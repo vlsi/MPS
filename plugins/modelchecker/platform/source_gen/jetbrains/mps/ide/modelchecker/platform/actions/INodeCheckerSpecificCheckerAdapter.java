@@ -5,6 +5,9 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 import jetbrains.mps.checkers.INodeChecker;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.QuickFix_Runtime;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -13,10 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.QuickFix_Runtime;
 
 public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
   private final INodeChecker myChecker;
@@ -29,32 +29,36 @@ public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
     myRepository = repository;
   }
 
+  public IModelCheckerFix getFix(final IErrorReporter errorReporter) {
+    QuickFixProvider provider = check_m7souj_a0a0g(errorReporter);
+    if (provider == null || !(provider.isExecutedImmediately())) {
+      return null;
+    }
+    final QuickFix_Runtime quickFix = provider.getQuickFix();
+    if (quickFix == null) {
+      return null;
+    }
+    return new IModelCheckerFix() {
+      public boolean doFix() {
+        quickFix.execute(errorReporter.getSNode());
+        return true;
+      }
+    };
+  }
+
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor) {
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     monitor.start(myCategory, 1);
     for (final SNode rootNode : SModelOperations.roots(model, null)) {
-      for (final IErrorReporter errorReporter : SetSequence.fromSet(myChecker.getErrors(rootNode, myRepository))) {
-        QuickFixProvider provider = check_m7souj_a0a0a0d0g(errorReporter);
-        IModelCheckerFix fix = null;
-        if (provider != null) {
-          final QuickFix_Runtime quickFix = provider.getQuickFix();
-          if (quickFix != null && provider.isExecutedImmediately()) {
-            fix = new IModelCheckerFix() {
-              public boolean doFix() {
-                quickFix.execute(errorReporter.getSNode());
-                return true;
-              }
-            };
-          }
-        }
-        SpecificChecker.addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), myCategory, fix);
+      for (IErrorReporter errorReporter : SetSequence.fromSet(myChecker.getErrors(rootNode, myRepository))) {
+        SpecificChecker.addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), myCategory, getFix(errorReporter));
       }
     }
     monitor.done();
     return results;
   }
-  private static QuickFixProvider check_m7souj_a0a0a0d0g(IErrorReporter checkedDotOperand) {
+  private static QuickFixProvider check_m7souj_a0a0g(IErrorReporter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getIntentionProvider();
     }

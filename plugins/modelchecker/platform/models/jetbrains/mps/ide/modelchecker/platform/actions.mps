@@ -7271,31 +7271,6 @@
             </node>
           </node>
           <node concept="3clFbS" id="3etVqSRRx7D" role="3clFbx">
-            <node concept="3clFbJ" id="3etVqSRRx7E" role="3cqZAp">
-              <node concept="3clFbC" id="3etVqSRRx7F" role="3clFbw">
-                <node concept="10Nm6u" id="3etVqSRRx7G" role="3uHU7w" />
-                <node concept="2OqwBi" id="3etVqSRRx7H" role="3uHU7B">
-                  <node concept="2Rxl7S" id="3etVqSRRx7I" role="2OqNvi" />
-                  <node concept="37vLTw" id="2BHiRxgm8Cd" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3etVqSRRx84" resolve="node" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="3etVqSRRx7K" role="3clFbx">
-                <node concept="34ab3g" id="3etVqSRRx7L" role="3cqZAp">
-                  <property role="35gtTG" value="error" />
-                  <property role="34fQS0" value="true" />
-                  <node concept="2ShNRf" id="3etVqSRRx7M" role="34bMjA">
-                    <node concept="1pGfFk" id="3etVqSRRx7N" role="2ShVmc">
-                      <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;()" resolve="IllegalStateException" />
-                    </node>
-                  </node>
-                  <node concept="Xl_RD" id="3etVqSRRx7O" role="34bqiv">
-                    <property role="Xl_RC" value="Node without containing root" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbF" id="3etVqSRRx7P" role="3cqZAp">
               <node concept="2OqwBi" id="3etVqSRRx7Q" role="3clFbG">
                 <node concept="37vLTw" id="2BHiRxgm7VI" role="2Oq$k0">
@@ -7341,6 +7316,9 @@
       <node concept="3Tmbuc" id="3etVqSRRx83" role="1B3o_S" />
       <node concept="37vLTG" id="3etVqSRRx84" role="3clF46">
         <property role="TrG5h" value="node" />
+        <node concept="2AHcQZ" id="RN3DCEj_Zk" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
         <node concept="3Tqbb2" id="3etVqSRRx85" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="3etVqSRRx86" role="3clF46">
@@ -10190,6 +10168,122 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="RN3DCEi_1l" role="jymVt" />
+    <node concept="3clFb_" id="RN3DCEi_yt" role="jymVt">
+      <property role="TrG5h" value="getFix" />
+      <node concept="37vLTG" id="RN3DCEiExs" role="3clF46">
+        <property role="TrG5h" value="errorReporter" />
+        <node concept="3uibUv" id="RN3DCEiEOc" role="1tU5fm">
+          <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="RN3DCEiIsx" role="3clF45">
+        <ref role="3uigEE" node="3etVqSRTqNj" resolve="IModelCheckerFix" />
+      </node>
+      <node concept="3Tm1VV" id="RN3DCEi_yw" role="1B3o_S" />
+      <node concept="3clFbS" id="RN3DCEi_yx" role="3clF47">
+        <node concept="3cpWs8" id="4ZSvteLUIH$" role="3cqZAp">
+          <node concept="3cpWsn" id="4ZSvteLUIH_" role="3cpWs9">
+            <property role="TrG5h" value="provider" />
+            <node concept="3uibUv" id="4ZSvteLUIGY" role="1tU5fm">
+              <ref role="3uigEE" to="2gg1:~QuickFixProvider" resolve="QuickFixProvider" />
+            </node>
+            <node concept="2EnYce" id="4ZSvteLUIHA" role="33vP2m">
+              <node concept="37vLTw" id="RN3DCEiHgS" role="2Oq$k0">
+                <ref role="3cqZAo" node="RN3DCEiExs" resolve="errorReporter" />
+              </node>
+              <node concept="liA8E" id="4ZSvteLUIHC" role="2OqNvi">
+                <ref role="37wK5l" to="2gg1:~IErrorReporter.getIntentionProvider():jetbrains.mps.errors.QuickFixProvider" resolve="getIntentionProvider" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4ZSvteLUX3a" role="3cqZAp">
+          <node concept="22lmx$" id="RN3DCEiScw" role="3clFbw">
+            <node concept="3clFbC" id="RN3DCEiLnO" role="3uHU7B">
+              <node concept="37vLTw" id="4ZSvteLUXol" role="3uHU7B">
+                <ref role="3cqZAo" node="4ZSvteLUIH_" resolve="provider" />
+              </node>
+              <node concept="10Nm6u" id="4ZSvteLUXCK" role="3uHU7w" />
+            </node>
+            <node concept="3fqX7Q" id="RN3DCEiP4o" role="3uHU7w">
+              <node concept="2OqwBi" id="RN3DCEiP4q" role="3fr31v">
+                <node concept="37vLTw" id="RN3DCEiP4r" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4ZSvteLUIH_" resolve="provider" />
+                </node>
+                <node concept="liA8E" id="RN3DCEiP4s" role="2OqNvi">
+                  <ref role="37wK5l" to="2gg1:~QuickFixProvider.isExecutedImmediately():boolean" resolve="isExecutedImmediately" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="RN3DCEiLnT" role="3clFbx">
+            <node concept="3cpWs6" id="RN3DCEiKwA" role="3cqZAp">
+              <node concept="10Nm6u" id="RN3DCEiL6S" role="3cqZAk" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="3etVqSRT$Hg" role="3cqZAp">
+          <node concept="3cpWsn" id="3etVqSRT$Hh" role="3cpWs9">
+            <property role="TrG5h" value="quickFix" />
+            <property role="3TUv4t" value="true" />
+            <node concept="2OqwBi" id="4ZSvteLUYpP" role="33vP2m">
+              <node concept="37vLTw" id="4ZSvteLUIHD" role="2Oq$k0">
+                <ref role="3cqZAo" node="4ZSvteLUIH_" resolve="provider" />
+              </node>
+              <node concept="liA8E" id="4ZSvteLUMHB" role="2OqNvi">
+                <ref role="37wK5l" to="2gg1:~QuickFixProvider.getQuickFix():jetbrains.mps.errors.QuickFix_Runtime" resolve="getQuickFix" />
+              </node>
+            </node>
+            <node concept="3uibUv" id="3etVqSRT$Hn" role="1tU5fm">
+              <ref role="3uigEE" to="2gg1:~QuickFix_Runtime" resolve="QuickFix_Runtime" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="RN3DCEiPvp" role="3cqZAp">
+          <node concept="3clFbS" id="RN3DCEiPvq" role="3clFbx">
+            <node concept="3cpWs6" id="RN3DCEiPvr" role="3cqZAp">
+              <node concept="10Nm6u" id="RN3DCEiPvs" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="3clFbC" id="RN3DCEiPvu" role="3clFbw">
+            <node concept="37vLTw" id="RN3DCEiPvv" role="3uHU7B">
+              <ref role="3cqZAo" node="3etVqSRT$Hh" resolve="quickFix" />
+            </node>
+            <node concept="10Nm6u" id="RN3DCEiPvw" role="3uHU7w" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="RN3DCEiJa2" role="3cqZAp">
+          <node concept="1bVj0M" id="63oasX2eTSI" role="3cqZAk">
+            <node concept="3clFbS" id="63oasX2eTSS" role="1bW5cS">
+              <node concept="3clFbF" id="3etVqSRT$HG" role="3cqZAp">
+                <node concept="2OqwBi" id="3etVqSRT$HH" role="3clFbG">
+                  <node concept="37vLTw" id="3GM_nagTxxy" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3etVqSRT$Hh" resolve="quickFix" />
+                  </node>
+                  <node concept="liA8E" id="3etVqSRT$HJ" role="2OqNvi">
+                    <ref role="37wK5l" to="2gg1:~QuickFix_Runtime.execute(org.jetbrains.mps.openapi.model.SNode):void" resolve="execute" />
+                    <node concept="2OqwBi" id="3etVqSRT$HK" role="37wK5m">
+                      <node concept="liA8E" id="3etVqSRT$HL" role="2OqNvi">
+                        <ref role="37wK5l" to="2gg1:~IErrorReporter.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
+                      </node>
+                      <node concept="37vLTw" id="RN3DCEiG_R" role="2Oq$k0">
+                        <ref role="3cqZAo" node="RN3DCEiExs" resolve="errorReporter" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs6" id="3etVqSRT$HN" role="3cqZAp">
+                <node concept="3clFbT" id="3etVqSRT$HO" role="3cqZAk">
+                  <property role="3clFbU" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="63oasX2f7T7" role="jymVt" />
     <node concept="3clFb_" id="1VtEqfXICt1" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -10262,112 +10356,6 @@
                 <property role="TrG5h" value="errorReporter" />
               </node>
               <node concept="3clFbS" id="3etVqSRT$Hb" role="2LFqv$">
-                <node concept="3cpWs8" id="4ZSvteLUIH$" role="3cqZAp">
-                  <node concept="3cpWsn" id="4ZSvteLUIH_" role="3cpWs9">
-                    <property role="TrG5h" value="provider" />
-                    <node concept="3uibUv" id="4ZSvteLUIGY" role="1tU5fm">
-                      <ref role="3uigEE" to="2gg1:~QuickFixProvider" resolve="QuickFixProvider" />
-                    </node>
-                    <node concept="2EnYce" id="4ZSvteLUIHA" role="33vP2m">
-                      <node concept="2GrUjf" id="4ZSvteLUIHB" role="2Oq$k0">
-                        <ref role="2Gs0qQ" node="3etVqSRT$Ha" resolve="errorReporter" />
-                      </node>
-                      <node concept="liA8E" id="4ZSvteLUIHC" role="2OqNvi">
-                        <ref role="37wK5l" to="2gg1:~IErrorReporter.getIntentionProvider():jetbrains.mps.errors.QuickFixProvider" resolve="getIntentionProvider" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="3etVqSRT$Ho" role="3cqZAp">
-                  <node concept="3cpWsn" id="3etVqSRT$Hp" role="3cpWs9">
-                    <property role="TrG5h" value="fix" />
-                    <node concept="3uibUv" id="3etVqSRT$Hq" role="1tU5fm">
-                      <ref role="3uigEE" node="3etVqSRTqNj" resolve="IModelCheckerFix" />
-                    </node>
-                    <node concept="10Nm6u" id="63oasX2gmb0" role="33vP2m" />
-                  </node>
-                </node>
-                <node concept="3clFbJ" id="4ZSvteLUX3a" role="3cqZAp">
-                  <node concept="3clFbS" id="4ZSvteLUX3c" role="3clFbx">
-                    <node concept="3cpWs8" id="3etVqSRT$Hg" role="3cqZAp">
-                      <node concept="3cpWsn" id="3etVqSRT$Hh" role="3cpWs9">
-                        <property role="TrG5h" value="quickFix" />
-                        <property role="3TUv4t" value="true" />
-                        <node concept="2OqwBi" id="4ZSvteLUYpP" role="33vP2m">
-                          <node concept="37vLTw" id="4ZSvteLUIHD" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4ZSvteLUIH_" resolve="provider" />
-                          </node>
-                          <node concept="liA8E" id="4ZSvteLUMHB" role="2OqNvi">
-                            <ref role="37wK5l" to="2gg1:~QuickFixProvider.getQuickFix():jetbrains.mps.errors.QuickFix_Runtime" resolve="getQuickFix" />
-                          </node>
-                        </node>
-                        <node concept="3uibUv" id="3etVqSRT$Hn" role="1tU5fm">
-                          <ref role="3uigEE" to="2gg1:~QuickFix_Runtime" resolve="QuickFix_Runtime" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbJ" id="63oasX2gccl" role="3cqZAp">
-                      <node concept="3clFbS" id="63oasX2gccn" role="3clFbx">
-                        <node concept="3clFbF" id="63oasX2gcA_" role="3cqZAp">
-                          <node concept="37vLTI" id="63oasX2gcAB" role="3clFbG">
-                            <node concept="1bVj0M" id="63oasX2eTSI" role="37vLTx">
-                              <node concept="3clFbS" id="63oasX2eTSS" role="1bW5cS">
-                                <node concept="3clFbF" id="3etVqSRT$HG" role="3cqZAp">
-                                  <node concept="2OqwBi" id="3etVqSRT$HH" role="3clFbG">
-                                    <node concept="37vLTw" id="3GM_nagTxxy" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="3etVqSRT$Hh" resolve="quickFix" />
-                                    </node>
-                                    <node concept="liA8E" id="3etVqSRT$HJ" role="2OqNvi">
-                                      <ref role="37wK5l" to="2gg1:~QuickFix_Runtime.execute(org.jetbrains.mps.openapi.model.SNode):void" resolve="execute" />
-                                      <node concept="2OqwBi" id="3etVqSRT$HK" role="37wK5m">
-                                        <node concept="liA8E" id="3etVqSRT$HL" role="2OqNvi">
-                                          <ref role="37wK5l" to="2gg1:~IErrorReporter.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
-                                        </node>
-                                        <node concept="2GrUjf" id="63oasX2cL06" role="2Oq$k0">
-                                          <ref role="2Gs0qQ" node="3etVqSRT$Ha" resolve="errorReporter" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="3cpWs6" id="3etVqSRT$HN" role="3cqZAp">
-                                  <node concept="3clFbT" id="3etVqSRT$HO" role="3cqZAk">
-                                    <property role="3clFbU" value="true" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="37vLTw" id="63oasX2gcAF" role="37vLTJ">
-                              <ref role="3cqZAo" node="3etVqSRT$Hp" resolve="fix" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="1Wc70l" id="4ZSvteLUhSp" role="3clFbw">
-                        <node concept="2OqwBi" id="4ZSvteLUJXo" role="3uHU7w">
-                          <node concept="37vLTw" id="4ZSvteLUJMU" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4ZSvteLUIH_" resolve="provider" />
-                          </node>
-                          <node concept="liA8E" id="4ZSvteLUKb9" role="2OqNvi">
-                            <ref role="37wK5l" to="2gg1:~QuickFixProvider.isExecutedImmediately():boolean" resolve="isExecutedImmediately" />
-                          </node>
-                        </node>
-                        <node concept="3y3z36" id="63oasX2gcnH" role="3uHU7B">
-                          <node concept="37vLTw" id="63oasX2gciR" role="3uHU7B">
-                            <ref role="3cqZAo" node="3etVqSRT$Hh" resolve="quickFix" />
-                          </node>
-                          <node concept="10Nm6u" id="63oasX2gcpY" role="3uHU7w" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3y3z36" id="4ZSvteLUXyx" role="3clFbw">
-                    <node concept="10Nm6u" id="4ZSvteLUXCK" role="3uHU7w" />
-                    <node concept="37vLTw" id="4ZSvteLUXol" role="3uHU7B">
-                      <ref role="3cqZAo" node="4ZSvteLUIH_" resolve="provider" />
-                    </node>
-                  </node>
-                </node>
                 <node concept="3clFbF" id="3etVqSRT$HQ" role="3cqZAp">
                   <node concept="2YIFZM" id="5Wg6SF9zt37" role="3clFbG">
                     <ref role="1Pybhc" node="3etVqSRRx7i" resolve="SpecificChecker" />
@@ -10406,8 +10394,11 @@
                     <node concept="37vLTw" id="RN3DCEgf5k" role="37wK5m">
                       <ref role="3cqZAo" node="6zkSwmUJV8a" resolve="myCategory" />
                     </node>
-                    <node concept="37vLTw" id="5Wg6SF9zy4a" role="37wK5m">
-                      <ref role="3cqZAo" node="3etVqSRT$Hp" resolve="fix" />
+                    <node concept="1rXfSq" id="RN3DCEiSLy" role="37wK5m">
+                      <ref role="37wK5l" node="RN3DCEi_yt" resolve="getFix" />
+                      <node concept="2GrUjf" id="RN3DCEiSLz" role="37wK5m">
+                        <ref role="2Gs0qQ" node="3etVqSRT$Ha" resolve="errorReporter" />
+                      </node>
                     </node>
                   </node>
                 </node>
