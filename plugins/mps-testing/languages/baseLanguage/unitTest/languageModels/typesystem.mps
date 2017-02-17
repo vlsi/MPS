@@ -222,7 +222,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="7i4U50br2rF">
-    <property role="TrG5h" value="AssertStatementInsideTestMethodInfo" />
+    <property role="TrG5h" value="check_AssertStatementInsideTestMethod" />
     <node concept="3clFbS" id="7i4U50br2rG" role="18ibNy">
       <node concept="3clFbJ" id="7i4U50br3zQ" role="3cqZAp">
         <node concept="3clFbS" id="7i4U50br3zS" role="3clFbx">

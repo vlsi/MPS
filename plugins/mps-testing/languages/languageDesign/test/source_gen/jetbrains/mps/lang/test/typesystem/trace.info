@@ -14,7 +14,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="9,0,57,0" name="jetbrains.mps.lang.test.typesystem.TypesystemDescriptor" />
+      <unit at="9,0,61,0" name="jetbrains.mps.lang.test.typesystem.TypesystemDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/1210676511811">
@@ -501,6 +501,60 @@
         <var name="typeCheckingContext" id="592868908271422399" />
       </scope>
       <unit id="592868908271422399" at="15,0,35,0" name="jetbrains.mps.lang.test.typesystem.typeof_IsIntentionApplicableExpression_InferenceRule" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/8315441706323992383">
+    <file name="check_AssertStatementInsideEditorTestCase_NonTypesystemRule.java">
+      <node id="8315441706324004783" at="20,117,21,25" concept="6" />
+      <node id="8315441706323999763" at="21,25,22,51" concept="6" />
+      <node id="8315441706324004950" at="23,233,24,23" concept="2" />
+      <node id="8315441706324003935" at="24,23,25,49" concept="2" />
+      <node id="8396091035812119723" at="28,7,29,60" concept="6" />
+      <node id="8396091035812119723" at="29,60,30,334" concept="6" />
+      <node id="8315441706323992383" at="34,50,35,155" concept="7" />
+      <node id="8315441706323992383" at="37,68,38,102" concept="7" />
+      <node id="8315441706323992383" at="40,30,41,17" concept="7" />
+      <node id="8315441706324020520" at="43,63,44,46" concept="7" />
+      <node id="8315441706323992383" at="18,0,20,0" concept="1" trace="check_AssertStatementInsideEditorTestCase_NonTypesystemRule#()V" />
+      <node id="8315441706323992383" at="34,0,37,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="8315441706323992383" at="37,0,40,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="8315441706323992383" at="40,0,43,0" concept="5" trace="overrides#()Z" />
+      <node id="8315441706324020520" at="43,0,46,0" concept="10" trace="eq_gkenzs_a0a3a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="8315441706323999814" at="22,51,26,5" concept="11" />
+      <node id="8396091035812119723" at="27,359,31,7" concept="0" />
+      <node id="8315441706324006442" at="26,5,32,5" concept="4" />
+      <node id="8315441706323992383" at="20,0,34,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="8315441706323992383" at="18,72,18,72" />
+      <scope id="8315441706323992383" at="34,50,35,155" />
+      <scope id="8315441706323992383" at="37,68,38,102" />
+      <scope id="8315441706323992383" at="40,30,41,17" />
+      <scope id="8315441706324020520" at="43,63,44,46" />
+      <scope id="8315441706323992383" at="18,0,20,0" />
+      <scope id="8315441706323999816" at="23,233,25,49" />
+      <scope id="8396091035812119723" at="28,7,30,334">
+        <var name="_reporter_2309309498" id="8396091035812119723" />
+        <var name="errorTarget" id="8396091035812119723" />
+      </scope>
+      <scope id="8315441706323992383" at="34,0,37,0" />
+      <scope id="8315441706323992383" at="37,0,40,0">
+        <var name="argument" id="8315441706323992383" />
+      </scope>
+      <scope id="8315441706323992383" at="40,0,43,0" />
+      <scope id="8315441706324020520" at="43,0,46,0">
+        <var name="a" id="8315441706324020520" />
+        <var name="b" id="8315441706324020520" />
+      </scope>
+      <scope id="8315441706324006444" at="27,359,31,7" />
+      <scope id="8315441706323992384" at="20,117,32,5">
+        <var name="current" id="8315441706324004786" />
+        <var name="parent" id="8315441706323999764" />
+      </scope>
+      <scope id="8315441706323992383" at="20,0,34,0">
+        <var name="node" id="8315441706323992383" />
+        <var name="status" id="8315441706323992383" />
+        <var name="typeCheckingContext" id="8315441706323992383" />
+      </scope>
+      <unit id="8315441706323992383" at="17,0,47,0" name="jetbrains.mps.lang.test.typesystem.check_AssertStatementInsideEditorTestCase_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/8933192351752325071">
