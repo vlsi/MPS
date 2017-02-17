@@ -10403,8 +10403,8 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="Xl_RD" id="63oasX2cEoY" role="37wK5m">
-                      <property role="Xl_RC" value="typesystem" />
+                    <node concept="37vLTw" id="RN3DCEgf5k" role="37wK5m">
+                      <ref role="3cqZAo" node="6zkSwmUJV8a" resolve="myCategory" />
                     </node>
                     <node concept="37vLTw" id="5Wg6SF9zy4a" role="37wK5m">
                       <ref role="3cqZAo" node="3etVqSRT$Hp" resolve="fix" />

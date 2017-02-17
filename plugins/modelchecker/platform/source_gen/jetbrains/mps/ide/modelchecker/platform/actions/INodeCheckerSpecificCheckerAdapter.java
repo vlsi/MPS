@@ -48,7 +48,7 @@ public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
             };
           }
         }
-        SpecificChecker.addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), "typesystem", fix);
+        SpecificChecker.addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), myCategory, fix);
       }
     }
     monitor.done();
