@@ -15777,19 +15777,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6IHSVKeLb3a" role="3cqZAp">
-          <node concept="2OqwBi" id="6IHSVKeLb3b" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTv91" role="2Oq$k0">
-              <ref role="3cqZAo" node="6IHSVKeLb35" resolve="popup" />
-            </node>
-            <node concept="liA8E" id="6IHSVKeLb3d" role="2OqNvi">
-              <ref role="37wK5l" to="1l1f:~ChooseByNamePopup.setShowListForEmptyPattern(boolean):void" resolve="setShowListForEmptyPattern" />
-              <node concept="3clFbT" id="6IHSVKeLb3e" role="37wK5m">
-                <property role="3clFbU" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="4wpmE7KY$L6" role="3cqZAp" />
         <node concept="3clFbF" id="6IHSVKeLb3f" role="3cqZAp">
           <node concept="2OqwBi" id="6IHSVKeLb3g" role="3clFbG">

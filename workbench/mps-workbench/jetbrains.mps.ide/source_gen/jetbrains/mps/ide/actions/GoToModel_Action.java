@@ -68,7 +68,6 @@ public class GoToModel_Action extends BaseAction {
     ChooseByNameData<SModelReference> gotoData = new ChooseByNameData<SModelReference>(new ModelsPresentation(repo));
     gotoData.derivePrompts("model").setScope(new ModelScopeIterable(localScope, repo), new ModelScopeIterable(globalScope, repo));
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(mpsProject.getProject(), gotoData, GoToModel_Action.this);
-    popup.setShowListForEmptyPattern(true);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void elementChosen(Object p0) {
