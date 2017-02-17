@@ -17,6 +17,7 @@ package jetbrains.mps.ide.blame.dialog;
 
 import com.intellij.credentialStore.CredentialAttributes;
 import com.intellij.credentialStore.Credentials;
+import com.intellij.diagnostic.DiagnosticBundle;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.passwordSafe.PasswordSafe;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
@@ -27,9 +28,15 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.DimensionService;
+import com.intellij.ui.HideableTitledPanel;
+import com.intellij.ui.components.JBCheckBox;
+import com.intellij.ui.components.JBLabel;
+import com.intellij.ui.components.JBPasswordField;
+import com.intellij.ui.components.JBRadioButton;
+import com.intellij.ui.components.JBScrollPane;
+import com.intellij.ui.components.JBTextField;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.uiDesigner.core.Spacer;
 import jetbrains.mps.ide.blame.command.Command;
 import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.blame.perform.Query;
@@ -40,6 +47,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
@@ -47,14 +55,12 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.border.TitledBorder;
+import java.awt.BorderLayout;
 import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.Frame;
@@ -72,11 +78,10 @@ public class BlameDialog extends DialogWrapper {
   private static final String CAPTION = "Submit System Exception to Developers";
 
   private JPanel myPanel;
-  private JTextArea myDescription;
+  private JTextArea myDescriptionField;
   private JTextArea myException;
   private JTextField myUsername;
   private JPasswordField myPassword;
-  private JPanel myLoginPanel;
   private JButton myTestLoginButton;
   private JRadioButton myRegisteredRadio;
   private JRadioButton myAnonymousRadio;
@@ -88,7 +93,9 @@ public class BlameDialog extends DialogWrapper {
   private Response myResult;
   private Project myProject;
 
-  private List<Throwable> myEx = new ArrayList<>();
+  private String myTitle = "";
+  private String myDescription = "";
+  private List<Throwable> myThrowableList = new ArrayList<>();
   private List<File> myFilesToAttach = new ArrayList<>();
   private String mySubsystem = null;
   private PluginDescriptor myPluginDescriptor;
@@ -96,37 +103,24 @@ public class BlameDialog extends DialogWrapper {
 
   public BlameDialog(Project project, Dialog dialog) {
     super(dialog, true);
-    setTitle(CAPTION);
-    setModal(true);
     myProject = project;
-    initDialog();
   }
 
   public BlameDialog(Project project, Frame mainFrame) {
     super(mainFrame, true);
-    setTitle(CAPTION);
-    setModal(true);
     myProject = project;
-    initDialog();
   }
 
-  public void addEx(Throwable ex) {
-    myEx.add(ex);
-    myExceptionContainer.setVisible(true);
-    String text = myException.getText();
-    if (text != null && text.length() > 0) {
-      myException.setText(text + "\n\n" + ex2str(ex));
-    } else {
-      myException.setText(ex2str(ex));
-    }
+  public void addEx(Throwable throwable) {
+    myThrowableList.add(throwable);
   }
 
   public void setIssueTitle(String message) {
-    myTitleField.setText(message);
+    myTitle = message;
   }
 
   public void setDescription(String message) {
-    myDescription.setText(message);
+    myDescription = message;
   }
 
   public void addFile(@NotNull File file) {
@@ -155,12 +149,112 @@ public class BlameDialog extends DialogWrapper {
 
   @Override
   protected JComponent createCenterPanel() {
+    myPanel = new JPanel(new BorderLayout());
+
+    JPanel issuePanel = new JPanel(new GridLayoutManager(6, 1, new Insets(0, 0, 0, 0), -1, -1));
+    issuePanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Issue properties"));
+
+    issuePanel.add(new JBLabel("Title:"), getConstraints(issuePanel.getComponentCount()));
+    myTitleField = new JBTextField();
+    issuePanel.add(myTitleField, getConstraints(issuePanel.getComponentCount()));
+
+    issuePanel.add(new JBLabel(DiagnosticBundle.message("error.dialog.comment.prompt")), getConstraints(issuePanel.getComponentCount()));
+    myDescriptionField = new JTextArea();
+    myDescriptionField.setEditable(true);
+    myDescriptionField.setRows(2);
+    JBScrollPane descriptionScrollPane = new JBScrollPane();
+    descriptionScrollPane.setViewportView(myDescriptionField);
+    final GridConstraints descriptionConstraints = getConstraints(issuePanel.getComponentCount());
+    descriptionConstraints.setAnchor(GridConstraints.ANCHOR_CENTER);
+    descriptionConstraints.setFill(GridConstraints.FILL_BOTH);
+    descriptionConstraints.setVSizePolicy(GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_WANT_GROW);
+    issuePanel.add(descriptionScrollPane, descriptionConstraints);
+
+    myExceptionContainer = new JPanel(new GridLayoutManager(2, 1, new Insets(0, 0, 0, 0), -1, -1));
+
+    myExceptionContainer.add(new JBLabel("Exception:"), getConstraints(myExceptionContainer.getComponentCount()));
+    myException = new JTextArea();
+    myException.setEditable(false);
+    final JBScrollPane exceptionScrollPane = new JBScrollPane();
+    exceptionScrollPane.setViewportView(myException);
+    myExceptionContainer.add(exceptionScrollPane, getConstraints(myExceptionContainer.getComponentCount()));
+
+    issuePanel.add(myExceptionContainer, getConstraints(issuePanel.getComponentCount()));
+
+    myHiddenCheckBox = new JBCheckBox("Visible only to MPS developers");
+    issuePanel.add(myHiddenCheckBox, getConstraints(issuePanel.getComponentCount()));
+    myHiddenCheckBox.setToolTipText("Select this if you want this bug report will be visible only to you and MPS developers");
+
+    myPanel.add(issuePanel, BorderLayout.CENTER);
+
+    JPanel bugTrackerPanel = new JPanel(new GridLayoutManager(7, 1, new Insets(0, 0, 0, 0), -1, -1));
+    HideableTitledPanel hideableTitledPanel = new HideableTitledPanel("Bug tracker login settings", bugTrackerPanel, false);
+
+    myAnonymousRadio = new JBRadioButton("Anonymous");
+    myAnonymousRadio.setSelected(true);
+    bugTrackerPanel.add(myAnonymousRadio, getConstraints(bugTrackerPanel.getComponentCount()));
+    myRegisteredRadio = new JBRadioButton("Registered user");
+    myAnonymousRadio.setSelected(false);
+    bugTrackerPanel.add(myRegisteredRadio, getConstraints(bugTrackerPanel.getComponentCount()));
+
+    ButtonGroup buttonGroup;
+    buttonGroup = new ButtonGroup();
+    buttonGroup.add(myRegisteredRadio);
+    buttonGroup.add(myAnonymousRadio);
+
+    bugTrackerPanel.add(new JBLabel("Username:"), getConstraints(bugTrackerPanel.getComponentCount()));
+    myUsername = new JBTextField();
+    myUsername.setEnabled(false);
+    bugTrackerPanel.add(myUsername, getConstraints(bugTrackerPanel.getComponentCount()));
+
+    bugTrackerPanel.add(new JBLabel("Password:"), getConstraints(bugTrackerPanel.getComponentCount()));
+    myPassword = new JBPasswordField();
+    myPassword.setEnabled(false);
+    bugTrackerPanel.add(myPassword, getConstraints(bugTrackerPanel.getComponentCount()));
+
+    myTestLoginButton = new JButton("Test Login");
+    myTestLoginButton.setEnabled(false);
+    final GridConstraints buttonConstraints = getConstraints(bugTrackerPanel.getComponentCount());
+    buttonConstraints.setFill(GridConstraints.FILL_NONE);
+    buttonConstraints.setAnchor(GridConstraints.ANCHOR_EAST);
+    bugTrackerPanel.add(myTestLoginButton, buttonConstraints);
+
+    myPanel.add(hideableTitledPanel, BorderLayout.SOUTH);
+
     return myPanel;
   }
 
-  private void initDialog() {
+  private final GridConstraints getConstraints(int row) {
+    return new GridConstraints(row, 0, 1, 1,
+                               GridConstraints.ANCHOR_WEST,
+                               GridConstraints.FILL_HORIZONTAL,
+                               GridConstraints.SIZEPOLICY_CAN_SHRINK,
+                               GridConstraints.SIZEPOLICY_CAN_SHRINK,
+                               null, null, null);
+  }
+
+  @Nullable
+  @Override
+  public JComponent getPreferredFocusedComponent() {
+    return myDescriptionField;
+  }
+
+  public void initDialog() {
+    setTitle(CAPTION);
     setModal(true);
-    myExceptionContainer.setVisible(false);
+    init();
+
+    myTitleField.setText(myTitle);
+    myDescriptionField.setText(myDescription);
+
+    myExceptionContainer.setVisible(!myThrowableList.isEmpty());
+    if (!myThrowableList.isEmpty()) {
+      StringBuilder builder = new StringBuilder();
+      for (Throwable throwable : myThrowableList) {
+        builder.append(ex2str(throwable)).append("\n\n");
+      }
+      myException.setText(builder.toString());
+    }
 
     myAnonymousRadio.addChangeListener(e -> {
       boolean enabled = !myAnonymousRadio.getModel().isSelected();
@@ -185,12 +279,7 @@ public class BlameDialog extends DialogWrapper {
         }
       }
     });
-    myTestLoginButton.setEnabled(!myAnonymousRadio.getModel().isSelected()); // javax.swing.AbstractButton.setAction() set button to enabled state
-
-    Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
-    if (size == null) {
-      myPanel.setPreferredSize(new Dimension(750, 550));
-    }
+    myTestLoginButton.setEnabled(false); // javax.swing.AbstractButton.setAction() set button to enabled state
 
     final Credentials credentials = MPSErrorReporterConfigurable.getCredentials();
     if (credentials == null) {
@@ -201,13 +290,17 @@ public class BlameDialog extends DialogWrapper {
       myPassword.setText(credentials.getPasswordAsString());
     }
 
+    Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
+    if (size == null) {
+      myPanel.setPreferredSize(new Dimension(750, 550));
+    }
+
     Point location = DimensionService.getInstance().getLocation(getDimensionServiceKey(), myProject);
     if (location == null) {
       setLocation(200, 200);
     }
     setOKButtonText("Send");
-    setOKButtonMnemonic('C');
-    init();
+    setOKButtonMnemonic('S');
   }
 
   @Override
@@ -271,23 +364,23 @@ public class BlameDialog extends DialogWrapper {
 
   @Override
   protected void doOKAction() {
-    StringBuilder description = new StringBuilder(myTitleField.getText().length() + myDescription.getText().length() + 1000);
+    StringBuilder description = new StringBuilder(myTitleField.getText().length() + myDescriptionField.getText().length() + 1000);
     if (myTitleField.getText().trim().length() != 0) {
       description.append(myTitleField.getText());
       description.append("\n\n");
     }
 
-    if (myDescription.getText().trim().length() != 0) {
-      description.append(myDescription.getText());
+    if (myDescriptionField.getText().trim().length() != 0) {
+      description.append(myDescriptionField.getText());
       description.append("\n\n");
     }
 
     description.append(getAdditionalInfo());
     description.append("\n");
 
-    if (!myEx.isEmpty()) {
+    if (!myThrowableList.isEmpty()) {
       description.append("{code}");
-      for (Throwable ex : myEx) {
+      for (Throwable ex : myThrowableList) {
         description.append(ex2str(ex)).append("\n");
       }
       description.append("{code}");
@@ -343,152 +436,4 @@ public class BlameDialog extends DialogWrapper {
     final Credentials credentials = new Credentials(myUsername.getText(), String.valueOf(myPassword.getPassword()));
     PasswordSafe.getInstance().set(credentialAttributes, myRegisteredRadio.isSelected() ? credentials : null);
   }
-
-  //@formatter:off
-  {
-// GUI initializer generated by IntelliJ IDEA GUI Designer
-// >>> IMPORTANT!! <<<
-// DO NOT EDIT OR ADD ANY CODE HERE!
-    $$$setupUI$$$();
-  }
-
-  /**
-   * Method generated by IntelliJ IDEA GUI Designer
-   * >>> IMPORTANT!! <<<
-   * DO NOT edit this method OR call it in your code!
-   *
-   * @noinspection ALL
-   */
-  private void $$$setupUI$$$() {
-    myPanel = new JPanel();
-    myPanel.setLayout(new GridLayoutManager(2, 1, new Insets(0, 0, 0, 0), -1, -1));
-    final JPanel panel1 = new JPanel();
-    panel1.setLayout(new GridLayoutManager(3, 2, new Insets(0, 0, 0, 0), -1, -1));
-    myPanel.add(panel1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
-    panel1.setBorder(
-        BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Bugtracker login settings", TitledBorder.LEFT, TitledBorder.DEFAULT_POSITION));
-    final Spacer spacer1 = new Spacer();
-    panel1.add(spacer1,
-        new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null,
-            null, 0, false));
-    myLoginPanel = new JPanel();
-    myLoginPanel.setLayout(new GridLayoutManager(3, 2, new Insets(0, 5, 0, 0), -1, -1));
-    panel1.add(myLoginPanel, new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
-    final JLabel label1 = new JLabel();
-    label1.setText("Username:");
-    myLoginPanel.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
-        GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-    myUsername = new JTextField();
-    myUsername.setEnabled(false);
-    myLoginPanel.add(myUsername,
-        new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
-            GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-    final JLabel label2 = new JLabel();
-    label2.setText("Password:");
-    myLoginPanel.add(label2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
-        GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-    myPassword = new JPasswordField();
-    myPassword.setEnabled(false);
-    myLoginPanel.add(myPassword,
-        new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
-            GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-    myTestLoginButton = new JButton();
-    myTestLoginButton.setEnabled(false);
-    myTestLoginButton.setText("Test Login");
-    myLoginPanel.add(myTestLoginButton, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_EAST, GridConstraints.FILL_NONE,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-    myRegisteredRadio = new JRadioButton();
-    myRegisteredRadio.setText("Registered user");
-    panel1.add(myRegisteredRadio, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-    myAnonymousRadio = new JRadioButton();
-    myAnonymousRadio.setSelected(true);
-    myAnonymousRadio.setText("Anonymous");
-    panel1.add(myAnonymousRadio, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-    final Spacer spacer2 = new Spacer();
-    panel1.add(spacer2,
-        new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null,
-            null, 0, false));
-    final JPanel panel2 = new JPanel();
-    panel2.setLayout(new GridLayoutManager(8, 2, new Insets(0, 0, 0, 0), -1, -1));
-    myPanel.add(panel2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-    panel2.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Issue properties"));
-    final JLabel label3 = new JLabel();
-    label3.setText("Description (what did you do,what happened instead of expected behavior):");
-    panel2.add(label3, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
-        GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-    final Spacer spacer3 = new Spacer();
-    panel2.add(spacer3,
-        new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null,
-            null, 0, false));
-    final JScrollPane scrollPane1 = new JScrollPane();
-    panel2.add(scrollPane1, new GridConstraints(3, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(0, 37), null, 0, false));
-    myDescription = new JTextArea();
-    myDescription.setEditable(true);
-    myDescription.setText("");
-    scrollPane1.setViewportView(myDescription);
-    myTitleField = new JTextField();
-    panel2.add(myTitleField, new GridConstraints(1, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
-        GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-    final JLabel label4 = new JLabel();
-    label4.setText("Title:");
-    panel2.add(label4, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
-        GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-    final Spacer spacer4 = new Spacer();
-    panel2.add(spacer4,
-        new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null,
-            null, 0, false));
-    final Spacer spacer5 = new Spacer();
-    panel2.add(spacer5,
-        new GridConstraints(4, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null,
-            null, 0, false));
-    myHiddenCheckBox = new JCheckBox();
-    myHiddenCheckBox.setText("Visible only to MPS developers");
-    myHiddenCheckBox.setToolTipText("Select this if you want this bug report will be visible only to you and MPS developers ");
-    panel2.add(myHiddenCheckBox, new GridConstraints(7, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-    myExceptionContainer = new JPanel();
-    myExceptionContainer.setLayout(new GridLayoutManager(2, 2, new Insets(0, 0, 0, 0), -1, -1));
-    myExceptionContainer.setEnabled(true);
-    panel2.add(myExceptionContainer, new GridConstraints(6, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
-    final JLabel label5 = new JLabel();
-    label5.setText("Exception:");
-    myExceptionContainer.add(label5, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
-        GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-    final Spacer spacer6 = new Spacer();
-    myExceptionContainer.add(spacer6,
-        new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null,
-            null, 0, false));
-    final JScrollPane scrollPane2 = new JScrollPane();
-    myExceptionContainer.add(scrollPane2, new GridConstraints(1, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(0, 220), null, 0, false));
-    myException = new JTextArea();
-    myException.setEditable(false);
-    scrollPane2.setViewportView(myException);
-    ButtonGroup buttonGroup;
-    buttonGroup = new ButtonGroup();
-    buttonGroup.add(myRegisteredRadio);
-    buttonGroup.add(myAnonymousRadio);
-  }
-
-  /**
-   * @noinspection ALL
-   */
-  public JComponent $$$getRootComponent$$$() {
-    return myPanel;
-  }
-
-  //@formatter:on
 }
