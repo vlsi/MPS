@@ -15,13 +15,28 @@
  */
 package jetbrains.mps.ide.blame.perform;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 
 public class Query {
-  public static final Query ANONYMOUS = new Query("mpsexception", "mpsexception");
+  /**
+   * @deprecated use {@link Query#getAnonymousQuery()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2017.1)
+  public static final Query ANONYMOUS = getAnonymousQuery();
+
+  /**
+   * Use this method to get empty query to fill with data if no user is specified
+   *
+   * @return empty query with default user for anonymous issue submission
+   */
+  public static Query getAnonymousQuery() {
+    return new Query("mpsexception", "mpsexception");
+  }
 
   private String myUser;
   private String myPassword;

@@ -244,7 +244,7 @@ public class BlameDialog extends DialogWrapper {
   private Query createQuery() {
     Credentials credentials = ErrorReportConfigurable.getCredentials();
     return CredentialAttributesKt.isFulfilled(credentials) ?
-           new Query(credentials.getUserName(), credentials.getPasswordAsString()) : Query.ANONYMOUS;
+           new Query(credentials.getUserName(), credentials.getPasswordAsString()) : Query.getAnonymousQuery();
   }
 
   private String ex2str(Throwable e) {

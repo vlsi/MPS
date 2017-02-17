@@ -31,7 +31,7 @@ public class YouTrackURLTest extends TestCase {
     for (int i = 1; i <= 3; ++i) {
       lastEx = null;
       try {
-        result = c.login(Query.ANONYMOUS);
+        result = c.login(Query.getAnonymousQuery());
         if (!result.isSuccess()) {
           try {
             Thread.sleep(3000 * i);
