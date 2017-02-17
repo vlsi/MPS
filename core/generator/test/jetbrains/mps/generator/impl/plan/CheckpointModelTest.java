@@ -76,7 +76,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
 
   @BeforeClass
   public static void setup() {
-    mpsProject = ENV.openProject(new File(PathManager.getUserDir()));
+    mpsProject = ENV.openProject(new File(PathManager.getUserDir(), "languages/languageDesign/generator/project.xmodel.test1"));
   }
 
   @AfterClass
