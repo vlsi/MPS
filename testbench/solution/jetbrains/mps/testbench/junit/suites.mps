@@ -46,7 +46,6 @@
     <import index="cky9" ref="r:1d4e7c57-c144-4228-9dec-8180ddf9f0ee(jetbrains.mps.tool.environment)" />
     <import index="k76n" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit.runner.notification(jetbrains.mps.baseLanguage.unitTest.libs/)" />
     <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
-    <import index="zf81" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.net(JDK/)" />
     <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
@@ -563,16 +562,11 @@
                   <node concept="3clFbS" id="5DrQSNO_94v" role="1bW5cS">
                     <node concept="3clFbF" id="5DrQSNO_989" role="3cqZAp">
                       <node concept="2OqwBi" id="5DrQSNO_9eO" role="3clFbG">
-                        <node concept="2OqwBi" id="7X3$Ctw3Y$_" role="2Oq$k0">
-                          <node concept="37vLTw" id="5DrQSNO_gQN" role="2Oq$k0">
-                            <ref role="3cqZAo" node="7X3$Ctw3Yt7" resolve="ourContextProject" />
-                          </node>
-                          <node concept="liA8E" id="7X3$Ctw3Y$A" role="2OqNvi">
-                            <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                          </node>
+                        <node concept="37vLTw" id="5DrQSNO_gQN" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7X3$Ctw3Yt7" resolve="ourContextProject" />
                         </node>
                         <node concept="liA8E" id="5DrQSNO_9na" role="2OqNvi">
-                          <ref role="37wK5l" to="lui2:~SRepository.getModules():java.lang.Iterable" resolve="getModules" />
+                          <ref role="37wK5l" to="z1c3:~Project.getProjectModulesWithGenerators():java.util.List" resolve="getProjectModulesWithGenerators" />
                         </node>
                       </node>
                     </node>

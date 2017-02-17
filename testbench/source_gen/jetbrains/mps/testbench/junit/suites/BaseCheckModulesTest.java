@@ -35,9 +35,9 @@ public class BaseCheckModulesTest {
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
     // load excluded modules from system property, can be specified by MpsTestConfiguration annotation? 
     initEnvironment();
-    Iterable<SModule> modules = new ModelAccessHelper(ourContextProject.getModelAccess()).runReadAction(new Computable<Iterable<SModule>>() {
-      public Iterable<SModule> compute() {
-        return ourContextProject.getRepository().getModules();
+    Iterable<SModule> modules = new ModelAccessHelper(ourContextProject.getModelAccess()).runReadAction(new Computable<List<SModule>>() {
+      public List<SModule> compute() {
+        return ourContextProject.getProjectModulesWithGenerators();
       }
     });
     return createTestParametersFromModules(modules);
