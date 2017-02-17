@@ -121,6 +121,7 @@ public class ReportModelMergeProblem_Action extends BaseAction {
           return;
         }
         blameDialog.addFile(new File(backupDir, zipNames[selectedIndex]));
+        blameDialog.initDialog();
         blameDialog.show();
       }
     }

@@ -93,6 +93,7 @@ public class SubmitToTracker_Action extends BaseAction {
       dialog.addEx(msg.getException());
     }
     dialog.setDescription(description.toString());
+    dialog.initDialog();
     dialog.show();
 
 

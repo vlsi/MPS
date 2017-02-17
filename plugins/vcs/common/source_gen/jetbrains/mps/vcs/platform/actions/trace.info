@@ -56,9 +56,10 @@
       <node id="3531370237490077650" at="118,14,119,205" concept="10" />
       <node id="342366573607015356" at="120,32,121,17" concept="11" />
       <node id="3531370237490077664" at="122,9,123,74" concept="5" />
-      <node id="3531370237490077674" at="123,74,124,27" concept="5" />
-      <node id="3531370237490077461" at="128,66,129,157" concept="5" />
-      <node id="3531370237490077701" at="131,55,132,43" concept="11" />
+      <node id="2271145424183423836" at="123,74,124,33" concept="5" />
+      <node id="3531370237490077674" at="124,33,125,27" concept="5" />
+      <node id="3531370237490077461" at="129,66,130,157" concept="5" />
+      <node id="3531370237490077701" at="132,55,133,43" concept="11" />
       <node id="3531370237490077694" at="48,0,51,0" concept="9" trace="accept#(Lcom/intellij/openapi/vcs/VcsDirectoryMapping;)Z" />
       <node id="3531370237490077457" at="58,95,61,5" concept="8" />
       <node id="3531370237490077457" at="63,56,66,7" concept="8" />
@@ -69,8 +70,8 @@
       <node id="3531370237490077618" at="108,0,111,0" concept="9" trace="select#(Ljava/io/File;)Ljava/lang/Long;" />
       <node id="3531370237490077628" at="112,0,115,0" concept="9" trace="select#(Ljava/io/File;)Ljava/lang/String;" />
       <node id="342366573606932794" at="119,205,122,9" concept="8" />
-      <node id="3531370237490077458" at="128,0,131,0" concept="9" trace="showNoBackupsAvailable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="3531370237490077701" at="131,0,134,0" concept="15" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <node id="3531370237490077458" at="129,0,132,0" concept="9" trace="showNoBackupsAvailable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <node id="3531370237490077701" at="132,0,135,0" concept="15" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
       <node id="3531370237490077457" at="40,0,44,0" concept="9" trace="isDumbAware#()Z" />
       <node id="3531370237490077457" at="53,0,57,0" concept="9" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="3531370237490077457" at="35,0,40,0" concept="3" trace="ReportModelMergeProblem_Action#()V" />
@@ -80,14 +81,14 @@
       <node id="3531370237490077574" at="97,71,102,7" concept="10" />
       <node id="3531370237490077457" at="61,5,67,5" concept="1" />
       <node id="3531370237490077457" at="67,5,73,5" concept="1" />
-      <node id="3531370237490077648" at="118,12,125,7" concept="1" />
+      <node id="3531370237490077648" at="118,12,126,7" concept="1" />
       <node id="3531370237490077457" at="44,0,53,0" concept="9" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="3531370237490077609" at="106,53,115,38" concept="10" />
-      <node id="3531370237490077637" at="115,38,125,7" concept="8" />
+      <node id="3531370237490077637" at="115,38,126,7" concept="8" />
       <node id="3531370237490077457" at="57,0,76,0" concept="9" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <node id="3531370237490077601" at="105,10,126,5" concept="1" />
-      <node id="3531370237490077592" at="102,7,126,5" concept="8" />
-      <node id="3531370237490077457" at="76,0,128,0" concept="9" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="3531370237490077601" at="105,10,127,5" concept="1" />
+      <node id="3531370237490077592" at="102,7,127,5" concept="8" />
+      <node id="3531370237490077457" at="76,0,129,0" concept="9" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <scope id="3531370237490077457" at="41,32,42,16" />
       <scope id="3531370237490077695" at="48,52,49,44" />
       <scope id="3531370237490077457" at="54,89,55,85" />
@@ -102,8 +103,8 @@
       <scope id="3531370237490077629" at="112,38,113,29" />
       <scope id="3531370237490077638" at="116,33,117,74" />
       <scope id="342366573606932795" at="120,32,121,17" />
-      <scope id="3531370237490077460" at="128,66,129,157" />
-      <scope id="3531370237490077701" at="131,55,132,43" />
+      <scope id="3531370237490077460" at="129,66,130,157" />
+      <scope id="3531370237490077701" at="132,55,133,43" />
       <scope id="3531370237490077457" at="35,43,38,40" />
       <scope id="3531370237490077694" at="48,0,51,0">
         <var name="m" id="3531370237490077694" />
@@ -125,10 +126,10 @@
       <scope id="3531370237490077628" at="112,0,115,0">
         <var name="f" id="3531370237490077628" />
       </scope>
-      <scope id="3531370237490077458" at="128,0,131,0">
+      <scope id="3531370237490077458" at="129,0,132,0">
         <var name="event" id="3531370237490077458" />
       </scope>
-      <scope id="3531370237490077701" at="131,0,134,0">
+      <scope id="3531370237490077701" at="132,0,135,0">
         <var name="str" id="3531370237490077701" />
       </scope>
       <scope id="3531370237490077457" at="40,0,44,0" />
@@ -146,7 +147,7 @@
       <scope id="3531370237490077679" at="45,87,51,7">
         <var name="mappings" id="3531370237490077681" />
       </scope>
-      <scope id="3531370237490077649" at="118,14,124,27">
+      <scope id="3531370237490077649" at="118,14,125,27">
         <var name="selectedIndex" id="3531370237490077651" />
       </scope>
       <scope id="3531370237490077457" at="44,0,53,0">
@@ -158,17 +159,17 @@
         <var name="_params" id="3531370237490077457" />
         <var name="event" id="3531370237490077457" />
       </scope>
-      <scope id="3531370237490077602" at="105,12,125,7">
+      <scope id="3531370237490077602" at="105,12,126,7">
         <var name="zipFiles" id="3531370237490077604" />
         <var name="zipNames" id="3531370237490077610" />
       </scope>
-      <scope id="3531370237490077457" at="77,96,126,5">
+      <scope id="3531370237490077457" at="77,96,127,5">
         <var name="backupDir" id="3531370237490077569" />
         <var name="blameDialog" id="3531370237490077474" />
         <var name="filesToAttach" id="3531370237490077501" />
         <var name="listFiles" id="3531370237490077575" />
       </scope>
-      <scope id="3531370237490077457" at="76,0,128,0">
+      <scope id="3531370237490077457" at="76,0,129,0">
         <var name="_params" id="3531370237490077457" />
         <var name="event" id="3531370237490077457" />
       </scope>
@@ -178,7 +179,7 @@
       <unit id="3531370237490077581" at="98,47,102,5" name="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$4" />
       <unit id="3531370237490077618" at="107,67,111,7" name="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$5" />
       <unit id="3531370237490077628" at="111,27,115,7" name="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$6" />
-      <unit id="3531370237490077457" at="32,0,135,0" name="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action" />
+      <unit id="3531370237490077457" at="32,0,136,0" name="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action" />
     </file>
   </root>
   <root nodeRef="r:c29f530b-f74d-4627-9da2-61138cfa6722(jetbrains.mps.vcs.platform.actions)/3531370237490077704">
