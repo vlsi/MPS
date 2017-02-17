@@ -8,6 +8,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
+import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -31,9 +32,9 @@ public class StopShowCompletionOnTheDiagram_Test extends BaseTransformationTest 
         processSecondaryMouseEvent(eventTargetComponent_hpnf0e_a0, x_hpnf0e_a0, y_hpnf0e_a0, MouseEvent.MOUSE_RELEASED);
         processSecondaryMouseEvent(eventTargetComponent_hpnf0e_a0, x_hpnf0e_a0, y_hpnf0e_a0, MouseEvent.MOUSE_CLICKED);
       }
-      assert getEditorComponent().getNodeSubstituteChooser().isVisible();
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible());
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ESCAPE"));
-      assert !(getEditorComponent().getNodeSubstituteChooser().isVisible());
+      Assert.assertTrue(!(getEditorComponent().getNodeSubstituteChooser().isVisible()));
 
     }
   }

@@ -8,6 +8,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
+import junit.framework.Assert;
 
 @MPSLaunch
 public class SelectDiagramFromNode_Test extends BaseTransformationTest {
@@ -30,7 +31,7 @@ public class SelectDiagramFromNode_Test extends BaseTransformationTest {
         processSecondaryMouseEvent(eventTargetComponent_vp76dd_b0, x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_RELEASED);
         processSecondaryMouseEvent(eventTargetComponent_vp76dd_b0, x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_CLICKED);
       }
-      assert !(getEditorComponent().getNodeSubstituteChooser().isVisible());
+      Assert.assertTrue(!(getEditorComponent().getNodeSubstituteChooser().isVisible()));
 
     }
   }

@@ -13,7 +13,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new AssertStatementInsideTestMethodInfo_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_AssertStatementInsideTestMethod_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -23,8 +24,8 @@ public class TestSubstitute_AmbigousPositionDifferentConcepts_Test extends BaseT
     public void testMethodImpl() throws Exception {
       initEditorComponent("9174907873153070667", "9174907873153070669");
       typeString("ambigous");
-      assert getEditorComponent().getNodeSubstituteChooser().isVisible();
-      assert getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 2;
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible());
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 2);
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }

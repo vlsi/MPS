@@ -8,6 +8,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import junit.framework.Assert;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 @MPSLaunch
@@ -25,7 +26,7 @@ public class InspectorOfCompactPresentation_Test extends BaseTransformationTest 
       initEditorComponent("2112659629360583086", "2112659629360583089");
       invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
       EditorCell rootCell = ((NodeEditorComponent) getEditorComponent()).getInspector().getRootCell();
-      assert rootCell instanceof EditorCell_Label && ((EditorCell_Label) rootCell).getText().equals("compact");
+      Assert.assertTrue(rootCell instanceof EditorCell_Label && ((EditorCell_Label) rootCell).getText().equals("compact"));
     }
   }
 }

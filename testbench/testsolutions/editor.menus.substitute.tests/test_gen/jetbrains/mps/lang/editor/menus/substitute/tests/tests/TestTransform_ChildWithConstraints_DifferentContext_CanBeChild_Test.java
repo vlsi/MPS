@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -24,7 +25,7 @@ public class TestTransform_ChildWithConstraints_DifferentContext_CanBeChild_Test
       initEditorComponent("3262439767570579572", "3262439767570579575");
       typeString(" ");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      assert getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 1;
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 1);
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }

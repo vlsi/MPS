@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -23,8 +24,8 @@ public class TestSubstitute_Subconcepts_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditorComponent("5476527677618977237", "5476527677618977239");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      assert getEditorComponent().getNodeSubstituteChooser().isVisible();
-      assert getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 4;
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible());
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 4);
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }

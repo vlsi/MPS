@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import junit.framework.Assert;
 
 @MPSLaunch
 public class DefaultEditor_DontSubstituteAbstractConcepts_Test extends BaseTransformationTest {
@@ -21,7 +22,7 @@ public class DefaultEditor_DontSubstituteAbstractConcepts_Test extends BaseTrans
     public void testMethodImpl() throws Exception {
       initEditorComponent("472942194665436919", "472942194665436916");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      assert getEditorComponent().getNodeSubstituteChooser().isVisible() && getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 1;
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible() && getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 1);
 
     }
   }

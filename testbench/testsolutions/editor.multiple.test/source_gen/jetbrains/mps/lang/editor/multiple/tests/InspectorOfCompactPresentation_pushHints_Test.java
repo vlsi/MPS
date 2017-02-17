@@ -8,6 +8,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import junit.framework.Assert;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import javax.swing.SwingUtilities;
 
@@ -27,7 +28,7 @@ public class InspectorOfCompactPresentation_pushHints_Test extends BaseTransform
 
       final NodeEditorComponent component = ((NodeEditorComponent) getEditorComponent());
       EditorCell rootCell = component.getInspector().getRootCell();
-      assert rootCell instanceof EditorCell_Label && ((EditorCell_Label) rootCell).getText().equals("default");
+      Assert.assertTrue(rootCell instanceof EditorCell_Label && ((EditorCell_Label) rootCell).getText().equals("default"));
       component.getUpdater().setInitialEditorHints(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact"});
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
@@ -40,7 +41,7 @@ public class InspectorOfCompactPresentation_pushHints_Test extends BaseTransform
         }
       });
       rootCell = component.getInspector().getRootCell();
-      assert rootCell instanceof EditorCell_Label && ((EditorCell_Label) rootCell).getText().equals("compact");
+      Assert.assertTrue(rootCell instanceof EditorCell_Label && ((EditorCell_Label) rootCell).getText().equals("compact"));
     }
   }
 }
