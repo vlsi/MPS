@@ -30,6 +30,7 @@ import jetbrains.mps.persistence.FilePerRootDataSource;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
@@ -125,7 +126,10 @@ public class BaseVersionUtil {
         }
         MapSequence.fromMap(content).put(stream, o);
       }
-      return loadPerRootModel(content);
+      if (MapSequence.fromMap(content).containsKey(MPSExtentions.MODEL_HEADER)) {
+        // no base version for ".model" file means there was no model 
+        return loadPerRootModel(content);
+      }
     }
     return null;
   }
