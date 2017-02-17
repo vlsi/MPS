@@ -261,25 +261,26 @@ public class BlameDialog extends DialogWrapper {
 
   private String getAdditionalInfo() {
     ApplicationInfo ai = ApplicationInfo.getInstance();
-    StringBuilder builder = new StringBuilder("[Build info]\n");
+    StringBuilder builder = new StringBuilder("{cut [Build info]}*[Build info]*\n");
     if (ai instanceof ApplicationInfoEx) {
-      builder.append("Application name: ").append(((ApplicationInfoEx) ai).getFullApplicationName()).append("\n");
+      builder.append("Application name: ''").append(((ApplicationInfoEx) ai).getFullApplicationName()).append("''\n");
     }
-    builder.append("Build number: ").append(ai.getBuild().asString()).append("\n");
-    builder.append("Version: ").append(ai.getFullVersion()).append("\n");
+    builder.append("Build number: ''").append(ai.getBuild().asString()).append("''\n");
+    builder.append("Version: ''").append(ai.getFullVersion()).append("''\n");
     if (myPluginDescriptor != null) {
-      builder.append("[Plugin info]").append("\n");
-      builder.append("Plugin id: ").append(myPluginDescriptor.getPluginId()).append("\n");
+      builder.append("*[Plugin info]*").append("\n");
+      builder.append("Plugin id: ''").append(myPluginDescriptor.getPluginId()).append("''\n");
       if (myPluginDescriptor instanceof IdeaPluginDescriptor) {
         final IdeaPluginDescriptor pluginDescriptor = (IdeaPluginDescriptor) myPluginDescriptor;
-        builder.append("Name: ").append(pluginDescriptor.getName()).append("\n");
-        builder.append("Version: ").append(pluginDescriptor.getVersion()).append("\n");
-        builder.append("Vendor: ").append(pluginDescriptor.getVendor()).append("\n");
-        builder.append("Category: ").append(pluginDescriptor.getCategory()).append("\n");
-        builder.append("Is bundled: ").append(pluginDescriptor.isBundled()).append("\n");
-        builder.append("Is enabled: ").append(pluginDescriptor.isEnabled()).append("\n");
+        builder.append("Name: ''").append(pluginDescriptor.getName()).append("''\n");
+        builder.append("Version: ''").append(pluginDescriptor.getVersion()).append("''\n");
+        builder.append("Vendor: ''").append(pluginDescriptor.getVendor()).append("''\n");
+        builder.append("Category: ''").append(pluginDescriptor.getCategory()).append("''\n");
+        builder.append("Is bundled: ''").append(pluginDescriptor.isBundled()).append("''\n");
+        builder.append("Is enabled: ''").append(pluginDescriptor.isEnabled()).append("''\n");
       }
     }
+    builder.append("{cut}");
     return builder.toString();
   }
 
