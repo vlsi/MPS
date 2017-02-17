@@ -102,9 +102,6 @@
         <child id="1154542793668" name="componentType" index="3g7fb8" />
         <child id="1154542803372" name="initValue" index="3g7hyw" />
       </concept>
-      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
-        <child id="1160998896846" name="condition" index="1gVkn0" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -121,6 +118,11 @@
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
+    <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
+      <concept id="1171981022339" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" flags="nn" index="3vwNmj">
+        <child id="1171981057159" name="condition" index="3vwVQn" />
       </concept>
     </language>
     <language id="7a80051c-66e9-4bfc-9698-b12adfed3d9f" name="jetbrains.mps.lang.editor.multiple.testLanguage">
@@ -1142,8 +1144,8 @@
           </node>
         </node>
       </node>
-      <node concept="1gVbGN" id="1PhFbPjmakp" role="3cqZAp">
-        <node concept="1Wc70l" id="1PhFbPjmbQh" role="1gVkn0">
+      <node concept="3vwNmj" id="7dAoyMZVC6O" role="3cqZAp">
+        <node concept="1Wc70l" id="1PhFbPjmbQh" role="3vwVQn">
           <node concept="2OqwBi" id="1PhFbPjmc5P" role="3uHU7w">
             <node concept="2OqwBi" id="1PhFbPjmbSv" role="2Oq$k0">
               <node concept="1eOMI4" id="1PhFbPjmbV3" role="2Oq$k0">
@@ -1234,8 +1236,8 @@
           </node>
         </node>
       </node>
-      <node concept="1gVbGN" id="1PhFbPjmdQd" role="3cqZAp">
-        <node concept="1Wc70l" id="1PhFbPjmdQe" role="1gVkn0">
+      <node concept="3vwNmj" id="7dAoyMZVC6_" role="3cqZAp">
+        <node concept="1Wc70l" id="1PhFbPjmdQe" role="3vwVQn">
           <node concept="2OqwBi" id="1PhFbPjmdQf" role="3uHU7w">
             <node concept="2OqwBi" id="1PhFbPjmdQg" role="2Oq$k0">
               <node concept="1eOMI4" id="1PhFbPjmdQh" role="2Oq$k0">
@@ -1326,8 +1328,8 @@
           </node>
         </node>
       </node>
-      <node concept="1gVbGN" id="1PhFbPjme4D" role="3cqZAp">
-        <node concept="1Wc70l" id="1PhFbPjme4E" role="1gVkn0">
+      <node concept="3vwNmj" id="7dAoyMZVC6D" role="3cqZAp">
+        <node concept="1Wc70l" id="1PhFbPjme4E" role="3vwVQn">
           <node concept="2OqwBi" id="1PhFbPjme4F" role="3uHU7w">
             <node concept="2OqwBi" id="1PhFbPjme4G" role="2Oq$k0">
               <node concept="1eOMI4" id="1PhFbPjme4H" role="2Oq$k0">
@@ -1426,8 +1428,8 @@
           </node>
         </node>
       </node>
-      <node concept="1gVbGN" id="7Lu8LsGJwwy" role="3cqZAp">
-        <node concept="1Wc70l" id="7Lu8LsGJwwz" role="1gVkn0">
+      <node concept="3vwNmj" id="7dAoyMZVC6N" role="3cqZAp">
+        <node concept="1Wc70l" id="7Lu8LsGJwwz" role="3vwVQn">
           <node concept="2OqwBi" id="7Lu8LsGJww$" role="3uHU7w">
             <node concept="2OqwBi" id="7Lu8LsGJww_" role="2Oq$k0">
               <node concept="1eOMI4" id="7Lu8LsGJwwA" role="2Oq$k0">
@@ -1568,8 +1570,8 @@
           </node>
         </node>
       </node>
-      <node concept="1gVbGN" id="1PhFbPjmeku" role="3cqZAp">
-        <node concept="1Wc70l" id="1PhFbPjmekv" role="1gVkn0">
+      <node concept="3vwNmj" id="7dAoyMZVC6u" role="3cqZAp">
+        <node concept="1Wc70l" id="1PhFbPjmekv" role="3vwVQn">
           <node concept="2OqwBi" id="1PhFbPjmekw" role="3uHU7w">
             <node concept="2OqwBi" id="1PhFbPjmekx" role="2Oq$k0">
               <node concept="1eOMI4" id="1PhFbPjmeky" role="2Oq$k0">
