@@ -3990,9 +3990,9 @@
         <node concept="3Tqbb2" id="3TJpIwQm7lX" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="3TJpIwQm7lY" role="3clF46">
-        <property role="TrG5h" value="component" />
-        <node concept="3uibUv" id="3TJpIwQm7lZ" role="1tU5fm">
-          <ref role="3uigEE" to="wsw7:6qi2OtU3u0m" resolve="LanguageErrorsComponent" />
+        <property role="TrG5h" value="errorsCollector" />
+        <node concept="3uibUv" id="1EmyK$nixg8" role="1tU5fm">
+          <ref role="3uigEE" to="wsw7:1EmyK$ncKqS" resolve="LanguageErrorsCollector" />
         </node>
       </node>
       <node concept="37vLTG" id="3TJpIwQm7m0" role="3clF46">
@@ -4037,7 +4037,7 @@
                 <node concept="3clFbF" id="3TJpIwQm7mh" role="3cqZAp">
                   <node concept="2OqwBi" id="3TJpIwQm7mi" role="3clFbG">
                     <node concept="37vLTw" id="3TJpIwQm7mj" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3TJpIwQm7lY" resolve="component" />
+                      <ref role="3cqZAo" node="3TJpIwQm7lY" resolve="errorsCollector" />
                     </node>
                     <node concept="liA8E" id="3TJpIwQm7mk" role="2OqNvi">
                       <ref role="37wK5l" to="wsw7:6qi2OtU3u3H" resolve="addError" />

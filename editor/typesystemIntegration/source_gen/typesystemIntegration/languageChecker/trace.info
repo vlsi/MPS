@@ -107,13 +107,13 @@
   <root nodeRef="r:74808b88-3d1c-4dc8-8642-164154f3f3a7(typesystemIntegration.languageChecker)/4498927700296627571">
     <file name="InEditorStructureChecker.java">
       <node id="4498927700296627594" at="19,67,20,22" concept="10" />
-      <node id="4498927700296627601" at="21,9,22,56" concept="4" />
-      <node id="4498927700296627610" at="22,56,23,20" concept="10" />
+      <node id="4498927700296627601" at="21,9,22,62" concept="4" />
+      <node id="4498927700296627610" at="22,62,23,20" concept="10" />
       <node id="4498927700296627572" at="14,0,16,0" concept="2" trace="InEditorStructureChecker#()V" />
       <node id="4498927700296627592" at="18,52,21,9" concept="7" />
       <node id="4498927700296627590" at="18,0,25,0" concept="8" trace="process#(Ljetbrains/mps/project/validation/ValidationProblem;)Z" />
-      <node id="4498927700296627587" at="16,108,25,7" concept="4" />
-      <node id="4498927700296627577" at="16,0,27,0" concept="8" trace="checkNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/checkers/LanguageErrorsComponent;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
+      <node id="4498927700296627587" at="16,114,25,7" concept="4" />
+      <node id="4498927700296627577" at="16,0,27,0" concept="8" trace="checkNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/checkers/LanguageErrorsCollector;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
       <scope id="4498927700296627573" at="14,37,14,37" />
       <scope id="4498927700296627593" at="19,67,20,22" />
       <scope id="4498927700296627572" at="14,0,16,0" />
@@ -121,9 +121,9 @@
       <scope id="4498927700296627590" at="18,0,25,0">
         <var name="vp" id="4498927700296627590" />
       </scope>
-      <scope id="4498927700296627586" at="16,108,25,7" />
+      <scope id="4498927700296627586" at="16,114,25,7" />
       <scope id="4498927700296627577" at="16,0,27,0">
-        <var name="component" id="4498927700296627582" />
+        <var name="errorsCollector" id="4498927700296627582" />
         <var name="node" id="4498927700296627580" />
         <var name="repository" id="4498927700296627584" />
       </scope>

@@ -82,7 +82,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryContentAdapter" />
   </dependency>
   <dependency className="typesystemIntegration.languageChecker.InEditorStructureChecker" file="InEditorStructureChecker.java">
-    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsComponent" />
+    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
