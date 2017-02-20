@@ -71,10 +71,13 @@
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/lib"/>
     </copy>
-    <!-- temp, will get back this -->
-    <!--<copy todir="${base_dir}/IdeaPlugin/mps-core/lib">-->
-      <!--<file file="${base_dir}/IdeaPlugin/build/artifacts/mpsWorkbench/lib/mps-resources_en.jar"/>-->
-    <!--</copy>-->
+    <!-- messages, which are packaged by mpsWorkbench build script, which we don't invoke when building plugin -->
+    <!-- it seems, they should end-up in mps-platform.jar, will be no need to copy -->
+    <copy todir="${base_dir}/IdeaPlugin/mps-core/resources">
+      <fileset dir="${base_dir}/workbench/resources_en/source/">
+        <exclude name="tips/**"/>
+      </fileset>
+    </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/languages"/>
