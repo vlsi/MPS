@@ -210,7 +210,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.core.xml", "XmlDeclaration", 0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.core.xml.structure.XmlBasePrologElement", 0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f08788L);
-    b.parent(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L);
     b.origin("r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)/5228786488744996718");
     b.prop("version", 0x4c3596ee25a4a423L, "5491461270226117667");
     b.prop("encoding", 0x2ed40cf354295456L, "3374336260035925078");
@@ -222,7 +221,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.core.xml", "XmlDoctypeDeclaration", 0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.core.xml.structure.XmlBasePrologElement", 0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f08788L);
-    b.parent(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L);
     b.origin("r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)/2133624044437898907");
     b.prop("doctypeName", 0x1d9c27c394f4069eL, "2133624044437898910");
     b.aggregate("externalId", 0x1d9c27c394f60340L).target(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL).optional(true).ordered(true).multiple(false).origin("2133624044438029120").done();
@@ -358,7 +356,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.core.xml", "XmlWhitespace", 0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.core.xml.structure.XmlBasePrologElement", 0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f08788L);
-    b.parent(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)/7604553062773750440");
     b.prop("value", 0x4890619bb3ff9b53L, "5228786488744844115");

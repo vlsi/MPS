@@ -385,9 +385,6 @@
       <property role="IQ2nx" value="5228786488744844115" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="PrWs8" id="2GY_C7c883K" role="PzmwI">
-      <ref role="PrY4T" node="6A8NbxeeX3_" resolve="XmlPrologElement" />
-    </node>
     <node concept="PrWs8" id="1653mnvB2xd" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
@@ -400,9 +397,6 @@
     <property role="34LRSv" value="&lt;?xml" />
     <property role="EcuMT" value="5228786488744996718" />
     <ref role="1TJDcQ" node="1Qs9WekW8u8" resolve="XmlBasePrologElement" />
-    <node concept="PrWs8" id="4ygopIO0uXJ" role="PzmwI">
-      <ref role="PrY4T" node="6A8NbxeeX3_" resolve="XmlPrologElement" />
-    </node>
     <node concept="1TJgyi" id="4KP_IS_Dagz" role="1TKVEl">
       <property role="TrG5h" value="version" />
       <property role="IQ2nx" value="5491461270226117667" />
@@ -445,9 +439,6 @@
     <property role="34LRSv" value="&lt;!DOCTYPE" />
     <property role="EcuMT" value="2133624044437898907" />
     <ref role="1TJDcQ" node="1Qs9WekW8u8" resolve="XmlBasePrologElement" />
-    <node concept="PrWs8" id="1Qs9WekX0qs" role="PzmwI">
-      <ref role="PrY4T" node="6A8NbxeeX3_" resolve="XmlPrologElement" />
-    </node>
     <node concept="1TJgyi" id="1Qs9WekX0qu" role="1TKVEl">
       <property role="TrG5h" value="doctypeName" />
       <property role="IQ2nx" value="2133624044437898910" />
