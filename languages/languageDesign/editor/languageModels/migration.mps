@@ -302,6 +302,9 @@
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
+      <concept id="1154546920561" name="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" flags="ng" index="3gmYPX">
+        <child id="1154546920563" name="concept" index="3gmYPZ" />
+      </concept>
       <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
         <reference id="1154546997487" name="concept" index="3gnhBz" />
       </concept>
@@ -6649,19 +6652,27 @@
         </node>
         <node concept="3cpWs6" id="17utbTbVZmF" role="3cqZAp">
           <node concept="2OqwBi" id="17utbTbVZmG" role="3cqZAk">
-            <node concept="2OqwBi" id="17utbTbVZmH" role="2Oq$k0">
-              <node concept="37vLTw" id="17utbTbW6b7" role="2Oq$k0">
-                <ref role="3cqZAo" node="17utbTbVZmN" resolve="cell" />
+            <node concept="1PxgMI" id="3CLtxR_lzMn" role="2Oq$k0">
+              <node concept="chp4Y" id="3CLtxR_lD7d" role="3oSUPX">
+                <ref role="cht4Q" to="tpc2:fIwURLg" resolve="BaseEditorComponent" />
               </node>
-              <node concept="2Xjw5R" id="17utbTbVZmJ" role="2OqNvi">
-                <node concept="1xMEDy" id="17utbTbVZmK" role="1xVPHs">
-                  <node concept="chp4Y" id="17utbTbVZmL" role="ri$Ld">
-                    <ref role="cht4Q" to="tpc2:fIwURLg" resolve="BaseEditorComponent" />
+              <node concept="2OqwBi" id="17utbTbVZmH" role="1m5AlR">
+                <node concept="37vLTw" id="17utbTbW6b7" role="2Oq$k0">
+                  <ref role="3cqZAo" node="17utbTbVZmN" resolve="cell" />
+                </node>
+                <node concept="2Xjw5R" id="17utbTbVZmJ" role="2OqNvi">
+                  <node concept="3gmYPX" id="3CLtxR_jIVW" role="1xVPHs">
+                    <node concept="3gn64h" id="3CLtxR_jO7p" role="3gmYPZ">
+                      <ref role="3gnhBz" to="tpc2:fA4kQeF" resolve="ConceptEditorDeclaration" />
+                    </node>
+                    <node concept="3gn64h" id="3CLtxR_jUXC" role="3gmYPZ">
+                      <ref role="3gnhBz" to="tpc2:fGPKFH7" resolve="EditorComponentDeclaration" />
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3TrEf2" id="17utbTbVZmM" role="2OqNvi">
+            <node concept="3TrEf2" id="3CLtxR_lJbU" role="2OqNvi">
               <ref role="3Tt5mk" to="tpc2:gXXX56I" resolve="conceptDeclaration" />
             </node>
           </node>
