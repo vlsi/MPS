@@ -178,13 +178,14 @@
 
       <add-to-group group-id="GoToMenu" anchor="after" relative-to-action="GoToCodeGroup"/>
     </group>
-
-    &lt;!&ndash; View &ndash;&gt;
     -->
+
+    <!-- View -->
     <group id="QuickActions">
       <separator/>
-      <action id="QuickImplementations" class="com.intellij.codeInsight.hint.actions.ShowImplementationsAction"/>
-      <action id="QuickJavaDoc" class="com.intellij.codeInsight.documentation.actions.ShowQuickDocInfoAction"/>
+      <!-- MPS patch: see MPS-24488 -->
+      <action id="QuickImplementations" class="jetbrains.mps.codeInsight.hint.actions.MockShowImplementationsAction"/>
+      <action id="QuickJavaDoc" class="jetbrains.mps.codeInsight.documentation.actions.MockShowQuickDocInfoAction"/>
 
       <add-to-group group-id="ViewMenu" anchor="after" relative-to-action="ToolWindowsGroup"/>
     </group>
@@ -284,7 +285,7 @@
         <group id="ExpandAllToLevel" popup="true">
           <action id="ExpandAllToLevel1" class="com.intellij.codeInsight.folding.impl.actions.ExpandAllToLevel1Action"/>
           <action id="ExpandAllToLevel2" class="com.intellij.codeInsight.folding.impl.actions.ExpandAllToLevel2Action"/>
-          <action id="ExpandAllToLevel3" class="com.i ntellij.codeInsight.folding.impl.actions.ExpandAllToLevel3Action"/>
+          <action id="ExpandAllToLevel3" class="com.intellij.codeInsight.folding.impl.actions.ExpandAllToLevel3Action"/>
           <action id="ExpandAllToLevel4" class="com.intellij.codeInsight.folding.impl.actions.ExpandAllToLevel4Action"/>
           <action id="ExpandAllToLevel5" class="com.intellij.codeInsight.folding.impl.actions.ExpandAllToLevel5Action"/>
         </group>
