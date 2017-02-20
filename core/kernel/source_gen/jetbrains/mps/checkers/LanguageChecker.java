@@ -17,6 +17,7 @@ public class LanguageChecker implements INodeChecker {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
     SetSequence.fromSet(myRules).addElement(new RefScopeChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
+    SetSequence.fromSet(myRules).addElement(new UsedLanguagesChecker());
   }
   @Override
   public Set<IErrorReporter> getErrors(SNode rootNode, SRepository repository) {

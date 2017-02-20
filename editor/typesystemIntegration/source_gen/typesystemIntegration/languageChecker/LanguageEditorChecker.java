@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
+import jetbrains.mps.checkers.UsedLanguagesChecker;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
