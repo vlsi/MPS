@@ -26,7 +26,7 @@ public class UsedLanguagesChecker extends AbstractConstraintsChecker {
 
   public UsedLanguagesChecker() {
   }
-  public void checkNode(SNode node, LanguageErrorsComponent component, SRepository repository) {
+  public void checkNode(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {
     if (SNodeOperations.getParent(node) != null) {
       return;
     }
@@ -38,10 +38,10 @@ public class UsedLanguagesChecker extends AbstractConstraintsChecker {
     // (starting from the first node with missing language encountered) 
     // Iterative alternative would be more complicated, and there are no utility  
     // methods in the rules nor we support inner classes, hence the trick with Runnable 
-    findMissing(component, Collections.singleton(node), Collections.<SLanguage>emptySet(), importedLanguages);
+    findMissing(errorsCollector, Collections.singleton(node), Collections.<SLanguage>emptySet(), importedLanguages);
   }
 
-  public void findMissing(LanguageErrorsComponent component, Iterable<? extends SNode> level, Set<SLanguage> parentReported, Set<SLanguage> imported) {
+  public void findMissing(LanguageErrorsCollector component, Iterable<? extends SNode> level, Set<SLanguage> parentReported, Set<SLanguage> imported) {
     boolean parentReportedSetChanged = false;
     for (SNode node : Sequence.fromIterable(level)) {
       HashSet<SLanguage> reported = new HashSet<SLanguage>(parentReported);

@@ -18,8 +18,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
@@ -27,6 +25,7 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
@@ -37,7 +36,7 @@ import jetbrains.mps.smodel.NodeReadEventsCaster;
 import org.jetbrains.mps.openapi.model.SNodeChangeListenerAdapter;
 import org.jetbrains.mps.openapi.model.SModelListenerBase;
 
-public class LanguageErrorsComponent {
+public class LanguageErrorsComponent extends LanguageErrorsCollector {
   /**
    * States:
    * <ul>
@@ -91,6 +90,7 @@ public class LanguageErrorsComponent {
     SetSequence.fromSet(myListenedModels).clear();
   }
 
+  @Override
   public void addDependency(SNode dependency) {
     if (myCurrentNode == null) {
       return;
@@ -164,15 +164,7 @@ public class LanguageErrorsComponent {
     m.removeModelListener(myUnloadListener);
   }
 
-  public void addError(SNode node, String errorString, @Nullable SNodeReference ruleNode) {
-    for (SNode anc : ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, false))) {
-      addDependency(anc);
-    }
-    addError(node, errorString, ruleNode, new NodeMessageTarget());
-  }
-  public void addError(SNode errorNode, String errorString, @Nullable SNodeReference ruleNode, MessageTarget messageTarget) {
-    addError(errorNode, errorString, ruleNode, messageTarget, null);
-  }
+  @Override
   public void addError(SNode errorNode, String errorString, @Nullable SNodeReference ruleNode, MessageTarget messageTarget, QuickFixProvider intentionProvider) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorNode, errorString, ruleNode, MessageStatus.ERROR, messageTarget);
     if (intentionProvider != null) {
@@ -326,6 +318,7 @@ public class LanguageErrorsComponent {
   /*package*/ void processEvent(SPropertyChangeEvent event) {
     SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getNode());
   }
+  @Override
   public <Result> Result runCheckingAction(_FunctionTypes._return_P0_E0<? extends Result> action) {
     final Set<SNode> accessedNodes = new HashSet<SNode>();
     final Object[] result = new Object[1];

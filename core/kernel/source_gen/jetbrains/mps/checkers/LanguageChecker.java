@@ -8,8 +8,10 @@ import java.util.HashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.Cancellable;
+import org.jetbrains.mps.util.DescendantsTreeIterator;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class LanguageChecker implements INodeChecker {
   private Set<AbstractConstraintsChecker> myRules = SetSequence.fromSet(new HashSet<AbstractConstraintsChecker>());
@@ -21,8 +23,25 @@ public class LanguageChecker implements INodeChecker {
   }
   @Override
   public Set<IErrorReporter> getErrors(SNode rootNode, SRepository repository) {
-    LanguageErrorsComponent errorsComponent = new LanguageErrorsComponent(SNodeOperations.getModel(rootNode));
-    errorsComponent.check(rootNode, myRules, repository, Cancellable.NEVER);
+    SModel model = SNodeOperations.getModel(rootNode);
+    assert model != null;
+    LanguageErrorsComponent errorsComponent = new LanguageErrorsComponent(model);
+
+    DescendantsTreeIterator fullCheckIterator = new DescendantsTreeIterator(rootNode);
+
+    while (fullCheckIterator.hasNext()) {
+      SNode node = fullCheckIterator.next();
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking"))) {
+        fullCheckIterator.skipChildren();
+        continue;
+      }
+      if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking"), true, false) == null) {
+        for (AbstractConstraintsChecker checker : myRules) {
+          checker.checkNode(node, errorsComponent, repository);
+        }
+      }
+    }
+
     Set<IErrorReporter> result = errorsComponent.getErrors();
     errorsComponent.dispose();
     return result;

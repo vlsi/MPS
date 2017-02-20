@@ -38,7 +38,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
 
   }
   @Override
-  public void checkNode(final SNode node, LanguageErrorsComponent component, SRepository repository) {
+  public void checkNode(final SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {
     final SAbstractConcept nodeConcept = SNodeOperations.getConcept(node);
     SNode parent = SNodeOperations.getParent(node);
 
@@ -46,62 +46,62 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     final CheckingNodeContext checkingNodeContext = new jetbrains.mps.smodel.runtime.impl.CheckingNodeContext();
 
     if (parent != null) {
-      component.addDependency(parent);
+      errorsCollector.addDependency(parent);
       if (SNodeOperations.getConcept(parent).isValid()) {
         SContainmentLink link = node.getContainmentLink();
         if (link == null) {
-          component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLink(node).getName() + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(parent).getName(), null);
+          errorsCollector.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLink(node).getName() + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(parent).getName(), null);
           return;
         }
-        boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+        boolean canBeChild = errorsCollector.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
           public Boolean invoke() {
             return ModelConstraints.canBeChild(node, checkingNodeContext);
           }
         });
         if (!(canBeChild)) {
           SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
-          component.addError(node, "Node " + node + " cannot be child of node " + parent, rule);
+          errorsCollector.addError(node, "Node " + node + " cannot be child of node " + parent, rule);
         }
       }
     }
 
     if ((SNodeOperations.getParent(node) == null)) {
       final SModel model = SNodeOperations.getModel(node);
-      boolean canBeRoot = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+      boolean canBeRoot = errorsCollector.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
           return ModelConstraints.canBeRoot(nodeConcept, model);
         }
       });
       if (!(canBeRoot)) {
         SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
-        component.addError(node, "Not rootable concept added as root", rule);
+        errorsCollector.addError(node, "Not rootable concept added as root", rule);
       }
     }
     if (!(SNodeOperations.getConcept(node).isValid())) {
-      component.addError(node, "Concept of a node was not found", null);
+      errorsCollector.addError(node, "Concept of a node was not found", null);
     }
 
     for (final SNode child : SNodeOperations.getChildren(node)) {
-      boolean canBeParent = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+      boolean canBeParent = errorsCollector.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
           return ModelConstraints.canBeParent(child, checkingNodeContext);
         }
       });
       if (!(canBeParent)) {
         SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
-        component.addError(node, "Node " + node + " cannot be parent of node " + child, rule);
+        errorsCollector.addError(node, "Node " + node + " cannot be parent of node " + child, rule);
       }
     }
 
     for (final Wrappers._T<SNode> ancestor = new Wrappers._T<SNode>(parent); ancestor.value != null; ancestor.value = SNodeOperations.getParent(ancestor.value)) {
-      boolean canBeAncestor = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+      boolean canBeAncestor = errorsCollector.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
           return ModelConstraints.canBeAncestorDirect(ancestor.value, node, checkingNodeContext);
         }
       });
       if (!(canBeAncestor)) {
         SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
-        component.addError(node, "Invalid ancestor: " + ancestor.value, rule);
+        errorsCollector.addError(node, "Invalid ancestor: " + ancestor.value, rule);
       }
     }
 
@@ -111,7 +111,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       final PropertySupport ps = PropertySupport.getPropertySupport(property);
       final String value = ps.fromInternalValue(SNodeAccessUtil.getProperty(node, property));
       final PropertyConstraintsDescriptor propertyDescriptor = constraintsDescriptor.getProperty(property);
-      boolean canSetValue = (propertyDescriptor == null ? false : component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+      boolean canSetValue = (propertyDescriptor == null ? false : errorsCollector.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
           return ps.canSetValue(propertyDescriptor, node, property, value);
         }
@@ -122,7 +122,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
           continue;
         }
         // todo find a rule 
-        component.addError(node, "Property constraint violation for property \"" + property.getName() + "\"", null, new PropertyMessageTarget(property.getName()));
+        errorsCollector.addError(node, "Property constraint violation for property \"" + property.getName() + "\"", null, new PropertyMessageTarget(property.getName()));
       }
     }
   }

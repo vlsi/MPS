@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.checkers.AbstractConstraintsChecker" file="AbstractConstraintsChecker.java">
-    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsComponent" />
+    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
@@ -12,7 +12,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsComponent" />
+    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.PropertyMessageTarget" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -68,10 +68,24 @@
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.util.Cancellable" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode dependClassName="org.jetbrains.mps.util.DescendantsTreeIterator" />
     <classNode extendsClassName="jetbrains.mps.checkers.INodeChecker" />
+  </dependency>
+  <dependency className="jetbrains.mps.checkers.LanguageErrorsCollector" file="LanguageErrorsCollector.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.errors.QuickFixProvider" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
   </dependency>
   <dependency className="jetbrains.mps.checkers.LanguageErrorsComponent" file="LanguageErrorsComponent.java">
     <classNode dependClassName="java.lang.Object" />
@@ -88,7 +102,6 @@
     <classNode dependClassName="jetbrains.mps.errors.QuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.SimpleErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
-    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -112,11 +125,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.util.DescendantsTreeIterator" />
+    <classNode extendsClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
   </dependency>
   <dependency className="jetbrains.mps.checkers.RefScopeChecker" file="RefScopeChecker.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsComponent" />
+    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.errors.QuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.QuickFix_Runtime" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.ReferenceMessageTarget" />
@@ -139,7 +153,7 @@
   </dependency>
   <dependency className="jetbrains.mps.checkers.TargetConceptChecker" file="TargetConceptChecker.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsComponent" />
+    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.ReferenceMessageTarget" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -176,7 +190,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsComponent" />
+    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.errors.QuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.QuickFix_Runtime" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />

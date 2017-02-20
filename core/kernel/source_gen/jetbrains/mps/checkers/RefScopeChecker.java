@@ -25,7 +25,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
   }
   @Override
-  public void checkNode(SNode node, LanguageErrorsComponent component, SRepository repository) {
+  public void checkNode(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {
     if (node == null || SNodeOperations.getModel(node) == null) {
       return;
     }
@@ -42,15 +42,15 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         continue;
       }
       // do we need all these additional dependencies? mb. it's better to use .runcheckingAction() instead? 
-      component.addDependency(target);
-      component.addDependency(SNodeOperations.getParent(node));
+      errorsCollector.addDependency(target);
+      errorsCollector.addDependency(SNodeOperations.getParent(node));
       for (SNode c : SNodeOperations.getChildren(node)) {
-        component.addDependency(c);
+        errorsCollector.addDependency(c);
       }
       ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(ref);
       Scope refScope = refDescriptor.getScope();
       if (refScope instanceof ErrorScope) {
-        component.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(SLinkOperations.getRefLink(ref).getName()));
+        errorsCollector.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(SLinkOperations.getRefLink(ref).getName()));
       } else if (!(refScope.contains(target))) {
         String name = target.getName();
         ReferenceScopeProvider scopeProvider = refDescriptor.getScopeProvider();
@@ -58,7 +58,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         if (scopeProvider != null) {
           ruleNode = scopeProvider.getSearchScopeValidatorNode();
         }
-        component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRefLink(ref).getName() + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRefLink(ref).getName()), createResolveReferenceQuickfix(ref, repository, executeImmediately));
+        errorsCollector.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRefLink(ref).getName() + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRefLink(ref).getName()), createResolveReferenceQuickfix(ref, repository, executeImmediately));
       }
     }
   }

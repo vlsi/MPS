@@ -17,7 +17,7 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
   public TargetConceptChecker() {
   }
   @Override
-  public void checkNode(SNode node, LanguageErrorsComponent component, SRepository repository) {
+  public void checkNode(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));
@@ -28,7 +28,7 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
         continue;
       }
       if (!(SNodeOperations.getConcept(child).isSubConceptOf(link.getTargetConcept()))) {
-        component.addError(child, "incompatible target concept in role \"" + SNodeOperations.getContainingLink(child) + "\": subconcept of \"" + link.getTargetConcept() + "\" expected, \"" + SNodeOperations.getConcept(child) + "\" found", null);
+        errorsCollector.addError(child, "incompatible target concept in role \"" + SNodeOperations.getContainingLink(child) + "\": subconcept of \"" + link.getTargetConcept() + "\" expected, \"" + SNodeOperations.getConcept(child) + "\" found", null);
       }
     }
 
@@ -42,7 +42,7 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
         continue;
       }
       if (!(SNodeOperations.getConcept(target).isSubConceptOf(link.getTargetConcept()))) {
-        component.addError(node, "incompatible target concept in role \"" + ((SReference) reference).getLink().getName() + "\": subconcept of \"" + link.getTargetConcept() + "\" expected, \"" + SNodeOperations.getConcept(target) + "\" found", null, new ReferenceMessageTarget(link.getName()));
+        errorsCollector.addError(node, "incompatible target concept in role \"" + ((SReference) reference).getLink().getName() + "\": subconcept of \"" + link.getTargetConcept() + "\" expected, \"" + SNodeOperations.getConcept(target) + "\" found", null, new ReferenceMessageTarget(link.getName()));
       }
     }
   }
