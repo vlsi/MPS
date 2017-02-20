@@ -126,7 +126,7 @@ public class BaseVersionUtil {
         }
         MapSequence.fromMap(content).put(stream, o);
       }
-      if (MapSequence.fromMap(content).containsKey(MPSExtentions.MODEL_HEADER)) {
+      if (MapSequence.fromMap(content).containsKey(MPSExtentions.DOT_MODEL_HEADER)) {
         // no base version for ".model" file means there was no model 
         return loadPerRootModel(content);
       }
