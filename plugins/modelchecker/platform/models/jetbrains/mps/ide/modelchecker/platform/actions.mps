@@ -355,6 +355,18 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+    </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
         <property id="1167228628751" name="hasException" index="34fQS0" />
@@ -412,6 +424,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -7316,10 +7329,10 @@
       <node concept="3Tmbuc" id="3etVqSRRx83" role="1B3o_S" />
       <node concept="37vLTG" id="3etVqSRRx84" role="3clF46">
         <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="3etVqSRRx85" role="1tU5fm" />
         <node concept="2AHcQZ" id="RN3DCEj_Zk" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
-        <node concept="3Tqbb2" id="3etVqSRRx85" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="3etVqSRRx86" role="3clF46">
         <property role="TrG5h" value="message" />
@@ -7410,6 +7423,18 @@
     </node>
     <node concept="2YIFZL" id="3etVqSRRx8C" role="jymVt">
       <property role="TrG5h" value="filterIssue" />
+      <node concept="P$JXv" id="L6xQAynf$Y" role="lGtFl">
+        <node concept="TZ5HA" id="L6xQAynfOC" role="TZ5H$">
+          <node concept="1dT_AC" id="L6xQAynfOD" role="1dT_Ay">
+            <property role="1dT_AB" value="drops only issues in tests" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="L6xQAynpaP" role="TZ5H$">
+          <node concept="1dT_AC" id="L6xQAynpaQ" role="1dT_Ay">
+            <property role="1dT_AB" value="ErrorReportUtil.shouldReportError =&gt; SpecificChecker.filterIssue" />
+          </node>
+        </node>
+      </node>
       <node concept="3clFbS" id="3etVqSRRx8D" role="3clF47">
         <node concept="3cpWs8" id="3etVqSRRx8E" role="3cqZAp">
           <node concept="3cpWsn" id="3etVqSRRx8F" role="3cpWs9">

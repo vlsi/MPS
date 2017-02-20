@@ -37,6 +37,10 @@ public abstract class SpecificChecker {
         return ModelChecker.SEVERITY_ERROR;
     }
   }
+  /**
+   * drops only issues in tests
+   * ErrorReportUtil.shouldReportError => SpecificChecker.filterIssue
+   */
   public static boolean filterIssue(SNode node) {
     SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer")));
     if (container == null) {
