@@ -104,8 +104,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/property/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/property/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/xmodel.build/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/xmodel.build/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.imageGen/generator/source_gen" isTestSource="false" />
@@ -275,7 +273,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/property/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/property/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/xmodel.build/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.imageGen/classes_gen" />
@@ -1111,6 +1108,11 @@
     <content url="file://$MODULE_DIR$/../../testbench/modules/testSpaceCompletion">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/classes_gen" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../testbench/modules/xmodel.build">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/xmodel.build/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/xmodel.build/test_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/xmodel.build/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/testsolutions">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/actions.test/test_gen" isTestSource="false" />

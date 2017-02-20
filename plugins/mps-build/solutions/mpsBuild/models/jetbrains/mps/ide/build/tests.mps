@@ -1867,19 +1867,13 @@
         <property role="aoJFB" value="sources and tests" />
         <node concept="55IIr" id="5kOge16AvnU" role="3LF7KH">
           <node concept="2Ry0Ak" id="5kOge16Avq1" role="iGT6I">
-            <property role="2Ry0Am" value="languages" />
+            <property role="2Ry0Am" value="testbench" />
             <node concept="2Ry0Ak" id="5kOge16AvsM" role="2Ry0An">
-              <property role="2Ry0Am" value="languageDesign" />
-              <node concept="2Ry0Ak" id="5kOge16Avvz" role="2Ry0An">
-                <property role="2Ry0Am" value="generator" />
-                <node concept="2Ry0Ak" id="5kOge16Avyk" role="2Ry0An">
-                  <property role="2Ry0Am" value="test" />
-                  <node concept="2Ry0Ak" id="5kOge16AvzJ" role="2Ry0An">
-                    <property role="2Ry0Am" value="xmodel.build" />
-                    <node concept="2Ry0Ak" id="5kOge16Av_a" role="2Ry0An">
-                      <property role="2Ry0Am" value="jetbrains.mps.generator.xmodel.build.test.msd" />
-                    </node>
-                  </node>
+              <property role="2Ry0Am" value="modules" />
+              <node concept="2Ry0Ak" id="5kOge16AvzJ" role="2Ry0An">
+                <property role="2Ry0Am" value="xmodel.build" />
+                <node concept="2Ry0Ak" id="5kOge16Av_a" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.generator.xmodel.build.test.msd" />
                 </node>
               </node>
             </node>

@@ -114,7 +114,6 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/outputLang/jetbrains.mps.transformation.test.outputLang.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/property/jetbrains.mps.generator.test.crossmodel.property.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/sandbox/jetbrains.mps.generator.sandbox.msd" folder="core.aspects.generator" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.build/jetbrains.mps.generator.xmodel.build.test.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/intentions/jetbrains.mps.lang.intentions.mpl" folder="core.aspects.intentions" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.editor.imageGen/jetbrains.mps.lang.editor.imageGen.mpl" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/make/languages/facet/jetbrains.mps.make.facet.mpl" folder="core.make" />
@@ -445,6 +444,7 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testPersistence/tests.testPersistence.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRead/jetbrains.mps.testRead.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/testSpaceCompletion.mpl" folder="tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/xmodel.build/jetbrains.mps.generator.xmodel.build.test.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/testbench/solution/jetbrains.mps.testbench.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/actions.test/jetbrains.mps.lang.actions.test.msd" folder="core.aspects.actions" />
