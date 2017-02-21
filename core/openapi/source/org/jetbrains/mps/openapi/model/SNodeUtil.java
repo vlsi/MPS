@@ -126,6 +126,14 @@ public class SNodeUtil {
     return new DescendantsIterable(node, condition, includeFirst);
   }
 
+  /**
+   * Iterate over subtrees of each node in a given sequence of 'root' nodes
+   */
+  @NotNull
+  public static Iterable<SNode> getDescendants(@NotNull Iterable<SNode> roots) {
+    return new ConcatNodesIterable(roots);
+  }
+
   private static class DescendantsIterable implements Iterable<SNode> {
     private final SNode myNode;
     private final Condition<SNode> myCondition;
@@ -160,6 +168,19 @@ public class SNodeUtil {
     @Override
     public Iterator<SNode> iterator() {
       return new NodesIterator(mySModel.getRootNodes().iterator());
+    }
+  }
+
+  private static class ConcatNodesIterable implements Iterable<SNode> {
+    private Iterable<SNode> myRoots;
+
+    public ConcatNodesIterable(Iterable<SNode> roots) {
+      myRoots = roots;
+    }
+
+    @Override
+    public Iterator<SNode> iterator() {
+      return new NodesIterator(myRoots.iterator());
     }
   }
 

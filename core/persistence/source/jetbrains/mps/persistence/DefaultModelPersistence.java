@@ -291,6 +291,11 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
   }
 
   @Override
+  public SModelData parseSingleStream(@NotNull String name, @NotNull InputStream input) throws IOException {
+    return ModelPersistence.getModelData(input);
+  }
+
+  @Override
   public boolean isBinary() {
     return false;
   }

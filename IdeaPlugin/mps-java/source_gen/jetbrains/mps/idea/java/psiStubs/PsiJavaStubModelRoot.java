@@ -63,7 +63,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
     return "Java PSI stubs";
   }
   @Override
-  public SModel getModel(@NotNull SModelId id) {
+  public SModel getModel(SModelId id) {
     // TODO 
     return null;
   }
@@ -81,7 +81,6 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
     PsiChangesWatcher w = myIdeaModule.getProject().getComponent(PsiChangesWatcher.class);
     w.removeListener(this);
   }
-  @NotNull
   @Override
   public Iterable<SModel> loadModels() {
     Map<SModelReference, List<PsiDirectory>> packageToDirs = MapSequence.fromMap(new HashMap<SModelReference, List<PsiDirectory>>());
@@ -129,14 +128,16 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
   }
   private PsiJavaStubModelDescriptor makeModelDescriptor(SModelReference modelRef, Iterable<PsiDirectory> dirs) {
     MultiplePsiJavaStubDataSource ds = new MultiplePsiJavaStubDataSource(myIdeaModule, dirs);
-    return new PsiJavaStubModelDescriptor(modelRef, ds);
+    PsiJavaStubModelDescriptor md = new PsiJavaStubModelDescriptor(modelRef, ds);
+    md.setModelRoot(this);
+    return md;
   }
   private SModelReference makeModelReference(PsiDirectory sourceRoot, PsiDirectory dir) {
     int skipPrefix = sourceRoot.toString().length();
     String relativeDirName = dir.toString().substring(skipPrefix);
     String packageName = relativeDirName.replace('/', '.').replace('\\', '.');
 
-    if (packageName.length() == 0) {
+    if ((packageName == null || packageName.length() == 0)) {
       return null;
     }
 
@@ -150,19 +151,19 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
     return true;
   }
   @Override
-  public boolean canCreateModel(@NotNull String modelName) {
+  public boolean canCreateModel(String modelName) {
     return false;
   }
   @Override
-  public SModel createModel(@NotNull String modelName) {
+  public SModel createModel(String modelName) {
     return null;
   }
   @Override
-  public void save(@NotNull Memento memento) {
+  public void save(Memento memento) {
     throw new UnsupportedOperationException("JavaPsiStubs: unsupported for now");
   }
   @Override
-  public void load(@NotNull Memento memento) {
+  public void load(Memento memento) {
     throw new UnsupportedOperationException("JavaPsiStubs: unsupported for now");
   }
 

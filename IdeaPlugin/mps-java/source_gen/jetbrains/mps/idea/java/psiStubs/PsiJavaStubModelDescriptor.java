@@ -65,7 +65,7 @@ public class PsiJavaStubModelDescriptor extends RegularModelDescriptor implement
     return (JavaFilesHolder) super.getSource();
   }
   @Override
-  public void attach(@NotNull SRepository repository) {
+  public void attach(SRepository repository) {
     super.attach(repository);
     getSource().addListener(this);
   }

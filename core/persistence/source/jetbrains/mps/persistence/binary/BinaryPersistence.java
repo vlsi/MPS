@@ -16,6 +16,7 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.generator.ModelDigestUtil.DigestBuilderOutputStream;
 import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
@@ -500,6 +501,11 @@ public final class BinaryPersistence {
     } finally {
       FileUtil.closeFileSafe(mis);
     }
+  }
+
+  public static SModelData getModelData(InputStream input) throws IOException {
+    ModelLoadResult result = loadModel(input, false, new StuffedMetaModelInfo(new BaseMetaModelInfo()));
+    return result.getModel();
   }
 
   private static void assertSyncToken(ModelInputStream is, int token) throws IOException {

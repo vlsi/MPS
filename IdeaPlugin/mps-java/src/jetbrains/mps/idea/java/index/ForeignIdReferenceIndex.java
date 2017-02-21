@@ -24,15 +24,16 @@ import com.intellij.util.indexing.ID;
 import com.intellij.util.io.DataExternalizer;
 import com.intellij.util.io.EnumeratorStringDescriptor;
 import com.intellij.util.io.KeyDescriptor;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.smodel.SNodeId.Foreign;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.util.Consumer;
 
@@ -79,13 +80,13 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
         // node.getName() here (nor any other code that access properties through SNodeAccessUtil, as it uses
         // constraints code, which may navigate references and access nodes from external models. Due to the
         // magic in StaticReference yet to be deleted, targets get resolved and subsequently fail with model access error.
-        SNodeDescriptor descriptor = new SNodeDescriptor(getSNodeName(src), src.getConcept(), src.getReference());
+        SNodeDescriptor descriptor = new SNodeDescriptor(getSNodeName(src), src.getConcept(), new SNodePointer(modelRef, src.getNodeId()));
         collection.add(new Pair<SNodeDescriptor, String>(descriptor, role));
       }
 
       @Override
-      protected void getObjectsToIndex(SModel sModel, Consumer<SReference> consumer) {
-        for (SNode sNode : SNodeUtil.getDescendants(sModel)) {
+      protected void getObjectsToIndex(SModelData modelData, Consumer<SReference> consumer) {
+        for (SNode sNode : SNodeUtil.getDescendants(modelData.getRootNodes())) {
           for (SReference sref : sNode.getReferences()) {
             consumer.consume(sref);
           }
@@ -93,7 +94,7 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
       }
 
       @Override
-      protected String[] getKeys(SModel model, SReference sref) {
+      protected String[] getKeys(SModelData model, SReference sref) {
         SNodeId targetNodeId = sref.getTargetNodeId();
         if (targetNodeId instanceof Foreign) {
 
