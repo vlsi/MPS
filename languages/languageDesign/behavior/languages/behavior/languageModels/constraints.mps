@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="-1" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
@@ -141,7 +141,6 @@
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
       <concept id="1148934636683" name="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" flags="nn" index="21POm0" />
       <concept id="6702802731807351367" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="9S07l" />
-      <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild_Old" flags="in" index="nKS2y" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="1147467115080" name="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" flags="ng" index="EnEH3">
         <reference id="1147467295099" name="applicableProperty" index="EomxK" />
@@ -159,7 +158,6 @@
         <child id="1227085062429" name="canBeRoot" index="2NY200" />
         <child id="1213098023997" name="property" index="1MhHOB" />
         <child id="1213100494875" name="referent" index="1Mr941" />
-        <child id="1213106463729" name="canBeChild_Old" index="1MLUbF" />
       </concept>
       <concept id="1148684180339" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" flags="in" index="1MUpDS" />
       <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
@@ -535,28 +533,28 @@
   <node concept="1M2fIO" id="1LqCkvsbvlP">
     <property role="3GE5qa" value="" />
     <ref role="1M2myG" to="1i04:hP3iPJx" resolve="ThisNodeExpression" />
-    <node concept="nKS2y" id="1LqCkvsbvmZ" role="1MLUbF">
-      <node concept="3clFbS" id="1LqCkvsbvn0" role="2VODD2">
-        <node concept="3SKdUt" id="1u_ffTozXcq" role="3cqZAp">
-          <node concept="3SKdUq" id="1u_ffTozXcs" role="3SKWNk">
+    <node concept="9S07l" id="147CB3QsUte" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsUtf" role="2VODD2">
+        <node concept="3SKdUt" id="147CB3QsUtg" role="3cqZAp">
+          <node concept="3SKdUq" id="147CB3QsUth" role="3SKWNk">
             <property role="3SKdUp" value="todo [MM] remove call with &quot;true&quot; arg after 3.5, needed for compatibility purposes" />
           </node>
         </node>
-        <node concept="3clFbF" id="1LqCkvsbvn1" role="3cqZAp">
-          <node concept="22lmx$" id="1u_ffTo$9gE" role="3clFbG">
-            <node concept="2YIFZM" id="1LqCkvsbvn3" role="3uHU7B">
+        <node concept="3clFbF" id="147CB3QsUti" role="3cqZAp">
+          <node concept="22lmx$" id="147CB3QsUtj" role="3clFbG">
+            <node concept="2YIFZM" id="147CB3QsUtk" role="3uHU7B">
               <ref role="37wK5l" node="1LqCkvsbvmp" resolve="isInsideOfBehavior" />
               <ref role="1Pybhc" node="1LqCkvsbvlQ" resolve="ConstraintsUtil" />
-              <node concept="nLn13" id="1LqCkvsbvn4" role="37wK5m" />
-              <node concept="3clFbT" id="1u_ffTorO02" role="37wK5m">
+              <node concept="nLn13" id="147CB3QsUtl" role="37wK5m" />
+              <node concept="3clFbT" id="147CB3QsUtm" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
             </node>
-            <node concept="2YIFZM" id="1u_ffTo$9pC" role="3uHU7w">
+            <node concept="2YIFZM" id="147CB3QsUtn" role="3uHU7w">
               <ref role="1Pybhc" node="1LqCkvsbvlQ" resolve="ConstraintsUtil" />
               <ref role="37wK5l" node="1LqCkvsbvmp" resolve="isInsideOfBehavior" />
-              <node concept="nLn13" id="1u_ffTo$9pD" role="37wK5m" />
-              <node concept="3clFbT" id="1u_ffTo$9pE" role="37wK5m">
+              <node concept="nLn13" id="147CB3QsUto" role="37wK5m" />
+              <node concept="3clFbT" id="147CB3QsUtp" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
             </node>
@@ -925,13 +923,13 @@
         </node>
       </node>
     </node>
-    <node concept="nKS2y" id="1LqCkvsbvrE" role="1MLUbF">
-      <node concept="3clFbS" id="1LqCkvsbvrF" role="2VODD2">
-        <node concept="3clFbF" id="1LqCkvsbvrG" role="3cqZAp">
-          <node concept="2YIFZM" id="2S4aO2s0X8n" role="3clFbG">
+    <node concept="9S07l" id="147CB3QsUt4" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsUt5" role="2VODD2">
+        <node concept="3clFbF" id="147CB3QsUt6" role="3cqZAp">
+          <node concept="2YIFZM" id="147CB3QsUt7" role="3clFbG">
             <ref role="37wK5l" node="1LqCkvsbvlX" resolve="isInsideOfBehavior" />
             <ref role="1Pybhc" node="1LqCkvsbvlQ" resolve="ConstraintsUtil" />
-            <node concept="nLn13" id="2S4aO2s0X8o" role="37wK5m" />
+            <node concept="nLn13" id="147CB3QsUt8" role="37wK5m" />
           </node>
         </node>
       </node>
@@ -1023,21 +1021,21 @@
         </node>
       </node>
     </node>
-    <node concept="nKS2y" id="5CBvrhXlt0j" role="1MLUbF">
-      <node concept="3clFbS" id="5CBvrhXlt0k" role="2VODD2">
-        <node concept="3clFbF" id="5CBvrhXlt0l" role="3cqZAp">
-          <node concept="3y3z36" id="5CBvrhXlt0t" role="3clFbG">
-            <node concept="10Nm6u" id="5CBvrhXlt0w" role="3uHU7w" />
-            <node concept="2OqwBi" id="5CBvrhXlt0m" role="3uHU7B">
-              <node concept="2Xjw5R" id="5CBvrhXlt0n" role="2OqNvi">
-                <node concept="1xMEDy" id="5CBvrhXlt0o" role="1xVPHs">
-                  <node concept="chp4Y" id="5CBvrhXlt0p" role="ri$Ld">
+    <node concept="9S07l" id="147CB3QsUsT" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsUsU" role="2VODD2">
+        <node concept="3clFbF" id="147CB3QsUsV" role="3cqZAp">
+          <node concept="3y3z36" id="147CB3QsUsW" role="3clFbG">
+            <node concept="10Nm6u" id="147CB3QsUsX" role="3uHU7w" />
+            <node concept="2OqwBi" id="147CB3QsUsY" role="3uHU7B">
+              <node concept="2Xjw5R" id="147CB3QsUsZ" role="2OqNvi">
+                <node concept="1xMEDy" id="147CB3QsUt0" role="1xVPHs">
+                  <node concept="chp4Y" id="147CB3QsUt1" role="ri$Ld">
                     <ref role="cht4Q" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
                   </node>
                 </node>
-                <node concept="1xIGOp" id="5CBvrhXlt0q" role="1xVPHs" />
+                <node concept="1xIGOp" id="147CB3QsUt2" role="1xVPHs" />
               </node>
-              <node concept="nLn13" id="5CBvrhXlt0s" role="2Oq$k0" />
+              <node concept="nLn13" id="147CB3QsUt3" role="2Oq$k0" />
             </node>
           </node>
         </node>
@@ -1282,13 +1280,13 @@
         </node>
       </node>
     </node>
-    <node concept="nKS2y" id="6ADPXMKlW$O" role="1MLUbF">
-      <node concept="3clFbS" id="6ADPXMKlW$P" role="2VODD2">
-        <node concept="3clFbF" id="6ADPXMKlW$Q" role="3cqZAp">
-          <node concept="2YIFZM" id="6ADPXMKm0CE" role="3clFbG">
+    <node concept="9S07l" id="147CB3QsUt9" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsUta" role="2VODD2">
+        <node concept="3clFbF" id="147CB3QsUtb" role="3cqZAp">
+          <node concept="2YIFZM" id="147CB3QsUtc" role="3clFbG">
             <ref role="37wK5l" node="1LqCkvsbvlX" resolve="isInsideOfBehavior" />
             <ref role="1Pybhc" node="1LqCkvsbvlQ" resolve="ConstraintsUtil" />
-            <node concept="nLn13" id="6ADPXMKm0CF" role="37wK5m" />
+            <node concept="nLn13" id="147CB3QsUtd" role="37wK5m" />
           </node>
         </node>
       </node>

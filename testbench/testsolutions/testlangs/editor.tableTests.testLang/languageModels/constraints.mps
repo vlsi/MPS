@@ -2,7 +2,7 @@
 <model ref="r:5eda252d-8f97-48fa-a19c-1626b2b52512(jetbrains.mps.lang.editor.tableTests.constraints)">
   <persistence version="9" />
   <languages>
-    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -31,12 +31,12 @@
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
       <concept id="1148934636683" name="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" flags="nn" index="21POm0" />
-      <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild_Old" flags="in" index="nKS2y" />
+      <concept id="6702802731807351367" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="9S07l" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
+        <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
         <child id="1213100494875" name="referent" index="1Mr941" />
-        <child id="1213106463729" name="canBeChild_Old" index="1MLUbF" />
       </concept>
       <concept id="1148684180339" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" flags="in" index="1MUpDS" />
       <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
@@ -95,13 +95,13 @@
         </node>
       </node>
     </node>
-    <node concept="nKS2y" id="5RFOWxSxOqu" role="1MLUbF">
-      <node concept="3clFbS" id="5RFOWxSxOqv" role="2VODD2">
-        <node concept="3clFbF" id="5RFOWxSxOqw" role="3cqZAp">
-          <node concept="2OqwBi" id="5RFOWxSxOqx" role="3clFbG">
-            <node concept="nLn13" id="5RFOWxSxOqy" role="2Oq$k0" />
-            <node concept="1mIQ4w" id="5RFOWxSxOqz" role="2OqNvi">
-              <node concept="chp4Y" id="5RFOWxSxOq$" role="cj9EA">
+    <node concept="9S07l" id="147CB3QsZZT" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsZZU" role="2VODD2">
+        <node concept="3clFbF" id="147CB3QsZZV" role="3cqZAp">
+          <node concept="2OqwBi" id="147CB3QsZZW" role="3clFbG">
+            <node concept="nLn13" id="147CB3QsZZX" role="2Oq$k0" />
+            <node concept="1mIQ4w" id="147CB3QsZZY" role="2OqNvi">
+              <node concept="chp4Y" id="147CB3QsZZZ" role="cj9EA">
                 <ref role="cht4Q" to="2qyu:EpZY78hngX" resolve="Transition" />
               </node>
             </node>
@@ -113,13 +113,13 @@
   <node concept="1M2fIO" id="6SYFRDkTQVH">
     <property role="3GE5qa" value="genericStateMachine" />
     <ref role="1M2myG" to="2qyu:6SYFRDkTQVE" resolve="AbstractStateMachineElement" />
-    <node concept="nKS2y" id="6SYFRDkTQVI" role="1MLUbF">
-      <node concept="3clFbS" id="6SYFRDkTQVJ" role="2VODD2">
-        <node concept="3clFbF" id="6SYFRDkTQVK" role="3cqZAp">
-          <node concept="2OqwBi" id="6SYFRDkTQVM" role="3clFbG">
-            <node concept="nLn13" id="6SYFRDkTQVL" role="2Oq$k0" />
-            <node concept="1mIQ4w" id="6SYFRDkTQVQ" role="2OqNvi">
-              <node concept="chp4Y" id="6SYFRDkTQVS" role="cj9EA">
+    <node concept="9S07l" id="147CB3Qt000" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3Qt001" role="2VODD2">
+        <node concept="3clFbF" id="147CB3Qt002" role="3cqZAp">
+          <node concept="2OqwBi" id="147CB3Qt003" role="3clFbG">
+            <node concept="nLn13" id="147CB3Qt004" role="2Oq$k0" />
+            <node concept="1mIQ4w" id="147CB3Qt005" role="2OqNvi">
+              <node concept="chp4Y" id="147CB3Qt006" role="cj9EA">
                 <ref role="cht4Q" to="2qyu:EpZY78hmIx" resolve="StateMachine" />
               </node>
             </node>
@@ -156,13 +156,13 @@
         </node>
       </node>
     </node>
-    <node concept="nKS2y" id="5RFOWxSxOq_" role="1MLUbF">
-      <node concept="3clFbS" id="5RFOWxSxOqA" role="2VODD2">
-        <node concept="3clFbF" id="5RFOWxSxOqB" role="3cqZAp">
-          <node concept="2OqwBi" id="5RFOWxSxOqC" role="3clFbG">
-            <node concept="nLn13" id="5RFOWxSxOqD" role="2Oq$k0" />
-            <node concept="1mIQ4w" id="5RFOWxSxOqE" role="2OqNvi">
-              <node concept="chp4Y" id="5RFOWxSxOqF" role="cj9EA">
+    <node concept="9S07l" id="147CB3QsZZM" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsZZN" role="2VODD2">
+        <node concept="3clFbF" id="147CB3QsZZO" role="3cqZAp">
+          <node concept="2OqwBi" id="147CB3QsZZP" role="3clFbG">
+            <node concept="nLn13" id="147CB3QsZZQ" role="2Oq$k0" />
+            <node concept="1mIQ4w" id="147CB3QsZZR" role="2OqNvi">
+              <node concept="chp4Y" id="147CB3QsZZS" role="cj9EA">
                 <ref role="cht4Q" to="2qyu:EpZY78hngX" resolve="Transition" />
               </node>
             </node>

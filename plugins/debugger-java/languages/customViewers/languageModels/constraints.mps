@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
@@ -59,12 +59,12 @@
       </concept>
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
-      <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild_Old" flags="in" index="nKS2y" />
+      <concept id="6702802731807351367" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="9S07l" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
+        <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
         <child id="1213100494875" name="referent" index="1Mr941" />
-        <child id="1213106463729" name="canBeChild_Old" index="1MLUbF" />
       </concept>
       <concept id="1148684180339" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" flags="in" index="1MUpDS" />
       <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
@@ -113,13 +113,13 @@
   <node concept="1M2fIO" id="2q5hg4g0HO">
     <property role="3GE5qa" value="highLevel" />
     <ref role="1M2myG" to="kisg:2q5hg4fGJi" resolve="GetHighLevelValuePresentation_ConceptFunction" />
-    <node concept="nKS2y" id="2q5hg4g0HP" role="1MLUbF">
-      <node concept="3clFbS" id="2q5hg4g0HQ" role="2VODD2">
-        <node concept="3clFbF" id="2q5hg4g0HR" role="3cqZAp">
-          <node concept="2OqwBi" id="2q5hg4g0HT" role="3clFbG">
-            <node concept="nLn13" id="2q5hg4g0HS" role="2Oq$k0" />
-            <node concept="1mIQ4w" id="2q5hg4g0HX" role="2OqNvi">
-              <node concept="chp4Y" id="2q5hg4g0HZ" role="cj9EA">
+    <node concept="9S07l" id="147CB3QsVpj" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsVpk" role="2VODD2">
+        <node concept="3clFbF" id="147CB3QsVpl" role="3cqZAp">
+          <node concept="2OqwBi" id="147CB3QsVpm" role="3clFbG">
+            <node concept="nLn13" id="147CB3QsVpn" role="2Oq$k0" />
+            <node concept="1mIQ4w" id="147CB3QsVpo" role="2OqNvi">
+              <node concept="chp4Y" id="147CB3QsVpp" role="cj9EA">
                 <ref role="cht4Q" to="kisg:_Ke0sqeZD0" resolve="HighLevelCustomViewer" />
               </node>
             </node>
@@ -131,13 +131,13 @@
   <node concept="1M2fIO" id="2q5hg4g0I0">
     <property role="3GE5qa" value="highLevel" />
     <ref role="1M2myG" to="kisg:2q5hg4fGJr" resolve="CanWrapHighLevelValue_ConceptFunction" />
-    <node concept="nKS2y" id="2q5hg4g0I1" role="1MLUbF">
-      <node concept="3clFbS" id="2q5hg4g0I2" role="2VODD2">
-        <node concept="3clFbF" id="2q5hg4g0I3" role="3cqZAp">
-          <node concept="2OqwBi" id="2q5hg4g0I4" role="3clFbG">
-            <node concept="nLn13" id="2q5hg4g0I5" role="2Oq$k0" />
-            <node concept="1mIQ4w" id="2q5hg4g0I6" role="2OqNvi">
-              <node concept="chp4Y" id="2q5hg4g0I7" role="cj9EA">
+    <node concept="9S07l" id="147CB3QsVpx" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsVpy" role="2VODD2">
+        <node concept="3clFbF" id="147CB3QsVpz" role="3cqZAp">
+          <node concept="2OqwBi" id="147CB3QsVp$" role="3clFbG">
+            <node concept="nLn13" id="147CB3QsVp_" role="2Oq$k0" />
+            <node concept="1mIQ4w" id="147CB3QsVpA" role="2OqNvi">
+              <node concept="chp4Y" id="147CB3QsVpB" role="cj9EA">
                 <ref role="cht4Q" to="kisg:_Ke0sqeZD0" resolve="HighLevelCustomViewer" />
               </node>
             </node>
@@ -149,13 +149,13 @@
   <node concept="1M2fIO" id="2q5hg4g0I8">
     <property role="3GE5qa" value="highLevel" />
     <ref role="1M2myG" to="kisg:2q5hg4fGJm" resolve="GetHighLevelWatchablesBlock_ConceptFunction" />
-    <node concept="nKS2y" id="2q5hg4g0I9" role="1MLUbF">
-      <node concept="3clFbS" id="2q5hg4g0Ia" role="2VODD2">
-        <node concept="3clFbF" id="2q5hg4g0Ib" role="3cqZAp">
-          <node concept="2OqwBi" id="2q5hg4g0Ic" role="3clFbG">
-            <node concept="nLn13" id="2q5hg4g0Id" role="2Oq$k0" />
-            <node concept="1mIQ4w" id="2q5hg4g0Ie" role="2OqNvi">
-              <node concept="chp4Y" id="2q5hg4g0If" role="cj9EA">
+    <node concept="9S07l" id="147CB3QsVpq" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsVpr" role="2VODD2">
+        <node concept="3clFbF" id="147CB3QsVps" role="3cqZAp">
+          <node concept="2OqwBi" id="147CB3QsVpt" role="3clFbG">
+            <node concept="nLn13" id="147CB3QsVpu" role="2Oq$k0" />
+            <node concept="1mIQ4w" id="147CB3QsVpv" role="2OqNvi">
+              <node concept="chp4Y" id="147CB3QsVpw" role="cj9EA">
                 <ref role="cht4Q" to="kisg:_Ke0sqeZD0" resolve="HighLevelCustomViewer" />
               </node>
             </node>
