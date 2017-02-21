@@ -56,6 +56,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConstraintFunction_ReferentSetHandler = new ConceptPresentationBuilder().shortDesc("executed on every link assignment").create();
   private final ConceptPresentation props_ConstraintsFunctionParameter_node = new ConceptPresentationBuilder().shortDesc("the node in question").create();
   private final ConceptPresentation props_ConstraintsFunctionParameter_propertyValue = new ConceptPresentationBuilder().shortDesc("new value of the node").create();
+  private final ConceptPresentation props_EnclosingNodeMigratedHint = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InheritedNodeScopeFactory = new ConceptPresentationBuilder().shortDesc("scope provided by parent elements").create();
   private final ConceptPresentation props_NodeDefaultSearchScope = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodePropertyConstraint = new ConceptPresentationBuilder().create();
@@ -160,6 +161,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConstraintsFunctionParameter_node;
       case LanguageConceptSwitch.ConstraintsFunctionParameter_propertyValue:
         return props_ConstraintsFunctionParameter_propertyValue;
+      case LanguageConceptSwitch.EnclosingNodeMigratedHint:
+        return props_EnclosingNodeMigratedHint;
       case LanguageConceptSwitch.InheritedNodeScopeFactory:
         return props_InheritedNodeScopeFactory;
       case LanguageConceptSwitch.NodeDefaultSearchScope:

@@ -23,6 +23,9 @@
         <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -884,6 +887,21 @@
       <node concept="trNpa" id="1GENxguIitJ" role="EQaZv">
         <ref role="trN6q" to="tpee:fz3vP1J" resolve="Expression" />
       </node>
+    </node>
+  </node>
+  <node concept="1TIwiD" id="16XPKGFSi7g">
+    <property role="EcuMT" value="1278414312223875536" />
+    <property role="3GE5qa" value="Migrations" />
+    <property role="TrG5h" value="EnclosingNodeMigratedHint" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="7tIFb5_LOOX" role="lGtFl">
+      <property role="Hh88m" value="enclosingNodeHint" />
+      <node concept="trNpa" id="7tIFb5_LOOZ" role="EQaZv">
+        <ref role="trN6q" to="tpee:fz3vP1J" resolve="Expression" />
+      </node>
+    </node>
+    <node concept="t5JxF" id="7tIFb5_LSfs" role="lGtFl">
+      <property role="t5JxN" value="For internal proposals. Remove soon" />
     </node>
   </node>
 </model>

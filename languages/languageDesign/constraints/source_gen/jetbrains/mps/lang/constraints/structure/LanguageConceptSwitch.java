@@ -55,12 +55,13 @@ public final class LanguageConceptSwitch {
   public static final int ConstraintFunction_ReferentSetHandler = 43;
   public static final int ConstraintsFunctionParameter_node = 44;
   public static final int ConstraintsFunctionParameter_propertyValue = 45;
-  public static final int InheritedNodeScopeFactory = 46;
-  public static final int NodeDefaultSearchScope = 47;
-  public static final int NodePropertyConstraint = 48;
-  public static final int NodeReferentConstraint = 49;
-  public static final int NodeScopeFactory = 50;
-  public static final int ParameterMigration = 51;
+  public static final int EnclosingNodeMigratedHint = 46;
+  public static final int InheritedNodeScopeFactory = 47;
+  public static final int NodeDefaultSearchScope = 48;
+  public static final int NodePropertyConstraint = 49;
+  public static final int NodeReferentConstraint = 50;
+  public static final int NodeScopeFactory = 51;
+  public static final int ParameterMigration = 52;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L);
@@ -110,6 +111,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x10ed4250f82L, ConstraintFunction_ReferentSetHandler);
     builder.put(0x10b2a71bcdcL, ConstraintsFunctionParameter_node);
     builder.put(0x10c7c69f5aeL, ConstraintsFunctionParameter_propertyValue);
+    builder.put(0x11bdd70b2be121d0L, EnclosingNodeMigratedHint);
     builder.put(0x74999a95393c73b2L, InheritedNodeScopeFactory);
     builder.put(0x10dead47852L, NodeDefaultSearchScope);
     builder.put(0x10b2a5eaa48L, NodePropertyConstraint);
