@@ -170,6 +170,9 @@
     <file name="NodeScopeFactory_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.lang.constraints.behavior.NodeScopeFactory_BehaviorDescriptor" />
     </file>
+    <file name="ParameterMigration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.constraints.behavior.ParameterMigration_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877261402">
     <file name="NodeDefaultSearchScope__BehaviorDescriptor.java">

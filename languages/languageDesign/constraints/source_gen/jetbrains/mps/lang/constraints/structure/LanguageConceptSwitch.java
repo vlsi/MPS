@@ -60,6 +60,7 @@ public final class LanguageConceptSwitch {
   public static final int NodePropertyConstraint = 48;
   public static final int NodeReferentConstraint = 49;
   public static final int NodeScopeFactory = 50;
+  public static final int ParameterMigration = 51;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L);
@@ -114,6 +115,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x10b2a5eaa48L, NodePropertyConstraint);
     builder.put(0x10b731752daL, NodeReferentConstraint);
     builder.put(0x74999a95393c73aaL, NodeScopeFactory);
+    builder.put(0x1b2ace141eb6c35bL, ParameterMigration);
     myIndex = builder.seal();
   }
 

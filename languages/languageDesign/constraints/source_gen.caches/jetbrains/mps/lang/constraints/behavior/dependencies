@@ -1352,5 +1352,9 @@
   <dependency className="jetbrains.mps.lang.constraints.behavior.NodeScopeFactory_BehaviorDescriptor" file="NodeScopeFactory_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ParameterMigration_BehaviorDescriptor" file="ParameterMigration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
 </dependenciesRoot>
 

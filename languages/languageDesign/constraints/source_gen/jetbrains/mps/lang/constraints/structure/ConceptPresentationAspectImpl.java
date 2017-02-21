@@ -61,6 +61,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NodePropertyConstraint = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeReferentConstraint = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeScopeFactory = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ParameterMigration = new ConceptPresentationBuilder().shortDesc("Constraint Function Parameter should be migrated manually").create();
 
   @Override
   @Nullable
@@ -169,6 +170,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NodeReferentConstraint;
       case LanguageConceptSwitch.NodeScopeFactory:
         return props_NodeScopeFactory;
+      case LanguageConceptSwitch.ParameterMigration:
+        return props_ParameterMigration;
     }
     return null;
   }

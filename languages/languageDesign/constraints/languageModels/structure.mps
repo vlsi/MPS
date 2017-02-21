@@ -23,6 +23,17 @@
         <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
+      <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
+        <property id="6054523464626875854" name="value" index="tnX3d" />
+      </concept>
+      <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
+        <reference id="6054523464627965081" name="concept" index="trN6q" />
+      </concept>
+      <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
+        <property id="7588428831955550663" name="role" index="Hh88m" />
+        <child id="7588428831947959310" name="attributed" index="EQaZv" />
+        <child id="7588428831955550186" name="multiple" index="HhnKV" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
@@ -857,6 +868,23 @@
     <property role="34LRSv" value="linkTarget" />
     <property role="R4oN_" value="target concept (useful for specialized links)" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="1GENxguHGdr">
+    <property role="EcuMT" value="1957603573855863643" />
+    <property role="3GE5qa" value="Migrations" />
+    <property role="TrG5h" value="ParameterMigration" />
+    <property role="R4oN_" value="Constraint Function Parameter should be migrated manually" />
+    <property role="34LRSv" value="migrate manually" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="1GENxguHGdL" role="lGtFl">
+      <property role="Hh88m" value="migration" />
+      <node concept="tn0Fv" id="1GENxguHGdN" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
+      <node concept="trNpa" id="1GENxguIitJ" role="EQaZv">
+        <ref role="trN6q" to="tpee:fz3vP1J" resolve="Expression" />
+      </node>
+    </node>
   </node>
 </model>
 
