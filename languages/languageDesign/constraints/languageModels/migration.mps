@@ -57,6 +57,7 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
@@ -1684,25 +1685,38 @@
                 </node>
                 <node concept="1P9Npp" id="7tIFb5_Phjn" role="2OqNvi">
                   <node concept="2c44tf" id="7tIFb5_Phjo" role="1P9ThW">
-                    <node concept="1eOMI4" id="7tIFb5_Phjp" role="2c44tc">
-                      <node concept="10QFUN" id="7tIFb5_Phjq" role="1eOMHV">
-                        <node concept="2OqwBi" id="7tIFb5_Phjr" role="10QFUP">
-                          <node concept="33vP2n" id="7tIFb5_Phjs" role="2Oq$k0">
-                            <node concept="2c44te" id="7tIFb5_Phjt" role="lGtFl">
-                              <node concept="37vLTw" id="7tIFb5_Phju" role="2c44t1">
-                                <ref role="3cqZAo" node="7tIFb5_Phi0" resolve="newParam" />
-                              </node>
+                    <node concept="3K4zz7" id="3TDbokeAw9X" role="2c44tc">
+                      <node concept="3clFbC" id="3TDbokeAxYq" role="3K4Cdx">
+                        <node concept="10Nm6u" id="3TDbokeAy4b" role="3uHU7w" />
+                        <node concept="33vP2n" id="3TDbokeAxfh" role="3uHU7B">
+                          <node concept="2c44te" id="3TDbokeAxiT" role="lGtFl">
+                            <node concept="37vLTw" id="3TDbokeAxo_" role="2c44t1">
+                              <ref role="3cqZAo" node="7tIFb5_Phi0" resolve="newParam" />
                             </node>
                           </node>
-                          <node concept="liA8E" id="7tIFb5_Phjv" role="2OqNvi">
-                            <ref role="37wK5l" to="c17a:~SContainmentLink.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
-                          </node>
-                        </node>
-                        <node concept="3Tqbb2" id="7tIFb5_Phjw" role="10QFUM">
-                          <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
                         </node>
                       </node>
-                      <node concept="5B0Pf" id="7tIFb5_Phjx" role="lGtFl" />
+                      <node concept="10Nm6u" id="3TDbokeAyb3" role="3K4E3e" />
+                      <node concept="1eOMI4" id="7tIFb5_Phjp" role="3K4GZi">
+                        <node concept="10QFUN" id="7tIFb5_Phjq" role="1eOMHV">
+                          <node concept="2OqwBi" id="7tIFb5_Phjr" role="10QFUP">
+                            <node concept="33vP2n" id="7tIFb5_Phjs" role="2Oq$k0">
+                              <node concept="2c44te" id="7tIFb5_Phjt" role="lGtFl">
+                                <node concept="37vLTw" id="7tIFb5_Phju" role="2c44t1">
+                                  <ref role="3cqZAo" node="7tIFb5_Phi0" resolve="newParam" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="7tIFb5_Phjv" role="2OqNvi">
+                              <ref role="37wK5l" to="c17a:~SContainmentLink.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                            </node>
+                          </node>
+                          <node concept="3Tqbb2" id="7tIFb5_Phjw" role="10QFUM">
+                            <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="5B0Pf" id="3TDbokeAzht" role="lGtFl" />
                     </node>
                   </node>
                 </node>
