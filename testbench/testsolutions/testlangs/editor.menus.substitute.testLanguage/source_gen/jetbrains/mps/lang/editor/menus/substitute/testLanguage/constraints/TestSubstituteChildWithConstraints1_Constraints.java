@@ -35,7 +35,7 @@ public class TestSubstituteChildWithConstraints1_Constraints extends BaseConstra
     };
   }
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
-    return neq_ecjzx0_a0a0d(((SNode) link.getDeclarationNode()), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9aL, 0x9c8de75f2d0d666L, "childCanBeChild").getDeclarationNode());
+    return neq_ecjzx0_a0a0d(link, MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9aL, 0x9c8de75f2d0d666L, "childCanBeChild"));
   }
   private static boolean neq_ecjzx0_a0a0d(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));

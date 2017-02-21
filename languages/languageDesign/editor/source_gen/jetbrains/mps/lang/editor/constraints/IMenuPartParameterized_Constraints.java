@@ -13,9 +13,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.editor.behavior.IMenuPartParameterized__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class IMenuPartParameterized_Constraints extends BaseConstraintsDescriptor {
@@ -39,13 +38,16 @@ public class IMenuPartParameterized_Constraints extends BaseConstraintsDescripto
     };
   }
   private static boolean staticCanBeAParent(SNode node, SNode childNode, SAbstractConcept childConcept, SContainmentLink link) {
-    if (IMenuPartParameterized__BehaviorDescriptor.getLinkNodeOfParameterizedPart_id1quYWAD03b2.invoke(node).getDeclarationNode() == ((SNode) link.getDeclarationNode())) {
+    if (eq_j0wf96_a0a0d(IMenuPartParameterized__BehaviorDescriptor.getLinkNodeOfParameterizedPart_id1quYWAD03b2.invoke(node), link)) {
       // Only allow parameterizable or abstract menu parts as children 
       // (allow abstract menu parts to avoid showing 'TransformationMenuPart cannot be child of parameterized' and 
       // instead let the typesystem rule show the message about the concept being abstract). 
-      return SPropertyOperations.getBoolean(SNodeOperations.asNode(childConcept), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0dL, "jetbrains.mps.lang.editor.structure.IParameterizableMenuPart"));
+      return childConcept.isAbstract() || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0dL, "jetbrains.mps.lang.editor.structure.IParameterizableMenuPart"));
     }
     return true;
+  }
+  private static boolean eq_j0wf96_a0a0d(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1227128029536561162");
 }

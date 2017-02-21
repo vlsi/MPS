@@ -63,7 +63,7 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
   }
   private static boolean staticCanBeAParent(SNode node, SNode childNode, SAbstractConcept childConcept, SContainmentLink link) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
-      SNode memberConcept = (SNode) SNodeOperations.asNode(childConcept);
+      SAbstractConcept memberConcept = (SAbstractConcept) childConcept;
       return (boolean) ClassifierMember__BehaviorDescriptor.canBeInterfaceMember_id2zJQqQIUx2B.invoke(SNodeOperations.asSConcept(memberConcept));
     }
     return true;

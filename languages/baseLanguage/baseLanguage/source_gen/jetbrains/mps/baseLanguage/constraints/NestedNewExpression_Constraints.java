@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.baseLanguage.behavior.NestedNewExpression__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NestedNewExpression_Constraints extends BaseConstraintsDescriptor {
@@ -57,7 +56,7 @@ public class NestedNewExpression_Constraints extends BaseConstraintsDescriptor {
     return (boolean) NestedNewExpression__BehaviorDescriptor.doesOperandHaveInnerClassesToInstantiateHere_id6GtiBfDgtyx.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x650f9fedfcb5b664L, "jetbrains.mps.baseLanguage.structure.NestedNewExpression")), parentNode);
   }
   private static boolean staticCanBeAParent(SNode node, SNode childNode, SAbstractConcept childConcept, SContainmentLink link) {
-    if (eq_6ri94c_a0a0f(SPropertyOperations.getString(((SNode) link.getDeclarationNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), "creator")) {
+    if (eq_6ri94c_a0a0f(link, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator"))) {
       return eq_6ri94c_a0a0a0a0f(childConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator")) || eq_6ri94c_a0a0a0a0f_0(childConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator")) || (eq_6ri94c_a0a0a0a0f_1(childConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator")));
     }
     return true;
