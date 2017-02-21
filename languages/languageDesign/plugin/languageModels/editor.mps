@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
@@ -70,7 +70,6 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
-      <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi" />
       <concept id="8371900013785948369" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Parameter" flags="ig" index="2$S_p_" />
       <concept id="6718020819487620876" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default" flags="ng" index="A1WHr" />
       <concept id="3473224453637651916" name="jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform_PlaceInCellHolder" flags="ng" index="CtIbL">
@@ -105,9 +104,6 @@
       </concept>
       <concept id="1214317859050" name="jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem" flags="ln" index="2UZ17K">
         <property id="1214317859051" name="layoutConstraint" index="2UZ17L" />
-      </concept>
-      <concept id="1214320119173" name="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" flags="ln" index="2V7CMv">
-        <property id="1214320119174" name="tag" index="2V7CMs" />
       </concept>
       <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
         <property id="1186403713874" name="color" index="Vb096" />
@@ -520,17 +516,9 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp">
@@ -1027,14 +1015,6 @@
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="VPM3Z" id="hEU$PCZ" role="3F10Kt">
             <property role="VOm3f" value="true" />
-          </node>
-          <node concept="1X3_iC" id="1wEcoXjJ_Kk" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="2V7CMv" id="hEVbLlm" role="8Wnug">
-              <property role="2V7CMs" value="default_RTransform" />
-              <node concept="xBawi" id="1wEcoXjJ_Kj" role="lGtFl" />
-            </node>
           </node>
           <node concept="A1WHr" id="1wEcoXjJ_Ki" role="3vIgyS">
             <ref role="2ZyFGn" to="tp4k:hwsEffU" resolve="ToolDeclaration" />
@@ -2917,14 +2897,6 @@
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="VPM3Z" id="57l5h3Ls$8L" role="3F10Kt">
             <property role="VOm3f" value="true" />
-          </node>
-          <node concept="1X3_iC" id="1wEcoXjJ_Kn" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="2V7CMv" id="57l5h3Ls$8M" role="8Wnug">
-              <property role="2V7CMs" value="default_RTransform" />
-              <node concept="xBawi" id="1wEcoXjJ_Km" role="lGtFl" />
-            </node>
           </node>
           <node concept="A1WHr" id="1wEcoXjJ_Kl" role="3vIgyS">
             <ref role="2ZyFGn" to="tp4k:57l5h3Lsyf5" resolve="TabbedToolDeclaration" />

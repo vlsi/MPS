@@ -8,7 +8,7 @@
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -75,9 +75,6 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
-      <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
-        <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
-      </concept>
       <concept id="562388756446465666" name="jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute" flags="ng" index="yp4Wq">
         <property id="562388756446465811" name="transformTag" index="yp4Ub" />
       </concept>
@@ -124,9 +121,6 @@
       </concept>
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
-      </concept>
-      <concept id="1214320119173" name="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" flags="ln" index="2V7CMv">
-        <property id="1214320119174" name="tag" index="2V7CMs" />
       </concept>
       <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
         <property id="1186403713874" name="color" index="Vb096" />
@@ -557,13 +551,6 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
-      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
@@ -676,16 +663,6 @@
         </node>
         <node concept="3$7jql" id="2wdLO7KhY8V" role="3F10Kt">
           <property role="3$6WeP" value="0.0" />
-        </node>
-        <node concept="1X3_iC" id="1wEcoXjJzEV" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="2wdLO7KhY8W" role="8Wnug">
-            <property role="2V7CMs" value="ext_1_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJzEU" role="lGtFl">
-              <ref role="xBaxx" node="1wEcoXjIBnP" resolve="sequenceType_addElementType" />
-            </node>
-          </node>
         </node>
         <node concept="A1WHu" id="1wEcoXjJzET" role="3vIgyS">
           <ref role="A1WHt" node="1wEcoXjIBnP" resolve="sequenceType_addElementType" />
@@ -845,16 +822,6 @@
         <property role="3F0ifm" value="foreach" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
         <ref role="1ERwB7" to="tpen:5qguV_rpt7X" resolve="Delete_Loop" />
-        <node concept="1X3_iC" id="1wEcoXjJzEA" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="42hlkH_pTDg" role="8Wnug">
-            <property role="2V7CMs" value="ext_1_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJzE_" role="lGtFl">
-              <ref role="xBaxx" to="tpen:1wEcoXjIFnP" resolve="loopLabelsAndIfStatement" />
-            </node>
-          </node>
-        </node>
         <node concept="A1WHu" id="1wEcoXjJzE$" role="3vIgyS">
           <ref role="A1WHt" to="tpen:2jHvEnOP8oj" resolve="loopLabels" />
         </node>
@@ -1592,14 +1559,6 @@
       <node concept="3F0ifn" id="hOkQdn4" role="3EZMnx">
         <property role="3F0ifm" value="&gt;" />
         <ref role="1k5W1q" node="hGdWaJB" resolve="RightAngleBracket" />
-        <node concept="1X3_iC" id="1wEcoXjJzEt" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="hOkRtIS" role="8Wnug">
-            <property role="2V7CMs" value="default_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJzEs" role="lGtFl" />
-          </node>
-        </node>
         <node concept="A1WHr" id="1wEcoXjJzEr" role="3vIgyS">
           <ref role="2ZyFGn" to="tp2q:hOkMnGm" resolve="SequenceCreator" />
         </node>
@@ -2086,14 +2045,6 @@
       <node concept="3F0ifn" id="hYHUxMG" role="3EZMnx">
         <property role="3F0ifm" value="&gt;" />
         <ref role="1k5W1q" node="hGdWaJB" resolve="RightAngleBracket" />
-        <node concept="1X3_iC" id="1wEcoXjJzEM" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="hYHUxMH" role="8Wnug">
-            <property role="2V7CMs" value="default_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJzEL" role="lGtFl" />
-          </node>
-        </node>
         <node concept="A1WHr" id="1wEcoXjJzEK" role="3vIgyS">
           <ref role="2ZyFGn" to="tp2q:hYHTtwE" resolve="SingletonSequenceCreator" />
         </node>
@@ -2501,14 +2452,6 @@
             <ref role="Ul1FP" to="tpee:hqOqG0K" resolve="IOperation" />
           </node>
         </node>
-        <node concept="1X3_iC" id="1wEcoXjJzEw" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="2wdLO7KhY32" role="8Wnug">
-            <property role="2V7CMs" value="default_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJzEv" role="lGtFl" />
-          </node>
-        </node>
         <node concept="A1WHr" id="1wEcoXjJzEu" role="3vIgyS">
           <ref role="2ZyFGn" to="tp2q:i3uJxr6" resolve="JoinOperation" />
         </node>
@@ -2870,16 +2813,6 @@
         <node concept="3$7jql" id="1h9lTVui$XU" role="3F10Kt">
           <property role="3$6WeP" value="0.0" />
         </node>
-        <node concept="1X3_iC" id="1wEcoXjJzES" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="1720OMz6kwV" role="8Wnug">
-            <property role="2V7CMs" value="ext_1_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJzER" role="lGtFl">
-              <ref role="xBaxx" node="1wEcoXjIBuj" resolve="HashMapCreator_add_keyType_valueType" />
-            </node>
-          </node>
-        </node>
         <node concept="1HfYo3" id="1h9lTVui96W" role="1HlULh">
           <node concept="3TQlhw" id="1h9lTVui96X" role="1Hhtcw">
             <node concept="3clFbS" id="1h9lTVui96Y" role="2VODD2">
@@ -2948,14 +2881,6 @@
           <ref role="1k5W1q" node="hGdWaJB" resolve="RightAngleBracket" />
           <node concept="VPM3Z" id="1mIpGV0rhmT" role="3F10Kt">
             <property role="VOm3f" value="true" />
-          </node>
-          <node concept="1X3_iC" id="1wEcoXjJzEG" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="2V7CMv" id="1mIpGV0rhmU" role="8Wnug">
-              <property role="2V7CMs" value="default_RTransform" />
-              <node concept="xBawi" id="1wEcoXjJzEF" role="lGtFl" />
-            </node>
           </node>
           <node concept="A1WHr" id="1wEcoXjJzEE" role="3vIgyS">
             <ref role="2ZyFGn" to="tp2q:hrrGOWH" resolve="HashMapCreator" />
@@ -3117,14 +3042,6 @@
         </node>
         <node concept="3F0A7n" id="5i_Pov1XWxf" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          <node concept="1X3_iC" id="1wEcoXjJzED" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="2V7CMv" id="5i_Pov1YXz4" role="8Wnug">
-              <property role="2V7CMs" value="default_RTransform" />
-              <node concept="xBawi" id="1wEcoXjJzEC" role="lGtFl" />
-            </node>
-          </node>
           <node concept="A1WHr" id="1wEcoXjJzEB" role="3vIgyS">
             <ref role="2ZyFGn" to="tp2q:5i_Pov1WWvw" resolve="CustomContainerDeclaration" />
           </node>
@@ -3264,16 +3181,6 @@
         <node concept="3$7jql" id="4AGmXeOW0sY" role="3F10Kt">
           <property role="3$6WeP" value="0.0" />
         </node>
-        <node concept="1X3_iC" id="1wEcoXjJzEJ" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="1720OMz4bSI" role="8Wnug">
-            <property role="2V7CMs" value="ext_1_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJzEI" role="lGtFl">
-              <ref role="xBaxx" node="1wEcoXjIBpg" resolve="AbstractContainerCreator_ext_1_RTransform_Menu" />
-            </node>
-          </node>
-        </node>
         <node concept="1HfYo3" id="4AGmXeOW0sZ" role="1HlULh">
           <node concept="3TQlhw" id="4AGmXeOW0t0" role="1Hhtcw">
             <node concept="3clFbS" id="4AGmXeOW0t1" role="2VODD2">
@@ -3338,16 +3245,6 @@
           </node>
           <node concept="3$7jql" id="4AGmXeOW0tn" role="3F10Kt">
             <property role="3$6WeP" value="0.0" />
-          </node>
-          <node concept="1X3_iC" id="1wEcoXjJzEq" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="2V7CMv" id="4AGmXeOW0to" role="8Wnug">
-              <property role="2V7CMs" value="ext_1_RTransform" />
-              <node concept="xBawi" id="1wEcoXjJzEp" role="lGtFl">
-                <ref role="xBaxx" node="1wEcoXjIBpg" resolve="AbstractContainerCreator_ext_1_RTransform_Menu" />
-              </node>
-            </node>
           </node>
           <node concept="A1WHu" id="1wEcoXjJzEo" role="3vIgyS">
             <ref role="A1WHt" node="1wEcoXjIBpg" resolve="AbstractContainerCreator_ext_1_RTransform_Menu" />
@@ -3944,16 +3841,6 @@
         <node concept="3$7jql" id="19aUK3a0_9J" role="3F10Kt">
           <property role="3$6WeP" value="0.0" />
         </node>
-        <node concept="1X3_iC" id="1wEcoXjJzEP" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="19aUK3a0_9K" role="8Wnug">
-            <property role="2V7CMs" value="ext_1_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJzEO" role="lGtFl">
-              <ref role="xBaxx" node="1wEcoXjIBuj" resolve="HashMapCreator_add_keyType_valueType" />
-            </node>
-          </node>
-        </node>
         <node concept="1HfYo3" id="19aUK3a0_9L" role="1HlULh">
           <node concept="3TQlhw" id="19aUK3a0_9M" role="1Hhtcw">
             <node concept="3clFbS" id="19aUK3a0_9N" role="2VODD2">
@@ -4087,14 +3974,6 @@
           <node concept="VPM3Z" id="19aUK3a0_aD" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
-          <node concept="1X3_iC" id="1wEcoXjJzEz" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="2V7CMv" id="19aUK3a0_aE" role="8Wnug">
-              <property role="2V7CMs" value="default_RTransform" />
-              <node concept="xBawi" id="1wEcoXjJzEy" role="lGtFl" />
-            </node>
-          </node>
           <node concept="A1WHr" id="1wEcoXjJzEx" role="3vIgyS">
             <ref role="2ZyFGn" to="tp2q:1ny5gPbZSDB" resolve="CustomMapCreator" />
           </node>
@@ -4208,6 +4087,7 @@
   </node>
   <node concept="3ICXOK" id="1wEcoXjIBnP">
     <property role="TrG5h" value="sequenceType_addElementType" />
+    <property role="3GE5qa" value="sequence" />
     <ref role="aqKnT" to="tp2q:gKA3Dh4" resolve="SequenceType" />
     <node concept="yp4Wq" id="1wEcoXjIBnQ" role="lGtFl">
       <property role="yp4Ub" value="ext_1_RTransform" />
@@ -4951,6 +4831,7 @@
   </node>
   <node concept="3ICXOK" id="1wEcoXjIBuj">
     <property role="TrG5h" value="HashMapCreator_add_keyType_valueType" />
+    <property role="3GE5qa" value="mapType" />
     <ref role="aqKnT" to="tp2q:hrrGOWH" resolve="HashMapCreator" />
     <node concept="yp4Wq" id="1wEcoXjIBuk" role="lGtFl">
       <property role="yp4Ub" value="ext_1_RTransform" />

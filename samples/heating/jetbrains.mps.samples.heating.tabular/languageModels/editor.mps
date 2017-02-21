@@ -4,7 +4,7 @@
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="0272d3b4-4cc8-481e-9e2f-07793fbfcb41" name="jetbrains.mps.lang.editor.table" version="0" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -48,9 +48,6 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
-      <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
-        <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
-      </concept>
       <concept id="6718020819487620873" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named" flags="ng" index="A1WHu">
         <reference id="6718020819487620874" name="menu" index="A1WHt" />
       </concept>
@@ -62,10 +59,6 @@
       </concept>
       <concept id="3473224453637651916" name="jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform_PlaceInCellHolder" flags="ng" index="CtIbL">
         <property id="3473224453637651917" name="placeInCell" index="CtIbK" />
-      </concept>
-      <concept id="1164824717996" name="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" flags="ng" index="OXEIz" />
-      <concept id="1214320119173" name="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" flags="ln" index="2V7CMv">
-        <property id="1214320119174" name="tag" index="2V7CMs" />
       </concept>
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
@@ -118,9 +111,6 @@
       <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Named" flags="ng" index="3ICXOK" />
       <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
         <child id="1638911550608572412" name="sections" index="IW6Ez" />
-      </concept>
-      <concept id="8233876857994246075" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms" flags="ng" index="3JiINr">
-        <property id="8233876857994286197" name="side" index="3JiSWl" />
       </concept>
       <concept id="7980428675268276156" name="jetbrains.mps.lang.editor.structure.TransformationMenuSection" flags="ng" index="1Qtc8_">
         <child id="7980428675268276157" name="locations" index="1Qtc8$" />
@@ -261,18 +251,8 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="0272d3b4-4cc8-481e-9e2f-07793fbfcb41" name="jetbrains.mps.lang.editor.table">
@@ -360,16 +340,6 @@
           <node concept="3F0ifn" id="NU25Mr0foo" role="3EZMnx">
             <property role="3F0ifm" value="Daily plan" />
             <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
-            <node concept="1X3_iC" id="1wEcoXjJM_M" role="lGtFl">
-              <property role="3V$3am" value="styleItem" />
-              <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-              <node concept="2V7CMv" id="NU25Mr0g0N" role="8Wnug">
-                <property role="2V7CMs" value="ext_1_RTransform" />
-                <node concept="xBawi" id="1wEcoXjJM_L" role="lGtFl">
-                  <ref role="xBaxx" to="ln9p:1wEcoXjJ4vA" resolve="Customizes" />
-                </node>
-              </node>
-            </node>
             <node concept="A1WHu" id="1wEcoXjJM_K" role="3vIgyS">
               <ref role="A1WHt" to="ln9p:1wEcoXjJ4vA" resolve="Customizes" />
             </node>
@@ -410,32 +380,6 @@
             <ref role="1ERwB7" node="1RZY6YZRIwl" resolve="DeleteCustomizeInTabular" />
             <node concept="ljvvj" id="4p4E$Nw_3yL" role="3F10Kt">
               <property role="VOm3f" value="true" />
-            </node>
-            <node concept="1X3_iC" id="1wEcoXjJM_G" role="lGtFl">
-              <property role="3V$3am" value="styleItem" />
-              <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-              <node concept="2V7CMv" id="NU25MqYRe$" role="8Wnug">
-                <property role="2V7CMs" value="ext_1_RTransform" />
-                <node concept="xBawi" id="1wEcoXjJM_F" role="lGtFl">
-                  <ref role="xBaxx" node="1wEcoXjJM_u" resolve="DailyPlan_ApplySideTransforms" />
-                </node>
-              </node>
-            </node>
-            <node concept="1X3_iC" id="1wEcoXjJM_J" role="lGtFl">
-              <property role="3V$3am" value="menuDescriptor" />
-              <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1164826688380" />
-              <node concept="OXEIz" id="NU25MqYs_T" role="8Wnug">
-                <node concept="1X3_iC" id="1wEcoXjJM_I" role="lGtFl">
-                  <property role="3V$3am" value="cellMenuPart" />
-                  <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164824717996/1164824815888" />
-                  <node concept="3JiINr" id="NU25MqYs_W" role="8Wnug">
-                    <property role="3JiSWl" value="left" />
-                    <node concept="xBawi" id="1wEcoXjJM_H" role="lGtFl">
-                      <ref role="xBaxx" node="1wEcoXjJM_u" resolve="DailyPlan_ApplySideTransforms" />
-                    </node>
-                  </node>
-                </node>
-              </node>
             </node>
             <node concept="pkWqt" id="1RZY6YZR$Pr" role="pqm2j">
               <node concept="3clFbS" id="1RZY6YZR$Ps" role="2VODD2">

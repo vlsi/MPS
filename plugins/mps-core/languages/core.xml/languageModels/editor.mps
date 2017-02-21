@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -63,10 +63,6 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
-      <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
-        <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
-      </concept>
-      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation" flags="ng" index="xG$WE" />
       <concept id="562388756446465666" name="jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute" flags="ng" index="yp4Wq">
         <property id="562388756446465811" name="transformTag" index="yp4Ub" />
       </concept>
@@ -111,10 +107,6 @@
       </concept>
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
-      </concept>
-      <concept id="1214320119173" name="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" flags="ln" index="2V7CMv">
-        <property id="1214320119174" name="tag" index="2V7CMs" />
-        <child id="3608226089191997414" name="tags" index="3TxK5$" />
       </concept>
       <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
         <property id="1186403713874" name="color" index="Vb096" />
@@ -287,9 +279,6 @@
       <concept id="7980428675268276156" name="jetbrains.mps.lang.editor.structure.TransformationMenuSection" flags="ng" index="1Qtc8_">
         <child id="7980428675268276157" name="locations" index="1Qtc8$" />
         <child id="7980428675268276159" name="parts" index="1Qtc8A" />
-      </concept>
-      <concept id="3608226089191997415" name="jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper" flags="ng" index="3TxK5_">
-        <property id="3608226089191997418" name="tag" index="3TxK5C" />
       </concept>
       <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
       <concept id="1166040637528" name="jetbrains.mps.lang.editor.structure.CellMenuComponent" flags="ng" index="1Xs25n">
@@ -473,13 +462,6 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp">
@@ -781,16 +763,6 @@
       <node concept="3F0A7n" id="5M4a$b5iL2Y" role="3EZMnx">
         <ref role="1NtTu8" to="iuxj:5M4a$b5iL2Q" resolve="tagName" />
         <ref role="1k5W1q" node="5M4a$b5iSRB" resolve="xmlTagName" />
-        <node concept="1X3_iC" id="1wEcoXjJHeB" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="5M4a$b5jcO2" role="8Wnug">
-            <property role="2V7CMs" value="ext_1_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJHeA" role="lGtFl">
-              <ref role="xBaxx" node="1wEcoXjJGl7" resolve="transform_ElementAttributes_XmlElement_ext_1" />
-            </node>
-          </node>
-        </node>
         <node concept="3mYdg7" id="2EZ251g0bTF" role="3F10Kt">
           <property role="1413C4" value="xmltag" />
         </node>
@@ -1223,14 +1195,6 @@
           <node concept="11LMrY" id="5M4a$b5iSS7" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
-          <node concept="1X3_iC" id="1wEcoXjJHf0" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="2V7CMv" id="5M4a$b5jlqp" role="8Wnug">
-              <property role="2V7CMs" value="ext_1_RTransform" />
-              <node concept="xG$WE" id="1wEcoXjJHeZ" role="lGtFl" />
-            </node>
-          </node>
         </node>
         <node concept="3F2HdR" id="5M4a$b5jg9F" role="3EZMnx">
           <ref role="1NtTu8" to="iuxj:5M4a$b5jfOu" resolve="value" />
@@ -1261,19 +1225,6 @@
           <node concept="11L4FC" id="5M4a$b5iSS6" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
-          <node concept="1X3_iC" id="1wEcoXjJHeM" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="2V7CMv" id="5M4a$b5jyJY" role="8Wnug">
-              <node concept="3TxK5_" id="5M4a$b5jyTW" role="3TxK5$">
-                <property role="3TxK5C" value="ext_2_RTransform" />
-              </node>
-              <node concept="3TxK5_" id="5M4a$b5jyTX" role="3TxK5$">
-                <property role="3TxK5C" value="default_RTransform" />
-              </node>
-              <node concept="xBawi" id="1wEcoXjJHeL" role="lGtFl" />
-            </node>
-          </node>
           <node concept="A1WHr" id="1wEcoXjJHeK" role="3vIgyS">
             <ref role="2ZyFGn" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
           </node>
@@ -1303,14 +1254,6 @@
           <ref role="1k5W1q" node="5M4a$b5iSSb" resolve="xmlAttributeValue" />
           <node concept="11LMrY" id="2EZ251fZWl3" role="3F10Kt">
             <property role="VOm3f" value="true" />
-          </node>
-          <node concept="1X3_iC" id="1wEcoXjJHeJ" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="2V7CMv" id="2EZ251fZWl4" role="8Wnug">
-              <property role="2V7CMs" value="ext_1_RTransform" />
-              <node concept="xG$WE" id="1wEcoXjJHeI" role="lGtFl" />
-            </node>
           </node>
         </node>
         <node concept="3EZMnI" id="2EZ251g00Xd" role="3EZMnx">
@@ -1350,19 +1293,6 @@
           <ref role="1k5W1q" node="5M4a$b5iSSb" resolve="xmlAttributeValue" />
           <node concept="11L4FC" id="2EZ251fZWla" role="3F10Kt">
             <property role="VOm3f" value="true" />
-          </node>
-          <node concept="1X3_iC" id="1wEcoXjJHeS" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="2V7CMv" id="2EZ251fZWlb" role="8Wnug">
-              <node concept="3TxK5_" id="2EZ251fZWlc" role="3TxK5$">
-                <property role="3TxK5C" value="ext_2_RTransform" />
-              </node>
-              <node concept="3TxK5_" id="2EZ251fZWld" role="3TxK5$">
-                <property role="3TxK5C" value="default_RTransform" />
-              </node>
-              <node concept="xBawi" id="1wEcoXjJHeR" role="lGtFl" />
-            </node>
           </node>
           <node concept="A1WHr" id="1wEcoXjJHeQ" role="3vIgyS">
             <ref role="2ZyFGn" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
@@ -2403,14 +2333,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="1X3_iC" id="1wEcoXjJHeP" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="1eE$XwbXc1P" role="8Wnug">
-            <property role="2V7CMs" value="default_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJHeO" role="lGtFl" />
           </node>
         </node>
         <node concept="OXEIz" id="1eE$XwbXc1Q" role="P5bDN">

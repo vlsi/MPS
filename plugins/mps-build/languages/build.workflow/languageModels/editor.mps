@@ -2,7 +2,7 @@
 <model ref="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -59,9 +59,6 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
-      <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
-        <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
-      </concept>
       <concept id="562388756446465666" name="jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute" flags="ng" index="yp4Wq">
         <property id="562388756446465811" name="transformTag" index="yp4Ub" />
       </concept>
@@ -93,10 +90,6 @@
       </concept>
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
-      </concept>
-      <concept id="1214320119173" name="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" flags="ln" index="2V7CMv">
-        <property id="1214320119174" name="tag" index="2V7CMs" />
-        <child id="3608226089191997414" name="tags" index="3TxK5$" />
       </concept>
       <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
         <property id="1186403713874" name="color" index="Vb096" />
@@ -227,9 +220,6 @@
         <child id="7980428675268276157" name="locations" index="1Qtc8$" />
         <child id="7980428675268276159" name="parts" index="1Qtc8A" />
       </concept>
-      <concept id="3608226089191997415" name="jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper" flags="ng" index="3TxK5_">
-        <property id="3608226089191997418" name="tag" index="3TxK5C" />
-      </concept>
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
@@ -359,13 +349,6 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -520,16 +503,6 @@
       </node>
       <node concept="3F0A7n" id="2pKPpytmGTR" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        <node concept="1X3_iC" id="1wEcoXjJHbM" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="2pKPpytnqG6" role="8Wnug">
-            <property role="2V7CMs" value="ext_2_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJHbL" role="lGtFl">
-              <ref role="xBaxx" node="1wEcoXjJhcw" resolve="add_dependencies_BwfTask_ext_2" />
-            </node>
-          </node>
-        </node>
         <node concept="A1WHu" id="1wEcoXjJHbK" role="3vIgyS">
           <ref role="A1WHt" node="1wEcoXjJhcw" resolve="add_dependencies_BwfTask_ext_2" />
         </node>
@@ -620,21 +593,6 @@
       </node>
       <node concept="3F0A7n" id="2pKPpytmOBS" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        <node concept="1X3_iC" id="1wEcoXjJHbY" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="2pKPpytnqG7" role="8Wnug">
-            <node concept="3TxK5_" id="3rV3sBXdNpz" role="3TxK5$">
-              <property role="3TxK5C" value="ext_2_RTransform" />
-            </node>
-            <node concept="3TxK5_" id="3rV3sBXdNp$" role="3TxK5$">
-              <property role="3TxK5C" value="ext_3_RTransform" />
-            </node>
-            <node concept="xBawi" id="1wEcoXjJHbX" role="lGtFl">
-              <ref role="xBaxx" node="1wEcoXjJHbP" resolve="BwfSubTask_ApplySideTransforms" />
-            </node>
-          </node>
-        </node>
         <node concept="A1WHu" id="1wEcoXjJHbW" role="3vIgyS">
           <ref role="A1WHt" node="1wEcoXjJHbP" resolve="BwfSubTask_ApplySideTransforms" />
         </node>
@@ -1147,16 +1105,6 @@
           <node concept="3F0A7n" id="3rV3sBXdU71" role="2wV5jI">
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          </node>
-        </node>
-        <node concept="1X3_iC" id="1wEcoXjJHbJ" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="6l_Qx579oHJ" role="8Wnug">
-            <property role="2V7CMs" value="ext_2_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJHbI" role="lGtFl">
-              <ref role="xBaxx" node="1wEcoXjJhdU" resolve="add_dependencies_BwfTaskPart" />
-            </node>
           </node>
         </node>
         <node concept="A1WHu" id="1wEcoXjJHbH" role="3vIgyS">
@@ -1824,6 +1772,7 @@
   </node>
   <node concept="3ICXOK" id="1wEcoXjJhcw">
     <property role="TrG5h" value="add_dependencies_BwfTask_ext_2" />
+    <property role="3GE5qa" value="Tasks" />
     <ref role="aqKnT" to="8xvf:2pKPpytmA9N" resolve="BwfTask" />
     <node concept="yp4Wq" id="1wEcoXjJhcx" role="lGtFl">
       <property role="yp4Ub" value="ext_2_RTransform" />
@@ -1980,6 +1929,7 @@
   </node>
   <node concept="3ICXOK" id="1wEcoXjJhdU">
     <property role="TrG5h" value="add_dependencies_BwfTaskPart" />
+    <property role="3GE5qa" value="Tasks" />
     <ref role="aqKnT" to="8xvf:3rV3sBXcG6S" resolve="BwfTaskPart" />
     <node concept="yp4Wq" id="1wEcoXjJhdV" role="lGtFl">
       <property role="yp4Ub" value="ext_2_RTransform" />
@@ -2425,6 +2375,7 @@
   </node>
   <node concept="3ICXOK" id="1wEcoXjJHbP">
     <property role="TrG5h" value="BwfSubTask_ApplySideTransforms" />
+    <property role="3GE5qa" value="Tasks" />
     <ref role="aqKnT" to="8xvf:2pKPpytmA9P" resolve="BwfSubTask" />
     <node concept="1Qtc8_" id="1wEcoXjJHbQ" role="IW6Ez">
       <node concept="3cWJ9i" id="1wEcoXjJHbR" role="1Qtc8$">

@@ -2,7 +2,7 @@
 <model ref="r:6aa6f228-56c3-4d3a-b03e-4204df10c967(jetbrains.mps.samples.KajaAndOr.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -32,10 +32,6 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
-      <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
-        <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
-      </concept>
-      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation" flags="ng" index="xG$WE" />
       <concept id="8371900013785948369" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Parameter" flags="ig" index="2$S_p_" />
       <concept id="6718020819487620876" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default" flags="ng" index="A1WHr" />
       <concept id="6718020819487620873" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named" flags="ng" index="A1WHu">
@@ -64,9 +60,6 @@
       </concept>
       <concept id="1164914519156" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" flags="ng" index="UkePV">
         <reference id="1164914727930" name="replacementConcept" index="Ul1FP" />
-      </concept>
-      <concept id="1214320119173" name="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" flags="ln" index="2V7CMv">
-        <property id="1214320119174" name="tag" index="2V7CMs" />
       </concept>
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
@@ -282,18 +275,8 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -316,16 +299,6 @@
       <node concept="3F0ifn" id="1DJg4Tz2$ol" role="3EZMnx">
         <property role="3F0ifm" value="(" />
         <ref role="1k5W1q" to="tpen:hFCSAw$" resolve="LeftParen" />
-        <node concept="1X3_iC" id="1wEcoXjJ_CG" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="1DJg4Tz31DE" role="8Wnug">
-            <property role="2V7CMs" value="ext_2_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJ_CF" role="lGtFl">
-              <ref role="xBaxx" to="e118:1wEcoXjJyo$" resolve="NegateAndAlter" />
-            </node>
-          </node>
-        </node>
         <node concept="A1WHu" id="1wEcoXjJ_CE" role="3vIgyS">
           <ref role="A1WHt" to="e118:1wEcoXjJyo$" resolve="NegateAndAlter" />
         </node>
@@ -341,14 +314,6 @@
         <node concept="VPxyj" id="2Kq7O$TUhIV" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="1X3_iC" id="1wEcoXjJ_CD" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="2Kq7O$TUhJM" role="8Wnug">
-            <property role="2V7CMs" value="ext_4_RTransform" />
-            <node concept="xG$WE" id="1wEcoXjJ_CC" role="lGtFl" />
-          </node>
-        </node>
         <node concept="OXEIz" id="zEL6hPQ1oT" role="P5bDN">
           <node concept="UkePV" id="zEL6hPQ1CW" role="OY2wv">
             <ref role="Ul1FP" to="6ms5:1DJg4Tz2$rp" resolve="LogicalOperator" />
@@ -362,16 +327,6 @@
       <node concept="3F0ifn" id="1DJg4Tz2$ot" role="3EZMnx">
         <property role="3F0ifm" value=")" />
         <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
-        <node concept="1X3_iC" id="1wEcoXjJ_CJ" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="zEL6hPUuJ0" role="8Wnug">
-            <property role="2V7CMs" value="ext_2_RTransform" />
-            <node concept="xBawi" id="1wEcoXjJ_CI" role="lGtFl">
-              <ref role="xBaxx" to="e118:1wEcoXjJyo$" resolve="NegateAndAlter" />
-            </node>
-          </node>
-        </node>
         <node concept="A1WHu" id="1wEcoXjJ_CH" role="3vIgyS">
           <ref role="A1WHt" to="e118:1wEcoXjJyo$" resolve="NegateAndAlter" />
         </node>

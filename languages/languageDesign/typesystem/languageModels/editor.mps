@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
@@ -79,9 +79,6 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
-      <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
-        <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
-      </concept>
       <concept id="562388756446465666" name="jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute" flags="ng" index="yp4Wq">
         <property id="562388756446465811" name="transformTag" index="yp4Ub" />
       </concept>
@@ -123,9 +120,6 @@
       </concept>
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
-      </concept>
-      <concept id="1214320119173" name="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" flags="ln" index="2V7CMv">
-        <property id="1214320119174" name="tag" index="2V7CMs" />
       </concept>
       <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
         <property id="1186403713874" name="color" index="Vb096" />
@@ -254,10 +248,6 @@
       </concept>
       <concept id="5624877018228264944" name="jetbrains.mps.lang.editor.structure.TransformationMenuContribution" flags="ng" index="3INDKC">
         <child id="6718020819489956031" name="menuReference" index="AmTjC" />
-      </concept>
-      <concept id="8233876857994246075" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms" flags="ng" index="3JiINr">
-        <property id="870577895075788418" name="tag" index="2_m5XT" />
-        <property id="8233876857994286197" name="side" index="3JiSWl" />
       </concept>
       <concept id="6684862045052272180" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_NodeToWrap" flags="ng" index="3N4pyC" />
       <concept id="6684862045052059649" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_WrapperHandler" flags="ig" index="3N5aqt" />
@@ -515,13 +505,6 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -942,33 +925,6 @@
               </node>
               <node concept="3F0A7n" id="1y5tROjucPS" role="1QoVPY">
                 <ref role="1NtTu8" to="tpd4:hp8ip7h" resolve="overrides" />
-                <node concept="1X3_iC" id="1wEcoXjJNDs" role="lGtFl">
-                  <property role="3V$3am" value="styleItem" />
-                  <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-                  <node concept="2V7CMv" id="6lCixFId049" role="8Wnug">
-                    <property role="2V7CMs" value="ext_1_RTransform" />
-                    <node concept="xBawi" id="1wEcoXjJNDr" role="lGtFl">
-                      <ref role="xBaxx" node="1wEcoXjJNDe" resolve="InferenceRule_ApplySideTransforms" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="1X3_iC" id="1wEcoXjJNDv" role="lGtFl">
-                  <property role="3V$3am" value="menuDescriptor" />
-                  <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1164826688380" />
-                  <node concept="OXEIz" id="6lCixFIezH9" role="8Wnug">
-                    <node concept="1X3_iC" id="1wEcoXjJNDu" role="lGtFl">
-                      <property role="3V$3am" value="cellMenuPart" />
-                      <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164824717996/1164824815888" />
-                      <node concept="3JiINr" id="6lCixFIezHi" role="8Wnug">
-                        <property role="3JiSWl" value="left" />
-                        <property role="2_m5XT" value="ext_1_RTransform" />
-                        <node concept="xBawi" id="1wEcoXjJNDt" role="lGtFl">
-                          <ref role="xBaxx" node="1wEcoXjJNDe" resolve="InferenceRule_ApplySideTransforms" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node concept="A1WHu" id="1wEcoXjJNDq" role="3vIgyS">
                   <ref role="A1WHt" node="1wEcoXjJNDe" resolve="InferenceRule_ApplySideTransforms" />
                 </node>
@@ -5847,6 +5803,7 @@
   </node>
   <node concept="3ICXOK" id="1wEcoXjJNDe">
     <property role="TrG5h" value="InferenceRule_ApplySideTransforms" />
+    <property role="3GE5qa" value="definition.rule" />
     <ref role="aqKnT" to="tpd4:h5YbPVU" resolve="InferenceRule" />
     <node concept="1Qtc8_" id="1wEcoXjJNDf" role="IW6Ez">
       <node concept="3cWJ9i" id="1wEcoXjJNDg" role="1Qtc8$">

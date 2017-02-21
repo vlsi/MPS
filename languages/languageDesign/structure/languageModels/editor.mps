@@ -5,7 +5,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
@@ -108,9 +108,6 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
-      <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
-        <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
-      </concept>
       <concept id="562388756446465666" name="jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute" flags="ng" index="yp4Wq">
         <property id="562388756446465811" name="transformTag" index="yp4Ub" />
       </concept>
@@ -162,9 +159,6 @@
       </concept>
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
-      </concept>
-      <concept id="1214320119173" name="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" flags="ln" index="2V7CMv">
-        <property id="1214320119174" name="tag" index="2V7CMs" />
       </concept>
       <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
         <property id="1186403713874" name="color" index="Vb096" />
@@ -313,9 +307,6 @@
       <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Named" flags="ng" index="3ICXOK" />
       <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
         <child id="1638911550608572412" name="sections" index="IW6Ez" />
-      </concept>
-      <concept id="8233876857994246075" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms" flags="ng" index="3JiINr">
-        <property id="870577895075788418" name="tag" index="2_m5XT" />
       </concept>
       <concept id="3647146066980922272" name="jetbrains.mps.lang.editor.structure.SelectInEditorOperation" flags="nn" index="1OKiuA">
         <child id="1948540814633499358" name="editorContext" index="lBI5i" />
@@ -652,13 +643,6 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -1968,16 +1952,6 @@
               </node>
             </node>
           </node>
-          <node concept="1X3_iC" id="1wEcoXjJMWY" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="2V7CMv" id="5xVYX$fXc0m" role="8Wnug">
-              <property role="2V7CMs" value="ext_1_RTransform" />
-              <node concept="xBawi" id="1wEcoXjJMWX" role="lGtFl">
-                <ref role="xBaxx" node="1wEcoXjJ80j" resolve="ConceptDeclaration_ext_1_RTransform_Menu" />
-              </node>
-            </node>
-          </node>
           <node concept="A1WHu" id="1wEcoXjJMWW" role="3vIgyS">
             <ref role="A1WHt" node="1wEcoXjJ80j" resolve="ConceptDeclaration_ext_1_RTransform_Menu" />
           </node>
@@ -2265,22 +2239,6 @@
               <node concept="2SqB2G" id="16BE8Zl$cth" role="2SqHTX">
                 <property role="TrG5h" value="emptyPropertiesPlaceHolder" />
               </node>
-              <node concept="1X3_iC" id="1wEcoXjJMXu" role="lGtFl">
-                <property role="3V$3am" value="menuDescriptor" />
-                <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1164826688380" />
-                <node concept="OXEIz" id="JeRNd$To4P" role="8Wnug">
-                  <node concept="1X3_iC" id="1wEcoXjJMXt" role="lGtFl">
-                    <property role="3V$3am" value="cellMenuPart" />
-                    <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164824717996/1164824815888" />
-                    <node concept="3JiINr" id="JeRNd$ToIh" role="8Wnug">
-                      <property role="2_m5XT" value="ext_4_RTransform" />
-                      <node concept="xBawi" id="1wEcoXjJMXs" role="lGtFl">
-                        <ref role="xBaxx" node="1wEcoXjJMXf" resolve="ConceptDeclaration_ApplySideTransforms_2" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="A1WHu" id="1wEcoXjJMXr" role="3vIgyS">
                 <ref role="A1WHt" node="1wEcoXjJMXf" resolve="ConceptDeclaration_ApplySideTransforms_2" />
               </node>
@@ -2385,22 +2343,6 @@
             <node concept="3F0ifn" id="6LnHxz$zgv7" role="2czzBI">
               <property role="3F0ifm" value="" />
               <property role="ilYzB" value="&lt;&lt; ... &gt;&gt;" />
-              <node concept="1X3_iC" id="1wEcoXjJMWF" role="lGtFl">
-                <property role="3V$3am" value="menuDescriptor" />
-                <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1164826688380" />
-                <node concept="OXEIz" id="2rTfnkTwugq" role="8Wnug">
-                  <node concept="1X3_iC" id="1wEcoXjJMWE" role="lGtFl">
-                    <property role="3V$3am" value="cellMenuPart" />
-                    <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164824717996/1164824815888" />
-                    <node concept="3JiINr" id="2rTfnkT$ycY" role="8Wnug">
-                      <property role="2_m5XT" value="ext_2_RTransform" />
-                      <node concept="xBawi" id="1wEcoXjJMWD" role="lGtFl">
-                        <ref role="xBaxx" node="1wEcoXjJMWs" resolve="ConceptDeclaration_ApplySideTransforms" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="VechU" id="6LnHxz$zgVR" role="3F10Kt">
                 <property role="Vb096" value="gray" />
               </node>
@@ -2506,22 +2448,6 @@
             </node>
             <node concept="3F0ifn" id="3zklUlUgGwP" role="2czzBI">
               <property role="ilYzB" value="&lt;&lt; ... &gt;&gt;" />
-              <node concept="1X3_iC" id="1wEcoXjJMWV" role="lGtFl">
-                <property role="3V$3am" value="menuDescriptor" />
-                <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1164826688380" />
-                <node concept="OXEIz" id="5EjZA6Jcl2K" role="8Wnug">
-                  <node concept="1X3_iC" id="1wEcoXjJMWU" role="lGtFl">
-                    <property role="3V$3am" value="cellMenuPart" />
-                    <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164824717996/1164824815888" />
-                    <node concept="3JiINr" id="5EjZA6Jcl2R" role="8Wnug">
-                      <property role="2_m5XT" value="ext_3_RTransform" />
-                      <node concept="xBawi" id="1wEcoXjJMWT" role="lGtFl">
-                        <ref role="xBaxx" node="1wEcoXjJMWG" resolve="ConceptDeclaration_ApplySideTransforms_1" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="VechU" id="3zklUlUiyZ3" role="3F10Kt">
                 <property role="Vb096" value="gray" />
               </node>
@@ -2905,22 +2831,6 @@
               <node concept="2SqB2G" id="16BE8Zl$iEm" role="2SqHTX">
                 <property role="TrG5h" value="emptyPropertiesPlaceHolder" />
               </node>
-              <node concept="1X3_iC" id="1wEcoXjJMXe" role="lGtFl">
-                <property role="3V$3am" value="menuDescriptor" />
-                <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1164826688380" />
-                <node concept="OXEIz" id="JeRNd$Tql6" role="8Wnug">
-                  <node concept="1X3_iC" id="1wEcoXjJMXd" role="lGtFl">
-                    <property role="3V$3am" value="cellMenuPart" />
-                    <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164824717996/1164824815888" />
-                    <node concept="3JiINr" id="JeRNd$Tqlb" role="8Wnug">
-                      <property role="2_m5XT" value="ext_4_RTransform" />
-                      <node concept="xBawi" id="1wEcoXjJMXc" role="lGtFl">
-                        <ref role="xBaxx" node="1wEcoXjJMWZ" resolve="InterfaceConceptDeclaration_ApplySideTransforms_2" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="A1WHu" id="1wEcoXjJMXb" role="3vIgyS">
                 <ref role="A1WHt" node="1wEcoXjJMWZ" resolve="InterfaceConceptDeclaration_ApplySideTransforms_2" />
               </node>
@@ -2960,22 +2870,6 @@
               </node>
               <node concept="VPxyj" id="4pmFEms0Fdc" role="3F10Kt">
                 <property role="VOm3f" value="true" />
-              </node>
-              <node concept="1X3_iC" id="1wEcoXjJMWr" role="lGtFl">
-                <property role="3V$3am" value="menuDescriptor" />
-                <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1164826688380" />
-                <node concept="OXEIz" id="4pmFEms0GWv" role="8Wnug">
-                  <node concept="1X3_iC" id="1wEcoXjJMWq" role="lGtFl">
-                    <property role="3V$3am" value="cellMenuPart" />
-                    <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164824717996/1164824815888" />
-                    <node concept="3JiINr" id="4pmFEms0GWA" role="8Wnug">
-                      <property role="2_m5XT" value="ext_2_RTransform" />
-                      <node concept="xBawi" id="1wEcoXjJMWp" role="lGtFl">
-                        <ref role="xBaxx" node="1wEcoXjJMWc" resolve="InterfaceConceptDeclaration_ApplySideTransforms_1" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
               </node>
               <node concept="2SqB2G" id="4pmFEms0L59" role="2SqHTX">
                 <property role="TrG5h" value="emptyChildrenPlaceHolder" />
@@ -3083,22 +2977,6 @@
               </node>
               <node concept="VPxyj" id="4pmFEms0Hn8" role="3F10Kt">
                 <property role="VOm3f" value="true" />
-              </node>
-              <node concept="1X3_iC" id="1wEcoXjJMWb" role="lGtFl">
-                <property role="3V$3am" value="menuDescriptor" />
-                <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1164826688380" />
-                <node concept="OXEIz" id="4pmFEms0Hn9" role="8Wnug">
-                  <node concept="1X3_iC" id="1wEcoXjJMWa" role="lGtFl">
-                    <property role="3V$3am" value="cellMenuPart" />
-                    <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164824717996/1164824815888" />
-                    <node concept="3JiINr" id="4pmFEms0Hna" role="8Wnug">
-                      <property role="2_m5XT" value="ext_3_RTransform" />
-                      <node concept="xBawi" id="1wEcoXjJMW9" role="lGtFl">
-                        <ref role="xBaxx" node="1wEcoXjJMVW" resolve="InterfaceConceptDeclaration_ApplySideTransforms" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
               </node>
               <node concept="2SqB2G" id="4pmFEms0Mvu" role="2SqHTX">
                 <property role="TrG5h" value="emptyRefPlaceHolder" />
