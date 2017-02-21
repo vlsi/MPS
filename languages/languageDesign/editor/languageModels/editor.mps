@@ -82,6 +82,7 @@
         <child id="1176897874615" name="nodeFactory" index="4_6I_" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
+        <child id="928328222691832421" name="separatorTextQuery" index="2gpyvW" />
         <child id="1233141163694" name="separatorStyle" index="sWeuL" />
       </concept>
       <concept id="4510086454722552739" name="jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector" flags="ng" index="eBIwv">
@@ -99,6 +100,7 @@
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
       <concept id="1948540814635886374" name="jetbrains.mps.lang.editor.structure.AbstractCellSelector" flags="ng" index="lGBME" />
       <concept id="3308309804690746362" name="jetbrains.mps.lang.editor.structure.QueryFunction_ColorComposit" flags="ig" index="mot77" />
+      <concept id="709996738298806197" name="jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText" flags="in" index="2o9xnK" />
       <concept id="1237375020029" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" flags="ln" index="pj6Ft" />
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
@@ -14257,18 +14259,34 @@
       <node concept="3F0ifn" id="30NnNOohrRY" role="3EZMnx">
         <property role="3F0ifm" value="{" />
         <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
+        <node concept="Vb9p2" id="38Dit$V7Amq" role="3F10Kt" />
       </node>
       <node concept="PMmxH" id="30NnNOohrR$" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <node concept="Vb9p2" id="38Dit$V7Amo" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="38Dit$VaxRZ" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+        <node concept="Vb9p2" id="38Dit$VaxSa" role="3F10Kt" />
       </node>
       <node concept="3F2HdR" id="30NnNOohrRL" role="3EZMnx">
         <ref role="1NtTu8" to="tpc2:30NnNOohrRf" resolve="placeInCell" />
         <node concept="l2Vlx" id="30NnNOohrRN" role="2czzBx" />
+        <node concept="2o9xnK" id="38Dit$Vbbez" role="2gpyvW">
+          <node concept="3clFbS" id="38Dit$Vbbe$" role="2VODD2">
+            <node concept="3clFbF" id="38Dit$Vbbn1" role="3cqZAp">
+              <node concept="Xl_RD" id="38Dit$Vbbn0" role="3clFbG">
+                <property role="Xl_RC" value="," />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="l2Vlx" id="30NnNOohrRs" role="2iSdaV" />
       <node concept="3F0ifn" id="30NnNOohrSc" role="3EZMnx">
         <property role="3F0ifm" value="}" />
         <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
+        <node concept="Vb9p2" id="38Dit$V7AWt" role="3F10Kt" />
       </node>
     </node>
   </node>
@@ -14279,6 +14297,9 @@
       <node concept="l2Vlx" id="30NnNOolNXf" role="2iSdaV" />
       <node concept="3F0A7n" id="30NnNOoi7hT" role="3EZMnx">
         <ref role="1NtTu8" to="tpc2:30NnNOohrRd" resolve="placeInCell" />
+        <node concept="Vb9p2" id="38Dit$VaxSe" role="3F10Kt">
+          <property role="Vbekb" value="BOLD" />
+        </node>
       </node>
       <node concept="VPM3Z" id="7VlgaXy9k0O" role="3F10Kt">
         <property role="VOm3f" value="false" />

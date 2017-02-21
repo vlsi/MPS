@@ -4710,7 +4710,7 @@
     <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuPart_Group" />
     <property role="34LRSv" value="group" />
-    <property role="R4oN_" value="composite part" />
+    <property role="R4oN_" value="composite part which can specify variables and applicability condition" />
     <property role="EcuMT" value="7429591467341004871" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="PrWs8" id="6CXbUwx7isK" role="PzmwI">
@@ -5119,14 +5119,15 @@
     <property role="3GE5qa" value="Menu.Transformation.Locations" />
     <property role="TrG5h" value="TransformationLocation_SideTransform_PlaceInCell" />
     <property role="PDuV0" value="true" />
+    <property role="3lZH7k" value="derive_from_internal_value" />
     <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
     <node concept="M4N5e" id="30NnNOohrQL" role="M5hS2">
       <property role="1uS6qv" value="RIGHT" />
-      <property role="1uS6qo" value="RIGHT" />
+      <property role="1uS6qo" value="left" />
     </node>
     <node concept="M4N5e" id="1A4kJjlVmVt" role="M5hS2">
       <property role="1uS6qv" value="LEFT" />
-      <property role="1uS6qo" value="LEFT" />
+      <property role="1uS6qo" value="right" />
     </node>
   </node>
   <node concept="1TIwiD" id="1A4kJjlVDm7">
@@ -5234,7 +5235,7 @@
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_Subconcepts" />
     <property role="34LRSv" value="subconcepts menu" />
-    <property role="R4oN_" value="subconcepts menu" />
+    <property role="R4oN_" value="includes default substitute menu of all the direct subconcepts" />
     <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
     <node concept="1TJgyj" id="6xArtG41BPw" role="1TKVEi">
       <property role="IQ2ns" value="7522821015001791840" />
@@ -5352,6 +5353,7 @@
     <property role="TrG5h" value="SubstituteMenuPart_Action" />
     <property role="34LRSv" value="substitute action" />
     <property role="EcuMT" value="7342352913006985483" />
+    <property role="R4oN_" value="customizable action" />
     <ref role="1TJDcQ" node="39Jlgden1IE" resolve="AbstractOutputConceptContainerSubstituteMenuPart" />
     <node concept="1TJgyj" id="7u5_96XhUqi" role="1TKVEi">
       <property role="IQ2ns" value="8612453216082699922" />
@@ -5396,6 +5398,7 @@
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_Parameterized" />
     <property role="34LRSv" value="parameterized" />
+    <property role="R4oN_" value="parameterized menu part" />
     <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
     <node concept="1TJgyj" id="7gIXFjgNa3d" role="1TKVEi">
       <property role="IQ2ns" value="8371900013785948365" />
@@ -5421,7 +5424,7 @@
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_IncludeMenu" />
     <property role="34LRSv" value="include" />
-    <property role="R4oN_" value="include another menu" />
+    <property role="R4oN_" value="include another substitute menu" />
     <property role="EcuMT" value="730181322658904464" />
     <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
     <node concept="1TJgyj" id="Cy80HmHnAj" role="1TKVEi">
@@ -5481,6 +5484,7 @@
     <property role="3GE5qa" value="Menu.Transformation.IncludeSubstitute" />
     <property role="TrG5h" value="TransformationMenuPart_WrapSubstituteMenu" />
     <property role="34LRSv" value="wrap substitute menu" />
+    <property role="R4oN_" value="wraps the specified substitute menu and customizes its behavior" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="1TJgyj" id="1Djcm3ms60d" role="1TKVEi">
       <property role="IQ2ns" value="1896914160037421069" />
@@ -5514,6 +5518,7 @@
     <property role="3GE5qa" value="Menu.Transformation.IncludeSubstitute" />
     <property role="TrG5h" value="TransformationMenuPart_IncludeSubstituteMenu" />
     <property role="34LRSv" value="include substitute menu" />
+    <property role="R4oN_" value="includes specified substitute menu" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="1TJgyj" id="5i0CB70W8ni" role="1TKVEi">
       <property role="IQ2ns" value="6089045305656903122" />
@@ -5585,7 +5590,7 @@
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_Concepts" />
     <property role="34LRSv" value="concepts list" />
-    <property role="R4oN_" value="simple actions for concepts" />
+    <property role="R4oN_" value="collection of simple actions for specified concepts" />
     <ref role="1TJDcQ" node="39Jlgden1IE" resolve="AbstractOutputConceptContainerSubstituteMenuPart" />
     <node concept="1TJgyj" id="2uBUyS1moKc" role="1TKVEi">
       <property role="IQ2ns" value="2857509971901910028" />
@@ -5739,7 +5744,8 @@
     <property role="EcuMT" value="414384289274424754" />
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_AddConcept" />
-    <property role="34LRSv" value="add concept" />
+    <property role="34LRSv" value="simple action" />
+    <property role="R4oN_" value="creates a new instance of the specified concept" />
     <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
     <node concept="1TJgyj" id="AIV2Sdu1tN" role="1TKVEi">
       <property role="IQ2ns" value="697754674827630451" />
@@ -5858,6 +5864,7 @@
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_Wrapper" />
     <property role="34LRSv" value="wrap substitute menu" />
+    <property role="R4oN_" value="wraps another substitute menu and customizes its behavior" />
     <ref role="1TJDcQ" node="39Jlgden1IE" resolve="AbstractOutputConceptContainerSubstituteMenuPart" />
     <node concept="1TJgyj" id="5N5pDMJVmTc" role="1TKVEi">
       <property role="IQ2ns" value="6684862045053873740" />
@@ -5899,6 +5906,7 @@
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_Group" />
     <property role="34LRSv" value="group" />
+    <property role="R4oN_" value="composite part which can specify variables and applicability condition" />
     <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
     <node concept="1TJgyj" id="u0TBa493ex" role="1TKVEi">
       <property role="IQ2ns" value="540685334802084769" />

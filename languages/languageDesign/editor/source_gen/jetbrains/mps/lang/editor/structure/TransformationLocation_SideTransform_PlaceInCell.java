@@ -7,8 +7,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
 
 public enum TransformationLocation_SideTransform_PlaceInCell {
-  RIGHT("RIGHT", "RIGHT"),
-  LEFT("LEFT", "LEFT");
+  RIGHT("left", "RIGHT"),
+  LEFT("right", "LEFT");
 
   private final String myName;
   public String getName() {

@@ -4339,7 +4339,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x35978129ee23fa76L);
     b.origin("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/414384289274424754");
     b.associate("concept", 0x9aeec2e0d781773L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L).optional(false).origin("697754674827630451").done();
-    b.alias("add concept");
+    b.alias("simple action");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSubstituteMenuPart_Concepts() {
