@@ -24,9 +24,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 
 /*package*/ class Conversation_EditorBuilder_a extends AbstractEditorBuilder {
@@ -142,7 +140,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          elementCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(elementCell, getNode(), MetaAdapterFactory.getContainmentLink(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f6fbL, 0x71d6f475fc93f721L, "participants"), elementNode), new DefaultChildSubstituteInfo(getNode(), elementNode, super.getLinkDeclaration(), getEditorContext())));
+          elementCell.setSubstituteInfo(new SChildSubstituteInfo(elementCell, getNode(), MetaAdapterFactory.getContainmentLink(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f6fbL, 0x71d6f475fc93f721L, "participants"), elementNode));
         }
       }
     }
@@ -219,7 +217,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          elementCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(elementCell, getNode(), MetaAdapterFactory.getContainmentLink(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f6fbL, 0x71d6f475fc93f723L, "smallTalk"), elementNode), new DefaultChildSubstituteInfo(getNode(), elementNode, super.getLinkDeclaration(), getEditorContext())));
+          elementCell.setSubstituteInfo(new SChildSubstituteInfo(elementCell, getNode(), MetaAdapterFactory.getContainmentLink(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f6fbL, 0x71d6f475fc93f723L, "smallTalk"), elementNode));
         }
       }
     }
