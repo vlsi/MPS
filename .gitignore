@@ -21,8 +21,6 @@ testclasses
 teamcity-info.xml
 *.hprof
 *.class
-!/testbench/modules/testClassLoading/**/classes_gen
-!/testbench/modules/testClassLoading/**/*.class
 /plugins/debugger-api/lib
 /plugins/debugger-java/lib
 /plugins/mps-java-workbench/lib/

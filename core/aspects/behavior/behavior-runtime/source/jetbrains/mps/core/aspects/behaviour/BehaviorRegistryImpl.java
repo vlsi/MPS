@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.core.aspects.behaviour;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.MethodResolutionOrder;
-import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.language.ConceptInLoadingStorage;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -40,8 +39,8 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
   private static final Logger LOG = LogManager.getLogger(BehaviorRegistryImpl.class);
 
   private final CachingMethodResolutionOrder myMRO = new C3StarMethodResolutionOrder();
-  private final ConceptInLoadingStorage<SAbstractConcept> myStorage = new ConceptInLoadingStorage<SAbstractConcept>();
-  private final Map<SAbstractConcept, BHDescriptor> myBHDescriptors = new ConcurrentHashMap<SAbstractConcept, BHDescriptor>();
+  private final ConceptInLoadingStorage<SAbstractConcept> myStorage = new ConceptInLoadingStorage<>();
+  private final Map<SAbstractConcept, BHDescriptor> myBHDescriptors = new ConcurrentHashMap<>();
   private final LanguageRegistry myLanguageRegistry;
 
   public BehaviorRegistryImpl(LanguageRegistry languageRegistry) {
@@ -68,10 +67,6 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
 
     try {
       try {
-        if (!(concept instanceof SAbstractConceptAdapter)) {
-          throw new IllegalArgumentException();
-        }
-
         LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(concept.getLanguage());
         BehaviorAspectDescriptor behaviorAspect = null;
         if (languageRuntime == null) {

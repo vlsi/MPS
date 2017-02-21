@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,17 +121,6 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   @NotNull
   public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SAbstractConcept concept) {
     return myConstraintsRegistry.getConstraintsDescriptor(concept);
-  }
-
-  /**
-   * Use {@link jetbrains.mps.smodel.language.ConceptRegistryUtil#getConstraintsDescriptor(org.jetbrains.mps.openapi.language.SAbstractConcept)}
-   * if you got SConcept
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  @NotNull
-  public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SConceptId conceptId) {
-    return myConstraintsRegistry.getConstraintsDescriptor(conceptId);
   }
 
   @Deprecated
