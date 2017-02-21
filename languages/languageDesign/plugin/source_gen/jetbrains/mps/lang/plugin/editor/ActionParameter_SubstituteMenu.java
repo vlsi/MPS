@@ -24,12 +24,6 @@ import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration__BehaviorDescriptor;
-import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
-import java.util.Collection;
-import jetbrains.mps.smodel.ConceptDescendantsCache;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -40,7 +34,6 @@ public class ActionParameter_SubstituteMenu extends SubstituteMenuBase {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ActionParameter_SubstituteMenu.SubstituteMenuPart_Parameterized_z80bk2_a(), MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b737a6b7cL, "jetbrains.mps.lang.plugin.structure.ActionParameter")));
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ActionParameter_SubstituteMenu.SubstituteMenuPart_Parameterized_z80bk2_b(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration")));
-    result.add(new ActionParameter_SubstituteMenu.SubstituteMenuPart_Subconcepts_z80bk2_c());
     return result;
   }
   private class SubstituteMenuPart_Parameterized_z80bk2_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
@@ -171,15 +164,6 @@ public class ActionParameter_SubstituteMenu extends SubstituteMenuBase {
       }
     }
 
-  }
-  public class SubstituteMenuPart_Subconcepts_z80bk2_c extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
-    protected Collection getConcepts(final SubstituteMenuContext _context) {
-      return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b737a6b7cL, "jetbrains.mps.lang.plugin.structure.ActionParameter"));
-    }
-    @Override
-    protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
-      return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
-    }
   }
   private static SNode _quotation_createNode_z80bk2_a0a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
