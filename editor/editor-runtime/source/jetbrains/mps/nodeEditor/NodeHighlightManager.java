@@ -152,9 +152,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     final List<SimpleEditorMessage> result = new SortedList<SimpleEditorMessage>(EDITOR_MESSAGES_COMPARATOR);
     Set<SimpleEditorMessage> messageSet = myMessagesToNodes.getBySecond(node);
     for (SimpleEditorMessage message : messageSet) {
-
-      //TODO remove this cast
-      if (((EditorMessage) message).acceptCell(cell, myEditor)) {
+      if (!(message instanceof EditorMessage) || ((EditorMessage) message).acceptCell(cell, myEditor)) {
         result.add(message);
       }
     }
