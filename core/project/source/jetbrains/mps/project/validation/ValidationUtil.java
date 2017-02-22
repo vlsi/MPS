@@ -79,7 +79,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-//todo: all methods should accept Processor as a parameter, not a Consumer
 public class ValidationUtil {
   //this processes all nodes and shows the most "common" problem for each node. E.g. if the language of the node is missing,
   //this won't show "concept missing" error
