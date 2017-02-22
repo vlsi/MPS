@@ -83,5 +83,6 @@
     <orderEntry type="module" module-name="mps-java-platform-base" scope="RUNTIME" />
     <orderEntry type="module" module-name="mps-java-workbench" scope="RUNTIME" />
     <orderEntry type="module" module-name="module" scope="TEST" />
+    <orderEntry type="module" module-name="modelchecker" />
   </component>
 </module>

@@ -54,6 +54,7 @@
     <import index="vqh0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.make(MPS.Core/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
+    <import index="phxh" ref="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1247,7 +1248,7 @@
                             <ref role="3cqZAo" node="2$EeqAz24yW" resolve="checker" />
                           </node>
                           <node concept="liA8E" id="2$EeqAz24zU" role="2OqNvi">
-                            <ref role="37wK5l" to="wsw7:7z7Xs6Zeki" resolve="getErrors" />
+                            <ref role="37wK5l" to="phxh:7z7Xs6Zeki" resolve="getErrors" />
                             <node concept="37vLTw" id="2$EeqAz24zV" role="37wK5m">
                               <ref role="3cqZAo" node="2$EeqAz24zw" resolve="root" />
                             </node>
@@ -1498,7 +1499,7 @@
         <property role="TrG5h" value="checker" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="2$EeqAz24yX" role="1tU5fm">
-          <ref role="3uigEE" to="wsw7:7z7Xs6Zeka" resolve="INodeChecker" />
+          <ref role="3uigEE" to="phxh:7z7Xs6Zeka" resolve="INodeChecker" />
         </node>
       </node>
       <node concept="37vLTG" id="2$EeqAz24yY" role="3clF46">
@@ -2120,7 +2121,7 @@
                           <ref role="37wK5l" node="2$EeqAz24yU" resolve="applyChecker" />
                           <node concept="2ShNRf" id="7X3$Ctw9fo1" role="37wK5m">
                             <node concept="1pGfFk" id="7X3$Ctw9fo2" role="2ShVmc">
-                              <ref role="37wK5l" to="wsw7:4yqv8vrxVuu" resolve="TypesystemChecker" />
+                              <ref role="37wK5l" to="phxh:4yqv8vrxVuu" resolve="TypesystemChecker" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="7X3$Ctw9fkA" role="37wK5m">
@@ -2341,6 +2342,11 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="3SKdUt" id="1EmyK$nAWVK" role="3cqZAp">
+                      <node concept="3SKdUq" id="1EmyK$nAWVM" role="3SKWNk">
+                        <property role="3SKdUp" value="todo: add UsedLanguageChecker" />
+                      </node>
+                    </node>
                     <node concept="3cpWs6" id="2$EeqAz1Xqj" role="3cqZAp">
                       <node concept="2OqwBi" id="2$EeqAz26gR" role="3cqZAk">
                         <node concept="2ShNRf" id="2$EeqAz25v8" role="2Oq$k0">
@@ -2355,7 +2361,22 @@
                           <ref role="37wK5l" node="2$EeqAz24yU" resolve="applyChecker" />
                           <node concept="2ShNRf" id="7X3$Ctw9yJr" role="37wK5m">
                             <node concept="1pGfFk" id="7X3$Ctw9yJs" role="2ShVmc">
-                              <ref role="37wK5l" to="wsw7:2UMCgvoqxz3" resolve="LanguageChecker" />
+                              <ref role="37wK5l" to="phxh:2UMCgvoqxz3" resolve="AbstractConstraintsCheckerINodeCheckerAdapter" />
+                              <node concept="2ShNRf" id="1EmyK$n$2II" role="37wK5m">
+                                <node concept="1pGfFk" id="1EmyK$n$hwF" role="2ShVmc">
+                                  <ref role="37wK5l" to="wsw7:6qi2OtU3uwS" resolve="ConstraintsChecker" />
+                                </node>
+                              </node>
+                              <node concept="2ShNRf" id="1EmyK$n$i3B" role="37wK5m">
+                                <node concept="1pGfFk" id="1EmyK$n$jU5" role="2ShVmc">
+                                  <ref role="37wK5l" to="wsw7:6qi2OtU3tXr" resolve="RefScopeChecker" />
+                                </node>
+                              </node>
+                              <node concept="2ShNRf" id="1EmyK$n$kxS" role="37wK5m">
+                                <node concept="1pGfFk" id="1EmyK$n$mno" role="2ShVmc">
+                                  <ref role="37wK5l" to="wsw7:6qi2OtU3tVc" resolve="TargetConceptChecker" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                           <node concept="37vLTw" id="7X3$Ctw9yJ3" role="37wK5m">
@@ -2608,11 +2629,11 @@
                           <node concept="2ShNRf" id="2RMHhGkSJyj" role="33vP2m">
                             <node concept="1pGfFk" id="2RMHhGkSJyk" role="2ShVmc">
                               <ref role="37wK5l" to="6if8:~MessageCollectProcessor.&lt;init&gt;(boolean)" resolve="MessageCollectProcessor" />
-                              <node concept="3uibUv" id="RN3DCE43S3" role="1pMfVU">
-                                <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
-                              </node>
                               <node concept="3clFbT" id="w2yda4dGr3" role="37wK5m">
                                 <property role="3clFbU" value="false" />
+                              </node>
+                              <node concept="3uibUv" id="RN3DCE43S3" role="1pMfVU">
+                                <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
                               </node>
                             </node>
                           </node>
@@ -2866,11 +2887,11 @@
                           <node concept="2ShNRf" id="2RMHhGkTSMg" role="33vP2m">
                             <node concept="1pGfFk" id="2RMHhGkTSMh" role="2ShVmc">
                               <ref role="37wK5l" to="6if8:~MessageCollectProcessor.&lt;init&gt;(boolean)" resolve="MessageCollectProcessor" />
-                              <node concept="3uibUv" id="RN3DCE3Zhs" role="1pMfVU">
-                                <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
-                              </node>
                               <node concept="3clFbT" id="w2yda4dHEf" role="37wK5m">
                                 <property role="3clFbU" value="false" />
+                              </node>
+                              <node concept="3uibUv" id="RN3DCE3Zhs" role="1pMfVU">
+                                <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
                               </node>
                             </node>
                           </node>
@@ -3158,9 +3179,6 @@
                                 <property role="2bfB8j" value="true" />
                                 <ref role="1Y3XeK" to="6if8:~MessageCollectProcessor" resolve="MessageCollectProcessor" />
                                 <ref role="37wK5l" to="6if8:~MessageCollectProcessor.&lt;init&gt;(boolean)" resolve="MessageCollectProcessor" />
-                                <node concept="3uibUv" id="RN3DCE3p_0" role="2Ghqu4">
-                                  <ref role="3uigEE" to="6if8:~NodeValidationProblem" resolve="NodeValidationProblem" />
-                                </node>
                                 <node concept="3Tm1VV" id="w2yda4dI3$" role="1B3o_S" />
                                 <node concept="3clFbT" id="w2yda4dHiv" role="37wK5m">
                                   <property role="3clFbU" value="false" />
@@ -3224,6 +3242,9 @@
                                   <node concept="2AHcQZ" id="w2yda4dIqk" role="2AJF6D">
                                     <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                                   </node>
+                                </node>
+                                <node concept="3uibUv" id="RN3DCE3p_0" role="2Ghqu4">
+                                  <ref role="3uigEE" to="6if8:~NodeValidationProblem" resolve="NodeValidationProblem" />
                                 </node>
                               </node>
                             </node>

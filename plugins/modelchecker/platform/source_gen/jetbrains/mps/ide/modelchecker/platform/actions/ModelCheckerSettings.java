@@ -15,8 +15,10 @@ import java.util.List;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.checkers.TypesystemChecker;
-import jetbrains.mps.checkers.LanguageChecker;
+import jetbrains.mps.checkers.ConstraintsChecker;
+import jetbrains.mps.checkers.RefScopeChecker;
+import jetbrains.mps.checkers.TargetConceptChecker;
+import jetbrains.mps.checkers.UsedLanguagesChecker;
 
 @State(name = "ModelCheckerSettings", storages = @Storage(value = "modelCheckerSettings.xml")
 )
@@ -57,7 +59,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
       case TYPESYSTEM:
         ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new TypesystemChecker(), "typesystem", mpsProject.getRepository()));
       case CONSTRAINTS:
-        ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new LanguageChecker(), "constraints", mpsProject.getRepository()));
+        ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new AbstractConstraintsCheckerINodeCheckerAdapter(new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker(), new UsedLanguagesChecker()), "constraints", mpsProject.getRepository()));
       case STRUCTURE:
         ListSequence.fromList(checkers).addElement(new StructureChecker());
       default:

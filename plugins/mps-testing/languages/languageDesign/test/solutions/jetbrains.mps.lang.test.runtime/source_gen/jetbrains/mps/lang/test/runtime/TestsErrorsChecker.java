@@ -18,8 +18,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.checkers.TypesystemChecker;
-import jetbrains.mps.checkers.LanguageChecker;
+import jetbrains.mps.ide.modelchecker.platform.actions.TypesystemChecker;
+import jetbrains.mps.ide.modelchecker.platform.actions.AbstractConstraintsCheckerINodeCheckerAdapter;
+import jetbrains.mps.checkers.ConstraintsChecker;
+import jetbrains.mps.checkers.RefScopeChecker;
+import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ValidationProblem;
@@ -109,7 +112,8 @@ public class TestsErrorsChecker {
     }
     final Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
     SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new TypesystemChecker().getErrors(myRoot, null)));
-    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new LanguageChecker().getErrors(myRoot, null)));
+    // todo: add UsedLanguageChecker 
+    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new AbstractConstraintsCheckerINodeCheckerAdapter(new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()).getErrors(myRoot, null)));
     ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new Processor<ValidationProblem>() {
       public boolean process(ValidationProblem vp) {
         if (!((vp instanceof NodeValidationProblem))) {
