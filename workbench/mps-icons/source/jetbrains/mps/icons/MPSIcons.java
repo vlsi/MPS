@@ -59,14 +59,13 @@ public class MPSIcons {
   }
 
   public static class General {
-    @Deprecated /* Will be removed in MPS 2017.2 */
-    public static final Icon Block = IconLoader.getIcon("/general/block.png");
+    @Deprecated /* Will be removed after MPS 2017.1 incl minor versions */ public static final Icon Block = IconLoader.getIcon("/general/block.png");
     public static final Icon Dependencies = IconLoader.getIcon("/general/dependencies.png");
-    public static final Icon ErrorOk = IconLoader.getIcon("/general/errorsOK.png");
+    @Deprecated /* Will be removed after MPS 2017.1 incl minor versions */ public static final Icon ErrorOk = IconLoader.getIcon("/general/errorsOK.png");
     public static final Icon ModelChecker = IconLoader.getIcon("/general/modelChecker.png");
     public static final Icon Runtime = IconLoader.getIcon("/general/runtime.png");
-    public static final Icon WarningsFound = IconLoader.getIcon("/general/warningsFound.png");
-    public static final Icon ErrorsFound = IconLoader.getIcon("/general/errorsFound.png");
+    @Deprecated /* Will be removed after MPS 2017.1 incl minor versions */ public static final Icon WarningsFound = IconLoader.getIcon("/general/warningsFound.png");
+    @Deprecated /* Will be removed after MPS 2017.1 incl minor versions */ public static final Icon ErrorsFound = IconLoader.getIcon("/general/errorsFound.png");
   }
 
   public static class Generator {
@@ -138,7 +137,7 @@ public class MPSIcons {
     public static final Icon ClassHierarchyView = IconLoader.getIcon("/toolWindows/classHierarchyView.png");
     public static final Icon Default = IconLoader.getIcon("/toolWindows/default.png");
     public static final Icon ModelChecker = IconLoader.getIcon("/toolWindows/modelChecker.png");
-    public static final Icon OpenTerminal_13x13 =  IconLoader.getIcon("/toolWindows/OpenTerminal_13x13.png");
+    public static final Icon OpenTerminal_13x13 = IconLoader.getIcon("/toolWindows/OpenTerminal_13x13.png");
     public static final Icon TypeTraceView = IconLoader.getIcon("/toolWindows/typeTraceView.png");
     public static final Icon CellExplorer = IconLoader.getIcon("/toolWindows/cellExplorer.png");
   }

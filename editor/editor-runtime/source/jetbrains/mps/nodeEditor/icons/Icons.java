@@ -16,13 +16,17 @@
 package jetbrains.mps.nodeEditor.icons;
 
 import com.intellij.icons.AllIcons.General;
+import com.intellij.util.IconUtil;
 import jetbrains.mps.icons.MPSIcons;
 
-import javax.swing.*;
+import javax.swing.Icon;
 
 /**
  * @author Kostik
+ * @deprecated use 'General.Inspection*' icons from {@link General} and
+ * {@link IconUtil#colorize(javax.swing.Icon, java.awt.Color)} with {@link General#InspectionsError} icons for warning/error icon
  */
+@Deprecated /* Will be removed after MPS 2017.1 incl minor versions */
 public class Icons {
   //TODO: rewrite jetbrains.mps.nodeEditor.MessagesGutter to get rid off this icons (like in IDEA)
   public static final Icon OK = MPSIcons.General.ErrorOk;
