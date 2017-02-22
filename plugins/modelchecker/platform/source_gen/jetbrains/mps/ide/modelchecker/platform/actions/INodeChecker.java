@@ -6,7 +6,9 @@ import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.util.Processor;
 
 public interface INodeChecker {
   Set<IErrorReporter> getErrors(SNode root, SRepository repository);
+  void processErrors(SNode root, SRepository repository, Processor<IErrorReporter> processor);
 }

@@ -15,6 +15,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class TypesystemChecker implements INodeChecker {
   private DefaultTypecheckingContextOwner myContextOwner = new DefaultTypecheckingContextOwner();
@@ -31,5 +33,13 @@ public class TypesystemChecker implements INodeChecker {
       }
     });
     return errors;
+  }
+  @Override
+  public void processErrors(SNode root, SRepository repository, final Processor<IErrorReporter> processor) {
+    SetSequence.fromSet(getErrors(root, repository)).visitAll(new IVisitor<IErrorReporter>() {
+      public void visit(IErrorReporter it) {
+        processor.process(it);
+      }
+    });
   }
 }

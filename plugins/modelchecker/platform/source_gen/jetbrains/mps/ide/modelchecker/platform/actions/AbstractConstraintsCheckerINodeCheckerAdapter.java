@@ -14,10 +14,12 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.util.Processor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.checkers.LanguageErrorsCollector;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
+import jetbrains.mps.util.Reference;
+import jetbrains.mps.checkers.LanguageErrorsCollector;
 
 public class AbstractConstraintsCheckerINodeCheckerAdapter implements INodeChecker {
   private Set<AbstractConstraintsChecker> myRules;
@@ -34,13 +36,31 @@ public class AbstractConstraintsCheckerINodeCheckerAdapter implements INodeCheck
   }
   @Override
   public Set<IErrorReporter> getErrors(SNode rootNode, SRepository repository) {
+    final Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
+    processErrors(rootNode, repository, new Processor<IErrorReporter>() {
+      public boolean process(IErrorReporter error) {
+        SetSequence.fromSet(result).addElement(error);
+        return true;
+      }
+    });
+    return result;
+  }
+  @Override
+  public void processErrors(SNode rootNode, SRepository repository, final Processor<IErrorReporter> processor) {
     SModel model = SNodeOperations.getModel(rootNode);
     assert model != null;
-    LanguageErrorsCollector errorsCollector = new LanguageErrorsCollector();
 
     DescendantsTreeIterator fullCheckIterator = new DescendantsTreeIterator(rootNode);
 
-    while (fullCheckIterator.hasNext()) {
+    final Reference<Boolean> cancelled = new Reference<Boolean>();
+
+    LanguageErrorsCollector errorsCollector = new LanguageErrorsCollector() {
+      public void addError(IErrorReporter errorReporter) {
+        cancelled.set(cancelled.get() || processor.process(errorReporter));
+      }
+    };
+
+    while (fullCheckIterator.hasNext() && !(cancelled.get())) {
       SNode node = fullCheckIterator.next();
       if (myStopCondition.met(node)) {
         fullCheckIterator.skipChildren();
@@ -50,8 +70,5 @@ public class AbstractConstraintsCheckerINodeCheckerAdapter implements INodeCheck
         checker.checkNode(node, errorsCollector, repository);
       }
     }
-
-    Set<IErrorReporter> result = errorsCollector.getErrors();
-    return result;
   }
 }

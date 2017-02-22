@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.util.Processor;
 
 public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
   private final INodeChecker myChecker;
@@ -45,14 +45,17 @@ public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
     };
   }
 
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor) {
+  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, final ProgressMonitor monitor) {
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     monitor.start(myCategory, 1);
     for (final SNode rootNode : SModelOperations.roots(model, null)) {
-      for (IErrorReporter errorReporter : SetSequence.fromSet(myChecker.getErrors(rootNode, myRepository))) {
-        SpecificChecker.addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), myCategory, getFix(errorReporter));
-      }
+      myChecker.processErrors(rootNode, myRepository, new Processor<IErrorReporter>() {
+        public boolean process(IErrorReporter errorReporter) {
+          SpecificChecker.addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), myCategory, getFix(errorReporter));
+          return !(monitor.isCanceled());
+        }
+      });
     }
     monitor.done();
     return results;
