@@ -30,7 +30,7 @@ public class AbstractConstraintsCheckerINodeCheckerAdapter implements INodeCheck
     assert model != null;
     final LanguageErrorsCollector errorsCollector = new LanguageErrorsCollector();
 
-    ListSequence.fromList(SNodeOperations.getNodeDescendants(rootNode, null, false, new SAbstractConcept[]{MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking")})).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(SNodeOperations.getNodeDescendants(rootNode, null, true, new SAbstractConcept[]{MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking")})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking")));
       }
