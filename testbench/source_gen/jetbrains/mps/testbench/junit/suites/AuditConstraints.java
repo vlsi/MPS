@@ -32,7 +32,7 @@ public class AuditConstraints extends BaseCheckModulesTest {
       public List<String> compute() {
         Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
         // todo: add UsedLanguageChecker 
-        return new CheckingTestsUtil(statistic).applyChecker(new AbstractConstraintsCheckerINodeCheckerAdapter(new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()), models);
+        return new CheckingTestsUtil(statistic).applyChecker(new AbstractConstraintsCheckerINodeCheckerAdapter(AbstractConstraintsCheckerINodeCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()), models);
       }
     });
     ourStats.report("Errors", statistic.getNumErrors());

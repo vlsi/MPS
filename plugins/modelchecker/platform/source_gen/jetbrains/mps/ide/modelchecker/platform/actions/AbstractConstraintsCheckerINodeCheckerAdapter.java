@@ -4,43 +4,52 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import java.util.Set;
 import jetbrains.mps.checkers.AbstractConstraintsChecker;
+import org.jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.InstanceOfCondition;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.IErrorReporter;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.checkers.LanguageErrorsCollector;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.util.DescendantsTreeIterator;
 
 public class AbstractConstraintsCheckerINodeCheckerAdapter implements INodeChecker {
   private Set<AbstractConstraintsChecker> myRules;
-  public AbstractConstraintsCheckerINodeCheckerAdapter(AbstractConstraintsChecker... rules) {
+  private Condition<SNode> myStopCondition;
+
+  public static final Condition<SNode> SKIP_CONSTRAINTS_CONDITION = new InstanceOfCondition(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking"));
+
+  public AbstractConstraintsCheckerINodeCheckerAdapter(@NotNull Condition<SNode> stopCondition, AbstractConstraintsChecker... rules) {
     myRules = SetSequence.fromSetWithValues(new HashSet<AbstractConstraintsChecker>(), Sequence.fromArray(rules));
+    myStopCondition = stopCondition;
+  }
+  public AbstractConstraintsCheckerINodeCheckerAdapter(AbstractConstraintsChecker... rules) {
+    this(Condition.FALSE_CONDITION, rules);
   }
   @Override
-  public Set<IErrorReporter> getErrors(SNode rootNode, final SRepository repository) {
+  public Set<IErrorReporter> getErrors(SNode rootNode, SRepository repository) {
     SModel model = SNodeOperations.getModel(rootNode);
     assert model != null;
-    final LanguageErrorsCollector errorsCollector = new LanguageErrorsCollector();
+    LanguageErrorsCollector errorsCollector = new LanguageErrorsCollector();
 
-    ListSequence.fromList(SNodeOperations.getNodeDescendants(rootNode, null, true, new SAbstractConcept[]{MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking")})).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking")));
+    DescendantsTreeIterator fullCheckIterator = new DescendantsTreeIterator(rootNode);
+
+    while (fullCheckIterator.hasNext()) {
+      SNode node = fullCheckIterator.next();
+      if (myStopCondition.met(node)) {
+        fullCheckIterator.skipChildren();
+        continue;
       }
-    }).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode node) {
-        for (AbstractConstraintsChecker checker : myRules) {
-          checker.checkNode(node, errorsCollector, repository);
-        }
+      for (AbstractConstraintsChecker checker : myRules) {
+        checker.checkNode(node, errorsCollector, repository);
       }
-    });
+    }
 
     Set<IErrorReporter> result = errorsCollector.getErrors();
     return result;

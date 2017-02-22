@@ -113,7 +113,7 @@ public class TestsErrorsChecker {
     final Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
     SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new TypesystemChecker().getErrors(myRoot, null)));
     // todo: add UsedLanguageChecker 
-    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new AbstractConstraintsCheckerINodeCheckerAdapter(new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()).getErrors(myRoot, null)));
+    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new AbstractConstraintsCheckerINodeCheckerAdapter(AbstractConstraintsCheckerINodeCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()).getErrors(myRoot, null)));
     ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new Processor<ValidationProblem>() {
       public boolean process(ValidationProblem vp) {
         if (!((vp instanceof NodeValidationProblem))) {
