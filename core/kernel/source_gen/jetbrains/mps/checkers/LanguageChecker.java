@@ -10,8 +10,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.util.DescendantsTreeIterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class LanguageChecker implements INodeChecker {
   private Set<AbstractConstraintsChecker> myRules = SetSequence.fromSet(new HashSet<AbstractConstraintsChecker>());
@@ -22,26 +25,24 @@ public class LanguageChecker implements INodeChecker {
     SetSequence.fromSet(myRules).addElement(new UsedLanguagesChecker());
   }
   @Override
-  public Set<IErrorReporter> getErrors(SNode rootNode, SRepository repository) {
+  public Set<IErrorReporter> getErrors(SNode rootNode, final SRepository repository) {
     SModel model = SNodeOperations.getModel(rootNode);
     assert model != null;
-    LanguageErrorsComponent errorsComponent = new LanguageErrorsComponent(model);
+    final LanguageErrorsCollector errorsCollector = new LanguageErrorsCollector();
 
-    DescendantsTreeIterator fullCheckIterator = new DescendantsTreeIterator(rootNode);
-
-    while (fullCheckIterator.hasNext()) {
-      SNode node = fullCheckIterator.next();
-      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking"))) {
-        fullCheckIterator.skipChildren();
-        continue;
+    ListSequence.fromList(SNodeOperations.getNodeDescendants(rootNode, null, false, new SAbstractConcept[]{MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking")})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking")));
       }
-      for (AbstractConstraintsChecker checker : myRules) {
-        checker.checkNode(node, errorsComponent, repository);
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode node) {
+        for (AbstractConstraintsChecker checker : myRules) {
+          checker.checkNode(node, errorsCollector, repository);
+        }
       }
-    }
+    });
 
-    Set<IErrorReporter> result = errorsComponent.getErrors();
-    errorsComponent.dispose();
+    Set<IErrorReporter> result = errorsCollector.getErrors();
     return result;
   }
 }
