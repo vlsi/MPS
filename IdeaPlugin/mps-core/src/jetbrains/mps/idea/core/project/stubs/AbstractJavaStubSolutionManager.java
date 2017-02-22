@@ -73,8 +73,15 @@ public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner,
   }
 
   protected Solution addSolution(Library library, SRepositoryExt repository) {
-    return StubSolutionIdea.newInstance(library, this, repository);
+    try {
+      return StubSolutionIdea.newInstance(library, this, repository);
+    } catch (StubModuleNameTakenException e) {
+      handleModuleNameTaken(e);
+      return null;
+    }
   }
+
+  protected abstract void handleModuleNameTaken(StubModuleNameTakenException exception);
 
   protected Solution addSolution(Sdk sdk, SRepositoryExt repository) {
     return StubSolutionIdea.newInstance(sdk, null, this, repository);
