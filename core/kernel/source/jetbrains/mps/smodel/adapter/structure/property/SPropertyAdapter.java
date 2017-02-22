@@ -53,7 +53,7 @@ public abstract class SPropertyAdapter implements SProperty {
 
   @Override
   public boolean isValid() {
-    return getPropertyDescriptor() == null;
+    return getPropertyDescriptor() != null;
   }
 
   @Override
