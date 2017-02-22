@@ -35,10 +35,8 @@ public class LanguageChecker implements INodeChecker {
         fullCheckIterator.skipChildren();
         continue;
       }
-      if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking"), true, false) == null) {
-        for (AbstractConstraintsChecker checker : myRules) {
-          checker.checkNode(node, errorsComponent, repository);
-        }
+      for (AbstractConstraintsChecker checker : myRules) {
+        checker.checkNode(node, errorsComponent, repository);
       }
     }
 
