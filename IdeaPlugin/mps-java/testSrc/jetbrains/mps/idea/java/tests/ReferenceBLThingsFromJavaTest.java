@@ -43,6 +43,8 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
 
     VirtualFile sourceRoot = sourceRoots[0];
     final IFile modelFile = copyResource(sourceRoot.getPath() + "/blModel.mps", "blModel.mps", "/tests/blProject/models/blModel.mps");
+    copyResource(sourceRoot.getPath() + "/src/bl/perRootModel/.model", "perRootModelHeader", "/tests/blProject/src/bl/perRootModel/.model");
+    copyResource(sourceRoot.getPath() + "/src/bl/perRootModel/BLClassRoot.mpsr", "BLClassRoot.mpsr", "/tests/blProject/src/bl/perRootModel/BLClassRoot.mpsr");
 
     DefaultModelRoot root = new DefaultModelRoot();
     root.setContentRoot(modelFile.getParent().getPath());
@@ -51,6 +53,7 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
 
     javafile = copyResource(sourceRoot.getPath() + "/bl/test/Claz.java", "Claz.java", "/tests/blProject/src/bl/test/Claz.java");
     copyResource(getTestDataPath() + "/Claz.after.java", "Claz.after.java", "/tests/blProject/src/bl/test/Claz.after.java");
+    copyResource(getTestDataPath() + "/ClazWithPerRootImport.after.java", "ClazWithPerRootImport.after.java", "/tests/blProject/src/bl/test/ClazWithPerRootImport.after.java");
   }
 
   @Override
@@ -58,12 +61,12 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
     return true;
   }
 
-  public void testAddBLClassImport() {
+  private void addBLClassImport(String expectedJavaFile, String classNameToType) {
     myFixture.openFileInEditor(VirtualFileUtils.getVirtualFile(javafile));
     int index = new StringBuilder(myFixture.getEditor().getDocument().getCharsSequence()).indexOf("// here");
 
     myFixture.getEditor().getCaretModel().moveToOffset(index + "// here".length());
-    myFixture.type("\nBLClass");
+    myFixture.type("\n" + classNameToType);
 
     ImportClassFix fix = null;
     for (IntentionAction intent : myFixture.getAvailableIntentions()) {
@@ -74,6 +77,14 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
     }
     assertTrue(fix != null);
     fix.invoke(myFixture.getProject(), myFixture.getEditor(), myFixture.getFile());
-    myFixture.checkResultByFile("Claz.after.java");
+    myFixture.checkResultByFile(expectedJavaFile);
+  }
+
+  public void testAddBLClassImportFromDefaultModel() {
+    addBLClassImport("Claz.after.java", "BLClass");
+  }
+
+  public void testAddBLClassImportFormPerRootModel() {
+    addBLClassImport("ClazWithPerRootImport.after.java", "BLClassRoot");
   }
 }
