@@ -19,7 +19,7 @@ import com.intellij.openapi.application.ApplicationInfo;
 
 public class ShowTutorialAction extends ShowSiteAction {
 
-  private final String myMajorMinorVersion = ApplicationInfo.getInstance().getMajorVersion() + ApplicationInfo.getInstance().getMajorVersion();
+  private final String myMajorMinorVersion = ApplicationInfo.getInstance().getMajorVersion() + ApplicationInfo.getInstance().getMinorVersion().substring(0,1);
 
   public ShowTutorialAction() {
     super("Tutorial");

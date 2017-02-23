@@ -21,7 +21,7 @@ CONTENTS
 	mps.sh              sh-file for starting JetBrains MPS on Unix (may not be present for some distributions)
 	readme.txt          this file
 	releaseNotes.txt    JetBrains MPS $version$ release notes
-	samples.zip         sample projects (see at http://confluence.jetbrains.com/display/MPSD32/Fast+Track+to+MPS)
+	samples.zip         sample projects (see at http://confluence.jetbrains.com/display/MPSD34/Fast+Track+to+MPS)
 
 SYSTEM REQUIREMENTS
     To run JetBrains MPS you need JDK 8.0.

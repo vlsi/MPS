@@ -87,7 +87,8 @@ public enum LanguageAspect {
   //mostly migrated
   MIGRATION("migration", BootstrapLanguages.migrationLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Migrations");
 
-  public static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD32/";
+  //TODO must be changes for each major/minor version release
+  public static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD34/";
 
   private String myName;
   private final SModuleReference myMainLang;

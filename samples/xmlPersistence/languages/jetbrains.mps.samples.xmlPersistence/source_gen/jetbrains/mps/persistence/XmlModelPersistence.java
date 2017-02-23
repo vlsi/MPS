@@ -45,7 +45,6 @@ import java.io.BufferedOutputStream;
 
 /**
  * A sample custom persistence implementation.
- * Read http://confluence.jetbrains.com/display/MPSD32/Custom+Persistence+Cookbook for details on custom persistence.
  */
 public class XmlModelPersistence implements ModelFactory, SModelPersistence {
   private static final String XML_EXTENSION = "xml";
