@@ -26,7 +26,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.scope.ListScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class Participant_Constraints extends BaseConstraintsDescriptor {
@@ -79,11 +78,7 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
                 }
               });
 
-              return new ListScope(candidates) {
-                public String getName(SNode child) {
-                  return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c8dL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-                }
-              };
+              return ListScope.forNamedElements(candidates);
             }
           }
         };

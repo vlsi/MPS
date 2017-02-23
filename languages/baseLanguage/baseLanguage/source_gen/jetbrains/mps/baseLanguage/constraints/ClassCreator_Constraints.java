@@ -79,11 +79,7 @@ public class ClassCreator_Constraints extends BaseConstraintsDescriptor {
               }
 
               final Iterable<SNode> memberConstructors = ClassCreator__BehaviorDescriptor.retrieveInstantiationPoints_id5qAZxlfY81X.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator")), SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), _context.getContextNode());
-              return new ListScope(memberConstructors) {
-                public String getName(SNode child) {
-                  return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-                }
-              };
+              return ListScope.forNamedElements(memberConstructors);
 
             }
           }
