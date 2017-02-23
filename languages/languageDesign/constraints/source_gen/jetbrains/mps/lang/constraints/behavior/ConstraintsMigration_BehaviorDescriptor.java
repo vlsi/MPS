@@ -9,7 +9,7 @@ package jetbrains.mps.lang.constraints.behavior;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class ParameterMigration_BehaviorDescriptor {
+public class ConstraintsMigration_BehaviorDescriptor {
   public String getConceptFqName() {
     return null;
   }

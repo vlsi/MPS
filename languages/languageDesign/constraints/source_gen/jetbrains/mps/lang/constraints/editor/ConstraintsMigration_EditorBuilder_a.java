@@ -17,11 +17,11 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 
-/*package*/ class ParameterMigration_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class ConstraintsMigration_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public ParameterMigration_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public ConstraintsMigration_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -33,26 +33,28 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_mab143_a();
+    return createCollection_6w8mne_a();
   }
 
-  private EditorCell createCollection_mab143_a() {
+  private EditorCell createCollection_6w8mne_a() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_mab143_a");
+    editorCell.setCellId("Collection_6w8mne_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createComponent_mab143_a0());
-    editorCell.addEditorCell(createAttributedNodeCell_mab143_b0());
+    editorCell.addEditorCell(createComponent_6w8mne_a0());
+    editorCell.addEditorCell(createAttributedNodeCell_6w8mne_b0());
     return editorCell;
   }
-  private EditorCell createComponent_mab143_a0() {
+  private EditorCell createComponent_6w8mne_a0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
+    ConstraintsMigration_Actions.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }
-  private EditorCell createAttributedNodeCell_mab143_b0() {
+  private EditorCell createAttributedNodeCell_6w8mne_b0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;

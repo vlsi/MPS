@@ -875,8 +875,8 @@
   <node concept="1TIwiD" id="1GENxguHGdr">
     <property role="EcuMT" value="1957603573855863643" />
     <property role="3GE5qa" value="Migrations" />
-    <property role="TrG5h" value="ParameterMigration" />
-    <property role="R4oN_" value="Constraint Function Parameter should be migrated manually" />
+    <property role="TrG5h" value="ConstraintsMigration" />
+    <property role="R4oN_" value="expression can be simplified or uses deprecated instances" />
     <property role="34LRSv" value="migrate manually" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="M6xJ_" id="1GENxguHGdL" role="lGtFl">

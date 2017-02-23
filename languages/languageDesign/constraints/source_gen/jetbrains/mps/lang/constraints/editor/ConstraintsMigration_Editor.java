@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ParameterMigration_Editor extends DefaultNodeEditor {
+public class ConstraintsMigration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new ParameterMigration_EditorBuilder_a(editorContext, node).createCell();
+    return new ConstraintsMigration_EditorBuilder_a(editorContext, node).createCell();
   }
 }

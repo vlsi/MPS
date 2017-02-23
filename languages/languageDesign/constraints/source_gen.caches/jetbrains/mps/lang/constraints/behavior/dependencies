@@ -1261,6 +1261,14 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintsMigration_BehaviorDescriptor" file="ConstraintsMigration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.EnclosingNodeMigratedHint_BehaviorDescriptor" file="EnclosingNodeMigratedHint_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.InheritedNodeScopeFactory_BehaviorDescriptor" file="InheritedNodeScopeFactory_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
@@ -1351,10 +1359,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.NodeScopeFactory_BehaviorDescriptor" file="NodeScopeFactory_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.behavior.ParameterMigration_BehaviorDescriptor" file="ParameterMigration_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

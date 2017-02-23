@@ -78,7 +78,8 @@ public final class ConstraintsMigrationUtil {
           continue;
         }
       }
-      SNodeOperations.replaceWithAnother(param, _quotation_createNode_3gs37h_a0a4a2a5(newParam, newParam));
+      // TODO should be simplified to <%(newParam)%.asNode> as soon as smodel lang supports links 
+      SNodeOperations.replaceWithAnother(param, _quotation_createNode_3gs37h_a0a5a2a5(newParam, newParam));
       migrateManually = true;
     }
     return migrateManually;
@@ -86,9 +87,9 @@ public final class ConstraintsMigrationUtil {
 
 
   public static void findProblems(SNode context, List<Problem> collector) {
-    ListSequence.fromList(collector).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(context, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1b2ace141eb6c35bL, "jetbrains.mps.lang.constraints.structure.ParameterMigration"), false, new SAbstractConcept[]{})).select(new ISelector<SNode, ParamaterMigrationProblem>() {
-      public ParamaterMigrationProblem select(SNode it) {
-        return new ParamaterMigrationProblem(SNodeOperations.getParent(it));
+    ListSequence.fromList(collector).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(context, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1b2ace141eb6c35bL, "jetbrains.mps.lang.constraints.structure.ConstraintsMigration"), false, new SAbstractConcept[]{})).select(new ISelector<SNode, ConstraintsMigrationProblem>() {
+      public ConstraintsMigrationProblem select(SNode it) {
+        return new ConstraintsMigrationProblem(SNodeOperations.getParent(it));
       }
     }));
   }
@@ -105,11 +106,11 @@ public final class ConstraintsMigrationUtil {
     if (quotedNode_4 != null) {
       quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), HUtil.copyIfNecessary(quotedNode_4));
     }
-    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1b2ace141eb6c35bL, "jetbrains.mps.lang.constraints.structure.ParameterMigration"), null, null, false);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1b2ace141eb6c35bL, "jetbrains.mps.lang.constraints.structure.ConstraintsMigration"), null, null, false);
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), quotedNode_5);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_3gs37h_a0a4a2a5(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_3gs37h_a0a5a2a5(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -150,7 +151,7 @@ public final class ConstraintsMigrationUtil {
     quotedNode_10.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), quotedNode_12);
     quotedNode_6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), quotedNode_10);
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012cedcL, "ifFalse"), quotedNode_6);
-    quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1b2ace141eb6c35bL, "jetbrains.mps.lang.constraints.structure.ParameterMigration"), null, null, false);
+    quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1b2ace141eb6c35bL, "jetbrains.mps.lang.constraints.structure.ConstraintsMigration"), null, null, false);
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), quotedNode_7);
     return quotedNode_3;
   }

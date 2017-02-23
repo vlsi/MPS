@@ -56,13 +56,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConstraintFunction_ReferentSetHandler = new ConceptPresentationBuilder().shortDesc("executed on every link assignment").create();
   private final ConceptPresentation props_ConstraintsFunctionParameter_node = new ConceptPresentationBuilder().shortDesc("the node in question").create();
   private final ConceptPresentation props_ConstraintsFunctionParameter_propertyValue = new ConceptPresentationBuilder().shortDesc("new value of the node").create();
+  private final ConceptPresentation props_ConstraintsMigration = new ConceptPresentationBuilder().shortDesc("expression can be simplified or uses deprecated instances").create();
   private final ConceptPresentation props_EnclosingNodeMigratedHint = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InheritedNodeScopeFactory = new ConceptPresentationBuilder().shortDesc("scope provided by parent elements").create();
   private final ConceptPresentation props_NodeDefaultSearchScope = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodePropertyConstraint = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeReferentConstraint = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeScopeFactory = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ParameterMigration = new ConceptPresentationBuilder().shortDesc("Constraint Function Parameter should be migrated manually").create();
 
   @Override
   @Nullable
@@ -161,6 +161,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConstraintsFunctionParameter_node;
       case LanguageConceptSwitch.ConstraintsFunctionParameter_propertyValue:
         return props_ConstraintsFunctionParameter_propertyValue;
+      case LanguageConceptSwitch.ConstraintsMigration:
+        return props_ConstraintsMigration;
       case LanguageConceptSwitch.EnclosingNodeMigratedHint:
         return props_EnclosingNodeMigratedHint;
       case LanguageConceptSwitch.InheritedNodeScopeFactory:
@@ -173,8 +175,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NodeReferentConstraint;
       case LanguageConceptSwitch.NodeScopeFactory:
         return props_NodeScopeFactory;
-      case LanguageConceptSwitch.ParameterMigration:
-        return props_ParameterMigration;
     }
     return null;
   }
