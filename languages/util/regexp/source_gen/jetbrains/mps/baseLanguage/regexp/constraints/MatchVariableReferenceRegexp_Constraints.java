@@ -12,10 +12,12 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -23,7 +25,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDescriptor {
@@ -42,7 +44,7 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
           public boolean hasPresentation() {
             return true;
@@ -52,26 +54,28 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
             return (_context.getSmartReference() ? "\\" + SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
           }
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> matches = new ArrayList<SNode>();
-            SNode top = _context.getEnclosingNode();
-            while (SNodeOperations.getParent(top) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(top), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"))) {
-              top = SNodeOperations.getParent(top);
-            }
-            ListSequence.fromList(matches).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(top, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), true, new SAbstractConcept[]{})));
-            if (SNodeOperations.isInstanceOf(top, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"))) {
-              ListSequence.fromList(matches).addElement(SNodeOperations.cast(top, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")));
-            }
-            return matches;
+          public SNodeReference getSearchScopeValidatorNode() {
+            return breakingNode_15u81x_a0a2a0a0a1a0b0a1a2;
           }
           @Override
-          public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_15u81x_a0a3a0a0a1a0b0a1a2;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              List<SNode> matches = new ArrayList<SNode>();
+              SNode top = (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode())));
+              while (SNodeOperations.getParent(top) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(top), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"))) {
+                top = SNodeOperations.getParent(top);
+              }
+              ListSequence.fromList(matches).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(top, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), true, new SAbstractConcept[]{})));
+              if (SNodeOperations.isInstanceOf(top, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"))) {
+                ListSequence.fromList(matches).addElement(SNodeOperations.cast(top, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")));
+              }
+              return ListScope.forResolvableElements(matches);
+            }
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_15u81x_a0a3a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "1213104860360");
+  private static SNodePointer breakingNode_15u81x_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "6836281137582820376");
 }

@@ -68,6 +68,6 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
     }
     return true;
   }
-  private static SNodePointer breakingNode_y7fug_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137248");
+  private static SNodePointer breakingNode_y7fug_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582644036");
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1227128029536558712");
 }

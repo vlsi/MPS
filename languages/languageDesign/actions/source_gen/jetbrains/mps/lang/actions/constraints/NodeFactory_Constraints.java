@@ -17,13 +17,16 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.ModelNodesSearchScope;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
@@ -58,22 +61,24 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
-          @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            // concepts from this language 
-            Language language = Language.getLanguageForLanguageAspect(_context.getModel());
-            SModel structureModel = language.getStructureModelDescriptor();
-            return new ModelNodesSearchScope(structureModel);
-          }
+        return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_i503fz_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_i503fz_a0a0a0a0a1a0b0a1a3;
+          }
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              // concepts from this language 
+              Language language = Language.getLanguageForLanguageAspect(SNodeOperations.getModel(_context.getContextNode()));
+              SModel structureModel = language.getStructureModelDescriptor();
+              return new ISearchScope.Adapter(new ModelNodesSearchScope(structureModel));
+            }
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_i503fz_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1213104859361");
+  private static SNodePointer breakingNode_i503fz_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "6836281137582779028");
 }

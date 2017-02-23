@@ -92,6 +92,6 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
     });
     return references;
   }
-  private static SNodePointer breakingNode_amrbnf_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137439");
-  private static SNodePointer breakingNode_amrbnf_a0a2a0a0a1a0b0a2a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137459");
+  private static SNodePointer breakingNode_amrbnf_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582644007");
+  private static SNodePointer breakingNode_amrbnf_a0a2a0a0a1a0b0a2a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582644031");
 }

@@ -17,6 +17,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ActionDataParameterDeclaration_Constraints extends BaseConstraintsDescriptor {
@@ -42,12 +43,12 @@ public class ActionDataParameterDeclaration_Constraints extends BaseConstraintsD
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new DataParameterKeysScope(_context.getModel());
+            return new DataParameterKeysScope(SNodeOperations.getModel(_context.getContextNode()));
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_lb7xg4_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "8759351810054244206");
+  private static SNodePointer breakingNode_lb7xg4_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "6836281137582796501");
 }

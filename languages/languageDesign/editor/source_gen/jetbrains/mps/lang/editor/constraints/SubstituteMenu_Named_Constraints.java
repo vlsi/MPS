@@ -30,9 +30,9 @@ public class SubstituteMenu_Named_Constraints extends BaseConstraintsDescriptor 
       }
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return MenuScopes.getNamedMenus(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Named"));
+        return MenuScopes.getNamedMenus(_context.getContextNode(), _context.getContainmentLink().getName(), _context.getPosition(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Named"));
       }
     };
   }
-  private static SNodePointer breakingNode_84th6d_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1630016958698441545");
+  private static SNodePointer breakingNode_84th6d_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "6836281137582784980");
 }

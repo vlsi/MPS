@@ -52,5 +52,5 @@ public class ChildNodeRefExpression_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-  private static SNodePointer breakingNode_uq3qb6_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "7292653286930790166");
+  private static SNodePointer breakingNode_uq3qb6_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "6836281137582799426");
 }

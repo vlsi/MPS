@@ -5,7 +5,9 @@ package jetbrains.mps.lang.textGen.constraints;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
@@ -14,7 +16,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class UtilityMethodDeclaration_Constraints extends BaseConstraintsDescriptor {
@@ -28,27 +30,29 @@ public class UtilityMethodDeclaration_Constraints extends BaseConstraintsDescrip
   }
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
-    return new BaseReferenceScopeProvider() {
-      @Override
-      public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        List<SNode> methods = new ArrayList<SNode>();
-        SNode textGen = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"), false, false);
-        if (textGen != null) {
-          while (true) {
-            ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getChildren(textGen, MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f6f8860bdL, "function"))));
-            if ((SLinkOperations.getTarget(textGen, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")) == null)) {
-              break;
-            }
-            textGen = SLinkOperations.getTarget(textGen, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen"));
-          }
-        }
-        return methods;
-      }
+    return new BaseScopeProvider() {
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_o7w1nm_a0a1a0a0a3;
+        return breakingNode_o7w1nm_a0a0a0a0a3;
+      }
+      @Override
+      public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+        {
+          List<SNode> methods = new ArrayList<SNode>();
+          SNode textGen = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"), false, false);
+          if (textGen != null) {
+            while (true) {
+              ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getChildren(textGen, MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f6f8860bdL, "function"))));
+              if ((SLinkOperations.getTarget(textGen, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")) == null)) {
+                break;
+              }
+              textGen = SLinkOperations.getTarget(textGen, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen"));
+            }
+          }
+          return ListScope.forResolvableElements(methods);
+        }
       }
     };
   }
-  private static SNodePointer breakingNode_o7w1nm_a0a1a0a0a3 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1237206482577");
+  private static SNodePointer breakingNode_o7w1nm_a0a0a0a0a3 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "6836281137582805636");
 }

@@ -35,5 +35,5 @@ public class Annotation_Constraints extends BaseConstraintsDescriptor {
       }
     };
   }
-  private static SNodePointer breakingNode_9e1z83_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948133146");
+  private static SNodePointer breakingNode_9e1z83_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582643663");
 }

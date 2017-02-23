@@ -5,10 +5,13 @@ package jetbrains.mps.lang.editor.constraints;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -23,8 +26,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class IStyle_Constraints extends BaseConstraintsDescriptor {
@@ -38,39 +41,41 @@ public class IStyle_Constraints extends BaseConstraintsDescriptor {
   }
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
-    return new BaseReferenceScopeProvider() {
-      @Override
-      public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        AbstractModule contextModule = (AbstractModule) _context.getModel().getModule();
-
-        Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
-        for (SModule module : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE))) {
-          if (module instanceof Language) {
-            SetSequence.fromSet(contextLanguages).addElement((Language) module);
-          }
-        }
-
-        Iterable<SNode> styles = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, SModel>() {
-          public SModel select(Language it) {
-            return SModuleOperations.getAspect(it, "editor");
-          }
-        }).where(new IWhereFilter<SModel>() {
-          public boolean accept(SModel it) {
-            return it != null;
-          }
-        }).translate(new ITranslator2<SModel, SNode>() {
-          public Iterable<SNode> translate(SModel it) {
-            return SModelOperations.nodes(((SModel) it), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1f5847b8L, "jetbrains.mps.lang.editor.structure.IStyle"));
-          }
-        });
-
-        return Sequence.fromIterable(styles).toListSequence();
-      }
+    return new BaseScopeProvider() {
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_56bmov_a0a1a0a0a3;
+        return breakingNode_56bmov_a0a0a0a0a3;
+      }
+      @Override
+      public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+        {
+          AbstractModule contextModule = (AbstractModule) SNodeOperations.getModel(_context.getContextNode()).getModule();
+
+          Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
+          for (SModule module : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE))) {
+            if (module instanceof Language) {
+              SetSequence.fromSet(contextLanguages).addElement((Language) module);
+            }
+          }
+
+          Iterable<SNode> styles = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, SModel>() {
+            public SModel select(Language it) {
+              return SModuleOperations.getAspect(it, "editor");
+            }
+          }).where(new IWhereFilter<SModel>() {
+            public boolean accept(SModel it) {
+              return it != null;
+            }
+          }).translate(new ITranslator2<SModel, SNode>() {
+            public Iterable<SNode> translate(SModel it) {
+              return SModelOperations.nodes(((SModel) it), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1f5847b8L, "jetbrains.mps.lang.editor.structure.IStyle"));
+            }
+          });
+
+          return ListScope.forResolvableElements(Sequence.fromIterable(styles).toListSequence());
+        }
       }
     };
   }
-  private static SNodePointer breakingNode_56bmov_a0a1a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1873972548978322667");
+  private static SNodePointer breakingNode_56bmov_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "6836281137582783666");
 }

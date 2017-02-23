@@ -114,6 +114,6 @@ public class QualifiedSuperMethodCall_Constraints extends BaseConstraintsDescrip
     });
     return references;
   }
-  private static SNodePointer breakingNode_4xi9kq_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "4032730095450369144");
-  private static SNodePointer breakingNode_4xi9kq_a0a0a0a0a1a0b0a2a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "4032730095448234212");
+  private static SNodePointer breakingNode_4xi9kq_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582643115");
+  private static SNodePointer breakingNode_4xi9kq_a0a0a0a0a1a0b0a2a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582643164");
 }

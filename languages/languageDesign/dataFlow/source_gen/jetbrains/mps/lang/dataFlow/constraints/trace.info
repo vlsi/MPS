@@ -88,47 +88,49 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)/1213104855807">
     <file name="LabelPosition_Constraints.java">
-      <node id="1213104855807" at="28,38,29,154" concept="11" />
-      <node id="1213104855807" at="33,90,34,131" concept="6" />
-      <node id="1213104855807" at="37,44,38,20" concept="7" />
-      <node id="1213104855811" at="45,142,46,56" concept="6" />
-      <node id="1213104855817" at="46,56,47,259" concept="6" />
-      <node id="1213104855825" at="47,259,48,303" concept="2" />
-      <node id="1213104855834" at="48,303,49,26" concept="7" />
-      <node id="1213104855807" at="52,63,53,58" concept="7" />
-      <node id="1213104855807" at="57,7,58,22" concept="7" />
-      <node id="1213104855807" at="60,0,61,0" concept="9" trace="breakingNode_t9qyyi_a0a1a0a0a1a0b0a1a2" />
-      <node id="1213104855807" at="28,0,31,0" concept="1" trace="LabelPosition_Constraints#()V" />
-      <node id="1213104855807" at="36,0,40,0" concept="5" trace="hasOwnScopeProvider#()Z" />
-      <node id="1213104855807" at="51,0,55,0" concept="5" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="1213104855807" at="44,0,51,0" concept="5" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-      <node id="1213104855807" at="42,56,55,10" concept="7" />
-      <node id="1213104855807" at="40,0,57,0" concept="5" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="1213104855807" at="34,131,57,7" concept="2" />
-      <node id="1213104855807" at="32,0,60,0" concept="5" trace="getSpecifiedReferences#()Ljava/util/Map;" />
-      <scope id="1213104855807" at="28,38,29,154" />
-      <scope id="1213104855807" at="37,44,38,20" />
-      <scope id="1213104855807" at="52,63,53,58" />
-      <scope id="1213104855807" at="28,0,31,0" />
-      <scope id="1213104855807" at="36,0,40,0" />
-      <scope id="1213104855810" at="45,142,49,26">
-        <var name="builder" id="1213104855818" />
-        <var name="labels" id="1213104855812" />
+      <node id="1213104855807" at="30,38,31,154" concept="11" />
+      <node id="1213104855807" at="35,90,36,131" concept="6" />
+      <node id="1213104855807" at="39,44,40,20" concept="7" />
+      <node id="1213104855807" at="47,63,48,58" concept="7" />
+      <node id="6836281137582782172" at="52,13,53,58" concept="6" />
+      <node id="6836281137582782178" at="53,58,54,259" concept="6" />
+      <node id="6836281137582782187" at="54,259,55,305" concept="2" />
+      <node id="6836281137582782197" at="55,305,56,61" concept="7" />
+      <node id="1213104855807" at="61,7,62,22" concept="7" />
+      <node id="1213104855807" at="64,0,65,0" concept="9" trace="breakingNode_t9qyyi_a0a0a0a0a1a0b0a1a2" />
+      <node id="1213104855807" at="30,0,33,0" concept="1" trace="LabelPosition_Constraints#()V" />
+      <node id="1213104855807" at="38,0,42,0" concept="5" trace="hasOwnScopeProvider#()Z" />
+      <node id="1213104855807" at="46,0,50,0" concept="5" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="1213104855807" at="51,122,57,13" concept="0" />
+      <node id="1213104855807" at="50,0,59,0" concept="5" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="1213104855807" at="44,56,59,10" concept="7" />
+      <node id="1213104855807" at="42,0,61,0" concept="5" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="1213104855807" at="36,131,61,7" concept="2" />
+      <node id="1213104855807" at="34,0,64,0" concept="5" trace="getSpecifiedReferences#()Ljava/util/Map;" />
+      <scope id="1213104855807" at="30,38,31,154" />
+      <scope id="1213104855807" at="39,44,40,20" />
+      <scope id="1213104855807" at="47,63,48,58" />
+      <scope id="1213104855807" at="30,0,33,0" />
+      <scope id="1213104855807" at="38,0,42,0" />
+      <scope id="1213104855807" at="46,0,50,0" />
+      <scope id="6836281137582782171" at="52,13,56,61">
+        <var name="builder" id="6836281137582782179" />
+        <var name="labels" id="6836281137582782173" />
       </scope>
-      <scope id="1213104855807" at="51,0,55,0" />
-      <scope id="1213104855807" at="44,0,51,0">
+      <scope id="1213104855807" at="51,122,57,13" />
+      <scope id="1213104855807" at="50,0,59,0">
         <var name="_context" id="1213104855807" />
         <var name="operationContext" id="1213104855807" />
       </scope>
-      <scope id="1213104855807" at="42,56,55,10" />
-      <scope id="1213104855807" at="40,0,57,0" />
-      <scope id="1213104855807" at="33,90,58,22">
+      <scope id="1213104855807" at="44,56,59,10" />
+      <scope id="1213104855807" at="42,0,61,0" />
+      <scope id="1213104855807" at="35,90,62,22">
         <var name="references" id="1213104855807" />
       </scope>
-      <scope id="1213104855807" at="32,0,60,0" />
-      <unit id="1213104855807" at="43,19,55,9" name="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$1$1" />
-      <unit id="1213104855807" at="35,143,57,5" name="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$1" />
-      <unit id="1213104855807" at="27,0,62,0" name="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints" />
+      <scope id="1213104855807" at="34,0,64,0" />
+      <unit id="1213104855807" at="45,19,59,9" name="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$1$1" />
+      <unit id="1213104855807" at="37,143,61,5" name="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$1" />
+      <unit id="1213104855807" at="29,0,66,0" name="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)/1213107437881">

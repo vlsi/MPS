@@ -28,12 +28,12 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.EmptyScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.structure.constraints.Scopes;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
@@ -103,11 +103,11 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              if (!(SModuleOperations.isAspect(_context.getModel(), "constraints"))) {
+              if (!(SModuleOperations.isAspect(SNodeOperations.getModel(_context.getContextNode()), "constraints"))) {
                 return new EmptyScope();
               }
 
-              SModel structure = check_guz8cy_a0c0a0b0a0a0b0a1a0b0e(Language.getLanguageForLanguageAspect(_context.getModel()));
+              SModel structure = check_guz8cy_a0c0a0b0a0a0b0a1a0b0e(Language.getLanguageForLanguageAspect(SNodeOperations.getModel(_context.getContextNode())));
               if (structure == null) {
                 return new EmptyScope();
               }
@@ -159,6 +159,6 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
     return null;
   }
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "1227089025593");
-  private static SNodePointer breakingNode_guz8cy_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "7966406217186699970");
-  private static SNodePointer breakingNode_guz8cy_a0a0a0a0a1a0b0a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "1866752856968772402");
+  private static SNodePointer breakingNode_guz8cy_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "6836281137582781546");
+  private static SNodePointer breakingNode_guz8cy_a0a0a0a0a1a0b0a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "6836281137582781587");
 }

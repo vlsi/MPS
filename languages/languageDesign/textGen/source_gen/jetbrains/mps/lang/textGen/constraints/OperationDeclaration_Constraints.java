@@ -5,16 +5,19 @@ package jetbrains.mps.lang.textGen.constraints;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.ListScope;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -35,19 +38,21 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
   }
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
-    return new BaseReferenceScopeProvider() {
-      @Override
-      public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        List<SNode> result = new ArrayList<SNode>();
-        List<SNode> tgList = SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"));
-        for (SNode tg : tgList) {
-          ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(tg, MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f4b821fc5L, "operation"))));
-        }
-        return result;
-      }
+    return new BaseScopeProvider() {
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_617hs5_a0a1a0a0a3;
+        return breakingNode_617hs5_a0a0a0a0a3;
+      }
+      @Override
+      public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+        {
+          List<SNode> result = new ArrayList<SNode>();
+          List<SNode> tgList = SModelOperations.rootsIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"));
+          for (SNode tg : tgList) {
+            ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(tg, MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f4b821fc5L, "operation"))));
+          }
+          return ListScope.forResolvableElements(result);
+        }
       }
     };
   }
@@ -82,5 +87,5 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
     });
     return properties;
   }
-  private static SNodePointer breakingNode_617hs5_a0a1a0a0a3 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1236703304349");
+  private static SNodePointer breakingNode_617hs5_a0a0a0a0a3 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "6836281137582805508");
 }
