@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -23,13 +24,11 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
-import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.List;
 
@@ -73,19 +72,10 @@ public class APICellAdapter {
       return false;
     }
 
-    List<SubstituteAction> matchingActions = ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
-      @Override
-      public List<SubstituteAction> compute() {
-        return TypeContextManager.getInstance().runTypeCheckingComputation((ITypeContextOwner) cell.getEditorComponent(),
-            cell.getEditorComponent().getEditedNode(),
-            new Computation<List<SubstituteAction>>() {
-              @Override
-              public List<SubstituteAction> compute(TypeCheckingContext context) {
-                return substituteInfo.getMatchingActions(pattern, strict);
-              }
-            });
-      }
-    });
+    List<SubstituteAction> matchingActions = new ModelAccessHelper(cell.getContext().getRepository()).runReadAction(
+        () -> TypeContextManager.getInstance().runTypeCheckingComputation((ITypeContextOwner) cell.getEditorComponent(),
+                                                                          cell.getEditorComponent().getEditedNode(),
+                                                                          context -> substituteInfo.getMatchingActions(pattern, strict)));
     return substituteIfPossible(cell, canActivatePopup, pattern, matchingActions);
   }
 
@@ -102,14 +92,14 @@ public class APICellAdapter {
       return true;
     }
     final SubstituteAction action = matchingActions.get(0);
-    Boolean canSubstitute = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return action.canSubstitute(pattern);
-      }
-    });
-    if (canSubstitute) {
-      action.substitute(cell.getContext(), pattern);
+    ModelAccess modelAccess = cell.getContext().getRepository().getModelAccess();
+    if (new ModelAccessHelper(modelAccess).runReadAction(() -> action.canSubstitute(pattern))) {
+      modelAccess.executeCommand(new EditorCommand(cell.getContext()) {
+        @Override
+        protected void doExecute() {
+          action.substitute(cell.getContext(), pattern);
+        }
+      });
       return true;
     } else {
       return false;

@@ -41,7 +41,6 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.UndoRunnable;
-import jetbrains.mps.util.AbstractComputeRunnable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -100,7 +99,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   @Override
   public boolean isLastPositionInBigCell() {
     return CellTraversalUtil.getLastLeaf(CellTraversalUtil.getContainingBigCell(this)) == this && isLastCaretPosition() &&
-        !getTextLine().hasNonTrivialSelection();
+           !getTextLine().hasNonTrivialSelection();
   }
 
   public boolean canPasteText() {
@@ -475,7 +474,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
     ModelAccess modelAccess = getContext().getRepository().getModelAccess();
     if (isEditable()) {
-      ProcessKeyTypedCommand keyTypedCommand = new ProcessKeyTypedCommand(keyEvent, allowErrors, side);
+      ProcessKeyTypedCommand keyTypedCommand = new ProcessKeyTypedCommand(keyEvent, allowErrors, side, getContext());
       modelAccess.executeCommand(keyTypedCommand);
       getEditor().relayout();
       return keyTypedCommand.getResult();
@@ -737,7 +736,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   private boolean isTheOnlyCompletelySelectedLabelInBigCell() {
     jetbrains.mps.openapi.editor.cells.EditorCell containingBigCell = CellTraversalUtil.getContainingBigCell(this);
     return CellTraversalUtil.getFirstLeaf(containingBigCell) == this && CellTraversalUtil.getLastLeaf(containingBigCell) == this &&
-        getText().equals(getSelectedText());
+           getText().equals(getSelectedText());
   }
 
   public String getCommandGroupId() {
@@ -905,7 +904,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
       // if non of above is true then just pasting text from the clipboard into this cell (e.g. you can copy 1 + 2 and
       // paste it into the name label).
       return node != null && label.canPasteText() && label.isEditable() &&
-          (label.isTheOnlyCompletelySelectedLabelInBigCell() || isFirstCaretPosition() && !getTextLine().hasNonTrivialSelection() ||
+             (label.isTheOnlyCompletelySelectedLabelInBigCell() || isFirstCaretPosition() && !getTextLine().hasNonTrivialSelection() ||
               isLastCaretPosition() && !getTextLine().hasNonTrivialSelection() ? CopyPasteUtil.isStringOnTopOfClipboard() :
               TextPasteUtil.hasStringInClipboard());
     }
@@ -1043,22 +1042,20 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     }
   }
 
-  /**
-   * TODO: use EditorComputable instead of AbstractComputeRunnable as a superclass here?
-   */
-  private class ProcessKeyTypedCommand extends AbstractComputeRunnable<Boolean> implements UndoRunnable {
+  private class ProcessKeyTypedCommand extends EditorComputable<Boolean> implements UndoRunnable {
     private final KeyEvent myKeyEvent;
     private final boolean myAllowErrors;
     private final CellSide mySide;
 
-    public ProcessKeyTypedCommand(KeyEvent keyEvent, boolean allowErrors, CellSide side) {
+    public ProcessKeyTypedCommand(KeyEvent keyEvent, boolean allowErrors, CellSide side, EditorContext context) {
+      super(context);
       myKeyEvent = keyEvent;
       myAllowErrors = allowErrors;
       mySide = side;
     }
 
     @Override
-    protected Boolean compute() {
+    protected Boolean doCompute() {
       if (processMutableKeyTyped(myKeyEvent, myAllowErrors)) {
         getContext().flushEvents();
         addChangeTextUndoableAction();

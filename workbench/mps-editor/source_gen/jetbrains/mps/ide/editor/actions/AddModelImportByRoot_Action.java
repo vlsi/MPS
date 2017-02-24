@@ -88,19 +88,21 @@ public class AddModelImportByRoot_Action extends BaseAction {
 
     final Wrappers._T<EditorCell_Label> errorLabel = new Wrappers._T<EditorCell_Label>(null);
     final Wrappers._T<SNode> unresolvedReference = new Wrappers._T<SNode>(null);
+    SNode contextNode = null;
     if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) != null) {
+      contextNode = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getCommandContext().getContextNode();
       unresolvedReference.value = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x28e9fc3ba3fa3940L, "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference"));
       errorLabel.value = AddModelImportByRoot_Action.this.getErrorCell(_params);
       NodeSubstituteChooser nodeSubstituteChooser = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser();
-      if (check_a68f4j_a3a4a0(nodeSubstituteChooser)) {
+      if (check_a68f4j_a4a5a0(nodeSubstituteChooser)) {
         String pattern = nodeSubstituteChooser.getPatternEditor().getPattern();
-        if (check_a68f4j_a1a3a4a0(pattern)) {
+        if (check_a68f4j_a1a4a5a0(pattern)) {
           initialText.value = pattern;
         }
       }
       if (isEmptyString(initialText.value)) {
         EditorCell_Label label = AddModelImportByRoot_Action.this.getCellLabel(_params);
-        String selectedText = check_a68f4j_a0b0e0e0a(label);
+        String selectedText = check_a68f4j_a0b0f0f0a(label);
         if (selectedText != null && !(selectedText.isEmpty())) {
           initialText.value = selectedText;
         }
@@ -116,7 +118,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
       }
 
     }
-    new ModelImportHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).setShortcut(getShortcutSet()).setInitialText(initialText.value).addImportByRoot(((SModel) MapSequence.fromMap(_params).get("model")), new Callback<String>() {
+    new ModelImportHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).setShortcut(getShortcutSet()).setInitialText(initialText.value).setContextNode(contextNode).addImportByRoot(((SModel) MapSequence.fromMap(_params).get("model")), new Callback<String>() {
       public void call(String rootName) {
         String textToMatch = (rootName != null ? rootName : initialText.value);
         if (textToMatch.length() == 0) {
@@ -157,19 +159,19 @@ public class AddModelImportByRoot_Action extends BaseAction {
     }
     return null;
   }
-  private static boolean check_a68f4j_a1a3a4a0(String checkedDotOperand) {
+  private static boolean check_a68f4j_a1a4a5a0(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return (checkedDotOperand != null && checkedDotOperand.length() > 0);
     }
     return false;
   }
-  private static boolean check_a68f4j_a3a4a0(NodeSubstituteChooser checkedDotOperand) {
+  private static boolean check_a68f4j_a4a5a0(NodeSubstituteChooser checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isVisible();
     }
     return false;
   }
-  private static String check_a68f4j_a0b0e0e0a(EditorCell_Label checkedDotOperand) {
+  private static String check_a68f4j_a0b0f0f0a(EditorCell_Label checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSelectedText();
     }

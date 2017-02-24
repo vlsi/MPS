@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label.DummyUndoableAction;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.UndoHelper;
-import jetbrains.mps.smodel.UndoRunnable.Base;
+import jetbrains.mps.smodel.UndoRunnable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class TransactionalPropertyAccessor extends PropertyAccessor implements TransactionalModelAccessor {
@@ -70,13 +72,7 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
     if (myHasValueToCommit) {
       doCommit(myOldValue, myUncommittedValue);
 
-      getRepository().getModelAccess().executeCommand(new Base(null, getGroupId()) {
-        @Override
-        public void run() {
-          resetUncommittedValue();
-          UndoHelper.getInstance().addUndoableAction(new DummyUndoableAction(getNode()));
-        }
-      });
+      getRepository().getModelAccess().executeCommand(new CommitCommand(myEditorCell.getContext()));
 
       myOldValue = null;
       synchronizeCell();
@@ -97,5 +93,34 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
       return ((EditorCell_Label) myEditorCell).getCommandGroupId();
     }
     return null;
+  }
+
+  private class CommitCommand extends EditorCommand implements UndoRunnable {
+    public CommitCommand(EditorContext editorContext) {
+      super(editorContext);
+    }
+
+    @Nullable
+    @Override
+    public String getName() {
+      return null;
+    }
+
+    @Nullable
+    @Override
+    public String getGroupId() {
+      return TransactionalPropertyAccessor.this.getGroupId();
+    }
+
+    @Override
+    public boolean shallConfirmUndo() {
+      return false;
+    }
+
+    @Override
+    protected void doExecute() {
+      resetUncommittedValue();
+      UndoHelper.getInstance().addUndoableAction(new DummyUndoableAction(getNode()));
+    }
   }
 }

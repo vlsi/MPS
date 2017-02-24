@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.undo;
+package jetbrains.mps.nodeEditor.commands;
 
-import jetbrains.mps.smodel.SNodeUndoableAction;
+import jetbrains.mps.openapi.editor.commands.CommandContext;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.List;
 
 /**
  * User: shatalin
- * Date: 21/01/16
+ * Date: 22/02/2017
  */
-public interface UndoContext {
-  Iterable<SNode> getVirtualFileNodes(List<SNodeUndoableAction> wrapped);
+public class CommandContextWrapper implements CommandContext {
+  private final CommandContext myContext;
+
+  public CommandContextWrapper(CommandContext context) {
+    myContext = context;
+  }
+
+  @Override
+  public void commandStarted() {
+    myContext.commandStarted();
+  }
+
+  @Override
+  public void commandFinished() {
+    myContext.commandFinished();
+  }
+
+  @Override
+  public SNode getContextNode() {
+    return myContext.getContextNode();
+  }
 }

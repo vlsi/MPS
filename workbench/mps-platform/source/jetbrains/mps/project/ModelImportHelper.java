@@ -23,6 +23,8 @@ import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.undo.DefaultCommand;
+import jetbrains.mps.smodel.undo.NodeBasedCommand;
 import jetbrains.mps.util.Callback;
 import jetbrains.mps.util.NotCondition;
 import jetbrains.mps.workbench.choose.ChooseByNameData;
@@ -35,6 +37,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
@@ -45,6 +48,7 @@ import java.awt.Frame;
 /**
  * Facility to interoperate with user to add a new model dependency to a model.
  * Responsible to collect user input and to update model internals.
+ *
  * @author Artem Tikhomirov
  * @since 3.4
  */
@@ -52,6 +56,7 @@ public class ModelImportHelper {
   private final MPSProject myProject;
   private ShortcutSet myShortcut;
   private String myInitialText;
+  private SNode myContextNode;
 
   public ModelImportHelper(@NotNull MPSProject project) {
     myProject = project;
@@ -60,6 +65,7 @@ public class ModelImportHelper {
   /**
    * Override keyboard shortcut for model pick dialog to switch between global and package scope (e.g. to match that of invoking action).
    * <p/>
+   *
    * @return <code>this</code> for convenience
    */
   public ModelImportHelper setShortcut(@Nullable ShortcutSet shortcut) {
@@ -77,7 +83,18 @@ public class ModelImportHelper {
   }
 
   /**
+   * @param contextNode will be used to execute {@link jetbrains.mps.smodel.undo.NodeBasedCommand}
+   *                    with this node used as a contextual
+   * @return <code>this</code> for convenience
+   */
+  public ModelImportHelper setContextNode(SNode contextNode) {
+    myContextNode = contextNode;
+    return this;
+  }
+
+  /**
    * Ask user to select a model and import it
+   *
    * @param model model to add import to
    */
   public void addImport(@NotNull SModel model) {
@@ -86,7 +103,7 @@ public class ModelImportHelper {
       @Override
       public boolean met(SModel modelDescriptor) {
         boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
-            || SModelStereotype.isStubModel(modelDescriptor);
+                                  || SModelStereotype.isStubModel(modelDescriptor);
         boolean hasModule = modelDescriptor.getModule() != null;
         return rightStereotype && hasModule;
       }
@@ -103,11 +120,11 @@ public class ModelImportHelper {
       popup.setCheckBoxShortcut(myShortcut);
     }
 
-    popup.invoke(new AddImportCallback(myProject, model) {
+    popup.invoke(new AddImportCallback(myProject, model, myContextNode) {
       @Override
       public void elementChosen(Object element) {
         if (element instanceof SModelReference) {
-          doImport((SModelReference) element);
+          runImportCommand((SModelReference) element);
         }
       }
     }, ModalityState.current(), false);
@@ -128,50 +145,73 @@ public class ModelImportHelper {
       popup.setCheckBoxShortcut(myShortcut);
     }
 
-    popup.invoke(new AddImportCallback(myProject, model) {
-      private String myRootName;
+    popup.invoke(new AddImportCallback<String>(myProject, model, myContextNode) {
       @Override
       public void elementChosen(Object element) {
         if (element instanceof NavigationTarget) {
           NavigationTarget object = (NavigationTarget) element;
-          myRootName = object.getPresentation();
-          doImport(object.getNodeReference().getModelReference());
-          importedRootCallback.call(myRootName);
+          runImportCommand(object.getNodeReference().getModelReference(), object.getPresentation());
         }
       }
-    }, ModalityState.current(), false);
 
+      @Override
+      public void executeCallback(String... parameters) {
+        importedRootCallback.call(parameters[0]);
+      }
+    }, ModalityState.current(), false);
   }
 
   // Callback.elementChosen shall populate myModelToImport
-  private static abstract class AddImportCallback extends ChooseByNamePopupComponent.Callback {
+  private static abstract class AddImportCallback<T> extends ChooseByNamePopupComponent.Callback {
     private final jetbrains.mps.project.Project myProject;
     private final SModel myModel;
+    private final SNode myContextNode;
 
-    public AddImportCallback(jetbrains.mps.project.Project mpsProject, SModel model) {
+    public AddImportCallback(jetbrains.mps.project.Project mpsProject, SModel model, SNode contextNode) {
       myProject = mpsProject;
       myModel = model;
+      myContextNode = contextNode;
     }
 
     /*package*/ Frame getFrame() {
       return ProjectHelper.toMainFrame(myProject);
     }
 
-    protected void doImport(final SModelReference modelToImport) {
-      myProject.getModelAccess().executeCommand(new Runnable() {
-        @Override
-        public void run() {
-          final ModelImporter modelImporter = new ModelImporter(myModel);
-          modelImporter.prepare(modelToImport);
-          boolean confirmed = true;
-          if (modelImporter.affectsModuleDependencies()) {
-            confirmed = modelImporter.confirmModuleChanges(getFrame());
+    protected void runImportCommand(final SModelReference modelToImport, T... callbackParameters) {
+      Runnable command;
+      if (myContextNode != null) {
+        command = new NodeBasedCommand(myContextNode) {
+          @Override
+          public void run() {
+            doImport(modelToImport);
+            executeCallback(callbackParameters);
           }
-          if (confirmed) {
-            modelImporter.execute();
+        };
+      } else {
+        command = new DefaultCommand() {
+          @Override
+          public void run() {
+            doImport(modelToImport);
+            executeCallback(callbackParameters);
           }
-        }
-      });
+        };
+      }
+      myProject.getModelAccess().executeCommand(command);
+    }
+
+    private void doImport(final SModelReference modelToImport) {
+      final ModelImporter modelImporter = new ModelImporter(myModel);
+      modelImporter.prepare(modelToImport);
+      boolean confirmed = true;
+      if (modelImporter.affectsModuleDependencies()) {
+        confirmed = modelImporter.confirmModuleChanges(getFrame());
+      }
+      if (confirmed) {
+        modelImporter.execute();
+      }
+    }
+
+    public void executeCallback(T... parameters) {
     }
   }
 }

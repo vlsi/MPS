@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractSubstituteInfo;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
@@ -58,7 +59,7 @@ public class SideTransformSubstituteInfo extends AbstractSubstituteInfo {
     return actions.stream().map(action -> new NodeSubstituteActionWrapper(action) {
       @Override
       public SNode substitute(@Nullable EditorContext context, String pattern) {
-        getEditorContext().getRepository().getModelAccess().executeCommand(() -> SideTransformInfoUtil.removeTransformInfo(getSourceNode()));
+        SideTransformInfoUtil.removeTransformInfo(getSourceNode());
         return super.substitute(context, pattern);
       }
 

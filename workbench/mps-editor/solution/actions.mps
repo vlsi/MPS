@@ -67,6 +67,7 @@
     <import index="n7yi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells.optional(MPS.Editor/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
+    <import index="oulx" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.commands(MPS.Editor/)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -9332,8 +9333,38 @@
             <node concept="10Nm6u" id="2mpxNo1hlXy" role="33vP2m" />
           </node>
         </node>
+        <node concept="3cpWs8" id="4ErS9Dk3iqG" role="3cqZAp">
+          <node concept="3cpWsn" id="4ErS9Dk3iqJ" role="3cpWs9">
+            <property role="TrG5h" value="contextNode" />
+            <node concept="3Tqbb2" id="4ErS9Dk3iqE" role="1tU5fm" />
+            <node concept="10Nm6u" id="4ErS9Dk3jng" role="33vP2m" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="dZuPV$whsy" role="3cqZAp">
           <node concept="3clFbS" id="dZuPV$whs$" role="3clFbx">
+            <node concept="3clFbF" id="4ErS9Dk3jOs" role="3cqZAp">
+              <node concept="37vLTI" id="4ErS9Dk3k7l" role="3clFbG">
+                <node concept="2OqwBi" id="4ErS9Dk3pPt" role="37vLTx">
+                  <node concept="2OqwBi" id="4ErS9Dk3ofB" role="2Oq$k0">
+                    <node concept="2OqwBi" id="4ErS9Dk3noY" role="2Oq$k0">
+                      <node concept="2WthIp" id="4ErS9Dk3np1" role="2Oq$k0" />
+                      <node concept="1DTwFV" id="4ErS9Dk3np3" role="2OqNvi">
+                        <ref role="2WH_rO" node="30tYQkHUrou" resolve="editorComponent" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="4ErS9Dk3pIk" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getCommandContext():jetbrains.mps.openapi.editor.commands.CommandContext" resolve="getCommandContext" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="4ErS9Dk3qlq" role="2OqNvi">
+                    <ref role="37wK5l" to="oulx:~CommandContext.getContextNode():org.jetbrains.mps.openapi.model.SNode" resolve="getContextNode" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="4ErS9Dk3jOq" role="37vLTJ">
+                  <ref role="3cqZAo" node="4ErS9Dk3iqJ" resolve="contextNode" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="2mpxNo1gQQd" role="3cqZAp">
               <node concept="37vLTI" id="2mpxNo1gQQf" role="3clFbG">
                 <node concept="1PxgMI" id="7DZ3qL5ROhL" role="37vLTx">
@@ -9586,30 +9617,38 @@
         </node>
         <node concept="3clFbF" id="4XWbpcg5w1V" role="3cqZAp">
           <node concept="2OqwBi" id="4XWbpcg5xzw" role="3clFbG">
-            <node concept="2OqwBi" id="4XWbpcg5yqU" role="2Oq$k0">
-              <node concept="2OqwBi" id="4XWbpcg5y3j" role="2Oq$k0">
-                <node concept="2ShNRf" id="4XWbpcg5w1R" role="2Oq$k0">
-                  <node concept="1pGfFk" id="4XWbpcg5xrt" role="2ShVmc">
-                    <ref role="37wK5l" to="z1c4:~ModelImportHelper.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolve="ModelImportHelper" />
-                    <node concept="2OqwBi" id="4XWbpcg5xs$" role="37wK5m">
-                      <node concept="2WthIp" id="4XWbpcg5xsB" role="2Oq$k0" />
-                      <node concept="1DTwFV" id="4XWbpcg5xsD" role="2OqNvi">
-                        <ref role="2WH_rO" node="3WfhvVJ3Syz" resolve="project" />
+            <node concept="2OqwBi" id="4ErS9Dk2XKV" role="2Oq$k0">
+              <node concept="2OqwBi" id="4XWbpcg5yqU" role="2Oq$k0">
+                <node concept="2OqwBi" id="4XWbpcg5y3j" role="2Oq$k0">
+                  <node concept="2ShNRf" id="4XWbpcg5w1R" role="2Oq$k0">
+                    <node concept="1pGfFk" id="4XWbpcg5xrt" role="2ShVmc">
+                      <ref role="37wK5l" to="z1c4:~ModelImportHelper.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolve="ModelImportHelper" />
+                      <node concept="2OqwBi" id="4XWbpcg5xs$" role="37wK5m">
+                        <node concept="2WthIp" id="4XWbpcg5xsB" role="2Oq$k0" />
+                        <node concept="1DTwFV" id="4XWbpcg5xsD" role="2OqNvi">
+                          <ref role="2WH_rO" node="3WfhvVJ3Syz" resolve="project" />
+                        </node>
                       </node>
                     </node>
                   </node>
+                  <node concept="liA8E" id="4XWbpcg5ykw" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c4:~ModelImportHelper.setShortcut(com.intellij.openapi.actionSystem.ShortcutSet):jetbrains.mps.project.ModelImportHelper" resolve="setShortcut" />
+                    <node concept="1rXfSq" id="4XWbpcg5yn_" role="37wK5m">
+                      <ref role="37wK5l" to="qkt:~AnAction.getShortcutSet():com.intellij.openapi.actionSystem.ShortcutSet" resolve="getShortcutSet" />
+                    </node>
+                  </node>
                 </node>
-                <node concept="liA8E" id="4XWbpcg5ykw" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c4:~ModelImportHelper.setShortcut(com.intellij.openapi.actionSystem.ShortcutSet):jetbrains.mps.project.ModelImportHelper" resolve="setShortcut" />
-                  <node concept="1rXfSq" id="4XWbpcg5yn_" role="37wK5m">
-                    <ref role="37wK5l" to="qkt:~AnAction.getShortcutSet():com.intellij.openapi.actionSystem.ShortcutSet" resolve="getShortcutSet" />
+                <node concept="liA8E" id="4XWbpcg5yVe" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c4:~ModelImportHelper.setInitialText(java.lang.String):jetbrains.mps.project.ModelImportHelper" resolve="setInitialText" />
+                  <node concept="37vLTw" id="4XWbpcg5yYy" role="37wK5m">
+                    <ref role="3cqZAo" node="30tYQkHUro$" resolve="initialText" />
                   </node>
                 </node>
               </node>
-              <node concept="liA8E" id="4XWbpcg5yVe" role="2OqNvi">
-                <ref role="37wK5l" to="z1c4:~ModelImportHelper.setInitialText(java.lang.String):jetbrains.mps.project.ModelImportHelper" resolve="setInitialText" />
-                <node concept="37vLTw" id="4XWbpcg5yYy" role="37wK5m">
-                  <ref role="3cqZAo" node="30tYQkHUro$" resolve="initialText" />
+              <node concept="liA8E" id="4ErS9Dk2YHr" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~ModelImportHelper.setContextNode(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.project.ModelImportHelper" resolve="setContextNode" />
+                <node concept="37vLTw" id="4ErS9Dk3qFS" role="37wK5m">
+                  <ref role="3cqZAo" node="4ErS9Dk3iqJ" resolve="contextNode" />
                 </node>
               </node>
             </node>

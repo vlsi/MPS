@@ -42,7 +42,7 @@ class RemoveRootUndoableAction extends SNodeUndoableAction {
   }
 
   @Override
-  public SNode getRoot() {
-    return null;
+  public boolean hasVirtualFile() {
+    return false;
   }
 }

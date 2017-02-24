@@ -54,7 +54,7 @@ class OldSideTransformSubstituteInfo extends AbstractNodeSubstituteInfo {
       wrapperList.add(new NodeSubstituteActionWrapper(action) {
         @Override
         public SNode substitute(@Nullable EditorContext context, String pattern) {
-          getEditorContext().getRepository().getModelAccess().executeCommand(() -> SideTransformInfoUtil.removeTransformInfo(myNode));
+          SideTransformInfoUtil.removeTransformInfo(myNode);
           return super.substitute(context, pattern);
         }
 

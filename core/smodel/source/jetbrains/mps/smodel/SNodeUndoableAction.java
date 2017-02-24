@@ -24,10 +24,25 @@ public abstract class SNodeUndoableAction {
     myAffectedNode = affectedNode;
   }
 
-  protected SNode getAffectedNode() {
+  public SNode getAffectedNode() {
     return myAffectedNode;
   }
 
+  /**
+   * Answers the question if this action may be associate with VirtualFile/Document using default logic (rootNode -> VirtualFile).
+   * This is not true for deleted root nodes (probably to not have memory leak).
+   * By default clients should use getAffectedNode() method to access affected node and use it's root node in order to access VF associated with it.
+   *
+   * @return true if VirtualFile may be calculated from the getAffectedNode() node
+   */
+  public boolean hasVirtualFile() {
+    return true;
+  }
+
+  /**
+   * @deprecated since MPS 2017.1 getAffectedNode() & hasVirtualFile() methods are used, to this method will be dropped after MPS 2017.1
+   */
+  @Deprecated
   public SNode getRoot() {
     return myAffectedNode.getContainingRoot();
   }

@@ -22,6 +22,7 @@ import com.intellij.ui.components.JBList;
 import com.intellij.util.ui.AbstractLayoutManager;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -31,20 +32,18 @@ import jetbrains.mps.nodeEditor.SubstituteActionComparator;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
-import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.NonReusableTypecheckingContextOwner;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.WindowsUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
@@ -89,7 +88,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private EditorComponent myEditorComponent;
   private NodeSubstitutePatternEditor myPatternEditor;
   private SubstituteInfo myNodeSubstituteInfo;
-  private List<SubstituteAction> mySubstituteActions = new ArrayList<SubstituteAction>();
+  private List<SubstituteAction> mySubstituteActions = new ArrayList<>();
   private boolean myMenuEmpty;
   private NodeItemCellRenderer myCellRenderer;
   private boolean myUserChoseItem;
@@ -138,8 +137,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   private Dimension calcPatternEditorDimension() {
     return new Dimension(
-        myContextCell.getWidth() - myContextCell.getLeftInset() - myContextCell.getRightInset() + 1,
-        myContextCell.getHeight() - myContextCell.getTopInset() - myContextCell.getBottomInset() + 1);
+                            myContextCell.getWidth() - myContextCell.getLeftInset() - myContextCell.getRightInset() + 1,
+                            myContextCell.getHeight() - myContextCell.getTopInset() - myContextCell.getBottomInset() + 1);
   }
 
   @Nullable
@@ -205,12 +204,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   /**
    * This method should be used for test purposes only
-   *
+   * <p>
    * Number of substitute actions suggested by substitute chooser.
    * Check isVisible() before using this method
    *
    * @return number of substitute actions
-   *
    * @throws java.lang.IllegalStateException if the chooser is not visible
    */
   public int getNumberOfActions() {
@@ -228,7 +226,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
    * Makes the chooser visible or invisible.
    *
    * @param visible true to make the chooser visible; false to
-   *		make it invisible.
+   *                make it invisible.
    * @throws java.lang.IllegalStateException if making visible and context cell is null or substitute info is null
    */
   public void setVisible(boolean visible) {
@@ -268,30 +266,20 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   private List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
     final ITypeContextOwner contextOwner = myIsSmart ? new NonReusableTypecheckingContextOwner() : myEditorComponent.getTypecheckingContextOwner();
-    return TypeContextManager.getInstance().runTypeCheckingComputation(contextOwner, myEditorComponent.getEditedNode(),
-        new Computation<List<SubstituteAction>>() {
-          @Override
-          public List<SubstituteAction> compute(TypeCheckingContext context) {
-            if (myIsSmart) {
-              return myNodeSubstituteInfo.getSmartMatchingActions(pattern, strictMatching, myContextCell);
-            } else {
-              return myNodeSubstituteInfo.getMatchingActions(pattern, strictMatching);
-            }
-          }
-        });
+    return TypeContextManager.getInstance().runTypeCheckingComputation(contextOwner, myEditorComponent.getEditedNode(), context -> {
+      if (myIsSmart) {
+        return myNodeSubstituteInfo.getSmartMatchingActions(pattern, strictMatching, myContextCell);
+      } else {
+        return myNodeSubstituteInfo.getMatchingActions(pattern, strictMatching);
+      }
+    });
   }
 
   private void rebuildMenuEntries() {
-    Runnable todo = new Runnable() {
-      @Override
-      public void run() {
-        doRebuildMenuEntries();
-      }
-    };
     if (myIsSmart) {
-      ModelAccess.instance().runWriteActionInCommand(todo);
+      getModelAccess().executeCommand(this::doRebuildMenuEntries);
     } else {
-      ModelAccess.instance().runReadAction(todo);
+      getModelAccess().runReadAction(this::doRebuildMenuEntries);
     }
   }
 
@@ -320,12 +308,12 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
     try {
       Collections.sort(matchingActions, new SubstituteActionComparator(needToTrim ? trimPattern : pattern) {
-        private Map<SubstituteAction, Integer> myLocalSortPrioritiesMap = new HashMap<SubstituteAction, Integer>();
-        private Map<SubstituteAction, Integer> myRatesMap = new HashMap<SubstituteAction, Integer>();
-        private Map<SubstituteAction, String> myVisibleMatchingTextsMap = new HashMap<SubstituteAction, String>();
-        private Map<SubstituteAction, Boolean> myCanSubstituteStrictlyMap = new HashMap<SubstituteAction, Boolean>();
-        private Map<SubstituteAction, Boolean> myStartsWithMap = new HashMap<SubstituteAction, Boolean>();
-        private Map<SubstituteAction, Boolean> myStartsWithLowerCaseMap = new HashMap<SubstituteAction, Boolean>();
+        private Map<SubstituteAction, Integer> myLocalSortPrioritiesMap = new HashMap<>();
+        private Map<SubstituteAction, Integer> myRatesMap = new HashMap<>();
+        private Map<SubstituteAction, String> myVisibleMatchingTextsMap = new HashMap<>();
+        private Map<SubstituteAction, Boolean> myCanSubstituteStrictlyMap = new HashMap<>();
+        private Map<SubstituteAction, Boolean> myStartsWithMap = new HashMap<>();
+        private Map<SubstituteAction, Boolean> myStartsWithLowerCaseMap = new HashMap<>();
 
         @Override
         protected int getLocalSortPriority(SubstituteAction action) {
@@ -434,6 +422,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       }
     }
   }
+
   private void selectPreviouslySelectedAction(SubstituteAction actionToSelect) {
     if (myUserChoseItem && actionToSelect != null) {
       int indexOfPreviouslySelectedAction = mySubstituteActions.indexOf(actionToSelect);
@@ -447,6 +436,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       getPopupWindow().setSelectionIndex(0);
     }
   }
+
   @Override
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     String oldPattern = getPatternEditor().getPattern();
@@ -493,18 +483,21 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     if (mySubstituteActions.size() == 1) {
       final SubstituteAction action = mySubstituteActions.get(0);
-      Boolean canSubstitute = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        @Override
-        public Boolean compute() {
-          return action.canSubstitute(pattern);
-        }
-      });
-      if (canSubstitute) {
+      if (new ModelAccessHelper(getModelAccess()).runReadAction(() -> action.canSubstitute(pattern))) {
         setVisible(false);
-        action.substitute(myEditorComponent.getEditorContext(), pattern);
+        getModelAccess().executeCommand(new EditorCommand(myEditorComponent) {
+          @Override
+          protected void doExecute() {
+            action.substitute(myEditorComponent.getEditorContext(), pattern);
+          }
+        });
       }
     }
     return true;
+  }
+
+  private ModelAccess getModelAccess() {
+    return myEditorComponent.getEditorContext().getRepository().getModelAccess();
   }
 
   private boolean menu_processKeyPressed(KeyEvent keyEvent) {
@@ -562,9 +555,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     final String pattern = getPatternEditor().getPattern();
     final SubstituteAction action = mySubstituteActions.get(getPopupWindow().getSelectionIndex());
     setVisible(false);
-    myEditorComponent.getEditorContext().getRepository().getModelAccess().executeCommand(new Runnable() {
+    myEditorComponent.getEditorContext().getRepository().getModelAccess().executeCommand(new EditorCommand(myEditorComponent) {
       @Override
-      public void run() {
+      public void doExecute() {
         action.substitute(myEditorComponent.getEditorContext(), pattern);
       }
     });
@@ -610,7 +603,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
     private JScrollPane myScroller = ScrollPaneFactory.createScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-        JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+                                                                        JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     ComponentAdapter myComponentListener = new ComponentAdapter() {
       @Override
       public void componentMoved(ComponentEvent e) {
@@ -642,12 +635,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         @Override
         public void mouseClicked(MouseEvent e) {
           if (e.getClickCount() == 2) {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              @Override
-              public void run() {
-                doSubstituteSelection();
-              }
-            });
+            getModelAccess().executeCommand(NodeSubstituteChooser.this::doSubstituteSelection);
           }
         }
       });

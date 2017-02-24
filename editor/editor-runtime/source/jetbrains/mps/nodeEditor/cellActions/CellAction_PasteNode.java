@@ -20,6 +20,7 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
@@ -177,9 +178,9 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
     ApplicationManager.getApplication().invokeLater(() -> {
       final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modelToPaste, mpsProject);
-      context.getRepository().getModelAccess().executeCommand(new Runnable() {
+      context.getRepository().getModelAccess().executeCommand(new EditorCommand(context) {
         @Override
-        public void run() {
+        public void doExecute() {
           if (addImportsRunnable != null) {
             addImportsRunnable.run();
           }
