@@ -101,6 +101,7 @@ public class MPSIcons {
     @Deprecated /* To remove in 3.3 (no ToRemove annotation to avoid dependency)*/
     public static final Icon ModelOverlay = IconLoader.getIcon("/nodes/model-overlay.png");
     public static final Icon Node = IconLoader.getIcon("/nodes/node.png");
+    @Deprecated /* To remove in 2017.1, use more specific icon or AllIcons.Nodes#ModuleGroup*/
     public static final Icon ProjectModels = IconLoader.getIcon("/nodes/projectModels.png");
     public static final Icon Reduction = IconLoader.getIcon("/nodes/reduction.png");
     public static final Icon Refactoring = IconLoader.getIcon("/nodes/refactoring.png");

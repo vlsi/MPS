@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
+import com.intellij.icons.AllIcons.Nodes;
 import jetbrains.mps.FilteredGlobalScope;
-import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
@@ -35,8 +35,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
     super("Modules Pool");
     myProject = project;
 
-    setIcon(IdeIcons.MODULE_GROUP_CLOSED, false);
-    setIcon(IdeIcons.MODULE_GROUP_OPENED, true);
+    setIcon(Nodes.ModuleGroup);
   }
 
   @Override
@@ -89,7 +88,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
     {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode devkits = new TextTreeNode("DevKits");
-      for (SModule m  : modules) {
+      for (SModule m : modules) {
         if (DevKit.class.isInstance(m)) {
           builder.addNode(ProjectModuleTreeNode.createFor(myProject, m, true));
         }
