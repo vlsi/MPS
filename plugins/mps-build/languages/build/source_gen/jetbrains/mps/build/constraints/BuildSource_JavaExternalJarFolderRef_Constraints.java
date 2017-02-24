@@ -74,7 +74,7 @@ public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstr
               if ((contextProject != null)) {
                 return ScopeUtil.getVisibleJarFoldersScope(contextProject);
               }
-              return new ModelPlusImportedScope(_context.getModel(), false, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb659d7L, "jetbrains.mps.build.structure.BuildSource_SingleFolder"));
+              return new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), false, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb659d7L, "jetbrains.mps.build.structure.BuildSource_SingleFolder"));
             }
           }
         };
@@ -82,5 +82,5 @@ public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstr
     });
     return references;
   }
-  private static SNodePointer breakingNode_aht4xu_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "5610619299014531657");
+  private static SNodePointer breakingNode_aht4xu_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "6836281137582840486");
 }

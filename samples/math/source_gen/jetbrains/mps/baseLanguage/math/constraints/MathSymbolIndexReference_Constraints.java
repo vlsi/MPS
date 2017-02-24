@@ -12,14 +12,16 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.math.behavior.MathSymbol__BehaviorDescriptor;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class MathSymbolIndexReference_Constraints extends BaseConstraintsDescriptor {
@@ -38,22 +40,24 @@ public class MathSymbolIndexReference_Constraints extends BaseConstraintsDescrip
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
-          @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode ms = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), true, false);
-            List<SNode> msi = MathSymbol__BehaviorDescriptor.getEmptyIndexList_idi0Okz4g.invoke(ms);
-            MathSymbol__BehaviorDescriptor.getVisibleIndices_idhZx_LLY.invoke(ms, _context.getEnclosingNode(), msi);
-            return msi;
-          }
+        return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_cdbkmw_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_cdbkmw_a0a0a0a0a1a0b0a1a2;
+          }
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              SNode ms = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), true, false);
+              List<SNode> msi = MathSymbol__BehaviorDescriptor.getEmptyIndexList_idi0Okz4g.invoke(ms);
+              MathSymbol__BehaviorDescriptor.getVisibleIndices_idhZx_LLY.invoke(ms, (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()))), msi);
+              return ListScope.forResolvableElements(msi);
+            }
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_cdbkmw_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)", "1237825752099");
+  private static SNodePointer breakingNode_cdbkmw_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)", "6836281137582848029");
 }

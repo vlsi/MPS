@@ -31,11 +31,11 @@
       <node id="1719162360409958585" at="77,277,78,64" concept="6" />
       <node id="1719162360409958585" at="86,44,87,20" concept="6" />
       <node id="1719162360409958585" at="94,63,95,58" concept="6" />
-      <node id="6434457067210690033" at="99,13,100,228" concept="5" />
-      <node id="6434457067210708526" at="101,44,102,40" concept="6" />
-      <node id="1343296446925671018" at="103,15,104,118" concept="5" />
-      <node id="4913172127246346780" at="106,49,107,112" concept="6" />
-      <node id="4913172127246338814" at="109,18,110,27" concept="6" />
+      <node id="6836281137582776110" at="99,13,100,228" concept="5" />
+      <node id="6836281137582776118" at="101,44,102,40" concept="6" />
+      <node id="6836281137582776124" at="103,15,104,118" concept="5" />
+      <node id="6836281137582776143" at="106,49,107,112" concept="6" />
+      <node id="6836281137582776150" at="109,18,110,27" concept="6" />
       <node id="1719162360409958585" at="115,7,116,22" concept="6" />
       <node id="1227128029536560561" at="118,128,119,71" concept="6" />
       <node id="1719162360409958585" at="121,0,122,0" concept="8" trace="canBeChildBreakingPoint" />
@@ -43,15 +43,15 @@
       <node id="1719162360409958585" at="123,0,124,0" concept="8" trace="breakingNode_bs3nei_a0a0a0a0a1a0b0a2a3" />
       <node id="1719162360409958585" at="39,0,42,0" concept="1" trace="SuperInterfaceMethodCall_Constraints#()V" />
       <node id="1719162360409958585" at="49,0,52,9" concept="3" />
-      <node id="6434457067210707006" at="100,228,103,15" concept="3" />
-      <node id="4913172127246345704" at="106,0,109,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6836281137582776116" at="100,228,103,15" concept="3" />
+      <node id="6836281137582776141" at="106,0,109,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1719162360409958585" at="118,0,121,0" concept="9" trace="staticCanBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
       <node id="1719162360409958585" at="62,0,66,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="1719162360409958585" at="70,0,74,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1719162360409958585" at="75,122,79,13" concept="0" />
       <node id="1719162360409958585" at="85,0,89,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="1719162360409958585" at="93,0,97,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="4913172127246311994" at="104,118,109,18" concept="5" />
+      <node id="6836281137582776130" at="104,118,109,18" concept="5" />
       <node id="1719162360409958585" at="74,0,81,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="1719162360409958585" at="46,0,56,0" concept="4" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
       <node id="1719162360409958585" at="44,103,56,6" concept="6" />
@@ -71,15 +71,15 @@
       <scope id="1719162360409958585" at="71,63,72,58" />
       <scope id="1719162360409958585" at="86,44,87,20" />
       <scope id="1719162360409958585" at="94,63,95,58" />
-      <scope id="6434457067210707009" at="101,44,102,40" />
-      <scope id="4913172127246345705" at="106,49,107,112" />
+      <scope id="6836281137582776117" at="101,44,102,40" />
+      <scope id="6836281137582776142" at="106,49,107,112" />
       <scope id="1227128029536560560" at="118,128,119,71" />
       <scope id="1719162360409958585" at="76,13,78,64">
         <var name="scope" id="1719162360409958585" />
       </scope>
       <scope id="1719162360409958585" at="39,0,42,0" />
-      <scope id="4913172127246345704" at="106,0,109,0">
-        <var name="it" id="4913172127246345704" />
+      <scope id="6836281137582776141" at="106,0,109,0">
+        <var name="it" id="6836281137582776141" />
       </scope>
       <scope id="1719162360409958585" at="118,0,121,0">
         <var name="childConcept" id="1719162360409958585" />
@@ -103,10 +103,10 @@
         <var name="checkingNodeContext" id="1719162360409958585" />
         <var name="context" id="1719162360409958585" />
       </scope>
-      <scope id="6434457067210687040" at="99,13,110,27">
-        <var name="classifierType" id="1343296446925671019" />
-        <var name="scope" id="4913172127246311995" />
-        <var name="superClassifier" id="6434457067210690036" />
+      <scope id="6836281137582776109" at="99,13,110,27">
+        <var name="classifierType" id="6836281137582776125" />
+        <var name="scope" id="6836281137582776131" />
+        <var name="superClassifier" id="6836281137582776111" />
       </scope>
       <scope id="1719162360409958585" at="44,103,56,6" />
       <scope id="1719162360409958585" at="68,56,81,10" />
@@ -123,7 +123,7 @@
         <var name="references" id="1719162360409958585" />
       </scope>
       <scope id="1719162360409958585" at="58,0,118,0" />
-      <unit id="4913172127246345704" at="105,175,109,15" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints$3$1$1" />
+      <unit id="6836281137582776141" at="105,175,109,15" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints$3$1$1" />
       <unit id="1719162360409958585" at="45,15,56,5" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints$1" />
       <unit id="1719162360409958585" at="69,19,81,9" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints$2$1" />
       <unit id="1719162360409958585" at="92,19,113,9" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints$3$1" />

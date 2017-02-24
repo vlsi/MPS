@@ -45,12 +45,12 @@ public class Dependency_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListScope.forNamedElements(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e19763814242bL, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet"), true, false), MetaAdapterFactory.getContainmentLink(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e19763814242bL, 0x565e197638146fa8L, "component")));
+            return ListScope.forNamedElements(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e19763814242bL, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet"), true, false), MetaAdapterFactory.getContainmentLink(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e19763814242bL, 0x565e197638146fa8L, "component")));
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_p94dcx_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:a5fe27e7-3b9f-4548-9154-66721114c30d(jetbrains.mps.samples.componentDependencies.constraints)", "9095678365530422331");
+  private static SNodePointer breakingNode_p94dcx_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:a5fe27e7-3b9f-4548-9154-66721114c30d(jetbrains.mps.samples.componentDependencies.constraints)", "6836281137582847189");
 }

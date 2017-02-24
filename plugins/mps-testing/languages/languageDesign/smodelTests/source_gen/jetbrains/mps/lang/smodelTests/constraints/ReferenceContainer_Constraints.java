@@ -12,13 +12,16 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.scope.ListScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
@@ -37,7 +40,7 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
           public boolean hasPresentation() {
             return true;
@@ -47,12 +50,12 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
             return SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
           }
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root"));
+          public SNodeReference getSearchScopeValidatorNode() {
+            return breakingNode_5tia2e_a0a2a0a0a1a0b0a1a2;
           }
           @Override
-          public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_5tia2e_a0a3a0a0a1a0b0a1a2;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            return ListScope.forResolvableElements(SModelOperations.nodes(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")));
           }
         };
       }
@@ -65,7 +68,7 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
           public boolean hasPresentation() {
             return true;
@@ -75,12 +78,12 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
             return SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
           }
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, "jetbrains.mps.lang.smodelTests.structure.Child"));
+          public SNodeReference getSearchScopeValidatorNode() {
+            return breakingNode_5tia2e_a0a2a0a0a1a0b0a2a2;
           }
           @Override
-          public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_5tia2e_a0a3a0a0a1a0b0a2a2;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            return ListScope.forResolvableElements(SModelOperations.nodes(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, "jetbrains.mps.lang.smodelTests.structure.Child")));
           }
         };
       }
@@ -93,7 +96,7 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
           public boolean hasPresentation() {
             return true;
@@ -103,19 +106,19 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
             return SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
           }
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, "jetbrains.mps.lang.smodelTests.structure.Child"));
+          public SNodeReference getSearchScopeValidatorNode() {
+            return breakingNode_5tia2e_a0a2a0a0a1a0b0a3a2;
           }
           @Override
-          public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_5tia2e_a0a3a0a0a1a0b0a3a2;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            return ListScope.forResolvableElements(SModelOperations.nodes(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, "jetbrains.mps.lang.smodelTests.structure.Child")));
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_5tia2e_a0a3a0a0a1a0b0a1a2 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029091796");
-  private static SNodePointer breakingNode_5tia2e_a0a3a0a0a1a0b0a2a2 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029225986");
-  private static SNodePointer breakingNode_5tia2e_a0a3a0a0a1a0b0a3a2 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029226005");
+  private static SNodePointer breakingNode_5tia2e_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "6836281137582843461");
+  private static SNodePointer breakingNode_5tia2e_a0a2a0a0a1a0b0a2a2 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "6836281137582843588");
+  private static SNodePointer breakingNode_5tia2e_a0a2a0a0a1a0b0a3a2 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "6836281137582843704");
 }

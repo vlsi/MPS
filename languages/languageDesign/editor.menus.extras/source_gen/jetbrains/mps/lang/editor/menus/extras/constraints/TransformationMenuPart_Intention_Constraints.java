@@ -19,9 +19,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.scope.ModelPlusImportedScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.behavior.IMenu__BehaviorDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
@@ -49,7 +49,7 @@ public class TransformationMenuPart_Intention_Constraints extends BaseConstraint
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new FilteringScope(new ModelPlusImportedScope(_context.getModel(), true, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"))) {
+            return new FilteringScope(new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), true, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"))) {
               @Override
               public boolean isExcluded(SNode node) {
                 SNode intentionConcept = SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration")), MetaAdapterFactory.getReferenceLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3e6812L, "forConcept"));
@@ -58,7 +58,7 @@ public class TransformationMenuPart_Intention_Constraints extends BaseConstraint
                 }
 
                 SNode menu = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"), false, false);
-                return !(check_qffvkf_a0e0a0a0a0a0b0a0a0b0a1a0b0c(check_qffvkf_a0a4a0a0a0a0a1a0a0a1a0b0a1a2(menu), intentionConcept));
+                return !(check_qffvkf_a0e0a0a0a0a0(check_qffvkf_a0a4a0a0a0a0a(menu), intentionConcept));
               }
             };
           }
@@ -67,17 +67,17 @@ public class TransformationMenuPart_Intention_Constraints extends BaseConstraint
     });
     return references;
   }
-  private static boolean check_qffvkf_a0e0a0a0a0a0b0a0a0b0a1a0b0c(SNode checkedDotOperand, SNode intentionConcept) {
+  private static boolean check_qffvkf_a0e0a0a0a0a0(SNode checkedDotOperand, SNode intentionConcept) {
     if (null != checkedDotOperand) {
       return (boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(checkedDotOperand, intentionConcept);
     }
     return false;
   }
-  private static SNode check_qffvkf_a0a4a0a0a0a0a1a0a0a1a0b0a1a2(SNode checkedDotOperand) {
+  private static SNode check_qffvkf_a0a4a0a0a0a0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(checkedDotOperand);
     }
     return null;
   }
-  private static SNodePointer breakingNode_qffvkf_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:bb97162f-2dcb-4ef8-802a-23987a8537bd(jetbrains.mps.lang.editor.menus.extras.constraints)", "4736696158596338905");
+  private static SNodePointer breakingNode_qffvkf_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:bb97162f-2dcb-4ef8-802a-23987a8537bd(jetbrains.mps.lang.editor.menus.extras.constraints)", "6836281137582782316");
 }

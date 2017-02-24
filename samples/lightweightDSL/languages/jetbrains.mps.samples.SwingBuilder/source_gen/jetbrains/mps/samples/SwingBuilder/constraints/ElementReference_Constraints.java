@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ElementReference_Constraints extends BaseConstraintsDescriptor {
@@ -45,12 +46,12 @@ public class ElementReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListScope.forNamedElements(ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0xd0f6999e83a1c61L, "jetbrains.mps.samples.SwingBuilder.structure.Filter"))).union(ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0xd0f6999e83a1d95L, "jetbrains.mps.samples.SwingBuilder.structure.Map")))));
+            return ListScope.forNamedElements(ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0xd0f6999e83a1c61L, "jetbrains.mps.samples.SwingBuilder.structure.Filter"))).union(ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0xd0f6999e83a1d95L, "jetbrains.mps.samples.SwingBuilder.structure.Map")))));
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_4bmjf7_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:7a1c88cb-66d9-4726-9b4a-d5dc6c544de7(jetbrains.mps.samples.SwingBuilder.constraints)", "941086956890759284");
+  private static SNodePointer breakingNode_4bmjf7_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:7a1c88cb-66d9-4726-9b4a-d5dc6c544de7(jetbrains.mps.samples.SwingBuilder.constraints)", "6836281137582847989");
 }

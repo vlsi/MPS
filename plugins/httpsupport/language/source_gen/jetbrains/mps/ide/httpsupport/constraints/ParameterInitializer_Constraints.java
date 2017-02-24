@@ -81,7 +81,7 @@ public class ParameterInitializer_Constraints extends BaseConstraintsDescriptor 
                     public boolean accept(SNode it) {
                       return check_9zeh4o_a0a0a0a0a0b0a0c0a0(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L, 0x4027f9073ff5cf18L, "parameter")), node);
                     }
-                  }) != null && !(_context.isExists());
+                  }) != null && !((SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L, 0x4027f9073ff5cf18L, "parameter")) != null));
                 }
               };
             }
@@ -101,5 +101,5 @@ public class ParameterInitializer_Constraints extends BaseConstraintsDescriptor 
     return false;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:13dad04a-0370-4fef-a258-0eee3aa2ee6a(jetbrains.mps.ide.httpsupport.constraints)", "1227128029536566389");
-  private static SNodePointer breakingNode_9zeh4o_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:13dad04a-0370-4fef-a258-0eee3aa2ee6a(jetbrains.mps.ide.httpsupport.constraints)", "4622937352052268808");
+  private static SNodePointer breakingNode_9zeh4o_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:13dad04a-0370-4fef-a258-0eee3aa2ee6a(jetbrains.mps.ide.httpsupport.constraints)", "6836281137582836959");
 }

@@ -43,7 +43,7 @@ public class TransformationMenuReference_Named_Constraints extends BaseConstrain
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), _context.getLinkTarget());
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), _context.getLinkTargetConcept());
               if (scope == null) {
                 return MenuScopes.getNamedMenus(_context.getContextNode(), _context.getContainmentLink().getName(), _context.getPosition(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"));
               }

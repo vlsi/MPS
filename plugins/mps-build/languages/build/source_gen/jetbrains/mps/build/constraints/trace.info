@@ -577,9 +577,9 @@
       <node id="5610619299013068409" at="60,33,61,117" concept="2" />
       <node id="5610619299013068418" at="62,13,63,80" concept="6" />
       <node id="5610619299013068362" at="66,63,67,58" concept="6" />
-      <node id="5610619299013068427" at="71,13,72,249" concept="5" />
-      <node id="5610619299013225669" at="76,57,77,223" concept="6" />
-      <node id="5610619299013214135" at="80,15,81,220" concept="6" />
+      <node id="6836281137582840516" at="71,13,72,249" concept="5" />
+      <node id="6836281137582840541" at="76,57,77,223" concept="6" />
+      <node id="6836281137582840551" at="80,15,81,252" concept="6" />
       <node id="5610619299013068362" at="86,7,87,22" concept="6" />
       <node id="5610619299013068362" at="89,0,90,0" concept="8" trace="breakingNode_cl5pbm_a0a2a0a0a1a0b0a1a2" />
       <node id="5610619299013068362" at="30,0,33,0" concept="1" trace="BuildLayout_ImportContent_Constraints#()V" />
@@ -588,10 +588,10 @@
       <node id="5610619299013068362" at="38,0,42,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="5610619299013068362" at="46,0,50,0" concept="4" trace="hasPresentation#()Z" />
       <node id="5610619299013068362" at="65,0,69,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="5610619299013225658" at="75,0,79,0" concept="4" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6836281137582840535" at="75,0,79,0" concept="4" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="5610619299013068379" at="53,33,59,13" concept="3" />
-      <node id="5610619299013068438" at="73,45,79,18" concept="6" />
-      <node id="5610619299013068436" at="72,249,80,15" concept="3" />
+      <node id="6836281137582840527" at="73,45,79,18" concept="6" />
+      <node id="6836281137582840525" at="72,249,80,15" concept="3" />
       <node id="5610619299013068362" at="70,122,82,13" concept="0" />
       <node id="5610619299013068362" at="50,0,65,0" concept="4" trace="getPresentation#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferencePresentationContext;)Ljava/lang/String;" />
       <node id="5610619299013068362" at="69,0,84,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
@@ -605,7 +605,7 @@
       <scope id="5610619299013068387" at="56,114,57,121" />
       <scope id="5610619299013068408" at="60,33,61,117" />
       <scope id="5610619299013068362" at="66,63,67,58" />
-      <scope id="5610619299013225663" at="76,57,77,223" />
+      <scope id="6836281137582840540" at="76,57,77,223" />
       <scope id="5610619299013068362" at="30,0,33,0" />
       <scope id="5610619299013068362" at="38,0,42,0" />
       <scope id="5610619299013068362" at="46,0,50,0" />
@@ -613,12 +613,12 @@
         <var name="importedArtifactsScope" id="5610619299013068382" />
       </scope>
       <scope id="5610619299013068362" at="65,0,69,0" />
-      <scope id="5610619299013225658" at="75,0,79,0">
-        <var name="node" id="5610619299013225661" />
+      <scope id="6836281137582840535" at="75,0,79,0">
+        <var name="node" id="6836281137582840538" />
       </scope>
-      <scope id="5610619299013068437" at="73,45,79,18" />
-      <scope id="5610619299013068426" at="71,13,81,220">
-        <var name="contextProject" id="5610619299013068428" />
+      <scope id="6836281137582840526" at="73,45,79,18" />
+      <scope id="6836281137582840515" at="71,13,81,252">
+        <var name="contextProject" id="6836281137582840517" />
       </scope>
       <scope id="5610619299013068365" at="51,128,63,80">
         <var name="contextProject" id="5610619299013068367" />
@@ -639,7 +639,7 @@
         <var name="references" id="5610619299013068362" />
       </scope>
       <scope id="5610619299013068362" at="34,0,89,0" />
-      <unit id="5610619299013225656" at="74,27,79,17" name="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints$1$1$1" />
+      <unit id="6836281137582840530" at="74,27,79,17" name="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints$1$1$1" />
       <unit id="5610619299013068362" at="45,19,84,9" name="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints$1$1" />
       <unit id="5610619299013068362" at="37,154,86,5" name="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints$1" />
       <unit id="5610619299013068362" at="29,0,91,0" name="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints" />
@@ -658,15 +658,15 @@
       <node id="5610619299014309527" at="61,33,62,759" concept="2" />
       <node id="5610619299014502521" at="63,13,64,26" concept="6" />
       <node id="5610619299014309454" at="67,63,68,58" concept="6" />
-      <node id="5610619299014309458" at="72,13,73,249" concept="5" />
-      <node id="5610619299014309469" at="74,45,75,69" concept="6" />
-      <node id="5610619299014309475" at="76,15,77,235" concept="6" />
+      <node id="6836281137582840437" at="72,13,73,249" concept="5" />
+      <node id="6836281137582840448" at="74,45,75,69" concept="6" />
+      <node id="6836281137582840454" at="76,15,77,267" concept="6" />
       <node id="5610619299014309454" at="82,7,83,22" concept="6" />
       <node id="5610619299014309454" at="85,0,86,0" concept="8" trace="breakingNode_u5rckp_a0a2a0a0a1a0b0a1a2" />
       <node id="5610619299014309454" at="31,0,34,0" concept="1" trace="BuildSource_JavaExternalJarRef_Constraints#()V" />
       <node id="5610619299014309504" at="56,91,59,15" concept="3" />
       <node id="5610619299014309525" at="60,13,63,13" concept="3" />
-      <node id="5610619299014309467" at="73,249,76,15" concept="3" />
+      <node id="6836281137582840446" at="73,249,76,15" concept="3" />
       <node id="5610619299014309454" at="39,0,43,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="5610619299014309454" at="47,0,51,0" concept="4" trace="hasPresentation#()Z" />
       <node id="5610619299014309454" at="66,0,70,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
@@ -684,7 +684,7 @@
       <scope id="5610619299014309505" at="57,114,58,121" />
       <scope id="5610619299014309526" at="61,33,62,759" />
       <scope id="5610619299014309454" at="67,63,68,58" />
-      <scope id="5610619299014309468" at="74,45,75,69" />
+      <scope id="6836281137582840447" at="74,45,75,69" />
       <scope id="5610619299014309454" at="31,0,34,0" />
       <scope id="5610619299014309454" at="39,0,43,0" />
       <scope id="5610619299014309454" at="47,0,51,0" />
@@ -692,8 +692,8 @@
         <var name="importedArtifactsScope" id="5610619299014309500" />
       </scope>
       <scope id="5610619299014309454" at="66,0,70,0" />
-      <scope id="5610619299014309457" at="72,13,77,235">
-        <var name="contextProject" id="5610619299014309459" />
+      <scope id="6836281137582840436" at="72,13,77,267">
+        <var name="contextProject" id="6836281137582840438" />
       </scope>
       <scope id="5610619299014309454" at="71,122,78,13" />
       <scope id="5610619299014309454" at="70,0,80,0">
@@ -732,15 +732,15 @@
       <node id="5610619299014531728" at="61,33,62,763" concept="2" />
       <node id="5610619299014531748" at="63,13,64,26" concept="6" />
       <node id="5610619299014531655" at="67,63,68,58" concept="6" />
-      <node id="5610619299014531659" at="72,13,73,249" concept="5" />
-      <node id="5610619299014531670" at="74,45,75,75" concept="6" />
-      <node id="5610619299014531676" at="76,15,77,237" concept="6" />
+      <node id="6836281137582840488" at="72,13,73,249" concept="5" />
+      <node id="6836281137582840499" at="74,45,75,75" concept="6" />
+      <node id="6836281137582840505" at="76,15,77,269" concept="6" />
       <node id="5610619299014531655" at="82,7,83,22" concept="6" />
       <node id="5610619299014531655" at="85,0,86,0" concept="8" trace="breakingNode_aht4xu_a0a2a0a0a1a0b0a1a2" />
       <node id="5610619299014531655" at="31,0,34,0" concept="1" trace="BuildSource_JavaExternalJarFolderRef_Constraints#()V" />
       <node id="5610619299014531705" at="56,97,59,15" concept="3" />
       <node id="5610619299014531726" at="60,13,63,13" concept="3" />
-      <node id="5610619299014531668" at="73,249,76,15" concept="3" />
+      <node id="6836281137582840497" at="73,249,76,15" concept="3" />
       <node id="5610619299014531655" at="39,0,43,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="5610619299014531655" at="47,0,51,0" concept="4" trace="hasPresentation#()Z" />
       <node id="5610619299014531655" at="66,0,70,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
@@ -758,7 +758,7 @@
       <scope id="5610619299014531706" at="57,114,58,121" />
       <scope id="5610619299014531727" at="61,33,62,763" />
       <scope id="5610619299014531655" at="67,63,68,58" />
-      <scope id="5610619299014531669" at="74,45,75,75" />
+      <scope id="6836281137582840498" at="74,45,75,75" />
       <scope id="5610619299014531655" at="31,0,34,0" />
       <scope id="5610619299014531655" at="39,0,43,0" />
       <scope id="5610619299014531655" at="47,0,51,0" />
@@ -766,8 +766,8 @@
         <var name="importedArtifactsScope" id="5610619299014531701" />
       </scope>
       <scope id="5610619299014531655" at="66,0,70,0" />
-      <scope id="5610619299014531658" at="72,13,77,237">
-        <var name="contextProject" id="5610619299014531660" />
+      <scope id="6836281137582840487" at="72,13,77,269">
+        <var name="contextProject" id="6836281137582840489" />
       </scope>
       <scope id="5610619299014531655" at="71,122,78,13" />
       <scope id="5610619299014531655" at="70,0,80,0">
@@ -1412,15 +1412,15 @@
       <node id="1368030936106708390" at="60,33,61,117" concept="2" />
       <node id="841011766566134744" at="62,13,63,80" concept="6" />
       <node id="841011766565773812" at="66,63,67,58" concept="6" />
-      <node id="841011766566141825" at="71,13,72,249" concept="5" />
-      <node id="1368030936106707779" at="73,45,74,81" concept="6" />
-      <node id="841011766566179105" at="75,15,76,38" concept="6" />
+      <node id="6836281137582840465" at="71,13,72,249" concept="5" />
+      <node id="6836281137582840476" at="73,45,74,81" concept="6" />
+      <node id="6836281137582840483" at="75,15,76,38" concept="6" />
       <node id="841011766565773812" at="81,7,82,22" concept="6" />
       <node id="841011766565773812" at="84,0,85,0" concept="8" trace="breakingNode_gjnfdd_a0a2a0a0a1a0b0a1a2" />
       <node id="841011766565773812" at="30,0,33,0" concept="1" trace="BuildLayout_Import_Constraints#()V" />
       <node id="1368030936106707810" at="55,103,58,15" concept="3" />
       <node id="1368030936106708363" at="59,13,62,13" concept="3" />
-      <node id="841011766566141835" at="72,249,75,15" concept="3" />
+      <node id="6836281137582840474" at="72,249,75,15" concept="3" />
       <node id="841011766565773812" at="38,0,42,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="841011766565773812" at="46,0,50,0" concept="4" trace="hasPresentation#()Z" />
       <node id="841011766565773812" at="65,0,69,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
@@ -1438,7 +1438,7 @@
       <scope id="1368030936106707811" at="56,114,57,121" />
       <scope id="1368030936106708364" at="60,33,61,117" />
       <scope id="841011766565773812" at="66,63,67,58" />
-      <scope id="841011766566141836" at="73,45,74,81" />
+      <scope id="6836281137582840475" at="73,45,74,81" />
       <scope id="841011766565773812" at="30,0,33,0" />
       <scope id="841011766565773812" at="38,0,42,0" />
       <scope id="841011766565773812" at="46,0,50,0" />
@@ -1446,8 +1446,8 @@
         <var name="importedArtifactsScope" id="1368030936106707804" />
       </scope>
       <scope id="841011766565773812" at="65,0,69,0" />
-      <scope id="841011766566141824" at="71,13,76,38">
-        <var name="contextProject" id="841011766566141826" />
+      <scope id="6836281137582840464" at="71,13,76,38">
+        <var name="contextProject" id="6836281137582840466" />
       </scope>
       <scope id="841011766565773812" at="70,122,77,13" />
       <scope id="841011766565773812" at="69,0,79,0">

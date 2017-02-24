@@ -12,7 +12,9 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
@@ -20,7 +22,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NotEditableVaraileReference_Constraints extends BaseConstraintsDescriptor {
@@ -39,27 +41,29 @@ public class NotEditableVaraileReference_Constraints extends BaseConstraintsDesc
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
-          @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> result = new ArrayList<SNode>();
-            for (SNode block : SNodeOperations.getNodeAncestors(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d62dbbL, "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList"), true)) {
-              for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(block))) {
-                if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f90ed1L, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock"))) {
-                  ListSequence.fromList(result).addElement(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f90ed1L, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock")));
-                }
-              }
-            }
-            return result;
-          }
+        return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_5rh4qw_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_5rh4qw_a0a0a0a0a1a0b0a1a2;
+          }
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              List<SNode> result = new ArrayList<SNode>();
+              for (SNode block : SNodeOperations.getNodeAncestors(_context.getContextNode(), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d62dbbL, "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList"), true)) {
+                for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(block))) {
+                  if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f90ed1L, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock"))) {
+                    ListSequence.fromList(result).addElement(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f90ed1L, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock")));
+                  }
+                }
+              }
+              return ListScope.forResolvableElements(result);
+            }
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_5rh4qw_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:94b1feee-20bf-48e9-9677-814a5fdcaf90(jetbrains.mps.lang.editor.editorTest.constraints)", "4965160547087600888");
+  private static SNodePointer breakingNode_5rh4qw_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:94b1feee-20bf-48e9-9677-814a5fdcaf90(jetbrains.mps.lang.editor.editorTest.constraints)", "6836281137582842927");
 }

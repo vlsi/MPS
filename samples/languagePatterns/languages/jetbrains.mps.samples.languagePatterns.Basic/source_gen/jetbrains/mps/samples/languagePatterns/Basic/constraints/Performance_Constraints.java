@@ -61,5 +61,5 @@ public class Performance_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static SNodePointer breakingNode_lq51rn_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:7e1c7518-df7a-4f22-84b2-a5e68261264a(jetbrains.mps.samples.languagePatterns.Basic.constraints)", "3803436373353624334");
+  private static SNodePointer breakingNode_lq51rn_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:7e1c7518-df7a-4f22-84b2-a5e68261264a(jetbrains.mps.samples.languagePatterns.Basic.constraints)", "6836281137582847667");
 }

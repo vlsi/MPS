@@ -70,7 +70,7 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new FilteringScope(Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, "jetbrains.mps.build.mps.structure.BuildMps_Group").getDeclarationNode())) {
+            return new FilteringScope(Scope.getScope(_context.getContextNode(), _context.getContainmentLink().getName(), _context.getPosition(), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, "jetbrains.mps.build.mps.structure.BuildMps_Group").getDeclarationNode())) {
               @Override
               public boolean isExcluded(SNode node) {
                 return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, "jetbrains.mps.build.mps.structure.BuildMps_Group")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, 0x14d3fb6fb843ebdeL, "modules"))).findFirst(new IWhereFilter<SNode>() {
@@ -90,5 +90,5 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
     return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)", "1227128029536566862");
-  private static SNodePointer breakingNode_fhfy8y_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)", "4005526075816137908");
+  private static SNodePointer breakingNode_fhfy8y_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)", "6836281137582839719");
 }

@@ -120,5 +120,5 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "1227128029536560559");
   private static SNodePointer breakingNode_bs3nei_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "8287904403586986407");
-  private static SNodePointer breakingNode_bs3nei_a0a0a0a0a1a0b0a2a3 = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "6434457067210687039");
+  private static SNodePointer breakingNode_bs3nei_a0a0a0a0a1a0b0a2a3 = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "6836281137582776108");
 }

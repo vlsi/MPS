@@ -62,7 +62,7 @@ public class IMemberOperation_Constraints extends BaseConstraintsDescriptor {
                 SNode coercedNode_dyvyal_d0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(operand), pattern_dyvyal_d0a0);
                 if (coercedNode_dyvyal_d0a0 != null) {
                   for (SNode member : ListSequence.fromList(BaseClassifierType__BehaviorDescriptor.getMembers_idhEwINC$.invoke(coercedNode_dyvyal_d0a0, enclosingNode))) {
-                    if (SNodeOperations.isInstanceOf(member, SNodeOperations.asSConcept(_context.getLinkTarget()))) {
+                    if (SNodeOperations.isInstanceOf(member, SNodeOperations.asSConcept(_context.getLinkTargetConcept()))) {
                       ListSequence.fromList(applicableMembers).addElement(member);
                     }
                   }

@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.ListScope;
@@ -59,9 +60,9 @@ public class ComponentUsage_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Iterable<SNode> unusedComponents = ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fa2aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Component"))).where(new IWhereFilter<SNode>() {
+              Iterable<SNode> unusedComponents = ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fa2aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Component"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(final SNode b) {
-                  return ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fb71L, "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage"))).where(new IWhereFilter<SNode>() {
+                  return ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fb71L, "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage"))).where(new IWhereFilter<SNode>() {
                     public boolean accept(SNode u) {
                       return neq_4swebx_a0a0a0a0a0a0a0a0a0a0a0a0d0a0a0b0a1a0b0c(u, _context.getContextNode());
                     }
@@ -86,5 +87,5 @@ public class ComponentUsage_Constraints extends BaseConstraintsDescriptor {
   private static boolean neq_4swebx_a0a0a0a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a2(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNodePointer breakingNode_4swebx_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:7e1c7518-df7a-4f22-84b2-a5e68261264a(jetbrains.mps.samples.languagePatterns.Basic.constraints)", "5681697064999413466");
+  private static SNodePointer breakingNode_4swebx_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:7e1c7518-df7a-4f22-84b2-a5e68261264a(jetbrains.mps.samples.languagePatterns.Basic.constraints)", "6836281137582847690");
 }

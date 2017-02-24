@@ -12,7 +12,9 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
@@ -21,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner__BehaviorDescriptor;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class VariableReference_Constraints extends BaseConstraintsDescriptor {
@@ -40,24 +42,26 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
-          @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getEnclosingNode(), MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), true);
-            List<SNode> result = new ArrayList<SNode>();
-            for (SNode node : nodes) {
-              ListSequence.fromList(result).addSequence(ListSequence.fromList(VariableOwner__BehaviorDescriptor.getVariables_id7M_MU5__$7C.invoke(node)));
-            }
-            return result;
-          }
+        return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_3k454j_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_3k454j_a0a0a0a0a1a0b0a1a2;
+          }
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getContextNode(), MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), true);
+              List<SNode> result = new ArrayList<SNode>();
+              for (SNode node : nodes) {
+                ListSequence.fromList(result).addSequence(ListSequence.fromList(VariableOwner__BehaviorDescriptor.getVariables_id7M_MU5__$7C.invoke(node)));
+              }
+              return ListScope.forResolvableElements(result);
+            }
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_3k454j_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:3d08e5ef-3618-477b-9827-f996a0e87a53(jetbrains.mps.samples.lambdaCalculus.constraints)", "7125334522320417175");
+  private static SNodePointer breakingNode_3k454j_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:3d08e5ef-3618-477b-9827-f996a0e87a53(jetbrains.mps.samples.lambdaCalculus.constraints)", "6836281137582847355");
 }

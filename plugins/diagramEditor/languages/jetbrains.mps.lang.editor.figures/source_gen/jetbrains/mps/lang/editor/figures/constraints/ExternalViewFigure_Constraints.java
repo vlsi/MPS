@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ExternalViewFigure_Constraints extends BaseConstraintsDescriptor {
@@ -64,12 +65,12 @@ public class ExternalViewFigure_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new ExternalViewClassifierScope(_context.getModel());
+            return new ExternalViewClassifierScope(SNodeOperations.getModel(_context.getContextNode()));
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_8qo5s5_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:e4768f3d-85b6-458a-8b3f-9ef490bdf2d0(jetbrains.mps.lang.editor.figures.constraints)", "5422656561917972552");
+  private static SNodePointer breakingNode_8qo5s5_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:e4768f3d-85b6-458a-8b3f-9ef490bdf2d0(jetbrains.mps.lang.editor.figures.constraints)", "6836281137582822772");
 }

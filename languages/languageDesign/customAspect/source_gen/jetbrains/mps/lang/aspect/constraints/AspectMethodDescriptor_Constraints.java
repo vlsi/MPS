@@ -60,5 +60,5 @@ public class AspectMethodDescriptor_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-  private static SNodePointer breakingNode_10kavj_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:a0e4ce7a-b15e-427f-b0fd-cb52ffcd3e91(jetbrains.mps.lang.aspect.constraints)", "5386558680326436316");
+  private static SNodePointer breakingNode_10kavj_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:a0e4ce7a-b15e-427f-b0fd-cb52ffcd3e91(jetbrains.mps.lang.aspect.constraints)", "6836281137582782104");
 }

@@ -63,5 +63,5 @@ public class NoteMetaInfo_Constraints extends BaseConstraintsDescriptor {
   private static boolean eq_j4sdke_a0a0a0a0a0a0a0a0b0a0a0b0a1a0b0c(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static SNodePointer breakingNode_j4sdke_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:31435044-ac3f-41ac-91b1-10c17ad3b966(jetbrains.mps.samples.notesOrganizer.constraints)", "3892287256988700985");
+  private static SNodePointer breakingNode_j4sdke_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:31435044-ac3f-41ac-91b1-10c17ad3b966(jetbrains.mps.samples.notesOrganizer.constraints)", "6836281137582849173");
 }
