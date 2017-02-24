@@ -6697,9 +6697,9 @@
                   <node concept="1uHKPH" id="3pNk_u$3vbF" role="2OqNvi" />
                 </node>
               </node>
-              <node concept="10M0yZ" id="4aNWY1v2MCx" role="3K4GZi">
-                <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-                <ref role="3cqZAo" to="xnls:~IdeIcons.MODULE_GROUP_CLOSED" resolve="MODULE_GROUP_CLOSED" />
+              <node concept="10M0yZ" id="4VE3_mvPxuF" role="3K4GZi">
+                <ref role="3cqZAo" to="z2i8:~AllIcons$Nodes.ModuleGroup" resolve="ModuleGroup" />
+                <ref role="1PxDUh" to="z2i8:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
               </node>
             </node>
           </node>

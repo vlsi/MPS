@@ -196,6 +196,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool" file="ModelCheckerTool.java">
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.vcs.checkin.CheckinHandler" />
