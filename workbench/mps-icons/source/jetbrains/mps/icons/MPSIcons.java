@@ -120,6 +120,7 @@ public class MPSIcons {
     public static class Models {
       public static final Icon AspectModel = IconLoader.getIcon("/nodes/models/aspect.png");
       public static final Icon TemplatesModel = IconLoader.getIcon("/nodes/models/templatesModel.png");
+      public static final Icon TestsModel = IconLoader.getIcon("/nodes/models/tests.png");
       public static final Icon AccessoryModel = IconLoader.getIcon("/nodes/models/accessoryModel.png");
     }
   }
