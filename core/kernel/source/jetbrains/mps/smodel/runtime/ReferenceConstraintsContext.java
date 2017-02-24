@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.runtime;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -36,6 +37,13 @@ public interface ReferenceConstraintsContext {
   @Nullable
   SContainmentLink getContainmentLink();
 
+
+  /**
+   *
+   * @return concrete target concept of the reference
+   */
+  @NotNull
+  SAbstractConcept getLinkTargetConcept();
   /**
    *
    * @return position in containment link
@@ -71,12 +79,21 @@ public interface ReferenceConstraintsContext {
   @Deprecated
   String getContextRole();
 
+  /**
+   * @deprecated equals to {@code getReferenceNode() != null ? getReferenceNode().getParent() : getContextNode()}
+   */
   @Deprecated
   SNode getEnclosingNode();
 
+  /**
+   * @deprecated use {@link #getLinkTargetConcept()} instead
+   */
   @Deprecated
   SNode getLinkTarget();
 
+  /**
+   * @deprecated use {@link #getContainmentLink()} instead
+   */
   @Deprecated
   SNode getContainingLink();
 }

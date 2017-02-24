@@ -40,7 +40,6 @@ public class ReferentConstraintsContextImpl implements ReferenceConstraintsConte
   private final SNode myReferenceNode;
 
   @NotNull
-  @Deprecated
   private final SAbstractConcept myTargetConcept;
 
   public ReferentConstraintsContextImpl(@NotNull SNode contextNode, @Nullable SContainmentLink containmentLink, int position, @Nullable SNode referenceNode,
@@ -95,6 +94,12 @@ public class ReferentConstraintsContextImpl implements ReferenceConstraintsConte
   @Override
   public SNode getReferenceNode() {
     return myReferenceNode;
+  }
+
+  @NotNull
+  @Override
+  public SAbstractConcept getLinkTargetConcept() {
+    return myTargetConcept;
   }
 
   @Override
