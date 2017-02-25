@@ -159,6 +159,9 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -175,9 +178,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -214,17 +214,12 @@
                   <node concept="3Tm1VV" id="5Vvmn_Ql1ua" role="1B3o_S" />
                   <node concept="2YIFZM" id="5Vvmn_Ql1ub" role="37wK5m">
                     <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
-                    <ref role="37wK5l" to="o8zo:6GEzh_Hz_xH" resolve="getScope" />
+                    <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
                     <node concept="2rP1CM" id="5Vvmn_Ql1uc" role="37wK5m" />
-                    <node concept="2OqwBi" id="5Vvmn_Ql1u$" role="37wK5m">
-                      <node concept="3dgs5T" id="5Vvmn_Ql1u_" role="2Oq$k0" />
-                      <node concept="liA8E" id="5Vvmn_Ql1uA" role="2OqNvi">
-                        <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
-                      </node>
-                    </node>
+                    <node concept="3dgs5T" id="5Vvmn_Ql1u_" role="37wK5m" />
                     <node concept="$OBjv" id="5Vvmn_Ql1ue" role="37wK5m" />
-                    <node concept="3TUQnm" id="5Vvmn_Ql1uf" role="37wK5m">
-                      <ref role="3TV0OU" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+                    <node concept="35c_gC" id="4atz$vTM6jM" role="37wK5m">
+                      <ref role="35c_gD" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
                     </node>
                   </node>
                   <node concept="3clFb_" id="5Vvmn_Ql1ug" role="jymVt">
@@ -310,19 +305,14 @@
                   <ref role="1Y3XeK" to="o8zo:3rV3sBXetA0" resolve="FilteringScope" />
                   <ref role="37wK5l" to="o8zo:3rV3sBXetA2" resolve="FilteringScope" />
                   <node concept="3Tm1VV" id="5Vvmn_Ql1uH" role="1B3o_S" />
-                  <node concept="2YIFZM" id="5Vvmn_Ql1uI" role="37wK5m">
+                  <node concept="2YIFZM" id="4atz$vTM454" role="37wK5m">
                     <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
-                    <ref role="37wK5l" to="o8zo:6GEzh_Hz_xH" resolve="getScope" />
-                    <node concept="2rP1CM" id="5Vvmn_Ql1uJ" role="37wK5m" />
-                    <node concept="2OqwBi" id="5Vvmn_Ql1vj" role="37wK5m">
-                      <node concept="3dgs5T" id="5Vvmn_Ql1vk" role="2Oq$k0" />
-                      <node concept="liA8E" id="5Vvmn_Ql1vl" role="2OqNvi">
-                        <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
-                      </node>
-                    </node>
-                    <node concept="$OBjv" id="5Vvmn_Ql1uL" role="37wK5m" />
-                    <node concept="3TUQnm" id="5Vvmn_Ql1uM" role="37wK5m">
-                      <ref role="3TV0OU" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
+                    <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
+                    <node concept="2rP1CM" id="4atz$vTM455" role="37wK5m" />
+                    <node concept="3dgs5T" id="4atz$vTM4$_" role="37wK5m" />
+                    <node concept="$OBjv" id="4atz$vTM45e" role="37wK5m" />
+                    <node concept="35c_gC" id="4atz$vTM5uE" role="37wK5m">
+                      <ref role="35c_gD" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
                     </node>
                   </node>
                   <node concept="3clFb_" id="5Vvmn_Ql1uN" role="jymVt">

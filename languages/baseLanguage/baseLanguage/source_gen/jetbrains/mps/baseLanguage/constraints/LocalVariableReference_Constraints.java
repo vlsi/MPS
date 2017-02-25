@@ -43,7 +43,7 @@ public class LocalVariableReference_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return MigrationScopes.forVariables(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), _context.getContextNode(), _context.getContainmentLink().getName(), _context.getPosition());
+            return MigrationScopes.forVariables(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), _context.getContextNode(), (_context.getContainmentLink() == null ? null : _context.getContainmentLink().getName()), _context.getPosition());
           }
         };
       }
