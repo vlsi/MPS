@@ -2,15 +2,14 @@
 <model ref="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -143,6 +142,10 @@
     <property role="34LRSv" value="search scope (deprecated)" />
     <property role="EcuMT" value="1148684180339" />
     <ref role="1TJDcQ" node="gI1PhqO" resolve="ConstraintFunction_ReferentSearchScope_AbstractBase" />
+    <node concept="asaX9" id="YMOU$DS997" role="lGtFl">
+      <property role="YLQ7P" value="Use ConstraintFunction_ReferentSearchScope_Scope instead" />
+      <property role="YLPcu" value="3.5" />
+    </node>
     <node concept="PrWs8" id="7ipADkTf7eF" role="PzmwI">
       <ref role="PrY4T" node="7ipADkTf7eE" resolve="NodeScopeFactory" />
     </node>
@@ -200,6 +203,10 @@
     <property role="3GE5qa" value="Functions" />
     <property role="EcuMT" value="1148934493876" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="YMOU$DSg8$" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="All subconcepts are deprecated" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gI1POib">
     <property role="R5$K7" value="false" />
@@ -211,6 +218,10 @@
     <property role="34LRSv" value="enclosingNode" />
     <property role="EcuMT" value="1148934636683" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="YMOU$DSgFY" role="lGtFl">
+      <property role="YLQ7P" value="equals to (referenceNode == null ? contextNode : referenceNode.parent)" />
+      <property role="YLPcu" value="3.5" />
+    </node>
     <node concept="PrWs8" id="1653mnvB2xP" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
@@ -572,6 +583,10 @@
     <property role="34LRSv" value="search scope item presentation" />
     <property role="EcuMT" value="3906442776579556545" />
     <ref role="1TJDcQ" node="gI1PhqO" resolve="ConstraintFunction_ReferentSearchScope_AbstractBase" />
+    <node concept="asaX9" id="YMOU$DSaia" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="Used to customize textual presentation of the referent node. Now it can be custolized directly in editor. Use CellModel_ReferencePresentation or CellMenuPart_ReferentPrimary instead." />
+    </node>
   </node>
   <node concept="1TIwiD" id="5RKjesl2qRO">
     <property role="R5$K7" value="false" />
@@ -582,6 +597,9 @@
     <property role="34LRSv" value="visible" />
     <property role="EcuMT" value="6768994795311967732" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="5tSqQCNlJqB" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+    </node>
     <node concept="PrWs8" id="1653mnvAOTo" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
@@ -595,6 +613,9 @@
     <property role="34LRSv" value="smartReference" />
     <property role="EcuMT" value="6768994795311967741" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="5tSqQCNlJqD" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+    </node>
     <node concept="PrWs8" id="1653mnvAORl" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
@@ -608,6 +629,9 @@
     <property role="34LRSv" value="inEditor" />
     <property role="EcuMT" value="4590747232508808445" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="5tSqQCNlJpN" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+    </node>
     <node concept="PrWs8" id="1653mnvANN8" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
@@ -640,6 +664,10 @@
     <property role="34LRSv" value="reference validity" />
     <property role="EcuMT" value="3481330710159180554" />
     <ref role="1TJDcQ" node="gI1PhqO" resolve="ConstraintFunction_ReferentSearchScope_AbstractBase" />
+    <node concept="asaX9" id="YMOU$DS995" role="lGtFl">
+      <property role="YLQ7P" value="Has no sence until ConstraintFunction_ReferentSearchScope_Factory is deprecated" />
+      <property role="YLPcu" value="3.5" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2_ZlElkqgaC">
     <property role="R5$K7" value="false" />
@@ -730,6 +758,10 @@
     <property role="34LRSv" value="contextRole" />
     <property role="EcuMT" value="4656991770397278586" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="YMOU$DShl3" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="use containmentLink.getName() instead" />
+    </node>
     <node concept="PrWs8" id="1653mnvB6Dy" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
@@ -744,6 +776,10 @@
     <property role="34LRSv" value="exists" />
     <property role="EcuMT" value="4656991770397278593" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="YMOU$DSg8A" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="use referenceNode.&lt;reference&gt;.isNotNull instead" />
+    </node>
     <node concept="PrWs8" id="1653mnvAlHn" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
