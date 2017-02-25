@@ -158,9 +158,6 @@
     <file name="ConstraintsMigration_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintsMigration_BehaviorDescriptor" />
     </file>
-    <file name="EnclosingNodeMigratedHint_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.constraints.behavior.EnclosingNodeMigratedHint_BehaviorDescriptor" />
-    </file>
     <file name="InheritedNodeScopeFactory_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.constraints.behavior.InheritedNodeScopeFactory_BehaviorDescriptor" />
     </file>

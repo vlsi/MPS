@@ -21,11 +21,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConstraintFunctionParameter_contextNode = new ConceptPresentationBuilder().shortDesc("node with the reference, or closest not-null context node").create();
   private final ConceptPresentation props_ConstraintFunctionParameter_contextRole = new ConceptPresentationBuilder().deprecated(true).shortDesc("target role in contextNode").create();
   private final ConceptPresentation props_ConstraintFunctionParameter_exists = new ConceptPresentationBuilder().deprecated(true).shortDesc("false when reference is being created").create();
-<<<<<<< Updated upstream
-  private final ConceptPresentation props_ConstraintFunctionParameter_inEditor = new ConceptPresentationBuilder().create();
-=======
   private final ConceptPresentation props_ConstraintFunctionParameter_inEditor = new ConceptPresentationBuilder().deprecated(true).create();
->>>>>>> Stashed changes
   private final ConceptPresentation props_ConstraintFunctionParameter_link = new ConceptPresentationBuilder().shortDesc("the containment link in question between the parent and the (potential or existing) child").create();
   private final ConceptPresentation props_ConstraintFunctionParameter_linkNode = new ConceptPresentationBuilder().deprecated(true).shortDesc("the containment link in question between the parent and the (potential or existing) child").create();
   private final ConceptPresentation props_ConstraintFunctionParameter_linkTarget = new ConceptPresentationBuilder().shortDesc("target concept (useful for specialized links)").create();
