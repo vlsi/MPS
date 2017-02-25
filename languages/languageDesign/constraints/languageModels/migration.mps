@@ -23,13 +23,13 @@
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="35tq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.scope(MPS.Core/)" />
+    <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" implicit="true" />
     <import index="6bz1" ref="r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)" implicit="true" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
-    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
     <import index="tpcw" ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" implicit="true" />
   </imports>
   <registry>
@@ -72,10 +72,6 @@
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
-        <child id="1081256993305" name="classType" index="2ZW6by" />
-        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -141,9 +137,6 @@
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
-      </concept>
-      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
-        <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -2997,70 +2990,44 @@
       <property role="od$2w" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="4atz$vTNPMX" role="3clF47">
-        <node concept="3clFbJ" id="4atz$vTNPMY" role="3cqZAp">
-          <node concept="2ZW3vV" id="4atz$vTNPMZ" role="3clFbw">
-            <node concept="3uibUv" id="4atz$vTNPN0" role="2ZW6by">
-              <ref role="3uigEE" to="w1kc:~SModelInternal" resolve="SModelInternal" />
+        <node concept="3cpWs8" id="YMOU$DU38V" role="3cqZAp">
+          <node concept="3cpWsn" id="YMOU$DU38W" role="3cpWs9">
+            <property role="TrG5h" value="importer" />
+            <node concept="3uibUv" id="YMOU$DU38X" role="1tU5fm">
+              <ref role="3uigEE" to="z1c3:~ModelImporter" resolve="ModelImporter" />
             </node>
-            <node concept="2JrnkZ" id="4atz$vTNPN1" role="2ZW6bz">
-              <node concept="37vLTw" id="4atz$vTNPN2" role="2JrQYb">
-                <ref role="3cqZAo" node="4atz$vTNPNr" resolve="m" />
+            <node concept="2ShNRf" id="YMOU$DU3gP" role="33vP2m">
+              <node concept="1pGfFk" id="YMOU$DU3Id" role="2ShVmc">
+                <ref role="37wK5l" to="z1c3:~ModelImporter.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel)" resolve="ModelImporter" />
+                <node concept="2JrnkZ" id="YMOU$DU3Yq" role="37wK5m">
+                  <node concept="37vLTw" id="YMOU$DU3JM" role="2JrQYb">
+                    <ref role="3cqZAo" node="4atz$vTNPNr" resolve="m" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
-          <node concept="3clFbS" id="4atz$vTNPN3" role="3clFbx">
-            <node concept="3cpWs8" id="4atz$vTNPN4" role="3cqZAp">
-              <node concept="3cpWsn" id="4atz$vTNPN5" role="3cpWs9">
-                <property role="TrG5h" value="model" />
-                <node concept="3uibUv" id="4atz$vTNPN6" role="1tU5fm">
-                  <ref role="3uigEE" to="w1kc:~SModelInternal" resolve="SModelInternal" />
-                </node>
-                <node concept="10QFUN" id="4atz$vTNPN7" role="33vP2m">
-                  <node concept="2JrnkZ" id="4atz$vTNPN8" role="10QFUP">
-                    <node concept="37vLTw" id="4atz$vTNPN9" role="2JrQYb">
-                      <ref role="3cqZAo" node="4atz$vTNPNr" resolve="m" />
-                    </node>
-                  </node>
-                  <node concept="3uibUv" id="4atz$vTNPNa" role="10QFUM">
-                    <ref role="3uigEE" to="w1kc:~SModelInternal" resolve="SModelInternal" />
-                  </node>
-                </node>
+        </node>
+        <node concept="3clFbF" id="YMOU$DU4cU" role="3cqZAp">
+          <node concept="2OqwBi" id="YMOU$DU4oz" role="3clFbG">
+            <node concept="37vLTw" id="YMOU$DU4cS" role="2Oq$k0">
+              <ref role="3cqZAo" node="YMOU$DU38W" resolve="importer" />
+            </node>
+            <node concept="liA8E" id="YMOU$DU4yH" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~ModelImporter.prepare(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="prepare" />
+              <node concept="37vLTw" id="YMOU$DU4_z" role="37wK5m">
+                <ref role="3cqZAo" node="4atz$vTKCFc" resolve="modelRef_ListScope" />
               </node>
             </node>
-            <node concept="3clFbJ" id="4atz$vTNPNb" role="3cqZAp">
-              <node concept="3clFbS" id="4atz$vTNPNc" role="3clFbx">
-                <node concept="3clFbF" id="4atz$vTNPNd" role="3cqZAp">
-                  <node concept="2OqwBi" id="4atz$vTNPNe" role="3clFbG">
-                    <node concept="37vLTw" id="4atz$vTNPNf" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4atz$vTNPN5" resolve="model" />
-                    </node>
-                    <node concept="liA8E" id="4atz$vTNPNg" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="addModelImport" />
-                      <node concept="37vLTw" id="4atz$vTNPNh" role="37wK5m">
-                        <ref role="3cqZAo" node="4atz$vTKCFc" resolve="modelRef_ListScope" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3fqX7Q" id="4atz$vTNPNi" role="3clFbw">
-                <node concept="2OqwBi" id="4atz$vTNPNj" role="3fr31v">
-                  <node concept="2OqwBi" id="4atz$vTNPNk" role="2Oq$k0">
-                    <node concept="37vLTw" id="4atz$vTNPNl" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4atz$vTNPN5" resolve="model" />
-                    </node>
-                    <node concept="liA8E" id="4atz$vTNPNm" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~SModelInternal.getModelImports():java.util.Collection" resolve="getModelImports" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="4atz$vTNPNn" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Collection.contains(java.lang.Object):boolean" resolve="contains" />
-                    <node concept="37vLTw" id="4atz$vTNPNo" role="37wK5m">
-                      <ref role="3cqZAo" node="4atz$vTKCFc" resolve="modelRef_ListScope" />
-                    </node>
-                  </node>
-                </node>
-              </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="YMOU$DU58L" role="3cqZAp">
+          <node concept="2OqwBi" id="YMOU$DU5kK" role="3clFbG">
+            <node concept="37vLTw" id="YMOU$DU58J" role="2Oq$k0">
+              <ref role="3cqZAo" node="YMOU$DU38W" resolve="importer" />
+            </node>
+            <node concept="liA8E" id="YMOU$DU5vc" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~ModelImporter.execute():void" resolve="execute" />
             </node>
           </node>
         </node>

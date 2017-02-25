@@ -30,7 +30,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.project.ModelImporter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
@@ -193,12 +193,9 @@ public class ConstraintScopeFactory_NodeToConcept extends MigrationScriptBase {
   private static final SModelReference modelRef_ListScope = PersistenceFacade.getInstance().createModelReference("r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)");
 
   public static void addListScopeModelImportIfMissing(SModel m) {
-    if (m instanceof SModelInternal) {
-      SModelInternal model = (SModelInternal) m;
-      if (!(model.getModelImports().contains(modelRef_ListScope))) {
-        model.addModelImport(modelRef_ListScope);
-      }
-    }
+    ModelImporter importer = new ModelImporter(m);
+    importer.prepare(modelRef_ListScope);
+    importer.execute();
   }
 
   public boolean replace_linkTargetNode(SNode body) {
