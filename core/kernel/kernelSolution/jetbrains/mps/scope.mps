@@ -21,6 +21,8 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
+    <import index="35tq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.scope(MPS.Core/)" />
+    <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -4547,7 +4549,7 @@
         </node>
         <node concept="TZ5HA" id="3jEbQoczGxm" role="TZ5H$">
           <node concept="1dT_AC" id="3jEbQoczGxn" role="1dT_Ay">
-            <property role="1dT_AB" value="Introduced as a conterpart to returning list of nodes in ConstraintFunction_ReferentSearchScope_Factory" />
+            <property role="1dT_AB" value="Introduced as a counterpart to returning list of nodes in ConstraintFunction_ReferentSearchScope_Factory" />
           </node>
         </node>
       </node>

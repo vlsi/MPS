@@ -183,7 +183,6 @@
       </concept>
       <concept id="1147467790433" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" flags="in" index="Eqf_E" />
       <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
-      <concept id="1278414312223875536" name="jetbrains.mps.lang.constraints.structure.EnclosingNodeMigratedHint" flags="ng" index="Unfrr" />
       <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
       <concept id="1163200647017" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" flags="nn" index="3kakTB" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
@@ -354,7 +353,6 @@
                           <node concept="1mfA1w" id="5Vvmn_QkRj5" role="2OqNvi" />
                         </node>
                       </node>
-                      <node concept="Unfrr" id="5Vvmn_QkRj6" role="lGtFl" />
                     </node>
                     <node concept="chp4Y" id="5Vvmn_QkRiu" role="3oSUPX">
                       <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
@@ -885,7 +883,6 @@
                       <node concept="1mfA1w" id="5Vvmn_QkSaT" role="2OqNvi" />
                     </node>
                   </node>
-                  <node concept="Unfrr" id="5Vvmn_QkSaU" role="lGtFl" />
                 </node>
               </node>
             </node>
@@ -1550,7 +1547,6 @@
                           <node concept="1mfA1w" id="5Vvmn_QkSlK" role="2OqNvi" />
                         </node>
                       </node>
-                      <node concept="Unfrr" id="5Vvmn_QkSlL" role="lGtFl" />
                     </node>
                     <node concept="chp4Y" id="5Vvmn_QkSkT" role="3oSUPX">
                       <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
@@ -1642,7 +1638,6 @@
                     <node concept="1mfA1w" id="5Vvmn_QkRJs" role="2OqNvi" />
                   </node>
                 </node>
-                <node concept="Unfrr" id="5Vvmn_QkRJt" role="lGtFl" />
               </node>
             </node>
           </node>
@@ -1760,7 +1755,6 @@
                     <node concept="1mfA1w" id="5Vvmn_QkSv$" role="2OqNvi" />
                   </node>
                 </node>
-                <node concept="Unfrr" id="5Vvmn_QkSv_" role="lGtFl" />
               </node>
             </node>
           </node>
@@ -1880,7 +1874,6 @@
                           <node concept="1mfA1w" id="5Vvmn_QkRst" role="2OqNvi" />
                         </node>
                       </node>
-                      <node concept="Unfrr" id="5Vvmn_QkRsu" role="lGtFl" />
                     </node>
                     <node concept="chp4Y" id="5Vvmn_QkRr_" role="3oSUPX">
                       <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
@@ -2055,7 +2048,6 @@
                     <node concept="1mfA1w" id="5Vvmn_QkS1E" role="2OqNvi" />
                   </node>
                 </node>
-                <node concept="Unfrr" id="5Vvmn_QkS1F" role="lGtFl" />
               </node>
             </node>
           </node>
@@ -2292,7 +2284,6 @@
                                     <node concept="1mfA1w" id="5Vvmn_QkRAq" role="2OqNvi" />
                                   </node>
                                 </node>
-                                <node concept="Unfrr" id="5Vvmn_QkRAr" role="lGtFl" />
                               </node>
                               <node concept="chp4Y" id="5Vvmn_QkRAs" role="3oSUPX">
                                 <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
@@ -2530,7 +2521,6 @@
                         <node concept="1mfA1w" id="5Vvmn_QkRH_" role="2OqNvi" />
                       </node>
                     </node>
-                    <node concept="Unfrr" id="5Vvmn_QkRHA" role="lGtFl" />
                   </node>
                   <node concept="chp4Y" id="5Vvmn_QkRHB" role="3oSUPX">
                     <ref role="cht4Q" to="tp25:5zEkxuKhqeM" resolve="AttributeAccess" />
@@ -2631,7 +2621,6 @@
                         <node concept="1mfA1w" id="5Vvmn_QkRTu" role="2OqNvi" />
                       </node>
                     </node>
-                    <node concept="Unfrr" id="5Vvmn_QkRTv" role="lGtFl" />
                   </node>
                   <node concept="chp4Y" id="5Vvmn_QkRTw" role="3oSUPX">
                     <ref role="cht4Q" to="tp25:5zEkxuKhqeM" resolve="AttributeAccess" />
@@ -2732,7 +2721,6 @@
                         <node concept="1mfA1w" id="5Vvmn_QkRii" role="2OqNvi" />
                       </node>
                     </node>
-                    <node concept="Unfrr" id="5Vvmn_QkRij" role="lGtFl" />
                   </node>
                   <node concept="chp4Y" id="5Vvmn_QkRik" role="3oSUPX">
                     <ref role="cht4Q" to="tp25:5zEkxuKhqeM" resolve="AttributeAccess" />
@@ -3259,7 +3247,6 @@
                         <node concept="1mfA1w" id="5Vvmn_QkSuj" role="2OqNvi" />
                       </node>
                     </node>
-                    <node concept="Unfrr" id="5Vvmn_QkSuk" role="lGtFl" />
                   </node>
                   <node concept="chp4Y" id="5Vvmn_QkSul" role="3oSUPX">
                     <ref role="cht4Q" to="tp25:5zEkxuKhqeM" resolve="AttributeAccess" />

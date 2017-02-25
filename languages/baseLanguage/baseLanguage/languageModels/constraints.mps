@@ -215,7 +215,6 @@
       <concept id="1147467790433" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" flags="in" index="Eqf_E" />
       <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
       <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
-      <concept id="1278414312223875536" name="jetbrains.mps.lang.constraints.structure.EnclosingNodeMigratedHint" flags="ng" index="Unfrr" />
       <concept id="1426851521646451314" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetInstanceIcon" flags="in" index="XeQIk" />
       <concept id="4590747232508808445" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor" flags="nn" index="30Zx2P" />
       <concept id="6768994795311967732" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible" flags="nn" index="18Yu4j" />
@@ -2060,7 +2059,6 @@
                     <node concept="1mfA1w" id="5Vvmn_QkhGw" role="2OqNvi" />
                   </node>
                 </node>
-                <node concept="Unfrr" id="5Vvmn_QkhGx" role="lGtFl" />
               </node>
             </node>
           </node>
@@ -2276,7 +2274,6 @@
                     <node concept="1mfA1w" id="5Vvmn_QkhB8" role="2OqNvi" />
                   </node>
                 </node>
-                <node concept="Unfrr" id="5Vvmn_QkhB9" role="lGtFl" />
               </node>
             </node>
           </node>
@@ -2563,7 +2560,6 @@
                         <node concept="1mfA1w" id="5Vvmn_QkhET" role="2OqNvi" />
                       </node>
                     </node>
-                    <node concept="Unfrr" id="5Vvmn_QkhEU" role="lGtFl" />
                   </node>
                   <node concept="chp4Y" id="5Vvmn_QkhDZ" role="3oSUPX">
                     <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />

@@ -30,7 +30,7 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
-    <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" implicit="true" />
+    <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="cx9y" ref="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
@@ -179,7 +179,6 @@
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="3906442776579556545" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation" flags="in" index="Bn3R3" />
       <concept id="3906442776579549644" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode" flags="nn" index="Bn53e" />
-      <concept id="1278414312223875536" name="jetbrains.mps.lang.constraints.structure.EnclosingNodeMigratedHint" flags="ng" index="Unfrr" />
       <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
       <concept id="1163200647017" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" flags="nn" index="3kakTB" />
       <concept id="1159285995602" name="jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope" flags="ng" index="3EP7_v">
@@ -346,7 +345,6 @@
                             <node concept="1mfA1w" id="5Vvmn_QkPuv" role="2OqNvi" />
                           </node>
                         </node>
-                        <node concept="Unfrr" id="5Vvmn_QkPuw" role="lGtFl" />
                       </node>
                       <node concept="chp4Y" id="5Vvmn_QkPux" role="3oSUPX">
                         <ref role="cht4Q" to="vvvw:5$iCEGsO$Kj" resolve="FacetDeclaration" />
@@ -486,7 +484,6 @@
                                       <node concept="1mfA1w" id="5Vvmn_QkQ57" role="2OqNvi" />
                                     </node>
                                   </node>
-                                  <node concept="Unfrr" id="5Vvmn_QkQ58" role="lGtFl" />
                                 </node>
                                 <node concept="chp4Y" id="5Vvmn_QkQ59" role="3oSUPX">
                                   <ref role="cht4Q" to="vvvw:5$iCEGsO$Kj" resolve="FacetDeclaration" />
@@ -582,7 +579,6 @@
                                     <node concept="1mfA1w" id="5Vvmn_QkPBA" role="2OqNvi" />
                                   </node>
                                 </node>
-                                <node concept="Unfrr" id="5Vvmn_QkPBB" role="lGtFl" />
                               </node>
                             </node>
                           </node>
@@ -868,7 +864,6 @@
                             <node concept="1mfA1w" id="5Vvmn_QkQhI" role="2OqNvi" />
                           </node>
                         </node>
-                        <node concept="Unfrr" id="5Vvmn_QkQhJ" role="lGtFl" />
                       </node>
                       <node concept="3clFbT" id="5Vvmn_QkQhK" role="37wK5m">
                         <property role="3clFbU" value="false" />

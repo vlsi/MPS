@@ -47,6 +47,7 @@
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="35tq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.scope(MPS.Core/)" />
     <import index="bzl4" ref="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)" implicit="true" />
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" implicit="true" />
   </imports>
@@ -9748,6 +9749,9 @@
                   <node concept="3cpWs8" id="5_UZVBQ8ZSn" role="3cqZAp">
                     <node concept="3cpWsn" id="5_UZVBQ8ZSo" role="3cpWs9">
                       <property role="TrG5h" value="methodScope" />
+                      <node concept="3uibUv" id="5_UZVBQk$z_" role="1tU5fm">
+                        <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+                      </node>
                       <node concept="2YIFZM" id="3jEbQoc$ouW" role="33vP2m">
                         <ref role="37wK5l" to="o8zo:4IP40Bi3eAf" resolve="forNamedElements" />
                         <ref role="1Pybhc" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
@@ -9769,9 +9773,6 @@
                             </node>
                           </node>
                         </node>
-                      </node>
-                      <node concept="3uibUv" id="5_UZVBQk$z_" role="1tU5fm">
-                        <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
                       </node>
                     </node>
                   </node>
@@ -34576,15 +34577,15 @@
             <node concept="3cpWs8" id="5IWtCM7f1pN" role="3cqZAp">
               <node concept="3cpWsn" id="5IWtCM7f1pO" role="3cpWs9">
                 <property role="TrG5h" value="visibleEumMembers" />
+                <node concept="3uibUv" id="5IWtCM7f1pP" role="1tU5fm">
+                  <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+                </node>
                 <node concept="2YIFZM" id="3jEbQoc_ztD" role="33vP2m">
                   <ref role="37wK5l" to="o8zo:4IP40Bi3eAf" resolve="forNamedElements" />
                   <ref role="1Pybhc" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
                   <node concept="37vLTw" id="3jEbQoc_$0h" role="37wK5m">
                     <ref role="3cqZAo" node="5IWtCM7ff1v" resolve="methods" />
                   </node>
-                </node>
-                <node concept="3uibUv" id="5IWtCM7f1pP" role="1tU5fm">
-                  <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
                 </node>
               </node>
             </node>

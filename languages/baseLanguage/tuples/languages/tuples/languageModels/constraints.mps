@@ -180,7 +180,6 @@
       </concept>
       <concept id="1147467790433" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" flags="in" index="Eqf_E" />
       <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
-      <concept id="1278414312223875536" name="jetbrains.mps.lang.constraints.structure.EnclosingNodeMigratedHint" flags="ng" index="Unfrr" />
       <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
       <concept id="1163200647017" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" flags="nn" index="3kakTB" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
@@ -243,9 +242,6 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -324,7 +320,6 @@
                               <node concept="1mfA1w" id="5Vvmn_QkMpb" role="2OqNvi" />
                             </node>
                           </node>
-                          <node concept="Unfrr" id="5Vvmn_QkMpc" role="lGtFl" />
                         </node>
                         <node concept="chp4Y" id="5Vvmn_QkMpd" role="3oSUPX">
                           <ref role="cht4Q" to="cx9y:i2ry7cs" resolve="NamedTupleLiteral" />
@@ -413,7 +408,6 @@
                             <node concept="1mfA1w" id="5Vvmn_QkMqq" role="2OqNvi" />
                           </node>
                         </node>
-                        <node concept="Unfrr" id="5Vvmn_QkMqr" role="lGtFl" />
                       </node>
                       <node concept="chp4Y" id="5Vvmn_QkMpz" role="3oSUPX">
                         <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
