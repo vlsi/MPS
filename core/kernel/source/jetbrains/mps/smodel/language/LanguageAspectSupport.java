@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.aspects.InOrderSorter;
-import jetbrains.mps.aspects.OrderParticipant;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
@@ -33,8 +32,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Optional;
 
 /**
  * All common work with language aspect should be done using this class.

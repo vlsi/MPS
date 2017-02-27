@@ -40,6 +40,7 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.dataFlow.lang.ReachingDefinitionsTest.class,
     jetbrains.mps.dataFlow.lang.StructuralProgramBuilderTest.class,
     jetbrains.mps.diff.DiffTestCase.class,
+    jetbrains.mps.aspects.InOrderSorterTest.class,
     jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
     jetbrains.mps.compile.EclipseJavaCompilerTest.class,
     jetbrains.mps.classloading.ModuleClassLoaderTest.class,

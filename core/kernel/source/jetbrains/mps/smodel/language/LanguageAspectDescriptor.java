@@ -96,4 +96,9 @@ public abstract class LanguageAspectDescriptor implements OrderParticipant<Strin
   public String getHelpUrl() {
     return null;
   }
+
+  @Override
+  public String toString() {
+    return getId();
+  }
 }
