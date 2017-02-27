@@ -21,41 +21,40 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)/2546981710035481844">
     <file name="AntBootstrap.java">
-      <node id="1463465047941145111" at="14,10,15,68" concept="12" />
-      <node id="1463465047941127641" at="15,68,16,33" concept="4" />
-      <node id="2546981710035481857" at="20,42,21,104" concept="12" />
-      <node id="5618154074607936771" at="21,104,22,36" concept="4" />
-      <node id="2546981710035481863" at="22,36,23,90" concept="10" />
-      <node id="2546981710035481881" at="24,9,25,54" concept="10" />
-      <node id="2546981710035481890" at="25,54,26,75" concept="10" />
-      <node id="2546981710035481900" at="26,75,27,37" concept="4" />
-      <node id="2546981710035481905" at="27,37,28,56" concept="10" />
-      <node id="2546981710035481918" at="28,56,29,66" concept="4" />
-      <node id="2546981710035481927" at="29,66,30,51" concept="4" />
-      <node id="2546981710035481873" at="31,27,32,36" concept="4" />
-      <node id="2546981710035481935" at="33,5,34,19" concept="4" />
-      <node id="2546981710035481846" at="18,0,20,0" concept="2" trace="AntBootstrap#()V" />
-      <node id="2546981710035481870" at="23,90,33,5" concept="18" />
-      <node id="2546981710035481850" at="20,0,36,0" concept="15" trace="main#([Ljava/lang/String;)V" />
-      <scope id="2546981710035481849" at="18,25,18,25" />
-      <scope id="2546981710035481871" at="31,0,32,36">
+      <node id="1463465047941145111" at="13,10,14,68" concept="12" />
+      <node id="1463465047941127641" at="14,68,15,33" concept="4" />
+      <node id="2546981710035481857" at="19,42,20,104" concept="12" />
+      <node id="2546981710035481863" at="20,104,21,90" concept="10" />
+      <node id="2546981710035481881" at="22,9,23,54" concept="10" />
+      <node id="2546981710035481890" at="23,54,24,75" concept="10" />
+      <node id="2546981710035481900" at="24,75,25,37" concept="4" />
+      <node id="2546981710035481905" at="25,37,26,56" concept="10" />
+      <node id="2546981710035481918" at="26,56,27,66" concept="4" />
+      <node id="2546981710035481927" at="27,66,28,51" concept="4" />
+      <node id="2546981710035481873" at="29,27,30,36" concept="4" />
+      <node id="2546981710035481935" at="31,5,32,19" concept="4" />
+      <node id="2546981710035481846" at="17,0,19,0" concept="2" trace="AntBootstrap#()V" />
+      <node id="2546981710035481870" at="21,90,31,5" concept="18" />
+      <node id="2546981710035481850" at="19,0,34,0" concept="15" trace="main#([Ljava/lang/String;)V" />
+      <scope id="2546981710035481849" at="17,25,17,25" />
+      <scope id="2546981710035481871" at="29,0,30,36">
         <var name="e" id="2546981710035481878" />
       </scope>
-      <scope id="2546981710035481872" at="31,27,32,36" />
-      <scope id="1463465047941104340" at="14,10,16,33" />
-      <scope id="2546981710035481846" at="18,0,20,0" />
-      <scope id="2546981710035481880" at="24,9,30,51">
+      <scope id="2546981710035481872" at="29,27,30,36" />
+      <scope id="1463465047941104340" at="13,10,15,33" />
+      <scope id="2546981710035481846" at="17,0,19,0" />
+      <scope id="2546981710035481880" at="22,9,28,51">
         <var name="clazz" id="2546981710035481882" />
         <var name="mainMethod" id="2546981710035481891" />
         <var name="passedArgs" id="2546981710035481906" />
       </scope>
-      <scope id="2546981710035481856" at="20,42,34,19">
+      <scope id="2546981710035481856" at="19,42,32,19">
         <var name="newClassLoader" id="2546981710035481864" />
       </scope>
-      <scope id="2546981710035481850" at="20,0,36,0">
+      <scope id="2546981710035481850" at="19,0,34,0">
         <var name="args" id="2546981710035481853" />
       </scope>
-      <unit id="2546981710035481844" at="13,0,37,0" name="jetbrains.mps.tool.builder.AntBootstrap" />
+      <unit id="2546981710035481844" at="12,0,35,0" name="jetbrains.mps.tool.builder.AntBootstrap" />
     </file>
   </root>
   <root nodeRef="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)/878521226300773719">

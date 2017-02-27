@@ -14,7 +14,7 @@ public class MainClass {
       public void run() {
         ModelAccess.instance().runWriteAction(new Computable<Boolean>() {
           public Boolean compute() {
-            IFile okFile = new IoFileSystem().getFile("ok.log");
+            IFile okFile = IoFileSystem.INSTANCE.getFile("ok.log");
             return okFile.createNewFile();
           }
         });

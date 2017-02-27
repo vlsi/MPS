@@ -2889,15 +2889,6 @@
             <property role="3SKdUp" value="    System.setProperty(ClassloaderUtil.PROPERTY_IGNORE_CLASSPATH, &quot;.*trove4j.*trove4j.*\\.jar&quot;);" />
           </node>
         </node>
-        <node concept="3clFbF" id="4RRGlPmqQk3" role="3cqZAp">
-          <node concept="2YIFZM" id="4RRGlPmqS0X" role="3clFbG">
-            <ref role="37wK5l" to="fyhk:~RuntimeFlags.setUseIOFile(boolean):void" resolve="setUseIOFile" />
-            <ref role="1Pybhc" to="fyhk:~RuntimeFlags" resolve="RuntimeFlags" />
-            <node concept="3clFbT" id="4RRGlPmqSCp" role="37wK5m">
-              <property role="3clFbU" value="true" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="2doG_VG5fk7" role="3cqZAp">
           <node concept="3cpWsn" id="2doG_VG5fk8" role="3cpWs9">
             <property role="TrG5h" value="newClassLoader" />

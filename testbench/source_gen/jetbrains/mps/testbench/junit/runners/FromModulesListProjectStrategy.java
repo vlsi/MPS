@@ -16,7 +16,6 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess;
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.vfs.FileSystem;
 
 /**
  * todo: merge with "modules collected from dir", or specify here paths to msd/mpl files
@@ -55,7 +54,7 @@ public class FromModulesListProjectStrategy extends ProjectStrategyBase {
     VfsRootAccess.allowRootAccess(moduleFolders.toArray(new String[moduleFolders.size()]));
     ModulesMiner mm = new ModulesMiner();
     for (String modulePath : modules) {
-      IFile fileByPath = FileSystem.getInstance().getFile(modulePath);
+      IFile fileByPath = IoFileSystem.INSTANCE.getFile(modulePath);
       mm.collectModules(fileByPath);
     }
     return loadProjectFromModuleHandles(emptyProject, mm.getCollectedModules());

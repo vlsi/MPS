@@ -6,10 +6,8 @@ import jetbrains.mps.tool.environment.ProjectStrategyBase;
 import java.util.Set;
 import jetbrains.mps.vfs.IFile;
 import java.util.HashSet;
-import jetbrains.mps.vfs.FileSystem;
-import java.io.File;
-
 import jetbrains.mps.vfs.impl.IoFileSystem;
+import java.io.File;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
