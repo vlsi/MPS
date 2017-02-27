@@ -11,6 +11,7 @@ import java.util.HashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.checkers.ConstraintsChecker;
+import jetbrains.mps.checkers.StructureChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.checkers.UsedLanguagesChecker;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
@@ -63,7 +64,7 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
   public LanguageEditorChecker(@NotNull SRepository projectRepo) {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
     SetSequence.fromSet(myRules).addElement(myScopeChecker = new RefScopeCheckerInEditor());
-    SetSequence.fromSet(myRules).addElement(new InEditorStructureChecker());
+    SetSequence.fromSet(myRules).addElement(new StructureChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
     SetSequence.fromSet(myRules).addElement(new UsedLanguagesChecker());
     myErrorComponents = new ErrorComponents(projectRepo);

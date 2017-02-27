@@ -81,15 +81,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryContentAdapter" />
   </dependency>
-  <dependency className="typesystemIntegration.languageChecker.InEditorStructureChecker" file="InEditorStructureChecker.java">
-    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
-    <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />
-    <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
-    <classNode extendsClassName="jetbrains.mps.checkers.AbstractConstraintsChecker" />
-  </dependency>
   <dependency className="typesystemIntegration.languageChecker.LanguageEditorChecker" file="LanguageEditorChecker.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.IndexNotReadyException" />
@@ -107,6 +98,7 @@
     <classNode dependClassName="jetbrains.mps.checkers.ConstraintsChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.ErrorReportUtil" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsComponent" />
+    <classNode dependClassName="jetbrains.mps.checkers.StructureChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.TargetConceptChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.UsedLanguagesChecker" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -143,7 +135,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="typesystemIntegration.languageChecker.AutoResolver" />
     <classNode dependClassName="typesystemIntegration.languageChecker.ErrorComponents" />
-    <classNode dependClassName="typesystemIntegration.languageChecker.InEditorStructureChecker" />
     <classNode dependClassName="typesystemIntegration.languageChecker.RefScopeCheckerInEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEditorChecker" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.DisposableEditorChecker" />

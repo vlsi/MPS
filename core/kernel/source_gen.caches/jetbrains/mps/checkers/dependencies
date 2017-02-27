@@ -123,6 +123,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.checkers.AbstractConstraintsChecker" />
   </dependency>
+  <dependency className="jetbrains.mps.checkers.StructureChecker" file="StructureChecker.java">
+    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
+    <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />
+    <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
+    <classNode extendsClassName="jetbrains.mps.checkers.AbstractConstraintsChecker" />
+  </dependency>
   <dependency className="jetbrains.mps.checkers.TargetConceptChecker" file="TargetConceptChecker.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
