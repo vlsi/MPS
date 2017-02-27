@@ -15,14 +15,11 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -84,7 +81,9 @@ public abstract class AbstractSubstituteAction implements SubstituteAction {
 
   @Override
   public boolean canSubstituteStrictly(String pattern) {
-    if (pattern == null || getMatchingText(pattern) == null) return false;
+    if (pattern == null || getMatchingText(pattern) == null) {
+      return false;
+    }
     return getMatchingText(pattern).equals(pattern);
   }
 
@@ -105,7 +104,9 @@ public abstract class AbstractSubstituteAction implements SubstituteAction {
     if (matchingText == null || matchingText.length() == 0) {
       return false;
     }
-    if (matchingText.charAt(0) != pattern.charAt(0)) return false;
+    if (matchingText.charAt(0) != pattern.charAt(0)) {
+      return false;
+    }
     return matches(pattern, matchingText);
   }
 
@@ -115,43 +116,30 @@ public abstract class AbstractSubstituteAction implements SubstituteAction {
 
   @Override
   public final SNode substitute(@Nullable final EditorContext editorContext, final String pattern) {
-    ModelComputeRunnable<SNode> substituter = new ModelComputeRunnable<SNode>(new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        if (editorContext != null) {
-          // completion can be invoked by typing invalid stuff into existing cells, revert it back to the model state
-          jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = (jetbrains.mps.nodeEditor.cells.EditorCell) editorContext.getSelectedCell();
-          if (selectedCell != null) {
-            // Trying to invoke synchronizeViewWithModel() for the cell which was modified by "typing invalid stuff into" only.
-            //
-            // This is necessary to not reset all states of all "error" cells with modified text within them.
-            // Important for auto-re-resolving functionality (see http://youtrack.jetbrains.com/issue/MPS-19751).
-            //
-            // In case this will break something we can thing of more careful "synchronizeViewWithModel()" execution.
-            // For example: run synchronizeViewWithModel() only for constant cells or only for cells representing this
-            // node only (not it's children).
-            selectedCell.synchronizeViewWithModel();
-          }
-        }
-
-        SNode nodeToSelect = doSubstitute(editorContext, pattern);
-
-        if (editorContext != null && nodeToSelect != null) {
-          EditorComponent editorComponent = editorContext.getEditorComponent();
-          editorComponent.getUpdater().flushModelEvents();
-          select(editorContext, nodeToSelect);
-        }
-        return nodeToSelect;
-      }
-    });
-
     if (editorContext != null) {
-      editorContext.getRepository().getModelAccess().executeCommand(new EditorCommandAdapter(substituter, editorContext));
-      return substituter.getResult();
-    } else {
-      substituter.run();
-      return substituter.getResult();
+      // completion can be invoked by typing invalid stuff into existing cells, revert it back to the model state
+      jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = (jetbrains.mps.nodeEditor.cells.EditorCell) editorContext.getSelectedCell();
+      if (selectedCell != null) {
+        // Trying to invoke synchronizeViewWithModel() for the cell which was modified by "typing invalid stuff into" only.
+        //
+        // This is necessary to not reset all states of all "error" cells with modified text within them.
+        // Important for auto-re-resolving functionality (see http://youtrack.jetbrains.com/issue/MPS-19751).
+        //
+        // In case this will break something we can thing of more careful "synchronizeViewWithModel()" execution.
+        // For example: run synchronizeViewWithModel() only for constant cells or only for cells representing this
+        // node only (not it's children).
+        selectedCell.synchronizeViewWithModel();
+      }
     }
+
+    SNode nodeToSelect = doSubstitute(editorContext, pattern);
+
+    if (editorContext != null && nodeToSelect != null) {
+      EditorComponent editorComponent = editorContext.getEditorComponent();
+      editorComponent.getUpdater().flushModelEvents();
+      select(editorContext, nodeToSelect);
+    }
+    return nodeToSelect;
   }
 
   protected void select(EditorContext context, SNode node) {

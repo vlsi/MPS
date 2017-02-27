@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.lang.editor.menus.transformation.CompletionActionItemUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -47,7 +46,7 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
   @Override
   public SNode getIconNode(String pattern) {
     final Object parameterObject = getParameterObject();
-    if (parameterObject instanceof  SNode){
+    if (parameterObject instanceof SNode) {
       return ((SNode) parameterObject);
     }
     return getOutputConcept();
@@ -117,18 +116,13 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
   @Override
   public SNode substitute(@Nullable EditorContext context, String pattern) {
     assert myActionItem.getCommandPolicy() == CommandPolicy.COMMAND_REQUIRED : "Cannot execute a substitute action outside of command";
-    if (context == null) {
-      myActionItem.execute(pattern);
-    } else {
-      context.getRepository().getModelAccess().executeCommand(new EditorCommandAdapter(() -> {
-        EditorCell contextCell = context.getContextCell();
-        if (contextCell instanceof jetbrains.mps.nodeEditor.cells.EditorCell) {
-          ((jetbrains.mps.nodeEditor.cells.EditorCell) contextCell).synchronizeViewWithModel();
-        }
-        myActionItem.execute(pattern);
-      }, context));
+    if (context != null) {
+      EditorCell contextCell = context.getContextCell();
+      if (contextCell instanceof jetbrains.mps.nodeEditor.cells.EditorCell) {
+        ((jetbrains.mps.nodeEditor.cells.EditorCell) contextCell).synchronizeViewWithModel();
+      }
     }
-
+    myActionItem.execute(pattern);
     // myActionItem should change selection itself, so return null here
     return null;
   }

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -78,7 +77,7 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
     if (myParameterObject instanceof SNode) {
       return NodePresentationUtil.descriptionText((SNode) myParameterObject);
     }
-    if(myParameterObject instanceof SConcept) {
+    if (myParameterObject instanceof SConcept) {
       return NodePresentationUtil.descriptionText((SConcept) myParameterObject);
     }
     return "";
@@ -116,7 +115,9 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
 
   @Override
   public boolean canSubstituteStrictly(String pattern) {
-    if (pattern == null || getMatchingText(pattern) == null) return false;
+    if (pattern == null || getMatchingText(pattern) == null) {
+      return false;
+    }
     return getMatchingText(pattern).equals(pattern);
   }
 
@@ -137,7 +138,9 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
     if (matchingText == null || matchingText.length() == 0) {
       return false;
     }
-    if (matchingText.charAt(0) != pattern.charAt(0)) return false;
+    if (matchingText.charAt(0) != pattern.charAt(0)) {
+      return false;
+    }
     return matches(pattern, matchingText);
   }
 
@@ -148,58 +151,45 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
 
   @Override
   public final SNode substitute(@Nullable final EditorContext context, final String pattern) {
-    final SNode[] newNode = new SNode[1];
+    if (context != null) {
+      // completion can be invoked by typing invalid stuff into existing cells, revert it back to the model state
+      jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = (jetbrains.mps.nodeEditor.cells.EditorCell) context.getSelectedCell();
+      if (selectedCell != null) {
+        // Trying to invoke synchronizeViewWithModel() for the cell which was modified by "typing invalid stuff into" only.
+        //
+        // This is necessary to not reset all states of all "error" cells with modified text within them.
+        // Important for auto-re-resolving functionality (see http://youtrack.jetbrains.com/issue/MPS-19751).
+        //
+        // In case this will break something we can thing of more careful "synchronizeViewWithModel()" execution.
+        // For example: run synchronizeViewWithModel() only for constant cells or only for cells representing this
+        // node only (not it's children).
+        selectedCell.synchronizeViewWithModel();
+      }
+    }
 
-    Runnable runnable = new Runnable() {
-      @Override
-      public void run() {
-        if (context != null) {
-          // completion can be invoked by typing invalid stuff into existing cells, revert it back to the model state
-          jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = (jetbrains.mps.nodeEditor.cells.EditorCell) context.getSelectedCell();
-          if (selectedCell != null) {
-            // Trying to invoke synchronizeViewWithModel() for the cell which was modified by "typing invalid stuff into" only.
-            //
-            // This is necessary to not reset all states of all "error" cells with modified text within them.
-            // Important for auto-re-resolving functionality (see http://youtrack.jetbrains.com/issue/MPS-19751).
-            //
-            // In case this will break something we can thing of more careful "synchronizeViewWithModel()" execution.
-            // For example: run synchronizeViewWithModel() only for constant cells or only for cells representing this
-            // node only (not it's children).
-            selectedCell.synchronizeViewWithModel();
-          }
-        }
-
-        try {
-          newNode[0] = doSubstitute(context, pattern);
-        } catch (RuntimeException rte) {
-          LOG.error("Exception on calling doSubstitute() method for " + AbstractNodeSubstituteAction.this.getClass(), rte);
-        }
-        // similar to: IntellijentInputUtil.applyRigthTransform() logic
-        if (context != null && newNode[0] != null) {
-          jetbrains.mps.nodeEditor.EditorComponent editorComponent = ((jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent());
-          if (editorComponent != null) {
-            editorComponent.getUpdater().flushModelEvents();
-            EditorCell cell = editorComponent.findNodeCell(newNode[0]);
-            if (cell != null) {
-              EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
-              if (errorCell != null) {
-                editorComponent.changeSelectionWRTFocusPolicy(errorCell);
-              } else {
-                editorComponent.changeSelectionWRTFocusPolicy(cell);
-              }
-            }
+    SNode nodeToSelect = null;
+    try {
+      nodeToSelect = doSubstitute(context, pattern);
+    } catch (RuntimeException rte) {
+      LOG.error("Exception on calling doSubstitute() method for " + AbstractNodeSubstituteAction.this.getClass(), rte);
+    }
+    // similar to: IntellijentInputUtil.applyRigthTransform() logic
+    if (context != null && nodeToSelect != null) {
+      jetbrains.mps.nodeEditor.EditorComponent editorComponent = ((jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent());
+      if (editorComponent != null) {
+        editorComponent.getUpdater().flushModelEvents();
+        EditorCell cell = editorComponent.findNodeCell(nodeToSelect);
+        if (cell != null) {
+          EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
+          if (errorCell != null) {
+            editorComponent.changeSelectionWRTFocusPolicy(errorCell);
+          } else {
+            editorComponent.changeSelectionWRTFocusPolicy(cell);
           }
         }
       }
-    };
-
-    if (context != null) {
-      context.getRepository().getModelAccess().executeCommand(new EditorCommandAdapter(runnable, context));
-    } else {
-      runnable.run();
     }
-
-    return newNode[0];
+    return nodeToSelect;
   }
 
   public String toString() {
