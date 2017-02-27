@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -32,6 +33,13 @@ import java.util.List;
 /**
  * @author simon
  */
+
+/**
+ * Class which finds side transform actions from actions aspect by the side transform tag.
+ * @deprecated use {@link SideTransformSubstituteInfo}
+ */
+@ToRemove(version = 2017.2)
+@Deprecated
 class OldSideTransformSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   private final SNode myNode;

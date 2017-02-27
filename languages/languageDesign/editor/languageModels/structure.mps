@@ -5123,11 +5123,11 @@
     <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
     <node concept="M4N5e" id="30NnNOohrQL" role="M5hS2">
       <property role="1uS6qv" value="RIGHT" />
-      <property role="1uS6qo" value="left" />
+      <property role="1uS6qo" value="right" />
     </node>
     <node concept="M4N5e" id="1A4kJjlVmVt" role="M5hS2">
       <property role="1uS6qv" value="LEFT" />
-      <property role="1uS6qo" value="right" />
+      <property role="1uS6qo" value="left" />
     </node>
   </node>
   <node concept="1TIwiD" id="1A4kJjlVDm7">

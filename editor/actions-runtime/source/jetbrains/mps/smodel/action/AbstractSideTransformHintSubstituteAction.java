@@ -20,7 +20,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 /**
  * Igor Alshannikov
  * Mar 29, 2005
+ * @deprecated use {@link jetbrains.mps.nodeEditor.cellMenu.CompletionActionItemAsSubstituteAction}
  */
+
+@Deprecated
 public abstract class AbstractSideTransformHintSubstituteAction extends AbstractNodeSubstituteAction {
   /**
    * @param concept instanceof AbstractConceptDeclaration

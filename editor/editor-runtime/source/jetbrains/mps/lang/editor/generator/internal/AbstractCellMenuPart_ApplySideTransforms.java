@@ -32,7 +32,10 @@ import java.util.List;
 
 /**
  * evgeny, 2/6/13
+ * @deprecated Runtime class for deprecated cell menu part. Transformation Menu should be used instead of that part.
  */
+
+@Deprecated
 public class AbstractCellMenuPart_ApplySideTransforms implements SubstituteInfoPartExt {
 
   private final CellSide myCellSide;

@@ -36,7 +36,9 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * @author simon
+ * @deprecated since 2017.1 actions from the actions aspect are not supported
  */
+@Deprecated
 public class OldNewSubstituteUtil {
 
   private static final String ACTIONS_LANG = "jetbrains.mps.lang.actions";

@@ -68,7 +68,6 @@ public class SideTransformSubstituteInfo extends AbstractSubstituteInfo {
     }).collect(Collectors.toList());
   }
 
-
   public enum Side {
     LEFT(MenuLocations.LEFT_SIDE_TRANSFORM),
     RIGHT(MenuLocations.RIGHT_SIDE_TRANSFORM);

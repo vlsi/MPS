@@ -19,6 +19,7 @@ import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo.Side;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
@@ -515,11 +516,11 @@ public class EditorManager {
   }
 
   private EditorCell addSideTransformHintCell(EditorCell nodeCell, SNode node) {
-    CellSide side;
+    Side side;
     if (SideTransformInfoUtil.hasRightTransformInfo(node)) {
-      side = CellSide.RIGHT;
+      side = Side.RIGHT;
     } else if (SideTransformInfoUtil.hasLeftTransformInfo(node)) {
-      side = CellSide.LEFT;
+      side = Side.LEFT;
     } else {
       return nodeCell;
     }
@@ -542,10 +543,8 @@ public class EditorManager {
         "Anchor cell should be associated with the same node as main cell. Anchor cell node: " + anchorCell.getSNode().getNodeId() + "; main node: " +
             node.getNodeId();
 
-    String sideTransformTag = SideTransformInfoUtil.getAnchorTagFromTransformInfo(node);
-    assert sideTransformTag != null;
     EditorCell_STHint sideTransformHintCell =
-        new EditorCell_STHint(unwrappedNodeBigCell, anchorCell, side, sideTransformTag, getCurrentlySelectedCellInfo(unwrappedNodeBigCell.getContext()));
+        new EditorCell_STHint(unwrappedNodeBigCell, anchorCell, side, getCurrentlySelectedCellInfo(unwrappedNodeBigCell.getContext()));
     return sideTransformHintCell.install();
   }
 

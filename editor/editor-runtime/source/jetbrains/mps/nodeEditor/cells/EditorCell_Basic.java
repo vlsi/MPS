@@ -893,6 +893,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   }
 
+  @NotNull
   @Override
   public CellInfo getCellInfo() {
     return new DefaultCellInfo(this);
