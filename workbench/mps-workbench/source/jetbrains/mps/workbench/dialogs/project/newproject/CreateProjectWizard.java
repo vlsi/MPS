@@ -25,7 +25,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.popup.ListItemDescriptor;
-import com.intellij.openapi.util.Condition;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.CollectionListModel;
 import com.intellij.ui.DocumentAdapter;
@@ -45,7 +44,6 @@ import com.intellij.util.ui.JBUI;
 import jetbrains.mps.ide.ui.util.UIUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.dialogs.project.newproject.PathField.PathChangedListner;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.ProjectNotCreatedException;
 import org.jetbrains.annotations.Nullable;
 
@@ -59,18 +57,16 @@ import javax.swing.JTextPane;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.event.DocumentEvent;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.io.FilenameFilter;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 public class CreateProjectWizard extends DialogWrapper {
 
@@ -112,8 +108,8 @@ public class CreateProjectWizard extends DialogWrapper {
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
-    if(myPanel == null){
-      myPanel = new JPanel(new GridLayoutManager(1,1, JBUI.emptyInsets(), -1, -1));
+    if (myPanel == null) {
+      myPanel = new JPanel(new GridLayoutManager(1, 1, JBUI.emptyInsets(), -1, -1));
 
       initLeftPanel();
 
@@ -124,7 +120,9 @@ public class CreateProjectWizard extends DialogWrapper {
       mySplitter.setFirstComponent(myLeftPanel);
       mySplitter.setSecondComponent(myRightPanel);
       myPanel.add(mySplitter,
-          new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null));
+                  new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
+                                      GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK,
+                                      GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null));
 
       myPanel.setPreferredSize(new Dimension(600, 400));
       myList.setSelectedIndex(0);
@@ -154,7 +152,7 @@ public class CreateProjectWizard extends DialogWrapper {
         if (event instanceof KeyEvent) {
           int row = myList.getSelectedIndex();
           int toSelect;
-          switch (((KeyEvent)event).getKeyCode()) {
+          switch (((KeyEvent) event).getKeyCode()) {
             case KeyEvent.VK_UP:
               toSelect = row == 0 ? myList.getItemsCount() - 1 : row - 1;
               myList.setSelectedIndex(toSelect);
@@ -171,25 +169,38 @@ public class CreateProjectWizard extends DialogWrapper {
     }.registerCustomShortcutSet(new CustomShortcutSet(KeyEvent.VK_UP, KeyEvent.VK_DOWN), mySearchField);
 
     myLeftPanel.add(mySearchField,
-        new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+                    new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK,
+                                        GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
 
     myList = new JBList();
 
-    List<ProjectTemplatesGroup> templatesGroups = new SortedList<ProjectTemplatesGroup>(new Comparator<ProjectTemplatesGroup>() {
+    List<ProjectTemplatesGroup> templatesGroups = new SortedList<>(new Comparator<ProjectTemplatesGroup>() {
       @Override
       public int compare(ProjectTemplatesGroup o1, ProjectTemplatesGroup o2) {
         //Put DSL/Development groups on top & Other group to the last place
-        if(o1.getName().equals("DSL")) return -1;
-        if(o2.getName().equals("DSL")) return 1;
-        if(o1.getName().equals("Development")) return -1;
-        if(o2.getName().equals("Development")) return 1;
-        if(o1.getName().equals("Other")) return 1;
-        if(o2.getName().equals("Other")) return -1;
+        if (o1.getName().equals("DSL")) {
+          return -1;
+        }
+        if (o2.getName().equals("DSL")) {
+          return 1;
+        }
+        if (o1.getName().equals("Development")) {
+          return -1;
+        }
+        if (o2.getName().equals("Development")) {
+          return 1;
+        }
+        if (o1.getName().equals("Other")) {
+          return 1;
+        }
+        if (o2.getName().equals("Other")) {
+          return -1;
+        }
         return o1.getName().compareToIgnoreCase(o2.getName());
       }
     });
-    List<TemplateItem> templateItems = new LinkedList<TemplateItem>();
+    List<TemplateItem> templateItems = new LinkedList<>();
 
     templatesGroups.addAll(Arrays.asList(ProjectTemplatesGroup.EP_NAME.getExtensions()));
 
@@ -199,36 +210,33 @@ public class CreateProjectWizard extends DialogWrapper {
       }
     }
 
-    CollectionListModel<TemplateItem> model = new CollectionListModel<TemplateItem>(templateItems);
-    myFilteringListModel = new FilteringListModel<TemplateItem>(model);
-    myFilteringListModel.setFilter(new Condition<TemplateItem>() {
-      @Override
-      public boolean value(TemplateItem templateItem) {
-        return templateItem.getName().toLowerCase().contains(mySearchField.getText().trim().toLowerCase());
-      }
-    });
+    CollectionListModel<TemplateItem> model = new CollectionListModel<>(templateItems);
+    myFilteringListModel = new FilteringListModel<>(model);
+    myFilteringListModel.setFilter(templateItem -> templateItem.getName().toLowerCase().contains(mySearchField.getText().trim().toLowerCase()));
     myList.setModel(myFilteringListModel);
 
     myList.setCellRenderer(new GroupedItemsListRenderer(new ListItemDescriptor() {
       @Nullable
       @Override
       public String getTextFor(Object value) {
-        return ((TemplateItem)value).getName();
+        return ((TemplateItem) value).getName();
       }
 
       @Nullable
       @Override
-      public String getTooltipFor(Object value) { return null; }
+      public String getTooltipFor(Object value) {
+        return null;
+      }
 
       @Nullable
       @Override
       public Icon getIconFor(Object value) {
-        return ((TemplateItem)value).getIcon();
+        return ((TemplateItem) value).getIcon();
       }
 
       @Override
       public boolean hasSeparatorAboveOf(Object value) {
-        TemplateItem item = (TemplateItem)value;
+        TemplateItem item = (TemplateItem) value;
         int index = myFilteringListModel.getElementIndex(item);
         return index == 0 || !myFilteringListModel.getElementAt(index - 1).getGroupName().equals(item.getGroupName());
       }
@@ -236,57 +244,56 @@ public class CreateProjectWizard extends DialogWrapper {
       @Nullable
       @Override
       public String getCaptionAboveOf(Object value) {
-        return ((TemplateItem)value).getGroupName();
+        return ((TemplateItem) value).getGroupName();
       }
     }));
 
-    myList.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-
-      @Override
-      public void valueChanged(ListSelectionEvent e) {
-        myCurrentTemplateItem = (TemplateItem)myList.getSelectedValue();
-        updateRightPanel();
-      }
+    myList.getSelectionModel().addListSelectionListener(listSelectionEvent -> {
+      myCurrentTemplateItem = (TemplateItem) myList.getSelectedValue();
+      updateRightPanel();
     });
 
     myLeftPanel.add(ScrollPaneFactory.createScrollPane(myList),
-        new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null));
+                    new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK,
+                                        GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null));
     myLeftPanel.setPreferredSize(new Dimension(200, 400));
   }
 
   private void initRightPanel() {
-    myRightPanel = new JPanel(new GridLayoutManager(4, 1, new JBInsets(5,5,5,0), -1, -1));
+    myRightPanel = new JPanel(new GridLayoutManager(4, 1, new JBInsets(5, 5, 5, 0), -1, -1));
 
     //-----Project panel-----
 
-    myProjectPanel = new JPanel(new GridLayoutManager(2, 2, new JBInsets(0,0,5,0), -1, -1));
+    myProjectPanel = new JPanel(new GridLayoutManager(2, 2, new JBInsets(0, 0, 5, 0), -1, -1));
 
     myProjectPanel.add(new JLabel("Project name:"),
-        new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+                       new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+                                           GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     myProjectName = new JTextField(getDefaultProjectName());
     myProjectPanel.add(myProjectName,
-        new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+                       new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
+                                           GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null,
+                                           null, null));
 
     myProjectPanel.add(new JLabel("Project location:"),
-        new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+                       new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+                                           GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     myProjectPath = new PathField();
-    myProjectPath.addPathChangedListner(new PathChangedListner() {
-      @Override
-      public void firePathChanged(String newValue) {
-        //If path changed need to update specific module settings
-        fireProjectPathChanged(newValue);
-        checkProjectPath(newValue);
-      }
+    myProjectPath.addPathChangedListner(newPathValue -> {
+      //If path changed need to update specific module settings
+      fireProjectPathChanged(newPathValue);
+      checkProjectPath(newPathValue);
     });
 
     //Change project path if project name changed
     myProjectName.addCaretListener(new CaretListener() {
       private String myValue = myProjectName.getText();
+
       @Override
       public void caretUpdate(CaretEvent e) {
-        if(myValue != myProjectName.getText()) {
+        if (!Objects.equals(myValue, myProjectName.getText())) {
           myValue = myProjectName.getText();
           updateProjectPath();
         }
@@ -295,10 +302,14 @@ public class CreateProjectWizard extends DialogWrapper {
 
     updateProjectPath();
     myProjectPanel.add(myProjectPath,
-        new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+                       new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
+                                           GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null,
+                                           null, null));
 
     myRightPanel.add(myProjectPanel,
-        new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+                     new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
+                                         GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null,
+                                         null, null));
 
     //-----Description panel-----
 
@@ -307,13 +318,20 @@ public class CreateProjectWizard extends DialogWrapper {
 
     myDescriptionPane = new JTextPane();
 
-    myDescriptionPanel.add(myDescriptionPane, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
+    myDescriptionPanel.add(myDescriptionPane, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH,
+                                                                  GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                                                                  GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null,
+                                                                  null));
 
     myRightPanel.add(myDescriptionPanel,
-        new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
+                     new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH,
+                                         GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                                         GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
 
     myRightPanel.add(Box.createVerticalGlue(),
-        new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
+                     new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH,
+                                         GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                                         GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
 
     //-----Template settings panel-----
 
@@ -323,27 +341,25 @@ public class CreateProjectWizard extends DialogWrapper {
     myHideableDecorator = new HideableDecorator(myTemplateSettingsHolder, "More Settings", false);
     myHideableDecorator.setContentComponent(myTemplateSettings);
     myHideableDecorator.setOn(true);
-    
+
     myRightPanel.add(myTemplateSettingsHolder,
-        new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_SOUTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+                     new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_SOUTHWEST, GridConstraints.FILL_HORIZONTAL,
+                                         GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null,
+                                         null, null));
   }
 
   private void checkProjectPath(String newProjectPath) {
     boolean isProjectPath = false;
     File file = new File(newProjectPath);
-    if(file.exists()){
-      if (file.getParent() == null || !file.isDirectory())
+    if (file.exists()) {
+      if (file.getParent() == null || !file.isDirectory()) {
         isProjectPath = false;
-      else {
-        isProjectPath = file.listFiles(new FilenameFilter() {
-          @Override
-          public boolean accept(File dir, String name) {
-            return Project.DIRECTORY_STORE_FOLDER.equals(name) || name.toLowerCase().endsWith(MPSExtentions.DOT_MPS_PROJECT);
-          }
-        }).length == 1;
+      } else if (file.isDirectory()) {
+        isProjectPath = file.listFiles(
+            (dir, name) -> Project.DIRECTORY_STORE_FOLDER.equals(name) || name.toLowerCase().endsWith(MPSExtentions.DOT_MPS_PROJECT)).length == 1;
       }
     }
-    if(isProjectPath){
+    if (isProjectPath) {
       //show error and disable apply
       setErrorText("Project under this path already exists!");
       getOKAction().setEnabled(false);
@@ -365,14 +381,16 @@ public class CreateProjectWizard extends DialogWrapper {
   }
 
   private void updateProjectPath() {
-    if (myProjectPath.getPath() == null || myProjectPath.getPath().length() == 0 || (myProjectPath.getPath().startsWith(PROJECTS_DIR) && !myProjectPath.isPathChangedByUser())) {
+    if (myProjectPath.getPath() == null || myProjectPath.getPath().length() == 0 ||
+        (myProjectPath.getPath().startsWith(PROJECTS_DIR) && !myProjectPath.isPathChangedByUser())) {
       myProjectPath.setPath(PROJECTS_DIR + File.separator + myProjectName.getText());
     }
   }
 
   private void fireProjectPathChanged(String newValue) {
-    if(myCurrentTemplateItem != null)
+    if (myCurrentTemplateItem != null) {
       myCurrentTemplateItem.setNewProjectPath(newValue);
+    }
   }
 
   private void updateRightPanel() {
@@ -390,13 +408,19 @@ public class CreateProjectWizard extends DialogWrapper {
 
     JComponent component = myCurrentTemplateItem != null ? myCurrentTemplateItem.getSettings() : null;
     myTemplateSettings.removeAll();
-    if(component != null) {
+    if (component != null) {
       myTemplateSettings.add(component,
-          new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
+                             new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH,
+                                                 GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                                                 GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
       myTemplateSettings.add(myProjectFormatPanel.getPanel(),
-          new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1));
+                             new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
+                                                 GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED,
+                                                 null, null, null, 1));
     }
-    if(myCurrentTemplateItem != null) myCurrentTemplateItem.setNewProjectPath(myProjectPath.getPath());
+    if (myCurrentTemplateItem != null) {
+      myCurrentTemplateItem.setNewProjectPath(myProjectPath.getPath());
+    }
     myTemplateSettingsHolder.setVisible(component != null);
   }
 
@@ -418,7 +442,8 @@ public class CreateProjectWizard extends DialogWrapper {
 
     if (myCurrentProject != null) {
       int exitCode = Messages.showDialog(IdeBundle.message("prompt.open.project.in.new.frame"), IdeBundle.message("title.open.project"),
-          new String[]{IdeBundle.message("button.newframe"), IdeBundle.message("button.existingframe")}, 1, Messages.getQuestionIcon());
+                                         new String[]{IdeBundle.message("button.newframe"), IdeBundle.message("button.existingframe")}, 1,
+                                         Messages.getQuestionIcon());
       if (exitCode == 1) {
         ProjectUtil.closeAndDispose(myCurrentProject);
       }
@@ -436,7 +461,7 @@ public class CreateProjectWizard extends DialogWrapper {
       @Override
       public void run() {
         try {
-          ProjectFactory factory = new ProjectFactory(myCurrentProject, myOptions);
+          ProjectFactory factory = new ProjectFactory(myOptions);
           Project project = factory.createProject();
           myCurrentTemplateItem.getTemplateFiller().fillProjectWithModules(project.getComponent(MPSProject.class));
           factory.activate();

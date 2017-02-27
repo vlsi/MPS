@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
-import com.intellij.execution.RunCanceledByUserException;
 import com.intellij.ide.startup.StartupManagerEx;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
@@ -40,6 +39,7 @@ import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -48,20 +48,28 @@ import java.io.File;
 
 public class ProjectFactory {
   private ProjectOptions myOptions;
-  private Project myCurrentProject;
   private Project myCreatedProject;
 
   private Language myCreatedLanguage;
   private Solution myCreatedSolution;
 
-  public ProjectFactory(Project currentProject, ProjectOptions options) {
-    myCurrentProject = currentProject;
+  public ProjectFactory(ProjectOptions options) {
     myOptions = options;
+  }
+
+  /**
+   * @deprecated parameter {@code currentProject} is not used any more.
+   * Use {@link ProjectFactory#ProjectFactory(jetbrains.mps.workbench.dialogs.project.newproject.ProjectOptions)} constructor instead
+   */
+  @Deprecated
+  @ToRemove(version = 2017.1)
+  public ProjectFactory(Project currentProject, ProjectOptions options) {
+    this(options);
   }
 
   public Project createProject() throws ProjectNotCreatedException {
     final String[] error = new String[]{null};
-    ProgressManager.getInstance().run(new Task.Modal(myCurrentProject, "Creating Project", false) {
+    ProgressManager.getInstance().run(new Task.Modal(null, "Creating Project", false) {
       @Override
       public void run(@NotNull() ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
