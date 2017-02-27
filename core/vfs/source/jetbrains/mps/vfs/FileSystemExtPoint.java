@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
  */
 @ToRemove(version = 3.4)
 public final class FileSystemExtPoint {
-  private static FileSystem ourFS = new IoFileSystem();
+  private static FileSystem ourFS = IoFileSystem.INSTANCE;
 
   public static void setFS(@NotNull FileSystem fileSystem) {
     ourFS = fileSystem;

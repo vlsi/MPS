@@ -26,7 +26,6 @@ public final class RuntimeFlags {
   private static TestMode ourTestMode = TestMode.NONE;
   private static boolean ourMergeDriverMode = false;
   private static Boolean ourCastException = null;
-  private static Boolean ourUseIOFile = null;
 
   private RuntimeFlags() {
   }
@@ -67,21 +66,5 @@ public final class RuntimeFlags {
       ourCastException = !"true".equals(System.getProperty("mps.disableNodeCastExceptions"));
     }
     return ourCastException;
-  }
-
-  /**
-   * Default value: system property <code>"mps.vfs.useIoFile"</code>
-   *
-   * @return <code>true</code> if VFS shall use regular java IO files.
-   */
-  public static boolean isUseIOFile() {
-    if (ourUseIOFile == null) {
-      ourUseIOFile = "true".equals(System.getProperty("mps.vfs.useIoFile"));
-    }
-    return ourUseIOFile;
-  }
-
-  public static void setUseIOFile(boolean value) {
-    ourUseIOFile = value;
   }
 }

@@ -32,7 +32,7 @@ import java.util.List;
 public abstract class RealClassPathItem extends AbstractClassPathItem {
   private static Logger LOG = LogManager.getLogger(RealClassPathItem.class);
 
-  private static final jetbrains.mps.vfs.openapi.FileSystem FS = new IoFileSystem();
+  private static final jetbrains.mps.vfs.openapi.FileSystem FS = IoFileSystem.INSTANCE;
 
   public abstract String getPath();
 

@@ -108,7 +108,7 @@ public class ProjectMPSFacetCorrectnessTest extends CoreMpsTest {
   private void addContributorWithPaths(Iterable<? extends String> paths) {
     Set<LibDescriptor> libraryPaths = new LinkedHashSet<LibDescriptor>();
     for (String path : paths) {
-      libraryPaths.add(new LibDescriptor(new IoFileSystem().getFile(path)));
+      libraryPaths.add(new LibDescriptor(IoFileSystem.INSTANCE.getFile(path)));
     }
     addContributor(SetLibraryContributor.fromSet("Library paths", libraryPaths));
   }

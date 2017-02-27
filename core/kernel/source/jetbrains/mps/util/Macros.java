@@ -37,7 +37,7 @@ class Macros {
 
   @NotNull
   private String getFullPath(@NotNull String anchorPath, @NotNull String relativePath) {
-    return IFileUtils.getCanonicalPath(new IoFileSystem().getFile(anchorPath).getDescendant(relativePath));
+    return IFileUtils.getCanonicalPath(IoFileSystem.INSTANCE.getFile(anchorPath).getDescendant(relativePath));
   }
 
   protected String expand(String path, @Nullable IFile anchorFile) {

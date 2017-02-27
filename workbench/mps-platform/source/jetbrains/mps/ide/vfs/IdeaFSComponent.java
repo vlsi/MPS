@@ -15,15 +15,10 @@ import org.jetbrains.annotations.NotNull;
 public abstract class IdeaFSComponent implements ApplicationComponent, FileSystem, CachingFileSystem {
   private FileSystem myOldFileSystem;
 
-  // component stuff
   @Override
   public void initComponent() {
-    boolean useIoFile = RuntimeFlags.isTestMode() && RuntimeFlags.isUseIOFile();
-    if (!useIoFile) {
-      myOldFileSystem = FileSystemExtPoint.getFS();
-      // setup filesystem provider
-      FileSystemExtPoint.setFS(this);
-    }
+    myOldFileSystem = FileSystemExtPoint.getFS();
+    FileSystemExtPoint.setFS(this);
   }
 
   @Override

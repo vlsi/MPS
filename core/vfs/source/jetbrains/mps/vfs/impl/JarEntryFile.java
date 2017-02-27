@@ -48,7 +48,7 @@ public class JarEntryFile implements IFileEx {
   public static final String JAR = "jar";
   private static final String DOT = ".";
   public static final String DOT_JAR = DOT + JAR;
-  private static final IoFileSystem FS = new IoFileSystem();
+  private static final IoFileSystem FS = IoFileSystem.INSTANCE;
 
   private final AbstractJarFileData myJarFileData;
   private final File myJarFile;

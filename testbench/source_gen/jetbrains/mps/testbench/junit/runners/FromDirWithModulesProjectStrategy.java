@@ -8,6 +8,8 @@ import jetbrains.mps.vfs.IFile;
 import java.util.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
+
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
@@ -25,7 +27,7 @@ public class FromDirWithModulesProjectStrategy extends ProjectStrategyBase {
     Set<IFile> excludesSet = new HashSet<IFile>();
     String userDir = System.getProperty("user.dir");
     for (String exclude : EXCLUDES) {
-      excludesSet.add(FileSystem.getInstance().getFileByPath(userDir + File.separator + exclude));
+      excludesSet.add(IoFileSystem.INSTANCE.getFile(userDir + File.separator + exclude));
     }
     return excludesSet;
   }
@@ -48,7 +50,7 @@ public class FromDirWithModulesProjectStrategy extends ProjectStrategyBase {
   }
 
   private List<ModulesMiner.ModuleHandle> collectHandles(File rootFolder) {
-    IFile fileByPath = FileSystem.getInstance().getFileByPath(rootFolder.getAbsolutePath());
+    IFile fileByPath = IoFileSystem.INSTANCE.getFile(rootFolder.getAbsolutePath());
     Iterable<ModulesMiner.ModuleHandle> minedHandles = new ModulesMiner(EXCLUDE_SET).collectModules(fileByPath).getCollectedModules();
     return Sequence.fromIterable(minedHandles).where(new IWhereFilter<ModulesMiner.ModuleHandle>() {
       public boolean accept(ModulesMiner.ModuleHandle it) {

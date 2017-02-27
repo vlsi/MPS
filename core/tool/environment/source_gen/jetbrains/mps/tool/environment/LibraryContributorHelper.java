@@ -50,16 +50,16 @@ import java.util.LinkedHashMap;
         if (libFolder.exists() && libFolder.isDirectory()) {
           pluginCL = createPluginClassLoader(libFolder);
           for (File jar : libFolder.listFiles(jetbrains.mps.util.PathManager.JAR_FILE_FILTER)) {
-            paths.add(new LibDescriptor(new IoFileSystem().getFile(jar.getAbsolutePath() + MODULES_PREFIX), pluginCL));
+            paths.add(new LibDescriptor(IoFileSystem.INSTANCE.getFile(jar.getAbsolutePath() + MODULES_PREFIX), pluginCL));
           }
         }
         File languagesFolder = new File(pluginDirectory, "languages");
         if (languagesFolder.exists() && languagesFolder.isDirectory()) {
-          paths.add(new LibDescriptor(new IoFileSystem().getFile(languagesFolder.getAbsolutePath()), pluginCL));
+          paths.add(new LibDescriptor(IoFileSystem.INSTANCE.getFile(languagesFolder.getAbsolutePath()), pluginCL));
         }
         File classesFolder = new File(pluginDirectory, "classes");
         if (classesFolder.exists() && classesFolder.isDirectory()) {
-          paths.add(new LibDescriptor(new IoFileSystem().getFile(classesFolder.getAbsolutePath()), pluginCL));
+          paths.add(new LibDescriptor(IoFileSystem.INSTANCE.getFile(classesFolder.getAbsolutePath()), pluginCL));
         }
       }
     }

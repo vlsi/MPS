@@ -48,7 +48,7 @@ public class VfsTest extends PlatformMpsTest {
     public void invokeTest(Runnable testRunnable) {
       FileSystem oldFS = FileSystemExtPoint.getFS();
       try {
-        FileSystemExtPoint.setFS(new IoFileSystem());
+        FileSystemExtPoint.setFS(IoFileSystem.INSTANCE);
         testRunnable.run();
       } finally {
         FileSystemExtPoint.setFS(oldFS);

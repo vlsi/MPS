@@ -19,7 +19,6 @@ public class AntBootstrap {
   }
   public static void main(String[] args) {
     //     System.setProperty(ClassloaderUtil.PROPERTY_IGNORE_CLASSPATH, ".*trove4j.*trove4j.*\\.jar"); 
-    RuntimeFlags.setUseIOFile(true);
     UrlClassLoader newClassLoader = ClassloaderUtil.initClassloader(new ArrayList<URL>());
     try {
       Class clazz = newClassLoader.loadClass(args[0]);

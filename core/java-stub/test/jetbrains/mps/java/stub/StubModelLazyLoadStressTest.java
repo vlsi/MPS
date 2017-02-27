@@ -83,7 +83,7 @@ public class StubModelLazyLoadStressTest {
       if (new File(path).isFile() && path.endsWith(".jar")) {
         path += "!/java/util/regex/";
       }
-      dataSource.addPath(new IoFileSystem().getFile(path), null);
+      dataSource.addPath(IoFileSystem.INSTANCE.getFile(path), null);
     }
     JavaClassStubModelDescriptor model = new JavaClassStubModelDescriptor(modelRef, dataSource) {
       @Override

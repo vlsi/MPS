@@ -15,10 +15,13 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Internal;
+import org.jetbrains.mps.annotations.Singleton;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -28,6 +31,10 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Responsible for different predefined paths in the distribution layout
+ */
+@Singleton
 public final class PathManager {
   private static final Logger LOG = LogManager.getLogger(PathManager.class);
 
@@ -44,6 +51,9 @@ public final class PathManager {
   private static String ourIdeaPath;
 
   public static final FilenameFilter JAR_FILE_FILTER = (dir, name) -> name.endsWith(DOT_JAR);
+
+  private PathManager() {
+  }
 
   public static String getHomePath() {
     if (ourHomePath != null) {
@@ -73,6 +83,14 @@ public final class PathManager {
       throw new IllegalStateException("cannot detect MPS location");
     }
     return ourHomePath;
+  }
+
+  /**
+   * Defines whether we are starting from sources not from distribution
+   */
+  @Internal
+  public static boolean isFromSources() {
+    return !getContainingJar(PathManager.class).endsWith(Path.DOT_JAR);
   }
 
   private static String getContainingJar(Class aClass) {

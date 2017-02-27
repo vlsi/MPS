@@ -22,16 +22,20 @@ import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Singleton;
 
 import java.io.File;
 
 /**
  * @author Evgeny Gerashchenko
  */
+@Singleton
 public class IoFileSystem implements FileSystem {
   private static final Logger LOG = LogManager.getLogger(IoFileSystem.class);
 
-  public IoFileSystem() {
+  public static final IoFileSystem INSTANCE = new IoFileSystem();
+
+  private IoFileSystem() {
   }
 
   @NotNull

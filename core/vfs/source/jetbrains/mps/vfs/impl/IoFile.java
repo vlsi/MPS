@@ -35,7 +35,7 @@ import java.util.List;
  */
 public class IoFile implements IFileEx {
   @NotNull private File myFile; // always absolute
-  private final static IoFileSystem ourFS = new IoFileSystem();
+  private final static IoFileSystem ourFS = IoFileSystem.INSTANCE;
 
   public IoFile(@NotNull String path) {
     this(path, ourFS);

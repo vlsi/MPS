@@ -40,7 +40,7 @@ public class FromModulesListProjectStrategy extends ProjectStrategyBase {
     List<String> moduleFolders = Arrays.stream(modules).map(new Function<String, String>() {
       @Override
       public String apply(String module) {
-        IFile file = new IoFileSystem().getFile(module);
+        IFile file = IoFileSystem.INSTANCE.getFile(module);
         IFile parent = file.getParent();
         if (parent == null) {
           return null;

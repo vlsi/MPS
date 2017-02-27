@@ -108,7 +108,7 @@ public class Utils {
       boolean language = child.getName().endsWith(MPSExtentions.DOT_LANGUAGE);
       if (!(solution || language)) continue;
 
-      final IFile moduleIFile = new IoFileSystem().getFile(child.getAbsolutePath());
+      final IFile moduleIFile = IoFileSystem.INSTANCE.getFile(child.getAbsolutePath());
       IFile moduleDir = moduleIFile.getParent();
       // XXX what's the reason for custom MyMacroHelper, why not MacrosFactory.forModuleFile()
       MacroHelper expander = new MyMacroHelper(moduleIFile);
