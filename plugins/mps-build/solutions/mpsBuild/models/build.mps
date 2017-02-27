@@ -17386,7 +17386,7 @@
       </node>
       <node concept="3_J27D" id="6Iq8148f_Zd" role="HFo83">
         <node concept="3Mxwew" id="6Iq8148f_Ze" role="3MwsjC">
-          <property role="3MwjfP" value="c2c2c2" />
+          <property role="3MwjfP" value="000000" />
         </node>
       </node>
       <node concept="IuM$Q" id="57dcfYPs$xS" role="IuKBz">
@@ -17445,7 +17445,7 @@
       </node>
       <node concept="NbPM2" id="5VYK1npNzOD" role="27hGoL">
         <node concept="3Mxwew" id="5VYK1npNzOC" role="3MwsjC">
-          <property role="3MwjfP" value="F97A12" />
+          <property role="3MwjfP" value="0E9EF0" />
         </node>
       </node>
       <node concept="55IIr" id="5VYK1npK8$T" role="27igRh">
