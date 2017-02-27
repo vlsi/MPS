@@ -4,10 +4,10 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import java.util.Set;
 import jetbrains.mps.checkers.AbstractConstraintsChecker;
-import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.util.InstanceOfCondition;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.checkers.ErrorReportUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -16,23 +16,53 @@ import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Processor;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.checkers.LanguageErrorsCollector;
 
 public class AbstractConstraintsCheckerINodeCheckerAdapter implements INodeChecker {
   private Set<AbstractConstraintsChecker> myRules;
-  private Condition<SNode> myStopCondition;
 
-  public static final Condition<SNode> SKIP_CONSTRAINTS_CONDITION = new InstanceOfCondition(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking"));
+  public interface ErrorSkipCondition {
+    boolean skipSingleNode(SNode node);
+    boolean skipSubtree(SNode root);
+  }
 
-  public AbstractConstraintsCheckerINodeCheckerAdapter(@NotNull Condition<SNode> stopCondition, AbstractConstraintsChecker... rules) {
+  private AbstractConstraintsCheckerINodeCheckerAdapter.ErrorSkipCondition mySkipCondition;
+
+  public static final AbstractConstraintsCheckerINodeCheckerAdapter.ErrorSkipCondition SKIP_CONSTRAINTS_CONDITION = new AbstractConstraintsCheckerINodeCheckerAdapter.ErrorSkipCondition() {
+    public boolean skipSingleNode(SNode node) {
+      return false;
+    }
+    public boolean skipSubtree(SNode root) {
+      return SNodeOperations.isInstanceOf(root, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking"));
+    }
+  };
+
+  public static final AbstractConstraintsCheckerINodeCheckerAdapter.ErrorSkipCondition SKIP_NOTHING_CONDITION = new AbstractConstraintsCheckerINodeCheckerAdapter.ErrorSkipCondition() {
+    public boolean skipSingleNode(SNode node) {
+      return false;
+    }
+    public boolean skipSubtree(SNode root) {
+      return false;
+    }
+  };
+
+  public static final AbstractConstraintsCheckerINodeCheckerAdapter.ErrorSkipCondition SUPRESS_ERRORS_CONDITION = new AbstractConstraintsCheckerINodeCheckerAdapter.ErrorSkipCondition() {
+    public boolean skipSingleNode(SNode node) {
+      return ErrorReportUtil.shouldReportError(node);
+    }
+    public boolean skipSubtree(SNode root) {
+      return false;
+    }
+  };
+
+  public AbstractConstraintsCheckerINodeCheckerAdapter(@NotNull AbstractConstraintsCheckerINodeCheckerAdapter.ErrorSkipCondition skipCondition, AbstractConstraintsChecker... rules) {
     myRules = SetSequence.fromSetWithValues(new HashSet<AbstractConstraintsChecker>(), Sequence.fromArray(rules));
-    myStopCondition = stopCondition;
+    mySkipCondition = skipCondition;
   }
   public AbstractConstraintsCheckerINodeCheckerAdapter(AbstractConstraintsChecker... rules) {
-    this(Condition.FALSE_CONDITION, rules);
+    this(SKIP_NOTHING_CONDITION, rules);
   }
   @Override
   public Set<IErrorReporter> getErrors(SNode rootNode, SRepository repository) {
@@ -52,17 +82,20 @@ public class AbstractConstraintsCheckerINodeCheckerAdapter implements INodeCheck
 
     DescendantsTreeIterator fullCheckIterator = new DescendantsTreeIterator(rootNode);
 
-    final Reference<Boolean> cancelled = new Reference<Boolean>();
+    final Reference<Boolean> cancelled = new Reference<Boolean>(false);
 
     LanguageErrorsCollector errorsCollector = new LanguageErrorsCollector() {
       public void addError(IErrorReporter errorReporter) {
+        if (mySkipCondition.skipSingleNode(errorReporter.getSNode())) {
+          return;
+        }
         cancelled.set(cancelled.get() || processor.process(errorReporter));
       }
     };
 
     while (fullCheckIterator.hasNext() && !(cancelled.get())) {
       SNode node = fullCheckIterator.next();
-      if (myStopCondition.met(node)) {
+      if (mySkipCondition.skipSubtree(node)) {
         fullCheckIterator.skipChildren();
         continue;
       }

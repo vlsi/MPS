@@ -28,7 +28,7 @@ public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
     myRepository = repository;
   }
 
-  public IModelCheckerFix getFix(final IErrorReporter errorReporter) {
+  public static IModelCheckerFix getFix(final IErrorReporter errorReporter) {
     QuickFixProvider provider = check_m7souj_a0a0g(errorReporter);
     if (provider == null || !(provider.isExecutedImmediately())) {
       return null;

@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.modelchecker.platform.actions.AbstractConstraintsCheckerINodeCheckerAdapter" file="AbstractConstraintsCheckerINodeCheckerAdapter.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.util.Reference" />
     <classNode dependClassName="jetbrains.mps.checkers.AbstractConstraintsChecker" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="org.jetbrains.mps.util.DescendantsTreeIterator" />
     <classNode dependClassName="org.jetbrains.mps.util.InstanceOfCondition" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
+    <classNode dependClassName="jetbrains.mps.checkers.ErrorReportUtil" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="org.jetbrains.mps.util.DescendantsTreeIterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.platform.actions.INodeChecker" />
   </dependency>
