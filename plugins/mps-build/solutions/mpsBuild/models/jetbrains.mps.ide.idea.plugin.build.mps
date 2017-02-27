@@ -705,12 +705,6 @@
       <node concept="3_I8Xc" id="73fHb9hpuyR" role="39821P">
         <ref role="3_I8Xa" node="73fHb9hpulH" resolve="mps-vcs" />
       </node>
-      <node concept="3_I8Xc" id="1CCAtQqcUeI" role="39821P">
-        <ref role="3_I8Xa" to="ffeo:I6XuqH2zYV" resolve="git4idea" />
-      </node>
-      <node concept="3_I8Xc" id="3nGzrDEq4D0" role="39821P">
-        <ref role="3_I8Xa" to="ffeo:3nGzrDEfcNJ" resolve="svn4idea" />
-      </node>
       <node concept="398223" id="4tNwrSpaf0f" role="39821P">
         <node concept="398223" id="611WBGkdBGa" role="39821P">
           <node concept="3_J27D" id="611WBGkdBGc" role="Nbhlr">

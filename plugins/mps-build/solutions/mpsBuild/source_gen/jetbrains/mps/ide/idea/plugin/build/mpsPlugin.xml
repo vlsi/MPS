@@ -53,14 +53,6 @@
     <copy todir="${build.layout}/mps-vcs">
       <fileset dir="${artifacts.mpsIdeaVcs}/mps-vcs" />
     </copy>
-    <mkdir dir="${build.layout}/git4idea" />
-    <copy todir="${build.layout}/git4idea">
-      <fileset dir="${artifacts.mpsIdeaVcs}/git4idea" />
-    </copy>
-    <mkdir dir="${build.layout}/svn4idea" />
-    <copy todir="${build.layout}/svn4idea">
-      <fileset dir="${artifacts.mpsIdeaVcs}/svn4idea" />
-    </copy>
     <mkdir dir="${build.layout}/mps-core" />
     <mkdir dir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.mpsPluginCommon}/mps-common.jar" todir="${build.layout}/mps-core/lib" />
