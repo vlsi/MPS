@@ -101,7 +101,8 @@ public class MPSPsiModelTreeNode extends BasePsiNode<MPSPsiModel> implements Nav
 
   @Override
   public boolean canRepresent(Object element) {
-    return super.canRepresent(element) || element.equals(getVirtualFile());
+    // can't say when element can be null, but PsiFileNode checks for null, too
+    return super.canRepresent(element) || element != null && element.equals(getVirtualFile());
   }
 
   @Nullable
