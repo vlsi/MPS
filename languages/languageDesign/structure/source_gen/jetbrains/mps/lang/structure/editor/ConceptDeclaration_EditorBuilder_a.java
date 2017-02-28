@@ -29,7 +29,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.UndoRunnable;
+import jetbrains.mps.nodeEditor.cells.TransactionalCommitCommand;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.ConceptNameStyleClass;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -162,8 +162,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
               return it.invoke(getEditorContext(), myNode, oldValue, newValue);
             }
           }))) {
-            getEditorContext().getRepository().getModelAccess().executeCommand(new UndoRunnable.Base(null, "name_" + myNode.getNodeId().toString()) {
-              public void run() {
+            getEditorContext().getRepository().getModelAccess().executeCommand(new TransactionalCommitCommand(getEditorContext(), "name_" + myNode.getNodeId().toString()) {
+              protected void doExecute() {
                 SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newValue);
               }
             });

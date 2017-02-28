@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -93,8 +94,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
     box.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
         try {
-          modelAccess.executeCommand(new Runnable() {
-            public void run() {
+          modelAccess.executeCommand(new EditorCommand(getEditorContext()) {
+            protected void doExecute() {
               if (box.isSelected()) {
                 SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical"), "" + (true));
               } else {

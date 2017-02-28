@@ -24,6 +24,7 @@ import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 
 public class SelectImageFileButton extends JButton {
   private final SNode myNode;
@@ -66,8 +67,8 @@ public class SelectImageFileButton extends JButton {
           }
           String selectedPath = result.getPath();
           final String pathToShow = (macroHelper == null ? selectedPath : macroHelper.shrinkPath(selectedPath));
-          modelAccess.executeCommand(new Runnable() {
-            public void run() {
+          modelAccess.executeCommand(new EditorCommand(myEditorContext) {
+            protected void doExecute() {
               SPropertyOperations.set(SelectImageFileButton.this.myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1095e12de6fL, 0x1095e2f7e63L, "imageFile"), pathToShow);
             }
           });

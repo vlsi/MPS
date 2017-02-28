@@ -46,6 +46,7 @@
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
     <import index="tpca" ref="r:00000000-0000-4000-0000-011c89590296(jetbrains.mps.lang.editor.actions)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
+    <import index="nlpl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.commands(MPS.Editor/)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" implicit="true" />
   </imports>
@@ -685,6 +686,7 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
+      <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
@@ -9966,6 +9968,7 @@
                             <node concept="3cpWs8" id="i2lHMai" role="3cqZAp">
                               <node concept="3cpWsn" id="i2lHMaj" role="3cpWs9">
                                 <property role="TrG5h" value="pathToShow" />
+                                <property role="3TUv4t" value="true" />
                                 <node concept="17QB3L" id="4druX3W0A1b" role="1tU5fm" />
                                 <node concept="3K4zz7" id="5wRUlvn90iW" role="33vP2m">
                                   <node concept="3clFbC" id="5wRUlvn911X" role="3K4Cdx">
@@ -9998,28 +10001,47 @@
                                 </node>
                                 <node concept="liA8E" id="1KUoCiqb7vH" role="2OqNvi">
                                   <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
-                                  <node concept="1bVj0M" id="1KUoCiqb7vI" role="37wK5m">
-                                    <node concept="3clFbS" id="1KUoCiqb7vJ" role="1bW5cS">
-                                      <node concept="3clFbF" id="1KUoCiqb7vK" role="3cqZAp">
-                                        <node concept="2OqwBi" id="1KUoCiqb7vL" role="3clFbG">
-                                          <node concept="2OqwBi" id="1KUoCiqb7vM" role="2Oq$k0">
-                                            <node concept="3TrcHB" id="1KUoCiqb7vN" role="2OqNvi">
-                                              <ref role="3TsBF5" to="tpc2:g_ubRTz" resolve="imageFile" />
-                                            </node>
-                                            <node concept="2OqwBi" id="1KUoCiqb7vO" role="2Oq$k0">
-                                              <node concept="Xjq3P" id="1KUoCiqb7vP" role="2Oq$k0">
-                                                <ref role="1HBi2w" node="i2lE2w4" resolve="SelectImageFileButton" />
-                                              </node>
-                                              <node concept="2OwXpG" id="1KUoCiqb7vQ" role="2OqNvi">
-                                                <ref role="2Oxat5" node="i2lEbZl" resolve="myNode" />
+                                  <node concept="2ShNRf" id="6SNuYcXQuOs" role="37wK5m">
+                                    <node concept="YeOm9" id="6SNuYcXQIlb" role="2ShVmc">
+                                      <node concept="1Y3b0j" id="6SNuYcXQIle" role="YeSDq">
+                                        <property role="2bfB8j" value="true" />
+                                        <ref role="37wK5l" to="nlpl:~EditorCommand.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext)" resolve="EditorCommand" />
+                                        <ref role="1Y3XeK" to="nlpl:~EditorCommand" resolve="EditorCommand" />
+                                        <node concept="3Tm1VV" id="6SNuYcXQIlf" role="1B3o_S" />
+                                        <node concept="3clFb_" id="6SNuYcXQIlk" role="jymVt">
+                                          <property role="1EzhhJ" value="false" />
+                                          <property role="TrG5h" value="doExecute" />
+                                          <property role="DiZV1" value="false" />
+                                          <property role="od$2w" value="false" />
+                                          <node concept="3Tmbuc" id="6SNuYcXQIll" role="1B3o_S" />
+                                          <node concept="3cqZAl" id="6SNuYcXQIln" role="3clF45" />
+                                          <node concept="3clFbS" id="6SNuYcXQIlo" role="3clF47">
+                                            <node concept="3clFbF" id="1KUoCiqb7vK" role="3cqZAp">
+                                              <node concept="2OqwBi" id="1KUoCiqb7vL" role="3clFbG">
+                                                <node concept="2OqwBi" id="1KUoCiqb7vM" role="2Oq$k0">
+                                                  <node concept="3TrcHB" id="1KUoCiqb7vN" role="2OqNvi">
+                                                    <ref role="3TsBF5" to="tpc2:g_ubRTz" resolve="imageFile" />
+                                                  </node>
+                                                  <node concept="2OqwBi" id="1KUoCiqb7vO" role="2Oq$k0">
+                                                    <node concept="Xjq3P" id="1KUoCiqb7vP" role="2Oq$k0">
+                                                      <ref role="1HBi2w" node="i2lE2w4" resolve="SelectImageFileButton" />
+                                                    </node>
+                                                    <node concept="2OwXpG" id="1KUoCiqb7vQ" role="2OqNvi">
+                                                      <ref role="2Oxat5" node="i2lEbZl" resolve="myNode" />
+                                                    </node>
+                                                  </node>
+                                                </node>
+                                                <node concept="tyxLq" id="1KUoCiqb7vS" role="2OqNvi">
+                                                  <node concept="37vLTw" id="6SNuYcXQNQV" role="tz02z">
+                                                    <ref role="3cqZAo" node="i2lHMaj" resolve="pathToShow" />
+                                                  </node>
+                                                </node>
                                               </node>
                                             </node>
                                           </node>
-                                          <node concept="tyxLq" id="1KUoCiqb7vS" role="2OqNvi">
-                                            <node concept="37vLTw" id="3GM_nagT$LK" role="tz02z">
-                                              <ref role="3cqZAo" node="i2lHMaj" resolve="pathToShow" />
-                                            </node>
-                                          </node>
+                                        </node>
+                                        <node concept="37vLTw" id="6SNuYcXQKO_" role="37wK5m">
+                                          <ref role="3cqZAo" node="2iS1Y5iotY" resolve="myEditorContext" />
                                         </node>
                                       </node>
                                     </node>

@@ -277,6 +277,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   private void rebuildMenuEntries() {
     if (myIsSmart) {
+      // Command is required here because in "smart" mode:
+      // - new temp model will be created & registered in the repository inside temp module
+      // - this model will be modified by "smart" complete acton type calculation process
+      // this command should not be associated with the current document to not show up in the undo stack
       getModelAccess().executeCommand(this::doRebuildMenuEntries);
     } else {
       getModelAccess().runReadAction(this::doRebuildMenuEntries);
@@ -635,7 +639,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         @Override
         public void mouseClicked(MouseEvent e) {
           if (e.getClickCount() == 2) {
-            getModelAccess().executeCommand(NodeSubstituteChooser.this::doSubstituteSelection);
+            doSubstituteSelection();
           }
         }
       });

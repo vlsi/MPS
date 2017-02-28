@@ -12,7 +12,7 @@ public abstract class PropertyMapperCell<T> extends AbstractJetpadCell {
   private WritableModelProperty<T> myModelProperty;
   public PropertyMapperCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
-    myModelProperty = new WritableModelProperty<T>(getCellId() + "_" + node.getNodeId().toString(), getContext().getRepository()) {
+    myModelProperty = new WritableModelProperty<T>(getCellId() + "_" + node.getNodeId().toString(), getContext()) {
       protected T getModelPropertyValue() {
         return getModelPropertyValueImpl();
       }

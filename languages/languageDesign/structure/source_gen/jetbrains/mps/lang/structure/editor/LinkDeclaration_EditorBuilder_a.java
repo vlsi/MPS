@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.UndoRunnable;
+import jetbrains.mps.nodeEditor.cells.TransactionalCommitCommand;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -98,8 +98,8 @@ import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClas
               return it.invoke(getEditorContext(), myNode, oldValue, newValue);
             }
           }))) {
-            getEditorContext().getRepository().getModelAccess().executeCommand(new UndoRunnable.Base(null, "role_" + myNode.getNodeId().toString()) {
-              public void run() {
+            getEditorContext().getRepository().getModelAccess().executeCommand(new TransactionalCommitCommand(getEditorContext(), "role_" + myNode.getNodeId().toString()) {
+              protected void doExecute() {
                 SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"), newValue);
               }
             });

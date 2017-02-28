@@ -11,7 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.baseLanguage.behavior.IBLDeprecatable__BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.util.Reference;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -76,36 +77,37 @@ public class TextCommentPartUtil {
       }
     }
 
-    final Wrappers._int index = new Wrappers._int(newText.indexOf("{@"));
-    if (index.value != -1) {
+    int index = newText.indexOf("{@");
+    if (index != -1) {
       SNode tagPart;
-      divideLineBetweenCaret(node, index.value, index.value + 2, newText);
+      divideLineBetweenCaret(node, index, index + 2, newText);
       tagPart = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990289L, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart")), null);
       SNodeOperations.insertNextSiblingChild(node, tagPart);
       editorContext.selectWRTFocusPolicy(tagPart);
       return;
     }
-    index.value = newText.indexOf("{{");
-    if (index.value != -1) {
+    index = newText.indexOf("{{");
+    if (index != -1) {
       SNode codeSnippet;
-      SNode nextLine = divideLineBetweenCaretAndInsertNewLine(node, index.value, index.value + 2, newText);
+      SNode nextLine = divideLineBetweenCaretAndInsertNewLine(node, index, index + 2, newText);
       codeSnippet = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x2398cefbc261e3ffL, "jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet")), null);
       SNodeOperations.insertPrevSiblingChild(nextLine, codeSnippet);
       editorContext.selectWRTFocusPolicy(codeSnippet);
       return;
     }
-    index.value = newText.indexOf("<");
-    if (index.value != -1) {
-      final Wrappers._T<SNode> htmlElement = new Wrappers._T<SNode>();
-      editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
-        public void run() {
-          divideLineBetweenCaret(node, index.value, index.value + 1, newText);
+    index = newText.indexOf("<");
+    if (index != -1) {
+      final int finalIndex = index;
+      final Reference<SNode> htmlElement = new Reference();
+      editorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(editorContext) {
+        protected void doExecute() {
+          divideLineBetweenCaret(node, finalIndex, finalIndex + 1, newText);
 
-          htmlElement.value = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement")), null);
-          SNodeOperations.insertNextSiblingChild(node, htmlElement.value);
+          htmlElement.set(SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement")), null));
+          SNodeOperations.insertNextSiblingChild(node, htmlElement.get());
         }
       });
-      editorContext.selectWRTFocusPolicy(htmlElement.value);
+      editorContext.selectWRTFocusPolicy(htmlElement.get());
       return;
     }
   }

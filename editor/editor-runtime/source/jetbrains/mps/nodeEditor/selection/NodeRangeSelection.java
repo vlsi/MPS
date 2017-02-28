@@ -31,7 +31,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.util.AbstractComputeRunnable;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -65,7 +65,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
   private final String myEmptyCellId;
 
   public NodeRangeSelection(@NotNull EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException,
-      SelectionRestoreException {
+                                                                                                                                SelectionRestoreException {
     super(editorComponent);
     if (cellInfo != null) {
       throw new SelectionStoreException("Non-null CellInfo object passed as a parameter: " + cellInfo);
@@ -115,7 +115,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
   }
 
   public NodeRangeSelection(@NotNull EditorComponent editorComponent, @NotNull SNode firstNode, @NotNull SNode lastNode, RangeSelectionFilter filter,
-      String emptyCellId) {
+                            String emptyCellId) {
     super(editorComponent);
     myFirstNode = firstNode;
     myLastNode = lastNode;
@@ -232,7 +232,8 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
       Class filterClass = moduleRefString != null ? loadFromModule(moduleRefString, filterClassName) : Class.forName(filterClassName);
       if (filterClass == null) {
         throw new SelectionStoreException(
-            "Can't load selection filter class: " + filterClassName + (moduleRefString != null ? "" : "module reference: " + moduleRefString));
+                                             "Can't load selection filter class: " + filterClassName +
+                                             (moduleRefString != null ? "" : "module reference: " + moduleRefString));
       }
       Object filterInstance = filterClass.newInstance();
       if (filterInstance instanceof RangeSelectionFilter) {
@@ -348,20 +349,13 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
   }
 
   private boolean canExecute(final EditorContext editorContext, final CellAction action) {
-    AbstractComputeRunnable<Boolean> canExecute = new AbstractComputeRunnable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return action.canExecute(editorContext);
-      }
-    };
-    editorContext.getRepository().getModelAccess().executeCommand(canExecute);
-    return canExecute.getResult();
+    return new ModelAccessHelper(editorContext.getRepository()).runReadAction(() -> action.canExecute(editorContext));
   }
 
   private boolean selectNode(SNode node, boolean startPosition) {
     if (node != null) {
       SelectionUtil.selectLabelCellAnSetCaret(getEditorComponent().getEditorContext(), node,
-          startPosition ? SelectionManager.FIRST_CELL : SelectionManager.LAST_CELL, startPosition ? 0 : -1);
+                                              startPosition ? SelectionManager.FIRST_CELL : SelectionManager.LAST_CELL, startPosition ? 0 : -1);
     }
     return node != null;
   }

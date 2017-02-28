@@ -302,39 +302,39 @@
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/5374841768510233685">
     <file name="WritableModelProperty.java">
       <node id="5374841768510407270" at="12,0,13,0" concept="6" trace="myCommandId" />
-      <node id="5374841768510476739" at="13,0,14,0" concept="6" trace="myRepo" />
-      <node id="5374841768510416246" at="15,74,16,28" concept="5" />
-      <node id="5374841768510486269" at="16,28,17,24" concept="5" />
-      <node id="1755573558917482497" at="19,57,20,55" concept="5" />
-      <node id="2837398282091107545" at="26,25,27,33" concept="5" />
-      <node id="5374841768510277826" at="31,0,32,0" concept="9" trace="setModelPropertyValue#(null)V" />
-      <node id="1755573558917291243" at="19,0,22,0" concept="9" trace="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
-      <node id="2837398282091105944" at="26,0,29,0" concept="9" trace="run#()V" />
-      <node id="1755573558917262126" at="17,24,22,7" concept="5" />
-      <node id="2837398282090980629" at="24,55,29,7" concept="5" />
-      <node id="5374841768510277788" at="24,0,31,0" concept="9" trace="safeSetModelPropertyValue#(null)V" />
-      <node id="5374841768510376467" at="15,0,24,0" concept="3" trace="WritableModelProperty#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
-      <scope id="1755573558917291249" at="19,57,20,55" />
-      <scope id="2837398282091105948" at="26,25,27,33" />
-      <scope id="5374841768510277826" at="31,0,32,0">
+      <node id="5425249249171853659" at="13,0,14,0" concept="6" trace="myContext" />
+      <node id="5425249249171834197" at="15,73,16,28" concept="5" />
+      <node id="5425249249171862400" at="16,28,17,24" concept="5" />
+      <node id="5425249249171834218" at="19,57,20,55" concept="5" />
+      <node id="5425249249171895147" at="27,34,28,33" concept="5" />
+      <node id="5374841768510277826" at="32,0,33,0" concept="9" trace="setModelPropertyValue#(null)V" />
+      <node id="5425249249171834211" at="19,0,22,0" concept="9" trace="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
+      <node id="5425249249171888467" at="27,0,30,0" concept="9" trace="doExecute#()V" />
+      <node id="5425249249171834205" at="17,24,22,7" concept="5" />
+      <node id="2837398282090980629" at="25,55,30,7" concept="5" />
+      <node id="5374841768510277788" at="25,0,32,0" concept="9" trace="safeSetModelPropertyValue#(null)V" />
+      <node id="5425249249171834193" at="15,0,24,0" concept="3" trace="WritableModelProperty#(Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <scope id="5425249249171834217" at="19,57,20,55" />
+      <scope id="5425249249171888471" at="27,34,28,33" />
+      <scope id="5374841768510277826" at="32,0,33,0">
         <var name="value" id="5374841768510277827" />
       </scope>
-      <scope id="1755573558917291243" at="19,0,22,0">
-        <var name="event" id="1755573558917291246" />
+      <scope id="5425249249171834211" at="19,0,22,0">
+        <var name="event" id="5425249249171834214" />
       </scope>
-      <scope id="2837398282091105944" at="26,0,29,0" />
-      <scope id="5374841768510277793" at="24,55,29,7" />
-      <scope id="5374841768510376471" at="15,74,22,7" />
-      <scope id="5374841768510277788" at="24,0,31,0">
+      <scope id="5425249249171888467" at="27,0,30,0" />
+      <scope id="5374841768510277793" at="25,55,30,7" />
+      <scope id="5425249249171834196" at="15,73,22,7" />
+      <scope id="5374841768510277788" at="25,0,32,0">
         <var name="t" id="5374841768510277791" />
       </scope>
-      <scope id="5374841768510376467" at="15,0,24,0">
-        <var name="commandId" id="5374841768510385418" />
-        <var name="repository" id="5374841768510449927" />
+      <scope id="5425249249171834193" at="15,0,24,0">
+        <var name="commandId" id="5425249249171834225" />
+        <var name="context" id="5425249249171834227" />
       </scope>
-      <unit id="1755573558917291241" at="18,19,22,5" name="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty$1" />
-      <unit id="2837398282091105942" at="25,47,29,5" name="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty$2" />
-      <unit id="5374841768510233685" at="11,0,33,0" name="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" />
+      <unit id="5425249249171834209" at="18,19,22,5" name="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty$1" />
+      <unit id="5425249249171888461" at="26,66,30,5" name="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty$2" />
+      <unit id="5374841768510233685" at="11,0,34,0" name="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" />
     </file>
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6277411742335784369">

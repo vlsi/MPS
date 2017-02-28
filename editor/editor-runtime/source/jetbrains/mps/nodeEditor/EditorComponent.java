@@ -2889,15 +2889,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
       KeyboardShortcut shortcut = new KeyboardShortcut(keyStroke, null);
       KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
+      setExecuteOutsideCommand(true);
     }
 
     @Override
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-      try {
-        myAction.execute(myEditorContext);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
+      myEditorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(myEditorContext) {
+        @Override
+        protected void doExecute() {
+          try {
+            myAction.execute(myEditorContext);
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
+        }
+      });
     }
   }
 

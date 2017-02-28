@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -171,8 +172,8 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
     button.addActionListener(new ActionListener() {
 
       public void actionPerformed(ActionEvent p0) {
-        modelAccess.executeCommand(new Runnable() {
-          public void run() {
+        modelAccess.executeCommand(new EditorCommand(getEditorContext()) {
+          protected void doExecute() {
             SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea3549ce25fL, "showActive"), "" + (!(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea3549ce25fL, "showActive")))));
           }
         });
@@ -211,8 +212,8 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
 
     categorySelector.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
-        modelAccess.executeCommand(new Runnable() {
-          public void run() {
+        modelAccess.executeCommand(new EditorCommand(getEditorContext()) {
+          protected void doExecute() {
             Object selectedItem = categorySelector.getSelectedItem();
             SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea354a85565L, "selectedCategory"), (selectedItem != null ? selectedItem.toString() : ""));
           }
