@@ -4329,6 +4329,9 @@
         <node concept="L2wRC" id="7Nx4mSUEGYJ" role="39821P">
           <ref role="L2wRA" node="7Nx4mSUEBa7" resolve="jetbrains.mps.lang.editor.menus.substitute.testExtendingLanguage" />
         </node>
+        <node concept="L2wRC" id="5HTr1bidITI" role="39821P">
+          <ref role="L2wRA" node="5HTr1bidIki" resolve="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage" />
+        </node>
         <node concept="3_J27D" id="axQ2jNKhO_" role="Nbhlr">
           <node concept="3Mxwew" id="axQ2jNKhPr" role="3MwsjC">
             <property role="3MwjfP" value="languages" />
@@ -4350,6 +4353,9 @@
         </node>
         <node concept="L2wRC" id="7Nx4mSUEH4B" role="39821P">
           <ref role="L2wRA" node="7Nx4mSUEBag" resolve="jetbrains.mps.lang.editor.menus.substitute.tests" />
+        </node>
+        <node concept="L2wRC" id="5HTr1bidIYD" role="39821P">
+          <ref role="L2wRA" node="5HTr1bidIkC" resolve="jetbrains.mps.lang.editor.menus.sideTransform.tests" />
         </node>
         <node concept="3_J27D" id="4Sf$XywNuat" role="Nbhlr">
           <node concept="3Mxwew" id="4Sf$XywNuau" role="3MwsjC">
@@ -4966,6 +4972,59 @@
         </node>
       </node>
     </node>
+    <node concept="2G$12M" id="5HTr1bidIkh" role="3989C9">
+      <property role="TrG5h" value="sideTransform-tests" />
+      <node concept="1E1JtD" id="5HTr1bidIki" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage" />
+        <property role="3LESm3" value="14a4b501-59f6-4c39-b5de-4a5d59477831" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="5HTr1bidIkj" role="3LF7KH">
+          <node concept="2Ry0Ak" id="5HTr1bidIkk" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="5HTr1bidIkl" role="2Ry0An">
+              <property role="2Ry0Am" value="testsolutions" />
+              <node concept="2Ry0Ak" id="5HTr1bidIkm" role="2Ry0An">
+                <property role="2Ry0Am" value="testlangs" />
+                <node concept="2Ry0Ak" id="5HTr1bidIkn" role="2Ry0An">
+                  <property role="2Ry0Am" value="editor.menus.sideTransform.testLanguage" />
+                  <node concept="2Ry0Ak" id="5HTr1bidIGL" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.mpl" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1E1JtA" id="5HTr1bidIkC" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.menus.sideTransform.tests" />
+        <property role="3LESm3" value="ee5f06cc-53b8-4415-b1f3-19f5942bedc0" />
+        <property role="2GAjPV" value="false" />
+        <property role="aoJFB" value="tests" />
+        <node concept="55IIr" id="5HTr1bidIkD" role="3LF7KH">
+          <node concept="2Ry0Ak" id="5HTr1bidIkE" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="5HTr1bidIkF" role="2Ry0An">
+              <property role="2Ry0Am" value="testsolutions" />
+              <node concept="2Ry0Ak" id="5HTr1bidIkG" role="2Ry0An">
+                <property role="2Ry0Am" value="editor.menus.sideTransform.tests" />
+                <node concept="2Ry0Ak" id="5HTr1bidINj" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.menus.sideTransform.tests.msd" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5HTr1bidIkI" role="3bR37C">
+          <node concept="3bR9La" id="5HTr1bidIkJ" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1TaHNgiIbJ$" resolve="jetbrains.mps.ide.editor" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="22LTRH" id="4Sf$XywNuaO" role="1hWBAP">
       <property role="TrG5h" value="transformationMenuTests" />
       <node concept="22LTRF" id="4Sf$XywNuaP" role="22LTRK">
@@ -4973,6 +5032,9 @@
       </node>
       <node concept="22LTRF" id="7Nx4mSUECz3" role="22LTRK">
         <ref role="22LTRG" node="7Nx4mSUEB9R" resolve="substitute-tests" />
+      </node>
+      <node concept="22LTRF" id="5HTr1bidIS4" role="22LTRK">
+        <ref role="22LTRG" node="5HTr1bidIkh" resolve="sideTransform-tests" />
       </node>
       <node concept="22LTRF" id="axQ2jNKRp2" role="22LTRK">
         <ref role="22LTRG" node="2X_LC_CDEju" resolve="menu-tests" />

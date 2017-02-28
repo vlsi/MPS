@@ -16,6 +16,8 @@
 
 package jetbrains.mps.idea.core.project.stubs;
 
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationType;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
@@ -24,6 +26,7 @@ import com.intellij.openapi.roots.libraries.LibraryTable;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.library.ModuleLibraryType;
 
 public class MPSProjectLibImporter extends BaseLibImporter implements ProjectComponent {
@@ -50,18 +53,29 @@ public class MPSProjectLibImporter extends BaseLibImporter implements ProjectCom
   }
 
   @Override
+  protected void handleModuleNameTaken(StubModuleNameTakenException exception) {
+    String message = String.format(
+      MPSBundle.message("mps.stub.warning.duplicate.project.lib.message"),
+        exception.getLibraryName(),
+        exception.getNamespace());
+    new Notification(
+      MPSBundle.message("mps.stub.warning.group.display.id"),
+      MPSBundle.message("mps.stub.warning.duplicate.project.lib.title"),
+      message,
+      NotificationType.WARNING).notify(myProject);
+  }
+
+  @Override
   protected LibraryTable getLibTable() {
     return myLibTable;
   }
 
   @Override
   public void projectOpened() {
-
   }
 
   @Override
   public void projectClosed() {
-
   }
 
   @Override

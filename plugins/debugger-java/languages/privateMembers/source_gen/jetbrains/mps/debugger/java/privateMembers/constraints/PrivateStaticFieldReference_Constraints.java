@@ -71,5 +71,5 @@ public class PrivateStaticFieldReference_Constraints extends BaseConstraintsDesc
     });
     return references;
   }
-  private static SNodePointer breakingNode_em3o18_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)", "6405552206789983193");
+  private static SNodePointer breakingNode_em3o18_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)", "6836281137582821828");
 }

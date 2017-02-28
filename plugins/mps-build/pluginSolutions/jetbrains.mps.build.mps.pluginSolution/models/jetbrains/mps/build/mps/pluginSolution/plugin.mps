@@ -11582,6 +11582,42 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="4PkT6nptemF" role="3cqZAp">
+          <node concept="3clFbS" id="4PkT6nptemH" role="3clFbx">
+            <node concept="3clFbF" id="4PkT6nprpZj" role="3cqZAp">
+              <node concept="2OqwBi" id="4PkT6nprpZk" role="3clFbG">
+                <node concept="2ShNRf" id="4PkT6nprpZl" role="2Oq$k0">
+                  <node concept="1pGfFk" id="4PkT6nprpZm" role="2ShVmc">
+                    <ref role="37wK5l" to="w1kc:~ModelImports.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel)" resolve="ModelImports" />
+                    <node concept="37vLTw" id="4PkT6nprpZn" role="37wK5m">
+                      <ref role="3cqZAo" node="38bQ8pLeEO2" resolve="smodel" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="4PkT6nprpZo" role="2OqNvi">
+                  <ref role="37wK5l" to="w1kc:~ModelImports.addModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="addModelImport" />
+                  <node concept="2OqwBi" id="4PkT6nprpZp" role="37wK5m">
+                    <node concept="1N_AGu" id="4PkT6nprpZq" role="2Oq$k0">
+                      <ref role="1N_AGt" to="hh2c:4tNwrSpaf04" resolve="mpsPlugin" />
+                    </node>
+                    <node concept="liA8E" id="4PkT6nprpZr" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SNodeReference.getModelReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getModelReference" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="17R0WA" id="4PkT6nptfL3" role="3clFbw">
+            <node concept="1rXfSq" id="4PkT6npteIe" role="3uHU7B">
+              <ref role="37wK5l" node="SGWM9zOPyI" resolve="getDependencyKind" />
+            </node>
+            <node concept="Rm8GO" id="4PkT6nptg56" role="3uHU7w">
+              <ref role="1Px2BO" node="SGWM9zOjih" resolve="DependencyStep.DependencyKind" />
+              <ref role="Rm8GQ" node="SGWM9zOp7I" resolve="IDEA" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="38bQ8pLeEO2" role="3clF46">
         <property role="TrG5h" value="smodel" />
@@ -13308,7 +13344,7 @@
                             <ref role="3_I8Xa" to="ffeo:1diLdO26H7T" resolve="cvsIntegration" />
                           </node>
                           <node concept="3_I8Xc" id="3nGzrDEksX6" role="39821P">
-                            <ref role="3_I8Xa" to="ffeo:3nGzrDEfcNJ" resolve="Subversion" />
+                            <ref role="3_I8Xa" to="ffeo:3nGzrDEfcNJ" resolve="svn4idea" />
                           </node>
                           <node concept="3_I8Xc" id="73fHb9hpuxm" role="39821P">
                             <ref role="3_I8Xa" to="ffeo:I6XuqH2zYV" resolve="git4idea" />

@@ -7,8 +7,6 @@ import jetbrains.mps.idea.java.psi.JavaPsiListener;
 import com.intellij.openapi.module.Module;
 import com.intellij.psi.PsiDirectory;
 import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -65,7 +63,7 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
   }
 
   @Override
-  public void addListener(@NotNull DataSourceListener listener) {
+  public void addListener(DataSourceListener listener) {
     synchronized (LOCK) {
       if (ListSequence.fromList(myListeners).isEmpty()) {
         startListening();
@@ -75,7 +73,7 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
   }
 
   @Override
-  public void removeListener(@NotNull DataSourceListener listener) {
+  public void removeListener(DataSourceListener listener) {
     synchronized (LOCK) {
       ListSequence.fromList(myListeners).removeElement(listener);
       if (ListSequence.fromList(myListeners).isEmpty()) {

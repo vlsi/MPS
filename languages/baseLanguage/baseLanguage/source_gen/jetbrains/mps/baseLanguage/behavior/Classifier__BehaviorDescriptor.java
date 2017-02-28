@@ -394,19 +394,11 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
           }
         }));
 
-        Scope methodScope = new ListScope((SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) ? staticMethods : instanceMethods)) {
-          public String getName(SNode child) {
-            return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-          }
-        };
+        Scope methodScope = ListScope.forNamedElements((SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) ? staticMethods : instanceMethods));
 
         return Scopes.forMethods(kind, methodScope, new FilteringByNameScope(filteredNames, ScopeUtils.lazyParentScope(__thisNode__, kind)));
       } else {
-        return Scopes.forMethods(kind, new ListScope(staticMethods) {
-          public String getName(SNode child) {
-            return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-          }
-        }, ScopeUtils.lazyParentScope(__thisNode__, kind));
+        return Scopes.forMethods(kind, ListScope.forNamedElements(staticMethods), ScopeUtils.lazyParentScope(__thisNode__, kind));
       }
 
     }

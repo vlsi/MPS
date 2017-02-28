@@ -206,6 +206,11 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
     BinaryPersistence.index(input, callback);
   }
 
+  @Override
+  public SModelData parseSingleStream(@NotNull String name, @NotNull InputStream input) throws IOException {
+    return BinaryPersistence.getModelData(input);
+  }
+
   public static Map<String, String> getDigestMap(@NotNull StreamDataSource source) {
     try {
       SModelHeader binaryModelHeader = BinaryPersistence.readHeader(source);

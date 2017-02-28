@@ -64,7 +64,7 @@ import java.util.Map.Entry;
 /**
  * evgeny, 6/3/13
  */
-public class FilePerRootModelFactory implements ModelFactory {
+public class FilePerRootModelFactory implements ModelFactory, IndexAwareModelFactory {
   private static final Logger LOG = LogManager.getLogger(FilePerRootModelFactory.class);
 
   @NotNull
@@ -261,6 +261,17 @@ public class FilePerRootModelFactory implements ModelFactory {
     result.put(GeneratableSModel.FILE, fileHash.toString(Character.MAX_RADIX));
     return result;
   }
+
+  @Override
+  public void index(@NotNull InputStream input, @NotNull Callback callback) throws IOException {
+    ModelPersistence.index(input, callback);
+  }
+
+  @Override
+  public SModelData parseSingleStream(@NotNull String name, @NotNull InputStream input) throws IOException {
+    return ModelPersistence.getModelData(input);
+  }
+
 
   private static class PersistenceFacility extends LazyLoadFacility {
     public PersistenceFacility(@NotNull FilePerRootModelFactory modelFactory, @NotNull MultiStreamDataSource dataSource) {

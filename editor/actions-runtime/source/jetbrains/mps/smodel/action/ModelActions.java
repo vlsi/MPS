@@ -17,15 +17,21 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultSubstituteMenuItemAsActionItem;
+import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector;
 import jetbrains.mps.lang.editor.menus.transformation.SubstituteItemsCollector;
 import jetbrains.mps.nodeEditor.CellSide;
+import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo.Side;
+import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -98,8 +104,23 @@ public class ModelActions {
     return new SideTransformHintSubstituteActionsHelper(sourceNode, side, transformTag, context).canCreateActions();
   }
 
-  public static List<SubstituteAction> createSideTransformHintSubstituteActions(SNode sourceNode, CellSide side, String transformTag,
-                                                                                IOperationContext context) {
+  /**
+   * @deprecated use {@link #createSideTransformSubstituteActions(EditorCell, Side)}
+   */
+  @Deprecated
+  public static List<SubstituteAction> createSideTransformHintSubstituteActions(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
     return new SideTransformHintSubstituteActionsHelper(sourceNode, side, transformTag, context).createActions();
+  }
+
+  public static List<SubstituteAction> createSideTransformSubstituteActions(@NotNull EditorCell cell, @NotNull SideTransformSubstituteInfo.Side side) {
+    final SNode sourceNode = cell.getSNode();
+
+    final EditorContext editorContext = cell.getContext();
+    if (sourceNode == null || editorContext == null) {
+      return Collections.emptyList();
+    }
+    TransformationMenuLookup lookup = new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), sourceNode.getConcept());
+    final List<TransformationMenuItem> items = MenuUtil.createMenu(lookup, side.myMenuLocation, cell);
+    return new SubstituteActionsCollector(sourceNode, items, editorContext.getRepository()).collect();
   }
 }

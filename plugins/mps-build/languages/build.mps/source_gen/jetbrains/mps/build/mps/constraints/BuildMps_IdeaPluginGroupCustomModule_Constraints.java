@@ -60,5 +60,5 @@ public class BuildMps_IdeaPluginGroupCustomModule_Constraints extends BaseConstr
     });
     return references;
   }
-  private static SNodePointer breakingNode_q09jue_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "4034578608468929486");
+  private static SNodePointer breakingNode_q09jue_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "6836281137582840140");
 }

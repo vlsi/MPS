@@ -23,9 +23,10 @@ import com.intellij.util.indexing.FileContent;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import java.util.Map;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.workbench.index.RootNodeNameIndex;
 import java.util.Collections;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -36,6 +37,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEntry, List<SNodeEntry>> {
   private static final ID<SNodeEntry, List<SNodeEntry>> NAME = ID.create("mps.ClassifierSuccessors");
@@ -105,30 +107,31 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEn
     @Override
     public Map<SNodeEntry, List<SNodeEntry>> map(final FileContent inputData) {
       try {
-        SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
+        SModelData modelData = RootNodeNameIndex.doModelParsing(inputData);
         // e.g. model with merge conflict 
-        if (sModel == null) {
+        if (modelData == null) {
           return Collections.emptyMap();
         }
 
+        SModelReference modelReference = modelData.getReference();
         final Map<SNodeEntry, List<SNodeEntry>> result = MapSequence.fromMap(new HashMap<SNodeEntry, List<SNodeEntry>>());
-        for (final SNode nextNode : SNodeUtil.getDescendants(sModel)) {
+        for (final SNode nextNode : SNodeUtil.getDescendants(modelData.getRootNodes())) {
           if (SNodeOperations.isInstanceOf(nextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
             SNode classNode = SNodeOperations.as(nextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
             SNode superclass = SLinkOperations.getTarget(classNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"));
             if (superclass != null) {
-              safeMap(result, superclass, classNode);
+              safeMap(result, superclass, modelReference, classNode);
             }
             for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getChildren(classNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface")))) {
-              safeMap(result, implementedInterface, classNode);
+              safeMap(result, implementedInterface, modelReference, classNode);
             }
             if (SNodeOperations.isInstanceOf(classNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
-              safeMap(result, SNodeOperations.getReference(SNodeOperations.as(classNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e0fd2a0L, "classifier")), classNode);
+              safeMap(result, SNodeOperations.getReference(SNodeOperations.as(classNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e0fd2a0L, "classifier")), modelReference, classNode);
             }
           } else if (SNodeOperations.isInstanceOf(nextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
             SNode interfaceNode = SNodeOperations.as(nextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"));
             for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getChildren(interfaceNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface")))) {
-              safeMap(result, extendedInterface, interfaceNode);
+              safeMap(result, extendedInterface, modelReference, interfaceNode);
             }
           }
         }
@@ -139,11 +142,11 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEn
       return Collections.emptyMap();
     }
 
-    private void safeMap(Map<SNodeEntry, List<SNodeEntry>> result, SNode classifierType, SNode node) {
-      safeMap(result, SNodeOperations.getReference(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), node);
+    private void safeMap(Map<SNodeEntry, List<SNodeEntry>> result, SNode classifierType, SModelReference modelReference, SNode node) {
+      safeMap(result, SNodeOperations.getReference(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), modelReference, node);
     }
 
-    private void safeMap(Map<SNodeEntry, List<SNodeEntry>> result, SReference reference, SNode node) {
+    private void safeMap(Map<SNodeEntry, List<SNodeEntry>> result, SReference reference, SModelReference modelReference, SNode node) {
       SNodeReference targetNode = (reference == null ? null : reference.getTargetNodeReference());
       if (targetNode == null) {
         return;
@@ -154,7 +157,9 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEn
         successors = new ArrayList<SNodeEntry>();
         MapSequence.fromMap(result).put(key, successors);
       }
-      successors.add(new SNodeEntry(SNodeOperations.getPointer(node)));
+      // being carefull with SNodePointer because node is not in a model 
+      SNodePointer nodePointer = new SNodePointer(modelReference, node.getNodeId());
+      successors.add(new SNodeEntry(nodePointer));
     }
   }
 }

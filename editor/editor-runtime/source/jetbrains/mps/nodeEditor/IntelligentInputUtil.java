@@ -18,10 +18,9 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cellActions.OldNewCompositeSideTransformSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo.Side;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -241,7 +240,7 @@ public class IntelligentInputUtil {
     CellAction rtAction = selectableChild != null ?
         editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(selectableChild, CellActionType.RIGHT_TRANSFORM) : null;
 
-    boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.RIGHT, tail);
+    boolean hasSideActions = hasSideActions(cellForNewNode, Side.RIGHT, tail);
 
     if (rtAction == null || !hasSideActions) {
       final CellInfo cellInfo = cellForNewNode.getCellInfo();
@@ -364,7 +363,7 @@ public class IntelligentInputUtil {
     CellAction ltAction =
         editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(CellFinderUtil.findFirstSelectableLeaf(cellForNewNode, true),
             CellActionType.LEFT_TRANSFORM);
-    boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.LEFT, head);
+    boolean hasSideActions = hasSideActions(cellForNewNode, Side.LEFT, head);
 
     if (ltAction == null || !hasSideActions) {
       CellInfo cellInfo = cellForNewNode.getCellInfo();
@@ -463,8 +462,8 @@ public class IntelligentInputUtil {
     return false;
   }
 
-  private static boolean hasSideActions(EditorCell cell, CellSide side, String prefix) {
-    SubstituteInfo info = OldNewCompositeSideTransformSubstituteInfo.createSubstituteInfo(side, cell, cell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG));
+  private static boolean hasSideActions(EditorCell cell, Side side, String prefix) {
+    SubstituteInfo info = new SideTransformSubstituteInfo(cell, side);
     return !info.hasExactlyNActions(prefix, false, 0);
   }
 

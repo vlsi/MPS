@@ -46,30 +46,10 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPartEx
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
-    final String role = CellUtil.getLinkDeclarationRole(linkDeclaration);
     SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
     final SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
-    if (OldNewSubstituteUtil.areOldActionsApplicableToConcept(linkDeclarationTarget, editorContext.getRepository())) {
-      return ModelActions.createChildNodeSubstituteActions(
-          parentNode,
-          currentChild,
-          CellUtil.getLinkDeclarationTarget(linkDeclaration),
-          new AbstractChildNodeSetter() {
-            @Override
-            public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
-              if (oldChild == null) {
-                parentNode.addChild(role, newChild);
-              } else {
-                SNodeUtil.replaceWithAnother(oldChild, newChild);
-              }
-              return newChild;
-            }
-          },
-          editorContext.getOperationContext());
-    } else {
-      SContainmentLink containmentLink = MetaAdapterByDeclaration.getContainmentLink(SModelUtil.getGenuineLinkDeclaration(linkDeclaration));
-      List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, MetaAdapterByDeclaration.getConcept(linkDeclarationTarget), editorContext, null).collect();
-      return new SubstituteActionsCollector(parentNode, transformationItems, editorContext.getRepository()).collect();
-    }
+    SContainmentLink containmentLink = MetaAdapterByDeclaration.getContainmentLink(SModelUtil.getGenuineLinkDeclaration(linkDeclaration));
+    List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, MetaAdapterByDeclaration.getConcept(linkDeclarationTarget), editorContext, null).collect();
+    return new SubstituteActionsCollector(parentNode, transformationItems, editorContext.getRepository()).collect();
   }
 }

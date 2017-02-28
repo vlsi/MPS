@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
+import com.intellij.icons.AllIcons.Nodes;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.SortUtil;
@@ -82,7 +83,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
   private void populate() {
     ShortModelNameText textSource = new ShortModelNameText();
-    for (SModel m: LanguageAspectSupport.getAspectModels(getModule())){
+    for (SModel m : LanguageAspectSupport.getAspectModels(getModule())) {
       add(new SModelTreeNode(m, textSource));
     }
 
@@ -126,8 +127,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     }
 
     TextTreeNode allModels = new AllModelsTreeNode();
-    allModels.setIcon(IdeIcons.PROJECT_MODELS_ICON, false);
-    allModels.setIcon(IdeIcons.PROJECT_MODELS_EXPANDED_ICON, true);
+    allModels.setIcon(Nodes.ModuleGroup);
     new SModelsSubtree(allModels, false, false).create(getModule());
     add(allModels);
   }

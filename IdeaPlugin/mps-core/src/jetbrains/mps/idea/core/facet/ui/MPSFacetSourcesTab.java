@@ -88,9 +88,15 @@ public class MPSFacetSourcesTab implements SModuleConfigurationTab {
               for(String file : ((FileBasedModelRoot) path).getFiles(FileBasedModelRoot.SOURCE_ROOTS)) {
                 for(ContentEntry contentEntry : modifiableRootModel.getContentEntries()) {
                   for(SourceFolder source : contentEntry.getSourceFolders()) {
-                    if(FileUtil.isSubPath(source.getFile().getPath(), file)) continue;
+                    if(FileUtil.isSubPath(source.getFile().getPath(), file)) {
+                      continue;
+                    }
+                    VirtualFile vFile = VirtualFileUtils.getVirtualFile(file);
+                    if (vFile == null) {
+                      continue;
+                    }
                     //Just add new source/test folder - do not watch after delete
-                    contentEntry.addSourceFolder(VirtualFileUtils.getVirtualFile(file), source.isTestSource());
+                    contentEntry.addSourceFolder(vFile, source.isTestSource());
                   }
                 }
               }

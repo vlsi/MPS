@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
+import com.intellij.icons.AllIcons.Nodes;
 import jetbrains.mps.extapi.model.TransientSModel;
-import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.icons.MPSIcons.Nodes.Models;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.SortUtil.SModelComparator;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
@@ -54,8 +55,8 @@ public class SModelsSubtree {
   }
 
   /**
-   * @param rootTreeNode tree node to populate with children
-   * @param withNamespaceNodes <code>true</code> to group models according to their namespace under dedicated text (aka namespace) nodes
+   * @param rootTreeNode          tree node to populate with children
+   * @param withNamespaceNodes    <code>true</code> to group models according to their namespace under dedicated text (aka namespace) nodes
    * @param withModelsAsNamespace <code>true</code> group models according to their namespace under model with shorter namespace
    */
   public SModelsSubtree(@NotNull MPSTreeNode rootTreeNode, boolean withNamespaceNodes, boolean withModelsAsNamespace) {
@@ -131,8 +132,7 @@ public class SModelsSubtree {
     public StubsTreeNode() {
       super("stubs");
 
-      setIcon(IdeIcons.PROJECT_MODELS_ICON, false);
-      setIcon(IdeIcons.PROJECT_MODELS_EXPANDED_ICON, true);
+      setIcon(Nodes.PpLibFolder);
     }
 
     @Override
@@ -150,8 +150,7 @@ public class SModelsSubtree {
     public TestsTreeNode() {
       super("tests");
 
-      setIcon(IdeIcons.PROJECT_MODELS_ICON, false);
-      setIcon(IdeIcons.PROJECT_MODELS_EXPANDED_ICON, true);
+      setIcon(Models.TestsModel);
     }
 
     @Override

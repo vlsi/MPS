@@ -20,6 +20,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.ModelsScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -63,7 +64,7 @@ public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Iterable<SModule> modules = _context.getModel().getModule().getRepository().getModules();
+              Iterable<SModule> modules = SNodeOperations.getModel(_context.getContextNode()).getModule().getRepository().getModules();
               return new ModelsScope(Sequence.fromIterable(modules).select(new ISelector<SModule, SModel>() {
                 public SModel select(SModule it) {
                   return SModuleOperations.getAspect(it, "plugin");
@@ -76,5 +77,5 @@ public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static SNodePointer breakingNode_srl38n_a0a0a0a0a4a0b0a1a2 = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "8994852683961285085");
+  private static SNodePointer breakingNode_srl38n_a0a0a0a0a4a0b0a1a2 = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "6836281137582820753");
 }

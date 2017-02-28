@@ -168,6 +168,9 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
     moduleDescriptor.getDependencies().add(new Dependency(PersistenceFacade.getInstance().createModuleReference("422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)"), false));
     new ModelImports(smodel).addModelImport(new SNodePointer("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)", "4301118715654192646").getModelReference());
+    if (eq_un708i_a0f0j(getDependencyKind(), DependencyStep.DependencyKind.IDEA)) {
+      new ModelImports(smodel).addModelImport(new SNodePointer("r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)", "5148601452480491524").getModelReference());
+    }
   }
   public SModel getSModelDescriptor(ProgressIndicator indicator) {
     if (getCreateModel()) {
@@ -2348,6 +2351,9 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_1;
   }
   private static boolean eq_un708i_a0d0d(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_un708i_a0f0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_un708i_a0r0s(Object a, Object b) {

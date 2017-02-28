@@ -64,5 +64,5 @@ public class ClassifierClassExpression_Constraints extends BaseConstraintsDescri
     });
     return references;
   }
-  private static SNodePointer breakingNode_w155fn_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136857");
+  private static SNodePointer breakingNode_w155fn_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582643064");
 }

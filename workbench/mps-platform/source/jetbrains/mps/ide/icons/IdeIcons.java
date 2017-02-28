@@ -52,14 +52,19 @@ public class IdeIcons {
   public static final Icon GENERATOR_ICON = Nodes.Generator;
 
   /**
-   * @deprecated duplicates {@link #LANGUAGE_ICON}
+   * Use more specific icon.
+   * {@link AllIcons.Nodes#ModuleGroup} can be used as general replacement.
    */
   @Deprecated
-  @ToRemove(version = 3.3)
-  public static final Icon PROJECT_LANGUAGE_ICON = FileIcons.PROJECT_LANGUAGE_ICON;
-
-  public static final Icon PROJECT_MODELS_ICON = MPSIcons.Nodes.ProjectModels;
-  public static final Icon PROJECT_MODELS_EXPANDED_ICON = MPSIcons.Nodes.ProjectModels;
+  @ToRemove(version = 2017.1)
+  public static final Icon PROJECT_MODELS_ICON = AllIcons.Nodes.ModuleGroup;
+  /**
+   * Use more specific icon.
+   * {@link AllIcons.Nodes#ModuleGroup} can be used as general replacement.
+   */
+  @Deprecated
+  @ToRemove(version = 2017.1)
+  public static final Icon PROJECT_MODELS_EXPANDED_ICON = AllIcons.Nodes.ModuleGroup;
   public static final Icon TRANSIENT_MODELS_ICON = MPSIcons.Nodes.TransientModels;
 
   public static final Icon PROPERTIES_ICON = General.Settings;
@@ -72,6 +77,16 @@ public class IdeIcons {
 
   public static final Icon REFERENCE_ICON = Actions.Forward;
 
+  /**
+   * @deprecated use {@link AllIcons.Nodes#ModuleGroup} directly
+   */
+  @Deprecated
+  @ToRemove(version = 2017.1)
   public static final Icon MODULE_GROUP_CLOSED = AllIcons.Nodes.ModuleGroup;
+  /**
+   * @deprecated use {@link AllIcons.Nodes#ModuleGroup} directly
+   */
+  @Deprecated
+  @ToRemove(version = 2017.1)
   public static final Icon MODULE_GROUP_OPENED = AllIcons.Nodes.ModuleGroup;
 }

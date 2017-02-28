@@ -60,42 +60,25 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
     if (parent == null) {
       return Collections.emptyList();
     }
-    IOperationContext context = editorContext.getOperationContext();
 
     List<SubstituteAction> result;
-    if (OldNewSubstituteUtil.areOldActionsApplicableToConcept(getReplacementConcept(), editorContext.getRepository())) {
-      List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(parent, node, getReplacementConcept().getDeclarationNode(), this, context);
-      result = new ArrayList<SubstituteAction>(actions.size());
-      for (SubstituteAction a : actions) {
-        result.add(new NodeSubstituteActionWrapper(a) {
-          @Override
-          public SNode substitute(@Nullable EditorContext context, String pattern) {
-            String selectedCellId = getSelectedCellId(context);
-            SNode result = super.substitute(context, pattern);
-            select(context, selectedCellId, result);
-            return result;
-          }
-        });
-      }
-    } else {
-      SubstituteMenuLookup lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getReplacementConcept());
-      SContainmentLink containmentLink = node.getContainmentLink();
-      assert containmentLink != null;
-      List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parent, node, containmentLink, editorContext, lookup).collect();
-      result = new SubstituteActionsCollector(parent, transformationItems, editorContext.getRepository()).collect().stream().map(action -> new NodeSubstituteActionWrapper(action) {
-        @Override
-        public SNode substitute(@Nullable EditorContext context, String pattern) {
-          String selectedCellId = getSelectedCellId(context);
+    SubstituteMenuLookup lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getReplacementConcept());
+    SContainmentLink containmentLink = node.getContainmentLink();
+    assert containmentLink != null;
+    List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parent, node, containmentLink, editorContext, lookup).collect();
+    result = new SubstituteActionsCollector(parent, transformationItems, editorContext.getRepository()).collect().stream().map(action -> new NodeSubstituteActionWrapper(action) {
+      @Override
+      public SNode substitute(@Nullable EditorContext context, String pattern) {
+        String selectedCellId = getSelectedCellId(context);
 
-          super.substitute(context, pattern);
-          if (context != null) {
-            //hack to find substituted node
-            select(editorContext, selectedCellId, getNewNode(parent, editorContext));
-          }
-          return null;
+        super.substitute(context, pattern);
+        if (context != null) {
+          //hack to find substituted node
+          select(editorContext, selectedCellId, getNewNode(parent, editorContext));
         }
-      }).collect(Collectors.toList());
-    }
+        return null;
+      }
+    }).collect(Collectors.toList());
     return result;
   }
 

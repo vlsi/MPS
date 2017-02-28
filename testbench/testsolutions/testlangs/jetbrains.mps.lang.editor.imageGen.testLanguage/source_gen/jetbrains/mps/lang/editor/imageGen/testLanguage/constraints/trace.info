@@ -17,45 +17,41 @@
   </root>
   <root nodeRef="r:0ef2f444-056f-4c81-955a-1c2ea83ba701(jetbrains.mps.lang.editor.imageGen.testLanguage.constraints)/2442780630506687109">
     <file name="ExportAsImage_Constraints.java">
-      <node id="2442780630506687109" at="15,38,16,179" concept="9" />
-      <node id="2442780630506687109" at="20,43,21,16" concept="5" />
-      <node id="2442780630506687109" at="24,200,25,99" concept="4" />
-      <node id="2442780630506687109" at="25,99,26,0" concept="6" />
-      <node id="2442780630506687109" at="27,51,28,67" concept="1" />
-      <node id="2442780630506687109" at="29,5,30,0" concept="6" />
-      <node id="2442780630506687109" at="30,0,31,18" concept="5" />
-      <node id="2442780630506687182" at="34,152,35,57" concept="5" />
-      <node id="2442780630506687109" at="37,0,38,0" concept="7" trace="canBeChildBreakingPoint" />
-      <node id="2442780630506687109" at="15,0,18,0" concept="0" trace="ExportAsImage_Constraints#()V" />
-      <node id="2442780630506687109" at="26,0,29,5" concept="2" />
-      <node id="2442780630506687109" at="19,0,23,0" concept="3" trace="hasOwnCanBeChildMethod#()Z" />
-      <node id="2442780630506687109" at="33,0,37,0" concept="8" trace="staticCanBeAChild_Old#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-      <node id="2442780630506687109" at="23,0,33,0" concept="3" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-      <scope id="2442780630506687109" at="15,38,16,179" />
-      <scope id="2442780630506687109" at="20,43,21,16" />
-      <scope id="2442780630506687109" at="27,51,28,67" />
-      <scope id="2442780630506687111" at="34,152,35,57" />
-      <scope id="2442780630506687109" at="15,0,18,0" />
-      <scope id="2442780630506687109" at="19,0,23,0" />
-      <scope id="2442780630506687109" at="33,0,37,0">
+      <node id="2442780630506687109" at="19,38,20,179" concept="9" />
+      <node id="2442780630506687109" at="27,127,28,128" concept="4" />
+      <node id="2442780630506687109" at="28,128,29,0" concept="6" />
+      <node id="2442780630506687109" at="30,55,31,71" concept="1" />
+      <node id="2442780630506687109" at="32,9,33,0" concept="6" />
+      <node id="2442780630506687109" at="33,0,34,22" concept="5" />
+      <node id="1227128029536583728" at="38,128,39,57" concept="5" />
+      <node id="2442780630506687109" at="41,0,42,0" concept="7" trace="canBeChildBreakingPoint" />
+      <node id="2442780630506687109" at="19,0,22,0" concept="0" trace="ExportAsImage_Constraints#()V" />
+      <node id="2442780630506687109" at="29,0,32,9" concept="2" />
+      <node id="2442780630506687109" at="38,0,41,0" concept="8" trace="staticCanBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
+      <node id="2442780630506687109" at="26,0,36,0" concept="3" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
+      <node id="2442780630506687109" at="24,103,36,6" concept="5" />
+      <node id="2442780630506687109" at="23,0,38,0" concept="3" trace="calculateCanBeChildConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
+      <scope id="2442780630506687109" at="19,38,20,179" />
+      <scope id="2442780630506687109" at="30,55,31,71" />
+      <scope id="1227128029536583727" at="38,128,39,57" />
+      <scope id="2442780630506687109" at="19,0,22,0" />
+      <scope id="2442780630506687109" at="38,0,41,0">
         <var name="childConcept" id="2442780630506687109" />
         <var name="link" id="2442780630506687109" />
         <var name="node" id="2442780630506687109" />
-        <var name="operationContext" id="2442780630506687109" />
         <var name="parentNode" id="2442780630506687109" />
       </scope>
-      <scope id="2442780630506687109" at="24,200,31,18">
+      <scope id="2442780630506687109" at="27,127,34,22">
         <var name="result" id="2442780630506687109" />
       </scope>
-      <scope id="2442780630506687109" at="23,0,33,0">
+      <scope id="2442780630506687109" at="26,0,36,0">
         <var name="checkingNodeContext" id="2442780630506687109" />
-        <var name="childConcept" id="2442780630506687109" />
-        <var name="link" id="2442780630506687109" />
-        <var name="node" id="2442780630506687109" />
-        <var name="operationContext" id="2442780630506687109" />
-        <var name="parentNode" id="2442780630506687109" />
+        <var name="context" id="2442780630506687109" />
       </scope>
-      <unit id="2442780630506687109" at="14,0,39,0" name="jetbrains.mps.lang.editor.imageGen.testLanguage.constraints.ExportAsImage_Constraints" />
+      <scope id="2442780630506687109" at="24,103,36,6" />
+      <scope id="2442780630506687109" at="23,0,38,0" />
+      <unit id="2442780630506687109" at="25,15,36,5" name="jetbrains.mps.lang.editor.imageGen.testLanguage.constraints.ExportAsImage_Constraints$1" />
+      <unit id="2442780630506687109" at="18,0,43,0" name="jetbrains.mps.lang.editor.imageGen.testLanguage.constraints.ExportAsImage_Constraints" />
     </file>
   </root>
 </debug-info>

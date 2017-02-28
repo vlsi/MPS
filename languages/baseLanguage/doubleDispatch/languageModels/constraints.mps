@@ -2,7 +2,7 @@
 <model ref="r:3d7b3732-9bef-45a8-98fa-22d696f27853(jetbrains.mps.baseLanguage.doubleDispatch.constraints)">
   <persistence version="9" />
   <languages>
-    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -34,11 +34,11 @@
       </concept>
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
-      <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="nKS2y" />
+      <concept id="6702802731807351367" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="9S07l" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
-        <child id="1213106463729" name="canBeChild" index="1MLUbF" />
+        <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -52,21 +52,21 @@
   </registry>
   <node concept="1M2fIO" id="25pbpTNvWz2">
     <ref role="1M2myG" to="spkm:25pbpTNvUrT" resolve="DispatchModifier" />
-    <node concept="nKS2y" id="25pbpTNvWzQ" role="1MLUbF">
-      <node concept="3clFbS" id="25pbpTNvWzR" role="2VODD2">
-        <node concept="3SKdUt" id="20YUQaJ$W4y" role="3cqZAp">
-          <node concept="3SKdUq" id="20YUQaJ$WcN" role="3SKWNk">
+    <node concept="9S07l" id="147CB3QsUhp" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsUhq" role="2VODD2">
+        <node concept="3SKdUt" id="147CB3QsUhr" role="3cqZAp">
+          <node concept="3SKdUq" id="147CB3QsUhs" role="3SKWNk">
             <property role="3SKdUp" value="applicable only to java methods" />
           </node>
         </node>
-        <node concept="3clFbF" id="25pbpTNvWAM" role="3cqZAp">
-          <node concept="2OqwBi" id="25pbpTNvWKm" role="3clFbG">
-            <node concept="1mIQ4w" id="25pbpTNvWRh" role="2OqNvi">
-              <node concept="chp4Y" id="25pbpTNvWZQ" role="cj9EA">
+        <node concept="3clFbF" id="147CB3QsUht" role="3cqZAp">
+          <node concept="2OqwBi" id="147CB3QsUhu" role="3clFbG">
+            <node concept="1mIQ4w" id="147CB3QsUhv" role="2OqNvi">
+              <node concept="chp4Y" id="147CB3QsUhw" role="cj9EA">
                 <ref role="cht4Q" to="tpee:6LFqxSRBTg8" resolve="MethodDeclaration" />
               </node>
             </node>
-            <node concept="nLn13" id="25pbpTNvWAL" role="2Oq$k0" />
+            <node concept="nLn13" id="147CB3QsUhx" role="2Oq$k0" />
           </node>
         </node>
       </node>

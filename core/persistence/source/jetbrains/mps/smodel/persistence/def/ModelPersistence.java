@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
 import jetbrains.mps.persistence.xml.XMLPersistence;
@@ -90,6 +91,8 @@ public class ModelPersistence {
 
   public static final int FIRST_SUPPORTED_VERSION = 9;
   public static final int LAST_VERSION = 9;
+
+  private static final int HEADER_READ_LIMIT = 1 << 16; // allow for huge headers
 
   public static boolean isSupported(int version) {
     return version >= FIRST_SUPPORTED_VERSION && version <= LAST_VERSION;
@@ -316,6 +319,8 @@ public class ModelPersistence {
     }
   }
 
+
+
   /**
    * @deprecated use {@link #index(InputStream, Callback)} instead
    */
@@ -325,12 +330,16 @@ public class ModelPersistence {
     index(new ByteArrayInputStream(data), newConsumer);
   }
 
-  public static void index(InputStream data, Callback newConsumer) throws IOException {
-    assert data.markSupported() : "XML model persistence reads the stream twice (to parse header and to figure out persistence version)";
+  private static void assertMarkSupported(InputStream stream) {
     // Both BufferedInputStream and ByteArrayInputStream do support marks, latter without limit.
+    assert stream.markSupported() : "XML model persistence reads the stream twice (to parse header and to figure out persistence version)";
+  }
+
+  public static void index(InputStream data, Callback newConsumer) throws IOException {
+    assertMarkSupported(data);
     try {
       SModelHeader header = new SModelHeader();
-      data.mark(1 << 16); // allow for huge headers
+      data.mark(HEADER_READ_LIMIT);
       InputSource source = new InputSource(new InputStreamReader(data, FileUtil.DEFAULT_CHARSET));
       parseAndHandleExceptions(source, new HeaderOnlyHandler(header));
       IModelPersistence mp = getPersistence(header.getPersistenceVersion());
@@ -349,6 +358,19 @@ public class ModelPersistence {
     } catch (Exception ex) {
       Throwable th = ex.getCause() == null ? ex : ex.getCause();
       throw new IOException(th);
+    }
+  }
+
+  public static SModelData getModelData(@NotNull InputStream input) throws IOException {
+    assertMarkSupported(input);
+    try {
+      input.mark(HEADER_READ_LIMIT);
+      SModelHeader header = loadDescriptor(new InputSource(new InputStreamReader(input, FileUtil.DEFAULT_CHARSET)));
+      input.reset();
+      ModelLoadResult result = readModel(header, new InputSource(new InputStreamReader(input, FileUtil.DEFAULT_CHARSET)), ModelLoadingState.FULLY_LOADED);
+      return result.getModel();
+    } catch (ModelReadException e) {
+      throw new IOException(e);
     }
   }
 

@@ -58,7 +58,7 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new FilteringScope(new SubconceptsScope(MetaAdapterFactory.getInterfaceConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x690b986730edd07L, "jetbrains.mps.lang.smodel.query.structure.HelpProvider"), _context.getModel()) {
+            return new FilteringScope(new SubconceptsScope(MetaAdapterFactory.getInterfaceConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x690b986730edd07L, "jetbrains.mps.lang.smodel.query.structure.HelpProvider"), SNodeOperations.getModel(_context.getContextNode())) {
               public String getName(SNode child) {
                 return (String) HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(SNodeOperations.asSConcept(((SAbstractConcept) SNodeOperations.asSConcept(child))));
               }
@@ -75,5 +75,5 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
     });
     return references;
   }
-  private static SNodePointer breakingNode_asp0i5_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:a35e9456-af18-4589-b3c4-ed9896a657c9(jetbrains.mps.console.base.constraints)", "6928665434433996663");
+  private static SNodePointer breakingNode_asp0i5_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:a35e9456-af18-4589-b3c4-ed9896a657c9(jetbrains.mps.console.base.constraints)", "6836281137582820644");
 }

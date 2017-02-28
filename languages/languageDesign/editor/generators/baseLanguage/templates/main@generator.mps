@@ -29607,7 +29607,7 @@
                 <ref role="3cqZAo" node="5DTV$TR_6Fe" resolve="editorCell" />
               </node>
               <node concept="1rXfSq" id="1aFmvcoLK11" role="2U24H$">
-                <ref role="37wK5l" to="nivk:~AbstractEditorBuilder.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                <ref role="37wK5l" to="p9jd:~SingleRoleCellProvider.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
               </node>
               <node concept="1rXfSq" id="1aFmvcoLL8T" role="2U24H$">
                 <ref role="37wK5l" to="nivk:~AbstractEditorBuilder.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />

@@ -26,7 +26,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.scope.ListScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class Participant_Constraints extends BaseConstraintsDescriptor {
@@ -55,13 +54,12 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
             {
               final SNode concert = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c45L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert"), false, false);
               final SNode performance = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78de950L, "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance"), true, false);
-              final SNode me = (_context.isExists() ? SNodeOperations.as(_context.getContextNode(), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78e59fbL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant")) : null);
 
               final List<SNode> allSingers = SLinkOperations.getChildren(concert, MetaAdapterFactory.getContainmentLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c45L, 0x34c8853ae7895c8bL, "performers"));
 
               final Iterable<SNode> alreadyParticipatingSingersButMe = ListSequence.fromList(SLinkOperations.getChildren(performance, MetaAdapterFactory.getContainmentLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78de950L, 0x34c8853ae78de9acL, "participants"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return neq_wflc39_a0a0a0a0a0a0g0a0b0a0a0b0a1a0b0c(it, me);
+                  return neq_wflc39_a0a0a0a0a0a0f0a0b0a0a0b0a1a0b0c(it, _context.getReferenceNode());
                 }
               }).select(new ISelector<SNode, SNode>() {
                 public SNode select(SNode participant) {
@@ -73,17 +71,13 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
                 public boolean accept(final SNode singer) {
                   return Sequence.fromIterable(alreadyParticipatingSingersButMe).all(new IWhereFilter<SNode>() {
                     public boolean accept(SNode participatingSinger) {
-                      return neq_wflc39_a0a0a0a0a0a0a0a0a0a8a0a1a0a0a1a0b0a1a2(participatingSinger, singer);
+                      return neq_wflc39_a0a0a0a0a0a0a0a0a0a7a0a1a0a0a1a0b0a1a2(participatingSinger, singer);
                     }
                   });
                 }
               });
 
-              return new ListScope(candidates) {
-                public String getName(SNode child) {
-                  return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c8dL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-                }
-              };
+              return ListScope.forNamedElements(candidates);
             }
           }
         };
@@ -91,11 +85,11 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static boolean neq_wflc39_a0a0a0a0a0a0g0a0b0a0a0b0a1a0b0c(Object a, Object b) {
+  private static boolean neq_wflc39_a0a0a0a0a0a0f0a0b0a0a0b0a1a0b0c(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_wflc39_a0a0a0a0a0a0a0a0a0a8a0a1a0a0a1a0b0a1a2(Object a, Object b) {
+  private static boolean neq_wflc39_a0a0a0a0a0a0a0a0a0a7a0a1a0a0a1a0b0a1a2(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNodePointer breakingNode_wflc39_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:7e1c7518-df7a-4f22-84b2-a5e68261264a(jetbrains.mps.samples.languagePatterns.Basic.constraints)", "3803436373354372415");
+  private static SNodePointer breakingNode_wflc39_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:7e1c7518-df7a-4f22-84b2-a5e68261264a(jetbrains.mps.samples.languagePatterns.Basic.constraints)", "6836281137582847570");
 }

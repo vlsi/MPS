@@ -18,7 +18,6 @@ package jetbrains.mps.workbench;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSExtentions;
@@ -40,7 +39,13 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.StringJoiner;
 
 /**
  * AP:
@@ -48,7 +53,7 @@ import java.util.*;
  * The problem is that the IDEA platform tends to get rid of xml configuration files in the project directory
  * on the empty project creation.
  * So the list of xml configuration files is not invariant and this test does not make much sense.
- *
+ * <p>
  * Added on Oct 16, 2010
  *
  * @author Evgeny Gerashchenko
@@ -78,14 +83,16 @@ public class ProjectCreationTest {
   private static Environment ourEnvironment;
 
   private static List<String> languageModels(String projectName, String languageNamespace) {
-    final LanguageAspect[] aspects = new LanguageAspect[] {
+    final LanguageAspect[] aspects = new LanguageAspect[]{
         LanguageAspect.STRUCTURE, LanguageAspect.CONSTRAINTS, LanguageAspect.EDITOR, LanguageAspect.BEHAVIOR, LanguageAspect.TYPESYSTEM
     };
     String[] rv = new String[aspects.length + 1];
     for (int i = 0; i < aspects.length; i++) {
-      rv[i] = String.format(PATH_IN_PROJECT, projectName, LANGUAGES_ROOT, languageNamespace, Language.LANGUAGE_MODELS, aspects[i].getName(), MPSExtentions.MODEL);
+      rv[i] =
+          String.format(PATH_IN_PROJECT, projectName, LANGUAGES_ROOT, languageNamespace, Language.LANGUAGE_MODELS, aspects[i].getName(), MPSExtentions.MODEL);
     }
-    rv[aspects.length] = String.format(PATH_IN_PROJECT, projectName, LANGUAGES_ROOT, languageNamespace, "generator/template", "main@generator", MPSExtentions.MODEL);
+    rv[aspects.length] =
+        String.format(PATH_IN_PROJECT, projectName, LANGUAGES_ROOT, languageNamespace, "generator/template", "main@generator", MPSExtentions.MODEL);
     return Arrays.asList(rv);
   }
 
@@ -100,7 +107,7 @@ public class ProjectCreationTest {
   @BeforeClass
   public static void init() {
     ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE = new ArrayList<String>();
+    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE = new ArrayList<>();
     final String languageModule = PROJECT_NAME + "/" + LANGUAGES_ROOT + "/" + LANGUAGE_NAMESPACE + "/" + LANGUAGE_NAMESPACE + MPSExtentions.DOT_LANGUAGE;
     final String solutionModule = PROJECT_NAME + "/" + SOLUTIONS_ROOT + "/" + SOLUTION_NAMESPACE + "/" + SOLUTION_NAMESPACE + MPSExtentions.DOT_SOLUTION;
     PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.add(languageModule);
@@ -139,7 +146,7 @@ public class ProjectCreationTest {
   }
 
   private void invokeTest(final ProjectOptionsProvider projectOptionsProvider, List<String> expectedPathList) {
-    final Reference<Throwable> refThrowable = new Reference<Throwable>();
+    final Reference<Throwable> refThrowable = new Reference<>();
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       @Override
       public void run() {
@@ -149,7 +156,7 @@ public class ProjectCreationTest {
             try {
               myTmpDir = IFileUtils.createTmpDir();
               try {
-                ProjectFactory factory = new ProjectFactory(null, projectOptionsProvider.getProjectOptions(myTmpDir));
+                ProjectFactory factory = new ProjectFactory(projectOptionsProvider.getProjectOptions(myTmpDir));
                 myProject = factory.createProject();
                 factory.activate();
                 myProject.save();
@@ -185,10 +192,10 @@ public class ProjectCreationTest {
   private static void checkFilePathList(IFile rootDir, List<String> expectedList) {
     List<String> actualList = collectFilePathList(rootDir);
 
-    Set<String> missing = new HashSet<String>(expectedList);
+    Set<String> missing = new HashSet<>(expectedList);
     missing.removeAll(actualList);
 
-    Set<String> unexpected = new HashSet<String>(actualList);
+    Set<String> unexpected = new HashSet<>(actualList);
     unexpected.removeAll(expectedList);
 
     StringJoiner missingString = new StringJoiner("\n");
@@ -201,7 +208,7 @@ public class ProjectCreationTest {
   }
 
   private static List<String> collectFilePathList(IFile rootDir) {
-    ArrayList<String> currentList = new ArrayList<String>();
+    ArrayList<String> currentList = new ArrayList<>();
     collectFilePathList(currentList, rootDir, null);
     return currentList;
   }

@@ -2,7 +2,7 @@
 <model ref="r:e4768f3d-85b6-458a-8b3f-9ef490bdf2d0(jetbrains.mps.lang.editor.figures.constraints)">
   <persistence version="9" />
   <languages>
-    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="2" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -17,9 +17,6 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
-    <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
-      <concept id="1161622665029" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" flags="nn" index="1Q6Npb" />
-    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
         <child id="1068498886297" name="rValue" index="37vLTx" />
@@ -119,13 +116,14 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
+      <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="1147467115080" name="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" flags="ng" index="EnEH3">
         <reference id="1147467295099" name="applicableProperty" index="EomxK" />
         <child id="1147468630220" name="propertyGetter" index="EtsB7" />
       </concept>
       <concept id="1147467790433" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" flags="in" index="Eqf_E" />
       <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
-      <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="in" index="13QW63" />
+      <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
       <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
         <reference id="8401916545537438643" name="kind" index="1dDu$A" />
       </concept>
@@ -186,13 +184,16 @@
     <ref role="1M2myG" to="ny2:1SVBbIvt9f2" resolve="ExternalViewFigure" />
     <node concept="1N5Pfh" id="4H19mAvWamL" role="1Mr941">
       <ref role="1N5Vy1" to="ny2:1SVBbIvt9fR" resolve="classifier" />
-      <node concept="13QW63" id="4H19mAw3X18" role="1N6uqs">
-        <node concept="3clFbS" id="4H19mAw3X19" role="2VODD2">
-          <node concept="3cpWs6" id="4H19mAw3X1W" role="3cqZAp">
-            <node concept="2ShNRf" id="4H19mAw3X3i" role="3cqZAk">
-              <node concept="1pGfFk" id="4H19mAw3XxM" role="2ShVmc">
+      <node concept="3dgokm" id="5Vvmn_QkXlO" role="1N6uqs">
+        <node concept="3clFbS" id="5Vvmn_QkXlP" role="2VODD2">
+          <node concept="3cpWs6" id="5Vvmn_QkXlQ" role="3cqZAp">
+            <node concept="2ShNRf" id="5Vvmn_QkXlR" role="3cqZAk">
+              <node concept="1pGfFk" id="5Vvmn_QkXlS" role="2ShVmc">
                 <ref role="37wK5l" node="4H19mAvXxH9" resolve="ExternalViewClassifierScope" />
-                <node concept="1Q6Npb" id="4H19mAw3XER" role="37wK5m" />
+                <node concept="2OqwBi" id="5Vvmn_QkXlU" role="37wK5m">
+                  <node concept="2rP1CM" id="5Vvmn_QkXlV" role="2Oq$k0" />
+                  <node concept="I4A8Y" id="5Vvmn_QkXlW" role="2OqNvi" />
+                </node>
               </node>
             </node>
           </node>

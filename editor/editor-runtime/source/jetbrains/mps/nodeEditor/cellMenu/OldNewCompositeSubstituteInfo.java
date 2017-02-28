@@ -27,6 +27,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
 /**
+ * Class which composes old substitute info which finds actions from actions model and new one which uses transformation menu attached to cell.
+ * @deprecated use {@link SChildSubstituteInfo}
  * @author simon
  */
 public class OldNewCompositeSubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {

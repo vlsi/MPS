@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)">
   <persistence version="9" />
   <languages>
-    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="-1" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="2" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
@@ -47,13 +47,13 @@
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
-      <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild_Old" flags="in" index="nKS2y" />
+      <concept id="6702802731807351367" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="9S07l" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="1227084988347" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot" flags="in" index="2NXJUA" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
+        <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
         <child id="1227085062429" name="canBeRoot" index="2NY200" />
-        <child id="1213106463729" name="canBeChild_Old" index="1MLUbF" />
       </concept>
     </language>
     <language id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage">
@@ -82,19 +82,19 @@
   </registry>
   <node concept="1M2fIO" id="hDMPBmV">
     <ref role="1M2myG" to="tp3b:hzmZew1" resolve="ExecuteFinderExpression" />
-    <node concept="nKS2y" id="hDMPBnc" role="1MLUbF">
-      <node concept="3clFbS" id="hDMPBnd" role="2VODD2">
-        <node concept="3clFbF" id="hDMPBne" role="3cqZAp">
-          <node concept="3y3z36" id="hDMPBnf" role="3clFbG">
-            <node concept="10Nm6u" id="hDMPBng" role="3uHU7w" />
-            <node concept="2OqwBi" id="hDMPBnh" role="3uHU7B">
-              <node concept="nLn13" id="hDMPBni" role="2Oq$k0" />
-              <node concept="2Xjw5R" id="hDMPBnj" role="2OqNvi">
-                <node concept="3gmYPX" id="hDMPBnk" role="1xVPHs">
-                  <node concept="3gn64h" id="hDMPBnl" role="3gmYPZ">
+    <node concept="9S07l" id="147CB3QsUDi" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsUDj" role="2VODD2">
+        <node concept="3clFbF" id="147CB3QsUDk" role="3cqZAp">
+          <node concept="3y3z36" id="147CB3QsUDl" role="3clFbG">
+            <node concept="10Nm6u" id="147CB3QsUDm" role="3uHU7w" />
+            <node concept="2OqwBi" id="147CB3QsUDn" role="3uHU7B">
+              <node concept="nLn13" id="147CB3QsUDo" role="2Oq$k0" />
+              <node concept="2Xjw5R" id="147CB3QsUDp" role="2OqNvi">
+                <node concept="3gmYPX" id="147CB3QsUDq" role="1xVPHs">
+                  <node concept="3gn64h" id="147CB3QsUDr" role="3gmYPZ">
                     <ref role="3gnhBz" to="tp3b:hqPqlE8" resolve="FindBlock" />
                   </node>
-                  <node concept="3gn64h" id="hDMPBnm" role="3gmYPZ">
+                  <node concept="3gn64h" id="147CB3QsUDs" role="3gmYPZ">
                     <ref role="3gnhBz" to="tp3b:hzAHsKp" resolve="SearchedNodesBlock" />
                   </node>
                 </node>
@@ -107,16 +107,16 @@
   </node>
   <node concept="1M2fIO" id="hDMPBzY">
     <ref role="1M2myG" to="tp3b:htO1afO" resolve="ResultStatement" />
-    <node concept="nKS2y" id="hDMPBzZ" role="1MLUbF">
-      <node concept="3clFbS" id="hDMPB$0" role="2VODD2">
-        <node concept="3clFbF" id="hDMPB$1" role="3cqZAp">
-          <node concept="3y3z36" id="hDMPB$2" role="3clFbG">
-            <node concept="10Nm6u" id="hDMPB$3" role="3uHU7w" />
-            <node concept="2OqwBi" id="hDMPB$4" role="3uHU7B">
-              <node concept="nLn13" id="hDMPB$5" role="2Oq$k0" />
-              <node concept="2Xjw5R" id="hDMPB$6" role="2OqNvi">
-                <node concept="1xMEDy" id="hDMPB$7" role="1xVPHs">
-                  <node concept="chp4Y" id="hDMPB$8" role="ri$Ld">
+    <node concept="9S07l" id="147CB3QsUDB" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsUDC" role="2VODD2">
+        <node concept="3clFbF" id="147CB3QsUDD" role="3cqZAp">
+          <node concept="3y3z36" id="147CB3QsUDE" role="3clFbG">
+            <node concept="10Nm6u" id="147CB3QsUDF" role="3uHU7w" />
+            <node concept="2OqwBi" id="147CB3QsUDG" role="3uHU7B">
+              <node concept="nLn13" id="147CB3QsUDH" role="2Oq$k0" />
+              <node concept="2Xjw5R" id="147CB3QsUDI" role="2OqNvi">
+                <node concept="1xMEDy" id="147CB3QsUDJ" role="1xVPHs">
+                  <node concept="chp4Y" id="147CB3QsUDK" role="ri$Ld">
                     <ref role="cht4Q" to="tp3b:hqPqlE8" resolve="FindBlock" />
                   </node>
                 </node>
@@ -129,16 +129,16 @@
   </node>
   <node concept="1M2fIO" id="hDMPC0K">
     <ref role="1M2myG" to="tp3b:htO21hq" resolve="NodeStatement" />
-    <node concept="nKS2y" id="hDMPC0L" role="1MLUbF">
-      <node concept="3clFbS" id="hDMPC0M" role="2VODD2">
-        <node concept="3clFbF" id="hDMPC0N" role="3cqZAp">
-          <node concept="3y3z36" id="hDMPC0O" role="3clFbG">
-            <node concept="10Nm6u" id="hDMPC0P" role="3uHU7w" />
-            <node concept="2OqwBi" id="hDMPC0Q" role="3uHU7B">
-              <node concept="nLn13" id="hDMPC0R" role="2Oq$k0" />
-              <node concept="2Xjw5R" id="hDMPC0S" role="2OqNvi">
-                <node concept="1xMEDy" id="hDMPC0T" role="1xVPHs">
-                  <node concept="chp4Y" id="hDMPC0U" role="ri$Ld">
+    <node concept="9S07l" id="147CB3QsUDt" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsUDu" role="2VODD2">
+        <node concept="3clFbF" id="147CB3QsUDv" role="3cqZAp">
+          <node concept="3y3z36" id="147CB3QsUDw" role="3clFbG">
+            <node concept="10Nm6u" id="147CB3QsUDx" role="3uHU7w" />
+            <node concept="2OqwBi" id="147CB3QsUDy" role="3uHU7B">
+              <node concept="nLn13" id="147CB3QsUDz" role="2Oq$k0" />
+              <node concept="2Xjw5R" id="147CB3QsUD$" role="2OqNvi">
+                <node concept="1xMEDy" id="147CB3QsUD_" role="1xVPHs">
+                  <node concept="chp4Y" id="147CB3QsUDA" role="ri$Ld">
                     <ref role="cht4Q" to="tp3b:hzAHsKp" resolve="SearchedNodesBlock" />
                   </node>
                 </node>
@@ -151,16 +151,16 @@
   </node>
   <node concept="1M2fIO" id="hDMPC2W">
     <ref role="1M2myG" to="tp3b:h$fgBI3" resolve="CheckCancelledStatusStatement" />
-    <node concept="nKS2y" id="hDMPC2X" role="1MLUbF">
-      <node concept="3clFbS" id="hDMPC2Y" role="2VODD2">
-        <node concept="3clFbF" id="hDMPC2Z" role="3cqZAp">
-          <node concept="3y3z36" id="hDMPC30" role="3clFbG">
-            <node concept="10Nm6u" id="hDMPC31" role="3uHU7w" />
-            <node concept="2OqwBi" id="hDMPC32" role="3uHU7B">
-              <node concept="nLn13" id="hDMPC33" role="2Oq$k0" />
-              <node concept="2Xjw5R" id="hDMPC34" role="2OqNvi">
-                <node concept="1xMEDy" id="hDMPC35" role="1xVPHs">
-                  <node concept="chp4Y" id="hDMPC36" role="ri$Ld">
+    <node concept="9S07l" id="147CB3QsUD8" role="9Vyp8">
+      <node concept="3clFbS" id="147CB3QsUD9" role="2VODD2">
+        <node concept="3clFbF" id="147CB3QsUDa" role="3cqZAp">
+          <node concept="3y3z36" id="147CB3QsUDb" role="3clFbG">
+            <node concept="10Nm6u" id="147CB3QsUDc" role="3uHU7w" />
+            <node concept="2OqwBi" id="147CB3QsUDd" role="3uHU7B">
+              <node concept="nLn13" id="147CB3QsUDe" role="2Oq$k0" />
+              <node concept="2Xjw5R" id="147CB3QsUDf" role="2OqNvi">
+                <node concept="1xMEDy" id="147CB3QsUDg" role="1xVPHs">
+                  <node concept="chp4Y" id="147CB3QsUDh" role="ri$Ld">
                     <ref role="cht4Q" to="tp3b:hqPqlE8" resolve="FindBlock" />
                   </node>
                 </node>

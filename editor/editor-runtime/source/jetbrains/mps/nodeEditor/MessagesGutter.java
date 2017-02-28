@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.icons.AllIcons.General;
+import com.intellij.openapi.editor.colors.CodeInsightColors;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.ui.ColorUtil;
+import com.intellij.util.IconUtil;
 import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import com.intellij.util.ui.UIUtil;
@@ -24,7 +28,6 @@ import com.intellij.util.ui.update.Update;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
-import jetbrains.mps.nodeEditor.icons.Icons;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
@@ -50,20 +53,14 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComponent, MouseMotionListener, MouseListener {
-  private static final Comparator<GutterMark> EDITOR_MESSAGES_COMPARATOR = new Comparator<GutterMark>() {
-    @Override
-    public int compare(GutterMark m1, GutterMark m2) {
-      if (m2.getPriority() != m1.getPriority()) {
-        return m2.getPriority() - m1.getPriority();
-      }
-      return m2.getStatus().ordinal() - m1.getStatus().ordinal();
-    }
-  };
+public class MessagesGutter extends ButtonlessScrollBarUI.Transparent implements TooltipComponent, MouseMotionListener, MouseListener {
+  private static final Comparator<GutterMark> EDITOR_MESSAGES_COMPARATOR = (mark, otherMark) -> otherMark.getPriority() != mark.getPriority() ?
+                                                                                                otherMark.getPriority() - mark.getPriority() :
+                                                                                                otherMark.getStatus().ordinal() - mark.getStatus().ordinal();
 
   private EditorComponent myEditorComponent;
   private MyErrorsButton myErrorsButton = new MyErrorsButton();
-  private List<SimpleEditorMessage> myMessages = new CopyOnWriteArrayList<SimpleEditorMessage>();
+  private List<SimpleEditorMessage> myMessages = new CopyOnWriteArrayList<>();
   private List<GutterMark> myGutterMarks = Collections.emptyList();
   private boolean myRightToLeft;
   private MergingUpdateQueue myUpdateQueue;
@@ -102,7 +99,9 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   //copied from com.intellij.openapi.editor.impl.EditorMarkupModelImpl
   @Override
   protected Color adjustColor(Color c) {
-    if (isMacOverlayScrollbar()) return super.adjustColor(c);
+    if (isMacOverlayScrollbar()) {
+      return super.adjustColor(c);
+    }
 
     if (UIUtil.isUnderDarcula()) {
       return c;
@@ -138,18 +137,16 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   @Override
   protected void doPaintTrack(Graphics g, JComponent c, Rectangle bounds) {
-    g.setColor(ButtonlessScrollBarUI.getTrackBackgroundDefault());
+    super.doPaintTrack(g, c, bounds);
+    g.setColor(getEditorComponent().getBackground());
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
-
-    g.setColor(ButtonlessScrollBarUI.getTrackBorderColorDefault());
-    int border = myRightToLeft ? bounds.x + bounds.width - 1 : bounds.x;
-    g.drawLine(border, bounds.y, border, bounds.y + bounds.height);
 
     drawMarks(g);
   }
 
   @Override
   protected int getThickness() {
+    // TODO: remove magic number!
     return super.getThickness() + 7;
   }
 
@@ -216,7 +213,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
       @Override
       public void run() {
         GutterStatus status = GutterStatus.OK;
-        List<GutterMark> marks = new ArrayList<GutterMark>();
+        List<GutterMark> marks = new ArrayList<>();
         for (SimpleEditorMessage message : myMessages) {
           GutterMark mark = new GutterMark(message);
           if (!mark.isValid()) {
@@ -230,10 +227,12 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
           marks.add(mark);
         }
 
-        Collections.sort(marks, new Comparator<GutterMark>() {
+        marks.sort(new Comparator<GutterMark>() {
           @Override
           public int compare(GutterMark mark1, GutterMark mark2) {
-            if (mark1 == mark2) return 0;
+            if (mark1 == mark2) {
+              return 0;
+            }
             SimpleEditorMessage message1 = mark1.getEditorMessage();
             SimpleEditorMessage message2 = mark2.getEditorMessage();
             if (message1 instanceof EditorMessage == message2 instanceof EditorMessage) {
@@ -269,23 +268,26 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   @Override
   public boolean alwaysShowTrack() {
-    if (scrollbar.getOrientation() == Adjustable.VERTICAL) return true;
-    return super.alwaysShowTrack();
+    return (scrollbar.getOrientation() == Adjustable.VERTICAL) || super.alwaysShowTrack();
   }
 
   private void setStatus(GutterStatus status) {
     switch (status) {
       case OK:
-        myErrorsButton.setIcon(Icons.OK);
+        myErrorsButton.setIcon(General.InspectionsOK);
         break;
       case WARNING:
-        myErrorsButton.setIcon(Icons.WARNINGS);
+        final Color warningStripeColor =
+            EditorColorsManager.getInstance().getGlobalScheme().getAttributes(CodeInsightColors.WARNINGS_ATTRIBUTES).getErrorStripeColor();
+        myErrorsButton.setIcon(IconUtil.colorize(General.InspectionsError, warningStripeColor));
         break;
       case ERROR:
-        myErrorsButton.setIcon(Icons.ERRORS);
+        final Color errorStripeColor =
+            EditorColorsManager.getInstance().getGlobalScheme().getAttributes(CodeInsightColors.ERRORS_ATTRIBUTES).getErrorStripeColor();
+        myErrorsButton.setIcon(IconUtil.colorize(General.InspectionsError, errorStripeColor));
         break;
       case IN_PROGRESS:
-        myErrorsButton.setIcon(Icons.IN_PROGRESS);
+        myErrorsButton.setIcon(General.InspectionsEye);
         break;
     }
   }
@@ -302,7 +304,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   public boolean removeMessages(EditorMessageOwner owner) {
     boolean removedAnything = false;
-    for (SimpleEditorMessage m : new ArrayList<SimpleEditorMessage>(myMessages)) {
+    for (SimpleEditorMessage m : new ArrayList<>(myMessages)) {
       if (m.getOwner() == owner) {
         myMessages.remove(m);
         removedAnything = true;
@@ -336,7 +338,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   }
 
   private List<GutterMark> getGutterMarksAt(int y) {
-    List<GutterMark> result = new SortedList<GutterMark>(EDITOR_MESSAGES_COMPARATOR);
+    List<GutterMark> result = new SortedList<>(EDITOR_MESSAGES_COMPARATOR);
     for (GutterMark gutterMark : myGutterMarks) {
       int start = gutterMark.getY();
       int end = start + gutterMark.getHeight();
@@ -380,7 +382,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
       myValid = true;
 
       myX = myRightToLeft ? 3 : 5;
-      myWidth = Icons.OK.getIconWidth() - 1;
+      myWidth = General.InspectionsOK.getIconWidth() - 1;
       if (!(myMessage instanceof EditorMessage)) {
         // thin
 
@@ -394,7 +396,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
     private int calculateY(SimpleEditorMessage message) {
       return getMessagesAreaShift() +
-          (int) (message.getStart(myEditorComponent) * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight())));
+             (int) (message.getStart(myEditorComponent) * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight())));
     }
 
     private int calculateHeight(SimpleEditorMessage message) {
@@ -410,7 +412,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
           }
         }
       }
-      return (int) (height * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight()))) + 3;
+      return (int) (height * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight()))) + 2;
     }
 
     public boolean isValid() {
@@ -489,7 +491,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   private class MyErrorsButton extends JButton {
     private MyErrorsButton() {
-      super(Icons.OK);
+      super(General.InspectionsEye);
       setFocusable(false);
     }
 
@@ -497,21 +499,18 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     public void paint(Graphics g) {
       final Rectangle bounds = getBounds();
 
-      g.setColor(ButtonlessScrollBarUI.getTrackBackgroundDefault());
+      g.setColor(getEditorComponent().getBackground());
       g.fillRect(0, 0, bounds.width, bounds.height);
-
-      g.setColor(ButtonlessScrollBarUI.getTrackBorderColorDefault());
-      g.drawLine(0, 0, 0, bounds.height);
 
       Icon icon = getIcon();
       if (icon != null) {
-        icon.paintIcon(this, g, (getWidth() - icon.getIconWidth()) / 2 + 1, (getHeight() - icon.getIconHeight()) / 2);
+        icon.paintIcon(this, g, (getWidth() - icon.getIconWidth()) / 2, (getHeight() - icon.getIconHeight()) / 2);
       }
     }
 
     @Override
     public Dimension getPreferredSize() {
-      return new Dimension(Icons.OK.getIconWidth() + 3, Icons.OK.getIconHeight() + 4);
+      return new Dimension(General.InspectionsOK.getIconWidth(), General.InspectionsOK.getIconHeight());
     }
   }
 }

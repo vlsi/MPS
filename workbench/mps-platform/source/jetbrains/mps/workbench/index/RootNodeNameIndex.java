@@ -26,15 +26,13 @@ import com.intellij.util.indexing.ID;
 import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
 import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleCoreService;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
 import jetbrains.mps.extapi.persistence.datasource.URLNotSupportedException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.persistence.PersistenceUtil;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.persistence.IndexAwareModelFactory;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.findusages.ConcreteFilesGlobalSearchScope;
@@ -53,6 +51,8 @@ import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTar
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.mps.util.Condition;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -71,12 +71,12 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
   @NonNls
   private static final ID<Integer, ModelRootsData> NAME = ID.create("mps.RootNodeName");
   private static final Logger LOG = LogManager.getLogger(RootNodeNameIndex.class);
-  private static final Key<SModel> PARSED_MODEL = new Key<SModel>("parsed-model");
+  private static final Key<SModelData> PARSED_MODEL = new Key<SModelData>("parsed-model");
 
-  public static SModel doModelParsing(FileContent inputData) {
-    SModel model = inputData.getUserData(PARSED_MODEL);
+  public static SModelData doModelParsing(FileContent inputData) {
+    SModelData modelData = inputData.getUserData(PARSED_MODEL);
 
-    if (model == null) {
+    if (modelData == null) {
       try {
         URL url = constructURLFromData(inputData);
         if (url == null) {
@@ -96,17 +96,20 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
         if (factory == null) {
           return null;
         }
-        model = PersistenceUtil.loadModel(inputData.getContent(), factory);
-        if (model == null) {
+        if (!(factory instanceof IndexAwareModelFactory)) {
           return null;
         }
-        inputData.putUserData(PARSED_MODEL, model);
-      } catch (URLNotSupportedException | URISyntaxException | MalformedURLException  e) {
+        modelData = ((IndexAwareModelFactory) factory).parseSingleStream(inputData.getFileName(), new ByteArrayInputStream(inputData.getContent()));
+        if (modelData == null) {
+          return null;
+        }
+        inputData.putUserData(PARSED_MODEL, modelData);
+      } catch (URLNotSupportedException | URISyntaxException | IOException e) {
         LOG.error("", e);
         return null;
       }
     }
-    return model;
+    return modelData;
   }
 
   @Nullable
@@ -218,14 +221,13 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
     protected ModelRootsData computeValue(@NotNull final FileContent inputData) {
       try {
         // XXX Perhaps, shall extend xml.persistence.Indexer with proper methods (name, concept) not to read as complete SModel?
-        SModel model = doModelParsing(inputData);
-        if (model == null || SModelStereotype.isStubModel(model)) {
+        SModelData modelData = doModelParsing(inputData);
+        if (modelData == null) {
           // e.g. model with merge conflict
-          // stub models are handled elsewhere
           return null;
         }
 
-        ModelRootsData data = new ModelRootsData(model);
+        ModelRootsData data = new ModelRootsData(modelData);
         // it looks there's no reason to serialize data for empty model
         return data.isEmpty() ? null : data;
       } catch (Exception e) {

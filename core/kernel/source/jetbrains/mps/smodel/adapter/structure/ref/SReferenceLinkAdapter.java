@@ -52,7 +52,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
 
   @Override
   public boolean isValid() {
-    return getReferenceDescriptor() == null;
+    return getReferenceDescriptor() != null;
   }
 
   @NotNull

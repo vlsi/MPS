@@ -18,6 +18,7 @@ package jetbrains.mps.idea.java.index;
 
 import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileContent;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.workbench.index.RootNodeNameIndex;
@@ -31,6 +32,7 @@ import org.jetbrains.mps.openapi.util.Consumer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -65,13 +67,13 @@ import java.util.Map;
     "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration",
   };
 
-  protected void getJavaClasses(SModel sModel, Consumer<SNode> consumer) {
+  protected void getJavaClasses(SModelData sModel, Consumer<SNode> consumer) {
     for (SNode root : sModel.getRootNodes()) {
       collectJavaClasses(root, consumer);
     }
   }
 
-  protected void getJavaMethods(SModel sModel, Consumer<SNode> consumer) {
+  protected void getJavaMethods(SModelData sModel, Consumer<SNode> consumer) {
     CollectConsumer<SNode> classes = new CollectConsumer<>(new ArrayList<>());
     for (SNode root : sModel.getRootNodes()) {
       collectJavaClasses(root, classes);
@@ -81,7 +83,7 @@ import java.util.Map;
     }
   }
 
-  protected void getJavaFields(SModel sModel, Consumer<SNode> consumer) {
+  protected void getJavaFields(SModelData sModel, Consumer<SNode> consumer) {
     CollectConsumer<SNode> classes = new CollectConsumer<>(new ArrayList<>());
     for (SNode root : sModel.getRootNodes()) {
       collectJavaClasses(root, classes);
@@ -118,7 +120,7 @@ import java.util.Map;
         continue;
       }
       collectJavaFields(cand, consumer);
-    }
+     }
   }
 
   private boolean isClassOrInterface(SNode sNode) {
@@ -145,7 +147,10 @@ import java.util.Map;
     final HashMap<String, Collection<E>> map = new HashMap<>();
 
     try {
-      final SModel model = RootNodeNameIndex.doModelParsing(inputData);
+      final SModelData model = RootNodeNameIndex.doModelParsing(inputData);
+      if (model == null) {
+        return Collections.emptyMap();
+      }
       final SModelReference modelRef = model.getReference();
       getObjectsToIndex(model, object -> {
         String[] keys = getKeys(model, object);
@@ -167,9 +172,9 @@ import java.util.Map;
     return map;
   }
 
-  protected abstract void getObjectsToIndex(SModel sModel, Consumer<S> consumer);
+  protected abstract void getObjectsToIndex(SModelData sModel, Consumer<S> consumer);
 
-  protected abstract String[] getKeys(SModel model, S object);
+  protected abstract String[] getKeys(SModelData model, S object);
 
   protected abstract void updateCollection(SModelReference modelRef, S object, Collection<E> collection);
 

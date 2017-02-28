@@ -18,6 +18,8 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.actions.runtime.impl.SideTransformUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.CellSide;
+import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo.Side;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -34,6 +36,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.StringTokenizer;
 
+/**
+ * @deprecated this class purpose is to find and collect actions from actions aspect.
+ * From version 2017.1 actions are attached to the editor cell via transformation menu in editor aspect.
+ */
+@Deprecated
 public class SideTransformHintSubstituteActionsHelper {
   public static final String SIDE_TRANSFORM_TAG_SEPARATOR = "|";
   private static final Logger LOG = LogManager.getLogger(SideTransformHintSubstituteActionsHelper.class);
@@ -75,6 +82,10 @@ public class SideTransformHintSubstituteActionsHelper {
     return SideTransformUtil.getApplicableActionsBuilders(mySourceNode, myTransformTags, mySide, myContext).iterator().hasNext();
   }
 
+  /**
+   * @deprecated Use {@link ModelActions#createSideTransformSubstituteActions(EditorCell, Side)}
+   */
+  @Deprecated
   public List<SubstituteAction> createActions() {
     if (!isValid()) return Collections.emptyList();
     // enable R/O access

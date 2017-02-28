@@ -29,8 +29,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Class which composes an old side transform info which finds actions from actions aspect and a new one which uses transformation menu attached to cell.
+ * @deprecated use {@link SideTransformSubstituteInfo}
  * @author simon
  */
+@Deprecated
 public class OldNewCompositeSideTransformSubstituteInfo extends AbstractNodeSubstituteInfo {
   private final SideTransformSubstituteInfo myNewSubstituteInfo;
 

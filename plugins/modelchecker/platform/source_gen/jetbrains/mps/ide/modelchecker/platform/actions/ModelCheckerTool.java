@@ -20,6 +20,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.icons.IconManager;
+import com.intellij.icons.AllIcons;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     ModelCheckerViewer newViewer = createViewerForTab();
     String title = (ListSequence.fromList(modules).count() == 1 ? ListSequence.fromList(modules).first().getModuleName() : "modules");
     newViewer.checkModules(modules, title);
-    Icon icon = (ListSequence.fromList(modules).count() == 1 ? IconManager.getIconFor(ListSequence.fromList(modules).first()) : IdeIcons.MODULE_GROUP_CLOSED);
+    Icon icon = (ListSequence.fromList(modules).count() == 1 ? IconManager.getIconFor(ListSequence.fromList(modules).first()) : AllIcons.Nodes.ModuleGroup);
     revealResults(newViewer, title, icon);
   }
   private void revealResults(ModelCheckerViewer newViewer, String title, Icon icon) {

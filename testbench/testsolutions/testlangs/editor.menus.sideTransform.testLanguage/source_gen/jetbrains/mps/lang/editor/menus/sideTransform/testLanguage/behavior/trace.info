@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <root>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="11,0,22,0" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="TestSideTransform_Node_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.behavior.TestSideTransform_Node_BehaviorDescriptor" />
+    </file>
+    <file name="TestSideTransform_Root_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.behavior.TestSideTransform_Root_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
+

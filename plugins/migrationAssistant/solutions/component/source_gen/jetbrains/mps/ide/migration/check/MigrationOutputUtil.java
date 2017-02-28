@@ -13,7 +13,7 @@ import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.ide.icons.IdeIcons;
+import com.intellij.icons.AllIcons;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -57,7 +57,7 @@ public class MigrationOutputUtil {
       }
     });
     v.setSearchResults(result);
-    ModelCheckerTool.getInstance(project).showTabWithResults(v, "Migration issues", IdeIcons.MODULE_GROUP_CLOSED);
+    ModelCheckerTool.getInstance(project).showTabWithResults(v, "Migration issues", AllIcons.Nodes.ModuleGroup);
   }
 
   public static void showNodes(final Project project, Tuples._2<String, Set<SNode>>... toShow) {

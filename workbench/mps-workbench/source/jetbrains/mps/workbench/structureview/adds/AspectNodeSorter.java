@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.structureview.adds;
 
+import com.intellij.icons.AllIcons.ObjectBrowser;
 import com.intellij.ide.util.treeView.smartTree.ActionPresentation;
 import com.intellij.ide.util.treeView.smartTree.ActionPresentationData;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
@@ -25,9 +26,6 @@ import java.util.Comparator;
 
 public class AspectNodeSorter implements Sorter {
 
-  public AspectNodeSorter() {
-  }
-
   @Override
   public Comparator getComparator() {
     return new EditorTabComparator();
@@ -35,13 +33,13 @@ public class AspectNodeSorter implements Sorter {
 
   @Override
   public boolean isVisible() {
-    return false;
+    return true;
   }
 
   @Override
   @NotNull
   public ActionPresentation getPresentation() {
-    return new ActionPresentationData("Sort Nodes by Aspect", "", jetbrains.mps.workbench.structureview.adds.icons.Icons.SORT_NODES_BY_ASPECT_ICON);
+    return new ActionPresentationData("Sort Nodes by Aspect", "", ObjectBrowser.SortByType);
   }
 
   @Override
@@ -54,10 +52,16 @@ public class AspectNodeSorter implements Sorter {
 
     @Override
     public int compare(Object o1, Object o2) {
-      if (!(o1 instanceof AspectTreeElement || o2 instanceof AspectTreeElement)) return 0;
+      if (!(o1 instanceof AspectTreeElement || o2 instanceof AspectTreeElement)) {
+        return 0;
+      }
 
-      if (!(o1 instanceof AspectTreeElement)) return 1;
-      if (!(o2 instanceof AspectTreeElement)) return -1;
+      if (!(o1 instanceof AspectTreeElement)) {
+        return 1;
+      }
+      if (!(o2 instanceof AspectTreeElement)) {
+        return -1;
+      }
 
       final AspectTreeElement ate1 = (AspectTreeElement) o1;
       final AspectTreeElement ate2 = (AspectTreeElement) o2;

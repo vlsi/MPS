@@ -83,5 +83,5 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-  private static SNodePointer breakingNode_3muhb7_a0a0a0a0a4 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948133172");
+  private static SNodePointer breakingNode_3muhb7_a0a0a0a0a4 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582643423");
 }

@@ -79,6 +79,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_CutNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_PasteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_PasteNodeRelative;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_SideTransform;
+import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo.Side;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
@@ -486,8 +487,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myActionMap.put(CellActionType.UNFOLD_RECURSIVELY, new CollapseRecursivelyCellAction(false));
     myActionMap.put(CellActionType.TOGGLE_FOLDING, new CallAction_ToggleCellFolding());
 
-    myActionMap.put(CellActionType.RIGHT_TRANSFORM, new CellAction_SideTransform(CellSide.RIGHT));
-    myActionMap.put(CellActionType.LEFT_TRANSFORM, new CellAction_SideTransform(CellSide.LEFT));
+    myActionMap.put(CellActionType.RIGHT_TRANSFORM, new CellAction_SideTransform(Side.RIGHT));
+    myActionMap.put(CellActionType.LEFT_TRANSFORM, new CellAction_SideTransform(Side.LEFT));
 
     myActionMap.put(CellActionType.COMPLETE, new NodeEditorActions.Complete());
     myActionMap.put(CellActionType.COMPLETE_SMART, new CompleteSmart());

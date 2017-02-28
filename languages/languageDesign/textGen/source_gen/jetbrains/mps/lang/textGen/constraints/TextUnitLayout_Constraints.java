@@ -50,5 +50,5 @@ public class TextUnitLayout_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static SNodePointer breakingNode_g51ca1_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "998325320688548833");
+  private static SNodePointer breakingNode_g51ca1_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "6836281137582805784");
 }

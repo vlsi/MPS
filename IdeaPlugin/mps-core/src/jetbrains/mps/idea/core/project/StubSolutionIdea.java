@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.project;
 
+import com.intellij.notification.Notification;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.projectRoots.SdkModificator;
@@ -28,6 +29,7 @@ import jetbrains.mps.classloading.IdeaPluginModuleFacet;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
+import jetbrains.mps.idea.core.project.stubs.StubModuleNameTakenException;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -81,8 +83,13 @@ public abstract class StubSolutionIdea extends StubSolution {
     myModelAccess = modelAccess;
   }
 
-  public static Solution newInstance(Library library, MPSModuleOwner moduleOwner, SRepositoryExt repository) {
-    SolutionDescriptor descriptor = createDescriptor(library.getName(), library.getFiles(OrderRootType.CLASSES));
+  @Nullable
+  public static Solution newInstance(Library library, MPSModuleOwner moduleOwner, SRepositoryExt repository) throws StubModuleNameTakenException {
+    String namespace = library.getName();
+    if (namespace != null && new ModuleRepositoryFacade(repository).getModuleByName(namespace) != null) {
+      throw new StubModuleNameTakenException(library.getName(), namespace);
+    }
+    SolutionDescriptor descriptor = createDescriptor(namespace, library.getFiles(OrderRootType.CLASSES));
     return register(repository, moduleOwner, new LibraryStubSolution(descriptor, library, repository.getModelAccess()));
   }
 

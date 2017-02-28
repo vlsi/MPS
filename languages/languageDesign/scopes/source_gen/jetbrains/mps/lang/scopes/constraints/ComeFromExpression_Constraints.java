@@ -66,5 +66,5 @@ public class ComeFromExpression_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static SNodePointer breakingNode_t1q7r2_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:ff944d67-5440-4132-a4a9-2198c9221961(jetbrains.mps.lang.scopes.constraints)", "8077936094962945825");
+  private static SNodePointer breakingNode_t1q7r2_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:ff944d67-5440-4132-a4a9-2198c9221961(jetbrains.mps.lang.scopes.constraints)", "6836281137582797256");
 }

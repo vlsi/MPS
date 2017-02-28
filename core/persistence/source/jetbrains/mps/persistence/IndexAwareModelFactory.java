@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -28,16 +29,36 @@ import java.io.InputStream;
  * PROVISIONAL API
  *
  * Extension to model factory to distinguish model persistence that cares about (usually platform) indexing support and knows ho to extract
- * appropriate pieces from actual model persistence state (preferably, faster than by regular model read).
- *
- * Captures references to concepts/nodes/model from a model. API might change if we find certain parameters ineffective
- * (e.g. excessive translation or more information is needed).
+ * appropriate pieces from actual model persistence state.
  *
  * @author Artem Tikhomirov
+ * @author danilla
  */
 public interface IndexAwareModelFactory extends ModelFactory {
 
+  /**
+   * Captures references to concepts/nodes/model from a model. API might change if we find certain parameters ineffective
+   * (e.g. excessive translation or more information is needed).
+   *
+   * Preferably, works faster than regular model read.
+   */
   void index(@NotNull InputStream input, @NotNull Callback callback) throws IOException;
+
+  /**
+   * Return either all or part of model data contained in the given input stream for the purpose of indexing.
+   * For multiple file model formats it will be a subset of all model data.
+   *
+   * The return type may change to a more general {code}ModelFragment{code} of which
+   * {@link SModelData} will be a special case, applicable in situations when persistence is able
+   * to return not only (a subset of) root nodes but also a model reference from the single stream given.
+   *
+   * @param name Name of the stream, to help model factory decide which part of data source it is.
+   * @param input An input stream which is a part of a data source accepted by this model factory
+   * @return (A subset of) model data contained in the given input stream
+   *
+   * @see org.jetbrains.mps.openapi.persistence.MultiStreamDataSource
+   */
+  SModelData parseSingleStream(@NotNull String name, @NotNull InputStream input) throws IOException;
 
   /**
    * Callback implementation shall tolerate duplicated notifications

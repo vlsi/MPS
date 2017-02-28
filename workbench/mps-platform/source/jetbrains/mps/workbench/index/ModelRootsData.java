@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.workbench.index;
 
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -44,7 +44,7 @@ import java.util.List;
   private final SModelReference myModelReference;
   private final List<Entry> myEntries;
 
-  /*package*/ ModelRootsData(@NotNull SModel model) {
+  /*package*/ ModelRootsData(@NotNull SModelData model) {
     myModelReference = model.getReference();
     myEntries = new ArrayList<Entry>();
     for (SNode root : model.getRootNodes()) {

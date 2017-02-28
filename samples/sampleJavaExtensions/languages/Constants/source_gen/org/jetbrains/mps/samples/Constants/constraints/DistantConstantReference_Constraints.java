@@ -55,5 +55,5 @@ public class DistantConstantReference_Constraints extends BaseConstraintsDescrip
     });
     return references;
   }
-  private static SNodePointer breakingNode_3o2gse_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)", "2687243112287755566");
+  private static SNodePointer breakingNode_3o2gse_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)", "6836281137582851719");
 }

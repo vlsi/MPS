@@ -16,6 +16,8 @@
 
 package jetbrains.mps.idea.core.project.stubs;
 
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationType;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.projectRoots.JavaSdk;
@@ -28,6 +30,7 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.util.ClassType;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -167,6 +170,19 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
         myModules.remove(module);
       }
     }
+  }
+
+  @Override
+  protected void handleModuleNameTaken(StubModuleNameTakenException exception) {
+    String message = String.format(
+        MPSBundle.message("mps.stub.warning.duplicate.sdk.message"),
+        exception.getLibraryName(),
+        exception.getNamespace());
+    new Notification(
+      MPSBundle.message("mps.stub.warning.group.display.id"),
+      MPSBundle.message("mps.stub.warning.duplicate.sdk.title"),
+      message,
+      NotificationType.WARNING).notify();
   }
 
   /**
