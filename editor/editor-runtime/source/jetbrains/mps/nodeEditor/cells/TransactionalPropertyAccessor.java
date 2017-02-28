@@ -69,7 +69,7 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
     if (myHasValueToCommit) {
       doCommit(myOldValue, myUncommittedValue);
 
-      getRepository().getModelAccess().executeCommand(new TransactionalCommitCommand(myEditorCell.getContext(), getGroupId()) {
+      getRepository().getModelAccess().executeCommand(new ChangePropertyEditorCommand(myEditorCell.getContext(), getGroupId()) {
         @Override
         protected void doExecute() {
           resetUncommittedValue();

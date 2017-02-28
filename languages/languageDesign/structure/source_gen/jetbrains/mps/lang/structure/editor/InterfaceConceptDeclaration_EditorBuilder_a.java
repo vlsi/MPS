@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.nodeEditor.cells.TransactionalCommitCommand;
+import jetbrains.mps.nodeEditor.cells.ChangePropertyEditorCommand;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -113,7 +113,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
               return it.invoke(getEditorContext(), myNode, oldValue, newValue);
             }
           }))) {
-            getEditorContext().getRepository().getModelAccess().executeCommand(new TransactionalCommitCommand(getEditorContext(), "name_" + myNode.getNodeId().toString()) {
+            getEditorContext().getRepository().getModelAccess().executeCommand(new ChangePropertyEditorCommand(getEditorContext(), "name_" + myNode.getNodeId().toString()) {
               protected void doExecute() {
                 SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newValue);
               }

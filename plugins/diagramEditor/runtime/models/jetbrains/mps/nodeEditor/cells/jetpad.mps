@@ -8406,8 +8406,8 @@
                 <node concept="YeOm9" id="4HamRaEQ5_a" role="2ShVmc">
                   <node concept="1Y3b0j" id="4HamRaEQ5_d" role="YeSDq">
                     <property role="2bfB8j" value="true" />
-                    <ref role="1Y3XeK" to="g51k:~TransactionalCommitCommand" resolve="TransactionalCommitCommand" />
-                    <ref role="37wK5l" to="g51k:~TransactionalCommitCommand.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,java.lang.String)" resolve="TransactionalCommitCommand" />
+                    <ref role="1Y3XeK" to="g51k:~ChangePropertyEditorCommand" resolve="ChangePropertyEditorCommand" />
+                    <ref role="37wK5l" to="g51k:~ChangePropertyEditorCommand.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,java.lang.String)" resolve="ChangePropertyEditorCommand" />
                     <node concept="3Tm1VV" id="4HamRaEQ5_e" role="1B3o_S" />
                     <node concept="3clFb_" id="4HamRaEQ5_j" role="jymVt">
                       <property role="1EzhhJ" value="false" />

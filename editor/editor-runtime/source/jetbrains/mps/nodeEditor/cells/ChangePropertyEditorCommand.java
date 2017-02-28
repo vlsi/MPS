@@ -24,10 +24,10 @@ import org.jetbrains.annotations.Nullable;
  * User: shatalin
  * Date: 27/02/2017
  */
-public abstract class TransactionalCommitCommand extends EditorCommand implements UndoRunnable {
+public abstract class ChangePropertyEditorCommand extends EditorCommand implements UndoRunnable {
   private final String myGroupId;
 
-  public TransactionalCommitCommand(EditorContext editorContext, String groupId) {
+  public ChangePropertyEditorCommand(EditorContext editorContext, String groupId) {
     super(editorContext);
     myGroupId = groupId;
   }

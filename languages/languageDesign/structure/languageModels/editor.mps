@@ -782,8 +782,8 @@
                         <node concept="YeOm9" id="4HamRaEMFqU" role="2ShVmc">
                           <node concept="1Y3b0j" id="4HamRaEMFqV" role="YeSDq">
                             <property role="2bfB8j" value="true" />
-                            <ref role="1Y3XeK" to="g51k:~TransactionalCommitCommand" resolve="TransactionalCommitCommand" />
-                            <ref role="37wK5l" to="g51k:~TransactionalCommitCommand.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,java.lang.String)" resolve="TransactionalCommitCommand" />
+                            <ref role="1Y3XeK" to="g51k:~ChangePropertyEditorCommand" resolve="ChangePropertyEditorCommand" />
+                            <ref role="37wK5l" to="g51k:~ChangePropertyEditorCommand.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,java.lang.String)" resolve="ChangePropertyEditorCommand" />
                             <node concept="3Tm1VV" id="4HamRaEMFqW" role="1B3o_S" />
                             <node concept="3clFb_" id="4HamRaEMFqX" role="jymVt">
                               <property role="1EzhhJ" value="false" />
@@ -1383,8 +1383,8 @@
                         <node concept="YeOm9" id="4HamRaEMATf" role="2ShVmc">
                           <node concept="1Y3b0j" id="4HamRaEMATg" role="YeSDq">
                             <property role="2bfB8j" value="true" />
-                            <ref role="1Y3XeK" to="g51k:~TransactionalCommitCommand" resolve="TransactionalCommitCommand" />
-                            <ref role="37wK5l" to="g51k:~TransactionalCommitCommand.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,java.lang.String)" resolve="TransactionalCommitCommand" />
+                            <ref role="1Y3XeK" to="g51k:~ChangePropertyEditorCommand" resolve="ChangePropertyEditorCommand" />
+                            <ref role="37wK5l" to="g51k:~ChangePropertyEditorCommand.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,java.lang.String)" resolve="ChangePropertyEditorCommand" />
                             <node concept="3Tm1VV" id="4HamRaEMATh" role="1B3o_S" />
                             <node concept="3clFb_" id="4HamRaEMATi" role="jymVt">
                               <property role="1EzhhJ" value="false" />
@@ -1984,8 +1984,8 @@
                           <node concept="YeOm9" id="4HamRaEMveb" role="2ShVmc">
                             <node concept="1Y3b0j" id="4HamRaEMvee" role="YeSDq">
                               <property role="2bfB8j" value="true" />
-                              <ref role="1Y3XeK" to="g51k:~TransactionalCommitCommand" resolve="TransactionalCommitCommand" />
-                              <ref role="37wK5l" to="g51k:~TransactionalCommitCommand.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,java.lang.String)" resolve="TransactionalCommitCommand" />
+                              <ref role="1Y3XeK" to="g51k:~ChangePropertyEditorCommand" resolve="ChangePropertyEditorCommand" />
+                              <ref role="37wK5l" to="g51k:~ChangePropertyEditorCommand.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,java.lang.String)" resolve="ChangePropertyEditorCommand" />
                               <node concept="3Tm1VV" id="4HamRaEMvef" role="1B3o_S" />
                               <node concept="3clFb_" id="4HamRaEMvf9" role="jymVt">
                                 <property role="1EzhhJ" value="false" />
@@ -2677,8 +2677,8 @@
                           <node concept="YeOm9" id="4HamRaEM_8Y" role="2ShVmc">
                             <node concept="1Y3b0j" id="4HamRaEM_8Z" role="YeSDq">
                               <property role="2bfB8j" value="true" />
-                              <ref role="1Y3XeK" to="g51k:~TransactionalCommitCommand" resolve="TransactionalCommitCommand" />
-                              <ref role="37wK5l" to="g51k:~TransactionalCommitCommand.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,java.lang.String)" resolve="TransactionalCommitCommand" />
+                              <ref role="1Y3XeK" to="g51k:~ChangePropertyEditorCommand" resolve="ChangePropertyEditorCommand" />
+                              <ref role="37wK5l" to="g51k:~ChangePropertyEditorCommand.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,java.lang.String)" resolve="ChangePropertyEditorCommand" />
                               <node concept="3Tm1VV" id="4HamRaEM_90" role="1B3o_S" />
                               <node concept="3clFb_" id="4HamRaEM_91" role="jymVt">
                                 <property role="1EzhhJ" value="false" />

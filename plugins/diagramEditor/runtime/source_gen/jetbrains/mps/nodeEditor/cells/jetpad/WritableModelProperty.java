@@ -6,7 +6,7 @@ import jetbrains.jetpad.model.property.Property;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
-import jetbrains.mps.nodeEditor.cells.TransactionalCommitCommand;
+import jetbrains.mps.nodeEditor.cells.ChangePropertyEditorCommand;
 
 public abstract class WritableModelProperty<T> extends ReadableModelProperty<T> implements Property<T> {
   private final String myCommandId;
@@ -23,7 +23,7 @@ public abstract class WritableModelProperty<T> extends ReadableModelProperty<T> 
   }
 
   protected void safeSetModelPropertyValue(final T t) {
-    myContext.getRepository().getModelAccess().executeCommand(new TransactionalCommitCommand(myContext, myCommandId) {
+    myContext.getRepository().getModelAccess().executeCommand(new ChangePropertyEditorCommand(myContext, myCommandId) {
       protected void doExecute() {
         setModelPropertyValue(t);
       }

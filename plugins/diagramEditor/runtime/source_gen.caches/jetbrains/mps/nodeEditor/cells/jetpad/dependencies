@@ -217,7 +217,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.jetpad.model.event.EventHandler" />
     <classNode dependClassName="jetbrains.jetpad.model.property.PropertyChangeEvent" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.TransactionalCommitCommand" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.ChangePropertyEditorCommand" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode extendsClassName="jetbrains.jetpad.model.property.Property" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty" />
