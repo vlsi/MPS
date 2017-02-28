@@ -417,6 +417,7 @@
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.OsVersionUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.UiInfoUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.JdkInfoUsageCollector"/>
+  <statistics.usagesCollector implementation="com.intellij.internal.statistic.FontSizeInfoUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.BuildNumberUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.ScaleInfoUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.ideSettings.IdeInitialConfigUsageCollectors$ConfigImport"/>
@@ -425,6 +426,7 @@
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.ideSettings.IdeInitialConfigUsageCollectors$SelectedKeymap"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.ideSettings.IdeInitialConfigUsageCollectors$DisabledPlugins"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.ideSettings.IdeInitialConfigUsageCollectors$DownloadedPlugins"/>
+  <statistics.usagesCollector implementation="com.intellij.openapi.editor.colors.impl.EditorColorSchemesUsagesCollector"/>
 
   <applicationConfigurable parentId="preferences.general" instance="com.intellij.internal.statistic.configurable.StatisticsConfigurable" id="usage.statistics"
                            displayName="Usage Statistics"/>
@@ -464,6 +466,8 @@
   <enterHandlerDelegate implementation="com.intellij.psi.codeStyle.autodetect.DetectedIndentNotifier"/>
 
   <fileEditorProvider implementation="com.intellij.openapi.fileEditor.impl.text.LargeFileEditorProvider"/>
+  <editorNotificationProvider implementation="com.intellij.openapi.fileEditor.impl.text.LargeFileNotificationProvider"/>
+  <fileDocumentSynchronizationVetoer implementation="com.intellij.openapi.fileEditor.impl.LargeFileSavingVetoer"/>
   <frameEditorComponentProvider implementation="com.intellij.openapi.wm.ex.DefaultFrameEditorComponentProvider"/>
 
   <lang.lineWrapStrategy language="TEXT" implementationClass="com.intellij.openapi.editor.TextLineWrapPositionStrategy"/>

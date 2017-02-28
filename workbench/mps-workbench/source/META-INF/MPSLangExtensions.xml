@@ -634,12 +634,12 @@
              order="after inResolveScope"/>
 
     <weigher key="completion" implementationClass="com.intellij.codeInsight.completion.PriorityWeigher" id="priority" order="first"/>
-    <weigher key="completion" implementationClass="com.intellij.codeInsight.completion.StatisticsWeigher" id="stats"
-             order="after priority"/>
     <weigher key="completion" implementationClass="com.intellij.codeInsight.completion.PrefixMatchingWeigher" id="prefix"
-             order="after stats"/>
-    <weigher key="completion" implementationClass="com.intellij.codeInsight.completion.ExplicitProximityWeigher" id="explicitProximity"
+             order="after priority"/>
+    <weigher key="completion" implementationClass="com.intellij.codeInsight.completion.StatisticsWeigher" id="stats"
              order="after prefix"/>
+    <weigher key="completion" implementationClass="com.intellij.codeInsight.completion.ExplicitProximityWeigher" id="explicitProximity"
+             order="after stats"/>
     <weigher key="completion" implementationClass="com.intellij.codeInsight.completion.LookupElementProximityWeigher" id="proximity"
              order="after explicitProximity"/>
     <weigher key="completion" implementationClass="com.intellij.codeInsight.completion.GroupingWeigher" id="grouping"
@@ -806,8 +806,6 @@
                          implementationClass="com.intellij.codeInsight.lookup.impl.LookupActionHandler$PageDownHandler"/>
     <editorActionHandler action="EditorLeft" implementationClass="com.intellij.codeInsight.lookup.impl.LookupActionHandler$LeftHandler"/>
     <editorActionHandler action="EditorRight" implementationClass="com.intellij.codeInsight.lookup.impl.LookupActionHandler$RightHandler"/>
-    <editorActionHandler action="EditorLineStart" implementationClass="com.intellij.codeInsight.lookup.impl.HomeHandler"/>
-    <editorActionHandler action="EditorLineEnd" implementationClass="com.intellij.codeInsight.lookup.impl.EndHandler"/>
     <editorActionHandler action="EditorBackSpace" implementationClass="com.intellij.codeInsight.lookup.impl.BackspaceHandler"/>
 
     &lt;!&ndash; CodeInsightSettings &ndash;&gt;
@@ -951,6 +949,8 @@
     <definitionsSearch implementation="com.intellij.pom.PomDefinitionSearch"/>
     <definitionsSearch implementation="com.intellij.xml.impl.schema.SchemaDefinitionsSearch"/>
 
+    <applicationService serviceInterface="com.intellij.ConfigurableFactory" serviceImplementation="com.intellij.ConfigurableFactory"/>
+
     <applicationService serviceImplementation="com.intellij.ide.todo.TodoConfiguration"/>
     <indexPatternProvider implementation="com.intellij.ide.todo.TodoIndexPatternProvider"/>
 
@@ -973,6 +973,7 @@
     <renameInputValidator implementation="com.intellij.refactoring.rename.RenameToIgnoredDirectoryFileInputValidator" order="last"/>
 
     <refactoring.elementListenerProvider implementation="com.intellij.execution.impl.RunConfigurationRefactoringElementListenerProvider"/>
+    <refactoring.elementListenerProvider implementation="com.intellij.ui.EditorNotificationsImpl$RefactoringListenerProvider"/>
 
     <keymapExtension implementation="com.intellij.tools.ToolKeymapExtension"/>
 
@@ -1079,7 +1080,6 @@
 
     <fileIndentOptionsProvider implementation="com.intellij.psi.codeStyle.DetectableIndentOptionsProvider" order="last"/>
     <editorNotificationProvider implementation="com.intellij.psi.codeStyle.autodetect.DetectedIndentOptionsNotificationProvider"/>
-    <smartPointerElementInfoFactory implementation="com.intellij.psi.impl.smartPointers.AnchorElementInfoFactory"/>
     <codeInsight.lineMarkerProvider language="" implementationClass="com.intellij.execution.lineMarker.RunLineMarkerProvider"/>
     <projectService serviceImplementation="com.intellij.execution.TestStateStorage"/>
     <editorActionHandler action="EditorEscape" implementationClass="com.intellij.refactoring.changeSignature.inplace.EscapeHandler" id="changeSignatureEscape" order="before hide-search"/>
@@ -1087,11 +1087,20 @@
     <schemeExporter
       name="Intellij IDEA code style XML"
       schemeClass="com.intellij.psi.codeStyle.CodeStyleScheme"
-      implementationClass="com.intellij.psi.impl.source.codeStyle.CodeStyleSchemeCopyExporter"/>
+      implementationClass="com.intellij.application.options.schemes.SerializableSchemeExporter"/>
     <schemeImporter
       name="Intellij IDEA code style XML"
       schemeClass="com.intellij.psi.codeStyle.CodeStyleScheme"
       implementationClass="com.intellij.psi.impl.source.codeStyle.CodeStyleSchemeXmlImporter"/>
+
+    <schemeExporter
+      name="Intellij IDEA inspection profile XML"
+      schemeClass="com.intellij.codeInspection.ex.InspectionProfileModifiableModel"
+      implementationClass="com.intellij.application.options.schemes.SerializableSchemeExporter"/>
+    <schemeImporter
+      name="Intellij IDEA inspection profile XML"
+      schemeClass="com.intellij.codeInspection.ex.InspectionProfileModifiableModel"
+      implementationClass="com.intellij.profile.codeInspection.ui.InspectionProfileImporter"/>
 
     <nonProjectFileWritingAccessExtension implementation="com.intellij.ide.actions.EditCustomPropertiesAction$AccessExtension"/>
     <nonProjectFileWritingAccessExtension implementation="com.intellij.ide.actions.EditCustomVmOptionsAction$AccessExtension"/>
