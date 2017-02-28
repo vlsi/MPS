@@ -26,7 +26,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
+import jetbrains.mps.smodel.action.DefaultSChildSetter;
 
 public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
   private SubstituteInfo mySubstituteInfo;
@@ -64,11 +64,11 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
   public String getText() {
     return null;
   }
-  private SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, final SAbstractConcept childNodeConcept, final SContainmentLink containingLink) {
+  private SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, SAbstractConcept childNodeConcept, final SContainmentLink containingLink) {
     return new SubstituteInfoPartExt() {
       public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
         List<SubstituteAction> result = new ArrayList<SubstituteAction>();
-        for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept.getDeclarationNode(), new DefaultChildNodeSetter(containingLink.getDeclarationNode()), editorContext.getOperationContext()))) {
+        for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, containingLink, null, new DefaultSChildSetter(containingLink), editorContext))) {
           result.add(action);
         }
         return result;

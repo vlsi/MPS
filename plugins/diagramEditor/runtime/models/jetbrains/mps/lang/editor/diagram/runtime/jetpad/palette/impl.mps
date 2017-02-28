@@ -759,40 +759,26 @@
                   </node>
                 </node>
                 <node concept="2YIFZM" id="zxzBEO0up5" role="2GsD0m">
-                  <ref role="37wK5l" to="zce0:~ModelActions.createChildNodeSubstituteActions(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.smodel.action.IChildNodeSetter,jetbrains.mps.smodel.IOperationContext):java.util.List" resolve="createChildNodeSubstituteActions" />
                   <ref role="1Pybhc" to="zce0:~ModelActions" resolve="ModelActions" />
+                  <ref role="37wK5l" to="zce0:~ModelActions.createChildNodeSubstituteActions(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.language.SAbstractConcept,jetbrains.mps.smodel.action.IChildNodeSetter,jetbrains.mps.openapi.editor.EditorContext):java.util.List" resolve="createChildNodeSubstituteActions" />
                   <node concept="37vLTw" id="zxzBEO0up6" role="37wK5m">
                     <ref role="3cqZAo" node="zxzBEO0unX" resolve="container" />
                   </node>
                   <node concept="10Nm6u" id="zxzBEO0up7" role="37wK5m" />
-                  <node concept="2OqwBi" id="4jf2BbglRF3" role="37wK5m">
-                    <node concept="37vLTw" id="zxzBEO0up8" role="2Oq$k0">
-                      <ref role="3cqZAo" node="zxzBEO0unZ" resolve="childNodeConcept" />
-                    </node>
-                    <node concept="liA8E" id="4jf2BbglSz_" role="2OqNvi">
-                      <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
-                    </node>
+                  <node concept="37vLTw" id="38mK48xsafu" role="37wK5m">
+                    <ref role="3cqZAo" node="zxzBEO0uo1" resolve="containingLink" />
                   </node>
+                  <node concept="10Nm6u" id="38mK48xsi74" role="37wK5m" />
                   <node concept="2ShNRf" id="zxzBEO0up9" role="37wK5m">
                     <node concept="1pGfFk" id="zxzBEO0upa" role="2ShVmc">
-                      <ref role="37wK5l" to="zce0:~DefaultChildNodeSetter.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="DefaultChildNodeSetter" />
-                      <node concept="2OqwBi" id="4jf2BbglTzI" role="37wK5m">
-                        <node concept="37vLTw" id="zxzBEO0upb" role="2Oq$k0">
-                          <ref role="3cqZAo" node="zxzBEO0uo1" resolve="containingLink" />
-                        </node>
-                        <node concept="liA8E" id="4jf2BbglU_3" role="2OqNvi">
-                          <ref role="37wK5l" to="c17a:~SContainmentLink.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
-                        </node>
+                      <ref role="37wK5l" to="zce0:~DefaultSChildSetter.&lt;init&gt;(org.jetbrains.mps.openapi.language.SContainmentLink)" resolve="DefaultSChildSetter" />
+                      <node concept="37vLTw" id="zxzBEO0upb" role="37wK5m">
+                        <ref role="3cqZAo" node="zxzBEO0uo1" resolve="containingLink" />
                       </node>
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="zxzBEO0upc" role="37wK5m">
-                    <node concept="37vLTw" id="zxzBEO0upd" role="2Oq$k0">
-                      <ref role="3cqZAo" node="zxzBEO0uoe" resolve="editorContext" />
-                    </node>
-                    <node concept="liA8E" id="zxzBEO0upe" role="2OqNvi">
-                      <ref role="37wK5l" to="cj4x:~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolve="getOperationContext" />
-                    </node>
+                  <node concept="37vLTw" id="zxzBEO0upd" role="37wK5m">
+                    <ref role="3cqZAo" node="zxzBEO0uoe" resolve="editorContext" />
                   </node>
                 </node>
               </node>

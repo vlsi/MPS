@@ -34,7 +34,7 @@
       <node id="6194248980631614170" at="61,25,62,18" concept="8" />
       <node id="4394877045815232707" at="64,27,65,16" concept="8" />
       <node id="639949279720498705" at="69,105,70,74" concept="7" />
-      <node id="639949279720498715" at="71,268,72,29" concept="2" />
+      <node id="639949279720498715" at="71,205,72,29" concept="2" />
       <node id="639949279720498767" at="73,9,74,22" concept="8" />
       <node id="4394877045814247657" at="53,0,56,0" concept="6" trace="select#(Ljetbrains/mps/openapi/editor/cells/SubstituteAction;)Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/impl/PaletteElementsCreationAction;" />
       <node id="121824560294466034" at="58,0,61,0" concept="6" trace="isPopup#()Z" />
@@ -46,14 +46,14 @@
       <node id="639949279720498699" at="69,0,76,0" concept="6" trace="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
       <node id="4958193202997147668" at="42,0,50,0" concept="1" trace="PaletteElementsCreationActionGroup#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P3_E0;)V" />
       <node id="121824560294466018" at="50,0,58,0" concept="6" trace="getElements#()[Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/openapi/PaletteElement;" />
-      <node id="639949279720498698" at="67,164,76,6" concept="8" />
+      <node id="639949279720498698" at="67,158,76,6" concept="8" />
       <node id="639949279720498684" at="67,0,78,0" concept="6" trace="createNewDiagramNodeActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Ljetbrains/mps/nodeEditor/cellMenu/SubstituteInfoPartExt;" />
       <scope id="121824560294465968" at="39,240,40,165" />
       <scope id="4394877045814247658" at="53,72,54,97" />
       <scope id="121824560294466037" at="58,28,59,16" />
       <scope id="121824560294466043" at="61,25,62,18" />
       <scope id="121824560294466051" at="64,27,65,16" />
-      <scope id="639949279720498714" at="71,268,72,29" />
+      <scope id="639949279720498714" at="71,205,72,29" />
       <scope id="4394877045814247657" at="53,0,56,0">
         <var name="it" id="4394877045814247657" />
       </scope>
@@ -87,7 +87,7 @@
         <var name="setNodePositionCallback" id="4958193202997147721" />
       </scope>
       <scope id="121824560294466018" at="50,0,58,0" />
-      <scope id="639949279720498697" at="67,164,76,6" />
+      <scope id="639949279720498697" at="67,158,76,6" />
       <scope id="639949279720498684" at="67,0,78,0">
         <var name="childNodeConcept" id="639949279720498687" />
         <var name="container" id="639949279720498685" />

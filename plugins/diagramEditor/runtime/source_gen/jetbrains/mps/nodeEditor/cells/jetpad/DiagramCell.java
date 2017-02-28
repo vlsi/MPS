@@ -48,7 +48,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
+import jetbrains.mps.smodel.action.DefaultSChildSetter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -294,21 +294,24 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   public SubstituteInfoPartExt createNewDiagramNodeActions(SNode container, SNode childNodeConcept, SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
     return createNewDiagramNodeActions(container, SNodeOperations.asSConcept(childNodeConcept), MetaAdapterByDeclaration.getContainmentLink(containingLink), setNodePositionCallback);
   }
-  public SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, final SAbstractConcept childNodeConcept, final SContainmentLink containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
+  public SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, SAbstractConcept childNodeConcept, final SContainmentLink containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
     return new SubstituteInfoPartExt() {
       public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
         List<SubstituteAction> result = new ArrayList<SubstituteAction>();
-        for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, SNodeOperations.asNode(childNodeConcept), new DefaultChildNodeSetter(containingLink.getDeclarationNode()), editorContext.getOperationContext()))) {
+        for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, containingLink, null, new DefaultSChildSetter(containingLink) {
+
+          @Override
+          public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
+            super.doExecute(parentNode, oldChild, newChild, editorContext);
+            setNodePositionCallback.invoke(newChild, myPatternEditorX, myPatternEditorY);
+            return newChild;
+
+          }
+        }, editorContext))) {
           result.add(new DiagramCell.DiagramSubstituteActionWraper(action) {
             @Override
             public boolean canSubstitute(String string) {
               return !(hasConnectionDragFeedback()) && super.canSubstitute(string);
-            }
-            @Override
-            public SNode substitute(@Nullable EditorContext context, String string) {
-              SNode result = super.substitute(context, string);
-              setNodePositionCallback.invoke(result, myPatternEditorX, myPatternEditorY);
-              return result;
             }
           });
         }

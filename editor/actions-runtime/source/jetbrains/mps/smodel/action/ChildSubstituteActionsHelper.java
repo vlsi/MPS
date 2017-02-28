@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.smodel.IOperationContext;
@@ -37,6 +38,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -48,6 +50,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * @deprecated use {@link ModelActions#createChildNodeSubstituteActions(SNode, SNode, SContainmentLink, SAbstractConcept, IChildNodeSetter, EditorContext)}
+ */
+@Deprecated
 public class ChildSubstituteActionsHelper {
   private static final Logger LOG = LogManager.getLogger(ChildSubstituteActionsHelper.class);
 
