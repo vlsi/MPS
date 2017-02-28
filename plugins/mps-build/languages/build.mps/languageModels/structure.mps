@@ -17,10 +17,6 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
-        <property id="1225118929411" name="build" index="YLPcu" />
-        <property id="1225118933224" name="comment" index="YLQ7P" />
-      </concept>
       <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
         <property id="7862711839422615217" name="text" index="t5JxN" />
         <child id="7862711839422615224" name="seeAlso" index="t5JxU" />
@@ -729,17 +725,6 @@
       <property role="IQ2ns" value="6845119683729874664" />
       <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
     </node>
-    <node concept="1TJgyj" id="7273ZJHyYNO" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="dialogImage" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="8108467228800445684" />
-      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
-      <node concept="asaX9" id="57dcfYPsA0j" role="lGtFl">
-        <property role="YLPcu" value="3.3" />
-        <property role="YLQ7P" value="To remove in 3.4" />
-      </node>
-    </node>
     <node concept="1TJgyj" id="5j4USBYGz2J" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="shortName" />
@@ -759,6 +744,12 @@
       <property role="20kJfa" value="welcomeLogo" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="772379520210716142" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyj" id="5iAd_W83DPD" role="1TKVEi">
+      <property role="IQ2ns" value="6099622527104884073" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="editorBGUrl" />
       <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
     </node>
     <node concept="1TJgyj" id="FnaIS$EsWD" role="1TKVEi">

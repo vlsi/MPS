@@ -5,7 +5,6 @@ package jetbrains.mps.build.mps.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -22,7 +21,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_BuildMpsLayout_Plugin = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMpsLayout_PluginDescriptor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMps_AbstractModule = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BuildMps_Branding = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e44L, "major"), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e45L, "minor"), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x3acf8ab06f017071L, "bugfixNr"), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e46L, "eap")).shortDesc("name, version and images of your custom IDE").create();
+  private final ConceptPresentation props_BuildMps_Branding = new ConceptPresentationBuilder().shortDesc("name, version and images of your custom IDE").create();
   private final ConceptPresentation props_BuildMps_BrandingCompany = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMps_BrandingHelp = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMps_BrandingKeymap = new ConceptPresentationBuilder().create();
