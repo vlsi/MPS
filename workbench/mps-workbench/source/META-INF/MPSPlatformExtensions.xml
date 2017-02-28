@@ -516,6 +516,8 @@
   <applicationService serviceInterface="com.intellij.remote.ext.CredentialsManager"
                       serviceImplementation="com.intellij.remote.ext.CredentialsManagerImpl"/>
 
+  <applicationService serviceImplementation="com.intellij.openapi.options.newEditor.SettingsDialogFactory"/>
+
   <!-- MPS Patch: this ProjectInspectionProfileStartUpActivity always fails to execute in test before project disposed
   <postStartupActivity implementation="com.intellij.profile.codeInspection.ProjectInspectionProfileManager$ProjectInspectionProfileStartUpActivity"/>
   -->
