@@ -714,7 +714,6 @@
       <concept id="7753544965996377997" name="jetbrains.mps.build.mps.structure.BuildMps_Branding" flags="ng" index="1zClus">
         <property id="3497141547781541445" name="minor" index="2OjLBK" />
         <property id="3497141547781541444" name="major" index="2OjLBL" />
-        <child id="8108467228800445684" name="dialogImage" index="2t3ecf" />
         <child id="6108265972537182997" name="aboutScreen" index="2EqU2s" />
         <child id="6108265972537182996" name="splashScreen" index="2EqU2t" />
         <child id="6108265972537229337" name="buildNumber" index="2EteIg" />
@@ -12883,21 +12882,6 @@
                             <property role="2qtEX9" value="head" />
                             <property role="P4ACc" value="798100da-4f0a-421a-b991-71f8c50ce5d2/8618885170173601777/8618885170173601779" />
                             <node concept="37vLTw" id="2BHiRxeooKc" role="2c44t1">
-                              <ref role="3cqZAo" node="1q4WFGK33dT" resolve="ICONS" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="55IIr" id="7273ZJHzy9A" role="2t3ecf">
-                        <node concept="2Ry0Ak" id="7273ZJHzy9B" role="iGT6I">
-                          <property role="2Ry0Am" value="icons" />
-                          <node concept="2Ry0Ak" id="7273ZJHzy9C" role="2Ry0An">
-                            <property role="2Ry0Am" value="dialogImage.png" />
-                          </node>
-                          <node concept="2EMmih" id="1q4WFGK35zF" role="lGtFl">
-                            <property role="2qtEX9" value="head" />
-                            <property role="P4ACc" value="798100da-4f0a-421a-b991-71f8c50ce5d2/8618885170173601777/8618885170173601779" />
-                            <node concept="37vLTw" id="2BHiRxeojXD" role="2c44t1">
                               <ref role="3cqZAo" node="1q4WFGK33dT" resolve="ICONS" />
                             </node>
                           </node>

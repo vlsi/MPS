@@ -366,7 +366,6 @@
         <child id="6845119683729280452" name="icon" index="27igRh" />
         <child id="7962467864632399185" name="progressX" index="2gocG4" />
         <child id="7962467864633062782" name="progressHeight" index="2gqIGF" />
-        <child id="8108467228800445684" name="dialogImage" index="2t3ecf" />
         <child id="6108265972537182997" name="aboutScreen" index="2EqU2s" />
         <child id="6108265972537182996" name="splashScreen" index="2EqU2t" />
         <child id="6108265972537229337" name="buildNumber" index="2EteIg" />
@@ -17613,20 +17612,6 @@
       <node concept="3_J27D" id="5cRJsFB9H19" role="R$TG_">
         <node concept="3Mxwey" id="d_WKSiQCsZ" role="3MwsjC">
           <ref role="3Mxwex" node="d_WKSiP3Fi" resolve="date" />
-        </node>
-      </node>
-      <node concept="55IIr" id="7273ZJHzeuJ" role="2t3ecf">
-        <node concept="2Ry0Ak" id="7273ZJHzeuK" role="iGT6I">
-          <property role="2Ry0Am" value="workbench" />
-          <node concept="2Ry0Ak" id="7273ZJHzeuL" role="2Ry0An">
-            <property role="2Ry0Am" value="mps-icons" />
-            <node concept="2Ry0Ak" id="7273ZJHzeuM" role="2Ry0An">
-              <property role="2Ry0Am" value="source" />
-              <node concept="2Ry0Ak" id="7273ZJHzeuR" role="2Ry0An">
-                <property role="2Ry0Am" value="dialogImage.png" />
-              </node>
-            </node>
-          </node>
         </node>
       </node>
       <node concept="NbPM2" id="7GO0VN9rZvQ" role="2Mmf0a">
