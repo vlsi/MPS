@@ -76,7 +76,7 @@
 
     <component>
       <interface-class>com.intellij.openapi.module.ModuleManager</interface-class>
-      <implementation-class>jetbrains.mps.EmptyModuleManager</implementation-class>
+      <implementation-class>com.intellij.openapi.module.EmptyModuleManager</implementation-class>
       <loadForDefaultProject/>
     </component>
 
