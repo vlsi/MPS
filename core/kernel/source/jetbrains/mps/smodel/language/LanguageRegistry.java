@@ -342,9 +342,6 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       } else {
         languagesToUnload.add(myLanguagesById.get(sl));
       }
-      if (language.getModuleName().endsWith(".lang.core")) {
-        LOG.warn(String.format("Runtime for language %s was scheduled for unload", language.getModuleName()));
-      }
     }
 
     notifyUnload(languagesToUnload);
@@ -361,9 +358,6 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     for (Language language : collectLanguageModules(loadedModules)) {
       try {
         LanguageRuntime langRuntime = createRuntime(language);
-        if (langRuntime != null) {
-          LOG.warn(String.format("Runtime for language %s is now %s", language.getModuleName(), langRuntime));
-        }
         if (langRuntime == null) {
           continue;
         }
