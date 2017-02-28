@@ -70,7 +70,7 @@ public class ModuleInProjectTest extends PlatformMpsTest {
     IdeaFile projectFile = new IdeaFileSystem().getFile(ModuleIDETests.ourProject.getProjectFile().toString());
     projectFile.refresh(new DefaultCachingContext(true, true));
     ApplicationManager.getApplication().invokeAndWait(() -> {
-      ((StoreAwareProjectManager) ProjectManager.getInstance()).flushChangedAlarm(); // needed to trigger refresh on the project folder components in test environment
+      ((StoreAwareProjectManager) ProjectManager.getInstance()).flushChangedProjectFileAlarm(); // needed to trigger refresh on the project folder components in test environment
     }, ModalityState.NON_MODAL);
   }
 
