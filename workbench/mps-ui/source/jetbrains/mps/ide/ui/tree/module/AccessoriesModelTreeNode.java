@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
-import com.intellij.icons.AllIcons.Nodes;
+import jetbrains.mps.icons.MPSIcons.Nodes.Models;
 import jetbrains.mps.ide.ui.tree.ErrorState;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -34,7 +33,7 @@ public class AccessoriesModelTreeNode extends TextTreeNode {
   public AccessoriesModelTreeNode(ProjectLanguageTreeNode projectLanguageTreeNode) {
     super("accessories");
     myProjectLanguageTreeNode = projectLanguageTreeNode;
-    setIcon(Nodes.PpLib);
+    setIcon(Models.AccessoryModel);
   }
 
   public List<String> validate() {
@@ -42,12 +41,14 @@ public class AccessoriesModelTreeNode extends TextTreeNode {
     if (lang.getRepository() == null) {
       return Collections.emptyList();
     }
-    List<String> errors = new ArrayList<String>();
+    List<String> errors = new ArrayList<>();
     //this check is wrong in common as we don't know what the user wants to do with the acc model in build.
     //but I'll not delete it until accessories removal just to have some warning on project consistency
     for (SModelReference accessory : lang.getModuleDescriptor().getAccessoryModels()) {
       SModel accModel = accessory.resolve(lang.getRepository());
-      if (accModel==null) continue;
+      if (accModel == null) {
+        continue;
+      }
 
       if (!VisibilityUtil.isVisible(lang, accModel)) {
         errors.add("Can't find accessory " + accessory.getName());
