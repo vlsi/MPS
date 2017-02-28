@@ -11,10 +11,10 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Collection;
 import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,12 +29,8 @@ public class MakeAspects_ActionGroup extends GeneratedActionGroup {
   public void doUpdate(AnActionEvent event) {
     removeAll();
     // do not change this to build() because aspect set can change dynamically 
-    Iterable<LanguageAspectDescriptor> aspects = Sequence.fromIterable(new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.aspect.LanguageAspectsEP").getObjects()).sort(new ISelector<LanguageAspectDescriptor, String>() {
-      public String select(LanguageAspectDescriptor it) {
-        return it.getPresentableAspectName();
-      }
-    }, true).toListSequence();
-    for (LanguageAspectDescriptor aspect : Sequence.fromIterable(aspects)) {
+    Collection<LanguageAspectDescriptor> aspects = LanguageAspectSupport.collectAspects();
+    for (LanguageAspectDescriptor aspect : CollectionSequence.fromCollection(aspects)) {
       MakeAspects_ActionGroup.this.addParameterizedAction(new BuildAspect_Action(aspect), PluginId.getId("jetbrains.mps.ide.make"), aspect);
     }
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {

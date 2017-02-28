@@ -460,12 +460,6 @@
         <child id="1201186121363" name="typeParameter" index="2Ghqu4" />
       </concept>
     </language>
-    <language id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension">
-      <concept id="6626851894249711936" name="jetbrains.mps.lang.extension.structure.ExtensionPointExpression" flags="nn" index="2O5UvJ">
-        <reference id="6626851894249712469" name="extensionPoint" index="2O5UnU" />
-      </concept>
-      <concept id="3175313036448560967" name="jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation" flags="nn" index="SfwO_" />
-    </language>
     <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
       <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
     </language>
@@ -601,9 +595,6 @@
         <child id="1237731803878" name="copyFrom" index="I$8f6" />
       </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
-      <concept id="1205679737078" name="jetbrains.mps.baseLanguage.collections.structure.SortOperation" flags="nn" index="2S7cBI">
-        <child id="1205679832066" name="ascending" index="2S7zOq" />
-      </concept>
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="4611582986551314327" name="jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation" flags="nn" index="UnYns">
@@ -614,7 +605,6 @@
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1240325842691" name="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" flags="nn" index="39bAoz" />
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
-      <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
@@ -10929,47 +10919,18 @@
               <property role="3SKdUp" value="do not change this to build() because aspect set can change dynamically" />
             </node>
           </node>
-          <node concept="3cpWs8" id="7wqdV6YcMVY" role="3cqZAp">
-            <node concept="3cpWsn" id="7wqdV6YcMVZ" role="3cpWs9">
+          <node concept="3cpWs8" id="63fRW0WtWDh" role="3cqZAp">
+            <node concept="3cpWsn" id="63fRW0WtWDi" role="3cpWs9">
               <property role="TrG5h" value="aspects" />
-              <node concept="A3Dl8" id="7wqdV6YcMVU" role="1tU5fm">
-                <node concept="3uibUv" id="7wqdV6YcMVX" role="A3Ik2">
+              <node concept="3uibUv" id="63fRW0WtWDd" role="1tU5fm">
+                <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+                <node concept="3uibUv" id="63fRW0WtWDg" role="11_B2D">
                   <ref role="3uigEE" to="vndm:~LanguageAspectDescriptor" resolve="LanguageAspectDescriptor" />
                 </node>
               </node>
-              <node concept="2OqwBi" id="40H5AhzkzTU" role="33vP2m">
-                <node concept="2OqwBi" id="7wqdV6YcNiJ" role="2Oq$k0">
-                  <node concept="2OqwBi" id="7wqdV6YcMW0" role="2Oq$k0">
-                    <node concept="2O5UvJ" id="7wqdV6YcMW1" role="2Oq$k0">
-                      <ref role="2O5UnU" to="gevi:2Sw9hCAHJv3" resolve="LanguageAspectsEP" />
-                    </node>
-                    <node concept="SfwO_" id="7wqdV6YcMW2" role="2OqNvi" />
-                  </node>
-                  <node concept="2S7cBI" id="7wqdV6YcNzp" role="2OqNvi">
-                    <node concept="1bVj0M" id="7wqdV6YcNzr" role="23t8la">
-                      <node concept="3clFbS" id="7wqdV6YcNzs" role="1bW5cS">
-                        <node concept="3clFbF" id="7wqdV6YcNGh" role="3cqZAp">
-                          <node concept="2OqwBi" id="7wqdV6YcNPI" role="3clFbG">
-                            <node concept="37vLTw" id="7wqdV6YcNGg" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7wqdV6YcNzt" resolve="it" />
-                            </node>
-                            <node concept="liA8E" id="7wqdV6YcNZN" role="2OqNvi">
-                              <ref role="37wK5l" to="vndm:~LanguageAspectDescriptor.getPresentableAspectName():java.lang.String" resolve="getPresentableAspectName" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="Rh6nW" id="7wqdV6YcNzt" role="1bW2Oz">
-                        <property role="TrG5h" value="it" />
-                        <node concept="2jxLKc" id="7wqdV6YcNzu" role="1tU5fm" />
-                      </node>
-                    </node>
-                    <node concept="1nlBCl" id="7wqdV6YcNzv" role="2S7zOq">
-                      <property role="3clFbU" value="true" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="ANE8D" id="40H5Ahzk$xG" role="2OqNvi" />
+              <node concept="2YIFZM" id="63fRW0WtWDj" role="33vP2m">
+                <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.util.Collection" resolve="collectAspects" />
+                <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
               </node>
             </node>
           </node>
@@ -10987,8 +10948,8 @@
                 </node>
               </node>
             </node>
-            <node concept="37vLTw" id="7wqdV6YcMW3" role="2GsD0m">
-              <ref role="3cqZAo" node="7wqdV6YcMVZ" resolve="aspects" />
+            <node concept="37vLTw" id="63fRW0WtWO6" role="2GsD0m">
+              <ref role="3cqZAo" node="63fRW0WtWDi" resolve="aspects" />
             </node>
           </node>
         </node>
