@@ -41,6 +41,7 @@ import org.jetbrains.mps.util.InstanceOfCondition;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.JOptionPane;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch;
@@ -344,8 +345,8 @@ public class ExtractMethodDialog extends RefactoringDialog {
           return;
         }
       }
-      myContext.getRepository().getModelAccess().executeCommand(new Runnable() {
-        public void run() {
+      myContext.getRepository().getModelAccess().executeCommand(new EditorCommand(myContext) {
+        protected void doExecute() {
           SNode result = myRefactoring.doRefactor();
           myContext.select(result);
           if ((myRefactoringModel != null) && myExtractIntoOuterContainer) {

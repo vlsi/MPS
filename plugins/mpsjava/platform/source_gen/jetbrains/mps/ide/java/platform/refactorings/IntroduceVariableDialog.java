@@ -5,7 +5,6 @@ package jetbrains.mps.ide.java.platform.refactorings;
 import jetbrains.mps.ide.platform.refactoring.RefactoringDialog;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JPanel;
-import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import com.intellij.openapi.project.Project;
@@ -21,6 +20,8 @@ import javax.swing.JTextField;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring;
+import jetbrains.mps.editor.runtime.commands.EditorComputable;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils;
 import java.awt.Insets;
 import javax.swing.JComponent;
@@ -28,7 +29,6 @@ import javax.swing.JComponent;
 public abstract class IntroduceVariableDialog extends RefactoringDialog {
   protected final EditorContext myEditorContext;
   protected JPanel myPanel;
-  protected SNode myResult;
   protected JCheckBox myReplaceAll = null;
   protected JCheckBox myIsFinal = null;
   protected VisibilityPanel myVisibilityPanel = null;
@@ -96,16 +96,16 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
   }
   public abstract IntroduceVariableRefactoring getRefactoring();
   protected void doRefactoring() {
-    myEditorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
-      public void run() {
-        IntroduceVariableDialog.this.myResult = IntroduceVariableDialog.this.getRefactoring().doRefactoring();
-        MoveRefactoringUtils.fixImportsFromNode(myResult);
+    EditorComputable<SNode> command = new EditorComputable<SNode>(myEditorContext) {
+      @Override
+      protected SNode doCompute() {
+        SNode result = getRefactoring().doRefactoring();
+        MoveRefactoringUtils.fixImportsFromNode(result);
+        return result;
       }
-    });
-    myEditorContext.select(myResult);
-  }
-  public SNode getResult() {
-    return myResult;
+    };
+    myEditorContext.getRepository().getModelAccess().executeCommand(command);
+    myEditorContext.select(command.getResult());
   }
   protected void initPanel() {
     myPanel = new JPanel(new GridBagLayout());

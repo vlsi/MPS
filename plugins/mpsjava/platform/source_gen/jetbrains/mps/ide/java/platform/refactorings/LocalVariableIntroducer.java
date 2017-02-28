@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -47,16 +47,18 @@ public class LocalVariableIntroducer {
     myRefactoring.setReplacingAll(replaceAllDuplicates);
     myRefactoring.setIsFinal(false);
     myRefactoring.setName(ListSequence.fromList(myRefactoring.getExpectedNames()).first());
-    final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
-    myEditorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
-      public void run() {
-        result.value = myRefactoring.doRefactoring();
-        MoveRefactoringUtils.fixImportsFromNode(result.value);
+    EditorComputable<SNode> command = new EditorComputable<SNode>(myEditorContext) {
+      @Override
+      protected SNode doCompute() {
+        SNode result = myRefactoring.doRefactoring();
+        MoveRefactoringUtils.fixImportsFromNode(result);
+        return result;
       }
-    });
-    EditorCell cell = CellFinder.getCellForProperty(myEditorComponent, result.value, "name");
+    };
+    myEditorContext.getRepository().getModelAccess().executeCommand(command);
+    EditorCell cell = CellFinder.getCellForProperty(myEditorComponent, command.getResult(), "name");
     if (cell == null) {
-      myEditorContext.select(result.value);
+      myEditorContext.select(command.getResult());
     } else {
       if (cell instanceof EditorCell_Label) {
         EditorCell_Label ecl = ((EditorCell_Label) cell);

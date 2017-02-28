@@ -20,6 +20,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -97,8 +98,8 @@ public class ExtractComponent_Action extends BaseAction {
     }
 
     final SNode ecm = ((SNode) MapSequence.fromMap(_params).get("node"));
-    ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().executeCommand(new Runnable() {
-      public void run() {
+    ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().executeCommand(new EditorCommand(((EditorContext) MapSequence.fromMap(_params).get("editorContext"))) {
+      protected void doExecute() {
         SModel model = SNodeOperations.getModel(ecm);
         SNode component = SModelOperations.createNewRootNode(model, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"));
         SPropertyOperations.set(component, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), componentName);

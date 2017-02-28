@@ -30,6 +30,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 
 public class InlineLocalVariable_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -159,11 +160,13 @@ public class InlineLocalVariable_Action extends BaseAction {
       }
     }
 
-    modelAccess.executeCommand(new Runnable() {
-      public void run() {
-        SNode result = ref.value.doRefactoring();
+    final InlineVariableRefactoring finalRef = ref.value;
+    final SNode finalAltSelection = alternativeSelection.value;
+    modelAccess.executeCommand(new EditorCommand(((EditorContext) MapSequence.fromMap(_params).get("editorContext"))) {
+      protected void doExecute() {
+        SNode result = finalRef.doRefactoring();
         if (result == null) {
-          result = alternativeSelection.value;
+          result = finalAltSelection;
         }
         ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).selectWRTFocusPolicy(result);
       }

@@ -5,9 +5,9 @@ package jetbrains.mps.ide.java.platform.refactorings;
 import jetbrains.mps.ide.platform.refactoring.RefactoringDialog;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
@@ -34,6 +34,7 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtil
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import javax.swing.JLabel;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring;
@@ -47,14 +48,17 @@ public class InlineMethodDialog extends RefactoringDialog {
   private InlineMethodDialog.PreviewAction myPreviewAction;
   private boolean myForAll;
   private final SRepository myEditorRepo;
+  private final EditorContext myEditorContext;
 
   public InlineMethodDialog(final SNode node, MPSProject project, EditorContext editorContext) {
     super(project.getProject(), true);
-    myEditorRepo = editorContext.getRepository();
+    myEditorContext = editorContext;
+    myEditorRepo = myEditorContext.getRepository();
+
     setTitle("Inline Method");
     setResizable(false);
 
-    myModel = new ModelAccessHelper(editorContext.getRepository()).runReadAction(new Computable<InlineMethodModel>() {
+    myModel = new ModelAccessHelper(myEditorRepo).runReadAction(new Computable<InlineMethodModel>() {
       public InlineMethodModel compute() {
         return new InlineMethodModel(node);
       }
@@ -196,8 +200,8 @@ public class InlineMethodDialog extends RefactoringDialog {
     return label;
   }
   private void performRefactoring(final SearchResults<SNode> usages) {
-    myEditorRepo.getModelAccess().executeCommand(new Runnable() {
-      public void run() {
+    myEditorRepo.getModelAccess().executeCommand(new EditorCommand(myEditorContext) {
+      protected void doExecute() {
         if (usages != null) {
           for (SearchResult<SNode> res : ListSequence.fromList(usages.getSearchResults())) {
             InlineMethodRefactoring ref = new InlineMethodRefactoring(res.getObject());
