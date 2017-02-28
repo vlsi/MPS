@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,11 @@ import java.util.stream.StreamSupport;
  * Returns all parents of a concept or concept interface in "inheritance" order.
  * "Inheritance" order means that behavior methods, constraints and some other concept stuff, that is inherited,
  * should be searched accordingly to order of parents in this list
+ *
+ * FIXME there are {@link org.jetbrains.mps.util.BreadthConceptHierarchyIterator} and {@link org.jetbrains.mps.util.DepthFirstConceptIterator} that walk
+ * complete hierarchy right away, so there's no need for implicit recursion of BaseConstraintsDescriptor's #collectParents, #getDescriptor and ConceptRegistry
+ * that ends up with another BaseConstraintsDescriptor.
+ * FIXME There's SModelUtil.getDirectSuperConcepts() with identical logic.
  */
 public class InheritanceIterable implements Iterable<SAbstractConcept> {
   private ArrayList<SAbstractConcept> myParents = new ArrayList<>(4);

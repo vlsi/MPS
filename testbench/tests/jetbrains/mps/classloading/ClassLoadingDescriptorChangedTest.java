@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +19,14 @@ import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.testbench.junit.runners.FromProjectPathProjectStrategy;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.PathManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.io.File;
 
 import static org.junit.Assert.assertTrue;
 
@@ -35,10 +35,12 @@ public class ClassLoadingDescriptorChangedTest extends CoreMpsTest {
 
   @Before
   public void beforeTest() {
-    MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     String homePath = PathManager.getHomePath();
     assert homePath != null;
-    myProject = openProject(new File(homePath));
+    // env.openProject doesn't make project, while FromProjectPathProjectStrategy does.
+    // createProject seems to be just a mechanism to employ a strategy, and it's up to strategy to decide whether to open a project or create a new one
+    myProject = env.createProject(new FromProjectPathProjectStrategy(homePath));
   }
 
   @After

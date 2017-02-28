@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -162,16 +162,16 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       if (LanguageRuntime.class.isAssignableFrom(rtClass)) {
         return rtClass.asSubclass(LanguageRuntime.class).newInstance();
       }
-      LOG.error(String.format("Incompatible language runtime class for module %s; resort to interpreted runtime", l.getModuleName()));
-      return new InterpretedLanguageRuntime(l);
+      LOG.error(String.format("Incompatible language runtime class for module %s; no language runtime", l.getModuleName()));
+      return null;
     } catch (ClassNotFoundException ex) {
       // would like to have error + exception here, but there are tests (e.g. ModulesReloadTest) that legitimately expect non-compiled modules
-      LOG.warn(String.format("Missing language runtime class for module %s (make failed?); resort to interpreted runtime", l.getModuleName()));
-      return new InterpretedLanguageRuntime(l);
-    } catch (InstantiationException e) {
-      LOG.error(String.format("Failed to load language %s", l.getModuleName()), e);
+      // and no distinction between source and deployed modules. Now, we try to load any module added to the global repository, even if it's
+      // a source module just added to a project. Once we tell deployed modules from sources (two distinct repositories would likely suffice),
+      // AND LanguageRegistry listens to the proper one, we can have an error here.
+      LOG.debug(String.format("Missing language runtime class for module %s (make failed?); no language runtime", l.getModuleName()));
       return null;
-    } catch (IllegalAccessException e) {
+    } catch (InstantiationException | IllegalAccessException e) {
       LOG.error(String.format("Failed to load language %s", l.getModuleName()), e);
       return null;
     }
