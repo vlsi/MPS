@@ -308,6 +308,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
    * FIXME shall decide whether need standalone GeneratorRegistry to supply GeneratorRuntimes
    * FIXME or access to GeneratorRuntime through LanguageRegistry is enough.
    */
+  @Nullable
   public GeneratorRuntime getGenerator(Generator generator) {
     LanguageRuntime lr = getLanguage(generator.getSourceLanguage());
     if (lr == null) {

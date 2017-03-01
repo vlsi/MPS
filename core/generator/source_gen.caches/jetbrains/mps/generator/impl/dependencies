@@ -42,15 +42,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.generator.impl.GenPlanBuilder" file="GenPlanBuilder.java">
+  <dependency className="jetbrains.mps.generator.impl.GenPlanTranslator" file="GenPlanTranslator.java">
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
-    <classNode dependClassName="jetbrains.mps.generator.ModelGenerationPlan" />
-    <classNode dependClassName="jetbrains.mps.generator.RigidGenerationPlan" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModel" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationPlanBuilder" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.plan.CheckpointIdentity" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.plan.PlanIdentity" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -58,9 +55,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.GeneratorRuntime" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />

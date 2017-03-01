@@ -25,7 +25,7 @@ import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.RigidGenerationPlan;
 import jetbrains.mps.generator.TransientModelsProvider;
-import jetbrains.mps.generator.impl.GenPlanBuilder;
+import jetbrains.mps.generator.impl.GenPlanTranslator;
 import jetbrains.mps.generator.impl.ModelStreamProviderImpl;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
@@ -255,8 +255,10 @@ public class CheckpointModelTest extends PlatformMpsTest {
       @Override
       public ModelGenerationPlan compute() {
         SModel planModel = resolve(planModelRef);
-        GenPlanBuilder gpBuilder = new GenPlanBuilder(LanguageRegistry.getInstance(mpsProject.getRepository()));
-        return gpBuilder.create(planModel.getRootNodes().iterator().next());
+        RigidPlanBuilder planBuilder = new RigidPlanBuilder(LanguageRegistry.getInstance(mpsProject.getRepository()));
+        GenPlanTranslator planTranslator = new GenPlanTranslator(planModel.getRootNodes().iterator().next());
+        planTranslator.feed(planBuilder);
+        return planBuilder.wrapUp(planTranslator.getPlanIdentity());
       }
     });
     Assert.assertNotNull(plan);

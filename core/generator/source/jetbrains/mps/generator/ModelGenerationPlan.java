@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,22 @@ public interface ModelGenerationPlan {
   // Besides, even if language is 'covered', nothing tells it is 'yet to get processed' one, not the one 'already processed'
   // (so/ output nodes in that language still make no sense). Perhaps, could be part of Step, and each Step knows
   // what languages are to come down the road?
+  // Shall drop, but first need to replace with a mechanism that collects all languages that emerge during generation
   boolean coversLanguage(SLanguage language);
+
+  /*
+   * Give a chance for a plan implementation to accommodate to actual input being transformed. Plans are inherently read-only,
+   * so to give an input-specific plan, one need to make a copy of a template and augment it.
+   * <p/>
+   * Invoked once per each processed {@linkplain GeneratorTask generation task} prior to any step.
+   *
+   * @return An instance of the plan modified according to languages present in the task, or {@code this} if this
+   * plan doesn't depend on transformed input.
+   */
+//  @NotNull
+//  default ModelGenerationPlan prepare(@NotNull GeneratorTask task) {
+//    return this;
+//  }
 
   interface Step {
     // e.g. to print MCs that take part, if Transform step populates objects rather than return list of MC

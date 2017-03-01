@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,8 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.GenerationOptions.OptionsBuilder;
-import jetbrains.mps.generator.impl.GenPlanBuilder;
+import jetbrains.mps.generator.impl.GenPlanTranslator;
+import jetbrains.mps.generator.impl.plan.RigidPlanBuilder;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -110,7 +111,10 @@ public final class GenPlanExtractor {
       final ModelGenerationPlan plan;
       final SModel planModel = dkPlan.resolve(myRepository);
       if (planModel != null) {
-        plan = new GenPlanBuilder(LanguageRegistry.getInstance(myRepository)).create(planModel.getRootNodes().iterator().next());
+        GenPlanTranslator gpt = new GenPlanTranslator(planModel.getRootNodes().iterator().next());
+        RigidPlanBuilder planBuilder = new RigidPlanBuilder(LanguageRegistry.getInstance(myRepository));
+        gpt.feed(planBuilder);
+        plan = planBuilder.wrapUp(gpt.getPlanIdentity());
       } else {
         plan = null;
       }
