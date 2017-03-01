@@ -88,12 +88,13 @@ public class RigidPlanBuilder implements GenerationPlanBuilder {
 
   @Override
   public void recordCheckpoint(@NotNull CheckpointIdentity cp) {
-    mySteps.add(new Checkpoint(cp.getPersistenceValue())); // FIXME respect plan of the cp, do not assume it's from the plan being constructed
+    // we shall respect plan of the cp, do not assume it's from the plan being constructed
+    mySteps.add(new Checkpoint(cp, false));
   }
 
   @Override
   public void synchronizeWithCheckpoint(@NotNull CheckpointIdentity cp) {
-    throw new UnsupportedOperationException("This implementation of plan builder doesn't support requested functionality");
+    mySteps.add(new Checkpoint(cp, true));
   }
 
   /**

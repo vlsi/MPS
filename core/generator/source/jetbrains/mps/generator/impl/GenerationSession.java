@@ -253,6 +253,9 @@ class GenerationSession {
             currInputModel = currOutput;
           } else if (planStep instanceof Checkpoint) {
             Checkpoint checkpointStep = (Checkpoint) planStep;
+            if (!checkpointStep.isPersisted()) {
+              continue;
+            }
             CheckpointIdentity checkpointIdentity = new CheckpointIdentity(myGenerationPlan, checkpointStep);
             final CrossModelEnvironment xmodelEnv = mySessionContext.getCrossModelEnvironment();
             SModel checkpointModel = xmodelEnv.createBlankCheckpointModel(myOriginalInputModel.getReference(), checkpointIdentity);
@@ -267,7 +270,9 @@ class GenerationSession {
             CheckpointState cpState = cpBuilder.create(checkpointIdentity);
             xmodelEnv.publishCheckpoint(myOriginalInputModel.getReference(), cpState);
             transitionTrace.newTransition(checkpointStep, checkpointModel.getReference(), currInputModel);
-            myStepArguments = null;
+            myStepArguments = null; // XXX what if there are few subsequent CPs (e.g. from different plans), why do we clear step arguments and
+            // prevent other CPs from saving MLs?
+
           }
         }
         ttrace.pop();

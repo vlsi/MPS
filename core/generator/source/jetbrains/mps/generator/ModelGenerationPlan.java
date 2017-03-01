@@ -17,6 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.RuleManager;
 import jetbrains.mps.generator.impl.TemplateSwitchGraph;
+import jetbrains.mps.generator.impl.plan.CheckpointIdentity;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -68,15 +69,29 @@ public interface ModelGenerationPlan {
 
   final class Checkpoint implements Step {
     private final String myName;
+    private final boolean mySynchOnly;
 
     public Checkpoint(@NotNull String name) {
       myName = name;
+      mySynchOnly = false;
+    }
+
+    public Checkpoint(@NotNull CheckpointIdentity cpIdentity, boolean synchOnly) {
+      myName = cpIdentity.getPersistenceValue();
+      mySynchOnly = synchOnly;
     }
 
     public String getName() {
       return myName;
     }
 
+    /**
+     * @return {@code true} if model state at this checkpoint is to be saved into a storage, {@code false} means this checkpoint is for
+     * synchronization with other models only.
+     */
+    public boolean isPersisted() {
+      return !mySynchOnly;
+    }
     // FIXME do I still need hashCode/equals when I can use CheckpointIdentity?
 
     @Override
