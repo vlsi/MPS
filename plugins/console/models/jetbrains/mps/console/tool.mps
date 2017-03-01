@@ -83,6 +83,7 @@
     <import index="z0rn" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.xmlb.annotations(MPS.IDEA/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="5fzo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.persistence.def(MPS.Core/)" />
+    <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
   </imports>
@@ -5527,13 +5528,23 @@
             <node concept="3clFbS" id="758rrhN2xKx" role="1bW5cS">
               <node concept="3clFbJ" id="6ysF3v1j_ko" role="3cqZAp">
                 <node concept="3clFbS" id="6ysF3v1j_kp" role="3clFbx">
-                  <node concept="3clFbF" id="6ysF3v1j_kq" role="3cqZAp">
-                    <node concept="2OqwBi" id="6ysF3v1j_kr" role="3clFbG">
-                      <node concept="37vLTw" id="6ysF3v1j_ks" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6ysF3v1j_8_" resolve="myEditor" />
-                      </node>
-                      <node concept="liA8E" id="6ysF3v1j_kt" role="2OqNvi">
-                        <ref role="37wK5l" to="exr9:~UIEditorComponent.dispose():void" resolve="dispose" />
+                  <node concept="3clFbF" id="7Ti21AGiJp0" role="3cqZAp">
+                    <node concept="2YIFZM" id="7Ti21AGiSlC" role="3clFbG">
+                      <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadNoWait(java.lang.Runnable):void" resolve="runInUIThreadNoWait" />
+                      <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
+                      <node concept="1bVj0M" id="7Ti21AGiTYk" role="37wK5m">
+                        <node concept="3clFbS" id="7Ti21AGiTYl" role="1bW5cS">
+                          <node concept="3clFbF" id="7Ti21AGiVcl" role="3cqZAp">
+                            <node concept="2OqwBi" id="6ysF3v1j_kr" role="3clFbG">
+                              <node concept="37vLTw" id="6ysF3v1j_ks" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6ysF3v1j_8_" resolve="myEditor" />
+                              </node>
+                              <node concept="liA8E" id="6ysF3v1j_kt" role="2OqNvi">
+                                <ref role="37wK5l" to="exr9:~UIEditorComponent.dispose():void" resolve="dispose" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>

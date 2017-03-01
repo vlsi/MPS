@@ -31,6 +31,7 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.util.Disposer;
+import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.wm.IdeFocusManager;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -217,7 +218,11 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
     myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         if (myEditor != null) {
-          myEditor.dispose();
+          ThreadUtils.runInUIThreadNoWait(new Runnable() {
+            public void run() {
+              myEditor.dispose();
+            }
+          });
         }
         TemporaryModels.getInstance().dispose(myModel);
       }

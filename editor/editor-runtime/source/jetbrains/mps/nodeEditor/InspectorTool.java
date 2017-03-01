@@ -29,6 +29,7 @@ import com.intellij.openapi.ui.SimpleToolWindowPanel;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.HyperlinkLabel;
 import com.intellij.ui.LightColors;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -80,7 +81,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     if (myInspectorComponent == null) {
       return;
     }
-    myInspectorComponent.dispose();
+    ThreadUtils.runInUIThreadNoWait(myInspectorComponent::dispose);
     unregister();
   }
 
@@ -100,7 +101,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
       myComponent = new MyPanel();
       jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());
       myInspectorComponent = new InspectorEditorComponent(project.getRepository(),
-          new EditorConfigurationBuilder().editorPanelManager(new EditorPanelManagerImpl(project)).build());
+                                                          new EditorConfigurationBuilder().editorPanelManager(new EditorPanelManagerImpl(project)).build());
       EditorExtensionUtil.extendUsingProject(myInspectorComponent, project);
       myComponent.setContent(myInspectorComponent.getExternalComponent());
       myMessagePanel.setNode(null);

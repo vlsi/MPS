@@ -198,7 +198,7 @@ public abstract class BaseNodeEditor implements Editor {
     if (myEditorComponent != null) {
       // Remove old editor component
       myEditorPanel.remove(myEditorComponent.getExternalComponent());
-      myEditorComponent.dispose();
+      ThreadUtils.runInUIThreadNoWait(myEditorComponent::dispose);
       myEditorComponent = null;
       myCurrentlyEditedNode = null;
     }
@@ -421,7 +421,7 @@ public abstract class BaseNodeEditor implements Editor {
 
       BaseEditorState that = (BaseEditorState) o;
       return EqualUtil.equals(that.memento, memento) && EqualUtil.equals(that.inspectorMemento, inspectorMemento) &&
-          that.isEditorFocused == isEditorFocused && that.isInspectorFocused == isInspectorFocused;
+             that.isEditorFocused == isEditorFocused && that.isInspectorFocused == isInspectorFocused;
     }
   }
 }

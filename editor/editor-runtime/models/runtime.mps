@@ -3095,6 +3095,36 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7Ti21AGhhK6" role="jymVt" />
+    <node concept="2tJIrI" id="7Ti21AGhhKC" role="jymVt" />
+    <node concept="3clFb_" id="7Ti21AGhhON" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="assertInEDT" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tmbuc" id="7Ti21AGhhOO" role="1B3o_S" />
+      <node concept="3cqZAl" id="7Ti21AGhhOQ" role="3clF45" />
+      <node concept="3clFbS" id="7Ti21AGhhOR" role="3clF47">
+        <node concept="3SKdUt" id="7Ti21AGhwzE" role="3cqZAp">
+          <node concept="3SKdUq" id="7Ti21AGhwzF" role="3SKWNk">
+            <property role="3SKdUp" value="empty method because we suppose HeadlessEditorComponent should be called from different threads." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="7Ti21AGhz7U" role="3cqZAp">
+          <node concept="3SKdUq" id="7Ti21AGhz7W" role="3SKWNk">
+            <property role="3SKdUp" value="in the future all EDT-specific stuff should be removed from this class &amp; so this method will" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="7Ti21AGhzYZ" role="3cqZAp">
+          <node concept="3SKdUq" id="7Ti21AGhzZ1" role="3SKWNk">
+            <property role="3SKdUp" value="present only inside EditorComponent with the UI attached to it." />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="7Ti21AGhhOS" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="3Tm1VV" id="6qGpHl7IHpL" role="1B3o_S" />
     <node concept="3uibUv" id="2qx2hw9gwJ0" role="1zkMxy">
       <ref role="3uigEE" to="exr9:~EditorComponent" resolve="EditorComponent" />

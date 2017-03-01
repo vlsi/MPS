@@ -1442,6 +1442,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public void dispose() {
+    assertInEDT();
     if (myDisposed) {
       throw new IllegalStateException(myDisposedTrace);
     }
@@ -1848,9 +1849,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public void rebuildEditorContent() {
-    LOG.assertLog(ThreadUtils.isInEDT(), "You should do this in EDT");
+    assertInEDT();
     getUpdater().update();
     relayout();
+  }
+
+  protected void assertInEDT() {
+    LOG.assertLog(ThreadUtils.isInEDT(), "You should do this in EDT");
   }
 
   private void fireEditorWillBeDisposed() {
