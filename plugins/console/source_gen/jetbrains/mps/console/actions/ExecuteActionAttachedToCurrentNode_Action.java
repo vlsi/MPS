@@ -21,7 +21,7 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   public ExecuteActionAttachedToCurrentNode_Action() {
     super("Execute Attached Action", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
@@ -59,6 +59,10 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    BHReflection.invoke(event.getData(MPSCommonDataKeys.NODE), SMethodTrimmedId.create("execute", null, "7oNS25df64x"), event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        BHReflection.invoke(event.getData(MPSCommonDataKeys.NODE), SMethodTrimmedId.create("execute", null, "7oNS25df64x"), event.getData(MPSCommonDataKeys.MPS_PROJECT));
+      }
+    });
   }
 }

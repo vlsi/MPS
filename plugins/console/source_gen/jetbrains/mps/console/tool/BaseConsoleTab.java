@@ -337,6 +337,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
   protected static class ExecuteClosureAction extends BaseAction {
     public ExecuteClosureAction() {
       super("Execute Closure");
+      this.setExecuteOutsideCommand(true);
     }
     public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
       this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
