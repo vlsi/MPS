@@ -96,20 +96,12 @@ public class GenSourcesAndCompilerXmlGenerationTest {
       }
 
       //test material
-      if (isUnder(cp, "/plugins/mps-obsolete/languages/generictasks/tests/")) continue;
       if (isUnder(cp, "/plugins/mps-java-workbench/tests/jetbrains.mps.ide.java.testMaterial/resources/testData")) continue;
-      if (isUnder(cp, "/testbench/modules/testMake/solutions/jetbrains.mps.makeTest/")) continue;
-      if (isUnder(cp, "/testbench/modules/testRefactoring/languages/testRefactoring/")) continue;
-      if (isUnder(cp, "/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/")) continue;
-
-      // these are files to be compiled with GWT compiler, they shouldn't be included in java projects
-      if (isUnder(cp, "/languages/baseLanguage/collections/runtime/source_gen.gwt/collections/gwt/jetbrains/mps/internal/collections/runtime/"))
-        continue;
 
       // move to sample's mps project or delete
       if (isUnder(cp, "/samples/agreement/frameworktest/test/")) continue;
 
-      // this is a test for build labguage. Needs to be somehow distinguishable as test
+      // this is a test for build language. Needs to be somehow distinguishable as test
       if (isUnder(cp, "/plugins/mps-build/languages/solutions/jetbrains.mps.build.sandbox/samples/")) continue;
 
       // Models in the plugin project are generated into an excluded source_gen folder
