@@ -197,6 +197,11 @@ public class EditorCell_STHint extends EditorCell_Constant {
     return mySide == Side.RIGHT;
   }
 
+  @NotNull
+  public Side getSide() {
+    return mySide;
+  }
+
   public EditorCell uninstall() {
     assert myInstalled;
     if (myAnchorCell == myBigCell) {
