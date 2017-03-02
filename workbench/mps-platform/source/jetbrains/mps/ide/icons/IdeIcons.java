@@ -36,7 +36,7 @@ public class IdeIcons {
   public static final Icon UNKNOWN_ICON = Nodes.Unknown;
 
   public static final Icon DEFAULT_ICON = ToolWindows.Default;
-  public static final Icon DEFAULT_CONCEPT_ICON = Nodes.RootNode;
+  public static final Icon DEFAULT_CONCEPT_ICON = Nodes.Node;
   public static final Icon DEFAULT_ROOT_ICON = Nodes.RootNode;
   public static final Icon DEFAULT_NODE_ICON = Nodes.Node;
 
