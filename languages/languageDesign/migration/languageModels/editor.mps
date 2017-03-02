@@ -1060,7 +1060,7 @@
           <node concept="3clFbS" id="72nsGSZ8JhY" role="2VODD2">
             <node concept="3clFbF" id="72nsGSZ8Jq$" role="3cqZAp">
               <node concept="Xl_RD" id="72nsGSZ8Jqz" role="3clFbG">
-                <property role="Xl_RC" value="&lt;non-exact&gt;" />
+                <property role="Xl_RC" value="Change to exact instances" />
               </node>
             </node>
           </node>

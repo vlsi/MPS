@@ -62,7 +62,7 @@ public class NonExactInstances extends TransformationMenuBase {
       @Nullable
       @Override
       public String getLabelText(String pattern) {
-        return "<non-exact>";
+        return "Change to exact instances";
       }
 
       @Override
