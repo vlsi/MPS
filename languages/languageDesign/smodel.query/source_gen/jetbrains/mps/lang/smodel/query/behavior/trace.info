@@ -79,6 +79,9 @@
     <file name="ProjectScope_old_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.ProjectScope_old_BehaviorDescriptor" />
     </file>
+    <file name="QueryExpressionScopeProvider_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryExpressionScopeProvider_BehaviorDescriptor" />
+    </file>
     <file name="QueryExpression_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryExpression_BehaviorDescriptor" />
     </file>

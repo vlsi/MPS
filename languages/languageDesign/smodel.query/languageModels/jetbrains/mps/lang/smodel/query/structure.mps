@@ -264,6 +264,12 @@
     <property role="34LRSv" value="with" />
     <property role="EcuMT" value="4234138103881610891" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
+    <node concept="PrWs8" id="s5v6K2qfnF" role="PzmwI">
+      <ref role="PrY4T" to="tpee:htgVS9_" resolve="IStatementListContainer" />
+    </node>
+    <node concept="PrWs8" id="s5v6K2pSKb" role="PzmwI">
+      <ref role="PrY4T" node="s5v6K2pSK7" resolve="QueryExpressionScopeProvider" />
+    </node>
     <node concept="1TJgyj" id="3F2FyKbNNqc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="stmts" />
@@ -445,6 +451,10 @@
     <property role="EcuMT" value="677787792397344112" />
     <property role="34LRSv" value="exact" />
     <ref role="1TJDcQ" node="3J6h25Q2URP" resolve="QueryParameter" />
+  </node>
+  <node concept="PlHQZ" id="s5v6K2pSK7">
+    <property role="EcuMT" value="505947336487701511" />
+    <property role="TrG5h" value="QueryExpressionScopeProvider" />
   </node>
 </model>
 

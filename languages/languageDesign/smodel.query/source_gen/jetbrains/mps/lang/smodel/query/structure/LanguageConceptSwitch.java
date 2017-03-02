@@ -31,16 +31,17 @@ public final class LanguageConceptSwitch {
   public static final int ProjectExpression_old = 19;
   public static final int ProjectScope_old = 20;
   public static final int QueryExpression = 21;
-  public static final int QueryParameter = 22;
-  public static final int QueryParameterExact = 23;
-  public static final int QueryParameterIncludeReadOnly = 24;
-  public static final int QueryParameterList = 25;
-  public static final int QueryParameterScope = 26;
-  public static final int ReferencesExpression = 27;
-  public static final int ScopeParameter = 28;
-  public static final int ShowExpression_old = 29;
-  public static final int UsagesExpression = 30;
-  public static final int WithStatement = 31;
+  public static final int QueryExpressionScopeProvider = 22;
+  public static final int QueryParameter = 23;
+  public static final int QueryParameterExact = 24;
+  public static final int QueryParameterIncludeReadOnly = 25;
+  public static final int QueryParameterList = 26;
+  public static final int QueryParameterScope = 27;
+  public static final int ReferencesExpression = 28;
+  public static final int ScopeParameter = 29;
+  public static final int ShowExpression_old = 30;
+  public static final int UsagesExpression = 31;
+  public static final int WithStatement = 32;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL);
@@ -66,6 +67,7 @@ public final class LanguageConceptSwitch {
     builder.put(0xa721a59126bb908L, ProjectExpression_old);
     builder.put(0x3bc64421763adda2L, ProjectScope_old);
     builder.put(0x3bc64421760bacfdL, QueryExpression);
+    builder.put(0x7057c6c02678c07L, QueryExpressionScopeProvider);
     builder.put(0x3bc64421760badf5L, QueryParameter);
     builder.put(0x967fc67f6f09d70L, QueryParameterExact);
     builder.put(0x3bc644217618ec86L, QueryParameterIncludeReadOnly);

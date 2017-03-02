@@ -275,6 +275,9 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.query.behavior.QueryExpressionScopeProvider_BehaviorDescriptor" file="QueryExpressionScopeProvider_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.query.behavior.QueryExpression_BehaviorDescriptor" file="QueryExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />

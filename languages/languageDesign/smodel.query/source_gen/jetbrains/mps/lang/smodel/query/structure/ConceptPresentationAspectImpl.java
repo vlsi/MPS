@@ -31,6 +31,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ProjectExpression_old = new ConceptPresentationBuilder().deprecated(true).shortDesc("the current project").create();
   private final ConceptPresentation props_ProjectScope_old = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_QueryExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_QueryExpressionScopeProvider = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameterExact = new ConceptPresentationBuilder().shortDesc("exact instances").create();
   private final ConceptPresentation props_QueryParameterIncludeReadOnly = new ConceptPresentationBuilder().shortDesc("include read only").create();
@@ -91,6 +92,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ProjectScope_old;
       case LanguageConceptSwitch.QueryExpression:
         return props_QueryExpression;
+      case LanguageConceptSwitch.QueryExpressionScopeProvider:
+        return props_QueryExpressionScopeProvider;
       case LanguageConceptSwitch.QueryParameter:
         return props_QueryParameter;
       case LanguageConceptSwitch.QueryParameterExact:
