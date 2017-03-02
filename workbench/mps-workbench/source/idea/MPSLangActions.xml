@@ -143,8 +143,8 @@
 
     <group id="GoToCodeGroup">
       <separator/>
-      <!--
       <action id="SelectIn" class="com.intellij.ide.actions.SelectInAction"/>
+      <!--
       <action id="ShowNavBar" class="com.intellij.ide.navigationToolbar.ShowNavBarAction"/>
       <action id="GotoDeclaration" class="com.intellij.codeInsight.navigation.actions.GotoDeclarationAction"/>
       -->

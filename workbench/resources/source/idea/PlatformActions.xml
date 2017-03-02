@@ -372,9 +372,6 @@
           <action id="RecentChangedFiles" class="com.intellij.ide.actions.ShowRecentlyEditedFilesAction"/>
         </group>
         <separator/>
-        <!-- MPS Patch Start-->
-        <action id="SelectIn" class="com.intellij.ide.actions.SelectInAction"/>
-        <!-- MPS Patch End-->
         <group id="CompareActions">
           <group id="PairFileActions">
             <!--
