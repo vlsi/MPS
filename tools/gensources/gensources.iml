@@ -139,6 +139,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/scopes/runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/scopes/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/script/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/script/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/slanguage/generator/source_gen" isTestSource="false" />
@@ -716,6 +717,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang6/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang7/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang7/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/solutions/test_models/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/heating/jetbrains.mps.samples.heating.tabular/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/heating/jetbrains.mps.samples.heating/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/heating/jetbrains.mps.samples.heating/source_gen" isTestSource="false" />
