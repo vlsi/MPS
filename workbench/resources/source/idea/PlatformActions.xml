@@ -372,9 +372,6 @@
           <action id="RecentChangedFiles" class="com.intellij.ide.actions.ShowRecentlyEditedFilesAction"/>
         </group>
         <separator/>
-        <!-- MPS Patch Start-->
-        <action id="SelectIn" class="com.intellij.ide.actions.SelectInAction"/>
-        <!-- MPS Patch End-->
         <group id="CompareActions">
           <group id="PairFileActions">
             <!--
@@ -751,7 +748,7 @@
         <action id="DropAnError" internal="true" class="com.intellij.diagnostic.DropAnErrorAction"/>
         <action id="DropAnErrorWithAttachments" internal="true" class="com.intellij.diagnostic.DropAnErrorWithAttachmentsAction"/>
         <action id="DropAnOutOfMemoryError" internal="true" class="com.intellij.diagnostic.DropAnOutOfMemoryErrorAction"/>
-        <action id="DropAnOutOfPermGenMemoryError" internal="true" class="com.intellij.diagnostic.DropAnOutOfPermGenMemoryErrorAction"/>
+        <action id="DropAnOutOfMetaspaceErrorAction" internal="true" class="com.intellij.diagnostic.DropAnOutOfMetaspaceErrorAction"/>
       </group>
       <separator/>
       <action internal="true" id="ReloadProjectAction" class="com.intellij.internal.ReloadProjectAction"/>

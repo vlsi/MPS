@@ -48,6 +48,12 @@ public class ModelActions {
   // child substitute
   //-------------------
 
+
+  /**
+   *
+   * @deprecated use {@link #createChildNodeSubstituteActions(SNode, SNode, SContainmentLink, SAbstractConcept, IChildNodeSetter, EditorContext)}
+   */
+  @Deprecated
   public static List<SubstituteAction> createChildNodeSubstituteActions(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter,
                                                                         IOperationContext context) {
     return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);

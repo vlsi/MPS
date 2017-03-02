@@ -16,7 +16,6 @@
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="ot6o" ref="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)" />
-    <import index="tpch" ref="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -151,7 +150,6 @@
       <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
-      <concept id="1223386653097" name="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" flags="ln" index="3nxI2P" />
       <concept id="1165420413719" name="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" flags="ng" index="1ou48o">
         <child id="1165420413721" name="handlerFunction" index="1ou48m" />
         <child id="1165420413720" name="parametersFunction" index="1ou48n" />
@@ -2560,26 +2558,6 @@
             <ref role="1NtTu8" to="kdzh:5VYK1npKdVC" resolve="iconToolWindow" />
           </node>
         </node>
-        <node concept="3F0ifn" id="57dcfYP$0Pw" role="3EZMnx">
-          <property role="3F0ifm" value="@Deprecated (for remove in 3.4)" />
-          <ref role="1k5W1q" to="tpch:hOawUFH" resolve="AnnotationNode" />
-          <node concept="ljvvj" id="57dcfYP$0TF" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-        </node>
-        <node concept="3F0ifn" id="7273ZJHz1wd" role="3EZMnx">
-          <property role="3F0ifm" value="dialog image" />
-          <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
-          <node concept="3nxI2P" id="57dcfYP$0TC" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-        </node>
-        <node concept="3F1sOY" id="7273ZJHz1wb" role="3EZMnx">
-          <ref role="1NtTu8" to="kdzh:7273ZJHyYNO" resolve="dialogImage" />
-          <node concept="ljvvj" id="7273ZJHz1wc" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-        </node>
         <node concept="3F0ifn" id="57dcfYPyy4A" role="3EZMnx">
           <property role="3F0ifm" value="names" />
           <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
@@ -2631,6 +2609,17 @@
         <node concept="3F1sOY" id="ES2LjlWK6B" role="3EZMnx">
           <ref role="1NtTu8" to="kdzh:ES2LjlW$nI" resolve="welcomeLogo" />
           <node concept="ljvvj" id="4UhlNcGZiBV" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="5iAd_W83DSu" role="3EZMnx">
+          <property role="3F0ifm" value="editor background-url" />
+          <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+        </node>
+        <node concept="3F1sOY" id="5iAd_W83E1M" role="3EZMnx">
+          <property role="1$x2rV" value="default background" />
+          <ref role="1NtTu8" to="kdzh:5iAd_W83DPD" resolve="editorBGUrl" />
+          <node concept="ljvvj" id="5iAd_W83E1N" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
         </node>

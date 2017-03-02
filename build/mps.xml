@@ -59,17 +59,17 @@
         <version codename="MPS" major="2017" minor="1" eap="true" update-channel="MPS35" />
         <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE" />
         <build number="${build.number}" date="${date}" />
-        <logo url="/splash.png" textcolor="c2c2c2" progressColor="F97A12" progressX="117" progressY="280" progressHeight="3" />
+        <logo url="/splash.png" textcolor="000000" progressColor="0E9EF0" progressX="117" progressY="280" progressHeight="3" />
         <about url="/mpsAbout.png" />
         <icon size32="/MPS_32.png" size16="/MPS_16.png" size128="/MPS_128.png" ico="/MPS.ico" />
-        <dialogs-image url="/dialogImage.png" />
         <package code="code" />
         <names product="MPS" fullname="JetBrains MPS" />
         
         <welcome-screen logo-url="/MPS_welcomeScreen.png" />
         
+        
         <plugins url="http://plugins.jetbrains.com/" />
-        <update-urls check="http://www.jetbrains.com/mps/update.xml" update="http://www.jetbrains.com/mps/download/" />
+        <update-urls check="http://www.jetbrains.com/mps/update.xml" patches="http://www.jetbrains.com/mps/download/" />
         
         <help file="mpshelp.jar" root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/" />
         <documentation url="https://www.jetbrains.com/mps/documentation" />
@@ -90,7 +90,6 @@
       <fileset file="${basedir}/workbench/mps-icons/source/MPS_welcomeScreen.png" />
       <fileset file="${basedir}/workbench/mps-icons/source/splash.png" />
       <fileset file="${basedir}/workbench/mps-icons/source/mpsAbout.png" />
-      <fileset file="${basedir}/workbench/mps-icons/source/dialogImage.png" />
       <fileset dir="${build.tmp}/default/branding.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/MPS-src.zip" />

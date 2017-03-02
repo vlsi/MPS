@@ -18,7 +18,6 @@ package jetbrains.mps.lang.editor.cellProviders;
 import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -92,7 +91,6 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     EditorCell_Constant emptyCell = new EditorCell_Constant(getEditorContext(), getNode(), null);
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
-    emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getNode(), null, getLinkDeclaration(), getEditorContext()));
     emptyCell.setRole(getElementRole());
     emptyCell.setCellId("empty_" + getElementRole());
     return emptyCell;

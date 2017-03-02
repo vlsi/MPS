@@ -1,21 +1,28 @@
-<component>
+<component xmlns="http://jetbrains.org/intellij/schema/application-info"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://jetbrains.org/intellij/schema/application-info http://jetbrains.org/intellij/schema/ApplicationInfo.xsd">
   <version codename="MPS" major="2017" minor="1" eap="true" update-channel="MPS35"/>
   <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
   <!--<install-over minbuild="" maxbuild="" version=""/>-->
-  <logo url="/splash.png" textcolor="c2c2c2" progressColor="F97A12" progressX="117" progressY="280" progressHeight="3"/>
+  <logo url="/splash.png" textcolor="000000" progressColor="0E9EF0" progressX="117" progressY="280" progressHeight="3"/>
   <about url="/mpsAbout.png"/><!-- foreground="7A858F" copyrightForeground="7A858F" linkColor="9b5121" logoX="300" logoY="265" logoW="75" logoH="30"-->
   <icon size32="/MPS_32.png" size16="/MPS_16.png" size128="/MPS_128.png" ico="MPS.ico"/>
-  <dialogs-image url="/dialogImage.png"/><!--TODO: remove in 3.4-->
   <package code="__PACKAGE_CODE__"/>
   <names product="MPS" fullname="JetBrains MPS"/>
 
   <welcome-screen logo-url="/MPS_welcomeScreen.png"/>
-  <!--<editor background-url="/idea_logo_welcome.png"/>-->
+  <!--
+  <customize-ide-wizard provider="com.intellij.ide.customize.CustomizeIdeaWizardStepsProvider"/>
+  -->
+
+  <!--
+  <editor background-url="/idea_logo_welcome.png"/>
+  -->
 
   <plugins url="http://plugins.jetbrains.com/"/>
   <update-urls check="http://www.jetbrains.com/mps/update.xml"
-               download="http://www.jetbrains.com/mps/download/"/>
+               patches="http://www.jetbrains.com/mps/download/"/>
 
   <help file="mpshelp.jar" root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/"/>
   <documentation url="https://www.jetbrains.com/mps/documentation"/>

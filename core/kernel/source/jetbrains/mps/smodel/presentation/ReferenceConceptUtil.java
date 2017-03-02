@@ -118,19 +118,19 @@ public class ReferenceConceptUtil {
           return link;
         }
       }
+      return null;
     } else {
       // if concept declares exactly ONE REQUIRED reference link...
       Iterator<SReferenceLink> iterator = links.iterator();
-      if (iterator.hasNext()) {
-        SReferenceLink result = iterator.next();
-        if (iterator.hasNext()) {
-          return null;
-        } else {
-          return result;
-        }
+      if (!iterator.hasNext()) {
+        return null;
       }
+      SReferenceLink result = iterator.next();
+      if (iterator.hasNext()) {
+        return null;
+      }
+      return result.isOptional() ? null : result;
     }
-    return null;
   }
 
   @Deprecated
@@ -146,7 +146,7 @@ public class ReferenceConceptUtil {
     return !conceptAlias.isEmpty() && SMART_ALIAS.matcher(conceptAlias).matches();
   }
 
-@Deprecated
+  @Deprecated
   public static String getPresentationFromSmartAlias(SNode concept, String referentPresentation) {
     String conceptAlias = SNodeUtil.getConceptAlias(concept);
     // handle pattern 'xxx <{_referent_role_}> yyy'
@@ -170,7 +170,9 @@ public class ReferenceConceptUtil {
   public static String getPresentation(SNode node) {
     SNode nodeConcept = new SNodeLegacy(node).getConceptDeclarationNode();
     SNode characteristicReference = getCharacteristicReference(nodeConcept);
-    if (characteristicReference == null) return null;
+    if (characteristicReference == null) {
+      return null;
+    }
     String genuineRole = SModelUtil.getGenuineLinkRole(characteristicReference);
     SReference reference = node.getReference(genuineRole);
     if (reference instanceof DynamicReference) {

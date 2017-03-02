@@ -43,7 +43,7 @@ import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 
 /**
  * 
- * @deprecated this class purpose is to find and collect actions from actions aspect. From version 2017.1 actions are attached to the editor cell via transformation menu in editor aspect. Use {@link jetbrains.mps.smodel.action.ModelActions#createSideTransformSubstituteActions(EditorCell, SideTransformSubstituteInfo.Side) }
+ * @deprecated this class purpose is to find and collect side-transform actions from te actions aspect. From version 2017.1 actions are attached to the editor cell via transformation menu inthe  editor aspect. Use {@link jetbrains.mps.smodel.action.ModelActions#createSideTransformSubstituteActions(EditorCell, SideTransformSubstituteInfo.Side) }
  */
 @Deprecated
 public class SideTransformUtil {

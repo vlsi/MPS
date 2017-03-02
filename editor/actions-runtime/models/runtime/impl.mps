@@ -1690,6 +1690,32 @@
         </node>
       </node>
     </node>
+    <node concept="3UR2Jj" id="38mK48xuyJe" role="lGtFl">
+      <node concept="TZ5HI" id="38mK48xuyJf" role="3nqlJM">
+        <node concept="TZ5HA" id="38mK48xuyJg" role="3HnX3l">
+          <node concept="1dT_AC" id="38mK48xuBSy" role="1dT_Ay">
+            <property role="1dT_AB" value="this class purpose is to find and collect substitute actions from the actions aspect. From version 2017.1 substitute actions are defined via substitute menu in the editor aspect. Use " />
+          </node>
+          <node concept="1dT_AC" id="38mK48xu_BX" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="1dT_AA" id="38mK48xuE99" role="1dT_Ay">
+            <node concept="92FcH" id="38mK48xuE9g" role="qph3F">
+              <node concept="TZ5HA" id="38mK48xuE9i" role="2XjZqd" />
+              <node concept="VXe0Z" id="38mK48xuTyw" role="92FcQ">
+                <ref role="VXe0S" to="zce0:~ModelActions.createChildNodeSubstituteActions(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.language.SAbstractConcept,jetbrains.mps.smodel.action.IChildNodeSetter,jetbrains.mps.openapi.editor.EditorContext):java.util.List" resolve="createChildNodeSubstituteActions" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="38mK48xuE98" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="38mK48xuyJh" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
   </node>
   <node concept="312cEu" id="wcCOXqJGkg">
     <property role="TrG5h" value="SideTransformUtil" />
@@ -2737,7 +2763,7 @@
       <node concept="TZ5HI" id="4TjafF_tiq7" role="3nqlJM">
         <node concept="TZ5HA" id="4TjafF_tiq8" role="3HnX3l">
           <node concept="1dT_AC" id="4TjafF_tj1c" role="1dT_Ay">
-            <property role="1dT_AB" value="this class purpose is to find and collect actions from actions aspect. From version 2017.1 actions are attached to the editor cell via transformation menu in editor aspect. Use " />
+            <property role="1dT_AB" value="this class purpose is to find and collect side-transform actions from te actions aspect. From version 2017.1 actions are attached to the editor cell via transformation menu inthe  editor aspect. Use " />
           </node>
           <node concept="1dT_AA" id="4TjafF_tthW" role="1dT_Ay">
             <node concept="92FcH" id="4TjafF_tti2" role="qph3F">

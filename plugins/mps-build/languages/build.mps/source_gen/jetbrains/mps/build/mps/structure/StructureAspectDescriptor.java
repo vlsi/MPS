@@ -354,10 +354,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("icon128", 0xad72aee24a9cbfeL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(true).ordered(true).multiple(false).origin("781140262677761022").done();
     b.aggregate("icon", 0x5efec015d9b7cdc4L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(true).ordered(true).multiple(false).origin("6845119683729280452").done();
     b.aggregate("iconToolWindow", 0x5efec015d9c0dee8L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(true).ordered(true).multiple(false).origin("6845119683729874664").done();
-    b.aggregate("dialogImage", 0x70870ffbed8becf4L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(false).ordered(true).multiple(false).origin("8108467228800445684").done();
     b.aggregate("shortName", 0x54c4eb89feb230afL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("6108265972537372847").done();
     b.aggregate("fullName", 0x54c4eb89feb230b0L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(false).ordered(true).multiple(false).origin("6108265972537372848").done();
     b.aggregate("welcomeLogo", 0xab80b14d5f245eeL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(false).ordered(true).multiple(false).origin("772379520210716142").done();
+    b.aggregate("editorBGUrl", 0x54a6365f080e9d69L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(true).ordered(true).multiple(false).origin("6099622527104884073").done();
     b.aggregate("plugins", 0xad72aee24a9cf29L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(true).ordered(true).multiple(false).origin("781140262677761833").done();
     b.aggregate("updateWebsite", 0x54c4eb89feb19dcdL).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083d2d07L).optional(true).ordered(true).multiple(false).origin("6108265972537335245").done();
     b.aggregate("help", 0x611c17467fa8199L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083d2d08L).optional(true).ordered(true).multiple(false).origin("437343344536486297").done();

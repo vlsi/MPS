@@ -123,7 +123,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteInfo" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.DefaultChildNodeSetter" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.DefaultSChildSetter" />
     <classNode dependClassName="jetbrains.mps.smodel.action.ModelActions" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />

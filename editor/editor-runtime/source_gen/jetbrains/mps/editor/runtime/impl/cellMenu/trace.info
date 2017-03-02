@@ -12,78 +12,66 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)/3368017140643570595">
     <file name="DefaultReferenceSubstituteInfoActionsFactory.java">
-      <node id="3368017140643570598" at="32,0,33,0" concept="11" trace="LOG" />
-      <node id="3368017140643570605" at="33,0,34,0" concept="3" trace="mySourceNode" />
-      <node id="3368017140643570608" at="34,0,35,0" concept="3" trace="myLinkDeclaration" />
-      <node id="3368017140643570611" at="35,0,36,0" concept="3" trace="myCurrentReferent" />
-      <node id="2479108860611089565" at="36,0,37,0" concept="3" trace="mySubstituteInfo" />
-      <node id="1503962097793478114" at="37,143,38,30" concept="2" />
-      <node id="3368017140643690481" at="38,30,39,40" concept="2" />
-      <node id="3368017140643690488" at="39,40,40,284" concept="7" />
-      <node id="3368017140643690424" at="41,41,42,13" concept="8" />
-      <node id="2190776171358671436" at="44,208,45,121" concept="2" />
-      <node id="1503962097793478103" at="47,275,48,124" concept="2" />
-      <node id="1503962097793478127" at="49,5,50,115" concept="2" />
-      <node id="2479108860611100296" at="50,115,51,38" concept="2" />
-      <node id="2479108860610978831" at="54,36,55,37" concept="8" />
-      <node id="2479108860610978833" at="56,5,57,104" concept="7" />
-      <node id="2479108860610978839" at="57,104,58,324" concept="7" />
-      <node id="2479108860611100008" at="58,324,59,0" concept="10" />
-      <node id="2479108860611060386" at="60,392,61,61" concept="7" />
-      <node id="2479108860611060452" at="61,61,62,90" concept="7" />
-      <node id="2479108860611089129" at="62,90,63,123" concept="7" />
-      <node id="2479108860610978904" at="63,123,64,315" concept="8" />
-      <node id="2479108860610978917" at="65,5,66,148" concept="8" />
-      <node id="2479108860611060455" at="69,36,70,41" concept="8" />
-      <node id="2479108860611060455" at="71,5,72,16" concept="8" />
-      <node id="3368017140643690419" at="40,284,43,5" concept="5" />
-      <node id="3368017140643690425" at="43,5,46,5" concept="5" />
-      <node id="659731673107302986" at="46,5,49,5" concept="5" />
-      <node id="2479108860610978826" at="53,49,56,5" concept="5" />
-      <node id="2479108860611060455" at="68,82,71,5" concept="5" />
-      <node id="2479108860610978848" at="59,0,65,5" concept="5" />
-      <node id="2479108860611060455" at="68,0,74,0" concept="12" trace="check_n4bs7j_a0b0e0g#(Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Ljava/lang/String;" />
-      <node id="1503962097793510727" at="53,0,68,0" concept="6" trace="createActions#()Ljava/util/List;" />
-      <node id="3368017140643570614" at="37,0,53,0" concept="1" trace="DefaultReferenceSubstituteInfoActionsFactory#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cellMenu/DefaultReferenceSubstituteInfo;)V" />
-      <scope id="3368017140643690423" at="41,41,42,13" />
-      <scope id="3368017140643690431" at="44,208,45,121" />
-      <scope id="659731673107302987" at="47,275,48,124" />
-      <scope id="2479108860610978830" at="54,36,55,37" />
-      <scope id="2479108860611060455" at="69,36,70,41" />
-      <scope id="2479108860610978881" at="60,392,64,315">
+      <node id="3368017140643570598" at="31,0,32,0" concept="11" trace="LOG" />
+      <node id="3368017140643570605" at="32,0,33,0" concept="3" trace="mySourceNode" />
+      <node id="3368017140643570608" at="33,0,34,0" concept="3" trace="myLinkDeclaration" />
+      <node id="3368017140643570611" at="34,0,35,0" concept="3" trace="myCurrentReferent" />
+      <node id="2479108860611089565" at="35,0,36,0" concept="3" trace="mySubstituteInfo" />
+      <node id="1503962097793478114" at="36,143,37,30" concept="2" />
+      <node id="3368017140643690481" at="37,30,38,40" concept="2" />
+      <node id="3368017140643690488" at="38,40,39,284" concept="7" />
+      <node id="3368017140643690424" at="40,41,41,13" concept="8" />
+      <node id="2190776171358671436" at="43,208,44,121" concept="2" />
+      <node id="1503962097793478103" at="46,275,47,124" concept="2" />
+      <node id="1503962097793478127" at="48,5,49,115" concept="2" />
+      <node id="2479108860611100296" at="49,115,50,38" concept="2" />
+      <node id="2479108860610978831" at="53,36,54,37" concept="8" />
+      <node id="2479108860610978833" at="55,5,56,104" concept="7" />
+      <node id="2479108860610978839" at="56,104,57,324" concept="7" />
+      <node id="2479108860611100008" at="57,324,58,0" concept="10" />
+      <node id="2479108860611060386" at="59,392,60,61" concept="7" />
+      <node id="2479108860611060452" at="60,61,61,64" concept="7" />
+      <node id="2479108860610978904" at="61,64,62,161" concept="8" />
+      <node id="2479108860610978917" at="63,5,64,148" concept="8" />
+      <node id="3368017140643690419" at="39,284,42,5" concept="5" />
+      <node id="3368017140643690425" at="42,5,45,5" concept="5" />
+      <node id="659731673107302986" at="45,5,48,5" concept="5" />
+      <node id="2479108860610978826" at="52,49,55,5" concept="5" />
+      <node id="2479108860610978848" at="58,0,63,5" concept="5" />
+      <node id="1503962097793510727" at="52,0,66,0" concept="6" trace="createActions#()Ljava/util/List;" />
+      <node id="3368017140643570614" at="36,0,52,0" concept="1" trace="DefaultReferenceSubstituteInfoActionsFactory#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cellMenu/DefaultReferenceSubstituteInfo;)V" />
+      <scope id="3368017140643690423" at="40,41,41,13" />
+      <scope id="3368017140643690431" at="43,208,44,121" />
+      <scope id="659731673107302987" at="46,275,47,124" />
+      <scope id="2479108860610978830" at="53,36,54,37" />
+      <scope id="2479108860610978881" at="59,392,62,161">
+        <var name="link" id="2479108860611060453" />
         <var name="parent" id="2479108860611060387" />
-        <var name="role" id="2479108860611060453" />
-        <var name="roleLink" id="2479108860611089130" />
       </scope>
-      <scope id="2479108860611060455" at="68,82,72,16" />
-      <scope id="2479108860611060455" at="68,0,74,0">
-        <var name="checkedDotOperand" id="2479108860611060455" />
-      </scope>
-      <scope id="1503962097793510731" at="53,49,66,148">
+      <scope id="1503962097793510731" at="52,49,64,148">
         <var name="editor" id="2479108860610978834" />
         <var name="referenceCell" id="2479108860610978840" />
       </scope>
-      <scope id="3368017140643570623" at="37,143,51,38">
+      <scope id="3368017140643570623" at="36,143,50,38">
         <var name="genuineLinkDeclaration" id="3368017140643690489" />
       </scope>
-      <scope id="1503962097793510727" at="53,0,68,0" />
-      <scope id="3368017140643570614" at="37,0,53,0">
+      <scope id="1503962097793510727" at="52,0,66,0" />
+      <scope id="3368017140643570614" at="36,0,52,0">
         <var name="linkDeclaration" id="3368017140643570619" />
         <var name="sourceNode" id="3368017140643570617" />
         <var name="substituteInfo" id="2479108860611089562" />
       </scope>
-      <unit id="3368017140643570595" at="31,0,75,0" name="jetbrains.mps.editor.runtime.impl.cellMenu.DefaultReferenceSubstituteInfoActionsFactory" />
+      <unit id="3368017140643570595" at="30,0,67,0" name="jetbrains.mps.editor.runtime.impl.cellMenu.DefaultReferenceSubstituteInfoActionsFactory" />
     </file>
   </root>
   <root nodeRef="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)/4391314372875337327">
     <file name="EnumPropertySubstituteInfo.java">
       <node id="4391314372875405367" at="28,0,29,0" concept="3" trace="myNode" />
       <node id="4391314372875405371" at="29,0,30,0" concept="3" trace="myPropertyDeclaration" />
-      <node id="4391314372875405365" at="31,105,32,25" concept="13" />
+      <node id="4391314372875405365" at="31,105,32,25" concept="12" />
       <node id="4391314372875405376" at="32,25,33,18" concept="2" />
       <node id="4391314372875405383" at="33,18,34,48" concept="2" />
       <node id="4391314372875430617" at="37,52,38,203" concept="7" />
@@ -149,7 +137,7 @@
     <file name="EnumSPropertySubstituteInfo.java">
       <node id="7279038390441828525" at="21,0,22,0" concept="3" trace="myNode" />
       <node id="7279038390441828528" at="22,0,23,0" concept="3" trace="myProperty" />
-      <node id="7279038390441828541" at="23,110,24,25" concept="13" />
+      <node id="7279038390441828541" at="23,110,24,25" concept="12" />
       <node id="5675225388174907350" at="24,25,25,18" concept="2" />
       <node id="7279038390441828547" at="25,18,26,37" concept="2" />
       <node id="7279038390441940806" at="29,52,30,36" concept="9" />

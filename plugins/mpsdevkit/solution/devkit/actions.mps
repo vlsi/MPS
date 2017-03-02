@@ -138,7 +138,6 @@
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
       <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
-        <property id="2756621024541341363" name="file" index="1iqoE4" />
         <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
       </concept>
     </language>
@@ -14711,9 +14710,6 @@
     </node>
     <node concept="2xpOpl" id="7GRes9Q8ug5" role="uR5co">
       <node concept="3clFbS" id="7GRes9Q8ug6" role="2VODD2" />
-    </node>
-    <node concept="1QGGSu" id="7GRes9Q8uiq" role="1nVCmq">
-      <property role="1iqoE4" value="${mps_home}/workbench/mps-icons/source/nodes/node.png" />
     </node>
   </node>
 </model>
