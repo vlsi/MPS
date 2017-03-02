@@ -12,7 +12,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.icons.GlobalIconManager;
 
 public class NodeExplorer_Tool extends BaseTabbedProjectTool {
-  private static final Icon ICON = IconContainer.ICON_a0;
+  private static final Icon ICON = null;
   private Project myProject;
   public NodeExplorer_Tool(Project project) {
     super(project, "Node Explorer", null, ICON, ToolWindowAnchor.BOTTOM, true);
