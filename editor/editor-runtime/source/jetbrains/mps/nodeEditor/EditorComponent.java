@@ -1599,22 +1599,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public CellActionType getActionType(KeyEvent keyEvent, EditorContext editorContext) {
-    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && shiftDown(keyEvent)) {
+    if (keyPressed(keyEvent) && keyEvent.getKeyCode() == KeyEvent.VK_HOME && shiftDown(keyEvent)) {
       return CellActionType.SELECT_HOME;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_END && shiftDown(keyEvent)) {
+    if (keyPressed(keyEvent) && keyEvent.getKeyCode() == KeyEvent.VK_END && shiftDown(keyEvent)) {
       return CellActionType.SELECT_END;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN && noKeysDown(keyEvent)) {
+    if (keyPressed(keyEvent) && keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN && noKeysDown(keyEvent)) {
       return CellActionType.PAGE_DOWN;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP && noKeysDown(keyEvent)) {
+    if (keyPressed(keyEvent) && keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP && noKeysDown(keyEvent)) {
       return CellActionType.PAGE_UP;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && noKeysDown(keyEvent)) {
+    if (keyPressed(keyEvent) && keyEvent.getKeyCode() == KeyEvent.VK_TAB && noKeysDown(keyEvent)) {
       return CellActionType.NEXT;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && shiftDown(keyEvent)) {
+    if (keyPressed(keyEvent) && keyEvent.getKeyCode() == KeyEvent.VK_TAB && shiftDown(keyEvent)) {
       return CellActionType.PREV;
     }
     if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
@@ -1666,6 +1666,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private boolean keyTyped(KeyEvent keyEvent) {
     return keyEvent.getID() == KeyEvent.KEY_TYPED;
+  }
+
+  private boolean keyPressed(KeyEvent keyEvent) {
+    return keyEvent.getID() == KeyEvent.KEY_PRESSED;
   }
 
   private boolean ctrlDown(KeyEvent keyEvent) {
