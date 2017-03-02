@@ -28,6 +28,7 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -163,6 +164,9 @@
       <property role="IQ2ns" value="5299096511375896640" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
+    <node concept="PrWs8" id="2k7p7sTvRFb" role="PzmwI">
+      <ref role="PrY4T" node="2k7p7sTvKjz" resolve="SuperExpression" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hP3iPJx">
     <property role="R5$K7" value="false" />
@@ -249,6 +253,13 @@
       <property role="20kJfa" value="superConcept" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
+    <node concept="PrWs8" id="2k7p7sTvQSv" role="PzmwI">
+      <ref role="PrY4T" node="2k7p7sTvKjz" resolve="SuperExpression" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="2k7p7sTvKjz">
+    <property role="EcuMT" value="2668211767468819683" />
+    <property role="TrG5h" value="SuperExpression" />
   </node>
 </model>
 

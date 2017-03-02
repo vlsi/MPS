@@ -1314,6 +1314,7 @@
     <orderEntry type="module" module-name="execution-api" />
     <orderEntry type="module" module-name="refactoring" />
     <orderEntry type="module" module-name="mps-java-platform-base" />
+    <orderEntry type="module" module-name="execution-configurations-ant" />
+    <orderEntry type="module" module-name="execution-languages-library" />
   </component>
 </module>
-

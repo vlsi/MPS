@@ -35,7 +35,10 @@ import java.util.Set;
 public final class SMethodVirtualTable {
   private final Map<SMethod<?>, BHDescriptor> myTable = new HashMap<SMethod<?>, BHDescriptor>();
 
-  public SMethodVirtualTable(@NotNull BHDescriptor startingDescriptor, List<SMethod<?>> methods) {
+  SMethodVirtualTable() {
+  }
+
+  SMethodVirtualTable(@NotNull BHDescriptor startingDescriptor, List<SMethod<?>> methods) {
     for (SMethod<?> method : methods) {
       if (method.isVirtual() && !method.isAbstract()) {
         myTable.put(method, startingDescriptor);

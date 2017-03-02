@@ -63,7 +63,7 @@ public class BuildScript_Configuration_RunProfileState implements RunProfileStat
     final MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
     mpsProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNodeReference configuredNode = myRunConfiguration.getNode().getNode();
+        SNodeReference configuredNode = myRunConfiguration.getNodePointer().getNodeRef();
         SNode projectNode = SNodeOperations.cast((configuredNode == null ? null : configuredNode.resolve(mpsProject.getRepository())), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
         String scriptsPath = (projectNode != null ? BuildProject__BehaviorDescriptor.getScriptsPath_id4ahc858UcHk.invoke(projectNode, Context.defaultContext()) : null);
         if (scriptsPath != null) {
@@ -89,7 +89,7 @@ public class BuildScript_Configuration_RunProfileState implements RunProfileStat
       }
     });
     if (file.value == null) {
-      throw new ExecutionException("Can not find xml-file for script " + myRunConfiguration.getNode());
+      throw new ExecutionException("Can not find xml-file for script " + myRunConfiguration.getNodePointer());
     }
     {
       ProcessHandler _processHandler = new Ant_Command().setTargetName_String(mainTaskName.value).setAntLocation_String((myRunConfiguration.getSettings().getUseOtherAntLocation() ? myRunConfiguration.getSettings().getOtherAntLocation() : null)).setOptions_String(myRunConfiguration.getSettings().getAntOptions()).setMacroToDefine_ListString(undefinedMacro.value).createProcess(file.value.getPath());

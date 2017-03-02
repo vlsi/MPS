@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.behavior.behavior.SuperExpression__BehaviorDescriptor;
 import jetbrains.mps.lang.behavior.behavior.SuperNodeExpression__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -19,7 +20,7 @@ public class typeof_SuperNodeExpression_InferenceRule extends AbstractInferenceR
   public typeof_SuperNodeExpression_InferenceRule() {
   }
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode superConcept = SuperNodeExpression__BehaviorDescriptor.getSuperConcept_id6tsH5JaReJu.invoke(nodeToCheck);
+    SNode superConcept = SuperExpression__BehaviorDescriptor.getSuperConcept_id2k7p7sTvKkn.invoke(nodeToCheck);
     if ((boolean) SuperNodeExpression__BehaviorDescriptor.isEnclosingMethodStatic_id4xnLoJyFYX5.invoke(nodeToCheck)) {
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;

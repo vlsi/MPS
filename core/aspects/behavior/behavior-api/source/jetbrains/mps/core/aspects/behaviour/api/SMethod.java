@@ -49,23 +49,43 @@ public interface SMethod<T> extends SExecutable {
 
   /**
    * invokes the method (trying to resolve the right method on runtime if it is virtual)
+   * essentially invokes the #invoke0 method with the concept of the operand
    */
-  T invoke(@Nullable SNode node, Object... parameters);
+  T invoke(@Nullable SNode operand, Object... parameters);
 
   /**
    * invokes the method in the case it is static (trying to resolve the right method on runtime if it is virtual)
    */
-  T invoke(@Nullable SAbstractConcept concept, Object... parameters);
+  T invoke(@Nullable SAbstractConcept operand, Object... parameters);
 
   /**
-   * invokes private or super method (no dynamic method resolve)
+   * invokes the virtual method as if applied to the node of the concreteConcept
    */
-  T invokeSpecial(@Nullable SNode node, Object... parameters);
+  T invoke0(@Nullable SNode operand, @NotNull SAbstractConcept concreteConcept, Object... parameters);
+
+  T invoke0(@Nullable SAbstractConcept operand, @NotNull SAbstractConcept concreteConcept, Object... parameters);
 
   /**
-   * invokes private or super method (no dynamic method resolve)
+   * invokes private method (no dynamic method resolve)
    */
-  T invokeSpecial(@Nullable SAbstractConcept concept, Object... parameters);
+  T invokeSpecial(@Nullable SNode operand, Object... parameters);
+
+  /**
+   * invokes private method (no dynamic method resolve)
+   */
+  T invokeSpecial(@Nullable SAbstractConcept operand, Object... parameters);
+
+  /**
+   * invokes virtual method looking for the ancestors of the node's concept (dynamic method resolve)
+   * @param concreteConcept is the concept from which the #invokeSuper is intended to be executed
+   */
+  T invokeSuper(@Nullable SNode operand, @NotNull SAbstractConcept concreteConcept, Object... parameters);
+
+  /**
+   * invokes virtual method looking for the ancestors of the concept (dynamic method resolve)
+   * @param concreteConcept is the concept from which the #invokeSuper is intended to be executed
+   */
+  T invokeSuper(@Nullable SAbstractConcept operand, @NotNull SAbstractConcept concreteConcept, Object... parameters);
 
   /**
    * @return true iff the method has a virtual modifier
@@ -84,11 +104,4 @@ public interface SMethod<T> extends SExecutable {
    * @see #getModifiers()
    */
   boolean isStatic();
-
-  /**
-   * @param another -- an instance of SMethod
-   * @return true iff this SMethod does override another SMethod.
-   * (That includes that the concept of this SMethod is a subconcept of the another method's concept)
-   */
-  boolean isOverrideOf(@NotNull SMethod another);
 }

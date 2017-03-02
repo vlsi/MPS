@@ -34,6 +34,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * API for the generated behavior code.
  * The API is null-safe
  */
+@SuppressWarnings("ALL")
 public final class BHReflection {
   @NotNull
   public static SNode newNode(@Nullable SModel model, @NotNull SConstructor constructor, Object... parameters) {
@@ -49,21 +50,22 @@ public final class BHReflection {
     }
   }
 
-  public static Object invoke(@Nullable SNode node, @NotNull SMethodId methodId, Object... parameters) {
-    if (node == null) {
+  public static Object invoke(@Nullable SNode operand, @NotNull SMethodId methodId, Object... parameters) {
+    if (operand == null) {
       return null;
     }
-    SConcept concept = node.getConcept();
-    BHDescriptor bhDescriptor = getBHDescriptor(concept);
-    SMethod<?> method = bhDescriptor.getMethod(methodId);
-    if (method == null) {
-      throw new BHNoSuchMethodException(methodId, bhDescriptor);
-    }
-    return method.invoke(node, parameters);
+    return invoke0(operand, operand.getConcept(), methodId, parameters);
   }
 
-  public static Object invoke(@Nullable SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
-    if (concept == null) {
+  public static Object invoke(@Nullable SAbstractConcept operand, @NotNull SMethodId methodId, Object... parameters) {
+    if (operand == null) {
+      return null;
+    }
+    return invoke0(operand, operand, methodId, parameters);
+  }
+
+  public static Object invoke0(@Nullable SNode operand, @NotNull SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
+    if (operand == null) {
       return null;
     }
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
@@ -71,14 +73,26 @@ public final class BHReflection {
     if (method == null) {
       throw new BHNoSuchMethodException(methodId, bhDescriptor);
     }
-    return method.invoke(concept, parameters);
+    return bhDescriptor.invoke(operand, method, parameters);
+  }
+
+  public static Object invoke0(@Nullable SAbstractConcept operand, @NotNull SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
+    if (operand == null) {
+      return null;
+    }
+    BHDescriptor bhDescriptor = getBHDescriptor(concept);
+    SMethod<?> method = bhDescriptor.getMethod(methodId);
+    if (method == null) {
+      throw new BHNoSuchMethodException(methodId, bhDescriptor);
+    }
+    return bhDescriptor.invoke(operand, method, parameters);
   }
 
   /**
    * invokes a method specifically in the concreteConcept behavior.
    */
-  public static Object invokeSpecial(@Nullable SNode node, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
-    if (node == null) {
+  public static Object invokeSpecial(@Nullable SNode operand, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
+    if (operand == null) {
       return null;
     }
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
@@ -86,11 +100,11 @@ public final class BHReflection {
     if (method == null) {
       throw new BHNoSuchMethodException(methodId, bhDescriptor);
     }
-    return method.invokeSpecial(node, parameters);
+    return bhDescriptor.invokeSpecial(operand, method, parameters);
   }
 
-  public static Object invokeSpecial(@Nullable SAbstractConcept concept, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
-    if (concept == null) {
+  public static Object invokeSpecial(@Nullable SAbstractConcept operand, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
+    if (operand == null) {
       return null;
     }
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
@@ -98,7 +112,35 @@ public final class BHReflection {
     if (method == null) {
       throw new BHNoSuchMethodException(methodId, bhDescriptor);
     }
-    return method.invokeSpecial(concept, parameters);
+    return bhDescriptor.invokeSpecial(operand, method, parameters);
+  }
+
+  /**
+   * method has to be virtual
+   * invokes method implementation which is strictly after the given concrete concept in the ancestor linearization of the node's concept
+   */
+  public static Object invokeSuper(@Nullable SNode operand, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
+    if (operand == null) {
+      return null;
+    }
+    BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
+    SMethod<?> method = bhDescriptor.getMethod(methodId);
+    if (method == null) {
+      throw new BHNoSuchMethodException(methodId, bhDescriptor);
+    }
+    return bhDescriptor.invokeSuper(operand, method, parameters);
+  }
+
+  public static Object invokeSuper(@Nullable SAbstractConcept operand, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
+    if (operand == null) {
+      return null;
+    }
+    BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
+    SMethod<?> method = bhDescriptor.getMethod(methodId);
+    if (method == null) {
+      throw new BHNoSuchMethodException(methodId, bhDescriptor);
+    }
+    return bhDescriptor.invokeSuper(operand, method, parameters);
   }
 
   @NotNull

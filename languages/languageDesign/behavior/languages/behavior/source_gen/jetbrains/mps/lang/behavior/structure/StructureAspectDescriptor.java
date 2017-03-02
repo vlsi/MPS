@@ -21,6 +21,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptInternalConceptDeclarationsHolder = createDescriptorForInternalConceptDeclarationsHolder();
   /*package*/ final ConceptDescriptor myConceptLocalBehaviorMethodCall = createDescriptorForLocalBehaviorMethodCall();
   /*package*/ final ConceptDescriptor myConceptSuperConceptExpression = createDescriptorForSuperConceptExpression();
+  /*package*/ final ConceptDescriptor myConceptSuperExpression = createDescriptorForSuperExpression();
   /*package*/ final ConceptDescriptor myConceptSuperNodeExpression = createDescriptorForSuperNodeExpression();
   /*package*/ final ConceptDescriptor myConceptThisConceptExpression = createDescriptorForThisConceptExpression();
   /*package*/ final ConceptDescriptor myConceptThisNodeExpression = createDescriptorForThisNodeExpression();
@@ -32,7 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptConceptBehavior, myConceptConceptConstructorDeclaration, myConceptConceptMethodDeclaration, myConceptInternalConceptDeclarationReference, myConceptInternalConceptDeclarationsHolder, myConceptLocalBehaviorMethodCall, myConceptSuperConceptExpression, myConceptSuperNodeExpression, myConceptThisConceptExpression, myConceptThisNodeExpression);
+    return Arrays.asList(myConceptConceptBehavior, myConceptConceptConstructorDeclaration, myConceptConceptMethodDeclaration, myConceptInternalConceptDeclarationReference, myConceptInternalConceptDeclarationsHolder, myConceptLocalBehaviorMethodCall, myConceptSuperConceptExpression, myConceptSuperExpression, myConceptSuperNodeExpression, myConceptThisConceptExpression, myConceptThisNodeExpression);
   }
 
   @Override
@@ -53,6 +54,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptLocalBehaviorMethodCall;
       case LanguageConceptSwitch.SuperConceptExpression:
         return myConceptSuperConceptExpression;
+      case LanguageConceptSwitch.SuperExpression:
+        return myConceptSuperExpression;
       case LanguageConceptSwitch.SuperNodeExpression:
         return myConceptSuperNodeExpression;
       case LanguageConceptSwitch.ThisConceptExpression:
@@ -132,15 +135,23 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.behavior", "SuperConceptExpression", 0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x69a9d7dcb057a7a7L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
+    b.parent(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x25076477397f04e3L);
     b.origin("r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)/7613853987897845671");
     b.associate("superConcept", 0x69a9d7dcb057a7a8L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(true).origin("7613853987897845672").done();
     b.alias("super");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSuperExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.behavior", "SuperExpression", 0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x25076477397f04e3L);
+    b.interface_();
+    b.origin("r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)/2668211767468819683");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSuperNodeExpression() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.behavior", "SuperNodeExpression", 0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
+    b.parent(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x25076477397f04e3L);
     b.origin("r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)/1225194628440");
     b.associate("superConcept", 0x498a2c3387127040L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(true).origin("5299096511375896640").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);

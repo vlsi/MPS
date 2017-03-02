@@ -357,6 +357,56 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="2XiYkJc331W" role="3cqZAp">
+          <node concept="3cpWsn" id="2XiYkJc331X" role="3cpWs9">
+            <property role="TrG5h" value="nodePointer" />
+            <node concept="yHkIc" id="2XiYkJc331T" role="1tU5fm">
+              <ref role="yHkHG" to="awpe:7byHRlLC1PU" resolve="NodeByConcept" />
+            </node>
+            <node concept="2OqwBi" id="2XiYkJc331Y" role="33vP2m">
+              <node concept="yHkDZ" id="2XiYkJc331Z" role="2OqNvi">
+                <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNodePointer" />
+              </node>
+              <node concept="2WthIp" id="2XiYkJc3320" role="2Oq$k0" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2XiYkJc380M" role="3cqZAp">
+          <node concept="3cpWsn" id="2XiYkJc380N" role="3cpWs9">
+            <property role="TrG5h" value="reference" />
+            <node concept="3uibUv" id="2XiYkJc380K" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+            </node>
+            <node concept="2OqwBi" id="2XiYkJc380O" role="33vP2m">
+              <node concept="2XshWL" id="2XiYkJc380P" role="2OqNvi">
+                <ref role="2WH_rO" to="awpe:7byHRlLC1Qg" resolve="getNodeRef" />
+              </node>
+              <node concept="37vLTw" id="2XiYkJc380Q" role="2Oq$k0">
+                <ref role="3cqZAo" node="2XiYkJc331X" resolve="nodePointer" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2XiYkJc35fq" role="3cqZAp">
+          <node concept="3clFbS" id="2XiYkJc35fs" role="3clFbx">
+            <node concept="yHkDM" id="2XiYkJc35MY" role="3cqZAp">
+              <node concept="3cpWs3" id="2XiYkJc367A" role="yHkDO">
+                <node concept="37vLTw" id="2XiYkJc383V" role="3uHU7w">
+                  <ref role="3cqZAo" node="2XiYkJc331X" resolve="nodePointer" />
+                </node>
+                <node concept="Xl_RD" id="2XiYkJc35Nc" role="3uHU7B">
+                  <property role="Xl_RC" value="The target of the node reference cannot be discovered " />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="2XiYkJc35wC" role="3clFbw">
+            <node concept="10Nm6u" id="2XiYkJc35wT" role="3uHU7w" />
+            <node concept="37vLTw" id="2XiYkJc383I" role="3uHU7B">
+              <ref role="3cqZAo" node="2XiYkJc380N" resolve="reference" />
+            </node>
+          </node>
+        </node>
         <node concept="1QHqEK" id="_dGddVTnEI" role="3cqZAp">
           <node concept="37vLTw" id="1MVY3kFAxh5" role="ukAjM">
             <ref role="3cqZAo" node="1MVY3kFAxh1" resolve="repo" />
@@ -368,16 +418,8 @@
                   <property role="TrG5h" value="node" />
                   <node concept="3Tqbb2" id="1KUoCipv$wy" role="1tU5fm" />
                   <node concept="2OqwBi" id="5QqGGkvq81Q" role="33vP2m">
-                    <node concept="2OqwBi" id="1KUoCipv$wz" role="2Oq$k0">
-                      <node concept="2XshWL" id="5QqGGkvq8B6" role="2OqNvi">
-                        <ref role="2WH_rO" to="awpe:7byHRlLC1Qg" resolve="getNode" />
-                      </node>
-                      <node concept="2OqwBi" id="1KUoCipv$w_" role="2Oq$k0">
-                        <node concept="yHkDZ" id="1KUoCipv$wA" role="2OqNvi">
-                          <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNode" />
-                        </node>
-                        <node concept="2WthIp" id="1KUoCipv$wB" role="2Oq$k0" />
-                      </node>
+                    <node concept="37vLTw" id="2XiYkJc380R" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2XiYkJc380N" resolve="reference" />
                     </node>
                     <node concept="liA8E" id="5QqGGkvq916" role="2OqNvi">
                       <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
@@ -473,7 +515,7 @@
               </node>
               <node concept="2OqwBi" id="7yLt8tTSJHL" role="37vLTx">
                 <node concept="yHkDH" id="7yLt8tTSJHM" role="2Oq$k0">
-                  <ref role="yHkDG" node="3S2GenT8fRr" resolve="myNode" />
+                  <ref role="yHkDG" node="3S2GenT8fRr" resolve="myNodePointer" />
                 </node>
                 <node concept="yHkDv" id="7byHRlLCkkz" role="2OqNvi">
                   <ref role="yHkD0" to="awpe:7byHRlLC1R$" />
@@ -573,14 +615,14 @@
           <node concept="3clFbF" id="3S2GenT8wbB" role="3cqZAp">
             <node concept="2OqwBi" id="3S2GenT8wbJ" role="3clFbG">
               <node concept="yHkDH" id="3S2GenT8wbC" role="2Oq$k0">
-                <ref role="yHkDG" node="3S2GenT8fRr" resolve="myNode" />
+                <ref role="yHkDG" node="3S2GenT8fRr" resolve="myNodePointer" />
               </node>
               <node concept="yHkDv" id="3S2GenT8wbR" role="2OqNvi">
                 <ref role="yHkD0" to="awpe:7byHRlLC1RR" />
                 <node concept="2OqwBi" id="3S2GenT8wbW" role="yHkDu">
                   <node concept="yHkzx" id="3S2GenT8wbT" role="2Oq$k0" />
                   <node concept="yHkDZ" id="3S2GenT8wc1" role="2OqNvi">
-                    <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNode" />
+                    <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNodePointer" />
                   </node>
                 </node>
               </node>
@@ -609,14 +651,14 @@
           <node concept="3clFbF" id="3S2GenT8wc6" role="3cqZAp">
             <node concept="2OqwBi" id="3S2GenT8wce" role="3clFbG">
               <node concept="yHkDH" id="3S2GenT8wc7" role="2Oq$k0">
-                <ref role="yHkDG" node="3S2GenT8fRr" resolve="myNode" />
+                <ref role="yHkDG" node="3S2GenT8fRr" resolve="myNodePointer" />
               </node>
               <node concept="yHkDv" id="3S2GenT8wcn" role="2OqNvi">
                 <ref role="yHkD0" to="awpe:7byHRlLC1S0" />
                 <node concept="2OqwBi" id="3S2GenT8wcu" role="yHkDu">
                   <node concept="yHkzx" id="3S2GenT8wcr" role="2Oq$k0" />
                   <node concept="yHkDZ" id="3S2GenT8wcz" role="2OqNvi">
-                    <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNode" />
+                    <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNodePointer" />
                   </node>
                 </node>
               </node>
@@ -657,7 +699,7 @@
     </node>
     <node concept="1QGGSu" id="3S2GenT87rC" role="3GxumY" />
     <node concept="yHkDC" id="3S2GenT8fRr" role="yHkDi">
-      <property role="TrG5h" value="myNode" />
+      <property role="TrG5h" value="myNodePointer" />
       <node concept="yHkIc" id="3S2GenT8fX$" role="1tU5fm">
         <ref role="yHkHG" to="awpe:7byHRlLC1PU" resolve="NodeByConcept" />
       </node>
@@ -768,11 +810,11 @@
                         <node concept="2OqwBi" id="4aB4InNMWXP" role="2Oq$k0">
                           <node concept="RBKsg" id="4aB4InNMWXQ" role="2Oq$k0" />
                           <node concept="yHkDZ" id="4aB4InNMWXR" role="2OqNvi">
-                            <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNode" />
+                            <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNodePointer" />
                           </node>
                         </node>
                         <node concept="2XshWL" id="4aB4InNMWXS" role="2OqNvi">
-                          <ref role="2WH_rO" to="awpe:7byHRlLC1Qg" resolve="getNode" />
+                          <ref role="2WH_rO" to="awpe:7byHRlLC1Qg" resolve="getNodeRef" />
                         </node>
                       </node>
                     </node>
@@ -1056,7 +1098,7 @@
                 <node concept="2OqwBi" id="2Edtzj52$92" role="3uHU7w">
                   <node concept="RBKsg" id="2Edtzj52$93" role="2Oq$k0" />
                   <node concept="yHkDZ" id="2Edtzj52$94" role="2OqNvi">
-                    <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNode" />
+                    <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNodePointer" />
                   </node>
                 </node>
               </node>
@@ -1144,12 +1186,12 @@
           </node>
           <node concept="2OqwBi" id="3h9a8EwP2xF" role="HW$Y0">
             <node concept="2XshWL" id="2bz1MXhf1hL" role="2OqNvi">
-              <ref role="2WH_rO" to="awpe:7byHRlLC1Qg" resolve="getNode" />
+              <ref role="2WH_rO" to="awpe:7byHRlLC1Qg" resolve="getNodeRef" />
             </node>
             <node concept="2OqwBi" id="3h9a8EwP2xy" role="2Oq$k0">
               <node concept="RBKsg" id="3h9a8EwP2xq" role="2Oq$k0" />
               <node concept="yHkDZ" id="3h9a8EwP2xB" role="2OqNvi">
-                <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNode" />
+                <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNodePointer" />
               </node>
             </node>
           </node>
@@ -1264,7 +1306,7 @@
                       <ref role="3cqZAo" node="3h9a8EwP6O0" resolve="configuration" />
                     </node>
                     <node concept="yHkDZ" id="3h9a8EwP6Ok" role="2OqNvi">
-                      <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNode" />
+                      <ref role="yHkDY" node="3S2GenT8fRr" resolve="myNodePointer" />
                     </node>
                   </node>
                   <node concept="2XshWL" id="3h9a8EwPavh" role="2OqNvi">

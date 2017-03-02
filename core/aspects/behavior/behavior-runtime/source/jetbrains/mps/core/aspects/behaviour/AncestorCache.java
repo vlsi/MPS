@@ -17,6 +17,7 @@ package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 import java.util.ArrayList;
@@ -26,11 +27,12 @@ import java.util.List;
 /**
  * The cache of all concept hierarchy (including the concept itself)
  */
-class AncestorCache {
+@Immutable
+final class AncestorCache {
   private final List<SAbstractConcept> myLinearization;
   private final List<SAbstractConcept> myConstructorAncestors;
 
-  public AncestorCache(@NotNull SAbstractConcept concept, BehaviorRegistry behaviorRegistry) {
+  AncestorCache(@NotNull SAbstractConcept concept, BehaviorRegistry behaviorRegistry) {
     myLinearization = behaviorRegistry.getMRO().linearize(concept);
     myConstructorAncestors = calcConstructorAncestors();
   }
@@ -41,11 +43,11 @@ class AncestorCache {
     return Collections.unmodifiableList(constructorAncestors);
   }
 
-  public List<SAbstractConcept> getAncestorsConstructionOrder() {
+  List<SAbstractConcept> getAncestorsConstructionOrder() {
     return myConstructorAncestors;
   }
 
-  public List<SAbstractConcept> getAncestorsInvocationOrder() {
+  List<SAbstractConcept> getAncestorsInvocationOrder() {
     return Collections.unmodifiableList(myLinearization);
   }
 }

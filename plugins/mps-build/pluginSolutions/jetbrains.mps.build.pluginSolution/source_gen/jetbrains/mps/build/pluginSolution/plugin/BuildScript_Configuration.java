@@ -14,8 +14,9 @@ import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -37,12 +38,11 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BuildScript_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
   private BuildScript_Configuration.MyState myState = new BuildScript_Configuration.MyState();
-  private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  private NodeByConcept_Configuration myNodePointer = new NodeByConcept_Configuration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return true;
     }
@@ -51,9 +51,14 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
   public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
     final Wrappers._boolean isPackaged = new Wrappers._boolean();
     final SRepository repo = context.getProject().getRepository();
+    NodeByConcept_Configuration nodePointer = this.getNodePointer();
+    final SNodeReference reference = nodePointer.getNodeRef();
+    if (reference == null) {
+      throw new RuntimeConfigurationError("The target of the node reference cannot be discovered " + nodePointer);
+    }
     repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode node = BuildScript_Configuration.this.getNode().getNode().resolve(repo);
+        SNode node = reference.resolve(repo);
         isPackaged.value = node != null && SNodeOperations.getModel(node).getModule().isPackaged();
       }
     });
@@ -65,8 +70,8 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
     {
-      Element fieldElement = new Element("myNode");
-      myNode.writeExternal(fieldElement);
+      Element fieldElement = new Element("myNodePointer");
+      myNodePointer.writeExternal(fieldElement);
       element.addContent(fieldElement);
     }
     {
@@ -83,12 +88,12 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
     {
-      Element fieldElement = element.getChild("myNode");
+      Element fieldElement = element.getChild("myNodePointer");
       if (fieldElement != null) {
-        myNode.readExternal(fieldElement);
+        myNodePointer.readExternal(fieldElement);
       } else {
         if (LOG.isDebugEnabled()) {
-          LOG.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
+          LOG.debug("Element " + "myNodePointer" + " in " + this.getClass().getName() + " was null.");
         }
       }
     }
@@ -103,8 +108,8 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       }
     }
   }
-  public NodeByConcept_Configuration getNode() {
-    return myNode;
+  public NodeByConcept_Configuration getNodePointer() {
+    return myNodePointer;
   }
   public AntSettings_Configuration getSettings() {
     return mySettings;
@@ -115,7 +120,7 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     try {
       clone = createCloneTemplate();
       clone.myState = (BuildScript_Configuration.MyState) myState.clone();
-      clone.myNode = (NodeByConcept_Configuration) myNode.clone();
+      clone.myNodePointer = (NodeByConcept_Configuration) myNodePointer.clone();
       clone.mySettings = (AntSettings_Configuration) mySettings.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
@@ -155,7 +160,7 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     return (BuildScript_Configuration) super.clone();
   }
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
-    return new BuildScript_Configuration_Editor(myNode.getEditor(), mySettings.getEditor());
+    return new BuildScript_Configuration_Editor(myNodePointer.getEditor(), mySettings.getEditor());
   }
   @Override
   public void checkConfiguration() throws RuntimeConfigurationException {
@@ -171,6 +176,6 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     return BuildScript_Configuration_RunProfileState.canExecute(executorId);
   }
   public Object[] createMakeNodePointersTask() {
-    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNode())};
+    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNodePointer().getNodeRef())};
   }
 }

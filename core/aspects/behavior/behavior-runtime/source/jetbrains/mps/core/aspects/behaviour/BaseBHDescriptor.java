@@ -57,7 +57,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   private SAbstractConcept myConcept;
   private boolean myInitialized = false;
   private SMethodVirtualTable myVTable;
-  protected final BehaviorRegistry myBehaviorRegistry;
+  private final SMethodVirtualTable mySuperVTable = new SMethodVirtualTable();
+  private final BehaviorRegistry myBehaviorRegistry;
   private AncestorCache myAncestorCache;
 
   protected BaseBHDescriptor(BehaviorRegistry behaviorRegistry) {
@@ -73,7 +74,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     if (!myInitialized) {
       myConcept = getConcept();
       myAncestorCache = new AncestorCache(myConcept, myBehaviorRegistry);
-      initVirtualTable();
+      initVirtualTables();
       myInitialized = true;
     }
   }
@@ -84,12 +85,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
   }
 
-  @NotNull
-  BehaviorRegistry getBehaviorRegistry() {
-    return myBehaviorRegistry;
-  }
-
-  private void initVirtualTable() {
+  private void initVirtualTables() {
     myVTable = new SMethodVirtualTable(this, getDeclaredMethods());
     List<SAbstractConcept> ancestors = myAncestorCache.getAncestorsInvocationOrder();
     for (SAbstractConcept ancestor : ancestors) {
@@ -97,7 +93,9 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
         BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
         // now its vtable is initialized
         if (bhDescriptor instanceof BaseBHDescriptor) {
-          myVTable.merge(((BaseBHDescriptor) bhDescriptor).myVTable);
+          SMethodVirtualTable vTable = ((BaseBHDescriptor) bhDescriptor).myVTable;
+          myVTable.merge(vTable);
+          mySuperVTable.merge(vTable);
         }
       }
     }
@@ -211,29 +209,49 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   @Override
-  public final <T> T invoke(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  public final <T> T invoke(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters) {
     checkInitialized();
     checkNotStatic(method);
-    checkForConcept(node.getConcept());
+    checkForConcept(operand.getConcept());
 
     if (method.isVirtual()) {
-      return invokeVirtual(node, method, parameters);
+      return invokeVirtual(operand, method, parameters);
     } else {
-      return invokeNonVirtual(node, method, parameters);
+      return invokeNonVirtual(operand, method, parameters);
     }
   }
 
   @Override
-  public final <T> T invoke(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+  public final <T> T invoke(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters) {
     checkInitialized();
     checkStatic(method);
-    checkForConcept(concept);
+    checkForConcept(operand);
 
     if (method.isVirtual()) {
-      return invokeVirtual(concept, method, parameters);
+      return invokeVirtual(operand, method, parameters);
     } else {
-      return invokeNonVirtual(concept, method, parameters);
+      return invokeNonVirtual(operand, method, parameters);
     }
+  }
+
+  @Override
+  public final <T> T invokeSuper(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters) {
+    checkInitialized();
+    checkNotStatic(method);
+    checkForConcept(operand.getConcept());
+    assert method.isVirtual();
+
+    return invokeVirtualSuper(operand, method, parameters);
+  }
+
+  @Override
+  public final <T> T invokeSuper(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters) {
+    checkInitialized();
+    checkStatic(method);
+    checkForConcept(operand);
+    assert method.isVirtual();
+
+    return invokeVirtualSuper(operand, method, parameters);
   }
 
   private void checkForConcept(@NotNull SAbstractConcept concept) {
@@ -325,20 +343,31 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
   }
 
-  private <T> T invokeVirtual(SNode node, SMethod<T> method, Object... parameters) {
-    BaseBHDescriptor baseBHDescriptor = findDescriptorByVirtualMethod(method);
-    return baseBHDescriptor.invokeSpecial(node, method, parameters);
+  private <T> T invokeVirtual(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters) {
+    BaseBHDescriptor baseBHDescriptor = findDescriptorByVirtualMethod(method, false);
+    return baseBHDescriptor.invokeSpecial(operand, method, parameters);
   }
 
-  private <T> T invokeVirtual(SAbstractConcept concept, SMethod<T> method, Object... parameters) {
-    BaseBHDescriptor baseBHDescriptor = findDescriptorByVirtualMethod(method);
-    return baseBHDescriptor.invokeSpecial(concept, method, parameters);
+  private <T> T invokeVirtual(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters) {
+    BaseBHDescriptor baseBHDescriptor = findDescriptorByVirtualMethod(method, false);
+    return baseBHDescriptor.invokeSpecial(operand, method, parameters);
+  }
+
+  private <T> T invokeVirtualSuper(SNode operand, SMethod<T> method, Object... parameters) {
+    BaseBHDescriptor baseBHDescriptor = findDescriptorByVirtualMethod(method, true);
+    return baseBHDescriptor.invokeSpecial(operand, method, parameters);
+  }
+
+  private <T> T invokeVirtualSuper(SAbstractConcept operand, SMethod<T> method, Object... parameters) {
+    BaseBHDescriptor baseBHDescriptor = findDescriptorByVirtualMethod(method, true);
+    return baseBHDescriptor.invokeSpecial(operand, method, parameters);
   }
 
   @NotNull
-  private <T> BaseBHDescriptor findDescriptorByVirtualMethod(SMethod<T> method) {
+  private <T> BaseBHDescriptor findDescriptorByVirtualMethod(SMethod<T> method, boolean superOnly) {
     assert method.isVirtual();
-    BHDescriptor bhDescriptor = myVTable.get(method);
+    BHDescriptor bhDescriptor = superOnly ? mySuperVTable.get(method)
+                                          : myVTable.get(method);
     if (bhDescriptor == null) {
       throw new BHMethodNotFoundException(this, method);
     }
@@ -347,27 +376,27 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   @Override
-  public <T> T invokeSpecial(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  public <T> T invokeSpecial(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters) {
     checkInitialized();
     checkNotStatic(method);
-    checkForConcept(node.getConcept());
+    checkForConcept(operand.getConcept());
     @Nullable Object[] parametersArray = getParametersArray(method.getParameters(), parameters);
     if (parametersArray != null) {
       checkParameters(method, parametersArray);
     }
-    return invokeSpecial0(node, method, parametersArray);
+    return invokeSpecial0(operand, method, parametersArray);
   }
 
   @Override
-  public <T> T invokeSpecial(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+  public <T> T invokeSpecial(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters) {
     checkInitialized();
     checkStatic(method);
-    checkForConcept(concept);
+    checkForConcept(operand);
     @Nullable Object[] parametersArray = getParametersArray(method.getParameters(), parameters);
     if (parametersArray != null) {
       checkParameters(method, parametersArray);
     }
-    return invokeSpecial0(concept, method, parametersArray);
+    return invokeSpecial0(operand, method, parametersArray);
   }
 
   @Nullable

@@ -56,7 +56,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.typesystem.typeof_SuperConceptExpression_InferenceRule" file="typeof_SuperConceptExpression_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.SuperConceptExpression__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.SuperExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -71,6 +71,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.typesystem.typeof_SuperNodeExpression_InferenceRule" file="typeof_SuperNodeExpression_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.SuperExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

@@ -16,8 +16,8 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.execution.lib.ui.NodeChooser;
 import org.apache.log4j.Logger;
@@ -34,7 +34,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration {
     String errorText = new ModelAccessHelper(repo).runReadAction(new Computable<String>() {
       public String compute() {
         try {
-          final SNodeReference ptr = getNode();
+          final SNodeReference ptr = getNodeRef();
           if (ptr == null) {
             return "Node is not specified.";
           }
@@ -76,7 +76,8 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration {
   public void setNodeText(String value) {
     myState.myNodeText = value;
   }
-  public SNodeReference getNode() {
+  @Nullable
+  public SNodeReference getNodeRef() {
     if (this.getNodePointer() == null) {
       return null;
     }

@@ -19,6 +19,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_C7 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_I1 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_I2 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_I3 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_I4 = new ConceptPresentationBuilder().create();
 
   @Override
   @Nullable
@@ -45,6 +47,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_I1;
       case LanguageConceptSwitch.I2:
         return props_I2;
+      case LanguageConceptSwitch.I3:
+        return props_I3;
+      case LanguageConceptSwitch.I4:
+        return props_I4;
     }
     return null;
   }

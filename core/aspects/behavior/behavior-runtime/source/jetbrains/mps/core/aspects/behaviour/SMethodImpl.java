@@ -27,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -56,6 +57,7 @@ import java.util.List;
  * Only there is no conflict for virtual methods' names throughout in the concept hierarchy
  * it might be possible to resolve two overriding methods by name.
  */
+@SuppressWarnings("Duplicates")
 @Immutable
 public final class SMethodImpl<T> implements SMethod<T> {
   public static final String METHOD_NAME_ID_SEPARATOR ="_"; // used in the behavior generator
@@ -119,53 +121,115 @@ public final class SMethodImpl<T> implements SMethod<T> {
   }
 
   @Override
-  public T invoke(@Nullable SNode node, Object... parameters) {
-    if (node == null) {
+  public T invoke(@Nullable SNode operand, Object... parameters) {
+    if (operand == null) {
+      //noinspection unchecked
       return (T) getReturnType().getDefaultValue();
     }
-    checkForConcept(node.getConcept());
-
-    if (myMethodModifiers.isPrivate()) {
-      return invokeSpecial(node, parameters);
-    }
-    BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(node.getConcept());
-    return bhDescriptor.invoke(node, this, parameters);
+    SConcept concept = operand.getConcept();
+    return invoke0(operand, concept, parameters);
   }
 
   @Override
-  public T invoke(@Nullable SAbstractConcept concept, Object... parameters) {
-    if (concept == null) {
+  public T invoke(@Nullable SAbstractConcept operand, Object... parameters) {
+    if (operand == null) {
+      //noinspection unchecked
+      return (T) getReturnType().getDefaultValue();
+    }
+    return invoke0(operand, operand, parameters);
+  }
+
+  @Override
+  public T invoke0(@Nullable SNode operand, @NotNull SAbstractConcept concreteConcept, Object... parameters) {
+    if (operand == null) {
+      //noinspection unchecked
+      return (T) getReturnType().getDefaultValue();
+    }
+    checkForConcept(concreteConcept);
+
+    if (myMethodModifiers.isPrivate()) {
+      return invokeSpecial(operand, parameters);
+    }
+
+    BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(concreteConcept);
+    return bhDescriptor.invoke(operand, this, parameters);
+  }
+
+  @Override
+  public T invoke0(@Nullable SAbstractConcept operand, @NotNull SAbstractConcept concreteConcept, Object... parameters) {
+    if (operand == null) {
+      //noinspection unchecked
+      return (T) getReturnType().getDefaultValue();
+    }
+    checkForConcept(operand);
+    if (myMethodModifiers.isPrivate()) {
+      return invokeSpecial(operand, parameters);
+    }
+
+    BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(concreteConcept);
+    return bhDescriptor.invoke(operand, this, parameters);
+  }
+
+  @Override
+  public T invokeSpecial(@Nullable SNode operand, Object... parameters) {
+    if (operand == null) {
+      //noinspection unchecked
+      return (T) getReturnType().getDefaultValue();
+    }
+    checkForConcept(operand.getConcept());
+
+    BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(myConcept);
+    return bhDescriptor.invokeSpecial(operand, this, parameters);
+  }
+
+  @Override
+  public T invokeSpecial(@Nullable SAbstractConcept operand, Object... parameters) {
+    if (operand == null) {
+      //noinspection unchecked
+      return (T) getReturnType().getDefaultValue();
+    }
+    checkForConcept(operand);
+
+    BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(myConcept);
+    return bhDescriptor.invokeSpecial(operand, this, parameters);
+  }
+
+  @Override
+  public T invokeSuper(@Nullable SNode operand, @NotNull SAbstractConcept concept, Object... parameters) {
+    if (operand == null) {
+      //noinspection unchecked
       return (T) getReturnType().getDefaultValue();
     }
     checkForConcept(concept);
 
     if (myMethodModifiers.isPrivate()) {
-      return invokeSpecial(concept, parameters);
+      throw new IllegalArgumentException("Cannot invoke super method which is declared private" + this);
+    }
+
+    if (!isVirtual()) {
+      throw new IllegalArgumentException("Method must be virtual");
     }
     BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(concept);
-    return bhDescriptor.invoke(concept, this, parameters);
+    return bhDescriptor.invokeSuper(operand, this, parameters);
   }
 
   @Override
-  public T invokeSpecial(@Nullable SNode node, Object... parameters) {
-    if (node == null) {
-      return (T) getReturnType().getDefaultValue();
-    }
-    checkForConcept(node.getConcept());
-
-    BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(myConcept);
-    return bhDescriptor.invokeSpecial(node, this, parameters);
-  }
-
-  @Override
-  public T invokeSpecial(@Nullable SAbstractConcept concept, Object... parameters) {
-    if (concept == null) {
+  public T invokeSuper(@Nullable SAbstractConcept operand, @NotNull SAbstractConcept concept, Object... parameters) {
+    if (operand == null) {
+      //noinspection unchecked
       return (T) getReturnType().getDefaultValue();
     }
     checkForConcept(concept);
 
-    BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(myConcept);
-    return bhDescriptor.invokeSpecial(concept, this, parameters);
+    if (myMethodModifiers.isPrivate()) {
+      throw new IllegalArgumentException("Cannot invoke super method which is declared private" + this);
+    }
+
+    if (!isVirtual()) {
+      throw new IllegalArgumentException("Method must be virtual");
+    }
+    BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(concept);
+    return bhDescriptor.invokeSuper(operand, this, parameters);
   }
 
   @NotNull
@@ -202,15 +266,6 @@ public final class SMethodImpl<T> implements SMethod<T> {
   @Override
   public boolean isStatic() {
     return myMethodModifiers.isStatic();
-  }
-
-  @Override
-  public boolean isOverrideOf(@NotNull SMethod another) {
-    if (!isVirtual() || !another.isVirtual()) {
-      throw new IllegalArgumentException("Methods must be virtual");
-    }
-    return getId().equals(another.getId()) &&
-        getConcept().isSubConceptOf(another.getConcept());
   }
 
   @NotNull

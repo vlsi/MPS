@@ -51,32 +51,42 @@ public interface BHDescriptor {
   /**
    * invokes a method (trying to resolve the right method on runtime if it is virtual)
    */
-  <T> T invoke(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters);
+  <T> T invoke(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters);
 
   /**
    * invokes a static method (trying to resolve the right method on runtime if it is virtual)
    */
-  <T> T invoke(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters);
+  <T> T invoke(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters);
+
+  /**
+   * invokes a virtual method, selecting from the ancestors of the given node concept.
+   * the difference with the {@code #invoke} method is only that we do not include the node concept itself in the scope.
+   */
+  <T> T invokeSuper(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters);
+
+  /**
+   * invokes a virtual static method, see above for details
+   */
+  <T> T invokeSuper(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters);
 
   /**
    * invokes a method without dynamic binding (not trying to resolve the right method on runtime if it is virtual)
-   * E.g. used when calling 'super' method from the behavior or calling a private method
+   * E.g. used when calling 'this' or 'super' non-virtual method from the behavior or calling a private method
    */
-  <T> T invokeSpecial(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters);
+  <T> T invokeSpecial(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters);
 
   /**
    * invokes a method without dynamic binding (not trying to resolve the right method on runtime if it is virtual)
-   * E.g. used when calling 'super' method from the behavior or calling a private method
+   * E.g. used when calling 'this' or 'super' non-virtual method from the behavior or calling a private method
    */
-  <T> T invokeSpecial(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters);
+  <T> T invokeSpecial(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters);
 
   /**
    * Returns list of {@link SMethod} objects reflecting all the methods (from private to public)
    * of the concept represented by this descriptor
    * EXCLUDING those inherited from super concepts.
    */
-  @NotNull
-  List<SMethod<?>> getDeclaredMethods();
+  @NotNull List<SMethod<?>> getDeclaredMethods();
 
   /**
    * Returns list of {@link SMethod} objects reflecting all the public (!) methods
@@ -88,12 +98,12 @@ public interface BHDescriptor {
   /**
    * Returns a {@link SMethod} handle that reflects the public (!) behavior method
    * of the concept represented by the owning {@link SAbstractConcept}
+   * Note that the virtual method will return the root concept of the concept hierarchy.
    *
    * @return null if the method was not found
    * @see #getMethods()
    */
-  @Nullable
-  SMethod<?> getMethod(@NotNull SMethodId methodId);
+  @Nullable SMethod<?> getMethod(@NotNull SMethodId methodId);
 
   /**
    * @return owning concept of this descriptor

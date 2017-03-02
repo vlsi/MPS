@@ -47,7 +47,7 @@ public class BuildScript_Producer {
           return null;
         }
         BuildScript_Configuration configuration = ((BuildScript_Configuration) getConfigurationFactory().createConfiguration("" + name, (BuildScript_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
-        configuration.getNode().setNode(containingRoot);
+        configuration.getNodePointer().setNode(containingRoot);
         return configuration;
       }
       return null;

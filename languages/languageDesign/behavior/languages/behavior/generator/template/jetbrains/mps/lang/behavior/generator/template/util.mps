@@ -150,11 +150,12 @@
   </registry>
   <node concept="312cEu" id="6pZ_jf9QLlb">
     <property role="TrG5h" value="Constants" />
+    <property role="1EXbeo" value="true" />
     <node concept="Wx3nA" id="6pZ_jf9QLm6" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
       <property role="TrG5h" value="BEHAVIOR_DESCRIPTOR_SUFFIX" />
-      <property role="3TUv4t" value="false" />
+      <property role="3TUv4t" value="true" />
       <node concept="17QB3L" id="6pZ_jf9QLm2" role="1tU5fm" />
       <node concept="Xl_RD" id="6pZ_jf9QLm_" role="33vP2m">
         <property role="Xl_RC" value="__BehaviorDescriptor" />
@@ -165,7 +166,7 @@
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
       <property role="TrG5h" value="BEHAVIOR_ASPECT_DESCRIPTOR_SUFFIX" />
-      <property role="3TUv4t" value="false" />
+      <property role="3TUv4t" value="true" />
       <node concept="17QB3L" id="7rdthmpG3Vl" role="1tU5fm" />
       <node concept="Xl_RD" id="7rdthmpG3Vm" role="33vP2m">
         <property role="Xl_RC" value="BehaviorAspectDescriptor" />
@@ -176,7 +177,7 @@
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
       <property role="TrG5h" value="THIS_NODE_VARIABLE_NAME" />
-      <property role="3TUv4t" value="false" />
+      <property role="3TUv4t" value="true" />
       <node concept="17QB3L" id="1YPFSpKnY5T" role="1tU5fm" />
       <node concept="Xl_RD" id="1YPFSpKnY5U" role="33vP2m">
         <property role="Xl_RC" value="__thisNode__" />
@@ -187,45 +188,12 @@
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
       <property role="TrG5h" value="THIS_CONCEPT_VARIABLE_NAME" />
-      <property role="3TUv4t" value="false" />
+      <property role="3TUv4t" value="true" />
       <node concept="17QB3L" id="5WXskL2fyTx" role="1tU5fm" />
       <node concept="Xl_RD" id="5WXskL2fyTy" role="33vP2m">
         <property role="Xl_RC" value="__thisConcept__" />
       </node>
       <node concept="3Tm1VV" id="5WXskL2fyTz" role="1B3o_S" />
-    </node>
-    <node concept="Wx3nA" id="1YPFSpKsYEW" role="jymVt">
-      <property role="2dlcS1" value="false" />
-      <property role="2dld4O" value="false" />
-      <property role="TrG5h" value="INVOKE_METHOD_NAME" />
-      <property role="3TUv4t" value="false" />
-      <node concept="17QB3L" id="1YPFSpKsYEX" role="1tU5fm" />
-      <node concept="Xl_RD" id="1YPFSpKsYEY" role="33vP2m">
-        <property role="Xl_RC" value="invoke" />
-      </node>
-      <node concept="3Tm1VV" id="1YPFSpKsYEZ" role="1B3o_S" />
-    </node>
-    <node concept="Wx3nA" id="tb1xa53BCM" role="jymVt">
-      <property role="2dlcS1" value="false" />
-      <property role="2dld4O" value="false" />
-      <property role="TrG5h" value="INVOKE_SPECIAL_METHOD_NAME" />
-      <property role="3TUv4t" value="false" />
-      <node concept="17QB3L" id="tb1xa53BCN" role="1tU5fm" />
-      <node concept="Xl_RD" id="tb1xa53BCO" role="33vP2m">
-        <property role="Xl_RC" value="invokeSpecial" />
-      </node>
-      <node concept="3Tm1VV" id="tb1xa53BCP" role="1B3o_S" />
-    </node>
-    <node concept="Wx3nA" id="24JB88KlyNk" role="jymVt">
-      <property role="2dlcS1" value="false" />
-      <property role="2dld4O" value="false" />
-      <property role="TrG5h" value="INVOKE_REFLECTIVE_METHOD_NAME" />
-      <property role="3TUv4t" value="false" />
-      <node concept="17QB3L" id="24JB88KlyNl" role="1tU5fm" />
-      <node concept="Xl_RD" id="24JB88KlyNm" role="33vP2m">
-        <property role="Xl_RC" value="invokeReflective" />
-      </node>
-      <node concept="3Tm1VV" id="24JB88KlyNn" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="6pZ_jf9QLlc" role="1B3o_S" />
   </node>

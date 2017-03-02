@@ -32,7 +32,7 @@ public final class H__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static Object foo6_id186XXh$CxOf(@NotNull SNode __thisNode__) {
-    return ((Object) D__BehaviorDescriptor.foo6_id186XXh$CxOf.invokeSpecial(__thisNode__));
+    return ((Object) B__BehaviorDescriptor.foo6_id186XXh$CxOf.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x1206f7d464a22147L, "BHL6.structure.H")));
   }
 
   /*package*/ H__BehaviorDescriptor() {

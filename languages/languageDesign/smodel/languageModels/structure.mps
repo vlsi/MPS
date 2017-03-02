@@ -18,6 +18,9 @@
         <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
@@ -333,6 +336,9 @@
     </node>
     <node concept="PrWs8" id="1653mnvB2PM" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="t5JxF" id="2k7p7sTvW9p" role="lGtFl">
+      <property role="t5JxN" value="Casts node to the given type. 'asCast' property is true &lt;=&gt; the operation is null-safe (null if the provided type is incompatible)" />
     </node>
   </node>
   <node concept="1TIwiD" id="gAoxUXw">

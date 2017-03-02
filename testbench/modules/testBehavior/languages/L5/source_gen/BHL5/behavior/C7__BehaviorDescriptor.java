@@ -7,8 +7,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import java.util.List;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
+import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
+import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
+import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -20,13 +24,27 @@ public final class C7__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1af93L, "BHL5.structure.C7");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
+  public static final SMethod<Void> bar_id2k7p7sTvyr6 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("bar").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2k7p7sTvyr6").registry(REGISTRY).build();
+  public static final SMethod<Void> foo_id2k7p7sTv$MS = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("foo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2k7p7sTv$MS").registry(REGISTRY).build();
+  public static final SMethod<Void> foo_id2k7p7sTv$Mh = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("foo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2k7p7sTv$Mh").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList();
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(bar_id2k7p7sTvyr6, foo_id2k7p7sTv$MS, foo_id2k7p7sTv$Mh);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     C6__BehaviorDescriptor.foo_id2eC$PxWCr8m.invokeSpecial(__thisNode__);
+    C6__BehaviorDescriptor.bar_id2k7p7sTvyr6.invoke0(__thisNode__, MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1aaedL, "BHL5.structure.C6"));
+    I3__BehaviorDescriptor.foo_id2k7p7sTv$MS.invoke0(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x25076477397e4c6fL, "BHL5.structure.I3"));
+    C6__BehaviorDescriptor.foo_id2eC$PxWCr8m.invokeSpecial(__thisNode__);
+    C6__BehaviorDescriptor.bar_id2k7p7sTvyr6.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1af93L, "BHL5.structure.C7"));
   }
 
+  /*package*/ static void bar_id2k7p7sTvyr6(@NotNull SNode __thisNode__) {
+    C6__BehaviorDescriptor.bar_id2k7p7sTvyr6.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1af93L, "BHL5.structure.C7"));
+  }
+  /*package*/ static void foo_id2k7p7sTv$MS(@NotNull SNode __thisNode__) {
+  }
+  /*package*/ static void foo_id2k7p7sTv$Mh(@NotNull SNode __thisNode__) {
+  }
 
   /*package*/ C7__BehaviorDescriptor() {
     super(REGISTRY);
@@ -44,6 +62,15 @@ public final class C7__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 0:
+        bar_id2k7p7sTvyr6(node);
+        return null;
+      case 1:
+        foo_id2k7p7sTv$MS(node);
+        return null;
+      case 2:
+        foo_id2k7p7sTv$Mh(node);
+        return null;
       default:
         throw new BHMethodNotFoundException(this, method);
     }

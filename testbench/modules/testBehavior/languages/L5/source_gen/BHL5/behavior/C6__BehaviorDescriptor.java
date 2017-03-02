@@ -26,8 +26,9 @@ public final class C6__BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Void> foo_id2eC$PxWCr8m = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("foo").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2eC$PxWCr8m").registry(REGISTRY).build();
+  public static final SMethod<Void> bar_id2k7p7sTvyr6 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("bar").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2k7p7sTvyr6").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id2eC$PxWCr8m);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id2eC$PxWCr8m, bar_id2k7p7sTvyr6);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba114cbL, 0x355d469f0ba114e9L, "a"), "C6");
@@ -35,6 +36,8 @@ public final class C6__BehaviorDescriptor extends BaseBHDescriptor {
 
   /*package*/ static void foo_id2eC$PxWCr8m(@NotNull SNode __thisNode__) {
     SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba114cbL, 0x355d469f0ba114e9L, "a"), "c6");
+  }
+  /*package*/ static void bar_id2k7p7sTvyr6(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ C6__BehaviorDescriptor() {
@@ -55,6 +58,9 @@ public final class C6__BehaviorDescriptor extends BaseBHDescriptor {
     switch (methodIndex) {
       case 0:
         foo_id2eC$PxWCr8m(node);
+        return null;
+      case 1:
+        bar_id2k7p7sTvyr6(node);
         return null;
       default:
         throw new BHMethodNotFoundException(this, method);

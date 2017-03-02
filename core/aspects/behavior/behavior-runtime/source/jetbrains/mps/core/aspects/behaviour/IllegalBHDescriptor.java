@@ -47,25 +47,37 @@ public final class IllegalBHDescriptor implements BHDescriptor {
   }
 
   @Override
-  public <T> T invoke(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  public <T> T invoke(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters) {
     throwException();
     return null;
   }
 
   @Override
-  public <T> T invoke(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+  public <T> T invoke(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters) {
     throwException();
     return null;
   }
 
   @Override
-  public <T> T invokeSpecial(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  public <T> T invokeSuper(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters) {
     throwException();
     return null;
   }
 
   @Override
-  public <T> T invokeSpecial(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+  public <T> T invokeSuper(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters) {
+    throwException();
+    return null;
+  }
+
+  @Override
+  public <T> T invokeSpecial(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters) {
+    throwException();
+    return null;
+  }
+
+  @Override
+  public <T> T invokeSpecial(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters) {
     throwException();
     return null;
   }

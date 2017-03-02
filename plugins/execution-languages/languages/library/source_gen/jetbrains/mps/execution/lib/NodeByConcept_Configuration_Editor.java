@@ -27,7 +27,7 @@ public class NodeByConcept_Configuration_Editor extends SettingsEditorEx<NodeByC
     configuration.setNodeText(myChooser.getText());
   }
   public void resetEditorFrom(final NodeByConcept_Configuration configuration) {
-    myChooser.setNode(configuration.getNode());
+    myChooser.setNode(configuration.getNodeRef());
     myChooser.setText(configuration.getNodeText());
   }
   private SAbstractConcept myConcept;

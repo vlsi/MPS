@@ -279,6 +279,8 @@ public class BHTest_Test extends TestCase {
       public void run() {
         SNode nodeI1 = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1af93L, "BHL5.structure.C7")), null);
         Assert.assertEquals("c6", SPropertyOperations.getString(nodeI1, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba114cbL, 0x355d469f0ba114e9L, "a")));
+        SNode nodeI3 = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1af93L, "BHL5.structure.C7")), null);
+        Assert.assertEquals("set", SPropertyOperations.getString(nodeI3, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x25076477397e4c6fL, 0x6c4ee9d44295ea26L, "c")));
       }
     });
   }

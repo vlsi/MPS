@@ -51,10 +51,7 @@
       <node id="8560627202334408404" at="8,0,9,0" concept="7" trace="BEHAVIOR_ASPECT_DESCRIPTOR_SUFFIX" />
       <node id="2284925377906205048" at="9,0,10,0" concept="7" trace="THIS_NODE_VARIABLE_NAME" />
       <node id="6862765979525328480" at="10,0,11,0" concept="7" trace="THIS_CONCEPT_VARIABLE_NAME" />
-      <node id="2284925377907518140" at="11,0,12,0" concept="7" trace="INVOKE_METHOD_NAME" />
-      <node id="525520458130291250" at="12,0,13,0" concept="7" trace="INVOKE_SPECIAL_METHOD_NAME" />
-      <node id="2391302010127658196" at="13,0,14,0" concept="7" trace="INVOKE_REFLECTIVE_METHOD_NAME" />
-      <unit id="7385785963573351755" at="6,0,15,0" name="jetbrains.mps.lang.behavior.generator.template.util.Constants" />
+      <unit id="7385785963573351755" at="6,0,12,0" name="jetbrains.mps.lang.behavior.generator.template.util.Constants" />
     </file>
   </root>
 </debug-info>

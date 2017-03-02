@@ -25,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.behavior.behavior.SuperConceptExpression__BehaviorDescriptor;
+import jetbrains.mps.lang.behavior.behavior.SuperExpression__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
@@ -81,7 +81,7 @@ public class SuperConceptExpression_TransformationMenu extends TransformationMen
 
         @Override
         public void execute(@NotNull String pattern) {
-          SNode result = SuperConceptExpression__BehaviorDescriptor.getSuperConcept_id6ADPXMKm4qz.invoke(_context.getNode());
+          SNode result = SuperExpression__BehaviorDescriptor.getSuperConcept_id2k7p7sTvKkn.invoke(_context.getNode());
           if (result == null) {
             result = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
           }

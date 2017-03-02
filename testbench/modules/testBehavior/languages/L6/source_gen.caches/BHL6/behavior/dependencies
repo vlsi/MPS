@@ -217,7 +217,7 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="BHL6.behavior.H__BehaviorDescriptor" file="H__BehaviorDescriptor.java">
-    <classNode dependClassName="BHL6.behavior.D__BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.B__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -318,7 +318,6 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="BHL6.behavior.J__BehaviorDescriptor" file="J__BehaviorDescriptor.java">
-    <classNode dependClassName="BHL6.behavior.I2__BehaviorDescriptor" />
     <classNode dependClassName="BHL6.behavior.I__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
