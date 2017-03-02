@@ -38,6 +38,7 @@ import org.xml.sax.SAXException;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -75,6 +76,46 @@ public class GenSourcesAndCompilerXmlGenerationTest {
     Diff diff = new Diff(FileUtil.read(GeneratorsRunner.COMPILER_XML_FILE), previousCompilerXml);
     diff.overrideElementQualifier(new ElementNameAndAttributeQualifier());
     XMLAssert.assertXMLEqual("Regenerate compiler.xml. Run GeneratorsRunner run configuration.", diff, true);
+  }
+
+  public static List<String> getImls(File modulesFiles) throws JDOMException, IOException {
+    Document doc = JDOMUtil.loadDocument(modulesFiles);
+    Element moduleManager = Utils.getComponentWithName(doc, "ProjectModuleManager");
+    Element modules = moduleManager.getChild("modules");
+    List<String> result = new ArrayList<>();
+    for (Element module : modules.getChildren("module")) {
+      String imlFormattedRoot = module.getAttributeValue("fileurl");
+      String imlPath = new File(imlFormattedRoot.replace("file://$PROJECT_DIR$", modulesFiles.getParentFile().getParent())).getCanonicalPath();
+      result.add(imlPath);
+    }
+    return result;
+  }
+
+  @Test
+  public void testEveryImlFileIsIncludedInProject() throws JDOMException, IOException {
+    File root = new File(".");
+    File projectFile = new File("./.idea/modules.xml");
+    List<String> imlsInProject = getImls(projectFile);
+    List<File> imlsOnDisk = Utils.withExtension(".iml", Utils.files(root));
+    List<String> notIncluded = new ArrayList<>();
+    for (File iml : imlsOnDisk) {
+      if (isUnder(iml.getCanonicalPath(), "/IdeaPlugin/")) {
+        continue;
+      }
+      if (isUnder(iml.getCanonicalPath(), "/MPSPlugin/")) {
+        continue;
+      }
+      if (isUnder(iml.getCanonicalPath(), "/mps-platform/")) {
+        continue;
+      }
+      if (isUnder(iml.getCanonicalPath(), "/tools/deepcompare/")) {
+        continue;
+      }
+      if (!imlsInProject.contains(iml.getCanonicalPath())) {
+        notIncluded.add(iml.getCanonicalPath());
+      }
+    }
+    Assert.assertTrue("Iml files not included into project: " + notIncluded, notIncluded.isEmpty());
   }
 
   @Test
