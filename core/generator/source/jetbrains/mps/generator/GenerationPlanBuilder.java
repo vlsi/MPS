@@ -35,6 +35,10 @@ import org.jetbrains.mps.openapi.module.SModule;
  * <p/>
  * It's up to implementation to decide about builder instance re-use (i.e. what happens if new statements are added after {@link #wrapUp(PlanIdentity)})
  *
+ *
+ * XXX it's not quite convenient to use varargs from smodel code (more suited for generated). Either introduce alternatives with collections or
+ * consider intermediate step builder to fill one by one.
+ *
  * @author Artem Tikhomirov
  * @since 2017.1
  */

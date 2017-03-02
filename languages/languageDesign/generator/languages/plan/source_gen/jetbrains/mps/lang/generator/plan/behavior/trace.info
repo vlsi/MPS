@@ -7,6 +7,9 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.lang.generator.plan.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="CheckpointSynchronization_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.plan.behavior.CheckpointSynchronization_BehaviorDescriptor" />
+    </file>
     <file name="Checkpoint_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.plan.behavior.Checkpoint_BehaviorDescriptor" />
     </file>

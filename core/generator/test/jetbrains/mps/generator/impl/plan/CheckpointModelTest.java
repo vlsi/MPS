@@ -34,6 +34,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.LogHandler;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
@@ -50,6 +51,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -249,7 +251,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
   }
 
   @Test
-  public void testPlanBuilder() {
+  public void testPlanTransformer() {
     final SModelReference planModelRef = PersistenceFacade.getInstance().createModelReference("r:85a0bc80-fc68-485e-a9a1-926c3cc284af(jetbrains.mps.generator.xmodel.test.plan1@genplan)");
     ModelGenerationPlan plan = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<ModelGenerationPlan>() {
       @Override
@@ -273,6 +275,60 @@ public class CheckpointModelTest extends PlatformMpsTest {
     myErrors.checkThat(s3.getTransformations().isEmpty(), CoreMatchers.equalTo(false));
     myErrors.checkThat(s2.getName(), CoreMatchers.equalTo("first"));
     myErrors.checkThat(new PlanIdentity(plan).getPersistenceValue(), CoreMatchers.equalTo("plan_a"));
+  }
+
+  @Test
+  public void testPlanBuilder() {
+//    final SModuleReference smodelGenerator = PersistenceFacade.getInstance().createModuleReference("2bdcefec-ba49-4b32-ab50-ebc7a41d5090()");
+    final SModuleReference collectionsGenerator = PersistenceFacade.getInstance().createModuleReference("5f9babc9-8d5d-4825-8e61-17b241ee6272()");
+    final SModuleReference closuresGenerator = PersistenceFacade.getInstance().createModuleReference("857d0a79-6f44-4f46-84ed-9c5b42632011()");
+    final SModuleReference blInternalGenerator = PersistenceFacade.getInstance().createModuleReference("46ef3033-ce72-4166-b19e-6ceed23b6844()");
+    final SModuleReference baselangGenerator = PersistenceFacade.getInstance().createModuleReference("985c8c6a-64b4-486d-a91e-7d4112742556()");
+    final PlanIdentity pi1 = new PlanIdentity("p1");
+    final PlanIdentity pi2 = new PlanIdentity("p2");
+    final CheckpointIdentity cp1 = new CheckpointIdentity(pi1, "cp1");
+    final CheckpointIdentity cp2 = new CheckpointIdentity(pi2, "cp2");
+
+    ModelGenerationPlan plan = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<ModelGenerationPlan>() {
+      @Override
+      public ModelGenerationPlan compute() {
+        Generator closuresGeneratorInstance = (Generator) closuresGenerator.resolve(mpsProject.getRepository());
+        Generator collectionsGeneratorInstance = (Generator) collectionsGenerator.resolve(mpsProject.getRepository());
+        Generator blInternalGeneratorInstance = (Generator) blInternalGenerator.resolve(mpsProject.getRepository());
+        Generator baselangGeneratorInstance = (Generator) baselangGenerator.resolve(mpsProject.getRepository());
+        final LanguageRegistry languageRegistry = LanguageRegistry.getInstance(mpsProject.getRepository());
+        Collection<TemplateModule> engagedGenerators = new ArrayList<>();
+        engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(closuresGeneratorInstance)));
+        engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(collectionsGeneratorInstance)));
+        engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(baselangGeneratorInstance)));
+        engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(blInternalGeneratorInstance)));
+        RegularPlanBuilder planBuilder = new RegularPlanBuilder(languageRegistry, engagedGenerators);
+        planBuilder.recordCheckpoint(cp1);
+        planBuilder.applyGeneratorWithExtended(closuresGeneratorInstance);
+        planBuilder.synchronizeWithCheckpoint(cp2);
+        planBuilder.applyGeneratorWithExtended(blInternalGeneratorInstance);
+        planBuilder.applyGeneratorWithExtended(baselangGeneratorInstance);
+        return planBuilder.wrapUp(pi1);
+      }
+    });
+    Assert.assertNotNull(plan);
+    Assert.assertEquals(5, plan.getSteps().size());
+    myErrors.checkThat(plan.getSteps().get(0), CoreMatchers.instanceOf(Checkpoint.class));
+    myErrors.checkThat(plan.getSteps().get(1), CoreMatchers.instanceOf(Transform.class));
+    myErrors.checkThat(plan.getSteps().get(2), CoreMatchers.instanceOf(Checkpoint.class));
+    myErrors.checkThat(plan.getSteps().get(3), CoreMatchers.instanceOf(Transform.class));
+    myErrors.checkThat(plan.getSteps().get(4), CoreMatchers.instanceOf(Transform.class));
+    //
+    Checkpoint p1 = (Checkpoint) plan.getSteps().get(0);
+    Checkpoint p2 = (Checkpoint) plan.getSteps().get(2);
+    myErrors.checkThat(p1.isPersisted(), CoreMatchers.equalTo(true));
+    myErrors.checkThat(p2.isPersisted(), CoreMatchers.equalTo(false));
+    Transform t1 = (Transform) plan.getSteps().get(1); // closures + extensions
+    Transform t2 = (Transform) plan.getSteps().get(3); // blInternal + extensions
+    Transform t3 = (Transform) plan.getSteps().get(4); // bl + extensions
+    myErrors.checkThat(t1.getTransformations().size(), CoreMatchers.equalTo(7)); // 2 from closures + 5 from collections
+    myErrors.checkThat(t2.getTransformations().size(), CoreMatchers.equalTo(1)); // 1 MC in blInternal.
+    myErrors.checkThat(t3.getTransformations().size(), CoreMatchers.equalTo(8)); // 3 from BL + 5 from collections
   }
 
   // utility to obtain generators of j.m.g.test.crossmodel.property language

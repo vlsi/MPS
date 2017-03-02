@@ -23,7 +23,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo" />
@@ -52,9 +54,39 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.plan.editor.ApplyGenerators_InspectorBuilder_a" file="ApplyGenerators_InspectorBuilder_a.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.generator.plan.editor.CheckpointSynchronization_Editor" file="CheckpointSynchronization_Editor.java">
+    <classNode dependClassName="jetbrains.mps.lang.generator.plan.editor.CheckpointSynchronization_EditorBuilder_a" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.generator.plan.editor.CheckpointSynchronization_EditorBuilder_a" file="CheckpointSynchronization_EditorBuilder_a.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.impl.CellUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
@@ -84,6 +116,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.generator.plan.editor.ApplyGenerators_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.plan.editor.CheckpointSynchronization_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.plan.editor.Checkpoint_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.plan.editor.Plan_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.plan.editor.Transform_Editor" />

@@ -7,7 +7,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 
 /*package*/ class ApplyGenerators_InspectorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -25,15 +31,57 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_34tr3z_a();
+    return createCollection_34tr3z_a_0();
   }
 
-  private EditorCell createConstant_34tr3z_a() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Apply specified generators directly, regardless of generator's language presence");
-    editorCell.setCellId("Constant_34tr3z_a");
+  private EditorCell createCollection_34tr3z_a_0() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
+    editorCell.setCellId("Collection_34tr3z_a_0");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
+    editorCell.addEditorCell(createConstant_34tr3z_a0());
+    editorCell.addEditorCell(createConstant_34tr3z_b0());
+    editorCell.addEditorCell(createCollection_34tr3z_c0());
+    return editorCell;
+  }
+  private EditorCell createConstant_34tr3z_a0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Apply specified generators directly, regardless of generator's language presence");
+    editorCell.setCellId("Constant_34tr3z_a0");
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_34tr3z_b0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_34tr3z_b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createCollection_34tr3z_c0() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
+    editorCell.setCellId("Collection_34tr3z_c0");
+    editorCell.addEditorCell(createConstant_34tr3z_a2a());
+    editorCell.addEditorCell(createProperty_34tr3z_b2a());
+    return editorCell;
+  }
+  private EditorCell createConstant_34tr3z_a2a() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "include extending generators into same step:");
+    editorCell.setCellId("Constant_34tr3z_a2a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createProperty_34tr3z_b2a() {
+    CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
+    provider.setRole("withExtended");
+    provider.setNoTargetText("<no withExtended>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(getEditorContext());
+    editorCell.setCellId("property_withExtended");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
+    } else
     return editorCell;
   }
 }

@@ -33,6 +33,8 @@
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
+      <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
+      <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
@@ -56,8 +58,16 @@
       </concept>
       <concept id="1165270662927" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query" flags="in" index="1fyNS0" />
       <concept id="1165270999881" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create" flags="in" index="1f$696" />
+      <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
+        <child id="1088186146602" name="editorComponent" index="1sWHZn" />
+      </concept>
+      <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
+        <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
+      </concept>
+      <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
+        <child id="1142887637401" name="renderingCondition" index="pqm2j" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
@@ -152,6 +162,9 @@
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
+      </concept>
+      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
+        <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
@@ -308,8 +321,26 @@
   <node concept="24kQdi" id="7c$ruAHXqhR">
     <ref role="1XX52x" to="bjdw:7c$ruAHVa5L" resolve="ApplyGenerators" />
     <node concept="3EZMnI" id="7c$ruAHXqhT" role="2wV5jI">
-      <node concept="3F0ifn" id="7c$ruAHXqib" role="3EZMnx">
-        <property role="3F0ifm" value="apply" />
+      <node concept="3EZMnI" id="KhTgyauo6R" role="3EZMnx">
+        <node concept="2iRfu4" id="KhTgyauo6S" role="2iSdaV" />
+        <node concept="3F0ifn" id="7c$ruAHXqib" role="3EZMnx">
+          <property role="3F0ifm" value="apply" />
+        </node>
+        <node concept="3F0ifn" id="KhTgyauoXZ" role="3EZMnx">
+          <property role="3F0ifm" value="  with extended" />
+          <node concept="pkWqt" id="KhTgyauoZa" role="pqm2j">
+            <node concept="3clFbS" id="KhTgyauoZb" role="2VODD2">
+              <node concept="3clFbF" id="KhTgyaupdp" role="3cqZAp">
+                <node concept="2OqwBi" id="KhTgyauqd_" role="3clFbG">
+                  <node concept="pncrf" id="KhTgyaupdo" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="KhTgyaurGe" role="2OqNvi">
+                    <ref role="3TsBF5" to="bjdw:KhTgyaupdj" resolve="withExtended" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3EZMnI" id="7c$ruAHXqi0" role="3EZMnx">
         <node concept="VPM3Z" id="7c$ruAHXqi2" role="3F10Kt">
@@ -504,8 +535,39 @@
       </node>
       <node concept="2iRkQZ" id="7c$ruAHXqhW" role="2iSdaV" />
     </node>
-    <node concept="3F0ifn" id="7c$ruAHXqik" role="6VMZX">
-      <property role="3F0ifm" value="Apply specified generators directly, regardless of generator's language presence" />
+    <node concept="3EZMnI" id="KhTgyaus03" role="6VMZX">
+      <node concept="2iRkQZ" id="KhTgyaus04" role="2iSdaV" />
+      <node concept="3F0ifn" id="7c$ruAHXqik" role="3EZMnx">
+        <property role="3F0ifm" value="Apply specified generators directly, regardless of generator's language presence" />
+      </node>
+      <node concept="3F0ifn" id="KhTgyausWN" role="3EZMnx" />
+      <node concept="3EZMnI" id="KhTgyausWU" role="3EZMnx">
+        <node concept="2iRfu4" id="KhTgyausWV" role="2iSdaV" />
+        <node concept="3F0ifn" id="KhTgyausWQ" role="3EZMnx">
+          <property role="3F0ifm" value="include extending generators into same step:" />
+        </node>
+        <node concept="3F0A7n" id="KhTgyausXb" role="3EZMnx">
+          <ref role="1NtTu8" to="bjdw:KhTgyaupdj" resolve="withExtended" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="KhTgyaukOz">
+    <ref role="1XX52x" to="bjdw:KhTgyaukO7" resolve="CheckpointSynchronization" />
+    <node concept="3EZMnI" id="KhTgyaulrP" role="2wV5jI">
+      <node concept="3F0ifn" id="KhTgyaulsH" role="3EZMnx">
+        <property role="3F0ifm" value="synchronize with " />
+      </node>
+      <node concept="1iCGBv" id="KhTgyaukO_" role="3EZMnx">
+        <ref role="1NtTu8" to="bjdw:KhTgyaukO8" resolve="checkpoint" />
+        <node concept="1sVBvm" id="KhTgyaukOB" role="1sWHZn">
+          <node concept="3F0A7n" id="KhTgyaukOI" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="2iRfu4" id="KhTgyaulrS" role="2iSdaV" />
     </node>
   </node>
 </model>

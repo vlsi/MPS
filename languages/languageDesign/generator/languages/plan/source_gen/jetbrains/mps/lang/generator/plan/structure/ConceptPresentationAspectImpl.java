@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ApplyGenerators = new ConceptPresentationBuilder().shortDesc("Collection of generators to apply directly").create();
   private final ConceptPresentation props_Checkpoint = new ConceptPresentationBuilder().shortDesc("Synchronization point of a generation plan").create();
+  private final ConceptPresentation props_CheckpointSynchronization = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Plan = new ConceptPresentationBuilder().shortDesc("Sequence of transformation steps").create();
   private final ConceptPresentation props_Step = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Transform = new ConceptPresentationBuilder().shortDesc("Collection of languages to reduce (iow, generators to apply)").create();
@@ -24,6 +25,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ApplyGenerators;
       case LanguageConceptSwitch.Checkpoint:
         return props_Checkpoint;
+      case LanguageConceptSwitch.CheckpointSynchronization:
+        return props_CheckpointSynchronization;
       case LanguageConceptSwitch.Plan:
         return props_Plan;
       case LanguageConceptSwitch.Step:

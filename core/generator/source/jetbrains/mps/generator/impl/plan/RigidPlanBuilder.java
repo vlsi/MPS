@@ -36,6 +36,8 @@ import java.util.List;
 
 /**
  * Supports limited set of GP statements. {@link #wrapUp(PlanIdentity)} captures present state and any subsequent statements augment what's there already.
+ * Perhaps, shall bear a name that reflects its limitation, (Basic/Bare?)
+ *
  * @author Artem Tikhomirov
  * @since 2017.1
  */
