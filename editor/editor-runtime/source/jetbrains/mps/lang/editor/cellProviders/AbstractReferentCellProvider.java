@@ -22,8 +22,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultSChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
@@ -35,6 +35,7 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -156,7 +157,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   @Override
   public SubstituteInfo createDefaultSubstituteInfo() {
     if (myIsAggregation) {
-      return new DefaultChildSubstituteInfo(getSNode(), myLinkDeclaration, myEditorContext);
+      return new DefaultSChildSubstituteInfo(getSNode(), MetaAdapterByDeclaration.getContainmentLink(myLinkDeclaration), myEditorContext);
     }
     return new DefaultReferenceSubstituteInfo(getSNode(), myLinkDeclaration, myEditorContext);
   }

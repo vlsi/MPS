@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.ModelImportHelper;
 import jetbrains.mps.util.Callback;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultSChildSubstituteInfo;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -128,7 +128,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
         if (errorLabel.value != null) {
           substituteInfo = errorLabel.value.getSubstituteInfo();
         } else if (unresolvedReference.value != null && ((EditorContext) MapSequence.fromMap(_params).get("editorContext")) != null) {
-          substituteInfo = new DefaultChildSubstituteInfo(SNodeOperations.getParent(unresolvedReference.value), unresolvedReference.value, SNodeOperations.getContainingLinkDeclaration(unresolvedReference.value), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+          substituteInfo = new DefaultSChildSubstituteInfo(SNodeOperations.getParent(unresolvedReference.value), unresolvedReference.value, unresolvedReference.value.getContainmentLink(), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
           substituteInfo.setOriginalText(initialText.value);
         }
         if (substituteInfo == null) {

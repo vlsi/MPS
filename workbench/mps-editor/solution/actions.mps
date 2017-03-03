@@ -9786,7 +9786,7 @@
                           <node concept="37vLTI" id="4jh213bivaL" role="3clFbG">
                             <node concept="2ShNRf" id="4jh213bivaM" role="37vLTx">
                               <node concept="1pGfFk" id="4jh213bivaN" role="2ShVmc">
-                                <ref role="37wK5l" to="6lvu:~DefaultChildSubstituteInfo.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext)" resolve="DefaultChildSubstituteInfo" />
+                                <ref role="37wK5l" to="6lvu:~DefaultSChildSubstituteInfo.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink,jetbrains.mps.openapi.editor.EditorContext)" resolve="DefaultSChildSubstituteInfo" />
                                 <node concept="2OqwBi" id="4jh213bivaO" role="37wK5m">
                                   <node concept="37vLTw" id="3GM_nagTtTK" role="2Oq$k0">
                                     <ref role="3cqZAo" node="7DZ3qL5ROhJ" resolve="unresolvedReference" />
@@ -9796,11 +9796,15 @@
                                 <node concept="37vLTw" id="3GM_nagTBDa" role="37wK5m">
                                   <ref role="3cqZAo" node="7DZ3qL5ROhJ" resolve="unresolvedReference" />
                                 </node>
-                                <node concept="2OqwBi" id="4jh213bivaS" role="37wK5m">
-                                  <node concept="37vLTw" id="3GM_nagTyR0" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="7DZ3qL5ROhJ" resolve="unresolvedReference" />
+                                <node concept="2OqwBi" id="FDlc77xFlz" role="37wK5m">
+                                  <node concept="2JrnkZ" id="FDlc77xEYq" role="2Oq$k0">
+                                    <node concept="37vLTw" id="3GM_nagTyR0" role="2JrQYb">
+                                      <ref role="3cqZAo" node="7DZ3qL5ROhJ" resolve="unresolvedReference" />
+                                    </node>
                                   </node>
-                                  <node concept="25OxAV" id="4jh213bivaU" role="2OqNvi" />
+                                  <node concept="liA8E" id="FDlc77xGhL" role="2OqNvi">
+                                    <ref role="37wK5l" to="mhbf:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
+                                  </node>
                                 </node>
                                 <node concept="2OqwBi" id="4jh213bivaV" role="37wK5m">
                                   <node concept="2WthIp" id="4jh213bivaW" role="2Oq$k0" />
