@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.DefaultSChildSetter;
 import jetbrains.mps.smodel.action.DefaultSChildSubstituteAction;
+import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
@@ -52,7 +53,6 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo impl
   private SNode myCurrentChild;
   private SContainmentLink myLink;
   private SAbstractConcept myTargetConcept;
-  private DefaultSChildSetter mySetter;
 
   public DefaultSChildSubstituteInfo(final SNode parentNode, final SContainmentLink link, final EditorContext editorContext) {
     super(editorContext);
@@ -66,7 +66,6 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo impl
       }
     });
     myTargetConcept = link.getTargetConcept();
-    mySetter = new DefaultSChildSetter(myLink);
   }
 
   public DefaultSChildSubstituteInfo(final SNode parentNode, final SNode currChildNode, final SContainmentLink link, final EditorContext editorContext) {
@@ -75,56 +74,22 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo impl
     myCurrentChild = currChildNode;
     myLink = link;
     myTargetConcept = link.getTargetConcept();
-    mySetter = new DefaultSChildSetter(myLink);
   }
 
   @Override
   public List<SubstituteAction> createActions() {
-    SContainmentLink link = mySetter.getLink();
-
-    //todo: get rid of declaration node
-    if (!ModelConstraints.canBeChild(myTargetConcept, myParentNode, link.getDeclarationNode(), null, null)) {
-      return Collections.emptyList();
-    }
-    if (myTargetConcept instanceof SConcept) {
-      SReferenceLink smartRef = ReferenceConceptUtil.getCharacteristicReference(((SConcept) myTargetConcept));
-      if (smartRef != null) {
-        //todo add smart actions
-        return Collections.emptyList();
-      }
-    }
-
-    Set<SAbstractConcept> concepts = new HashSet<SAbstractConcept>();
-    SModel model = this.myParentNode.getModel();
-    if (model == null) {
-      return Collections.emptyList();
-    }
-    for (SLanguage language : SModelOperations.getAllLanguageImports(model)) {
-      for (SAbstractConcept concept : language.getConcepts()) {
-        if (!(concept instanceof SConcept)) continue;
-        if (!SNodeUtil.isDefaultSubstitutable(concept)) continue;
-        if (concept.isSubConceptOf(this.myTargetConcept)) {
-          concepts.add(concept);
-        }
-      }
-    }
-    ArrayList<SubstituteAction> substituteActions = new ArrayList<SubstituteAction>();
-    for (SAbstractConcept concept : concepts) {
-      //todo add constraints
-      substituteActions.add(new DefaultSChildSubstituteAction(concept, myParentNode, myCurrentChild, mySetter));
-    }
-    return substituteActions;
+    return ModelActions.createChildNodeSubstituteActions(myParentNode, myCurrentChild, myLink, myTargetConcept, createDefaultNodeSetter(), getEditorContext());
   }
 
 
   @Override
   protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
-    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    HashMap<SNode, SNode> mapping = new HashMap<>();
     final SNode copy = CopyUtil.copy(Arrays.asList(myParentNode.getContainingRoot()), mapping).get(0);
     getModelForTypechecking().addRootNode(copy);
 
     final SAbstractConcept concept = myLink.getTargetConcept();
-    boolean holeIsAType = concept != null && concept.isSubConceptOf(SNodeUtil.concept_IType);
+    boolean holeIsAType = concept.isSubConceptOf(SNodeUtil.concept_IType);
     SNode parent = mapping.get(myParentNode);
     SNode hole = SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_BaseConcept, null, null, true);
     if (myCurrentChild != null) {
