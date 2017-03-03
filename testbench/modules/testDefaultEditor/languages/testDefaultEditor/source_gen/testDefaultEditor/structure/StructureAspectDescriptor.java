@@ -160,7 +160,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/938834323431434553");
     b.prop("age", 0xd0768d7cf132948L, "938834323431434568");
-    b.prop("sex", 0xd0768d7cf13294aL, "938834323431434570");
+    b.prop("inSpb", 0xd0768d7cf13294aL, "938834323431434570");
     b.prop("lastName", 0xd0768d7cf13294fL, "938834323431434575");
     b.prop("politicWing", 0x5318180a0a3dcaffL, "5987562135989635839");
     b.associate("bestFriend", 0xd0768d7cf132953L).target(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf132939L).optional(true).origin("938834323431434579").done();

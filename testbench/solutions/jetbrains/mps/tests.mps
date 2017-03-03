@@ -1909,6 +1909,18 @@
     <node concept="lpD6D" id="10HrLiaLxp2" role="lpD6w">
       <ref role="lpD7u" to="ryl9:10HrLiaLxnO" resolve="DefaultEditor_BackspaceFriend" />
     </node>
+    <node concept="lpD6D" id="3bKUdoCZBN4" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3bKUdoCWw07" resolve="DefaultEditor_CompleteMultipleChild" />
+    </node>
+    <node concept="lpD6D" id="3bKUdoCZC0t" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3bKUdoCW_om" resolve="DefaultEditor_CompleteReference" />
+    </node>
+    <node concept="lpD6D" id="3bKUdoCZCdR" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3bKUdoCW_FQ" resolve="DefaultEditor_CompleteSingleChild" />
+    </node>
+    <node concept="lpD6D" id="3bKUdoCZCQ8" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3bKUdoCXyVL" resolve="DefaultEditor_CompleteSmartReference" />
+    </node>
     <node concept="lpD6D" id="2axhso1Goby" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5dui9Yb8n5C" resolve="DefaultEditor_DeleteChild" />
     </node>

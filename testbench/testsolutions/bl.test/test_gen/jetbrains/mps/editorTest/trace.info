@@ -4621,6 +4621,75 @@
       <unit id="3586175963765097035" at="10,0,28,0" name="jetbrains.mps.editorTest.CompletionSpaceSecond_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3670689702814547975">
+    <file name="DefaultEditor_CompleteMultipleChild_Test.java">
+      <node id="3670689702814547975" at="15,75,16,102" concept="2" />
+      <node id="3670689702814547975" at="16,102,17,111" concept="2" />
+      <node id="3670689702814547975" at="23,51,24,72" concept="2" />
+      <node id="3670689702814547982" at="24,72,25,71" concept="2" />
+      <node id="3670689702814569978" at="25,71,26,82" concept="2" />
+      <node id="3670689702814547975" at="14,0,19,0" concept="5" trace="test_DefaultEditor_CompleteMultipleChild#()V" />
+      <node id="3670689702814547975" at="22,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3670689702814547975" at="15,75,17,111" />
+      <scope id="3670689702814547975" at="23,51,26,82" />
+      <scope id="3670689702814547975" at="14,0,19,0" />
+      <scope id="3670689702814547975" at="22,0,28,0" />
+      <unit id="3670689702814547975" at="20,0,29,0" name="jetbrains.mps.editorTest.DefaultEditor_CompleteMultipleChild_Test$TestBody" />
+      <unit id="3670689702814547975" at="12,0,30,0" name="jetbrains.mps.editorTest.DefaultEditor_CompleteMultipleChild_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3670689702814570006">
+    <file name="DefaultEditor_CompleteReference_Test.java">
+      <node id="3670689702814570006" at="15,71,16,102" concept="2" />
+      <node id="3670689702814570006" at="16,102,17,107" concept="2" />
+      <node id="3670689702814570006" at="23,51,24,72" concept="2" />
+      <node id="3670689702814570643" at="24,72,25,71" concept="2" />
+      <node id="3670689702814571232" at="25,71,26,82" concept="2" />
+      <node id="3670689702814570006" at="14,0,19,0" concept="5" trace="test_DefaultEditor_CompleteReference#()V" />
+      <node id="3670689702814570006" at="22,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3670689702814570006" at="15,71,17,107" />
+      <scope id="3670689702814570006" at="23,51,26,82" />
+      <scope id="3670689702814570006" at="14,0,19,0" />
+      <scope id="3670689702814570006" at="22,0,28,0" />
+      <unit id="3670689702814570006" at="20,0,29,0" name="jetbrains.mps.editorTest.DefaultEditor_CompleteReference_Test$TestBody" />
+      <unit id="3670689702814570006" at="12,0,30,0" name="jetbrains.mps.editorTest.DefaultEditor_CompleteReference_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3670689702814571254">
+    <file name="DefaultEditor_CompleteSingleChild_Test.java">
+      <node id="3670689702814571254" at="15,73,16,102" concept="2" />
+      <node id="3670689702814571254" at="16,102,17,109" concept="2" />
+      <node id="3670689702814571254" at="23,51,24,72" concept="2" />
+      <node id="3670689702814571261" at="24,72,25,71" concept="2" />
+      <node id="3670689702814571263" at="25,71,26,82" concept="2" />
+      <node id="3670689702814571254" at="14,0,19,0" concept="5" trace="test_DefaultEditor_CompleteSingleChild#()V" />
+      <node id="3670689702814571254" at="22,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3670689702814571254" at="15,73,17,109" />
+      <scope id="3670689702814571254" at="23,51,26,82" />
+      <scope id="3670689702814571254" at="14,0,19,0" />
+      <scope id="3670689702814571254" at="22,0,28,0" />
+      <unit id="3670689702814571254" at="20,0,29,0" name="jetbrains.mps.editorTest.DefaultEditor_CompleteSingleChild_Test$TestBody" />
+      <unit id="3670689702814571254" at="12,0,30,0" name="jetbrains.mps.editorTest.DefaultEditor_CompleteSingleChild_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3670689702814822129">
+    <file name="DefaultEditor_CompleteSmartReference_Test.java">
+      <node id="3670689702814822129" at="15,76,16,102" concept="2" />
+      <node id="3670689702814822129" at="16,102,17,112" concept="2" />
+      <node id="3670689702814822129" at="23,51,24,72" concept="2" />
+      <node id="3670689702814825784" at="24,72,25,26" concept="2" />
+      <node id="3670689702814822131" at="25,26,26,71" concept="2" />
+      <node id="3670689702814826362" at="26,71,27,82" concept="2" />
+      <node id="3670689702814822129" at="14,0,19,0" concept="5" trace="test_DefaultEditor_CompleteSmartReference#()V" />
+      <node id="3670689702814822129" at="22,0,29,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3670689702814822129" at="15,76,17,112" />
+      <scope id="3670689702814822129" at="23,51,27,82" />
+      <scope id="3670689702814822129" at="14,0,19,0" />
+      <scope id="3670689702814822129" at="22,0,29,0" />
+      <unit id="3670689702814822129" at="20,0,30,0" name="jetbrains.mps.editorTest.DefaultEditor_CompleteSmartReference_Test$TestBody" />
+      <unit id="3670689702814822129" at="12,0,31,0" name="jetbrains.mps.editorTest.DefaultEditor_CompleteSmartReference_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3682190017634612695">
     <file name="FluentParens1_Test.java">
       <node id="3682190017634612695" at="13,53,14,102" concept="2" />
