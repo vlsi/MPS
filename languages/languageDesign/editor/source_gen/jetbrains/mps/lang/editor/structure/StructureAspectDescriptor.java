@@ -2194,7 +2194,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L);
     b.origin("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1073389658414");
     b.kind(ConceptKind.IMPLEMENTATION_WITH_STUB, StaticScope.GLOBAL);
-    b.alias("{<{propertyDeclaration}>}");
+    b.alias("{<{relationDeclaration}>}");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCellModel_ReadOnlyModelAccessor() {
@@ -2216,7 +2216,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1088013125922");
     b.aggregate("editorComponent", 0xfd5cf2df2aL).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd5cee772bL).optional(false).ordered(true).multiple(false).origin("1088186146602").done();
     b.kind(ConceptKind.IMPLEMENTATION_WITH_STUB, StaticScope.GLOBAL);
-    b.alias("%<{linkDeclaration}>%->");
+    b.alias("%<{relationDeclaration}>%->");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCellModel_RefNode() {
@@ -2230,7 +2230,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("removeHints", 0x51568a5db0d45e10L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x40953da3e594b7a8L).optional(true).ordered(true).multiple(false).origin("5861024100072578576").done();
     b.aggregate("emptyCellModel", 0x3a4d559b42e5cbL).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L).optional(true).ordered(true).multiple(false).origin("16410578721629643").done();
     b.kind(ConceptKind.IMPLEMENTATION_WITH_STUB, StaticScope.GLOBAL);
-    b.alias("%<{linkDeclaration}>%");
+    b.alias("%<{relationDeclaration}>%");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCellModel_RefNodeList() {
@@ -2246,7 +2246,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("addHints", 0x650641cc62245646L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x40953da3e594b7a8L).optional(true).ordered(true).multiple(false).origin("7279578193766667846").done();
     b.aggregate("removeHints", 0x650641cc62245647L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x40953da3e594b7a8L).optional(true).ordered(true).multiple(false).origin("7279578193766667847").done();
     b.kind(ConceptKind.IMPLEMENTATION_WITH_STUB, StaticScope.GLOBAL);
-    b.alias("%<{linkDeclaration}>%");
+    b.alias("%<{relationDeclaration}>%");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCellModel_ReferencePresentation() {
