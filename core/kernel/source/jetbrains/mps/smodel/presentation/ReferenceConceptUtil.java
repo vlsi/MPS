@@ -44,7 +44,7 @@ import java.util.regex.Pattern;
 public class ReferenceConceptUtil {
   private static final Logger LOG = LogManager.getLogger(ReferenceConceptUtil.class);
 
-  private static final Pattern SMART_ALIAS = Pattern.compile("(.*)<\\{(.+)\\}>(.*)");
+
 
   /**
    * Purpose of some concepts is only to hold reference on something else.
@@ -66,13 +66,12 @@ public class ReferenceConceptUtil {
         String expectedReferentRole = null;
         String alias = SNodeUtil.getConceptAlias(concept);
         if (alias != null) {
-          // handle pattern 'xxx <{_referent_role_}> yyy'
-          final Matcher matcher = SMART_ALIAS.matcher(alias);
-          if (!matcher.matches()) {
+          final SmartAliasHelper smartAliasHelper = new SmartAliasHelper(alias);
+          expectedReferentRole = smartAliasHelper.getSmartRole();
+          if (expectedReferentRole == null) {
             // trick (why?): has an alias but it doesn't match pattern - no characteristic reference
             return null;
           }
-          expectedReferentRole = matcher.group(2);
         }
 
         List<SNode> links = SModelSearchUtil.getReferenceLinkDeclarations(concept);
@@ -102,13 +101,12 @@ public class ReferenceConceptUtil {
     String expectedReferentRole = null;
     String alias = concept.getConceptAlias();
     if (!alias.isEmpty()) {
-      // handle pattern 'xxx <{_referent_role_}> yyy'
-      final Matcher matcher = SMART_ALIAS.matcher(alias);
-      if (!matcher.matches()) {
+      final SmartAliasHelper smartAliasHelper = new SmartAliasHelper(alias);
+      expectedReferentRole = smartAliasHelper.getSmartRole();
+      if (expectedReferentRole == null) {
         // trick (why?): has an alias but it doesn't match pattern - no characteristic reference
         return null;
       }
-      expectedReferentRole = matcher.group(2);
     }
 
     Iterable<SReferenceLink> links = concept.getReferenceLinks();
@@ -137,34 +135,27 @@ public class ReferenceConceptUtil {
   public static boolean hasSmartAlias(SNode concept) {
     String conceptAlias = SNodeUtil.getConceptAlias(concept);
     // matches pattern 'xxx <{_referent_role_}> yyy' ?
-    return conceptAlias != null && SMART_ALIAS.matcher(conceptAlias).matches();
+    return conceptAlias != null && new SmartAliasHelper(conceptAlias).isSmartAlias();
   }
 
   public static boolean hasSmartAlias(SAbstractConcept concept) {
     String conceptAlias = concept.getConceptAlias();
     // matches pattern 'xxx <{_referent_role_}> yyy' ?
-    return !conceptAlias.isEmpty() && SMART_ALIAS.matcher(conceptAlias).matches();
+    return !conceptAlias.isEmpty() && new SmartAliasHelper(conceptAlias).isSmartAlias();
   }
 
   @Deprecated
   public static String getPresentationFromSmartAlias(SNode concept, String referentPresentation) {
     String conceptAlias = SNodeUtil.getConceptAlias(concept);
-    // handle pattern 'xxx <{_referent_role_}> yyy'
-    final Matcher matcher = SMART_ALIAS.matcher(conceptAlias);
-    if (!matcher.matches()) {
+    if (conceptAlias == null) {
       return referentPresentation;
     }
-    return matcher.group(1) + referentPresentation + matcher.group(3);
+    return new SmartAliasHelper(conceptAlias).getPresentation(referentPresentation);
   }
 
   public static String getPresentationFromSmartAlias(SAbstractConcept concept, String referentPresentation) {
     String conceptAlias = concept.getConceptAlias();
-    // handle pattern 'xxx <{_referent_role_}> yyy'
-    final Matcher matcher = SMART_ALIAS.matcher(conceptAlias);
-    if (!matcher.matches()) {
-      return referentPresentation;
-    }
-    return matcher.group(1) + referentPresentation + matcher.group(3);
+    return new SmartAliasHelper(conceptAlias).getPresentation(referentPresentation);
   }
 
   public static String getPresentation(SNode node) {
