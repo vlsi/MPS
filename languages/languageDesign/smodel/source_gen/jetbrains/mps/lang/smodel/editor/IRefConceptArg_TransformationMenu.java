@@ -18,13 +18,15 @@ import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableActionItem;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -57,53 +59,100 @@ public class IRefConceptArg_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Action_9e3ftz_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Group_9e3ftz_a0a());
     }
-    private class TransformationMenuPart_Action_9e3ftz_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-      @Nullable
-      protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Action_9e3ftz_a0a.Item(context);
+    public class TransformationMenuPart_Group_9e3ftz_a0a extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private boolean isCastExpression;
+      @Override
+      protected void initialize(TransformationMenuContext _context) {
+        super.initialize(_context);
+        isCastExpression = new Computable<Boolean>() {
+          public Boolean compute() {
+            return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1871b2e3b0ef0078L, "jetbrains.mps.lang.smodel.structure.SConceptTypeCastExpression")) || SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"));
+          }
+        }.compute();
       }
 
-      private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
-        private final TransformationMenuContext _context;
-
-        private Item(TransformationMenuContext context) {
-          _context = context;
-        }
-
-        @Nullable
+      @Override
+      protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
+        return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Group_9e3ftz_a0a.TransformationMenuPart_Group_9e3ftz_a0a0(), new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Group_9e3ftz_a0a.TransformationMenuPart_Group_9e3ftz_b0a0());
+      }
+      public class TransformationMenuPart_Group_9e3ftz_a0a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Override
-        public String getLabelText(String pattern) {
-          return ")";
+        protected boolean isApplicable(TransformationMenuContext _context) {
+          return isCastExpression;
         }
 
         @Override
-        public void execute(@NotNull String pattern) {
-          SNode parentExpression = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
-          SNode parens = ParenthesisUtil.createUnmatchedRightParenthesis(parentExpression);
-          if (eq_9e3ftz_a0c0g2d5(parens, parentExpression)) {
-            SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), AttributeOperations.getAttribute(parens, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2052c4520af308e1L, "jetbrains.mps.baseLanguage.structure.IncompleteRightParen"))), SelectionManager.LAST_CELL, -1);
-          } else {
-            SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), parens, SelectionManager.LAST_CELL, -1);
+        protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
+          return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Group_9e3ftz_a0a.TransformationMenuPart_Group_9e3ftz_a0a0.TransformationMenuPart_IncludeMenu_9e3ftz_a0a0a());
+        }
+        public class TransformationMenuPart_IncludeMenu_9e3ftz_a0a0a extends IncludeTransformationMenuTransformationMenuPart {
+          @Nullable
+          @Override
+          protected SNode getNode(TransformationMenuContext _context) {
+            return SNodeOperations.getParent(_context.getNode());
           }
-          return;
+
+        }
+      }
+      public class TransformationMenuPart_Group_9e3ftz_b0a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+        @Override
+        protected boolean isApplicable(TransformationMenuContext _context) {
+          return !(isCastExpression);
         }
 
-
-        @Nullable
         @Override
-        public SAbstractConcept getOutputConcept() {
-          return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+        protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
+          return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Group_9e3ftz_a0a.TransformationMenuPart_Group_9e3ftz_b0a0.TransformationMenuPart_Action_9e3ftz_a1a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
         }
-        @Override
-        public String getShortDescriptionText(@NotNull String pattern) {
-          return "Complete parens";
+        private class TransformationMenuPart_Action_9e3ftz_a1a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+          @Nullable
+          protected TransformationMenuItem createItem(TransformationMenuContext context) {
+            return new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Group_9e3ftz_a0a.TransformationMenuPart_Group_9e3ftz_b0a0.TransformationMenuPart_Action_9e3ftz_a1a0a.Item(context);
+          }
+
+          private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
+            private final TransformationMenuContext _context;
+
+            private Item(TransformationMenuContext context) {
+              _context = context;
+            }
+
+            @Nullable
+            @Override
+            public String getLabelText(String pattern) {
+              return ")";
+            }
+
+            @Override
+            public void execute(@NotNull String pattern) {
+              SNode parentExpression = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
+              SNode parens = ParenthesisUtil.createUnmatchedRightParenthesis(parentExpression);
+              if (eq_9e3ftz_a0c0g2d5d5(parens, parentExpression)) {
+                SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), AttributeOperations.getAttribute(parens, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2052c4520af308e1L, "jetbrains.mps.baseLanguage.structure.IncompleteRightParen"))), SelectionManager.LAST_CELL, -1);
+              } else {
+                SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), parens, SelectionManager.LAST_CELL, -1);
+              }
+              return;
+            }
+
+
+            @Nullable
+            @Override
+            public SAbstractConcept getOutputConcept() {
+              return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+            }
+            @Override
+            public String getShortDescriptionText(@NotNull String pattern) {
+              return "Complete parens";
+            }
+          }
         }
       }
     }
   }
-  private static boolean eq_9e3ftz_a0c0g2d5(Object a, Object b) {
+  private static boolean eq_9e3ftz_a0c0g2d5d5(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
