@@ -159,7 +159,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)/1239531918181");
     b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
-    b.alias("<{tupleDeclaration}> type");
+    b.alias("<{classifier}> type");
     return b.create();
   }
 }
