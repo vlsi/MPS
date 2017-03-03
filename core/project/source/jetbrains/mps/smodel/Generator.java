@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,6 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -44,7 +42,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -86,7 +83,7 @@ public class Generator extends ReloadableModuleBase {
   }
 
   public List<SModel> getOwnTemplateModels() {
-    List<SModel> templateModels = new ArrayList<SModel>();
+    List<SModel> templateModels = new ArrayList<>();
     for (SModel modelDescriptor : getModels()) {
       if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
         templateModels.add(modelDescriptor);
@@ -157,7 +154,7 @@ public class Generator extends ReloadableModuleBase {
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
-    HashSet<SDependency> rv = new HashSet<SDependency>(IterableUtil.asCollection(super.getDeclaredDependencies()));
+    HashSet<SDependency> rv = new HashSet<>(IterableUtil.asCollection(super.getDeclaredDependencies()));
     final SRepository repo = getRepository();
 
     // generator sees its source language
@@ -178,7 +175,7 @@ public class Generator extends ReloadableModuleBase {
   }
 
   public List<SModuleReference> getReferencedGeneratorUIDs() {
-    return new ArrayList<SModuleReference>(myGeneratorDescriptor.getDepGenerators());
+    return new ArrayList<>(myGeneratorDescriptor.getDepGenerators());
   }
 
   public boolean deleteReferenceFromPriorities(org.jetbrains.mps.openapi.model.SModelReference ref) {
@@ -203,7 +200,6 @@ public class Generator extends ReloadableModuleBase {
    *
    * This method can be removed if we separate generator module persistence from the language module persistence.
    *
-   * @param generatorDescriptor
    */
   final void updateGeneratorDescriptor(GeneratorDescriptor generatorDescriptor) {
     initGeneratorDescriptor(generatorDescriptor);
@@ -234,20 +230,27 @@ public class Generator extends ReloadableModuleBase {
       return Generator.class;
     }
 
+    @Override
+    public Set<SModel> getAutoImportedModels(Generator contextGenerator, SModel model) {
+      // likely, one needs to reference concepts of the source language:
+      if (SModelStereotype.isGeneratorModel(model)) {
+        // FIXME MM, please tell me what to use instead! SModuleOperations.getAspect(SModule, "structure") isn't nice alternative for hand-written code.
+        SModel structureAspect = LanguageAspect.STRUCTURE.get(contextGenerator.getSourceLanguage());
+        if (structureAspect != null) {
+          // XXX when source language used to be 'used language', we've imported all extended languages as well. Shall we
+          // import structures of extended language modules here as well?
+          return Collections.singleton(structureAspect);
+        }
+      }
+      return Collections.emptySet();
+    }
+
     @NotNull
     @Override
     public Collection<SLanguage> getLanguages(Generator contextGenerator, SModel model) {
-      if (SModelStereotype.isGeneratorModel(model)) {
-        SLanguage sourceLanguage = MetaAdapterByDeclaration.getLanguage(contextGenerator.getSourceLanguage());
-
-        Set<SLanguage> result = new LinkedHashSet<SLanguage>();
-        LanguageRegistry lr = LanguageRegistry.getInstance(contextGenerator.getRepository());
-        result.addAll(new SLanguageHierarchy(lr, Collections.singleton(sourceLanguage)).getExtended());
-
-        return result;
-      } else {
-        return Collections.emptySet();
-      }
+      // languages we are going to write templates at are not known at this moment,
+      // generator languages are imported with dedicated templates devkit
+      return Collections.emptySet();
     }
 
     @Override
