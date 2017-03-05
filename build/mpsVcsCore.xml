@@ -68,9 +68,21 @@
     </copy>
     <mkdir dir="${build.layout}/vcs-core" />
     <mkdir dir="${build.layout}/vcs-core/META-INF" />
-    <copy todir="${build.layout}/vcs-core/META-INF">
-      <fileset file="${mps_home}/plugins/vcs-core/META-INF/plugin.xml" />
-    </copy>
+    <echoxml file="${build.layout}/vcs-core/META-INF/plugin.xml">
+      <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <id>jetbrains.mps.vcs.core</id>
+        <name>MPS Vcs Core</name>
+        <description>Plugin is only needed to be a dependency of jetbrains.mps.vcs plugin</description>
+        <version>1.0</version>
+        <depends>jetbrains.mps.core</depends>
+        <depends>git4idea</depends>
+        <depends>svn4idea</depends>
+        
+        <extensions defaultExtensionNs="com.intellij">
+          <mps.LanguageLibrary dir="/languages" />
+        </extensions>
+      </idea-plugin>
+    </echoxml>
     <mkdir dir="${build.layout}/vcs-core/META-INF" />
     <copy todir="${build.layout}/vcs-core/META-INF">
       <fileset file="${mps_home}/plugins/vcs/META-INF/MPSVcs.xml" />

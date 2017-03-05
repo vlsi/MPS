@@ -12013,6 +12013,12 @@
               <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
             </node>
           </node>
+          <node concept="1SiIV0" id="6woObKLuP__" role="3bR37C">
+            <node concept="3bR9La" id="6woObKLuP_A" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="44LXwdzyvTi" resolve="Annotations" />
+            </node>
+          </node>
         </node>
         <node concept="1E0d5M" id="fA2nR_yV4L" role="1E1XAP">
           <ref role="1E0d5P" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
@@ -21068,6 +21074,9 @@
       </node>
       <node concept="m$_yC" id="iTJcDIxtWQ" role="m$_yJ">
         <ref role="m$_y1" node="3nGzrDDNo$o" resolve="svn4idea" />
+      </node>
+      <node concept="m$_yC" id="6woObKLuPAM" role="m$_yJ">
+        <ref role="m$_y1" node="6ifcnI8BosJ" resolve="jetbrains.mps.vcs.core" />
       </node>
     </node>
     <node concept="398rNT" id="1lMM4owFq60" role="1l3spd">
@@ -30754,21 +30763,6 @@
           <property role="3MwjfP" value="Plugin is only needed to be a dependency of jetbrains.mps.vcs plugin" />
         </node>
       </node>
-      <node concept="398BVA" id="I6XuqGYeIG" role="I30fb">
-        <ref role="398BVh" node="6ifcnI8$2ke" resolve="mps_home" />
-        <node concept="2Ry0Ak" id="I6XuqGYeIH" role="iGT6I">
-          <property role="2Ry0Am" value="plugins" />
-          <node concept="2Ry0Ak" id="I6XuqGYeII" role="2Ry0An">
-            <property role="2Ry0Am" value="vcs-core" />
-            <node concept="2Ry0Ak" id="I6XuqGYeIJ" role="2Ry0An">
-              <property role="2Ry0Am" value="META-INF" />
-              <node concept="2Ry0Ak" id="I6XuqGYeIK" role="2Ry0An">
-                <property role="2Ry0Am" value="plugin.xml" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="55IIr" id="6ifcnI8$2iS" role="auvoZ">
       <node concept="2Ry0Ak" id="6ifcnI8A4QM" role="iGT6I">
@@ -30818,7 +30812,7 @@
           </node>
           <node concept="28jJK3" id="3SChJ9XyqTP" role="39821P">
             <node concept="398BVA" id="3SChJ9XyqUH" role="28jJRO">
-              <ref role="398BVh" node="6ifcnI8$2ke" />
+              <ref role="398BVh" node="6ifcnI8$2ke" resolve="mps_home" />
               <node concept="2Ry0Ak" id="3SChJ9XyqVB" role="iGT6I">
                 <property role="2Ry0Am" value="plugins" />
                 <node concept="2Ry0Ak" id="3SChJ9XyqVG" role="2Ry0An">

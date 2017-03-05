@@ -135,6 +135,7 @@
       <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
       <plugin path="${artifacts.mpsVcsCore}/git4idea" />
       <plugin path="${artifacts.mpsVcsCore}/svn4idea" />
+      <plugin path="${artifacts.mpsVcsCore}/vcs-core" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
