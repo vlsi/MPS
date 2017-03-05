@@ -5,7 +5,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import javax.swing.JLabel;
 import jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor;
-import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor;
+import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters1_Configuration_Editor;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
@@ -17,7 +17,7 @@ import com.intellij.openapi.options.ConfigurationException;
 public class Java_Configuration_Editor extends SettingsEditorEx<Java_Configuration> {
   private JLabel myLabel;
   private NodeBySeveralConcepts_Configuration_Editor myNode;
-  private JavaRunParameters_Configuration_Editor myRunParameters;
+  private JavaRunParameters1_Configuration_Editor myRunParameters;
   public void disposeEditor() {
     myRunParameters.dispose();
     Disposer.dispose(myNode);
@@ -30,7 +30,6 @@ public class Java_Configuration_Editor extends SettingsEditorEx<Java_Configurati
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(myLabel, BorderLayout.NORTH);
     panel.add(nodeChooser, BorderLayout.CENTER);
-
     JavaConfigurationEditorComponent javaRunParametersEditor = myRunParameters.createEditor();
 
     JPanel mainPanel = new JPanel(new BorderLayout());
@@ -46,7 +45,7 @@ public class Java_Configuration_Editor extends SettingsEditorEx<Java_Configurati
     myNode.resetEditorFrom(configuration.getNode());
     myRunParameters.resetEditorFrom(configuration.getRunParameters());
   }
-  public Java_Configuration_Editor(NodeBySeveralConcepts_Configuration_Editor node, JavaRunParameters_Configuration_Editor runParameters) {
+  public Java_Configuration_Editor(NodeBySeveralConcepts_Configuration_Editor node, JavaRunParameters1_Configuration_Editor runParameters) {
     myNode = node;
     myRunParameters = runParameters;
   }

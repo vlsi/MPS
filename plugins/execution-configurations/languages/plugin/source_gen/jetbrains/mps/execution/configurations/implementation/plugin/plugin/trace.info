@@ -42,7 +42,7 @@
       <node id="514667495885180441" at="27,0,28,0" concept="6" trace="myDebuggerSettings" />
       <node id="1353230511309622143" at="28,0,29,0" concept="6" trace="myJavaRunParameters" />
       <node id="1353230511309668927" at="29,0,30,0" concept="6" trace="myTestNodes" />
-      <node id="7425944265394330352" at="31,247,32,24" concept="5" />
+      <node id="7425944265394330352" at="31,248,32,24" concept="5" />
       <node id="8844446772621203086" at="32,24,33,26" concept="5" />
       <node id="8221742540279283302" at="33,26,34,36" concept="5" />
       <node id="514667495885184566" at="34,36,35,42" concept="5" />
@@ -53,8 +53,8 @@
       <node id="1353230511309575869" at="43,72,44,207" concept="10" />
       <node id="8221742540280419281" at="48,22,49,54" concept="5" />
       <node id="1353230511309683463" at="52,7,53,26" concept="11" />
-      <node id="1353230511309618049" at="56,89,57,72" concept="10" />
-      <node id="1353230511309618054" at="57,72,58,80" concept="10" />
+      <node id="1353230511309618049" at="56,89,57,73" concept="10" />
+      <node id="1353230511309618054" at="57,73,58,80" concept="10" />
       <node id="1353230511309618062" at="58,80,59,76" concept="10" />
       <node id="1353230511309618072" at="60,29,61,22" concept="5" />
       <node id="1353230511309618037" at="62,5,63,23" concept="10" />
@@ -95,7 +95,7 @@
       <scope id="4875410293293187552" at="68,14,71,22" />
       <scope id="5809945197338050334" at="87,0,90,0" />
       <scope id="5809945197338050331" at="85,30,90,7" />
-      <scope id="1353230511309587429" at="31,247,37,28" />
+      <scope id="1353230511309587429" at="31,248,37,28" />
       <scope id="1353230511309575888" at="46,0,52,0">
         <var name="p0" id="1353230511309575891" />
       </scope>
@@ -1667,7 +1667,7 @@
       <node id="6062668769033909448" at="115,33,116,51" concept="5" />
       <node id="6062668769033909448" at="118,35,119,104" concept="5" />
       <node id="6062668769033909448" at="124,56,125,18" concept="11" />
-      <node id="6062668769033909448" at="127,61,128,27" concept="11" />
+      <node id="6062668769033909448" at="127,62,128,27" concept="11" />
       <node id="5960730365808449596" at="131,60,132,74" concept="10" />
       <node id="1471346093949795150" at="133,31,134,94" concept="10" />
       <node id="167449308724993104" at="134,94,135,82" concept="10" />
@@ -1682,8 +1682,8 @@
       <node id="6062668769033909448" at="158,9,159,36" concept="5" />
       <node id="6062668769033909448" at="159,36,160,67" concept="5" />
       <node id="6062668769033909448" at="160,67,161,74" concept="5" />
-      <node id="6062668769033909448" at="161,74,162,88" concept="5" />
-      <node id="6062668769033909448" at="162,88,163,19" concept="11" />
+      <node id="6062668769033909448" at="161,74,162,89" concept="5" />
+      <node id="6062668769033909448" at="162,89,163,19" concept="11" />
       <node id="6062668769033909448" at="165,42,166,26" concept="5" />
       <node id="6062668769033909448" at="168,5,169,17" concept="11" />
       <node id="6062668769033909448" at="175,61,176,74" concept="10" />
@@ -1759,7 +1759,7 @@
       <scope id="6062668769033909448" at="115,33,116,51" />
       <scope id="6062668769033909448" at="118,35,119,104" />
       <scope id="6062668769033909448" at="124,56,125,18" />
-      <scope id="6062668769033909448" at="127,61,128,27" />
+      <scope id="6062668769033909448" at="127,62,128,27" />
       <scope id="167449308725081264" at="144,22,145,29" />
       <scope id="6062668769033909448" at="165,42,166,26" />
       <scope id="6062668769033909448" at="180,95,181,34" />
@@ -1895,47 +1895,46 @@
       <node id="6062668769033909466" at="29,68,30,50" concept="10" />
       <node id="6062668769033909473" at="30,50,31,43" concept="5" />
       <node id="6062668769033909479" at="31,43,32,48" concept="5" />
-      <node id="6062668769033909485" at="32,48,33,0" concept="13" />
-      <node id="6062668769033909486" at="33,0,34,94" concept="10" />
-      <node id="6062668769033909492" at="34,94,35,0" concept="13" />
-      <node id="6062668769033909493" at="35,0,36,54" concept="10" />
-      <node id="6062668769033909500" at="36,54,37,45" concept="5" />
-      <node id="6062668769033909506" at="37,45,38,64" concept="5" />
-      <node id="6062668769033909512" at="38,64,39,21" concept="11" />
-      <node id="6062668769033909532" at="41,99,42,50" concept="5" />
-      <node id="6062668769033909539" at="42,50,43,68" concept="5" />
-      <node id="6062668769033909516" at="45,71,46,52" concept="5" />
-      <node id="6062668769033909523" at="46,52,47,70" concept="5" />
-      <node id="6062668769033909448" at="49,139,50,18" concept="5" />
-      <node id="6062668769033909448" at="50,18,51,36" concept="5" />
-      <node id="6062668769033909448" at="41,0,45,0" concept="9" trace="applyEditorTo#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/Java_Configuration;)V" />
-      <node id="6062668769033909448" at="45,0,49,0" concept="9" trace="resetEditorFrom#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/Java_Configuration;)V" />
-      <node id="6062668769033909448" at="49,0,53,0" concept="3" trace="Java_Configuration_Editor#(Lcom/intellij/openapi/options/SettingsEditor;Lcom/intellij/openapi/options/SettingsEditor;)V" />
+      <node id="6062668769033909486" at="32,48,33,94" concept="10" />
+      <node id="6062668769033909492" at="33,94,34,0" concept="13" />
+      <node id="6062668769033909493" at="34,0,35,54" concept="10" />
+      <node id="6062668769033909500" at="35,54,36,45" concept="5" />
+      <node id="6062668769033909506" at="36,45,37,64" concept="5" />
+      <node id="6062668769033909512" at="37,64,38,21" concept="11" />
+      <node id="6062668769033909532" at="40,99,41,50" concept="5" />
+      <node id="6062668769033909539" at="41,50,42,68" concept="5" />
+      <node id="6062668769033909516" at="44,71,45,52" concept="5" />
+      <node id="6062668769033909523" at="45,52,46,70" concept="5" />
+      <node id="6062668769033909448" at="48,140,49,18" concept="5" />
+      <node id="6062668769033909448" at="49,18,50,36" concept="5" />
+      <node id="6062668769033909448" at="40,0,44,0" concept="9" trace="applyEditorTo#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/Java_Configuration;)V" />
+      <node id="6062668769033909448" at="44,0,48,0" concept="9" trace="resetEditorFrom#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/Java_Configuration;)V" />
+      <node id="6062668769033909448" at="48,0,52,0" concept="3" trace="Java_Configuration_Editor#(Lcom/intellij/openapi/options/SettingsEditor;Lcom/intellij/openapi/options/SettingsEditor;)V" />
       <node id="6062668769033909448" at="21,0,26,0" concept="9" trace="disposeEditor#()V" />
-      <node id="6062668769033909448" at="26,0,41,0" concept="9" trace="createEditor#()Ljavax/swing/JPanel;" />
-      <scope id="6062668769033909448" at="41,99,43,68" />
-      <scope id="6062668769033909448" at="45,71,47,70" />
-      <scope id="6062668769033909448" at="49,139,51,36" />
+      <node id="6062668769033909448" at="26,0,40,0" concept="9" trace="createEditor#()Ljavax/swing/JPanel;" />
+      <scope id="6062668769033909448" at="40,99,42,68" />
+      <scope id="6062668769033909448" at="44,71,46,70" />
+      <scope id="6062668769033909448" at="48,140,50,36" />
       <scope id="6062668769033909448" at="21,31,24,38" />
-      <scope id="6062668769033909448" at="41,0,45,0">
+      <scope id="6062668769033909448" at="40,0,44,0">
         <var name="configuration" id="6062668769033909448" />
       </scope>
-      <scope id="6062668769033909448" at="45,0,49,0">
+      <scope id="6062668769033909448" at="44,0,48,0">
         <var name="configuration" id="6062668769033909448" />
       </scope>
-      <scope id="6062668769033909448" at="49,0,53,0">
+      <scope id="6062668769033909448" at="48,0,52,0">
         <var name="node" id="6062668769033909448" />
         <var name="runParameters" id="6062668769033909448" />
       </scope>
       <scope id="6062668769033909448" at="21,0,26,0" />
-      <scope id="6062668769033909453" at="27,32,39,21">
+      <scope id="6062668769033909453" at="27,32,38,21">
         <var name="javaRunParametersEditor" id="6062668769033909487" />
         <var name="mainPanel" id="6062668769033909494" />
         <var name="nodeChooser" id="6062668769033909461" />
         <var name="panel" id="6062668769033909467" />
       </scope>
-      <scope id="6062668769033909448" at="26,0,41,0" />
-      <unit id="6062668769033909448" at="17,0,54,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration_Editor" />
+      <scope id="6062668769033909448" at="26,0,40,0" />
+      <unit id="6062668769033909448" at="17,0,53,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration_Editor" />
     </file>
     <file name="Java_Configuration_Factory.java">
       <node id="6062668769033909448" at="12,64,13,16" concept="16" />
@@ -2309,7 +2308,7 @@
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/6062668769034010590">
     <file name="JUnitTests_Configuration.java">
       <node id="6062668769034642100" at="44,0,45,0" concept="6" trace="myJUnitSettings" />
-      <node id="6062668769034010824" at="45,0,46,0" concept="6" trace="myJavaRunParameters" />
+      <node id="7500974686090636891" at="45,0,46,0" concept="6" trace="myJavaRunParameters" />
       <node id="2254242821804980534" at="46,117,47,56" concept="5" />
       <node id="6062668769034010590" at="50,76,51,57" concept="5" />
       <node id="6062668769034010590" at="52,5,53,60" concept="10" />
@@ -2328,7 +2327,7 @@
       <node id="6062668769034010590" at="82,33,83,55" concept="5" />
       <node id="6062668769034010590" at="85,35,86,108" concept="5" />
       <node id="6062668769034010590" at="91,57,92,27" concept="11" />
-      <node id="6062668769034010590" at="94,65,95,31" concept="11" />
+      <node id="6062668769034010590" at="94,66,95,31" concept="11" />
       <node id="6062668769034642325" at="97,48,98,100" concept="11" />
       <node id="1353230511309435983" at="100,109,101,85" concept="10" />
       <node id="1353230511309435990" at="101,85,102,83" concept="5" />
@@ -2337,8 +2336,8 @@
       <node id="6062668769034010590" at="114,9,115,36" concept="5" />
       <node id="6062668769034010590" at="115,36,116,73" concept="5" />
       <node id="6062668769034010590" at="116,73,117,84" concept="5" />
-      <node id="6062668769034010590" at="117,84,118,96" concept="5" />
-      <node id="6062668769034010590" at="118,96,119,19" concept="11" />
+      <node id="6062668769034010590" at="117,84,118,97" concept="5" />
+      <node id="6062668769034010590" at="118,97,119,19" concept="11" />
       <node id="6062668769034010590" at="121,42,122,26" concept="5" />
       <node id="6062668769034010590" at="124,5,125,17" concept="11" />
       <node id="6062668769034010590" at="131,61,132,86" concept="10" />
@@ -2401,7 +2400,7 @@
       <scope id="6062668769034010590" at="82,33,83,55" />
       <scope id="6062668769034010590" at="85,35,86,108" />
       <scope id="6062668769034010590" at="91,57,92,27" />
-      <scope id="6062668769034010590" at="94,65,95,31" />
+      <scope id="6062668769034010590" at="94,66,95,31" />
       <scope id="6062668769034642259" at="97,48,98,100" />
       <scope id="1353230511309436013" at="105,30,106,35" />
       <scope id="6062668769034010590" at="121,42,122,26" />
@@ -2516,7 +2515,7 @@
       <node id="6062668769034642202" at="37,76,38,68" concept="5" />
       <node id="6062668769034010873" at="40,77,41,78" concept="5" />
       <node id="6062668769034010880" at="41,78,42,70" concept="5" />
-      <node id="6062668769034010590" at="44,150,45,36" concept="5" />
+      <node id="6062668769034010590" at="44,151,45,36" concept="5" />
       <node id="6062668769034010590" at="45,36,46,44" concept="5" />
       <node id="6062668769034010590" at="36,0,40,0" concept="9" trace="applyEditorTo#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/JUnitTests_Configuration;)V" />
       <node id="6062668769034010590" at="40,0,44,0" concept="9" trace="resetEditorFrom#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/JUnitTests_Configuration;)V" />
@@ -2525,7 +2524,7 @@
       <node id="6062668769034010590" at="25,0,36,0" concept="9" trace="createEditor#()Ljavax/swing/JPanel;" />
       <scope id="6062668769034010590" at="36,105,38,68" />
       <scope id="6062668769034010590" at="40,77,42,70" />
-      <scope id="6062668769034010590" at="44,150,46,44" />
+      <scope id="6062668769034010590" at="44,151,46,44" />
       <scope id="6062668769034010590" at="20,31,23,42" />
       <scope id="6062668769034010590" at="36,0,40,0">
         <var name="configuration" id="6062668769034010590" />

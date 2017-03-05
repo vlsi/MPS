@@ -4,7 +4,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration_Editor;
-import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor;
+import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters1_Configuration_Editor;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
@@ -16,7 +16,7 @@ import com.intellij.openapi.options.ConfigurationException;
 
 public class JUnitTests_Configuration_Editor extends SettingsEditorEx<JUnitTests_Configuration> {
   private JUnitSettings_Configuration_Editor myJUnitSettings;
-  private JavaRunParameters_Configuration_Editor myJavaRunParameters;
+  private JavaRunParameters1_Configuration_Editor myJavaRunParameters;
   public void disposeEditor() {
     myJUnitSettings.dispose();
     Disposer.dispose(myJUnitSettings);
@@ -41,7 +41,7 @@ public class JUnitTests_Configuration_Editor extends SettingsEditorEx<JUnitTests
     myJavaRunParameters.resetEditorFrom(configuration.getJavaRunParameters());
     myJUnitSettings.resetEditorFrom(configuration.getJUnitSettings());
   }
-  public JUnitTests_Configuration_Editor(JUnitSettings_Configuration_Editor jUnitSettings, JavaRunParameters_Configuration_Editor javaRunParameters) {
+  public JUnitTests_Configuration_Editor(JUnitSettings_Configuration_Editor jUnitSettings, JavaRunParameters1_Configuration_Editor javaRunParameters) {
     myJUnitSettings = jUnitSettings;
     myJavaRunParameters = javaRunParameters;
   }

@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
-import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
+import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters1_Configuration;
 import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -61,7 +61,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       return ((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L, "jetbrains.mps.execution.util.structure.IMainClass")), SMethodTrimmedId.create("isNodeRunnable", null, "431DWIovi3C"))) && Java_Command.isUnitNode(node);
     }
   })));
-  private JavaRunParameters_Configuration myRunParameters = new JavaRunParameters_Configuration();
+  private JavaRunParameters1_Configuration myRunParameters = new JavaRunParameters1_Configuration(this.getProject());
   public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
     this.getNode().checkConfiguration(context);
     final Wrappers._boolean hasMainMethod = new Wrappers._boolean(false);
@@ -124,7 +124,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
   public NodeBySeveralConcepts_Configuration getNode() {
     return myNode;
   }
-  public JavaRunParameters_Configuration getRunParameters() {
+  public JavaRunParameters1_Configuration getRunParameters() {
     return myRunParameters;
   }
   public boolean isFromContext(@NotNull ConfigurationContext context) {
@@ -159,7 +159,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       clone = createCloneTemplate();
       clone.myState = (Java_Configuration.MyState) myState.clone();
       clone.myNode = (NodeBySeveralConcepts_Configuration) myNode.clone();
-      clone.myRunParameters = (JavaRunParameters_Configuration) myRunParameters.clone();
+      clone.myRunParameters = (JavaRunParameters1_Configuration) myRunParameters.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
       if (LOG.isEnabledFor(Level.ERROR)) {

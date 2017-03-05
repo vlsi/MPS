@@ -6,7 +6,7 @@ import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration;
-import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
+import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters1_Configuration;
 import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
@@ -42,7 +42,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   @NotNull
   private JUnitTests_Configuration.MyState myState = new JUnitTests_Configuration.MyState();
   private JUnitSettings_Configuration myJUnitSettings = new JUnitSettings_Configuration(this.getProject());
-  private JavaRunParameters_Configuration myJavaRunParameters = new JavaRunParameters_Configuration();
+  private JavaRunParameters1_Configuration myJavaRunParameters = new JavaRunParameters1_Configuration(this.getProject());
   public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
     this.getJUnitSettings().checkConfiguration(context);
   }
@@ -91,7 +91,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   public JUnitSettings_Configuration getJUnitSettings() {
     return myJUnitSettings;
   }
-  public JavaRunParameters_Configuration getJavaRunParameters() {
+  public JavaRunParameters1_Configuration getJavaRunParameters() {
     return myJavaRunParameters;
   }
   public List<SNodeReference> getTestsToMake() {
@@ -115,7 +115,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       clone = createCloneTemplate();
       clone.myState = (JUnitTests_Configuration.MyState) myState.clone();
       clone.myJUnitSettings = (JUnitSettings_Configuration) myJUnitSettings.clone();
-      clone.myJavaRunParameters = (JavaRunParameters_Configuration) myJavaRunParameters.clone();
+      clone.myJavaRunParameters = (JavaRunParameters1_Configuration) myJavaRunParameters.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
       if (LOG.isEnabledFor(Level.ERROR)) {

@@ -36,7 +36,6 @@ import java.util.List;
 /**
  * Represents a project based on the idea platform project
  * Used in the idea plugin
- * TODO find what are the actual differences between it and a standalone mps project
  */
 public class MPSProject extends ProjectBase implements FileBasedProject, ProjectComponent {
   private com.intellij.openapi.project.Project myProject;
