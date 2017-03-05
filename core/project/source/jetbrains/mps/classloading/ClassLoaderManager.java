@@ -29,6 +29,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.TestOnly;
+import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -364,7 +365,8 @@ public class ClassLoaderManager implements CoreComponent {
    * hack for 3.4
    */
   @Deprecated
-  @ToRemove(version = 3.4)
+  @ToRemove(version = 2018.1)
+  @Internal
   public synchronized void runNonReloadableTransaction(Runnable runnable) {
     try {
       myRepositoryListener.pause();

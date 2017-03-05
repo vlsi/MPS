@@ -1495,9 +1495,14 @@
                                   <property role="TrG5h" value="path" />
                                   <node concept="2ShNRf" id="3b6xVKVT4py" role="33vP2m">
                                     <node concept="1pGfFk" id="9$$2x2f7d6" role="2ShVmc">
-                                      <ref role="37wK5l" to="y8s3:~ModulePath.&lt;init&gt;(jetbrains.mps.vfs.IFile,java.lang.String)" resolve="ModulePath" />
-                                      <node concept="37vLTw" id="BN7Pn0A9aq" role="37wK5m">
-                                        <ref role="3cqZAo" node="1mBiRF0LCS8" resolve="file" />
+                                      <ref role="37wK5l" to="y8s3:~ModulePath.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="ModulePath" />
+                                      <node concept="2OqwBi" id="6oDdG_Xze0_" role="37wK5m">
+                                        <node concept="37vLTw" id="BN7Pn0A9aq" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="1mBiRF0LCS8" resolve="file" />
+                                        </node>
+                                        <node concept="liA8E" id="6oDdG_Xze6e" role="2OqNvi">
+                                          <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+                                        </node>
                                       </node>
                                       <node concept="10Nm6u" id="BN7Pn0Aa$z" role="37wK5m" />
                                     </node>

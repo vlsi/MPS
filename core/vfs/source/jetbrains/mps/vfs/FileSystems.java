@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.vfs;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.io.File;
+import org.jetbrains.mps.annotations.Singleton;
 
 /**
- * A project which stores its state in the file on the disk
+ * Static methods for access to installed file systems
+ *
+ * @author apyshkin on 3/5/17.
  */
-public interface FileBasedProject {
-  /**
-   * @deprecated must return {@link jetbrains.mps.vfs.IFile}
-   * todo not so sure now AP
-   */
-  @Deprecated
-  @NotNull File getProjectFile();
+@Singleton
+public final class FileSystems {
+  private FileSystems() {}
+
+  public static FileSystem getDefault() {
+    return FileSystemExtPoint.getFS();
+  }
 }

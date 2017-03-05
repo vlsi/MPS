@@ -21,6 +21,8 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.vfs.FileSystemExtPoint;
+import jetbrains.mps.vfs.FileSystems;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -43,6 +45,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 final class ModuleLoader {
   private static final Logger LOG = LogManager.getLogger(ModuleLoader.class);
+
   @NotNull private final ProjectBase myProject;
   private final List<ProjectModuleLoadingListener> myListeners = new CopyOnWriteArrayList<ProjectModuleLoadingListener>();
   private final StringBuilder myErrors = new StringBuilder();
@@ -80,7 +83,7 @@ final class ModuleLoader {
   /**
    * updates module paths in the project.
    */
-  public void updatePathsInProject(final List<ModulePath> newModulePaths) {
+  void updatePathsInProject(final List<ModulePath> newModulePaths) {
     LOG.info("Loading modules...");
     clearErrorsBuffer();
 
@@ -103,7 +106,8 @@ final class ModuleLoader {
     final ModulesMiner modulesMiner = new ModulesMiner();
     final Map<ModuleHandle, ModulePath> handleToPath = new HashMap<>();
     for (ModulePath modulePath : pathsToLoad) {
-      IFile descriptorFile = modulePath.getFile();
+      String descriptorPath = modulePath.getPath();
+      IFile descriptorFile = FileSystems.getDefault().getFile(descriptorPath);
       if (descriptorFile.exists()) {
         ModuleHandle handle = modulesMiner.loadModuleHandle(descriptorFile);
         handleToPath.put(handle, modulePath);
@@ -111,7 +115,7 @@ final class ModuleLoader {
         // TODO listen to file location in the MPSProject
         // AP : it is kind of strange having module watching for removing/changing its file descriptor and having someone else
         // watching for the module creation. I believe everything which concerns the module file system watching must be done in one place.
-        error(String.format("Can't load module from %s. File doesn't exist.", descriptorFile.getPath()));
+        error(String.format("Can't load module from %s. File doesn't exist.", descriptorPath));
         fireModuleNotFound(modulePath);
       }
     }

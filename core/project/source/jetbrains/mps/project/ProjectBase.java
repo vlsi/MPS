@@ -98,7 +98,7 @@ public abstract class ProjectBase extends Project {
   public final void addModule(@NotNull SModule module) {
     IFile descriptorFile = getDescriptorFileChecked(module);
     if (descriptorFile != null) {
-      ModulePath path = new ModulePath(descriptorFile, null);
+      ModulePath path = new ModulePath(descriptorFile.getPath(), null);
       addModule(path, module);
       myProjectDescriptor.addModulePath(path);
       myModuleLoader.fireModuleLoaded(path, module);
@@ -250,7 +250,7 @@ public abstract class ProjectBase extends Project {
       if (descriptorFile == null) {
         throw new IllegalArgumentException("The descriptor file is null " + module);
       }
-      ModulePath newPath = new ModulePath(descriptorFile, oldPath.getVirtualFolder());
+      ModulePath newPath = new ModulePath(descriptorFile.getPath(), oldPath.getVirtualFolder());
       myProjectDescriptor.replacePath(oldPath, newPath);
       myModuleToPathMap.put(module, newPath);
     }

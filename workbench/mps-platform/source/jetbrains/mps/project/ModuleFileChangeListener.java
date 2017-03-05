@@ -19,7 +19,9 @@ import jetbrains.mps.library.ModuleFileTracker;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.vfs.FileListener;
 import jetbrains.mps.vfs.FileSystemEvent;
+import jetbrains.mps.vfs.FileSystems;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -54,23 +56,29 @@ public class ModuleFileChangeListener implements ProjectModuleLoadingListener {
     }
   };
 
-  public ModuleFileChangeListener(MPSProject mpsProject) {
+  ModuleFileChangeListener(MPSProject mpsProject) {
     myMpsProject = mpsProject;
   }
 
   @Override
   public void moduleLoaded(ModulePath modulePath, @NotNull SModule module) {
-    myDescriptorChangeListener.track(modulePath.getFile(), module);
+    if (module instanceof AbstractModule) {
+      FileSystem fileSystem = ((AbstractModule) module).getFileSystem();
+      myDescriptorChangeListener.track(fileSystem.getFile(modulePath.getPath()), module);
+    }
   }
 
   @Override
   public void moduleRemoved(ModulePath modulePath, @NotNull SModule module) {
-    myDescriptorChangeListener.forget(modulePath.getFile(), module);
+    if (module instanceof AbstractModule) {
+      FileSystem fileSystem = ((AbstractModule) module).getFileSystem();
+      myDescriptorChangeListener.forget(fileSystem.getFile(modulePath.getPath()), module);
+    }
   }
 
   @Override
   public void moduleNotFound(@NotNull final ModulePath modulePath) {
-    modulePath.getFile().addListener(myMissingFileListener);
+    FileSystems.getDefault().getFile(modulePath.getPath()).addListener(myMissingFileListener);
   }
 
   @Override

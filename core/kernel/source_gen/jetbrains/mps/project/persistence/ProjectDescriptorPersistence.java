@@ -4,11 +4,9 @@ package jetbrains.mps.project.persistence;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
+import java.io.File;
 import jetbrains.mps.util.MacroHelper;
 import org.jetbrains.annotations.NotNull;
-import java.io.File;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
@@ -20,9 +18,11 @@ import jetbrains.mps.vfs.path.Path;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 
 public class ProjectDescriptorPersistence {
   private static final Logger LOG = LogManager.getLogger(ProjectDescriptorPersistence.class);
@@ -32,13 +32,12 @@ public class ProjectDescriptorPersistence {
   private static final String FOLDER_TAG = "folder";
   private static final String PROJECT_MODULES_TAG = "projectModules";
   private static final String PATH_TAG = "path";
-  private static final FileSystem FS = FileSystem.getInstance();
 
-  private final IFile myBaseDir;
+  private final File myBaseDir;
   private final MacroHelper myMacroHelper;
 
   public ProjectDescriptorPersistence(@NotNull File baseDir, @NotNull MacroHelper macroHelper) {
-    myBaseDir = FS.getFile(baseDir.getAbsolutePath());
+    myBaseDir = baseDir.getAbsoluteFile();
     myMacroHelper = macroHelper;
   }
 
@@ -67,12 +66,11 @@ public class ProjectDescriptorPersistence {
   @NotNull
   public ProjectDescriptor load(@Nullable Element root) {
     final String name = myBaseDir.getName();
-    final jetbrains.mps.vfs.openapi.FileSystem fileSystem = myBaseDir.getFileSystem();
     ProjectDescriptor descriptor = new ProjectDescriptor(name);
     if (root == null) {
       return descriptor;
     }
-    ProjectDescriptor result_jnk9az_a4a81 = descriptor;
+    ProjectDescriptor result_jnk9az_a3a71 = descriptor;
     List<Element> moduleList = ListSequence.fromList(new ArrayList<Element>());
     // AP : these are deprecated, aren't they? 
     ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectSolutions"), "solutionPath")));
@@ -82,8 +80,8 @@ public class ProjectDescriptorPersistence {
     for (Element moduleElement : ListSequence.fromList(moduleList)) {
       String path = myMacroHelper.expandPath(moduleElement.getAttributeValue(PATH_TAG));
       String virtualFolder = moduleElement.getAttributeValue(FOLDER_TAG);
-      ModulePath modulePath = new ModulePath(fileSystem.getFile(path), virtualFolder);
-      result_jnk9az_a4a81.addModulePath(modulePath);
+      ModulePath modulePath = new ModulePath(path, virtualFolder);
+      result_jnk9az_a3a71.addModulePath(modulePath);
     }
     return descriptor;
   }
@@ -91,7 +89,7 @@ public class ProjectDescriptorPersistence {
   @Nullable
   public Element loadProjectElement() {
     try {
-      IFile projectFile = findProjectFile(myBaseDir.toPath().toString());
+      IFile projectFile = findProjectFile(myBaseDir.getPath());
       if (!(projectFile.exists())) {
         return null;
       }
@@ -109,7 +107,7 @@ public class ProjectDescriptorPersistence {
 
   @NotNull
   private static IFile findProjectFile(String path) {
-    IFile projectFile = FS.getFile(path);
+    IFile projectFile = IoFileSystem.INSTANCE.getFile(path);
     if (!(projectFile.exists())) {
       throw new IllegalArgumentException("Path " + path + " does not exist");
     }

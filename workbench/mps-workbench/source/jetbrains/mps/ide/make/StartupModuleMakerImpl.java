@@ -19,7 +19,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -31,6 +30,7 @@ import jetbrains.mps.project.ProjectLibraryManager;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.PathManager;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -57,7 +57,7 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
   }
 
   @Override
-  public void initComponent() {
+  public void projectOpened() {
     if (ProgressManager.getInstance().getProgressIndicator() != null) {
       executeUnderOldIndicator();
     } else {
@@ -102,7 +102,7 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
   }
 
   private Collection<SModule> getModules() {
-    if (InternalFlag.isInternalMode()) {
+    if (PathManager.isFromSources()) {
       return IterableUtil.asCollection(myMPSProject.getRepository().getModules());
     }
     return myMPSProject.getProjectModulesWithGenerators();

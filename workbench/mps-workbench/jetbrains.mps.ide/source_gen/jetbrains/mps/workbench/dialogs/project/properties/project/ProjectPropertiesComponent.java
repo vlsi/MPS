@@ -71,7 +71,7 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
           return;
         }
 
-        ModulePath path = new ModulePath(file, null);
+        ModulePath path = new ModulePath(file.getPath(), null);
         for (ModulePath p : ((ProjectPropertiesComponent.PathsListModel) list.getModel()).getPaths()) {
           if (p.getPath().equals(path.getPath())) {
             list.setSelectedValue(p, true);
