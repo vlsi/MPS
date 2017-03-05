@@ -44,13 +44,13 @@ public class CopyValueAction_Action extends BaseAction {
       return;
     }
 
-    AbstractUiState uiState = check_d54g7t_a0d0a(DebugActionsUtil.getDebugSession(event));
+    AbstractUiState uiState = check_cz11mp_a0d0f(DebugActionsUtil.getDebugSession(event));
     if (uiState == null || !(uiState instanceof JavaUiState)) {
       return;
     }
     JavaUiState javaUiState = (JavaUiState) uiState;
 
-    final ThreadReference thread = check_d54g7t_a0h0a(javaUiState.getThread());
+    final ThreadReference thread = check_cz11mp_a0h0f(javaUiState.getThread());
     if (thread == null) {
       return;
     }
@@ -64,13 +64,13 @@ public class CopyValueAction_Action extends BaseAction {
       CopyPasteUtil.copyTextToClipboard(result);
     }
   }
-  private static AbstractUiState check_d54g7t_a0d0a(AbstractDebugSession checkedDotOperand) {
+  private static AbstractUiState check_cz11mp_a0d0f(AbstractDebugSession checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUiState();
     }
     return null;
   }
-  private static ThreadReference check_d54g7t_a0h0a(JavaThread checkedDotOperand) {
+  private static ThreadReference check_cz11mp_a0h0f(JavaThread checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getThread();
     }

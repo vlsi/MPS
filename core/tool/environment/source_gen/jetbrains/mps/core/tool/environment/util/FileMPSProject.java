@@ -12,12 +12,12 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.impl.IoFile;
+import java.io.IOException;
+import org.apache.log4j.Level;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;
 import jetbrains.mps.project.ElementProjectDataSource;
-
-import java.io.IOException;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
@@ -38,13 +38,16 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
     return MacrosFactory.forProjectFile(new IoFile(getProjectFile().getPath()));
   }
 
+  protected static Logger LOG_1170860263 = LogManager.getLogger(FileMPSProject.class);
   @Override
   @NotNull
   public String getName() {
     try {
       return myProjectFile.getCanonicalFile().getName();
     } catch (IOException e) {
-      LOG.error("Got while accessing the project file", e);
+      if (LOG_1170860263.isEnabledFor(Level.ERROR)) {
+        LOG_1170860263.error("Got while accessing the project file", e);
+      }
       return myProjectFile.getName();
     }
   }

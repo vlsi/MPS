@@ -464,8 +464,8 @@
       <node id="8894158296385402494" at="26,0,31,0" concept="1" trace="CopyValueAction_Action#()V" />
       <node id="8894158296385402494" at="35,0,40,0" concept="6" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="4750532960510699745" at="57,0,62,7" concept="7" />
-      <node id="6684958471219587468" at="67,0,73,0" concept="12" trace="check_d54g7t_a0d0a#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Ljetbrains/mps/debug/api/AbstractUiState;" />
-      <node id="966640927460655440" at="73,0,79,0" concept="12" trace="check_d54g7t_a0h0a#(Ljetbrains/mps/debugger/java/api/state/proxy/JavaThread;)Lcom/sun/jdi/ThreadReference;" />
+      <node id="6684958471219587468" at="67,0,73,0" concept="12" trace="check_cz11mp_a0d0f#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Ljetbrains/mps/debug/api/AbstractUiState;" />
+      <node id="966640927460655440" at="73,0,79,0" concept="12" trace="check_cz11mp_a0h0f#(Ljetbrains/mps/debugger/java/api/state/proxy/JavaThread;)Lcom/sun/jdi/ThreadReference;" />
       <node id="8894158296385402494" at="40,0,67,0" concept="6" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <scope id="8894158296385402494" at="32,32,33,16" />
       <scope id="8894158296385402612" at="43,57,44,13" />

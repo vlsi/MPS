@@ -276,8 +276,10 @@
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
+        <property id="1167228628751" name="hasException" index="34fQS0" />
         <property id="1167245565795" name="severity" index="35gtTG" />
         <child id="1167227463056" name="logExpression" index="34bqiv" />
+        <child id="1167227561449" name="exception" index="34bMjA" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -3901,13 +3903,52 @@
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3clFbS" id="2doG_VG59HB" role="3clF47">
-        <node concept="3clFbF" id="2doG_VG59HC" role="3cqZAp">
-          <node concept="2OqwBi" id="2doG_VG59HD" role="3clFbG">
-            <node concept="37vLTw" id="3lw7SQDAwZ9" role="2Oq$k0">
-              <ref role="3cqZAo" node="15VbAzMFhGt" resolve="myProjectFile" />
+        <node concept="SfApY" id="29ovBt4ZZH2" role="3cqZAp">
+          <node concept="3clFbS" id="29ovBt4ZZH4" role="SfCbr">
+            <node concept="3cpWs6" id="29ovBt4ZZIc" role="3cqZAp">
+              <node concept="2OqwBi" id="29ovBt5012h" role="3cqZAk">
+                <node concept="2OqwBi" id="29ovBt500PC" role="2Oq$k0">
+                  <node concept="37vLTw" id="29ovBt4ZZIV" role="2Oq$k0">
+                    <ref role="3cqZAo" node="15VbAzMFhGt" resolve="myProjectFile" />
+                  </node>
+                  <node concept="liA8E" id="29ovBt500WH" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.getCanonicalFile():java.io.File" resolve="getCanonicalFile" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="29ovBt501hS" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~File.getName():java.lang.String" resolve="getName" />
+                </node>
+              </node>
             </node>
-            <node concept="liA8E" id="2doG_VG59HF" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~File.getName():java.lang.String" resolve="getName" />
+          </node>
+          <node concept="TDmWw" id="29ovBt4ZZH5" role="TEbGg">
+            <node concept="3cpWsn" id="29ovBt4ZZH7" role="TDEfY">
+              <property role="TrG5h" value="e" />
+              <node concept="3uibUv" id="29ovBt501oO" role="1tU5fm">
+                <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="29ovBt4ZZHb" role="TDEfX">
+              <node concept="34ab3g" id="29ovBt501AM" role="3cqZAp">
+                <property role="35gtTG" value="error" />
+                <property role="34fQS0" value="true" />
+                <node concept="Xl_RD" id="29ovBt501AO" role="34bqiv">
+                  <property role="Xl_RC" value="Got while accessing the project file" />
+                </node>
+                <node concept="37vLTw" id="29ovBt501AQ" role="34bMjA">
+                  <ref role="3cqZAo" node="29ovBt4ZZH7" resolve="e" />
+                </node>
+              </node>
+              <node concept="3cpWs6" id="29ovBt50dde" role="3cqZAp">
+                <node concept="2OqwBi" id="2doG_VG59HD" role="3cqZAk">
+                  <node concept="37vLTw" id="3lw7SQDAwZ9" role="2Oq$k0">
+                    <ref role="3cqZAo" node="15VbAzMFhGt" resolve="myProjectFile" />
+                  </node>
+                  <node concept="liA8E" id="2doG_VG59HF" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.getName():java.lang.String" resolve="getName" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
