@@ -306,8 +306,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForAfterTestsMethod() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.test", "AfterTestsMethod", 0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2045125020ec2848L);
     b.class_(false, false, false);
-    b.super_("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunction", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L);
     b.origin("r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)/2325284917965760584");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     b.alias("after tests");
     return b.create();
   }
@@ -343,8 +344,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForBeforeTestsMethod() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.test", "BeforeTestsMethod", 0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2045125020ec2847L);
     b.class_(false, false, false);
-    b.super_("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunction", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L);
     b.origin("r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)/2325284917965760583");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     b.alias("before tests");
     return b.create();
   }

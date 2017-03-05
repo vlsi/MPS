@@ -30,6 +30,7 @@
     <import index="tpe5" ref="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)" />
     <import index="tpe0" ref="r:00000000-0000-4000-0000-011c895902d4(jetbrains.mps.baseLanguage.unitTest.editor)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -68,6 +69,7 @@
       <concept id="1164833692343" name="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues" flags="ng" index="PvTIS">
         <child id="1164833692344" name="valuesFunction" index="PvTIR" />
       </concept>
+      <concept id="1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" flags="ig" index="PKFIW" />
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
@@ -166,7 +168,9 @@
         <child id="4323500428121274054" name="id" index="2SqHTX" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
+        <property id="1160590353935" name="usesFolding" index="S$Qs1" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
+        <child id="7723470090030138869" name="foldedCellModel" index="AHCbl" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
       <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" stub="3610246225209162225" index="3F0ifn">
@@ -3626,80 +3630,57 @@
   </node>
   <node concept="24kQdi" id="2154_0wV2x$">
     <ref role="1XX52x" to="tp5g:2154_0wV2x7" resolve="BeforeTestsMethod" />
-    <node concept="3EZMnI" id="2154_0wV2xA" role="2wV5jI">
-      <node concept="PMmxH" id="2154_0wV2xB" role="3EZMnx">
-        <ref role="PMmxG" to="tpen:hNAtxlY" resolve="_DeprecatedPart" />
-      </node>
-      <node concept="PMmxH" id="2154_0wV2xC" role="3EZMnx">
-        <ref role="PMmxG" to="tpen:6aS1KHf_xVK" resolve="HasAnnotation_AnnotationComponent" />
-      </node>
-      <node concept="3EZMnI" id="2154_0wV2xD" role="3EZMnx">
-        <node concept="VPM3Z" id="2154_0wV2xE" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="11L4FC" id="2154_0wV2xF" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="11LMrY" id="2154_0wV2xG" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="3F0ifn" id="2154_0wV2xH" role="3EZMnx">
-          <property role="3F0ifm" value="before tests" />
-        </node>
-        <node concept="PMmxH" id="2154_0wV2xJ" role="3EZMnx">
-          <ref role="PMmxG" to="tpen:5UYpxeVafB6" resolve="BaseMethodDeclaration_BodyComponent" />
-        </node>
-        <node concept="VPM3Z" id="2154_0wV2xK" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="11L4FC" id="2154_0wV2xL" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="11LMrY" id="2154_0wV2xM" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="l2Vlx" id="2154_0wV2xN" role="2iSdaV" />
-      </node>
-      <node concept="2iRkQZ" id="2154_0wV2xO" role="2iSdaV" />
+    <node concept="PMmxH" id="6woObKL_kMj" role="2wV5jI">
+      <ref role="PMmxG" node="6woObKL_kM5" resolve="BeforeAfterEditor" />
     </node>
   </node>
   <node concept="24kQdi" id="2154_0wV2Aw">
     <ref role="1XX52x" to="tp5g:2154_0wV2x8" resolve="AfterTestsMethod" />
-    <node concept="3EZMnI" id="2154_0wV2Ay" role="2wV5jI">
-      <node concept="PMmxH" id="2154_0wV2Az" role="3EZMnx">
-        <ref role="PMmxG" to="tpen:hNAtxlY" resolve="_DeprecatedPart" />
+    <node concept="PMmxH" id="6woObKL_kM$" role="2wV5jI">
+      <ref role="PMmxG" node="6woObKL_kM5" resolve="BeforeAfterEditor" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="6woObKL_kM5">
+    <property role="TrG5h" value="BeforeAfterEditor" />
+    <ref role="1XX52x" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="3EZMnI" id="6woObKL_kM6" role="2wV5jI">
+      <node concept="PMmxH" id="6woObKL_kM7" role="3EZMnx">
+        <property role="1cu_pB" value="0" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
-      <node concept="PMmxH" id="2154_0wV2A$" role="3EZMnx">
-        <ref role="PMmxG" to="tpen:6aS1KHf_xVK" resolve="HasAnnotation_AnnotationComponent" />
+      <node concept="3EZMnI" id="6woObKL_kM8" role="3EZMnx">
+        <property role="S$Qs1" value="true" />
+        <node concept="ljvvj" id="6woObKL_kM9" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="l2Vlx" id="6woObKL_kMa" role="2iSdaV" />
+        <node concept="3F0ifn" id="6woObKL_kMb" role="3EZMnx">
+          <property role="3F0ifm" value="{" />
+          <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
+          <node concept="ljvvj" id="6woObKL_kMc" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="6woObKL_kMd" role="3EZMnx">
+          <property role="1cu_pB" value="2" />
+          <ref role="1NtTu8" to="tpee:gyVODHa" resolve="body" />
+          <node concept="lj46D" id="6woObKL_kMe" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="6woObKL_kMf" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="6woObKL_kMg" role="3EZMnx">
+          <property role="3F0ifm" value="}" />
+          <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
+        </node>
+        <node concept="PMmxH" id="6woObKL_kMh" role="AHCbl">
+          <ref role="PMmxG" to="tpen:MTvSFwydN_" resolve="ConceptFunction_Folded_Component" />
+        </node>
       </node>
-      <node concept="3EZMnI" id="2154_0wV2A_" role="3EZMnx">
-        <node concept="VPM3Z" id="2154_0wV2AA" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="11L4FC" id="2154_0wV2AB" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="11LMrY" id="2154_0wV2AC" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="3F0ifn" id="2154_0wV2AD" role="3EZMnx">
-          <property role="3F0ifm" value="after tests" />
-        </node>
-        <node concept="PMmxH" id="2154_0wV2AF" role="3EZMnx">
-          <ref role="PMmxG" to="tpen:5UYpxeVafB6" resolve="BaseMethodDeclaration_BodyComponent" />
-        </node>
-        <node concept="VPM3Z" id="2154_0wV2AG" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="11L4FC" id="2154_0wV2AH" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="11LMrY" id="2154_0wV2AI" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="l2Vlx" id="2154_0wV2AJ" role="2iSdaV" />
-      </node>
-      <node concept="2iRkQZ" id="2154_0wV2AK" role="2iSdaV" />
+      <node concept="l2Vlx" id="6woObKL_kMi" role="2iSdaV" />
     </node>
   </node>
 </model>

@@ -1334,13 +1334,13 @@
     <property role="EcuMT" value="2325284917965760583" />
     <property role="TrG5h" value="BeforeTestsMethod" />
     <property role="34LRSv" value="before tests" />
-    <ref role="1TJDcQ" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="2154_0wV2x8">
     <property role="EcuMT" value="2325284917965760584" />
     <property role="TrG5h" value="AfterTestsMethod" />
     <property role="34LRSv" value="after tests" />
-    <ref role="1TJDcQ" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
 </model>
 
