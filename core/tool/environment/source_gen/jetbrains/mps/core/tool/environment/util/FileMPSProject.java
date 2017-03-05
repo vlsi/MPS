@@ -16,6 +16,8 @@ import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;
 import jetbrains.mps.project.ElementProjectDataSource;
+
+import java.io.IOException;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
@@ -39,7 +41,12 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
   @Override
   @NotNull
   public String getName() {
-    return myProjectFile.getName();
+    try {
+      return myProjectFile.getCanonicalFile().getName();
+    } catch (IOException e) {
+      LOG.error("Got while accessing the project file", e);
+      return myProjectFile.getName();
+    }
   }
 
   @Override
