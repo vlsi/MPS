@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.AbstractAntiquotation_BehaviorDescriptor" file="AbstractAntiquotation_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.AbstractAntiquotation__BehaviorDescriptor" file="AbstractAntiquotation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
@@ -30,10 +27,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.Antiquotation_BehaviorDescriptor" file="Antiquotation_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.Antiquotation__BehaviorDescriptor" file="Antiquotation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -71,22 +64,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.GeneratorInternal_InternalReferenceHolder_BehaviorDescriptor" file="GeneratorInternal_InternalReferenceHolder_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.GeneratorInternal_PropertyDescriptor_BehaviorDescriptor" file="GeneratorInternal_PropertyDescriptor_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor" file="GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.ListAntiquotation_BehaviorDescriptor" file="ListAntiquotation_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.ListAntiquotation__BehaviorDescriptor" file="ListAntiquotation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -103,14 +80,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderExpression_BehaviorDescriptor" file="NodeBuilderExpression_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink_BehaviorDescriptor" file="NodeBuilderInitLink_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink__BehaviorDescriptor" file="NodeBuilderInitLink__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -141,22 +110,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitPart_BehaviorDescriptor" file="NodeBuilderInitPart_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitProperty_BehaviorDescriptor" file="NodeBuilderInitProperty_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderList_BehaviorDescriptor" file="NodeBuilderList_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_BehaviorDescriptor" file="NodeBuilderNode_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderNode__BehaviorDescriptor" file="NodeBuilderNode__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -193,14 +146,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderRef_BehaviorDescriptor" file="NodeBuilderRef_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilder_BehaviorDescriptor" file="NodeBuilder_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilder__BehaviorDescriptor" file="NodeBuilder__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -228,10 +173,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation_BehaviorDescriptor" file="PropertyAntiquotation_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation__BehaviorDescriptor" file="PropertyAntiquotation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -248,10 +189,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.Quotation_BehaviorDescriptor" file="Quotation_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.Quotation__BehaviorDescriptor" file="Quotation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -274,10 +211,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.behavior.ReferenceAntiquotation_BehaviorDescriptor" file="ReferenceAntiquotation_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.ReferenceAntiquotation__BehaviorDescriptor" file="ReferenceAntiquotation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />

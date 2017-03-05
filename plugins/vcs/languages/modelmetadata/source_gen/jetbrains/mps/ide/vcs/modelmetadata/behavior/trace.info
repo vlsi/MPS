@@ -4,18 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="LanguageDependency_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.LanguageDependency_BehaviorDescriptor" />
-    </file>
-    <file name="ModelReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.ModelReference_BehaviorDescriptor" />
-    </file>
-    <file name="Model_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.Model_BehaviorDescriptor" />
-    </file>
-    <file name="ModuleReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.ModuleReference_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

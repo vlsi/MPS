@@ -4,9 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.samples.TargetXML.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="IncludeXMLTarget_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.TargetXML.behavior.IncludeXMLTarget_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

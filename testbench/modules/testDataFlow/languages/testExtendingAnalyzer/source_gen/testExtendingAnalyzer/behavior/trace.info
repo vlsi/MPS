@@ -15,12 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,35,0" name="testExtendingAnalyzer.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="NullSafeDotExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testExtendingAnalyzer.behavior.NullSafeDotExpression_BehaviorDescriptor" />
-    </file>
-    <file name="NullUnsafeDotExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testExtendingAnalyzer.behavior.NullUnsafeDotExpression_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:68962fbd-a11f-4bc4-9ac2-64ee4491f0a7(testExtendingAnalyzer.behavior)/1417601170173058148">
     <file name="NullUnsafeDotExpression__BehaviorDescriptor.java">

@@ -15,12 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.baseLanguage.logging.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="LogStatement_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.logging.behavior.LogStatement_BehaviorDescriptor" />
-    </file>
-    <file name="PrintStatement_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.logging.behavior.PrintStatement_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:10e26070-7ddd-4eff-9570-d2a7151f9936(jetbrains.mps.baseLanguage.logging.behavior)/2511103526757020849">
     <file name="LogStatement__BehaviorDescriptor.java">

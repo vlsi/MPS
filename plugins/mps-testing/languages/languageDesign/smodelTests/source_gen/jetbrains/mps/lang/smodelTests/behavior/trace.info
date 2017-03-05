@@ -15,24 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.lang.smodelTests.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="ChildSubConcept_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodelTests.behavior.ChildSubConcept_BehaviorDescriptor" />
-    </file>
-    <file name="Child_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodelTests.behavior.Child_BehaviorDescriptor" />
-    </file>
-    <file name="GrandChild_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodelTests.behavior.GrandChild_BehaviorDescriptor" />
-    </file>
-    <file name="ReferenceContainerSubConcept_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodelTests.behavior.ReferenceContainerSubConcept_BehaviorDescriptor" />
-    </file>
-    <file name="ReferenceContainer_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodelTests.behavior.ReferenceContainer_BehaviorDescriptor" />
-    </file>
-    <file name="Root_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodelTests.behavior.Root_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:ac876e9f-bc45-4a96-ab5c-97ae696a2dba(jetbrains.mps.lang.smodelTests.behavior)/4900430935921348065">
     <file name="Root__BehaviorDescriptor.java">

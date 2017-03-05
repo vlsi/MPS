@@ -15,27 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.transformation.test.outputLang.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="CustomRoot_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.outputLang.behavior.CustomRoot_BehaviorDescriptor" />
-    </file>
-    <file name="CustomStatementRef_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.outputLang.behavior.CustomStatementRef_BehaviorDescriptor" />
-    </file>
-    <file name="CustomStatement_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.outputLang.behavior.CustomStatement_BehaviorDescriptor" />
-    </file>
-    <file name="OutputNode_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.outputLang.behavior.OutputNode_BehaviorDescriptor" />
-    </file>
-    <file name="OutputNode_forDontApplyReductionTwice_test_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.outputLang.behavior.OutputNode_forDontApplyReductionTwice_test_BehaviorDescriptor" />
-    </file>
-    <file name="OutputRoot_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.outputLang.behavior.OutputRoot_BehaviorDescriptor" />
-    </file>
-    <file name="TwoVarStatement_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.outputLang.behavior.TwoVarStatement_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:6403882d-ffad-429a-8b59-eb2f29334fb1(jetbrains.mps.transformation.test.outputLang.behavior)/2511103526757027810">
     <file name="CustomRoot__BehaviorDescriptor.java">

@@ -4,21 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="testCustomAnalyzer.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="Child_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testCustomAnalyzer.behavior.Child_BehaviorDescriptor" />
-    </file>
-    <file name="OtherChild_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testCustomAnalyzer.behavior.OtherChild_BehaviorDescriptor" />
-    </file>
-    <file name="OtherRoot_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testCustomAnalyzer.behavior.OtherRoot_BehaviorDescriptor" />
-    </file>
-    <file name="OtherSubChild_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testCustomAnalyzer.behavior.OtherSubChild_BehaviorDescriptor" />
-    </file>
-    <file name="Root_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testCustomAnalyzer.behavior.Root_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

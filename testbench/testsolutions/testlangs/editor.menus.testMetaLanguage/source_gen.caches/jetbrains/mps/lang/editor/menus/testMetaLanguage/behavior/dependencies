@@ -11,26 +11,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationFeature_Optional_BehaviorDescriptor" file="TransformationFeature_Optional_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationFeature_Required_BehaviorDescriptor" file="TransformationFeature_Required_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationFeature_Unavailable_BehaviorDescriptor" file="TransformationFeature_Unavailable_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationLocation_Test_BehaviorDescriptor" file="TransformationLocation_Test_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationLocation_WithFeatures_BehaviorDescriptor" file="TransformationLocation_WithFeatures_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationLocation_WithFeatures__BehaviorDescriptor" file="TransformationLocation_WithFeatures__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -56,14 +36,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationLocation_WithoutFeatures_BehaviorDescriptor" file="TransformationLocation_WithoutFeatures_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationMenu_Test_BehaviorDescriptor" file="TransformationMenu_Test_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

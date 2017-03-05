@@ -15,12 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,35,0" name="jetbrains.mps.samples.customizedDebugger.Bottomline.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="MessageSequence_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.customizedDebugger.Bottomline.behavior.MessageSequence_BehaviorDescriptor" />
-    </file>
-    <file name="OutputMessage_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.customizedDebugger.Bottomline.behavior.OutputMessage_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:35cb2ec8-e48a-4bb2-9313-f7255fe04158(jetbrains.mps.samples.customizedDebugger.Bottomline.behavior)/567241428659768861">
     <file name="OutputMessage__BehaviorDescriptor.java">

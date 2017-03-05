@@ -11,10 +11,6 @@
     <classNode dependClassName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_BehaviorDescriptor" file="DecisionTable_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable__BehaviorDescriptor" file="DecisionTable__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />

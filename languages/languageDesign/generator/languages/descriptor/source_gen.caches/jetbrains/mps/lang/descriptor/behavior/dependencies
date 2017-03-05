@@ -7,17 +7,5 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.behavior.GeneratorDescriptor_BehaviorDescriptor" file="GeneratorDescriptor_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.behavior.GeneratorInternal_Aspect_BehaviorDescriptor" file="GeneratorInternal_Aspect_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.behavior.LanguageDescriptor_BehaviorDescriptor" file="LanguageDescriptor_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
 </dependenciesRoot>
 

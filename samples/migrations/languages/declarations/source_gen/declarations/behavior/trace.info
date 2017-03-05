@@ -4,18 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="declarations.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="NewComponentMember_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="declarations.behavior.NewComponentMember_BehaviorDescriptor" />
-    </file>
-    <file name="NewComponent_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="declarations.behavior.NewComponent_BehaviorDescriptor" />
-    </file>
-    <file name="OldComponentMember_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="declarations.behavior.OldComponentMember_BehaviorDescriptor" />
-    </file>
-    <file name="OldComponent_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="declarations.behavior.OldComponent_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

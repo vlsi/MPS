@@ -18,27 +18,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,50,0" name="jetbrains.mps.testbench.suite.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="IModuleRef_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.testbench.suite.behavior.IModuleRef_BehaviorDescriptor" />
-    </file>
-    <file name="ITestRef_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor" />
-    </file>
-    <file name="JUnit3TestCaseRef_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_BehaviorDescriptor" />
-    </file>
-    <file name="JUnit4TestCaseRef_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_BehaviorDescriptor" />
-    </file>
-    <file name="ModuleSuite_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.testbench.suite.behavior.ModuleSuite_BehaviorDescriptor" />
-    </file>
-    <file name="SolutionRef_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.testbench.suite.behavior.SolutionRef_BehaviorDescriptor" />
-    </file>
-    <file name="TestCaseRef_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.testbench.suite.behavior.TestCaseRef_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:2f48a1e0-29c6-465b-b158-4cba88c0e4a6(jetbrains.mps.testbench.suite.behavior)/1280144168199506814">
     <file name="ModuleSuite__BehaviorDescriptor.java">

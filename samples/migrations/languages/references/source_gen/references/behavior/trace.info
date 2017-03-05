@@ -4,12 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="references.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="NewComponentRef_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="references.behavior.NewComponentRef_BehaviorDescriptor" />
-    </file>
-    <file name="OldComponentRef_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="references.behavior.OldComponentRef_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

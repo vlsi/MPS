@@ -11,22 +11,6 @@
     <classNode dependClassName="org.jetbrains.mps.samples.Constants.behavior.Constants__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Constants.behavior.ConstantReferenceKeeper_BehaviorDescriptor" file="ConstantReferenceKeeper_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="org.jetbrains.mps.samples.Constants.behavior.ConstantReference_BehaviorDescriptor" file="ConstantReference_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="org.jetbrains.mps.samples.Constants.behavior.Constant_BehaviorDescriptor" file="Constant_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="org.jetbrains.mps.samples.Constants.behavior.Constants_BehaviorDescriptor" file="Constants_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="org.jetbrains.mps.samples.Constants.behavior.Constants__BehaviorDescriptor" file="Constants__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -53,14 +37,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="org.jetbrains.mps.samples.Constants.behavior.DistantConstantReference_BehaviorDescriptor" file="DistantConstantReference_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="org.jetbrains.mps.samples.Constants.behavior.GeneratedClassKeeper_BehaviorDescriptor" file="GeneratedClassKeeper_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

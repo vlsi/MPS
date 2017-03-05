@@ -19,9 +19,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.execution.common.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="IGeneratedToClass_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:59b8a6cf-a3a9-4109-98b7-d13bb426ef49(jetbrains.mps.execution.common.behavior)/946964771156905389">
     <file name="IGeneratedToClass__BehaviorDescriptor.java">

@@ -17,24 +17,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.build.startup.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="ClassPathItem_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.startup.behavior.ClassPathItem_BehaviorDescriptor" />
-    </file>
-    <file name="MpsStartupScript_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleVmOptions_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.startup.behavior.SimpleVmOptions_BehaviorDescriptor" />
-    </file>
-    <file name="TextFile_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.startup.behavior.TextFile_BehaviorDescriptor" />
-    </file>
-    <file name="TextLine_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.startup.behavior.TextLine_BehaviorDescriptor" />
-    </file>
-    <file name="VmOptions_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.startup.behavior.VmOptions_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:f9efd379-0776-49f3-ae79-8113b86e36ad(jetbrains.mps.build.startup.behavior)/5842819808956701264">
     <file name="MpsStartupScript__BehaviorDescriptor.java">

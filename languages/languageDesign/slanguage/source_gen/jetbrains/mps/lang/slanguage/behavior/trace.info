@@ -12,14 +12,8 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AspectModelRefExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.slanguage.behavior.AspectModelRefExpression_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.lang.slanguage.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="Model_IsAspectOperation_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.slanguage.behavior.Model_IsAspectOperation_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:bd7e7514-3c03-4167-934e-dc32a649b114(jetbrains.mps.lang.slanguage.behavior)/2030416617761226735">

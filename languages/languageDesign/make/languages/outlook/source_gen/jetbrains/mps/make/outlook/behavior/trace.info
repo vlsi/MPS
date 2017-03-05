@@ -15,9 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.make.outlook.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="Outlook_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.make.outlook.behavior.Outlook_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:d9cc47d9-65f3-44ac-ba13-c0e9adf60c8b(jetbrains.mps.make.outlook.behavior)/2511103526757027801">
     <file name="Outlook__BehaviorDescriptor.java">

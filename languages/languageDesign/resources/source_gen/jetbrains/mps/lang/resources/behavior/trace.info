@@ -21,63 +21,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,68,0" name="jetbrains.mps.lang.resources.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="Circle_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.Circle_BehaviorDescriptor" />
-    </file>
-    <file name="ColorLiteral_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.ColorLiteral_BehaviorDescriptor" />
-    </file>
-    <file name="Color_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.resources.behavior.Color_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptIconResourceExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.ConceptIconResourceExpression_BehaviorDescriptor" />
-    </file>
-    <file name="FileIcon_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.FileIcon_BehaviorDescriptor" />
-    </file>
-    <file name="IconExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.IconExpression_BehaviorDescriptor" />
-    </file>
-    <file name="IconLayerDescription_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.resources.behavior.IconLayerDescription_BehaviorDescriptor" />
-    </file>
-    <file name="IconResourceExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.IconResourceExpression_BehaviorDescriptor" />
-    </file>
-    <file name="Icon_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.resources.behavior.Icon_BehaviorDescriptor" />
-    </file>
-    <file name="Image_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.Image_BehaviorDescriptor" />
-    </file>
-    <file name="NodeIconResourceExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.NodeIconResourceExpression_BehaviorDescriptor" />
-    </file>
-    <file name="OldIconBundle_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.OldIconBundle_BehaviorDescriptor" />
-    </file>
-    <file name="OldIconDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.OldIconDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="OldIconReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.OldIconReference_BehaviorDescriptor" />
-    </file>
-    <file name="Primitive_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.Primitive_BehaviorDescriptor" />
-    </file>
-    <file name="Rect_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.Rect_BehaviorDescriptor" />
-    </file>
-    <file name="Resource_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.resources.behavior.Resource_BehaviorDescriptor" />
-    </file>
-    <file name="TextIcon_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.TextIcon_BehaviorDescriptor" />
-    </file>
-    <file name="Text_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.Text_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)/137002124239736680">
     <file name="Text__BehaviorDescriptor.java">

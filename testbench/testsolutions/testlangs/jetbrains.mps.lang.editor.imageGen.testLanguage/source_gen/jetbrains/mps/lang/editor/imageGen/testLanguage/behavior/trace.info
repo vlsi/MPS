@@ -4,9 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.lang.editor.imageGen.testLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="ExportAsImage_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.imageGen.testLanguage.behavior.ExportAsImage_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

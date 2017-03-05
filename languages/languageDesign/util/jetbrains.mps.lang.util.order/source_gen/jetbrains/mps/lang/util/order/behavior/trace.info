@@ -16,21 +16,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,38,0" name="jetbrains.mps.lang.util.order.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="OrderDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.util.order.behavior.OrderDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="OrderParticipantReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.util.order.behavior.OrderParticipantReference_BehaviorDescriptor" />
-    </file>
-    <file name="OrderParticipant_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.util.order.behavior.OrderParticipant_BehaviorDescriptor" />
-    </file>
-    <file name="OrderReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.util.order.behavior.OrderReference_BehaviorDescriptor" />
-    </file>
-    <file name="Order_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.util.order.behavior.Order_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:5777900a-dedf-48c6-b3b8-5fd37f887019(jetbrains.mps.lang.util.order.behavior)/174635545557536477">
     <file name="OrderDeclaration__BehaviorDescriptor.java">

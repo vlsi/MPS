@@ -15,15 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,35,0" name="jetbrains.mps.lang.editor.table.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="CellModel_HierarchycalTable_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.table.behavior.CellModel_HierarchycalTable_BehaviorDescriptor" />
-    </file>
-    <file name="CellModel_Table_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.table.behavior.CellModel_Table_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_TableModel_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.table.behavior.QueryFunction_TableModel_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:86ce5303-096b-481a-b577-1636d0ef54ad(jetbrains.mps.lang.editor.table.behavior)/3044950653914723868">
     <file name="QueryFunction_TableModel__BehaviorDescriptor.java">

@@ -17,15 +17,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.build.mps.testManifest.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="TestModuleManifestRef_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifestRef_BehaviorDescriptor" />
-    </file>
-    <file name="TestModuleManifest_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifest_BehaviorDescriptor" />
-    </file>
-    <file name="TestProjectConfiguration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.testManifest.behavior.TestProjectConfiguration_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:83437316-51a8-44ee-b386-4989e30943c4(jetbrains.mps.build.mps.testManifest.behavior)/3298469228705200587">
     <file name="TestModuleManifest__BehaviorDescriptor.java">

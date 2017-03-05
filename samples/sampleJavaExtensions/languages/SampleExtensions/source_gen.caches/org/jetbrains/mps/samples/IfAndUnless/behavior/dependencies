@@ -13,10 +13,6 @@
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_BehaviorDescriptor" file="FalseFlow_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow__BehaviorDescriptor" file="FalseFlow__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -38,10 +34,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_BehaviorDescriptor" file="Flow_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow__BehaviorDescriptor" file="Flow__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -65,14 +57,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.MyIfStatement_BehaviorDescriptor" file="MyIfStatement_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_BehaviorDescriptor" file="TrueFlow_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow__BehaviorDescriptor" file="TrueFlow__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -94,10 +78,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.UnlessStatement_BehaviorDescriptor" file="UnlessStatement_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

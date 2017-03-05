@@ -4,15 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.lang.descriptor.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="GeneratorDescriptor_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.descriptor.behavior.GeneratorDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_Aspect_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.descriptor.behavior.GeneratorInternal_Aspect_BehaviorDescriptor" />
-    </file>
-    <file name="LanguageDescriptor_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.descriptor.behavior.LanguageDescriptor_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

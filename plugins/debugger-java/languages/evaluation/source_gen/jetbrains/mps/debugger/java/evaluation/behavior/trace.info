@@ -16,45 +16,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,53,0" name="jetbrains.mps.debugger.java.evaluation.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="DebuggedType_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_BehaviorDescriptor" />
-    </file>
-    <file name="DoNotTransformAnnotation_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="DownCastToLowLevel_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.DownCastToLowLevel_BehaviorDescriptor" />
-    </file>
-    <file name="EvaluatorConcept_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept_BehaviorDescriptor" />
-    </file>
-    <file name="Evaluator_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.Evaluator_BehaviorDescriptor" />
-    </file>
-    <file name="EvaluatorsSuperMethodCall_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsSuperMethodCall_BehaviorDescriptor" />
-    </file>
-    <file name="EvaluatorsThisExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsThisExpression_BehaviorDescriptor" />
-    </file>
-    <file name="GenerationHelperAnnotation_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.GenerationHelperAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="IEvaluatorConcept_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.debugger.java.evaluation.behavior.IEvaluatorConcept_BehaviorDescriptor" />
-    </file>
-    <file name="LowLevelVariableReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="LowLevelVariable_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariable_BehaviorDescriptor" />
-    </file>
-    <file name="UnitNode_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.UnitNode_BehaviorDescriptor" />
-    </file>
-    <file name="UnprocessedAnnotation_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/1262430001741646975">
     <file name="DoNotTransformAnnotation__BehaviorDescriptor.java">

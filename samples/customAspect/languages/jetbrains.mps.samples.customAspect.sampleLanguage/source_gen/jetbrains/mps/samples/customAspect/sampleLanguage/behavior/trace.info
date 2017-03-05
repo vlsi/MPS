@@ -4,9 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.samples.customAspect.sampleLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="DocumentedConcept_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.customAspect.sampleLanguage.behavior.DocumentedConcept_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

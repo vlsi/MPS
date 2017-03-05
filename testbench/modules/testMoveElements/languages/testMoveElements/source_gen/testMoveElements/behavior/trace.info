@@ -4,15 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="testMoveElements.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="DummyBlock_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testMoveElements.behavior.DummyBlock_BehaviorDescriptor" />
-    </file>
-    <file name="ManyStatementsContainer_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testMoveElements.behavior.ManyStatementsContainer_BehaviorDescriptor" />
-    </file>
-    <file name="ManyStatements_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testMoveElements.behavior.ManyStatements_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

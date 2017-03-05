@@ -4,15 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="Field_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.Field_BehaviorDescriptor" />
-    </file>
-    <file name="Mapping_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.Mapping_BehaviorDescriptor" />
-    </file>
-    <file name="ReaderConfiguration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.ReaderConfiguration_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

@@ -15,15 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="DefaultGenerationParameterId_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGenerationParameterId_BehaviorDescriptor" />
-    </file>
-    <file name="DefaultGeneratorParameterContainer_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameterContainer_BehaviorDescriptor" />
-    </file>
-    <file name="DefaultGeneratorParameter_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameter_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:fd22fe79-96d7-4028-99df-53ccd194ec8d(jetbrains.mps.lang.generator.generationParameters.behavior)/8484425748929510084">
     <file name="DefaultGeneratorParameter__BehaviorDescriptor.java">

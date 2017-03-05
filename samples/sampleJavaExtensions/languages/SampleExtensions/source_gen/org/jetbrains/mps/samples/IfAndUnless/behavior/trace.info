@@ -15,21 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,38,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="FalseFlow_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_BehaviorDescriptor" />
-    </file>
-    <file name="Flow_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_BehaviorDescriptor" />
-    </file>
-    <file name="MyIfStatement_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.MyIfStatement_BehaviorDescriptor" />
-    </file>
-    <file name="TrueFlow_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_BehaviorDescriptor" />
-    </file>
-    <file name="UnlessStatement_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.UnlessStatement_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:59d505ea-267a-4174-bf02-615e0817b24f(org.jetbrains.mps.samples.IfAndUnless.behavior)/1262430001741498059">
     <file name="Flow__BehaviorDescriptor.java">

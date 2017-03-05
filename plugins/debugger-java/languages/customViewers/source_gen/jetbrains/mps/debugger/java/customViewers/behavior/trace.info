@@ -16,42 +16,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,47,0" name="jetbrains.mps.debugger.java.customViewers.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="CanWrapHighLevelValue_ConceptFunction_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.customViewers.behavior.CanWrapHighLevelValue_ConceptFunction_BehaviorDescriptor" />
-    </file>
-    <file name="CustomWatchable_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.customViewers.behavior.CustomWatchable_BehaviorDescriptor" />
-    </file>
-    <file name="CustomWatchablesContainer_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.customViewers.behavior.CustomWatchablesContainer_BehaviorDescriptor" />
-    </file>
-    <file name="GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.customViewers.behavior.GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor" />
-    </file>
-    <file name="GetHighLevelWatchablesBlock_ConceptFunction_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.customViewers.behavior.GetHighLevelWatchablesBlock_ConceptFunction_BehaviorDescriptor" />
-    </file>
-    <file name="HighLevelCustomViewer_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.customViewers.behavior.HighLevelCustomViewer_BehaviorDescriptor" />
-    </file>
-    <file name="HighLevelValue_ConceptFunctionParameter_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.customViewers.behavior.HighLevelValue_ConceptFunctionParameter_BehaviorDescriptor" />
-    </file>
-    <file name="HighLevelWatchableCreator_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.customViewers.behavior.HighLevelWatchableCreator_BehaviorDescriptor" />
-    </file>
-    <file name="ToProcessMethod_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.customViewers.behavior.ToProcessMethod_BehaviorDescriptor" />
-    </file>
-    <file name="WatchableListType_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.customViewers.behavior.WatchableListType_BehaviorDescriptor" />
-    </file>
-    <file name="WatchableType_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.customViewers.behavior.WatchableType_BehaviorDescriptor" />
-    </file>
-    <file name="WatchablesListCreator_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.debugger.java.customViewers.behavior.WatchablesListCreator_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:6272afbe-d407-4921-b9d6-fcdba8c77d3c(jetbrains.mps.debugger.java.customViewers.behavior)/1262430001741718612">
     <file name="ToProcessMethod__BehaviorDescriptor.java">

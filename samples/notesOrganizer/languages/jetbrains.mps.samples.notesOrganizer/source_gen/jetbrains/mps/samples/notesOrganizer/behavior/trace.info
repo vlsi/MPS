@@ -16,36 +16,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.samples.notesOrganizer.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="CategoryReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.notesOrganizer.behavior.CategoryReference_BehaviorDescriptor" />
-    </file>
-    <file name="Category_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.notesOrganizer.behavior.Category_BehaviorDescriptor" />
-    </file>
-    <file name="NoteMetaInfo_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.notesOrganizer.behavior.NoteMetaInfo_BehaviorDescriptor" />
-    </file>
-    <file name="NotePart_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.notesOrganizer.behavior.NotePart_BehaviorDescriptor" />
-    </file>
-    <file name="Note_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.notesOrganizer.behavior.Note_BehaviorDescriptor" />
-    </file>
-    <file name="NotesConfiguration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.notesOrganizer.behavior.NotesConfiguration_BehaviorDescriptor" />
-    </file>
-    <file name="Notes_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.notesOrganizer.behavior.Notes_BehaviorDescriptor" />
-    </file>
-    <file name="Priority_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.notesOrganizer.behavior.Priority_BehaviorDescriptor" />
-    </file>
-    <file name="Status_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.notesOrganizer.behavior.Status_BehaviorDescriptor" />
-    </file>
-    <file name="TextNotePart_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.notesOrganizer.behavior.TextNotePart_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:2ed514bb-0dfc-4876-91d2-b5b2bfa150da(jetbrains.mps.samples.notesOrganizer.behavior)/3892287256988935420">
     <file name="Note__BehaviorDescriptor.java">

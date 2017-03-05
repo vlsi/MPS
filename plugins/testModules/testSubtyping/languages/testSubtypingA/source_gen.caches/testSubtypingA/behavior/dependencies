@@ -11,10 +11,6 @@
     <classNode dependClassName="testSubtypingA.behavior.WrapperType__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="testSubtypingA.behavior.WrapperType_BehaviorDescriptor" file="WrapperType_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="testSubtypingA.behavior.WrapperType__BehaviorDescriptor" file="WrapperType__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

@@ -4,9 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="testPrimitiveType.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="TypeWithProperties_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testPrimitiveType.behavior.TypeWithProperties_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

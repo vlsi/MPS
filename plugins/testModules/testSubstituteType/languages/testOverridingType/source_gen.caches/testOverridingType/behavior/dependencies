@@ -7,29 +7,5 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="testOverridingType.behavior.ErrorType_BehaviorDescriptor" file="ErrorType_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="testOverridingType.behavior.OverrideAnnotation_BehaviorDescriptor" file="OverrideAnnotation_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="testOverridingType.behavior.OverridingPrimFloatType_BehaviorDescriptor" file="OverridingPrimFloatType_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="testOverridingType.behavior.OverridingPrimIntType_BehaviorDescriptor" file="OverridingPrimIntType_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="testOverridingType.behavior.OverridingPrimNumConstant_BehaviorDescriptor" file="OverridingPrimNumConstant_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="testOverridingType.behavior.UnconditionalOverrideAnnotation_BehaviorDescriptor" file="UnconditionalOverrideAnnotation_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
 </dependenciesRoot>
 

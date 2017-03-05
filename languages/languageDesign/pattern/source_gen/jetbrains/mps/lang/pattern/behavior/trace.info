@@ -14,68 +14,8 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="ActionAsPattern_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.ActionAsPattern_BehaviorDescriptor" />
-    </file>
-    <file name="ActionStatement_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.ActionStatement_BehaviorDescriptor" />
-    </file>
-    <file name="AsPattern_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.AsPattern_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,50,0" name="jetbrains.mps.lang.pattern.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="GeneratorInternal_ChildDescriptor_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.GeneratorInternal_ChildDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_PropertyDescriptor_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.GeneratorInternal_PropertyDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="InsertAfterPosition_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.InsertAfterPosition_BehaviorDescriptor" />
-    </file>
-    <file name="InsertBeforePosition_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.InsertBeforePosition_BehaviorDescriptor" />
-    </file>
-    <file name="InsertPosition_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.InsertPosition_BehaviorDescriptor" />
-    </file>
-    <file name="LinkPatternVariableDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.LinkPatternVariableDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="ListPattern_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.ListPattern_BehaviorDescriptor" />
-    </file>
-    <file name="OrPatternClause_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.OrPatternClause_BehaviorDescriptor" />
-    </file>
-    <file name="OrPatternVariableReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.OrPatternVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="OrPattern_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.OrPattern_BehaviorDescriptor" />
-    </file>
-    <file name="PatternExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.PatternExpression_BehaviorDescriptor" />
-    </file>
-    <file name="PatternVariableDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.PatternVariableDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="PatternVariableReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.PatternVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="Pattern_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.Pattern_BehaviorDescriptor" />
-    </file>
-    <file name="PropertyPatternVariableDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="WildcardPattern_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.WildcardPattern_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)/111677556049506422">

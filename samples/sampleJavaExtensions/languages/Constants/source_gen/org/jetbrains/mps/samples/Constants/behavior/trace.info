@@ -15,24 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="org.jetbrains.mps.samples.Constants.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="ConstantReferenceKeeper_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="org.jetbrains.mps.samples.Constants.behavior.ConstantReferenceKeeper_BehaviorDescriptor" />
-    </file>
-    <file name="ConstantReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="org.jetbrains.mps.samples.Constants.behavior.ConstantReference_BehaviorDescriptor" />
-    </file>
-    <file name="Constant_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="org.jetbrains.mps.samples.Constants.behavior.Constant_BehaviorDescriptor" />
-    </file>
-    <file name="Constants_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="org.jetbrains.mps.samples.Constants.behavior.Constants_BehaviorDescriptor" />
-    </file>
-    <file name="DistantConstantReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="org.jetbrains.mps.samples.Constants.behavior.DistantConstantReference_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratedClassKeeper_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="org.jetbrains.mps.samples.Constants.behavior.GeneratedClassKeeper_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:68c57825-9d65-4771-a04b-e7b3a3f2abfb(org.jetbrains.mps.samples.Constants.behavior)/5956117492786858347">
     <file name="Constants__BehaviorDescriptor.java">

@@ -4,12 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="testWrappedType.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="TypeWithUnits_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testWrappedType.behavior.TypeWithUnits_BehaviorDescriptor" />
-    </file>
-    <file name="WrapperType_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testWrappedType.behavior.WrapperType_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

@@ -15,27 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="Event_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.Event_BehaviorDescriptor" />
-    </file>
-    <file name="HandleEvent_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.HandleEvent_BehaviorDescriptor" />
-    </file>
-    <file name="StateMachineTestMethod_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTestMethod_BehaviorDescriptor" />
-    </file>
-    <file name="StateMachineTest_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTest_BehaviorDescriptor" />
-    </file>
-    <file name="StateMachine_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachine_BehaviorDescriptor" />
-    </file>
-    <file name="State_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.State_BehaviorDescriptor" />
-    </file>
-    <file name="Transition_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.Transition_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:bf569071-47c0-4c8e-8820-c63d5ff55ed1(jetbrains.mps.samples.secretCompartmentLanguage.behavior)/3191472212106638383">
     <file name="StateMachineTest__BehaviorDescriptor.java">

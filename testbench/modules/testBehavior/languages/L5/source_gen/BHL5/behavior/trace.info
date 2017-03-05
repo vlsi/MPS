@@ -15,42 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,56,0" name="BHL5.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="C0_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL5.behavior.C0_BehaviorDescriptor" />
-    </file>
-    <file name="C1_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL5.behavior.C1_BehaviorDescriptor" />
-    </file>
-    <file name="C2_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL5.behavior.C2_BehaviorDescriptor" />
-    </file>
-    <file name="C3_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL5.behavior.C3_BehaviorDescriptor" />
-    </file>
-    <file name="C4_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL5.behavior.C4_BehaviorDescriptor" />
-    </file>
-    <file name="C5_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL5.behavior.C5_BehaviorDescriptor" />
-    </file>
-    <file name="C6_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL5.behavior.C6_BehaviorDescriptor" />
-    </file>
-    <file name="C7_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL5.behavior.C7_BehaviorDescriptor" />
-    </file>
-    <file name="I1_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="BHL5.behavior.I1_BehaviorDescriptor" />
-    </file>
-    <file name="I2_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="BHL5.behavior.I2_BehaviorDescriptor" />
-    </file>
-    <file name="I3_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="BHL5.behavior.I3_BehaviorDescriptor" />
-    </file>
-    <file name="I4_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="BHL5.behavior.I4_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:fc74f586-39a4-4b76-8017-86fbfcf61a74(BHL5.behavior)/2569465595672242950">
     <file name="C6__BehaviorDescriptor.java">

@@ -15,21 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,38,0" name="jetbrains.mps.samples.componentDependencies.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="ComponentSet_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_BehaviorDescriptor" />
-    </file>
-    <file name="Component_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.componentDependencies.behavior.Component_BehaviorDescriptor" />
-    </file>
-    <file name="Dependency_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.componentDependencies.behavior.Dependency_BehaviorDescriptor" />
-    </file>
-    <file name="InPort_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.componentDependencies.behavior.InPort_BehaviorDescriptor" />
-    </file>
-    <file name="OutPort_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.componentDependencies.behavior.OutPort_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)/9095678365528900259">
     <file name="ComponentSet__BehaviorDescriptor.java">

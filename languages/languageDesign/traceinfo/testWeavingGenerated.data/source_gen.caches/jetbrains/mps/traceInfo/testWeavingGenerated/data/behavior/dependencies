@@ -7,25 +7,5 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveEachMany_BehaviorDescriptor" file="ChildConceptWeaveEachMany_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveEach_BehaviorDescriptor" file="ChildConceptWeaveEach_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveMany_BehaviorDescriptor" file="ChildConceptWeaveMany_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeave_BehaviorDescriptor" file="ChildConceptWeave_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.RootConcept_BehaviorDescriptor" file="RootConcept_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
 </dependenciesRoot>
 

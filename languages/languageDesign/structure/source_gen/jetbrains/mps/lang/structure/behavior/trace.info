@@ -19,74 +19,8 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
-    <file name="AbstractConceptDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="AggregationLinkDeclarationScopeKind_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.structure.behavior.AggregationLinkDeclarationScopeKind_BehaviorDescriptor" />
-    </file>
-    <file name="AttributeInfo_AttributedConcept_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.AttributeInfo_AttributedConcept_BehaviorDescriptor" />
-    </file>
-    <file name="AttributeInfo_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.AttributeInfo_BehaviorDescriptor" />
-    </file>
-    <file name="AttributeInfo_IsMultiple_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.AttributeInfo_IsMultiple_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,71,0" name="jetbrains.mps.lang.structure.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ConceptDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.ConceptDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="ConstrainedDataTypeDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.ConstrainedDataTypeDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="DataTypeDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="DeprecatedNodeAnnotation_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.DeprecatedNodeAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="DocumentationObjectiveRef_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.DocumentationObjectiveRef_BehaviorDescriptor" />
-    </file>
-    <file name="DocumentationObjective_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.structure.behavior.DocumentationObjective_BehaviorDescriptor" />
-    </file>
-    <file name="DocumentedNodeAnnotation_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.DocumentedNodeAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="EnumerationDataTypeDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="EnumerationMemberDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="IConceptAspect_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor" />
-    </file>
-    <file name="IStructureDeprecatable_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.structure.behavior.IStructureDeprecatable_BehaviorDescriptor" />
-    </file>
-    <file name="InterfaceConceptDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.InterfaceConceptDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="InterfaceConceptReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.InterfaceConceptReference_BehaviorDescriptor" />
-    </file>
-    <file name="LinkDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.LinkDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="PrimitiveDataTypeDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="PropertyDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.PropertyDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="ReferenceLinkDeclartionScopeKind_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.structure.behavior.ReferenceLinkDeclartionScopeKind_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)/1213877216526">

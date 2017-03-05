@@ -15,15 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.lang.checkedName.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="ICheckedNamePolicy_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor" />
-    </file>
-    <file name="PropertyRefExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.checkedName.behavior.PropertyRefExpression_BehaviorDescriptor" />
-    </file>
-    <file name="PropertyRefType_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.checkedName.behavior.PropertyRefType_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:82ee0621-a317-4778-9ea5-72584de35a48(jetbrains.mps.lang.checkedName.behavior)/4844813484172611410">
     <file name="ICheckedNamePolicy__BehaviorDescriptor.java">

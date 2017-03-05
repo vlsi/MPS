@@ -12,44 +12,8 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="A_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL6.behavior.A_BehaviorDescriptor" />
-    </file>
-    <file name="B_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL6.behavior.B_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,65,0" name="BHL6.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="C_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL6.behavior.C_BehaviorDescriptor" />
-    </file>
-    <file name="D_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL6.behavior.D_BehaviorDescriptor" />
-    </file>
-    <file name="E_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL6.behavior.E_BehaviorDescriptor" />
-    </file>
-    <file name="F_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL6.behavior.F_BehaviorDescriptor" />
-    </file>
-    <file name="G_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL6.behavior.G_BehaviorDescriptor" />
-    </file>
-    <file name="H_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL6.behavior.H_BehaviorDescriptor" />
-    </file>
-    <file name="I1_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="BHL6.behavior.I1_BehaviorDescriptor" />
-    </file>
-    <file name="I2_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="BHL6.behavior.I2_BehaviorDescriptor" />
-    </file>
-    <file name="I_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="BHL6.behavior.I_BehaviorDescriptor" />
-    </file>
-    <file name="J_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="BHL6.behavior.J_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:8d9d5d2a-4503-4714-9fa6-17c2b8928601(BHL6.behavior)/1298998034136441184">

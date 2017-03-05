@@ -4,12 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="WorkflowContainer_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.behavior.WorkflowContainer_BehaviorDescriptor" />
-    </file>
-    <file name="Workflow_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.behavior.Workflow_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

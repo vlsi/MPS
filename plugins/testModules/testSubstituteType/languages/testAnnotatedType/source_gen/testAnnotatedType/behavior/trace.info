@@ -15,30 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,38,0" name="testAnnotatedType.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="PresenceCondition_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testAnnotatedType.behavior.PresenceCondition_BehaviorDescriptor" />
-    </file>
-    <file name="PrimDoubleType_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testAnnotatedType.behavior.PrimDoubleType_BehaviorDescriptor" />
-    </file>
-    <file name="PrimFloatType_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testAnnotatedType.behavior.PrimFloatType_BehaviorDescriptor" />
-    </file>
-    <file name="PrimIntType_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testAnnotatedType.behavior.PrimIntType_BehaviorDescriptor" />
-    </file>
-    <file name="PrimLongType_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testAnnotatedType.behavior.PrimLongType_BehaviorDescriptor" />
-    </file>
-    <file name="PrimNumConstant_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testAnnotatedType.behavior.PrimNumConstant_BehaviorDescriptor" />
-    </file>
-    <file name="PrimType_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testAnnotatedType.behavior.PrimType_BehaviorDescriptor" />
-    </file>
-    <file name="SubstituteAnnotation_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testAnnotatedType.behavior.SubstituteAnnotation_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:7e57b061-76da-4008-a734-67f3e97231e2(testAnnotatedType.behavior)/1470921783545443946">
     <file name="PrimType__BehaviorDescriptor.java">

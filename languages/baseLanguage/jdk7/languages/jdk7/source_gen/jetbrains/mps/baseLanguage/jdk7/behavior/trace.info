@@ -4,9 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.baseLanguage.jdk7.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="StringSwitchStatement_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.jdk7.behavior.StringSwitchStatement_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

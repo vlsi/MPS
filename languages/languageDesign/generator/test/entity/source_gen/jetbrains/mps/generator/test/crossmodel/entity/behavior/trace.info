@@ -4,15 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.generator.test.crossmodel.entity.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="Entry_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.generator.test.crossmodel.entity.behavior.Entry_BehaviorDescriptor" />
-    </file>
-    <file name="NodeA_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.generator.test.crossmodel.entity.behavior.NodeA_BehaviorDescriptor" />
-    </file>
-    <file name="TrivialKeeper_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.generator.test.crossmodel.entity.behavior.TrivialKeeper_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

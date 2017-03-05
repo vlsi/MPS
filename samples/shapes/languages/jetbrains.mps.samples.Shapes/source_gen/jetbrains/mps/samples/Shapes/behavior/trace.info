@@ -17,24 +17,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,44,0" name="jetbrains.mps.samples.Shapes.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="Canvas_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.Shapes.behavior.Canvas_BehaviorDescriptor" />
-    </file>
-    <file name="Circle_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.Shapes.behavior.Circle_BehaviorDescriptor" />
-    </file>
-    <file name="ColorReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.Shapes.behavior.ColorReference_BehaviorDescriptor" />
-    </file>
-    <file name="Color_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.Shapes.behavior.Color_BehaviorDescriptor" />
-    </file>
-    <file name="Shape_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor" />
-    </file>
-    <file name="Square_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.samples.Shapes.behavior.Square_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/1082824515535528661">
     <file name="Canvas__BehaviorDescriptor.java">

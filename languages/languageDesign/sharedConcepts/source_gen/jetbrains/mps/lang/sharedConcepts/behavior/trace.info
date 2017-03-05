@@ -15,24 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,41,0" name="jetbrains.mps.lang.sharedConcepts.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="ConceptFunctionParameter_editorContext_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_editorContext_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_model_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_model_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_node_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_operationContext_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_operationContext_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_progressMonitor_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_progressMonitor_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_scope_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_scope_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b9(jetbrains.mps.lang.sharedConcepts.behavior)/1213877217441">
     <file name="ConceptFunctionParameter_operationContext__BehaviorDescriptor.java">

@@ -4,9 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="testPackagedLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="TestConcept_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="testPackagedLanguage.behavior.TestConcept_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

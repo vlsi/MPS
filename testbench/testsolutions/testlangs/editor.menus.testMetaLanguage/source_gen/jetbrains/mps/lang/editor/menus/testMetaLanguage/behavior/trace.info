@@ -15,27 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="TransformationFeature_Optional_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationFeature_Optional_BehaviorDescriptor" />
-    </file>
-    <file name="TransformationFeature_Required_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationFeature_Required_BehaviorDescriptor" />
-    </file>
-    <file name="TransformationFeature_Unavailable_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationFeature_Unavailable_BehaviorDescriptor" />
-    </file>
-    <file name="TransformationLocation_Test_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationLocation_Test_BehaviorDescriptor" />
-    </file>
-    <file name="TransformationLocation_WithFeatures_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationLocation_WithFeatures_BehaviorDescriptor" />
-    </file>
-    <file name="TransformationLocation_WithoutFeatures_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationLocation_WithoutFeatures_BehaviorDescriptor" />
-    </file>
-    <file name="TransformationMenu_Test_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.TransformationMenu_Test_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:fa24799b-cdaf-4188-8969-3cbf8af62d82(jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior)/3743352646564481257">
     <file name="TransformationLocation_WithFeatures__BehaviorDescriptor.java">

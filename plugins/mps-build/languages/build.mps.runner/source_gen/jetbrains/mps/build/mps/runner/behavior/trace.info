@@ -17,12 +17,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="jetbrains.mps.build.mps.runner.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="BuildSolutionRunnerAspect_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSolutionRunnerPlugin_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerPlugin_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:19e846e2-aa6a-48a9-8367-2a1eda2709e7(jetbrains.mps.build.mps.runner.behavior)/2220861080744370264">
     <file name="BuildSolutionRunnerAspect__BehaviorDescriptor.java">

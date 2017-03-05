@@ -18,21 +18,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,44,0" name="jetbrains.mps.build.mps.tests.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="BuildModuleTestsPlugin_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.tests.behavior.BuildModuleTestsPlugin_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMpsLayout_TestModuleGroup_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModuleGroup_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMpsLayout_TestModule_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModule_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMpsLayout_TestModules_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMpsLayout_TestModules_Content_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Content_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:7bb3f1f1-7557-4f02-8802-5f9a48253a88(jetbrains.mps.build.mps.tests.behavior)/4005526075820610553">
     <file name="BuildModuleTestsPlugin__BehaviorDescriptor.java">

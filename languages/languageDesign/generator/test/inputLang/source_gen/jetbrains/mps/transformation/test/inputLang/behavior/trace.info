@@ -15,45 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,38,0" name="jetbrains.mps.transformation.test.inputLang.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="ExpressionToReduceToStatement_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.inputLang.behavior.ExpressionToReduceToStatement_BehaviorDescriptor" />
-    </file>
-    <file name="InputNode_A_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.inputLang.behavior.InputNode_A_BehaviorDescriptor" />
-    </file>
-    <file name="InputNode_B_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.inputLang.behavior.InputNode_B_BehaviorDescriptor" />
-    </file>
-    <file name="InputNode_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.inputLang.behavior.InputNode_BehaviorDescriptor" />
-    </file>
-    <file name="InputNode_C_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.inputLang.behavior.InputNode_C_BehaviorDescriptor" />
-    </file>
-    <file name="InputRootWithStatementList_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.inputLang.behavior.InputRootWithStatementList_BehaviorDescriptor" />
-    </file>
-    <file name="InputRoot_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.inputLang.behavior.InputRoot_BehaviorDescriptor" />
-    </file>
-    <file name="RefTestClass_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.inputLang.behavior.RefTestClass_BehaviorDescriptor" />
-    </file>
-    <file name="RefTestExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.inputLang.behavior.RefTestExpression_BehaviorDescriptor" />
-    </file>
-    <file name="RefTestMethodCall_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.inputLang.behavior.RefTestMethodCall_BehaviorDescriptor" />
-    </file>
-    <file name="RefTestMethod_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.inputLang.behavior.RefTestMethod_BehaviorDescriptor" />
-    </file>
-    <file name="RefTestParamRef_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.inputLang.behavior.RefTestParamRef_BehaviorDescriptor" />
-    </file>
-    <file name="RefTestParam_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.transformation.test.inputLang.behavior.RefTestParam_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:e6fa6600-76f8-4a95-9fda-01416b2cfa47(jetbrains.mps.transformation.test.inputLang.behavior)/2511103526757027807">
     <file name="InputNode__BehaviorDescriptor.java">

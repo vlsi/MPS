@@ -4,12 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.lang.migration.util.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="StepData_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.util.behavior.StepData_BehaviorDescriptor" />
-    </file>
-    <file name="StringData_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.util.behavior.StringData_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

@@ -16,83 +16,8 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
-    <file name="AsBuilderStatement_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.AsBuilderStatement_BehaviorDescriptor" />
-    </file>
-    <file name="AsTypeBuilder_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.AsTypeBuilder_BehaviorDescriptor" />
-    </file>
-    <file name="BaseSimpleBuilderDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.BaseSimpleBuilderDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="BeanBuilder_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.BeanBuilder_BehaviorDescriptor" />
-    </file>
-    <file name="BeanPropertyBuilder_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.BeanPropertyBuilder_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,71,0" name="jetbrains.mps.baseLanguage.builders.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BuilderContainer_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.builders.behavior.BuilderContainer_BehaviorDescriptor" />
-    </file>
-    <file name="BuilderCreator_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.BuilderCreator_BehaviorDescriptor" />
-    </file>
-    <file name="BuilderStatement_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.BuilderStatement_BehaviorDescriptor" />
-    </file>
-    <file name="Builder_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.Builder_BehaviorDescriptor" />
-    </file>
-    <file name="ResultExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.ResultExpression_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderChildExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderChildExpression_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderChild_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderChild_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderExpression_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderExtensionDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderExtensionDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderParameterReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderParameterReference_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderParameter_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderParameter_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderParentExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderParentExpression_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderPropertyBuilder_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderPropertyBuilder_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderPropertyExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderPropertyExpression_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderPropertyParent_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderPropertyParent_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderPropertyValue_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderPropertyValue_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderProperty_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderProperty_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilder_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilder_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilders_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilders_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/2679357232284040708">

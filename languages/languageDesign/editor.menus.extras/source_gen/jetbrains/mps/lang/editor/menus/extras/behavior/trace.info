@@ -15,18 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,35,0" name="jetbrains.mps.lang.editor.menus.extras.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="QueryFunctionParameter_IntentionExecutable_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.extras.behavior.QueryFunctionParameter_IntentionExecutable_BehaviorDescriptor" />
-    </file>
-    <file name="TransformationMenuPart_Intention_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.extras.behavior.TransformationMenuPart_Intention_BehaviorDescriptor" />
-    </file>
-    <file name="TransformationMenuPart_PluginAction_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.extras.behavior.TransformationMenuPart_PluginAction_BehaviorDescriptor" />
-    </file>
-    <file name="TransformationMenuPart_Refactoring_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.extras.behavior.TransformationMenuPart_Refactoring_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:b76e6387-9e47-4e56-8a9c-59cb9d383183(jetbrains.mps.lang.editor.menus.extras.behavior)/2468431357014356596">
     <file name="TransformationMenuPart_Intention__BehaviorDescriptor.java">

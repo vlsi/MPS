@@ -4,12 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="updatedLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="MigratingConcept_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="updatedLanguage.behavior.MigratingConcept_BehaviorDescriptor" />
-    </file>
-    <file name="RootConcept_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="updatedLanguage.behavior.RootConcept_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 

@@ -4,9 +4,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="GeneratedForeach_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.behavior.GeneratedForeach_BehaviorDescriptor" />
-    </file>
   </root>
 </debug-info>
 
