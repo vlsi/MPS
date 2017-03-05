@@ -138,6 +138,6 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     return DemoApplication_Configuration_RunProfileState.canExecute(executorId);
   }
   public Object[] createMakeNodePointersTask() {
-    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNode())};
+    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodeRef())};
   }
 }
