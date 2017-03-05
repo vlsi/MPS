@@ -12,22 +12,18 @@ public final class LanguageConceptSwitch {
   public static final int ConceptBehavior = 0;
   public static final int ConceptConstructorDeclaration = 1;
   public static final int ConceptMethodDeclaration = 2;
-  public static final int InternalConceptDeclarationReference = 3;
-  public static final int InternalConceptDeclarationsHolder = 4;
-  public static final int LocalBehaviorMethodCall = 5;
-  public static final int SuperConceptExpression = 6;
-  public static final int SuperExpression = 7;
-  public static final int SuperNodeExpression = 8;
-  public static final int ThisConceptExpression = 9;
-  public static final int ThisNodeExpression = 10;
+  public static final int LocalBehaviorMethodCall = 3;
+  public static final int SuperConceptExpression = 4;
+  public static final int SuperExpression = 5;
+  public static final int SuperNodeExpression = 6;
+  public static final int ThisConceptExpression = 7;
+  public static final int ThisNodeExpression = 8;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L);
     builder.put(0x11d43447b1aL, ConceptBehavior);
     builder.put(0x11d43471eedL, ConceptConstructorDeclaration);
     builder.put(0x11d4348057eL, ConceptMethodDeclaration);
-    builder.put(0x8fa3b96a509fe09L, InternalConceptDeclarationReference);
-    builder.put(0x8fa3b96a509fe0bL, InternalConceptDeclarationsHolder);
     builder.put(0x5a277db47d54d7e1L, LocalBehaviorMethodCall);
     builder.put(0x69a9d7dcb057a7a7L, SuperConceptExpression);
     builder.put(0x25076477397f04e3L, SuperExpression);

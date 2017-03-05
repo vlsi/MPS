@@ -17,8 +17,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptConceptBehavior = createDescriptorForConceptBehavior();
   /*package*/ final ConceptDescriptor myConceptConceptConstructorDeclaration = createDescriptorForConceptConstructorDeclaration();
   /*package*/ final ConceptDescriptor myConceptConceptMethodDeclaration = createDescriptorForConceptMethodDeclaration();
-  /*package*/ final ConceptDescriptor myConceptInternalConceptDeclarationReference = createDescriptorForInternalConceptDeclarationReference();
-  /*package*/ final ConceptDescriptor myConceptInternalConceptDeclarationsHolder = createDescriptorForInternalConceptDeclarationsHolder();
   /*package*/ final ConceptDescriptor myConceptLocalBehaviorMethodCall = createDescriptorForLocalBehaviorMethodCall();
   /*package*/ final ConceptDescriptor myConceptSuperConceptExpression = createDescriptorForSuperConceptExpression();
   /*package*/ final ConceptDescriptor myConceptSuperExpression = createDescriptorForSuperExpression();
@@ -33,7 +31,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptConceptBehavior, myConceptConceptConstructorDeclaration, myConceptConceptMethodDeclaration, myConceptInternalConceptDeclarationReference, myConceptInternalConceptDeclarationsHolder, myConceptLocalBehaviorMethodCall, myConceptSuperConceptExpression, myConceptSuperExpression, myConceptSuperNodeExpression, myConceptThisConceptExpression, myConceptThisNodeExpression);
+    return Arrays.asList(myConceptConceptBehavior, myConceptConceptConstructorDeclaration, myConceptConceptMethodDeclaration, myConceptLocalBehaviorMethodCall, myConceptSuperConceptExpression, myConceptSuperExpression, myConceptSuperNodeExpression, myConceptThisConceptExpression, myConceptThisNodeExpression);
   }
 
   @Override
@@ -46,10 +44,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptConceptConstructorDeclaration;
       case LanguageConceptSwitch.ConceptMethodDeclaration:
         return myConceptConceptMethodDeclaration;
-      case LanguageConceptSwitch.InternalConceptDeclarationReference:
-        return myConceptInternalConceptDeclarationReference;
-      case LanguageConceptSwitch.InternalConceptDeclarationsHolder:
-        return myConceptInternalConceptDeclarationsHolder;
       case LanguageConceptSwitch.LocalBehaviorMethodCall:
         return myConceptLocalBehaviorMethodCall;
       case LanguageConceptSwitch.SuperConceptExpression:
@@ -104,23 +98,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("isAbstract", 0x11d43480582L, "1225194472834");
     b.prop("isStatic", 0x51613f7fe129b24dL, "5864038008284099149");
     b.associate("overriddenMethod", 0x11d4348057fL).target(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL).optional(true).origin("1225194472831").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForInternalConceptDeclarationReference() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.behavior", "InternalConceptDeclarationReference", 0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x8fa3b96a509fe09L);
-    b.class_(false, false, false);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
-    b.origin("r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)/646895014681116169");
-    b.associate("concept", 0x8fa3b96a509fe0aL).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(false).origin("646895014681116170").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForInternalConceptDeclarationsHolder() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.behavior", "InternalConceptDeclarationsHolder", 0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x8fa3b96a509fe0bL);
-    b.class_(false, false, true);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
-    b.origin("r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)/646895014681116171");
-    b.aggregate("concept", 0x8fa3b96a509fe0cL).target(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x8fa3b96a509fe09L).optional(true).ordered(true).multiple(true).origin("646895014681116172").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForLocalBehaviorMethodCall() {

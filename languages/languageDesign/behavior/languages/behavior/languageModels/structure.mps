@@ -197,40 +197,6 @@
       <ref role="20ksaX" to="tpee:fz7wK6H" resolve="baseMethodDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="zUeTq_2vS9">
-    <property role="TrG5h" value="InternalConceptDeclarationReference" />
-    <property role="EcuMT" value="646895014681116169" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="zUeTq_2vSa" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="concept" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="646895014681116170" />
-      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-    </node>
-    <node concept="PrWs8" id="1653mnvB6ep" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="zUeTq_2vSb">
-    <property role="19KtqR" value="true" />
-    <property role="TrG5h" value="InternalConceptDeclarationsHolder" />
-    <property role="EcuMT" value="646895014681116171" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="zUeTq_2vSc" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="concept" />
-      <property role="20lbJX" value="0..n" />
-      <property role="IQ2ns" value="646895014681116172" />
-      <ref role="20lvS9" node="zUeTq_2vS9" resolve="InternalConceptDeclarationReference" />
-    </node>
-    <node concept="PrWs8" id="zUeTq_2zBY" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="PrWs8" id="1653mnvAlOe" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="1u_ffTorqp2">
     <property role="EcuMT" value="1703835097132541506" />
     <property role="TrG5h" value="ThisConceptExpression" />

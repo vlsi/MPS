@@ -23,7 +23,7 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
   private final SModelReference model;
   public TemplateModelImpl(TemplateModule module) {
     super(module);
-    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mapping_mc_Behavior(this), new Mapping_mc_LegacyBehaviorDescriptors(this), new Mapping_mc_PrepareLegacyBehaviorDescriptors(this));
+    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mapping_mc_Behavior(this));
     switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new Switch_switch_ClassFromType(), new Switch_switch_Parameter(), new Switch_BehaviorDescriptor());
     model = PersistenceFacade.getInstance().createModelReference("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)");
   }
@@ -78,18 +78,6 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
     if (template.equals(new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "7385785963572922999"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_BehaviorDescriptor();
-    }
-    if (template.equals(new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "1144956008583654942"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new Template_InterfaceLegacyBehaviorDescriptor();
-    }
-    if (template.equals(new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "7923290658387314297"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new Template_LegacyBehaviorDescriptor();
-    }
-    if (template.equals(new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "7923290658387314669"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new Template_ConceptDeclarations();
     }
     return null;
   }
