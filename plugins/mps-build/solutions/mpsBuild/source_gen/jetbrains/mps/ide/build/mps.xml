@@ -225,7 +225,7 @@
     <ant antfile="build/mpsDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsVcsCommon.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsVcsCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/jetpad.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsDiagramEditor.xml" inheritAll="false" useNativeBasedir="true" />

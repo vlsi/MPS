@@ -12,7 +12,7 @@
   <property name="artifacts.mpsPlugins" location="${build.dir}/artifacts/mpsPlugins" />
   <property name="artifacts.mpsMakePlugin" location="${build.dir}/artifacts/mpsMakePlugin" />
   <property name="artifacts.mpsBuild" location="${build.dir}/artifacts/mpsBuild" />
-  <property name="artifacts.mpsVcsCommon" location="${build.dir}/artifacts/mpsVcsCommon" />
+  <property name="artifacts.mpsVcsCore" location="${build.dir}/artifacts/mpsVcsCore" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mpsBootstrapCore}/build.properties" prefix="import.mpsBootstrapCore" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBootstrapCore.mpsBootstrapCore.version}" />
@@ -58,14 +58,17 @@
     </jar>
     <mkdir dir="${build.layout}/mps-vcs/META-INF" />
     <copy todir="${build.layout}/mps-vcs/META-INF">
-      <fileset file="${mps_home}/plugins/vcs/META-INF/MPSVcs.xml" />
+      <fileset dir="${artifacts.mpsVcsCore}/vcs-core/META-INF" />
     </copy>
     <mkdir dir="${build.layout}/mps-vcs/languages" />
     <copy todir="${build.layout}/mps-vcs/languages">
-      <fileset dir="${artifacts.mpsVcsCommon}/vcs-core/languages" />
+      <fileset dir="${artifacts.mpsVcsCore}/vcs-core/languages" />
     </copy>
     <mkdir dir="${build.layout}/mps-vcs/lib" />
-    <copy file="${artifacts.mpsVcsCommon}/vcs-core/lib/vcs-core.jar" todir="${build.layout}/mps-vcs/lib" />
+    <copy todir="${build.layout}/mps-vcs/lib">
+      <fileset dir="${artifacts.mpsVcsCore}/vcs-core/lib" />
+    </copy>
+    <mkdir dir="${build.layout}/mps-vcs/lib" />
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-models">
       <fileset dir="${mps_home}/plugins/vcs/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
@@ -83,11 +86,11 @@
     </jar>
     <mkdir dir="${build.layout}/git4idea" />
     <copy todir="${build.layout}/git4idea">
-      <fileset dir="${artifacts.mpsVcsCommon}/git4idea" />
+      <fileset dir="${artifacts.mpsVcsCore}/git4idea" />
     </copy>
     <mkdir dir="${build.layout}/svn4idea" />
     <copy todir="${build.layout}/svn4idea">
-      <fileset dir="${artifacts.mpsVcsCommon}/svn4idea" />
+      <fileset dir="${artifacts.mpsVcsCore}/svn4idea" />
     </copy>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -104,7 +107,7 @@
     <ant antfile="build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsPlugins.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsVcsCommon.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsVcsCore.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
@@ -130,9 +133,8 @@
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
       <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
-      <plugin path="${artifacts.mpsVcsCommon}/git4idea" />
-      <plugin path="${artifacts.mpsVcsCommon}/svn4idea" />
-      <plugin path="${artifacts.mpsVcsCommon}/vcs-core" />
+      <plugin path="${artifacts.mpsVcsCore}/git4idea" />
+      <plugin path="${artifacts.mpsVcsCore}/svn4idea" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -205,9 +207,9 @@
       <library file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.jar" />
       <library file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
       <library file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
-      <library file="${artifacts.mpsVcsCommon}/vcs-core/languages/jetbrains.mps.ide.vcs.modelmetadata.jar" />
-      <library file="${artifacts.mpsVcsCommon}/vcs-core/languages/jetbrains.mps.vcs.mergehints.jar" />
-      <library file="${artifacts.mpsVcsCommon}/vcs-core/lib/vcs-core.jar" />
+      <library file="${artifacts.mpsVcsCore}/vcs-core/languages/jetbrains.mps.ide.vcs.modelmetadata.jar" />
+      <library file="${artifacts.mpsVcsCore}/vcs-core/languages/jetbrains.mps.vcs.mergehints.jar" />
+      <library file="${artifacts.mpsVcsCore}/vcs-core/lib/vcs-core.jar" />
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
       <chunk>
@@ -271,7 +273,7 @@
       <target name="generate" />
       <target name="assemble" />
     </ant>
-    <ant antfile="build/mpsVcsCommon.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="build/mpsVcsCore.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>
@@ -288,7 +290,7 @@
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mpsVcsCommon}/vcs-core/lib/vcs-core.jar" />
+        <fileset file="${artifacts.mpsVcsCore}/vcs-core/lib/vcs-core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-logging.jar" />

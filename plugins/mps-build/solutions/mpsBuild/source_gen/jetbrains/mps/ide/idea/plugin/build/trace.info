@@ -32,7 +32,7 @@
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/8128914530389845295">
     <file name="mpsIdeaVcs.xml">
-      <unit id="8128914530389845295" at="1,0,158,10" name="jetbrains.mps.ide.idea.plugin.build.mpsIdeaVcs" />
+      <unit id="8128914530389845295" at="1,0,164,10" name="jetbrains.mps.ide.idea.plugin.build.mpsIdeaVcs" />
     </file>
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/8658995123701267517">

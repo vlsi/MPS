@@ -15,8 +15,8 @@
   -->
 
 <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <id>jetbrains.mps.vcs</id>
-  <name>MPS Version Control support</name>
+  <id>jetbrains.mps.idea.vcs</id>
+  <name>MPS Version Control Support</name>
   <category>Custom Languages</category>
   <description>MPS Version Control support</description>
   <version>2017.1</version>
