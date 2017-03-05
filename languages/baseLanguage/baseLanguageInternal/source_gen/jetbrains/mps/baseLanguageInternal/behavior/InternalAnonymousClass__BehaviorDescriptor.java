@@ -71,11 +71,11 @@ public final class InternalAnonymousClass__BehaviorDescriptor extends BaseBHDesc
   }
   /*package*/ static String getNestedName_id7q4lzBFjvIX(@NotNull SNode __thisNode__) {
     SNode containingClassifier = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
-    return (containingClassifier != null ? InternalAnonymousClass__BehaviorDescriptor.getAnonymousClassPresentation_id2XVui9ut6Db.invoke(__thisNode__, containingClassifier) + Classifier__BehaviorDescriptor.getNestedName_id7q4lzBFjvIX.invoke(containingClassifier) : Classifier__BehaviorDescriptor.getNestedName_id7q4lzBFjvIX.invokeSpecial(__thisNode__));
+    return (containingClassifier != null ? InternalAnonymousClass__BehaviorDescriptor.getAnonymousClassPresentation_id2XVui9ut6Db.invoke(__thisNode__, containingClassifier) + Classifier__BehaviorDescriptor.getNestedName_id7q4lzBFjvIX.invoke(containingClassifier) : Classifier__BehaviorDescriptor.getNestedName_id7q4lzBFjvIX.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746809L, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass")));
   }
   /*package*/ static String getFqName_idhEwIO9y(@NotNull SNode __thisNode__) {
     SNode containingClassifier = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
-    return (containingClassifier != null ? InternalAnonymousClass__BehaviorDescriptor.getAnonymousClassPresentation_id2XVui9ut6Db.invoke(__thisNode__, containingClassifier) + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(containingClassifier) : Classifier__BehaviorDescriptor.getFqName_idhEwIO9y.invokeSpecial(__thisNode__));
+    return (containingClassifier != null ? InternalAnonymousClass__BehaviorDescriptor.getAnonymousClassPresentation_id2XVui9ut6Db.invoke(__thisNode__, containingClassifier) + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(containingClassifier) : INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746809L, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass")));
   }
   /*package*/ static String getAnonymousClassPresentation_id2XVui9ut6Db(@NotNull SNode __thisNode__, SNode containingClassifier) {
     String result = "Anonymous in ";

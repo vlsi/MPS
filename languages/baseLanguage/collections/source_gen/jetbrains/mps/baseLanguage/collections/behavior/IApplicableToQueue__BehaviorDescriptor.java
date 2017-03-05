@@ -35,7 +35,7 @@ public final class IApplicableToQueue__BehaviorDescriptor extends BaseBHDescript
   }
 
   /*package*/ static List<SNode> getApplicableTypes_id5cL0w3DYzxf(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = IApplicableToDeque__BehaviorDescriptor.getApplicableTypes_id5cL0w3DYzxf.invokeSpecial(__thisConcept__);
+    List<SNode> result = IApplicableToNothing__BehaviorDescriptor.getApplicableTypes_id5cL0w3DYzxf.invokeSuper(__thisConcept__, MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eefcL, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToQueue"));
     ListSequence.fromList(result).addElement(_quotation_createNode_sbaz2p_a0a1a0());
     return result;
   }

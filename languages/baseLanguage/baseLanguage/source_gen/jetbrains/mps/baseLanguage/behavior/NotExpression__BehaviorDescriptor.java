@@ -69,7 +69,7 @@ public final class NotExpression__BehaviorDescriptor extends BaseBHDescriptor {
     if (result != null && result instanceof Boolean) {
       return !(((Boolean) result).booleanValue());
     }
-    return Expression__BehaviorDescriptor.eval_idhEwJgmp.invokeSpecial(__thisNode__, module);
+    return Expression__BehaviorDescriptor.eval_idhEwJgmp.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"), module);
   }
 
   /*package*/ NotExpression__BehaviorDescriptor() {

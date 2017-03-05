@@ -93,7 +93,7 @@ public final class SimpleBuilder__BehaviorDescriptor extends BaseBHDescriptor {
       }
     }
 
-    return ((SNode) Builder__BehaviorDescriptor.getAttachStatement_id6k$kQGI5UZ7.invokeSpecial(__thisNode__, childBuilder, parentRef, childRef));
+    return ((SNode) Builder__BehaviorDescriptor.getAttachStatement_id6k$kQGI5UZ7.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), childBuilder, parentRef, childRef));
   }
 
   /*package*/ SimpleBuilder__BehaviorDescriptor() {

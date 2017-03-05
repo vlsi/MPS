@@ -40,12 +40,12 @@ public final class C__BehaviorDescriptor extends BaseBHDescriptor {
     return "C";
   }
   /*package*/ static void doInvokeAll_id46FlynTbVzB(@NotNull SNode __thisNode__) {
-    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invokeSpecial(__thisNode__, ((int) 0));
-    A__BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invokeSpecial(__thisNode__, "", ((int) 0));
+    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e6873L, "jetbrains.mps.lang.behavior.test.structure.C"), ((int) 0));
+    A__BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e6873L, "jetbrains.mps.lang.behavior.test.structure.C"), "", ((int) 0));
     B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invokeSpecial(__thisNode__, "from B", ((int) 0));
     A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invokeSpecial(__thisNode__, "from A", ((int) 0));
-    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invokeSpecial(__thisNode__, "from B", ((int) 0));
-    B__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invokeSpecial(__thisNode__, "from A", ((int) 0));
+    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e6873L, "jetbrains.mps.lang.behavior.test.structure.C"), "from B", ((int) 0));
+    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e6873L, "jetbrains.mps.lang.behavior.test.structure.C"), "from A", ((int) 0));
     // 
     B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", ((int) 0));
     B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", ((int) 0));

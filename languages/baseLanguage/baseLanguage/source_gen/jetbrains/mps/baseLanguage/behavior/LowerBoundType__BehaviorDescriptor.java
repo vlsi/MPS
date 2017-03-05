@@ -69,7 +69,7 @@ public final class LowerBoundType__BehaviorDescriptor extends BaseBHDescriptor {
       }
       return _quotation_createNode_kcjgm5_a2a0a4(expBound);
     }
-    return IGenericType__BehaviorDescriptor.expandGenerics_id3$PgO9fYTB5.invokeSpecial(__thisNode__, substitutions, expTrace);
+    return IGenericType__BehaviorDescriptor.expandGenerics_id3$PgO9fYTB5.invoke0(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions, expTrace);
   }
   /*package*/ static void collectGenericSubstitutions_id3zZky3wF74h(@NotNull SNode __thisNode__, Map<SNode, SNode> substitutions) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, 0x110dae9f25bL, "bound")), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {

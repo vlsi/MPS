@@ -35,11 +35,11 @@ public final class Square__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static void drawShape_idW6XMzE_hbz(@NotNull SNode __thisNode__, Graphics graphics) {
-    Shape__BehaviorDescriptor.drawShape_idW6XMzE_hbz.invokeSpecial(__thisNode__, graphics);
+    Shape__BehaviorDescriptor.drawShape_idW6XMzE_hbz.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L, "jetbrains.mps.samples.Shapes.structure.Square"), graphics);
     graphics.drawRect(SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L, 0x51dcaa29974fc1a3L, "upperLeftX")), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L, 0x51dcaa29974fc1a5L, "upperLeftY")), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L, 0x51dcaa29974fc1a8L, "size")), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L, 0x51dcaa29974fc1a8L, "size")));
   }
   /*package*/ static void drawShapeAt_id3u6SZi0POQS(@NotNull SNode __thisNode__, Graphics graphics, int x, int y) {
-    Shape__BehaviorDescriptor.drawShapeAt_id3u6SZi0POQS.invokeSpecial(__thisNode__, graphics, ((int) x), ((int) y));
+    Shape__BehaviorDescriptor.drawShapeAt_id3u6SZi0POQS.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L, "jetbrains.mps.samples.Shapes.structure.Square"), graphics, ((int) x), ((int) y));
     graphics.drawRect(x, y, SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L, 0x51dcaa29974fc1a8L, "size")), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L, 0x51dcaa29974fc1a8L, "size")));
   }
 

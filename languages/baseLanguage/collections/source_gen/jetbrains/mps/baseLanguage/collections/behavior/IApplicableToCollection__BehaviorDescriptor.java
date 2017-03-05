@@ -35,7 +35,7 @@ public final class IApplicableToCollection__BehaviorDescriptor extends BaseBHDes
   }
 
   /*package*/ static List<SNode> getApplicableTypes_id5cL0w3DYzxf(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = IApplicableToList__BehaviorDescriptor.getApplicableTypes_id5cL0w3DYzxf.invokeSpecial(__thisConcept__);
+    List<SNode> result = IApplicableToNothing__BehaviorDescriptor.getApplicableTypes_id5cL0w3DYzxf.invokeSuper(__thisConcept__, MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eef7L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToCollection"));
     ListSequence.fromList(result).addElement(_quotation_createNode_w2ix4_a0a1a0());
     return result;
   }

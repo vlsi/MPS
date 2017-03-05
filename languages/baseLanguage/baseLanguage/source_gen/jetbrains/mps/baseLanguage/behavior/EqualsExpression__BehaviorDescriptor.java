@@ -67,7 +67,7 @@ public final class EqualsExpression__BehaviorDescriptor extends BaseBHDescriptor
     if (VariableReferenceUtil.referencesPointToSameVariableDeclaration(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")), SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")))) {
       return true;
     }
-    return ((Object) BinaryOperation__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invokeSpecial(__thisNode__, module));
+    return ((Object) Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"), module));
   }
 
   /*package*/ EqualsExpression__BehaviorDescriptor() {

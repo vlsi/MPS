@@ -83,7 +83,7 @@ public final class PersistentConfiguration__BehaviorDescriptor extends BaseBHDes
     return "Editor";
   }
   /*package*/ static List<SNode> getMembers_idhEwJink(@NotNull SNode __thisNode__, SNode contextNode) {
-    List<SNode> allMemebers = IClassifier__BehaviorDescriptor.getMembers_idhEwJink.invokeSpecial(__thisNode__, contextNode);
+    List<SNode> allMemebers = IClassifier__BehaviorDescriptor.getMembers_idhEwJink.invoke0(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), contextNode);
     if ((SNodeOperations.getNodeAncestor(contextNode, MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, "jetbrains.mps.execution.settings.structure.SettingsEditor"), false, false) != null)) {
       return ListSequence.fromList(allMemebers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {

@@ -42,7 +42,7 @@ public final class ConceptFunctionParameter_node__BehaviorDescriptor extends Bas
       SNode editorTab = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, "jetbrains.mps.lang.plugin.structure.EditorTab"), false, false);
       return _quotation_createNode_luv170_a1a0a0(SLinkOperations.getTarget(editorTab, MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d30L, "baseNodeConcept")));
     } else {
-      return ConceptFunctionParameter__BehaviorDescriptor.getType_id27DJnJtIQ9C.invokeSpecial(__thisNode__);
+      return ConceptFunctionParameter__BehaviorDescriptor.getType_id27DJnJtIQ9C.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1184b3b848fL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node"));
     }
   }
 

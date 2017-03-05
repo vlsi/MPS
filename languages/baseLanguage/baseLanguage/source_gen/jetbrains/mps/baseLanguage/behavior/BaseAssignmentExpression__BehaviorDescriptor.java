@@ -47,7 +47,7 @@ public final class BaseAssignmentExpression__BehaviorDescriptor extends BaseBHDe
     return true;
   }
   /*package*/ static boolean canPropagateUnmatchedParenUp_id1wHCnsn58ZA(@NotNull SNode __thisNode__, SNode leaf, boolean rightParen) {
-    return ((boolean) IBinaryLike__BehaviorDescriptor.canPropagateUnmatchedParenUp_id1wHCnsn58ZA.invokeSpecial(__thisNode__, leaf, ((boolean) rightParen))) && (!(rightParen) || ListSequence.fromList(SNodeOperations.getNodeAncestors(leaf, null, true)).contains(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e99L, "rValue"))));
+    return ((boolean) IBinaryLike__BehaviorDescriptor.canPropagateUnmatchedParenUp_id1wHCnsn58ZA.invoke0(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x182da1771714863eL, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), leaf, ((boolean) rightParen))) && (!(rightParen) || ListSequence.fromList(SNodeOperations.getNodeAncestors(leaf, null, true)).contains(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e99L, "rValue"))));
   }
   /*package*/ static SNode getSyntacticallyLeftSideExpression_id1wHCnsn590c(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue"));

@@ -17,6 +17,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -40,7 +41,7 @@ public final class QueryFunction_SubstituteMenu_CanSubstitute__BehaviorDescripto
     return _quotation_createNode_lfd2pz_a0a0();
   }
   /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
-    List<SConcept> result = QueryFunction_SubstituteMenuPart__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invokeSpecial(__thisNode__);
+    List<SConcept> result = ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce1116e3a2db1e1L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_CanSubstitute"));
     ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x59f39dd19d1526cdL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Strictly"));
     return result;
   }

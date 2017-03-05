@@ -71,7 +71,7 @@ public final class VariableReference__BehaviorDescriptor extends BaseBHDescripto
       }
     }
 
-    return ((Object) Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invokeSpecial(__thisNode__, module));
+    return ((Object) Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), module));
   }
   /*package*/ static boolean isCompileTimeConstant_idi1LOPRp(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
@@ -81,7 +81,7 @@ public final class VariableReference__BehaviorDescriptor extends BaseBHDescripto
       return SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"));
     }
 
-    return ((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invokeSpecial(__thisNode__));
+    return ((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")));
   }
   /*package*/ static Object eval_idhEwJgmp(@NotNull SNode __thisNode__, SModule module) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
@@ -114,7 +114,7 @@ public final class VariableReference__BehaviorDescriptor extends BaseBHDescripto
       }
     }
 
-    return ((Object) Expression__BehaviorDescriptor.eval_idhEwJgmp.invokeSpecial(__thisNode__, module));
+    return ((Object) Expression__BehaviorDescriptor.eval_idhEwJgmp.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), module));
   }
   /*package*/ static boolean isParameterOfThisMethod_idi3dhek3(@NotNull SNode __thisNode__) {
     // todo: method from ParameterReference. Remove. 

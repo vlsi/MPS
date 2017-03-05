@@ -799,8 +799,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ISuppressErrors__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_fhnb8mu8" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />

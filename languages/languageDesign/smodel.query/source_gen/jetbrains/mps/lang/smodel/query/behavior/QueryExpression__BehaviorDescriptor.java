@@ -55,7 +55,7 @@ public final class QueryExpression__BehaviorDescriptor extends BaseBHDescriptor 
     return result;
   }
   /*package*/ static String getDisplayString_id5YxQmqOFZEf(@NotNull SAbstractConcept __thisConcept__) {
-    String result = HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invokeSpecial(__thisConcept__);
+    String result = HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke0(__thisConcept__, MetaAdapterFactory.getInterfaceConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x613b3dd6aa6dac90L, "jetbrains.mps.lang.smodel.query.structure.ExpressionHelpProvider"));
     if (Sequence.fromIterable(QueryExpression__BehaviorDescriptor.getSupportedParameters_id3J6h25QXCDW.invoke(__thisConcept__)).isEmpty()) {
       return result;
     } else {

@@ -37,7 +37,7 @@ public final class WatchableListType__BehaviorDescriptor extends BaseBHDescripto
   }
 
   /*package*/ static void collectGenericSubstitutions_id3zZky3wF74h(@NotNull SNode __thisNode__, Map<SNode, SNode> substitutions) {
-    IGenericType__BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invokeSpecial(__thisNode__, substitutions);
+    IGenericType__BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invoke0(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions);
     IGenericType__BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invoke(createClassifierType_za89pk_a0b0a(), substitutions);
   }
 

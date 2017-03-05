@@ -62,7 +62,7 @@ public final class BaseIntentionDeclaration__BehaviorDescriptor extends BaseBHDe
     return false;
   }
   /*package*/ static List<PropertyReference> getPropertiesToCheck_id4cWf37B8oXP(@NotNull SNode __thisNode__) {
-    return ((List<PropertyReference>) ICheckedNamePolicy__BehaviorDescriptor.getPropertiesToCheck_id4cWf37B8oXP.invokeSpecial(__thisNode__));
+    return ((List<PropertyReference>) ICheckedNamePolicy__BehaviorDescriptor.getPropertiesToCheck_id4cWf37B8oXP.invoke0(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xfe9d76d7580945c9L, 0xae28a40915b4d6ffL, 0x433c3c31e7218f38L, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy")));
   }
   /*package*/ static SNode getDescendantToCheck_id4cWf37B8oXJ(@NotNull SNode __thisNode__) {
     if (!((boolean) ConceptFunction__BehaviorDescriptor.isReturnOnly_id3fUxpI1uWGM.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3cd0a9L, "descriptionFunction"))))) {

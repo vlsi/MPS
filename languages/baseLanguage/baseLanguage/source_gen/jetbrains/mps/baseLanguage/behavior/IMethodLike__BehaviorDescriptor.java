@@ -70,7 +70,7 @@ public final class IMethodLike__BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
   /*package*/ static boolean suppress_id2WmWrdnSpX7(@NotNull SNode __thisNode__, SNode child) {
-    return ((boolean) ISuppressErrors__BehaviorDescriptor.suppress_id2WmWrdnSpX7.invokeSpecial(__thisNode__, child)) && eq_2wubdd_a0a0a0u(child, IMethodLike__BehaviorDescriptor.getBody_idi2fhZ_m.invoke(__thisNode__)) && SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"));
+    return ((boolean) ISuppressErrors__BehaviorDescriptor.suppress_id2WmWrdnSpX7.invoke0(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L, "jetbrains.mps.lang.core.structure.ISuppressErrors"), child)) && eq_2wubdd_a0a0a0u(child, IMethodLike__BehaviorDescriptor.getBody_idi2fhZ_m.invoke(__thisNode__)) && SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"));
   }
 
   /*package*/ IMethodLike__BehaviorDescriptor() {

@@ -58,7 +58,7 @@ public final class EnumClass__BehaviorDescriptor extends BaseBHDescriptor {
     return _quotation_createNode_nbdilp_a0a1();
   }
   /*package*/ static List<SNode> getExtendedClassifierTypes_id1UeCwxlWKny(@NotNull SNode __thisNode__) {
-    List<SNode> extended = ClassConcept__BehaviorDescriptor.getExtendedClassifierTypes_id1UeCwxlWKny.invokeSpecial(__thisNode__);
+    List<SNode> extended = Classifier__BehaviorDescriptor.getExtendedClassifierTypes_id1UeCwxlWKny.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"));
     SNode enumType = Classifier__BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Enum"));
     if (!(ListSequence.fromList(extended).contains(enumType))) {
       // todo: WTF??? 
@@ -67,7 +67,7 @@ public final class EnumClass__BehaviorDescriptor extends BaseBHDescriptor {
     return extended;
   }
   /*package*/ static List<SNode> getMembers_idhEwJjl2(@NotNull SNode __thisNode__) {
-    List<SNode> members = Classifier__BehaviorDescriptor.getMembers_idhEwJjl2.invokeSpecial(__thisNode__);
+    List<SNode> members = IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"));
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant"))));
     return members;
   }
@@ -76,7 +76,7 @@ public final class EnumClass__BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
   /*package*/ static List<SNode> getMethodsToImplement_id4GM03FJm5q2(@NotNull SNode __thisNode__) {
-    List<SNode> methodsToImplement = ClassConcept__BehaviorDescriptor.getMethodsToImplement_id4GM03FJm5q2.invokeSpecial(__thisNode__);
+    List<SNode> methodsToImplement = IMemberContainer__BehaviorDescriptor.getMethodsToImplement_id4GM03FJm5q2.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"));
     final List<SNode> ownMethods = Classifier__BehaviorDescriptor.getOwnMethods_id1DPgsAlM_WC.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Enum"));
     Iterable<SNode> remaining = ListSequence.fromList(methodsToImplement).where(new IWhereFilter<SNode>() {
       public boolean accept(final SNode toBeImplemented) {
@@ -90,7 +90,7 @@ public final class EnumClass__BehaviorDescriptor extends BaseBHDescriptor {
     return Sequence.fromIterable(remaining).toListSequence();
   }
   /*package*/ static List<SNode> getMethodsToOverride_id4GM03FJm3zL(@NotNull SNode __thisNode__) {
-    final List<SNode> methodsToOverride = ClassConcept__BehaviorDescriptor.getMethodsToOverride_id4GM03FJm3zL.invokeSpecial(__thisNode__);
+    final List<SNode> methodsToOverride = IMemberContainer__BehaviorDescriptor.getMethodsToOverride_id4GM03FJm3zL.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"));
     Iterable<SNode> ownMethods = ListSequence.fromList(Classifier__BehaviorDescriptor.getOwnMethods_id1DPgsAlM_WC.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Enum"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));

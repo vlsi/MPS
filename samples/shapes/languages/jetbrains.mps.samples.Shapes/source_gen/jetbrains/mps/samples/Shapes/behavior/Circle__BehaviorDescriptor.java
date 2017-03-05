@@ -35,11 +35,11 @@ public final class Circle__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static void drawShape_idW6XMzE_hbz(@NotNull SNode __thisNode__, Graphics graphics) {
-    Shape__BehaviorDescriptor.drawShape_idW6XMzE_hbz.invokeSpecial(__thisNode__, graphics);
+    Shape__BehaviorDescriptor.drawShape_idW6XMzE_hbz.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, "jetbrains.mps.samples.Shapes.structure.Circle"), graphics);
     graphics.drawOval(SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc199L, "x")), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19bL, "y")), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius")), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius")));
   }
   /*package*/ static void drawShapeAt_id3u6SZi0POQS(@NotNull SNode __thisNode__, Graphics graphics, int x, int y) {
-    Shape__BehaviorDescriptor.drawShapeAt_id3u6SZi0POQS.invokeSpecial(__thisNode__, graphics, ((int) x), ((int) y));
+    Shape__BehaviorDescriptor.drawShapeAt_id3u6SZi0POQS.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, "jetbrains.mps.samples.Shapes.structure.Circle"), graphics, ((int) x), ((int) y));
     graphics.drawOval(x, y, SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius")), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius")));
   }
 

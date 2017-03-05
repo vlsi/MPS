@@ -46,7 +46,7 @@ public final class QueryFunction_Menu__BehaviorDescriptor extends BaseBHDescript
     return !(SNodeOperations.getConcept(parameter).equals(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e2c89d1L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_pattern")));
   }
   /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
-    ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invokeSpecial(__thisNode__);
+    ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9039c3cL, "jetbrains.mps.lang.editor.structure.QueryFunction_Menu"));
     List<SConcept> result = ListSequence.fromList(new ArrayList<SConcept>());
     if (((boolean) QueryFunction_Menu__BehaviorDescriptor.isParameterized_id1quYWAD0TOG.invoke(__thisNode__))) {
       ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a903acc3L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_parameterObject"));

@@ -46,7 +46,7 @@ public final class WeaveMacro__BehaviorDescriptor extends BaseBHDescriptor {
       } else {
       }
     }
-    return NodeMacro__BehaviorDescriptor.getInputNodeTypeInsideOfMacro_idhEwIosJ.invokeSpecial(__thisNode__);
+    return NodeMacro__BehaviorDescriptor.getInputNodeTypeInsideOfMacro_idhEwIosJ.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x300c02df884235d3L, "jetbrains.mps.lang.generator.structure.WeaveMacro"));
   }
 
   /*package*/ WeaveMacro__BehaviorDescriptor() {

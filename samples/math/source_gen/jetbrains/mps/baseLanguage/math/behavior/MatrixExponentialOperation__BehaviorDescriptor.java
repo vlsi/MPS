@@ -34,7 +34,7 @@ public final class MatrixExponentialOperation__BehaviorDescriptor extends BaseBH
   }
 
   /*package*/ static List<SNode> getAllowedSubstituends_id2D1PBM_bxH0(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ExponentialOperation__BehaviorDescriptor.getAllowedSubstituends_id2D1PBM_bxH0.invokeSpecial(__thisConcept__);
+    List<SNode> result = ExponentialOperation__BehaviorDescriptor.getAllowedSubstituends_id2D1PBM_bxH0.invoke0(__thisConcept__, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)", "7255837154369580413"));
     return result;
   }

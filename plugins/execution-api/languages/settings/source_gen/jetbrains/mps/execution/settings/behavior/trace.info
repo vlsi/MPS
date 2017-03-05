@@ -498,8 +498,8 @@
       <node id="2797684467151253534" at="32,0,33,0" concept="8" trace="REGISTRY" />
       <node id="2797684467151253534" at="34,0,35,0" concept="8" trace="collectUncaughtMethodThrowables_id4Gt7ANIVH8f" />
       <node id="2797684467151253534" at="36,0,37,0" concept="8" trace="BH_METHODS" />
-      <node id="2797684467151253546" at="41,156,42,155" concept="3" />
-      <node id="2797684467151253553" at="42,155,43,239" concept="3" />
+      <node id="2797684467151253546" at="41,156,42,326" concept="3" />
+      <node id="2797684467151253553" at="42,326,43,239" concept="3" />
       <node id="2797684467151253534" at="46,71,47,20" concept="10" />
       <node id="2797684467151253534" at="51,114,52,21" concept="3" />
       <node id="2797684467151253534" at="56,114,57,49" concept="6" />
@@ -753,7 +753,7 @@
       <node id="946964771156066523" at="70,39,71,110" concept="7" />
       <node id="946964771156066543" at="77,39,78,113" concept="7" />
       <node id="946964771156066555" at="82,87,83,20" concept="7" />
-      <node id="2508378883219585568" at="85,103,86,124" concept="6" />
+      <node id="2508378883219585568" at="85,103,86,280" concept="6" />
       <node id="2508378883219590429" at="89,41,90,467" concept="7" />
       <node id="2508378883219590408" at="93,5,94,23" concept="7" />
       <node id="946964771156066395" at="96,134,97,241" concept="6" />
@@ -819,7 +819,7 @@
       <node id="48168216978194874" at="189,0,195,0" concept="9" trace="createPersistentConfigurationType_4ves9l_a2a8#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="946964771156066386" at="68,0,75,0" concept="9" trace="getTemplateProperties_idO$iR4J$g3e#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="946964771156066386" at="75,0,82,0" concept="9" trace="getNonTemplateProperties_idO$iR4J$g3y#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="2508378883219585576" at="86,124,93,5" concept="4" />
+      <node id="2508378883219585576" at="86,280,93,5" concept="4" />
       <node id="946964771156066386" at="106,0,113,0" concept="9" trace="getContextPersistentProperties_idO$iR4J$g22#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="946964771156066386" at="96,0,106,0" concept="9" trace="getContextPersistentConfigurationType_idO$iR4J$g1l#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="946964771156066386" at="159,5,169,5" concept="11" />
@@ -1453,8 +1453,8 @@
       <node id="946964771156066984" at="40,84,41,125" concept="7" />
       <node id="203908296139519019" at="43,90,44,117" concept="7" />
       <node id="1262430001741718745" at="46,96,47,16" concept="7" />
-      <node id="3044950653914723429" at="49,101,50,127" concept="6" />
-      <node id="3044950653914723444" at="50,127,51,208" concept="3" />
+      <node id="3044950653914723429" at="49,101,50,287" concept="6" />
+      <node id="3044950653914723444" at="50,287,51,208" concept="3" />
       <node id="3044950653914723448" at="51,208,52,18" concept="7" />
       <node id="946964771156066978" at="55,54,56,20" concept="10" />
       <node id="946964771156066978" at="60,114,61,21" concept="3" />
@@ -1642,8 +1642,8 @@
       <node id="946964771156067024" at="40,84,41,137" concept="7" />
       <node id="203908296139519723" at="43,90,44,131" concept="7" />
       <node id="1262430001741643129" at="46,96,47,16" concept="7" />
-      <node id="3044950653914719722" at="49,101,50,127" concept="6" />
-      <node id="3044950653914719737" at="50,127,51,208" concept="3" />
+      <node id="3044950653914719722" at="49,101,50,287" concept="6" />
+      <node id="3044950653914719737" at="50,287,51,208" concept="3" />
       <node id="3044950653914719741" at="51,208,52,18" concept="7" />
       <node id="946964771156067020" at="55,56,56,20" concept="10" />
       <node id="946964771156067020" at="60,114,61,21" concept="3" />

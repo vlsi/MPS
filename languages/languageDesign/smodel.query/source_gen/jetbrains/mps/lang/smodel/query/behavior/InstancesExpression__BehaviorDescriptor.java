@@ -40,10 +40,10 @@ public final class InstancesExpression__BehaviorDescriptor extends BaseBHDescrip
     return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ed2fL, "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ec86L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x967fc67f6f09d70L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterExact"));
   }
   /*package*/ static String getHelpPage_id64VftqEen2L(@NotNull SAbstractConcept __thisConcept__) {
-    return QueryExpression__BehaviorDescriptor.getHelpPage_id64VftqEen2L.invokeSpecial(__thisConcept__) + "\nImplementation of this command uses the IDE indexes to speed up execution";
+    return HelpProvider__BehaviorDescriptor.getHelpPage_id64VftqEen2L.invokeSuper(__thisConcept__, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression")) + "\nImplementation of this command uses the IDE indexes to speed up execution";
   }
   /*package*/ static String getDisplayString_id5YxQmqOFZEf(@NotNull SAbstractConcept __thisConcept__) {
-    return QueryExpression__BehaviorDescriptor.getDisplayString_id5YxQmqOFZEf.invokeSpecial(__thisConcept__) + "(concept)";
+    return HelpProvider__BehaviorDescriptor.getDisplayString_id5YxQmqOFZEf.invokeSuper(__thisConcept__, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression")) + "(concept)";
   }
 
   /*package*/ InstancesExpression__BehaviorDescriptor() {

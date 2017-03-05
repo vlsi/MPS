@@ -33,7 +33,7 @@ public final class J__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String foo_idyOqIWcnDrn(@NotNull SNode __thisNode__) {
-    return ((String) I__BehaviorDescriptor.foo_idyOqIWcnDrn.invoke0(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x13b01619ddde1769L, "BHL6.structure.I2")));
+    return ((String) I__BehaviorDescriptor.foo_idyOqIWcnDrn.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x13b01619ddde16fdL, "BHL6.structure.J")));
   }
   /*package*/ static String bar_id43RsG_ymtGN(@NotNull SNode __thisNode__) {
     return ((String) I__BehaviorDescriptor.bar_id43RsG_ymtGN.invoke0(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x13b01619ddde175eL, "BHL6.structure.I1")));

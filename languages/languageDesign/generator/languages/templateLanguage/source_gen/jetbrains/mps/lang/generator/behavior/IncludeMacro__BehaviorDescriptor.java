@@ -45,7 +45,7 @@ public final class IncludeMacro__BehaviorDescriptor extends BaseBHDescriptor {
       } else {
       }
     }
-    return NodeMacro__BehaviorDescriptor.getInputNodeTypeInsideOfMacro_idhEwIosJ.invokeSpecial(__thisNode__);
+    return NodeMacro__BehaviorDescriptor.getInputNodeTypeInsideOfMacro_idhEwIosJ.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11621ab7715L, "jetbrains.mps.lang.generator.structure.IncludeMacro"));
   }
 
   /*package*/ IncludeMacro__BehaviorDescriptor() {

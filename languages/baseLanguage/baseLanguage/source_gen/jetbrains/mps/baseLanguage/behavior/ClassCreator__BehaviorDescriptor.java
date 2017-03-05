@@ -91,7 +91,7 @@ public final class ClassCreator__BehaviorDescriptor extends BaseBHDescriptor {
     }
   }
   /*package*/ static boolean isInTypeInferenceContext_id4cxv$9$kw67(@NotNull SNode __thisNode__) {
-    return ((boolean) IMethodCall__BehaviorDescriptor.isInTypeInferenceContext_id4cxv$9$kw67.invokeSpecial(__thisNode__));
+    return ((boolean) IMethodCall__BehaviorDescriptor.isInTypeInferenceContext_id4cxv$9$kw67.invoke0(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")));
   }
   /*package*/ static Iterable<SNode> retrieveInstantiationPoints_id5qAZxlfY81X(@NotNull SAbstractConcept __thisConcept__, SNode type, SNode contextNode) {
     return Sequence.fromIterable(ClassifierScopeUtils.getVisibleNestedClassConceptsIncludingInherited(type, contextNode)).where(new IWhereFilter<SNode>() {

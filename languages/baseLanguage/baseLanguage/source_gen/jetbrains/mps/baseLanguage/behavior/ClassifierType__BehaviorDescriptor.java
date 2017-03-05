@@ -199,7 +199,7 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
       } else {
       }
     }
-    return ((boolean) Type__BehaviorDescriptor.isSupersetOf_idhKBOZqh.invokeSpecial(__thisNode__, t));
+    return ((boolean) Type__BehaviorDescriptor.isSupersetOf_idhKBOZqh.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), t));
   }
   /*package*/ static boolean isSupersetOf_id7PgshREdQKp(@NotNull SNode __thisNode__, SNode t, Map<SNode, SNode> substitutions) {
     if (SNodeOperations.isInstanceOf(t, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"))) {
@@ -270,7 +270,7 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
       } else {
       }
     }
-    return ((boolean) Type__BehaviorDescriptor.isSupersetOf_id7PgshREdQKp.invokeSpecial(__thisNode__, t, substitutions));
+    return ((boolean) Type__BehaviorDescriptor.isSupersetOf_id7PgshREdQKp.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), t, substitutions));
   }
   /*package*/ static SNode createDefaultTypeExpression_id2UvJdVpqUA4(@NotNull SNode __thisNode__) {
     return _quotation_createNode_hz3823_a0a11();

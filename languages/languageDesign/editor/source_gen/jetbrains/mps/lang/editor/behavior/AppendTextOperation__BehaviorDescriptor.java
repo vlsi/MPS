@@ -39,7 +39,7 @@ public final class AppendTextOperation__BehaviorDescriptor extends BaseBHDescrip
     return "append";
   }
   /*package*/ static List<SNode> getOperationArgumentType_id5GZRL5t2d36(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = AbstractStyledTextOperation__BehaviorDescriptor.getOperationArgumentType_id5GZRL5t2d36.invokeSpecial(__thisConcept__);
+    List<SNode> result = AbstractStyledTextOperation__BehaviorDescriptor.getOperationArgumentType_id5GZRL5t2d36.invokeSuper(__thisConcept__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e34c38c0ad5587L, "jetbrains.mps.lang.editor.structure.AppendTextOperation"));
     ListSequence.fromList(result).addElement(_quotation_createNode_jh7h4_a0a1a1());
     return result;
   }

@@ -74,7 +74,7 @@ public final class DotExpression__BehaviorDescriptor extends BaseBHDescriptor {
       Object[] actualArguments = IMethodCall__BehaviorDescriptor.getActualArguments_idhJyuD6_.invoke(methodCall, module);
       return ReflectionUtil.invoke(method, instance, actualArguments);
     }
-    return Expression__BehaviorDescriptor.eval_idhEwJgmp.invokeSpecial(__thisNode__, module);
+    return Expression__BehaviorDescriptor.eval_idhEwJgmp.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), module);
   }
   /*package*/ static boolean isLegalAsStatement_idi26MfYG(@NotNull SNode __thisNode__) {
     return (boolean) IOperation__BehaviorDescriptor.isDotExpressionLegalAsStatement_idi26OiY_.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")));

@@ -64,7 +64,7 @@ public final class EnumConstantDeclaration__BehaviorDescriptor extends BaseBHDes
     return (enumClass != null ? ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(enumClass) : new ArrayList<SNode>());
   }
   /*package*/ static List<IconResource> getIconMarks_id6TtJ6IUkhQJ(@NotNull SNode __thisNode__) {
-    List<IconResource> markIcons = new ArrayList<IconResource>(BaseConcept__BehaviorDescriptor.getIconMarks_id6TtJ6IUkhQJ.invokeSpecial(__thisNode__));
+    List<IconResource> markIcons = new ArrayList<IconResource>(BaseConcept__BehaviorDescriptor.getIconMarks_id6TtJ6IUkhQJ.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")));
     markIcons.add(BLIconMarks.STATIC);
     markIcons.add(BLIconMarks.FINAL);
     return markIcons;
@@ -152,7 +152,7 @@ public final class EnumConstantDeclaration__BehaviorDescriptor extends BaseBHDes
       Scope visibleEumMembers = ListScope.forNamedElements(methods);
       return new CompositeScope(visibleMembers, visibleEumMembers);
     }
-    return ((Scope) ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QDV$.invokeSpecial(__thisNode__, kind, child));
+    return ((Scope) ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QDV$.invoke0(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider"), kind, child));
   }
 
   /*package*/ EnumConstantDeclaration__BehaviorDescriptor() {
