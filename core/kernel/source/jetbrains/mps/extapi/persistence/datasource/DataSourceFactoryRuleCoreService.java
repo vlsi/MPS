@@ -22,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.annotations.Singleton;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.net.URL;
@@ -40,7 +41,7 @@ import java.util.ServiceLoader;
 @Immutable
 public final class DataSourceFactoryRuleCoreService {
   private static final Logger LOG = LogManager.getLogger(DataSourceFactoryRuleCoreService.class);
-  private static final ClassLoader CORE_CLASSLOADER = DataSourceFactoryFromName.class.getClassLoader();
+  private static final ClassLoader CORE_CLASSLOADER = SRepository.class.getClassLoader();
 
   private static DataSourceFactoryRuleCoreService ourInstance;
   private static ServiceLoader<DataSourceFactoryRule> ourServiceLoader;

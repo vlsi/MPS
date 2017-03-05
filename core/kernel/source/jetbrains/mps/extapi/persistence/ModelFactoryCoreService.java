@@ -21,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.annotations.Singleton;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
@@ -45,7 +46,7 @@ import java.util.ServiceLoader;
 @Immutable
 public final class ModelFactoryCoreService implements ModelFactoryRegistry {
   private static final Logger LOG = LogManager.getLogger(ModelFactoryCoreService.class);
-  private static final ClassLoader CORE_CLASSLOADER = ModelFactory.class.getClassLoader();
+  private static final ClassLoader CORE_CLASSLOADER = SRepository.class.getClassLoader();
 
   private static ModelFactoryCoreService ourInstance;
   private final ModelFactoryRegistryInt myModelFactoryRegistryInt;
