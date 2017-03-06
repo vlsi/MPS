@@ -26,6 +26,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.vcs.util.MergeConstants;
 import jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.persistence.PersistenceVersionAware;
 import com.intellij.openapi.ui.Messages;
@@ -70,7 +71,6 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
       byte[][] byteContents = {getContentBytes(ListSequence.fromList(contents).getElement(0)), getContentBytes(ListSequence.fromList(contents).getElement(1)), getContentBytes(ListSequence.fromList(contents).getElement(2))};
 
       final VirtualFile file = ((FileContent) textRequest.getOutputContent()).getFile();
-
       final File backupFile = MergeBackupUtil.zipModel(byteContents, file);
 
       final Wrappers._T<String> ext = new Wrappers._T<String>(file.getExtension());
@@ -86,6 +86,8 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
 
         ISaveMergedModel saver = new ISaveMergedModel() {
           public boolean save(MergeModelsPanel parent, final SModel resultModel) {
+            ApplicationManager.getApplication().assertIsDispatchThread();
+
             final Wrappers._boolean closeDialog = new Wrappers._boolean(true);
             final Wrappers._T<String> resultContent = new Wrappers._T<String>(null);
 
@@ -117,22 +119,22 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
                   }
                 }
 
-                if (resultContent.value != null) {
-                  ModelAccess.instance().runWriteInEDT(new Runnable() {
-                    public void run() {
-                      try {
-                        file.setBinaryContent(resultContent.value.getBytes(FileUtil.DEFAULT_CHARSET));
-                      } catch (IOException e) {
-                        if (LOG_276369528.isEnabledFor(Level.ERROR)) {
-                          LOG_276369528.error("Cannot save merge result into " + file.getPath(), e);
-                        }
-                      }
-                    }
-                  });
-                  MergeBackupUtil.packMergeResult(backupFile, file.getName(), resultContent.value);
-                }
               }
             });
+            if (resultContent.value != null) {
+              ModelAccess.instance().runWriteAction(new Runnable() {
+                public void run() {
+                  try {
+                    file.setBinaryContent(resultContent.value.getBytes(FileUtil.DEFAULT_CHARSET));
+                  } catch (IOException e) {
+                    if (LOG_276369528.isEnabledFor(Level.ERROR)) {
+                      LOG_276369528.error("Cannot save merge result into " + file.getPath(), e);
+                    }
+                  }
+                }
+              });
+              MergeBackupUtil.packMergeResult(backupFile, file.getName(), resultContent.value);
+            }
 
             return closeDialog.value;
           }
