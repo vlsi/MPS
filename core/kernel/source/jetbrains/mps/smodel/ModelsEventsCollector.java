@@ -43,7 +43,14 @@ import java.util.Set;
  * @see org.jetbrains.mps.openapi.module.ModelAccess#executeCommand(Runnable)
  */
 public abstract class ModelsEventsCollector {
-  private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
+  /**
+   * This lock should be used for synchronizing access to myEvents field.
+   * This field may be accessed without a model lock from the flush() method,
+   * so we should take care of this synchronization.
+   */
+  private Object myEventsLock = new Object();
+
+  private List<SModelEvent> myEvents = new ArrayList<>();
   private SModelListener myModelListener = new SModelDelegateListener();
   private Set<SModel> myModelsToListen = new LinkedHashSet<SModel>();
   private CommandListener myCommandListener = new MyCommandAdapter();
@@ -58,7 +65,8 @@ public abstract class ModelsEventsCollector {
 
   public void startListeningToModel(@NotNull SModel sm) {
     checkNotDisposed();
-    //assert !myModelsToListen.contains(sm) : "EventsCollector was already configured to listen for changes in this model descriptor: " + sm.getSModelReference().toString();
+    assert !myModelsToListen.contains(sm) :
+        "EventsCollector was already configured to listen for changes in this model descriptor: " + sm.getReference().toString();
     myModelsToListen.add(sm);
     ((SModelInternal) sm).addModelListener(myModelListener);
   }
@@ -73,15 +81,16 @@ public abstract class ModelsEventsCollector {
   public void flush() {
     checkNotDisposed();
 
-    if (myEvents.isEmpty()) return;
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        List<SModelEvent> wrappedEvents = Collections.unmodifiableList(myEvents);
-        myEvents = new ArrayList<SModelEvent>();
-        eventsHappened(wrappedEvents);
+    final List<SModelEvent> wrappedEvents;
+    synchronized (myEventsLock) {
+      if (myEvents.isEmpty()) {
+        return;
       }
-    });
+      wrappedEvents = Collections.unmodifiableList(myEvents);
+      myEvents = new ArrayList<>();
+    }
+
+    ModelAccess.instance().runWriteAction(() -> eventsHappened(wrappedEvents));
   }
 
   /**
@@ -91,10 +100,10 @@ public abstract class ModelsEventsCollector {
 
   protected void clearCollectedEvents() {
     checkNotDisposed();
-
-    if (myEvents.isEmpty()) return;
-    ModelAccess.assertLegalWrite();
-    myEvents.clear();
+    ModelAccess.assertLegalRead();
+    synchronized (myEventsLock) {
+      myEvents.clear();
+    }
   }
 
   public void dispose() {
@@ -119,7 +128,9 @@ public abstract class ModelsEventsCollector {
       if (myDisposed) {
         return;
       }
-      myEvents.clear();
+      synchronized (myEventsLock) {
+        myEvents.clear();
+      }
       myIsInCommand = true;
     }
 
@@ -253,7 +264,9 @@ public abstract class ModelsEventsCollector {
         if (!myIsInCommand && !(event instanceof SModelFileChangedEvent)) {
           throw new IllegalStateException("Event outside of a command");
         }
-        myEvents.add(event);
+        synchronized (myEventsLock) {
+          myEvents.add(event);
+        }
       }
     }
   }
