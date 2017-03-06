@@ -15,6 +15,8 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.vcs.core.mergedriver.FileType;
 import java.io.IOException;
@@ -37,7 +39,7 @@ import com.intellij.openapi.vcs.AbstractVcs;
     } else {
       List<AbstractInstaller.State> states = Sequence.fromIterable(gitRoots).select(new ISelector<VcsRoot, AbstractInstaller.State>() {
         public AbstractInstaller.State select(VcsRoot r) {
-          return installForRoot(r.getPath(), dryRun);
+          return installForRootInWrite(r.getPath(), dryRun);
         }
       }).toListSequence();
       if (ListSequence.fromList(states).all(new IWhereFilter<AbstractInstaller.State>() {
@@ -65,7 +67,7 @@ import com.intellij.openapi.vcs.AbstractVcs;
   private int getRootsToInstall() {
     return Sequence.fromIterable(getGitRoots()).select(new ISelector<VcsRoot, AbstractInstaller.State>() {
       public AbstractInstaller.State select(VcsRoot r) {
-        return installForRoot(r.getPath(), true);
+        return installForRootInWrite(r.getPath(), true);
       }
     }).where(new IWhereFilter<AbstractInstaller.State>() {
       public boolean accept(AbstractInstaller.State st) {
@@ -85,7 +87,7 @@ import com.intellij.openapi.vcs.AbstractVcs;
     int updated = 0;
     int failed = 0;
     for (VcsRoot root : Sequence.fromIterable(roots)) {
-      if (installForRoot(root.getPath(), false) == AbstractInstaller.State.INSTALLED) {
+      if (installForRootInWrite(root.getPath(), false) == AbstractInstaller.State.INSTALLED) {
         updated++;
       } else {
         failed++;
@@ -107,6 +109,18 @@ import com.intellij.openapi.vcs.AbstractVcs;
   @Override
   public String getAffectedVcsName() {
     return "Git";
+  }
+  @NotNull
+  private static AbstractInstaller.State installForRootInWrite(final VirtualFile vcsRootPath, final boolean dryRun) {
+    if (dryRun) {
+      return installForRoot(vcsRootPath, dryRun);
+    } else {
+      return ModelAccess.instance().runWriteAction(new Computable<AbstractInstaller.State>() {
+        public AbstractInstaller.State compute() {
+          return installForRoot(vcsRootPath, dryRun);
+        }
+      });
+    }
   }
   @NotNull
   private static AbstractInstaller.State installForRoot(VirtualFile vcsRootPath, boolean dryRun) {

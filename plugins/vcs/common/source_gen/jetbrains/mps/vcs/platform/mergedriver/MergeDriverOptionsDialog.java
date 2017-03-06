@@ -13,14 +13,13 @@ import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import javax.swing.JCheckBox;
+import jetbrains.mps.ide.ThreadUtils;
 
 public class MergeDriverOptionsDialog extends DialogWrapper {
   private JPanel myPanel = new JPanel(new GridLayout(0, 1));
@@ -76,20 +75,15 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
   }
   @Override
   protected void doOKAction() {
-    assert ThreadUtils.isInEDT();
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        myGitFixes.installIfNeeded();
-        myGitGlobal.installIfNeeded();
-        if (myGitGlobal.myInstaller.getCurrentState() == AbstractInstaller.State.INSTALLED) {
-          myGitRepos.installIfNeeded();
-        }
-        myCommonSvn.installIfNeeded();
-        if (myIdeSvn != null) {
-          myIdeSvn.installIfNeeded();
-        }
-      }
-    });
+    myGitFixes.installIfNeeded();
+    myGitGlobal.installIfNeeded();
+    if (myGitGlobal.myInstaller.getCurrentState() == AbstractInstaller.State.INSTALLED) {
+      myGitRepos.installIfNeeded();
+    }
+    myCommonSvn.installIfNeeded();
+    if (myIdeSvn != null) {
+      myIdeSvn.installIfNeeded();
+    }
     close(DialogWrapper.OK_EXIT_CODE);
   }
   @NotNull
@@ -116,6 +110,7 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
       }
     }
     private void installIfNeeded() {
+      assert ThreadUtils.isInEDT();
       if (isSelected() && isEnabled()) {
         myInstaller.install();
         MergeDriverNotification.getInstance(myProject).setNotificationsSuppressed(false);

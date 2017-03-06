@@ -11,7 +11,7 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class MergeDriverInstaller {
   private MergeDriverInstaller() {
@@ -57,7 +57,7 @@ public class MergeDriverInstaller {
     }
   }
   public static void installWhereNeeded(final Project project) {
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         new MergeDriverOptionsDialog(project).show();
       }

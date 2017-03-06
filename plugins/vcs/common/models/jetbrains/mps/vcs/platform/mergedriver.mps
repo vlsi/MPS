@@ -770,24 +770,29 @@
       <node concept="3cqZAl" id="3OxOldILLP7" role="3clF45" />
       <node concept="3Tm1VV" id="3OxOldILLP8" role="1B3o_S" />
       <node concept="3clFbS" id="3OxOldILLP9" role="3clF47">
-        <node concept="3clFbF" id="1dKJ6hCbKTG" role="3cqZAp">
-          <node concept="2YIFZM" id="1dKJ6hCbKTI" role="3clFbG">
-            <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-            <node concept="1bVj0M" id="1dKJ6hCbKTJ" role="37wK5m">
-              <node concept="3clFbS" id="1dKJ6hCbKTK" role="1bW5cS">
-                <node concept="3clFbF" id="1dKJ6hCbKTL" role="3cqZAp">
-                  <node concept="2OqwBi" id="1dKJ6hCbKTM" role="3clFbG">
-                    <node concept="2ShNRf" id="1dKJ6hCbKTN" role="2Oq$k0">
-                      <node concept="1pGfFk" id="1dKJ6hCbKTO" role="2ShVmc">
-                        <ref role="37wK5l" node="5k0aSfJ$Oi8" resolve="MergeDriverOptionsDialog" />
-                        <node concept="37vLTw" id="2BHiRxglwbo" role="37wK5m">
-                          <ref role="3cqZAo" node="3OxOldILLTR" resolve="project" />
+        <node concept="3clFbF" id="3ieW4ZRuXgu" role="3cqZAp">
+          <node concept="2OqwBi" id="3ieW4ZRuXnh" role="3clFbG">
+            <node concept="2YIFZM" id="3ieW4ZRuXia" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="3ieW4ZRuXyC" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+              <node concept="1bVj0M" id="1dKJ6hCbKTJ" role="37wK5m">
+                <node concept="3clFbS" id="1dKJ6hCbKTK" role="1bW5cS">
+                  <node concept="3clFbF" id="1dKJ6hCbKTL" role="3cqZAp">
+                    <node concept="2OqwBi" id="1dKJ6hCbKTM" role="3clFbG">
+                      <node concept="2ShNRf" id="1dKJ6hCbKTN" role="2Oq$k0">
+                        <node concept="1pGfFk" id="1dKJ6hCbKTO" role="2ShVmc">
+                          <ref role="37wK5l" node="5k0aSfJ$Oi8" resolve="MergeDriverOptionsDialog" />
+                          <node concept="37vLTw" id="2BHiRxglwbo" role="37wK5m">
+                            <ref role="3cqZAo" node="3OxOldILLTR" resolve="project" />
+                          </node>
                         </node>
                       </node>
-                    </node>
-                    <node concept="liA8E" id="5cI_JFr9gRw" role="2OqNvi">
-                      <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
+                      <node concept="liA8E" id="5cI_JFr9gRw" role="2OqNvi">
+                        <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -916,7 +921,7 @@
                           <node concept="3clFbS" id="1crbmp8O$nb" role="1bW5cS">
                             <node concept="3clFbF" id="1crbmp8O$nc" role="3cqZAp">
                               <node concept="1rXfSq" id="4hiugqystRC" role="3clFbG">
-                                <ref role="37wK5l" node="vM_ZBYYySe" resolve="installForRoot" />
+                                <ref role="37wK5l" node="5vvH8dSUfbQ" resolve="installForRootInWrite" />
                                 <node concept="2OqwBi" id="1crbmp8O$ne" role="37wK5m">
                                   <node concept="liA8E" id="46_v$3HT$_u" role="2OqNvi">
                                     <ref role="37wK5l" to="jlcu:~VcsRoot.getPath():com.intellij.openapi.vfs.VirtualFile" resolve="getPath" />
@@ -1070,7 +1075,7 @@
                     <node concept="3clFbS" id="1dKJ6hCbyKx" role="1bW5cS">
                       <node concept="3clFbF" id="1dKJ6hCbyKy" role="3cqZAp">
                         <node concept="1rXfSq" id="4hiugqyswEZ" role="3clFbG">
-                          <ref role="37wK5l" node="vM_ZBYYySe" resolve="installForRoot" />
+                          <ref role="37wK5l" node="5vvH8dSUfbQ" resolve="installForRootInWrite" />
                           <node concept="2OqwBi" id="1dKJ6hCbyK$" role="37wK5m">
                             <node concept="liA8E" id="46_v$3HTC$M" role="2OqNvi">
                               <ref role="37wK5l" to="jlcu:~VcsRoot.getPath():com.intellij.openapi.vfs.VirtualFile" resolve="getPath" />
@@ -1265,7 +1270,7 @@
                   <ref role="1Px2BO" node="1crbmp8Of6p" resolve="AbstractInstaller.State" />
                 </node>
                 <node concept="1rXfSq" id="4hiugqyswFN" role="3uHU7B">
-                  <ref role="37wK5l" node="vM_ZBYYySe" resolve="installForRoot" />
+                  <ref role="37wK5l" node="5vvH8dSUfbQ" resolve="installForRootInWrite" />
                   <node concept="2OqwBi" id="1crbmp8O$pi" role="37wK5m">
                     <node concept="liA8E" id="46_v$3HTI2e" role="2OqNvi">
                       <ref role="37wK5l" to="jlcu:~VcsRoot.getPath():com.intellij.openapi.vfs.VirtualFile" resolve="getPath" />
@@ -1413,6 +1418,79 @@
       </node>
       <node concept="2AHcQZ" id="3tYsUK_S7kl" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2YIFZL" id="5vvH8dSUfbQ" role="jymVt">
+      <property role="TrG5h" value="installForRootInWrite" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="5vvH8dSUfbT" role="3clF47">
+        <node concept="3clFbJ" id="5vvH8dSVZUj" role="3cqZAp">
+          <node concept="3clFbS" id="5vvH8dSVZUl" role="3clFbx">
+            <node concept="3cpWs6" id="5vvH8dSW2XR" role="3cqZAp">
+              <node concept="1rXfSq" id="5vvH8dSW2XS" role="3cqZAk">
+                <ref role="37wK5l" node="vM_ZBYYySe" resolve="installForRoot" />
+                <node concept="37vLTw" id="5vvH8dSW2XT" role="37wK5m">
+                  <ref role="3cqZAo" node="5vvH8dSUh6_" resolve="vcsRootPath" />
+                </node>
+                <node concept="37vLTw" id="5vvH8dSW2XU" role="37wK5m">
+                  <ref role="3cqZAo" node="5vvH8dSUhy_" resolve="dryRun" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTw" id="5vvH8dSW1vU" role="3clFbw">
+            <ref role="3cqZAo" node="5vvH8dSUhy_" resolve="dryRun" />
+          </node>
+          <node concept="9aQIb" id="5vvH8dSW4QH" role="9aQIa">
+            <node concept="3clFbS" id="5vvH8dSW4QI" role="9aQI4">
+              <node concept="3cpWs6" id="5vvH8dSULC3" role="3cqZAp">
+                <node concept="2OqwBi" id="5vvH8dSUO_A" role="3cqZAk">
+                  <node concept="2YIFZM" id="5vvH8dSUO_B" role="2Oq$k0">
+                    <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                    <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+                  </node>
+                  <node concept="liA8E" id="5vvH8dSUO_C" role="2OqNvi">
+                    <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runWriteAction" />
+                    <node concept="1bVj0M" id="5vvH8dSUO_D" role="37wK5m">
+                      <node concept="3clFbS" id="5vvH8dSUO_E" role="1bW5cS">
+                        <node concept="3clFbF" id="5vvH8dSW_u6" role="3cqZAp">
+                          <node concept="1rXfSq" id="5vvH8dSW_u8" role="3clFbG">
+                            <ref role="37wK5l" node="vM_ZBYYySe" resolve="installForRoot" />
+                            <node concept="37vLTw" id="5vvH8dSW_u9" role="37wK5m">
+                              <ref role="3cqZAo" node="5vvH8dSUh6_" resolve="vcsRootPath" />
+                            </node>
+                            <node concept="37vLTw" id="5vvH8dSW_ua" role="37wK5m">
+                              <ref role="3cqZAo" node="5vvH8dSUhy_" resolve="dryRun" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="5vvH8dSUdg5" role="1B3o_S" />
+      <node concept="3uibUv" id="5vvH8dSUf44" role="3clF45">
+        <ref role="3uigEE" node="1crbmp8Of6p" resolve="AbstractInstaller.State" />
+      </node>
+      <node concept="37vLTG" id="5vvH8dSUh6_" role="3clF46">
+        <property role="TrG5h" value="vcsRootPath" />
+        <node concept="3uibUv" id="5vvH8dSUh6$" role="1tU5fm">
+          <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5vvH8dSUhy_" role="3clF46">
+        <property role="TrG5h" value="dryRun" />
+        <node concept="10P_77" id="5vvH8dSUhI9" role="1tU5fm" />
+      </node>
+      <node concept="2AHcQZ" id="5vvH8dSUWPh" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="2YIFZL" id="vM_ZBYYySe" role="jymVt">
@@ -2363,8 +2441,8 @@
             <node concept="3clFbF" id="2oKg$XjDSjH" role="3cqZAp">
               <node concept="2OqwBi" id="2oKg$XjDSjY" role="3clFbG">
                 <node concept="2YIFZM" id="2oKg$XjDSjJ" role="2Oq$k0">
-                  <ref role="37wK5l" node="7cEItjJEuSx" resolve="getInstance" />
                   <ref role="1Pybhc" node="fZ9ka7YMG8" resolve="MergeDriverPacker" />
+                  <ref role="37wK5l" node="7cEItjJEuSx" resolve="getInstance" />
                 </node>
                 <node concept="liA8E" id="2oKg$XjDSk4" role="2OqNvi">
                   <ref role="37wK5l" node="7cEItjJE$21" resolve="pack" />
@@ -7135,107 +7213,86 @@
       <node concept="3cqZAl" id="5k0aSfJ$Yil" role="3clF45" />
       <node concept="3Tmbuc" id="5k0aSfJ$Yis" role="1B3o_S" />
       <node concept="3clFbS" id="5k0aSfJ$Yin" role="3clF47">
-        <node concept="1gVbGN" id="3p_qxK5y$vC" role="3cqZAp">
-          <node concept="2YIFZM" id="3p_qxK5y_eB" role="1gVkn0">
-            <ref role="37wK5l" to="3a50:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
-            <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
+        <node concept="3clFbF" id="5k0aSfJ$YiB" role="3cqZAp">
+          <node concept="2OqwBi" id="5k0aSfJ$YiC" role="3clFbG">
+            <node concept="37vLTw" id="2BHiRxeuE3v" role="2Oq$k0">
+              <ref role="3cqZAo" node="5k0aSfJ$Olp" resolve="myGitFixes" />
+            </node>
+            <node concept="liA8E" id="5k0aSfJ$YiE" role="2OqNvi">
+              <ref role="37wK5l" node="5k0aSfJ$Oh1" resolve="installIfNeeded" />
+            </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5k0aSfJ$Yix" role="3cqZAp">
-          <node concept="2OqwBi" id="5k0aSfJ$Yiy" role="3clFbG">
-            <node concept="2YIFZM" id="5k0aSfJ$Yiz" role="2Oq$k0">
-              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+        <node concept="3clFbF" id="5k0aSfJ$YiF" role="3cqZAp">
+          <node concept="2OqwBi" id="5k0aSfJ$YiG" role="3clFbG">
+            <node concept="37vLTw" id="2BHiRxeunlN" role="2Oq$k0">
+              <ref role="3cqZAo" node="5k0aSfJ$Olt" resolve="myGitGlobal" />
             </node>
-            <node concept="liA8E" id="5k0aSfJ$Yi$" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
-              <node concept="1bVj0M" id="5k0aSfJ$Yi_" role="37wK5m">
-                <node concept="3clFbS" id="5k0aSfJ$YiA" role="1bW5cS">
-                  <node concept="3clFbF" id="5k0aSfJ$YiB" role="3cqZAp">
-                    <node concept="2OqwBi" id="5k0aSfJ$YiC" role="3clFbG">
-                      <node concept="37vLTw" id="2BHiRxeuE3v" role="2Oq$k0">
-                        <ref role="3cqZAo" node="5k0aSfJ$Olp" resolve="myGitFixes" />
-                      </node>
-                      <node concept="liA8E" id="5k0aSfJ$YiE" role="2OqNvi">
-                        <ref role="37wK5l" node="5k0aSfJ$Oh1" resolve="installIfNeeded" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="5k0aSfJ$YiF" role="3cqZAp">
-                    <node concept="2OqwBi" id="5k0aSfJ$YiG" role="3clFbG">
-                      <node concept="37vLTw" id="2BHiRxeunlN" role="2Oq$k0">
-                        <ref role="3cqZAo" node="5k0aSfJ$Olt" resolve="myGitGlobal" />
-                      </node>
-                      <node concept="liA8E" id="5k0aSfJ$YiI" role="2OqNvi">
-                        <ref role="37wK5l" node="5k0aSfJ$Oh1" resolve="installIfNeeded" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbJ" id="5k0aSfJ$YiJ" role="3cqZAp">
-                    <node concept="3clFbS" id="5k0aSfJ$YiK" role="3clFbx">
-                      <node concept="3clFbF" id="5k0aSfJ$YiL" role="3cqZAp">
-                        <node concept="2OqwBi" id="5k0aSfJ$YiM" role="3clFbG">
-                          <node concept="37vLTw" id="2BHiRxeuKje" role="2Oq$k0">
-                            <ref role="3cqZAo" node="5k0aSfJ$Olx" resolve="myGitRepos" />
-                          </node>
-                          <node concept="liA8E" id="5k0aSfJ$YiO" role="2OqNvi">
-                            <ref role="37wK5l" node="5k0aSfJ$Oh1" resolve="installIfNeeded" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbC" id="5k0aSfJ$YiP" role="3clFbw">
-                      <node concept="Rm8GO" id="5k0aSfJ$YiQ" role="3uHU7w">
-                        <ref role="1Px2BO" node="1crbmp8Of6p" resolve="AbstractInstaller.State" />
-                        <ref role="Rm8GQ" node="1crbmp8Of6s" resolve="INSTALLED" />
-                      </node>
-                      <node concept="2OqwBi" id="5k0aSfJ$YiR" role="3uHU7B">
-                        <node concept="2OqwBi" id="5k0aSfJ$YiS" role="2Oq$k0">
-                          <node concept="37vLTw" id="2BHiRxeuM$v" role="2Oq$k0">
-                            <ref role="3cqZAo" node="5k0aSfJ$Olt" resolve="myGitGlobal" />
-                          </node>
-                          <node concept="2OwXpG" id="5k0aSfJ$YiU" role="2OqNvi">
-                            <ref role="2Oxat5" node="5k0aSfJ$Ohk" resolve="myInstaller" />
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="5k0aSfJ$YiV" role="2OqNvi">
-                          <ref role="37wK5l" node="1crbmp8Of6X" resolve="getCurrentState" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="5k0aSfJ$YiW" role="3cqZAp">
-                    <node concept="2OqwBi" id="5k0aSfJ$YiX" role="3clFbG">
-                      <node concept="37vLTw" id="2BHiRxeujXY" role="2Oq$k0">
-                        <ref role="3cqZAo" node="5k0aSfJ$Ol_" resolve="myCommonSvn" />
-                      </node>
-                      <node concept="liA8E" id="5k0aSfJ$YiZ" role="2OqNvi">
-                        <ref role="37wK5l" node="5k0aSfJ$Oh1" resolve="installIfNeeded" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbJ" id="5k0aSfJ$Yj0" role="3cqZAp">
-                    <node concept="3clFbS" id="5k0aSfJ$Yj1" role="3clFbx">
-                      <node concept="3clFbF" id="5k0aSfJ$Yj2" role="3cqZAp">
-                        <node concept="2OqwBi" id="5k0aSfJ$Yj3" role="3clFbG">
-                          <node concept="37vLTw" id="2BHiRxeuX4h" role="2Oq$k0">
-                            <ref role="3cqZAo" node="5k0aSfJ$OlD" resolve="myIdeSvn" />
-                          </node>
-                          <node concept="liA8E" id="5k0aSfJ$Yj5" role="2OqNvi">
-                            <ref role="37wK5l" node="5k0aSfJ$Oh1" resolve="installIfNeeded" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3y3z36" id="5k0aSfJ$Yj6" role="3clFbw">
-                      <node concept="10Nm6u" id="5k0aSfJ$Yj7" role="3uHU7w" />
-                      <node concept="37vLTw" id="2BHiRxeunp2" role="3uHU7B">
-                        <ref role="3cqZAo" node="5k0aSfJ$OlD" resolve="myIdeSvn" />
-                      </node>
-                    </node>
-                  </node>
+            <node concept="liA8E" id="5k0aSfJ$YiI" role="2OqNvi">
+              <ref role="37wK5l" node="5k0aSfJ$Oh1" resolve="installIfNeeded" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="5k0aSfJ$YiJ" role="3cqZAp">
+          <node concept="3clFbS" id="5k0aSfJ$YiK" role="3clFbx">
+            <node concept="3clFbF" id="5k0aSfJ$YiL" role="3cqZAp">
+              <node concept="2OqwBi" id="5k0aSfJ$YiM" role="3clFbG">
+                <node concept="37vLTw" id="2BHiRxeuKje" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5k0aSfJ$Olx" resolve="myGitRepos" />
+                </node>
+                <node concept="liA8E" id="5k0aSfJ$YiO" role="2OqNvi">
+                  <ref role="37wK5l" node="5k0aSfJ$Oh1" resolve="installIfNeeded" />
                 </node>
               </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="5k0aSfJ$YiP" role="3clFbw">
+            <node concept="Rm8GO" id="5k0aSfJ$YiQ" role="3uHU7w">
+              <ref role="1Px2BO" node="1crbmp8Of6p" resolve="AbstractInstaller.State" />
+              <ref role="Rm8GQ" node="1crbmp8Of6s" resolve="INSTALLED" />
+            </node>
+            <node concept="2OqwBi" id="5k0aSfJ$YiR" role="3uHU7B">
+              <node concept="2OqwBi" id="5k0aSfJ$YiS" role="2Oq$k0">
+                <node concept="37vLTw" id="2BHiRxeuM$v" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5k0aSfJ$Olt" resolve="myGitGlobal" />
+                </node>
+                <node concept="2OwXpG" id="5k0aSfJ$YiU" role="2OqNvi">
+                  <ref role="2Oxat5" node="5k0aSfJ$Ohk" resolve="myInstaller" />
+                </node>
+              </node>
+              <node concept="liA8E" id="5k0aSfJ$YiV" role="2OqNvi">
+                <ref role="37wK5l" node="1crbmp8Of6X" resolve="getCurrentState" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5k0aSfJ$YiW" role="3cqZAp">
+          <node concept="2OqwBi" id="5k0aSfJ$YiX" role="3clFbG">
+            <node concept="37vLTw" id="2BHiRxeujXY" role="2Oq$k0">
+              <ref role="3cqZAo" node="5k0aSfJ$Ol_" resolve="myCommonSvn" />
+            </node>
+            <node concept="liA8E" id="5k0aSfJ$YiZ" role="2OqNvi">
+              <ref role="37wK5l" node="5k0aSfJ$Oh1" resolve="installIfNeeded" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="5k0aSfJ$Yj0" role="3cqZAp">
+          <node concept="3clFbS" id="5k0aSfJ$Yj1" role="3clFbx">
+            <node concept="3clFbF" id="5k0aSfJ$Yj2" role="3cqZAp">
+              <node concept="2OqwBi" id="5k0aSfJ$Yj3" role="3clFbG">
+                <node concept="37vLTw" id="2BHiRxeuX4h" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5k0aSfJ$OlD" resolve="myIdeSvn" />
+                </node>
+                <node concept="liA8E" id="5k0aSfJ$Yj5" role="2OqNvi">
+                  <ref role="37wK5l" node="5k0aSfJ$Oh1" resolve="installIfNeeded" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="5k0aSfJ$Yj6" role="3clFbw">
+            <node concept="10Nm6u" id="5k0aSfJ$Yj7" role="3uHU7w" />
+            <node concept="37vLTw" id="2BHiRxeunp2" role="3uHU7B">
+              <ref role="3cqZAo" node="5k0aSfJ$OlD" resolve="myIdeSvn" />
             </node>
           </node>
         </node>
@@ -7511,6 +7568,12 @@
         <node concept="3cqZAl" id="5k0aSfJ$Oh2" role="3clF45" />
         <node concept="3Tm6S6" id="5k0aSfJ$Oh3" role="1B3o_S" />
         <node concept="3clFbS" id="5k0aSfJ$Oh4" role="3clF47">
+          <node concept="1gVbGN" id="5vvH8dSRtoS" role="3cqZAp">
+            <node concept="2YIFZM" id="5vvH8dSRtoT" role="1gVkn0">
+              <ref role="37wK5l" to="3a50:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
+              <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
+            </node>
+          </node>
           <node concept="3clFbJ" id="5k0aSfJ$Oh5" role="3cqZAp">
             <node concept="1Wc70l" id="5k0aSfJ$Oh6" role="3clFbw">
               <node concept="1rXfSq" id="4hiugqyyVe$" role="3uHU7w">
