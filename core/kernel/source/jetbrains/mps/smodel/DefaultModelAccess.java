@@ -257,11 +257,6 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public <T> T tryWriteInCommand(Computable<T> r, Project p) {
-    return tryWrite(r);
-  }
-
-  @Override
   public void executeCommand(Runnable r, Project project) {
     runWriteAction(r);
   }

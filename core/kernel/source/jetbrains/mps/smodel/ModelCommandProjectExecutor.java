@@ -71,8 +71,4 @@ public interface ModelCommandProjectExecutor extends ModelCommandExecutor {
   @ToRemove(version = 3.2)
   @Deprecated
   boolean tryWriteInCommand(Runnable r, Project p);
-
-  @ToRemove(version = 3.2)
-  @Deprecated
-  <T> T tryWriteInCommand(Computable<T> r, Project p);
 }

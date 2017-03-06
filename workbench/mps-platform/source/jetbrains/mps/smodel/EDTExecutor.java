@@ -21,93 +21,75 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.Project;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.TimeUnit;
 
-class EDTExecutor {
-
-  private static final int MAX_EXECUTION_TIME = 100;
-
+final class EDTExecutor {
   private static final Logger LOG = LogManager.getLogger(EDTExecutor.class);
+  private static final int MAX_EXECUTION_TIME_MS = 100;
 
   /* Notified when:
    *    myTasks queue becomes non-empty
-   *    workerStarted becomes false
+   *    myExecutingFlag becomes false
    */
   private final Object myLock = new Object();
 
-  private final Thread myExecutor;
+  private final Thread myExecutorThread;
   private final WorkbenchModelAccess myModelAccess;
 
   /* remove elements in EDT only */
-  private ConcurrentLinkedQueue<Task> myTasks = new ConcurrentLinkedQueue<Task>();
+  private final ConcurrentLinkedQueue<Task> myTasks = new ConcurrentLinkedQueue<Task>();
 
-  public EDTExecutor(WorkbenchModelAccess modelAccess) {
+  EDTExecutor(WorkbenchModelAccess modelAccess) {
     myModelAccess = modelAccess;
-    myExecutor = new Executor();
-    myExecutor.setDaemon(true);
-    myExecutor.start();
+    myExecutorThread = new ExecutorThread();
+    myExecutorThread.setDaemon(true);
+    myExecutorThread.start();
   }
 
-  public void scheduleRead(final Runnable r) {
+  void scheduleRead(@NotNull Runnable r) {
     synchronized (myLock) {
       if (myTasks.isEmpty()) {
         myLock.notifyAll();
       }
-      myTasks.offer(new Task() {
+      myTasks.offer(new ReadTask() {
         @Override
         public boolean tryRun() throws TaskIsOutdated {
           return myModelAccess.tryRead(r);
         }
-
-        @Override
-        public boolean needsWrite() {
-          return false;
-        }
       });
     }
   }
 
-  public void scheduleWrite(final Runnable r) {
+  void scheduleWrite(@NotNull Runnable r) {
     synchronized (myLock) {
       if (myTasks.isEmpty()) {
         myLock.notifyAll();
       }
-      myTasks.offer(new Task() {
+      myTasks.offer(new WriteTask() {
         @Override
         public boolean tryRun() throws TaskIsOutdated {
           return myModelAccess.tryWrite(r);
         }
-
-        @Override
-        public boolean needsWrite() {
-          return true;
-        }
       });
     }
   }
 
-  public void scheduleCommand(final Runnable r, final Project p) {
-    if (p == null || r == null) {
-      throw new IllegalArgumentException();
-    }
+  void scheduleCommand(@NotNull Runnable r, @NotNull Project project) {
     synchronized (myLock) {
       if (myTasks.isEmpty()) {
         myLock.notifyAll();
       }
-      myTasks.offer(new Task() {
+      myTasks.offer(new WriteTask() {
         @Override
         public boolean tryRun() throws TaskIsOutdated {
-          boolean ok = myModelAccess.tryWriteInCommand(r, p);
-          if (p.isDisposed()) {
-            throw new TaskIsOutdated();
+          boolean ok = myModelAccess.tryWriteInCommand(r, project);
+          if (project.isDisposed()) {
+            throw new TaskIsOutdated(this, "The project " + project + " is disposed");
           }
           return ok;
-        }
-
-        @Override
-        public boolean needsWrite() {
-          return true;
         }
       });
     }
@@ -127,115 +109,129 @@ class EDTExecutor {
     }
   }
 
-  private class Executor extends Thread {
+  private class ExecutorThread extends Thread {
+    private volatile boolean myExecutingFlag = false;
 
-    private volatile boolean workerStarted = false;
-    private Runnable myWorker = new Runnable() {
-      @Override
-      public void run() {
-        worker();
-      }
-    };
-
-    private Executor() {
-      super("Executor");
+    private ExecutorThread() {
+      super("MPS EDT Executor Thread");
     }
 
     @Override
     public void run() {
       try {
         while (true) {
-          boolean schedule, needsWrite;
+          boolean doExecute, needsWrite;
           synchronized (myLock) {
-            if (workerStarted || myTasks.isEmpty()) {
+            if (myExecutingFlag || myTasks.isEmpty()) {
               try {
                 myLock.wait();
               } catch (InterruptedException e) {
                 /* ignore */
               }
             }
-            if (workerStarted) {
+            if (myExecutingFlag) {
               continue;
             }
-            Task first = myTasks.peek();
-            schedule = first != null;
-            needsWrite = schedule && first.needsWrite();
+            Task top = myTasks.peek();
+            doExecute = top != null; // myTasks is not empty
+            needsWrite = doExecute && top.needsWrite();
           }
 
-          if (schedule) {
-            /* wait until required lock is available */
-            myModelAccess.waitLock(needsWrite);
-
-            /* start worker */
-            workerStarted = true;
-            /*
-             * Using ModalityState.any() here because there is one queue of model read/write tasks in MPS now (myTasks).
-             * myWorker runnable used to flush (a part of) this queue in AWT thread and, by design, we expect scheduled
-             * myWorker to be executed before we schedule next one.
-             *
-             * If current modality state was changed to more specific one (another modal dialog become visible) then scheduled
-             * myWorker will not be executed unless the state changed back, so task processing will be effectively frozen till
-             * the moment of modality state change.
-             *
-             * To avoid this situation, ModalityState.any() used here.
-             */
-            ApplicationManager.getApplication().invokeLater(myWorker, ModalityState.any());
+          if (doExecute) {
+            myModelAccess.waitLock(needsWrite); // wait until the required lock is available
+            myExecutingFlag = true;
+            executeLater();
           }
         }
       } catch (Exception e) {
-        LOG.error(null, e);
+        LOG.error("Got an exception while expecting EDT tasks", e);
       }
     }
 
-    // invoked in EDT
-    private void worker() {
-      if (!workerStarted) {
+    /**
+     * Using ModalityState.any() here because there is one queue of model read/write tasks in MPS now (myTasks).
+     * myWorker runnable used to flush (a part of) this queue in AWT thread and, by design, we expect scheduled
+     * myWorker to be executed before we schedule next one.
+     *
+     * If current modality state was changed to more specific one (another modal dialog become visible) then scheduled
+     * myWorker will not be executed unless the state changed back, so task processing will be effectively frozen till
+     * the moment of modality state change.
+     *
+     * To avoid this situation, ModalityState.any() used here.
+     *
+     * [Alex Shatalin]
+     */
+    private void executeLater() {
+      ApplicationManager.getApplication().invokeLater(this::execute, ModalityState.any());
+    }
+
+    /**
+     * actual task execution happens here
+     */
+    private void execute() {
+      ApplicationManager.getApplication().assertIsDispatchThread();
+      if (!myExecutingFlag) {
         return;
       }
       try {
-        long deadline = System.currentTimeMillis() + MAX_EXECUTION_TIME;
+        long deadline = System.nanoTime() + TimeUnit.NANOSECONDS.convert(MAX_EXECUTION_TIME_MS, TimeUnit.MILLISECONDS);
 
         do {
-          Task t = myTasks.peek();
-          if (t == null) {
+          Task task = myTasks.peek();
+          if (task == null) { // myTasks is empty
             return;
           }
-          boolean remove = true;
+          boolean toRemove = true;
           try {
-            if (!t.tryRun()) {
+            if (!task.tryRun()) {
               // stop processing, reschedule
-              remove = false;
+              toRemove = false;
               return;
             }
           } catch (TaskIsOutdated e) {
             /* ignore, remove task */
           } catch (Exception e) {
-            /* report */
             LOG.error("run in EDT failure", e);
           } finally {
-            if (remove) {
+            if (toRemove) {
               synchronized (myLock) {
                 myTasks.remove();
               }
             }
           }
-        } while (deadline > System.currentTimeMillis());
-
+        } while (deadline > System.nanoTime());
       } finally {
         synchronized (myLock) {
-          workerStarted = false;
+          myExecutingFlag = false;
           myLock.notifyAll();
         }
       }
     }
   }
 
-  private static interface Task {
+  private interface Task {
     boolean tryRun() throws TaskIsOutdated;
 
     boolean needsWrite();
   }
 
-  private static class TaskIsOutdated extends Exception {
+  public abstract class ReadTask implements Task {
+    @Override
+    public boolean needsWrite() {
+      return false;
+    }
+  }
+
+  public abstract class WriteTask implements Task {
+    @Override
+    public boolean needsWrite() {
+      return true;
+    }
+  }
+
+  private static final class TaskIsOutdated extends Exception {
+    TaskIsOutdated(@NotNull Task task, @NotNull String reason) {
+      super("Task " + task + " is outdated; the reason is " + reason);
+    }
   }
 }

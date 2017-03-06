@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.undo.DefaultUndoContext;
 import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
+import jetbrains.mps.util.Reference;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -207,19 +208,16 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
       return true;
     }
 
-    return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        if (getReadLock().tryLock()) {
-          try {
-            r.run();
-          } finally {
-            getReadLock().unlock();
-          }
-          return true;
-        } else {
-          return false;
+    return ApplicationManager.getApplication().runReadAction((com.intellij.openapi.util.Computable<Boolean>) () -> {
+      if (getReadLock().tryLock()) {
+        try {
+          r.run();
+        } finally {
+          getReadLock().unlock();
         }
+        return true;
+      } else {
+        return false;
       }
     });
   }
@@ -271,12 +269,9 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
       r.run();
       return true;
     }
-    Computable<Boolean> c = new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        r.run();
-        return true;
-      }
+    Computable<Boolean> c = () -> {
+      r.run();
+      return true;
     };
     Boolean res = tryWrite(c);
     return res != null ? res : false;
@@ -290,23 +285,20 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
     }
 
     // idea.Computable, not mps.Computable to facilitate direct Application.runReadAction call below
-    com.intellij.openapi.util.Computable<T> computable = new com.intellij.openapi.util.Computable<T>() {
-      @Override
-      public T compute() {
-        try {
-          if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-            try {
-              clearRepositoryStateCaches();
-              return myWriteActionDispatcher.compute(c);
-            } finally {
-              getWriteLock().unlock();
-            }
-          } else {
-            return null;
+    com.intellij.openapi.util.Computable<T> computable = () -> {
+      try {
+        if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
+          try {
+            clearRepositoryStateCaches();
+            return myWriteActionDispatcher.compute(c);
+          } finally {
+            getWriteLock().unlock();
           }
-        } catch (InterruptedException e) {
+        } else {
           return null;
         }
+      } catch (InterruptedException e) {
+        return null;
       }
     };
 
@@ -346,30 +338,27 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
   }
 
   @Override
-  public boolean tryWriteInCommand(final Runnable r, Project p) {
+  public boolean tryWriteInCommand(final Runnable r, @Nullable Project p) {
     ApplicationManager.getApplication().assertIsDispatchThread();
 
-    final boolean[] res = new boolean[]{false};
+    final Reference<Boolean> result = new Reference<>(false);
 
     final Project project = p != null ? p : CurrentProjectAccessUtil.getMPSProjectFromUI();
 
-    Runnable commandRunnable = new Runnable() {
-      @Override
-      public void run() {
-        try {
-          if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-            try {
-              clearRepositoryStateCaches();
-              myWriteActionDispatcher.run(new CommandRunnable(r, project));
-            } finally {
-              getWriteLock().unlock();
-            }
+    Runnable commandRunnable = () -> {
+      try {
+        if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
+          try {
+            clearRepositoryStateCaches();
+            myWriteActionDispatcher.run(new CommandRunnable(r, project));
+          } finally {
+            getWriteLock().unlock();
           }
-        } catch (InterruptedException e) {
-          return;
         }
-        res[0] = true;
+      } catch (InterruptedException e) {
+        return;
       }
+      result.set(true);
     };
 
     CommandProcessor.getInstance().executeCommand(
@@ -377,14 +366,7 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
         new TryWriteActionRunnable(commandRunnable),
         "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 
-    return res[0];
-  }
-
-  @Override
-  public <T> T tryWriteInCommand(final Computable<T> c, Project p) {
-    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
-    boolean success = tryWriteInCommand(r, p);
-    return success ? r.getResult() : null;
+    return result.get();
   }
 
   @Override
@@ -639,7 +621,6 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
   }
 
   private class TryWriteActionRunnable implements Runnable {
-
     private final Runnable myRunnable;
 
     public TryWriteActionRunnable(Runnable runnable) {
