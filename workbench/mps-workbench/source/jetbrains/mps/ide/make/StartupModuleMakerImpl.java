@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.ide.make;
 
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -57,7 +59,7 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
   }
 
   @Override
-  public void projectOpened() {
+  public void initComponent() {
     if (ProgressManager.getInstance().getProgressIndicator() != null) {
       executeUnderOldIndicator();
     } else {

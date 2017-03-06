@@ -41,7 +41,6 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
   private com.intellij.openapi.project.Project myProject;
   private final List<ProjectModuleLoadingListener> myListeners = new ArrayList<>();
 
-  @SuppressWarnings("unused")
   public MPSProject(@NotNull com.intellij.openapi.project.Project project, ProjectRootListenerComponent unused) {
     super(new ProjectDescriptor(project.getName()));
     myProject = project;
@@ -52,12 +51,7 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
     ModuleFileChangeListener listener = new ModuleFileChangeListener(this);
     myListeners.add(listener);
     addListener(listener);
-  }
-
-  @Override
-  public void projectOpened() {
-    super.projectOpened();
-    update();
+    ClassLoaderManager.getInstance().runNonReloadableTransaction(this::update);
   }
 
   public void disposeComponent() {
