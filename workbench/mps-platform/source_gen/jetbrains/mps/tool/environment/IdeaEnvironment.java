@@ -8,12 +8,15 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.RuntimeFlags;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.project.ProjectManagerAdapter;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.project.Project;
 import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.util.FileUtil;
@@ -79,9 +82,21 @@ public class IdeaEnvironment extends EnvironmentBase {
     // this code will work if on executing tests with "reuse caches" option 
     // TODO: should we modify FSChangesWatcher to always listen for FS notifications (even in tests)? 
     FSChangesWatcher.instance().initComponent(true);
+    disallowAccessToClosedProjectsDir();
 
     MPSCoreComponents coreComponents = getMPSCoreComponents();
     super.init(coreComponents.getLibraryInitializer());
+  }
+
+  private void disallowAccessToClosedProjectsDir() {
+    if (RuntimeFlags.isTestMode()) {
+      ProjectManager.getInstance().addProjectManagerListener(new ProjectManagerAdapter() {
+        @Override
+        public void projectClosed(Project project) {
+          VfsRootAccess.disallowRootAccess(project.getBasePath());
+        }
+      });
+    }
   }
 
   private MPSCoreComponents getMPSCoreComponents() {
@@ -97,19 +112,22 @@ public class IdeaEnvironment extends EnvironmentBase {
 
   @Override
   @NotNull
-  public Project doOpenProject(@NotNull File projectFile) {
+  public jetbrains.mps.project.Project doOpenProject(@NotNull File projectFile) {
+    if (RuntimeFlags.isTestMode()) {
+      VfsRootAccess.allowRootAccess(projectFile.getAbsolutePath());
+    }
     return openProjectInIdeaEnvironment(projectFile);
   }
 
   @NotNull
   @Override
-  public Project createEmptyProject() {
+  public jetbrains.mps.project.Project createEmptyProject() {
     checkInitialized();
     if (LOG.isInfoEnabled()) {
       LOG.info("Creating an empty project");
     }
     File dummyProjectFile = createDummyProjectFile();
-    Project dummyProject = openProject(dummyProjectFile);
+    jetbrains.mps.project.Project dummyProject = openProject(dummyProjectFile);
     return dummyProject;
   }
 
@@ -118,8 +136,8 @@ public class IdeaEnvironment extends EnvironmentBase {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       @Override
       public void run() {
-        List<Project> openedProjects = new ArrayList<Project>(ProjectManager.getInstance().getOpenedProjects());
-        for (final Project project : openedProjects) {
+        List<jetbrains.mps.project.Project> openedProjects = new ArrayList<jetbrains.mps.project.Project>(jetbrains.mps.project.ProjectManager.getInstance().getOpenedProjects());
+        for (final jetbrains.mps.project.Project project : openedProjects) {
           if (project instanceof MPSProject) {
             // MPSProject need to be disposed outside writeAction to prevent exception: 
             // java.lang.IllegalStateException: Must not call closeProject() from under write action  
@@ -145,14 +163,14 @@ public class IdeaEnvironment extends EnvironmentBase {
 
   private File createDummyProjectFile() {
     File dummyProjDir = FileUtil.createTmpDir();
-    File dotMps = new File(dummyProjDir, com.intellij.openapi.project.Project.DIRECTORY_STORE_FOLDER);
+    File dotMps = new File(dummyProjDir, Project.DIRECTORY_STORE_FOLDER);
     dotMps.mkdir();
     dummyProjDir.deleteOnExit();
     return dummyProjDir;
   }
 
   @NotNull
-  private Project openProjectInIdeaEnvironment(File projectFile) {
+  private jetbrains.mps.project.Project openProjectInIdeaEnvironment(File projectFile) {
     if (!(projectFile.exists())) {
       throw new RuntimeException("Can't find project file " + projectFile.getAbsolutePath());
     }
@@ -160,7 +178,7 @@ public class IdeaEnvironment extends EnvironmentBase {
     final String filePath = projectFile.getAbsolutePath();
 
     final IdeaEnvironment.PostStartupActivitiesWaiter waiter = new IdeaEnvironment.PostStartupActivitiesWaiter();
-    final Reference<com.intellij.openapi.project.Project> project = new Reference<com.intellij.openapi.project.Project>();
+    final Reference<Project> project = new Reference<Project>();
     final Reference<Exception> exc = new Reference<Exception>();
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
@@ -186,7 +204,7 @@ public class IdeaEnvironment extends EnvironmentBase {
     return project.get().getComponent(MPSProject.class);
   }
 
-  private void refreshProjectDir(@NotNull com.intellij.openapi.project.Project project) {
+  private void refreshProjectDir(@NotNull Project project) {
     // calling sync refresh for FS in order to update all modules/models loaded from the project 
     // if unit-test is executed with the "reuse caches" option. 
     String basePath = project.getBasePath();
@@ -224,9 +242,9 @@ public class IdeaEnvironment extends EnvironmentBase {
 
   private static final class PostStartupActivitiesWaiter {
     private final Semaphore mySem = new Semaphore(0);
-    private volatile com.intellij.openapi.project.Project myProject;
+    private volatile Project myProject;
 
-    public void init(com.intellij.openapi.project.Project project) {
+    public void init(Project project) {
       if (project != null) {
         myProject = project;
         StartupManager.getInstance(project).registerPostStartupActivity(new Runnable() {

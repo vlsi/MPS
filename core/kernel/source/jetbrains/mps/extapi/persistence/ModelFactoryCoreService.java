@@ -46,7 +46,7 @@ import java.util.ServiceLoader;
 @Immutable
 public final class ModelFactoryCoreService implements ModelFactoryRegistry {
   private static final Logger LOG = LogManager.getLogger(ModelFactoryCoreService.class);
-  private static final ClassLoader CORE_CLASSLOADER = SRepository.class.getClassLoader();
+  private static final ClassLoader CORE_CLASSLOADER = Thread.currentThread().getContextClassLoader();
 
   private static ModelFactoryCoreService ourInstance;
   private final ModelFactoryRegistryInt myModelFactoryRegistryInt;

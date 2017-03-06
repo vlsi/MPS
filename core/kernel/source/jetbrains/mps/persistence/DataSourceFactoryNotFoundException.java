@@ -23,14 +23,11 @@ import org.jetbrains.annotations.NotNull;
  * @since 27/12/16
  */
 public final class DataSourceFactoryNotFoundException extends ModelCannotBeCreatedException {
-  private final DataSourceType myDataSourceType;
-
   public DataSourceFactoryNotFoundException(@NotNull DataSourceType dataSourceType) {
-    myDataSourceType = dataSourceType;
+    super("Could not find default data factory mapping for the '" + dataSourceType + "'");
   }
 
-  @Override
-  public String getMessage() {
-    return "Could not find default data factory mapping for the '" + myDataSourceType + "'";
+  public DataSourceFactoryNotFoundException(@NotNull String msg) {
+    super(msg);
   }
 }

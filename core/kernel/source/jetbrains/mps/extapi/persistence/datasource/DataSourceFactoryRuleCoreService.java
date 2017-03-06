@@ -41,7 +41,7 @@ import java.util.ServiceLoader;
 @Immutable
 public final class DataSourceFactoryRuleCoreService {
   private static final Logger LOG = LogManager.getLogger(DataSourceFactoryRuleCoreService.class);
-  private static final ClassLoader CORE_CLASSLOADER = SRepository.class.getClassLoader();
+  private static final ClassLoader CORE_CLASSLOADER = Thread.currentThread().getContextClassLoader();
 
   private static DataSourceFactoryRuleCoreService ourInstance;
   private static ServiceLoader<DataSourceFactoryRule> ourServiceLoader;

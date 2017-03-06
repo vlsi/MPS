@@ -138,6 +138,9 @@ public final class DataSourceFactoryBridge {
     try {
       URL url = file.getUrl();
       DataSourceFactoryFromURL factory = DataSourceFactoryRuleService.getInstance().getFactory(url);
+      if (factory == null) {
+        throw new RuntimeException(new DataSourceFactoryNotFoundException("Could not find factory using the url " + url));
+      }
       if (factory.supports(url)) {
         dataSource = factory.create(url, myModelRoot);
       }
