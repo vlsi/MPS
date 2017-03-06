@@ -81,31 +81,25 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
 
   @Override
   public void initComponent() {
-    final Application application = ApplicationManager.getApplication();
-    application.invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        if (PathManager.isFromSources()) {
-          improveLoadingOnSources();
-          ClassLoaderManager.getInstance().runNonReloadableTransaction(this::load);
-        } else {
-          load();
-        }
-      }
+    if (PathManager.isFromSources()) {
+      improveLoadingOnSources();
+      ClassLoaderManager.getInstance().runNonReloadableTransaction(this::load);
+    } else {
+      load();
+    }
+  }
 
-      private void load() {
-        application.runWriteAction(() -> {
-          myLibraryInitializer.loadRefreshed(myContributors);
-        });
-      }
-    }, ModalityState.defaultModalityState());
+  private void load() {
+    myLibraryInitializer.load(myContributors);
   }
 
   /**
    * here idea is the same as in {@code ProjectRootListenerComponent}
    */
   private void improveLoadingOnSources() {
-    myFS.getFile(PathManager.getHomePath()).addListener((monitor, event) -> {});
+    ApplicationManager.getApplication().runReadAction(() -> {
+      myFS.getFile(PathManager.getHomePath()).addListener((monitor, event) -> {});
+    });
   }
 
   @Override

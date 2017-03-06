@@ -19,6 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.RepositoryContributor;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileRefresh;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -83,8 +84,11 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
 
   /**
    * EDT is required
+   * @deprecated use {@link #load(List)} instead
    */
   @Override
+  @ToRemove(version = 2017.3)
+  @Deprecated
   public void loadRefreshed(List<LibraryContributor> contributors) {
     for (LibraryContributor contributor : contributors) {
       addContributor(contributor);
