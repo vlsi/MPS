@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -229,6 +230,21 @@ public class FileUtil {
     }
     // !result means one of children was not deleted, hence you may not delete this directory
     return result && root.delete();
+  }
+
+  /**
+   * deletes the file and all its parents above which happen to be empty after this file's removal
+   * @return true iff the file has been removed
+   */
+  public static boolean deleteWithAllEmptyDirs(@NotNull IFile file) {
+    if (file.exists()) { // exists is vital, see VirtualFile assert for file existence [AP]
+      do {
+        file.delete();
+        file = file.getParent();
+      } while (file != null && file.getChildren().isEmpty());
+      return true;
+    }
+    return false;
   }
 
   public static boolean clear(File dir) {

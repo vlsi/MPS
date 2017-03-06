@@ -195,7 +195,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     //we must be in command since model save might change model by adding model/language imports
     //if (!mySModel.isLoading()) LOG.assertInCommand();
 
-    LOG.info("Saving model " + getName().getLongName());
+    LOG.debug("Saving model " + getName().getLongName());
 
     if (!checkAndResolveConflictOnSave()) {
       return;
@@ -276,10 +276,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
 
   @SuppressWarnings("ConstantConditions")
   private void deleteOldFile(IFile oldFile) {
-    do {
-      oldFile.delete();
-      oldFile = oldFile.getParent();
-    } while (oldFile != null && oldFile.getChildren().isEmpty());
+    FileUtil.deleteWithAllEmptyDirs(oldFile);
   }
 
   private SourceRoot findSourceRootOfMyself(IFile oldFile, DefaultModelRoot defaultModelRoot) {
