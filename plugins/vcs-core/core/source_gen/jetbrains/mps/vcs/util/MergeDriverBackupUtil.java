@@ -26,7 +26,7 @@ public class MergeDriverBackupUtil {
     writeContentsToFile(contents[MergeConstants.ORIGINAL], shortFileName, tmp, MergeVersion.BASE.getSuffix());
     writeContentsToFile(contents[MergeConstants.CURRENT], shortFileName, tmp, MergeVersion.MINE.getSuffix());
     writeContentsToFile(contents[MergeConstants.LAST_REVISION], shortFileName, tmp, MergeVersion.REPOSITORY.getSuffix());
-    File zipfile = chooseZipFileForModelLongName("unknown.mps", modelName.getLongName());
+    File zipfile = chooseZipFileForModelLongName("unknown.mps", modelName);
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);
     FileUtil.delete(tmp);
@@ -36,10 +36,10 @@ public class MergeDriverBackupUtil {
     File file = new File(tmpDir.getAbsolutePath() + File.separator + name + "." + suffix);
     FileUtil.write(file, contents);
   }
-  public static File chooseZipFileForModelLongName(@NotNull String defaultFileName, @Nullable String modelLongName) {
+  public static File chooseZipFileForModelLongName(@NotNull String defaultFileName, @Nullable SModelName modelName) {
     String fileName = defaultFileName;
-    if (modelLongName != null) {
-      fileName = modelLongName + MPSExtentions.DOT_MODEL;
+    if (modelName != null) {
+      fileName = modelName.getLongName() + MPSExtentions.DOT_MODEL;
     }
     String prefix = getMergeBackupDirPath() + File.separator + fileName;
     prefix = prefix + "." + new SimpleDateFormat("yyyy-MM-dd_HH-mm").format(new Date());

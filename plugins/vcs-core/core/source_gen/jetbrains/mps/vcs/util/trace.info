@@ -21,15 +21,15 @@
       <node id="3531370237489972272" at="25,39,26,110" concept="1" />
       <node id="3531370237489972282" at="26,110,27,109" concept="1" />
       <node id="3531370237489972292" at="27,109,28,121" concept="1" />
-      <node id="3531370237489972302" at="28,121,29,89" concept="5" />
-      <node id="3531370237489972310" at="29,89,30,37" concept="1" />
+      <node id="3531370237489972302" at="28,121,29,75" concept="5" />
+      <node id="3531370237489972310" at="29,75,30,37" concept="1" />
       <node id="3531370237489972316" at="30,37,31,31" concept="1" />
       <node id="3531370237489972320" at="31,31,32,25" concept="1" />
       <node id="3531370237489972323" at="32,25,33,19" concept="6" />
       <node id="3531370237489972338" at="35,119,36,90" concept="5" />
       <node id="3531370237489972354" at="36,90,37,35" concept="1" />
       <node id="3531370237489972369" at="39,117,40,38" concept="5" />
-      <node id="3531370237489972375" at="41,32,42,57" concept="1" />
+      <node id="3531370237489972375" at="41,28,42,67" concept="1" />
       <node id="3531370237489972384" at="43,5,44,72" concept="5" />
       <node id="3531370237489972392" at="44,72,45,88" concept="1" />
       <node id="3531370237489972406" at="45,88,46,45" concept="5" />
@@ -47,10 +47,10 @@
       <node id="3531370237489972326" at="35,0,39,0" concept="9" trace="writeContentsToFile#([BLjava/lang/String;Ljava/io/File;Ljava/lang/String;)V" />
       <node id="3531370237489972418" at="47,14,51,5" concept="10" />
       <node id="3531370237489972240" at="20,0,35,0" concept="9" trace="zipModel#([[BLorg/jetbrains/mps/openapi/model/SModelName;)Ljava/io/File;" />
-      <node id="3531370237489972359" at="39,0,54,0" concept="9" trace="chooseZipFileForModelLongName#(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;" />
+      <node id="3531370237489972359" at="39,0,54,0" concept="9" trace="chooseZipFileForModelLongName#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModelName;)Ljava/io/File;" />
       <scope id="3531370237489972166" at="17,34,18,38" />
       <scope id="3531370237489972258" at="22,28,23,74" />
-      <scope id="3531370237489972374" at="41,32,42,57" />
+      <scope id="3531370237489972374" at="41,28,42,67" />
       <scope id="3531370237489972576" at="54,48,55,25" />
       <scope id="429607733396471375" at="57,57,58,25" />
       <scope id="3531370237489972337" at="35,119,37,35">
@@ -85,7 +85,7 @@
       </scope>
       <scope id="3531370237489972359" at="39,0,54,0">
         <var name="defaultFileName" id="3531370237489972360" />
-        <var name="modelLongName" id="3531370237489972363" />
+        <var name="modelName" id="3531370237489972363" />
       </scope>
       <unit id="3531370237489972135" at="15,0,61,0" name="jetbrains.mps.vcs.util.MergeDriverBackupUtil" />
     </file>
