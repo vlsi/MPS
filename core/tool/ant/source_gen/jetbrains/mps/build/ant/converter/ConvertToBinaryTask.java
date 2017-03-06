@@ -42,15 +42,19 @@ public class ConvertToBinaryTask extends Copy {
     add(mapper);
     fileUtils = new ConvertToBinaryTask.FileUtilsEx(fileUtils);
   }
+
   public void setMpsHome(File mpsHome) {
     this.mpsHome = mpsHome;
   }
+
   public File getMpsHome() {
     return mpsHome;
   }
+
   public void setStripImplementation(boolean value) {
     this.myStripImplementation = value;
   }
+
   public boolean getStripImplementation() {
     return myStripImplementation;
   }
@@ -60,6 +64,7 @@ public class ConvertToBinaryTask extends Copy {
     set.setErrorOnMissingDir(false);
     super.addFileset(set);
   }
+
   @Override
   public void execute() throws BuildException {
     super.execute();
@@ -79,6 +84,7 @@ public class ConvertToBinaryTask extends Copy {
       }
       URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), this.getClass().getClassLoader());
       try {
+        Thread.currentThread().setContextClassLoader(classLoader);
         Class<?> converterClass = classLoader.loadClass("jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker");
         Object converter = converterClass.newInstance();
         Method method = converterClass.getMethod("convert", Map.class, Boolean.class);

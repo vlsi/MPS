@@ -1986,6 +1986,20 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="3RhXwLD0ObW" role="3cqZAp">
+                <node concept="2OqwBi" id="3RhXwLD0OFS" role="3clFbG">
+                  <node concept="2YIFZM" id="3RhXwLD0OBI" role="2Oq$k0">
+                    <ref role="37wK5l" to="wyt6:~Thread.currentThread():java.lang.Thread" resolve="currentThread" />
+                    <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
+                  </node>
+                  <node concept="liA8E" id="3RhXwLD0P5V" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Thread.setContextClassLoader(java.lang.ClassLoader):void" resolve="setContextClassLoader" />
+                    <node concept="37vLTw" id="3RhXwLD0Pg0" role="37wK5m">
+                      <ref role="3cqZAo" node="3ufQioQQtp9" resolve="classLoader" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="SfApY" id="3ufQioQQtpq" role="3cqZAp">
                 <node concept="TDmWw" id="3ufQioQQtpr" role="TEbGg">
                   <node concept="3clFbS" id="3ufQioQQtps" role="TDEfX">

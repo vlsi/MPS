@@ -166,6 +166,7 @@ public abstract class MpsLoadTask extends Task {
         }
       }
       URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), ProjectComponent.class.getClassLoader());
+      Thread.currentThread().setContextClassLoader(classLoader);
       try {
         Class<?> whatToGenerateClass = classLoader.loadClass(Script.class.getCanonicalName());
         Object whatToGenerate = whatToGenerateClass.newInstance();
