@@ -6,7 +6,7 @@
     </modelRoot>
   </models>
   <facets>
-    <facet pluginId="jetbrains.mps.ide.mpsmigration_34" type="ideaPlugin" />
+    <facet pluginId="jetbrains.mps.ide.mpsmigration" type="ideaPlugin" />
   </facets>
   <sourcePath />
   <dependencies>

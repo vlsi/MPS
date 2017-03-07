@@ -6,7 +6,7 @@
     </modelRoot>
   </models>
   <facets>
-    <facet type="ideaPlugin" />
+    <facet type="ideaPlugin" pluginId="com.intellij" />
   </facets>
   <sourcePath />
   <dependencies>
