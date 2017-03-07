@@ -8,12 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class check_LoopMacro_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_LoopMacro_NonTypesystemRule() {
@@ -21,12 +21,12 @@ public class check_LoopMacro_NonTypesystemRule extends AbstractNonTypesystemRule
   public void applyRule(final SNode loopMacro, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode attributedNode = SNodeOperations.getParent(loopMacro);
     if ((attributedNode != null)) {
-      SContainmentLink l = SNodeOperations.getContainingLink(attributedNode);
-      if (l.isValid()) {
-        if (!(l.isMultiple())) {
+      SNode linkdecl = SNodeOperations.getContainingLinkDeclaration(attributedNode);
+      if ((linkdecl != null) && SPropertyOperations.hasValue(linkdecl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
+        if (SPropertyOperations.hasValue(linkdecl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(linkdecl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1")) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(loopMacro, "Node under $LOOP$ macro should have multiple cardinality (role: " + l.getName() + ")", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1098116234534104047", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(loopMacro, "Node under $LOOP$ macro should have multiple cardinality (role: " + SPropertyOperations.getString(linkdecl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")) + ")", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1098116234534104047", null, errorTarget);
           }
         }
       }

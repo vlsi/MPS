@@ -318,6 +318,7 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="5692182839349412519" name="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation" flags="nn" index="90r25" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -339,7 +340,6 @@
         <property id="559557797393017702" name="name" index="BaHAW" />
         <child id="1423104411233404408" name="repo" index="up2gk" />
       </concept>
-      <concept id="2926695023085807517" name="jetbrains.mps.lang.smodel.structure.Reference_ContainingLinkOperation" flags="nn" index="CsP83" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -1257,16 +1257,11 @@
                   <ref role="1YBMHb" node="kRU4uWoMZC" resolve="node" />
                 </node>
                 <node concept="2PjuBw" id="7K0cqdeOMfK" role="2OEWyd">
-                  <node concept="2OqwBi" id="4L5lkpK9h6X" role="2Pjzse">
-                    <node concept="2OqwBi" id="4L5lkpK9gz3" role="2Oq$k0">
-                      <node concept="2GrUjf" id="4L5lkpK9gr6" role="2Oq$k0">
-                        <ref role="2Gs0qQ" node="kRU4uWoN6A" resolve="ref" />
-                      </node>
-                      <node concept="CsP83" id="4L5lkpK9gQb" role="2OqNvi" />
+                  <node concept="2OqwBi" id="7K0cqdeOMfO" role="2Pjzse">
+                    <node concept="2GrUjf" id="7K0cqdeOMfN" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="kRU4uWoN6A" resolve="ref" />
                     </node>
-                    <node concept="liA8E" id="4L5lkpK9hFi" role="2OqNvi">
-                      <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
-                    </node>
+                    <node concept="90r25" id="7K0cqdeOMfS" role="2OqNvi" />
                   </node>
                 </node>
               </node>

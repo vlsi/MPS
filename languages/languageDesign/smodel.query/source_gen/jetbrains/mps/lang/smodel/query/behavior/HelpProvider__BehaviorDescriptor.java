@@ -17,6 +17,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -44,7 +45,7 @@ public final class HelpProvider__BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
   /*package*/ static String getGroup_id60B$833p9Uj(@NotNull SAbstractConcept __thisConcept__) {
-    return __thisConcept__.getLanguage().getQualifiedName();
+    return SNodeOperations.getModel(__thisConcept__.getDeclarationNode()).getModule().getModuleName();
   }
   /*package*/ static String getShortDisplayString_id64VftqEenfn(@NotNull SAbstractConcept __thisConcept__) {
     String alias = SConceptOperations.conceptAlias(__thisConcept__);

@@ -400,17 +400,17 @@ public class BHTest_Test extends TestCase {
     Assert.assertSame(2, (int) BHL7.behavior.I3__BehaviorDescriptor.foo_id12MCENn4RcU.invoke(node3));
     Assert.assertSame(1, (int) BHL7.behavior.I3__BehaviorDescriptor.foo_id12MCENn4Rd5.invoke(node3));
   }
-  public void test_conceptConstruction() throws Exception {
+  public void test_conceptNodeConstruction() throws Exception {
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SConcept node = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A");
+        SNode node = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A").getDeclarationNode();
         Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, (int) BHL7.behavior.A__BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invoke(SNodeOperations.asSConcept(node)));
         Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, (int) BHL7.behavior.A__BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"))));
         SNode aNode;
         aNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
         aNode = SNodeOperations.getNode("r:0766eaf2-1894-47af-9a97-3484d14d48e4(BHL7.structure)", "6167444251392503100");
         SNode nodeA = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"));
-        SConcept conceptNodeA = SNodeOperations.getConcept(nodeA);
+        SNode conceptNodeA = SNodeOperations.getConceptDeclaration(nodeA);
         Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, (int) BHL7.behavior.A__BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invoke(SNodeOperations.asSConcept(conceptNodeA)));
       }
     });

@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -25,12 +25,12 @@ public class check_CopySrcListMacro_NonTypesystemRule extends AbstractNonTypesys
       // e.g. COPY_SRCL under ELSE in $IF$, or as inline template consequence of a rule - can't figure out containing link easily 
       return;
     }
-    SContainmentLink l = SNodeOperations.getContainingLink(attributedNode);
-    if (l.isValid()) {
-      if (!(l.isMultiple())) {
+    SNode linkdecl = SNodeOperations.getContainingLinkDeclaration(attributedNode);
+    if ((linkdecl != null) && SPropertyOperations.hasValue(linkdecl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
+      if (SPropertyOperations.hasValue(linkdecl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(linkdecl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1")) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, String.format("Node under %s macro should have multiple cardinality (role: %s)", SConceptOperations.conceptAlias(SNodeOperations.getConcept(macro)), l.getName()), "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "6636694971610576886", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, String.format("Node under %s macro should have multiple cardinality (role: %s)", SConceptOperations.conceptAlias(SNodeOperations.getConcept(macro)), SPropertyOperations.getString(linkdecl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"))), "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "6636694971610576886", null, errorTarget);
         }
       }
     }

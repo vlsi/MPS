@@ -8,6 +8,8 @@
   <imports>
     <import index="3xdn" ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -24,6 +26,7 @@
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
       </concept>
+      <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
       <concept id="1703835097132541506" name="jetbrains.mps.lang.behavior.structure.ThisConceptExpression" flags="ng" index="1fM9EW" />
       <concept id="7613853987897845671" name="jetbrains.mps.lang.behavior.structure.SuperConceptExpression" flags="ng" index="3pZB1V">
         <reference id="7613853987897845672" name="superConcept" index="3pZB1O" />
@@ -105,6 +108,10 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
+      </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
@@ -766,15 +773,20 @@
       <node concept="17QB3L" id="60B$833pa0v" role="3clF45" />
       <node concept="3clFbS" id="60B$833p9Um" role="3clF47">
         <node concept="3cpWs6" id="60B$833paGI" role="3cqZAp">
-          <node concept="2OqwBi" id="4L5lkpKd5oU" role="3cqZAk">
-            <node concept="2OqwBi" id="4L5lkpKd4Pw" role="2Oq$k0">
-              <node concept="1fM9EW" id="4L5lkpKd4Aj" role="2Oq$k0" />
-              <node concept="liA8E" id="4L5lkpKd5d5" role="2OqNvi">
-                <ref role="37wK5l" to="c17a:~SAbstractConcept.getLanguage():org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
+          <node concept="2OqwBi" id="60B$833ppp_" role="3cqZAk">
+            <node concept="2OqwBi" id="60B$833po1N" role="2Oq$k0">
+              <node concept="2JrnkZ" id="60B$833pnWY" role="2Oq$k0">
+                <node concept="2OqwBi" id="60B$833pjEc" role="2JrQYb">
+                  <node concept="13iPFW" id="60B$833ph1c" role="2Oq$k0" />
+                  <node concept="I4A8Y" id="60B$833pkue" role="2OqNvi" />
+                </node>
+              </node>
+              <node concept="liA8E" id="60B$833pozH" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
               </node>
             </node>
-            <node concept="liA8E" id="4L5lkpKd5Cf" role="2OqNvi">
-              <ref role="37wK5l" to="c17a:~SLanguage.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+            <node concept="liA8E" id="60B$833ppXQ" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~SModule.getModuleName():java.lang.String" resolve="getModuleName" />
             </node>
           </node>
         </node>

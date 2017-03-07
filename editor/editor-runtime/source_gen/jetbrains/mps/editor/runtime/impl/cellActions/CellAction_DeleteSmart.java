@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -41,7 +40,6 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
    * @deprecated 
    */
   @Deprecated
-  @ToRemove(version = 3.5)
   public CellAction_DeleteSmart(SNode source, SNode link, SNode target) {
     mySource = source;
     myLegacyLink = link;

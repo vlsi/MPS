@@ -302,9 +302,7 @@
       <concept id="982871510064032177" name="jetbrains.mps.lang.generator.structure.IParameterizedTemplate" flags="ng" index="1s_3nv">
         <child id="982871510064032342" name="parameter" index="1s_3oS" />
       </concept>
-      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
-        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
-      </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX" />
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167756221419" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue" flags="nn" index="3zGtF$" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
@@ -383,6 +381,7 @@
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
+      <concept id="5820409030208923287" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation" flags="nn" index="25OxAV" />
       <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
@@ -411,7 +410,6 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
-      <concept id="7504436213544206332" name="jetbrains.mps.lang.smodel.structure.Node_ContainingLinkOperation" flags="nn" index="2NL2c5" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
@@ -5604,43 +5602,20 @@
                   </node>
                   <node concept="liA8E" id="1Gd1YUjFVlK" role="2OqNvi">
                     <ref role="37wK5l" to="7jhi:~NodeMatcher.child(org.jetbrains.mps.openapi.language.SContainmentLink):jetbrains.mps.lang.pattern.ChildMatcher" resolve="child" />
-                    <node concept="10Nm6u" id="4L5lkpK7dbW" role="37wK5m">
-                      <node concept="1sPUBX" id="4L5lkpK7dbX" role="lGtFl">
-                        <ref role="v9R2y" to="tp27:7jb4LXp9xud" resolve="switch_AggregationIdentity_SContainmentLink" />
-                        <node concept="3NFfHV" id="4L5lkpK7dbY" role="1sPUBK">
-                          <node concept="3clFbS" id="4L5lkpK7dbZ" role="2VODD2">
-                            <node concept="3cpWs8" id="4L5lkpK7dc2" role="3cqZAp">
-                              <node concept="3cpWsn" id="4L5lkpK7dc3" role="3cpWs9">
-                                <property role="TrG5h" value="id" />
-                                <node concept="3Tqbb2" id="4L5lkpK7dc4" role="1tU5fm">
-                                  <ref role="ehGHo" to="tp25:7jb4LXp8VrB" resolve="ContainmentLinkId" />
-                                </node>
-                                <node concept="2ShNRf" id="4L5lkpK7dc5" role="33vP2m">
-                                  <node concept="3zrR0B" id="4L5lkpK7dc6" role="2ShVmc">
-                                    <node concept="3Tqbb2" id="4L5lkpK7dc7" role="3zrR0E">
-                                      <ref role="ehGHo" to="tp25:7jb4LXp8VrB" resolve="ContainmentLinkId" />
-                                    </node>
-                                  </node>
-                                </node>
+                    <node concept="10Nm6u" id="1Gd1YUjFVlL" role="37wK5m">
+                      <node concept="5jKBG" id="1Gd1YUjFVlM" role="lGtFl">
+                        <ref role="v9R2y" to="tp27:5DcBNiM8ykU" resolve="reduce_LinkDeclaration_SLink" />
+                        <node concept="3NFfHV" id="1Gd1YUjFVlN" role="5jGum">
+                          <node concept="3clFbS" id="1Gd1YUjFVlO" role="2VODD2">
+                            <node concept="3SKdUt" id="1Gd1YUjFVlP" role="3cqZAp">
+                              <node concept="3SKdUq" id="1Gd1YUjFVlQ" role="3SKWNk">
+                                <property role="3SKdUp" value="FIXME use SContainmentLink instead" />
                               </node>
                             </node>
-                            <node concept="3clFbF" id="4L5lkpK7dc8" role="3cqZAp">
-                              <node concept="2OqwBi" id="4L5lkpK7dc9" role="3clFbG">
-                                <node concept="37vLTw" id="4L5lkpK7dca" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="4L5lkpK7dc3" resolve="id" />
-                                </node>
-                                <node concept="2qgKlT" id="4L5lkpK7dcb" role="2OqNvi">
-                                  <ref role="37wK5l" to="tpeu:7jb4LXp8VsD" resolve="setLink" />
-                                  <node concept="2OqwBi" id="4L5lkpK7dcc" role="37wK5m">
-                                    <node concept="30H73N" id="4L5lkpK7dcd" role="2Oq$k0" />
-                                    <node concept="2NL2c5" id="4L5lkpK7dce" role="2OqNvi" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3cpWs6" id="4L5lkpK7dcf" role="3cqZAp">
-                              <node concept="37vLTw" id="4L5lkpK7dcg" role="3cqZAk">
-                                <ref role="3cqZAo" node="4L5lkpK7dc3" resolve="id" />
+                            <node concept="3clFbF" id="1Gd1YUjFVlR" role="3cqZAp">
+                              <node concept="2OqwBi" id="1Gd1YUjFVlS" role="3clFbG">
+                                <node concept="30H73N" id="1Gd1YUjFVlT" role="2Oq$k0" />
+                                <node concept="25OxAV" id="1Gd1YUjFVlU" role="2OqNvi" />
                               </node>
                             </node>
                           </node>
@@ -6689,47 +6664,24 @@
       <node concept="liA8E" id="4tPQHKlmWul" role="2OqNvi">
         <ref role="37wK5l" to="7jhi:~NodeMatcher.child(org.jetbrains.mps.openapi.language.SContainmentLink):jetbrains.mps.lang.pattern.ChildMatcher" resolve="child" />
         <node concept="10Nm6u" id="4tPQHKlmWum" role="37wK5m">
-          <node concept="1sPUBX" id="4L5lkpK77e5" role="lGtFl">
-            <ref role="v9R2y" to="tp27:7jb4LXp9xud" resolve="switch_AggregationIdentity_SContainmentLink" />
-            <node concept="3NFfHV" id="4L5lkpK77u$" role="1sPUBK">
-              <node concept="3clFbS" id="4L5lkpK77u_" role="2VODD2">
+          <node concept="5jKBG" id="4tPQHKlmWun" role="lGtFl">
+            <ref role="v9R2y" to="tp27:5DcBNiM8ykU" resolve="reduce_LinkDeclaration_SLink" />
+            <node concept="3NFfHV" id="4tPQHKlmWuo" role="5jGum">
+              <node concept="3clFbS" id="4tPQHKlmWup" role="2VODD2">
+                <node concept="3SKdUt" id="4tPQHKlmWuq" role="3cqZAp">
+                  <node concept="3SKdUq" id="4tPQHKlmWur" role="3SKWNk">
+                    <property role="3SKdUp" value="FIXME containingLink - either wrap to AggregationIdentity or introduce a template that takes SContainmentLink as argument" />
+                  </node>
+                </node>
                 <node concept="3SKdUt" id="4tPQHKlmWus" role="3cqZAp">
                   <node concept="3SKdUq" id="4tPQHKlmWut" role="3SKWNk">
                     <property role="3SKdUp" value="Here we assume ListPattern could not be applied to top-most node (as it needs a list of children, while quotation is single node)" />
                   </node>
                 </node>
-                <node concept="3cpWs8" id="4L5lkpK73k9" role="3cqZAp">
-                  <node concept="3cpWsn" id="4L5lkpK73kc" role="3cpWs9">
-                    <property role="TrG5h" value="id" />
-                    <node concept="3Tqbb2" id="4L5lkpK73k7" role="1tU5fm">
-                      <ref role="ehGHo" to="tp25:7jb4LXp8VrB" resolve="ContainmentLinkId" />
-                    </node>
-                    <node concept="2ShNRf" id="4L5lkpK73W4" role="33vP2m">
-                      <node concept="3zrR0B" id="4L5lkpK73W2" role="2ShVmc">
-                        <node concept="3Tqbb2" id="4L5lkpK73W3" role="3zrR0E">
-                          <ref role="ehGHo" to="tp25:7jb4LXp8VrB" resolve="ContainmentLinkId" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="4L5lkpK74ge" role="3cqZAp">
-                  <node concept="2OqwBi" id="4L5lkpK74w7" role="3clFbG">
-                    <node concept="37vLTw" id="4L5lkpK74gc" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4L5lkpK73kc" resolve="id" />
-                    </node>
-                    <node concept="2qgKlT" id="4L5lkpK75Sk" role="2OqNvi">
-                      <ref role="37wK5l" to="tpeu:7jb4LXp8VsD" resolve="setLink" />
-                      <node concept="2OqwBi" id="4tPQHKlmWuv" role="37wK5m">
-                        <node concept="30H73N" id="4tPQHKlmWux" role="2Oq$k0" />
-                        <node concept="2NL2c5" id="4L5lkpK730c" role="2OqNvi" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWs6" id="4L5lkpK76yg" role="3cqZAp">
-                  <node concept="37vLTw" id="4L5lkpK76LT" role="3cqZAk">
-                    <ref role="3cqZAo" node="4L5lkpK73kc" resolve="id" />
+                <node concept="3clFbF" id="4tPQHKlmWuu" role="3cqZAp">
+                  <node concept="2OqwBi" id="4tPQHKlmWuv" role="3clFbG">
+                    <node concept="30H73N" id="4tPQHKlmWux" role="2Oq$k0" />
+                    <node concept="25OxAV" id="4tPQHKlmWuz" role="2OqNvi" />
                   </node>
                 </node>
               </node>

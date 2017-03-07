@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -308,9 +308,6 @@
     <property role="34LRSv" value=":" />
     <property role="EcuMT" value="1140137987495" />
     <ref role="1TJDcQ" node="253epK5leq7" resolve="AbstractTypeCastExpression" />
-    <node concept="t5JxF" id="2k7p7sTvW9p" role="lGtFl">
-      <property role="t5JxN" value="Casts node to the given type. 'asCast' property is true &lt;=&gt; the operation is null-safe (null if the provided type is incompatible)" />
-    </node>
     <node concept="1TJgyj" id="g_PxMaO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="leftExpression_old" />
@@ -339,6 +336,9 @@
     </node>
     <node concept="PrWs8" id="1653mnvB2PM" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="t5JxF" id="2k7p7sTvW9p" role="lGtFl">
+      <property role="t5JxN" value="Casts node to the given type. 'asCast' property is true &lt;=&gt; the operation is null-safe (null if the provided type is incompatible)" />
     </node>
   </node>
   <node concept="1TIwiD" id="gAoxUXw">
@@ -1742,10 +1742,6 @@
     <property role="R4oN_" value="full qualified name" />
     <property role="EcuMT" value="8339862546319741524" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="asaX9" id="4L5lkpK8vr6" role="lGtFl">
-      <property role="YLPcu" value="3.5" />
-      <property role="YLQ7P" value="use concept// instead" />
-    </node>
     <node concept="1TJgyj" id="7eX9cM$Yh9l" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaration" />
       <property role="20lbJX" value="1" />

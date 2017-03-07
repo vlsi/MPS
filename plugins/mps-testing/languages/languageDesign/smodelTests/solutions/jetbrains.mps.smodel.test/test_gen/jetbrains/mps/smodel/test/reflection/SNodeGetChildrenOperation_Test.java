@@ -99,7 +99,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       Assert.assertEquals(initialSize + 1, ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(getNodeById("2166349271756548531"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests"), 0x3dd540b968e9fc5L, "Root"))))).count());
       Iterable<SNode> unspecifiedChildren = ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(getNodeById("2166349271756548531"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests"), 0x3dd540b968e9fc5L, "Root"))))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(SNodeOperations.getContainingLink(it).isValid());
+          return (SNodeOperations.getContainingLinkDeclaration(it) == null);
         }
       });
       Assert.assertEquals(1, Sequence.fromIterable(unspecifiedChildren).count());
@@ -112,7 +112,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       addNodeById("5815925154349132136");
       addNodeById("2166349271756548530");
       SNode nullNode = null;
-      Assert.assertNull(SNodeOperations.getContainingLink(nullNode));
+      Assert.assertNull(SNodeOperations.getContainingLinkDeclaration(nullNode));
       Assert.assertNull(check_vfao6t_a5a4j(SNodeOperations.getContainingLink(nullNode)));
     }
     public void test_childrenByLinkDeclaration() throws Exception {

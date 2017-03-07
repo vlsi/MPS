@@ -21,8 +21,10 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorActionUtils {
   public EditorActionUtils() {
@@ -181,14 +183,14 @@ public class EditorActionUtils {
     return nextLeaf == null || nextLeaf.getSNode() != cell.getSNode();
   }
   private static boolean hasSingleRole(final EditorCell cell) {
-    final Wrappers._boolean result = new Wrappers._boolean();
+    final boolean[] result = new boolean[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SContainmentLink l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLink(((SNode) cell.getSNode()));
-        result.value = l.isValid() && !(l.isMultiple());
+        SNode linkDeclaration = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLinkDeclaration(((SNode) cell.getSNode()));
+        result[0] = linkDeclaration != null && ((boolean) (Boolean) BHReflection.invoke(linkDeclaration, SMethodTrimmedId.create("isSingular", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "hEwIfAt")));
       }
     });
-    return result.value;
+    return result[0];
   }
   private static boolean isLinkCollection(EditorCell cell) {
     return cell.getRole() != null;
