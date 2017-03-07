@@ -36,10 +36,10 @@ public class Switch_switch_LanguageIdentity_SLanguage extends TemplateSwitchBase
     return rules;
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    DismissTopMappingRuleException ex_a_5 = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unsupported LanguageIdentity kind\"");
-    ex_a_5.setTemplateContext(context);
-    ex_a_5.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2944629966652298616"));
-    throw ex_a_5;
+    DismissTopMappingRuleException ex_pqno5i_a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unsupported LanguageIdentity kind\"");
+    ex_pqno5i_a.setTemplateContext(context);
+    ex_pqno5i_a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2944629966652298616"));
+    throw ex_pqno5i_a;
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
     environment.getLogger().error(templateSwitch, "\"Need an instance of LanguageIdentity\"", GeneratorUtil.describeInput(context));

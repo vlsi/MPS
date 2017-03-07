@@ -680,10 +680,10 @@
       <node id="8371596541809075904" at="23,41,24,199" concept="9" />
       <node id="8371596541809075904" at="26,45,27,199" concept="9" />
       <node id="8371596541809075904" at="29,62,30,34" concept="9" />
-      <node id="8371596541809075904" at="32,199,33,138" concept="8" />
-      <node id="8371596541809075904" at="33,138,34,37" concept="3" />
-      <node id="8371596541809075904" at="34,37,35,223" concept="3" />
-      <node id="8371596541809075904" at="35,223,36,15" concept="14" />
+      <node id="8371596541809075904" at="32,199,33,145" concept="8" />
+      <node id="8371596541809075904" at="33,145,34,44" concept="3" />
+      <node id="8371596541809075904" at="34,44,35,230" concept="3" />
+      <node id="8371596541809075904" at="35,230,36,22" concept="14" />
       <node id="8371596541809075904" at="21,0,23,0" concept="1" trace="Switch_better_switch3#()V" />
       <node id="8371596541809075904" at="38,0,40,0" concept="7" trace="processNull#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljetbrains/mps/generator/runtime/TemplateContext;)V" />
       <node id="8371596541809075904" at="23,0,26,0" concept="7" trace="getSwitchNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
@@ -704,8 +704,8 @@
       <scope id="8371596541809075904" at="23,0,26,0" />
       <scope id="8371596541809075904" at="26,0,29,0" />
       <scope id="8371596541809075904" at="29,0,32,0" />
-      <scope id="8371596541809075904" at="32,199,36,15">
-        <var name="ex_a" id="8371596541809075904" />
+      <scope id="8371596541809075904" at="32,199,36,22">
+        <var name="ex_1tzoyg_a" id="8371596541809075904" />
       </scope>
       <scope id="8371596541809075904" at="32,0,38,0">
         <var name="context" id="8371596541809075904" />

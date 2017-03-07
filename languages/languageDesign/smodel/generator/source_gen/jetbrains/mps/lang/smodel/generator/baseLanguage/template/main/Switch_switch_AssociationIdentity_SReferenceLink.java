@@ -36,10 +36,10 @@ public class Switch_switch_AssociationIdentity_SReferenceLink extends TemplateSw
     return rules;
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    DismissTopMappingRuleException ex_a_9 = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unsupported ReferenceIdentity kind\"");
-    ex_a_9.setTemplateContext(context);
-    ex_a_9.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8415841354032416824"));
-    throw ex_a_9;
+    DismissTopMappingRuleException ex_ldpfoe_a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unsupported ReferenceIdentity kind\"");
+    ex_ldpfoe_a.setTemplateContext(context);
+    ex_ldpfoe_a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8415841354032416824"));
+    throw ex_ldpfoe_a;
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
     environment.getLogger().error(templateSwitch, "\"Need an instance of ReferenceIdentity\"", GeneratorUtil.describeInput(context));

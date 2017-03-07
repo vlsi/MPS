@@ -40,10 +40,10 @@ public class Switch_switch_toConceptNameStringExpr extends TemplateSwitchBase im
     return rules;
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    DismissTopMappingRuleException ex_a_0 = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "couldn't generate concept name string expression");
-    ex_a_0.setTemplateContext(context);
-    ex_a_0.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1206654249424"));
-    throw ex_a_0;
+    DismissTopMappingRuleException ex_s19qjt_a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "couldn't generate concept name string expression");
+    ex_s19qjt_a.setTemplateContext(context);
+    ex_s19qjt_a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1206654249424"));
+    throw ex_s19qjt_a;
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }

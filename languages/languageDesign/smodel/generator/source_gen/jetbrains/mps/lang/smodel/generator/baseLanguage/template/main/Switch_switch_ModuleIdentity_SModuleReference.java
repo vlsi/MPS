@@ -36,10 +36,10 @@ public class Switch_switch_ModuleIdentity_SModuleReference extends TemplateSwitc
     return rules;
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    DismissTopMappingRuleException ex_a_6 = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unsupported ModuleIdentity kind\"");
-    ex_a_6.setTemplateContext(context);
-    ex_a_6.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1678062499342605311"));
-    throw ex_a_6;
+    DismissTopMappingRuleException ex_b1a3pn_a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unsupported ModuleIdentity kind\"");
+    ex_b1a3pn_a.setTemplateContext(context);
+    ex_b1a3pn_a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1678062499342605311"));
+    throw ex_b1a3pn_a;
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
     environment.getLogger().error(templateSwitch, "\"Need an instance of ModuleIdentity\"", GeneratorUtil.describeInput(context));

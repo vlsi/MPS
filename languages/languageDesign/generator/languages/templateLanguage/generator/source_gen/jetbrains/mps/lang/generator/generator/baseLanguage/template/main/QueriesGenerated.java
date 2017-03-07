@@ -414,7 +414,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013931abdL, 0x11055b6dd7bL, "generatorMessage")), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c63121L, 0x11055c67157L, "messageText"));
   }
   public static Object propertyMacro_GetPropertyValue_5898456405536884428(final PropertyMacroContext _context) {
-    return _context.createUniqueName("ex", null);
+    return _context.createUniqueName("ex", SNodeOperations.getContainingRoot(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_1147906725605420839(final PropertyMacroContext _context) {
     return GenUtil.saveListVar(_context, _context.getNode(), ++((int[]) _context.getVariable("varindex"))[0]);

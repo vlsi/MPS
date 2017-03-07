@@ -36,10 +36,10 @@ public class Switch_switch_ILinkAccessQualifier_toSLink extends TemplateSwitchBa
     return rules;
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    DismissTopMappingRuleException ex_a_1 = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "Unsupported ILinkAccessQualifier found. Reference to LinkDeclaration cannot be generated.");
-    ex_a_1.setTemplateContext(context);
-    ex_a_1.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653082238"));
-    throw ex_a_1;
+    DismissTopMappingRuleException ex_lm3fls_a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "Unsupported ILinkAccessQualifier found. Reference to LinkDeclaration cannot be generated.");
+    ex_lm3fls_a.setTemplateContext(context);
+    ex_lm3fls_a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653082238"));
+    throw ex_lm3fls_a;
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }

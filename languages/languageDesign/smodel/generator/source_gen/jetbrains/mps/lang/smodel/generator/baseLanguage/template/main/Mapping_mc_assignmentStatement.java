@@ -416,10 +416,10 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
         }
         tlist1 = TemplateUtil.singletonList(tnode16);
       } else {
-        DismissTopMappingRuleException ex_a0b = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "couldn't generate operaton");
-        ex_a0b.setTemplateContext(context);
-        ex_a0b.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1229469837507"));
-        throw ex_a0b;
+        DismissTopMappingRuleException ex_j2x56k_a0b = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "couldn't generate operaton");
+        ex_j2x56k_a0b.setTemplateContext(context);
+        ex_j2x56k_a0b.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1229469837507"));
+        throw ex_j2x56k_a0b;
       }
       return tlist1;
     }
@@ -560,10 +560,10 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
         }
         tlist1 = TemplateUtil.singletonList(tnode2);
       } else {
-        DismissTopMappingRuleException ex_a0c = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "couldn't generate operaton");
-        ex_a0c.setTemplateContext(context);
-        ex_a0c.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1229469897207"));
-        throw ex_a0c;
+        DismissTopMappingRuleException ex_j2x56k_a0c = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "couldn't generate operaton");
+        ex_j2x56k_a0c.setTemplateContext(context);
+        ex_j2x56k_a0c.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1229469897207"));
+        throw ex_j2x56k_a0c;
       }
       return tlist1;
     }

@@ -36,10 +36,10 @@ public class Switch_switch_IPropertyQualifier_toSProperty extends TemplateSwitch
     return rules;
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    DismissTopMappingRuleException ex_a_3 = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "Unsupported IPropertyQualifier found. Reference to PropertyDeclaration cannot be generated.");
-    ex_a_3.setTemplateContext(context);
-    ex_a_3.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2855392971717584215"));
-    throw ex_a_3;
+    DismissTopMappingRuleException ex_nuu7m_a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "Unsupported IPropertyQualifier found. Reference to PropertyDeclaration cannot be generated.");
+    ex_nuu7m_a.setTemplateContext(context);
+    ex_nuu7m_a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2855392971717584215"));
+    throw ex_nuu7m_a;
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }

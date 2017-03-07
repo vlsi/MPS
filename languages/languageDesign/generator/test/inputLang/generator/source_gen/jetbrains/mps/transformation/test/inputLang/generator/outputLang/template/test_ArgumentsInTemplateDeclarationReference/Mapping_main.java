@@ -87,10 +87,10 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
         Collection<SNode> tlist2 = new Template_reduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_7496726876599937591(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0a0c0c8)))).apply(environment, context);
         tlist1 = tlist2;
       } else {
-        DismissTopMappingRuleException ex_a0c = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "shall not hit here");
-        ex_a0c.setTemplateContext(context);
-        ex_a0c.setTemplateModelLocation(new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599935504"));
-        throw ex_a0c;
+        DismissTopMappingRuleException ex_zu1o_a0c = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "shall not hit here");
+        ex_zu1o_a0c.setTemplateContext(context);
+        ex_zu1o_a0c.setTemplateModelLocation(new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599935504"));
+        throw ex_zu1o_a0c;
       }
       return tlist1;
     }

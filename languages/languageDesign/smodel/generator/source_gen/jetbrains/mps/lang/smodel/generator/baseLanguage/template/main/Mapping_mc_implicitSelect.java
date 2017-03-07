@@ -148,10 +148,10 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
         }
         tlist1 = TemplateUtil.singletonList(tnode12);
       } else {
-        DismissTopMappingRuleException ex_a0a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unexpected implicit link select operation\"");
-        ex_a0a.setTemplateContext(context);
-        ex_a0a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "4877343046905239389"));
-        throw ex_a0a;
+        DismissTopMappingRuleException ex_yxgl8l_a0a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unexpected implicit link select operation\"");
+        ex_yxgl8l_a0a.setTemplateContext(context);
+        ex_yxgl8l_a0a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "4877343046905239389"));
+        throw ex_yxgl8l_a0a;
       }
       return tlist1;
     }

@@ -39,10 +39,10 @@ public class Switch_NodeBuilder_child extends TemplateSwitchBase implements Temp
     return rules;
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    DismissTopMappingRuleException ex_a_0 = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "Illegal child initializer in NodeBuilder");
-    ex_a_0.setTemplateContext(context);
-    ex_a_0.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5756354288101744853"));
-    throw ex_a_0;
+    DismissTopMappingRuleException ex_txv4mz_a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "Illegal child initializer in NodeBuilder");
+    ex_txv4mz_a.setTemplateContext(context);
+    ex_txv4mz_a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5756354288101744853"));
+    throw ex_txv4mz_a;
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }

@@ -38,10 +38,10 @@ public class Switch_switch_ConceptIdentity_SConcept extends TemplateSwitchBase i
     return rules;
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    DismissTopMappingRuleException ex_a_7 = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unsupported ConceptIdentity kind\"");
-    ex_a_7.setTemplateContext(context);
-    ex_a_7.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6911370362349544114"));
-    throw ex_a_7;
+    DismissTopMappingRuleException ex_2d96ak_a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unsupported ConceptIdentity kind\"");
+    ex_2d96ak_a.setTemplateContext(context);
+    ex_2d96ak_a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6911370362349544114"));
+    throw ex_2d96ak_a;
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
     environment.getLogger().error(templateSwitch, "\"Need an instance of ConceptIdentity\"", GeneratorUtil.describeInput(context));

@@ -36,10 +36,10 @@ public class Switch_switch_AggregationIdentity_SContainmentLink extends Template
     return rules;
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    DismissTopMappingRuleException ex_a_10 = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unsupported AggregationIdentity kind\"");
-    ex_a_10.setTemplateContext(context);
-    ex_a_10.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8415841354032486288"));
-    throw ex_a_10;
+    DismissTopMappingRuleException ex_w08uy9_a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unsupported AggregationIdentity kind\"");
+    ex_w08uy9_a.setTemplateContext(context);
+    ex_w08uy9_a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8415841354032486288"));
+    throw ex_w08uy9_a;
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
     environment.getLogger().error(templateSwitch, "\"Need an instance of AggregationIdentity\"", GeneratorUtil.describeInput(context));

@@ -38,10 +38,10 @@ public class Switch_switch_toSAbstractConcept extends TemplateSwitchBase impleme
     return rules;
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    DismissTopMappingRuleException ex_a_2 = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "couldn't generate concept name string expression");
-    ex_a_2.setTemplateContext(context);
-    ex_a_2.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653355629"));
-    throw ex_a_2;
+    DismissTopMappingRuleException ex_6bmy4c_a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "couldn't generate concept name string expression");
+    ex_6bmy4c_a.setTemplateContext(context);
+    ex_6bmy4c_a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653355629"));
+    throw ex_6bmy4c_a;
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }

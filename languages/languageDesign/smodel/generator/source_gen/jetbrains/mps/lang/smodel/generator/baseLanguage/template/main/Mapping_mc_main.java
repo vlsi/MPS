@@ -128,10 +128,10 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
         }
         tlist1 = TemplateUtil.singletonList(tnode3);
       } else {
-        DismissTopMappingRuleException ex_a0e = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "Unexpected ConceptDeclaration kind in type literal");
-        ex_a0e.setTemplateContext(context);
-        ex_a0e.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "4487960964134046370"));
-        throw ex_a0e;
+        DismissTopMappingRuleException ex_79o76p_a0e = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "Unexpected ConceptDeclaration kind in type literal");
+        ex_79o76p_a0e.setTemplateContext(context);
+        ex_79o76p_a0e.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "4487960964134046370"));
+        throw ex_79o76p_a0e;
       }
       return tlist1;
     }
