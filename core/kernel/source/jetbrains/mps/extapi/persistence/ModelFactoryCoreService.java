@@ -46,7 +46,7 @@ import java.util.ServiceLoader;
 @Immutable
 public final class ModelFactoryCoreService implements ModelFactoryRegistry {
   private static final Logger LOG = LogManager.getLogger(ModelFactoryCoreService.class);
-  private static final ClassLoader CORE_CLASSLOADER = Thread.currentThread().getContextClassLoader();
+  private static final ClassLoader CORE_CLASSLOADER = ModelFactoryCoreService.class.getClassLoader();
 
   private static ModelFactoryCoreService ourInstance;
   private final ModelFactoryRegistryInt myModelFactoryRegistryInt;
@@ -55,7 +55,7 @@ public final class ModelFactoryCoreService implements ModelFactoryRegistry {
     ServiceLoader<ModelFactory> ourServiceLoader = ServiceLoader.load(ModelFactory.class, CORE_CLASSLOADER);
     myModelFactoryRegistryInt = new ModelFactoryRegistryInt(ourServiceLoader);
     if (myModelFactoryRegistryInt.getFactories().isEmpty()) {
-      LOG.error("No pre-installed model factories are found which is very suspicious");
+      LOG.error("No pre-installed model factories are found which is very suspicious", new Throwable());
     }
   }
 
