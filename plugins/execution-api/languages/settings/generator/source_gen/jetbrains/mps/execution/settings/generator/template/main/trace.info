@@ -119,8 +119,8 @@
       <node id="5041115067675810366" at="490,39,491,113" concept="5" />
       <node id="5041115067675810381" at="559,63,560,63" concept="4" />
       <node id="5041115067675810381" at="560,63,561,30" concept="4" />
-      <node id="5041115067675810381" at="561,30,562,227" concept="1" />
-      <node id="5041115067675810381" at="562,227,563,438" concept="1" />
+      <node id="5041115067675810381" at="561,30,562,252" concept="1" />
+      <node id="5041115067675810381" at="562,252,563,438" concept="1" />
       <node id="5041115067675810381" at="563,438,564,24" concept="5" />
       <node id="5041115067675810591" at="430,0,433,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="5041115067675810493" at="440,0,443,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />

@@ -35,7 +35,7 @@ public class typeof_ImaginaryUnit_InferenceRule extends AbstractInferenceRule_Ru
   private static SNode _quotation_createNode_ir5twi_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686a0422aL, "jetbrains.mps.samples.complex.structure.ComplexType"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, "jetbrains.mps.samples.complex"), 0x11686a0422aL, "ComplexType"), null, null, false);
     return quotedNode_1;
   }
 }

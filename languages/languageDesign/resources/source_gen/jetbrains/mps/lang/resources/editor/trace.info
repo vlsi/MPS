@@ -38,8 +38,8 @@
       <node id="1741258697587120740" at="92,64,93,379" concept="7" />
       <node id="1741258697587120782" at="99,80,100,63" concept="6" />
       <node id="1741258697587120782" at="100,63,101,30" concept="6" />
-      <node id="1741258697587120782" at="101,30,102,236" concept="2" />
-      <node id="1741258697587120782" at="102,236,103,210" concept="2" />
+      <node id="1741258697587120782" at="101,30,102,261" concept="2" />
+      <node id="1741258697587120782" at="102,261,103,210" concept="2" />
       <node id="1741258697587120782" at="103,210,104,24" concept="7" />
       <node id="1741258697587120698" at="30,0,33,0" concept="1" trace="IconResourceReference_subs_Contribution#()V" />
       <node id="1741258697587120698" at="53,0,56,0" concept="1" trace="SubstituteMenuPart_Action_c11kxs_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

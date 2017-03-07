@@ -53,8 +53,8 @@
       <node id="1986963296984229191" at="92,51,93,124" concept="3" />
       <node id="1986963296984299942" at="96,67,97,63" concept="2" />
       <node id="1986963296984299942" at="97,63,98,30" concept="2" />
-      <node id="1986963296984299942" at="98,30,99,210" concept="0" />
-      <node id="1986963296984299942" at="99,210,100,24" concept="3" />
+      <node id="1986963296984299942" at="98,30,99,235" concept="0" />
+      <node id="1986963296984299942" at="99,235,100,24" concept="3" />
       <node id="1986963296984229191" at="29,0,32,0" concept="1" trace="getCaption#()Ljava/lang/String;" />
       <node id="5321427680537308263" at="47,0,50,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="1986963296984247859" at="54,0,57,0" concept="1" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />

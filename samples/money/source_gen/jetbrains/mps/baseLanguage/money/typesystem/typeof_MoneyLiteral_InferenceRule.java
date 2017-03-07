@@ -35,7 +35,7 @@ public class typeof_MoneyLiteral_InferenceRule extends AbstractInferenceRule_Run
   private static SNode _quotation_createNode_1il3t_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144b05194dL, "jetbrains.mps.baseLanguage.money.structure.MoneyType"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, "jetbrains.mps.baseLanguage.money"), 0x1144b05194dL, "MoneyType"), null, null, false);
     return quotedNode_1;
   }
 }

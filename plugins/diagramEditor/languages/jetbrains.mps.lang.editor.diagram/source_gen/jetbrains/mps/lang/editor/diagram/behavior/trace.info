@@ -892,8 +892,8 @@
       <node id="8570854907290566950" at="97,40,98,19" concept="5" />
       <node id="2028694650681124671" at="100,60,101,63" concept="4" />
       <node id="2028694650681124671" at="101,63,102,30" concept="4" />
-      <node id="2028694650681124671" at="102,30,103,220" concept="1" />
-      <node id="2028694650681124671" at="103,220,104,24" concept="5" />
+      <node id="2028694650681124671" at="102,30,103,245" concept="1" />
+      <node id="2028694650681124671" at="103,245,104,24" concept="5" />
       <node id="8570854907290566950" at="37,0,39,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8570854907290566950" at="48,0,51,0" concept="8" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8570854907290566950" at="52,0,55,0" concept="0" trace="DiagramElementCreationHandler__BehaviorDescriptor#()V" />
@@ -995,8 +995,8 @@
       <node id="939897302409085213" at="100,40,101,19" concept="5" />
       <node id="939897302409085249" at="103,60,104,63" concept="4" />
       <node id="939897302409085249" at="104,63,105,30" concept="4" />
-      <node id="939897302409085249" at="105,30,106,220" concept="1" />
-      <node id="939897302409085249" at="106,220,107,24" concept="5" />
+      <node id="939897302409085249" at="105,30,106,245" concept="1" />
+      <node id="939897302409085249" at="106,245,107,24" concept="5" />
       <node id="939897302409085213" at="37,0,39,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="939897302409085213" at="51,0,54,0" concept="8" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="939897302409085213" at="55,0,58,0" concept="0" trace="DiagramConnectorCreationHandler__BehaviorDescriptor#()V" />
@@ -1096,8 +1096,8 @@
       <node id="939897302409110471" at="98,40,99,19" concept="5" />
       <node id="939897302409110497" at="101,60,102,63" concept="4" />
       <node id="939897302409110497" at="102,63,103,30" concept="4" />
-      <node id="939897302409110497" at="103,30,104,223" concept="1" />
-      <node id="939897302409110497" at="104,223,105,24" concept="5" />
+      <node id="939897302409110497" at="103,30,104,248" concept="1" />
+      <node id="939897302409110497" at="104,248,105,24" concept="5" />
       <node id="939897302409110471" at="37,0,39,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="939897302409110471" at="49,0,52,0" concept="8" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="939897302409110471" at="53,0,56,0" concept="0" trace="DiagramConnectorCanCreateHandler__BehaviorDescriptor#()V" />

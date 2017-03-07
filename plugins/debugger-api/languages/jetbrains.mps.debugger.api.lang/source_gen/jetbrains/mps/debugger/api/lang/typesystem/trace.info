@@ -118,8 +118,8 @@
       <node id="4030433165041852571" at="37,30,38,17" concept="7" />
       <node id="7329423411587718650" at="40,64,41,63" concept="6" />
       <node id="7329423411587718650" at="41,63,42,30" concept="6" />
-      <node id="7329423411587718650" at="42,30,43,227" concept="2" />
-      <node id="7329423411587718650" at="43,227,44,453" concept="2" />
+      <node id="7329423411587718650" at="42,30,43,252" concept="2" />
+      <node id="7329423411587718650" at="43,252,44,453" concept="2" />
       <node id="7329423411587718650" at="44,453,45,24" concept="7" />
       <node id="4030433165041852571" at="22,0,24,0" concept="1" trace="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule#()V" />
       <node id="4030433165041852571" at="31,0,34,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -266,8 +266,8 @@
       <node id="8321799582437916610" at="41,51,42,179" concept="7" />
       <node id="8519118779653927606" at="44,65,45,63" concept="6" />
       <node id="8519118779653927606" at="45,63,46,30" concept="6" />
-      <node id="8519118779653927606" at="46,30,47,227" concept="2" />
-      <node id="8519118779653927606" at="47,227,48,453" concept="2" />
+      <node id="8519118779653927606" at="46,30,47,252" concept="2" />
+      <node id="8519118779653927606" at="47,252,48,453" concept="2" />
       <node id="8519118779653927606" at="48,453,49,24" concept="7" />
       <node id="8321799582437916610" at="18,0,20,0" concept="1" trace="DebuggerIsDebugger_ComparisonRule#()V" />
       <node id="8321799582437916610" at="20,0,23,0" concept="5" trace="areComparable#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />

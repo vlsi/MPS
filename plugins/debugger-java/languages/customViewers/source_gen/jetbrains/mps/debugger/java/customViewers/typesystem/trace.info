@@ -68,10 +68,10 @@
       <node id="1842653058275008955" at="31,60,32,63" concept="5" />
       <node id="1842653058275008955" at="32,63,33,30" concept="5" />
       <node id="1842653058275008955" at="33,30,34,30" concept="5" />
-      <node id="1842653058275008955" at="34,30,35,227" concept="2" />
-      <node id="1842653058275008955" at="35,227,36,433" concept="2" />
-      <node id="1842653058275008955" at="36,433,37,225" concept="2" />
-      <node id="1842653058275008955" at="37,225,38,166" concept="2" />
+      <node id="1842653058275008955" at="34,30,35,252" concept="2" />
+      <node id="1842653058275008955" at="35,252,36,433" concept="2" />
+      <node id="1842653058275008955" at="36,433,37,250" concept="2" />
+      <node id="1842653058275008955" at="37,250,38,166" concept="2" />
       <node id="1842653058275008955" at="38,166,39,24" concept="6" />
       <node id="1842653058275008950" at="17,0,19,0" concept="1" trace="WatchableListIsAList_SubtypingRule#()V" />
       <node id="1842653058275008950" at="19,0,22,0" concept="4" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />

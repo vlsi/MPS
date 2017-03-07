@@ -22,8 +22,8 @@
       <node id="2893726635884034887" at="33,30,34,17" concept="5" />
       <node id="2893726635884035574" at="36,61,37,63" concept="4" />
       <node id="2893726635884035574" at="37,63,38,30" concept="4" />
-      <node id="2893726635884035574" at="38,30,39,227" concept="2" />
-      <node id="2893726635884035574" at="39,227,40,471" concept="2" />
+      <node id="2893726635884035574" at="38,30,39,252" concept="2" />
+      <node id="2893726635884035574" at="39,252,40,471" concept="2" />
       <node id="2893726635884035574" at="40,471,41,24" concept="5" />
       <node id="2893726635884034887" at="18,0,20,0" concept="1" trace="typeof_ConceptFunctionParameter_scope_InferenceRule#()V" />
       <node id="2893726635884034887" at="27,0,30,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -70,8 +70,8 @@
       <node id="558005353046665155" at="33,30,34,17" concept="5" />
       <node id="558005353046665207" at="36,61,37,63" concept="4" />
       <node id="558005353046665207" at="37,63,38,30" concept="4" />
-      <node id="558005353046665207" at="38,30,39,227" concept="2" />
-      <node id="558005353046665207" at="39,227,40,473" concept="2" />
+      <node id="558005353046665207" at="38,30,39,252" concept="2" />
+      <node id="558005353046665207" at="39,252,40,473" concept="2" />
       <node id="558005353046665207" at="40,473,41,24" concept="5" />
       <node id="558005353046665155" at="18,0,20,0" concept="1" trace="typeof_ConceptFunctionParameter_progressMonitor_InferenceRule#()V" />
       <node id="558005353046665155" at="27,0,30,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />

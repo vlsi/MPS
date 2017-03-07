@@ -33,7 +33,7 @@ public class StaticFieldReference_DeleteDot {
     private static SNode _quotation_createNode_65e73j_a0a0a0a(Object parameter_1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_2 = null;
-      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference"), null, null, false);
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x6c6c91efa5ec8cd7L, "AbstractClassifierReference"), null, null, false);
       SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, 0x6c6c91efa5ecbbb2L, "classifier"), (SNode) parameter_1);
       return quotedNode_2;
     }
@@ -52,7 +52,7 @@ public class StaticFieldReference_DeleteDot {
     private static SNode _quotation_createNode_65e73j_a0a0a0a(Object parameter_1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_2 = null;
-      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference"), null, null, false);
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x6c6c91efa5ec8cd7L, "AbstractClassifierReference"), null, null, false);
       SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, 0x6c6c91efa5ecbbb2L, "classifier"), (SNode) parameter_1);
       return quotedNode_2;
     }

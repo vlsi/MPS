@@ -86,7 +86,7 @@ public final class ConceptFunctionParameter_StyledText__BehaviorDescriptor exten
   private static SNode _quotation_createNode_70zdzh_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x362b8be848e5c49bL, "jetbrains.mps.lang.editor.structure.StyledTextType"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor"), 0x362b8be848e5c49bL, "StyledTextType"), null, null, false);
     return quotedNode_1;
   }
 }

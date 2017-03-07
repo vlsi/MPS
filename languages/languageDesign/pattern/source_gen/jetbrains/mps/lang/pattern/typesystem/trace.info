@@ -24,8 +24,8 @@
       <node id="1196515055991" at="36,30,37,17" concept="6" />
       <node id="1196515055998" at="39,79,40,63" concept="5" />
       <node id="1196515055998" at="40,63,41,30" concept="5" />
-      <node id="1196515055998" at="41,30,42,221" concept="2" />
-      <node id="1196515055998" at="42,221,43,196" concept="2" />
+      <node id="1196515055998" at="41,30,42,246" concept="2" />
+      <node id="1196515055998" at="42,246,43,196" concept="2" />
       <node id="1196515055998" at="43,196,44,24" concept="6" />
       <node id="1196515055991" at="20,0,22,0" concept="1" trace="typeof_PatternExpression_InferenceRule#()V" />
       <node id="1196515055991" at="30,0,33,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -76,8 +76,8 @@
       <node id="1202483500731" at="34,30,35,17" concept="6" />
       <node id="1202486183685" at="37,79,38,63" concept="5" />
       <node id="1202486183685" at="38,63,39,30" concept="5" />
-      <node id="1202486183685" at="39,30,40,221" concept="2" />
-      <node id="1202486183685" at="40,221,41,196" concept="2" />
+      <node id="1202486183685" at="39,30,40,246" concept="2" />
+      <node id="1202486183685" at="40,246,41,196" concept="2" />
       <node id="1202486183685" at="41,196,42,24" concept="6" />
       <node id="1202483500731" at="19,0,21,0" concept="1" trace="typeof_LinkPatternVariableDeclaration_InferenceRule#()V" />
       <node id="1202483500731" at="28,0,31,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -126,8 +126,8 @@
       <node id="1202488162378" at="32,30,33,17" concept="6" />
       <node id="1202488176884" at="35,61,36,63" concept="5" />
       <node id="1202488176884" at="36,63,37,30" concept="5" />
-      <node id="1202488176884" at="37,30,38,223" concept="2" />
-      <node id="1202488176884" at="38,223,39,24" concept="6" />
+      <node id="1202488176884" at="37,30,38,248" concept="2" />
+      <node id="1202488176884" at="38,248,39,24" concept="6" />
       <node id="1202488162378" at="17,0,19,0" concept="1" trace="typeof_PropertyPatternVariableDeclaration_InferenceRule#()V" />
       <node id="1202488162378" at="26,0,29,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1202488162378" at="29,0,32,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -179,12 +179,12 @@
       <node id="1202488392899" at="46,30,47,17" concept="6" />
       <node id="1202488481890" at="49,63,50,63" concept="5" />
       <node id="1202488481890" at="50,63,51,30" concept="5" />
-      <node id="1202488481890" at="51,30,52,221" concept="2" />
-      <node id="1202488481890" at="52,221,53,24" concept="6" />
+      <node id="1202488481890" at="51,30,52,246" concept="2" />
+      <node id="1202488481890" at="52,246,53,24" concept="6" />
       <node id="1202488496545" at="55,82,56,63" concept="5" />
       <node id="1202488496545" at="56,63,57,30" concept="5" />
-      <node id="1202488496545" at="57,30,58,221" concept="2" />
-      <node id="1202488496545" at="58,221,59,196" concept="2" />
+      <node id="1202488496545" at="57,30,58,246" concept="2" />
+      <node id="1202488496545" at="58,246,59,196" concept="2" />
       <node id="1202488496545" at="59,196,60,24" concept="6" />
       <node id="1202488392899" at="20,0,22,0" concept="1" trace="typeof_PatternVariableDeclaration_InferenceRule#()V" />
       <node id="1202488392899" at="40,0,43,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -253,8 +253,8 @@
       <node id="1202491110369" at="34,30,35,16" concept="6" />
       <node id="1202491125109" at="37,79,38,63" concept="5" />
       <node id="1202491125109" at="38,63,39,30" concept="5" />
-      <node id="1202491125109" at="39,30,40,221" concept="2" />
-      <node id="1202491125109" at="40,221,41,196" concept="2" />
+      <node id="1202491125109" at="39,30,40,246" concept="2" />
+      <node id="1202491125109" at="40,246,41,196" concept="2" />
       <node id="1202491125109" at="41,196,42,24" concept="6" />
       <node id="1202491110369" at="19,0,21,0" concept="1" trace="typeof_AsPattern_InferenceRule#()V" />
       <node id="1202491110369" at="28,0,31,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -310,12 +310,12 @@
       <node id="1202491204038" at="47,30,48,16" concept="6" />
       <node id="1202491231733" at="50,63,51,63" concept="5" />
       <node id="1202491231733" at="51,63,52,30" concept="5" />
-      <node id="1202491231733" at="52,30,53,225" concept="2" />
-      <node id="1202491231733" at="53,225,54,24" concept="6" />
+      <node id="1202491231733" at="52,30,53,250" concept="2" />
+      <node id="1202491231733" at="53,250,54,24" concept="6" />
       <node id="1202491231764" at="56,82,57,63" concept="5" />
       <node id="1202491231764" at="57,63,58,30" concept="5" />
-      <node id="1202491231764" at="58,30,59,225" concept="2" />
-      <node id="1202491231764" at="59,225,60,203" concept="2" />
+      <node id="1202491231764" at="58,30,59,250" concept="2" />
+      <node id="1202491231764" at="59,250,60,203" concept="2" />
       <node id="1202491231764" at="60,203,61,24" concept="6" />
       <node id="1202491204038" at="20,0,22,0" concept="1" trace="typeof_ListPattern_InferenceRule#()V" />
       <node id="1202491204038" at="41,0,44,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />

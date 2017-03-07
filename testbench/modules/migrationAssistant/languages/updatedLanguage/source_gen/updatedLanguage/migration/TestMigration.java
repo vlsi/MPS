@@ -82,7 +82,7 @@ public class TestMigration extends MigrationScriptBase {
   private static SNode _quotation_createNode_53jq1q_a0a0a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xa59395ba5d944758L, 0xa87cb11e086d5491L, 0x42068cb67bc5737L, "updatedLanguage.structure.MigratingConcept"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa59395ba5d944758L, 0xa87cb11e086d5491L, "updatedLanguage"), 0x42068cb67bc5737L, "MigratingConcept"), null, null, false);
     return quotedNode_1;
   }
 }

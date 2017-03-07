@@ -35,7 +35,7 @@ public class typeof_StockPriceInquiry_InferenceRule extends AbstractInferenceRul
   private static SNode _quotation_createNode_nq1gda_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe55913516aL, "org.jetbrains.mps.samples.Money.structure.MoneyType"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x662a9f2b58024d16L, 0x955872c65c7a681eL, "org.jetbrains.mps.samples.Money"), 0x4b9a2fe55913516aL, "MoneyType"), null, null, false);
     return quotedNode_1;
   }
 }

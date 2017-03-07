@@ -86,7 +86,7 @@ public final class ConceptFunctionParameter_Selection__BehaviorDescriptor extend
   private static SNode _quotation_createNode_nuwy8d_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x611e7dc14a6926c8L, "jetbrains.mps.lang.typesystem.structure.SelectionType"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, "jetbrains.mps.lang.typesystem"), 0x611e7dc14a6926c8L, "SelectionType"), null, null, false);
     return quotedNode_1;
   }
 }

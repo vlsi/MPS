@@ -81,13 +81,13 @@ public class MigrateReferences extends MigrationScriptBase {
   private static SNode _quotation_createNode_w5820p_a0a0a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, "references.structure.OldComponentRef"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x1610048531ac4899L, 0x91122289e22843ddL, "references"), 0x6aff2c104931574dL, "OldComponentRef"), null, null, false);
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_w5820p_a0a0f(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104932a6c9L, "references.structure.NewComponentRef"), null, null, false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x1610048531ac4899L, 0x91122289e22843ddL, "references"), 0x6aff2c104932a6c9L, "NewComponentRef"), null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104932a6c9L, 0x6aff2c104932a6caL, "target"), (SNode) parameter_1);
     return quotedNode_2;
   }

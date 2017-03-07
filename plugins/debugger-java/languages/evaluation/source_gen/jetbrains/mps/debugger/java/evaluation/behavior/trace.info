@@ -334,8 +334,8 @@
       <node id="5211667636169798154" at="104,40,105,19" concept="5" />
       <node id="5211667636169846783" at="107,60,108,63" concept="4" />
       <node id="5211667636169846783" at="108,63,109,30" concept="4" />
-      <node id="5211667636169846783" at="109,30,110,227" concept="1" />
-      <node id="5211667636169846783" at="110,227,111,435" concept="1" />
+      <node id="5211667636169846783" at="109,30,110,252" concept="1" />
+      <node id="5211667636169846783" at="110,252,111,435" concept="1" />
       <node id="5211667636169846783" at="111,435,112,24" concept="5" />
       <node id="5211667636169798154" at="39,0,41,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5211667636169798154" at="42,0,45,0" concept="8" trace="getThrowableTypes_id5op8ooRkkc7#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />

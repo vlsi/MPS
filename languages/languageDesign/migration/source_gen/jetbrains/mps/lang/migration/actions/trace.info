@@ -21,10 +21,10 @@
       <node id="1901572971594270494" at="24,83,25,65" concept="3" />
       <node id="1901572971594270494" at="25,65,26,32" concept="3" />
       <node id="1901572971594270494" at="26,32,27,32" concept="3" />
-      <node id="1901572971594270494" at="27,32,28,234" concept="0" />
-      <node id="1901572971594270494" at="28,234,29,170" concept="0" />
-      <node id="1901572971594270494" at="29,170,30,223" concept="0" />
-      <node id="1901572971594270494" at="30,223,31,198" concept="0" />
+      <node id="1901572971594270494" at="27,32,28,259" concept="0" />
+      <node id="1901572971594270494" at="28,259,29,170" concept="0" />
+      <node id="1901572971594270494" at="29,170,30,248" concept="0" />
+      <node id="1901572971594270494" at="30,248,31,198" concept="0" />
       <node id="1901572971594270494" at="31,198,32,173" concept="0" />
       <node id="1901572971594270494" at="32,173,33,26" concept="4" />
       <node id="1901572971594206036" at="20,0,24,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />

@@ -1915,14 +1915,14 @@
       <node id="1939066678961233651" at="2128,84,2129,65" concept="5" />
       <node id="1939066678961233651" at="2129,65,2130,32" concept="5" />
       <node id="1939066678961233651" at="2130,32,2131,32" concept="5" />
-      <node id="1939066678961233651" at="2131,32,2132,235" concept="2" />
+      <node id="1939066678961233651" at="2131,32,2132,260" concept="2" />
       <node id="1939066678961233651" at="2133,7,2134,54" concept="5" />
       <node id="1939066678961233651" at="2135,35,2136,192" concept="2" />
       <node id="1939066678961233651" at="2138,7,2139,26" concept="6" />
       <node id="1939066678961233663" at="2141,84,2142,65" concept="5" />
       <node id="1939066678961233663" at="2142,65,2143,32" concept="5" />
       <node id="1939066678961233663" at="2143,32,2144,32" concept="5" />
-      <node id="1939066678961233663" at="2144,32,2145,235" concept="2" />
+      <node id="1939066678961233663" at="2144,32,2145,260" concept="2" />
       <node id="1939066678961233663" at="2146,7,2147,54" concept="5" />
       <node id="1939066678961233663" at="2148,35,2149,192" concept="2" />
       <node id="1939066678961233663" at="2151,7,2152,26" concept="6" />
@@ -1990,8 +1990,8 @@
       <node id="4693929676428718784" at="1982,328,1987,7" concept="0" />
       <node id="8441349676536441192" at="2046,328,2051,7" concept="0" />
       <node id="3619281710184384012" at="2111,328,2116,7" concept="0" />
-      <node id="1939066678961233651" at="2132,235,2138,7" concept="0" />
-      <node id="1939066678961233663" at="2145,235,2151,7" concept="0" />
+      <node id="1939066678961233651" at="2132,260,2138,7" concept="0" />
+      <node id="1939066678961233663" at="2145,260,2151,7" concept="0" />
       <node id="1939066678961233651" at="2128,0,2141,0" concept="8" trace="_quotation_createNode_n7zrdh_a0fc0m13#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1939066678961233663" at="2141,0,2154,0" concept="8" trace="_quotation_createNode_n7zrdh_a0fc0p13#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5543996881668550054" at="179,0,243,0" concept="4" trace="test_lowLevelVariable#()V" />

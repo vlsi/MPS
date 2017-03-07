@@ -62,7 +62,7 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afae8L, "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType"), null, null, false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, "jetbrains.mps.samples.lambdaCalculus"), 0x3ee0e3dd7c1afae8L, "FunctionType"), null, null, false);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afae8L, 0x3ee0e3dd7c1afae9L, "domain"), HUtil.copyIfNecessary(quotedNode_4));

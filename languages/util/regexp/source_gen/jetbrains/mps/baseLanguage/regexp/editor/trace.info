@@ -10049,8 +10049,8 @@
       <node id="1741258697587182949" at="197,52,198,168" concept="8" />
       <node id="1741258697587182959" at="203,64,204,63" concept="7" />
       <node id="1741258697587182959" at="204,63,205,30" concept="7" />
-      <node id="1741258697587182959" at="205,30,206,223" concept="2" />
-      <node id="1741258697587182959" at="206,223,207,24" concept="8" />
+      <node id="1741258697587182959" at="205,30,206,248" concept="2" />
+      <node id="1741258697587182959" at="206,248,207,24" concept="8" />
       <node id="1741258697587182945" at="37,0,40,0" concept="1" trace="stringOperations_Contribution#()V" />
       <node id="1741258697587182945" at="49,156,52,5" concept="5" />
       <node id="1741258697587182949" at="75,0,78,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />

@@ -7283,8 +7283,8 @@
       <node id="6360794824234325012" at="364,55,365,43" concept="10" />
       <node id="8222073419152217837" at="367,66,368,63" concept="9" />
       <node id="8222073419152217837" at="368,63,369,30" concept="9" />
-      <node id="8222073419152217837" at="369,30,370,240" concept="4" />
-      <node id="8222073419152217837" at="370,240,371,447" concept="4" />
+      <node id="8222073419152217837" at="369,30,370,265" concept="4" />
+      <node id="8222073419152217837" at="370,265,371,447" concept="4" />
       <node id="8222073419152217837" at="371,447,372,24" concept="10" />
       <node id="2299504936702472506" at="51,156,54,5" concept="7" />
       <node id="2299504936702472507" at="88,0,91,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />

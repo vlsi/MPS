@@ -35,7 +35,7 @@ public class typeof_NumericConstant_InferenceRule extends AbstractInferenceRule_
   private static SNode _quotation_createNode_4r4vxo_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afadaL, "jetbrains.mps.samples.lambdaCalculus.structure.NumberType"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, "jetbrains.mps.samples.lambdaCalculus"), 0x3ee0e3dd7c1afadaL, "NumberType"), null, null, false);
     return quotedNode_1;
   }
 }

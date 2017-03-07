@@ -270,12 +270,12 @@
       <node id="2699636778858778743" at="113,40,114,19" concept="8" />
       <node id="2699636778858790492" at="116,60,117,63" concept="7" />
       <node id="2699636778858790492" at="117,63,118,30" concept="7" />
-      <node id="2699636778858790492" at="118,30,119,220" concept="2" />
-      <node id="2699636778858790492" at="119,220,120,24" concept="8" />
+      <node id="2699636778858790492" at="118,30,119,245" concept="2" />
+      <node id="2699636778858790492" at="119,245,120,24" concept="8" />
       <node id="2699636778858912197" at="122,62,123,63" concept="7" />
       <node id="2699636778858912197" at="123,63,124,30" concept="7" />
-      <node id="2699636778858912197" at="124,30,125,227" concept="2" />
-      <node id="2699636778858912197" at="125,227,126,438" concept="2" />
+      <node id="2699636778858912197" at="124,30,125,252" concept="2" />
+      <node id="2699636778858912197" at="125,252,126,438" concept="2" />
       <node id="2699636778858912197" at="126,438,127,24" concept="8" />
       <node id="2699636778858778743" at="41,0,43,0" concept="11" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2699636778858778743" at="44,0,47,0" concept="11" trace="getExpectedRetType_idi2fhBNC#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />

@@ -109,8 +109,8 @@
       <node id="1213877408160" at="100,40,101,19" concept="5" />
       <node id="658365993682017563" at="103,60,104,63" concept="4" />
       <node id="658365993682017563" at="104,63,105,30" concept="4" />
-      <node id="658365993682017563" at="105,30,106,220" concept="1" />
-      <node id="658365993682017563" at="106,220,107,24" concept="5" />
+      <node id="658365993682017563" at="105,30,106,245" concept="1" />
+      <node id="658365993682017563" at="106,245,107,24" concept="5" />
       <node id="1213877408160" at="38,0,40,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1213877408160" at="41,0,44,0" concept="7" trace="usesParameterObjectFor_idhEwIGRw#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1213877408160" at="49,0,52,0" concept="7" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />

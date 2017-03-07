@@ -83,8 +83,8 @@
       <node id="2264311582634140487" at="36,30,37,17" concept="6" />
       <node id="2264311582634140505" at="39,62,40,63" concept="5" />
       <node id="2264311582634140505" at="40,63,41,30" concept="5" />
-      <node id="2264311582634140505" at="41,30,42,227" concept="2" />
-      <node id="2264311582634140505" at="42,227,43,435" concept="2" />
+      <node id="2264311582634140505" at="41,30,42,252" concept="2" />
+      <node id="2264311582634140505" at="42,252,43,435" concept="2" />
       <node id="2264311582634140505" at="43,435,44,24" concept="6" />
       <node id="2264311582634140487" at="20,0,22,0" concept="1" trace="typeof_XMLSAXChildHandler_childObject_InferenceRule#()V" />
       <node id="2264311582634140487" at="30,0,33,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -133,8 +133,8 @@
       <node id="2264311582634140528" at="32,30,33,17" concept="6" />
       <node id="2264311582634140532" at="35,61,36,63" concept="5" />
       <node id="2264311582634140532" at="36,63,37,30" concept="5" />
-      <node id="2264311582634140532" at="37,30,38,223" concept="2" />
-      <node id="2264311582634140532" at="38,223,39,24" concept="6" />
+      <node id="2264311582634140532" at="37,30,38,248" concept="2" />
+      <node id="2264311582634140532" at="38,248,39,24" concept="6" />
       <node id="2264311582634140528" at="17,0,19,0" concept="1" trace="typeof_XMLSAXAttributeReference_InferenceRule#()V" />
       <node id="2264311582634140528" at="26,0,29,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="2264311582634140528" at="29,0,32,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -217,8 +217,8 @@
       <node id="2264311582634140551" at="33,30,34,17" concept="6" />
       <node id="2264311582634140555" at="36,61,37,63" concept="5" />
       <node id="2264311582634140555" at="37,63,38,30" concept="5" />
-      <node id="2264311582634140555" at="38,30,39,227" concept="2" />
-      <node id="2264311582634140555" at="39,227,40,438" concept="2" />
+      <node id="2264311582634140555" at="38,30,39,252" concept="2" />
+      <node id="2264311582634140555" at="39,252,40,438" concept="2" />
       <node id="2264311582634140555" at="40,438,41,24" concept="6" />
       <node id="2264311582634140551" at="18,0,20,0" concept="1" trace="typeof_XMLSAXLocatorExpression_InferenceRule#()V" />
       <node id="2264311582634140551" at="27,0,30,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />

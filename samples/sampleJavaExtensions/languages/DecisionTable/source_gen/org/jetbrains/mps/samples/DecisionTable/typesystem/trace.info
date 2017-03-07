@@ -39,12 +39,12 @@
       <node id="1987251859607011636" at="71,30,72,17" concept="7" />
       <node id="1987251859607015332" at="74,64,75,63" concept="6" />
       <node id="1987251859607015332" at="75,63,76,30" concept="6" />
-      <node id="1987251859607015332" at="76,30,77,223" concept="2" />
-      <node id="1987251859607015332" at="77,223,78,24" concept="7" />
+      <node id="1987251859607015332" at="76,30,77,248" concept="2" />
+      <node id="1987251859607015332" at="77,248,78,24" concept="7" />
       <node id="1987251859607015347" at="80,64,81,63" concept="6" />
       <node id="1987251859607015347" at="81,63,82,30" concept="6" />
-      <node id="1987251859607015347" at="82,30,83,223" concept="2" />
-      <node id="1987251859607015347" at="83,223,84,24" concept="7" />
+      <node id="1987251859607015347" at="82,30,83,248" concept="2" />
+      <node id="1987251859607015347" at="83,248,84,24" concept="7" />
       <node id="1987251859607011636" at="20,0,22,0" concept="1" trace="typeof_DecisionTable_InferenceRule#()V" />
       <node id="1987251859607011636" at="65,0,68,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1987251859607011636" at="68,0,71,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />

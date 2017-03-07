@@ -22,8 +22,8 @@
       <node id="9152904044274365443" at="33,30,34,17" concept="5" />
       <node id="9152904044274382254" at="36,61,37,63" concept="4" />
       <node id="9152904044274382254" at="37,63,38,30" concept="4" />
-      <node id="9152904044274382254" at="38,30,39,227" concept="2" />
-      <node id="9152904044274382254" at="39,227,40,440" concept="2" />
+      <node id="9152904044274382254" at="38,30,39,252" concept="2" />
+      <node id="9152904044274382254" at="39,252,40,440" concept="2" />
       <node id="9152904044274382254" at="40,440,41,24" concept="5" />
       <node id="9152904044274365443" at="18,0,20,0" concept="1" trace="typeof_XmlLiteral_InferenceRule#()V" />
       <node id="9152904044274365443" at="27,0,30,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -70,8 +70,8 @@
       <node id="9152904044274516047" at="34,30,35,17" concept="5" />
       <node id="9152904044274518120" at="37,61,38,63" concept="4" />
       <node id="9152904044274518120" at="38,63,39,30" concept="4" />
-      <node id="9152904044274518120" at="39,30,40,227" concept="2" />
-      <node id="9152904044274518120" at="40,227,41,435" concept="2" />
+      <node id="9152904044274518120" at="39,30,40,252" concept="2" />
+      <node id="9152904044274518120" at="40,252,41,435" concept="2" />
       <node id="9152904044274518120" at="41,435,42,24" concept="5" />
       <node id="9152904044274516047" at="19,0,21,0" concept="1" trace="typeof_TextMacro_InferenceRule#()V" />
       <node id="9152904044274516047" at="28,0,31,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -118,8 +118,8 @@
       <node id="9152904044274518139" at="34,30,35,17" concept="5" />
       <node id="9152904044274518156" at="37,61,38,63" concept="4" />
       <node id="9152904044274518156" at="38,63,39,30" concept="4" />
-      <node id="9152904044274518156" at="39,30,40,227" concept="2" />
-      <node id="9152904044274518156" at="40,227,41,440" concept="2" />
+      <node id="9152904044274518156" at="39,30,40,252" concept="2" />
+      <node id="9152904044274518156" at="40,252,41,440" concept="2" />
       <node id="9152904044274518156" at="41,440,42,24" concept="5" />
       <node id="9152904044274518139" at="19,0,21,0" concept="1" trace="typeof_ElementMacro_InferenceRule#()V" />
       <node id="9152904044274518139" at="28,0,31,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />

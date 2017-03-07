@@ -194,8 +194,8 @@
       <node id="3044950653914725604" at="94,40,95,19" concept="5" />
       <node id="658365993681975271" at="97,60,98,63" concept="4" />
       <node id="658365993681975271" at="98,63,99,30" concept="4" />
-      <node id="658365993681975271" at="99,30,100,223" concept="1" />
-      <node id="658365993681975271" at="100,223,101,24" concept="5" />
+      <node id="658365993681975271" at="99,30,100,248" concept="1" />
+      <node id="658365993681975271" at="100,248,101,24" concept="5" />
       <node id="3044950653914725604" at="37,0,39,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3044950653914725604" at="45,0,48,0" concept="7" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3044950653914725604" at="49,0,52,0" concept="0" trace="MigrationScriptPart_Instance_Predicate__BehaviorDescriptor#()V" />

@@ -93,10 +93,10 @@
       <node id="9097849371504760812" at="23,65,24,65" concept="3" />
       <node id="9097849371504760812" at="24,65,25,32" concept="3" />
       <node id="9097849371504760812" at="25,32,26,32" concept="3" />
-      <node id="9097849371504760812" at="26,32,27,234" concept="0" />
-      <node id="9097849371504760812" at="27,234,28,171" concept="0" />
-      <node id="9097849371504760812" at="28,171,29,223" concept="0" />
-      <node id="9097849371504760812" at="29,223,30,173" concept="0" />
+      <node id="9097849371504760812" at="26,32,27,259" concept="0" />
+      <node id="9097849371504760812" at="27,259,28,171" concept="0" />
+      <node id="9097849371504760812" at="28,171,29,248" concept="0" />
+      <node id="9097849371504760812" at="29,248,30,173" concept="0" />
       <node id="9097849371504760812" at="30,173,31,26" concept="4" />
       <node id="9097849371504700258" at="18,0,23,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="9097849371504760812" at="23,0,33,0" concept="6" trace="_quotation_createNode_6hmkle_a0a1a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />

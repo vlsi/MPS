@@ -80,8 +80,8 @@ public class MigrateDeclarations extends MigrationScriptBase {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049316cdaL, "declarations.structure.OldComponent"), null, null, false);
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getInterfaceConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c104931bb26L, "declarations.structure.OldComponentMember"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, "declarations"), 0x6aff2c1049316cdaL, "OldComponent"), null, null, false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, "declarations"), 0x6aff2c104931bb26L, "OldComponentMember"), null, null, false);
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049316cdaL, 0x6aff2c104931bb27L, "member"), quotedNode_2);
     return quotedNode_1;
   }
@@ -89,7 +89,7 @@ public class MigrateDeclarations extends MigrationScriptBase {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049329d71L, "declarations.structure.NewComponent"), null, null, false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, "declarations"), 0x6aff2c1049329d71L, "NewComponent"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), (String) parameter_2);
     {
       List<SNode> nodes = (List<SNode>) parameter_1;

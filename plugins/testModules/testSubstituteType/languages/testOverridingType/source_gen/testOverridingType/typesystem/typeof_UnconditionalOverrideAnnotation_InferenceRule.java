@@ -50,7 +50,7 @@ public class typeof_UnconditionalOverrideAnnotation_InferenceRule extends Abstra
   private static SNode _quotation_createNode_ldhnbc_a0a0a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x19f3ac4f6f2a7f40L, "testOverridingType.structure.ErrorType"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x394e385732564e8bL, 0x96015abe7ad354d9L, "testOverridingType"), 0x19f3ac4f6f2a7f40L, "ErrorType"), null, null, false);
     return quotedNode_1;
   }
 }

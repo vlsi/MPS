@@ -36,7 +36,7 @@ public class typeof_InsertPosition_InferenceRule extends AbstractInferenceRule_R
   private static SNode _quotation_createNode_src0b7_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x44f5e79f9e613080L, "jetbrains.mps.lang.dataFlow.structure.InstructionType"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, "jetbrains.mps.lang.dataFlow"), 0x44f5e79f9e613080L, "InstructionType"), null, null, false);
     return quotedNode_1;
   }
 }

@@ -35,7 +35,7 @@ public class typeof_RefactoringContext_ConceptFunctionParameter_InferenceRule ex
   private static SNode _quotation_createNode_v91xio_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b65b84aL, "jetbrains.mps.lang.refactoring.structure.ContextType"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, "jetbrains.mps.lang.refactoring"), 0x6e6245e06b65b84aL, "ContextType"), null, null, false);
     return quotedNode_1;
   }
 }

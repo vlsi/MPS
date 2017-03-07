@@ -728,8 +728,8 @@
       <node id="1230052902974" at="43,333,44,151" concept="1" />
       <node id="1230052902961" at="49,65,50,65" concept="5" />
       <node id="1230052902961" at="50,65,51,32" concept="5" />
-      <node id="1230052902961" at="51,32,52,229" concept="1" />
-      <node id="1230052902961" at="52,229,53,451" concept="1" />
+      <node id="1230052902961" at="51,32,52,254" concept="1" />
+      <node id="1230052902961" at="52,254,53,451" concept="1" />
       <node id="1230052902961" at="53,451,54,26" concept="6" />
       <node id="1230052902925" at="26,0,31,0" concept="4" trace="test_AddThrowDeclaration#()V" />
       <node id="1230052902974" at="40,26,45,7" concept="0" />
@@ -875,10 +875,10 @@
       <node id="1230052943800" at="49,65,50,65" concept="5" />
       <node id="1230052943800" at="50,65,51,32" concept="5" />
       <node id="1230052943800" at="51,32,52,32" concept="5" />
-      <node id="1230052943800" at="52,32,53,234" concept="1" />
-      <node id="1230052943800" at="53,234,54,167" concept="1" />
-      <node id="1230052943800" at="54,167,55,222" concept="1" />
-      <node id="1230052943800" at="55,222,56,173" concept="1" />
+      <node id="1230052943800" at="52,32,53,259" concept="1" />
+      <node id="1230052943800" at="53,259,54,167" concept="1" />
+      <node id="1230052943800" at="54,167,55,247" concept="1" />
+      <node id="1230052943800" at="55,247,56,173" concept="1" />
       <node id="1230052943800" at="56,173,57,26" concept="6" />
       <node id="1230052943763" at="26,0,31,0" concept="4" trace="test_AddParameter#()V" />
       <node id="1230052943814" at="40,26,45,7" concept="0" />
@@ -951,8 +951,8 @@
       <node id="1230052943943" at="42,333,43,151" concept="1" />
       <node id="1230052943920" at="48,64,49,65" concept="5" />
       <node id="1230052943920" at="49,65,50,32" concept="5" />
-      <node id="1230052943920" at="50,32,51,225" concept="1" />
-      <node id="1230052943920" at="51,225,52,26" concept="6" />
+      <node id="1230052943920" at="50,32,51,250" concept="1" />
+      <node id="1230052943920" at="51,250,52,26" concept="6" />
       <node id="1230052943883" at="25,0,30,0" concept="4" trace="test_ChangeParameterType#()V" />
       <node id="1230052943943" at="39,26,44,7" concept="0" />
       <node id="1230052943920" at="48,0,54,0" concept="8" trace="_quotation_createNode_69x5rj_a0d0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />

@@ -39,8 +39,8 @@
       <node id="1741258697587122100" at="96,67,97,318" concept="6" />
       <node id="1741258697587122067" at="103,64,104,63" concept="5" />
       <node id="1741258697587122067" at="104,63,105,30" concept="5" />
-      <node id="1741258697587122067" at="105,30,106,227" concept="1" />
-      <node id="1741258697587122067" at="106,227,107,464" concept="1" />
+      <node id="1741258697587122067" at="105,30,106,252" concept="1" />
+      <node id="1741258697587122067" at="106,252,107,464" concept="1" />
       <node id="1741258697587122067" at="107,464,108,24" concept="6" />
       <node id="1741258697587122055" at="32,0,35,0" concept="0" trace="AddWorkbenchToActionParameters_Contribution#()V" />
       <node id="1741258697587122055" at="55,0,58,0" concept="0" trace="SubstituteMenuPart_Action_bkyuyj_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

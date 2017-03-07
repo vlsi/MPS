@@ -496,8 +496,8 @@
       <node id="658365993681963374" at="83,40,84,19" concept="6" />
       <node id="658365993681963554" at="86,60,87,63" concept="5" />
       <node id="658365993681963554" at="87,63,88,30" concept="5" />
-      <node id="658365993681963554" at="88,30,89,220" concept="2" />
-      <node id="658365993681963554" at="89,220,90,24" concept="6" />
+      <node id="658365993681963554" at="88,30,89,245" concept="2" />
+      <node id="658365993681963554" at="89,245,90,24" concept="6" />
       <node id="658365993681963374" at="33,0,35,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="658365993681963374" at="36,0,39,0" concept="8" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="658365993681963374" at="40,0,43,0" concept="1" trace="ExtensionFunction__BehaviorDescriptor#()V" />

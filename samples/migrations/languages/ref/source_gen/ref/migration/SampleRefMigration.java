@@ -96,7 +96,7 @@ public class SampleRefMigration extends MigrationScriptBase {
   private static SNode _quotation_createNode_u457zm_a0b0a0a01a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104932a6c9L, "ref.structure.NewComponentRef"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, "ref"), 0x6aff2c104932a6c9L, "NewComponentRef"), null, null, false);
     return quotedNode_1;
   }
 }

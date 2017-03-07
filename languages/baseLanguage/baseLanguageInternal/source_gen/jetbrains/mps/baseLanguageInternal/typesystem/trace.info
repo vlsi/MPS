@@ -29,13 +29,13 @@
       <node id="1100832983841501763" at="43,30,44,17" concept="8" />
       <node id="1100832983841501782" at="46,64,47,63" concept="7" />
       <node id="1100832983841501782" at="47,63,48,30" concept="7" />
-      <node id="1100832983841501782" at="48,30,49,227" concept="3" />
-      <node id="1100832983841501782" at="49,227,50,435" concept="3" />
+      <node id="1100832983841501782" at="48,30,49,252" concept="3" />
+      <node id="1100832983841501782" at="49,252,50,435" concept="3" />
       <node id="1100832983841501782" at="50,435,51,24" concept="8" />
       <node id="1100832983841501794" at="53,99,54,63" concept="7" />
       <node id="1100832983841501794" at="54,63,55,30" concept="7" />
-      <node id="1100832983841501794" at="55,30,56,243" concept="3" />
-      <node id="1100832983841501794" at="56,243,57,189" concept="3" />
+      <node id="1100832983841501794" at="55,30,56,268" concept="3" />
+      <node id="1100832983841501794" at="56,268,57,189" concept="3" />
       <node id="1100832983841501794" at="57,189,58,199" concept="3" />
       <node id="1100832983841501794" at="58,199,59,24" concept="8" />
       <node id="1100832983841501763" at="22,0,24,0" concept="2" trace="typeof_InternalClassCreator_InferenceRule#()V" />
@@ -101,14 +101,14 @@
       <node id="1196525371871" at="45,30,46,16" concept="8" />
       <node id="1196525371889" at="48,64,49,63" concept="7" />
       <node id="1196525371889" at="49,63,50,30" concept="7" />
-      <node id="1196525371889" at="50,30,51,227" concept="3" />
-      <node id="1196525371889" at="51,227,52,435" concept="3" />
+      <node id="1196525371889" at="50,30,51,252" concept="3" />
+      <node id="1196525371889" at="51,252,52,435" concept="3" />
       <node id="1196525371889" at="52,435,53,24" concept="8" />
       <node id="3102959500546034593" at="55,119,56,63" concept="7" />
       <node id="3102959500546034593" at="56,63,57,30" concept="7" />
       <node id="3102959500546034593" at="57,30,58,30" concept="7" />
-      <node id="3102959500546034593" at="58,30,59,243" concept="3" />
-      <node id="3102959500546034593" at="59,243,60,189" concept="3" />
+      <node id="3102959500546034593" at="58,30,59,268" concept="3" />
+      <node id="3102959500546034593" at="59,268,60,189" concept="3" />
       <node id="3102959500546034593" at="60,189,61,199" concept="3" />
       <node id="3102959500546034593" at="62,5,63,52" concept="7" />
       <node id="3102959500546034593" at="64,33,65,186" concept="3" />
@@ -222,8 +222,8 @@
       <node id="1196525371918" at="38,79,39,63" concept="7" />
       <node id="1196525371918" at="39,63,40,30" concept="7" />
       <node id="1196525371918" at="40,30,41,30" concept="7" />
-      <node id="1196525371918" at="41,30,42,227" concept="3" />
-      <node id="1196525371918" at="42,227,43,434" concept="3" />
+      <node id="1196525371918" at="41,30,42,252" concept="3" />
+      <node id="1196525371918" at="42,252,43,434" concept="3" />
       <node id="1196525371918" at="43,434,44,39" concept="3" />
       <node id="1196525371918" at="45,31,46,191" concept="3" />
       <node id="1196525371918" at="47,5,48,24" concept="8" />
@@ -737,8 +737,8 @@
       <node id="3584941796637350105" at="29,27,30,17" concept="8" />
       <node id="3584941796637370689" at="32,78,33,63" concept="7" />
       <node id="3584941796637370689" at="33,63,34,30" concept="7" />
-      <node id="3584941796637370689" at="34,30,35,227" concept="3" />
-      <node id="3584941796637370689" at="35,227,36,199" concept="3" />
+      <node id="3584941796637370689" at="34,30,35,252" concept="3" />
+      <node id="3584941796637370689" at="35,252,36,199" concept="3" />
       <node id="3584941796637370689" at="36,199,37,24" concept="8" />
       <node id="3584941796637350105" at="18,0,20,0" concept="2" trace="InternalClassifierType_subtypeOf_ClassifierType_SubtypingRule#()V" />
       <node id="3584941796637350105" at="20,0,23,0" concept="6" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -893,8 +893,8 @@
       <node id="8791205313600585964" at="32,30,33,17" concept="8" />
       <node id="8791205313600585976" at="35,61,36,63" concept="7" />
       <node id="8791205313600585976" at="36,63,37,30" concept="7" />
-      <node id="8791205313600585976" at="37,30,38,223" concept="3" />
-      <node id="8791205313600585976" at="38,223,39,24" concept="8" />
+      <node id="8791205313600585976" at="37,30,38,248" concept="3" />
+      <node id="8791205313600585976" at="38,248,39,24" concept="8" />
       <node id="8791205313600585964" at="17,0,19,0" concept="2" trace="typeof_WeakClassReference_InferenceRule#()V" />
       <node id="8791205313600585964" at="26,0,29,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="8791205313600585964" at="29,0,32,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />

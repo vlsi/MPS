@@ -45,8 +45,8 @@
       <node id="1262430001741643085" at="100,40,101,19" concept="6" />
       <node id="658365993682016313" at="103,60,104,63" concept="5" />
       <node id="658365993682016313" at="104,63,105,30" concept="5" />
-      <node id="658365993682016313" at="105,30,106,223" concept="2" />
-      <node id="658365993682016313" at="106,223,107,24" concept="6" />
+      <node id="658365993682016313" at="105,30,106,248" concept="2" />
+      <node id="658365993682016313" at="106,248,107,24" concept="6" />
       <node id="1262430001741643085" at="38,0,40,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1262430001741643085" at="41,0,44,0" concept="8" trace="showName_id1653mnvAgry#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
       <node id="1262430001741643085" at="49,0,52,0" concept="8" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -801,8 +801,8 @@
       <node id="5263715862011159402" at="101,40,102,19" concept="6" />
       <node id="5263715862011159409" at="104,60,105,63" concept="5" />
       <node id="5263715862011159409" at="105,63,106,30" concept="5" />
-      <node id="5263715862011159409" at="106,30,107,223" concept="2" />
-      <node id="5263715862011159409" at="107,223,108,24" concept="6" />
+      <node id="5263715862011159409" at="106,30,107,248" concept="2" />
+      <node id="5263715862011159409" at="107,248,108,24" concept="6" />
       <node id="5263715862011159402" at="38,0,40,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5263715862011159402" at="41,0,44,0" concept="8" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5263715862011159402" at="44,0,47,0" concept="8" trace="showName_id1653mnvAgry#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
@@ -988,11 +988,11 @@
       <node id="6764660826575793266" at="115,63,116,30" concept="5" />
       <node id="6764660826575793266" at="116,30,117,30" concept="5" />
       <node id="6764660826575793266" at="117,30,118,30" concept="5" />
-      <node id="6764660826575793266" at="118,30,119,224" concept="2" />
-      <node id="6764660826575793266" at="119,224,120,234" concept="2" />
-      <node id="6764660826575793266" at="120,234,121,165" concept="2" />
-      <node id="6764660826575793266" at="121,165,122,227" concept="2" />
-      <node id="6764660826575793266" at="122,227,123,469" concept="2" />
+      <node id="6764660826575793266" at="118,30,119,249" concept="2" />
+      <node id="6764660826575793266" at="119,249,120,259" concept="2" />
+      <node id="6764660826575793266" at="120,259,121,165" concept="2" />
+      <node id="6764660826575793266" at="121,165,122,252" concept="2" />
+      <node id="6764660826575793266" at="122,252,123,469" concept="2" />
       <node id="6764660826575793266" at="123,469,124,165" concept="2" />
       <node id="6764660826575793266" at="124,165,125,24" concept="6" />
       <node id="6538811202682334474" at="43,0,45,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1260,8 +1260,8 @@
       <node id="7806358006983709805" at="117,40,118,19" concept="6" />
       <node id="6226796386650281946" at="120,62,121,63" concept="5" />
       <node id="6226796386650281946" at="121,63,122,30" concept="5" />
-      <node id="6226796386650281946" at="122,30,123,241" concept="2" />
-      <node id="6226796386650281946" at="123,241,124,24" concept="6" />
+      <node id="6226796386650281946" at="122,30,123,266" concept="2" />
+      <node id="6226796386650281946" at="123,266,124,24" concept="6" />
       <node id="7806358006983709805" at="41,0,43,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7806358006983709805" at="44,0,47,0" concept="8" trace="isDebuggable_idoym_8btfV8#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="7806358006983709805" at="47,0,50,0" concept="8" trace="canBeSimple_id5pE1_aqYssM#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />

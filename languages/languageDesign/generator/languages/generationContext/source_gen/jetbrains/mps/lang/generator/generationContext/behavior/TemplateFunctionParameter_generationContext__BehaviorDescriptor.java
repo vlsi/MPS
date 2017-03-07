@@ -86,7 +86,7 @@ public final class TemplateFunctionParameter_generationContext__BehaviorDescript
   private static SNode _quotation_createNode_fkq6n5_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0e1L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, "jetbrains.mps.lang.generator.generationContext"), 0x11b5282d0e1L, "GenerationContextType"), null, null, false);
     return quotedNode_1;
   }
 }
