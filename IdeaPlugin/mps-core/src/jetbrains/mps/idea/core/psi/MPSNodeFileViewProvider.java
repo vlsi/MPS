@@ -51,12 +51,10 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
 
   private static final String emptyString = "";
   private final PsiManager myManager;
-  private final MPSNodeVirtualFile myNodeFile;
 
   public MPSNodeFileViewProvider(@NotNull PsiManager manager, @NotNull MPSNodeVirtualFile nodeFile) {
     super(manager, nodeFile, EVENT_SYSTEM_ENABLED, LANGUAGE);
     myManager = manager;
-    myNodeFile = nodeFile;
   }
 
   @NotNull
@@ -75,12 +73,6 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
   @Override
   public CharSequence getContents() {
     return emptyString;
-  }
-
-  @NotNull
-  @Override
-  public VirtualFile getVirtualFile() {
-    return myNodeFile;
   }
 
   @NotNull
@@ -109,7 +101,7 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
     final Ref<PsiElement> result = new Ref<>(null);
     // todo use MPSNodeVirtualFile.getNode() (rewrite it to project repo)
     repo.getModelAccess().runReadAction(() -> {
-      SNode sNode = myNodeFile.getSNodePointer().resolve(repo);
+      SNode sNode = ((MPSNodeVirtualFile)getVirtualFile()).getSNodePointer().resolve(repo);
       if (sNode != null) {
         result.set(MPSPsiProvider.getInstance(getManager().getProject()).getPsi(sNode));
       }
@@ -141,7 +133,9 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
 
   @Override
   public long getModificationStamp() {
-    return myNodeFile.getModificationStamp();
+    // TODO: check if we need to override this method.
+    // We relay on file modification instead of content.
+    return getVirtualFile().getModificationStamp();
   }
 
   @Override
