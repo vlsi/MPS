@@ -9,6 +9,8 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.util.IterableUtil;
 
 public class FinderUtils {
@@ -43,16 +45,13 @@ public class FinderUtils {
     return ListSequence.fromList(path1).count() - ListSequence.fromList(path2).count();
   }
   public static int compareBrothers(SNode n1, SNode n2) {
-    if (SNodeOperations.getContainingLink(n1) == null) {
+    if (SNodeOperations.getContainingLink(n1) == null || SNodeOperations.getContainingLink(n2) == null) {
+      // if one of them is null, both must be null 
+      assert SNodeOperations.getContainingLink(n1) == null && SNodeOperations.getContainingLink(n2) == null : "Root node is supposed to be a 'brother' of another root node only. n1=" + ((String) BHReflection.invoke(n1, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw"))) + ", n2=" + ((String) BHReflection.invoke(n2, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
       return n1.getPresentation().compareTo(n2.getPresentation());
     }
-    if (eq_u06ccl_a0b0e(SNodeOperations.getContainingLink(n1), SNodeOperations.getContainingLink(n2))) {
-      return SNodeOperations.getIndexInParent(n1) - SNodeOperations.getIndexInParent(n2);
-    }
+
     List<SNode> children = IterableUtil.asList(SNodeOperations.getParent(n1).getChildren());
     return ListSequence.fromList(children).indexOf(n1) - ListSequence.fromList(children).indexOf(n2);
-  }
-  private static boolean eq_u06ccl_a0b0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }
