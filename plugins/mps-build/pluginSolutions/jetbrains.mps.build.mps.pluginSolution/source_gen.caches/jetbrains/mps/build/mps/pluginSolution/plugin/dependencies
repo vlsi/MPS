@@ -183,7 +183,6 @@
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.IErrorHandler" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractStep" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.GenerateBuildForProjectAction_Action" file="GenerateBuildForProjectAction_Action.java">
@@ -216,7 +215,7 @@
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.ModelStep" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.SolutionStep" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode extendsClassName="com.intellij.ide.wizard.AbstractWizard" />
   </dependency>
@@ -284,7 +283,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep" file="LanguagesStep.java">
     <classNode dependClassName="java.awt.GridBagLayout" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Comparator" />
@@ -316,28 +314,25 @@
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractStep" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.ModelStep" file="ModelStep.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.IErrorHandler" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
@@ -359,7 +354,6 @@
     <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.NodeData" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.ModulesListData" file="ModulesListData.java">
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Comparator" />
@@ -406,15 +400,12 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.IErrorHandler" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.TwoOptionsStep" />
   </dependency>
