@@ -37,6 +37,7 @@ import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.Content;
+import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -142,7 +143,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   @ToRemove(version = 3.3)
   public void findUsages(IResultProvider provider, SearchQuery query, boolean isRerunnable, boolean showOne, boolean forceNewTab, String notFoundMsg) {
     findUsages(provider, query,
-        new UsageToolOptions().allowRunAgain(isRerunnable).navigateIfSingle(!showOne).forceNewTab(forceNewTab).notFoundMessage(notFoundMsg));
+               new UsageToolOptions().allowRunAgain(isRerunnable).navigateIfSingle(!showOne).forceNewTab(forceNewTab).notFoundMessage(notFoundMsg));
   }
 
   private void findUsages(IResultProvider provider, final SearchQuery query, final UsageToolOptions options) {
@@ -243,7 +244,11 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     myDefaultViewOptions.read(defaultViewOptionsXML, project);
 
     ApplicationManager.getApplication().invokeLater(() -> {
-      if (getContentManager().getContentCount() == 0) {
+      ContentManager cm = getContentManager();
+      if (cm == null) {
+        return;
+      }
+      if (cm.getContentCount() == 0) {
         makeUnavailableLater();
       }
     });
