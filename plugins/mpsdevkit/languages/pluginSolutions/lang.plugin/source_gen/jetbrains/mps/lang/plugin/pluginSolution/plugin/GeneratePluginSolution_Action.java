@@ -30,7 +30,7 @@ public class GeneratePluginSolution_Action extends BaseAction {
   public GeneratePluginSolution_Action() {
     super("Plugin Solution", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
@@ -61,7 +61,7 @@ public class GeneratePluginSolution_Action extends BaseAction {
       return;
     }
 
-    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runWriteAction(new Runnable() {
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().executeCommand(new Runnable() {
       public void run() {
         ModelRoot defaultRoot = s.getModelRoots().iterator().next();
         SModel newModel = defaultRoot.createModel(s.getModuleName() + ".plugin");

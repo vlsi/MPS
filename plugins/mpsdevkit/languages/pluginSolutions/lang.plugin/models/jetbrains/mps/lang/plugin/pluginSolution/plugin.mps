@@ -417,6 +417,7 @@
   <node concept="sE7Ow" id="7$e6lgA3B_D">
     <property role="TrG5h" value="GeneratePluginSolution" />
     <property role="2uzpH1" value="Plugin Solution" />
+    <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="7$e6lgA3B_E" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -507,7 +508,7 @@
               </node>
             </node>
             <node concept="liA8E" id="3DVVPRJFIl5" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+              <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
               <node concept="2ShNRf" id="3DVVPRJFIxz" role="37wK5m">
                 <node concept="YeOm9" id="3DVVPRJFJ8e" role="2ShVmc">
                   <node concept="1Y3b0j" id="3DVVPRJFJ8h" role="YeSDq">
