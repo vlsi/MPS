@@ -10458,26 +10458,6 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="3clFbF" id="1q4WFGK3qHr" role="3cqZAp">
-                          <node concept="1rXfSq" id="4hiugqyzcMH" role="3clFbG">
-                            <ref role="37wK5l" node="6Ti13it31m4" resolve="copyIcon" />
-                            <node concept="2OqwBi" id="1q4WFGK3qHu" role="37wK5m">
-                              <node concept="liA8E" id="1q4WFGK3qHv" role="2OqNvi">
-                                <ref role="37wK5l" to="3s15:~MPSApplicationInfo.getDialogImageURL():java.net.URL" resolve="getDialogImageURL" />
-                              </node>
-                              <node concept="2YIFZM" id="1q4WFGK3qHw" role="2Oq$k0">
-                                <ref role="37wK5l" to="3s15:~MPSApplicationInfo.getInstance():jetbrains.mps.workbench.MPSApplicationInfo" resolve="getInstance" />
-                                <ref role="1Pybhc" to="3s15:~MPSApplicationInfo" resolve="MPSApplicationInfo" />
-                              </node>
-                            </node>
-                            <node concept="37vLTw" id="3GM_nagTsNJ" role="37wK5m">
-                              <ref role="3cqZAo" node="1q4WFGK3qG7" resolve="iconsDir" />
-                            </node>
-                            <node concept="Xl_RD" id="1q4WFGK3qHz" role="37wK5m">
-                              <property role="Xl_RC" value="dialogImage.png" />
-                            </node>
-                          </node>
-                        </node>
                       </node>
                       <node concept="2AHcQZ" id="3tYsUK_UxbK" role="2AJF6D">
                         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />

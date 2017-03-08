@@ -15,7 +15,6 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.application.ex.ApplicationInfoEx;
-import jetbrains.mps.workbench.MPSApplicationInfo;
 import jetbrains.mps.core.platform.MPSCore;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -120,7 +119,6 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         copyIcon(instanceEx.getIconUrl(), iconsDir, "MPS32.png");
         copyIcon(instanceEx.getSplashImageUrl(), iconsDir, "splash.png");
         copyIcon(instanceEx.getWelcomeScreenLogoUrl(), iconsDir, "logo.png");
-        copyIcon(MPSApplicationInfo.getInstance().getDialogImageURL(), iconsDir, "dialogImage.png");
       }
     });
   }

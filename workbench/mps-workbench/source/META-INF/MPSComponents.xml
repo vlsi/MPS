@@ -67,9 +67,6 @@
       <implementation-class>jetbrains.mps.workbench.findusages.StubModelsFastFindSupport</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.workbench.MPSApplicationInfo</implementation-class>
-    </component>
-    <component>
       <implementation-class>com.intellij.platform.PlatformProjectStarter</implementation-class>
     </component>
     <component>
