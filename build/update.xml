@@ -132,9 +132,8 @@
              url="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.1+EAP+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2017" minorVersoin="1">
-      <build number="171.415" version="2017.1 EAP2">
-        <message>JetBrains MPS 2017.1 EAP2 is available.</message>
-        <button name="What's New" url="https://confluence.jetbrains.com/display/MPS/What%27s+new+in+MPS+2017.1+EAP2"/>
+      <build number="171.621" version="2017.1 EAP3">
+        <message>JetBrains MPS 2017.1 EAP3 is available.</message>
         <button name="Download" url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.1+EAP+Download+Page/" download="true"/>
       </build>
     </channel>
