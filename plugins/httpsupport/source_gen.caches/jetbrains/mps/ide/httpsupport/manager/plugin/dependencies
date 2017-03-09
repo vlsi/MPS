@@ -53,9 +53,9 @@
     <classNode dependClassName="io.netty.handler.codec.http.HttpResponseStatus" />
     <classNode dependClassName="io.netty.handler.codec.http.QueryStringDecoder" />
     <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.net.URISyntaxException" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />

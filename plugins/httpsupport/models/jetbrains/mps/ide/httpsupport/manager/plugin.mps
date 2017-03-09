@@ -380,7 +380,7 @@
             </node>
             <node concept="3clFbJ" id="6qcSpWPRll$" role="3cqZAp">
               <node concept="3clFbS" id="6qcSpWPRllA" role="3clFbx">
-                <node concept="2GUZhq" id="5dkEk59X871" role="3cqZAp">
+                <node concept="2GUZhq" id="12oNA5U0W89" role="3cqZAp">
                   <node concept="3clFbS" id="7IkZ1uxy$RQ" role="2GV8ay">
                     <node concept="3clFbF" id="7IkZ1uxy_l8" role="3cqZAp">
                       <node concept="2OqwBi" id="3D_I_vuCk5t" role="3clFbG">
@@ -396,71 +396,30 @@
                   <node concept="TDmWw" id="7IkZ1uxy$RR" role="TEXxN">
                     <node concept="3cpWsn" id="7IkZ1uxy$RT" role="TDEfY">
                       <property role="TrG5h" value="e" />
-                      <node concept="3uibUv" id="7IkZ1uxy_15" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+                      <node concept="3uibUv" id="12oNA5U0Gpz" role="1tU5fm">
+                        <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="7IkZ1uxy$RX" role="TDEfX">
-                      <node concept="3cpWs8" id="5dkEk59Xdr_" role="3cqZAp">
-                        <node concept="3cpWsn" id="5dkEk59XdrC" role="3cpWs9">
-                          <property role="TrG5h" value="errorHeader" />
-                          <node concept="17QB3L" id="5dkEk59Xdrz" role="1tU5fm" />
-                          <node concept="3cpWs3" id="5dkEk59XdNz" role="33vP2m">
-                            <node concept="3cpWs3" id="5dkEk59XdN_" role="3uHU7B">
-                              <node concept="Xl_RD" id="5dkEk59XdNA" role="3uHU7B">
-                                <property role="Xl_RC" value="Request handler '" />
-                              </node>
-                              <node concept="2OqwBi" id="5dkEk59XdNB" role="3uHU7w">
-                                <node concept="2GrUjf" id="5dkEk59XdNC" role="2Oq$k0">
-                                  <ref role="2Gs0qQ" node="7IkZ1uxyusx" resolve="handlerFactory" />
-                                </node>
-                                <node concept="liA8E" id="5dkEk59XdND" role="2OqNvi">
-                                  <ref role="37wK5l" node="6qcSpWPQxIi" resolve="getHandlerName" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="Xl_RD" id="5dkEk59XdN$" role="3uHU7w">
-                              <property role="Xl_RC" value="' throws exception" />
-                            </node>
+                      <node concept="3clFbF" id="6C6WuS9MHCX" role="3cqZAp">
+                        <node concept="1rXfSq" id="6C6WuS9MHCV" role="3clFbG">
+                          <ref role="37wK5l" node="6C6WuS9MFYc" resolve="handleException" />
+                          <node concept="37vLTw" id="6C6WuS9MHLf" role="37wK5m">
+                            <ref role="3cqZAo" node="7IkZ1uxy$RT" resolve="e" />
                           </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbH" id="5FAyHK_DDOo" role="3cqZAp" />
-                      <node concept="3clFbF" id="5YhakczIOox" role="3cqZAp">
-                        <node concept="2OqwBi" id="5YhakczIOJK" role="3clFbG">
-                          <node concept="37vLTw" id="5YhakczIOov" role="2Oq$k0">
+                          <node concept="2GrUjf" id="6C6WuS9MHZ1" role="37wK5m">
+                            <ref role="2Gs0qQ" node="7IkZ1uxyusx" resolve="handlerFactory" />
+                          </node>
+                          <node concept="37vLTw" id="6C6WuS9MIks" role="37wK5m">
                             <ref role="3cqZAo" node="24d57bnBvUG" resolve="boxedRequest" />
                           </node>
-                          <node concept="liA8E" id="5YhakczIOSj" role="2OqNvi">
-                            <ref role="37wK5l" node="5YhakczIim2" resolve="sendErrorResponse" />
-                            <node concept="10M0yZ" id="5FAyHK_D7zz" role="37wK5m">
-                              <ref role="3cqZAo" to="9xw8:~HttpResponseStatus.INTERNAL_SERVER_ERROR" resolve="INTERNAL_SERVER_ERROR" />
-                              <ref role="1PxDUh" to="9xw8:~HttpResponseStatus" resolve="HttpResponseStatus" />
-                            </node>
-                            <node concept="37vLTw" id="1Hl7x1at70F" role="37wK5m">
-                              <ref role="3cqZAo" node="5dkEk59XdrC" resolve="errorHeader" />
-                            </node>
-                            <node concept="37vLTw" id="5YhakczIQvd" role="37wK5m">
-                              <ref role="3cqZAo" node="7IkZ1uxy$RT" resolve="e" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="34ab3g" id="7IkZ1uxyplQ" role="3cqZAp">
-                        <property role="35gtTG" value="error" />
-                        <property role="34fQS0" value="true" />
-                        <node concept="37vLTw" id="7IkZ1uxyplU" role="34bMjA">
-                          <ref role="3cqZAo" node="7IkZ1uxy$RT" resolve="e" />
-                        </node>
-                        <node concept="37vLTw" id="5dkEk59Xi1x" role="34bqiv">
-                          <ref role="3cqZAo" node="5dkEk59XdrC" resolve="errorHeader" />
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbS" id="5dkEk59X874" role="2GVbov">
-                    <node concept="3cpWs6" id="5dkEk59X8sp" role="3cqZAp">
-                      <node concept="3clFbT" id="5dkEk59X8AB" role="3cqZAk">
+                  <node concept="3clFbS" id="12oNA5U0W8c" role="2GVbov">
+                    <node concept="3cpWs6" id="12oNA5U0TXe" role="3cqZAp">
+                      <node concept="3clFbT" id="12oNA5U0U70" role="3cqZAk">
                         <property role="3clFbU" value="true" />
                       </node>
                     </node>
@@ -490,6 +449,91 @@
       </node>
       <node concept="2AHcQZ" id="3xqp3A6tCTM" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6C6WuS9MFFI" role="jymVt" />
+    <node concept="3clFb_" id="6C6WuS9MFYc" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="handleException" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="6C6WuS9MFYf" role="3clF47">
+        <node concept="3cpWs8" id="6C6WuS9MEKa" role="3cqZAp">
+          <node concept="3cpWsn" id="6C6WuS9MEKb" role="3cpWs9">
+            <property role="TrG5h" value="errorHeader" />
+            <node concept="17QB3L" id="6C6WuS9MEKc" role="1tU5fm" />
+            <node concept="3cpWs3" id="6C6WuS9MEKd" role="33vP2m">
+              <node concept="3cpWs3" id="6C6WuS9MEKe" role="3uHU7B">
+                <node concept="Xl_RD" id="6C6WuS9MEKf" role="3uHU7B">
+                  <property role="Xl_RC" value="Request handler '" />
+                </node>
+                <node concept="2OqwBi" id="6C6WuS9MEKg" role="3uHU7w">
+                  <node concept="37vLTw" id="6C6WuS9MH2P" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6C6WuS9MGbl" resolve="factory" />
+                  </node>
+                  <node concept="liA8E" id="6C6WuS9MEKi" role="2OqNvi">
+                    <ref role="37wK5l" node="6qcSpWPQxIi" resolve="getHandlerName" />
+                  </node>
+                </node>
+              </node>
+              <node concept="Xl_RD" id="6C6WuS9MEKj" role="3uHU7w">
+                <property role="Xl_RC" value="' throws exception" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6C6WuS9MEKk" role="3cqZAp" />
+        <node concept="3clFbF" id="6C6WuS9MEKl" role="3cqZAp">
+          <node concept="2OqwBi" id="6C6WuS9MEKm" role="3clFbG">
+            <node concept="37vLTw" id="6C6WuS9MHxa" role="2Oq$k0">
+              <ref role="3cqZAo" node="6C6WuS9MHix" resolve="request" />
+            </node>
+            <node concept="liA8E" id="6C6WuS9MEKo" role="2OqNvi">
+              <ref role="37wK5l" node="5YhakczIim2" resolve="sendErrorResponse" />
+              <node concept="10M0yZ" id="6C6WuS9MEKp" role="37wK5m">
+                <ref role="1PxDUh" to="9xw8:~HttpResponseStatus" resolve="HttpResponseStatus" />
+                <ref role="3cqZAo" to="9xw8:~HttpResponseStatus.INTERNAL_SERVER_ERROR" resolve="INTERNAL_SERVER_ERROR" />
+              </node>
+              <node concept="37vLTw" id="6C6WuS9MEKq" role="37wK5m">
+                <ref role="3cqZAo" node="6C6WuS9MEKb" resolve="errorHeader" />
+              </node>
+              <node concept="37vLTw" id="6C6WuS9MEKr" role="37wK5m">
+                <ref role="3cqZAo" node="6C6WuS9MG5H" resolve="e" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="34ab3g" id="6C6WuS9MEKt" role="3cqZAp">
+          <property role="35gtTG" value="error" />
+          <property role="34fQS0" value="true" />
+          <node concept="37vLTw" id="6C6WuS9MFm5" role="34bMjA">
+            <ref role="3cqZAo" node="6C6WuS9MG5H" resolve="e" />
+          </node>
+          <node concept="37vLTw" id="6C6WuS9MEKv" role="34bqiv">
+            <ref role="3cqZAo" node="6C6WuS9MEKb" resolve="errorHeader" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6C6WuS9MFOM" role="1B3o_S" />
+      <node concept="3cqZAl" id="6C6WuS9MFVA" role="3clF45" />
+      <node concept="37vLTG" id="6C6WuS9MG5H" role="3clF46">
+        <property role="TrG5h" value="e" />
+        <node concept="3uibUv" id="6C6WuS9MG5G" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6C6WuS9MGbl" role="3clF46">
+        <property role="TrG5h" value="factory" />
+        <node concept="3uibUv" id="6C6WuS9MGgJ" role="1tU5fm">
+          <ref role="3uigEE" node="3D_I_vuBX$7" resolve="IHttpRequestHandlerFactory" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6C6WuS9MHix" role="3clF46">
+        <property role="TrG5h" value="request" />
+        <node concept="3uibUv" id="6C6WuS9MHuE" role="1tU5fm">
+          <ref role="3uigEE" node="6GArDv5HYVM" resolve="HttpRequest" />
+        </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="3xqp3A6t$Ps" role="1B3o_S" />

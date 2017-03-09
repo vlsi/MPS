@@ -6,14 +6,14 @@ import org.jetbrains.ide.HttpRequestHandler;
 import org.jetbrains.annotations.NotNull;
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.HttpMethod;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import io.netty.handler.codec.http.QueryStringDecoder;
 import io.netty.channel.ChannelHandlerContext;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import org.apache.log4j.Level;
 
@@ -24,7 +24,6 @@ public class MPSRequestManager extends HttpRequestHandler {
     return request.method() == HttpMethod.GET;
   }
 
-  protected static Logger LOG = LogManager.getLogger(MPSRequestManager.class);
   @Override
   public boolean process(@NotNull QueryStringDecoder decoder, @NotNull FullHttpRequest request, @NotNull ChannelHandlerContext context) throws IOException {
     HttpRequest boxedRequest;
@@ -39,18 +38,23 @@ public class MPSRequestManager extends HttpRequestHandler {
       if (handler.canHandle()) {
         try {
           handler.handle();
-        } catch (Exception e) {
-          String errorHeader = "Request handler '" + handlerFactory.getHandlerName() + "' throws exception";
-
-          boxedRequest.sendErrorResponse(HttpResponseStatus.INTERNAL_SERVER_ERROR, errorHeader, e);
-          if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error(errorHeader, e);
-          }
+        } catch (Throwable e) {
+          handleException(e, handlerFactory, boxedRequest);
         } finally {
           return true;
         }
       }
     }
     return false;
+  }
+
+  protected static Logger LOG = LogManager.getLogger(MPSRequestManager.class);
+  public void handleException(Throwable e, IHttpRequestHandlerFactory factory, HttpRequest request) {
+    String errorHeader = "Request handler '" + factory.getHandlerName() + "' throws exception";
+
+    request.sendErrorResponse(HttpResponseStatus.INTERNAL_SERVER_ERROR, errorHeader, e);
+    if (LOG.isEnabledFor(Level.ERROR)) {
+      LOG.error(errorHeader, e);
+    }
   }
 }
