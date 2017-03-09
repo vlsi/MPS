@@ -700,6 +700,19 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="1JuK1Kcet5" role="3acgRq">
+      <ref role="30HIoZ" to="tp2q:1JuK1Kcd8U" resolve="NotNullOperation" />
+      <node concept="gft3U" id="1JuK1KcgXu" role="1lVwrX">
+        <node concept="liA8E" id="1JuK1KczNG" role="gfFT$">
+          <ref role="37wK5l" to="urs3:5Ffu4tBUx5Y" resolve="where" />
+          <node concept="2ShNRf" id="1JuK1Kc$DC" role="37wK5m">
+            <node concept="1pGfFk" id="1JuK1KcCjs" role="2ShVmc">
+              <ref role="37wK5l" to="vq2z:1JuK1K9lRL" resolve="NotNullWhereFilter" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="hYH_$6N" role="3acgRq">
       <ref role="30HIoZ" to="tp2q:hYHxqzP" resolve="AllOperation" />
       <node concept="gft3U" id="hYH__wI" role="1lVwrX">

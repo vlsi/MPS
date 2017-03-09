@@ -140,6 +140,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_RemoveSetElementOperation = new ConceptPresentationBuilder().deprecated(true).shortDesc("remove an element").create();
   private final ConceptPresentation props_RemoveWhereOperation = new ConceptPresentationBuilder().shortDesc("filter out the matched elements").create();
   private final ConceptPresentation props_ReverseOperation = new ConceptPresentationBuilder().shortDesc("create a list with elements in reverse order").create();
+  private final ConceptPresentation props_SelectNotNullOperation = new ConceptPresentationBuilder().shortDesc("exclude null elements").create();
   private final ConceptPresentation props_SelectOperation = new ConceptPresentationBuilder().shortDesc("transform each element to another type").create();
   private final ConceptPresentation props_SequenceCreator = new ConceptPresentationBuilder().shortDesc("create new sequence").create();
   private final ConceptPresentation props_SequenceOperation = new ConceptPresentationBuilder().create();
@@ -447,6 +448,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_RemoveWhereOperation;
       case LanguageConceptSwitch.ReverseOperation:
         return props_ReverseOperation;
+      case LanguageConceptSwitch.SelectNotNullOperation:
+        return props_SelectNotNullOperation;
       case LanguageConceptSwitch.SelectOperation:
         return props_SelectOperation;
       case LanguageConceptSwitch.SequenceCreator:

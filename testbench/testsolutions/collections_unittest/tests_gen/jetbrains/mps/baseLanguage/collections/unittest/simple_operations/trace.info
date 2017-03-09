@@ -12,6 +12,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
@@ -90,8 +91,8 @@
       <node id="1165526704344" at="19,0,28,0" concept="8" trace="test_S1#()V" />
       <node id="1165526992412" at="129,0,138,0" concept="8" trace="test_L1#()V" />
       <node id="1165527190595" at="138,0,147,0" concept="8" trace="test_L2#()V" />
-      <node id="1224596674627" at="37,20,60,19" concept="13" />
-      <node id="1224596674658" at="88,20,111,19" concept="13" />
+      <node id="1224596674627" at="37,20,60,19" concept="14" />
+      <node id="1224596674658" at="88,20,111,19" concept="14" />
       <node id="1224596674627" at="35,46,61,31" concept="3" />
       <node id="1224596674658" at="86,46,112,31" concept="3" />
       <node id="1224596674627" at="35,0,64,0" concept="8" trace="moveToNext#()Z" />
@@ -294,7 +295,7 @@
       <node id="1205787985087" at="64,17,65,16" concept="4" />
       <node id="1205787995891" at="65,16,66,65" concept="4" />
       <node id="1172267731982" at="60,0,68,0" concept="8" trace="test_test2#()V" />
-      <node id="1224596675028" at="25,20,48,19" concept="13" />
+      <node id="1224596675028" at="25,20,48,19" concept="14" />
       <node id="1224596675028" at="23,46,49,31" concept="3" />
       <node id="1224596675028" at="23,0,52,0" concept="8" trace="moveToNext#()Z" />
       <node id="1224596675028" at="20,47,52,14" concept="10" />
@@ -379,8 +380,8 @@
       <node id="1205789000428" at="105,67,106,64" concept="4" />
       <node id="1205789128065" at="106,64,107,65" concept="9" />
       <node id="1205789148356" at="107,65,108,57" concept="4" />
-      <node id="1224596674916" at="22,20,45,19" concept="13" />
-      <node id="1224596674538" at="62,20,85,19" concept="13" />
+      <node id="1224596674916" at="22,20,45,19" concept="14" />
+      <node id="1224596674538" at="62,20,85,19" concept="14" />
       <node id="1224596674916" at="20,46,46,31" concept="3" />
       <node id="1224596674538" at="60,46,86,31" concept="3" />
       <node id="1224596674916" at="20,0,49,0" concept="8" trace="moveToNext#()Z" />
@@ -508,7 +509,7 @@
       <node id="1178900391959" at="112,66,117,13" concept="4" />
       <node id="1205788070346" at="124,0,129,0" concept="8" trace="test__null#()V" />
       <node id="1178898653156" at="17,0,43,0" concept="8" trace="test_distinct1#()V" />
-      <node id="1224596675102" at="53,20,92,19" concept="13" />
+      <node id="1224596675102" at="53,20,92,19" concept="14" />
       <node id="1224596675102" at="51,46,93,31" concept="3" />
       <node id="1224596675102" at="51,0,96,0" concept="8" trace="moveToNext#()Z" />
       <node id="1224596675102" at="48,47,96,14" concept="10" />
@@ -868,32 +869,32 @@
       <node id="3891516456976043518" at="552,0,554,0" concept="2" trace="NaiveSetOperations_Test#()V" />
       <node id="1180976086647" at="555,96,558,5" concept="6" />
       <node id="1180976112578" at="558,5,561,5" concept="6" />
-      <node id="1209906614569" at="565,41,568,5" concept="14" />
+      <node id="1209906614569" at="565,41,568,5" concept="15" />
       <node id="1209906614605" at="573,41,576,5" concept="6" />
-      <node id="1209906614621" at="577,41,580,5" concept="14" />
+      <node id="1209906614621" at="577,41,580,5" concept="15" />
       <node id="1209906614713" at="594,39,597,7" concept="7" />
       <node id="1180974305208" at="535,0,539,0" concept="8" trace="test_union#()V" />
       <node id="1209906614660" at="585,60,589,5" concept="6" />
       <node id="1180974925059" at="539,0,545,0" concept="8" trace="test_exclude#()V" />
       <node id="1180975293807" at="545,0,552,0" concept="8" trace="test_intersect#()V" />
-      <node id="1209906614691" at="590,41,598,5" concept="14" />
+      <node id="1209906614691" at="590,41,598,5" concept="15" />
       <node id="1180976022795" at="554,0,563,0" concept="8" trace="assertSameContents#(Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
       <node id="1209906614553" at="563,0,572,0" concept="8" trace="assertIterableEquals#(Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
       <node id="1209906614595" at="572,0,584,0" concept="8" trace="assertIterableEqualsAsSet#(Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
-      <node id="1224596674248" at="435,18,450,17" concept="13" />
+      <node id="1224596674248" at="435,18,450,17" concept="14" />
       <node id="1224596674248" at="433,44,451,29" concept="3" />
       <node id="1209906614648" at="584,0,602,0" concept="8" trace="assertIterableEqualsIgnoreOrder#(Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
-      <node id="1224596675328" at="467,18,486,17" concept="13" />
+      <node id="1224596675328" at="467,18,486,17" concept="14" />
       <node id="1224596674248" at="433,0,454,0" concept="8" trace="moveToNext#()Z" />
       <node id="1224596675328" at="465,44,487,29" concept="3" />
-      <node id="1224596675249" at="251,18,274,17" concept="13" />
-      <node id="1224596675218" at="503,18,526,17" concept="13" />
+      <node id="1224596675249" at="251,18,274,17" concept="14" />
+      <node id="1224596675218" at="503,18,526,17" concept="14" />
       <node id="1224596674248" at="430,44,454,12" concept="10" />
       <node id="1224596675328" at="465,0,490,0" concept="8" trace="moveToNext#()Z" />
       <node id="1224596675249" at="249,44,275,29" concept="3" />
       <node id="1224596674248" at="430,0,456,0" concept="8" trace="iterator#()Ljava/util/Iterator;" />
       <node id="1224596675218" at="501,44,527,29" concept="3" />
-      <node id="1224596674504" at="391,18,418,17" concept="13" />
+      <node id="1224596674504" at="391,18,418,17" concept="14" />
       <node id="1224596674248" at="428,40,456,8" concept="10" />
       <node id="1224596675328" at="462,44,490,12" concept="10" />
       <node id="1224596675249" at="249,0,278,0" concept="8" trace="moveToNext#()Z" />
@@ -901,10 +902,10 @@
       <node id="1224596674504" at="389,44,419,29" concept="3" />
       <node id="1224596674248" at="428,0,458,0" concept="8" trace="iterable#()Ljava/lang/Iterable;" />
       <node id="1224596675328" at="462,0,492,0" concept="8" trace="iterator#()Ljava/util/Iterator;" />
-      <node id="1224596674826" at="75,18,106,17" concept="13" />
-      <node id="1224596675476" at="343,18,374,17" concept="13" />
+      <node id="1224596674826" at="75,18,106,17" concept="14" />
+      <node id="1224596675476" at="343,18,374,17" concept="14" />
       <node id="1224596675249" at="246,44,278,12" concept="10" />
-      <node id="1180977311679" at="427,0,459,0" concept="12" trace="c" />
+      <node id="1180977311679" at="427,0,459,0" concept="13" trace="c" />
       <node id="1224596675328" at="460,40,492,8" concept="10" />
       <node id="1224596675218" at="498,44,530,12" concept="10" />
       <node id="1224596674504" at="389,0,422,0" concept="8" trace="moveToNext#()Z" />
@@ -913,11 +914,11 @@
       <node id="1224596675476" at="341,44,375,29" concept="3" />
       <node id="1224596675328" at="460,0,494,0" concept="8" trace="iterable#()Ljava/lang/Iterable;" />
       <node id="1224596675218" at="498,0,532,0" concept="8" trace="iterator#()Ljava/util/Iterator;" />
-      <node id="1224596675182" at="23,18,58,17" concept="13" />
-      <node id="1224596674352" at="291,18,326,17" concept="13" />
+      <node id="1224596675182" at="23,18,58,17" concept="14" />
+      <node id="1224596674352" at="291,18,326,17" concept="14" />
       <node id="1224596675249" at="244,40,280,8" concept="10" />
       <node id="1224596674504" at="386,44,422,12" concept="10" />
-      <node id="1180975845066" at="459,0,495,0" concept="12" trace="cc" />
+      <node id="1180975845066" at="459,0,495,0" concept="13" trace="cc" />
       <node id="1224596675218" at="496,40,532,8" concept="10" />
       <node id="1224596674826" at="73,0,110,0" concept="8" trace="moveToNext#()Z" />
       <node id="1224596675476" at="341,0,378,0" concept="8" trace="moveToNext#()Z" />
@@ -927,48 +928,48 @@
       <node id="1224596674504" at="386,0,424,0" concept="8" trace="iterator#()Ljava/util/Iterator;" />
       <node id="1224596675218" at="496,0,534,0" concept="8" trace="iterable#()Ljava/lang/Iterable;" />
       <node id="1224596674826" at="70,44,110,12" concept="10" />
-      <node id="1180976565097" at="243,0,283,0" concept="12" trace="abc" />
+      <node id="1180976565097" at="243,0,283,0" concept="13" trace="abc" />
       <node id="1224596675476" at="338,44,378,12" concept="10" />
       <node id="1224596674504" at="384,40,424,8" concept="10" />
-      <node id="1180975323102" at="495,0,535,0" concept="12" trace="ccc" />
+      <node id="1180975323102" at="495,0,535,0" concept="13" trace="ccc" />
       <node id="1224596675182" at="21,0,62,0" concept="8" trace="moveToNext#()Z" />
       <node id="1224596674352" at="289,0,330,0" concept="8" trace="moveToNext#()Z" />
       <node id="1224596674826" at="70,0,112,0" concept="8" trace="iterator#()Ljava/util/Iterator;" />
       <node id="1224596675476" at="338,0,380,0" concept="8" trace="iterator#()Ljava/util/Iterator;" />
       <node id="1224596674504" at="384,0,426,0" concept="8" trace="iterable#()Ljava/lang/Iterable;" />
-      <node id="1224596674462" at="191,18,234,17" concept="13" />
+      <node id="1224596674462" at="191,18,234,17" concept="14" />
       <node id="1224596675182" at="18,44,62,12" concept="10" />
       <node id="1224596674826" at="68,40,112,8" concept="10" />
       <node id="1224596674352" at="286,44,330,12" concept="10" />
       <node id="1224596675476" at="336,40,380,8" concept="10" />
-      <node id="1180974964109" at="383,0,427,0" concept="12" trace="aabb" />
+      <node id="1180974964109" at="383,0,427,0" concept="13" trace="aabb" />
       <node id="1224596675182" at="18,0,64,0" concept="8" trace="iterator#()Ljava/util/Iterator;" />
       <node id="1224596674826" at="68,0,114,0" concept="8" trace="iterable#()Ljava/lang/Iterable;" />
       <node id="1224596674462" at="189,44,235,29" concept="3" />
       <node id="1224596674352" at="286,0,332,0" concept="8" trace="iterator#()Ljava/util/Iterator;" />
       <node id="1224596675476" at="336,0,382,0" concept="8" trace="iterable#()Ljava/lang/Iterable;" />
       <node id="1224596675182" at="16,40,64,8" concept="10" />
-      <node id="1209907158096" at="67,0,115,0" concept="12" trace="aabbc" />
+      <node id="1209907158096" at="67,0,115,0" concept="13" trace="aabbc" />
       <node id="1224596674352" at="284,40,332,8" concept="10" />
-      <node id="1180974557564" at="335,0,383,0" concept="12" trace="abcde" />
+      <node id="1180974557564" at="335,0,383,0" concept="13" trace="abcde" />
       <node id="1224596674462" at="189,0,238,0" concept="8" trace="moveToNext#()Z" />
       <node id="1224596675182" at="16,0,66,0" concept="8" trace="iterable#()Ljava/lang/Iterable;" />
       <node id="1224596674352" at="284,0,334,0" concept="8" trace="iterable#()Ljava/lang/Iterable;" />
-      <node id="1224596674414" at="123,18,174,17" concept="13" />
-      <node id="1180974321791" at="15,0,67,0" concept="12" trace="aabbcc" />
+      <node id="1224596674414" at="123,18,174,17" concept="14" />
+      <node id="1180974321791" at="15,0,67,0" concept="13" trace="aabbcc" />
       <node id="1224596674462" at="186,44,238,12" concept="10" />
-      <node id="1180974394196" at="283,0,335,0" concept="12" trace="cccdde" />
+      <node id="1180974394196" at="283,0,335,0" concept="13" trace="cccdde" />
       <node id="1224596674414" at="121,44,175,29" concept="3" />
       <node id="1224596674462" at="186,0,240,0" concept="8" trace="iterator#()Ljava/util/Iterator;" />
       <node id="1224596674462" at="184,40,240,8" concept="10" />
       <node id="1224596674414" at="121,0,178,0" concept="8" trace="moveToNext#()Z" />
       <node id="1224596674462" at="184,0,242,0" concept="8" trace="iterable#()Ljava/lang/Iterable;" />
       <node id="1224596674414" at="118,44,178,12" concept="10" />
-      <node id="1196886260484" at="183,0,243,0" concept="12" trace="ccaabbcc" />
+      <node id="1196886260484" at="183,0,243,0" concept="13" trace="ccaabbcc" />
       <node id="1224596674414" at="118,0,180,0" concept="8" trace="iterator#()Ljava/util/Iterator;" />
       <node id="1224596674414" at="116,40,180,8" concept="10" />
       <node id="1224596674414" at="116,0,182,0" concept="8" trace="iterable#()Ljava/lang/Iterable;" />
-      <node id="1209907051681" at="115,0,183,0" concept="12" trace="aabbcccdde" />
+      <node id="1209907051681" at="115,0,183,0" concept="13" trace="aabbcccdde" />
       <scope id="3891516456976043520" at="552,36,552,36" />
       <scope id="1224596675182" at="56,26,57,35" />
       <scope id="1224596674826" at="104,26,105,35" />
@@ -1277,8 +1278,8 @@
       <node id="1205787774080" at="105,88,106,63" concept="4" />
       <node id="1205787891988" at="106,63,107,68" concept="9" />
       <node id="1205787896043" at="107,68,108,64" concept="4" />
-      <node id="1224596674996" at="24,20,47,19" concept="13" />
-      <node id="1224596674277" at="64,20,87,19" concept="13" />
+      <node id="1224596674996" at="24,20,47,19" concept="14" />
+      <node id="1224596674277" at="64,20,87,19" concept="14" />
       <node id="1224596674996" at="22,46,48,31" concept="3" />
       <node id="1224596674277" at="62,46,88,31" concept="3" />
       <node id="1224596674996" at="22,0,51,0" concept="8" trace="moveToNext#()Z" />
@@ -1381,6 +1382,70 @@
       </scope>
       <scope id="1205789257750" at="11,0,25,0" />
       <unit id="1205789243372" at="10,0,26,0" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Null_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903c2(jetbrains.mps.baseLanguage.collections.unittest.simple_operations)/3797954653256380020">
+    <file name="SelectNotNullOperation_Test.java">
+      <node id="3797954653256380821" at="15,53,16,85" concept="9" />
+      <node id="3797954653256381181" at="16,85,17,0" concept="12" />
+      <node id="3797954653256381258" at="17,0,18,93" concept="4" />
+      <node id="3797954653256444515" at="26,0,27,0" concept="5" trace="__CP__" />
+      <node id="3797954653256444515" at="32,28,33,54" concept="0" />
+      <node id="3797954653256444515" at="33,54,34,35" concept="10" />
+      <node id="3797954653256445206" at="35,27,36,38" concept="4" />
+      <node id="3797954653256445206" at="36,38,37,47" concept="4" />
+      <node id="3797954653256445206" at="37,47,38,34" concept="10" />
+      <node id="3797954653256976536" at="39,27,40,38" concept="4" />
+      <node id="3797954653256976536" at="40,38,41,39" concept="4" />
+      <node id="3797954653256976536" at="41,39,42,34" concept="10" />
+      <node id="3797954653256444516" at="43,27,44,38" concept="4" />
+      <node id="3797954653256444516" at="44,38,45,28" concept="1" />
+      <node id="3797954653256444515" at="46,28,47,37" concept="1" />
+      <node id="3797954653256444515" at="49,31,50,29" concept="10" />
+      <node id="3797954653256579403" at="56,7,57,0" concept="12" />
+      <node id="3797954653256446178" at="57,0,58,0" concept="12" />
+      <node id="3797954653256848240" at="58,0,59,64" concept="4" />
+      <node id="3797954653256977512" at="59,64,60,66" concept="4" />
+      <node id="3797954653257046794" at="60,66,61,0" concept="12" />
+      <node id="3797954653257045000" at="61,0,62,96" concept="9" />
+      <node id="3797954653257042609" at="62,96,63,71" concept="4" />
+      <node id="3797954653256979007" at="63,71,64,74" concept="4" />
+      <node id="3797954653257042540" at="64,74,65,0" concept="12" />
+      <node id="3797954653256380525" at="15,0,20,0" concept="8" trace="test_EmptySequence#()V" />
+      <node id="3797954653256444515" at="29,20,48,19" concept="14" />
+      <node id="3797954653256444515" at="27,46,49,31" concept="3" />
+      <node id="3797954653256444515" at="27,0,52,0" concept="8" trace="moveToNext#()Z" />
+      <node id="3797954653256444515" at="24,47,52,14" concept="10" />
+      <node id="3797954653256444515" at="24,0,54,0" concept="8" trace="iterator#()Ljava/util/Iterator;" />
+      <node id="3797954653256444515" at="22,43,54,10" concept="10" />
+      <node id="3797954653256444515" at="22,0,56,0" concept="8" trace="iterable#()Ljava/lang/Iterable;" />
+      <node id="3797954653256444086" at="20,55,56,7" concept="9" />
+      <node id="3797954653256443955" at="20,0,67,0" concept="8" trace="test_IntegerSequence#()V" />
+      <scope id="3797954653256444515" at="46,28,47,37" />
+      <scope id="3797954653256444515" at="32,28,34,35" />
+      <scope id="3797954653256444516" at="43,27,45,28" />
+      <scope id="3797954653256380528" at="15,53,18,93">
+        <var name="intS" id="3797954653256380824" />
+      </scope>
+      <scope id="3797954653256445206" at="35,27,38,34" />
+      <scope id="3797954653256976536" at="39,27,42,34" />
+      <scope id="3797954653256380525" at="15,0,20,0" />
+      <scope id="3797954653256444515" at="29,20,48,19" />
+      <scope id="3797954653256444515" at="27,46,50,29" />
+      <scope id="3797954653256444515" at="27,0,52,0" />
+      <scope id="3797954653256444515" at="24,47,52,14" />
+      <scope id="3797954653256444515" at="24,0,54,0" />
+      <scope id="3797954653256444515" at="22,43,54,10" />
+      <scope id="3797954653256444515" at="22,0,56,0" />
+      <scope id="3797954653256443958" at="20,55,65,0">
+        <var name="intS" id="3797954653256444087" />
+        <var name="intSNotNull" id="3797954653257045003" />
+      </scope>
+      <scope id="3797954653256443955" at="20,0,67,0" />
+      <unit id="3797954653256444515" at="25,23,52,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SelectNotNullOperation_Test$1$1$1" />
+      <unit id="3797954653256444515" at="23,19,54,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SelectNotNullOperation_Test$1$1" />
+      <unit id="3797954653256444515" at="21,54,56,5" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SelectNotNullOperation_Test$1" />
+      <unit id="3797954653256380020" at="14,0,68,0" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SelectNotNullOperation_Test" />
     </file>
   </root>
 </debug-info>
