@@ -154,7 +154,7 @@ public class CreateFirstDeclaration_ext_3 extends TransformationMenuBase {
           @Nullable
           @Override
           public String getLabelText(String pattern) {
-            return NodePresentationUtil.matchingText(myParameterObject);
+            return NodePresentationUtil.visibleMatchingText(myParameterObject, null);
           }
 
           @Override

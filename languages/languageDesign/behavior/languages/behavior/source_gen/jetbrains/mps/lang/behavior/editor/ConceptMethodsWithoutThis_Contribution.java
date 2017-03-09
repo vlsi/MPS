@@ -92,7 +92,7 @@ public class ConceptMethodsWithoutThis_Contribution extends SubstituteMenuBase {
           @Override
           public String getMatchingText(@NotNull String pattern) {
             if (myParameterObject instanceof SNode) {
-              return NodePresentationUtil.matchingText((SNode) myParameterObject);
+              return NodePresentationUtil.visibleMatchingText((SNode) myParameterObject, null);
             }
             return "" + myParameterObject;
           }

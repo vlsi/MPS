@@ -38539,17 +38539,18 @@
               <node concept="3clFbJ" id="38TrnUp4YYF" role="3cqZAp">
                 <node concept="3clFbS" id="38TrnUp4YYH" role="3clFbx">
                   <node concept="3cpWs6" id="2wzsDBzUDHB" role="3cqZAp">
-                    <node concept="2YIFZM" id="2wzsDBzUDHD" role="3cqZAk">
+                    <node concept="2YIFZM" id="4AvAon1SIOL" role="3cqZAk">
+                      <ref role="37wK5l" to="5b0:~NodePresentationUtil.visibleMatchingText(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="visibleMatchingText" />
                       <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
-                      <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="matchingText" />
-                      <node concept="10QFUN" id="2wzsDBzUDHE" role="37wK5m">
-                        <node concept="37vLTw" id="2wzsDBzUDHF" role="10QFUP">
+                      <node concept="10QFUN" id="4AvAon1SIOM" role="37wK5m">
+                        <node concept="37vLTw" id="4AvAon1SION" role="10QFUP">
                           <ref role="3cqZAo" node="1MWbOI3DwPd" resolve="myParameterObject" />
                         </node>
-                        <node concept="3uibUv" id="2wzsDBzUDHG" role="10QFUM">
+                        <node concept="3uibUv" id="4AvAon1SIOO" role="10QFUM">
                           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                         </node>
                       </node>
+                      <node concept="10Nm6u" id="4AvAon1T0Bw" role="37wK5m" />
                     </node>
                   </node>
                 </node>

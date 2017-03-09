@@ -7485,10 +7485,11 @@
             <node concept="1hCUdq" id="1wEcoXjJ88k" role="1hCUd6">
               <node concept="3clFbS" id="1wEcoXjJ88l" role="2VODD2">
                 <node concept="3clFbF" id="1wEcoXjJ88m" role="3cqZAp">
-                  <node concept="2YIFZM" id="1wEcoXjJ88n" role="3clFbG">
+                  <node concept="2YIFZM" id="4AvAon1SF0K" role="3clFbG">
+                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.visibleMatchingText(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="visibleMatchingText" />
                     <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
-                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="matchingText" />
-                    <node concept="2ZBlsa" id="1wEcoXjJ88q" role="37wK5m" />
+                    <node concept="2ZBlsa" id="4AvAon1SF0L" role="37wK5m" />
+                    <node concept="10Nm6u" id="4AvAon1SGE5" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -7888,10 +7889,11 @@
             <node concept="1hCUdq" id="1wEcoXjJ8bv" role="1hCUd6">
               <node concept="3clFbS" id="1wEcoXjJ8bw" role="2VODD2">
                 <node concept="3clFbF" id="1wEcoXjJ8bx" role="3cqZAp">
-                  <node concept="2YIFZM" id="5dQjTsKl_gn" role="3clFbG">
+                  <node concept="2YIFZM" id="4AvAon1SCrc" role="3clFbG">
+                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.visibleMatchingText(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="visibleMatchingText" />
                     <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
-                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="matchingText" />
-                    <node concept="2ZBlsa" id="5dQjTsKl_go" role="37wK5m" />
+                    <node concept="2ZBlsa" id="4AvAon1SCrd" role="37wK5m" />
+                    <node concept="10Nm6u" id="4AvAon1SELB" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -8243,10 +8245,11 @@
             <node concept="1hCUdq" id="1wEcoXjJ8em" role="1hCUd6">
               <node concept="3clFbS" id="1wEcoXjJ8en" role="2VODD2">
                 <node concept="3clFbF" id="1wEcoXjJ8eo" role="3cqZAp">
-                  <node concept="2YIFZM" id="1wEcoXjJ8ep" role="3clFbG">
+                  <node concept="2YIFZM" id="4AvAon1S_nf" role="3clFbG">
+                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.visibleMatchingText(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="visibleMatchingText" />
                     <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
-                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="matchingText" />
-                    <node concept="2ZBlsa" id="1wEcoXjJ8es" role="37wK5m" />
+                    <node concept="2ZBlsa" id="4AvAon1S_ng" role="37wK5m" />
+                    <node concept="10Nm6u" id="4AvAon1SCcc" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -8503,10 +8506,11 @@
             <node concept="uGdhv" id="1wEcoXjJfkk" role="16NeZM">
               <node concept="3clFbS" id="1wEcoXjJfkl" role="2VODD2">
                 <node concept="3clFbF" id="1wEcoXjJfkm" role="3cqZAp">
-                  <node concept="2YIFZM" id="1wEcoXjJfkn" role="3clFbG">
+                  <node concept="2YIFZM" id="4AvAon1SIiI" role="3clFbG">
+                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.visibleMatchingText(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="visibleMatchingText" />
                     <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
-                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="matchingText" />
-                    <node concept="2ZBlsa" id="1wEcoXjJfkq" role="37wK5m" />
+                    <node concept="2ZBlsa" id="4AvAon1SIiJ" role="37wK5m" />
+                    <node concept="10Nm6u" id="4AvAon1SIt5" role="37wK5m" />
                   </node>
                 </node>
               </node>

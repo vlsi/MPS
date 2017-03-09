@@ -94,7 +94,7 @@ public class LinkDeclaration_SubstituteMenu extends SubstituteMenuBase {
           @Nullable
           @Override
           public String getMatchingText(@NotNull String pattern) {
-            return NodePresentationUtil.matchingText(myParameterObject);
+            return NodePresentationUtil.visibleMatchingText(myParameterObject, null);
           }
           @Nullable
           @Override
