@@ -178,12 +178,20 @@ public class ModelImportHelper {
     }
 
     protected void runImportCommand(final SModelReference modelToImport, T... callbackParameters) {
+      // Have to extract preparation of ModelImporter outside command,
+      // because ModelImporter#confirmModuleChanges require Swing, which is not allowed inside command.
+      final ModelImporter modelImporter = new ModelImporter(myModel);
+      myProject.getModelAccess().runReadAction(() -> modelImporter.prepare(modelToImport));
+      final boolean confirmed = !modelImporter.affectsModuleDependencies() || modelImporter.confirmModuleChanges(getFrame());
+
       Runnable command;
       if (myContextNode != null) {
         command = new NodeBasedCommand(myContextNode) {
           @Override
           public void run() {
-            doImport(modelToImport);
+            if (confirmed) {
+              modelImporter.execute();
+            }
             executeCallback(callbackParameters);
           }
         };
@@ -191,24 +199,14 @@ public class ModelImportHelper {
         command = new DefaultCommand() {
           @Override
           public void run() {
-            doImport(modelToImport);
+            if (confirmed) {
+              modelImporter.execute();
+            }
             executeCallback(callbackParameters);
           }
         };
       }
       myProject.getModelAccess().executeCommand(command);
-    }
-
-    private void doImport(final SModelReference modelToImport) {
-      final ModelImporter modelImporter = new ModelImporter(myModel);
-      modelImporter.prepare(modelToImport);
-      boolean confirmed = true;
-      if (modelImporter.affectsModuleDependencies()) {
-        confirmed = modelImporter.confirmModuleChanges(getFrame());
-      }
-      if (confirmed) {
-        modelImporter.execute();
-      }
     }
 
     public void executeCallback(T... parameters) {
