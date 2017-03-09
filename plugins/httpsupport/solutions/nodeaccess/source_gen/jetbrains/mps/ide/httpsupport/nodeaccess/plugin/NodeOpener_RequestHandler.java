@@ -14,6 +14,7 @@ import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
 import jetbrains.mps.project.ProjectManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import com.intellij.openapi.ui.Messages;
 import org.apache.log4j.Level;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.buffer.Unpooled;
@@ -69,16 +70,18 @@ public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
   @Override
   public void handle() throws Exception {
     if (this.project != null) {
-      this.project.getModelAccess().runWriteInEDT(new Runnable() {
-        public void run() {
-          HandlerUtil.openNode(NodeOpener_RequestHandler.this.request, NodeOpener_RequestHandler.this.project, NodeOpener_RequestHandler.this.ref);
-        }
-      });
+      if (!(HandlerUtil.openNode(this.request, this.project, this.ref))) {
+        this.project.getModelAccess().runReadInEDT(new Runnable() {
+          public void run() {
+            Messages.showErrorDialog("Can't find node " + NodeOpener_RequestHandler.this.ref + "\nMaybe it has been deleted?", "Error");
+          }
+        });
+      }
     } else {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("No project is available.");
       }
-      this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
     }
+    this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
   }
 }

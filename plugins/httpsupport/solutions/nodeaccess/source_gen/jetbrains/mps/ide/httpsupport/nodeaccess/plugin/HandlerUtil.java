@@ -5,9 +5,9 @@ package jetbrains.mps.ide.httpsupport.nodeaccess.plugin;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
-import com.intellij.openapi.ui.Messages;
+import org.jetbrains.mps.openapi.module.SRepository;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.buffer.Unpooled;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -24,18 +24,30 @@ public class HandlerUtil {
 
 
 
-  public static void openNode(HttpRequest request, final Project project, final SNodeReference nodeReference) {
+  public static boolean openNode(HttpRequest request, final Project project, final SNodeReference nodeReference) {
+    if (nodeReference == null) {
+      return false;
+    }
+    final Wrappers._T<SNode> resolvedNode = new Wrappers._T<SNode>();
     final SRepository repository = project.getRepository();
 
-    SNode node = nodeReference.resolve(repository);
-    if (node == null) {
-      Messages.showErrorDialog("Can't find node  " + nodeReference + "\nMaybe it has been deleted?", "Error");
-      request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(FAILURE_STREAM));
-    } else {
-      NavigationSupport.getInstance().openNode(project, node, true, true);
-      request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(SUCCESS_STREAM));
-      requestFocus(project);
+    repository.getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        resolvedNode.value = nodeReference.resolve(repository);
+      }
+    });
+
+    if (resolvedNode.value != null) {
+      request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
+
+      repository.getModelAccess().runWriteInEDT(new Runnable() {
+        public void run() {
+          NavigationSupport.getInstance().openNode(project, resolvedNode.value, true, true);
+          requestFocus(project);
+        }
+      });
     }
+    return resolvedNode.value != null;
   }
 
   public static void requestFocus(Project project) {

@@ -74,10 +74,10 @@ public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
           this.project.getModelAccess().runWriteInEDT(new Runnable() {
             public void run() {
               FileOpenUtil.openFile(ideaProject, virtualFile, 1);
-              FileOpener_RequestHandler.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
               HandlerUtil.requestFocus(FileOpener_RequestHandler.this.project);
             }
           });
+          this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
           return;
         }
       }

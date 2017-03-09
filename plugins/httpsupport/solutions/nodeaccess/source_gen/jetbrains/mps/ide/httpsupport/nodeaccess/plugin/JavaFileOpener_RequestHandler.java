@@ -94,45 +94,45 @@ public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
       int sourceGen = this.file.lastIndexOf(HandlerUtil.SOURCE_GEN);
       int unitNamePosition = (sourceGen == -1 ? 0 : sourceGen + HandlerUtil.SOURCE_GEN.length());
       int unitNameEndPostion = this.file.length() - ".java".length();
-      final String unitName = this.file.substring(unitNamePosition, unitNameEndPostion).replace('/', '.');
-      final String namespace = unitName.substring(0, unitName.lastIndexOf("."));
+      String unitName = this.file.substring(unitNamePosition, unitNameEndPostion).replace('/', '.');
+      String namespace = unitName.substring(0, unitName.lastIndexOf("."));
 
       final String fileName = this.file.substring(this.file.lastIndexOf("/") + 1);
 
-      this.project.getModelAccess().runWriteInEDT(new Runnable() {
-        public void run() {
-          Iterator<DebugInfo> it = new DefaultTraceInfoProvider(JavaFileOpener_RequestHandler.this.project.getRepository()).debugInfo(namespace).iterator();
-          while (it.hasNext()) {
-            if (JavaFileOpener_RequestHandler.this.line != null) {
-              final SNodeReference nodeReference = new BaseLanguageNodeLookup(it.next()).getNodeAt(fileName, JavaFileOpener_RequestHandler.this.line);
-              if (nodeReference != null) {
-                HandlerUtil.openNode(JavaFileOpener_RequestHandler.this.request, JavaFileOpener_RequestHandler.this.project, nodeReference);
-                return;
-              }
-            } else {
-              Iterable<DebugInfoRoot> debugInfoRoots = it.next().getRoots();
-              SNodeReference nodeReference = Sequence.fromIterable(debugInfoRoots).where(new IWhereFilter<DebugInfoRoot>() {
-                public boolean accept(DebugInfoRoot debugInfoRoot) {
-                  return debugInfoRoot.getFileNames().contains(fileName);
-                }
-              }).first().getNodeRef();
-              if (nodeReference != null) {
-                HandlerUtil.openNode(JavaFileOpener_RequestHandler.this.request, JavaFileOpener_RequestHandler.this.project, nodeReference);
-                return;
-              }
-            }
-          }
-
-          final VirtualFile virtualFile = FileOpenUtil.findFile(ideaProject, unitName, fileName);
-          if (virtualFile != null) {
-            FileOpenUtil.openFile(ideaProject, virtualFile, (JavaFileOpener_RequestHandler.this.line == null ? 1 : JavaFileOpener_RequestHandler.this.line));
-            JavaFileOpener_RequestHandler.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
-            HandlerUtil.requestFocus(JavaFileOpener_RequestHandler.this.project);
+      Iterator<DebugInfo> it = new DefaultTraceInfoProvider(this.project.getRepository()).debugInfo(namespace).iterator();
+      if (this.line != null) {
+        while (it.hasNext()) {
+          final SNodeReference nodeReference = new BaseLanguageNodeLookup(it.next()).getNodeAt(fileName, this.line);
+          if (HandlerUtil.openNode(this.request, this.project, nodeReference)) {
             return;
           }
-          JavaFileOpener_RequestHandler.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
         }
-      });
+      } else {
+        while (it.hasNext()) {
+          Iterable<DebugInfoRoot> debugInfoRoots = it.next().getRoots();
+          SNodeReference nodeReference = Sequence.fromIterable(debugInfoRoots).where(new IWhereFilter<DebugInfoRoot>() {
+            public boolean accept(DebugInfoRoot debugInfoRoot) {
+              return debugInfoRoot.getFileNames().contains(fileName);
+            }
+          }).first().getNodeRef();
+          if (HandlerUtil.openNode(this.request, this.project, nodeReference)) {
+            return;
+          }
+        }
+      }
+
+      final VirtualFile virtualFile = FileOpenUtil.findFile(ideaProject, unitName, fileName);
+      if (virtualFile != null) {
+        this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
+        this.project.getModelAccess().runWriteInEDT(new Runnable() {
+          public void run() {
+            FileOpenUtil.openFile(ideaProject, virtualFile, (JavaFileOpener_RequestHandler.this.line == null ? 1 : JavaFileOpener_RequestHandler.this.line));
+            HandlerUtil.requestFocus(JavaFileOpener_RequestHandler.this.project);
+          }
+        });
+        return;
+      }
+      this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
     } else {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("No project is available.");
