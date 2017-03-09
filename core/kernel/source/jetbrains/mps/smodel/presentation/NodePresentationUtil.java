@@ -47,14 +47,18 @@ import java.awt.Font;
  * 2) matching text:
  *     - custom text by overriding ISmartReferent#getMatchingText(context)
  *     - resolveInfo from IResolveInfo
- *       TODO IResolveInfo now uses mostly to distinct matchingText and visibleMatchingText
+ *       TODO IResolveInfo now uses mostly to separate matchingText and visibleMatchingText
  *     - default presentation
- * 3) matching text:
+ * 3) visible matching text:
  *     - custom text by overriding ISmartReferent#getVisibleMatchingText(context)
  *     - default presentation
  * 4) description text:
  *     - custom text by overriding ISmartReferent#getDescriptionText(context)
  *     - {conceptName} ( {where} )
+ *
+ * These facilities should be used only in editor-runtime for specifying the textual presentation of referenced node in completion, etc.
+ * Other subsystems should not rely on it and use {@link SNode#getPresentation()} or {@link SNode#getName()} instead.
+ * TODO Should be moved to editor-runtime?
  */
 public class NodePresentationUtil {
 
@@ -95,6 +99,9 @@ public class NodePresentationUtil {
     return m;
   }
 
+  /**
+   * Provides a text that should be shown in editor to present a referenced node.
+   */
   public static String presentation(@NotNull SNode node, @Nullable SNode context) {
     return getPresentation(node, SmartReferentUtil.getPresentation(context, node));
   }
@@ -116,23 +123,31 @@ public class NodePresentationUtil {
     return matchingText(concept);
   }
 
+  /**
+   *
+   * @deprecated This method provides a visible matching text instead of real matching text, that might be confusing.
+   *             Should be replaced with {@link #visibleMatchingText(SNode, SNode)}.
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static String matchingText(SNode node) {
-    return matchingText(node, null);
+    return visibleMatchingText(node, null);
   }
 
   /**
    *
-   * @deprecated use {@link #matchingText(SNode)}  instead.
+   * @deprecated This method provides a visible matching text instead of real matching text, that might be confusing.
+   *             Should be replaced with {@link #visibleMatchingText(SNode, SNode)}.
    */
   @Deprecated
   @ToRemove(version = 3.5)
   public static String matchingText(SNode node, boolean referent_presentation) {
-    return matchingText(node, null);
+    return visibleMatchingText(node, null);
   }
 
   /**
    *
-   * @deprecated use {@link #matchingText(SNode)}, {@link #matchingText(SNode, SNode, boolean)} or {@link #visibleMatchingText(SNode, SNode)}
+   * @deprecated use {@link #matchingText(SNode, SNode)}, {@link #matchingText(SNode, SNode, boolean)} or {@link #visibleMatchingText(SNode, SNode)}
    */
   @Deprecated
   @ToRemove(version = 3.5)
@@ -140,6 +155,9 @@ public class NodePresentationUtil {
     return matchingText(node, null, visible);
   }
 
+  /**
+   * Provides a text that will be matched with user-typed pattern in completion menu.
+   */
   public static String matchingText(@NotNull SNode node, @Nullable SNode context) {
     return getPresentation(node, SmartReferentUtil.getMatchingText(context, node));
   }
@@ -151,6 +169,11 @@ public class NodePresentationUtil {
     return getPresentation(node, SmartReferentUtil.getMatchingText(context, node, visible));
   }
 
+  /**
+   * Provides a text that presents given node in completion menu.
+   * This text also can be used for matching with user-typed pattern,
+   * if there is no necessity to facilitate the separation between real matching text and visible matching text.
+   */
   public static String visibleMatchingText(@NotNull SNode node, @Nullable SNode context) {
     return getPresentation(node, SmartReferentUtil.getVisibleMatchingText(context, node));
   }

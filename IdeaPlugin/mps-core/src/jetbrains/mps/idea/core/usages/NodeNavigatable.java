@@ -24,7 +24,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -47,7 +46,7 @@ public abstract class NodeNavigatable implements Navigatable {
 
     myTextPresentation = modelAccessHelper.runReadAction(() -> {
       final SNode resolve = node.resolve(repository);
-      return resolve == null ? node.toString() : NodePresentationUtil.matchingText(resolve);
+      return resolve == null ? node.toString() : resolve.getPresentation();
     });
 
     myRootNode = modelAccessHelper.runReadAction(() -> {

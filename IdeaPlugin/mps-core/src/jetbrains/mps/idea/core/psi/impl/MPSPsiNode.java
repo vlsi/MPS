@@ -23,7 +23,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -173,7 +172,7 @@ public class MPSPsiNode extends MPSPsiNodeBase implements MPSPsiRealNode {
       // Try resolve and set presentation. If it fails - will try next time.
       myPresentation = new ModelAccessHelper(repository).runReadAction(() -> {
         final SNode resolve = getSNodeReference().resolve(repository);
-        return resolve == null ? null : NodePresentationUtil.matchingText(resolve);
+        return resolve == null ? null : resolve.getPresentation();
       });
     }
     return myPresentation == null ? myConcept + ": as " + myContainingRole : myPresentation;

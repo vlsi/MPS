@@ -18,7 +18,6 @@ package jetbrains.mps.workbench.choose;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -43,8 +42,7 @@ public class NodePointerNavigationItem implements NavigationItem, ItemPresentati
 
   public NodePointerNavigationItem(@NotNull SNode node) {
     myNodePointer = node.getReference();
-    // FIXME use of NodePresentationUtil is dubious, do we still need it? Meanwhile, copied as is from NodePointerPresentation class.
-    myName = NodePresentationUtil.matchingText(node);
+    myName = node.getPresentation();
     myIcon = IconManager.getIconFor(node);
   }
 

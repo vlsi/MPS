@@ -98,7 +98,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
 
   protected String getMatchingText(Object parameterObject) {
     if (parameterObject instanceof SNode) {
-      return NodePresentationUtil.matchingText((SNode) parameterObject);
+      return NodePresentationUtil.visibleMatchingText((SNode) parameterObject, null);
     }
     return "" + parameterObject;
   }

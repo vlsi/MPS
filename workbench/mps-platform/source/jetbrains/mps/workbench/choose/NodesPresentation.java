@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.choose;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -55,7 +54,7 @@ public class NodesPresentation implements ElementPresentation<SNodeReference> {
   protected String renderName(SNode node) {
     // use of NodePresentationUtil.matchingText originates from legacy code, merely copied from NodePointerPresentation
     // I got no idea what's the reason to use that method
-    return myNameFunc == null ? NodePresentationUtil.matchingText(node) : myNameFunc.apply(node);
+    return myNameFunc == null ? node.getPresentation() : myNameFunc.apply(node);
   }
 
   @Override
