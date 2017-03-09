@@ -19,6 +19,7 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.actionSystem.ShortcutSet;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.TransactionGuard;
 import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.scope.ConditionalScope;
@@ -178,35 +179,37 @@ public class ModelImportHelper {
     }
 
     protected void runImportCommand(final SModelReference modelToImport, T... callbackParameters) {
-      // Have to extract preparation of ModelImporter outside command,
-      // because ModelImporter#confirmModuleChanges require Swing, which is not allowed inside command.
-      final ModelImporter modelImporter = new ModelImporter(myModel);
-      myProject.getModelAccess().runReadAction(() -> modelImporter.prepare(modelToImport));
-      final boolean confirmed = !modelImporter.affectsModuleDependencies() || modelImporter.confirmModuleChanges(getFrame());
+      TransactionGuard.getInstance().submitTransactionAndWait(() -> {
+        // Have to extract preparation of ModelImporter outside command,
+        // because ModelImporter#confirmModuleChanges require Swing, which is not allowed inside command.
+        final ModelImporter modelImporter = new ModelImporter(myModel);
+        myProject.getModelAccess().runReadAction(() -> modelImporter.prepare(modelToImport));
+        final boolean confirmed = !modelImporter.affectsModuleDependencies() || modelImporter.confirmModuleChanges(getFrame());
 
-      Runnable command;
-      if (myContextNode != null) {
-        command = new NodeBasedCommand(myContextNode) {
-          @Override
-          public void run() {
-            if (confirmed) {
-              modelImporter.execute();
+        Runnable command;
+        if (myContextNode != null) {
+          command = new NodeBasedCommand(myContextNode) {
+            @Override
+            public void run() {
+              if (confirmed) {
+                modelImporter.execute();
+              }
+              executeCallback(callbackParameters);
             }
-            executeCallback(callbackParameters);
-          }
-        };
-      } else {
-        command = new DefaultCommand() {
-          @Override
-          public void run() {
-            if (confirmed) {
-              modelImporter.execute();
+          };
+        } else {
+          command = new DefaultCommand() {
+            @Override
+            public void run() {
+              if (confirmed) {
+                modelImporter.execute();
+              }
+              executeCallback(callbackParameters);
             }
-            executeCallback(callbackParameters);
-          }
-        };
-      }
-      myProject.getModelAccess().executeCommand(command);
+          };
+        }
+        myProject.getModelAccess().executeCommand(command);
+      });
     }
 
     public void executeCallback(T... parameters) {
