@@ -10133,6 +10133,14 @@
         <property role="3hacHL" value="replace all" />
       </node>
     </node>
+    <node concept="Zd509" id="7enUb_9G9tI" role="Zd508">
+      <ref role="1bYAoF" node="6KwcZ1G3Plp" resolve="SelectDown" />
+      <node concept="pLAjd" id="7enUb_9G9tK" role="Zd501">
+        <property role="pLAjc" value="alt" />
+        <property role="pLAjf" value="VK_DOWN" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
     <node concept="Zd509" id="2HiVo5PaRe3" role="Zd508">
       <ref role="1bYAoF" node="2M3H3BXpUD9" resolve="ShowGenerationActions" />
       <node concept="pLAjd" id="2HiVo5PaRe4" role="Zd501">

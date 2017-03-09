@@ -158,6 +158,7 @@
       <keyboard-shortcut first-keystroke="ctrl shift W" keymap="Mac OS X" />
       <keyboard-shortcut first-keystroke="ctrl DOWN" keymap="Mac OS X 10.5+" />
       <keyboard-shortcut first-keystroke="ctrl shift W" keymap="Mac OS X 10.5+" />
+      <keyboard-shortcut first-keystroke="alt DOWN" keymap="Mac OS X 10.5+" replace-all="true" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.SelectLeft_Action" class="jetbrains.mps.ide.editor.actions.SelectLeft_Action">
       <keyboard-shortcut first-keystroke="shift LEFT" keymap="$default" />
