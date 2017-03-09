@@ -120,10 +120,6 @@ public class NodePresentationUtil {
     return matchingText(node, null);
   }
 
-  public static String visibleMatchingText(SNode node) {
-    return visibleMatchingText(node, null);
-  }
-
   /**
    *
    * @deprecated use {@link #matchingText(SNode)}  instead.
