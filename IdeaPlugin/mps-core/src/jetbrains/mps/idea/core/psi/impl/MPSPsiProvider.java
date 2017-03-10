@@ -16,11 +16,11 @@
 package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.openapi.actionSystem.LangDataKeys;
+import com.intellij.openapi.application.TransactionGuard;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorDataProvider;
 import com.intellij.openapi.fileEditor.FileEditorDataProviderManager;
-import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
@@ -32,14 +32,7 @@ import com.intellij.psi.impl.PsiManagerImpl;
 import com.intellij.psi.impl.PsiModificationTrackerImpl;
 import com.intellij.psi.impl.PsiTreeChangeEventImpl;
 import com.intellij.psi.impl.file.impl.FileManager;
-import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.util.Processor;
-import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.FileBasedIndexExtension;
-import com.intellij.util.indexing.ID;
-import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor;
@@ -51,7 +44,6 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -64,8 +56,8 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleListenerBase;
+import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -85,10 +77,37 @@ public class MPSPsiProvider extends AbstractProjectComponent {
 
   private SModelEventProcessor myEventProcessor;
 
+  /**
+   * We're notifying about changes in PSI via
+   * {@link com.intellij.psi.impl.PsiModificationTrackerImpl#incCounter()}).
+   * It asserts {@link com.intellij.openapi.application.TransactionGuardImpl#assertWriteActionAllowed()
+   * The problem is the command which created the events we're reacting to might have been either
+   * inside a transaction or not. Currently, most MPS actions don't invoke a transaction. Moreover,
+   * calls to runWriteInEDT() and the like, which happen to exist in MPS actions, run the given code
+   * via LaterInvocator and the code is executed not in a transaction.
+   * <p>
+   * Thus, we should expect both scenarios.
+   * <p>
+   * In the future, maybe we should drop the case when we're creating our own fake transaction here.
+   * It can be done either by removing runWriteInEDT in actions (because every action is wrapped
+   * in {@link com.intellij.openapi.application.TransactionGuardImpl#performUserActivity(Runnable)})
+   * or by invoking a transaction explicitly in the action.
+   */
   private SModelCommandListener myListener = new SModelCommandListener() {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
-      myEventProcessor.process(events);
-
+      Runnable processEvents = () -> myEventProcessor.process(events);
+      if (TransactionGuard.getInstance().getContextTransaction() != null) {
+        // the command that caused the events was in a transaction
+        processEvents.run();
+      } else {
+        // hackish, might be dropped in the future
+        TransactionGuard.submitTransaction(myProject, () -> {
+          SRepository repository = ProjectHelper.getProjectRepository(myProject);
+          if (repository != null) {
+            repository.getModelAccess().runWriteAction(processEvents);
+          }
+        });
+      }
 
       // TODO PsiModificationTrackerImpl.incCounter/incOutOfCodeBlockModificationCounter (see JavaCodeBlockModificationListener)
       // TODO notify ANY_PSI_CHANGE_TOPIC
