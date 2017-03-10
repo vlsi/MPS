@@ -28,6 +28,7 @@
         <property id="1207318242774" name="keycode" index="pLAjf" />
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
+        <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
         <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
@@ -175,6 +176,7 @@
     <property role="TrG5h" value="ShowNodeMessages" />
     <property role="2uzpH1" value="Show Node Messages" />
     <property role="1teQrl" value="true" />
+    <property role="72QZ$" value="true" />
     <node concept="tnohg" id="6G33IkaAPC0" role="tncku">
       <node concept="3clFbS" id="6G33IkaAPC1" role="2VODD2">
         <node concept="3cpWs8" id="6G33IkaAPC2" role="3cqZAp">
@@ -430,11 +432,6 @@
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
       <node concept="1oajcY" id="6G33IkaAPDl" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="6G33IkaAPDm" role="1NuT2Z">
-      <property role="TrG5h" value="frame" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
-      <node concept="1oajcY" id="6G33IkaAPDn" role="1oa70y" />
     </node>
   </node>
   <node concept="Zd50a" id="6G33IkaAPDt">

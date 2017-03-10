@@ -18,7 +18,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import java.awt.Frame;
 import com.intellij.openapi.ui.Messages;
 
 public class ShowNodeMessages_Action extends BaseAction {
@@ -27,7 +26,7 @@ public class ShowNodeMessages_Action extends BaseAction {
   public ShowNodeMessages_Action() {
     super("Show Node Messages", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
@@ -71,13 +70,6 @@ public class ShowNodeMessages_Action extends BaseAction {
       }
       MapSequence.fromMap(_params).put("editorComponent", editorComponent);
       if (editorComponent == null) {
-        return false;
-      }
-    }
-    {
-      Frame p = event.getData(MPSCommonDataKeys.FRAME);
-      MapSequence.fromMap(_params).put("frame", p);
-      if (p == null) {
         return false;
       }
     }
