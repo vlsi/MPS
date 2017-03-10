@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.util.Pair;
 
+import java.awt.event.InputMethodEvent;
 import java.awt.event.KeyEvent;
 import java.util.Collection;
 
@@ -77,7 +78,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
 
     if (selectedCell != null) {
       final boolean strictMatching = jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM.equals(actionType) ||
-          jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM.equals(actionType);
+                                     jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM.equals(actionType);
 
       if (selectedCell.isErrorState() && strictMatching) {
         EditorComputable<Boolean> validateCommand = new EditorComputable<Boolean>(editorContext) {
@@ -88,7 +89,9 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         };
         editorContext.getRepository().getModelAccess().executeCommand(validateCommand);
 
-        if (validateCommand.getResult()) return true;
+        if (validateCommand.getResult()) {
+          return true;
+        }
       }
 
       if (actionType != null
@@ -141,5 +144,11 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       myKeymapHandler.showActionsMenu(actionCellPairs, editorContext, selectedCell);
     }
     return true;
+  }
+
+  @Override
+  public boolean processTextChanged(EditorContext editorContext, InputMethodEvent inputEvent) {
+    EditorCell selectedCell = editorContext.getSelectedCell();
+    return selectedCell != null && ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).processTextChanged(inputEvent);
   }
 }

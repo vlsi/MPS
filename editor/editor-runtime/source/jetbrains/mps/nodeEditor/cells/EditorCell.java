@@ -21,6 +21,7 @@ import org.jetbrains.mps.util.Condition;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.InputMethodEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
@@ -48,6 +49,8 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   boolean processKeyPressed(KeyEvent e, boolean allowErrors);
 
   boolean processKeyTyped(KeyEvent e, boolean allowErrors);
+
+  boolean processTextChanged(InputMethodEvent e);
 
   /**
    * @deprecated since MPS 3.4 use {@link #findLeaf(int, int)} and check the condition upon returned cell

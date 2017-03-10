@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
+import jetbrains.mps.nodeEditor.ui.InputMethodListenerImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -52,6 +53,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.event.InputMethodEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
@@ -473,18 +475,41 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     }
 
     ModelAccess modelAccess = getContext().getRepository().getModelAccess();
+    String text = String.valueOf(keyEvent.getKeyChar());
     if (isEditable()) {
-      ProcessKeyTypedCommand keyTypedCommand = new ProcessKeyTypedCommand(keyEvent, allowErrors, side, getContext());
+      ModifyTextCommand keyTypedCommand = new ModifyTextCommand(text, allowErrors, side, getContext());
       modelAccess.executeCommand(keyTypedCommand);
       getEditor().relayout();
       return keyTypedCommand.getResult();
     } else if (side != null) {
-      String pattern = getTextOnEvent(keyEvent);
+      String pattern = getUpdatedText(text);
       if (!pattern.equals(getRenderedText())) {
         return IntelligentInputUtil.processCell(this, getContext(), pattern, side);
       }
     }
     return false;
+  }
+
+  @Override
+  public boolean processTextChanged(InputMethodEvent e) {
+    if (!isEditable()) {
+      return false;
+    }
+    ModelAccess modelAccess = getContext().getRepository().getModelAccess();
+
+    if (!myTextLine.hasNonTrivialSelection()) {
+      // selecting last symbol entered by user in order to replace if with the result fo input method processing
+      int caretPosition = getCaretPosition();
+      if (isCaretPositionAllowed(caretPosition - 1)) {
+        setCaretPosition(caretPosition - 1, true);
+      }
+    }
+    ModifyTextCommand keyTypedCommand = new ModifyTextCommand(InputMethodListenerImpl.getText(e), true, null, getContext());
+    modelAccess.executeCommand(keyTypedCommand);
+    if (keyTypedCommand.getResult()) {
+      getEditor().relayout();
+    }
+    return keyTypedCommand.getResult();
   }
 
   private void addChangeTextUndoableAction() {
@@ -504,15 +529,14 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   /**
-   * @param keyEvent "keyTyped" event, allowsIntelligentInputKeyStroke(keyEvent) should be true
-   * @return the string contained in myTextLine updated in accordance with passed keyEvent
+   * @param replacingText the text, replacing selected fragment
+   * @return the string contained in myTextLine, updated by replacing selected text fragment with the replacingText parameter
    */
-  private String getTextOnEvent(KeyEvent keyEvent) {
+  private String getUpdatedText(String replacingText) {
     String currentText = myTextLine.getText();
     int startSelection = myTextLine.getStartTextSelectionPosition();
     int endSelection = myTextLine.getEndTextSelectionPosition();
-    char keyChar = keyEvent.getKeyChar();
-    return currentText.substring(0, startSelection) + keyChar + currentText.substring(endSelection);
+    return currentText.substring(0, startSelection) + replacingText + currentText.substring(endSelection);
   }
 
   private boolean canDeleteFrom(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
@@ -1042,21 +1066,21 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     }
   }
 
-  private class ProcessKeyTypedCommand extends EditorComputable<Boolean> implements UndoRunnable {
-    private final KeyEvent myKeyEvent;
+  public class ModifyTextCommand extends EditorComputable<Boolean> implements UndoRunnable {
+    private final String myReplacingText;
     private final boolean myAllowErrors;
     private final CellSide mySide;
 
-    public ProcessKeyTypedCommand(KeyEvent keyEvent, boolean allowErrors, CellSide side, EditorContext context) {
+    public ModifyTextCommand(String replacingText, boolean allowErrors, CellSide side, EditorContext context) {
       super(context);
-      myKeyEvent = keyEvent;
+      myReplacingText = replacingText;
       myAllowErrors = allowErrors;
       mySide = side;
     }
 
     @Override
     protected Boolean doCompute() {
-      if (processMutableKeyTyped(myKeyEvent, myAllowErrors)) {
+      if (processMutableKeyTyped(myReplacingText, myAllowErrors)) {
         getContext().flushEvents();
         addChangeTextUndoableAction();
 
@@ -1070,18 +1094,18 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
         }
         return true;
       }
-      return isErrorState() && mySide == CellSide.LEFT && myKeyEvent.getKeyChar() == ' ';
+      return isErrorState() && mySide == CellSide.LEFT && " ".equals(myReplacingText);
     }
 
-    private boolean processMutableKeyTyped(KeyEvent keyEvent, final boolean allowErrors) {
-      String newText = getTextOnEvent(keyEvent);
+    private boolean processMutableKeyTyped(String replacement, final boolean allowErrors) {
+      String newText = getUpdatedText(replacement);
       if (!allowErrors && !isValidText(newText)) {
         return false;
       }
 
       int startSelection = myTextLine.getStartTextSelectionPosition();
       changeText(newText);
-      setCaretPositionIfPossible(startSelection + 1);
+      setCaretPositionIfPossible(startSelection + myReplacingText.length());
       myTextLine.resetSelection();
       fireSelectionChanged();
       ensureCaretVisible();

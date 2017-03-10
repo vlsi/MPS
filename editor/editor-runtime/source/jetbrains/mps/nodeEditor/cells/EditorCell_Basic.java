@@ -65,6 +65,7 @@ import org.jetbrains.mps.util.Condition;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.InputMethodEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -498,6 +499,11 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     });
 
     return true;
+  }
+
+  @Override
+  public boolean processTextChanged(InputMethodEvent e) {
+    return false;
   }
 
   protected boolean isTextTypedEvent(KeyEvent e) {

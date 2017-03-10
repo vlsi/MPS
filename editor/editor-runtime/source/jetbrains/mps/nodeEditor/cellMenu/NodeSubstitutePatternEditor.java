@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.TextLine;
+import jetbrains.mps.nodeEditor.ui.InputMethodListenerImpl;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -30,6 +31,7 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Window;
+import java.awt.event.InputMethodEvent;
 import java.awt.event.KeyEvent;
 
 /**
@@ -57,6 +59,7 @@ public class NodeSubstitutePatternEditor {
   public boolean isActivated() {
     return myEditorActivated;
   }
+
   public String getText() {
     if (myEditorActivated) {
       return myEditorWindow.myTextLine.getText();
@@ -112,6 +115,14 @@ public class NodeSubstitutePatternEditor {
 
   public boolean processKeyTyped(KeyEvent keyEvent) {
     if (myEditorActivated && myEditorWindow.processKeyTyped(keyEvent)) {
+      mySavedCaretPosition = 0;
+      return true;
+    }
+    return false;
+  }
+
+  public boolean processTextChanged(InputMethodEvent inputEvent) {
+    if (myEditorActivated && myEditorWindow.processTextChanged(inputEvent)) {
       mySavedCaretPosition = 0;
       return true;
     }
@@ -205,6 +216,22 @@ public class NodeSubstitutePatternEditor {
       return false;
     }
 
+    public boolean processTextChanged(InputMethodEvent inputEvent) {
+      String oldText = myTextLine.getText();
+      int caretPosition = myTextLine.getCaretPosition();
+      if (caretPosition > 0) {
+        // replacing last symbol before the caret with the text from input method
+        caretPosition--;
+      }
+
+      String text = InputMethodListenerImpl.getText(inputEvent);
+      changeText(oldText.substring(0, caretPosition) + text);
+      myTextLine.setCaretPosition(caretPosition + text.length());
+      relayout();
+      repaint();
+      return true;
+    }
+
     private boolean processKeyTypedInternal(KeyEvent keyEvent) {
       String oldText = myTextLine.getText();
       int caretPosition = myTextLine.getCaretPosition();
@@ -278,6 +305,7 @@ public class NodeSubstitutePatternEditor {
     protected void changeText(String text) {
       myTextLine.setText(text);
     }
+
     private class EditorPanel extends JPanel {
       @Override
       protected void paintComponent(Graphics g) {

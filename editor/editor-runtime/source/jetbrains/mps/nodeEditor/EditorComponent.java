@@ -108,6 +108,8 @@ import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.nodeEditor.selection.SelectionInternal;
 import jetbrains.mps.nodeEditor.selection.SelectionManagerImpl;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.ui.InputMethodListenerImpl;
+import jetbrains.mps.nodeEditor.ui.InputMethodRequestsImpl;
 import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.openapi.editor.ActionHandler;
@@ -205,6 +207,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.im.InputMethodRequests;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -230,6 +233,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private final ClassLoaderManager myClassLoaderManager;
 
   private String myDefaultPopupGroupId = MPSActions.EDITOR_POPUP_GROUP;
+  private InputMethodRequests myInputMethodRequests;
 
   public static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
@@ -3152,6 +3156,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean isPastePossible() {
     return !(isDisposed() || isInvalidLightweight() || ReadOnlyUtil.isSelectionReadOnlyInEditor(EditorComponent.this) ||
              getSelectionManager().getSelection() == null);
+  }
+
+  @Override
+  public InputMethodRequests getInputMethodRequests() {
+// Uncomment at the moment https://youtrack.jetbrains.com/issue/JRE-252 is fixed
+//    if (ReadOnlyUtil.isSelectionReadOnlyInEditor(this)) {
+//      return null;
+//    }
+
+    hideMessageToolTip();
+
+    if (myInputMethodRequests == null) {
+      myInputMethodRequests = new InputMethodRequestsImpl(this);
+      addInputMethodListener(new InputMethodListenerImpl(this));
+    }
+    return myInputMethodRequests;
   }
 
   /**

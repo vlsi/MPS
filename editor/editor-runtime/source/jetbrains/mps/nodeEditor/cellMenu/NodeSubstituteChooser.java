@@ -61,6 +61,7 @@ import java.awt.Rectangle;
 import java.awt.Window;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.event.InputMethodEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -479,6 +480,15 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   @Override
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
+    return false;
+  }
+
+  @Override
+  public boolean processTextChanged(EditorContext editorContext, InputMethodEvent inputEvent) {
+    if (getPatternEditor().processTextChanged(inputEvent)) {
+      processKeyEventInternal();
+      return true;
+    }
     return false;
   }
 
