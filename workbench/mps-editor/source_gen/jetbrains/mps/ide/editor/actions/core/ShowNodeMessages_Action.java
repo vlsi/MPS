@@ -34,11 +34,11 @@ public class ShowNodeMessages_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ListSequence.fromList(((List<SimpleEditorMessage>) ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().getMessagesFor(((SNode) MapSequence.fromMap(_params).get("node"))))).where(new IWhereFilter<SimpleEditorMessage>() {
+    return ListSequence.fromList(((List<SimpleEditorMessage>) ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().getMessagesFor(((SNode) MapSequence.fromMap(_params).get("node"))))).any(new IWhereFilter<SimpleEditorMessage>() {
       public boolean accept(SimpleEditorMessage it) {
         return isNotEmptyString(it.getMessage());
       }
-    }).isNotEmpty();
+    });
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -78,20 +78,33 @@ public class ShowNodeMessages_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     List<SimpleEditorMessage> messages = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().getMessagesFor(((SNode) MapSequence.fromMap(_params).get("node")));
-    StringBuilder sb = new StringBuilder();
-    for (SimpleEditorMessage message : ListSequence.fromList(messages).where(new IWhereFilter<SimpleEditorMessage>() {
+    messages = ListSequence.fromList(messages).removeWhere(new IWhereFilter<SimpleEditorMessage>() {
       public boolean accept(SimpleEditorMessage it) {
-        return isNotEmptyString(it.getMessage());
+        return isEmptyString(it.getMessage());
       }
-    })) {
+    });
+    // Try to guess messages text size 
+    StringBuilder sb = new StringBuilder(200 * ListSequence.fromList(messages).count());
+    sb.append("<html>");
+    for (SimpleEditorMessage message : messages) {
+      sb.append("<p>");
       sb.append(message.getMessage());
-      sb.append("; owner is ");
+      sb.append("<br>");
+      sb.append("Message owner: ");
       sb.append(message.getOwner());
-      sb.append("\n");
+      sb.append("</p>");
+      if (!(ListSequence.fromList(messages).last().equals(message))) {
+        sb.append("<br>");
+      }
     }
-    Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), sb.toString(), "Node Messages", Messages.getInformationIcon());
+    sb.append("<html>");
+
+    Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), sb.toString(), "Node Messages");
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
   }
 }
