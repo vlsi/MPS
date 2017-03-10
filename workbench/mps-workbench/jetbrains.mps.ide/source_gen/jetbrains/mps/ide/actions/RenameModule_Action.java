@@ -8,10 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.util.ModuleNameUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.refactoring.RenameModuleDialog;
@@ -31,19 +28,7 @@ public class RenameModule_Action extends BaseAction {
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     boolean isApplicable = event.getData(MPSCommonDataKeys.MODULE) instanceof AbstractModule && !(event.getData(MPSCommonDataKeys.MODULE).isPackaged()) && !(event.getData(MPSCommonDataKeys.MODULE).isReadOnly());
-    if (isApplicable) {
-      if (event.getData(MPSCommonDataKeys.MODULE) instanceof Solution) {
-        event.getPresentation().setText("Rename Solution");
-      } else if (event.getData(MPSCommonDataKeys.MODULE) instanceof Language) {
-        event.getPresentation().setText("Rename Language");
-      } else if (event.getData(MPSCommonDataKeys.MODULE) instanceof DevKit) {
-        event.getPresentation().setText("Rename DevKit");
-      } else if (event.getData(MPSCommonDataKeys.MODULE) instanceof Generator) {
-        event.getPresentation().setText("Rename Generator");
-      } else {
-        event.getPresentation().setText("Rename Module");
-      }
-    }
+    event.getPresentation().setText("Rename " + ModuleNameUtil.getModuleType(event.getData(MPSCommonDataKeys.MODULE)));
     event.getPresentation().setEnabledAndVisible(isApplicable);
   }
   @Override

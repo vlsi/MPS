@@ -320,6 +320,7 @@
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
+    <classNode dependClassName="jetbrains.mps.util.ModuleNameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
@@ -2646,11 +2647,8 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.refactoring.RenameModuleDialog" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
-    <classNode dependClassName="jetbrains.mps.project.DevKit" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="jetbrains.mps.smodel.Generator" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.util.ModuleNameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />

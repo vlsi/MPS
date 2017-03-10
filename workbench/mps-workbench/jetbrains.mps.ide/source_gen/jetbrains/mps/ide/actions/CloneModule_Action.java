@@ -4,11 +4,12 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.AbstractModule;
 import com.intellij.util.Generator;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.ModuleNameUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -29,7 +30,7 @@ public class CloneModule_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public CloneModule_Action() {
-    super("Clone Module...", "", ICON);
+    super("Clone Module", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -38,12 +39,10 @@ public class CloneModule_Action extends BaseAction {
     return true;
   }
   @Override
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE) == 1 && event.getData(MPSCommonDataKeys.MODULE) instanceof AbstractModule && (!(event.getData(MPSCommonDataKeys.MODULE) instanceof Generator));
-  }
-  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
+    boolean isApplicable = event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE) == 1 && event.getData(MPSCommonDataKeys.MODULE) instanceof AbstractModule && (!(event.getData(MPSCommonDataKeys.MODULE) instanceof Generator));
+    event.getPresentation().setText("Clone " + ModuleNameUtil.getModuleType(event.getData(MPSCommonDataKeys.MODULE)));
+    event.getPresentation().setEnabledAndVisible(isApplicable);
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -80,9 +79,9 @@ public class CloneModule_Action extends BaseAction {
       return;
     }
 
-    String virtualFolder = as_i0xx9i_a0a0f0h(event.getData(MPSCommonDataKeys.MPS_PROJECT), StandaloneMPSProject.class).getFolderFor(event.getData(MPSCommonDataKeys.MODULE));
+    String virtualFolder = as_i0xx9i_a0a0f0g(event.getData(MPSCommonDataKeys.MPS_PROJECT), StandaloneMPSProject.class).getFolderFor(event.getData(MPSCommonDataKeys.MODULE));
 
-    final AbstractModuleCreationDialog dialog = new CloneModuleDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), virtualFolder, as_i0xx9i_a2a0a7a7(event.getData(MPSCommonDataKeys.MODULE), AbstractModule.class));
+    final AbstractModuleCreationDialog dialog = new CloneModuleDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), virtualFolder, as_i0xx9i_a2a0a7a6(event.getData(MPSCommonDataKeys.MODULE), AbstractModule.class));
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         dialog.show();
@@ -122,10 +121,10 @@ public class CloneModule_Action extends BaseAction {
     }
     return result;
   }
-  private static <T> T as_i0xx9i_a0a0f0h(Object o, Class<T> type) {
+  private static <T> T as_i0xx9i_a0a0f0g(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_i0xx9i_a2a0a7a7(Object o, Class<T> type) {
+  private static <T> T as_i0xx9i_a2a0a7a6(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
