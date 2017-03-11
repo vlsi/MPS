@@ -45,6 +45,7 @@
   <dependency className="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.HandlerUtil" file="HandlerUtil.java">
     <classNode dependClassName="com.intellij.ide.impl.ProjectUtil" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.MessageType" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.Balloon" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopupFactory" />
@@ -57,6 +58,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
@@ -120,12 +122,10 @@
     <classNode extendsClassName="jetbrains.mps.smodel.structure.Extension" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.NodeOpener_RequestHandler" file="NodeOpener_RequestHandler.java">
-    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="io.netty.buffer.Unpooled" />
     <classNode dependClassName="io.netty.handler.codec.http.HttpResponseStatus" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />

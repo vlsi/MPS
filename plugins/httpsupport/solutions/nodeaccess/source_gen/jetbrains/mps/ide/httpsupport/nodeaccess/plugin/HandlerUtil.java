@@ -14,8 +14,9 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.wm.IdeFrame;
+import javax.swing.JComponent;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.ui.awt.RelativePoint;
@@ -28,6 +29,8 @@ public class HandlerUtil {
   public static final String HEADER = "<b>HTTP Support Plugin</b>\n";
 
   public static final String NO_PROJECT_IS_AVAILABLE = "An incoming request can not be handled properly since no project is available";
+
+  public static final int POPUP_TIME = 10000;
 
   public static final byte[] SUCCESS_STREAM = new byte[]{(byte) 0x47, (byte) 0x49, (byte) 0x46, (byte) 0x38, (byte) 0x39, (byte) 0x61, (byte) 0x02, (byte) 0x00, (byte) 0x02, (byte) 0x00, (byte) 0x80, (byte) 0xFF, (byte) 0x00, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x2C, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x01, (byte) 0x00, (byte) 0x01, (byte) 0x00, (byte) 0x00, (byte) 0x02, (byte) 0x02, (byte) 0x44, (byte) 0x01, (byte) 0x00, (byte) 0x3B};
 
@@ -67,16 +70,37 @@ public class HandlerUtil {
     }
   }
 
+  public static String getNodeNotFoundText(final SNodeReference ref) {
+    return "Can not find node <i>" + ref + "</i>\nMaybe it has been deleted?";
+  }
+
   public static void showNoProjectIsAvailablePopup() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        IdeFrame frame = as_qa1yjq_a0a0a0a0a0a0a71(WindowManager.getInstance().findVisibleFrame(), IdeFrame.class);
-        JBPopupFactory.getInstance().createHtmlTextBalloonBuilder(HEADER + NO_PROJECT_IS_AVAILABLE, MessageType.WARNING, null).setFadeoutTime(5000).createBalloon().show(RelativePoint.getSouthWestOf(frame.getComponent()), Balloon.Position.above);
+        JComponent component = (as_qa1yjq_a0a0a0a0a0a0a0a12(WindowManager.getInstance().findVisibleFrame(), IdeFrame.class)).getComponent();
+        createPopupAndShow(HEADER + NO_PROJECT_IS_AVAILABLE, component);
       }
     });
-
   }
-  private static <T> T as_qa1yjq_a0a0a0a0a0a0a71(Object o, Class<T> type) {
+
+  public static void showNodeNotFoundPopup(final Project project, final SNodeReference ref) {
+    final MPSProject mpsProject = as_qa1yjq_a0a0a32(project, MPSProject.class);
+    final com.intellij.openapi.project.Project ideaProject = mpsProject.getProject();
+    project.getModelAccess().runReadInEDT(new Runnable() {
+      public void run() {
+        JComponent component = WindowManager.getInstance().getStatusBar(ideaProject).getComponent();
+        createPopupAndShow(HEADER + getNodeNotFoundText(ref), component);
+      }
+    });
+  }
+
+  private static void createPopupAndShow(String text, JComponent component) {
+    JBPopupFactory.getInstance().createHtmlTextBalloonBuilder(text, MessageType.WARNING, null).setFadeoutTime(POPUP_TIME).createBalloon().show(RelativePoint.getSouthWestOf(component), Balloon.Position.above);
+  }
+  private static <T> T as_qa1yjq_a0a0a0a0a0a0a0a12(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
+  private static <T> T as_qa1yjq_a0a0a32(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

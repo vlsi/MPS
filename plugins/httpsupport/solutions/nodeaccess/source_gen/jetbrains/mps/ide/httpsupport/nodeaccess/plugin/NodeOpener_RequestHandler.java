@@ -12,7 +12,6 @@ import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
 import jetbrains.mps.project.ProjectManager;
-import com.intellij.openapi.ui.Messages;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.buffer.Unpooled;
 
@@ -67,11 +66,7 @@ public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
   public void handle() throws Exception {
     if (this.project != null) {
       if (!(HandlerUtil.openNode(this.request, this.project, this.ref))) {
-        this.project.getModelAccess().runReadInEDT(new Runnable() {
-          public void run() {
-            Messages.showErrorDialog("Can't find node " + NodeOpener_RequestHandler.this.ref + "\nMaybe it has been deleted?", "Error");
-          }
-        });
+        HandlerUtil.showNodeNotFoundPopup(this.project, this.ref);
       }
     } else {
       HandlerUtil.showNoProjectIsAvailablePopup();
