@@ -13,10 +13,21 @@ import io.netty.buffer.Unpooled;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.wm.IdeFrame;
+import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.openapi.ui.MessageType;
+import com.intellij.ui.awt.RelativePoint;
+import com.intellij.openapi.ui.popup.Balloon;
 
 public class HandlerUtil {
 
   public static final String SOURCE_GEN = "source_gen/";
+
+  public static final String HEADER = "<b>HTTP Support Plugin</b>\n";
+
+  public static final String NO_PROJECT_IS_AVAILABLE = "An incoming request can not be handled properly since no project is available";
 
   public static final byte[] SUCCESS_STREAM = new byte[]{(byte) 0x47, (byte) 0x49, (byte) 0x46, (byte) 0x38, (byte) 0x39, (byte) 0x61, (byte) 0x02, (byte) 0x00, (byte) 0x02, (byte) 0x00, (byte) 0x80, (byte) 0xFF, (byte) 0x00, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x2C, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x01, (byte) 0x00, (byte) 0x01, (byte) 0x00, (byte) 0x00, (byte) 0x02, (byte) 0x02, (byte) 0x44, (byte) 0x01, (byte) 0x00, (byte) 0x3B};
 
@@ -54,5 +65,18 @@ public class HandlerUtil {
     if (project instanceof MPSProject) {
       ProjectUtil.focusProjectWindow(((MPSProject) project).getProject(), true);
     }
+  }
+
+  public static void showNoProjectIsAvailablePopup() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        IdeFrame frame = as_qa1yjq_a0a0a0a0a0a0a71(WindowManager.getInstance().findVisibleFrame(), IdeFrame.class);
+        JBPopupFactory.getInstance().createHtmlTextBalloonBuilder(HEADER + NO_PROJECT_IS_AVAILABLE, MessageType.WARNING, null).setFadeoutTime(5000).createBalloon().show(RelativePoint.getSouthWestOf(frame.getComponent()), Balloon.Position.above);
+      }
+    });
+
+  }
+  private static <T> T as_qa1yjq_a0a0a0a0a0a0a71(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -34,6 +34,14 @@
     <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
     <import index="iwsx" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileEditor(MPS.IDEA/)" />
     <import index="s9o5" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.editor(MPS.IDEA/)" />
+    <import index="gspm" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui.popup(MPS.IDEA/)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="jkny" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.wm(MPS.IDEA/)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="w1kc" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.smodel(MPS.Platform/)" />
+    <import index="fnpx" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.notification(MPS.IDEA/)" />
+    <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
+    <import index="vmdq" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.awt(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -101,6 +109,10 @@
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
@@ -242,12 +254,6 @@
       <concept id="1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" flags="nn" index="2WthIp" />
       <concept id="1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" flags="ng" index="2WEnae">
         <reference id="1205756909548" name="member" index="2WH_rO" />
-      </concept>
-    </language>
-    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -900,10 +906,10 @@
           </node>
           <node concept="9aQIb" id="4yQMaPlLfrI" role="9aQIa">
             <node concept="3clFbS" id="4yQMaPlLfrJ" role="9aQI4">
-              <node concept="34ab3g" id="602uc2JOFlf" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <node concept="Xl_RD" id="602uc2JOFlh" role="34bqiv">
-                  <property role="Xl_RC" value="No project is available." />
+              <node concept="3clFbF" id="5ueUq77VtHN" role="3cqZAp">
+                <node concept="2YIFZM" id="5ueUq77VtHP" role="3clFbG">
+                  <ref role="37wK5l" node="4vg7_weVOC3" resolve="showNoProjectIsAvailablePopup" />
+                  <ref role="1Pybhc" node="2lt1tUBuCdK" resolve="HandlerUtil" />
                 </node>
               </node>
               <node concept="3clFbF" id="5YhakczJ4zC" role="3cqZAp">
@@ -1002,10 +1008,10 @@
           </node>
           <node concept="9aQIb" id="4yQMaPlLeF6" role="9aQIa">
             <node concept="3clFbS" id="4yQMaPlLeF7" role="9aQI4">
-              <node concept="34ab3g" id="4yQMaPlLgbE" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <node concept="Xl_RD" id="4yQMaPlLgbF" role="34bqiv">
-                  <property role="Xl_RC" value="No project is available." />
+              <node concept="3clFbF" id="5ueUq77VnJo" role="3cqZAp">
+                <node concept="2YIFZM" id="4vg7_weWdZe" role="3clFbG">
+                  <ref role="37wK5l" node="4vg7_weVOC3" resolve="showNoProjectIsAvailablePopup" />
+                  <ref role="1Pybhc" node="2lt1tUBuCdK" resolve="HandlerUtil" />
                 </node>
               </node>
             </node>
@@ -1061,6 +1067,30 @@
       <node concept="17QB3L" id="4hySY0cg0Iv" role="1tU5fm" />
       <node concept="Xl_RD" id="7prpbsC60aP" role="33vP2m">
         <property role="Xl_RC" value="source_gen/" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4vg7_weVOJT" role="jymVt" />
+    <node concept="Wx3nA" id="5ueUq77UMLK" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="HEADER" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="5ueUq77UKGN" role="1B3o_S" />
+      <node concept="17QB3L" id="5ueUq77UMLB" role="1tU5fm" />
+      <node concept="Xl_RD" id="5ueUq77UMWI" role="33vP2m">
+        <property role="Xl_RC" value="&lt;b&gt;HTTP Support Plugin&lt;/b&gt;\n" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5ueUq77Vyjg" role="jymVt" />
+    <node concept="Wx3nA" id="4vg7_weVPiU" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="NO_PROJECT_IS_AVAILABLE" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="4vg7_weVOZG" role="1B3o_S" />
+      <node concept="17QB3L" id="4vg7_weVPiL" role="1tU5fm" />
+      <node concept="Xl_RD" id="4vg7_weVPq1" role="33vP2m">
+        <property role="Xl_RC" value="An incoming request can not be handled properly since no project is available" />
       </node>
     </node>
     <node concept="2tJIrI" id="6dOBq74Q1J4" role="jymVt" />
@@ -1761,6 +1791,113 @@
       </node>
       <node concept="3Tm1VV" id="3whKZwB1k7q" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="4vg7_weVKgc" role="jymVt" />
+    <node concept="2YIFZL" id="4vg7_weVOC3" role="jymVt">
+      <property role="TrG5h" value="showNoProjectIsAvailablePopup" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="4vg7_weVOC6" role="3clF47">
+        <node concept="3clFbF" id="4vg7_weX1Ye" role="3cqZAp">
+          <node concept="2OqwBi" id="4vg7_weX2tj" role="3clFbG">
+            <node concept="2YIFZM" id="4vg7_weX1YM" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="5ueUq77Trmm" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+              <node concept="1bVj0M" id="4vg7_weXfHt" role="37wK5m">
+                <node concept="3clFbS" id="4vg7_weXfHu" role="1bW5cS">
+                  <node concept="3cpWs8" id="4vg7_weWdgm" role="3cqZAp">
+                    <node concept="3cpWsn" id="4vg7_weWdgn" role="3cpWs9">
+                      <property role="TrG5h" value="frame" />
+                      <node concept="3uibUv" id="5ueUq77UI4_" role="1tU5fm">
+                        <ref role="3uigEE" to="jkny:~IdeFrame" resolve="IdeFrame" />
+                      </node>
+                      <node concept="0kSF2" id="5ueUq77UJrO" role="33vP2m">
+                        <node concept="3uibUv" id="5ueUq77UJrR" role="0kSFW">
+                          <ref role="3uigEE" to="jkny:~IdeFrame" resolve="IdeFrame" />
+                        </node>
+                        <node concept="2OqwBi" id="5ueUq77UgkA" role="0kSFX">
+                          <node concept="2YIFZM" id="5ueUq77Ugbf" role="2Oq$k0">
+                            <ref role="37wK5l" to="jkny:~WindowManager.getInstance():com.intellij.openapi.wm.WindowManager" resolve="getInstance" />
+                            <ref role="1Pybhc" to="jkny:~WindowManager" resolve="WindowManager" />
+                          </node>
+                          <node concept="liA8E" id="5ueUq77Upw7" role="2OqNvi">
+                            <ref role="37wK5l" to="jkny:~WindowManager.findVisibleFrame():javax.swing.JFrame" resolve="findVisibleFrame" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="5ueUq77UNs_" role="3cqZAp">
+                    <node concept="2OqwBi" id="5ueUq77USTa" role="3clFbG">
+                      <node concept="2OqwBi" id="5ueUq77URqp" role="2Oq$k0">
+                        <node concept="2OqwBi" id="5ueUq77UQdX" role="2Oq$k0">
+                          <node concept="2OqwBi" id="5ueUq77UNDw" role="2Oq$k0">
+                            <node concept="2YIFZM" id="5ueUq77UNxi" role="2Oq$k0">
+                              <ref role="1Pybhc" to="gspm:~JBPopupFactory" resolve="JBPopupFactory" />
+                              <ref role="37wK5l" to="gspm:~JBPopupFactory.getInstance():com.intellij.openapi.ui.popup.JBPopupFactory" resolve="getInstance" />
+                            </node>
+                            <node concept="liA8E" id="5ueUq77UNNY" role="2OqNvi">
+                              <ref role="37wK5l" to="gspm:~JBPopupFactory.createHtmlTextBalloonBuilder(java.lang.String,com.intellij.openapi.ui.MessageType,javax.swing.event.HyperlinkListener):com.intellij.openapi.ui.popup.BalloonBuilder" resolve="createHtmlTextBalloonBuilder" />
+                              <node concept="3cpWs3" id="5ueUq77UP9w" role="37wK5m">
+                                <node concept="37vLTw" id="5ueUq77VonZ" role="3uHU7w">
+                                  <ref role="3cqZAo" node="4vg7_weVPiU" resolve="NO_PROJECT_IS_AVAILABLE" />
+                                </node>
+                                <node concept="37vLTw" id="5ueUq77Voo5" role="3uHU7B">
+                                  <ref role="3cqZAo" node="5ueUq77UMLK" resolve="HEADER" />
+                                </node>
+                              </node>
+                              <node concept="10M0yZ" id="5ueUq77UPJO" role="37wK5m">
+                                <ref role="1PxDUh" to="jkm4:~MessageType" resolve="MessageType" />
+                                <ref role="3cqZAo" to="jkm4:~MessageType.WARNING" resolve="WARNING" />
+                              </node>
+                              <node concept="10Nm6u" id="5ueUq77UQ3g" role="37wK5m" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="5ueUq77UQEU" role="2OqNvi">
+                            <ref role="37wK5l" to="gspm:~BalloonBuilder.setFadeoutTime(long):com.intellij.openapi.ui.popup.BalloonBuilder" resolve="setFadeoutTime" />
+                            <node concept="3cmrfG" id="5ueUq77UQXR" role="37wK5m">
+                              <property role="3cmrfH" value="5000" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="5ueUq77USoL" role="2OqNvi">
+                          <ref role="37wK5l" to="gspm:~BalloonBuilder.createBalloon():com.intellij.openapi.ui.popup.Balloon" resolve="createBalloon" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="5ueUq77UUDu" role="2OqNvi">
+                        <ref role="37wK5l" to="gspm:~Balloon.show(com.intellij.ui.awt.RelativePoint,com.intellij.openapi.ui.popup.Balloon$Position):void" resolve="show" />
+                        <node concept="2YIFZM" id="5ueUq77VjF7" role="37wK5m">
+                          <ref role="1Pybhc" to="vmdq:~RelativePoint" resolve="RelativePoint" />
+                          <ref role="37wK5l" to="vmdq:~RelativePoint.getSouthWestOf(javax.swing.JComponent):com.intellij.ui.awt.RelativePoint" resolve="getSouthWestOf" />
+                          <node concept="2OqwBi" id="5ueUq77VjF8" role="37wK5m">
+                            <node concept="37vLTw" id="5ueUq77VjF9" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4vg7_weWdgn" resolve="frame" />
+                            </node>
+                            <node concept="liA8E" id="5ueUq77VjFa" role="2OqNvi">
+                              <ref role="37wK5l" to="jkny:~IdeFrame.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="Rm8GO" id="5ueUq77VkzH" role="37wK5m">
+                          <ref role="1Px2BO" to="gspm:~Balloon$Position" resolve="Balloon.Position" />
+                          <ref role="Rm8GQ" to="gspm:~Balloon$Position.above" resolve="above" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="5ueUq77Vo0N" role="3cqZAp" />
+      </node>
+      <node concept="3Tm1VV" id="4vg7_weVMGz" role="1B3o_S" />
+      <node concept="3cqZAl" id="4vg7_weVOBU" role="3clF45" />
+    </node>
     <node concept="3Tm1VV" id="2lt1tUBuCdL" role="1B3o_S" />
   </node>
   <node concept="sE7Ow" id="3ApdfstLXw">
@@ -2004,6 +2141,16 @@
             </node>
             <node concept="3_PKRz" id="xSXmQZyCG9" role="2ZW6bz">
               <ref role="3_PKRw" node="xSXmQZy0Q7" resolve="project" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="5ueUq77VruU" role="9aQIa">
+            <node concept="3clFbS" id="5ueUq77VruV" role="9aQI4">
+              <node concept="3clFbF" id="5ueUq77VrDW" role="3cqZAp">
+                <node concept="2YIFZM" id="5ueUq77VrDY" role="3clFbG">
+                  <ref role="37wK5l" node="4vg7_weVOC3" resolve="showNoProjectIsAvailablePopup" />
+                  <ref role="1Pybhc" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

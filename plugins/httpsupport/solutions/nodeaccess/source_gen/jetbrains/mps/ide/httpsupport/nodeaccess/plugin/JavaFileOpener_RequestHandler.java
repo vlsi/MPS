@@ -10,8 +10,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
 import jetbrains.mps.project.ProjectManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSProject;
 import java.util.Iterator;
 import jetbrains.mps.textgen.trace.DebugInfo;
@@ -25,7 +23,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.common.FileOpenUtil;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.buffer.Unpooled;
-import org.apache.log4j.Level;
 
 public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
 
@@ -83,7 +80,6 @@ public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
     return this.file.endsWith(".java");
   }
 
-  protected static Logger LOG = LogManager.getLogger(JavaFileOpener_RequestHandler.class);
   @Override
   public void handle() throws Exception {
 
@@ -134,9 +130,7 @@ public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
       }
       this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
     } else {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("No project is available.");
-      }
+      HandlerUtil.showNoProjectIsAvailablePopup();
       this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
     }
   }
