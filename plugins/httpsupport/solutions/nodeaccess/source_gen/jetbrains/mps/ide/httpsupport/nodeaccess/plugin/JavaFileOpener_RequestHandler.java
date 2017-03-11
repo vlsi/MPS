@@ -16,13 +16,13 @@ import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.textgen.trace.BaseLanguageNodeLookup;
+import io.netty.handler.codec.http.HttpResponseStatus;
+import io.netty.buffer.Unpooled;
 import jetbrains.mps.textgen.trace.DebugInfoRoot;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.common.FileOpenUtil;
-import io.netty.handler.codec.http.HttpResponseStatus;
-import io.netty.buffer.Unpooled;
 
 public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
 
@@ -99,7 +99,8 @@ public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
       if (this.line != null) {
         while (it.hasNext()) {
           final SNodeReference nodeReference = new BaseLanguageNodeLookup(it.next()).getNodeAt(fileName, this.line);
-          if (HandlerUtil.openNode(this.request, this.project, nodeReference)) {
+          if (HandlerUtil.openNode(this.project, nodeReference) != null) {
+            this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
             return;
           }
         }
@@ -111,7 +112,8 @@ public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
               return debugInfoRoot.getFileNames().contains(fileName);
             }
           }).first().getNodeRef();
-          if (HandlerUtil.openNode(this.request, this.project, nodeReference)) {
+          if (HandlerUtil.openNode(this.project, nodeReference) != null) {
+            this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
             return;
           }
         }

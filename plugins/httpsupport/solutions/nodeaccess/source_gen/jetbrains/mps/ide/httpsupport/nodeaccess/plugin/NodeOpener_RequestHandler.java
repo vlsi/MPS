@@ -12,8 +12,11 @@ import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
 import jetbrains.mps.project.ProjectManager;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.buffer.Unpooled;
+import io.netty.util.CharsetUtil;
 
 public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
 
@@ -65,12 +68,25 @@ public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
   @Override
   public void handle() throws Exception {
     if (this.project != null) {
-      if (!(HandlerUtil.openNode(this.request, this.project, this.ref))) {
+      final SNode node = HandlerUtil.openNode(this.project, this.ref);
+      if (node != null) {
+        final Wrappers._T<String> nodePresentation = new Wrappers._T<String>();
+        this.project.getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            nodePresentation.value = node.getPresentation();
+          }
+        });
+        String text = HandlerUtil.HEADER_RESPONCE + "The requested node has been opened in MPS<br><b>Node</b>: " + nodePresentation.value + " <i>(" + node.getConcept() + ")</i><br><b>Project</b>: " + this.project.getName();
+        this.request.sendResponse(HttpResponseStatus.OK, "text/html", Unpooled.copiedBuffer(text, CharsetUtil.UTF_8));
+      } else {
+        String text = HandlerUtil.HEADER_RESPONCE + "The requested node has not been found<br><b>Node reference</b>: " + this.ref + "<br><b>Project</b>: " + this.project.getName();
         HandlerUtil.showNodeNotFoundPopup(this.project, this.ref);
+        this.request.sendResponse(HttpResponseStatus.OK, "text/html", Unpooled.copiedBuffer(text, CharsetUtil.UTF_8));
       }
     } else {
+      String text = HandlerUtil.HEADER_RESPONCE + "No project is available";
       HandlerUtil.showNoProjectIsAvailablePopup();
+      this.request.sendResponse(HttpResponseStatus.OK, "text/html", Unpooled.copiedBuffer(text, CharsetUtil.UTF_8));
     }
-    this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
   }
 }
