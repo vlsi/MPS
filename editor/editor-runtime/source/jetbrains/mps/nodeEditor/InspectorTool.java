@@ -62,12 +62,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
   private FileEditor myFileEditor;
 
   public InspectorTool(Project project) {
-    super(project, ID, amIInPlugin() ? -1 : 2, IdeIcons.INSPECTOR_ICON, ToolWindowAnchor.BOTTOM, true, false);
-  }
-
-  // Remove after fix of IDEA-127185 Switcher throws exception and stops working
-  private static boolean amIInPlugin() {
-    return InspectorTool.class.getClassLoader() instanceof PluginClassLoader;
+    super(project, ID,2, IdeIcons.INSPECTOR_ICON, ToolWindowAnchor.BOTTOM, true, false);
   }
 
   @Override
