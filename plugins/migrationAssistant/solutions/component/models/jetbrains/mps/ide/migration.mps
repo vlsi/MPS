@@ -3488,8 +3488,16 @@
                 <ref role="37wK5l" to="4nm9:~Project.getBaseDir():com.intellij.openapi.vfs.VirtualFile" resolve="getBaseDir" />
               </node>
             </node>
-            <node concept="37vLTw" id="oCeXOwM_KO" role="37wK5m">
-              <ref role="3cqZAo" node="oCeXOwMuCb" resolve="progressMonitor" />
+            <node concept="2OqwBi" id="1oJarTqFgyg" role="37wK5m">
+              <node concept="37vLTw" id="oCeXOwM_KO" role="2Oq$k0">
+                <ref role="3cqZAo" node="oCeXOwMuCb" resolve="progressMonitor" />
+              </node>
+              <node concept="liA8E" id="1oJarTqFgJR" role="2OqNvi">
+                <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
+                <node concept="3cmrfG" id="1oJarTqFh5z" role="37wK5m">
+                  <property role="3cmrfH" value="1" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -3499,32 +3507,6 @@
             <ref role="1Pybhc" to="9w4s:~WaitForProgressToShow" resolve="WaitForProgressToShow" />
             <node concept="1bVj0M" id="oCeXOwMByh" role="37wK5m">
               <node concept="3clFbS" id="oCeXOwMByi" role="1bW5cS">
-                <node concept="3SKdUt" id="6uMmfEAu9bh" role="3cqZAp">
-                  <node concept="3SKdUq" id="6uMmfEAu9bj" role="3SKWNk">
-                    <property role="3SKdUp" value="fixme remove in 3.4" />
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="6uMmfEAu9$L" role="3cqZAp">
-                  <node concept="3SKdUq" id="6uMmfEAu9$N" role="3SKWNk">
-                    <property role="3SKdUp" value="TODO AP: these are essentially those files which have been requested from IDEA vfs at least once so far" />
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="6uMmfEAubZk" role="3cqZAp">
-                  <node concept="3SKdUq" id="6uMmfEAubZm" role="3SKWNk">
-                    <property role="3SKdUp" value="AP: I sense the author rather meant just refreshing the project directory" />
-                  </node>
-                </node>
-                <node concept="3clFbF" id="5SsFeroaalc" role="3cqZAp">
-                  <node concept="2OqwBi" id="5SsFeroaald" role="3clFbG">
-                    <node concept="2YIFZM" id="5SsFeroafMD" role="2Oq$k0">
-                      <ref role="37wK5l" to="jlff:~VirtualFileManager.getInstance():com.intellij.openapi.vfs.VirtualFileManager" resolve="getInstance" />
-                      <ref role="1Pybhc" to="jlff:~VirtualFileManager" resolve="VirtualFileManager" />
-                    </node>
-                    <node concept="liA8E" id="5qfN6LqBXsK" role="2OqNvi">
-                      <ref role="37wK5l" to="jlff:~VirtualFileManager.syncRefresh():long" resolve="syncRefresh" />
-                    </node>
-                  </node>
-                </node>
                 <node concept="3clFbF" id="4tP09YuEkC_" role="3cqZAp">
                   <node concept="2OqwBi" id="4tP09YuElC7" role="3clFbG">
                     <node concept="2OqwBi" id="2RCunBMs9yF" role="2Oq$k0">

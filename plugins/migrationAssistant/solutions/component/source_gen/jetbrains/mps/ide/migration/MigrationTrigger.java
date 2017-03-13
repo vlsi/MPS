@@ -392,13 +392,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         application.saveAll();
       }
     });
-    VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir(), progressMonitor);
+    VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir(), progressMonitor.subTask(1));
     WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
       public void run() {
-        // fixme remove in 3.4 
-        // TODO AP: these are essentially those files which have been requested from IDEA vfs at least once so far 
-        // AP: I sense the author rather meant just refreshing the project directory 
-        VirtualFileManager.getInstance().syncRefresh();
         application.getComponent(ReloadManager.class).flush();
       }
     });

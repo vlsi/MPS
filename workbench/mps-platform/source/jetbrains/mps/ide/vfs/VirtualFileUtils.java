@@ -16,10 +16,11 @@
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileVisitor;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
-import com.intellij.util.Processor;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -34,6 +35,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
+import java.util.List;
 
 public final class VirtualFileUtils {
   private static final Logger LOG = LogManager.getLogger(VirtualFileUtils.class);
@@ -118,28 +120,33 @@ public final class VirtualFileUtils {
   }
 
   public static void refreshSynchronouslyRecursively(VirtualFile file, ProgressMonitor progressMonitor) {
-    Reference<Integer> count = new Reference<>(0);
-    VfsUtilCore.processFilesRecursively(file, new Processor<VirtualFile>() {
-      @Override
-      public boolean process(VirtualFile virtualFile) {
-        count.set(count.get() + 1);
-        return true;
-      }
-    });
-    progressMonitor.start("Refreshing file system", count.get());
-    VfsUtilCore.processFilesRecursively(file, new Processor<VirtualFile>() {
-      @Override
-      public boolean process(VirtualFile virtualFile) {
+    final int totalWork = 3;
+    try {
+      progressMonitor.start("Refreshing the virtual file system", totalWork);
+      List<VirtualFile> dirtyFiles = VfsUtil.markDirty(true, true, file);
+      progressMonitor.advance(1);
+      if (!dirtyFiles.isEmpty()) {
         progressMonitor.advance(1);
-        addFileToVFSSnapshot(virtualFile);
-        virtualFile.refresh(false, false);
-        return true;
+        refreshSynchronouslyAndRecursively(file);
+        progressMonitor.advance(1);
       }
+    } finally {
+      progressMonitor.done();
+    }
+  }
 
-      private void addFileToVFSSnapshot(@NotNull VirtualFile file) {
-        file.getChildren(); // for directories to be included into the vfs snapshot
-      }
-    }, directory -> directory.exists());
+  private static void refreshSynchronouslyAndRecursively(VirtualFile file) {
+    file.refresh(false, true);
+  }
+
+  @NotNull
+  private static Reference<Integer> estimateFilesNumber(VirtualFile file) {
+    Reference<Integer> count = new Reference<>(0);
+    VfsUtilCore.processFilesRecursively(file, virtualFile -> {
+      count.set(count.get() + 1);
+      return true;
+    });
+    return count;
   }
 
   /**
