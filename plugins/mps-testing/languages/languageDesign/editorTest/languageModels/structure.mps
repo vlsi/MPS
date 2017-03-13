@@ -860,5 +860,16 @@
       <ref role="PrY4T" node="2znOOs7hk5B" resolve="ISpecialDelTestChild" />
     </node>
   </node>
+  <node concept="1TIwiD" id="1AA73NYNwSA">
+    <property role="EcuMT" value="1848195745380699686" />
+    <property role="TrG5h" value="LabelConceptWithProperty" />
+    <property role="3GE5qa" value="label" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="1AA73NYO3qV" role="1TKVEl">
+      <property role="IQ2nx" value="1848195745380841147" />
+      <property role="TrG5h" value="myProperty" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
 </model>
 
