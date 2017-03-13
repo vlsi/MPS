@@ -1,8 +1,8 @@
 <ivy-module version="2.0">
-  <info organisation="org.jetbrains.mps" module="JDK/jdk.zip"/>
+  <info organisation="org.jetbrains.mps" module="openJDK/jbsdk_ocx_x64.tar.gz"/>
   <dependencies>
     <dependency org="org" name="MPS_35_Distribution_GetResources" rev="latest.lastSuccessful">
-      <include name="JDK/jdk" ext="zip"/>
+      <include name="openJDK/jbsdk_ocx_x64" ext="tar.gz"/>
     </dependency>
   </dependencies>
 </ivy-module>

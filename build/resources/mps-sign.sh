@@ -18,8 +18,10 @@ if [ -f ~/$1-Info.plist ]; then
   cp ~/$1-Info.plist ~/${EXPLODED}/"$BUILD_NAME"/Contents/Info.plist
 fi
 if [ -f ~/$1-jdk.tar.gz ]; then
-  echo "Copying JDK: ~/$1-jdk.tar.gz to ~/${EXPLODED}/"$BUILD_NAME"/Contents"
+  echo "Copying JDK: ~/$1-jdk.tar.gz to ~/${EXPLODED}/"$BUILD_NAME"/Contents/jre"
   cd ~/${EXPLODED}/"$BUILD_NAME"/Contents
+  mkdir jre
+  cd jre
   tar xvf ~/$1-jdk.tar.gz --exclude='._jdk'
   echo "JDK has been copied"
   cd ~

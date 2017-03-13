@@ -4,7 +4,7 @@
   <property name="ivy.jar.dir" value="${basedir}/ivy" />
   <property name="get.dir" location="${resources}"/>
 
-  <target name="getall" depends="getHelp, getMachelp, getJdk, getOpenjdk"/>
+  <target name="getall" depends="getHelp, getMachelp, getJdk, getOpenjdk, getOpenjdkMac, getOpenjdkWin"/>
 
   <target name="install-ivy">
     <property name="mps.ivy.home" value="${user.home}" description="Property used to set custom path on TeamCity"/>
@@ -33,6 +33,16 @@
   <target name="getOpenjdk" depends="install-ivy" description="--> Retreive recent openJDK/jdk.tar.gz">
     <ivy:resolve file="ivyOpenjdk.xml"/>
     <ivy:retrieve file="ivyOpenjdk.xml" pattern="${get.dir}/[artifact].[ext]"/>
+  </target>
+
+  <target name="getOpenjdkWin" depends="install-ivy" description="--> Retreive openJDK/jbsdk_windows_x64.tar.gz">
+    <ivy:resolve file="ivyOpenjdkWin.xml"/>
+    <ivy:retrieve file="ivyOpenjdkWin.xml" pattern="${get.dir}/[artifact].[ext]"/>
+  </target>
+
+  <target name="getOpenjdkMac" depends="install-ivy" description="--> Retreive openJDK/jbsdk_ocx_x64.tar.gz">
+    <ivy:resolve file="ivyOpenjdkMac.xml"/>
+    <ivy:retrieve file="ivyOpenjdkMac.xml" pattern="${get.dir}/[artifact].[ext]"/>
   </target>
 
 </project>

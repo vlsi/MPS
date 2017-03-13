@@ -6,7 +6,7 @@
 
   <property name="build.code" value="${mps.build.number}" />
   <property name="mps-macos.zip" location="${build.artifacts}/${mps.build.number}-macos.zip"/>
-  <property name="jdk.tar.gz" location="${build.artifacts}/jdk.tar.gz"/>
+  <property name="jdk.tar.gz" location="${build.artifacts}/jbsdk_osx_x64.tar.gz"/>
   <property name="info.plist" location="${build.artifacts}/jdk-bundled-Info.plist"/>
 
   <property name="mac.host" value=""/>

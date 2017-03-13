@@ -16913,7 +16913,7 @@
               </node>
             </node>
             <node concept="3ygNvl" id="AwiPu7jIu4" role="39821P">
-              <ref role="3ygNvj" node="AwiPu7jHuQ" resolve="jdk.zip" />
+              <ref role="3ygNvj" node="1NXhbnOpTEu" resolve="jbsdk_windows_x64.tar.gz" />
             </node>
           </node>
           <node concept="398223" id="AwiPu7jHTL" role="39821P">
@@ -30426,6 +30426,22 @@
       </node>
     </node>
     <node concept="398223" id="AwiPu7jFRO" role="39821P">
+      <node concept="1tmT9g" id="1NXhbnOpTEb" role="39821P">
+        <property role="AB_bT" value="gzip" />
+        <node concept="3_J27D" id="1NXhbnOpTEd" role="Nbhlr">
+          <node concept="3Mxwew" id="1NXhbnOpTEk" role="3MwsjC">
+            <property role="3MwjfP" value="jbsdk_osx_x64.tar.gz" />
+          </node>
+        </node>
+      </node>
+      <node concept="1tmT9g" id="1NXhbnOpTEu" role="39821P">
+        <property role="AB_bT" value="gzip" />
+        <node concept="3_J27D" id="1NXhbnOpTEw" role="Nbhlr">
+          <node concept="3Mxwew" id="1NXhbnOpTEE" role="3MwsjC">
+            <property role="3MwjfP" value="jbsdk_windows_x64.tar.gz" />
+          </node>
+        </node>
+      </node>
       <node concept="3_J27D" id="AwiPu7jFRQ" role="Nbhlr">
         <node concept="3Mxwew" id="AwiPu7jFS0" role="3MwsjC">
           <property role="3MwjfP" value="openJDK" />

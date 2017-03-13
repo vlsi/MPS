@@ -184,7 +184,7 @@
       <zipfileset file="${basedir}/bin/win/vistalauncher.exe" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <zipfileset file="${basedir}/bin/win/WinProcessListHelper.exe" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <zipfileset file="${basedir}/bin/win/append.bat" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
-      <zipfileset dir="${build.tmp}/deps/jdk.zip" prefix="MPS ${mpsBootstrapCore.version}/jre" />
+      <zipfileset dir="${build.tmp}/deps/jbsdk_windows_x64.tar.gz" prefix="MPS ${mpsBootstrapCore.version}/jre" />
       <zipfileset file="${artifacts.resources}/help/mpshelp.jar" prefix="MPS ${mpsBootstrapCore.version}/help" />
       <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-windows.zip_f755" filemode="755" prefix="MPS ${mpsBootstrapCore.version}/bin" />
       <fileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-windows.zip" />
@@ -282,8 +282,8 @@
   </target>
   
   <target name="fetchDependencies">
-    <mkdir dir="${build.tmp}/deps/jdk.zip" />
-    <unzip src="${artifacts.resources}/JDK/jdk.zip" dest="${build.tmp}/deps/jdk.zip" />
+    <mkdir dir="${build.tmp}/deps/jbsdk_windows_x64.tar.gz" />
+    <untar src="${artifacts.resources}/openJDK/jbsdk_windows_x64.tar.gz" dest="${build.tmp}/deps/jbsdk_windows_x64.tar.gz" compression="gzip" />
   </target>
   
   <target name="build" depends="assemble" />
