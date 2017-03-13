@@ -7,9 +7,11 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.httpsupport.manager.plugin.MPSInternalPortManager;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -22,7 +24,7 @@ public class NodeReferenceURL_Action extends BaseAction {
 
   public NodeReferenceURL_Action() {
     super("Copy Node Reference as URL", "", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
   @Override
@@ -31,7 +33,7 @@ public class NodeReferenceURL_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return MPSInternalPortManager.isEnabled();
+    return MPSInternalPortManager.isEnabled() && !(TemporaryModels.isTemporary(SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE))));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
