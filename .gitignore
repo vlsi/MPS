@@ -23,6 +23,7 @@ teamcity-info.xml
 *.class
 /plugins/debugger-api/lib
 /plugins/debugger-java/lib
+/plugins/mpsjava/lib/
 /plugins/mps-java-workbench/lib/
 /plugins/execution-languages/lib
 /plugins/execution-configurations/lib
