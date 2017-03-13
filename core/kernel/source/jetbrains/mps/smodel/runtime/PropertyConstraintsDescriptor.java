@@ -15,21 +15,12 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface PropertyConstraintsDescriptor {
 
-  @Deprecated
-  @ToRemove(version = 3.4)
-  SPropertyId getProperty();
-
   SProperty getSProperty();
-
-  @Deprecated
-  String getName();
 
   ConstraintsDescriptor getContainer();
 

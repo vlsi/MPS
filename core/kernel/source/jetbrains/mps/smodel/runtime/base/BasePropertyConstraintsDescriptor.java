@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
@@ -158,18 +157,6 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   @Override
   public boolean hasOwnValidator() {
     return false;
-  }
-
-  @Override
-  public String getName() {
-    return myProperty.getName();
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  @Override
-  public SPropertyId getProperty() {
-    return MetaIdHelper.getProperty(myProperty);
   }
 
   @Override
