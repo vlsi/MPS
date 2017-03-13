@@ -6,10 +6,10 @@ import org.junit.runner.notification.RunListener;
 import org.jetbrains.annotations.Nullable;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.lang.test.util.RunEventsDispatcher;
 import org.junit.runner.Request;
 import org.junit.runner.JUnitCore;
 import org.apache.log4j.Level;
-import jetbrains.mps.lang.test.util.RunEventsDispatcher;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 
@@ -30,6 +30,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   @Override
   public void execute() {
     try {
+      RunEventsDispatcher.getInstance().onTestRunStarted();
       TestsContributor testsContributor = createTestsContributor();
       Iterable<Request> requests = testsContributor.gatherTests();
       JUnitCore jUnitCore = prepareJUnitCore(requests);
@@ -39,7 +40,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
         LOG.error("Exception in the test framework", t);
       }
     } finally {
-      RunEventsDispatcher.getInstance().onTestRunDone();
+      RunEventsDispatcher.getInstance().onTestRunFinished();
     }
   }
 

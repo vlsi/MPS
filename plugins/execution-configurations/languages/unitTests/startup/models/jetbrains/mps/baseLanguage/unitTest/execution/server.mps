@@ -1586,6 +1586,17 @@
       <node concept="3clFbS" id="5Ti9jVZ8rxG" role="3clF47">
         <node concept="2GUZhq" id="T9MU2ckbhZ" role="3cqZAp">
           <node concept="3clFbS" id="5Ti9jVZ8rxZ" role="2GV8ay">
+            <node concept="3clFbF" id="23$lmxdVKFw" role="3cqZAp">
+              <node concept="2OqwBi" id="23$lmxdVKFx" role="3clFbG">
+                <node concept="2YIFZM" id="23$lmxdVKFy" role="2Oq$k0">
+                  <ref role="37wK5l" to="fnd7:21nkJZKo9oB" resolve="getInstance" />
+                  <ref role="1Pybhc" to="fnd7:21nkJZKnWjm" resolve="RunEventsDispatcher" />
+                </node>
+                <node concept="liA8E" id="23$lmxdVKFz" role="2OqNvi">
+                  <ref role="37wK5l" to="fnd7:23$lmxdVRD5" resolve="onTestRunStarted" />
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="5Ti9jVZ8ry0" role="3cqZAp">
               <node concept="3cpWsn" id="5Ti9jVZ8ry1" role="3cpWs9">
                 <property role="3TUv4t" value="false" />
@@ -1674,7 +1685,7 @@
                   <ref role="1Pybhc" to="fnd7:21nkJZKnWjm" resolve="RunEventsDispatcher" />
                 </node>
                 <node concept="liA8E" id="T9MU2ckADV" role="2OqNvi">
-                  <ref role="37wK5l" to="fnd7:70xkT3P5oru" resolve="onTestRunDone" />
+                  <ref role="37wK5l" to="fnd7:70xkT3P5oru" resolve="onTestRunFinished" />
                 </node>
               </node>
             </node>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.test.util.MpsRunListener" file="MpsRunListener.java" />
+  <dependency className="jetbrains.mps.lang.test.util.MpsTestRunListener" file="MpsTestRunListener.java" />
   <dependency className="jetbrains.mps.lang.test.util.RunEventsDispatcher" file="RunEventsDispatcher.java">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.concurrent.CopyOnWriteArrayList" />
-    <classNode dependClassName="jetbrains.mps.lang.test.util.MpsRunListener" />
+    <classNode dependClassName="jetbrains.mps.lang.test.util.MpsTestRunListener" />
+    <classNode dependClassName="org.jetbrains.mps.annotations.Singleton" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.util.RunStateEnum" file="RunStateEnum.java" />
   <dependency className="jetbrains.mps.lang.test.util.TestInProcessRunState" file="TestInProcessRunState.java">

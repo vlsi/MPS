@@ -120,10 +120,11 @@
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.TestMode" />
     <classNode dependClassName="jetbrains.mps.generator.impl.CloneUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestModelSaver" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestRunner" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestLightRunner" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
-    <classNode dependClassName="jetbrains.mps.lang.test.util.MpsRunListener" />
+    <classNode dependClassName="jetbrains.mps.lang.test.util.MpsTestRunListener" />
     <classNode dependClassName="jetbrains.mps.lang.test.util.RunEventsDispatcher" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
@@ -316,11 +317,8 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TestModelSaver" file="TestModelSaver.java">
     <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="jetbrains.mps.lang.test.util.MpsRunListener" />
-    <classNode dependClassName="jetbrains.mps.lang.test.util.RunEventsDispatcher" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TestRunner" file="TestRunner.java">
@@ -415,6 +413,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestModelSaver" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode dependClassName="jetbrains.mps.module.ReloadableModule" />

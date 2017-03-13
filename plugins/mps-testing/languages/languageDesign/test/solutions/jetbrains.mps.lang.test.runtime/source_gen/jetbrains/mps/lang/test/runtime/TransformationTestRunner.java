@@ -63,11 +63,12 @@ public class TransformationTestRunner implements TestRunner {
       LOG.info("Initializing the test");
     }
     test.setProject(testProject);
-    TransformationTest cachedTest = TestModelSaver.getInstance().getTest();
+    TestModelSaver modelSaver = BaseTransformationTest.CACHE;
+    TransformationTest cachedTest = modelSaver.getTest();
 
-    SModel cachedModel = check_ovzmet_a0e0l(cachedTest);
-    SModel cachedTransientModel = check_ovzmet_a0f0l(cachedTest);
-    String cachedModelName = check_ovzmet_a0g0l(check_ovzmet_a0a6a11(cachedModel));
+    SModel cachedModel = check_ovzmet_a0f0l(cachedTest);
+    SModel cachedTransientModel = check_ovzmet_a0g0l(cachedTest);
+    String cachedModelName = check_ovzmet_a0h0l(check_ovzmet_a0a7a11(cachedModel));
     if (cachedModelName != null && cachedModelName.equals(modelName)) {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Using the cached model");
@@ -97,8 +98,8 @@ public class TransformationTestRunner implements TestRunner {
       if (exception != null) {
         throw new RuntimeException(exception);
       }
-      TestModelSaver.getInstance().clean();
-      TestModelSaver.getInstance().setTest(test);
+      modelSaver.clean();
+      modelSaver.setTest(test);
     }
   }
 
@@ -241,25 +242,25 @@ public class TransformationTestRunner implements TestRunner {
     }
     return exception;
   }
-  private static SModel check_ovzmet_a0e0l(TransformationTest checkedDotOperand) {
+  private static SModel check_ovzmet_a0f0l(TransformationTest checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
-  private static SModel check_ovzmet_a0f0l(TransformationTest checkedDotOperand) {
+  private static SModel check_ovzmet_a0g0l(TransformationTest checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTransientModelDescriptor();
     }
     return null;
   }
-  private static String check_ovzmet_a0g0l(SModelReference checkedDotOperand) {
+  private static String check_ovzmet_a0h0l(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.toString();
     }
     return null;
   }
-  private static SModelReference check_ovzmet_a0a6a11(SModel checkedDotOperand) {
+  private static SModelReference check_ovzmet_a0a7a11(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

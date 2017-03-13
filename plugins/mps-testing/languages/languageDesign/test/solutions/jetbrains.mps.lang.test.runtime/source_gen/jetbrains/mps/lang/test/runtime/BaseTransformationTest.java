@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.lang.test.util.MpsRunListener;
+import jetbrains.mps.lang.test.util.MpsTestRunListener;
 import jetbrains.mps.lang.test.util.RunEventsDispatcher;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
@@ -21,6 +21,8 @@ public abstract class BaseTransformationTest implements TransformationTest {
   private SModel myModel;
   private SModel myTransientModel;
   private TestRunner myRunner;
+
+  /*package*/ static final TestModelSaver CACHE = new TestModelSaver();
 
   public static boolean isExecutionInProcess() {
     return RuntimeFlags.getTestMode() == TestMode.IN_PROCESS;
@@ -77,16 +79,21 @@ public abstract class BaseTransformationTest implements TransformationTest {
 
   private void initTests() {
     setTestRunner(defaultTestRunner());
-    beforeTests();
-    registerAfterTestsListener();
+    registerTestsListener();
   }
 
-  private void registerAfterTestsListener() {
-    MpsRunListener listener = new MpsRunListener() {
+  private void registerTestsListener() {
+    MpsTestRunListener listener = new MpsTestRunListener() {
       @Override
-      public void testRunDone() {
+      public void testRunFinished() {
+        CACHE.clean();
         afterTests();
         RunEventsDispatcher.getInstance().removeListener(this);
+      }
+
+      @Override
+      public void testRunStarted() {
+        beforeTests();
       }
     };
     RunEventsDispatcher.getInstance().addListener(listener);
