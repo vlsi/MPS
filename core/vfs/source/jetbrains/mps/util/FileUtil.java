@@ -203,6 +203,7 @@ public class FileUtil {
   }
 
   // poor version of normalization
+  // does not consider '..'; will be provided in the future release within new vfs API
   private static String normalize0(@NotNull String path, @NotNull String separator) {
     path = path.replaceAll("/+", "/").replaceAll("\\\\+", "\\\\");
     if (path.endsWith(separator + DOT)) {
@@ -213,9 +214,6 @@ public class FileUtil {
     }
     // four backslashes are for windows file separator (escaping it twice), and two are escaping the dot
     path = path.replaceAll("\\\\\\.\\\\", "\\\\").replaceAll("/\\./", "/");
-    if (path.contains(separator + DOT + DOT + separator)) {
-      LOG.warn("fixme: failed to normalize properly '..' elements '" + path + "'");
-    }
     return path;
   }
 
