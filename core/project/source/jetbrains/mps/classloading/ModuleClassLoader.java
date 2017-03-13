@@ -22,12 +22,16 @@ import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.iterable.IterableEnumeration;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import sun.misc.CompoundEnumeration;
 
 import java.io.IOException;
 import java.net.URL;
 import java.security.ProtectionDomain;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Enumeration;
 import java.util.List;
@@ -233,6 +237,25 @@ public final class ModuleClassLoader extends ClassLoader {
     return parent.loadClass(name);
   }
 
+  @Nullable
+  @Override
+  public URL getResource(@NonNls String name) {
+    URL ownResource = findResource(name);
+    if (ownResource == null) {
+      return getParent().getResource(name);
+    }
+    return ownResource;
+  }
+
+  @NotNull
+  @Override
+  public Enumeration<URL> getResources(@NonNls String name) throws IOException {
+    Enumeration<URL> ownResources = findResources(name);
+    Enumeration<URL> parentResources = getParent().getResources(name);
+    //noinspection unchecked
+    return new CompoundEnumeration<>(new Enumeration[]{ownResources, parentResources});
+  }
+
   @Override
   protected URL findResource(String name) {
     checkNotDisposed();
@@ -260,7 +283,7 @@ public final class ModuleClassLoader extends ClassLoader {
     List<ClassLoader> classLoadersToCheck = new ArrayList<ClassLoader>();
     classLoadersToCheck.add(this);
     classLoadersToCheck.addAll(getDependencyClassLoaders());
-    List<URL> result = new ArrayList<URL>();
+    List<URL> result = new ArrayList<>();
     for (ClassLoader dep : classLoadersToCheck) {
       if (dep instanceof ModuleClassLoader) {
         Enumeration<URL> resources;
@@ -273,7 +296,7 @@ public final class ModuleClassLoader extends ClassLoader {
       }
     }
 
-    return new IterableEnumeration<URL>(result);
+    return new IterableEnumeration<>(result);
   }
 
   /**
