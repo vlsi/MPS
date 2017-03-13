@@ -376,6 +376,9 @@
     <node concept="PrWs8" id="2lR2lzquo81" role="PzmwI">
       <ref role="PrY4T" to="tpee:htgVS9_" resolve="IStatementListContainer" />
     </node>
+    <node concept="PrWs8" id="5E7lJvCYGYT" role="PzmwI">
+      <ref role="PrY4T" to="3xdn:s5v6K2pSK7" resolve="QueryExpressionScopeProvider" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6D0CP__oaBp">
     <property role="TrG5h" value="BLExpression" />
