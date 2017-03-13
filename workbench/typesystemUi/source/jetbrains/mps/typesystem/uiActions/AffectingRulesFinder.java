@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,8 +48,7 @@ public class AffectingRulesFinder extends BaseFinder {
     if (!(target instanceof SNodeReference)) {
       return new SearchResults();
     }
-    // here's sort of workaround for missing SearchScope.resolve(SNodeReference)
-    SNode term = query.getScope().resolve((SNodeReference) target);
+    SNode term = query.getSearchObjectResolver().resolve((SNodeReference) target);
     if (term == null) {
       return new SearchResults();
     }
@@ -94,7 +93,7 @@ public class AffectingRulesFinder extends BaseFinder {
   }
 
   private SearchResults<SNode> createResult(SNode node, List<SearchResult<SNode>> results) {
-    return new SearchResults<SNode>(CollectionUtil.set(node), results);
+    return new SearchResults<>(CollectionUtil.set(node), results);
   }
 
 

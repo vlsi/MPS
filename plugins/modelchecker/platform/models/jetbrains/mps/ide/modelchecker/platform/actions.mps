@@ -11,7 +11,6 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <import index="5ijk" ref="r:f77c2bf1-6f5c-4cb2-b314-a84dd502542e(jetbrains.mps.resolve)" />
@@ -1612,6 +1611,21 @@
                 <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="79llRaSwGdi" role="3cqZAp">
+          <node concept="3SKdUq" id="79llRaSwGdk" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME IT'S PLAIN WRONG TO PASS SET OF MODELS/MODULES TO CHECK THROUGH IHolder." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="79llRaSwIF9" role="3cqZAp">
+          <node concept="3SKdUq" id="79llRaSwIFb" role="3SKWNk">
+            <property role="3SKdUp" value="      SearchScope tells where to look for, SearchQuery.getObjectHolder tells what to look for" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="79llRaSwOfR" role="3cqZAp">
+          <node concept="3SKdUq" id="79llRaSwOfT" role="3SKWNk">
+            <property role="3SKdUp" value="      That's why I didn't change scope.resolve here to use query.getSearchObjectResolver()!" />
           </node>
         </node>
         <node concept="3clFbJ" id="3etVqSRKzwx" role="3cqZAp">
