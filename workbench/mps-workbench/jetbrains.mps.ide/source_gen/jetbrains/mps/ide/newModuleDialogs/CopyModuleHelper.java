@@ -54,6 +54,10 @@ public final class CopyModuleHelper {
 
   @Nullable
   public AbstractModule copy() {
+    if (myOriginal.isPackaged()) {
+      // Do not handle this case since packaged module may not contain it sources 
+      return null;
+    }
     ModuleDescriptor moduleDescriptor = myOriginal.getModuleDescriptor();
     if (moduleDescriptor == null) {
       throw new IllegalArgumentException("The module descriptor is null for the " + myOriginal);

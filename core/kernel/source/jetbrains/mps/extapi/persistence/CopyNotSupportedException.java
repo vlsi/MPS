@@ -25,18 +25,11 @@ import org.jetbrains.annotations.NotNull;
  * @since 12/2/16 [3.5]
  */
 public class CopyNotSupportedException extends Exception {
-  private final String myErrorMessage;
-
   public CopyNotSupportedException(@NotNull String errorMessage) {
-    myErrorMessage = errorMessage;
+    super(errorMessage);
   }
 
   public CopyNotSupportedException(@NotNull String errorMessage, Throwable cause) {
     super(errorMessage, cause);
-    myErrorMessage = errorMessage;
-  }
-
-  public String getErrorMessage() {
-    return myErrorMessage;
   }
 }

@@ -3139,6 +3139,26 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="7l6b$KxsWq3" role="3clF47">
+        <node concept="3clFbJ" id="5ueUq782lER" role="3cqZAp">
+          <node concept="3clFbS" id="5ueUq782lET" role="3clFbx">
+            <node concept="3SKdUt" id="5ueUq782p00" role="3cqZAp">
+              <node concept="3SKdUq" id="5ueUq782p02" role="3SKWNk">
+                <property role="3SKdUp" value="Do not handle this case since packaged module may not contain it sources" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="5ueUq782nic" role="3cqZAp">
+              <node concept="10Nm6u" id="5ueUq782nma" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="5ueUq782mPs" role="3clFbw">
+            <node concept="37vLTw" id="5ueUq782mAR" role="2Oq$k0">
+              <ref role="3cqZAo" node="7l6b$KxsUru" resolve="myOriginal" />
+            </node>
+            <node concept="liA8E" id="5ueUq782n6B" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~AbstractModule.isPackaged():boolean" resolve="isPackaged" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="6CFNGGphPe1" role="3cqZAp">
           <node concept="3cpWsn" id="6CFNGGphPe0" role="3cpWs9">
             <property role="3TUv4t" value="false" />

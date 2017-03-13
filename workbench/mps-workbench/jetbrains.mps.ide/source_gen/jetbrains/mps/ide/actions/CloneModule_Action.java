@@ -7,8 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.ModuleNameUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
@@ -17,6 +15,7 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog;
 import jetbrains.mps.ide.newModuleDialogs.CloneModuleDialog;
+import jetbrains.mps.project.AbstractModule;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.application.ModalityState;
@@ -25,6 +24,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.extapi.persistence.CopyableModelRoot;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Language;
 
 public class CloneModule_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -40,7 +41,7 @@ public class CloneModule_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    boolean isApplicable = event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE) == 1 && event.getData(MPSCommonDataKeys.MODULE) instanceof AbstractModule && (!(event.getData(MPSCommonDataKeys.MODULE) instanceof Generator));
+    boolean isApplicable = event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE) == 1 && CloneModule_Action.this.supportsClonning(event.getData(MPSCommonDataKeys.MODULE), event);
     event.getPresentation().setText("Clone " + ModuleNameUtil.getModuleType(event.getData(MPSCommonDataKeys.MODULE)));
     event.getPresentation().setEnabledAndVisible(isApplicable);
   }
@@ -120,6 +121,9 @@ public class CloneModule_Action extends BaseAction {
       }
     }
     return result;
+  }
+  private boolean supportsClonning(SModule module, final AnActionEvent event) {
+    return !(module.isPackaged()) && (module instanceof Solution || module instanceof Language);
   }
   private static <T> T as_i0xx9i_a0a0f0g(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
