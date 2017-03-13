@@ -75,12 +75,12 @@ public class Insert_Action extends BaseAction {
         }
       }
     }
+    if (editorCell.getEditorComponent().isDisposed()) {
+      return;
+    }
 
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        if (editorCell.getEditorComponent().isDisposed()) {
-          return;
-        }
         if (editorCell instanceof EditorCell_Property && ((EditorCell_Property) editorCell).commit()) {
           return;
         }

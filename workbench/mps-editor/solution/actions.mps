@@ -2905,7 +2905,25 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="11sNP2BQ5ph" role="3cqZAp" />
+        <node concept="3clFbJ" id="2qEq7FDtqJy" role="3cqZAp">
+          <node concept="3clFbS" id="2qEq7FDtqJ$" role="3clFbx">
+            <node concept="3cpWs6" id="2qEq7FDtrtn" role="3cqZAp" />
+          </node>
+          <node concept="2OqwBi" id="2qEq7FDtqZ4" role="3clFbw">
+            <node concept="2OqwBi" id="2qEq7FDtqOk" role="2Oq$k0">
+              <node concept="37vLTw" id="2qEq7FDtqM2" role="2Oq$k0">
+                <ref role="3cqZAo" node="7eEUNhe_Ak" resolve="editorCell" />
+              </node>
+              <node concept="liA8E" id="2qEq7FDtqWy" role="2OqNvi">
+                <ref role="37wK5l" to="f4zo:~EditorCell.getEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getEditorComponent" />
+              </node>
+            </node>
+            <node concept="liA8E" id="2qEq7FDtrmN" role="2OqNvi">
+              <ref role="37wK5l" to="cj4x:~EditorComponent.isDisposed():boolean" resolve="isDisposed" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="pLiEoci8Tg" role="3cqZAp" />
         <node concept="3clFbF" id="7DX8xFKyFnn" role="3cqZAp">
           <node concept="2OqwBi" id="7DX8xFKyFZr" role="3clFbG">
             <node concept="2YIFZM" id="7DX8xFKyFtU" role="2Oq$k0">
@@ -2913,27 +2931,9 @@
               <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
             </node>
             <node concept="liA8E" id="7DX8xFKyIwW" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
+              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
               <node concept="1bVj0M" id="7DX8xFKyIyx" role="37wK5m">
                 <node concept="3clFbS" id="7DX8xFKyIyy" role="1bW5cS">
-                  <node concept="3clFbJ" id="2qEq7FDtqJy" role="3cqZAp">
-                    <node concept="3clFbS" id="2qEq7FDtqJ$" role="3clFbx">
-                      <node concept="3cpWs6" id="2qEq7FDtrtn" role="3cqZAp" />
-                    </node>
-                    <node concept="2OqwBi" id="2qEq7FDtqZ4" role="3clFbw">
-                      <node concept="2OqwBi" id="2qEq7FDtqOk" role="2Oq$k0">
-                        <node concept="37vLTw" id="2qEq7FDtqM2" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7eEUNhe_Ak" resolve="editorCell" />
-                        </node>
-                        <node concept="liA8E" id="2qEq7FDtqWy" role="2OqNvi">
-                          <ref role="37wK5l" to="f4zo:~EditorCell.getEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getEditorComponent" />
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="2qEq7FDtrmN" role="2OqNvi">
-                        <ref role="37wK5l" to="cj4x:~EditorComponent.isDisposed():boolean" resolve="isDisposed" />
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3clFbJ" id="11sNP2BO_Ca" role="3cqZAp">
                     <node concept="1Wc70l" id="2wEmQUlSmjB" role="3clFbw">
                       <node concept="2ZW3vV" id="11sNP2BOAmv" role="3uHU7B">
@@ -3067,7 +3067,7 @@
               <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
             </node>
             <node concept="liA8E" id="11sNP2BRlHr" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
+              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
               <node concept="1bVj0M" id="11sNP2BRlJ6" role="37wK5m">
                 <node concept="3clFbS" id="11sNP2BRlJ7" role="1bW5cS">
                   <node concept="3clFbJ" id="11sNP2BRmjM" role="3cqZAp">
