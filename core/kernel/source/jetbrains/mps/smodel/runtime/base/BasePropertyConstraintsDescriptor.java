@@ -88,6 +88,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     }
   }
 
+  @ToRemove(version = 3.5)
   private static boolean isBootstrapProperty(SAbstractConcept concept, SProperty property) {
     if (property.equals(SNodeUtil.property_INamedConcept_name) && concept.equals(SNodeUtil.concept_INamedConcept)) {
       return true;
@@ -172,29 +173,16 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
   @Override
   public Object getValue(SNode node) {
-    //this line is just to get old compiled code not to get into infinite recursion.
-    //remove it after 3.1
-    //ask Mihail Muhin or Timur Abishev for details
-    if (getterDescriptor == this) {
+    if (!isGetterDefault()) {
+      return getterDescriptor.getValue(node);
+    } else {
       return node.getProperty(myProperty);
     }
-
-    if (getterDescriptor!=null) return getterDescriptor.getValue(node);
-
-    return node.getProperty(myProperty);
   }
 
   @Override
   public void setValue(SNode node, String value) {
-    //this line is just to get old compiled code not to get into infinite recursion.
-    //remove it after 3.1
-    //ask Mihail Muhin or Timur Abishev for details
-    if (setterDescriptor == this) {
-      node.setProperty(myProperty, value);
-      return;
-    }
-
-    if (setterDescriptor != null) {
+    if (!isSetterDefault()) {
       setterDescriptor.setValue(node, value);
     } else {
       node.setProperty(myProperty, value);
@@ -203,14 +191,11 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
   @Override
   public boolean validateValue(SNode node, String value) {
-    //this line is just to get old compiled code not to get into infinite recursion.
-    //remove it after 3.1
-    //ask Mihail Muhin or Timur Abishev for details
-    if (validatorDescriptor == this) {
+    if (!isValidatorDefault()) {
+      return validatorDescriptor.validateValue(node, value);
+    } else {
       return true;
     }
-
-    return validatorDescriptor == null || validatorDescriptor.validateValue(node, value);
   }
 
   @Override
