@@ -15,6 +15,75 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root nodeRef="r:87ca99dc-4ebb-4b25-aad1-a314895ec01e(jetbrains.mps.ide.mpsmigration.v_2017_1)/3701865296871042751">
+    <file name="SetGenRequiredToEmptyAspects.java">
+      <node id="3701865296871042756" at="21,41,22,102" concept="14" />
+      <node id="3701865296871042770" at="26,5,27,65" concept="9" />
+      <node id="3701865296871042770" at="29,52,30,23" concept="10" />
+      <node id="2840424593937398442" at="32,8,33,94" concept="9" />
+      <node id="3701865296871042789" at="37,60,38,36" concept="10" />
+      <node id="3701865296871135532" at="41,46,42,63" concept="10" />
+      <node id="3701865296871114414" at="46,9,47,0" concept="12" />
+      <node id="2840424593938849085" at="49,42,50,50" concept="10" />
+      <node id="4956410689168100736" at="53,38,54,64" concept="4" />
+      <node id="3701865296871042857" at="57,5,58,16" concept="10" />
+      <node id="3701865296871042864" at="61,34,62,63" concept="10" />
+      <node id="3701865296871042752" at="21,0,24,0" concept="2" trace="SetGenRequiredToEmptyAspects#()V" />
+      <node id="3701865296871042770" at="29,0,32,0" concept="8" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="3701865296871042787" at="37,0,40,0" concept="8" trace="translate#(Ljetbrains/mps/smodel/Language;)Ljava/lang/Iterable;" />
+      <node id="3701865296871133866" at="41,0,44,0" concept="8" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <node id="2840424593938849083" at="49,0,52,0" concept="8" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <node id="2840424593937444658" at="53,0,56,0" concept="8" trace="visit#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="3701865296871042860" at="60,0,64,0" concept="8" trace="getDescription#()Ljava/lang/String;" />
+      <node id="3701865296871042770" at="27,65,32,8" concept="9" />
+      <node id="2840424593937399992" at="35,27,44,13" concept="4" />
+      <node id="2840424593937422819" at="47,0,56,9" concept="4" />
+      <node id="2840424593938149480" at="35,0,46,0" concept="8" trace="run#()V" />
+      <node id="2840424593938149478" at="33,94,46,9" concept="4" />
+      <node id="3701865296871042770" at="25,45,57,5" concept="1" />
+      <node id="3701865296871042762" at="24,0,60,0" concept="8" trace="doExecute#(Ljetbrains/mps/project/Project;)Z" />
+      <scope id="3701865296871042755" at="21,41,22,102" />
+      <scope id="3701865296871042770" at="29,52,30,23" />
+      <scope id="3701865296871042788" at="37,60,38,36" />
+      <scope id="3701865296871133867" at="41,46,42,63" />
+      <scope id="2840424593938849084" at="49,42,50,50" />
+      <scope id="2840424593937444659" at="53,38,54,64" />
+      <scope id="3701865296871042863" at="61,34,62,63" />
+      <scope id="3701865296871042752" at="21,0,24,0" />
+      <scope id="3701865296871042770" at="29,0,32,0" />
+      <scope id="3701865296871042787" at="37,0,40,0">
+        <var name="it" id="3701865296871042787" />
+      </scope>
+      <scope id="3701865296871133866" at="41,0,44,0">
+        <var name="it" id="3701865296871133866" />
+      </scope>
+      <scope id="2840424593938849083" at="49,0,52,0">
+        <var name="it" id="2840424593938849083" />
+      </scope>
+      <scope id="2840424593937444658" at="53,0,56,0">
+        <var name="it" id="2840424593937444658" />
+      </scope>
+      <scope id="3701865296871042860" at="60,0,64,0" />
+      <scope id="2840424593938149482" at="35,27,44,13" />
+      <scope id="2840424593938149480" at="35,0,46,0" />
+      <scope id="3701865296871042770" at="26,5,56,9">
+        <var name="context" id="3701865296871042770" />
+        <var name="modelsToClean" id="2840424593937398443" />
+        <var name="scope" id="3701865296871042770" />
+      </scope>
+      <scope id="3701865296871042767" at="25,45,58,16" />
+      <scope id="3701865296871042762" at="24,0,60,0">
+        <var name="project" id="3701865296871042765" />
+      </scope>
+      <unit id="3701865296871042770" at="28,48,32,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects$1" />
+      <unit id="3701865296871042787" at="36,166,40,11" name="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects$2$1" />
+      <unit id="3701865296871133866" at="40,23,44,11" name="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects$2$2" />
+      <unit id="2840424593938849083" at="48,59,52,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects$3" />
+      <unit id="2840424593937444658" at="52,22,56,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects$4" />
+      <unit id="2840424593938149480" at="34,65,46,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects$2" />
+      <unit id="3701865296871042751" at="20,0,65,0" name="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects" />
+    </file>
+  </root>
   <root nodeRef="r:87ca99dc-4ebb-4b25-aad1-a314895ec01e(jetbrains.mps.ide.mpsmigration.v_2017_1)/4140180342946030802">
     <file name="RemoveHistoryFiles.java">
       <node id="4140180342946076749" at="23,31,24,92" concept="14" />
