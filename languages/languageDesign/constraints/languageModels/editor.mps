@@ -115,6 +115,12 @@
         <child id="16410578721629643" name="emptyCellModel" index="2ruayu" />
       </concept>
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
+      <concept id="1088612959204" name="jetbrains.mps.lang.editor.structure.CellModel_Alternation" flags="sg" stub="8104358048506729361" index="1QoScp">
+        <property id="1088613081987" name="vertical" index="1QpmdY" />
+        <child id="1145918517974" name="alternationCondition" index="3e4ffs" />
+        <child id="1088612958265" name="ifTrueCellModel" index="1QoS34" />
+        <child id="1088612973955" name="ifFalseCellModel" index="1QoVPY" />
+      </concept>
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
@@ -303,14 +309,36 @@
             <property role="VOm3f" value="false" />
           </node>
         </node>
-        <node concept="3F1sOY" id="1P_b4lPTC6L" role="3EZMnx">
-          <property role="1$x2rV" value="&lt;default&gt;" />
-          <ref role="1NtTu8" to="tp1t:gLLXaMP" resolve="propertySetter" />
+        <node concept="1QoScp" id="2do2zVkj22r" role="3EZMnx">
+          <property role="1QpmdY" value="true" />
           <node concept="ljvvj" id="1op4ZxbwlRl" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
           <node concept="34QqEe" id="1op4Zxbwuak" role="3F10Kt">
             <property role="VOm3f" value="true" />
+          </node>
+          <node concept="pkWqt" id="2do2zVkj22u" role="3e4ffs">
+            <node concept="3clFbS" id="2do2zVkj22w" role="2VODD2">
+              <node concept="3clFbF" id="2do2zVkj2a2" role="3cqZAp">
+                <node concept="2OqwBi" id="2do2zVkj32v" role="3clFbG">
+                  <node concept="2OqwBi" id="2do2zVkj2kB" role="2Oq$k0">
+                    <node concept="pncrf" id="2do2zVkj2a1" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="2do2zVkj2AM" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tp1t:gGEtszc" resolve="propertyGetter" />
+                    </node>
+                  </node>
+                  <node concept="3x8VRR" id="2do2zVkj3x$" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3F1sOY" id="1P_b4lPTC6L" role="1QoS34">
+            <property role="1$x2rV" value="&lt;read-only&gt;" />
+            <ref role="1NtTu8" to="tp1t:gLLXaMP" resolve="propertySetter" />
+          </node>
+          <node concept="3F1sOY" id="2do2zVkj4cB" role="1QoVPY">
+            <property role="1$x2rV" value="&lt;default&gt;" />
+            <ref role="1NtTu8" to="tp1t:gLLXaMP" resolve="propertySetter" />
           </node>
         </node>
         <node concept="3F0ifn" id="1P_b4lPTC6N" role="3EZMnx">
@@ -321,7 +349,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="1P_b4lPTC6T" role="3EZMnx">
-          <property role="1$x2rV" value="&lt;default&gt;" />
+          <property role="1$x2rV" value="&lt;always&gt;" />
           <ref role="1NtTu8" to="tp1t:hCQCWDj" resolve="propertyValidator" />
           <node concept="ljvvj" id="1op4ZxbwlRB" role="3F10Kt">
             <property role="VOm3f" value="true" />

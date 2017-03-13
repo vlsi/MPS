@@ -595,12 +595,7 @@
         </node>
         <node concept="3SKdUt" id="7BBQIYkR5mm" role="3cqZAp">
           <node concept="3SKdUq" id="7BBQIYkR5mn" role="3SKWNk">
-            <property role="3SKdUp" value="we won't rename nodes, for which there are registered name constrints" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="7BBQIYkR5mo" role="3cqZAp">
-          <node concept="3SKdUq" id="7BBQIYkR5mp" role="3SKWNk">
-            <property role="3SKdUp" value="if there are constrints, but they are not compiled, we can rename it" />
+            <property role="3SKdUp" value="we won't rename nodes, for which there is getter without setter" />
           </node>
         </node>
         <node concept="3cpWs8" id="7BBQIYkR5mq" role="3cqZAp">
@@ -812,10 +807,10 @@
                   </node>
                 </node>
                 <node concept="Xl_RD" id="7BBQIYkR46i" role="37wK5m">
-                  <property role="Xl_RC" value="Nodes with getter or setter for the \&quot;name\&quot; property can't be renamed" />
+                  <property role="Xl_RC" value="Nodes with getter and without setter for the \&quot;name\&quot; property can't be renamed" />
                 </node>
                 <node concept="Xl_RD" id="7BBQIYkR46j" role="37wK5m">
-                  <property role="Xl_RC" value="Node can't be renamed" />
+                  <property role="Xl_RC" value="Read-only property" />
                 </node>
                 <node concept="10M0yZ" id="7BBQIYkR46k" role="37wK5m">
                   <ref role="1PxDUh" to="dxuu:~JOptionPane" resolve="JOptionPane" />

@@ -200,10 +200,10 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
   @Override
   public boolean isReadOnly() {
-    return !(isSetterDefault() && isGetterDefault());
+    return isSetterDefault() || !isGetterDefault();
   }
 
-  private static interface InheritanceCalculateParameters {
+  private interface InheritanceCalculateParameters {
     PropertyConstraintsDescriptor getParentCalculatedDescriptor(BasePropertyConstraintsDescriptor parentDescriptor);
 
     boolean hasOwn(PropertyConstraintsDispatchable parentDescriptor);

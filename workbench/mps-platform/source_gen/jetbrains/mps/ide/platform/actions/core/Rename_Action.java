@@ -104,7 +104,7 @@ public class Rename_Action extends BaseAction {
       }
     });
     if (!(canBeRenamed.value)) {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Nodes with getter or setter for the \"name\" property can't be renamed", "Node can't be renamed", JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Nodes with getter and without setter for the \"name\" property can't be renamed", "Read-only property", JOptionPane.INFORMATION_MESSAGE);
       return;
     }
     final String newName = RenameDialog.getNewName(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), oldName.value, "node");
@@ -124,8 +124,7 @@ public class Rename_Action extends BaseAction {
   protected static Logger LOG = LogManager.getLogger(Rename_Action.class);
   /*package*/ boolean canBeRenamed(final Map<String, Object> _params) {
     SNode node = ((SNode) MapSequence.fromMap(_params).get("target"));
-    // we won't rename nodes, for which there are registered name constrints 
-    // if there are constrints, but they are not compiled, we can rename it 
+    // we won't rename nodes, for which there is getter without setter 
     SProperty nameProperty = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     ConstraintsDescriptor cd = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node));
     PropertyConstraintsDescriptor propertyConstraint = cd.getProperty(nameProperty);
