@@ -52,7 +52,7 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
  * We always first acquire IDEA's lock and only then acquire MPS's lock
  */
 public class WorkbenchModelAccess extends ModelAccess implements ApplicationComponent {
-  public static final int WAIT_FOR_WRITE_LOCK_MILLIS = 200;
+  private static final int WAIT_FOR_WRITE_LOCK_MILLIS = 200;
   private static final int REQUIRE_MAX_TRIES = 8;
 
   private final AtomicInteger myWritesScheduled = new AtomicInteger();
@@ -550,7 +550,7 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
   protected void onCommandFinished() {
     ArrayList<CommandListener> listeners;
     synchronized (myListenersLock) {
-      listeners = new ArrayList<CommandListener>(myListeners);
+      listeners = new ArrayList<>(myListeners);
     }
     for (CommandListener l : listeners) {
       try {
@@ -568,7 +568,7 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
         while (!getWriteLock().tryLock(100, TimeUnit.MILLISECONDS)) {
         }
         getWriteLock().unlock();
-      } catch (InterruptedException e) {
+      } catch (InterruptedException ignored) {
       }
     } else {
       getReadLock().lock();
@@ -703,28 +703,27 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
   }
 
   private static class DelayedInterrupt implements Delayed {
+    private final long myAlarmTimeMillis;
+    private final Thread myToInterrupt;
 
-    private long alarmTimeMillis;
-    private Thread toInterrupt;
-
-    private DelayedInterrupt(Thread toInterrupt, long delay, TimeUnit unit) {
-      this.toInterrupt = toInterrupt;
-      this.alarmTimeMillis = System.currentTimeMillis() + unit.toMillis(delay);
+    private DelayedInterrupt(@NotNull Thread toInterrupt, long delay, TimeUnit unit) {
+      myToInterrupt = toInterrupt;
+      myAlarmTimeMillis = System.currentTimeMillis() + unit.toMillis(delay);
     }
 
     private void timeIsUp() {
-      toInterrupt.interrupt();
+      myToInterrupt.interrupt();
     }
 
     @Override
-    public long getDelay(TimeUnit unit) {
-      return unit.convert(alarmTimeMillis - System.currentTimeMillis(), TimeUnit.MILLISECONDS);
+    public long getDelay(@NotNull TimeUnit unit) {
+      return unit.convert(myAlarmTimeMillis - System.currentTimeMillis(), TimeUnit.MILLISECONDS);
     }
 
     @Override
-    public int compareTo(Delayed that) {
+    public int compareTo(@NotNull Delayed that) {
       if (!(that instanceof DelayedInterrupt)) throw new ClassCastException();
-      return (int) (this.alarmTimeMillis - ((DelayedInterrupt) that).alarmTimeMillis);
+      return (int) (this.myAlarmTimeMillis - ((DelayedInterrupt) that).myAlarmTimeMillis);
     }
   }
 

@@ -22,31 +22,33 @@ import jetbrains.mps.project.Project;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.TimeUnit;
 
+@Immutable
 final class EDTExecutor {
   private static final Logger LOG = LogManager.getLogger(EDTExecutor.class);
-  private static final int MAX_EXECUTION_TIME_MS = 100;
 
-  /* Notified when:
+  /**
+   * Notified when:
    *    myTasks queue becomes non-empty
    *    myExecutingFlag becomes false
    */
   private final Object myLock = new Object();
 
-  private final Thread myExecutorThread;
   private final WorkbenchModelAccess myModelAccess;
 
-  /* remove elements in EDT only */
-  private final ConcurrentLinkedQueue<Task> myTasks = new ConcurrentLinkedQueue<Task>();
+  /**
+   *  elements are removed in EDT only
+   */
+  private final ConcurrentLinkedQueue<Task> myTasks = new ConcurrentLinkedQueue<>();
 
   EDTExecutor(WorkbenchModelAccess modelAccess) {
     myModelAccess = modelAccess;
-    myExecutorThread = new ExecutorThread();
-    myExecutorThread.setDaemon(true);
-    myExecutorThread.start();
+    Thread executorThread = new ExecutorThread();
+    executorThread.setDaemon(true);
+    executorThread.start();
   }
 
   void scheduleRead(@NotNull Runnable r) {
@@ -120,25 +122,22 @@ final class EDTExecutor {
     public void run() {
       try {
         while (true) {
-          boolean doExecute, needsWrite;
+          boolean hasSmthToExecute;
           synchronized (myLock) {
             if (myExecutingFlag || myTasks.isEmpty()) {
               try {
                 myLock.wait();
-              } catch (InterruptedException e) {
-                /* ignore */
+              } catch (InterruptedException ignored) {
               }
             }
             if (myExecutingFlag) {
               continue;
             }
             Task top = myTasks.peek();
-            doExecute = top != null; // myTasks is not empty
-            needsWrite = doExecute && top.needsWrite();
+            hasSmthToExecute = (top != null); // myTasks is not empty
           }
 
-          if (doExecute) {
-            myModelAccess.waitLock(needsWrite); // wait until the required lock is available
+          if (hasSmthToExecute) {
             myExecutingFlag = true;
             executeLater();
           }
@@ -174,32 +173,24 @@ final class EDTExecutor {
         return;
       }
       try {
-        long deadline = System.nanoTime() + TimeUnit.NANOSECONDS.convert(MAX_EXECUTION_TIME_MS, TimeUnit.MILLISECONDS);
-
-        do {
-          Task task = myTasks.peek();
-          if (task == null) { // myTasks is empty
-            return;
-          }
-          boolean toRemove = true;
-          try {
-            if (!task.tryRun()) {
-              // stop processing, reschedule
-              toRemove = false;
-              return;
-            }
-          } catch (TaskIsOutdated e) {
-            /* ignore, remove task */
-          } catch (Exception e) {
-            LOG.error("run in EDT failure", e);
-          } finally {
-            if (toRemove) {
-              synchronized (myLock) {
-                myTasks.remove();
-              }
+        Task task = myTasks.peek();
+        if (task == null) { // myTasks is empty
+          return;
+        }
+        boolean taskPassed = true;
+        try {
+          taskPassed = task.tryRun();
+        } catch (TaskIsOutdated ignored) {
+          LOG.warn("The scheduled task has expired", ignored);
+        } catch (Exception e) {
+          LOG.error("run in EDT failure", e);
+        } finally {
+          if (taskPassed) {
+            synchronized (myLock) {
+              myTasks.remove();
             }
           }
-        } while (deadline > System.nanoTime());
+        }
       } finally {
         synchronized (myLock) {
           myExecutingFlag = false;
@@ -209,24 +200,14 @@ final class EDTExecutor {
     }
   }
 
-  private interface Task {
+  interface Task {
     boolean tryRun() throws TaskIsOutdated;
-
-    boolean needsWrite();
   }
 
-  public abstract class ReadTask implements Task {
-    @Override
-    public boolean needsWrite() {
-      return false;
-    }
+  abstract class ReadTask implements Task {
   }
 
-  public abstract class WriteTask implements Task {
-    @Override
-    public boolean needsWrite() {
-      return true;
-    }
+  abstract class WriteTask implements Task {
   }
 
   private static final class TaskIsOutdated extends Exception {
