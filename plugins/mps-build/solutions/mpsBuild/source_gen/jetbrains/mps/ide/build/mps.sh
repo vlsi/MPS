@@ -198,7 +198,7 @@ fi
 # Run the IDE.
 # ---------------------------------------------------------------------
 IFS="$(printf '\n\t')"
-MAIN_CLASS=jetbrains.mps.Launcher
+MAIN_CLASS=jetbrains.mps.com.intellij.idea.Main
 IDEA_PATHS_SELECTOR=MPS2017.1
 LD_LIBRARY_PATH="$IDE_BIN_HOME:$LD_LIBRARY_PATH" "$JAVA_BIN" \
   ${AGENT} \

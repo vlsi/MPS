@@ -25913,7 +25913,7 @@
     <node concept="10PD9b" id="5bqL32jZKzE" role="10PD9s" />
   </node>
   <node concept="26EafH" id="BJYGrH08Xx">
-    <property role="26FY9R" value="jetbrains.mps.Launcher" />
+    <property role="26FY9R" value="jetbrains.mps.com.intellij.idea.Main" />
     <property role="TrG5h" value="mps" />
     <property role="3GE5qa" value="ide.data" />
     <property role="26EafI" value="bin" />
