@@ -20,8 +20,18 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * To be removed in the nearest future.
+ * This is a hack which I had to employ since the core part of MPS knows nothing about the ModalityState concept;
+ * and since the PluginLoaderRegistry (which is a client of classloading) runs asynchronously on the EDT thread with NON_MODAL modality
+ * and demands working (non-disposed) classloaders this hack is here.
+ *
+ * @author apyshkin
+ */
+@ToRemove(version = 2018.1)
 public final class WorkbenchClassloadingEDTDispatcher implements ApplicationComponent, EDTDispatcher {
   private final ClassLoaderManager myClassLoaderManager;
 
