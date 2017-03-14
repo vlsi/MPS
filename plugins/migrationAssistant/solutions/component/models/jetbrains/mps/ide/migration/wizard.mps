@@ -2048,8 +2048,8 @@
         </node>
         <node concept="3clFbF" id="6khVpJexXT$" role="3cqZAp">
           <node concept="37vLTI" id="6khVpJexZ76" role="3clFbG">
-            <node concept="2YIFZM" id="6khVpJey01z" role="37vLTx">
-              <ref role="37wK5l" to="bd8o:~ModalityState.any():com.intellij.openapi.application.ModalityState" resolve="any" />
+            <node concept="2YIFZM" id="1XQRSQI2ry4" role="37vLTx">
+              <ref role="37wK5l" to="bd8o:~ModalityState.defaultModalityState():com.intellij.openapi.application.ModalityState" resolve="defaultModalityState" />
               <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
             </node>
             <node concept="2OqwBi" id="6khVpJexYmC" role="37vLTJ">

@@ -63,7 +63,6 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
   protected final ConcurrentHashMap<String, ConcurrentMap<Object, Object>> myRepositoryStateCaches = new ConcurrentHashMap<String, ConcurrentMap<Object, Object>>();
 
   protected ModelAccess() {
-
   }
 
   /**

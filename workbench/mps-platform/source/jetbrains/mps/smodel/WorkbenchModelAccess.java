@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationEx;
@@ -51,25 +52,22 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
  * We access IDEA locking mechanism here in order to prevent different way of acquiring locks
  * We always first acquire IDEA's lock and only then acquire MPS's lock
  */
-public class WorkbenchModelAccess extends ModelAccess implements ApplicationComponent {
+public final class WorkbenchModelAccess extends ModelAccess implements Disposable, ApplicationComponent {
   private static final int WAIT_FOR_WRITE_LOCK_MILLIS = 200;
   private static final int REQUIRE_MAX_TRIES = 8;
 
   private final AtomicInteger myWritesScheduled = new AtomicInteger();
   private final EDTExecutor myEDTExecutor = new EDTExecutor(this);
   private final DelayQueue<DelayedInterrupt> myInterruptQueue = new DelayQueue<DelayedInterrupt>();
-  private final Thread myInterruptingThread = new Thread(new Runnable() {
-    @Override
-    public void run() {
-      while (true) {
-        try {
-          DelayedInterrupt di = myInterruptQueue.take();
-          di.timeIsUp();
-        } catch (InterruptedException e) {
-          Application app = ApplicationManager.getApplication();
-          if (app == null || app.isDisposeInProgress() || app.isDisposed()) {
-            return;
-          }
+  private final Thread myInterruptingThread = new Thread(() -> {
+    while (true) {
+      try {
+        DelayedInterrupt di = myInterruptQueue.take();
+        di.timeIsUp();
+      } catch (InterruptedException e) {
+        Application app = ApplicationManager.getApplication();
+        if (app == null || app.isDisposeInProgress() || app.isDisposed()) {
+          return;
         }
       }
     }
@@ -81,6 +79,7 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
 
   @Override
   public void dispose() {
+    myEDTExecutor.dispose();
     for (int attempt = 3; attempt > 0 && myInterruptingThread.isAlive(); --attempt) {
       myInterruptingThread.interrupt();
       try {
@@ -178,7 +177,7 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
 
   @Override
   public void flushEventQueue() {
-    myEDTExecutor.flushEventQueue();
+    myEDTExecutor.flushEventsQueue();
   }
 
   @Override
