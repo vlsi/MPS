@@ -562,20 +562,6 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
     super.onCommandFinished();
   }
 
-  void waitLock(boolean write) {
-    if (write) {
-      try {
-        while (!getWriteLock().tryLock(100, TimeUnit.MILLISECONDS)) {
-        }
-        getWriteLock().unlock();
-      } catch (InterruptedException ignored) {
-      }
-    } else {
-      getReadLock().lock();
-      getReadLock().unlock();
-    }
-  }
-
   @Override
   public void initComponent() {
     // not allowing to substitute alien model accesses here
