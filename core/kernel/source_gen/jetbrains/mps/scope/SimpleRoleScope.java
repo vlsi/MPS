@@ -5,6 +5,7 @@ package jetbrains.mps.scope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
@@ -28,13 +29,13 @@ public abstract class SimpleRoleScope extends Scope {
     this.concept = null;
   }
   @Override
-  public SNode resolve(SNode contextNode, String refText) {
+  public SNode resolve(SNode contextNode, @NotNull String refText) {
     SNode result = null;
     for (SNode n : SNodeOperations.getChildren(myNode, myLink)) {
       if (this.concept != null && !(n.getConcept().isSubConceptOf(concept))) {
         continue;
       }
-      if (getName(n).equals(refText)) {
+      if (refText.equals(getName(n))) {
         if (result != null) {
           return null;
         }

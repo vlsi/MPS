@@ -27,6 +27,7 @@ import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.build.behavior.BuildLayout_Node__BehaviorDescriptor;
 import java.util.List;
 import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor;
 
 public class ScopeUtil {
@@ -144,11 +145,11 @@ public class ScopeUtil {
       return result;
     }
     @Override
-    public SNode resolve(SNode contextNode, String refText) {
+    public SNode resolve(SNode contextNode, @NotNull String refText) {
       SNode result = null;
       for (SNode n : getAllNodes()) {
         String name = getName(n);
-        if (name.equals(refText)) {
+        if (refText.equals(name)) {
           if (result == null) {
             result = n;
           } else {
@@ -187,10 +188,7 @@ public class ScopeUtil {
     @Override
     public SNode resolve(SNode contextNode, String refText) {
       SNode resolve = wrapped.resolve(contextNode, refText);
-      if (resolve == null) {
-        return null;
-      }
-      return unwrap(resolve);
+      return (resolve == null ? null : unwrap(resolve));
     }
     @Override
     public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
