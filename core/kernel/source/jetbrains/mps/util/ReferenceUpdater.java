@@ -17,6 +17,12 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelInternal;
@@ -32,6 +38,7 @@ import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -105,7 +112,7 @@ public final class ReferenceUpdater {
         SModel oldModel = oldModels.get(j);
         SModel newModel = newModels.get(j);
         if (!oldModel.isReadOnly()) {
-          addModelToAdjust(oldModel, newModel);
+          addModelToAdjustImpl(oldModel, newModel);
         } else {
           if (!newModel.isReadOnly()) {
             throw new RefUpdateException("Readonly status differs in the clone " + newModel);
@@ -161,18 +168,16 @@ public final class ReferenceUpdater {
     assertNotAdjusted();
 
     myModules.forEach(module -> {
-        for (SDependency dependency : module.getDeclaredDependencies()) {
-          SModuleReference depReference = dependency.getTargetModule();
-          if (myModuleReferenceMap.containsKey(depReference)) {
-            ((AbstractModule) module).removeDependency(new Dependency(depReference, dependency.getScope(), dependency.isReexport()));
-            ((AbstractModule) module).addDependency(myModuleReferenceMap.get(depReference), dependency.isReexport());
-          }
-        }
+      if (module instanceof Generator) {
+        adjustGenerator((Generator) module);
+      } else if (module instanceof AbstractModule) {
+        adjustModule((AbstractModule) module);
+      }
     });
 
     myModels.forEach(model -> {
       SModelInternal modelInternal = (SModelInternal) model;
-      for (SModelReference aImport: modelInternal.getModelImports()) {
+      for (SModelReference aImport : modelInternal.getModelImports()) {
         if (myModelReferenceMap.containsKey(aImport)) {
           modelInternal.deleteModelImport(aImport);
           modelInternal.addModelImport(myModelReferenceMap.get(aImport));
@@ -217,24 +222,68 @@ public final class ReferenceUpdater {
     }
   }
 
-  private void updateReferences(SNode node){
+  private void updateReferences(SNode node) {
     node.getReferences().forEach(ref -> {
       if (ref instanceof StaticReference) {
         StaticReference reference = (StaticReference) ref;
         SModelReference targetSModelReference = reference.getTargetSModelReference();
         if (myModelReferenceMap.containsKey(targetSModelReference)) {
           StaticReference newReference = new StaticReference(
-              reference.getLink(),
-              node,
-              myModelReferenceMap.get(targetSModelReference),
-              reference.getTargetNodeId(),
-              reference.getResolveInfo()
+                                                                reference.getLink(),
+                                                                node,
+                                                                myModelReferenceMap.get(targetSModelReference),
+                                                                reference.getTargetNodeId(),
+                                                                reference.getResolveInfo()
           );
           node.setReference(newReference.getLink(), newReference);
         }
       }
     });
     node.getChildren().forEach(this::updateReferences);
+  }
+
+  private void adjustGenerator(Generator generator) {
+    adjustModule(generator);
+
+    GeneratorDescriptor descriptor = generator.getModuleDescriptor();
+    for (MappingPriorityRule rule : descriptor.getPriorityRules()) {
+      adjustMappingConfig(rule.getLeft());
+      adjustMappingConfig(rule.getRight());
+    }
+    generator.setModuleDescriptor(descriptor);
+  }
+
+  private void adjustMappingConfig(MappingConfig_AbstractRef config) {
+    if (config instanceof MappingConfig_SimpleRef) {
+      MappingConfig_SimpleRef config_simpleRef = (MappingConfig_SimpleRef) config;
+      SModelReference oldModelRef = PersistenceFacade.getInstance().createModelReference(config_simpleRef.getModelUID());
+      SModelReference newModelRef = myModelReferenceMap.get(oldModelRef);
+      if (newModelRef != null) {
+        config_simpleRef.setModelUID(newModelRef.toString());
+      }
+    } else if (config instanceof MappingConfig_ExternalRef) {
+      MappingConfig_ExternalRef config_externalRef = (MappingConfig_ExternalRef) config;
+      SModuleReference oldModuleRef = config_externalRef.getGenerator();
+      SModuleReference newModuleRef = myModuleReferenceMap.get(oldModuleRef);
+      if (newModuleRef != null) {
+        config_externalRef.setGenerator(newModuleRef);
+      }
+      adjustMappingConfig(config_externalRef.getMappingConfig());
+    } else if (config instanceof MappingConfig_RefSet) {
+      for (MappingConfig_AbstractRef configElement: ((MappingConfig_RefSet) config).getMappingConfigs()) {
+        adjustMappingConfig(configElement);
+      }
+    }
+  }
+
+  private void adjustModule(AbstractModule module) {
+    for (SDependency dependency : module.getDeclaredDependencies()) {
+      SModuleReference depReference = dependency.getTargetModule();
+      if (myModuleReferenceMap.containsKey(depReference)) {
+        module.removeDependency(new Dependency(depReference, dependency.getScope(), dependency.isReexport()));
+        module.addDependency(myModuleReferenceMap.get(depReference), dependency.isReexport());
+      }
+    }
   }
 
   public static final class RefUpdateException extends Exception {
