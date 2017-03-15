@@ -35,11 +35,10 @@ public final class BinaryOperation__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<Object> getCompileTimeConstantValue_idi1LP2xI = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("getCompileTimeConstantValue").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i1LP2xI").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SModule.class, ""));
   public static final SMethod<Object> calculateCompileTimeConstantValue_id1o8Ht9sN5Hn = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("calculateCompileTimeConstantValue").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1o8Ht9sN5Hn").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Object.class, ""), SMethodBuilder.createJavaParameter(Object.class, ""));
   public static final SMethod<Boolean> bothShouldBeWidenedTo_id5otPu$gIcHo = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("bothShouldBeWidenedTo").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5otPu$gIcHo").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Class.class, ""), SMethodBuilder.createJavaParameter(Object.class, ""), SMethodBuilder.createJavaParameter(Object.class, ""));
-  public static final SMethod<Object> eval_idhEwJgmp = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("eval").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJgmp").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SModule.class, ""));
   public static final SMethod<SNode> getFlippedOperator_id14Lzlw0K236 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getFlippedOperator").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("14Lzlw0K236").registry(REGISTRY).build();
   public static final SMethod<Boolean> flipChangesSemantics_id14Lzlw0RrBK = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("flipChangesSemantics").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("14Lzlw0RrBK").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPriority_id1653mnvAgo2, setSyntacticallyLeftSideExpression_id1wHCnsn58ZK, setSyntacticallyRightSideExpression_id1wHCnsn58ZY, getSyntacticallyLeftSideExpression_id1wHCnsn590c, getSyntacticallyRightSideExpression_id1wHCnsn590i, isCompileTimeConstant_idi1LOPRp, getCompileTimeConstantValue_idi1LP2xI, calculateCompileTimeConstantValue_id1o8Ht9sN5Hn, bothShouldBeWidenedTo_id5otPu$gIcHo, eval_idhEwJgmp, getFlippedOperator_id14Lzlw0K236, flipChangesSemantics_id14Lzlw0RrBK);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPriority_id1653mnvAgo2, setSyntacticallyLeftSideExpression_id1wHCnsn58ZK, setSyntacticallyRightSideExpression_id1wHCnsn58ZY, getSyntacticallyLeftSideExpression_id1wHCnsn590c, getSyntacticallyRightSideExpression_id1wHCnsn590i, isCompileTimeConstant_idi1LOPRp, getCompileTimeConstantValue_idi1LP2xI, calculateCompileTimeConstantValue_id1o8Ht9sN5Hn, bothShouldBeWidenedTo_id5otPu$gIcHo, getFlippedOperator_id14Lzlw0K236, flipChangesSemantics_id14Lzlw0RrBK);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -75,9 +74,6 @@ public final class BinaryOperation__BehaviorDescriptor extends BaseBHDescriptor 
   }
   /*package*/ static boolean bothShouldBeWidenedTo_id5otPu$gIcHo(@NotNull SAbstractConcept __thisConcept__, Class type, Object a, Object b) {
     return a.getClass().isAssignableFrom(type) || b.getClass().isAssignableFrom(type);
-  }
-  /*package*/ static Object eval_idhEwJgmp(@NotNull SNode __thisNode__, SModule module) {
-    return ((Object) Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(__thisNode__, module));
   }
   /*package*/ static SNode getFlippedOperator_id14Lzlw0K236(@NotNull SNode __thisNode__) {
     return __thisNode__;
@@ -119,10 +115,8 @@ public final class BinaryOperation__BehaviorDescriptor extends BaseBHDescriptor 
       case 7:
         return (T) ((Object) calculateCompileTimeConstantValue_id1o8Ht9sN5Hn(node, (Object) parameters[0], (Object) parameters[1]));
       case 9:
-        return (T) ((Object) eval_idhEwJgmp(node, (SModule) parameters[0]));
-      case 10:
         return (T) ((SNode) getFlippedOperator_id14Lzlw0K236(node));
-      case 11:
+      case 10:
         return (T) ((Boolean) flipChangesSemantics_id14Lzlw0RrBK(node));
       default:
         throw new BHMethodNotFoundException(this, method);

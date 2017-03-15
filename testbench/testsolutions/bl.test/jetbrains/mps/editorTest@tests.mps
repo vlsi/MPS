@@ -48,6 +48,7 @@
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
+    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
@@ -142,6 +143,8 @@
       <concept id="1225194413805" name="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" flags="in" index="13hLZK" />
       <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
         <property id="1225194472833" name="isPrivate" index="13i0is" />
+        <property id="1225194472832" name="isVirtual" index="13i0it" />
+        <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
       </concept>
     </language>
@@ -2232,31 +2235,25 @@
     <property role="3GE5qa" value="selection" />
     <node concept="13h7C7" id="hVTYQqw" role="LiRBU">
       <ref role="13h7C2" to="tpee:fzcpWvV" resolve="PlusExpression" />
-      <node concept="13i0hz" id="hVTYQqx" role="13h7CS">
+      <node concept="13i0hz" id="39lCI4w4BaQ" role="13h7CS">
         <property role="13i0is" value="false" />
-        <property role="TrG5h" value="eval" />
-        <ref role="13i0hy" to="tpek:hEwJgmp" resolve="eval" />
-        <node concept="LIFWc" id="4EqhHToXWen" role="lGtFl">
-          <property role="p6zMs" value="10" />
-          <property role="LIFWd" value="ReadOnlyModelAccessor_gmtuod_c9c0" />
-          <property role="p6zMq" value="10" />
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-        </node>
-        <node concept="37vLTG" id="hVTYQrc" role="3clF46">
-          <property role="TrG5h" value="module" />
-          <node concept="3uibUv" id="hVTYQrd" role="1tU5fm">
-            <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-          </node>
-        </node>
-        <node concept="3uibUv" id="hVTYQre" role="3clF45">
-          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-        </node>
-        <node concept="3Tm1VV" id="hVTYQrf" role="1B3o_S" />
-        <node concept="3clFbS" id="hVU1YTQ" role="3clF47">
+        <property role="TrG5h" value="getPresentation" />
+        <property role="13i0it" value="false" />
+        <property role="13i0iv" value="false" />
+        <ref role="13i0hy" to="tpcu:hEwIMiw" resolve="getPresentation" />
+        <node concept="3Tm1VV" id="39lCI4w4BbZ" role="1B3o_S" />
+        <node concept="3clFbS" id="39lCI4w4Bc0" role="3clF47">
           <node concept="3cpWs6" id="hVU1YTR" role="3cqZAp">
             <node concept="10Nm6u" id="hVU1Zvv" role="3cqZAk" />
           </node>
+        </node>
+        <node concept="17QB3L" id="39lCI4w4Bc1" role="3clF45" />
+        <node concept="LIFWc" id="39lCI4w66xJ" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="property_name_1" />
         </node>
       </node>
       <node concept="13hLZK" id="hVTYQrg" role="13h7CW">
@@ -2265,35 +2262,24 @@
     </node>
     <node concept="13h7C7" id="hVU32bW" role="LiZbd">
       <ref role="13h7C2" to="tpee:fzcpWvV" resolve="PlusExpression" />
-      <node concept="13i0hz" id="hVU32bX" role="13h7CS">
+      <node concept="13i0hz" id="39lCI4w4GJf" role="13h7CS">
         <property role="13i0is" value="false" />
-        <property role="TrG5h" value="eval" />
-        <node concept="3Tm1VV" id="hVU32c1" role="1B3o_S" />
-        <node concept="3clFbS" id="hVU32c2" role="3clF47">
-          <node concept="3cpWs6" id="hVU32c3" role="3cqZAp">
-            <node concept="10Nm6u" id="hVU32c4" role="3cqZAk" />
+        <property role="TrG5h" value="getPresentation" />
+        <property role="13i0it" value="false" />
+        <property role="13i0iv" value="false" />
+        <node concept="3Tm1VV" id="39lCI4w4GJg" role="1B3o_S" />
+        <node concept="3clFbS" id="39lCI4w4GJh" role="3clF47">
+          <node concept="3cpWs6" id="39lCI4w4GJi" role="3cqZAp">
+            <node concept="10Nm6u" id="39lCI4w4GJj" role="3cqZAk" />
           </node>
         </node>
-        <node concept="37vLTG" id="hVU64bI" role="3clF46">
-          <property role="TrG5h" value="module" />
-          <node concept="3uibUv" id="hVU64bJ" role="1tU5fm">
-            <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-          </node>
-        </node>
-        <node concept="3uibUv" id="hVU64bK" role="3clF45">
-          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-        </node>
+        <node concept="17QB3L" id="39lCI4w4GJk" role="3clF45" />
       </node>
       <node concept="13hLZK" id="hVU32c5" role="13h7CW">
         <node concept="3clFbS" id="hVU32c6" role="2VODD2" />
       </node>
     </node>
     <node concept="3clFbS" id="hVU3i2e" role="LjaKd">
-      <node concept="2HxZob" id="mqAYuUjhit" role="3cqZAp">
-        <node concept="1iFQzN" id="mqAYuUjhiv" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBNW" resolve="MoveRight" />
-        </node>
-      </node>
       <node concept="1Dw8fO" id="hVU3i2f" role="3cqZAp">
         <node concept="3cpWsn" id="hVU3i2g" role="1Duv9x">
           <property role="TrG5h" value="i" />
@@ -2303,8 +2289,13 @@
           </node>
         </node>
         <node concept="3eOVzh" id="hVU3jIh" role="1Dwp0S">
-          <node concept="3cmrfG" id="hVU3jLZ" role="3uHU7w">
-            <property role="3cmrfH" value="5" />
+          <node concept="2OqwBi" id="39lCI4w4Fq_" role="3uHU7w">
+            <node concept="Xl_RD" id="39lCI4w4BzV" role="2Oq$k0">
+              <property role="Xl_RC" value=".getPresentation" />
+            </node>
+            <node concept="liA8E" id="39lCI4w4G58" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
+            </node>
           </node>
           <node concept="37vLTw" id="hVU3jv8" role="3uHU7B">
             <ref role="3cqZAo" node="hVU3i2g" resolve="i" />
@@ -11886,18 +11877,18 @@
               <node concept="34ab3g" id="2tTgVY$$Yz4" role="3cqZAp">
                 <property role="35gtTG" value="error" />
                 <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="2tTgVY$$Yz6" role="34bqiv">
-                  <property role="Xl_RC" value="Can't write messages" />
-                </node>
-                <node concept="37vLTw" id="2tTgVY$$Yz8" role="34bMjA">
-                  <ref role="3cqZAo" node="2tTgVY$$PBc" resolve="e" />
-                </node>
                 <node concept="LIFWc" id="7yRd4V1DW4G" role="lGtFl">
                   <property role="LIFWa" value="0" />
                   <property role="OXtK3" value="true" />
                   <property role="p6zMq" value="0" />
                   <property role="p6zMs" value="0" />
                   <property role="LIFWd" value="property_severity" />
+                </node>
+                <node concept="Xl_RD" id="2tTgVY$$Yz6" role="34bqiv">
+                  <property role="Xl_RC" value="Can't write messages" />
+                </node>
+                <node concept="37vLTw" id="2tTgVY$$Yz8" role="34bMjA">
+                  <ref role="3cqZAo" node="2tTgVY$$PBc" resolve="e" />
                 </node>
               </node>
             </node>
