@@ -57,6 +57,7 @@ public final class DataTransferManager implements LanguageRegistryListener {
     myLoaded = false;
     MapSequence.fromMap(myCopyPreProcessors).clear();
     MapSequence.fromMap(myPastePostProcessors).clear();
+    MapSequence.fromMap(myPasteWrappers).clear();
   }
 
   public void preProcessNode(SNode copy, SNode original) {
@@ -106,7 +107,9 @@ public final class DataTransferManager implements LanguageRegistryListener {
     PasteWrapper pasteWrapper = getPasteWrapper(SNodeOperations.getConcept(node), targetConcept);
 
     if (pasteWrapper != null) {
-      return pasteWrapper.wrap(node);
+      SNode newNode = pasteWrapper.wrap(node);
+      SNodeOperations.deleteNode(newNode);
+      return newNode;
     }
 
     // branch for legacy code interop. remove after 3.5 
@@ -126,7 +129,7 @@ public final class DataTransferManager implements LanguageRegistryListener {
   private PasteWrapper getPasteWrapper(SAbstractConcept source, SAbstractConcept target) {
     buildCache();
     Map<SAbstractConcept, PasteWrapper> wrappers = MapSequence.fromMap(myPasteWrappers).get(target);
-    for (SAbstractConcept src : ListSequence.fromList(SConceptOperations.getAllSuperConcepts(source, false))) {
+    for (SAbstractConcept src : ListSequence.fromList(SConceptOperations.getAllSuperConcepts(source, true))) {
       PasteWrapper pasteWrapper = MapSequence.fromMap(wrappers).get(src);
       if (pasteWrapper != null) {
         return pasteWrapper;
@@ -159,11 +162,4 @@ public final class DataTransferManager implements LanguageRegistryListener {
       }
     }
   }
-
-  public void clearCache() {
-    myLoaded = false;
-    MapSequence.fromMap(myCopyPreProcessors).clear();
-    MapSequence.fromMap(myPastePostProcessors).clear();
-  }
-
 }
