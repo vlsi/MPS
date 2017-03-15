@@ -18,6 +18,7 @@ package jetbrains.mps.util;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
@@ -44,8 +45,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Utility class that provides model/module reference updating in a group of models/modules.
@@ -58,7 +61,6 @@ import java.util.Map;
  *
  * @author Radimir.Sorokin
  *
- * TODO supports languages updating (runtime modules, accessory models, etc.)
  */
 public final class ReferenceUpdater {
   private final List<SModule> myModules = new ArrayList<>();
@@ -130,6 +132,10 @@ public final class ReferenceUpdater {
     if (oldLanguage.getGenerators().size() != newLanguage.getGenerators().size()) {
       throw new RefUpdateException("The number of generators do not match!");
     }
+    Iterator<SModel> newAccessoryModelIt = newLanguage.getAccessoryModels().iterator();
+    for (SModel oldAccessoryModel: oldLanguage.getAccessoryModels()) {
+      myModelReferenceMap.put(oldAccessoryModel.getReference(), newAccessoryModelIt.next().getReference());
+    }
     Iterator<Generator> newGeneratorIt = newLanguage.getGenerators().iterator();
     for (Generator oldGenerator : oldLanguage.getGenerators()) {
       addModuleToAdjustImpl(oldGenerator, newGeneratorIt.next());
@@ -170,6 +176,8 @@ public final class ReferenceUpdater {
     myModules.forEach(module -> {
       if (module instanceof Generator) {
         adjustGenerator((Generator) module);
+      }else if (module instanceof Language) {
+        adjustLanguage((Language) module);
       } else if (module instanceof AbstractModule) {
         adjustModule((AbstractModule) module);
       }
@@ -240,6 +248,19 @@ public final class ReferenceUpdater {
       }
     });
     node.getChildren().forEach(this::updateReferences);
+  }
+
+  private void adjustLanguage(Language language) {
+    adjustModule(language);
+
+    LanguageDescriptor descriptor = language.getModuleDescriptor();
+    Set<SModelReference> accessoryModels = descriptor.getAccessoryModels();
+    Set<SModelReference> newAccessoryModels = new LinkedHashSet<>();
+    for (SModelReference modelReference : accessoryModels) {
+      SModelReference newModelReference = myModelReferenceMap.get(modelReference);
+      newAccessoryModels.add(newModelReference != null ? newModelReference : modelReference);
+    }
+    language.setModuleDescriptor(descriptor);
   }
 
   private void adjustGenerator(Generator generator) {
