@@ -108,6 +108,11 @@ public final class SNodeUtil {
   public static String getDetailedPresentation(SNode node) {
     return ((String) (String) BHReflection.invoke(node, SMethodTrimmedId.create("getDetailedPresentation", null, "22G2W3WJ92t")));
   }
+  /**
+   * 
+   * @deprecated Since 2017.1 editor automatically detects whether the concept cannot be used as a substitute by noticing that its substitute menu is empty
+   */
+  @Deprecated
   public static boolean isDefaultSubstitutable(SAbstractConcept concept) {
     return !(concept.isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
   }

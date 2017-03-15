@@ -62,7 +62,7 @@ public final class ReplaceWithConcreteSubconcept_Intention extends IntentionDesc
   private List<SConcept> parameter(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(SConceptOperations.getAllSubConcepts2(SNodeOperations.getConcept(node), SNodeOperations.getModel(node))).where(new IWhereFilter<SConcept>() {
       public boolean accept(SConcept it) {
-        return !(it.isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(it), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
+        return !(it.isAbstract());
       }
     }).toListSequence();
   }

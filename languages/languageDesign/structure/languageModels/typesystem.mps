@@ -2550,23 +2550,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3yB0zvVOA83" role="3cqZAp">
-          <node concept="2OqwBi" id="3yB0zvVOAzZ" role="3clFbG">
-            <node concept="2OqwBi" id="3yB0zvVOAc7" role="2Oq$k0">
-              <node concept="37vLTw" id="3yB0zvVOA81" role="2Oq$k0">
-                <ref role="3cqZAo" node="3yB0zvVO_Co" resolve="ref1" />
-              </node>
-              <node concept="3TrEf2" id="3yB0zvVOAl7" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpce:h0PrY0D" resolve="intfc" />
-              </node>
-            </node>
-            <node concept="2oxUTD" id="3yB0zvVOBUN" role="2OqNvi">
-              <node concept="3B5_sB" id="4YXTt1AIOuq" role="2oxUTC">
-                <ref role="3B5MYn" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="3yB0zvVOhVg" role="3cqZAp">
           <node concept="2OqwBi" id="3yB0zvVOlgO" role="3clFbG">
             <node concept="2OqwBi" id="3yB0zvVOhZi" role="2Oq$k0">
@@ -2810,6 +2793,69 @@
               <ref role="37wK5l" to="mhbf:~SModel.addRootNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="addRootNode" />
               <node concept="37vLTw" id="5qAq7iVHo2h" role="37wK5m">
                 <ref role="3cqZAo" node="5qAq7iVH0Et" resolve="editor" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="zFlAU0SgQq" role="3cqZAp" />
+        <node concept="3cpWs8" id="zFlAU0SgXt" role="3cqZAp">
+          <node concept="3cpWsn" id="zFlAU0SgXw" role="3cpWs9">
+            <property role="TrG5h" value="menu" />
+            <node concept="3Tqbb2" id="zFlAU0SgXr" role="1tU5fm">
+              <ref role="ehGHo" to="tpc2:2RDMjbOTqI4" resolve="SubstituteMenu_Default" />
+            </node>
+            <node concept="2ShNRf" id="zFlAU0Sh31" role="33vP2m">
+              <node concept="3zrR0B" id="zFlAU0SmPH" role="2ShVmc">
+                <node concept="3Tqbb2" id="zFlAU0SmPJ" role="3zrR0E">
+                  <ref role="ehGHo" to="tpc2:2RDMjbOTqI4" resolve="SubstituteMenu_Default" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="zFlAU0SmV8" role="3cqZAp">
+          <node concept="2OqwBi" id="zFlAU0SpeO" role="3clFbG">
+            <node concept="2OqwBi" id="zFlAU0Sna1" role="2Oq$k0">
+              <node concept="37vLTw" id="zFlAU0SmV6" role="2Oq$k0">
+                <ref role="3cqZAo" node="zFlAU0SgXw" resolve="menu" />
+              </node>
+              <node concept="3TrEf2" id="zFlAU0SoNj" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpc2:5HVj4Ph44AO" resolve="conceptDeclaration" />
+              </node>
+            </node>
+            <node concept="2oxUTD" id="zFlAU0SpD2" role="2OqNvi">
+              <node concept="37vLTw" id="zFlAU0SpG1" role="2oxUTC">
+                <ref role="3cqZAo" node="3yB0zvVOebG" resolve="stub" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="zFlAU0SpSp" role="3cqZAp">
+          <node concept="2OqwBi" id="zFlAU0SreP" role="3clFbG">
+            <node concept="2OqwBi" id="zFlAU0Sq7p" role="2Oq$k0">
+              <node concept="37vLTw" id="zFlAU0SpSn" role="2Oq$k0">
+                <ref role="3cqZAo" node="zFlAU0SgXw" resolve="menu" />
+              </node>
+              <node concept="3TrcHB" id="zFlAU0SqE6" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:hnGE5uv" resolve="virtualPackage" />
+              </node>
+            </node>
+            <node concept="tyxLq" id="zFlAU0Srtf" role="2OqNvi">
+              <node concept="37vLTw" id="zFlAU0SrxX" role="tz02z">
+                <ref role="3cqZAo" node="3yB0zvVOcO7" resolve="virtualPackage" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="zFlAU0SrC_" role="3cqZAp">
+          <node concept="2OqwBi" id="zFlAU0SrLt" role="3clFbG">
+            <node concept="37vLTw" id="zFlAU0SrCz" role="2Oq$k0">
+              <ref role="3cqZAo" node="5qAq7iVFXZW" resolve="editorModel" />
+            </node>
+            <node concept="liA8E" id="zFlAU0SrRS" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SModel.addRootNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="addRootNode" />
+              <node concept="37vLTw" id="zFlAU0SrV8" role="37wK5m">
+                <ref role="3cqZAo" node="zFlAU0SgXw" resolve="menu" />
               </node>
             </node>
           </node>

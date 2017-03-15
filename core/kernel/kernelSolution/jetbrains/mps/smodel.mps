@@ -224,6 +224,9 @@
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
       <concept id="2217234381367049075" name="jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag" flags="ng" index="VVOAv">
         <child id="3106559687488741665" name="line" index="2Xj1qM" />
       </concept>
@@ -1783,6 +1786,18 @@
       <node concept="37vLTG" id="7vc5PjWu3B6" role="3clF46">
         <property role="TrG5h" value="concept" />
         <node concept="3bZ5Sz" id="7vc5PjWu4az" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="zFlAU0Tibv" role="lGtFl">
+        <node concept="TZ5HI" id="zFlAU0Tibw" role="3nqlJM">
+          <node concept="TZ5HA" id="zFlAU0Tibx" role="3HnX3l">
+            <node concept="1dT_AC" id="zFlAU0Tif1" role="1dT_Ay">
+              <property role="1dT_AB" value="Since 2017.1 editor automatically detects whether the concept cannot be used as a substitute by noticing that its substitute menu is empty" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="zFlAU0Tiby" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="7kDY1n$F1IM" role="jymVt">
