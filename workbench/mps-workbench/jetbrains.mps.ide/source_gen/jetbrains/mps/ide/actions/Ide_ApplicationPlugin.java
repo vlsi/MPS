@@ -78,7 +78,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new PrintNodePosition_Action());
     addAction(new RemoveAllBookmarks_Action());
     addAction(new RemoveFromFavorites_Action());
-    addAction(new RemoveModuleFromProject_Action());
     addAction(new RemoveTransientModels_Action());
     addAction(new RenameFavoritesList_Action());
     addAction(new RenameFileOrDirectory_Action());
