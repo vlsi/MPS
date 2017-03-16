@@ -531,11 +531,12 @@
       <node id="1613125646032873132" at="155,28,156,20" concept="4" />
       <node id="1613125646032873134" at="156,20,157,42" concept="4" />
       <node id="1613125646032873147" at="160,110,161,81" concept="9" />
-      <node id="1613125646032873205" at="161,81,162,64" concept="4" />
-      <node id="1613125646032873212" at="162,64,163,53" concept="4" />
-      <node id="8978606230572474873" at="163,53,164,20" concept="4" />
-      <node id="2273513587775220371" at="164,20,165,0" concept="12" />
-      <node id="2273513587775220372" at="165,0,166,118" concept="10" />
+      <node id="2952006363643714024" at="161,81,162,73" concept="4" />
+      <node id="1613125646032873205" at="162,73,163,64" concept="4" />
+      <node id="1613125646032873212" at="163,64,164,53" concept="4" />
+      <node id="8978606230572474873" at="164,53,165,20" concept="4" />
+      <node id="2273513587775220371" at="165,20,166,0" concept="12" />
+      <node id="2273513587775220372" at="166,0,167,118" concept="10" />
       <node id="1613125646032873389" at="75,58,78,9" concept="7" />
       <node id="1613125646032873414" at="79,44,82,9" concept="7" />
       <node id="1613125646032872971" at="97,39,100,7" concept="7" />
@@ -549,7 +550,7 @@
       <node id="1613125646032873128" at="154,0,159,0" concept="8" trace="dispose#()V" />
       <node id="1613125646032872919" at="89,0,96,0" concept="8" trace="updateTemplateModelsDir#()V" />
       <node id="1613125646032872958" at="96,0,104,0" concept="8" trace="isValidName#(Ljava/lang/String;)Z" />
-      <node id="1613125646032873137" at="160,0,168,0" concept="8" trace="createNewGenerator#(Ljetbrains/mps/smodel/Language;Ljetbrains/mps/project/structure/modules/GeneratorDescriptor;)Ljetbrains/mps/smodel/Generator;" />
+      <node id="1613125646032873137" at="160,0,169,0" concept="8" trace="createNewGenerator#(Ljetbrains/mps/smodel/Language;Ljetbrains/mps/project/structure/modules/GeneratorDescriptor;)Ljetbrains/mps/smodel/Generator;" />
       <node id="1613125646032872878" at="71,0,84,0" concept="8" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
       <node id="1613125646032872700" at="44,0,58,0" concept="3" trace="NewGeneratorDialog#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/smodel/Language;)V" />
       <node id="1613125646032872871" at="69,58,84,7" concept="4" />
@@ -585,14 +586,14 @@
       <scope id="2990056072202845347" at="140,31,145,36" />
       <scope id="1613125646032873128" at="154,0,159,0" />
       <scope id="1613125646032872963" at="96,44,102,16" />
-      <scope id="1613125646032873146" at="160,110,166,118">
+      <scope id="1613125646032872919" at="89,0,96,0" />
+      <scope id="1613125646032873146" at="160,110,167,118">
         <var name="languageDescriptor" id="1613125646032873148" />
       </scope>
-      <scope id="1613125646032872919" at="89,0,96,0" />
       <scope id="1613125646032872958" at="96,0,104,0">
         <var name="name" id="1613125646032872961" />
       </scope>
-      <scope id="1613125646032873137" at="160,0,168,0">
+      <scope id="1613125646032873137" at="160,0,169,0">
         <var name="generatorDescriptor" id="255299930511837233" />
         <var name="language" id="1613125646032873140" />
       </scope>
@@ -624,7 +625,7 @@
       <scope id="1939610764124496121" at="108,0,153,0" />
       <unit id="1613125646032872877" at="70,46,84,5" name="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog$1" />
       <unit id="5049856602248792141" at="127,51,148,5" name="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog$2" />
-      <unit id="1613125646032872003" at="35,0,169,0" name="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog" />
+      <unit id="1613125646032872003" at="35,0,170,0" name="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog" />
     </file>
   </root>
 </debug-info>

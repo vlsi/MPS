@@ -4945,6 +4945,24 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="2zRCymRFhBC" role="3cqZAp">
+          <node concept="2OqwBi" id="2zRCymRFiXb" role="3clFbG">
+            <node concept="37vLTw" id="2zRCymRFhBA" role="2Oq$k0">
+              <ref role="3cqZAo" node="eb0uW_lKwL" resolve="generatorDescriptor" />
+            </node>
+            <node concept="liA8E" id="2zRCymRFkxG" role="2OqNvi">
+              <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.setSourceLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="setSourceLanguage" />
+              <node concept="2OqwBi" id="2zRCymRFkDe" role="37wK5m">
+                <node concept="37vLTw" id="2zRCymRFkyu" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1pyYjDPRaqO" resolve="language" />
+                </node>
+                <node concept="liA8E" id="2zRCymRFkVm" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="1pyYjDPRarP" role="3cqZAp">
           <node concept="2OqwBi" id="1pyYjDPRarQ" role="3clFbG">
             <node concept="2OqwBi" id="1pyYjDPRarR" role="2Oq$k0">

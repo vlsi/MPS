@@ -188,8 +188,9 @@ public class NewModuleUtil {
     templateModelsLocation.mkdirs();
 
     final GeneratorDescriptor generatorDescriptor = createGeneratorDescriptor(Generator.generateGeneratorUID(language), generatorLocation, templateModelsLocation);
+    generatorDescriptor.setSourceLanguage(language.getModuleReference());
     descriptor.getGenerators().add(generatorDescriptor);
-    language.setLanguageDescriptor(descriptor);
+    language.setModuleDescriptor(descriptor);
     language.save();
 
     final Generator newGenerator = projectRepoFacade.getModule(generatorDescriptor.getModuleReference(), Generator.class);

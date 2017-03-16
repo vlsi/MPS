@@ -1716,6 +1716,24 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="2zRCymRFovM" role="3cqZAp">
+          <node concept="2OqwBi" id="2zRCymRFp1O" role="3clFbG">
+            <node concept="37vLTw" id="2zRCymRFovK" role="2Oq$k0">
+              <ref role="3cqZAo" node="1pyYjDPRar2" resolve="generatorDescriptor" />
+            </node>
+            <node concept="liA8E" id="2zRCymRFpTW" role="2OqNvi">
+              <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.setSourceLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="setSourceLanguage" />
+              <node concept="2OqwBi" id="2zRCymRFq$1" role="37wK5m">
+                <node concept="37vLTw" id="2zRCymRFq6f" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7BBl3KI$P2v" resolve="language" />
+                </node>
+                <node concept="liA8E" id="2zRCymRFrha" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="1pyYjDPRarP" role="3cqZAp">
           <node concept="2OqwBi" id="1pyYjDPRarQ" role="3clFbG">
             <node concept="2OqwBi" id="70MbTYn8Ysz" role="2Oq$k0">
@@ -1737,7 +1755,7 @@
         <node concept="3clFbF" id="3J$DPqOjaU1" role="3cqZAp">
           <node concept="2OqwBi" id="3J$DPqOjbao" role="3clFbG">
             <node concept="liA8E" id="3J$DPqOjdhM" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~Language.setLanguageDescriptor(jetbrains.mps.project.structure.modules.LanguageDescriptor):void" resolve="setLanguageDescriptor" />
+              <ref role="37wK5l" to="z1c3:~AbstractModule.setModuleDescriptor(jetbrains.mps.project.structure.modules.ModuleDescriptor):void" resolve="setModuleDescriptor" />
               <node concept="37vLTw" id="3J$DPqOje8y" role="37wK5m">
                 <ref role="3cqZAo" node="1Yd98ZZnqH$" resolve="descriptor" />
               </node>

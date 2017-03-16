@@ -159,6 +159,7 @@ public class NewGeneratorDialog extends DialogWrapper {
 
   /*package*/ Generator createNewGenerator(final Language language, GeneratorDescriptor generatorDescriptor) {
     final LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
+    generatorDescriptor.setSourceLanguage(language.getModuleReference());
     languageDescriptor.getGenerators().add(generatorDescriptor);
     language.setModuleDescriptor(languageDescriptor);
     language.save();
