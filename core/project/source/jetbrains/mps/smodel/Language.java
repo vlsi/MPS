@@ -214,7 +214,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
         // looking for the existing generator with same ID
         Generator nextGeneratorCandidate = it.next();
         GeneratorDescriptor nextGeneratorCandidateDescriptor = nextGeneratorCandidate.getModuleDescriptor();
-        if (Objects.equals(nextGeneratorCandidateDescriptor.getGeneratorUID(), nextDescriptor.getGeneratorUID()) &&
+        if (Objects.equals(nextGeneratorCandidateDescriptor.getNamespace(), nextDescriptor.getNamespace()) &&
             Objects.equals(nextGeneratorCandidateDescriptor.getId(), nextDescriptor.getId())) {
           nextGenerator = nextGeneratorCandidate;
           it.remove();

@@ -33,7 +33,6 @@
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="mcvo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure.language(MPS.Core/)" />
     <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" />
-    <import index="w827" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.openapi(MPS.Core/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
   </imports>
@@ -1677,6 +1676,11 @@
                 <node concept="2ShNRf" id="1yoijmglWo5" role="33vP2m">
                   <node concept="g8Q5f" id="1yoijmglWo6" role="2ShVmc">
                     <node concept="3clFbS" id="1yoijmglWo7" role="GGjiV">
+                      <node concept="3SKdUt" id="2NRMQ_$hp8F" role="3cqZAp">
+                        <node concept="3SKdUq" id="2NRMQ_$hp8H" role="3SKWNk">
+                          <property role="3SKdUp" value="FIXME generatorUID is legacy key, remove in 2017.2 or 2017.3 (depending on moment we save new attributes)" />
+                        </node>
+                      </node>
                       <node concept="3cpWs8" id="1yoijmglWo8" role="3cqZAp">
                         <node concept="3cpWsn" id="1yoijmglWo9" role="3cpWs9">
                           <property role="TrG5h" value="genUID" />
@@ -1686,9 +1690,20 @@
                               <ref role="3cqZAo" node="33oJVYhhiYs" resolve="generatorElement" />
                             </node>
                             <node concept="liA8E" id="1Tieq1imglt" role="2OqNvi">
-                              <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
+                              <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String,java.lang.String):java.lang.String" resolve="getAttributeValue" />
                               <node concept="Xl_RD" id="1Tieq1imglu" role="37wK5m">
-                                <property role="Xl_RC" value="generatorUID" />
+                                <property role="Xl_RC" value="namespace" />
+                              </node>
+                              <node concept="2OqwBi" id="2NRMQ_$hnw$" role="37wK5m">
+                                <node concept="37vLTw" id="2NRMQ_$hnw_" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="33oJVYhhiYs" resolve="generatorElement" />
+                                </node>
+                                <node concept="liA8E" id="2NRMQ_$hnwA" role="2OqNvi">
+                                  <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
+                                  <node concept="Xl_RD" id="2NRMQ_$hnwB" role="37wK5m">
+                                    <property role="Xl_RC" value="generatorUID" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -1697,7 +1712,7 @@
                       <node concept="g8Q5y" id="1yoijmglWoe" role="3cqZAp">
                         <node concept="3clFbS" id="1yoijmglWof" role="GGjiV" />
                         <node concept="3tyRfN" id="1yoijmglWog" role="GIGjv">
-                          <ref role="3tyRfW" to="w0gx:~GeneratorDescriptor.setGeneratorUID(java.lang.String):void" resolve="setGeneratorUID" />
+                          <ref role="3tyRfW" to="w0gx:~ModuleDescriptor.setNamespace(java.lang.String):void" resolve="setNamespace" />
                           <node concept="37vLTw" id="3GM_nagTBCo" role="3tyRfI">
                             <ref role="3cqZAo" node="1yoijmglWo9" resolve="genUID" />
                           </node>
@@ -1810,6 +1825,11 @@
                         </node>
                       </node>
                       <node concept="3clFbH" id="1yoijmglWow" role="3cqZAp" />
+                      <node concept="3SKdUt" id="2NRMQ_$hqhd" role="3cqZAp">
+                        <node concept="3SKdUq" id="2NRMQ_$hqhf" role="3SKWNk">
+                          <property role="3SKdUp" value="FIXME use of 'name' is legacy, see comment above" />
+                        </node>
+                      </node>
                       <node concept="3cpWs8" id="1Tieq1imglU" role="3cqZAp">
                         <node concept="3cpWsn" id="1Tieq1imglV" role="3cpWs9">
                           <property role="TrG5h" value="generatorName" />
@@ -1819,9 +1839,20 @@
                               <ref role="3cqZAo" node="33oJVYhhiYs" resolve="generatorElement" />
                             </node>
                             <node concept="liA8E" id="1Tieq1imgm7" role="2OqNvi">
-                              <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
+                              <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String,java.lang.String):java.lang.String" resolve="getAttributeValue" />
                               <node concept="Xl_RD" id="1Tieq1imgm8" role="37wK5m">
-                                <property role="Xl_RC" value="name" />
+                                <property role="Xl_RC" value="alias" />
+                              </node>
+                              <node concept="2OqwBi" id="2NRMQ_$hmLc" role="37wK5m">
+                                <node concept="37vLTw" id="2NRMQ_$hmLd" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="33oJVYhhiYs" resolve="generatorElement" />
+                                </node>
+                                <node concept="liA8E" id="2NRMQ_$hmLe" role="2OqNvi">
+                                  <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
+                                  <node concept="Xl_RD" id="2NRMQ_$hmLf" role="37wK5m">
+                                    <property role="Xl_RC" value="name" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -1832,7 +1863,7 @@
                           <node concept="g8Q5y" id="1yoijmglWoz" role="3cqZAp">
                             <node concept="3clFbS" id="1yoijmglWo$" role="GGjiV" />
                             <node concept="3tyRfN" id="1yoijmglWo_" role="GIGjv">
-                              <ref role="3tyRfW" to="w0gx:~ModuleDescriptor.setNamespace(java.lang.String):void" resolve="setNamespace" />
+                              <ref role="3tyRfW" to="w0gx:~GeneratorDescriptor.setAlias(java.lang.String):void" resolve="setAlias" />
                               <node concept="37vLTw" id="1Tieq1imgm1" role="3tyRfI">
                                 <ref role="3cqZAo" node="1Tieq1imglV" resolve="generatorName" />
                               </node>
@@ -2376,11 +2407,16 @@
                 <ref role="3cqZAo" node="33oJVYhhW0c" resolve="descriptor" />
               </node>
               <node concept="liA8E" id="IMUMWuHQz0" role="2OqNvi">
-                <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getNamespace():java.lang.String" resolve="getNamespace" />
+                <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.getAlias():java.lang.String" resolve="getAlias" />
               </node>
             </node>
           </node>
           <node concept="3clFbS" id="IMUMWuHQz1" role="3clFbx">
+            <node concept="3SKdUt" id="2NRMQ_$hqWc" role="3cqZAp">
+              <node concept="3SKdUq" id="2NRMQ_$hqWe" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME shall use 'alias' instead, see load(), above. Left to minimize changes in 2017.1" />
+              </node>
+            </node>
             <node concept="3clFbF" id="1Tieq1imh0U" role="3cqZAp">
               <node concept="2OqwBi" id="1Tieq1imh1a" role="3clFbG">
                 <node concept="37vLTw" id="1Tieq1imh0V" role="2Oq$k0">
@@ -2396,7 +2432,7 @@
                       <ref role="3cqZAo" node="33oJVYhhW0c" resolve="descriptor" />
                     </node>
                     <node concept="liA8E" id="1Tieq1imh1x" role="2OqNvi">
-                      <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getNamespace():java.lang.String" resolve="getNamespace" />
+                      <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.getAlias():java.lang.String" resolve="getAlias" />
                     </node>
                   </node>
                 </node>
@@ -2406,6 +2442,11 @@
         </node>
         <node concept="3clFbJ" id="IMUMWuHQz8" role="3cqZAp">
           <node concept="3clFbS" id="IMUMWuHQz9" role="3clFbx">
+            <node concept="3SKdUt" id="2NRMQ_$hqY5" role="3cqZAp">
+              <node concept="3SKdUq" id="2NRMQ_$hqY6" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME shall use 'namespace' instead, see load(), above. Left to minimize changes in 2017.1" />
+              </node>
+            </node>
             <node concept="3clFbF" id="1Tieq1imh1z" role="3cqZAp">
               <node concept="2OqwBi" id="1Tieq1imh1$" role="3clFbG">
                 <node concept="37vLTw" id="1Tieq1imh1_" role="2Oq$k0">
@@ -2421,7 +2462,7 @@
                       <ref role="3cqZAo" node="33oJVYhhW0c" resolve="descriptor" />
                     </node>
                     <node concept="liA8E" id="1Tieq1imh1Z" role="2OqNvi">
-                      <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.getGeneratorUID():java.lang.String" resolve="getGeneratorUID" />
+                      <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getNamespace():java.lang.String" resolve="getNamespace" />
                     </node>
                   </node>
                 </node>
@@ -2435,7 +2476,7 @@
                 <ref role="3cqZAo" node="33oJVYhhW0c" resolve="descriptor" />
               </node>
               <node concept="liA8E" id="IMUMWuHQzk" role="2OqNvi">
-                <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.getGeneratorUID():java.lang.String" resolve="getGeneratorUID" />
+                <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getNamespace():java.lang.String" resolve="getNamespace" />
               </node>
             </node>
           </node>

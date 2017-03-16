@@ -16,6 +16,8 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +34,7 @@ import java.util.Set;
 import static java.util.stream.Collectors.toList;
 
 public class GeneratorDescriptor extends ModuleDescriptor {
-  private String myGeneratorUID;
+  private String myAlias;
 
   private Set<SModuleReference> myDepGenerators;
   private List<MappingPriorityRule> myPriorityRules;
@@ -52,18 +54,38 @@ public class GeneratorDescriptor extends ModuleDescriptor {
    * for whatever reason, getGeneratorUID() is in fact module name, or what {@link #getNamespace()} is for other modules.
    * In generators, {@link #getNamespace()} is employed for module alias, instead. Shall refactor this, use namespace uniformly among modules
    * to represent its name, and use dedicated {@code getAlias()} to keep generator short name (if needed).
-   * @return
+   * @deprecated use {@link #getNamespace()}
    */
+  @Deprecated
+  @ToRemove(version = 2017.1)
   public String getGeneratorUID() {
-    return myGeneratorUID;
+    return getNamespace();
   }
 
+  /**
+   * @deprecated identical to {@link #setNamespace(String)}
+   */
+  @Deprecated
+  @ToRemove(version = 2017.1)
   public void setGeneratorUID(String generatorUID) {
-    myGeneratorUID = generatorUID;
+    setNamespace(generatorUID);
   }
 
   public void setSourceLanguage(SModuleReference sourceLanguage) {
     mySourceLanguage = sourceLanguage;
+  }
+
+  public void setAlias(String alias) {
+    myAlias = alias;
+  }
+
+  /**
+   * While we keep machine-generated module name for Generator modules, alias is a part
+   * which Language Designer may pick to his liking. Note, {@link Generator#getAlias()} includes
+   * qualifed name of source language as prefix, and value of this method is only a suffix, likely kept unchanged during module renames.
+   */
+  public String getAlias() {
+    return myAlias;
   }
 
   /**
@@ -138,7 +160,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
   @Override
   public void save(ModelOutputStream stream) throws IOException {
     super.save(stream);
-    stream.writeString(myGeneratorUID);
+    stream.writeString(myAlias);
     stream.writeBoolean(myGenerateTemplates);
     stream.writeString(myGenOutputPath);
     stream.writeModuleReference(mySourceLanguage);
@@ -157,7 +179,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
   @Override
   public void load(ModelInputStream stream) throws IOException {
     super.load(stream);
-    myGeneratorUID = stream.readString();
+    myAlias = stream.readString();
     myGenerateTemplates = stream.readBoolean();
     myGenOutputPath = stream.readString();
     mySourceLanguage = stream.readModuleReference();
@@ -178,7 +200,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
   @Override
   public GeneratorDescriptor copy() {
     GeneratorDescriptor copy = super.copy0(GeneratorDescriptor::new);
-    copy.setGeneratorUID(myGeneratorUID);
+    copy.setAlias(myAlias);
     copy.setGenerateTemplates(isGenerateTemplates());
     copy.setOutputPath(getOutputPath());
     copy.setReflectiveQueries(isReflectiveQueries());

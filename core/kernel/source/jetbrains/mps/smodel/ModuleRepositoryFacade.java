@@ -315,11 +315,11 @@ public final class ModuleRepositoryFacade implements CoreComponent {
       //     generally we shall not insist on the ordering (generator could obtain source language lazily, not at construction time,
       //     or we can make up a proxy Language instance, and replace it with real once proper module comes to the repository).
       String msg =
-          String.format("Can't register generator %s for not yet known language module %s", descriptor.getGeneratorUID(), descriptor.getSourceLanguage());
+          String.format("Can't register generator %s for not yet known language module %s", descriptor.getNamespace(), descriptor.getSourceLanguage());
       throw new IllegalStateException(msg);
     }
     if (false == module instanceof Language) {
-      String msg = String.format("Module %s specified as source language of genrator %s in not a Language module", descriptor.getSourceLanguage(), descriptor.getGeneratorUID());
+      String msg = String.format("Module %s specified as source language of generator %s in not a Language module", descriptor.getSourceLanguage(), descriptor.getNamespace());
       throw new IllegalStateException(msg);
     }
     return new Generator((Language) module, descriptor);

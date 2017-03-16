@@ -3,14 +3,16 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <property id="1197591154882" name="memberIdentifierPolicy" index="3lZH7k" />
         <reference id="1083171729157" name="memberDataType" index="M4eZT" />
@@ -231,6 +233,15 @@
     <node concept="1TJgyi" id="eY0iPzBCD4" role="1TKVEl">
       <property role="TrG5h" value="generatorUID" />
       <property role="IQ2nx" value="269654322145299012" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="2NRMQ_$pg2D" role="lGtFl">
+        <property role="YLPcu" value="2017.1" />
+        <property role="YLQ7P" value="Copy of namespace value, use namespace instead" />
+      </node>
+    </node>
+    <node concept="1TJgyi" id="2NRMQ_$oqa2" role="1TKVEl">
+      <property role="IQ2nx" value="3240282110432486018" />
+      <property role="TrG5h" value="generatorAlias" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="2A_smLtZHa0" role="1TKVEl">

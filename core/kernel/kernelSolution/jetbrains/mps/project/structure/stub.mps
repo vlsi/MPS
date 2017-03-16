@@ -1754,7 +1754,7 @@
                 <ref role="3cqZAo" node="6mz0KzMF7AL" resolve="source" />
               </node>
               <node concept="liA8E" id="eY0iPzBCDn" role="2OqNvi">
-                <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.getGeneratorUID():java.lang.String" resolve="getGeneratorUID" />
+                <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getNamespace():java.lang.String" resolve="getNamespace" />
               </node>
             </node>
           </node>
@@ -1805,8 +1805,8 @@
               <node concept="37vLTw" id="3GM_nagTwcE" role="2Oq$k0">
                 <ref role="3cqZAo" node="2n3WChpmgR2" resolve="generator" />
               </node>
-              <node concept="3TrcHB" id="1P9Z2Y0dN7z" role="2OqNvi">
-                <ref role="3TsBF5" to="hypd:5xDtKQA7vSz" resolve="namespace" />
+              <node concept="3TrcHB" id="2NRMQ_$pdK$" role="2OqNvi">
+                <ref role="3TsBF5" to="hypd:2NRMQ_$oqa2" resolve="generatorAlias" />
               </node>
             </node>
             <node concept="3K4zz7" id="1P9Z2Y0dN7M" role="37vLTx">
@@ -1815,7 +1815,7 @@
                   <ref role="3cqZAo" node="6mz0KzMF7AL" resolve="source" />
                 </node>
                 <node concept="liA8E" id="1P9Z2Y0dN7V" role="2OqNvi">
-                  <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getNamespace():java.lang.String" resolve="getNamespace" />
+                  <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.getAlias():java.lang.String" resolve="getAlias" />
                 </node>
               </node>
               <node concept="10Nm6u" id="1P9Z2Y0dN7W" role="3K4GZi" />
@@ -1825,7 +1825,7 @@
                     <ref role="3cqZAo" node="6mz0KzMF7AL" resolve="source" />
                   </node>
                   <node concept="liA8E" id="1P9Z2Y0dN7G" role="2OqNvi">
-                    <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getNamespace():java.lang.String" resolve="getNamespace" />
+                    <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.getAlias():java.lang.String" resolve="getAlias" />
                   </node>
                 </node>
                 <node concept="17RvpY" id="1P9Z2Y0dN7L" role="2OqNvi" />

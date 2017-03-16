@@ -43,26 +43,28 @@ public class GeneratorDescriptorPersistence {
       GeneratorDescriptor descriptor = new _FunctionTypes._return_P0_E0<GeneratorDescriptor>() {
         public GeneratorDescriptor invoke() {
           final GeneratorDescriptor result_wk2vdq_a0a0a0a0g = new GeneratorDescriptor();
-          String genUID = generatorElement.getAttributeValue("generatorUID");
-          final String result_wk2vdq_a1a0a0a0a0g = genUID;
-          result_wk2vdq_a0a0a0a0g.setGeneratorUID(result_wk2vdq_a1a0a0a0a0g);
-          final boolean result_wk2vdq_a2a0a0a0a0g = XmlUtil.booleanWithDefault(generatorElement, "generate-templates", false);
-          result_wk2vdq_a0a0a0a0g.setGenerateTemplates(result_wk2vdq_a2a0a0a0a0g);
-          final boolean result_wk2vdq_a3a0a0a0a0g = XmlUtil.booleanWithDefault(generatorElement, "reflective-queries", true);
-          result_wk2vdq_a0a0a0a0g.setReflectiveQueries(result_wk2vdq_a3a0a0a0a0g);
-          final String result_wk2vdq_a4a0a0a0a0g = myMacroHelper.expandPath(XmlUtil.stringWithDefault(generatorElement, "generatorOutputPath", SOURCE_GEN_DEFAULT));
-          result_wk2vdq_a0a0a0a0g.setOutputPath(result_wk2vdq_a4a0a0a0a0g);
+          // FIXME generatorUID is legacy key, remove in 2017.2 or 2017.3 (depending on moment we save new attributes) 
+          String genUID = generatorElement.getAttributeValue("namespace", generatorElement.getAttributeValue("generatorUID"));
+          final String result_wk2vdq_a2a0a0a0a0g = genUID;
+          result_wk2vdq_a0a0a0a0g.setNamespace(result_wk2vdq_a2a0a0a0a0g);
+          final boolean result_wk2vdq_a3a0a0a0a0g = XmlUtil.booleanWithDefault(generatorElement, "generate-templates", false);
+          result_wk2vdq_a0a0a0a0g.setGenerateTemplates(result_wk2vdq_a3a0a0a0a0g);
+          final boolean result_wk2vdq_a4a0a0a0a0g = XmlUtil.booleanWithDefault(generatorElement, "reflective-queries", true);
+          result_wk2vdq_a0a0a0a0g.setReflectiveQueries(result_wk2vdq_a4a0a0a0a0g);
+          final String result_wk2vdq_a5a0a0a0a0g = myMacroHelper.expandPath(XmlUtil.stringWithDefault(generatorElement, "generatorOutputPath", SOURCE_GEN_DEFAULT));
+          result_wk2vdq_a0a0a0a0g.setOutputPath(result_wk2vdq_a5a0a0a0a0g);
 
           String uuid = generatorElement.getAttributeValue("uuid");
           if (uuid != null) {
-            final ModuleId result_wk2vdq_a0a7a0a0a0a0g = ModuleId.fromString(uuid);
-            result_wk2vdq_a0a0a0a0g.setId(result_wk2vdq_a0a7a0a0a0a0g);
+            final ModuleId result_wk2vdq_a0a8a0a0a0a0g = ModuleId.fromString(uuid);
+            result_wk2vdq_a0a0a0a0g.setId(result_wk2vdq_a0a8a0a0a0a0g);
           }
 
-          String generatorName = generatorElement.getAttributeValue("name");
+          // FIXME use of 'name' is legacy, see comment above 
+          String generatorName = generatorElement.getAttributeValue("alias", generatorElement.getAttributeValue("name"));
           if (generatorName != null) {
-            final String result_wk2vdq_a0a01a0a0a0a0g = generatorName;
-            result_wk2vdq_a0a0a0a0g.setNamespace(result_wk2vdq_a0a01a0a0a0a0g);
+            final String result_wk2vdq_a0a21a0a0a0a0g = generatorName;
+            result_wk2vdq_a0a0a0a0g.setAlias(result_wk2vdq_a0a21a0a0a0a0g);
           }
 
           Element models = XmlUtil.first(generatorElement, "models");
@@ -83,20 +85,20 @@ public class GeneratorDescriptorPersistence {
           }
 
           for (Element ruleElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(generatorElement, "mapping-priorities"), "mapping-priority-rule"))) {
-            final MappingPriorityRule result_wk2vdq_a0a32a0a0a0a0g = new MappingPriorityRule();
-            final RuleType result_wk2vdq_a0a0a32a0a0a0a0g = RuleType.parse(ruleElement.getAttributeValue("kind"));
-            result_wk2vdq_a0a32a0a0a0a0g.setType(result_wk2vdq_a0a0a32a0a0a0a0g);
+            final MappingPriorityRule result_wk2vdq_a0a52a0a0a0a0g = new MappingPriorityRule();
+            final RuleType result_wk2vdq_a0a0a52a0a0a0a0g = RuleType.parse(ruleElement.getAttributeValue("kind"));
+            result_wk2vdq_a0a52a0a0a0a0g.setType(result_wk2vdq_a0a0a52a0a0a0a0g);
             Element greaterPM = XmlUtil.first(ruleElement, "greater-priority-mapping");
             if (greaterPM != null) {
-              final MappingConfig_AbstractRef result_wk2vdq_a0a2a0a32a0a0a0a0g = loadGeneratorMappingConfigRef(greaterPM, genUID, false);
-              result_wk2vdq_a0a32a0a0a0a0g.setLeft(result_wk2vdq_a0a2a0a32a0a0a0a0g);
+              final MappingConfig_AbstractRef result_wk2vdq_a0a2a0a52a0a0a0a0g = loadGeneratorMappingConfigRef(greaterPM, genUID, false);
+              result_wk2vdq_a0a52a0a0a0a0g.setLeft(result_wk2vdq_a0a2a0a52a0a0a0a0g);
             }
             Element lesserPM = XmlUtil.first(ruleElement, "lesser-priority-mapping");
             if (lesserPM != null) {
-              final MappingConfig_AbstractRef result_wk2vdq_a0a4a0a32a0a0a0a0g = loadGeneratorMappingConfigRef(lesserPM, genUID, false);
-              result_wk2vdq_a0a32a0a0a0a0g.setRight(result_wk2vdq_a0a4a0a32a0a0a0a0g);
+              final MappingConfig_AbstractRef result_wk2vdq_a0a4a0a52a0a0a0a0g = loadGeneratorMappingConfigRef(lesserPM, genUID, false);
+              result_wk2vdq_a0a52a0a0a0a0g.setRight(result_wk2vdq_a0a4a0a52a0a0a0a0g);
             }
-            result_wk2vdq_a0a0a0a0g.getPriorityRules().add(result_wk2vdq_a0a32a0a0a0a0g);
+            result_wk2vdq_a0a0a0a0g.getPriorityRules().add(result_wk2vdq_a0a52a0a0a0a0g);
           }
           return result_wk2vdq_a0a0a0a0g;
         }
@@ -122,11 +124,13 @@ public class GeneratorDescriptorPersistence {
   @NotNull
   public Element save(@NotNull GeneratorDescriptor descriptor) {
     Element generator = new Element("generator");
-    if (descriptor.getNamespace() != null) {
-      generator.setAttribute("name", descriptor.getNamespace());
+    if (descriptor.getAlias() != null) {
+      // FIXME shall use 'alias' instead, see load(), above. Left to minimize changes in 2017.1 
+      generator.setAttribute("name", descriptor.getAlias());
     }
-    if (descriptor.getGeneratorUID() != null) {
-      generator.setAttribute("generatorUID", descriptor.getGeneratorUID());
+    if (descriptor.getNamespace() != null) {
+      // FIXME shall use 'namespace' instead, see load(), above. Left to minimize changes in 2017.1 
+      generator.setAttribute("generatorUID", descriptor.getNamespace());
     }
     if (descriptor.getId() != null) {
       generator.setAttribute("uuid", descriptor.getId().toString());

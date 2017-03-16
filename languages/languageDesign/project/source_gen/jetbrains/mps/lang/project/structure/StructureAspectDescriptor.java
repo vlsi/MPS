@@ -111,6 +111,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.project.structure.Module", 0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL);
     b.origin("r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)/6370754048397540897");
     b.prop("generatorUID", 0x3be012d639e8a44L, "269654322145299012");
+    b.prop("generatorAlias", 0x2cf7cb696461a282L, "3240282110432486018");
     b.prop("generateTemplates", 0x29a5716c5dfed280L, "3000929436959691392");
     b.prop("reflectiveQueries", 0x64a78ad4da8f85a6L, "7252918371708011942");
     b.aggregate("priorityRules", 0x19bfb4173fb5210bL).target(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe38L).optional(true).ordered(true).multiple(true).origin("1855399583446016267").done();

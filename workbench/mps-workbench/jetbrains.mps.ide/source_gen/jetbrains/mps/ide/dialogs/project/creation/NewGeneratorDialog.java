@@ -119,7 +119,7 @@ public class NewGeneratorDialog extends DialogWrapper {
     }
     final String name = myGeneratorName.getText();
     if (!(isValidName(name))) {
-      setErrorText("Only letters, digits and '_' can be used in generator name.");
+      setErrorText("Only letters, digits and '_' can be used in a generator's alias.");
       return;
     }
     dispose();
@@ -134,7 +134,7 @@ public class NewGeneratorDialog extends DialogWrapper {
           // FIXME I know it's ugly to assume templateModelsPath always points to a descendant of generator module location, just don't want to deal with UI update 
           //       right now, nor to introduce a hack to guess whether it's relative to mySourceLanguage.getModuleSourceDir() and how many separators are there. 
           final GeneratorDescriptor generatorDescriptor = NewModuleUtil.createGeneratorDescriptor(Generator.generateGeneratorUID(mySourceLanguage), templateModelsPath.getParent(), templateModelsPath);
-          generatorDescriptor.setNamespace(name);
+          generatorDescriptor.setAlias(name);
           newGenerator.value = createNewGenerator(mySourceLanguage, generatorDescriptor);
           NewModuleUtil.createTemplateModelIfNoneYet(newGenerator.value);
         } catch (Exception e) {

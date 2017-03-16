@@ -4676,7 +4676,7 @@
               <node concept="1rXfSq" id="4hiugqyz8Wd" role="3clFbG">
                 <ref role="37wK5l" to="jkm4:~DialogWrapper.setErrorText(java.lang.String):void" resolve="setErrorText" />
                 <node concept="Xl_RD" id="1pyYjDPRapq" role="37wK5m">
-                  <property role="Xl_RC" value="Only letters, digits and '_' can be used in generator name." />
+                  <property role="Xl_RC" value="Only letters, digits and '_' can be used in a generator's alias." />
                 </node>
               </node>
             </node>
@@ -4791,7 +4791,7 @@
                           <ref role="3cqZAo" node="1pyYjDPRar2" resolve="generatorDescriptor" />
                         </node>
                         <node concept="liA8E" id="1pyYjDPRarf" role="2OqNvi">
-                          <ref role="37wK5l" to="w0gx:~ModuleDescriptor.setNamespace(java.lang.String):void" resolve="setNamespace" />
+                          <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.setAlias(java.lang.String):void" resolve="setAlias" />
                           <node concept="37vLTw" id="2BHiRxgkYZ5" role="37wK5m">
                             <ref role="3cqZAo" node="1pyYjDPRape" resolve="name" />
                           </node>

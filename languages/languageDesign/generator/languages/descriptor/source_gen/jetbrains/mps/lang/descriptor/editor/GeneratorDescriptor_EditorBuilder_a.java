@@ -106,12 +106,12 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
     private EditorCell createProperty_jxarjp_a0b0() {
       CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
-      provider.setRole("generatorUID");
-      provider.setNoTargetText("<no generatorUID>");
+      provider.setRole("namespace");
+      provider.setNoTargetText("<no namespace>");
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(getEditorContext());
-      editorCell.setCellId("property_generatorUID");
+      editorCell.setCellId("property_namespace");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       if (attributeConcept != null) {

@@ -2298,15 +2298,15 @@
                             </node>
                             <node concept="2OqwBi" id="eB6_hfBaST" role="3K4GZi">
                               <node concept="30H73N" id="eB6_hfBaSU" role="2Oq$k0" />
-                              <node concept="3TrcHB" id="eB6_hfBaSV" role="2OqNvi">
-                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                              <node concept="3TrcHB" id="x3em9IuJWV" role="2OqNvi">
+                                <ref role="3TsBF5" to="hypd:2NRMQ_$oqa2" resolve="generatorAlias" />
                               </node>
                             </node>
                             <node concept="2OqwBi" id="eB6_hfBaSW" role="3K4Cdx">
                               <node concept="2OqwBi" id="eB6_hfBaSX" role="2Oq$k0">
                                 <node concept="30H73N" id="eB6_hfBaSY" role="2Oq$k0" />
-                                <node concept="3TrcHB" id="eB6_hfBaSZ" role="2OqNvi">
-                                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                <node concept="3TrcHB" id="x3em9IuJgP" role="2OqNvi">
+                                  <ref role="3TsBF5" to="hypd:2NRMQ_$oqa2" resolve="generatorAlias" />
                                 </node>
                               </node>
                               <node concept="17RlXB" id="eB6_hfBaT0" role="2OqNvi" />
