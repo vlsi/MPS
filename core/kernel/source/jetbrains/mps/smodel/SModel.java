@@ -75,10 +75,12 @@ public class SModel implements SModelData, UpdateModeSupport {
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
   private SModelReference myReference;
   private boolean myDisposed;
-  private List<SLanguage> myLanguagesEngagedOnGeneration = new ArrayList<SLanguage>();
-  private Map<SLanguage, Integer> myLanguagesIds = new LinkedHashMap<SLanguage, Integer>();
-  private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
-  private List<ImportElement> myImports = new ArrayList<ImportElement>();
+  private List<SLanguage> myLanguagesEngagedOnGeneration = new ArrayList<>();
+  private Map<SLanguage, Integer> myLanguagesIds = new LinkedHashMap<>();
+  // FIXME introduce UniqueList or ArraySet to avoid "if (!myList.contains && myList.add())" on change
+  //       for both myDevKits and myImports. There's intellij's ArrayListSet, but it's dull and introduces unnecessary dependency
+  private List<SModuleReference> myDevKits = new ArrayList<>();
+  private List<ImportElement> myImports = new ArrayList<>();
   private INodeIdToNodeMap myIdToNodeMap;
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
@@ -695,7 +697,7 @@ public class SModel implements SModelData, UpdateModeSupport {
   }
 
   public void addDevKit(SModuleReference ref) {
-    if (myDevKits.add(ref)) {
+    if (!myDevKits.contains(ref) && myDevKits.add(ref)) {
       invalidateModelDepsManager();
       fireDevKitAddedEvent(ref);
       markChanged();
