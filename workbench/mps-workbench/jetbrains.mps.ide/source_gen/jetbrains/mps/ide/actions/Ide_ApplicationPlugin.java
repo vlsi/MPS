@@ -18,7 +18,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
   }
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new AddModuleToProject_Action());
     addAction(new AddToNewFavoritesList_Action());
     addAction(new AnalyzeModuleDependencies_Action());
     addAction(new AnalyzeStacktrace_Action());

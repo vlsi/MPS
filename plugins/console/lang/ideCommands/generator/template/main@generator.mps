@@ -124,6 +124,12 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
@@ -215,9 +221,7 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
-      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
-        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
-      </concept>
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
@@ -245,6 +249,7 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7" />
     </language>
     <language id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query">
       <concept id="6864030874027862829" name="jetbrains.mps.lang.smodel.query.structure.ModelsExpression" flags="ng" index="EZOir" />
@@ -348,12 +353,16 @@
         <node concept="3cqZAl" id="4PRmqZe_Ryo" role="3clF45" />
         <node concept="3Tm1VV" id="4PRmqZe_Ryp" role="1B3o_S" />
         <node concept="3clFbS" id="4PRmqZe_Ryq" role="3clF47">
+          <node concept="3SKdUt" id="2fPyi4pB2A5" role="3cqZAp">
+            <node concept="3SKdUq" id="2fPyi4pB2A7" role="3SKWNk">
+              <property role="3SKdUp" value="Here just suppress error, because don't want to use some concrete action" />
+            </node>
+          </node>
           <node concept="3clFbF" id="4PRmqZe_Ryr" role="3cqZAp">
             <node concept="2YIFZM" id="4PRmqZe_Rys" role="3clFbG">
               <ref role="1Pybhc" to="4olo:4PRmqZeKGRd" resolve="IdeCommandUtil" />
               <ref role="37wK5l" to="4olo:7VSQgz8Ni_J" resolve="callAction" />
               <node concept="3B5_sB" id="4PRmqZe_Ryt" role="37wK5m">
-                <ref role="3B5MYn" to="tprs:i3MzFfb" resolve="AddModuleToProject" />
                 <node concept="1ZhdrF" id="4PRmqZe_Ryu" role="lGtFl">
                   <property role="2qtEX8" value="referentNode" />
                   <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1219352745532/1219352800908" />
@@ -464,6 +473,7 @@
               </node>
               <node concept="raruj" id="4PRmqZe_Rzk" role="lGtFl" />
             </node>
+            <node concept="15s5l7" id="1Je8ev8LAnG" role="lGtFl" />
           </node>
         </node>
       </node>
