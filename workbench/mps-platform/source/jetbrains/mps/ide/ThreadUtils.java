@@ -117,14 +117,6 @@ public class ThreadUtils {
     }
   }
 
-  /**
-   * use {@link #isInEDT()}
-   */
-  @Deprecated
-  public static boolean isEventDispatchThread() {
-    return isInEDT();
-  }
-
   public static boolean isInEDT() {
     final Application ideaApp = ApplicationManager.getApplication();
     return ideaApp == null ? SwingUtilities.isEventDispatchThread() : ideaApp.isDispatchThread();
