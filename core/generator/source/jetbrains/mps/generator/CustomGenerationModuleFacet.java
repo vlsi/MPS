@@ -17,7 +17,8 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.generator.impl.GenPlanTranslator;
-import jetbrains.mps.generator.impl.plan.RigidPlanBuilder;
+import jetbrains.mps.generator.impl.plan.EngagedGeneratorCollector;
+import jetbrains.mps.generator.impl.plan.RegularPlanBuilder;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -59,7 +60,8 @@ public class CustomGenerationModuleFacet extends ModuleFacetBase {
     }
 
     GenPlanTranslator gpt = new GenPlanTranslator(planModel.getRootNodes().iterator().next());
-    RigidPlanBuilder planBuilder = new RigidPlanBuilder(LanguageRegistry.getInstance(model.getRepository()));
+    EngagedGeneratorCollector egc = new EngagedGeneratorCollector(model, null); // see comment in GenPlanExtractor regarding additional languages
+    RegularPlanBuilder planBuilder = new RegularPlanBuilder(LanguageRegistry.getInstance(model.getRepository()), egc.getGenerators());
     gpt.feed(planBuilder);
     myCachedPlanInstance = planBuilder.wrapUp(gpt.getPlanIdentity());
     return myCachedPlanInstance;

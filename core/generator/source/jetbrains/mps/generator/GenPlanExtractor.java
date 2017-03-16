@@ -17,6 +17,9 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.GenerationOptions.OptionsBuilder;
 import jetbrains.mps.generator.impl.GenPlanTranslator;
+import jetbrains.mps.generator.impl.plan.EngagedGeneratorCollector;
+import jetbrains.mps.generator.impl.plan.ModelContentUtil;
+import jetbrains.mps.generator.impl.plan.RegularPlanBuilder;
 import jetbrains.mps.generator.impl.plan.RigidPlanBuilder;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.SModelInternal;
@@ -47,7 +50,7 @@ public final class GenPlanExtractor {
   private final Map<SModule, CustomGenerationModuleFacet> myOwnerModuleToFacet = new HashMap<SModule, CustomGenerationModuleFacet>();
   private final Set<SModule> myOwnerModulesNoCustomFacet = new HashSet<SModule>();
   // null value indicates there's no plan associated with devkit (or the plan couldn't get instantiated).
-  private final Map<SModuleReference, ModelGenerationPlan> myDevkitToPlan = new HashMap<SModuleReference, ModelGenerationPlan>();
+  private final Map<SModuleReference, SModelReference> myDevkitToPlan = new HashMap<>();
 
   public GenPlanExtractor(@NotNull SRepository repository) {
     myRepository = repository;
@@ -92,19 +95,21 @@ public final class GenPlanExtractor {
   @Nullable
   private ModelGenerationPlan planFromDevKit(SModel model) {
     for (SModuleReference dkRef : ((SModelInternal) model).importedDevkits()) {
+      final SModelReference dkPlan;
       if (myDevkitToPlan.containsKey(dkRef)) {
-        final ModelGenerationPlan rv = myDevkitToPlan.get(dkRef);
+        final SModelReference rv = myDevkitToPlan.get(dkRef);
         if (rv == null) {
           // we've seen this devkit and know it has no plan
           continue;
         }
-        return rv;
+        dkPlan = rv;
+      } else {
+        final SModule dkModule = dkRef.resolve(myRepository);
+        if (!(dkModule instanceof DevKit)) {
+          continue;
+        }
+        dkPlan = ((DevKit) dkModule).getModuleDescriptor().getAssociatedGenPlan();
       }
-      final SModule dkModule = dkRef.resolve(myRepository);
-      if (!(dkModule instanceof DevKit)) {
-        continue;
-      }
-      final SModelReference dkPlan = ((DevKit) dkModule).getModuleDescriptor().getAssociatedGenPlan();
       if (dkPlan == null) {
         continue;
       }
@@ -112,13 +117,17 @@ public final class GenPlanExtractor {
       final SModel planModel = dkPlan.resolve(myRepository);
       if (planModel != null) {
         GenPlanTranslator gpt = new GenPlanTranslator(planModel.getRootNodes().iterator().next());
-        RigidPlanBuilder planBuilder = new RigidPlanBuilder(LanguageRegistry.getInstance(myRepository));
+        // FIXME in fact, shall respect additional languages passed through GenerationParametersProviderEx.getAdditionalLanguages(SModel), like
+        // original GenerationPlan did. However, it's rarely (if ever) used feature and contemporary GPs replace it completely, so I do not bother.
+        EngagedGeneratorCollector egc = new EngagedGeneratorCollector(model, null);
+        RegularPlanBuilder planBuilder = new RegularPlanBuilder(LanguageRegistry.getInstance(myRepository), egc.getGenerators());
         gpt.feed(planBuilder);
         plan = planBuilder.wrapUp(gpt.getPlanIdentity());
+        myDevkitToPlan.put(dkRef, dkPlan);
       } else {
         plan = null;
+        myDevkitToPlan.put(dkRef, null);
       }
-      myDevkitToPlan.put(dkRef, plan);
       return plan;
     }
     return null;
