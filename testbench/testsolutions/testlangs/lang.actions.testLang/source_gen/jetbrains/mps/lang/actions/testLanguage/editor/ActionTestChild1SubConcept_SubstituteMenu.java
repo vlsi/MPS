@@ -26,12 +26,12 @@ public class ActionTestChild1SubConcept_SubstituteMenu extends SubstituteMenuBas
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ActionTestChild1SubConcept_SubstituteMenu.SubstituteMenuPart_Group_6g8ikp_a());
-    result.add(new ActionTestChild1SubConcept_SubstituteMenu.SubstituteMenuPart_Subconcepts_6g8ikp_b());
+    result.add(new ActionTestChild1SubConcept_SubstituteMenu.SMP_Group_6g8ikp_a());
+    result.add(new ActionTestChild1SubConcept_SubstituteMenu.SMP_Subconcepts_6g8ikp_b());
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c99ba4dd5ff2533L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept")), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c99ba4dd5ff2533L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept")));
     return result;
   }
-  public class SubstituteMenuPart_Group_6g8ikp_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_6g8ikp_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return eq_6g8ikp_a0a0a1(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x2c99ba4dd7323dbbL, "addMenu_genericQuery"));
@@ -42,7 +42,7 @@ public class ActionTestChild1SubConcept_SubstituteMenu extends SubstituteMenuBas
       return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList();
     }
   }
-  public class SubstituteMenuPart_Subconcepts_6g8ikp_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_6g8ikp_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c99ba4dd5ff2533L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept"));
     }

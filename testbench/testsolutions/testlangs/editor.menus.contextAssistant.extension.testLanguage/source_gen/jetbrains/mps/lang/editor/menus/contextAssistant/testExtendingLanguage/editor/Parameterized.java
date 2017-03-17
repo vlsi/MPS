@@ -36,17 +36,17 @@ public class Parameterized extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ACTIONS_TOOL).contains(_context.getMenuLocation())) {
-      result.add(new Parameterized.TransformationMenuPart_Parameterized_3h2zbg_a0());
+      result.add(new Parameterized.TMP_Param_3h2zbg_a0());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Parameterized_3h2zbg_a0 extends ParameterizedMenuPart<Integer, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_3h2zbg_a0 extends ParameterizedMenuPart<Integer, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(Integer parameter, TransformationMenuContext context) {
-      return new Parameterized.TransformationMenuPart_Parameterized_3h2zbg_a0.TransformationMenuPart_Action_3h2zbg_a0a(parameter).createItems(context);
+      return new Parameterized.TMP_Param_3h2zbg_a0.TMP_Action_3h2zbg_a0a(parameter).createItems(context);
     }
 
     @Nullable
@@ -55,14 +55,14 @@ public class Parameterized extends TransformationMenuBase {
       return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
     }
 
-    private class TransformationMenuPart_Action_3h2zbg_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_3h2zbg_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final Integer myParameterObject;
-      public TransformationMenuPart_Action_3h2zbg_a0a(Integer parameterObject) {
+      public TMP_Action_3h2zbg_a0a(Integer parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Parameterized.TransformationMenuPart_Parameterized_3h2zbg_a0.TransformationMenuPart_Action_3h2zbg_a0a.Item(context);
+        return new Parameterized.TMP_Param_3h2zbg_a0.TMP_Action_3h2zbg_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {

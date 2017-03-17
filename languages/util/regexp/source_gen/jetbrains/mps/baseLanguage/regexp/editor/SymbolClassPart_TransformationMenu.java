@@ -45,12 +45,12 @@ public class SymbolClassPart_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791aa602L, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new SymbolClassPart_TransformationMenu.TransformationMenuPart_WrapSubstituteMenu_wbulcq_a1());
+      result.add(new SymbolClassPart_TransformationMenu.TMP_WrapSM_wbulcq_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_WrapSubstituteMenu_wbulcq_a1 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_wbulcq_a1 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override

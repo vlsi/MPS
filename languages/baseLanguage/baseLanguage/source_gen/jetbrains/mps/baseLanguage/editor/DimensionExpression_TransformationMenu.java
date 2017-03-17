@@ -43,13 +43,13 @@ public class DimensionExpression_TransformationMenu extends TransformationMenuBa
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4b2dfdaL, "jetbrains.mps.baseLanguage.structure.DimensionExpression"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new DimensionExpression_TransformationMenu.TransformationMenuPart_IncludeMenu_fvoog4_a1());
-      result.add(new DimensionExpression_TransformationMenu.TransformationMenuPart_Action_fvoog4_b1());
+      result.add(new DimensionExpression_TransformationMenu.TMP_Include_fvoog4_a1());
+      result.add(new DimensionExpression_TransformationMenu.TMP_Action_fvoog4_b1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_fvoog4_a1 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_fvoog4_a1 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected SNode getNode(TransformationMenuContext _context) {
@@ -57,10 +57,10 @@ public class DimensionExpression_TransformationMenu extends TransformationMenuBa
     }
 
   }
-  private class TransformationMenuPart_Action_fvoog4_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_fvoog4_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new DimensionExpression_TransformationMenu.TransformationMenuPart_Action_fvoog4_b1.Item(context);
+      return new DimensionExpression_TransformationMenu.TMP_Action_fvoog4_b1.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

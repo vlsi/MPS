@@ -32,16 +32,16 @@ public class smartCast extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new smartCast.SubstituteMenuPart_Action_nkius4_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new smartCast.SubstituteMenuPart_Action_nkius4_b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new smartCast.SMP_Action_nkius4_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new smartCast.SMP_Action_nkius4_b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
     return result;
   }
-  private class SubstituteMenuPart_Action_nkius4_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_nkius4_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new smartCast.SubstituteMenuPart_Action_nkius4_a.Item(_context);
+      return new smartCast.SMP_Action_nkius4_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -83,12 +83,12 @@ public class smartCast extends SubstituteMenuBase {
       }
     }
   }
-  private class SubstituteMenuPart_Action_nkius4_b extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_nkius4_b extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new smartCast.SubstituteMenuPart_Action_nkius4_b.Item(_context);
+      return new smartCast.SMP_Action_nkius4_b.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

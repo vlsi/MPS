@@ -40,12 +40,12 @@ public class add_initSize_to_container_creator extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new add_initSize_to_container_creator.TransformationMenuPart_Group_4ifdyl_a0());
+      result.add(new add_initSize_to_container_creator.TMP_Group_4ifdyl_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_4ifdyl_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_4ifdyl_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x15ae66cec05cb2eaL, "initSize")) == null) && (boolean) AbstractContainerCreator__BehaviorDescriptor.hasInitSize_id1653mnvAgtY.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getNode()))) && ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24ea0L, "initValue"))).isEmpty() && (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202e9082e6L, "copyFrom")) == null);
@@ -53,12 +53,12 @@ public class add_initSize_to_container_creator extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_initSize_to_container_creator.TransformationMenuPart_Group_4ifdyl_a0.TransformationMenuPart_Action_4ifdyl_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_initSize_to_container_creator.TMP_Group_4ifdyl_a0.TMP_Action_4ifdyl_a0a());
     }
-    private class TransformationMenuPart_Action_4ifdyl_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_4ifdyl_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new add_initSize_to_container_creator.TransformationMenuPart_Group_4ifdyl_a0.TransformationMenuPart_Action_4ifdyl_a0a.Item(context);
+        return new add_initSize_to_container_creator.TMP_Group_4ifdyl_a0.TMP_Action_4ifdyl_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

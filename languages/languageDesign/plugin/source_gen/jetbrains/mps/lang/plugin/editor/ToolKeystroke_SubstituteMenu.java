@@ -27,30 +27,30 @@ public class ToolKeystroke_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ToolKeystroke_SubstituteMenu.SubstituteMenuPart_Parameterized_846jr0_a(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b765b0L, "jetbrains.mps.lang.plugin.structure.ToolKeystroke")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ToolKeystroke_SubstituteMenu.SMP_Param_846jr0_a(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b765b0L, "jetbrains.mps.lang.plugin.structure.ToolKeystroke")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_846jr0_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_846jr0_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new ToolKeystroke_SubstituteMenu.SubstituteMenuPart_Parameterized_846jr0_a.SubstituteMenuPart_Action_846jr0_a0(parameter).createItems(context);
+      return new ToolKeystroke_SubstituteMenu.SMP_Param_846jr0_a.SMP_Action_846jr0_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "Keymap"));
     }
-    private class SubstituteMenuPart_Action_846jr0_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_846jr0_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_846jr0_a0(SNode parameterObject) {
+      public SMP_Action_846jr0_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new ToolKeystroke_SubstituteMenu.SubstituteMenuPart_Parameterized_846jr0_a.SubstituteMenuPart_Action_846jr0_a0.Item(_context);
+        return new ToolKeystroke_SubstituteMenu.SMP_Param_846jr0_a.SMP_Action_846jr0_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

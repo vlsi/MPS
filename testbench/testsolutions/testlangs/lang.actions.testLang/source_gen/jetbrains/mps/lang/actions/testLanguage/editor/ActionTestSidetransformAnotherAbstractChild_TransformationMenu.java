@@ -47,20 +47,20 @@ public class ActionTestSidetransformAnotherAbstractChild_TransformationMenu exte
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefca54d96L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherAbstractChild"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new ActionTestSidetransformAnotherAbstractChild_TransformationMenu.TransformationMenuPart_Parameterized_qh3wu9_a1(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new ActionTestSidetransformAnotherAbstractChild_TransformationMenu.TMP_Param_qh3wu9_a1(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept")));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new ActionTestSidetransformAnotherAbstractChild_TransformationMenu.TransformationMenuPart_Parameterized_qh3wu9_a2(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new ActionTestSidetransformAnotherAbstractChild_TransformationMenu.TMP_Param_qh3wu9_a2(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept")));
     }
     return result;
   }
 
-  private class TransformationMenuPart_Parameterized_qh3wu9_a1 extends ParameterizedMenuPart<SConcept, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_qh3wu9_a1 extends ParameterizedMenuPart<SConcept, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(SConcept parameter, TransformationMenuContext context) {
-      return new ActionTestSidetransformAnotherAbstractChild_TransformationMenu.TransformationMenuPart_Parameterized_qh3wu9_a1.TransformationMenuPart_Action_qh3wu9_a0b(parameter).createItems(context);
+      return new ActionTestSidetransformAnotherAbstractChild_TransformationMenu.TMP_Param_qh3wu9_a1.TMP_Action_qh3wu9_a0b(parameter).createItems(context);
     }
 
     @Nullable
@@ -73,14 +73,14 @@ public class ActionTestSidetransformAnotherAbstractChild_TransformationMenu exte
       }).toListSequence();
     }
 
-    private class TransformationMenuPart_Action_qh3wu9_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_qh3wu9_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final SConcept myParameterObject;
-      public TransformationMenuPart_Action_qh3wu9_a0b(SConcept parameterObject) {
+      public TMP_Action_qh3wu9_a0b(SConcept parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ActionTestSidetransformAnotherAbstractChild_TransformationMenu.TransformationMenuPart_Parameterized_qh3wu9_a1.TransformationMenuPart_Action_qh3wu9_a0b.Item(context);
+        return new ActionTestSidetransformAnotherAbstractChild_TransformationMenu.TMP_Param_qh3wu9_a1.TMP_Action_qh3wu9_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -110,12 +110,12 @@ public class ActionTestSidetransformAnotherAbstractChild_TransformationMenu exte
       }
     }
   }
-  private class TransformationMenuPart_Parameterized_qh3wu9_a2 extends ParameterizedMenuPart<SConcept, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_qh3wu9_a2 extends ParameterizedMenuPart<SConcept, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(SConcept parameter, TransformationMenuContext context) {
-      return new ActionTestSidetransformAnotherAbstractChild_TransformationMenu.TransformationMenuPart_Parameterized_qh3wu9_a2.TransformationMenuPart_Action_qh3wu9_a0c(parameter).createItems(context);
+      return new ActionTestSidetransformAnotherAbstractChild_TransformationMenu.TMP_Param_qh3wu9_a2.TMP_Action_qh3wu9_a0c(parameter).createItems(context);
     }
 
     @Nullable
@@ -128,14 +128,14 @@ public class ActionTestSidetransformAnotherAbstractChild_TransformationMenu exte
       }).toListSequence();
     }
 
-    private class TransformationMenuPart_Action_qh3wu9_a0c extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_qh3wu9_a0c extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final SConcept myParameterObject;
-      public TransformationMenuPart_Action_qh3wu9_a0c(SConcept parameterObject) {
+      public TMP_Action_qh3wu9_a0c(SConcept parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ActionTestSidetransformAnotherAbstractChild_TransformationMenu.TransformationMenuPart_Parameterized_qh3wu9_a2.TransformationMenuPart_Action_qh3wu9_a0c.Item(context);
+        return new ActionTestSidetransformAnotherAbstractChild_TransformationMenu.TMP_Param_qh3wu9_a2.TMP_Action_qh3wu9_a0c.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

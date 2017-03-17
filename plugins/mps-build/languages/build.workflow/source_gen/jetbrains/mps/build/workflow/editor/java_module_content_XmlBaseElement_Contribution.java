@@ -32,10 +32,10 @@ public class java_module_content_XmlBaseElement_Contribution extends SubstituteM
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new java_module_content_XmlBaseElement_Contribution.SubstituteMenuPart_Group_fc12n3_a());
+    result.add(new java_module_content_XmlBaseElement_Contribution.SMP_Group_fc12n3_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_fc12n3_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_fc12n3_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, "jetbrains.mps.build.workflow.structure.BwfJavaModule")) || SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6e014d63c07ebd1bL, "jetbrains.mps.build.workflow.structure.BwfFileSet")) || SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede077L, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"));
@@ -43,29 +43,29 @@ public class java_module_content_XmlBaseElement_Contribution extends SubstituteM
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new java_module_content_XmlBaseElement_Contribution.SubstituteMenuPart_Group_fc12n3_a.SubstituteMenuPart_Parameterized_fc12n3_a0(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new java_module_content_XmlBaseElement_Contribution.SMP_Group_fc12n3_a.SMP_Param_fc12n3_a0(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement")));
     }
-    private class SubstituteMenuPart_Parameterized_fc12n3_a0 extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
+    private class SMP_Param_fc12n3_a0 extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
       @Override
       protected List<SubstituteMenuItem> createItems(String parameter, SubstituteMenuContext context) {
-        return new java_module_content_XmlBaseElement_Contribution.SubstituteMenuPart_Group_fc12n3_a.SubstituteMenuPart_Parameterized_fc12n3_a0.SubstituteMenuPart_Action_fc12n3_a0a(parameter).createItems(context);
+        return new java_module_content_XmlBaseElement_Contribution.SMP_Group_fc12n3_a.SMP_Param_fc12n3_a0.SMP_Action_fc12n3_a0a(parameter).createItems(context);
       }
       @Nullable
       @Override
       protected Iterable<? extends String> getParameters(SubstituteMenuContext _context) {
         return Sequence.fromIterable(Sequence.fromArray(new String[]{"fileset", "pathelement", "dirset"})).toListSequence();
       }
-      private class SubstituteMenuPart_Action_fc12n3_a0a extends SingleItemSubstituteMenuPart {
+      private class SMP_Action_fc12n3_a0a extends SingleItemSubstituteMenuPart {
         private final String myParameterObject;
-        public SubstituteMenuPart_Action_fc12n3_a0a(String parameterObject) {
+        public SMP_Action_fc12n3_a0a(String parameterObject) {
           myParameterObject = parameterObject;
         }
 
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new java_module_content_XmlBaseElement_Contribution.SubstituteMenuPart_Group_fc12n3_a.SubstituteMenuPart_Parameterized_fc12n3_a0.SubstituteMenuPart_Action_fc12n3_a0a.Item(_context);
+          return new java_module_content_XmlBaseElement_Contribution.SMP_Group_fc12n3_a.SMP_Param_fc12n3_a0.SMP_Action_fc12n3_a0a.Item(_context);
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;

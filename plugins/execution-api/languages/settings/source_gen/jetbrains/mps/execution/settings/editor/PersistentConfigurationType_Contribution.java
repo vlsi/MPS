@@ -39,11 +39,11 @@ public class PersistentConfigurationType_Contribution extends SubstituteMenuBase
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new PersistentConfigurationType_Contribution.SubstituteMenuPart_Group_67nl4b_a());
-    result.add(new PersistentConfigurationType_Contribution.SubstituteMenuPart_Group_67nl4b_b());
+    result.add(new PersistentConfigurationType_Contribution.SMP_Group_67nl4b_a());
+    result.add(new PersistentConfigurationType_Contribution.SMP_Group_67nl4b_b());
     return result;
   }
-  public class SubstituteMenuPart_Group_67nl4b_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_67nl4b_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"));
@@ -51,13 +51,13 @@ public class PersistentConfigurationType_Contribution extends SubstituteMenuBase
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new PersistentConfigurationType_Contribution.SubstituteMenuPart_Group_67nl4b_a.SubstituteMenuPart_Parameterized_67nl4b_a0(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL, "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new PersistentConfigurationType_Contribution.SMP_Group_67nl4b_a.SMP_Param_67nl4b_a0(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL, "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType")));
     }
-    private class SubstituteMenuPart_Parameterized_67nl4b_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+    private class SMP_Param_67nl4b_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
       @Override
       protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-        return new PersistentConfigurationType_Contribution.SubstituteMenuPart_Group_67nl4b_a.SubstituteMenuPart_Parameterized_67nl4b_a0.SubstituteMenuPart_Action_67nl4b_a0a(parameter).createItems(context);
+        return new PersistentConfigurationType_Contribution.SMP_Group_67nl4b_a.SMP_Param_67nl4b_a0.SMP_Action_67nl4b_a0a(parameter).createItems(context);
       }
       @Nullable
       @Override
@@ -68,16 +68,16 @@ public class PersistentConfigurationType_Contribution extends SubstituteMenuBase
           }
         }).toListSequence();
       }
-      private class SubstituteMenuPart_Action_67nl4b_a0a extends SingleItemSubstituteMenuPart {
+      private class SMP_Action_67nl4b_a0a extends SingleItemSubstituteMenuPart {
         private final SNode myParameterObject;
-        public SubstituteMenuPart_Action_67nl4b_a0a(SNode parameterObject) {
+        public SMP_Action_67nl4b_a0a(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
 
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new PersistentConfigurationType_Contribution.SubstituteMenuPart_Group_67nl4b_a.SubstituteMenuPart_Parameterized_67nl4b_a0.SubstituteMenuPart_Action_67nl4b_a0a.Item(_context);
+          return new PersistentConfigurationType_Contribution.SMP_Group_67nl4b_a.SMP_Param_67nl4b_a0.SMP_Action_67nl4b_a0a.Item(_context);
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;
@@ -119,7 +119,7 @@ public class PersistentConfigurationType_Contribution extends SubstituteMenuBase
 
     }
   }
-  public class SubstituteMenuPart_Group_67nl4b_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_67nl4b_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return !(SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration")));
@@ -127,13 +127,13 @@ public class PersistentConfigurationType_Contribution extends SubstituteMenuBase
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new PersistentConfigurationType_Contribution.SubstituteMenuPart_Group_67nl4b_b.SubstituteMenuPart_Parameterized_67nl4b_a1(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new PersistentConfigurationType_Contribution.SMP_Group_67nl4b_b.SMP_Param_67nl4b_a1(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType")));
     }
-    private class SubstituteMenuPart_Parameterized_67nl4b_a1 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+    private class SMP_Param_67nl4b_a1 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
       @Override
       protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-        return new PersistentConfigurationType_Contribution.SubstituteMenuPart_Group_67nl4b_b.SubstituteMenuPart_Parameterized_67nl4b_a1.SubstituteMenuPart_Action_67nl4b_a0b(parameter).createItems(context);
+        return new PersistentConfigurationType_Contribution.SMP_Group_67nl4b_b.SMP_Param_67nl4b_a1.SMP_Action_67nl4b_a0b(parameter).createItems(context);
       }
       @Nullable
       @Override
@@ -144,16 +144,16 @@ public class PersistentConfigurationType_Contribution extends SubstituteMenuBase
           }
         }).toListSequence();
       }
-      private class SubstituteMenuPart_Action_67nl4b_a0b extends SingleItemSubstituteMenuPart {
+      private class SMP_Action_67nl4b_a0b extends SingleItemSubstituteMenuPart {
         private final SNode myParameterObject;
-        public SubstituteMenuPart_Action_67nl4b_a0b(SNode parameterObject) {
+        public SMP_Action_67nl4b_a0b(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
 
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new PersistentConfigurationType_Contribution.SubstituteMenuPart_Group_67nl4b_b.SubstituteMenuPart_Parameterized_67nl4b_a1.SubstituteMenuPart_Action_67nl4b_a0b.Item(_context);
+          return new PersistentConfigurationType_Contribution.SMP_Group_67nl4b_b.SMP_Param_67nl4b_a1.SMP_Action_67nl4b_a0b.Item(_context);
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;

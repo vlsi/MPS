@@ -32,12 +32,12 @@ public class WithNestedVariables extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), "test location").contains(_context.getMenuLocation())) {
-      result.add(new WithNestedVariables.TransformationMenuPart_Group_foze4d_a0());
+      result.add(new WithNestedVariables.TMP_Group_foze4d_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_foze4d_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_foze4d_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     private int v;
     private int x;
     @Override
@@ -61,9 +61,9 @@ public class WithNestedVariables extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new WithNestedVariables.TransformationMenuPart_Group_foze4d_a0.TransformationMenuPart_Group_foze4d_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new WithNestedVariables.TMP_Group_foze4d_a0.TMP_Group_foze4d_a0a());
     }
-    public class TransformationMenuPart_Group_foze4d_a0a extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    public class TMP_Group_foze4d_a0a extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private int t;
       @Override
       protected void initialize(TransformationMenuContext _context) {
@@ -77,12 +77,12 @@ public class WithNestedVariables extends TransformationMenuBase {
 
       @Override
       protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-        return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new WithNestedVariables.TransformationMenuPart_Group_foze4d_a0.TransformationMenuPart_Group_foze4d_a0a.TransformationMenuPart_Action_foze4d_a0a0());
+        return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new WithNestedVariables.TMP_Group_foze4d_a0.TMP_Group_foze4d_a0a.TMP_Action_foze4d_a0a0());
       }
-      private class TransformationMenuPart_Action_foze4d_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_foze4d_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new WithNestedVariables.TransformationMenuPart_Group_foze4d_a0.TransformationMenuPart_Group_foze4d_a0a.TransformationMenuPart_Action_foze4d_a0a0.Item(context);
+          return new WithNestedVariables.TMP_Group_foze4d_a0.TMP_Group_foze4d_a0a.TMP_Action_foze4d_a0a0.Item(context);
         }
 
         private class Item extends ActionItemBase {

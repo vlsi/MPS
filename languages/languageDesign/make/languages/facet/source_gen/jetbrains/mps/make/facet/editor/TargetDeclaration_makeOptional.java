@@ -37,12 +37,12 @@ public class TargetDeclaration_makeOptional extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new TargetDeclaration_makeOptional.TransformationMenuPart_Group_2cml4i_a0());
+      result.add(new TargetDeclaration_makeOptional.TMP_Group_2cml4i_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_2cml4i_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_2cml4i_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x642ffc6d854ec1c5L, "optional")));
@@ -50,12 +50,12 @@ public class TargetDeclaration_makeOptional extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new TargetDeclaration_makeOptional.TransformationMenuPart_Group_2cml4i_a0.TransformationMenuPart_Action_2cml4i_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new TargetDeclaration_makeOptional.TMP_Group_2cml4i_a0.TMP_Action_2cml4i_a0a());
     }
-    private class TransformationMenuPart_Action_2cml4i_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_2cml4i_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new TargetDeclaration_makeOptional.TransformationMenuPart_Group_2cml4i_a0.TransformationMenuPart_Action_2cml4i_a0a.Item(context);
+        return new TargetDeclaration_makeOptional.TMP_Group_2cml4i_a0.TMP_Action_2cml4i_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

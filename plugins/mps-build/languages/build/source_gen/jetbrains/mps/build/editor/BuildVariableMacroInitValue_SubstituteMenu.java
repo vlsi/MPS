@@ -33,11 +33,11 @@ public class BuildVariableMacroInitValue_SubstituteMenu extends SubstituteMenuBa
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildVariableMacroInitValue_SubstituteMenu.SubstituteMenuPart_Wrapper_8kfjf0_a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd1e1aaL, "jetbrains.mps.build.structure.BuildVariableMacroInitValue")));
-    result.add(new BuildVariableMacroInitValue_SubstituteMenu.SubstituteMenuPart_Subconcepts_8kfjf0_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildVariableMacroInitValue_SubstituteMenu.SMP_Wrap_8kfjf0_a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd1e1aaL, "jetbrains.mps.build.structure.BuildVariableMacroInitValue")));
+    result.add(new BuildVariableMacroInitValue_SubstituteMenu.SMP_Subconcepts_8kfjf0_b());
     return result;
   }
-  private class SubstituteMenuPart_Wrapper_8kfjf0_a extends WrapperSubstituteMenuPart {
+  private class SMP_Wrap_8kfjf0_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
@@ -70,7 +70,7 @@ public class BuildVariableMacroInitValue_SubstituteMenu extends SubstituteMenuBa
       return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString"));
     }
   }
-  public class SubstituteMenuPart_Subconcepts_8kfjf0_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_8kfjf0_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd1e1aaL, "jetbrains.mps.build.structure.BuildVariableMacroInitValue"));
     }

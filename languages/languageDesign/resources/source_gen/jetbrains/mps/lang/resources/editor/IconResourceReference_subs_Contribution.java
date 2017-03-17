@@ -34,30 +34,30 @@ public class IconResourceReference_subs_Contribution extends SubstituteMenuBase 
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new IconResourceReference_subs_Contribution.SubstituteMenuPart_Parameterized_c11kxs_a(), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L, "jetbrains.mps.lang.resources.structure.OldIconReference")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new IconResourceReference_subs_Contribution.SMP_Param_c11kxs_a(), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L, "jetbrains.mps.lang.resources.structure.OldIconReference")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_c11kxs_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_c11kxs_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new IconResourceReference_subs_Contribution.SubstituteMenuPart_Parameterized_c11kxs_a.SubstituteMenuPart_Action_c11kxs_a0(parameter).createItems(context);
+      return new IconResourceReference_subs_Contribution.SMP_Param_c11kxs_a.SMP_Action_c11kxs_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
       return SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L, "jetbrains.mps.lang.resources.structure.OldIconDeclaration"));
     }
-    private class SubstituteMenuPart_Action_c11kxs_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_c11kxs_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_c11kxs_a0(SNode parameterObject) {
+      public SMP_Action_c11kxs_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new IconResourceReference_subs_Contribution.SubstituteMenuPart_Parameterized_c11kxs_a.SubstituteMenuPart_Action_c11kxs_a0.Item(_context);
+        return new IconResourceReference_subs_Contribution.SMP_Param_c11kxs_a.SMP_Action_c11kxs_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

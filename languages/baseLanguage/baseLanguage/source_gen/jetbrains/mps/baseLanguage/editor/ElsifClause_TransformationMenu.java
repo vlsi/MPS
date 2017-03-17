@@ -47,18 +47,18 @@ public class ElsifClause_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, "jetbrains.mps.baseLanguage.structure.ElsifClause"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new ElsifClause_TransformationMenu.TransformationMenuPart_Parameterized_9fqsrr_a1(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement")));
-      result.add(new ElsifClause_TransformationMenu.TransformationMenuPart_Parameterized_9fqsrr_b1());
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new ElsifClause_TransformationMenu.TMP_Param_9fqsrr_a1(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement")));
+      result.add(new ElsifClause_TransformationMenu.TMP_Param_9fqsrr_b1());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Parameterized_9fqsrr_a1 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_9fqsrr_a1 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(String parameter, TransformationMenuContext context) {
-      return new ElsifClause_TransformationMenu.TransformationMenuPart_Parameterized_9fqsrr_a1.TransformationMenuPart_Action_9fqsrr_a0b(parameter).createItems(context);
+      return new ElsifClause_TransformationMenu.TMP_Param_9fqsrr_a1.TMP_Action_9fqsrr_a0b(parameter).createItems(context);
     }
 
     @Nullable
@@ -67,14 +67,14 @@ public class ElsifClause_TransformationMenu extends TransformationMenuBase {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "else{", "else {");
     }
 
-    private class TransformationMenuPart_Action_9fqsrr_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_9fqsrr_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final String myParameterObject;
-      public TransformationMenuPart_Action_9fqsrr_a0b(String parameterObject) {
+      public TMP_Action_9fqsrr_a0b(String parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ElsifClause_TransformationMenu.TransformationMenuPart_Parameterized_9fqsrr_a1.TransformationMenuPart_Action_9fqsrr_a0b.Item(context);
+        return new ElsifClause_TransformationMenu.TMP_Param_9fqsrr_a1.TMP_Action_9fqsrr_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -105,12 +105,12 @@ public class ElsifClause_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  private class TransformationMenuPart_Parameterized_9fqsrr_b1 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_9fqsrr_b1 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(String parameter, TransformationMenuContext context) {
-      return new ElsifClause_TransformationMenu.TransformationMenuPart_Parameterized_9fqsrr_b1.TransformationMenuPart_Action_9fqsrr_a1b(parameter).createItems(context);
+      return new ElsifClause_TransformationMenu.TMP_Param_9fqsrr_b1.TMP_Action_9fqsrr_a1b(parameter).createItems(context);
     }
 
     @Nullable
@@ -119,14 +119,14 @@ public class ElsifClause_TransformationMenu extends TransformationMenuBase {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "else if", "elseif");
     }
 
-    private class TransformationMenuPart_Action_9fqsrr_a1b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_9fqsrr_a1b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final String myParameterObject;
-      public TransformationMenuPart_Action_9fqsrr_a1b(String parameterObject) {
+      public TMP_Action_9fqsrr_a1b(String parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ElsifClause_TransformationMenu.TransformationMenuPart_Parameterized_9fqsrr_b1.TransformationMenuPart_Action_9fqsrr_a1b.Item(context);
+        return new ElsifClause_TransformationMenu.TMP_Param_9fqsrr_b1.TMP_Action_9fqsrr_a1b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

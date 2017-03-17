@@ -23,15 +23,15 @@ public class Numeric_Substitute extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Numeric_Substitute.SubstituteMenuPart_Action_6g51gm_a(), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dd5L, "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Numeric_Substitute.SMP_Action_6g51gm_a(), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dd5L, "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant")));
     return result;
   }
-  private class SubstituteMenuPart_Action_6g51gm_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_6g51gm_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new Numeric_Substitute.SubstituteMenuPart_Action_6g51gm_a.Item(_context);
+      return new Numeric_Substitute.SMP_Action_6g51gm_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

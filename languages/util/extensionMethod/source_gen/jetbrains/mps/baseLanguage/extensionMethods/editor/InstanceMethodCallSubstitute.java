@@ -36,10 +36,10 @@ public class InstanceMethodCallSubstitute extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new InstanceMethodCallSubstitute.SubstituteMenuPart_Group_ru4l93_a());
+    result.add(new InstanceMethodCallSubstitute.SMP_Group_ru4l93_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_ru4l93_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_ru4l93_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       if ((SNodeOperations.getNodeAncestorWhereConceptInList(_context.getParentNode(), new SAbstractConcept[]{MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076549f519L, "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer")}, true, false) != null)) {
@@ -50,13 +50,13 @@ public class InstanceMethodCallSubstitute extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new InstanceMethodCallSubstitute.SubstituteMenuPart_Group_ru4l93_a.SubstituteMenuPart_Parameterized_ru4l93_a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new InstanceMethodCallSubstitute.SMP_Group_ru4l93_a.SMP_Param_ru4l93_a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")));
     }
-    private class SubstituteMenuPart_Parameterized_ru4l93_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+    private class SMP_Param_ru4l93_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
       @Override
       protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-        return new InstanceMethodCallSubstitute.SubstituteMenuPart_Group_ru4l93_a.SubstituteMenuPart_Parameterized_ru4l93_a0.SubstituteMenuPart_Action_ru4l93_a0a(parameter).createItems(context);
+        return new InstanceMethodCallSubstitute.SMP_Group_ru4l93_a.SMP_Param_ru4l93_a0.SMP_Action_ru4l93_a0a(parameter).createItems(context);
       }
       @Nullable
       @Override
@@ -65,16 +65,16 @@ public class InstanceMethodCallSubstitute extends SubstituteMenuBase {
         SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(instance, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), false);
         return Sequence.fromIterable(Members.visibleInstanceMethods(classifierType, _context.getCurrentTargetNode())).toListSequence();
       }
-      private class SubstituteMenuPart_Action_ru4l93_a0a extends SingleItemSubstituteMenuPart {
+      private class SMP_Action_ru4l93_a0a extends SingleItemSubstituteMenuPart {
         private final SNode myParameterObject;
-        public SubstituteMenuPart_Action_ru4l93_a0a(SNode parameterObject) {
+        public SMP_Action_ru4l93_a0a(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
 
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new InstanceMethodCallSubstitute.SubstituteMenuPart_Group_ru4l93_a.SubstituteMenuPart_Parameterized_ru4l93_a0.SubstituteMenuPart_Action_ru4l93_a0a.Item(_context);
+          return new InstanceMethodCallSubstitute.SMP_Group_ru4l93_a.SMP_Param_ru4l93_a0.SMP_Action_ru4l93_a0a.Item(_context);
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;

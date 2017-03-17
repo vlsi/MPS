@@ -46,12 +46,12 @@ public class IRefConceptArg_TransformationMenu extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0());
+      result.add(new IRefConceptArg_TransformationMenu.TMP_Group_9e3ftz_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_9e3ftz_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_9e3ftz_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
@@ -59,9 +59,9 @@ public class IRefConceptArg_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Group_9e3ftz_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new IRefConceptArg_TransformationMenu.TMP_Group_9e3ftz_a0.TMP_Group_9e3ftz_a0a());
     }
-    public class TransformationMenuPart_Group_9e3ftz_a0a extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    public class TMP_Group_9e3ftz_a0a extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private boolean isCastExpression;
       @Override
       protected void initialize(TransformationMenuContext _context) {
@@ -75,9 +75,9 @@ public class IRefConceptArg_TransformationMenu extends TransformationMenuBase {
 
       @Override
       protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-        return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Group_9e3ftz_a0a.TransformationMenuPart_Group_9e3ftz_a0a0(), new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Group_9e3ftz_a0a.TransformationMenuPart_Group_9e3ftz_b0a0());
+        return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new IRefConceptArg_TransformationMenu.TMP_Group_9e3ftz_a0.TMP_Group_9e3ftz_a0a.TMP_Group_9e3ftz_a0a0(), new IRefConceptArg_TransformationMenu.TMP_Group_9e3ftz_a0.TMP_Group_9e3ftz_a0a.TMP_Group_9e3ftz_b0a0());
       }
-      public class TransformationMenuPart_Group_9e3ftz_a0a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      public class TMP_Group_9e3ftz_a0a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Override
         protected boolean isApplicable(TransformationMenuContext _context) {
           return isCastExpression;
@@ -85,9 +85,9 @@ public class IRefConceptArg_TransformationMenu extends TransformationMenuBase {
 
         @Override
         protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-          return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Group_9e3ftz_a0a.TransformationMenuPart_Group_9e3ftz_a0a0.TransformationMenuPart_IncludeMenu_9e3ftz_a0a0a());
+          return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new IRefConceptArg_TransformationMenu.TMP_Group_9e3ftz_a0.TMP_Group_9e3ftz_a0a.TMP_Group_9e3ftz_a0a0.TMP_Include_9e3ftz_a0a0a());
         }
-        public class TransformationMenuPart_IncludeMenu_9e3ftz_a0a0a extends IncludeTransformationMenuTransformationMenuPart {
+        public class TMP_Include_9e3ftz_a0a0a extends IncludeTransformationMenuTransformationMenuPart {
           @Nullable
           @Override
           protected SNode getNode(TransformationMenuContext _context) {
@@ -96,7 +96,7 @@ public class IRefConceptArg_TransformationMenu extends TransformationMenuBase {
 
         }
       }
-      public class TransformationMenuPart_Group_9e3ftz_b0a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      public class TMP_Group_9e3ftz_b0a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Override
         protected boolean isApplicable(TransformationMenuContext _context) {
           return !(isCastExpression);
@@ -104,12 +104,12 @@ public class IRefConceptArg_TransformationMenu extends TransformationMenuBase {
 
         @Override
         protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-          return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Group_9e3ftz_a0a.TransformationMenuPart_Group_9e3ftz_b0a0.TransformationMenuPart_Action_9e3ftz_a1a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
+          return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new IRefConceptArg_TransformationMenu.TMP_Group_9e3ftz_a0.TMP_Group_9e3ftz_a0a.TMP_Group_9e3ftz_b0a0.TMP_Action_9e3ftz_a1a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
         }
-        private class TransformationMenuPart_Action_9e3ftz_a1a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+        private class TMP_Action_9e3ftz_a1a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
           @Nullable
           protected TransformationMenuItem createItem(TransformationMenuContext context) {
-            return new IRefConceptArg_TransformationMenu.TransformationMenuPart_Group_9e3ftz_a0.TransformationMenuPart_Group_9e3ftz_a0a.TransformationMenuPart_Group_9e3ftz_b0a0.TransformationMenuPart_Action_9e3ftz_a1a0a.Item(context);
+            return new IRefConceptArg_TransformationMenu.TMP_Group_9e3ftz_a0.TMP_Group_9e3ftz_a0a.TMP_Group_9e3ftz_b0a0.TMP_Action_9e3ftz_a1a0a.Item(context);
           }
 
           private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

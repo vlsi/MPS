@@ -44,20 +44,20 @@ public class Complex_RightTransform_Contribution extends TransformationMenuBase 
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Complex_RightTransform_Contribution.TransformationMenuPart_Action_vmt1qg_a0(), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression")));
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Complex_RightTransform_Contribution.TransformationMenuPart_Action_vmt1qg_b0(), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression")));
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Complex_RightTransform_Contribution.TransformationMenuPart_Action_vmt1qg_c0(), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression")));
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Complex_RightTransform_Contribution.TransformationMenuPart_Action_vmt1qg_d0(), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression")));
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Complex_RightTransform_Contribution.TransformationMenuPart_Action_vmt1qg_e0(), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression")));
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Complex_RightTransform_Contribution.TransformationMenuPart_Action_vmt1qg_f0(), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Complex_RightTransform_Contribution.TMP_Action_vmt1qg_a0(), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Complex_RightTransform_Contribution.TMP_Action_vmt1qg_b0(), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Complex_RightTransform_Contribution.TMP_Action_vmt1qg_c0(), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Complex_RightTransform_Contribution.TMP_Action_vmt1qg_d0(), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Complex_RightTransform_Contribution.TMP_Action_vmt1qg_e0(), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Complex_RightTransform_Contribution.TMP_Action_vmt1qg_f0(), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression")));
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_vmt1qg_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_vmt1qg_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Complex_RightTransform_Contribution.TransformationMenuPart_Action_vmt1qg_a0.Item(context);
+      return new Complex_RightTransform_Contribution.TMP_Action_vmt1qg_a0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -93,10 +93,10 @@ public class Complex_RightTransform_Contribution extends TransformationMenuBase 
       }
     }
   }
-  private class TransformationMenuPart_Action_vmt1qg_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_vmt1qg_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Complex_RightTransform_Contribution.TransformationMenuPart_Action_vmt1qg_b0.Item(context);
+      return new Complex_RightTransform_Contribution.TMP_Action_vmt1qg_b0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -132,10 +132,10 @@ public class Complex_RightTransform_Contribution extends TransformationMenuBase 
       }
     }
   }
-  private class TransformationMenuPart_Action_vmt1qg_c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_vmt1qg_c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Complex_RightTransform_Contribution.TransformationMenuPart_Action_vmt1qg_c0.Item(context);
+      return new Complex_RightTransform_Contribution.TMP_Action_vmt1qg_c0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -171,10 +171,10 @@ public class Complex_RightTransform_Contribution extends TransformationMenuBase 
       }
     }
   }
-  private class TransformationMenuPart_Action_vmt1qg_d0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_vmt1qg_d0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Complex_RightTransform_Contribution.TransformationMenuPart_Action_vmt1qg_d0.Item(context);
+      return new Complex_RightTransform_Contribution.TMP_Action_vmt1qg_d0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -210,10 +210,10 @@ public class Complex_RightTransform_Contribution extends TransformationMenuBase 
       }
     }
   }
-  private class TransformationMenuPart_Action_vmt1qg_e0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_vmt1qg_e0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Complex_RightTransform_Contribution.TransformationMenuPart_Action_vmt1qg_e0.Item(context);
+      return new Complex_RightTransform_Contribution.TMP_Action_vmt1qg_e0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -249,10 +249,10 @@ public class Complex_RightTransform_Contribution extends TransformationMenuBase 
       }
     }
   }
-  private class TransformationMenuPart_Action_vmt1qg_f0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_vmt1qg_f0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Complex_RightTransform_Contribution.TransformationMenuPart_Action_vmt1qg_f0.Item(context);
+      return new Complex_RightTransform_Contribution.TMP_Action_vmt1qg_f0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

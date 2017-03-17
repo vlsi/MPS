@@ -44,10 +44,10 @@ public class Type_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a());
+    result.add(new Type_SubstituteMenu.SMP_Group_mqq6an_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_mqq6an_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_mqq6an_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     private boolean condition;
     @Override
     protected void initialize(SubstituteMenuContext _context) {
@@ -61,9 +61,9 @@ public class Type_SubstituteMenu extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a.SubstituteMenuPart_Group_mqq6an_a0(), new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a.SubstituteMenuPart_Group_mqq6an_b0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new Type_SubstituteMenu.SMP_Group_mqq6an_a.SMP_Group_mqq6an_a0(), new Type_SubstituteMenu.SMP_Group_mqq6an_a.SMP_Group_mqq6an_b0());
     }
-    public class SubstituteMenuPart_Group_mqq6an_a0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_mqq6an_a0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return condition;
@@ -71,13 +71,13 @@ public class Type_SubstituteMenu extends SubstituteMenuBase {
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a.SubstituteMenuPart_Group_mqq6an_a0.SubstituteMenuPart_Parameterized_mqq6an_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), new ConstraintsFilteringSubstituteMenuPartDecorator(new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a.SubstituteMenuPart_Group_mqq6an_a0.SubstituteMenuPart_Parameterized_mqq6an_b0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new Type_SubstituteMenu.SMP_Group_mqq6an_a.SMP_Group_mqq6an_a0.SMP_Param_mqq6an_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), new ConstraintsFilteringSubstituteMenuPartDecorator(new Type_SubstituteMenu.SMP_Group_mqq6an_a.SMP_Group_mqq6an_a0.SMP_Param_mqq6an_b0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
       }
-      private class SubstituteMenuPart_Parameterized_mqq6an_a0a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+      private class SMP_Param_mqq6an_a0a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
         @NotNull
         @Override
         protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-          return new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a.SubstituteMenuPart_Group_mqq6an_a0.SubstituteMenuPart_Parameterized_mqq6an_a0a.SubstituteMenuPart_Action_mqq6an_a0a0(parameter).createItems(context);
+          return new Type_SubstituteMenu.SMP_Group_mqq6an_a.SMP_Group_mqq6an_a0.SMP_Param_mqq6an_a0a.SMP_Action_mqq6an_a0a0(parameter).createItems(context);
         }
         @Nullable
         @Override
@@ -88,16 +88,16 @@ public class Type_SubstituteMenu extends SubstituteMenuBase {
             }
           }).toListSequence();
         }
-        private class SubstituteMenuPart_Action_mqq6an_a0a0 extends SingleItemSubstituteMenuPart {
+        private class SMP_Action_mqq6an_a0a0 extends SingleItemSubstituteMenuPart {
           private final SNode myParameterObject;
-          public SubstituteMenuPart_Action_mqq6an_a0a0(SNode parameterObject) {
+          public SMP_Action_mqq6an_a0a0(SNode parameterObject) {
             myParameterObject = parameterObject;
           }
 
           @Nullable
           @Override
           protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-            return new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a.SubstituteMenuPart_Group_mqq6an_a0.SubstituteMenuPart_Parameterized_mqq6an_a0a.SubstituteMenuPart_Action_mqq6an_a0a0.Item(_context);
+            return new Type_SubstituteMenu.SMP_Group_mqq6an_a.SMP_Group_mqq6an_a0.SMP_Param_mqq6an_a0a.SMP_Action_mqq6an_a0a0.Item(_context);
           }
           private class Item extends DefaultSubstituteMenuItem {
             private final SubstituteMenuContext _context;
@@ -139,27 +139,27 @@ public class Type_SubstituteMenu extends SubstituteMenuBase {
         }
 
       }
-      private class SubstituteMenuPart_Parameterized_mqq6an_b0a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+      private class SMP_Param_mqq6an_b0a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
         @NotNull
         @Override
         protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-          return new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a.SubstituteMenuPart_Group_mqq6an_a0.SubstituteMenuPart_Parameterized_mqq6an_b0a.SubstituteMenuPart_Action_mqq6an_a1a0(parameter).createItems(context);
+          return new Type_SubstituteMenu.SMP_Group_mqq6an_a.SMP_Group_mqq6an_a0.SMP_Param_mqq6an_b0a.SMP_Action_mqq6an_a1a0(parameter).createItems(context);
         }
         @Nullable
         @Override
         protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
           return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getThrowablesScope(_context.getParentNode()).getAvailableElements(null)).toListSequence();
         }
-        private class SubstituteMenuPart_Action_mqq6an_a1a0 extends SingleItemSubstituteMenuPart {
+        private class SMP_Action_mqq6an_a1a0 extends SingleItemSubstituteMenuPart {
           private final SNode myParameterObject;
-          public SubstituteMenuPart_Action_mqq6an_a1a0(SNode parameterObject) {
+          public SMP_Action_mqq6an_a1a0(SNode parameterObject) {
             myParameterObject = parameterObject;
           }
 
           @Nullable
           @Override
           protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-            return new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a.SubstituteMenuPart_Group_mqq6an_a0.SubstituteMenuPart_Parameterized_mqq6an_b0a.SubstituteMenuPart_Action_mqq6an_a1a0.Item(_context);
+            return new Type_SubstituteMenu.SMP_Group_mqq6an_a.SMP_Group_mqq6an_a0.SMP_Param_mqq6an_b0a.SMP_Action_mqq6an_a1a0.Item(_context);
           }
           private class Item extends DefaultSubstituteMenuItem {
             private final SubstituteMenuContext _context;
@@ -204,7 +204,7 @@ public class Type_SubstituteMenu extends SubstituteMenuBase {
 
       }
     }
-    public class SubstituteMenuPart_Group_mqq6an_b0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_mqq6an_b0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return !((condition));
@@ -212,9 +212,9 @@ public class Type_SubstituteMenu extends SubstituteMenuBase {
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a.SubstituteMenuPart_Group_mqq6an_b0.SubstituteMenuPart_Subconcepts_mqq6an_a1a());
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new Type_SubstituteMenu.SMP_Group_mqq6an_a.SMP_Group_mqq6an_b0.SMP_Subconcepts_mqq6an_a1a());
       }
-      public class SubstituteMenuPart_Subconcepts_mqq6an_a1a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+      public class SMP_Subconcepts_mqq6an_a1a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
         protected Collection getConcepts(final SubstituteMenuContext _context) {
           return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));
         }

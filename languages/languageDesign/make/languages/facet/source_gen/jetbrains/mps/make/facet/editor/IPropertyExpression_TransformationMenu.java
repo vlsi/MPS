@@ -45,12 +45,12 @@ public class IPropertyExpression_TransformationMenu extends TransformationMenuBa
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getInterfaceConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1e69fdb2a034c3f8L, "jetbrains.mps.make.facet.structure.IPropertyExpression"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new IPropertyExpression_TransformationMenu.TransformationMenuPart_Group_j2qvk8_a1());
+      result.add(new IPropertyExpression_TransformationMenu.TMP_Group_j2qvk8_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_j2qvk8_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_j2qvk8_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1e69fdb2a034c3f8L, 0x716499a90689fe76L, "resource")) == null);
@@ -58,12 +58,12 @@ public class IPropertyExpression_TransformationMenu extends TransformationMenuBa
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new IPropertyExpression_TransformationMenu.TransformationMenuPart_Group_j2qvk8_a1.TransformationMenuPart_Action_j2qvk8_a0b(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1e69fdb2a034c3f6L, "jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new IPropertyExpression_TransformationMenu.TMP_Group_j2qvk8_a1.TMP_Action_j2qvk8_a0b(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1e69fdb2a034c3f6L, "jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression")));
     }
-    private class TransformationMenuPart_Action_j2qvk8_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_j2qvk8_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new IPropertyExpression_TransformationMenu.TransformationMenuPart_Group_j2qvk8_a1.TransformationMenuPart_Action_j2qvk8_a0b.Item(context);
+        return new IPropertyExpression_TransformationMenu.TMP_Group_j2qvk8_a1.TMP_Action_j2qvk8_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

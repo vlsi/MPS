@@ -30,10 +30,10 @@ public class ResultStatement_subs extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ResultStatement_subs.SubstituteMenuPart_Group_358bbk_a());
+    result.add(new ResultStatement_subs.SMP_Group_358bbk_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_358bbk_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_358bbk_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       SNode anc = SNodeOperations.getNodeAncestorWhereConceptInList(_context.getParentNode(), new SAbstractConcept[]{MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dabL, "jetbrains.mps.make.script.structure.JobDefinition"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x1b731b4510dcbee4L, "jetbrains.mps.make.script.structure.ConfigDefinition"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")}, false, false);
@@ -42,29 +42,29 @@ public class ResultStatement_subs extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ResultStatement_subs.SubstituteMenuPart_Group_358bbk_a.SubstituteMenuPart_Parameterized_358bbk_a0(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, "jetbrains.mps.make.script.structure.ResultStatement")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ResultStatement_subs.SMP_Group_358bbk_a.SMP_Param_358bbk_a0(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, "jetbrains.mps.make.script.structure.ResultStatement")));
     }
-    private class SubstituteMenuPart_Parameterized_358bbk_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+    private class SMP_Param_358bbk_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
       @Override
       protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-        return new ResultStatement_subs.SubstituteMenuPart_Group_358bbk_a.SubstituteMenuPart_Parameterized_358bbk_a0.SubstituteMenuPart_Action_358bbk_a0a(parameter).createItems(context);
+        return new ResultStatement_subs.SMP_Group_358bbk_a.SMP_Param_358bbk_a0.SMP_Action_358bbk_a0a(parameter).createItems(context);
       }
       @Nullable
       @Override
       protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
         return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "Result"));
       }
-      private class SubstituteMenuPart_Action_358bbk_a0a extends SingleItemSubstituteMenuPart {
+      private class SMP_Action_358bbk_a0a extends SingleItemSubstituteMenuPart {
         private final SNode myParameterObject;
-        public SubstituteMenuPart_Action_358bbk_a0a(SNode parameterObject) {
+        public SMP_Action_358bbk_a0a(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
 
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new ResultStatement_subs.SubstituteMenuPart_Group_358bbk_a.SubstituteMenuPart_Parameterized_358bbk_a0.SubstituteMenuPart_Action_358bbk_a0a.Item(_context);
+          return new ResultStatement_subs.SMP_Group_358bbk_a.SMP_Param_358bbk_a0.SMP_Action_358bbk_a0a.Item(_context);
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;

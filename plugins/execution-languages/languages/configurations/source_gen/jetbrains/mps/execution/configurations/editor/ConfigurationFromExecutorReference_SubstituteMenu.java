@@ -36,12 +36,12 @@ public class ConfigurationFromExecutorReference_SubstituteMenu extends Substitut
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConfigurationFromExecutorReference_SubstituteMenu.SubstituteMenuPart_Group_nhkpww_a());
-    result.add(new ConfigurationFromExecutorReference_SubstituteMenu.SubstituteMenuPart_Subconcepts_nhkpww_b());
+    result.add(new ConfigurationFromExecutorReference_SubstituteMenu.SMP_Group_nhkpww_a());
+    result.add(new ConfigurationFromExecutorReference_SubstituteMenu.SMP_Subconcepts_nhkpww_b());
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL, "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference")), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL, "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference")));
     return result;
   }
-  public class SubstituteMenuPart_Group_nhkpww_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_nhkpww_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getParentNode()), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor"));
@@ -49,29 +49,29 @@ public class ConfigurationFromExecutorReference_SubstituteMenu extends Substitut
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ConfigurationFromExecutorReference_SubstituteMenu.SubstituteMenuPart_Group_nhkpww_a.SubstituteMenuPart_Parameterized_nhkpww_a0(), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL, "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ConfigurationFromExecutorReference_SubstituteMenu.SMP_Group_nhkpww_a.SMP_Param_nhkpww_a0(), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL, "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference")));
     }
-    private class SubstituteMenuPart_Parameterized_nhkpww_a0 extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
+    private class SMP_Param_nhkpww_a0 extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
       @Override
       protected List<SubstituteMenuItem> createItems(String parameter, SubstituteMenuContext context) {
-        return new ConfigurationFromExecutorReference_SubstituteMenu.SubstituteMenuPart_Group_nhkpww_a.SubstituteMenuPart_Parameterized_nhkpww_a0.SubstituteMenuPart_Action_nhkpww_a0a(parameter).createItems(context);
+        return new ConfigurationFromExecutorReference_SubstituteMenu.SMP_Group_nhkpww_a.SMP_Param_nhkpww_a0.SMP_Action_nhkpww_a0a(parameter).createItems(context);
       }
       @Nullable
       @Override
       protected Iterable<? extends String> getParameters(SubstituteMenuContext _context) {
         return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getParentNode()), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor")), MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x1acdeec3ca0ad49cL, "configurationName")));
       }
-      private class SubstituteMenuPart_Action_nhkpww_a0a extends SingleItemSubstituteMenuPart {
+      private class SMP_Action_nhkpww_a0a extends SingleItemSubstituteMenuPart {
         private final String myParameterObject;
-        public SubstituteMenuPart_Action_nhkpww_a0a(String parameterObject) {
+        public SMP_Action_nhkpww_a0a(String parameterObject) {
           myParameterObject = parameterObject;
         }
 
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new ConfigurationFromExecutorReference_SubstituteMenu.SubstituteMenuPart_Group_nhkpww_a.SubstituteMenuPart_Parameterized_nhkpww_a0.SubstituteMenuPart_Action_nhkpww_a0a.Item(_context);
+          return new ConfigurationFromExecutorReference_SubstituteMenu.SMP_Group_nhkpww_a.SMP_Param_nhkpww_a0.SMP_Action_nhkpww_a0a.Item(_context);
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;
@@ -105,7 +105,7 @@ public class ConfigurationFromExecutorReference_SubstituteMenu extends Substitut
 
     }
   }
-  public class SubstituteMenuPart_Subconcepts_nhkpww_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_nhkpww_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL, "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference"));
     }

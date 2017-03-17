@@ -22,15 +22,15 @@ public class ChildOfParentWithEmptyCell_SubstituteMenu extends SubstituteMenuBas
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ChildOfParentWithEmptyCell_SubstituteMenu.SubstituteMenuPart_Action_vrdora_a(), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x7cc9c0c2af1b18deL, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ChildOfParentWithEmptyCell")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ChildOfParentWithEmptyCell_SubstituteMenu.SMP_Action_vrdora_a(), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x7cc9c0c2af1b18deL, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ChildOfParentWithEmptyCell")));
     return result;
   }
-  private class SubstituteMenuPart_Action_vrdora_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_vrdora_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new ChildOfParentWithEmptyCell_SubstituteMenu.SubstituteMenuPart_Action_vrdora_a.Item(_context);
+      return new ChildOfParentWithEmptyCell_SubstituteMenu.SMP_Action_vrdora_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

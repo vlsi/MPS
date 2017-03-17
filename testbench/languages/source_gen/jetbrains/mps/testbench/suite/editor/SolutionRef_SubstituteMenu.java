@@ -30,14 +30,14 @@ public class SolutionRef_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SolutionRef_SubstituteMenu.SubstituteMenuPart_Parameterized_omknhr_a(), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, "jetbrains.mps.testbench.suite.structure.SolutionRef")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SolutionRef_SubstituteMenu.SMP_Param_omknhr_a(), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, "jetbrains.mps.testbench.suite.structure.SolutionRef")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_omknhr_a extends ParameterizedMenuPart<SModuleReference, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_omknhr_a extends ParameterizedMenuPart<SModuleReference, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SModuleReference parameter, SubstituteMenuContext context) {
-      return new SolutionRef_SubstituteMenu.SubstituteMenuPart_Parameterized_omknhr_a.SubstituteMenuPart_Action_omknhr_a0(parameter).createItems(context);
+      return new SolutionRef_SubstituteMenu.SMP_Param_omknhr_a.SMP_Action_omknhr_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -49,16 +49,16 @@ public class SolutionRef_SubstituteMenu extends SubstituteMenuBase {
         }
       }).toListSequence();
     }
-    private class SubstituteMenuPart_Action_omknhr_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_omknhr_a0 extends SingleItemSubstituteMenuPart {
       private final SModuleReference myParameterObject;
-      public SubstituteMenuPart_Action_omknhr_a0(SModuleReference parameterObject) {
+      public SMP_Action_omknhr_a0(SModuleReference parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new SolutionRef_SubstituteMenu.SubstituteMenuPart_Parameterized_omknhr_a.SubstituteMenuPart_Action_omknhr_a0.Item(_context);
+        return new SolutionRef_SubstituteMenu.SMP_Param_omknhr_a.SMP_Action_omknhr_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

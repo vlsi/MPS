@@ -26,10 +26,10 @@ public class BLC_substitute extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new BLC_substitute.SubstituteMenuPart_Group_4r5ods_a());
+    result.add(new BLC_substitute.SMP_Group_4r5ods_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_4r5ods_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_4r5ods_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118b81cc8f6L, "jetbrains.mps.baseLanguage.collections.structure.SortOperation")) || SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x119a966b94dL, "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation"));
@@ -37,14 +37,14 @@ public class BLC_substitute extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new BLC_substitute.SubstituteMenuPart_Group_4r5ods_a.SubstituteMenuPart_Action_4r5ods_a0(), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11257567b07L, "jetbrains.mps.baseLanguage.collections.structure.SortDirection")), new ConstraintsFilteringSubstituteMenuPartDecorator(new BLC_substitute.SubstituteMenuPart_Group_4r5ods_a.SubstituteMenuPart_Action_4r5ods_b0(), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11257567b07L, "jetbrains.mps.baseLanguage.collections.structure.SortDirection")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new BLC_substitute.SMP_Group_4r5ods_a.SMP_Action_4r5ods_a0(), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11257567b07L, "jetbrains.mps.baseLanguage.collections.structure.SortDirection")), new ConstraintsFilteringSubstituteMenuPartDecorator(new BLC_substitute.SMP_Group_4r5ods_a.SMP_Action_4r5ods_b0(), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11257567b07L, "jetbrains.mps.baseLanguage.collections.structure.SortDirection")));
     }
-    private class SubstituteMenuPart_Action_4r5ods_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_4r5ods_a0 extends SingleItemSubstituteMenuPart {
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new BLC_substitute.SubstituteMenuPart_Group_4r5ods_a.SubstituteMenuPart_Action_4r5ods_a0.Item(_context);
+        return new BLC_substitute.SMP_Group_4r5ods_a.SMP_Action_4r5ods_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -72,12 +72,12 @@ public class BLC_substitute extends SubstituteMenuBase {
         }
       }
     }
-    private class SubstituteMenuPart_Action_4r5ods_b0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_4r5ods_b0 extends SingleItemSubstituteMenuPart {
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new BLC_substitute.SubstituteMenuPart_Group_4r5ods_a.SubstituteMenuPart_Action_4r5ods_b0.Item(_context);
+        return new BLC_substitute.SMP_Group_4r5ods_a.SMP_Action_4r5ods_b0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

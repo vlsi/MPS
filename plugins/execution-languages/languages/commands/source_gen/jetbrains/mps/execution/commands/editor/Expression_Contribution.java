@@ -25,12 +25,12 @@ public class Expression_Contribution extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new Expression_Contribution.SubstituteMenuPart_IncludeMenu_s9uhwr_a());
-    result.add(new Expression_Contribution.SubstituteMenuPart_IncludeMenu_s9uhwr_b());
-    result.add(new Expression_Contribution.SubstituteMenuPart_IncludeMenu_s9uhwr_c());
+    result.add(new Expression_Contribution.SMP_Include_s9uhwr_a());
+    result.add(new Expression_Contribution.SMP_Include_s9uhwr_b());
+    result.add(new Expression_Contribution.SMP_Include_s9uhwr_c());
     return result;
   }
-  public class SubstituteMenuPart_IncludeMenu_s9uhwr_a extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_s9uhwr_a extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override
@@ -39,7 +39,7 @@ public class Expression_Contribution extends SubstituteMenuBase {
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.execution.commands.editor.SubstituteListCommandPart");
     }
   }
-  public class SubstituteMenuPart_IncludeMenu_s9uhwr_b extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_s9uhwr_b extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override
@@ -48,7 +48,7 @@ public class Expression_Contribution extends SubstituteMenuBase {
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.execution.commands.editor.commandReference");
     }
   }
-  public class SubstituteMenuPart_IncludeMenu_s9uhwr_c extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_s9uhwr_c extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override

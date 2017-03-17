@@ -34,12 +34,12 @@ public class add_reexport_BuildSourcePath extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new add_reexport_BuildSourcePath.TransformationMenuPart_Group_xb4wa_a0());
+      result.add(new add_reexport_BuildSourcePath.TMP_Group_xb4wa_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_xb4wa_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_xb4wa_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, "jetbrains.mps.build.structure.BuildSource_JavaJar")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar"));
@@ -47,9 +47,9 @@ public class add_reexport_BuildSourcePath extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_reexport_BuildSourcePath.TransformationMenuPart_Group_xb4wa_a0.TransformationMenuPart_IncludeMenu_xb4wa_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_reexport_BuildSourcePath.TMP_Group_xb4wa_a0.TMP_Include_xb4wa_a0a());
     }
-    public class TransformationMenuPart_IncludeMenu_xb4wa_a0a extends IncludeTransformationMenuTransformationMenuPart {
+    public class TMP_Include_xb4wa_a0a extends IncludeTransformationMenuTransformationMenuPart {
       @Nullable
       @Override
       protected SNode getNode(TransformationMenuContext _context) {

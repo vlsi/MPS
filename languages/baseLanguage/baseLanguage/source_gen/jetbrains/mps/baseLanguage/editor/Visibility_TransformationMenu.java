@@ -37,12 +37,12 @@ public class Visibility_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af957d96eL, "jetbrains.mps.baseLanguage.structure.Visibility"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new Visibility_TransformationMenu.TransformationMenuPart_IncludeMenu_gnu1be_a1());
+      result.add(new Visibility_TransformationMenu.TMP_Include_gnu1be_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_gnu1be_a1 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_gnu1be_a1 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected SNode getNode(TransformationMenuContext _context) {

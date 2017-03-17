@@ -33,15 +33,15 @@ public class Child_MoreNamedActions extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new Child_MoreNamedActions.TransformationMenuPart_Action_9jyvr2_a0());
+      result.add(new Child_MoreNamedActions.TMP_Action_9jyvr2_a0());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_9jyvr2_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_9jyvr2_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Child_MoreNamedActions.TransformationMenuPart_Action_9jyvr2_a0.Item(context);
+      return new Child_MoreNamedActions.TMP_Action_9jyvr2_a0.Item(context);
     }
 
     private class Item extends ActionItemBase {

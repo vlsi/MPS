@@ -35,16 +35,16 @@ public class AbstractArgument_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Parameterized_eitulo_a(), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f9b7L, "jetbrains.mps.lang.editor.diagram.structure.LinkArgument")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Parameterized_eitulo_b(), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fdc48c85L, "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Action_eitulo_c(), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8f7L, "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractArgument_SubstituteMenu.SMP_Param_eitulo_a(), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f9b7L, "jetbrains.mps.lang.editor.diagram.structure.LinkArgument")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractArgument_SubstituteMenu.SMP_Param_eitulo_b(), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fdc48c85L, "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractArgument_SubstituteMenu.SMP_Action_eitulo_c(), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8f7L, "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_eitulo_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_eitulo_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Parameterized_eitulo_a.SubstituteMenuPart_Action_eitulo_a0(parameter).createItems(context);
+      return new AbstractArgument_SubstituteMenu.SMP_Param_eitulo_a.SMP_Action_eitulo_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -59,16 +59,16 @@ public class AbstractArgument_SubstituteMenu extends SubstituteMenuBase {
         }
       });
     }
-    private class SubstituteMenuPart_Action_eitulo_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_eitulo_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_eitulo_a0(SNode parameterObject) {
+      public SMP_Action_eitulo_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Parameterized_eitulo_a.SubstituteMenuPart_Action_eitulo_a0.Item(_context);
+        return new AbstractArgument_SubstituteMenu.SMP_Param_eitulo_a.SMP_Action_eitulo_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -113,11 +113,11 @@ public class AbstractArgument_SubstituteMenu extends SubstituteMenuBase {
     }
 
   }
-  private class SubstituteMenuPart_Parameterized_eitulo_b extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_eitulo_b extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Parameterized_eitulo_b.SubstituteMenuPart_Action_eitulo_a1(parameter).createItems(context);
+      return new AbstractArgument_SubstituteMenu.SMP_Param_eitulo_b.SMP_Action_eitulo_a1(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -132,16 +132,16 @@ public class AbstractArgument_SubstituteMenu extends SubstituteMenuBase {
         }
       });
     }
-    private class SubstituteMenuPart_Action_eitulo_a1 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_eitulo_a1 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_eitulo_a1(SNode parameterObject) {
+      public SMP_Action_eitulo_a1(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Parameterized_eitulo_b.SubstituteMenuPart_Action_eitulo_a1.Item(_context);
+        return new AbstractArgument_SubstituteMenu.SMP_Param_eitulo_b.SMP_Action_eitulo_a1.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -187,12 +187,12 @@ public class AbstractArgument_SubstituteMenu extends SubstituteMenuBase {
     }
 
   }
-  private class SubstituteMenuPart_Action_eitulo_c extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_eitulo_c extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Action_eitulo_c.Item(_context);
+      return new AbstractArgument_SubstituteMenu.SMP_Action_eitulo_c.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

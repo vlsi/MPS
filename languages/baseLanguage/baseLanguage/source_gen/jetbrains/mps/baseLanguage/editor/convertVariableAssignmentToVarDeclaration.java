@@ -46,12 +46,12 @@ public class convertVariableAssignmentToVarDeclaration extends TransformationMen
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new convertVariableAssignmentToVarDeclaration.TransformationMenuPart_Group_lavomd_a0());
+      result.add(new convertVariableAssignmentToVarDeclaration.TMP_Group_lavomd_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_lavomd_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_lavomd_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")))) {
@@ -66,9 +66,9 @@ public class convertVariableAssignmentToVarDeclaration extends TransformationMen
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new convertVariableAssignmentToVarDeclaration.TransformationMenuPart_Group_lavomd_a0.TransformationMenuPart_Group_lavomd_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new convertVariableAssignmentToVarDeclaration.TMP_Group_lavomd_a0.TMP_Group_lavomd_a0a());
     }
-    public class TransformationMenuPart_Group_lavomd_a0a extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    public class TMP_Group_lavomd_a0a extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private SNode assignment;
       private SNode type;
       @Override
@@ -88,12 +88,12 @@ public class convertVariableAssignmentToVarDeclaration extends TransformationMen
 
       @Override
       protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-        return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new convertVariableAssignmentToVarDeclaration.TransformationMenuPart_Group_lavomd_a0.TransformationMenuPart_Group_lavomd_a0a.TransformationMenuPart_Action_lavomd_a0a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
+        return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new convertVariableAssignmentToVarDeclaration.TMP_Group_lavomd_a0.TMP_Group_lavomd_a0a.TMP_Action_lavomd_a0a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
       }
-      private class TransformationMenuPart_Action_lavomd_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_lavomd_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new convertVariableAssignmentToVarDeclaration.TransformationMenuPart_Group_lavomd_a0.TransformationMenuPart_Group_lavomd_a0a.TransformationMenuPart_Action_lavomd_a0a0.Item(context);
+          return new convertVariableAssignmentToVarDeclaration.TMP_Group_lavomd_a0.TMP_Group_lavomd_a0a.TMP_Action_lavomd_a0a0.Item(context);
         }
 
         private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

@@ -46,12 +46,12 @@ public class transform_FunctionType_to_ClassifierLiteralType extends Transformat
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new transform_FunctionType_to_ClassifierLiteralType.TransformationMenuPart_Group_f0n48v_a0());
+      result.add(new transform_FunctionType_to_ClassifierLiteralType.TMP_Group_f0n48v_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_f0n48v_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_f0n48v_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getNode())), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
@@ -59,12 +59,12 @@ public class transform_FunctionType_to_ClassifierLiteralType extends Transformat
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new transform_FunctionType_to_ClassifierLiteralType.TransformationMenuPart_Group_f0n48v_a0.TransformationMenuPart_Action_f0n48v_a0a(), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0xe8770ba07b68051L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new transform_FunctionType_to_ClassifierLiteralType.TMP_Group_f0n48v_a0.TMP_Action_f0n48v_a0a(), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0xe8770ba07b68051L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType")));
     }
-    private class TransformationMenuPart_Action_f0n48v_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_f0n48v_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new transform_FunctionType_to_ClassifierLiteralType.TransformationMenuPart_Group_f0n48v_a0.TransformationMenuPart_Action_f0n48v_a0a.Item(context);
+        return new transform_FunctionType_to_ClassifierLiteralType.TMP_Group_f0n48v_a0.TMP_Action_f0n48v_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

@@ -43,16 +43,16 @@ public class WildCardType_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new WildCardType_TransformationMenu.TransformationMenuPart_Action_dxvkyx_a1(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")));
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new WildCardType_TransformationMenu.TransformationMenuPart_Action_dxvkyx_b1(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new WildCardType_TransformationMenu.TMP_Action_dxvkyx_a1(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new WildCardType_TransformationMenu.TMP_Action_dxvkyx_b1(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")));
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_dxvkyx_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_dxvkyx_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new WildCardType_TransformationMenu.TransformationMenuPart_Action_dxvkyx_a1.Item(context);
+      return new WildCardType_TransformationMenu.TMP_Action_dxvkyx_a1.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -81,10 +81,10 @@ public class WildCardType_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  private class TransformationMenuPart_Action_dxvkyx_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_dxvkyx_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new WildCardType_TransformationMenu.TransformationMenuPart_Action_dxvkyx_b1.Item(context);
+      return new WildCardType_TransformationMenu.TMP_Action_dxvkyx_b1.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

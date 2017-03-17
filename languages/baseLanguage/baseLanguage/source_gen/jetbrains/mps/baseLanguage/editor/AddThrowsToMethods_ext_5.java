@@ -38,12 +38,12 @@ public class AddThrowsToMethods_ext_5 extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new AddThrowsToMethods_ext_5.TransformationMenuPart_Group_kmavwg_a0());
+      result.add(new AddThrowsToMethods_ext_5.TMP_Group_kmavwg_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_kmavwg_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_kmavwg_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x10f383d6949L, "throwsItem"))).isEmpty();
@@ -51,12 +51,12 @@ public class AddThrowsToMethods_ext_5 extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new AddThrowsToMethods_ext_5.TransformationMenuPart_Group_kmavwg_a0.TransformationMenuPart_Action_kmavwg_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new AddThrowsToMethods_ext_5.TMP_Group_kmavwg_a0.TMP_Action_kmavwg_a0a());
     }
-    private class TransformationMenuPart_Action_kmavwg_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_kmavwg_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AddThrowsToMethods_ext_5.TransformationMenuPart_Group_kmavwg_a0.TransformationMenuPart_Action_kmavwg_a0a.Item(context);
+        return new AddThrowsToMethods_ext_5.TMP_Group_kmavwg_a0.TMP_Action_kmavwg_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

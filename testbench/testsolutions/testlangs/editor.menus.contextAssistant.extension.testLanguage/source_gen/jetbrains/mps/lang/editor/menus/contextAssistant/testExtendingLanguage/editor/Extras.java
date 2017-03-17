@@ -40,21 +40,21 @@ public class Extras extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ACTIONS_TOOL).contains(_context.getMenuLocation())) {
-      result.add(new Extras.TransformationMenuPart_Refactoring_ha3uwx_a0());
-      result.add(new Extras.TransformationMenuPart_PluginAction_ha3uwx_b0());
-      result.add(new Extras.TransformationMenuPart_Intention_ha3uwx_c0());
+      result.add(new Extras.TMP_Refactoring_ha3uwx_a0());
+      result.add(new Extras.TMP_PluginAction_ha3uwx_b0());
+      result.add(new Extras.TMP_Intention_ha3uwx_c0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Refactoring_ha3uwx_a0 extends RefactoringMenuPartBase {
-    public TransformationMenuPart_Refactoring_ha3uwx_a0() {
+  public class TMP_Refactoring_ha3uwx_a0 extends RefactoringMenuPartBase {
+    public TMP_Refactoring_ha3uwx_a0() {
       super("jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.refactorings.AppendOneToName");
     }
 
     @Override
     protected TransformationMenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IRefactoring refactoring) {
-      return new Extras.TransformationMenuPart_Refactoring_ha3uwx_a0.Item(context, refactoring);
+      return new Extras.TMP_Refactoring_ha3uwx_a0.Item(context, refactoring);
     }
 
     private class Item extends RefactoringMenuItemBase implements SidebarActionItem {
@@ -72,14 +72,14 @@ public class Extras extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_PluginAction_ha3uwx_b0 extends PluginActionMenuPartBase {
-    public TransformationMenuPart_PluginAction_ha3uwx_b0() {
+  public class TMP_PluginAction_ha3uwx_b0 extends PluginActionMenuPartBase {
+    public TMP_PluginAction_ha3uwx_b0() {
       super("jetbrains.mps.ide.actions.ShowBookmarksDialog_Action");
     }
 
     @Override
     protected TransformationMenuItem createItem(@NotNull TransformationMenuContext context, @NotNull AnAction action) {
-      return new Extras.TransformationMenuPart_PluginAction_ha3uwx_b0.Item(context, action);
+      return new Extras.TMP_PluginAction_ha3uwx_b0.Item(context, action);
     }
 
     private class Item extends PluginActionMenuItemBase implements SidebarActionItem {
@@ -97,14 +97,14 @@ public class Extras extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_Intention_ha3uwx_c0 extends IntentionMenuPartBase {
-    public TransformationMenuPart_Intention_ha3uwx_c0() {
+  public class TMP_Intention_ha3uwx_c0 extends IntentionMenuPartBase {
+    public TMP_Intention_ha3uwx_c0() {
       super("jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.intentions.AddLetterToName_Intention");
     }
 
     @Override
     protected TransformationMenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable) {
-      return new Extras.TransformationMenuPart_Intention_ha3uwx_c0.Item(context, executable);
+      return new Extras.TMP_Intention_ha3uwx_c0.Item(context, executable);
     }
 
     private class Item extends IntentionMenuPartBase.ItemBase implements SidebarActionItem {

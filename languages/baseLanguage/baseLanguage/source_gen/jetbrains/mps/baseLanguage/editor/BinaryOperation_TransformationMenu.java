@@ -46,15 +46,15 @@ public class BinaryOperation_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new BinaryOperation_TransformationMenu.TransformationMenuPart_WrapSubstituteMenu_kltahs_a1());
+      result.add(new BinaryOperation_TransformationMenu.TMP_WrapSM_kltahs_a1());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new BinaryOperation_TransformationMenu.TransformationMenuPart_WrapSubstituteMenu_kltahs_a2());
+      result.add(new BinaryOperation_TransformationMenu.TMP_WrapSM_kltahs_a2());
     }
     return result;
   }
 
-  public class TransformationMenuPart_WrapSubstituteMenu_kltahs_a1 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_kltahs_a1 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override
@@ -72,7 +72,7 @@ public class BinaryOperation_TransformationMenu extends TransformationMenuBase {
       SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), PrecedenceUtil.processRightTransform(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), createdNode), SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
     }
   }
-  public class TransformationMenuPart_WrapSubstituteMenu_kltahs_a2 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_kltahs_a2 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override

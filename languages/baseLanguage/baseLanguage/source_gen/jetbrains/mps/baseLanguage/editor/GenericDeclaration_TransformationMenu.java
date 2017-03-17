@@ -44,12 +44,12 @@ public class GenericDeclaration_TransformationMenu extends TransformationMenuBas
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new GenericDeclaration_TransformationMenu.TransformationMenuPart_Group_wdgok2_a1());
+      result.add(new GenericDeclaration_TransformationMenu.TMP_Group_wdgok2_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_wdgok2_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_wdgok2_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).isEmpty() && !((SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation")) || SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))));
@@ -57,12 +57,12 @@ public class GenericDeclaration_TransformationMenu extends TransformationMenuBas
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new GenericDeclaration_TransformationMenu.TransformationMenuPart_Group_wdgok2_a1.TransformationMenuPart_Action_wdgok2_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new GenericDeclaration_TransformationMenu.TMP_Group_wdgok2_a1.TMP_Action_wdgok2_a0b());
     }
-    private class TransformationMenuPart_Action_wdgok2_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_wdgok2_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new GenericDeclaration_TransformationMenu.TransformationMenuPart_Group_wdgok2_a1.TransformationMenuPart_Action_wdgok2_a0b.Item(context);
+        return new GenericDeclaration_TransformationMenu.TMP_Group_wdgok2_a1.TMP_Action_wdgok2_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

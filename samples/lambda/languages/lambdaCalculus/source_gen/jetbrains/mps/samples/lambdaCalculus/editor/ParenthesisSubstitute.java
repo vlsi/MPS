@@ -22,15 +22,15 @@ public class ParenthesisSubstitute extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ParenthesisSubstitute.SubstituteMenuPart_Action_smqx88_a(), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3735fdad52687b59L, "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ParenthesisSubstitute.SMP_Action_smqx88_a(), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3735fdad52687b59L, "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression")));
     return result;
   }
-  private class SubstituteMenuPart_Action_smqx88_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_smqx88_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new ParenthesisSubstitute.SubstituteMenuPart_Action_smqx88_a.Item(_context);
+      return new ParenthesisSubstitute.SMP_Action_smqx88_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

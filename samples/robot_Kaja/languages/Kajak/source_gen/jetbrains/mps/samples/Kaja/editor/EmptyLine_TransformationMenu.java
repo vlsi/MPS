@@ -42,19 +42,19 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a0());
-      result.add(new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_b0());
-      result.add(new EmptyLine_TransformationMenu.TransformationMenuPart_Group_supj5f_c0());
-      result.add(new EmptyLine_TransformationMenu.TransformationMenuPart_SubMenu_supj5f_d0());
-      result.add(new EmptyLine_TransformationMenu.TransformationMenuPart_SubMenu_supj5f_e0());
+      result.add(new EmptyLine_TransformationMenu.TMP_Action_supj5f_a0());
+      result.add(new EmptyLine_TransformationMenu.TMP_Action_supj5f_b0());
+      result.add(new EmptyLine_TransformationMenu.TMP_Group_supj5f_c0());
+      result.add(new EmptyLine_TransformationMenu.TMP_SubMenu_supj5f_d0());
+      result.add(new EmptyLine_TransformationMenu.TMP_SubMenu_supj5f_e0());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_supj5f_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_supj5f_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a0.Item(context);
+      return new EmptyLine_TransformationMenu.TMP_Action_supj5f_a0.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -78,10 +78,10 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private class TransformationMenuPart_Action_supj5f_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_supj5f_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_b0.Item(context);
+      return new EmptyLine_TransformationMenu.TMP_Action_supj5f_b0.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -105,7 +105,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  public class TransformationMenuPart_Group_supj5f_c0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_supj5f_c0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return eq_supj5f_a0a0a7(SNodeOperations.getParent(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"), false, false)), SNodeOperations.getContainingRoot(_context.getNode()));
@@ -113,12 +113,12 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new EmptyLine_TransformationMenu.TransformationMenuPart_Group_supj5f_c0.TransformationMenuPart_Action_supj5f_a2a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new EmptyLine_TransformationMenu.TMP_Group_supj5f_c0.TMP_Action_supj5f_a2a());
     }
-    private class TransformationMenuPart_Action_supj5f_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_supj5f_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new EmptyLine_TransformationMenu.TransformationMenuPart_Group_supj5f_c0.TransformationMenuPart_Action_supj5f_a2a.Item(context);
+        return new EmptyLine_TransformationMenu.TMP_Group_supj5f_c0.TMP_Action_supj5f_a2a.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -144,7 +144,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_SubMenu_supj5f_d0 extends SubMenuMenuTransformationMenuPart {
+  public class TMP_SubMenu_supj5f_d0 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "Control flow";
@@ -152,12 +152,12 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new EmptyLine_TransformationMenu.TransformationMenuPart_SubMenu_supj5f_d0.TransformationMenuPart_Action_supj5f_a3a(), new EmptyLine_TransformationMenu.TransformationMenuPart_SubMenu_supj5f_d0.TransformationMenuPart_Action_supj5f_b3a(), new EmptyLine_TransformationMenu.TransformationMenuPart_SubMenu_supj5f_d0.TransformationMenuPart_Action_supj5f_c3a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new EmptyLine_TransformationMenu.TMP_SubMenu_supj5f_d0.TMP_Action_supj5f_a3a(), new EmptyLine_TransformationMenu.TMP_SubMenu_supj5f_d0.TMP_Action_supj5f_b3a(), new EmptyLine_TransformationMenu.TMP_SubMenu_supj5f_d0.TMP_Action_supj5f_c3a());
     }
-    private class TransformationMenuPart_Action_supj5f_a3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_supj5f_a3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new EmptyLine_TransformationMenu.TransformationMenuPart_SubMenu_supj5f_d0.TransformationMenuPart_Action_supj5f_a3a.Item(context);
+        return new EmptyLine_TransformationMenu.TMP_SubMenu_supj5f_d0.TMP_Action_supj5f_a3a.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -183,10 +183,10 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
       }
     }
-    private class TransformationMenuPart_Action_supj5f_b3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_supj5f_b3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new EmptyLine_TransformationMenu.TransformationMenuPart_SubMenu_supj5f_d0.TransformationMenuPart_Action_supj5f_b3a.Item(context);
+        return new EmptyLine_TransformationMenu.TMP_SubMenu_supj5f_d0.TMP_Action_supj5f_b3a.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -211,10 +211,10 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
       }
     }
-    private class TransformationMenuPart_Action_supj5f_c3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_supj5f_c3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new EmptyLine_TransformationMenu.TransformationMenuPart_SubMenu_supj5f_d0.TransformationMenuPart_Action_supj5f_c3a.Item(context);
+        return new EmptyLine_TransformationMenu.TMP_SubMenu_supj5f_d0.TMP_Action_supj5f_c3a.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -240,7 +240,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_SubMenu_supj5f_e0 extends SubMenuMenuTransformationMenuPart {
+  public class TMP_SubMenu_supj5f_e0 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "Other actions";
@@ -248,9 +248,9 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new EmptyLine_TransformationMenu.TransformationMenuPart_SubMenu_supj5f_e0.TransformationMenuPart_IncludeMenu_supj5f_a4a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new EmptyLine_TransformationMenu.TMP_SubMenu_supj5f_e0.TMP_Include_supj5f_a4a());
     }
-    public class TransformationMenuPart_IncludeMenu_supj5f_a4a extends IncludeTransformationMenuTransformationMenuPart {
+    public class TMP_Include_supj5f_a4a extends IncludeTransformationMenuTransformationMenuPart {
       @Nullable
       @Override
       protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {

@@ -40,12 +40,12 @@ public class BootstrapAwareMetaObject_TransformationMenu extends TransformationM
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2399a155048244c5L, "jetbrains.mps.lang.smodel.structure.BootstrapAwareMetaObject"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new BootstrapAwareMetaObject_TransformationMenu.TransformationMenuPart_Group_t8aodl_a1());
+      result.add(new BootstrapAwareMetaObject_TransformationMenu.TMP_Group_t8aodl_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_t8aodl_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_t8aodl_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2399a155048244c5L, 0x2399a1550482726bL, "bootstrap")));
@@ -53,12 +53,12 @@ public class BootstrapAwareMetaObject_TransformationMenu extends TransformationM
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new BootstrapAwareMetaObject_TransformationMenu.TransformationMenuPart_Group_t8aodl_a1.TransformationMenuPart_Action_t8aodl_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new BootstrapAwareMetaObject_TransformationMenu.TMP_Group_t8aodl_a1.TMP_Action_t8aodl_a0b());
     }
-    private class TransformationMenuPart_Action_t8aodl_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_t8aodl_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new BootstrapAwareMetaObject_TransformationMenu.TransformationMenuPart_Group_t8aodl_a1.TransformationMenuPart_Action_t8aodl_a0b.Item(context);
+        return new BootstrapAwareMetaObject_TransformationMenu.TMP_Group_t8aodl_a1.TMP_Action_t8aodl_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

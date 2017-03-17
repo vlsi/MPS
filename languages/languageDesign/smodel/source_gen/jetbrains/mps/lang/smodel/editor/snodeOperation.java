@@ -39,10 +39,10 @@ public class snodeOperation extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new snodeOperation.SubstituteMenuPart_Group_o4406x_a());
+    result.add(new snodeOperation.SMP_Group_o4406x_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_o4406x_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_o4406x_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     private ApplicableTypesInfo appTypesInfo;
     @Override
     protected void initialize(SubstituteMenuContext _context) {
@@ -86,9 +86,9 @@ public class snodeOperation extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new snodeOperation.SubstituteMenuPart_Group_o4406x_a.SubstituteMenuPart_Subconcepts_o4406x_a0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new snodeOperation.SMP_Group_o4406x_a.SMP_Subconcepts_o4406x_a0());
     }
-    public class SubstituteMenuPart_Subconcepts_o4406x_a0 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Subconcepts_o4406x_a0 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
       protected Collection getConcepts(final SubstituteMenuContext _context) {
         return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation")).stream().filter(new Predicate<SAbstractConcept>() {
           public boolean test(SAbstractConcept concept) {

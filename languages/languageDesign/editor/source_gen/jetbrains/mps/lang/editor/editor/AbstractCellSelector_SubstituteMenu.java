@@ -28,18 +28,18 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Action_1rdeze_b(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1e02662c4b880750L, "jetbrains.mps.lang.editor.structure.IdSelector")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Parameterized_1rdeze_c(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Action_1rdeze_d(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Action_1rdeze_e(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc30443a0aL, "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SMP_Action_1rdeze_b(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1e02662c4b880750L, "jetbrains.mps.lang.editor.structure.IdSelector")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SMP_Param_1rdeze_c(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SMP_Action_1rdeze_d(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SMP_Action_1rdeze_e(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc30443a0aL, "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector")));
     return result;
   }
-  private class SubstituteMenuPart_Action_1rdeze_b extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_1rdeze_b extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Action_1rdeze_b.Item(_context);
+      return new AbstractCellSelector_SubstituteMenu.SMP_Action_1rdeze_b.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -77,27 +77,27 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  private class SubstituteMenuPart_Parameterized_1rdeze_c extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_1rdeze_c extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Parameterized_1rdeze_c.SubstituteMenuPart_Action_1rdeze_a2(parameter).createItems(context);
+      return new AbstractCellSelector_SubstituteMenu.SMP_Param_1rdeze_c.SMP_Action_1rdeze_a2(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "PredefinedCellID"));
     }
-    private class SubstituteMenuPart_Action_1rdeze_a2 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_1rdeze_a2 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_1rdeze_a2(SNode parameterObject) {
+      public SMP_Action_1rdeze_a2(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Parameterized_1rdeze_c.SubstituteMenuPart_Action_1rdeze_a2.Item(_context);
+        return new AbstractCellSelector_SubstituteMenu.SMP_Param_1rdeze_c.SMP_Action_1rdeze_a2.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -132,12 +132,12 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
     }
 
   }
-  private class SubstituteMenuPart_Action_1rdeze_d extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_1rdeze_d extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Action_1rdeze_d.Item(_context);
+      return new AbstractCellSelector_SubstituteMenu.SMP_Action_1rdeze_d.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -175,12 +175,12 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  private class SubstituteMenuPart_Action_1rdeze_e extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_1rdeze_e extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Action_1rdeze_e.Item(_context);
+      return new AbstractCellSelector_SubstituteMenu.SMP_Action_1rdeze_e.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

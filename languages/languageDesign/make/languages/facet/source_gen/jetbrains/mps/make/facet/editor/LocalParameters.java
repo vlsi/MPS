@@ -34,10 +34,10 @@ public class LocalParameters extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new LocalParameters.SubstituteMenuPart_Group_59frgq_a());
+    result.add(new LocalParameters.SMP_Group_59frgq_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_59frgq_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_59frgq_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return (SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, "jetbrains.mps.make.facet.structure.TargetDeclaration"), false, false) != null);
@@ -45,29 +45,29 @@ public class LocalParameters extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new LocalParameters.SubstituteMenuPart_Group_59frgq_a.SubstituteMenuPart_Parameterized_59frgq_a0(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x6598ce4d2f231cb3L, "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new LocalParameters.SMP_Group_59frgq_a.SMP_Param_59frgq_a0(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x6598ce4d2f231cb3L, "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression")));
     }
-    private class SubstituteMenuPart_Parameterized_59frgq_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+    private class SMP_Param_59frgq_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
       @Override
       protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-        return new LocalParameters.SubstituteMenuPart_Group_59frgq_a.SubstituteMenuPart_Parameterized_59frgq_a0.SubstituteMenuPart_Action_59frgq_a0a(parameter).createItems(context);
+        return new LocalParameters.SMP_Group_59frgq_a.SMP_Param_59frgq_a0.SMP_Action_59frgq_a0a(parameter).createItems(context);
       }
       @Nullable
       @Override
       protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
         return SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, "jetbrains.mps.make.facet.structure.TargetDeclaration"), false, false), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x6598ce4d2f20bbdfL, "parameters")), MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x12099b7fca9L, "component"));
       }
-      private class SubstituteMenuPart_Action_59frgq_a0a extends SingleItemSubstituteMenuPart {
+      private class SMP_Action_59frgq_a0a extends SingleItemSubstituteMenuPart {
         private final SNode myParameterObject;
-        public SubstituteMenuPart_Action_59frgq_a0a(SNode parameterObject) {
+        public SMP_Action_59frgq_a0a(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
 
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new LocalParameters.SubstituteMenuPart_Group_59frgq_a.SubstituteMenuPart_Parameterized_59frgq_a0.SubstituteMenuPart_Action_59frgq_a0a.Item(_context);
+          return new LocalParameters.SMP_Group_59frgq_a.SMP_Param_59frgq_a0.SMP_Action_59frgq_a0a.Item(_context);
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;

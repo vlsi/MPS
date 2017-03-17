@@ -26,15 +26,15 @@ public class NumberToolShortcut_SubstituteMenu extends SubstituteMenuBase {
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76107L, "jetbrains.mps.lang.plugin.structure.NumberToolShortcut")), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76107L, "jetbrains.mps.lang.plugin.structure.NumberToolShortcut")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new NumberToolShortcut_SubstituteMenu.SubstituteMenuPart_Action_33swfs_b(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76107L, "jetbrains.mps.lang.plugin.structure.NumberToolShortcut")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new NumberToolShortcut_SubstituteMenu.SMP_Action_33swfs_b(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76107L, "jetbrains.mps.lang.plugin.structure.NumberToolShortcut")));
     return result;
   }
-  private class SubstituteMenuPart_Action_33swfs_b extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_33swfs_b extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new NumberToolShortcut_SubstituteMenu.SubstituteMenuPart_Action_33swfs_b.Item(_context);
+      return new NumberToolShortcut_SubstituteMenu.SMP_Action_33swfs_b.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

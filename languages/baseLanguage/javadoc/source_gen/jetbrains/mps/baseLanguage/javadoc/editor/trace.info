@@ -94,9 +94,9 @@
       <node id="1741258697587168103" at="36,67,37,63" concept="8" />
       <node id="1741258697587168103" at="42,124,43,156" concept="7" />
       <node id="1741258697587168103" at="44,173,45,261" concept="2" />
-      <node id="1741258697587168103" at="47,137,48,110" concept="2" />
+      <node id="1741258697587168103" at="47,137,48,83" concept="2" />
       <node id="1741258697587168103" at="49,5,50,18" concept="8" />
-      <node id="1741258697587168111" at="57,109,58,176" concept="8" />
+      <node id="1741258697587168111" at="57,109,58,130" concept="8" />
       <node id="1741258697587168117" at="63,92,64,140" concept="7" />
       <node id="1741258697587168131" at="65,428,66,60" concept="2" />
       <node id="1741258697587168146" at="67,431,68,60" concept="2" />
@@ -104,8 +104,8 @@
       <node id="1741258697587168156" at="69,61,70,61" concept="2" />
       <node id="1741258697587168169" at="71,7,72,21" concept="8" />
       <node id="1741258697587168111" at="76,0,77,0" concept="3" trace="myParameterObject" />
-      <node id="1741258697587168111" at="77,79,78,44" concept="2" />
-      <node id="1741258697587168111" at="81,86,82,160" concept="8" />
+      <node id="1741258697587168111" at="77,60,78,44" concept="2" />
+      <node id="1741258697587168111" at="81,86,82,114" concept="8" />
       <node id="1741258697587168111" at="86,0,87,0" concept="3" trace="_context" />
       <node id="1741258697587168111" at="88,57,89,29" concept="2" />
       <node id="1741258697587168176" at="94,52,95,40" concept="8" />
@@ -140,7 +140,7 @@
       <node id="1741258697587168368" at="174,67,175,46" concept="8" />
       <node id="1741258697587168103" at="43,156,46,5" concept="5" />
       <node id="1741258697587168103" at="46,5,49,5" concept="5" />
-      <node id="1741258697587168111" at="77,0,80,0" concept="1" trace="TransformationMenuPart_Action_rifg0n_a0b#(Ljava/lang/String;)V" />
+      <node id="1741258697587168111" at="77,0,80,0" concept="1" trace="TMP_Action_rifg0n_a0b#(Ljava/lang/String;)V" />
       <node id="1741258697587168111" at="88,0,91,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
       <node id="1741258697587168209" at="104,27,107,11" concept="5" />
       <node id="1741258697587168222" at="107,11,110,11" concept="5" />
@@ -173,11 +173,11 @@
       <node id="1741258697587168111" at="98,0,145,0" concept="6" trace="execute#(Ljava/lang/String;)V" />
       <scope id="1741258697587168103" at="36,67,37,63" />
       <scope id="1741258697587168103" at="44,173,45,261" />
-      <scope id="1741258697587168103" at="47,137,48,110" />
-      <scope id="1741258697587168111" at="57,109,58,176" />
+      <scope id="1741258697587168103" at="47,137,48,83" />
+      <scope id="1741258697587168111" at="57,109,58,130" />
       <scope id="1741258697587168130" at="65,428,66,60" />
-      <scope id="1741258697587168111" at="77,79,78,44" />
-      <scope id="1741258697587168111" at="81,86,82,160" />
+      <scope id="1741258697587168111" at="77,60,78,44" />
+      <scope id="1741258697587168111" at="81,86,82,114" />
       <scope id="1741258697587168111" at="88,57,89,29" />
       <scope id="1741258697587168175" at="94,52,95,40" />
       <scope id="1741258697587168210" at="105,65,106,395" />
@@ -280,10 +280,10 @@
       <scope id="1741258697587168111" at="98,0,145,0">
         <var name="pattern" id="1741258697587168111" />
       </scope>
-      <unit id="1741258697587168269" at="117,262,121,13" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu$TransformationMenuPart_Parameterized_rifg0n_a1$TransformationMenuPart_Action_rifg0n_a0b$Item$1" />
-      <unit id="1741258697587168111" at="85,0,148,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu$TransformationMenuPart_Parameterized_rifg0n_a1$TransformationMenuPart_Action_rifg0n_a0b$Item" />
-      <unit id="1741258697587168111" at="75,0,149,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu$TransformationMenuPart_Parameterized_rifg0n_a1$TransformationMenuPart_Action_rifg0n_a0b" />
-      <unit id="1741258697587168111" at="53,0,150,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu$TransformationMenuPart_Parameterized_rifg0n_a1" />
+      <unit id="1741258697587168269" at="117,262,121,13" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu$TMP_Param_rifg0n_a1$TMP_Action_rifg0n_a0b$Item$1" />
+      <unit id="1741258697587168111" at="85,0,148,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu$TMP_Param_rifg0n_a1$TMP_Action_rifg0n_a0b$Item" />
+      <unit id="1741258697587168111" at="75,0,149,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu$TMP_Param_rifg0n_a1$TMP_Action_rifg0n_a0b" />
+      <unit id="1741258697587168111" at="53,0,150,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu$TMP_Param_rifg0n_a1" />
       <unit id="1741258697587168103" at="33,0,178,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu" />
     </file>
   </root>
@@ -306,8 +306,8 @@
       <node id="1741258697587190277" at="27,0,28,0" concept="3" trace="myLocations" />
       <node id="1741258697587190277" at="29,67,30,63" concept="8" />
       <node id="1741258697587190277" at="35,124,36,156" concept="7" />
-      <node id="1741258697587190277" at="37,173,38,109" concept="2" />
-      <node id="1741258697587190277" at="40,128,41,109" concept="2" />
+      <node id="1741258697587190277" at="37,173,38,86" concept="2" />
+      <node id="1741258697587190277" at="40,128,41,86" concept="2" />
       <node id="1741258697587190277" at="42,5,43,18" concept="8" />
       <node id="1741258697587190283" at="52,90,53,44" concept="7" />
       <node id="1741258697587190283" at="53,44,54,70" concept="7" />
@@ -321,8 +321,8 @@
       <node id="1741258697587190283" at="50,0,58,0" concept="6" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuLookup;" />
       <node id="1741258697587190277" at="33,0,45,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587190277" at="29,67,30,63" />
-      <scope id="1741258697587190277" at="37,173,38,109" />
-      <scope id="1741258697587190277" at="40,128,41,109" />
+      <scope id="1741258697587190277" at="37,173,38,86" />
+      <scope id="1741258697587190277" at="40,128,41,86" />
       <scope id="1741258697587190283" at="61,70,62,47" />
       <scope id="1741258697587190277" at="28,0,32,0">
         <var name="location" id="1741258697587190277" />
@@ -343,8 +343,8 @@
       <scope id="1741258697587190277" at="33,0,45,0">
         <var name="_context" id="1741258697587190277" />
       </scope>
-      <unit id="1741258697587190278" at="46,0,49,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_ApplySideTransforms$TransformationMenuPart_IncludeMenu_v87s8j_a0" />
-      <unit id="1741258697587190283" at="49,0,65,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_ApplySideTransforms$TransformationMenuPart_IncludeMenu_v87s8j_a1" />
+      <unit id="1741258697587190278" at="46,0,49,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_ApplySideTransforms$TMP_Include_v87s8j_a0" />
+      <unit id="1741258697587190283" at="49,0,65,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_ApplySideTransforms$TMP_Include_v87s8j_a1" />
       <unit id="1741258697587190277" at="26,0,66,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_ApplySideTransforms" />
     </file>
   </root>

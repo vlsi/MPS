@@ -38,13 +38,13 @@ public class VariableReference_TransformationMenu extends TransformationMenuBase
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"))));
-      result.add(new VariableReference_TransformationMenu.TransformationMenuPart_IncludeMenu_wncgfg_b0());
-      result.add(new VariableReference_TransformationMenu.TransformationMenuPart_IncludeMenu_wncgfg_c0());
+      result.add(new VariableReference_TransformationMenu.TMP_Include_wncgfg_b0());
+      result.add(new VariableReference_TransformationMenu.TMP_Include_wncgfg_c0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_wncgfg_b0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_wncgfg_b0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
@@ -55,7 +55,7 @@ public class VariableReference_TransformationMenu extends TransformationMenuBase
     }
 
   }
-  public class TransformationMenuPart_IncludeMenu_wncgfg_c0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_wncgfg_c0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {

@@ -42,12 +42,12 @@ public class BuildSource_JavaDependencyLibrary_TransformationMenu extends Transf
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new BuildSource_JavaDependencyLibrary_TransformationMenu.TransformationMenuPart_Group_d1076f_a1());
+      result.add(new BuildSource_JavaDependencyLibrary_TransformationMenu.TMP_Group_d1076f_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_d1076f_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_d1076f_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL, 0x52fab202d8f26228L, "reexport")));
@@ -55,12 +55,12 @@ public class BuildSource_JavaDependencyLibrary_TransformationMenu extends Transf
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new BuildSource_JavaDependencyLibrary_TransformationMenu.TransformationMenuPart_Group_d1076f_a1.TransformationMenuPart_Action_d1076f_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new BuildSource_JavaDependencyLibrary_TransformationMenu.TMP_Group_d1076f_a1.TMP_Action_d1076f_a0b());
     }
-    private class TransformationMenuPart_Action_d1076f_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_d1076f_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new BuildSource_JavaDependencyLibrary_TransformationMenu.TransformationMenuPart_Group_d1076f_a1.TransformationMenuPart_Action_d1076f_a0b.Item(context);
+        return new BuildSource_JavaDependencyLibrary_TransformationMenu.TMP_Group_d1076f_a1.TMP_Action_d1076f_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

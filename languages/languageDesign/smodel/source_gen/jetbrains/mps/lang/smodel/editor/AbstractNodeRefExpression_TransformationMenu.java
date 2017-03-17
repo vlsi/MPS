@@ -49,12 +49,12 @@ public class AbstractNodeRefExpression_TransformationMenu extends Transformation
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x319fd776da5d8e3cL, "jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new AbstractNodeRefExpression_TransformationMenu.TransformationMenuPart_Group_wxvpf4_a1());
+      result.add(new AbstractNodeRefExpression_TransformationMenu.TMP_Group_wxvpf4_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_wxvpf4_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_wxvpf4_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return Sequence.fromIterable(AbstractNodeRefExpression__BehaviorDescriptor.getPossibleTargetNodes_id4x3U0fpSqvX.invoke(_context.getNode())).isNotEmpty();
@@ -62,12 +62,12 @@ public class AbstractNodeRefExpression_TransformationMenu extends Transformation
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractNodeRefExpression_TransformationMenu.TransformationMenuPart_Group_wxvpf4_a1.TransformationMenuPart_Action_wxvpf4_a0b(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L, "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractNodeRefExpression_TransformationMenu.TMP_Group_wxvpf4_a1.TMP_Action_wxvpf4_a0b(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L, "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression")));
     }
-    private class TransformationMenuPart_Action_wxvpf4_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_wxvpf4_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AbstractNodeRefExpression_TransformationMenu.TransformationMenuPart_Group_wxvpf4_a1.TransformationMenuPart_Action_wxvpf4_a0b.Item(context);
+        return new AbstractNodeRefExpression_TransformationMenu.TMP_Group_wxvpf4_a1.TMP_Action_wxvpf4_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

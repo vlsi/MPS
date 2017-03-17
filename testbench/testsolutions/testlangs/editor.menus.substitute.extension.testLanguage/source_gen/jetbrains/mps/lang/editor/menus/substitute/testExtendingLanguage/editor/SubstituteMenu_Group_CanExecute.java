@@ -28,16 +28,16 @@ public class SubstituteMenu_Group_CanExecute extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstituteMenu_Group_CanExecute.SubstituteMenuPart_Action_ulw6p1_a(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild")));
-    result.add(new SubstituteMenu_Group_CanExecute.SubstituteMenuPart_Group_ulw6p1_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstituteMenu_Group_CanExecute.SMP_Action_ulw6p1_a(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild")));
+    result.add(new SubstituteMenu_Group_CanExecute.SMP_Group_ulw6p1_b());
     return result;
   }
-  private class SubstituteMenuPart_Action_ulw6p1_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_ulw6p1_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new SubstituteMenu_Group_CanExecute.SubstituteMenuPart_Action_ulw6p1_a.Item(_context);
+      return new SubstituteMenu_Group_CanExecute.SMP_Action_ulw6p1_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -71,7 +71,7 @@ public class SubstituteMenu_Group_CanExecute extends SubstituteMenuBase {
       }
     }
   }
-  public class SubstituteMenuPart_Group_ulw6p1_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_ulw6p1_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return _context.getParentNode() != null && _context.getCurrentTargetNode() != null && _context.getLink() != null && _context.getEditorContext() != null;
@@ -79,14 +79,14 @@ public class SubstituteMenu_Group_CanExecute extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstituteMenu_Group_CanExecute.SubstituteMenuPart_Group_ulw6p1_b.SubstituteMenuPart_Action_ulw6p1_a1(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstituteMenu_Group_CanExecute.SMP_Group_ulw6p1_b.SMP_Action_ulw6p1_a1(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild")));
     }
-    private class SubstituteMenuPart_Action_ulw6p1_a1 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_ulw6p1_a1 extends SingleItemSubstituteMenuPart {
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new SubstituteMenu_Group_CanExecute.SubstituteMenuPart_Group_ulw6p1_b.SubstituteMenuPart_Action_ulw6p1_a1.Item(_context);
+        return new SubstituteMenu_Group_CanExecute.SMP_Group_ulw6p1_b.SMP_Action_ulw6p1_a1.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

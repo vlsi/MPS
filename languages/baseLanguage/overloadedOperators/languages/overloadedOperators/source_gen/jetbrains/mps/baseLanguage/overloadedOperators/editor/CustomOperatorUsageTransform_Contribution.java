@@ -47,17 +47,17 @@ public class CustomOperatorUsageTransform_Contribution extends TransformationMen
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new CustomOperatorUsageTransform_Contribution.TransformationMenuPart_Parameterized_z54bif_a0(), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new CustomOperatorUsageTransform_Contribution.TMP_Param_z54bif_a0(), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage")));
     }
     return result;
   }
 
-  private class TransformationMenuPart_Parameterized_z54bif_a0 extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_z54bif_a0 extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
-      return new CustomOperatorUsageTransform_Contribution.TransformationMenuPart_Parameterized_z54bif_a0.TransformationMenuPart_Action_z54bif_a0a(parameter).createItems(context);
+      return new CustomOperatorUsageTransform_Contribution.TMP_Param_z54bif_a0.TMP_Action_z54bif_a0a(parameter).createItems(context);
     }
 
     @Nullable
@@ -66,14 +66,14 @@ public class CustomOperatorUsageTransform_Contribution extends TransformationMen
       return (List<SNode>) CustomOperatorUsage__BehaviorDescriptor.getVisibleCustomOperators_idZogSShiOAT.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage")), _context.getModel());
     }
 
-    private class TransformationMenuPart_Action_z54bif_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_z54bif_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final SNode myParameterObject;
-      public TransformationMenuPart_Action_z54bif_a0a(SNode parameterObject) {
+      public TMP_Action_z54bif_a0a(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new CustomOperatorUsageTransform_Contribution.TransformationMenuPart_Parameterized_z54bif_a0.TransformationMenuPart_Action_z54bif_a0a.Item(context);
+        return new CustomOperatorUsageTransform_Contribution.TMP_Param_z54bif_a0.TMP_Action_z54bif_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

@@ -44,12 +44,12 @@ public class expressionToNotExpression extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new expressionToNotExpression.TransformationMenuPart_Group_ihw7u4_a0());
+      result.add(new expressionToNotExpression.TMP_Group_ihw7u4_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_ihw7u4_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_ihw7u4_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       SNode node = _context.getNode();
@@ -65,12 +65,12 @@ public class expressionToNotExpression extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new expressionToNotExpression.TransformationMenuPart_Group_ihw7u4_a0.TransformationMenuPart_Action_ihw7u4_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new expressionToNotExpression.TMP_Group_ihw7u4_a0.TMP_Action_ihw7u4_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression")));
     }
-    private class TransformationMenuPart_Action_ihw7u4_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_ihw7u4_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new expressionToNotExpression.TransformationMenuPart_Group_ihw7u4_a0.TransformationMenuPart_Action_ihw7u4_a0a.Item(context);
+        return new expressionToNotExpression.TMP_Group_ihw7u4_a0.TMP_Action_ihw7u4_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

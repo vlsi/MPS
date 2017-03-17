@@ -24,10 +24,10 @@ public class XmlDoctypeDeclaration_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new XmlDoctypeDeclaration_SubstituteMenu.SubstituteMenuPart_Group_bnzz5o_a());
+    result.add(new XmlDoctypeDeclaration_SubstituteMenu.SMP_Group_bnzz5o_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_bnzz5o_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_bnzz5o_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       List<SNode> descendants = SNodeOperations.getNodeDescendants(_context.getParentNode(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"), false, new SAbstractConcept[]{});

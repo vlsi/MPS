@@ -17,10 +17,10 @@ public class AbstractPrintExpression_old_SubstituteMenu extends SubstituteMenuBa
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new AbstractPrintExpression_old_SubstituteMenu.SubstituteMenuPart_Group_z2pn7q_a());
+    result.add(new AbstractPrintExpression_old_SubstituteMenu.SMP_Group_z2pn7q_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_z2pn7q_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_z2pn7q_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return false;

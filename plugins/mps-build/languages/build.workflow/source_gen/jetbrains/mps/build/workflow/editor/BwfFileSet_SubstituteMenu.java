@@ -31,10 +31,10 @@ public class BwfFileSet_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BwfFileSet_SubstituteMenu.SubstituteMenuPart_Wrapper_bkb34x_a(), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6e014d63c07ebd1bL, "jetbrains.mps.build.workflow.structure.BwfFileSet")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BwfFileSet_SubstituteMenu.SMP_Wrap_bkb34x_a(), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6e014d63c07ebd1bL, "jetbrains.mps.build.workflow.structure.BwfFileSet")));
     return result;
   }
-  private class SubstituteMenuPart_Wrapper_bkb34x_a extends WrapperSubstituteMenuPart {
+  private class SMP_Wrap_bkb34x_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {

@@ -35,16 +35,16 @@ public class DebuggerReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new DebuggerReference_SubstituteMenu.SubstituteMenuPart_Parameterized_kfxouf_a(), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference")));
-    result.add(new DebuggerReference_SubstituteMenu.SubstituteMenuPart_Subconcepts_kfxouf_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new DebuggerReference_SubstituteMenu.SMP_Param_kfxouf_a(), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference")));
+    result.add(new DebuggerReference_SubstituteMenu.SMP_Subconcepts_kfxouf_b());
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference")), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_kfxouf_a extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_kfxouf_a extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(String parameter, SubstituteMenuContext context) {
-      return new DebuggerReference_SubstituteMenu.SubstituteMenuPart_Parameterized_kfxouf_a.SubstituteMenuPart_Action_kfxouf_a0(parameter).createItems(context);
+      return new DebuggerReference_SubstituteMenu.SMP_Param_kfxouf_a.SMP_Action_kfxouf_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -55,16 +55,16 @@ public class DebuggerReference_SubstituteMenu extends SubstituteMenuBase {
       }
       return debuggerNames;
     }
-    private class SubstituteMenuPart_Action_kfxouf_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_kfxouf_a0 extends SingleItemSubstituteMenuPart {
       private final String myParameterObject;
-      public SubstituteMenuPart_Action_kfxouf_a0(String parameterObject) {
+      public SMP_Action_kfxouf_a0(String parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new DebuggerReference_SubstituteMenu.SubstituteMenuPart_Parameterized_kfxouf_a.SubstituteMenuPart_Action_kfxouf_a0.Item(_context);
+        return new DebuggerReference_SubstituteMenu.SMP_Param_kfxouf_a.SMP_Action_kfxouf_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -99,7 +99,7 @@ public class DebuggerReference_SubstituteMenu extends SubstituteMenuBase {
     }
 
   }
-  public class SubstituteMenuPart_Subconcepts_kfxouf_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_kfxouf_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference"));
     }

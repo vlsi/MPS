@@ -44,12 +44,12 @@ public class XmlValuePart_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new XmlValuePart_TransformationMenu.TransformationMenuPart_WrapSubstituteMenu_jcezjh_a1());
+      result.add(new XmlValuePart_TransformationMenu.TMP_WrapSM_jcezjh_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_WrapSubstituteMenu_jcezjh_a1 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_jcezjh_a1 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override

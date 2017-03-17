@@ -43,12 +43,12 @@ public class BuildSourceMacroRelativePath_TransformationMenu extends Transformat
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new BuildSourceMacroRelativePath_TransformationMenu.TransformationMenuPart_Group_dh81t5_a1());
+      result.add(new BuildSourceMacroRelativePath_TransformationMenu.TMP_Group_dh81t5_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_dh81t5_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_dh81t5_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")) == null);
@@ -56,12 +56,12 @@ public class BuildSourceMacroRelativePath_TransformationMenu extends Transformat
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new BuildSourceMacroRelativePath_TransformationMenu.TransformationMenuPart_Group_dh81t5_a1.TransformationMenuPart_Action_dh81t5_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new BuildSourceMacroRelativePath_TransformationMenu.TMP_Group_dh81t5_a1.TMP_Action_dh81t5_a0b());
     }
-    private class TransformationMenuPart_Action_dh81t5_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_dh81t5_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new BuildSourceMacroRelativePath_TransformationMenu.TransformationMenuPart_Group_dh81t5_a1.TransformationMenuPart_Action_dh81t5_a0b.Item(context);
+        return new BuildSourceMacroRelativePath_TransformationMenu.TMP_Group_dh81t5_a1.TMP_Action_dh81t5_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

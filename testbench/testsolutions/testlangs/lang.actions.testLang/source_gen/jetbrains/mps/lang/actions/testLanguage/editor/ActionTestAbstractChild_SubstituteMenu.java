@@ -22,13 +22,13 @@ public class ActionTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ActionTestAbstractChild_SubstituteMenu.SubstituteMenuPart_IncludeMenu_hawx03_a());
-    result.add(new ActionTestAbstractChild_SubstituteMenu.SubstituteMenuPart_IncludeMenu_hawx03_b());
-    result.add(new ActionTestAbstractChild_SubstituteMenu.SubstituteMenuPart_IncludeMenu_hawx03_c());
-    result.add(new ActionTestAbstractChild_SubstituteMenu.SubstituteMenuPart_IncludeMenu_hawx03_d());
+    result.add(new ActionTestAbstractChild_SubstituteMenu.SMP_Include_hawx03_a());
+    result.add(new ActionTestAbstractChild_SubstituteMenu.SMP_Include_hawx03_b());
+    result.add(new ActionTestAbstractChild_SubstituteMenu.SMP_Include_hawx03_c());
+    result.add(new ActionTestAbstractChild_SubstituteMenu.SMP_Include_hawx03_d());
     return result;
   }
-  public class SubstituteMenuPart_IncludeMenu_hawx03_a extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_hawx03_a extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override
@@ -37,7 +37,7 @@ public class ActionTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild"), "jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ParameterizedSubstitute");
     }
   }
-  public class SubstituteMenuPart_IncludeMenu_hawx03_b extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_hawx03_b extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override
@@ -46,7 +46,7 @@ public class ActionTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild"), "jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ConceptSubstitute");
     }
   }
-  public class SubstituteMenuPart_IncludeMenu_hawx03_c extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_hawx03_c extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override
@@ -55,7 +55,7 @@ public class ActionTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild"), "jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_SimpleItemSubstitute");
     }
   }
-  public class SubstituteMenuPart_IncludeMenu_hawx03_d extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_hawx03_d extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override

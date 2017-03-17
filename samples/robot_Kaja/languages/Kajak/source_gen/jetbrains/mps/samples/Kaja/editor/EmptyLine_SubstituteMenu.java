@@ -30,10 +30,10 @@ public class EmptyLine_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new EmptyLine_SubstituteMenu.SubstituteMenuPart_Wrapper_udt3cr_a(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fbeL, "jetbrains.mps.samples.Kaja.structure.IfStatement")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new EmptyLine_SubstituteMenu.SMP_Wrap_udt3cr_a(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fbeL, "jetbrains.mps.samples.Kaja.structure.IfStatement")));
     return result;
   }
-  private class SubstituteMenuPart_Wrapper_udt3cr_a extends WrapperSubstituteMenuPart {
+  private class SMP_Wrap_udt3cr_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {

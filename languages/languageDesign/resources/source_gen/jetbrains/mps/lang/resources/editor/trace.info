@@ -20,13 +20,13 @@
     <file name="IconResourceReference_subs_Contribution.java">
       <node id="1741258697587120698" at="30,52,31,16" concept="9" />
       <node id="1741258697587120698" at="35,118,36,140" concept="6" />
-      <node id="1741258697587120698" at="36,140,37,310" concept="2" />
-      <node id="1741258697587120698" at="37,310,38,18" concept="7" />
-      <node id="1741258697587120698" at="43,100,44,167" concept="7" />
+      <node id="1741258697587120698" at="36,140,37,287" concept="2" />
+      <node id="1741258697587120698" at="37,287,38,18" concept="7" />
+      <node id="1741258697587120698" at="43,100,44,129" concept="7" />
       <node id="1741258697587120705" at="48,87,49,229" concept="7" />
       <node id="1741258697587120698" at="52,0,53,0" concept="3" trace="myParameterObject" />
-      <node id="1741258697587120698" at="53,73,54,44" concept="2" />
-      <node id="1741258697587120698" at="59,79,60,152" concept="7" />
+      <node id="1741258697587120698" at="53,58,54,44" concept="2" />
+      <node id="1741258697587120698" at="59,79,60,114" concept="7" />
       <node id="1741258697587120698" at="63,0,64,0" concept="3" trace="_context" />
       <node id="1741258697587120698" at="64,52,65,254" concept="9" />
       <node id="1741258697587120698" at="65,254,66,29" concept="2" />
@@ -42,7 +42,7 @@
       <node id="1741258697587120782" at="102,261,103,210" concept="2" />
       <node id="1741258697587120782" at="103,210,104,24" concept="7" />
       <node id="1741258697587120698" at="30,0,33,0" concept="1" trace="IconResourceReference_subs_Contribution#()V" />
-      <node id="1741258697587120698" at="53,0,56,0" concept="1" trace="SubstituteMenuPart_Action_c11kxs_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587120698" at="53,0,56,0" concept="1" trace="SMP_Action_c11kxs_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587120698" at="76,67,79,11" concept="4" />
       <node id="1741258697587120698" at="84,62,87,11" concept="4" />
       <node id="1741258697587120698" at="64,0,68,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
@@ -56,10 +56,10 @@
       <node id="1741258697587120698" at="74,0,82,0" concept="5" trace="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1741258697587120698" at="82,0,90,0" concept="5" trace="getIcon#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <scope id="1741258697587120698" at="30,52,31,16" />
-      <scope id="1741258697587120698" at="43,100,44,167" />
+      <scope id="1741258697587120698" at="43,100,44,129" />
       <scope id="1741258697587120704" at="48,87,49,229" />
-      <scope id="1741258697587120698" at="53,73,54,44" />
-      <scope id="1741258697587120698" at="59,79,60,152" />
+      <scope id="1741258697587120698" at="53,58,54,44" />
+      <scope id="1741258697587120698" at="59,79,60,114" />
       <scope id="1741258697587120698" at="71,58,72,72" />
       <scope id="1741258697587120698" at="77,51,78,83" />
       <scope id="1741258697587120698" at="85,51,86,88" />
@@ -109,9 +109,9 @@
       <scope id="1741258697587120698" at="82,0,90,0">
         <var name="pattern" id="1741258697587120698" />
       </scope>
-      <unit id="1741258697587120698" at="62,0,96,0" name="jetbrains.mps.lang.resources.editor.IconResourceReference_subs_Contribution$SubstituteMenuPart_Parameterized_c11kxs_a$SubstituteMenuPart_Action_c11kxs_a0$Item" />
-      <unit id="1741258697587120698" at="51,0,97,0" name="jetbrains.mps.lang.resources.editor.IconResourceReference_subs_Contribution$SubstituteMenuPart_Parameterized_c11kxs_a$SubstituteMenuPart_Action_c11kxs_a0" />
-      <unit id="1741258697587120698" at="40,0,99,0" name="jetbrains.mps.lang.resources.editor.IconResourceReference_subs_Contribution$SubstituteMenuPart_Parameterized_c11kxs_a" />
+      <unit id="1741258697587120698" at="62,0,96,0" name="jetbrains.mps.lang.resources.editor.IconResourceReference_subs_Contribution$SMP_Param_c11kxs_a$SMP_Action_c11kxs_a0$Item" />
+      <unit id="1741258697587120698" at="51,0,97,0" name="jetbrains.mps.lang.resources.editor.IconResourceReference_subs_Contribution$SMP_Param_c11kxs_a$SMP_Action_c11kxs_a0" />
+      <unit id="1741258697587120698" at="40,0,99,0" name="jetbrains.mps.lang.resources.editor.IconResourceReference_subs_Contribution$SMP_Param_c11kxs_a" />
       <unit id="1741258697587120698" at="29,0,107,0" name="jetbrains.mps.lang.resources.editor.IconResourceReference_subs_Contribution" />
     </file>
   </root>

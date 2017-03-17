@@ -22,11 +22,11 @@ public class ActionTestAbstractChildWrapper_SubstituteMenu extends SubstituteMen
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ActionTestAbstractChildWrapper_SubstituteMenu.SubstituteMenuPart_IncludeMenu_sqd4vv_a());
-    result.add(new ActionTestAbstractChildWrapper_SubstituteMenu.SubstituteMenuPart_IncludeMenu_sqd4vv_b());
+    result.add(new ActionTestAbstractChildWrapper_SubstituteMenu.SMP_Include_sqd4vv_a());
+    result.add(new ActionTestAbstractChildWrapper_SubstituteMenu.SMP_Include_sqd4vv_b());
     return result;
   }
-  public class SubstituteMenuPart_IncludeMenu_sqd4vv_a extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_sqd4vv_a extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override
@@ -35,7 +35,7 @@ public class ActionTestAbstractChildWrapper_SubstituteMenu extends SubstituteMen
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ec53f71L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChildWrapper"), "jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstituteDefaultSelection");
     }
   }
-  public class SubstituteMenuPart_IncludeMenu_sqd4vv_b extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_sqd4vv_b extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override

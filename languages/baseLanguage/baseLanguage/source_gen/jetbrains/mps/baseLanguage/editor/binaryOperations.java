@@ -42,12 +42,12 @@ public class binaryOperations extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new binaryOperations.TransformationMenuPart_Group_vwyr1i_a0());
+      result.add(new binaryOperations.TMP_Group_vwyr1i_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_vwyr1i_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_vwyr1i_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbff03700L, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression"));
@@ -55,9 +55,9 @@ public class binaryOperations extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new binaryOperations.TransformationMenuPart_Group_vwyr1i_a0.TransformationMenuPart_WrapSubstituteMenu_vwyr1i_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new binaryOperations.TMP_Group_vwyr1i_a0.TMP_WrapSM_vwyr1i_a0a());
     }
-    public class TransformationMenuPart_WrapSubstituteMenu_vwyr1i_a0a extends WrapSubstituteMenuTransformationMenuPart {
+    public class TMP_WrapSM_vwyr1i_a0a extends WrapSubstituteMenuTransformationMenuPart {
 
       @Nullable
       @Override

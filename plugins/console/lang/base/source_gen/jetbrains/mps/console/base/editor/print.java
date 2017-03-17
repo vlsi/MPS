@@ -43,12 +43,12 @@ public class print extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new print.TransformationMenuPart_Group_vtzrq_a0());
+      result.add(new print.TMP_Group_vtzrq_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_vtzrq_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_vtzrq_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       if ((SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), true, false) != null)) {
@@ -62,9 +62,9 @@ public class print extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new print.TransformationMenuPart_Group_vtzrq_a0.TransformationMenuPart_WrapSubstituteMenu_vtzrq_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new print.TMP_Group_vtzrq_a0.TMP_WrapSM_vtzrq_a0a());
     }
-    public class TransformationMenuPart_WrapSubstituteMenu_vtzrq_a0a extends WrapSubstituteMenuTransformationMenuPart {
+    public class TMP_WrapSM_vtzrq_a0a extends WrapSubstituteMenuTransformationMenuPart {
 
       @Nullable
       @Override

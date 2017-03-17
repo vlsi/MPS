@@ -30,14 +30,14 @@ public class LogicalOperator_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new LogicalOperator_SubstituteMenu.SubstituteMenuPart_Parameterized_vciz2d_a(), MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new LogicalOperator_SubstituteMenu.SMP_Param_vciz2d_a(), MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_vciz2d_a extends ParameterizedMenuPart<SConcept, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_vciz2d_a extends ParameterizedMenuPart<SConcept, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SConcept parameter, SubstituteMenuContext context) {
-      return new LogicalOperator_SubstituteMenu.SubstituteMenuPart_Parameterized_vciz2d_a.SubstituteMenuPart_Action_vciz2d_a0(parameter).createItems(context);
+      return new LogicalOperator_SubstituteMenu.SMP_Param_vciz2d_a.SMP_Action_vciz2d_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -48,16 +48,16 @@ public class LogicalOperator_SubstituteMenu extends SubstituteMenuBase {
         }
       });
     }
-    private class SubstituteMenuPart_Action_vciz2d_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_vciz2d_a0 extends SingleItemSubstituteMenuPart {
       private final SConcept myParameterObject;
-      public SubstituteMenuPart_Action_vciz2d_a0(SConcept parameterObject) {
+      public SMP_Action_vciz2d_a0(SConcept parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new LogicalOperator_SubstituteMenu.SubstituteMenuPart_Parameterized_vciz2d_a.SubstituteMenuPart_Action_vciz2d_a0.Item(_context);
+        return new LogicalOperator_SubstituteMenu.SMP_Param_vciz2d_a.SMP_Action_vciz2d_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

@@ -21,16 +21,16 @@
     <file name="PersistentConfigurationType_Contribution.java">
       <node id="1741258697586930409" at="35,53,36,16" concept="10" />
       <node id="1741258697586930409" at="40,118,41,140" concept="7" />
-      <node id="1741258697586930409" at="41,140,42,97" concept="2" />
-      <node id="1741258697586930409" at="42,97,43,97" concept="2" />
-      <node id="1741258697586930409" at="43,97,44,18" concept="8" />
+      <node id="1741258697586930409" at="41,140,42,82" concept="2" />
+      <node id="1741258697586930409" at="42,82,43,82" concept="2" />
+      <node id="1741258697586930409" at="43,82,44,18" concept="8" />
       <node id="1741258697586930415" at="48,68,49,237" concept="8" />
-      <node id="1741258697586930409" at="53,84,54,433" concept="8" />
-      <node id="1741258697586930409" at="59,102,60,206" concept="8" />
+      <node id="1741258697586930409" at="53,84,54,395" concept="8" />
+      <node id="1741258697586930409" at="59,102,60,153" concept="8" />
       <node id="1741258697586930460" at="66,43,67,267" concept="8" />
       <node id="1741258697586930409" at="72,0,73,0" concept="3" trace="myParameterObject" />
-      <node id="1741258697586930409" at="73,76,74,46" concept="2" />
-      <node id="1741258697586930409" at="79,81,80,191" concept="8" />
+      <node id="1741258697586930409" at="73,61,74,46" concept="2" />
+      <node id="1741258697586930409" at="79,81,80,138" concept="8" />
       <node id="1741258697586930409" at="83,0,84,0" concept="3" trace="_context" />
       <node id="1741258697586930409" at="84,54,85,278" concept="10" />
       <node id="1741258697586930409" at="85,278,86,31" concept="2" />
@@ -43,12 +43,12 @@
       <node id="1741258697586930409" at="109,13,110,24" concept="8" />
       <node id="1741258697586930501" at="114,69,115,202" concept="8" />
       <node id="1741258697586930586" at="124,68,125,240" concept="8" />
-      <node id="1741258697586930409" at="129,84,130,425" concept="8" />
-      <node id="1741258697586930409" at="135,102,136,206" concept="8" />
+      <node id="1741258697586930409" at="129,84,130,387" concept="8" />
+      <node id="1741258697586930409" at="135,102,136,153" concept="8" />
       <node id="1741258697586930632" at="142,43,143,267" concept="8" />
       <node id="1741258697586930409" at="148,0,149,0" concept="3" trace="myParameterObject" />
-      <node id="1741258697586930409" at="149,76,150,46" concept="2" />
-      <node id="1741258697586930409" at="155,81,156,191" concept="8" />
+      <node id="1741258697586930409" at="149,61,150,46" concept="2" />
+      <node id="1741258697586930409" at="155,81,156,138" concept="8" />
       <node id="1741258697586930409" at="159,0,160,0" concept="3" trace="_context" />
       <node id="1741258697586930409" at="160,54,161,270" concept="10" />
       <node id="1741258697586930409" at="161,270,162,31" concept="2" />
@@ -62,11 +62,11 @@
       <node id="1741258697586930673" at="190,69,191,207" concept="8" />
       <node id="1741258697586930409" at="35,0,38,0" concept="1" trace="PersistentConfigurationType_Contribution#()V" />
       <node id="1741258697586930458" at="66,0,69,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1741258697586930409" at="73,0,76,0" concept="1" trace="SubstituteMenuPart_Action_67nl4b_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697586930409" at="73,0,76,0" concept="1" trace="SMP_Action_67nl4b_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697586930409" at="98,66,101,13" concept="5" />
       <node id="1741258697586930409" at="106,64,109,13" concept="5" />
       <node id="1741258697586930630" at="142,0,145,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1741258697586930409" at="149,0,152,0" concept="1" trace="SubstituteMenuPart_Action_67nl4b_a0b#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697586930409" at="149,0,152,0" concept="1" trace="SMP_Action_67nl4b_a0b#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697586930409" at="174,66,177,13" concept="5" />
       <node id="1741258697586930409" at="182,64,185,13" concept="5" />
       <node id="1741258697586930409" at="47,0,51,0" concept="6" trace="isApplicable#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Z" />
@@ -94,20 +94,20 @@
       <node id="1741258697586930409" at="138,0,147,0" concept="6" trace="getParameters#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/lang/Iterable;" />
       <scope id="1741258697586930409" at="35,53,36,16" />
       <scope id="1741258697586930414" at="48,68,49,237" />
-      <scope id="1741258697586930409" at="53,84,54,433" />
-      <scope id="1741258697586930409" at="59,102,60,206" />
+      <scope id="1741258697586930409" at="53,84,54,395" />
+      <scope id="1741258697586930409" at="59,102,60,153" />
       <scope id="1741258697586930459" at="66,43,67,267" />
-      <scope id="1741258697586930409" at="73,76,74,46" />
-      <scope id="1741258697586930409" at="79,81,80,191" />
+      <scope id="1741258697586930409" at="73,61,74,46" />
+      <scope id="1741258697586930409" at="79,81,80,138" />
       <scope id="1741258697586930409" at="99,53,100,95" />
       <scope id="1741258697586930409" at="107,53,108,90" />
       <scope id="1741258697586930498" at="114,69,115,202" />
       <scope id="1741258697586930585" at="124,68,125,240" />
-      <scope id="1741258697586930409" at="129,84,130,425" />
-      <scope id="1741258697586930409" at="135,102,136,206" />
+      <scope id="1741258697586930409" at="129,84,130,387" />
+      <scope id="1741258697586930409" at="135,102,136,153" />
       <scope id="1741258697586930631" at="142,43,143,267" />
-      <scope id="1741258697586930409" at="149,76,150,46" />
-      <scope id="1741258697586930409" at="155,81,156,191" />
+      <scope id="1741258697586930409" at="149,61,150,46" />
+      <scope id="1741258697586930409" at="155,81,156,138" />
       <scope id="1741258697586930409" at="175,53,176,95" />
       <scope id="1741258697586930409" at="183,53,184,90" />
       <scope id="1741258697586930670" at="190,69,191,207" />
@@ -202,16 +202,16 @@
       <scope id="1741258697586930409" at="138,0,147,0">
         <var name="_context" id="1741258697586930409" />
       </scope>
-      <unit id="1741258697586930458" at="65,280,69,9" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_a$SubstituteMenuPart_Parameterized_67nl4b_a0$1" />
-      <unit id="1741258697586930630" at="141,272,145,9" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_b$SubstituteMenuPart_Parameterized_67nl4b_a1$1" />
-      <unit id="1741258697586930409" at="82,0,118,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_a$SubstituteMenuPart_Parameterized_67nl4b_a0$SubstituteMenuPart_Action_67nl4b_a0a$Item" />
-      <unit id="1741258697586930409" at="158,0,194,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_b$SubstituteMenuPart_Parameterized_67nl4b_a1$SubstituteMenuPart_Action_67nl4b_a0b$Item" />
-      <unit id="1741258697586930409" at="71,0,119,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_a$SubstituteMenuPart_Parameterized_67nl4b_a0$SubstituteMenuPart_Action_67nl4b_a0a" />
-      <unit id="1741258697586930409" at="147,0,195,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_b$SubstituteMenuPart_Parameterized_67nl4b_a1$SubstituteMenuPart_Action_67nl4b_a0b" />
-      <unit id="1741258697586930409" at="56,0,121,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_a$SubstituteMenuPart_Parameterized_67nl4b_a0" />
-      <unit id="1741258697586930409" at="132,0,197,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_b$SubstituteMenuPart_Parameterized_67nl4b_a1" />
-      <unit id="1741258697586930409" at="46,0,122,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_a" />
-      <unit id="1741258697586930409" at="122,0,198,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_b" />
+      <unit id="1741258697586930458" at="65,280,69,9" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SMP_Group_67nl4b_a$SMP_Param_67nl4b_a0$1" />
+      <unit id="1741258697586930630" at="141,272,145,9" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SMP_Group_67nl4b_b$SMP_Param_67nl4b_a1$1" />
+      <unit id="1741258697586930409" at="82,0,118,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SMP_Group_67nl4b_a$SMP_Param_67nl4b_a0$SMP_Action_67nl4b_a0a$Item" />
+      <unit id="1741258697586930409" at="158,0,194,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SMP_Group_67nl4b_b$SMP_Param_67nl4b_a1$SMP_Action_67nl4b_a0b$Item" />
+      <unit id="1741258697586930409" at="71,0,119,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SMP_Group_67nl4b_a$SMP_Param_67nl4b_a0$SMP_Action_67nl4b_a0a" />
+      <unit id="1741258697586930409" at="147,0,195,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SMP_Group_67nl4b_b$SMP_Param_67nl4b_a1$SMP_Action_67nl4b_a0b" />
+      <unit id="1741258697586930409" at="56,0,121,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SMP_Group_67nl4b_a$SMP_Param_67nl4b_a0" />
+      <unit id="1741258697586930409" at="132,0,197,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SMP_Group_67nl4b_b$SMP_Param_67nl4b_a1" />
+      <unit id="1741258697586930409" at="46,0,122,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SMP_Group_67nl4b_a" />
+      <unit id="1741258697586930409" at="122,0,198,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SMP_Group_67nl4b_b" />
       <unit id="1741258697586930409" at="34,0,199,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution" />
     </file>
   </root>

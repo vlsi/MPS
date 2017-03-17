@@ -36,17 +36,17 @@ public class OtherCommands extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new OtherCommands.TransformationMenuPart_Action_uewb7w_a0());
-      result.add(new OtherCommands.TransformationMenuPart_Action_uewb7w_b0());
-      result.add(new OtherCommands.TransformationMenuPart_Group_uewb7w_c0());
+      result.add(new OtherCommands.TMP_Action_uewb7w_a0());
+      result.add(new OtherCommands.TMP_Action_uewb7w_b0());
+      result.add(new OtherCommands.TMP_Group_uewb7w_c0());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_uewb7w_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_uewb7w_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new OtherCommands.TransformationMenuPart_Action_uewb7w_a0.Item(context);
+      return new OtherCommands.TMP_Action_uewb7w_a0.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -70,10 +70,10 @@ public class OtherCommands extends TransformationMenuBase {
 
     }
   }
-  private class TransformationMenuPart_Action_uewb7w_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_uewb7w_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new OtherCommands.TransformationMenuPart_Action_uewb7w_b0.Item(context);
+      return new OtherCommands.TMP_Action_uewb7w_b0.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -97,7 +97,7 @@ public class OtherCommands extends TransformationMenuBase {
 
     }
   }
-  public class TransformationMenuPart_Group_uewb7w_c0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_uewb7w_c0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return eq_uewb7w_a0a0a7(SNodeOperations.getParent(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"), false, false)), SNodeOperations.getContainingRoot(_context.getNode()));
@@ -105,12 +105,12 @@ public class OtherCommands extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new OtherCommands.TransformationMenuPart_Group_uewb7w_c0.TransformationMenuPart_Action_uewb7w_a2a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new OtherCommands.TMP_Group_uewb7w_c0.TMP_Action_uewb7w_a2a());
     }
-    private class TransformationMenuPart_Action_uewb7w_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_uewb7w_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new OtherCommands.TransformationMenuPart_Group_uewb7w_c0.TransformationMenuPart_Action_uewb7w_a2a.Item(context);
+        return new OtherCommands.TMP_Group_uewb7w_c0.TMP_Action_uewb7w_a2a.Item(context);
       }
 
       private class Item extends ActionItemBase {

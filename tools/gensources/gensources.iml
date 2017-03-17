@@ -609,6 +609,7 @@
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/baseLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.actions/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.dataFlow/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.migration/source_gen" isTestSource="false" />
@@ -617,6 +618,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.structure/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.typesystem.devkit/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/baseLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.actions/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.dataFlow/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.migration/classes_gen" />
@@ -1318,3 +1320,4 @@
     <orderEntry type="module" module-name="execution-languages-library" />
   </component>
 </module>
+

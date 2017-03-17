@@ -41,16 +41,16 @@ public class Math extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ACTIONS_TOOL).contains(_context.getMenuLocation())) {
-      result.add(new Math.TransformationMenuPart_SubMenu_pmdw_a0());
-      result.add(new Math.TransformationMenuPart_SubMenu_pmdw_b0());
-      result.add(new Math.TransformationMenuPart_SubMenu_pmdw_c0());
-      result.add(new Math.TransformationMenuPart_SubMenu_pmdw_d0());
-      result.add(new Math.TransformationMenuPart_SubMenu_pmdw_e0());
+      result.add(new Math.TMP_SubMenu_pmdw_a0());
+      result.add(new Math.TMP_SubMenu_pmdw_b0());
+      result.add(new Math.TMP_SubMenu_pmdw_c0());
+      result.add(new Math.TMP_SubMenu_pmdw_d0());
+      result.add(new Math.TMP_SubMenu_pmdw_e0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_SubMenu_pmdw_a0 extends SubMenuMenuTransformationMenuPart {
+  public class TMP_SubMenu_pmdw_a0 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "Math";
@@ -58,9 +58,9 @@ public class Math extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Math.TransformationMenuPart_SubMenu_pmdw_a0.TransformationMenuPart_SubMenu_pmdw_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a());
     }
-    public class TransformationMenuPart_SubMenu_pmdw_a0a extends SubMenuMenuTransformationMenuPart {
+    public class TMP_SubMenu_pmdw_a0a extends SubMenuMenuTransformationMenuPart {
       @Override
       protected String getText(TransformationMenuContext _context) {
         return "Operations";
@@ -68,12 +68,12 @@ public class Math extends TransformationMenuBase {
 
       @Override
       protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-        return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Math.TransformationMenuPart_SubMenu_pmdw_a0.TransformationMenuPart_SubMenu_pmdw_a0a.TransformationMenuPart_Action_pmdw_a0a0(), new Math.TransformationMenuPart_SubMenu_pmdw_a0.TransformationMenuPart_SubMenu_pmdw_a0a.TransformationMenuPart_Action_pmdw_b0a0(), new Math.TransformationMenuPart_SubMenu_pmdw_a0.TransformationMenuPart_SubMenu_pmdw_a0a.TransformationMenuPart_Action_pmdw_c0a0(), new Math.TransformationMenuPart_SubMenu_pmdw_a0.TransformationMenuPart_SubMenu_pmdw_a0a.TransformationMenuPart_Action_pmdw_d0a0());
+        return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_a0a0(), new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_b0a0(), new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_c0a0(), new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_d0a0());
       }
-      private class TransformationMenuPart_Action_pmdw_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_pmdw_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new Math.TransformationMenuPart_SubMenu_pmdw_a0.TransformationMenuPart_SubMenu_pmdw_a0a.TransformationMenuPart_Action_pmdw_a0a0.Item(context);
+          return new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_a0a0.Item(context);
         }
 
         private class Item extends ActionItemBase implements SidebarActionItem {
@@ -105,10 +105,10 @@ public class Math extends TransformationMenuBase {
           }
         }
       }
-      private class TransformationMenuPart_Action_pmdw_b0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_pmdw_b0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new Math.TransformationMenuPart_SubMenu_pmdw_a0.TransformationMenuPart_SubMenu_pmdw_a0a.TransformationMenuPart_Action_pmdw_b0a0.Item(context);
+          return new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_b0a0.Item(context);
         }
 
         private class Item extends ActionItemBase implements SidebarActionItem {
@@ -140,10 +140,10 @@ public class Math extends TransformationMenuBase {
           }
         }
       }
-      private class TransformationMenuPart_Action_pmdw_c0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_pmdw_c0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new Math.TransformationMenuPart_SubMenu_pmdw_a0.TransformationMenuPart_SubMenu_pmdw_a0a.TransformationMenuPart_Action_pmdw_c0a0.Item(context);
+          return new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_c0a0.Item(context);
         }
 
         private class Item extends ActionItemBase implements SidebarActionItem {
@@ -175,10 +175,10 @@ public class Math extends TransformationMenuBase {
           }
         }
       }
-      private class TransformationMenuPart_Action_pmdw_d0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_pmdw_d0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new Math.TransformationMenuPart_SubMenu_pmdw_a0.TransformationMenuPart_SubMenu_pmdw_a0a.TransformationMenuPart_Action_pmdw_d0a0.Item(context);
+          return new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_d0a0.Item(context);
         }
 
         private class Item extends ActionItemBase implements SidebarActionItem {
@@ -212,7 +212,7 @@ public class Math extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_SubMenu_pmdw_b0 extends SubMenuMenuTransformationMenuPart {
+  public class TMP_SubMenu_pmdw_b0 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "Matrix";
@@ -220,12 +220,12 @@ public class Math extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Math.TransformationMenuPart_SubMenu_pmdw_b0.TransformationMenuPart_Action_pmdw_a1a(), new Math.TransformationMenuPart_SubMenu_pmdw_b0.TransformationMenuPart_Action_pmdw_b1a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Math.TMP_SubMenu_pmdw_b0.TMP_Action_pmdw_a1a(), new Math.TMP_SubMenu_pmdw_b0.TMP_Action_pmdw_b1a());
     }
-    private class TransformationMenuPart_Action_pmdw_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_pmdw_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TransformationMenuPart_SubMenu_pmdw_b0.TransformationMenuPart_Action_pmdw_a1a.Item(context);
+        return new Math.TMP_SubMenu_pmdw_b0.TMP_Action_pmdw_a1a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
@@ -258,10 +258,10 @@ public class Math extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_pmdw_b1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_pmdw_b1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TransformationMenuPart_SubMenu_pmdw_b0.TransformationMenuPart_Action_pmdw_b1a.Item(context);
+        return new Math.TMP_SubMenu_pmdw_b0.TMP_Action_pmdw_b1a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
@@ -294,7 +294,7 @@ public class Math extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_SubMenu_pmdw_c0 extends SubMenuMenuTransformationMenuPart {
+  public class TMP_SubMenu_pmdw_c0 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "High precision";
@@ -302,12 +302,12 @@ public class Math extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Math.TransformationMenuPart_SubMenu_pmdw_c0.TransformationMenuPart_Action_pmdw_a2a(), new Math.TransformationMenuPart_SubMenu_pmdw_c0.TransformationMenuPart_Action_pmdw_b2a(), new Math.TransformationMenuPart_SubMenu_pmdw_c0.TransformationMenuPart_Action_pmdw_c2a(), new Math.TransformationMenuPart_SubMenu_pmdw_c0.TransformationMenuPart_Action_pmdw_d2a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_a2a(), new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_b2a(), new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_c2a(), new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_d2a());
     }
-    private class TransformationMenuPart_Action_pmdw_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_pmdw_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TransformationMenuPart_SubMenu_pmdw_c0.TransformationMenuPart_Action_pmdw_a2a.Item(context);
+        return new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_a2a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
@@ -339,10 +339,10 @@ public class Math extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_pmdw_b2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_pmdw_b2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TransformationMenuPart_SubMenu_pmdw_c0.TransformationMenuPart_Action_pmdw_b2a.Item(context);
+        return new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_b2a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
@@ -374,10 +374,10 @@ public class Math extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_pmdw_c2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_pmdw_c2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TransformationMenuPart_SubMenu_pmdw_c0.TransformationMenuPart_Action_pmdw_c2a.Item(context);
+        return new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_c2a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
@@ -409,10 +409,10 @@ public class Math extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_pmdw_d2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_pmdw_d2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TransformationMenuPart_SubMenu_pmdw_c0.TransformationMenuPart_Action_pmdw_d2a.Item(context);
+        return new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_d2a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
@@ -445,7 +445,7 @@ public class Math extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_SubMenu_pmdw_d0 extends SubMenuMenuTransformationMenuPart {
+  public class TMP_SubMenu_pmdw_d0 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "Functions";
@@ -453,12 +453,12 @@ public class Math extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Math.TransformationMenuPart_SubMenu_pmdw_d0.TransformationMenuPart_Action_pmdw_a3a(), new Math.TransformationMenuPart_SubMenu_pmdw_d0.TransformationMenuPart_Action_pmdw_b3a(), new Math.TransformationMenuPart_SubMenu_pmdw_d0.TransformationMenuPart_Action_pmdw_c3a(), new Math.TransformationMenuPart_SubMenu_pmdw_d0.TransformationMenuPart_Action_pmdw_d3a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_a3a(), new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_b3a(), new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_c3a(), new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_d3a());
     }
-    private class TransformationMenuPart_Action_pmdw_a3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_pmdw_a3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TransformationMenuPart_SubMenu_pmdw_d0.TransformationMenuPart_Action_pmdw_a3a.Item(context);
+        return new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_a3a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
@@ -490,10 +490,10 @@ public class Math extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_pmdw_b3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_pmdw_b3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TransformationMenuPart_SubMenu_pmdw_d0.TransformationMenuPart_Action_pmdw_b3a.Item(context);
+        return new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_b3a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
@@ -525,10 +525,10 @@ public class Math extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_pmdw_c3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_pmdw_c3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TransformationMenuPart_SubMenu_pmdw_d0.TransformationMenuPart_Action_pmdw_c3a.Item(context);
+        return new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_c3a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
@@ -560,10 +560,10 @@ public class Math extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_pmdw_d3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_pmdw_d3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TransformationMenuPart_SubMenu_pmdw_d0.TransformationMenuPart_Action_pmdw_d3a.Item(context);
+        return new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_d3a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
@@ -596,7 +596,7 @@ public class Math extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_SubMenu_pmdw_e0 extends SubMenuMenuTransformationMenuPart {
+  public class TMP_SubMenu_pmdw_e0 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "Trigonometric";
@@ -604,12 +604,12 @@ public class Math extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Math.TransformationMenuPart_SubMenu_pmdw_e0.TransformationMenuPart_Action_pmdw_a4a(), new Math.TransformationMenuPart_SubMenu_pmdw_e0.TransformationMenuPart_Action_pmdw_b4a(), new Math.TransformationMenuPart_SubMenu_pmdw_e0.TransformationMenuPart_Action_pmdw_c4a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_a4a(), new Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_b4a(), new Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_c4a());
     }
-    private class TransformationMenuPart_Action_pmdw_a4a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_pmdw_a4a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TransformationMenuPart_SubMenu_pmdw_e0.TransformationMenuPart_Action_pmdw_a4a.Item(context);
+        return new Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_a4a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
@@ -641,10 +641,10 @@ public class Math extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_pmdw_b4a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_pmdw_b4a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TransformationMenuPart_SubMenu_pmdw_e0.TransformationMenuPart_Action_pmdw_b4a.Item(context);
+        return new Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_b4a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
@@ -676,10 +676,10 @@ public class Math extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_pmdw_c4a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_pmdw_c4a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TransformationMenuPart_SubMenu_pmdw_e0.TransformationMenuPart_Action_pmdw_c4a.Item(context);
+        return new Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_c4a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {

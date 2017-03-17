@@ -41,12 +41,12 @@ public class add_moduleLocationAndFlags extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new add_moduleLocationAndFlags.TransformationMenuPart_Group_vydzh3_a0());
+      result.add(new add_moduleLocationAndFlags.TMP_Group_vydzh3_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_vydzh3_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_vydzh3_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       String sourcesKind = SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), null);
@@ -55,14 +55,14 @@ public class add_moduleLocationAndFlags extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_moduleLocationAndFlags.TransformationMenuPart_Group_vydzh3_a0.TransformationMenuPart_Parameterized_vydzh3_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_moduleLocationAndFlags.TMP_Group_vydzh3_a0.TMP_Param_vydzh3_a0a());
     }
-    private class TransformationMenuPart_Parameterized_vydzh3_a0a extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Param_vydzh3_a0a extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
 
       @NotNull
       @Override
       protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
-        return new add_moduleLocationAndFlags.TransformationMenuPart_Group_vydzh3_a0.TransformationMenuPart_Parameterized_vydzh3_a0a.TransformationMenuPart_Action_vydzh3_a0a0(parameter).createItems(context);
+        return new add_moduleLocationAndFlags.TMP_Group_vydzh3_a0.TMP_Param_vydzh3_a0a.TMP_Action_vydzh3_a0a0(parameter).createItems(context);
       }
 
       @Nullable
@@ -71,14 +71,14 @@ public class add_moduleLocationAndFlags extends TransformationMenuBase {
         return Sequence.fromArray(new SNode[]{SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)", "BuildMps_ModuleSourcesKind"), "tests"), SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)", "BuildMps_ModuleSourcesKind"), "sources and tests")});
       }
 
-      private class TransformationMenuPart_Action_vydzh3_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_vydzh3_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         private final SNode myParameterObject;
-        public TransformationMenuPart_Action_vydzh3_a0a0(SNode parameterObject) {
+        public TMP_Action_vydzh3_a0a0(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new add_moduleLocationAndFlags.TransformationMenuPart_Group_vydzh3_a0.TransformationMenuPart_Parameterized_vydzh3_a0a.TransformationMenuPart_Action_vydzh3_a0a0.Item(context);
+          return new add_moduleLocationAndFlags.TMP_Group_vydzh3_a0.TMP_Param_vydzh3_a0a.TMP_Action_vydzh3_a0a0.Item(context);
         }
 
         private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

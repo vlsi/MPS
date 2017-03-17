@@ -42,12 +42,12 @@ public class AddFieldModifiersOnTypes extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new AddFieldModifiersOnTypes.TransformationMenuPart_Group_ohj0iz_a0());
+      result.add(new AddFieldModifiersOnTypes.TMP_Group_ohj0iz_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_ohj0iz_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_ohj0iz_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
@@ -55,12 +55,12 @@ public class AddFieldModifiersOnTypes extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AddFieldModifiersOnTypes.TransformationMenuPart_Group_ohj0iz_a0.TransformationMenuPart_Action_ohj0iz_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")), new ConstraintsFilteringTransformationMenuPartDecorator(new AddFieldModifiersOnTypes.TransformationMenuPart_Group_ohj0iz_a0.TransformationMenuPart_Action_ohj0iz_b0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")), new ConstraintsFilteringTransformationMenuPartDecorator(new AddFieldModifiersOnTypes.TransformationMenuPart_Group_ohj0iz_a0.TransformationMenuPart_Action_ohj0iz_c0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AddFieldModifiersOnTypes.TMP_Group_ohj0iz_a0.TMP_Action_ohj0iz_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")), new ConstraintsFilteringTransformationMenuPartDecorator(new AddFieldModifiersOnTypes.TMP_Group_ohj0iz_a0.TMP_Action_ohj0iz_b0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")), new ConstraintsFilteringTransformationMenuPartDecorator(new AddFieldModifiersOnTypes.TMP_Group_ohj0iz_a0.TMP_Action_ohj0iz_c0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")));
     }
-    private class TransformationMenuPart_Action_ohj0iz_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_ohj0iz_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AddFieldModifiersOnTypes.TransformationMenuPart_Group_ohj0iz_a0.TransformationMenuPart_Action_ohj0iz_a0a.Item(context);
+        return new AddFieldModifiersOnTypes.TMP_Group_ohj0iz_a0.TMP_Action_ohj0iz_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -91,10 +91,10 @@ public class AddFieldModifiersOnTypes extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_ohj0iz_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_ohj0iz_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AddFieldModifiersOnTypes.TransformationMenuPart_Group_ohj0iz_a0.TransformationMenuPart_Action_ohj0iz_b0a.Item(context);
+        return new AddFieldModifiersOnTypes.TMP_Group_ohj0iz_a0.TMP_Action_ohj0iz_b0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -125,10 +125,10 @@ public class AddFieldModifiersOnTypes extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_ohj0iz_c0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_ohj0iz_c0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AddFieldModifiersOnTypes.TransformationMenuPart_Group_ohj0iz_a0.TransformationMenuPart_Action_ohj0iz_c0a.Item(context);
+        return new AddFieldModifiersOnTypes.TMP_Group_ohj0iz_a0.TMP_Action_ohj0iz_c0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

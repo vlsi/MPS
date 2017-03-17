@@ -23,16 +23,16 @@ public class SubstituteListCommandPart extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstituteListCommandPart.SubstituteMenuPart_Action_5b7y1v_a(), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, "jetbrains.mps.execution.commands.structure.ListCommandPart")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstituteListCommandPart.SubstituteMenuPart_Action_5b7y1v_b(), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, "jetbrains.mps.execution.commands.structure.ListCommandPart")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstituteListCommandPart.SMP_Action_5b7y1v_a(), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, "jetbrains.mps.execution.commands.structure.ListCommandPart")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstituteListCommandPart.SMP_Action_5b7y1v_b(), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, "jetbrains.mps.execution.commands.structure.ListCommandPart")));
     return result;
   }
-  private class SubstituteMenuPart_Action_5b7y1v_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_5b7y1v_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new SubstituteListCommandPart.SubstituteMenuPart_Action_5b7y1v_a.Item(_context);
+      return new SubstituteListCommandPart.SMP_Action_5b7y1v_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -60,12 +60,12 @@ public class SubstituteListCommandPart extends SubstituteMenuBase {
       }
     }
   }
-  private class SubstituteMenuPart_Action_5b7y1v_b extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_5b7y1v_b extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new SubstituteListCommandPart.SubstituteMenuPart_Action_5b7y1v_b.Item(_context);
+      return new SubstituteListCommandPart.SMP_Action_5b7y1v_b.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

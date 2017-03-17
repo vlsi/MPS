@@ -30,10 +30,10 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new TransformationLocation_SubstituteMenu.SubstituteMenuPart_Group_fvfxl9_a());
+    result.add(new TransformationLocation_SubstituteMenu.SMP_Group_fvfxl9_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_fvfxl9_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_fvfxl9_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     private boolean condition;
     @Override
     protected void initialize(SubstituteMenuContext _context) {
@@ -48,9 +48,9 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new TransformationLocation_SubstituteMenu.SubstituteMenuPart_Group_fvfxl9_a.SubstituteMenuPart_Group_fvfxl9_a0(), new TransformationLocation_SubstituteMenu.SubstituteMenuPart_Group_fvfxl9_a.SubstituteMenuPart_Group_fvfxl9_b0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new TransformationLocation_SubstituteMenu.SMP_Group_fvfxl9_a.SMP_Group_fvfxl9_a0(), new TransformationLocation_SubstituteMenu.SMP_Group_fvfxl9_a.SMP_Group_fvfxl9_b0());
     }
-    public class SubstituteMenuPart_Group_fvfxl9_a0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_fvfxl9_a0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return condition;
@@ -58,9 +58,9 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new TransformationLocation_SubstituteMenu.SubstituteMenuPart_Group_fvfxl9_a.SubstituteMenuPart_Group_fvfxl9_a0.SubstituteMenuPart_Concepts_fvfxl9_a0a(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation")));
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new TransformationLocation_SubstituteMenu.SMP_Group_fvfxl9_a.SMP_Group_fvfxl9_a0.SMP_Concepts_fvfxl9_a0a(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation")));
       }
-      public class SubstituteMenuPart_Concepts_fvfxl9_a0a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+      public class SMP_Concepts_fvfxl9_a0a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
         protected Collection getConcepts(SubstituteMenuContext _context) {
           return Sequence.fromIterable(TransformationMenuActionsUtil.getSubconceptsWithCurrentChildConceptsExcluded(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation"), _context.getParentNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"), _context.getCurrentTargetNode())).toListSequence();
         }
@@ -70,7 +70,7 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
         }
       }
     }
-    public class SubstituteMenuPart_Group_fvfxl9_b0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_fvfxl9_b0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return !((condition));
@@ -78,9 +78,9 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new TransformationLocation_SubstituteMenu.SubstituteMenuPart_Group_fvfxl9_a.SubstituteMenuPart_Group_fvfxl9_b0.SubstituteMenuPart_Subconcepts_fvfxl9_a1a());
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new TransformationLocation_SubstituteMenu.SMP_Group_fvfxl9_a.SMP_Group_fvfxl9_b0.SMP_Subconcepts_fvfxl9_a1a());
       }
-      public class SubstituteMenuPart_Subconcepts_fvfxl9_a1a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+      public class SMP_Subconcepts_fvfxl9_a1a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
         protected Collection getConcepts(final SubstituteMenuContext _context) {
           return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation"));
         }

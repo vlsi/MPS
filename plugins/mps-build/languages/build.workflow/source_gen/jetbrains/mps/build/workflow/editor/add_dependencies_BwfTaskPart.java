@@ -38,12 +38,12 @@ public class add_dependencies_BwfTaskPart extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new add_dependencies_BwfTaskPart.TransformationMenuPart_Group_5stah4_a0());
+      result.add(new add_dependencies_BwfTaskPart.TMP_Group_5stah4_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_5stah4_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_5stah4_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, 0x36fb0dc9fd37a1c2L, "additionalDependencies"))).isEmpty();
@@ -51,12 +51,12 @@ public class add_dependencies_BwfTaskPart extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_dependencies_BwfTaskPart.TransformationMenuPart_Group_5stah4_a0.TransformationMenuPart_Action_5stah4_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_dependencies_BwfTaskPart.TMP_Group_5stah4_a0.TMP_Action_5stah4_a0a());
     }
-    private class TransformationMenuPart_Action_5stah4_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_5stah4_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new add_dependencies_BwfTaskPart.TransformationMenuPart_Group_5stah4_a0.TransformationMenuPart_Action_5stah4_a0a.Item(context);
+        return new add_dependencies_BwfTaskPart.TMP_Group_5stah4_a0.TMP_Action_5stah4_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

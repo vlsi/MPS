@@ -48,16 +48,16 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b0a9b8c0eb8e726L, "jetbrains.mps.lang.editor.structure.AbstractCellSelector"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new AbstractCellSelector_TransformationMenu.TransformationMenuPart_Group_by8jv6_a1());
+      result.add(new AbstractCellSelector_TransformationMenu.TMP_Group_by8jv6_a1());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new AbstractCellSelector_TransformationMenu.TransformationMenuPart_Group_by8jv6_a2());
-      result.add(new AbstractCellSelector_TransformationMenu.TransformationMenuPart_Group_by8jv6_b2());
+      result.add(new AbstractCellSelector_TransformationMenu.TMP_Group_by8jv6_a2());
+      result.add(new AbstractCellSelector_TransformationMenu.TMP_Group_by8jv6_b2());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_by8jv6_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_by8jv6_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector")));
@@ -65,12 +65,12 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractCellSelector_TransformationMenu.TransformationMenuPart_Group_by8jv6_a1.TransformationMenuPart_Action_by8jv6_a0b(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractCellSelector_TransformationMenu.TMP_Group_by8jv6_a1.TMP_Action_by8jv6_a0b(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector")));
     }
-    private class TransformationMenuPart_Action_by8jv6_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_by8jv6_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AbstractCellSelector_TransformationMenu.TransformationMenuPart_Group_by8jv6_a1.TransformationMenuPart_Action_by8jv6_a0b.Item(context);
+        return new AbstractCellSelector_TransformationMenu.TMP_Group_by8jv6_a1.TMP_Action_by8jv6_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -117,7 +117,7 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
       }
     }
   }
-  public class TransformationMenuPart_Group_by8jv6_a2 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_by8jv6_a2 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector")));
@@ -125,12 +125,12 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractCellSelector_TransformationMenu.TransformationMenuPart_Group_by8jv6_a2.TransformationMenuPart_Action_by8jv6_a0c(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractCellSelector_TransformationMenu.TMP_Group_by8jv6_a2.TMP_Action_by8jv6_a0c(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector")));
     }
-    private class TransformationMenuPart_Action_by8jv6_a0c extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_by8jv6_a0c extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AbstractCellSelector_TransformationMenu.TransformationMenuPart_Group_by8jv6_a2.TransformationMenuPart_Action_by8jv6_a0c.Item(context);
+        return new AbstractCellSelector_TransformationMenu.TMP_Group_by8jv6_a2.TMP_Action_by8jv6_a0c.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -177,7 +177,7 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
       }
     }
   }
-  public class TransformationMenuPart_Group_by8jv6_b2 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_by8jv6_b2 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"));
@@ -185,12 +185,12 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractCellSelector_TransformationMenu.TransformationMenuPart_Group_by8jv6_b2.TransformationMenuPart_Action_by8jv6_a1c(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractCellSelector_TransformationMenu.TransformationMenuPart_Group_by8jv6_b2.TransformationMenuPart_Action_by8jv6_b1c(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractCellSelector_TransformationMenu.TMP_Group_by8jv6_b2.TMP_Action_by8jv6_a1c(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractCellSelector_TransformationMenu.TMP_Group_by8jv6_b2.TMP_Action_by8jv6_b1c(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
     }
-    private class TransformationMenuPart_Action_by8jv6_a1c extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_by8jv6_a1c extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AbstractCellSelector_TransformationMenu.TransformationMenuPart_Group_by8jv6_b2.TransformationMenuPart_Action_by8jv6_a1c.Item(context);
+        return new AbstractCellSelector_TransformationMenu.TMP_Group_by8jv6_b2.TMP_Action_by8jv6_a1c.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -225,10 +225,10 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
         }
       }
     }
-    private class TransformationMenuPart_Action_by8jv6_b1c extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_by8jv6_b1c extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AbstractCellSelector_TransformationMenu.TransformationMenuPart_Group_by8jv6_b2.TransformationMenuPart_Action_by8jv6_b1c.Item(context);
+        return new AbstractCellSelector_TransformationMenu.TMP_Group_by8jv6_b2.TMP_Action_by8jv6_b1c.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

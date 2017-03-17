@@ -35,16 +35,16 @@ public class Child_MoreDefaultActions extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new Child_MoreDefaultActions.TransformationMenuPart_Action_ch35tm_a0());
+      result.add(new Child_MoreDefaultActions.TMP_Action_ch35tm_a0());
     }
     return result;
   }
 
   protected static Logger LOG = LogManager.getLogger(Child_MoreDefaultActions.class);
-  private class TransformationMenuPart_Action_ch35tm_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_ch35tm_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Child_MoreDefaultActions.TransformationMenuPart_Action_ch35tm_a0.Item(context);
+      return new Child_MoreDefaultActions.TMP_Action_ch35tm_a0.Item(context);
     }
 
     private class Item extends ActionItemBase {
