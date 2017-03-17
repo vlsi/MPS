@@ -911,52 +911,52 @@ public class QueriesGenerated extends QueryProviderBase {
     return NameUtil.getGetterName(SConceptOperations.conceptAlias(SNodeOperations.getConcept(_context.getNode())));
   }
   public static Object propertyMacro_GetPropertyValue_4233361609420232109(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("TMP_Param", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_5126791860780655922(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("TMP_Group", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_5126791860781668561(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("TMP_Include", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_5126791860780139304(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("TMP_Action", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_5126791860781449338(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("TMP_SubMenu", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_2857509971902941678(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("SMP_Concepts", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_730181322659859693(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("SMP_Include", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_6684862045054096589(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("SMP_Wrap", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_5571456255683058063(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_6089045305656913701(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("TMP_IncludeSM", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_3961072808177721434(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("SMP_Group", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_7782821550199528287(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("TMP_WrapSM", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_6089045305654951115(final PropertyMacroContext _context) {
     return (String) INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5480a271c0d1df1fL, 0x5480a271c0d2a27eL, "menu")));
   }
   public static Object propertyMacro_GetPropertyValue_1607619499980032792(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("SMP_Action", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_8371900013785965485(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("SMP_Param", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_7317263714739171661(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("SMP_Subconcepts", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_4037229630278768206(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"));

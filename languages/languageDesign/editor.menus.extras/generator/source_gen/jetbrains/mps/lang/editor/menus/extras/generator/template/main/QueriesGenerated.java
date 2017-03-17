@@ -7,7 +7,6 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.plugin.behavior.ActionDeclaration__BehaviorDescriptor;
@@ -22,19 +21,19 @@ public class QueriesGenerated {
     return (String) BaseIntentionDeclaration__BehaviorDescriptor.getGeneratedId_id2ytFvC$HDcE.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x289dadfa24b57a51L, 0x289dadfa24b57a52L, "intention")));
   }
   public static Object propertyMacro_GetPropertyValue_7291101478621741111(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("TMP_Intention", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_4736696158595700433(final PropertyMacroContext _context) {
     return (String) INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x41bc200f660dc377L, 0x41bc200f660dc37aL, "refactoring")));
   }
   public static Object propertyMacro_GetPropertyValue_4736696158595700557(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("TMP_Refactoring", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_2319156231054489313(final PropertyMacroContext _context) {
     return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x202f4c4e02a0918cL, 0x202f4c4e02a09194L, "action")), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0x374ac263e13f4abeL, "ID"))) ? SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x202f4c4e02a0918cL, 0x202f4c4e02a09194L, "action")), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0x374ac263e13f4abeL, "ID")) : ActionDeclaration__BehaviorDescriptor.getGeneratedClassFQName_idhEwIGgK.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x202f4c4e02a0918cL, 0x202f4c4e02a09194L, "action"))));
   }
   public static Object propertyMacro_GetPropertyValue_2319156231054489386(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+    return _context.createUniqueName("TMP_PluginAction", _context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_4233361609414462017(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features"));
