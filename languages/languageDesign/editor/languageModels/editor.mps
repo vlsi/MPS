@@ -929,13 +929,6 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
-      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
@@ -15377,17 +15370,12 @@
       <node concept="3F1sOY" id="6ed47gdfnvo" role="3EZMnx">
         <ref role="1NtTu8" to="tpc2:6ed47gdfnvk" resolve="menuReference" />
       </node>
-      <node concept="3F2HdR" id="6ed47gdfnvI" role="3EZMnx">
-        <property role="2czwfO" value="----------" />
-        <ref role="1NtTu8" to="tpc2:n0c53aH4X$" resolve="parts" />
-        <node concept="l2Vlx" id="6ed47gdfnvJ" role="2czzBx" />
-        <node concept="pVoyu" id="6ed47gdfnvK" role="3F10Kt">
+      <node concept="PMmxH" id="7WoWfGXKLPV" role="3EZMnx">
+        <ref role="PMmxG" node="7WoWfGXKj7A" resolve="ISubstituteMenu_PartsComponent" />
+        <node concept="lj46D" id="7WoWfGXKLPW" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="pj6Ft" id="6ed47gdfnvL" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="lj46D" id="6ed47gdfnvM" role="3F10Kt">
+        <node concept="pVoyu" id="7WoWfGXKLQe" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
@@ -15415,33 +15403,12 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3F2HdR" id="n0c53aHDWW" role="3EZMnx">
-        <property role="2czwfO" value="----------" />
-        <ref role="1NtTu8" to="tpc2:n0c53aH4X$" resolve="parts" />
-        <node concept="tppnM" id="4VK1yxGVoze" role="sWeuL">
-          <node concept="1X3_iC" id="4VK1yxGVp$Q" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="ljvvj" id="4VK1yxGVozg" role="8Wnug">
-              <property role="VOm3f" value="true" />
-            </node>
-          </node>
-          <node concept="1X3_iC" id="4VK1yxGVp$R" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="pVoyu" id="4VK1yxGVozl" role="8Wnug">
-              <property role="VOm3f" value="true" />
-            </node>
-          </node>
-        </node>
-        <node concept="l2Vlx" id="n0c53aHDWZ" role="2czzBx" />
-        <node concept="pVoyu" id="n0c53aHDX8" role="3F10Kt">
+      <node concept="PMmxH" id="7WoWfGXKLO3" role="3EZMnx">
+        <ref role="PMmxG" node="7WoWfGXKj7A" resolve="ISubstituteMenu_PartsComponent" />
+        <node concept="lj46D" id="7WoWfGXKLOy" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="lj46D" id="n0c53aHDXa" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="pj6Ft" id="1pfqmFIhqjq" role="3F10Kt">
+        <node concept="pVoyu" id="7WoWfGXKLQr" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
@@ -15487,17 +15454,12 @@
           </node>
         </node>
       </node>
-      <node concept="3F2HdR" id="3fw9B$5Z6mJ" role="3EZMnx">
-        <property role="2czwfO" value="----------" />
-        <ref role="1NtTu8" to="tpc2:n0c53aH4X$" resolve="parts" />
-        <node concept="l2Vlx" id="3fw9B$5Z6mK" role="2czzBx" />
-        <node concept="pVoyu" id="3fw9B$5Z6mL" role="3F10Kt">
+      <node concept="PMmxH" id="7WoWfGXKLOT" role="3EZMnx">
+        <ref role="PMmxG" node="7WoWfGXKj7A" resolve="ISubstituteMenu_PartsComponent" />
+        <node concept="lj46D" id="7WoWfGXKLOU" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="pj6Ft" id="3fw9B$5Z6mM" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="lj46D" id="3fw9B$5Z6mN" role="3F10Kt">
+        <node concept="pVoyu" id="7WoWfGXKLQu" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
@@ -25190,6 +25152,31 @@
   <node concept="3p36aQ" id="5c5foM6v03Z">
     <property role="3GE5qa" value="CellMenu" />
     <ref role="aqKnT" to="tpc2:794AQ2t3BuV" resolve="CellMenuPart_ApplySideTransforms" />
+  </node>
+  <node concept="PKFIW" id="7WoWfGXKj7A">
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="ISubstituteMenu_PartsComponent" />
+    <ref role="1XX52x" to="tpc2:1J2KHYpABsB" resolve="ISubstituteMenu" />
+    <node concept="3F2HdR" id="7WoWfGXKj7C" role="2wV5jI">
+      <ref role="1NtTu8" to="tpc2:n0c53aH4X$" resolve="parts" />
+      <node concept="pj6Ft" id="7WoWfGXKkVo" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
+      <node concept="l2Vlx" id="7WoWfGXKkVk" role="2czzBx" />
+      <node concept="4$FPG" id="7WoWfGXKkVu" role="4_6I_">
+        <node concept="3clFbS" id="7WoWfGXKkVv" role="2VODD2">
+          <node concept="3clFbF" id="7WoWfGXKn_A" role="3cqZAp">
+            <node concept="2ShNRf" id="7WoWfGXKn_$" role="3clFbG">
+              <node concept="3zrR0B" id="7WoWfGXKLGy" role="2ShVmc">
+                <node concept="3Tqbb2" id="7WoWfGXKLG$" role="3zrR0E">
+                  <ref role="ehGHo" to="tpc2:2n7QBnujfW5" resolve="SubstituteMenuPart_Placeholder" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
