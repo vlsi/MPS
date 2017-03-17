@@ -21,7 +21,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IncludeMigrationPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LinkPatternVariableReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ListPatternVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MigrationScript = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MigrationScript = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0m).create();
   private final ConceptPresentation props_MigrationScriptReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MoveConcept = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MoveConceptMember = new ConceptPresentationBuilder().create();
