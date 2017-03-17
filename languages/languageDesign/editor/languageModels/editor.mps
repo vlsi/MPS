@@ -25183,5 +25183,13 @@
     <property role="3GE5qa" value="QueryFunction" />
     <ref role="aqKnT" to="tpc2:601LQojMcdN" resolve="QueryFunction_RefPresentation" />
   </node>
+  <node concept="3p36aQ" id="5c5foM6uZaj">
+    <property role="3GE5qa" value="Stylesheet" />
+    <ref role="aqKnT" to="tpc2:hEV7CQ5" resolve="SideTransformAnchorTagStyleClassItem" />
+  </node>
+  <node concept="3p36aQ" id="5c5foM6v03Z">
+    <property role="3GE5qa" value="CellMenu" />
+    <ref role="aqKnT" to="tpc2:794AQ2t3BuV" resolve="CellMenuPart_ApplySideTransforms" />
+  </node>
 </model>
 
