@@ -27,6 +27,8 @@ import jetbrains.mps.generator.RigidGenerationPlan;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.impl.GenPlanTranslator;
 import jetbrains.mps.generator.impl.ModelStreamProviderImpl;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
+import jetbrains.mps.generator.plan.PlanIdentity;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -96,16 +98,16 @@ public class CheckpointModelTest extends PlatformMpsTest {
         "r:24638668-c917-4da1-8069-8ddef862314d(jetbrains.mps.generator.crossmodel.sandbox.beanmodel1)");
     // "r:53fbbbd7-a01f-458c-a76d-a34ed2d6f25f(jetbrains.mps.generator.crossmodel.sandbox.beanmodel2)"
     final SModel m = resolve(mr);
-    final Checkpoint cp1 = new Checkpoint("aaa");
+    final PlanIdentity planIdentity = new PlanIdentity("test Plan");
+    final Checkpoint cp1 = new Checkpoint(new CheckpointIdentity(planIdentity, "aaa"));
     ModelGenerationPlan plan = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<ModelGenerationPlan>() {
       @Override
       public ModelGenerationPlan compute() {
         final Transform step1 = new Transform(getCrossmodelPropertyGenerators());
         final Transform step2 = new Transform(getBaseLanguageGenerators());
-        return new RigidGenerationPlan("test Plan", step1, cp1, step2);
+        return new RigidGenerationPlan(planIdentity, step1, cp1, step2);
       }
     });
-    final PlanIdentity planIdentity = new PlanIdentity(plan);
     GenerationOptions opt = GenerationOptions.getDefaults().customPlan(m, plan).create();
     final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
     // need write for process(x, model) to construct transient module, and need model read to run transformation
@@ -124,7 +126,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
     // XXX shall it be CME to give access to module with checkpoint models? Is there better way to find out cpModel?
 
     SModule checkpointModule = tmProvider.getCheckpointsModule();
-    final SModelName cpModelName = CrossModelEnvironment.createCheckpointModelName(m.getReference(), new CheckpointIdentity(planIdentity, cp1));
+    final SModelName cpModelName = CrossModelEnvironment.createCheckpointModelName(m.getReference(), cp1.getIdentity());
     SModel cpModel = null;
     for (SModel trm : checkpointModule.getModels()) {
       if (cpModelName.equals(trm.getName())) {
@@ -152,18 +154,18 @@ public class CheckpointModelTest extends PlatformMpsTest {
     final SModelReference mr = PersistenceFacade.getInstance().createModelReference(
         "r:05c2f926-57b0-4b6d-930c-1aabb187694d(jetbrains.mps.generator.crossmodel.sandbox.entrymodel1)");
     final SModel m = resolve(mr);
-    final Checkpoint cp1 = new Checkpoint("aaa");
-    final Checkpoint cp2 = new Checkpoint("bbb");
+    final PlanIdentity planIdentity = new PlanIdentity(" test plan #2");
+    final Checkpoint cp1 = new Checkpoint(new CheckpointIdentity(planIdentity, "aaa"));
+    final Checkpoint cp2 = new Checkpoint(new CheckpointIdentity(planIdentity, "bbb"));
     ModelGenerationPlan plan = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<ModelGenerationPlan>() {
       @Override
       public ModelGenerationPlan compute() {
         final Transform step1 = new Transform(getCrossmodelEntityGenerators());
         final Transform step2 = new Transform(getCrossmodelPropertyGenerators());
         final Transform step3 = new Transform(getBaseLanguageGenerators());
-        return new RigidGenerationPlan(" test plan #2", step1, cp1, step2, cp2, step3);
+        return new RigidGenerationPlan(planIdentity, step1, cp1, step2, cp2, step3);
       }
     });
-    final PlanIdentity planIdentity = new PlanIdentity(plan);
     GenerationOptions opt = GenerationOptions.getDefaults().customPlan(m, plan).create();
     final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
     // write lock - see above #createModelWithOneCheckpoint
@@ -228,8 +230,9 @@ public class CheckpointModelTest extends PlatformMpsTest {
       SLanguage lang1 = MetaAdapterFactory.getLanguage(0xb2d9d19b9a4747a4L, 0x93f40c9390001bf2L, "jetbrains.mps.generator.test.xmodel.lang1");
       final Transform step1 = new Transform(getGenerators(lang1));
       final Transform step2 = new Transform(getBaseLanguageGenerators());
-      final Checkpoint cp1 = new Checkpoint("aaa");
-      ModelGenerationPlan plan =  new RigidGenerationPlan("test.plan.3", step1, cp1, step2);
+      final PlanIdentity planIdentity = new PlanIdentity("test.plan.3");
+      final Checkpoint cp1 = new Checkpoint(new CheckpointIdentity(planIdentity, "aaa"));
+      ModelGenerationPlan plan =  new RigidGenerationPlan(planIdentity, step1, cp1, step2);
       SModel m1 = resolve(mr1);
       OptionsBuilder optBuilder = GenerationOptions.getDefaults();
       GenerationOptions opt = optBuilder.customPlan(m1, plan).create();
@@ -274,7 +277,8 @@ public class CheckpointModelTest extends PlatformMpsTest {
     myErrors.checkThat(s1.getTransformations().isEmpty(), CoreMatchers.equalTo(false));
     myErrors.checkThat(s3.getTransformations().isEmpty(), CoreMatchers.equalTo(false));
     myErrors.checkThat(s2.getName(), CoreMatchers.equalTo("first"));
-    myErrors.checkThat(new PlanIdentity(plan).getPersistenceValue(), CoreMatchers.equalTo("plan_a"));
+    // XXX mgp.getIdentity, provided there's CP.getIdentity()?
+    myErrors.checkThat(s2.getIdentity().getPlan().getPersistenceValue(), CoreMatchers.equalTo("plan_a"));
   }
 
   @Test

@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.impl.plan.CheckpointIdentity;
-import jetbrains.mps.generator.impl.plan.PlanIdentity;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
+import jetbrains.mps.generator.plan.PlanIdentity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;

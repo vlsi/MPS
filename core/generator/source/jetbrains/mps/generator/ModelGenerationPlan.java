@@ -17,7 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.RuleManager;
 import jetbrains.mps.generator.impl.TemplateSwitchGraph;
-import jetbrains.mps.generator.impl.plan.CheckpointIdentity;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -68,21 +68,25 @@ public interface ModelGenerationPlan {
   }
 
   final class Checkpoint implements Step {
-    private final String myName;
     private final boolean mySynchOnly;
+    private final CheckpointIdentity myIdentity;
 
-    public Checkpoint(@NotNull String name) {
-      myName = name;
-      mySynchOnly = false;
+    public Checkpoint(@NotNull CheckpointIdentity cpIdentity) {
+      this(cpIdentity, false);
     }
 
     public Checkpoint(@NotNull CheckpointIdentity cpIdentity, boolean synchOnly) {
-      myName = cpIdentity.getPersistenceValue();
       mySynchOnly = synchOnly;
+      myIdentity = cpIdentity;
     }
 
     public String getName() {
-      return myName;
+      // FIXME I'm not sure I shall keep this method at all. Is it describe(), merely to present GP to user?
+      return myIdentity.getName();
+    }
+
+    public CheckpointIdentity getIdentity() {
+      return myIdentity;
     }
 
     /**
@@ -91,17 +95,6 @@ public interface ModelGenerationPlan {
      */
     public boolean isPersisted() {
       return !mySynchOnly;
-    }
-    // FIXME do I still need hashCode/equals when I can use CheckpointIdentity?
-
-    @Override
-    public int hashCode() {
-      return myName.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      return (obj instanceof Checkpoint) ? myName.equals(((Checkpoint) obj).myName) : false;
     }
   }
 

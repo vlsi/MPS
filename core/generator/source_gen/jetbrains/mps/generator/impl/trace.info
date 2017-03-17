@@ -654,7 +654,7 @@
       <node id="8655139756683645973" at="83,379,84,589" concept="4" />
       <node id="2214485068936824385" at="86,5,87,16" concept="11" />
       <node id="8655139756683700157" at="74,16,76,11" concept="0" />
-      <node id="2214485068936937487" at="39,0,42,0" concept="9" trace="getPlanIdentity#()Ljetbrains/mps/generator/impl/plan/PlanIdentity;" />
+      <node id="2214485068936937487" at="39,0,42,0" concept="9" trace="getPlanIdentity#()Ljetbrains/mps/generator/plan/PlanIdentity;" />
       <node id="2214485068936361163" at="55,209,58,9" concept="7" />
       <node id="2214485068936361260" at="67,72,70,11" concept="8" />
       <node id="2214485068936357454" at="34,0,38,0" concept="2" trace="GenPlanTranslator#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

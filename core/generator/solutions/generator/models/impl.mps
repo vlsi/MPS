@@ -34,6 +34,7 @@
     <import index="av9" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.cache(MPS.Core/)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="tft2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.plan(MPS.Core/)" />
+    <import index="cgca" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.plan(MPS.Core/)" />
     <import index="tp2b" ref="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -7226,8 +7227,8 @@
       <property role="TrG5h" value="myPlanIdentity" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="1UVrAZQpeAL" role="1B3o_S" />
-      <node concept="3uibUv" id="1UVrAZQpgcM" role="1tU5fm">
-        <ref role="3uigEE" to="tft2:~PlanIdentity" resolve="PlanIdentity" />
+      <node concept="3uibUv" id="6jZAaWYYm$Z" role="1tU5fm">
+        <ref role="3uigEE" to="cgca:~PlanIdentity" resolve="PlanIdentity" />
       </node>
     </node>
     <node concept="2tJIrI" id="1UVrAZQpd2b" role="jymVt" />
@@ -7249,7 +7250,7 @@
           <node concept="37vLTI" id="1UVrAZQp9_4" role="3clFbG">
             <node concept="2ShNRf" id="1UVrAZQna0_" role="37vLTx">
               <node concept="1pGfFk" id="1UVrAZQnapX" role="2ShVmc">
-                <ref role="37wK5l" to="tft2:~PlanIdentity.&lt;init&gt;(java.lang.String)" resolve="PlanIdentity" />
+                <ref role="37wK5l" to="cgca:~PlanIdentity.&lt;init&gt;(java.lang.String)" resolve="PlanIdentity" />
                 <node concept="2OqwBi" id="1UVrAZQnaCL" role="37wK5m">
                   <node concept="37vLTw" id="1UVrAZQnaqX" role="2Oq$k0">
                     <ref role="3cqZAo" node="1UVrAZQmUqz" resolve="myPlanDeclaration" />
@@ -7292,7 +7293,7 @@
       </node>
       <node concept="3Tm1VV" id="1UVrAZQp6rg" role="1B3o_S" />
       <node concept="3uibUv" id="1UVrAZQp7ZR" role="3clF45">
-        <ref role="3uigEE" to="tft2:~PlanIdentity" resolve="PlanIdentity" />
+        <ref role="3uigEE" to="cgca:~PlanIdentity" resolve="PlanIdentity" />
       </node>
     </node>
     <node concept="2tJIrI" id="1UVrAZQmUxz" role="jymVt" />
@@ -7352,10 +7353,10 @@
                       <ref role="3cqZAo" node="1UVrAZQmUB_" resolve="planBuilder" />
                     </node>
                     <node concept="liA8E" id="1UVrAZQn2VU" role="2OqNvi">
-                      <ref role="37wK5l" to="ap4t:~GenerationPlanBuilder.recordCheckpoint(jetbrains.mps.generator.impl.plan.CheckpointIdentity):void" resolve="recordCheckpoint" />
+                      <ref role="37wK5l" to="ap4t:~GenerationPlanBuilder.recordCheckpoint(jetbrains.mps.generator.plan.CheckpointIdentity):void" resolve="recordCheckpoint" />
                       <node concept="2ShNRf" id="1UVrAZQn2WK" role="37wK5m">
                         <node concept="1pGfFk" id="1UVrAZQn5hK" role="2ShVmc">
-                          <ref role="37wK5l" to="tft2:~CheckpointIdentity.&lt;init&gt;(jetbrains.mps.generator.impl.plan.PlanIdentity,java.lang.String)" resolve="CheckpointIdentity" />
+                          <ref role="37wK5l" to="cgca:~CheckpointIdentity.&lt;init&gt;(jetbrains.mps.generator.plan.PlanIdentity,java.lang.String)" resolve="CheckpointIdentity" />
                           <node concept="37vLTw" id="1UVrAZQpl3R" role="37wK5m">
                             <ref role="3cqZAo" node="1UVrAZQpeAK" resolve="myPlanIdentity" />
                           </node>
@@ -7779,13 +7780,13 @@
                         <ref role="3cqZAo" node="1UVrAZQmUB_" resolve="planBuilder" />
                       </node>
                       <node concept="liA8E" id="7wteW1Qvlgo" role="2OqNvi">
-                        <ref role="37wK5l" to="ap4t:~GenerationPlanBuilder.synchronizeWithCheckpoint(jetbrains.mps.generator.impl.plan.CheckpointIdentity):void" resolve="synchronizeWithCheckpoint" />
+                        <ref role="37wK5l" to="ap4t:~GenerationPlanBuilder.synchronizeWithCheckpoint(jetbrains.mps.generator.plan.CheckpointIdentity):void" resolve="synchronizeWithCheckpoint" />
                         <node concept="2ShNRf" id="7wteW1Qvlgp" role="37wK5m">
                           <node concept="1pGfFk" id="7wteW1Qvlgq" role="2ShVmc">
-                            <ref role="37wK5l" to="tft2:~CheckpointIdentity.&lt;init&gt;(jetbrains.mps.generator.impl.plan.PlanIdentity,java.lang.String)" resolve="CheckpointIdentity" />
+                            <ref role="37wK5l" to="cgca:~CheckpointIdentity.&lt;init&gt;(jetbrains.mps.generator.plan.PlanIdentity,java.lang.String)" resolve="CheckpointIdentity" />
                             <node concept="2ShNRf" id="7wteW1QvprD" role="37wK5m">
                               <node concept="1pGfFk" id="7wteW1QvrA7" role="2ShVmc">
-                                <ref role="37wK5l" to="tft2:~PlanIdentity.&lt;init&gt;(java.lang.String)" resolve="PlanIdentity" />
+                                <ref role="37wK5l" to="cgca:~PlanIdentity.&lt;init&gt;(java.lang.String)" resolve="PlanIdentity" />
                                 <node concept="2OqwBi" id="7wteW1Qvp4L" role="37wK5m">
                                   <node concept="1PxgMI" id="7wteW1QvoWE" role="2Oq$k0">
                                     <property role="1BlNFB" value="true" />

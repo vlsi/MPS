@@ -20,6 +20,8 @@ import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.ModelGenerationPlan.Step;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.RigidGenerationPlan;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
+import jetbrains.mps.generator.plan.PlanIdentity;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -106,7 +108,7 @@ public class RigidPlanBuilder implements GenerationPlanBuilder {
   @NotNull
   @Override
   public RigidGenerationPlan wrapUp(@NotNull PlanIdentity planIdentity) {
-    return new RigidGenerationPlan(planIdentity.getPersistenceValue(), mySteps);
+    return new RigidGenerationPlan(planIdentity, mySteps);
   }
 
   private static void fillMC(GeneratorRuntime gr, List<TemplateMappingConfiguration> mc) {

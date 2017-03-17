@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -568,16 +568,22 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private CheckpointState findMatchingStateFor(/*non-null*/SModel model) {
     CrossModelEnvironment env = getGeneratorSessionContext().getCrossModelEnvironment();
-    ModelCheckpoints modelHistory = env.getState(model, myPlanStep.getPlanIdentity());
-    if (modelHistory == null) {
-      return null;
-    }
     // last and next are not necessarily in immediately adjacent generation steps, i.e. cpLast, transfStep1, transfStep2, activeTransformStep, transfStep3, cpNext
     Checkpoint lastPoint = myPlanStep.getLastCheckpoint();
     // XXX alternatively, we can extract active checkpoint from TransitionTrace. Do we need both ways to get the value I don't care to use?
     //     Isn't it too complicated?
     Checkpoint targetPoint = myPlanStep.getNextCheckpoint();
-    return modelHistory.find(targetPoint);
+    if (targetPoint == null) {
+      // XXX can I do anything in this case?
+      return null;
+    }
+    // myPlanStep.getPlanIdentity() points to the plan in action; while we need that of target model
+    // which could be generated against different plan (although with a shared CP).
+    ModelCheckpoints modelHistory = env.getState(model, targetPoint.getIdentity().getPlan());
+    if (modelHistory == null) {
+      return null;
+    }
+    return modelHistory.find(targetPoint.getIdentity());
   }
 
   @Nullable
