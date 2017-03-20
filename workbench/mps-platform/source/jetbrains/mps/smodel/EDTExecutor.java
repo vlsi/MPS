@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.ModalityStateListener;
+import com.intellij.openapi.application.TransactionGuard;
+import com.intellij.openapi.application.impl.LaterInvocator;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.Project;
 import org.apache.log4j.LogManager;
@@ -25,8 +29,14 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TransferQueue;
 
-final class EDTExecutor {
+/**
+ * Asynchronous task scheduling MPS engine.
+ * Contract:
+ * #scheduleXXX tasks are executed in the order they are invoked
+ */
+final class EDTExecutor implements Disposable {
   private static final Logger LOG = LogManager.getLogger(EDTExecutor.class);
   private static final int MAX_EXECUTION_TIME_MS = 100;
 
@@ -36,7 +46,7 @@ final class EDTExecutor {
    */
   private final Object myLock = new Object();
 
-  private final Thread myExecutorThread;
+  private final ExecutorThread myExecutorThread;
   private final WorkbenchModelAccess myModelAccess;
 
   /* remove elements in EDT only */
@@ -47,6 +57,10 @@ final class EDTExecutor {
     myExecutorThread = new ExecutorThread();
     myExecutorThread.setDaemon(true);
     myExecutorThread.start();
+  }
+
+  @Override
+  public void dispose() {
   }
 
   void scheduleRead(@NotNull Runnable r) {
@@ -149,20 +163,13 @@ final class EDTExecutor {
     }
 
     /**
-     * Using ModalityState.any() here because there is one queue of model read/write tasks in MPS now (myTasks).
-     * myWorker runnable used to flush (a part of) this queue in AWT thread and, by design, we expect scheduled
-     * myWorker to be executed before we schedule next one.
+     * Using the transaction system to comply with the IDEA 'safe-write context' contract.
      *
-     * If current modality state was changed to more specific one (another modal dialog become visible) then scheduled
-     * myWorker will not be executed unless the state changed back, so task processing will be effectively frozen till
-     * the moment of modality state change.
-     *
-     * To avoid this situation, ModalityState.any() used here.
-     *
-     * [Alex Shatalin]
+     * We need to deal with the MPS model consistency problem on our own later.
+     * AP
      */
     private void executeLater() {
-      ApplicationManager.getApplication().invokeLater(this::execute, ModalityState.any());
+      TransactionGuard.submitTransaction(EDTExecutor.this, this::execute);
     }
 
     /**
@@ -173,6 +180,7 @@ final class EDTExecutor {
       if (!myExecutingFlag) {
         return;
       }
+
       try {
         long deadline = System.nanoTime() + TimeUnit.NANOSECONDS.convert(MAX_EXECUTION_TIME_MS, TimeUnit.MILLISECONDS);
 
