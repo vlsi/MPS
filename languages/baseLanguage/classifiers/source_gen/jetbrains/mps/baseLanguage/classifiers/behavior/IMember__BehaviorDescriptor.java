@@ -19,10 +19,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -35,12 +33,10 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<SAbstractConcept> getOperationSConcept_id6ALWH9g2jU8 = new SMethodBuilder<SAbstractConcept>(new SJavaCompoundTypeImpl((Class<SAbstractConcept>) ((Class) Object.class))).name("getOperationSConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ALWH9g2jU8").registry(REGISTRY).build();
   public static final SMethod<SNode> createOperation_idhEwIBCC = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("createOperation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIBCC").registry(REGISTRY).build();
   public static final SMethod<SNode> getContainer_idhEwIBCW = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getContainer").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIBCW").registry(REGISTRY).build();
-  public static final SMethod<Boolean> canBeReferent_id762MQfghnJQ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeReferent").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("762MQfghnJQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> canOperationBeChild_id3YYagzpL_8S = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canOperationBeChild").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3YYagzpL_8S").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<List<SNode>> getOperationConcept_id2D1PBM_bxJ5 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getOperationConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxJ5").registry(REGISTRY).build();
   public static final SMethod<List<SAbstractConcept>> getOperationSConcept_id6ALWH9g2mqE = new SMethodBuilder<List<SAbstractConcept>>(new SJavaCompoundTypeImpl((Class<List<SAbstractConcept>>) ((Class) Object.class))).name("getOperationSConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ALWH9g2mqE").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVisiblity_idhEwIBC5, getOperationSConcept_id6ALWH9g2jU8, createOperation_idhEwIBCC, getContainer_idhEwIBCW, canBeReferent_id762MQfghnJQ, canOperationBeChild_id3YYagzpL_8S, getOperationConcept_id2D1PBM_bxJ5, getOperationSConcept_id6ALWH9g2mqE);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVisiblity_idhEwIBC5, getOperationSConcept_id6ALWH9g2jU8, createOperation_idhEwIBCC, getContainer_idhEwIBCW, canOperationBeChild_id3YYagzpL_8S, getOperationSConcept_id6ALWH9g2mqE);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -59,25 +55,11 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static SNode getContainer_idhEwIBCW(@NotNull SNode __thisNode__) {
     return IClassifier__BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")), __thisNode__);
   }
-  @Deprecated
-  @ToRemove(version = 3.5)
-  /*package*/ static boolean canBeReferent_id762MQfghnJQ(@NotNull SNode __thisNode__, SNode referentConcept) {
-    return true;
-  }
   /*package*/ static boolean canOperationBeChild_id3YYagzpL_8S(@NotNull SNode __thisNode__, SNode parentNode) {
     return true;
   }
-  @Deprecated
-  @ToRemove(version = 3.5)
-  /*package*/ static List<SNode> getOperationConcept_id2D1PBM_bxJ5(@NotNull SAbstractConcept __thisConcept__) {
-    return ListSequence.fromList(new ArrayList<SNode>());
-  }
   /*package*/ static List<SAbstractConcept> getOperationSConcept_id6ALWH9g2mqE(@NotNull SAbstractConcept __thisConcept__) {
-    return ListSequence.fromList(IMember__BehaviorDescriptor.getOperationConcept_id2D1PBM_bxJ5.invoke(__thisConcept__)).select(new ISelector<SNode, SAbstractConcept>() {
-      public SAbstractConcept select(SNode it) {
-        return SNodeOperations.asSConcept(it);
-      }
-    }).toListSequence();
+    return ListSequence.fromList(new ArrayList<SAbstractConcept>());
   }
 
   /*package*/ IMember__BehaviorDescriptor() {
@@ -105,8 +87,6 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
       case 3:
         return (T) ((SNode) getContainer_idhEwIBCW(node));
       case 4:
-        return (T) ((Boolean) canBeReferent_id762MQfghnJQ(node, (SNode) parameters[0]));
-      case 5:
         return (T) ((Boolean) canOperationBeChild_id3YYagzpL_8S(node, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -120,9 +100,7 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 6:
-        return (T) ((List<SNode>) getOperationConcept_id2D1PBM_bxJ5(concept));
-      case 7:
+      case 5:
         return (T) ((List<SAbstractConcept>) getOperationSConcept_id6ALWH9g2mqE(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
