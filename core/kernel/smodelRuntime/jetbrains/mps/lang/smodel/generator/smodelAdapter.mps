@@ -2,10 +2,10 @@
 <model ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
@@ -11173,36 +11173,6 @@
         </node>
       </node>
     </node>
-    <node concept="2YIFZL" id="7E3Sw0Hokl$" role="jymVt">
-      <property role="TrG5h" value="asNode" />
-      <node concept="3clFbS" id="7E3Sw0Hokl_" role="3clF47">
-        <node concept="3cpWs6" id="7E3Sw0Hotqm" role="3cqZAp">
-          <node concept="37vLTw" id="7E3Sw0Hotvp" role="3cqZAk">
-            <ref role="3cqZAo" node="7E3Sw0HoklM" resolve="node" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="7E3Sw0HoklM" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3Tqbb2" id="7E3Sw0HoklN" role="1tU5fm">
-          <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="7E3Sw0HoklO" role="1B3o_S" />
-      <node concept="2AHcQZ" id="7E3Sw0HonNG" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="P$JXv" id="7E3Sw0Hoo4t" role="lGtFl">
-        <node concept="TZ5HA" id="7E3Sw0Hoo4u" role="TZ5H$">
-          <node concept="1dT_AC" id="7E3Sw0Hoo4v" role="1dT_Ay">
-            <property role="1dT_AB" value="this method is used where both concept and declaration should be acceptable" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="7E3Sw0HotZH" role="3clF45">
-        <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-      </node>
-    </node>
     <node concept="2YIFZL" id="7E3Sw0HoklQ" role="jymVt">
       <property role="TrG5h" value="asNode" />
       <property role="IEkAT" value="false" />
@@ -11312,46 +11282,6 @@
             <property role="1dT_AB" value="this method is used where both concept and declaration should be acceptable" />
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="2YIFZL" id="Det6sRbgCN" role="jymVt">
-      <property role="TrG5h" value="asInstanceConcept" />
-      <node concept="3clFbS" id="Det6sRbgCO" role="3clF47">
-        <node concept="3clFbJ" id="Det6sRbgCP" role="3cqZAp">
-          <node concept="3clFbS" id="Det6sRbgCQ" role="3clFbx">
-            <node concept="3cpWs6" id="Det6sRbgCR" role="3cqZAp">
-              <node concept="10Nm6u" id="Det6sRbgCS" role="3cqZAk" />
-            </node>
-          </node>
-          <node concept="3clFbC" id="Det6sRbgCT" role="3clFbw">
-            <node concept="10Nm6u" id="Det6sRbgCU" role="3uHU7w" />
-            <node concept="37vLTw" id="Det6sRbgCV" role="3uHU7B">
-              <ref role="3cqZAo" node="Det6sRbgD1" resolve="node" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="Det6sRbgCW" role="3cqZAp">
-          <node concept="2YIFZM" id="1Qk62llKQ99" role="3cqZAk">
-            <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
-            <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getInstanceConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SConcept" resolve="getInstanceConcept" />
-            <node concept="37vLTw" id="1Qk62llKQ9b" role="37wK5m">
-              <ref role="3cqZAo" node="Det6sRbgD1" resolve="node" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="Det6sRbgD1" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3Tqbb2" id="Det6sRbgD2" role="1tU5fm">
-          <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="Det6sRbgD3" role="1B3o_S" />
-      <node concept="3uibUv" id="Det6sRbjfa" role="3clF45">
-        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
-      </node>
-      <node concept="2AHcQZ" id="Det6sRbp4R" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="Det6sRbgD5" role="jymVt">

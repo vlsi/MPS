@@ -606,13 +606,6 @@ public class SNodeOperations {
     }
     return node;
   }
-  /**
-   * this method is used where both concept and declaration should be acceptable
-   */
-  @Deprecated
-  public static SNode asNode(SNode node) {
-    return node;
-  }
   public static SNode asNode(SAbstractConcept concept) {
     if (concept == null) {
       return null;
@@ -631,13 +624,6 @@ public class SNodeOperations {
   @Deprecated
   public static SAbstractConcept asSConcept(SAbstractConcept concept) {
     return concept;
-  }
-  @Deprecated
-  public static SConcept asInstanceConcept(SNode node) {
-    if (node == null) {
-      return null;
-    }
-    return MetaAdapterByDeclaration.getInstanceConcept(node);
   }
   public static SConcept asInstanceConcept(SAbstractConcept concept) {
     return MetaAdapterByDeclaration.asInstanceConcept(concept);
