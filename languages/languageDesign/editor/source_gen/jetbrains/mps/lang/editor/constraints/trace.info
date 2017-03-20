@@ -1454,63 +1454,35 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/3431328178503222335">
     <file name="MenuScopes.java">
-      <node id="3431328178503223966" at="23,116,24,113" concept="6" />
-      <node id="3431328178503223976" at="24,113,25,0" concept="9" />
-      <node id="3431328178503223977" at="25,0,26,106" concept="8" />
-      <node id="3431328178503223979" at="26,106,27,40" concept="8" />
-      <node id="3431328178503223982" at="27,40,28,264" concept="6" />
-      <node id="3431328178503223992" at="29,34,30,30" concept="7" />
-      <node id="3431328178503223998" at="31,5,32,0" concept="9" />
-      <node id="3431328178503224010" at="35,45,36,395" concept="7" />
-      <node id="4800149217631316513" at="41,119,42,113" concept="6" />
-      <node id="4800149217631316523" at="42,113,43,0" concept="9" />
-      <node id="4800149217631316524" at="43,0,44,106" concept="8" />
-      <node id="4800149217631316526" at="44,106,45,40" concept="8" />
-      <node id="4800149217631316529" at="45,40,46,236" concept="6" />
-      <node id="4800149217631316539" at="47,34,48,30" concept="7" />
-      <node id="4800149217631316545" at="49,5,50,0" concept="9" />
-      <node id="4800149217631316557" at="53,45,54,395" concept="7" />
-      <node id="3431328178503223990" at="28,264,31,5" concept="4" />
-      <node id="4800149217631316537" at="46,236,49,5" concept="4" />
-      <node id="3431328178503224004" at="34,0,38,0" concept="5" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="4800149217631316551" at="52,0,56,0" concept="5" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3431328178503223999" at="32,0,38,6" concept="7" />
-      <node id="4800149217631316546" at="50,0,56,6" concept="7" />
-      <node id="4800149217631316511" at="41,0,58,0" concept="11" trace="getNamedMenus#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;ILorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/scope/Scope;" />
-      <node id="3431328178503223940" at="22,0,40,0" concept="11" trace="getNamedMenus#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;ILorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/scope/Scope;" />
-      <scope id="3431328178503223991" at="29,34,30,30" />
-      <scope id="3431328178503224009" at="35,45,36,395" />
-      <scope id="4800149217631316538" at="47,34,48,30" />
-      <scope id="4800149217631316556" at="53,45,54,395" />
-      <scope id="3431328178503224004" at="34,0,38,0">
-        <var name="node" id="3431328178503224007" />
-      </scope>
-      <scope id="4800149217631316551" at="52,0,56,0">
+      <node id="4800149217631316513" at="17,119,18,113" concept="6" />
+      <node id="4800149217631316523" at="18,113,19,0" concept="9" />
+      <node id="4800149217631316524" at="19,0,20,106" concept="8" />
+      <node id="4800149217631316526" at="20,106,21,40" concept="8" />
+      <node id="4800149217631316529" at="21,40,22,236" concept="6" />
+      <node id="4800149217631316539" at="23,34,24,30" concept="7" />
+      <node id="4800149217631316545" at="25,5,26,0" concept="9" />
+      <node id="4800149217631316557" at="29,45,30,395" concept="7" />
+      <node id="4800149217631316537" at="22,236,25,5" concept="4" />
+      <node id="4800149217631316551" at="28,0,32,0" concept="5" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="4800149217631316546" at="26,0,32,6" concept="7" />
+      <node id="4800149217631316511" at="17,0,34,0" concept="11" trace="getNamedMenus#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;ILorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/scope/Scope;" />
+      <scope id="4800149217631316538" at="23,34,24,30" />
+      <scope id="4800149217631316556" at="29,45,30,395" />
+      <scope id="4800149217631316551" at="28,0,32,0">
         <var name="node" id="4800149217631316554" />
       </scope>
-      <scope id="3431328178503223943" at="23,116,38,6">
-        <var name="allNamedMenus" id="3431328178503223967" />
-        <var name="allowedConcepts" id="3431328178503223983" />
-      </scope>
-      <scope id="4800149217631316512" at="41,119,56,6">
+      <scope id="4800149217631316512" at="17,119,32,6">
         <var name="allNamedMenus" id="4800149217631316514" />
         <var name="allowedConcepts" id="4800149217631316530" />
       </scope>
-      <scope id="4800149217631316511" at="41,0,58,0">
+      <scope id="4800149217631316511" at="17,0,34,0">
         <var name="concept" id="4800149217631316577" />
         <var name="contextNode" id="4800149217631316571" />
         <var name="link" id="4800149217631316573" />
         <var name="position" id="4800149217631316575" />
       </scope>
-      <scope id="3431328178503223940" at="22,0,40,0">
-        <var name="concept" id="1630016958697348943" />
-        <var name="contextNode" id="3431328178503225260" />
-        <var name="contextRole" id="3431328178503227467" />
-        <var name="position" id="3431328178503228332" />
-      </scope>
-      <unit id="3431328178503224002" at="33,15,38,5" name="jetbrains.mps.lang.editor.constraints.MenuScopes$1" />
-      <unit id="4800149217631316549" at="51,15,56,5" name="jetbrains.mps.lang.editor.constraints.MenuScopes$2" />
-      <unit id="3431328178503222335" at="16,0,60,0" name="jetbrains.mps.lang.editor.constraints.MenuScopes" />
+      <unit id="4800149217631316549" at="27,15,32,5" name="jetbrains.mps.lang.editor.constraints.MenuScopes$1" />
+      <unit id="3431328178503222335" at="16,0,36,0" name="jetbrains.mps.lang.editor.constraints.MenuScopes" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/4088952938557443050">
