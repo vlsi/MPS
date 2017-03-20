@@ -8,20 +8,20 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class MoveElementsUpFromCoumnSelection_Test extends BaseTransformationTest {
+public class MoveElementsDownFromColumnSelection_Test extends BaseTransformationTest {
   @Test
-  public void test_MoveElementsUpFromCoumnSelection() throws Throwable {
+  public void test_MoveElementsDownFromColumnSelection() throws Throwable {
     initTest("${mps_home}", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)");
-    runTest("jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsUpFromCoumnSelection_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsDownFromColumnSelection_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("2025581204008533739", "2025581204008533761");
-      invokeAction("jetbrains.mps.ide.editor.actions.SelectNext_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      initEditorComponent("2025581204008533797", "2025581204008533819");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
     }
   }
 }

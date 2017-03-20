@@ -22,18 +22,13 @@ import jetbrains.mps.tests.TestModule_internalCollections_test;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_closures_unittest;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_math_tests;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_regexp_unittest;
-import jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_test;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_tuples_test;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_unittest;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_build_tests;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_debugger_java_runtime_tests;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_generator_tests;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_kernel_tests;
-import jetbrains.mps.tests.TestModule_jetbrains_mps_lang_actions_test;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_forms_tests;
-import jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_multiple_tests;
-import jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_table_tests;
-import jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_tests;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_lang_extension_tests;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_lang_pattern_test;
 import jetbrains.mps.tests.TestModule_jetbrains_mps_lang_smodel_unittest;
@@ -65,18 +60,13 @@ import org.junit.runners.Suite;
                         TestModule_jetbrains_mps_baseLanguage_closures_unittest.class,
                         TestModule_jetbrains_mps_baseLanguage_math_tests.class,
                         TestModule_jetbrains_mps_baseLanguage_regexp_unittest.class,
-                        TestModule_jetbrains_mps_baseLanguage_test.class,
                         TestModule_jetbrains_mps_baseLanguage_tuples_test.class,
                         TestModule_jetbrains_mps_baseLanguage_unittest.class,
                         TestModule_jetbrains_mps_build_tests.class,
                         TestModule_jetbrains_mps_debugger_java_runtime_tests.class,
                         TestModule_jetbrains_mps_generator_tests.class,
                         TestModule_jetbrains_mps_kernel_tests.class,
-                        TestModule_jetbrains_mps_lang_actions_test.class,
                         TestModule_jetbrains_mps_lang_editor_forms_tests.class,
-                        TestModule_jetbrains_mps_lang_editor_multiple_tests.class,
-                        TestModule_jetbrains_mps_lang_editor_table_tests.class,
-                        TestModule_jetbrains_mps_lang_editor_tests.class,
                         TestModule_jetbrains_mps_lang_extension_tests.class,
                         TestModule_jetbrains_mps_lang_pattern_test.class,
                         TestModule_jetbrains_mps_lang_smodel_unittest.class,
