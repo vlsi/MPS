@@ -117,9 +117,24 @@
     <appender-ref ref="CONSOLE-INFO"/>
   </category>
 
+  <category name="jetbrains.mps.smodel.EDTExecutor" additivity="false">
+    <priority value="TRACE"/>
+    <appender-ref ref="CONSOLE-TRACE"/>
+  </category>
+
+  <category name="jetbrains.mps.smodel.EDTExecutorThread" additivity="false">
+    <priority value="TRACE"/>
+    <appender-ref ref="CONSOLE-TRACE"/>
+  </category>
+
+  <category name="jetbrains.mps.smodel.TaskScheduler" additivity="false">
+    <priority value="TRACE"/>
+    <appender-ref ref="CONSOLE-TRACE"/>
+  </category>
+
   <category name="#com.intellij" additivity="false">
-    <priority value="WARN"/>
-    <appender-ref ref="CONSOLE-WARN"/>
+    <priority value="INFO"/>
+    <appender-ref ref="CONSOLE-INFO"/>
     <appender-ref ref="DIALOG"/>
     <appender-ref ref="FILE"/>
   </category>

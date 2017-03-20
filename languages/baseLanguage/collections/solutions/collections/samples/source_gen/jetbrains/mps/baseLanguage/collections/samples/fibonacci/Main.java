@@ -7,7 +7,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class Main {
   public static void main(String[] args) {
     FibonacciSequence fib = new FibonacciSequence();
-    for (Integer num : Sequence.fromIterable(fib.numbers(100))) {
+    for (Integer num : Sequence.fromIterable(fib.numbers(102))) {
       System.out.println(num);
     }
   }

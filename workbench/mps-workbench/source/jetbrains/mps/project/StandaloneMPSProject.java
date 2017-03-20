@@ -132,7 +132,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   public final void update() {
     ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
     long beginTime = System.nanoTime();
-    LOG.info("Updating " + this);
+    LOG.info("Updating " + getName());
     try {
       if (progressIndicator != null) {
         progressIndicator.setText2("Loading Project Modules");
@@ -142,7 +142,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
         progressIndicator.setText2("");
       }
     } finally {
-      LOG.info(String.format("Updating %s took %.3f s", this, (System.nanoTime() - beginTime) / 1e9));
+      LOG.info(String.format("Updating %s took %.3f s", getName(), (System.nanoTime() - beginTime) / 1e9));
     }
   }
 

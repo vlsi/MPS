@@ -36,6 +36,11 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
  * Since the IDEA platform seems not to have any primitive #tryWrite to invoke
  * and we sometimes experience long reads (e.g. Highlighter) we are forced to
  * start a separate thread which waits for some time and then interrupts
+ *
+ * @author apyshkin
+ * @since 2017.2
+ *
+ * TODO request #tryLock method from the IDEA platform
  */
 @Immutable
 final class TryRunPlatformWriteHelper {

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.classloading;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.testbench.BaseMpsTest;
@@ -23,6 +25,9 @@ import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.apache.tools.ant.taskdefs.Exec;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.After;
 import org.junit.Assert;
@@ -58,7 +63,6 @@ public class DeploymentConcurrencyTest extends BaseMpsTest {
 //    myEnvironment.dispose(); cannot restart idea environment for now
   }
 
-
   @Test
   public void naiveConcurrencyTest() {
     ExecutorService pool = Executors.newFixedThreadPool(nThreads);
@@ -90,5 +94,30 @@ public class DeploymentConcurrencyTest extends BaseMpsTest {
       e.printStackTrace();
       Assert.fail();
     }
+  }
+
+  @Test
+  public void naiveConcurrencyTest2() {
+    MPSModuleRepository repo = myEnvironment.getPlatform().findComponent(MPSModuleRepository.class);
+    @NotNull ModelAccess modelAccess = repo.getModelAccess();
+    ExecutorService pool = Executors.newSingleThreadExecutor();
+    pool.execute(() -> modelAccess.runReadAction(() -> {
+      try {
+        System.out.println("read taken");
+        Thread.sleep(4000);
+      } catch (InterruptedException ignored) {
+        throw new RuntimeException(ignored);
+      }
+      System.out.println("read released");
+    }));
+    pool.execute(() -> jetbrains.mps.smodel.ModelAccess.instance().tryRead(() -> {
+      System.out.println("write taken");
+    }));
+    try {
+      pool.awaitTermination(10000, TimeUnit.SECONDS);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    myEnvironment.flushAllEvents();
   }
 }

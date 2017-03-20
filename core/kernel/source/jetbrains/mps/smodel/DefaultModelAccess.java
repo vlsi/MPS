@@ -211,12 +211,10 @@ class DefaultModelAccess extends ModelAccess {
     return runWriteAction(c);
   }
 
-  @Override
   public <T> T runWriteActionInCommand(Computable<T> c, Project project) {
     return runWriteAction(c);
   }
 
-  @Override
   public <T> T runWriteActionInCommand(Computable<T> c, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
     return runWriteAction(c);
   }
@@ -227,12 +225,10 @@ class DefaultModelAccess extends ModelAccess {
     runWriteAction(r);
   }
 
-  @Override
   public void runWriteActionInCommand(Runnable r, Project project) {
     runWriteAction(r);
   }
 
-  @Override
   public void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
     runWriteAction(r);
   }
