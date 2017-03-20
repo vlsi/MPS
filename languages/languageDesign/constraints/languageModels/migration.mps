@@ -2794,8 +2794,35 @@
       <node concept="3clFbS" id="30KOWJNTBXj" role="3clF47">
         <node concept="3clFbJ" id="30KOWJNUqqs" role="3cqZAp">
           <node concept="3clFbS" id="30KOWJNUqqu" role="3clFbx">
-            <node concept="3cpWs6" id="30KOWJNUrTV" role="3cqZAp">
-              <node concept="3clFbT" id="30KOWJNUsGb" role="3cqZAk">
+            <node concept="3clFbF" id="5B0zhDZfSUp" role="3cqZAp">
+              <node concept="1rXfSq" id="5B0zhDZfSUn" role="3clFbG">
+                <ref role="37wK5l" node="4atz$vTNPMV" resolve="addScopeModelImportIfMissing" />
+                <node concept="2OqwBi" id="5B0zhDZfU3S" role="37wK5m">
+                  <node concept="37vLTw" id="5B0zhDZfTSg" role="2Oq$k0">
+                    <ref role="3cqZAo" node="30KOWJNTGkm" resolve="expression" />
+                  </node>
+                  <node concept="I4A8Y" id="5B0zhDZfUi_" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="5B0zhDZfVir" role="3cqZAp">
+              <node concept="2OqwBi" id="5B0zhDZfvK8" role="3clFbG">
+                <node concept="37vLTw" id="5B0zhDZfuH3" role="2Oq$k0">
+                  <ref role="3cqZAo" node="30KOWJNTGkm" resolve="expression" />
+                </node>
+                <node concept="1P9Npp" id="5B0zhDZfwYH" role="2OqNvi">
+                  <node concept="2c44tf" id="5B0zhDZfxWd" role="1P9ThW">
+                    <node concept="2ShNRf" id="5B0zhDZfyRy" role="2c44tc">
+                      <node concept="1pGfFk" id="5B0zhDZfQMS" role="2ShVmc">
+                        <ref role="37wK5l" to="o8zo:7ipADkTfAzT" resolve="EmptyScope" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="5B0zhDZfY5J" role="3cqZAp">
+              <node concept="3clFbT" id="5B0zhDZfZUw" role="3cqZAk">
                 <property role="3clFbU" value="false" />
               </node>
             </node>
@@ -2829,7 +2856,7 @@
           <node concept="3clFbS" id="30KOWJNTMNw" role="3clFbx">
             <node concept="3clFbF" id="4atz$vTKLmY" role="3cqZAp">
               <node concept="1rXfSq" id="4atz$vTKLmW" role="3clFbG">
-                <ref role="37wK5l" node="4atz$vTNPMV" resolve="addListScopeModelImportIfMissing" />
+                <ref role="37wK5l" node="4atz$vTNPMV" resolve="addScopeModelImportIfMissing" />
                 <node concept="2OqwBi" id="4atz$vTKMzP" role="37wK5m">
                   <node concept="37vLTw" id="4atz$vTKMps" role="2Oq$k0">
                     <ref role="3cqZAo" node="30KOWJNTGkm" resolve="expression" />
@@ -2957,7 +2984,7 @@
     <node concept="Wx3nA" id="4atz$vTKCFc" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
-      <property role="TrG5h" value="modelRef_ListScope" />
+      <property role="TrG5h" value="modelRef_Scope" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="4atz$vTKBqA" role="1B3o_S" />
       <node concept="3uibUv" id="4atz$vTKDSq" role="1tU5fm">
@@ -2985,7 +3012,7 @@
     </node>
     <node concept="2tJIrI" id="36xJYoZGBbe" role="jymVt" />
     <node concept="2YIFZL" id="4atz$vTNPMV" role="jymVt">
-      <property role="TrG5h" value="addListScopeModelImportIfMissing" />
+      <property role="TrG5h" value="addScopeModelImportIfMissing" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <property role="2aFKle" value="false" />
@@ -3016,7 +3043,7 @@
             <node concept="liA8E" id="YMOU$DU4yH" role="2OqNvi">
               <ref role="37wK5l" to="z1c3:~ModelImporter.prepare(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="prepare" />
               <node concept="37vLTw" id="YMOU$DU4_z" role="37wK5m">
-                <ref role="3cqZAo" node="4atz$vTKCFc" resolve="modelRef_ListScope" />
+                <ref role="3cqZAo" node="4atz$vTKCFc" resolve="modelRef_Scope" />
               </node>
             </node>
           </node>
