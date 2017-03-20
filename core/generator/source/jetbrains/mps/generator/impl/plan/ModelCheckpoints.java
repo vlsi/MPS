@@ -16,6 +16,8 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
+import jetbrains.mps.generator.plan.PlanIdentity;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
@@ -73,7 +75,7 @@ public class ModelCheckpoints {
    */
   @Nullable
   public CheckpointState find(@NotNull Checkpoint targetPoint) {
-    return find(new CheckpointIdentity(myPlan, targetPoint));
+    return find(targetPoint.getIdentity());
   }
 
   @Nullable

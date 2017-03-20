@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,10 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.impl.plan;
+package jetbrains.mps.generator.plan;
 
-import jetbrains.mps.generator.ModelGenerationPlan;
-import jetbrains.mps.generator.RigidGenerationPlan;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -33,31 +31,34 @@ import org.jetbrains.annotations.NotNull;
  * @since 3.4
  */
 public final class PlanIdentity {
-  private String myId;
+  private String myName;
 
-  public PlanIdentity(String id) {
-    myId = id;
+  public PlanIdentity(@NotNull String name) {
+    // FIXME when GenPlanTranslator creates a PlanIdentity, it has human-readable name only.
+    myName = name;
   }
 
-  public PlanIdentity(ModelGenerationPlan planInstance) {
-    myId = planInstance instanceof RigidGenerationPlan ? toPersistenceValue(((RigidGenerationPlan) planInstance).getName()) : "default";
+  @NotNull
+  public String getName() {
+    return myName;
   }
 
   @NotNull
   public String getPersistenceValue() {
-    return myId;
+    return toPersistenceValue(myName);
   }
 
   @Override
   public int hashCode() {
-    return myId.hashCode();
+    return myName.hashCode();
   }
 
   @Override
   public boolean equals(Object o) {
-    return o instanceof PlanIdentity && ((PlanIdentity) o).myId.equals(myId);
+    return o instanceof PlanIdentity && ((PlanIdentity) o).myName.equals(myName);
   }
 
+  // inv: idempotent toPersistenceValue(X).equals(toPersistenceValue(toPersistenceValue(X))
   /*package*/ static String toPersistenceValue(String name) {
     final char[] rv = new char[name.length()];
     boolean modified = false;

@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.impl.plan.CheckpointIdentity;
-import jetbrains.mps.generator.impl.plan.PlanIdentity;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
+import jetbrains.mps.generator.plan.PlanIdentity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -39,23 +39,65 @@ import org.jetbrains.mps.openapi.module.SModule;
  * XXX it's not quite convenient to use varargs from smodel code (more suited for generated). Either introduce alternatives with collections or
  * consider intermediate step builder to fill one by one.
  *
+ * FIXME API is inconsistent as we reference languages using deployment identity ({@link SLanguage}), while for generators there are {@link SModule modules}.
+ *       There's no {@code SGenerator} counterpart, and use of GeneratorRuntime would imply use of LanguageRuntime instead of SLanguage, so I don't see any
+ *       better alternative at the moment.
+ *
  * @author Artem Tikhomirov
  * @since 2017.1
  */
 public interface GenerationPlanBuilder {
   void transformLanguage(@NotNull SLanguage ... languages);
-  void applyGenerator(@NotNull SModule ... generators);
-  void applyGeneratorWithExtended(@NotNull SModule generator);
+
   /**
-   * FIXME PROVISIONAL, use of impl.plan.CheckpointIdentity is not a nice idea
+   * Specified generators (exact set, inlike {@link #applyGeneratorWithExtended(SModule...)} no extended relation between generators is taken into account)
+   * applied as a single transformation step.
+   * @param generators generator modules
+   */
+  void applyGenerator(@NotNull SModule ... generators);
+
+  /**
+   * Specified generators and those extending them AND visible from scope applied as a single transformation step.
+   * PENDING: we may want to respect generator priority rules of involved generators to address extensibility scenarios like that of lang.editor here.
+   *   * What constitutes this 'scope' is up to plan builder implementation.
+   * @param generators generator modules
+   */
+  void applyGeneratorWithExtended(@NotNull SModule ... generators);
+
+  /**
+   * Tells generator there's a checkpoint identified certain way.
+   * Generally, we don't need to do anything about this when building a plan, as declaration of a CP doesn't affect anything and is merely
+   * an anchor {@linkplain #recordCheckpoint(CheckpointIdentity) record/persist} and {@linkplain #synchronizeWithCheckpoint(CheckpointIdentity) synchronize}
+   * actions could reference. Nevertheless, builder has a chance to react to CP declaration if deemed necessary.
+   *
+   * @param cp checkpoint identity
+   */
+  default void declareCheckpoint(@NotNull CheckpointIdentity cp) {
+    // no-op by default, CheckpointIdentity here is just an anchor other cp methods could use
+  }
+
+
+  /**
+   * Tells generator to record state of transformed model at the given moment and keep it with supplied identity.
+   * Besides, also tells generator to synchronize external references with models of the specified checkpoint.
+   *
+   * @param cp checkpoint identity
    */
   void recordCheckpoint(@NotNull CheckpointIdentity cp);
+
+  /**
+   * Tells generator to synchronize references with a recorded model state, identified by supplied checkpoint.
+   * State of the actual model being transformed is not recorded.
+   * @param cp checkpoint identity
+   */
   void synchronizeWithCheckpoint(@NotNull CheckpointIdentity cp);
 
   /**
-   * FIXME PROVISIONAL, use of impl.plan.PlanIdentity is not a nice idea
-   * XXX Besides, might be smarter to have smth like start(PlanIdentity) instead, so that GenPlanTranslator doesn't need to expose accessor
-   *     and client code would be more simple
+   * Completes {@link ModelGenerationPlan} instance with any state information build is aware of (e.g. build extends relation between
+   * generators for {@link #applyGeneratorWithExtended(SModule...) or respect priority rules of generators involved}
+   *
+   * @param planIdentity identity of the plan to build
+   * @return plan instance ready to use
    */
   @NotNull
   ModelGenerationPlan wrapUp(@NotNull PlanIdentity planIdentity);

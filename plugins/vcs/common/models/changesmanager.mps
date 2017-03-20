@@ -50,7 +50,6 @@
     <import index="iwsx" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileEditor(MPS.IDEA/)" />
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
     <import index="z1c4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
-    <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
     <import index="kip1" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.nodefs(MPS.Platform/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -9383,16 +9382,12 @@
               <node concept="3uibUv" id="4TP40u00Dz4" role="1tU5fm">
                 <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
               </node>
-              <node concept="2YIFZM" id="4TP40u010i4" role="33vP2m">
-                <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getLanguage(org.jetbrains.mps.openapi.module.SModuleReference):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
-                <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
-                <node concept="2OqwBi" id="4TP40u00WeU" role="37wK5m">
-                  <node concept="37vLTw" id="4TP40u00W1P" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2QnDi8QvcfQ" resolve="event" />
-                  </node>
-                  <node concept="liA8E" id="4TP40u00WBo" role="2OqNvi">
-                    <ref role="37wK5l" to="j9co:~SModelLanguageEvent.getLanguageNamespace():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getLanguageNamespace" />
-                  </node>
+              <node concept="2OqwBi" id="5NdtkQ0kCv6" role="33vP2m">
+                <node concept="37vLTw" id="5NdtkQ0kCeb" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2QnDi8QvcfQ" resolve="event" />
+                </node>
+                <node concept="liA8E" id="5NdtkQ0kO5j" role="2OqNvi">
+                  <ref role="37wK5l" to="j9co:~SModelLanguageEvent.getEventLanguage():org.jetbrains.mps.openapi.language.SLanguage" resolve="getEventLanguage" />
                 </node>
               </node>
             </node>

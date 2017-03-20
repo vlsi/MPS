@@ -18,9 +18,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.generator.GenerationOptions.OptionsBuilder;
 import jetbrains.mps.generator.impl.GenPlanTranslator;
 import jetbrains.mps.generator.impl.plan.EngagedGeneratorCollector;
-import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.generator.impl.plan.RegularPlanBuilder;
-import jetbrains.mps.generator.impl.plan.RigidPlanBuilder;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -29,6 +27,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -44,11 +43,11 @@ import java.util.Set;
  * @author Artem Tikhomirov
  * @since 3.4
  */
-public final class GenPlanExtractor {
+public final class GenPlanExtractor implements ModelGenerationPlan.Provider {
   private final SRepository myRepository;
   private final OptionsBuilder myOptions;
-  private final Map<SModule, CustomGenerationModuleFacet> myOwnerModuleToFacet = new HashMap<SModule, CustomGenerationModuleFacet>();
-  private final Set<SModule> myOwnerModulesNoCustomFacet = new HashSet<SModule>();
+  private final Map<SModule, ModelGenerationPlan.Provider> myOwnerModuleToFacet = new HashMap<>();
+  private final Set<SModule> myOwnerModulesNoCustomFacet = new HashSet<>();
   // null value indicates there's no plan associated with devkit (or the plan couldn't get instantiated).
   private final Map<SModuleReference, SModelReference> myDevkitToPlan = new HashMap<>();
 
@@ -74,19 +73,28 @@ public final class GenPlanExtractor {
   @Nullable
   private ModelGenerationPlan planFromCustomFacet(SModel model) {
     final SModule ownerModule = model.getModule();
-    final CustomGenerationModuleFacet facet = myOwnerModuleToFacet.get(ownerModule);
+    final ModelGenerationPlan.Provider facet = myOwnerModuleToFacet.get(ownerModule);
     if (facet != null) {
       return facet.getPlan(model);
     }
     if (!myOwnerModulesNoCustomFacet.contains(ownerModule)) {
       // ok, it's the first time we see the module
-      CustomGenerationModuleFacet f = ownerModule.getFacet(CustomGenerationModuleFacet.class);
+      ModelGenerationPlan.Provider f = fromModuleFacets(ownerModule);
       if (f != null) {
         myOwnerModuleToFacet.put(ownerModule, f);
         return f.getPlan(model);
       } else {
         myOwnerModulesNoCustomFacet.add(ownerModule);
         // fall-through
+      }
+    }
+    return null;
+  }
+
+  private static ModelGenerationPlan.Provider fromModuleFacets(SModule module) {
+    for (SModuleFacet mf : module.getFacets()) {
+      if (mf instanceof ModelGenerationPlan.Provider) {
+        return (ModelGenerationPlan.Provider) mf;
       }
     }
     return null;
@@ -108,7 +116,11 @@ public final class GenPlanExtractor {
         if (!(dkModule instanceof DevKit)) {
           continue;
         }
-        dkPlan = ((DevKit) dkModule).getModuleDescriptor().getAssociatedGenPlan();
+        DevKit devkit = (DevKit) dkModule;
+        if (devkit.getModuleDescriptor() == null) {
+          continue;
+        }
+        dkPlan = devkit.getModuleDescriptor().getAssociatedGenPlan();
       }
       if (dkPlan == null) {
         continue;
