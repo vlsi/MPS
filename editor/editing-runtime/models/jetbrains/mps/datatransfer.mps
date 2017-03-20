@@ -163,7 +163,6 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1180457458947" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts" flags="nn" index="3oJPKh" />
@@ -760,15 +759,8 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="4x7n4mFgSF" role="3clF47">
-        <node concept="3clFbJ" id="4x7n4mFWGJ" role="3cqZAp">
-          <node concept="3clFbS" id="4x7n4mFWGL" role="3clFbx">
-            <node concept="3cpWs6" id="4x7n4mFZAT" role="3cqZAp">
-              <node concept="3clFbT" id="4x7n4mFZCD" role="3cqZAk">
-                <property role="3clFbU" value="true" />
-              </node>
-            </node>
-          </node>
-          <node concept="3y3z36" id="4x7n4mFYBE" role="3clFbw">
+        <node concept="3cpWs6" id="11cLQV4zHEJ" role="3cqZAp">
+          <node concept="3y3z36" id="4x7n4mFYBE" role="3cqZAk">
             <node concept="1rXfSq" id="4x7n4mFjRm" role="3uHU7B">
               <ref role="37wK5l" node="4x7n4mEoRs" resolve="getPasteWrapper" />
               <node concept="2OqwBi" id="4x7n4mFlIX" role="37wK5m">
@@ -782,32 +774,6 @@
               </node>
             </node>
             <node concept="10Nm6u" id="4x7n4mFqYf" role="3uHU7w" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="4x7n4mFVGx" role="3cqZAp" />
-        <node concept="3SKdUt" id="4x7n4mFCs5" role="3cqZAp">
-          <node concept="3SKdUq" id="4x7n4mFCs7" role="3SKWNk">
-            <property role="3SKdUp" value="branch for legacy code interop. remove after 3.5" />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="11cLQV4zHEJ" role="3cqZAp">
-          <node concept="2OqwBi" id="11cLQV4zKKf" role="3cqZAk">
-            <node concept="2YIFZM" id="11cLQV4zJEh" role="2Oq$k0">
-              <ref role="1Pybhc" to="qzxn:~PasteWrappersManager" resolve="PasteWrappersManager" />
-              <ref role="37wK5l" to="qzxn:~PasteWrappersManager.getInstance():jetbrains.mps.datatransfer.PasteWrappersManager" resolve="getInstance" />
-            </node>
-            <node concept="liA8E" id="11cLQV4zLXp" role="2OqNvi">
-              <ref role="37wK5l" to="qzxn:~PasteWrappersManager.canWrapInto(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canWrapInto" />
-              <node concept="37vLTw" id="11cLQV4zMX6" role="37wK5m">
-                <ref role="3cqZAo" node="4x7n4mFhUB" resolve="node" />
-              </node>
-              <node concept="2OqwBi" id="11cLQV4zQ7e" role="37wK5m">
-                <node concept="37vLTw" id="11cLQV4zP1x" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4x7n4mFiPT" resolve="targetConcept" />
-                </node>
-                <node concept="FGMqu" id="11cLQV4zRl8" role="2OqNvi" />
-              </node>
-            </node>
           </node>
         </node>
       </node>
@@ -891,31 +857,8 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="4x7n4mGdnc" role="3cqZAp" />
-        <node concept="3SKdUt" id="4x7n4mGdpd" role="3cqZAp">
-          <node concept="3SKdUq" id="4x7n4mGdpe" role="3SKWNk">
-            <property role="3SKdUp" value="branch for legacy code interop. remove after 3.5" />
-          </node>
-        </node>
         <node concept="3cpWs6" id="11cLQV4$0i1" role="3cqZAp">
-          <node concept="2OqwBi" id="4x7n4mGdpg" role="3cqZAk">
-            <node concept="2YIFZM" id="4x7n4mGdph" role="2Oq$k0">
-              <ref role="1Pybhc" to="qzxn:~PasteWrappersManager" resolve="PasteWrappersManager" />
-              <ref role="37wK5l" to="qzxn:~PasteWrappersManager.getInstance():jetbrains.mps.datatransfer.PasteWrappersManager" resolve="getInstance" />
-            </node>
-            <node concept="liA8E" id="4x7n4mGdpi" role="2OqNvi">
-              <ref role="37wK5l" to="qzxn:~PasteWrappersManager.wrapInto(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="wrapInto" />
-              <node concept="37vLTw" id="4x7n4mGdpj" role="37wK5m">
-                <ref role="3cqZAo" node="4x7n4mG9QT" resolve="node" />
-              </node>
-              <node concept="2OqwBi" id="4x7n4mGdpk" role="37wK5m">
-                <node concept="37vLTw" id="4x7n4mGdpl" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4x7n4mGaP1" resolve="targetConcept" />
-                </node>
-                <node concept="FGMqu" id="4x7n4mGdpm" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
+          <node concept="10Nm6u" id="_otG0yHNxj" role="3cqZAk" />
         </node>
       </node>
       <node concept="3Tm1VV" id="4x7n4mG7CI" role="1B3o_S" />

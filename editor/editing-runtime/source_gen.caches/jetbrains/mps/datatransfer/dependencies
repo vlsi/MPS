@@ -7,7 +7,6 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.datatransfer.CopyPasteManager" />
-    <classNode dependClassName="jetbrains.mps.datatransfer.PasteWrappersManager" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />

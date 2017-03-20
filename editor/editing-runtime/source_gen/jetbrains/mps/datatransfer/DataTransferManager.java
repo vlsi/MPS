@@ -95,12 +95,7 @@ public final class DataTransferManager implements LanguageRegistryListener {
   }
 
   public boolean canWrapInto(SNode node, SAbstractConcept targetConcept) {
-    if (getPasteWrapper(SNodeOperations.getConcept(node), targetConcept) != null) {
-      return true;
-    }
-
-    // branch for legacy code interop. remove after 3.5 
-    return PasteWrappersManager.getInstance().canWrapInto(node, SNodeOperations.asNode(targetConcept));
+    return getPasteWrapper(SNodeOperations.getConcept(node), targetConcept) != null;
   }
 
   public SNode wrapInto(SNode node, SAbstractConcept targetConcept) {
@@ -111,9 +106,7 @@ public final class DataTransferManager implements LanguageRegistryListener {
       SNodeOperations.deleteNode(newNode);
       return newNode;
     }
-
-    // branch for legacy code interop. remove after 3.5 
-    return PasteWrappersManager.getInstance().wrapInto(node, SNodeOperations.asNode(targetConcept));
+    return null;
   }
 
   private CopyPreProcessor getCopyPreProcessor(SAbstractConcept concept) {
