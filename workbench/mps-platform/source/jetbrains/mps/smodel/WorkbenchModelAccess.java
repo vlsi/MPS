@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.command.CommandProcessor;
@@ -28,6 +27,7 @@ import com.intellij.openapi.progress.util.ProgressWindow;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.undo.DefaultUndoContext;
 import jetbrains.mps.smodel.undo.UndoContext;
@@ -37,15 +37,14 @@ import jetbrains.mps.util.Reference;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.DelayQueue;
-import java.util.concurrent.Delayed;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
+import static java.math.BigDecimal.valueOf;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 /**
@@ -53,42 +52,24 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
  * We always first acquire IDEA's lock and only then acquire MPS's lock
  */
 public final class WorkbenchModelAccess extends ModelAccess implements Disposable, ApplicationComponent {
-  private static final int WAIT_FOR_WRITE_LOCK_MILLIS = 200;
   private static final int REQUIRE_MAX_TRIES = 8;
+  private static final int WAIT_FOR_WRITE_LOCK_MILLIS = 200;
+  private static final String IDEA_WRITE_LOCK_FAIL = "Failed to acquire the IDEA write lock after having waited for %.3f s";
+  private static final String WRITE_LOCK_FAIL = "Failed to acquire write lock after having waited for %.3f s";
 
-  private final AtomicInteger myWritesScheduled = new AtomicInteger();
-  private final EDTExecutor myEDTExecutor = new EDTExecutor(this);
-  private final DelayQueue<DelayedInterrupt> myInterruptQueue = new DelayQueue<DelayedInterrupt>();
-  private final Thread myInterruptingThread = new Thread(() -> {
-    while (true) {
-      try {
-        DelayedInterrupt di = myInterruptQueue.take();
-        di.timeIsUp();
-      } catch (InterruptedException e) {
-        Application app = ApplicationManager.getApplication();
-        if (app == null || app.isDisposeInProgress() || app.isDisposed()) {
-          return;
-        }
-      }
-    }
-  }, "MPS interrupting thread");
+  private final EDTExecutor myEDTExecutor = new EDTExecutor();
+  private final WriteActionTracker myWriteActionTracker;
+  private final TryRunPlatformWriteHelper myTryPlatformWriteHelper;
 
   protected WorkbenchModelAccess() {
-    myInterruptingThread.start();
+    myWriteActionTracker = new WriteActionTracker();
+    myTryPlatformWriteHelper = new TryRunPlatformWriteHelper(myWriteActionTracker);
   }
 
   @Override
   public void dispose() {
     myEDTExecutor.dispose();
-    for (int attempt = 3; attempt > 0 && myInterruptingThread.isAlive(); --attempt) {
-      myInterruptingThread.interrupt();
-      try {
-        myInterruptingThread.join(500);
-      } catch (InterruptedException e) {
-        break;
-      }
-    }
-    super.dispose();
+    myTryPlatformWriteHelper.dispose();
   }
 
   @Override
@@ -97,15 +78,12 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       r.run();
       return;
     }
-    ApplicationManager.getApplication().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        getReadLock().lock();
-        try {
-          r.run();
-        } finally {
-          getReadLock().unlock();
-        }
+    ApplicationManager.getApplication().runReadAction(() -> {
+      getReadLock().lock();
+      try {
+        r.run();
+      } finally {
+        getReadLock().unlock();
       }
     });
   }
@@ -115,7 +93,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     if (canRead()) {
       return c.compute();
     }
-    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    ComputeRunnable<T> r = new ComputeRunnable<>(c);
     runReadAction(r);
     return r.getResult();
   }
@@ -127,24 +105,21 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       return;
     }
     assertNotWriteFromRead();
-    Runnable runnable = new Runnable() {
-      @Override
-      public void run() {
-        getWriteLock().lock();
-        try {
-          clearRepositoryStateCaches();
-          myWriteActionDispatcher.run(r);
-        } finally {
-          getWriteLock().unlock();
-        }
+    Runnable runnable = () -> {
+      getWriteLock().lock();
+      try {
+        clearRepositoryStateCaches();
+        myWriteActionDispatcher.run(r);
+      } finally {
+        getWriteLock().unlock();
       }
     };
     if (isInEDT()) {
       try {
-        myWritesScheduled.incrementAndGet();
+        myWriteActionTracker.writeActionScheduled();
         ApplicationManager.getApplication().runWriteAction(runnable);
       } finally {
-        myWritesScheduled.decrementAndGet();
+        myWriteActionTracker.writeActionProcessed();
       }
     } else {
       ApplicationManager.getApplication().runReadAction(runnable);
@@ -157,7 +132,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       return c.compute();
     }
     assertNotWriteFromRead();
-    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    ComputeRunnable<T> r = new ComputeRunnable<>(c);
     runWriteAction(r);
     return r.getResult();
   }
@@ -182,17 +157,17 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
   @Override
   public void runReadInEDT(Runnable r) {
-    myEDTExecutor.scheduleRead(r);
+    myEDTExecutor.scheduleRead(() -> tryRead(r));
   }
 
   @Override
   public void runWriteInEDT(Runnable r) {
-    myEDTExecutor.scheduleWrite(r);
+    myEDTExecutor.scheduleWrite(() -> tryWrite(r));
   }
 
   @Override
-  public void runCommandInEDT(@NotNull Runnable r, @NotNull Project p) {
-    myEDTExecutor.scheduleCommand(r, p);
+  public void runCommandInEDT(@NotNull Runnable r, @NotNull Project project) {
+    myEDTExecutor.scheduleCommand(() -> tryWriteInCommand(r, (MPSProject) project), project);
   }
 
   @Override
@@ -227,47 +202,14 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       return c.compute();
     }
 
-    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    ComputeRunnable<T> r = new ComputeRunnable<>(c);
     if (tryRead(r)) {
       return r.getResult();
     }
     return null;
   }
 
-  @Override
-  public void requireRead(Runnable r) {
-    int i;
-    long start;
-    long waited;
-    do {
-      start = System.currentTimeMillis();
-      for (i = 0; i < REQUIRE_MAX_TRIES && !tryRead(r); ++i) {
-        try {
-          Thread.sleep((1 << i) * 100);
-        } catch (InterruptedException ignore) {
-        }
-      }
-      waited = System.currentTimeMillis() - start;
-    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
-
-    if (i >= REQUIRE_MAX_TRIES) {
-      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for " + waited + "ms");
-    }
-  }
-
-  @Override
-  public <T> T requireRead(Computable<T> c) {
-    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
-    requireRead(r);
-    return r.getResult();
-  }
-
-  @Override
-  public boolean tryWrite(final Runnable r) {
-    if (canWrite()) {
-      r.run();
-      return true;
-    }
+  private boolean tryWrite(final Runnable r) {
     Computable<Boolean> c = () -> {
       r.run();
       return true;
@@ -277,8 +219,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   }
 
 
-  @Override
-  public <T> T tryWrite(final Computable<T> c) {
+  private <T> T tryWrite(final Computable<T> c) {
     if (canWrite()) {
       return c.compute();
     }
@@ -297,75 +238,110 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
           return null;
         }
       } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        LOG.error("Interrupted while trying to access the MPS write lock", e);
         return null;
       }
     };
 
     if (isInEDT()) {
-      return new TryWriteActionComputable<T>(computable).compute();
+      TaskTimer taskTimer = new TaskTimer();
+      taskTimer.start();
+      try {
+        return myTryPlatformWriteHelper.tryWrite(computable);
+      } catch (WriteTimeOutException e) {
+        throw new TimeOutRuntimeException(String.format(IDEA_WRITE_LOCK_FAIL, taskTimer.secondsElapsed()), e);
+      }
     } else {
       return ApplicationManager.getApplication().runReadAction(computable);
     }
   }
 
-  @Override
-  public void requireWrite(Runnable r) {
-    int i;
-    long start;
-    long waited;
-    do {
-      start = System.currentTimeMillis();
-      for (i = 0; i < REQUIRE_MAX_TRIES && !tryWrite(r); ++i) {
-        try {
-          Thread.sleep((1 << i) * 100);
-        } catch (InterruptedException ignore) {
-        }
-      }
-      waited = System.currentTimeMillis() - start;
-    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
+  /**
+   * not thread-safe
+   */
+  private static final class TaskTimer {
+    private long myStartNanos;
 
-    if (i >= REQUIRE_MAX_TRIES) {
-      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for " + waited + "ms");
+    public void start() {
+      myStartNanos = System.nanoTime();
+    }
+
+
+    BigDecimal secondsElapsed() {
+      return valueOf(System.nanoTime())
+                 .subtract(valueOf(myStartNanos))
+                 .divide(valueOf(1e9), BigDecimal.ROUND_DOWN);
     }
   }
 
   @Override
-  public <T> T requireWrite(Computable<T> c) {
-    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
-    requireWrite(r);
-    return r.getResult();
+  public void requireWrite(Runnable r) {
+    TaskTimer taskTimer = new TaskTimer();
+    taskTimer.start();
+    boolean done = false;
+    while (!done) {
+      for (int attempt = 0; attempt < REQUIRE_MAX_TRIES; ++attempt) {
+        boolean success = tryWrite(r);
+        done |= success; // done if succeeded
+        done |= sleep(attempt); // done if interrupted while sleeping
+      }
+      if (!done) {
+        askUserForProceeding(taskTimer);
+      }
+    }
   }
 
-  @Override
-  public boolean tryWriteInCommand(final Runnable r, @Nullable Project p) {
+  /**
+   * @return true iff interrupted
+   */
+  private boolean sleep(int attempt) {
+    try {
+      Thread.sleep((1 << attempt) * 100);
+    } catch (InterruptedException ie) {
+      Thread.currentThread().interrupt();
+      LOG.error("Interrupted while trying to access the MPS write lock", ie);
+      return true;
+    }
+    return false;
+  }
+
+  private void askUserForProceeding(TaskTimer timer) {
+    boolean cancelAction = confirmActionCancellation();
+    if (!cancelAction) {
+      throw new TimeOutRuntimeException(String.format(WRITE_LOCK_FAIL, timer.secondsElapsed()));
+    }
+  }
+
+  private boolean tryWriteInCommand(final Runnable r, @NotNull final MPSProject project) {
     ApplicationManager.getApplication().assertIsDispatchThread();
 
-    final Reference<Boolean> result = new Reference<>(false);
-
-    final Project project = p != null ? p : CurrentProjectAccessUtil.getMPSProjectFromUI();
-
-    Runnable commandRunnable = () -> {
-      try {
-        if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-          try {
-            clearRepositoryStateCaches();
-            myWriteActionDispatcher.run(new CommandRunnable(r, project));
-          } finally {
-            getWriteLock().unlock();
+    Reference<Boolean> lockGranted = new Reference<>();
+    com.intellij.openapi.project.Project ideaProject = project.getProject();
+    TaskTimer taskTimer = new TaskTimer();
+    try {
+      myTryPlatformWriteHelper.tryCommand(ideaProject, () -> {
+        try {
+          if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
+            try {
+              clearRepositoryStateCaches();
+              myWriteActionDispatcher.run(new CommandRunnable(() -> {
+                r.run();
+                lockGranted.set(true);
+              }, project));
+            } finally {
+              getWriteLock().unlock();
+            }
           }
+        } catch (InterruptedException ie) {
+          Thread.currentThread().interrupt();
+          LOG.error("Interrupted while trying to access the MPS write lock", ie);
         }
-      } catch (InterruptedException e) {
-        return;
-      }
-      result.set(true);
-    };
-
-    CommandProcessor.getInstance().executeCommand(
-        ProjectHelper.toIdeaProject(project),
-        new TryWriteActionRunnable(commandRunnable),
-        "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
-
-    return result.get();
+      });
+    } catch (WriteTimeOutException e) {
+      throw new TimeOutRuntimeException(String.format(IDEA_WRITE_LOCK_FAIL, taskTimer.secondsElapsed()), e);
+    }
+    return lockGranted.get();
   }
 
   @Override
@@ -373,7 +349,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     if (project == null) {
       project = CurrentProjectAccessUtil.getMPSProjectFromUI();
     }
-    String name = "", groupId = null;
+    String name = "MPS Execute Command", groupId = null;
     boolean confirmUndo = false;
     if (r instanceof UndoRunnable) {
       UndoRunnable ur = (UndoRunnable) r;
@@ -390,7 +366,6 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     return runWriteActionInCommand(c, CurrentProjectAccessUtil.getMPSProjectFromUI());
   }
 
-  @Override
   public <T> T runWriteActionInCommand(Computable<T> c, Project project) {
     if (project == null) {
       project = CurrentProjectAccessUtil.getMPSProjectFromUI();
@@ -398,9 +373,8 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     return runWriteActionInCommand(c, null, null, false, project);
   }
 
-  @Override
   public <T> T runWriteActionInCommand(Computable<T> c, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
-    final ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    final ComputeRunnable<T> r = new ComputeRunnable<>(c);
     runWriteActionInCommand(r, name, groupId, requestUndoConfirmation, project);
     return r.getResult();
   }
@@ -411,15 +385,15 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     runWriteActionInCommand(r, CurrentProjectAccessUtil.getMPSProjectFromUI());
   }
 
-  @Override
   public void runWriteActionInCommand(Runnable r, Project project) {
     executeCommand(r, project);
   }
 
-  @Override
   public void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
-    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new CommandRunnable(r, project), name, groupId,
-        requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project),
+                                                  new CommandRunnable(r, project), name, groupId,
+                                                  requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION
+                                                                          : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
   @Override
@@ -457,7 +431,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
   @Override
   public boolean hasScheduledWrites() {
-    return myWritesScheduled.get() > 0 || super.hasScheduledWrites();
+    return myWriteActionTracker.hasScheduledWrites() || super.hasScheduledWrites();
   }
 
   private boolean confirmActionCancellation() {
@@ -467,23 +441,21 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
     final int[] chosen = new int[1];
     final ProgressIndicator pi = ProgressManager.getInstance().getProgressIndicator();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      @Override
-      public void run() {
-        if (pi instanceof ProgressWindow && !((ProgressWindow) pi).isBackgrounded()) {
-          ((ProgressWindow) pi).background();
-        }
-
-        chosen[0] = Messages.showYesNoDialog("The current action is taking too long, do you want to abort it?", "Unresponsive Process", null);
+    //noinspection ThrowableResultOfMethodCallIgnored
+    ThreadUtils.runInUIThreadAndWait(() -> {
+      if (pi instanceof ProgressWindow && !((ProgressWindow) pi).isBackgrounded()) {
+        ((ProgressWindow) pi).background();
       }
+
+      chosen[0] = Messages.showYesNoDialog("The current action is taking too long, do you want to abort it?", "Unresponsive Process", null);
     });
 
-    return chosen[0] == 0;
+    return chosen[0] == Messages.YES;
   }
 
   //--------command events listening
 
-  private List<CommandListener> myListeners = new ArrayList<CommandListener>();
+  private List<CommandListener> myListeners = new ArrayList<>();
   private final Object myListenersLock = new Object();
 
   private int myCommandLevel = 0;
@@ -533,7 +505,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     super.onCommandStarted();
     ArrayList<CommandListener> listeners;
     synchronized (myListenersLock) {
-      listeners = new ArrayList<CommandListener>(myListeners);
+      listeners = new ArrayList<>(myListeners);
     }
 
     for (CommandListener l : listeners) {
@@ -580,136 +552,26 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     return getClass().getSimpleName();
   }
 
-  private class CommandRunnable implements Runnable {
+  @Immutable
+  private final class CommandRunnable implements Runnable {
     private final Runnable myRunnable;
     private final Project myProject;
 
-    public CommandRunnable(Runnable r, Project project) {
+    CommandRunnable(Runnable r, Project project) {
       myRunnable = r;
       myProject = project;
     }
 
     @Override
     public void run() {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        @Override
-        public void run() {
-          incCommandLevel(myRunnable);
-          try {
-            myRunnable.run();
-          } finally {
-            decCommandLevel(myProject);
-          }
+      ModelAccess.instance().runWriteAction(() -> {
+        incCommandLevel(myRunnable);
+        try {
+          myRunnable.run();
+        } finally {
+          decCommandLevel(myProject);
         }
       });
     }
   }
-
-  private class TryWriteActionRunnable implements Runnable {
-    private final Runnable myRunnable;
-
-    public TryWriteActionRunnable(Runnable runnable) {
-      myRunnable = runnable;
-    }
-
-    @Override
-    public void run() {
-      // workaround for IDEA's locks shortcoming: timeout on write action
-      Thread.interrupted();
-      final DelayedInterrupt delayedInterrupt = interruptLater(Thread.currentThread(), WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS);
-      try {
-        myWritesScheduled.incrementAndGet();
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            cancelInterrupt(delayedInterrupt);
-            myRunnable.run();
-          }
-        });
-      } catch (RuntimeException re) {
-        while (re.getCause() instanceof RuntimeException) {
-          re = (RuntimeException) re.getCause();
-        }
-        if (!(re.getCause() instanceof InterruptedException)) {
-          throw re;
-        }
-        cancelInterrupt(delayedInterrupt);
-      } finally {
-        myWritesScheduled.decrementAndGet();
-      }
-    }
-  }
-
-  private class TryWriteActionComputable<T> implements Computable<T> {
-
-    private final com.intellij.openapi.util.Computable<T> myComputable;
-
-    public TryWriteActionComputable(com.intellij.openapi.util.Computable<T> computable) {
-      myComputable = computable;
-    }
-
-    @Override
-    public T compute() {
-      // workaround for IDEA's locks shortcoming: timeout on write action
-      Thread.interrupted();
-      final DelayedInterrupt delayedInterrupt = interruptLater(Thread.currentThread(), WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS);
-      try {
-        myWritesScheduled.incrementAndGet();
-        return ApplicationManager.getApplication().runWriteAction(new com.intellij.openapi.util.Computable<T>() {
-          @Override
-          public T compute() {
-            cancelInterrupt(delayedInterrupt);
-            return myComputable.compute();
-          }
-        });
-      } catch (RuntimeException re) {
-        while (re.getCause() instanceof RuntimeException) {
-          re = (RuntimeException) re.getCause();
-        }
-        if (!(re.getCause() instanceof InterruptedException)) {
-          throw re;
-        }
-        cancelInterrupt(delayedInterrupt);
-        return null;
-      } finally {
-        myWritesScheduled.decrementAndGet();
-      }
-    }
-  }
-
-  private void cancelInterrupt(DelayedInterrupt di) {
-    myInterruptQueue.remove(di);
-  }
-
-  private DelayedInterrupt interruptLater(Thread toInterrupt, long delay, TimeUnit unit) {
-    DelayedInterrupt di = new DelayedInterrupt(toInterrupt, delay, unit);
-    myInterruptQueue.put(di);
-    return di;
-  }
-
-  private static class DelayedInterrupt implements Delayed {
-    private final long myAlarmTimeMillis;
-    private final Thread myToInterrupt;
-
-    private DelayedInterrupt(@NotNull Thread toInterrupt, long delay, TimeUnit unit) {
-      myToInterrupt = toInterrupt;
-      myAlarmTimeMillis = System.currentTimeMillis() + unit.toMillis(delay);
-    }
-
-    private void timeIsUp() {
-      myToInterrupt.interrupt();
-    }
-
-    @Override
-    public long getDelay(@NotNull TimeUnit unit) {
-      return unit.convert(myAlarmTimeMillis - System.currentTimeMillis(), TimeUnit.MILLISECONDS);
-    }
-
-    @Override
-    public int compareTo(@NotNull Delayed that) {
-      if (!(that instanceof DelayedInterrupt)) throw new ClassCastException();
-      return (int) (this.myAlarmTimeMillis - ((DelayedInterrupt) that).myAlarmTimeMillis);
-    }
-  }
-
 }

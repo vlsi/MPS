@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,23 +15,20 @@
  */
 package jetbrains.mps.smodel;
 
-/**
- * fyodor, 6/8/11
- */
-public class TimeOutRuntimeException extends RuntimeException {
-  public TimeOutRuntimeException() {
-    super();
+import java.util.concurrent.atomic.AtomicInteger;
+
+final class WriteActionTracker {
+  private final AtomicInteger myWritesScheduled = new AtomicInteger();
+
+  void writeActionScheduled() {
+    myWritesScheduled.incrementAndGet();
   }
 
-  public TimeOutRuntimeException(String message) {
-    super(message);
+  void writeActionProcessed() {
+    myWritesScheduled.decrementAndGet();
   }
 
-  public TimeOutRuntimeException(String message, Throwable cause) {
-    super(message, cause);
-  }
-
-  public TimeOutRuntimeException(Throwable cause) {
-    super(cause);
+  boolean hasScheduledWrites() {
+    return myWritesScheduled.get() > 0;
   }
 }

@@ -226,14 +226,11 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
     myRepositoryStateCaches.clear();
   }
 
-  public void dispose() {
-  }
-
   /**
    * @deprecated use {@link org.jetbrains.mps.openapi.module.ModelAccess#addWriteActionListener}
    */
   @Deprecated
-  public void addWriteActionListener(WriteActionListener listener) {
+  public void addWriteActionListener(@NotNull WriteActionListener listener) {
     myWriteActionDispatcher.addWriteActionListener(listener);
   }
 
@@ -241,7 +238,7 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
    * @deprecated use {@link org.jetbrains.mps.openapi.module.ModelAccess#removeWriteActionListener}
    */
   @Deprecated
-  public void removeWriteActionListener(WriteActionListener listener) {
+  public void removeWriteActionListener(@NotNull WriteActionListener listener) {
     myWriteActionDispatcher.removeWriteActionListener(listener);
   }
 

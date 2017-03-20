@@ -27,13 +27,13 @@ import java.util.Map;
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
-public class DefaultModelAccess extends ModelAccess {
+class DefaultModelAccess extends ModelAccess {
   /**
    * write action is the same as command; storing a map from command listener clients to the actual write action listeners
    */
-  private final Map<CommandListener, CommandWriteActionAdapter> myAdaptersMap = new HashMap<CommandListener, CommandWriteActionAdapter>();
+  private final Map<CommandListener, CommandWriteActionAdapter> myAdaptersMap = new HashMap<>();
 
-  public DefaultModelAccess() {
+  DefaultModelAccess() {
   }
 
   @Override
@@ -158,39 +158,6 @@ public class DefaultModelAccess extends ModelAccess {
     }
   }
 
-  @Override
-  public void requireRead(Runnable r) {
-    int i;
-    int MAX_TRIES = 4;
-    for (i = 0; i < MAX_TRIES && !tryRead(r); ++i) {
-      try {
-        Thread.sleep((1 << i) * 100);
-      } catch (InterruptedException ignore) {
-      }
-    }
-    if (i >= MAX_TRIES) {
-      throw new RuntimeException("Failed to acquire read lock");
-    }
-  }
-
-  @Override
-  public <T> T requireRead(Computable<T> c) {
-    T result = null;
-    int i;
-    int MAX_TRIES = 4;
-    for (i = 0; i < MAX_TRIES && (result = tryRead(c)) == null; ++i) {
-      try {
-        Thread.sleep((1 << i) * 100);
-      } catch (InterruptedException ignore) {
-      }
-    }
-    if (i >= MAX_TRIES) {
-      throw new RuntimeException("Failed to acquire read lock");
-    }
-    return result;
-  }
-
-  @Override
   public boolean tryWrite(Runnable r) {
     if (getWriteLock().tryLock()) {
       try {
@@ -205,7 +172,6 @@ public class DefaultModelAccess extends ModelAccess {
     }
   }
 
-  @Override
   public <T> T tryWrite(final Computable<T> c) {
     if (getWriteLock().tryLock()) {
       try {
@@ -232,28 +198,6 @@ public class DefaultModelAccess extends ModelAccess {
     if (i >= MAX_TRIES) {
       throw new RuntimeException("Failed to acquire write lock");
     }
-  }
-
-  @Override
-  public <T> T requireWrite(Computable<T> c) {
-    T result = null;
-    int i;
-    int MAX_TRIES = 4;
-    for (i = 0; i < MAX_TRIES && (result = tryWrite(c)) == null; ++i) {
-      try {
-        Thread.sleep((1 << i) * 100);
-      } catch (InterruptedException ignore) {
-      }
-    }
-    if (i >= MAX_TRIES) {
-      throw new RuntimeException("Failed to acquire write lock");
-    }
-    return result;
-  }
-
-  @Override
-  public boolean tryWriteInCommand(Runnable r, Project p) {
-    return tryWrite(r);
   }
 
   @Override

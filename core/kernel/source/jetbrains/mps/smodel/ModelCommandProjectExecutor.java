@@ -27,48 +27,23 @@ import org.jetbrains.annotations.Nullable;
  * instead to run project-aware commands. There are handy {@link jetbrains.mps.project.Project#getModelAccess()} 
  * and <code>jetbrains.mps.ide.project.ProjectHelper</code>if you got MPS or IDEA project.
  *
+ * TODO introduce Project in the mps openapi and transfer the required methods to the {@code ModelAccess} API.
+ *
  * @author Artem Tikhomirov
  */
 @ToRemove(version = 3.2)
 @Deprecated
-public interface ModelCommandProjectExecutor extends ModelCommandExecutor {
+interface ModelCommandProjectExecutor extends ModelCommandExecutor {
 
   @ToRemove(version = 3.2)
   @Deprecated
   void runCommandInEDT(@NotNull Runnable r, @NotNull Project p);
 
-  /**
-   * Is equivalent to {@link #runWriteActionInCommand(Runnable, jetbrains.mps.project.Project)}
-   */
   @ToRemove(version = 3.2)
   @Deprecated
   void executeCommand(Runnable r, Project project);
 
   @ToRemove(version = 3.2)
   @Deprecated
-  <T> T runWriteActionInCommand(Computable<T> c, Project project);
-
-  @ToRemove(version = 3.2)
-  @Deprecated
-  <T> T runWriteActionInCommand(Computable<T> c, @Nullable String name, @Nullable Object groupId, boolean requestUndoConfirmation, Project project);
-
-  /**
-   * Is equivalent to {@link #executeCommand(java.lang.Runnable, jetbrains.mps.project.Project)}
-   */
-  @ToRemove(version = 3.2)
-  @Deprecated
-  void runWriteActionInCommand(Runnable r, Project project);
-
-  @ToRemove(version = 3.2)
-  @Deprecated
-  void runWriteActionInCommand(Runnable r, @Nullable String name, @Nullable Object groupId, boolean requestUndoConfirmation, Project project);
-
-  @ToRemove(version = 3.2)
-  @Deprecated
   void runUndoTransparentCommand(Runnable r, Project project);
-
-
-  @ToRemove(version = 3.2)
-  @Deprecated
-  boolean tryWriteInCommand(Runnable r, Project p);
 }

@@ -90,7 +90,8 @@ public interface ModelAccess {
   void executeUndoTransparentCommand(Runnable r);
 
   /**
-   * @return <code>true</code> if there's a command (either with {@link #executeCommand(Runnable)} or {@link #executeCommandInEDT(Runnable)}) being executed
+   * @return <code>true</code> if there's a command
+   * (either with {@link #executeCommand(Runnable)} or {@link #executeCommandInEDT(Runnable)}) being executed
    */
   boolean isCommandAction();
 
@@ -100,9 +101,9 @@ public interface ModelAccess {
    * @see #executeCommand(Runnable)
    * @param listener listens to command
    */
-  public void addCommandListener(CommandListener listener);
+  void addCommandListener(CommandListener listener);
 
-  public void removeCommandListener(CommandListener listener);
+  void removeCommandListener(CommandListener listener);
 
   /**
    * add/remove listeners to listen to the start/finish of write action events
@@ -110,8 +111,7 @@ public interface ModelAccess {
    * @see #runWriteAction(Runnable)
    * @param listener listens to write action
    */
-  public void addWriteActionListener(@NotNull WriteActionListener listener);
+  void addWriteActionListener(@NotNull WriteActionListener listener);
 
-  public void removeWriteActionListener(@NotNull WriteActionListener listener);
-
+  void removeWriteActionListener(@NotNull WriteActionListener listener);
 }

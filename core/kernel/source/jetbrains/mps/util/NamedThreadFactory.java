@@ -46,12 +46,7 @@ public class NamedThreadFactory implements ThreadFactory {
     if (t.getPriority() != Thread.NORM_PRIORITY) {
       t.setPriority(Thread.NORM_PRIORITY);
     }
-    t.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
-      @Override
-      public void uncaughtException(@NotNull Thread t, @NotNull Throwable e) {
-        LOG.error("Thread " + t + " threw the exception ", e);
-      }
-    });
+    t.setUncaughtExceptionHandler((t1, e) -> LOG.error("Thread " + t1 + " threw the exception ", e));
     return t;
   }
 }
