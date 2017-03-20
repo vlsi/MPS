@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.scope.FilteringScope;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -51,15 +50,6 @@ public class ScopeUtil {
         return !(filter.invoke(node));
       }
     };
-  }
-  /**
-   * 
-   * @deprecated use the version with conceptparameter
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static Iterable<Scope> imported(Iterable<SNode> importDeclarations, SNode concept, SNode child) {
-    return imported(importDeclarations, SNodeOperations.asSConcept(concept), child);
   }
   public static Iterable<Scope> imported(Iterable<SNode> importDeclarations, final SAbstractConcept concept, final SNode child) {
     return Sequence.fromIterable(importDeclarations).where(new IWhereFilter<SNode>() {

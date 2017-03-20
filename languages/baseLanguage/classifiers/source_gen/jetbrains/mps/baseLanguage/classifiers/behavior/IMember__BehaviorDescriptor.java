@@ -17,10 +17,10 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -32,7 +32,6 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SNode> getVisiblity_idhEwIBC5 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getVisiblity").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIBC5").registry(REGISTRY).build();
-  public static final SMethod<SNode> getOperationConcept_idhEwIBCc = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getOperationConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIBCc").registry(REGISTRY).build();
   public static final SMethod<SAbstractConcept> getOperationSConcept_id6ALWH9g2jU8 = new SMethodBuilder<SAbstractConcept>(new SJavaCompoundTypeImpl((Class<SAbstractConcept>) ((Class) Object.class))).name("getOperationSConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ALWH9g2jU8").registry(REGISTRY).build();
   public static final SMethod<SNode> createOperation_idhEwIBCC = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("createOperation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIBCC").registry(REGISTRY).build();
   public static final SMethod<SNode> getContainer_idhEwIBCW = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getContainer").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIBCW").registry(REGISTRY).build();
@@ -41,7 +40,7 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<List<SNode>> getOperationConcept_id2D1PBM_bxJ5 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getOperationConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxJ5").registry(REGISTRY).build();
   public static final SMethod<List<SAbstractConcept>> getOperationSConcept_id6ALWH9g2mqE = new SMethodBuilder<List<SAbstractConcept>>(new SJavaCompoundTypeImpl((Class<List<SAbstractConcept>>) ((Class) Object.class))).name("getOperationSConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ALWH9g2mqE").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVisiblity_idhEwIBC5, getOperationConcept_idhEwIBCc, getOperationSConcept_id6ALWH9g2jU8, createOperation_idhEwIBCC, getContainer_idhEwIBCW, canBeReferent_id762MQfghnJQ, canOperationBeChild_id3YYagzpL_8S, getOperationConcept_id2D1PBM_bxJ5, getOperationSConcept_id6ALWH9g2mqE);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVisiblity_idhEwIBC5, getOperationSConcept_id6ALWH9g2jU8, createOperation_idhEwIBCC, getContainer_idhEwIBCW, canBeReferent_id762MQfghnJQ, canOperationBeChild_id3YYagzpL_8S, getOperationConcept_id2D1PBM_bxJ5, getOperationSConcept_id6ALWH9g2mqE);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -49,17 +48,8 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static SNode getVisiblity_idhEwIBC5(@NotNull SNode __thisNode__) {
     return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
   }
-  @Deprecated
-  @ToRemove(version = 3.5)
-  /*package*/ static SNode getOperationConcept_idhEwIBCc(@NotNull SNode __thisNode__) {
-    SNode memberOperationConcept = ((SNode) SNodeOperations.asNode(ListSequence.fromList(IMember__BehaviorDescriptor.getOperationSConcept_id6ALWH9g2mqE.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)))).first()));
-    if (memberOperationConcept == null) {
-      throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConcept(__thisNode__) + " concept");
-    }
-    return memberOperationConcept;
-  }
   /*package*/ static SAbstractConcept getOperationSConcept_id6ALWH9g2jU8(@NotNull SNode __thisNode__) {
-    return SNodeOperations.asSConcept(IMember__BehaviorDescriptor.getOperationConcept_idhEwIBCc.invoke(__thisNode__));
+    return null;
   }
   /*package*/ static SNode createOperation_idhEwIBCC(@NotNull SNode __thisNode__) {
     SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(IMember__BehaviorDescriptor.getOperationSConcept_id6ALWH9g2jU8.invoke(__thisNode__)));
@@ -109,16 +99,14 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
       case 0:
         return (T) ((SNode) getVisiblity_idhEwIBC5(node));
       case 1:
-        return (T) ((SNode) getOperationConcept_idhEwIBCc(node));
-      case 2:
         return (T) ((SAbstractConcept) getOperationSConcept_id6ALWH9g2jU8(node));
-      case 3:
+      case 2:
         return (T) ((SNode) createOperation_idhEwIBCC(node));
-      case 4:
+      case 3:
         return (T) ((SNode) getContainer_idhEwIBCW(node));
-      case 5:
+      case 4:
         return (T) ((Boolean) canBeReferent_id762MQfghnJQ(node, (SNode) parameters[0]));
-      case 6:
+      case 5:
         return (T) ((Boolean) canOperationBeChild_id3YYagzpL_8S(node, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -132,9 +120,9 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 7:
+      case 6:
         return (T) ((List<SNode>) getOperationConcept_id2D1PBM_bxJ5(concept));
-      case 8:
+      case 7:
         return (T) ((List<SAbstractConcept>) getOperationSConcept_id6ALWH9g2mqE(concept));
       default:
         throw new BHMethodNotFoundException(this, method);

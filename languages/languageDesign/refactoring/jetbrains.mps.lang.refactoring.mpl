@@ -9,7 +9,7 @@
     <model modelUID="r:00000000-0000-4000-0000-011c89590318(jetbrains.mps.lang.refactoring.samples)" />
   </accessoryModels>
   <generators>
-    <generator alias="" namespace="jetbrains.mps.lang.refactoring#1189697379687" uuid="071dc6d3-9172-49bc-9ecd-8487bb9112a4">
+    <generator name="" generatorUID="jetbrains.mps.lang.refactoring#1189697379687" uuid="071dc6d3-9172-49bc-9ecd-8487bb9112a4">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/baseLanguage/template" />

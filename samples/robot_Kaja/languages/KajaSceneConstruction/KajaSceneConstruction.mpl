@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator alias="" namespace="jetbrains.mps.samples.KajaSceneConstruction#3210697320273563026" uuid="b4e19835-6919-44a5-8b70-73791426c235" generate-templates="true">
+    <generator name="" generatorUID="jetbrains.mps.samples.KajaSceneConstruction#3210697320273563026" uuid="b4e19835-6919-44a5-8b70-73791426c235" generate-templates="true">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />

@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator alias="java" namespace="jetbrains.mps.make.outlook#5608160002100106841" uuid="f2324f12-b66e-4ff0-82da-267897cc06d8">
+    <generator name="java" generatorUID="jetbrains.mps.make.outlook#5608160002100106841" uuid="f2324f12-b66e-4ff0-82da-267897cc06d8">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />

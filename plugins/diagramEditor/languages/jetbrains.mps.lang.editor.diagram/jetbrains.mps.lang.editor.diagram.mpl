@@ -17,7 +17,7 @@
   </facets>
   <accessoryModels />
   <generators>
-    <generator alias="" namespace="jetbrains.mps.lang.editor.diagram#1094405431463447766" uuid="2473a9c0-7105-42a7-9a33-05a05e76222d">
+    <generator name="" generatorUID="jetbrains.mps.lang.editor.diagram#1094405431463447766" uuid="2473a9c0-7105-42a7-9a33-05a05e76222d">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />

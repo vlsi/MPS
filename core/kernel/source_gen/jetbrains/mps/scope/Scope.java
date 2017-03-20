@@ -7,12 +7,11 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -61,32 +60,6 @@ public abstract class Scope {
    */
   @Nullable
   public abstract String getReferenceText(SNode contextNode, @NotNull SNode node);
-  /**
-   * Get scope for existing node.
-   * 
-   * @deprecated use {@link jetbrains.mps.scope.Scope#getScope(SNode, SNode, SAbstractConcept) } instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static Scope getScope(SNode node, SNode fromChild, SNode kind) {
-    return getScope(node, fromChild, SNodeOperations.asSConcept(kind));
-  }
-  /**
-   * Get scope for smart reference, when node doesn't exist yet
-   * 
-   * @deprecated use {@link jetbrains.mps.scope.Scope#getScope(SNode, SContainmentLink, int, SAbstractConcept) } instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static Scope getScope(SNode node, String role, int index, SNode kind) {
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider"))) {
-      Scope scope = ((Scope) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider")), SMethodTrimmedId.create("getScope", null, "6GEzh_Hz_wK"), kind, role, ((int) index)));
-      if (scope != null) {
-        return scope;
-      }
-    }
-    return getScope(parent(node), node, kind);
-  }
   /**
    * Get scope for existing node.
    */
