@@ -121,5 +121,14 @@
       <ref role="20lvS9" node="1_4co2y1Lw1" resolve="Checkpoint" />
     </node>
   </node>
+  <node concept="1TIwiD" id="5rmusCviPfe">
+    <property role="EcuMT" value="6257322641293267918" />
+    <property role="TrG5h" value="CheckpointDeclaration" />
+    <property role="R4oN_" value="Declaration of a checkpoint suitable for reuse, with no persistence/synchronization semantics attached." />
+    <ref role="1TJDcQ" node="1_4co2y1LvW" resolve="Step" />
+    <node concept="PrWs8" id="5rmusCviPff" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
 </model>
 

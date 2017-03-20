@@ -570,5 +570,17 @@
       <node concept="2iRfu4" id="KhTgyaulrS" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="5rmusCviPfE">
+    <ref role="1XX52x" to="bjdw:5rmusCviPfe" resolve="CheckpointDeclaration" />
+    <node concept="3EZMnI" id="5rmusCviPfG" role="2wV5jI">
+      <node concept="2iRfu4" id="5rmusCviPfH" role="2iSdaV" />
+      <node concept="3F0ifn" id="5rmusCviPfI" role="3EZMnx">
+        <property role="3F0ifm" value="declare checkpoint" />
+      </node>
+      <node concept="3F0A7n" id="5rmusCviPfJ" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+    </node>
+  </node>
 </model>
 

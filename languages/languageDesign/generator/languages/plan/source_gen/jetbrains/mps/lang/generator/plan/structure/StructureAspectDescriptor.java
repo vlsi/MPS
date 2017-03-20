@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptApplyGenerators = createDescriptorForApplyGenerators();
   /*package*/ final ConceptDescriptor myConceptCheckpoint = createDescriptorForCheckpoint();
+  /*package*/ final ConceptDescriptor myConceptCheckpointDeclaration = createDescriptorForCheckpointDeclaration();
   /*package*/ final ConceptDescriptor myConceptCheckpointSynchronization = createDescriptorForCheckpointSynchronization();
   /*package*/ final ConceptDescriptor myConceptPlan = createDescriptorForPlan();
   /*package*/ final ConceptDescriptor myConceptStep = createDescriptorForStep();
@@ -26,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptApplyGenerators, myConceptCheckpoint, myConceptCheckpointSynchronization, myConceptPlan, myConceptStep, myConceptTransform);
+    return Arrays.asList(myConceptApplyGenerators, myConceptCheckpoint, myConceptCheckpointDeclaration, myConceptCheckpointSynchronization, myConceptPlan, myConceptStep, myConceptTransform);
   }
 
   @Override
@@ -37,6 +38,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptApplyGenerators;
       case LanguageConceptSwitch.Checkpoint:
         return myConceptCheckpoint;
+      case LanguageConceptSwitch.CheckpointDeclaration:
+        return myConceptCheckpointDeclaration;
       case LanguageConceptSwitch.CheckpointSynchronization:
         return myConceptCheckpointSynchronization;
       case LanguageConceptSwitch.Plan:
@@ -69,6 +72,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.generator.plan.structure.Step", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/1820634577908471809");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForCheckpointDeclaration() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator.plan", "CheckpointDeclaration", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x56d679ca1f4b53ceL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.generator.plan.structure.Step", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/6257322641293267918");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCheckpointSynchronization() {

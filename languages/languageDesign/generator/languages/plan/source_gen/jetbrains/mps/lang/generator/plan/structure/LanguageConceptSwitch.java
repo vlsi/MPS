@@ -11,15 +11,17 @@ public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
   public static final int ApplyGenerators = 0;
   public static final int Checkpoint = 1;
-  public static final int CheckpointSynchronization = 2;
-  public static final int Plan = 3;
-  public static final int Step = 4;
-  public static final int Transform = 5;
+  public static final int CheckpointDeclaration = 2;
+  public static final int CheckpointSynchronization = 3;
+  public static final int Plan = 4;
+  public static final int Step = 5;
+  public static final int Transform = 6;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L);
     builder.put(0x73246de9adeca171L, ApplyGenerators);
     builder.put(0x19443180a2071801L, Checkpoint);
+    builder.put(0x56d679ca1f4b53ceL, CheckpointDeclaration);
     builder.put(0xc11e5088a794d07L, CheckpointSynchronization);
     builder.put(0x19443180a20717fbL, Plan);
     builder.put(0x19443180a20717fcL, Step);

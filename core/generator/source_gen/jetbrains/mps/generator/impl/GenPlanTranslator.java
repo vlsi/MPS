@@ -68,20 +68,20 @@ public class GenPlanTranslator {
           if (!(module instanceof Generator)) {
             continue;
           }
-          if (withExtended) {
-            // FIXME need applyGeneratorWithExtended that takes multiple modules 
-            planBuilder.applyGeneratorWithExtended(module);
-          } else {
-            generators.add(module);
-          }
+          generators.add(module);
         }
-        if (!(withExtended)) {
+        if (withExtended) {
+          planBuilder.applyGeneratorWithExtended(generators.toArray(new SModule[generators.size()]));
+        } else {
           planBuilder.applyGenerator(generators.toArray(new SModule[generators.size()]));
-          generators.clear();
         }
+        generators.clear();
       } else if (SNodeOperations.isInstanceOf(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0xc11e5088a794d07L, "jetbrains.mps.lang.generator.plan.structure.CheckpointSynchronization"))) {
         SNode cpSynch = SLinkOperations.getTarget(SNodeOperations.as(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0xc11e5088a794d07L, "jetbrains.mps.lang.generator.plan.structure.CheckpointSynchronization")), MetaAdapterFactory.getReferenceLink(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0xc11e5088a794d07L, 0xc11e5088a794d08L, "checkpoint"));
         planBuilder.synchronizeWithCheckpoint(new CheckpointIdentity(new PlanIdentity(SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getParent(cpSynch), MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fbL, "jetbrains.mps.lang.generator.plan.structure.Plan")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))), SPropertyOperations.getString(cpSynch, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
+      } else if (SNodeOperations.isInstanceOf(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x56d679ca1f4b53ceL, "jetbrains.mps.lang.generator.plan.structure.CheckpointDeclaration"))) {
+        SNode cpDecl = SNodeOperations.as(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x56d679ca1f4b53ceL, "jetbrains.mps.lang.generator.plan.structure.CheckpointDeclaration"));
+        planBuilder.declareCheckpoint(new CheckpointIdentity(myPlanIdentity, SPropertyOperations.getString(cpDecl, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
       }
     }
     return this;

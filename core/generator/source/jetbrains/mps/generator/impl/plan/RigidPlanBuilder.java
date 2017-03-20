@@ -86,7 +86,7 @@ public class RigidPlanBuilder implements GenerationPlanBuilder {
   }
 
   @Override
-  public void applyGeneratorWithExtended(@NotNull SModule generator) {
+  public void applyGeneratorWithExtended(@NotNull SModule ... generator) {
     throw new UnsupportedOperationException("This implementation of plan builder doesn't support requested functionality");
   }
 

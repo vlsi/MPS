@@ -93,7 +93,7 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
   }
 
   @Override
-  public void applyGeneratorWithExtended(@NotNull SModule generator) {
+  public void applyGeneratorWithExtended(@NotNull SModule ... generator) {
     mySteps.add(new TransformEntry(asTemplateModules(generator), false));
   }
 
