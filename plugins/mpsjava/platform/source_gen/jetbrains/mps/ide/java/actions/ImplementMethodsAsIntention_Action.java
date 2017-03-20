@@ -28,7 +28,7 @@ public class ImplementMethodsAsIntention_Action extends BaseAction {
   public ImplementMethodsAsIntention_Action() {
     super("Implement Methods", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {

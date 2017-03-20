@@ -10870,6 +10870,7 @@
     <node concept="3Tm1VV" id="7ECFGRPAHyP" role="1B3o_S" />
     <node concept="312cEg" id="7ECFGRPAHv_" role="jymVt">
       <property role="TrG5h" value="myProject" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="7ECFGRPAHvA" role="1B3o_S" />
       <node concept="3uibUv" id="7ECFGRPAHvB" role="1tU5fm">
         <ref role="3uigEE" to="z1c4:~Project" resolve="Project" />
@@ -10877,11 +10878,13 @@
     </node>
     <node concept="312cEg" id="7ECFGRPAHvC" role="jymVt">
       <property role="TrG5h" value="mySelectedNode" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="7ECFGRPAHvD" role="1B3o_S" />
       <node concept="3Tqbb2" id="7ECFGRPAHvE" role="1tU5fm" />
     </node>
     <node concept="312cEg" id="7ECFGRPAHvF" role="jymVt">
       <property role="TrG5h" value="myEditorContext" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="7ECFGRPAHvG" role="1B3o_S" />
       <node concept="3uibUv" id="7ECFGRPAHvH" role="1tU5fm">
         <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
@@ -10889,9 +10892,11 @@
     </node>
     <node concept="312cEg" id="7ECFGRPAHzk" role="jymVt">
       <property role="TrG5h" value="myIsOverride" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="7ECFGRPAHzl" role="1B3o_S" />
       <node concept="10P_77" id="7ECFGRPAHzm" role="1tU5fm" />
     </node>
+    <node concept="2tJIrI" id="1KXtTGFROOq" role="jymVt" />
     <node concept="3clFbW" id="7ECFGRPAHyQ" role="jymVt">
       <node concept="3cqZAl" id="7ECFGRPAHyR" role="3clF45" />
       <node concept="3Tm1VV" id="7ECFGRPAHyS" role="1B3o_S" />
@@ -10928,11 +10933,8 @@
         </node>
         <node concept="3clFbF" id="7ECFGRPAHz6" role="3cqZAp">
           <node concept="37vLTI" id="7ECFGRPAHz7" role="3clFbG">
-            <node concept="2OqwBi" id="7ECFGRPAHz8" role="37vLTJ">
-              <node concept="Xjq3P" id="7ECFGRPAHz9" role="2Oq$k0" />
-              <node concept="2OwXpG" id="7ECFGRPAHza" role="2OqNvi">
-                <ref role="2Oxat5" node="7ECFGRPAHzk" resolve="myIsOverride" />
-              </node>
+            <node concept="37vLTw" id="5FM3rB5WlzV" role="37vLTJ">
+              <ref role="3cqZAo" node="7ECFGRPAHzk" resolve="myIsOverride" />
             </node>
             <node concept="37vLTw" id="2BHiRxgm6T9" role="37vLTx">
               <ref role="3cqZAo" node="7ECFGRPAHzi" resolve="isOverride" />
@@ -10961,6 +10963,7 @@
         <node concept="10P_77" id="7ECFGRPAHzj" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1KXtTGFRNbO" role="jymVt" />
     <node concept="3clFb_" id="7ECFGRPAHvI" role="jymVt">
       <property role="TrG5h" value="run" />
       <node concept="3cqZAl" id="7ECFGRPAHvJ" role="3clF45" />
@@ -11246,7 +11249,7 @@
                   <ref role="3cqZAo" node="7ECFGRPAHzk" resolve="myIsOverride" />
                 </node>
                 <node concept="Xl_RD" id="7ECFGRPAHwZ" role="3K4E3e">
-                  <property role="Xl_RC" value="Select Methods to Override" />
+                  <property role="Xl_RC" value="Select Methods to Override/Implement" />
                 </node>
                 <node concept="Xl_RD" id="7ECFGRPAHx0" role="3K4GZi">
                   <property role="Xl_RC" value="Select Methods to Implement" />
@@ -14663,6 +14666,7 @@
     <property role="2uzpH1" value="Implement Methods" />
     <property role="3GE5qa" value="overridemethod" />
     <property role="1teQrl" value="true" />
+    <property role="72QZ$" value="true" />
     <node concept="2S4$dB" id="7ECFGRPAL9_" role="1NuT2Z">
       <property role="TrG5h" value="selectedNode" />
       <node concept="1oajcY" id="7ECFGRPAL9A" role="1oa70y" />
@@ -14981,6 +14985,7 @@
     <property role="TrG5h" value="OverrideMethodsAsIntention" />
     <property role="2uzpH1" value="Override Methods" />
     <property role="3GE5qa" value="overridemethod" />
+    <property role="72QZ$" value="true" />
     <node concept="2S4$dB" id="7ECFGRPALan" role="1NuT2Z">
       <property role="TrG5h" value="selectedNode" />
       <node concept="1oajcY" id="7ECFGRPALao" role="1oa70y" />

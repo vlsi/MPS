@@ -6711,100 +6711,100 @@
       <node id="8838506468326692840" at="24,0,25,0" concept="6" trace="mySelectedNode" />
       <node id="8838506468326692843" at="25,0,26,0" concept="6" trace="myEditorContext" />
       <node id="8838506468326693076" at="26,0,27,0" concept="6" trace="myIsOverride" />
-      <node id="8838506468326693050" at="27,126,28,24" concept="5" />
-      <node id="8838506468326693054" at="28,24,29,34" concept="5" />
-      <node id="8838506468326693058" at="29,34,30,36" concept="5" />
-      <node id="8838506468326693062" at="30,36,31,35" concept="5" />
-      <node id="2575930471428206984" at="33,21,34,78" concept="11" />
-      <node id="7644867599579805561" at="36,30,37,217" concept="12" />
-      <node id="7644867599579812770" at="41,30,42,231" concept="12" />
-      <node id="6156332913823995884" at="47,41,48,173" concept="11" />
-      <node id="6156332913824507030" at="49,27,50,219" concept="5" />
-      <node id="8838506468326692895" at="51,9,52,150" concept="12" />
-      <node id="8838506468326692902" at="54,7,55,0" concept="14" />
-      <node id="8838506468326692903" at="55,0,56,134" concept="11" />
-      <node id="8838506468326692920" at="56,134,57,0" concept="14" />
-      <node id="8838506468326692921" at="57,0,58,99" concept="5" />
-      <node id="8838506468326692929" at="58,99,59,18" concept="5" />
-      <node id="8838506468326692933" at="59,18,60,0" concept="14" />
-      <node id="8838506468326692936" at="61,24,62,112" concept="11" />
-      <node id="8838506468326692946" at="62,112,63,0" concept="14" />
-      <node id="8838506468326692968" at="68,52,69,231" concept="12" />
-      <node id="8838506468326692976" at="71,30,72,0" concept="14" />
-      <node id="8838506468326692977" at="72,0,73,213" concept="11" />
-      <node id="8838506468326692994" at="73,213,74,72" concept="11" />
-      <node id="8838506468326693006" at="75,42,76,19" concept="12" />
-      <node id="7678112022081298402" at="77,11,78,77" concept="11" />
-      <node id="7678112022080723338" at="78,77,79,29" concept="11" />
-      <node id="7678112022081610318" at="80,363,81,369" concept="5" />
-      <node id="7678112022081539183" at="82,18,83,39" concept="5" />
-      <node id="3751861853747494833" at="84,11,85,40" concept="5" />
-      <node id="7678112022081937708" at="85,40,86,75" concept="5" />
-      <node id="7678112022081538919" at="82,16,84,11" concept="2" />
-      <node id="7644867599579805557" at="36,0,39,0" concept="10" trace="compute#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="7644867599579812767" at="41,0,44,0" concept="10" trace="compute#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6156332913824082756" at="48,173,51,9" concept="9" />
-      <node id="8838506468326692966" at="68,0,71,0" concept="10" trace="select#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="8838506468326693001" at="74,72,77,11" concept="9" />
-      <node id="8838506468326692850" at="34,78,39,7" concept="11" />
-      <node id="8838506468326692859" at="39,7,44,7" concept="11" />
-      <node id="8838506468326692959" at="66,27,71,30" concept="11" />
-      <node id="7678112022080774657" at="79,29,84,11" concept="9" />
-      <node id="8838506468326693046" at="27,0,33,0" concept="4" trace="OverrideImplementMethodAction#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Z)V" />
-      <node id="8838506468326692879" at="46,0,54,0" concept="10" trace="compute#()[Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="8838506468326692868" at="44,7,54,7" concept="11" />
-      <node id="8838506468326692955" at="65,0,88,0" concept="10" trace="run#()V" />
-      <node id="8838506468326692947" at="63,0,88,9" concept="5" />
-      <node id="8838506468326692934" at="60,0,89,5" concept="9" />
-      <node id="8838506468326692846" at="33,0,91,0" concept="10" trace="run#()V" />
-      <scope id="7644867599579805560" at="36,30,37,217" />
-      <scope id="7644867599579812769" at="41,30,42,231" />
-      <scope id="6156332913824082759" at="49,27,50,219" />
-      <scope id="8838506468326692967" at="68,52,69,231" />
-      <scope id="8838506468326693005" at="75,42,76,19" />
-      <scope id="7678112022080774660" at="80,363,81,369" />
-      <scope id="7678112022081538920" at="82,18,83,39" />
-      <scope id="7644867599579805557" at="36,0,39,0" />
-      <scope id="7644867599579812767" at="41,0,44,0" />
-      <scope id="8838506468326692966" at="68,0,71,0">
+      <node id="8838506468326693050" at="28,126,29,24" concept="5" />
+      <node id="8838506468326693054" at="29,24,30,34" concept="5" />
+      <node id="8838506468326693058" at="30,34,31,36" concept="5" />
+      <node id="8838506468326693062" at="31,36,32,30" concept="5" />
+      <node id="2575930471428206984" at="35,21,36,78" concept="11" />
+      <node id="7644867599579805561" at="38,30,39,217" concept="12" />
+      <node id="7644867599579812770" at="43,30,44,231" concept="12" />
+      <node id="6156332913823995884" at="49,41,50,173" concept="11" />
+      <node id="6156332913824507030" at="51,27,52,219" concept="5" />
+      <node id="8838506468326692895" at="53,9,54,150" concept="12" />
+      <node id="8838506468326692902" at="56,7,57,0" concept="14" />
+      <node id="8838506468326692903" at="57,0,58,134" concept="11" />
+      <node id="8838506468326692920" at="58,134,59,0" concept="14" />
+      <node id="8838506468326692921" at="59,0,60,109" concept="5" />
+      <node id="8838506468326692929" at="60,109,61,18" concept="5" />
+      <node id="8838506468326692933" at="61,18,62,0" concept="14" />
+      <node id="8838506468326692936" at="63,24,64,112" concept="11" />
+      <node id="8838506468326692946" at="64,112,65,0" concept="14" />
+      <node id="8838506468326692968" at="70,52,71,231" concept="12" />
+      <node id="8838506468326692976" at="73,30,74,0" concept="14" />
+      <node id="8838506468326692977" at="74,0,75,213" concept="11" />
+      <node id="8838506468326692994" at="75,213,76,72" concept="11" />
+      <node id="8838506468326693006" at="77,42,78,19" concept="12" />
+      <node id="7678112022081298402" at="79,11,80,77" concept="11" />
+      <node id="7678112022080723338" at="80,77,81,29" concept="11" />
+      <node id="7678112022081610318" at="82,363,83,369" concept="5" />
+      <node id="7678112022081539183" at="84,18,85,39" concept="5" />
+      <node id="3751861853747494833" at="86,11,87,40" concept="5" />
+      <node id="7678112022081937708" at="87,40,88,75" concept="5" />
+      <node id="7678112022081538919" at="84,16,86,11" concept="2" />
+      <node id="7644867599579805557" at="38,0,41,0" concept="10" trace="compute#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7644867599579812767" at="43,0,46,0" concept="10" trace="compute#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6156332913824082756" at="50,173,53,9" concept="9" />
+      <node id="8838506468326692966" at="70,0,73,0" concept="10" trace="select#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8838506468326693001" at="76,72,79,11" concept="9" />
+      <node id="8838506468326692850" at="36,78,41,7" concept="11" />
+      <node id="8838506468326692859" at="41,7,46,7" concept="11" />
+      <node id="8838506468326692959" at="68,27,73,30" concept="11" />
+      <node id="7678112022080774657" at="81,29,86,11" concept="9" />
+      <node id="8838506468326693046" at="28,0,34,0" concept="4" trace="OverrideImplementMethodAction#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Z)V" />
+      <node id="8838506468326692879" at="48,0,56,0" concept="10" trace="compute#()[Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="8838506468326692868" at="46,7,56,7" concept="11" />
+      <node id="8838506468326692955" at="67,0,90,0" concept="10" trace="run#()V" />
+      <node id="8838506468326692947" at="65,0,90,9" concept="5" />
+      <node id="8838506468326692934" at="62,0,91,5" concept="9" />
+      <node id="8838506468326692846" at="35,0,93,0" concept="10" trace="run#()V" />
+      <scope id="7644867599579805560" at="38,30,39,217" />
+      <scope id="7644867599579812769" at="43,30,44,231" />
+      <scope id="6156332913824082759" at="51,27,52,219" />
+      <scope id="8838506468326692967" at="70,52,71,231" />
+      <scope id="8838506468326693005" at="77,42,78,19" />
+      <scope id="7678112022080774660" at="82,363,83,369" />
+      <scope id="7678112022081538920" at="84,18,85,39" />
+      <scope id="7644867599579805557" at="38,0,41,0" />
+      <scope id="7644867599579812767" at="43,0,46,0" />
+      <scope id="8838506468326692966" at="70,0,73,0">
         <var name="it" id="8838506468326692966" />
       </scope>
-      <scope id="8838506468326693049" at="27,126,31,35" />
-      <scope id="8838506468326692883" at="47,41,52,150">
+      <scope id="8838506468326693049" at="28,126,32,30" />
+      <scope id="8838506468326692883" at="49,41,54,150">
         <var name="methodsToImplementAndOverride" id="6156332913823995885" />
       </scope>
-      <scope id="8838506468326693046" at="27,0,33,0">
+      <scope id="8838506468326693046" at="28,0,34,0">
         <var name="editorContext" id="8838506468326693072" />
         <var name="isOverride" id="8838506468326693074" />
         <var name="project" id="8838506468326693068" />
         <var name="selectedNode" id="8838506468326693070" />
       </scope>
-      <scope id="8838506468326692879" at="46,0,54,0" />
-      <scope id="8838506468326692958" at="66,27,86,75">
+      <scope id="8838506468326692879" at="48,0,56,0" />
+      <scope id="8838506468326692958" at="68,27,88,75">
         <var name="firstMethod" id="7678112022081298403" />
         <var name="helper" id="8838506468326692978" />
         <var name="insertedMethods" id="8838506468326692995" />
         <var name="nodeToSelect" id="7678112022080723339" />
         <var name="selection" id="8838506468326692960" />
       </scope>
-      <scope id="8838506468326692955" at="65,0,88,0" />
-      <scope id="8838506468326692935" at="61,24,88,9">
+      <scope id="8838506468326692955" at="67,0,90,0" />
+      <scope id="8838506468326692935" at="63,24,90,9">
         <var name="selectedElements" id="8838506468326692937" />
       </scope>
-      <scope id="8838506468326692849" at="33,21,89,5">
+      <scope id="8838506468326692849" at="35,21,91,5">
         <var name="contextClass" id="8838506468326692851" />
         <var name="contextMember" id="8838506468326692860" />
         <var name="dialog" id="8838506468326692904" />
         <var name="mah" id="2575930471428206985" />
         <var name="methods" id="8838506468326692869" />
       </scope>
-      <scope id="8838506468326692846" at="33,0,91,0" />
-      <unit id="7644867599579805554" at="35,53,39,5" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$1" />
-      <unit id="7644867599579812764" at="40,54,44,5" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$2" />
-      <unit id="8838506468326692966" at="67,85,71,11" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$4$1" />
-      <unit id="8838506468326692877" at="45,59,54,5" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$3" />
-      <unit id="8838506468326692953" at="64,57,88,7" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$4" />
-      <unit id="8838506468326692836" at="22,0,92,0" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction" />
+      <scope id="8838506468326692846" at="35,0,93,0" />
+      <unit id="7644867599579805554" at="37,53,41,5" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$1" />
+      <unit id="7644867599579812764" at="42,54,46,5" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$2" />
+      <unit id="8838506468326692966" at="69,85,73,11" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$4$1" />
+      <unit id="8838506468326692877" at="47,59,56,5" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$3" />
+      <unit id="8838506468326692953" at="66,57,90,7" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$4" />
+      <unit id="8838506468326692836" at="22,0,94,0" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction" />
     </file>
   </root>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/8838506468326693079">
@@ -7507,7 +7507,7 @@
       <node id="8838506468326707812" at="26,0,27,0" concept="15" trace="ICON" />
       <node id="8838506468326707812" at="28,47,29,41" concept="17" />
       <node id="8838506468326707812" at="29,41,30,35" concept="5" />
-      <node id="8838506468326707812" at="30,35,31,41" concept="5" />
+      <node id="8838506468326707812" at="30,35,31,40" concept="5" />
       <node id="8838506468326707812" at="34,32,35,16" concept="12" />
       <node id="5497203577248001423" at="38,87,39,271" concept="11" />
       <node id="5497203577248001436" at="40,191,41,284" concept="11" />
@@ -7559,7 +7559,7 @@
       <scope id="5497203577248011737" at="84,32,85,282" />
       <scope id="5497203577248011750" at="88,27,89,256" />
       <scope id="5497203577248011766" at="90,12,91,242" />
-      <scope id="8838506468326707812" at="28,47,31,41" />
+      <scope id="8838506468326707812" at="28,47,31,40" />
       <scope id="5497203577248011734" at="84,0,87,0" />
       <scope id="8838506468326707812" at="33,0,37,0" />
       <scope id="5497203577248001435" at="40,191,44,7">
@@ -7607,7 +7607,7 @@
       <node id="8838506468326707862" at="23,0,24,0" concept="15" trace="ICON" />
       <node id="8838506468326707862" at="25,46,26,40" concept="17" />
       <node id="8838506468326707862" at="26,40,27,35" concept="5" />
-      <node id="8838506468326707862" at="27,35,28,41" concept="5" />
+      <node id="8838506468326707862" at="27,35,28,40" concept="5" />
       <node id="8838506468326707862" at="31,32,32,16" concept="12" />
       <node id="8838506468326707896" at="35,87,36,567" concept="12" />
       <node id="8838506468326707862" at="39,89,40,85" concept="5" />
@@ -7641,7 +7641,7 @@
       <scope id="8838506468326707862" at="55,22,56,21" />
       <scope id="8838506468326707862" at="61,22,62,21" />
       <scope id="8838506468326707862" at="68,96,69,184" />
-      <scope id="8838506468326707862" at="25,46,28,41" />
+      <scope id="8838506468326707862" at="25,46,28,40" />
       <scope id="8838506468326707862" at="30,0,34,0" />
       <scope id="8838506468326707862" at="34,0,38,0">
         <var name="_params" id="8838506468326707862" />

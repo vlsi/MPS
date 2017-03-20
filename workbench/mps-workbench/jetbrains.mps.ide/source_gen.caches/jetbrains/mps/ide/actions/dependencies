@@ -233,6 +233,8 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.logging.runtime.model.LoggingRuntime" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.Anonymous in run() in Anonymous in doExecute() in CalcSNodeStatistic_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -240,9 +242,9 @@
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
-    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -344,9 +346,11 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.logging.runtime.model.LoggingRuntime" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.extapi.module.SModuleBase" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.Anonymous in doExecute() in ConvertToBinaryPersistence_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -358,9 +362,9 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
@@ -381,11 +385,13 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.logging.runtime.model.LoggingRuntime" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.extapi.module.SModuleBase" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileBasedModelRoot" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.ModelFactoryService" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.Anonymous in doExecute() in ConvertToFilePerRootPersistence_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -398,9 +404,9 @@
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
@@ -1143,6 +1149,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.logging.runtime.model.LoggingRuntime" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -1153,9 +1160,9 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -2204,7 +2211,9 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.tree.TreeNode" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.logging.runtime.model.LoggingRuntime" />
     <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.Anonymous in doExecute() in NewSubTestModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.SortUtil" />
@@ -2214,9 +2223,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelImports" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
-    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelName" />
@@ -3258,6 +3267,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JOptionPane" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.logging.runtime.model.LoggingRuntime" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.blame.dialog.BlameDialog" />
     <classNode dependClassName="jetbrains.mps.ide.blame.dialog.BlameDialogComponent" />
@@ -3267,9 +3277,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.messages.IMessage" />
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
-    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
