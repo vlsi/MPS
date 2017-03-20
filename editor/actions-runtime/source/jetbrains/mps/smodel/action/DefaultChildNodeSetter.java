@@ -16,11 +16,10 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.util.SNodeOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.util.SNodeOperations;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -37,9 +36,14 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
   public DefaultChildNodeSetter(SNode linkDeclaration) {
     myLinkDeclaration = linkDeclaration;
 
-    if (DefaultChildSubstituteInfo.isNotAggregation(linkDeclaration)) {
+    if (isNotAggregation(linkDeclaration)) {
       throw new RuntimeException("Only aggregation links are allowed here.");
     }
+  }
+
+  public static boolean isNotAggregation(SNode linkDeclaration) {
+    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+    return jetbrains.mps.smodel.SNodeUtil.getLinkDeclaration_IsReference(genuineLinkDeclaration);
   }
 
   public SNode getLinkDeclaration() {

@@ -19,7 +19,6 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.nodeEditor.EditorCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
@@ -101,24 +100,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   private MouseListener myUnfoldCollectionMouseListener;
   private boolean myCanBeSynchronized;
 
-  /**
-   * @deprecated since MPS 3.5 not used
-   */
-  @SuppressWarnings({"UnusedDeclaration"})
-  @Deprecated
-  public static EditorCell_Collection createVertical(EditorContext editorContext, SNode node, EditorCellListHandler handler) {
-    return new EditorCell_Collection(editorContext, node, new CellLayout_Vertical(), handler);
-  }
-
-  /**
-   * @deprecated since MPS 3.5 not used
-   */
-  @SuppressWarnings({"UnusedDeclaration"})
-  @Deprecated
-  public static EditorCell_Collection createHorizontal(EditorContext editorContext, SNode node, EditorCellListHandler handler) {
-    return new EditorCell_Collection(editorContext, node, new CellLayout_Horizontal(), handler);
-  }
-
   public static EditorCell_Collection createVertical(EditorContext editorContext, SNode node) {
     return new EditorCell_Collection(editorContext, node, new CellLayout_Vertical(), null);
   }
@@ -137,15 +118,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   public static EditorCell_Collection createTable(EditorContext editorContext, SNode node) {
     return new EditorCell_Collection(editorContext, node, new CellLayout_Table(), null);
-  }
-
-  /**
-   * @deprecated since MPS 3.5 not used
-   */
-  @SuppressWarnings({"UnusedDeclaration"})
-  @Deprecated
-  public static EditorCell_Collection createFlow(EditorContext editorContext, SNode node, EditorCellListHandler handler) {
-    return new EditorCell_Collection(editorContext, node, new CellLayout_Flow(), handler);
   }
 
   public static EditorCell_Collection createFlow(EditorContext editorContext, SNode node) {
