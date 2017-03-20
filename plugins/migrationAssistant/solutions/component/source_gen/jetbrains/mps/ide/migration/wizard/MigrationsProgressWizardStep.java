@@ -191,7 +191,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     };
     MigrationsProgressWizardStep step = new MigrationsProgressWizardStep(p, initialStep, p.getComponent(MigrationManager.class), mpc, false);
     step.myList = new JBList(new DefaultListModel());
-    step.myModalityState = ModalityState.any();
+    step.myModalityState = ModalityState.NON_MODAL;
     step.doRun(new EmptyProgressIndicator());
   }
 

@@ -2176,9 +2176,9 @@
                                     </node>
                                   </node>
                                 </node>
-                                <node concept="2YIFZM" id="7yIn7aXpR7b" role="37wK5m">
-                                  <ref role="37wK5l" to="bd8o:~ModalityState.any():com.intellij.openapi.application.ModalityState" resolve="any" />
+                                <node concept="2YIFZM" id="40oD5LyzFJE" role="37wK5m">
                                   <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+                                  <ref role="37wK5l" to="bd8o:~ModalityState.defaultModalityState():com.intellij.openapi.application.ModalityState" resolve="defaultModalityState" />
                                 </node>
                               </node>
                             </node>
@@ -6940,8 +6940,8 @@
                                     </node>
                                   </node>
                                 </node>
-                                <node concept="2YIFZM" id="7yIn7aXpWzx" role="37wK5m">
-                                  <ref role="37wK5l" to="bd8o:~ModalityState.any():com.intellij.openapi.application.ModalityState" resolve="any" />
+                                <node concept="2YIFZM" id="40oD5LyzEKS" role="37wK5m">
+                                  <ref role="37wK5l" to="bd8o:~ModalityState.defaultModalityState():com.intellij.openapi.application.ModalityState" resolve="defaultModalityState" />
                                   <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
                                 </node>
                               </node>
@@ -7489,9 +7489,9 @@
                                         </node>
                                       </node>
                                     </node>
-                                    <node concept="2YIFZM" id="7yIn7aXpRkj" role="37wK5m">
-                                      <ref role="37wK5l" to="bd8o:~ModalityState.any():com.intellij.openapi.application.ModalityState" resolve="any" />
+                                    <node concept="2YIFZM" id="40oD5LyzFh$" role="37wK5m">
                                       <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+                                      <ref role="37wK5l" to="bd8o:~ModalityState.defaultModalityState():com.intellij.openapi.application.ModalityState" resolve="defaultModalityState" />
                                     </node>
                                   </node>
                                 </node>
