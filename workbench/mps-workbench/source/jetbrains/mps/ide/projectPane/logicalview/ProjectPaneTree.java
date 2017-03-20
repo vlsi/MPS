@@ -320,7 +320,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
                 continue;
               }
               for (final SNode node : contextDescriptor.getRootNodes()) {
-                String nodePack = SNodeAccessUtil.getProperty(node, SNodeUtil.propertyName_BaseConcept_virtualPackage);
+                String nodePack = SNodeAccessUtil.getProperty(node, SNodeUtil.property_BaseConcept_virtualPackage);
                 if (nodePack == null) {
                   continue;
                 }

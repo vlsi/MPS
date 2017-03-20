@@ -252,10 +252,6 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="5253134957341870583" name="jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression" flags="nn" index="pqAIu">
-        <reference id="5253134957341870585" name="propertyDeclaration" index="pqAIg" />
-        <reference id="5253134957341870584" name="conceptDeclaration" index="pqAIh" />
-      </concept>
       <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
@@ -1598,29 +1594,6 @@
         <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
       </node>
     </node>
-    <node concept="Wx3nA" id="2iMJRNxJZUU" role="jymVt">
-      <property role="TrG5h" value="property_IResolveInfo_resolveInfo" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="2iMJRNxJZUV" role="1B3o_S" />
-      <node concept="355D3s" id="2iMJRNxJZUZ" role="33vP2m">
-        <property role="B6XcY" value="true" />
-        <ref role="355D3t" to="tpck:hqLv6T6" resolve="IResolveInfo" />
-        <ref role="355D3u" to="tpck:hqLvdgl" resolve="resolveInfo" />
-      </node>
-      <node concept="3uibUv" id="7BIvS$tMzie" role="1tU5fm">
-        <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
-      </node>
-    </node>
-    <node concept="Wx3nA" id="6pIEkniRZWw" role="jymVt">
-      <property role="TrG5h" value="propertyName_BaseConcept_virtualPackage" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="6pIEkniRZWx" role="1B3o_S" />
-      <node concept="17QB3L" id="6pIEkniRZWy" role="1tU5fm" />
-      <node concept="pqAIu" id="4jf2Bbgo_F5" role="33vP2m">
-        <ref role="pqAIh" to="tpck:gw2VY9q" resolve="BaseConcept" />
-        <ref role="pqAIg" to="tpck:hnGE5uv" resolve="virtualPackage" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="2iMJRNxJZV0" role="jymVt">
       <property role="TrG5h" value="property_BaseConcept_virtualPackage" />
       <property role="3TUv4t" value="true" />
@@ -1644,19 +1617,6 @@
         <ref role="355D3u" to="tpck:gOOYy9I" resolve="alias" />
       </node>
       <node concept="3uibUv" id="7BIvS$tMzig" role="1tU5fm">
-        <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
-      </node>
-    </node>
-    <node concept="Wx3nA" id="2iMJRNxJZVc" role="jymVt">
-      <property role="TrG5h" value="property_BaseConcept_shortDescription" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="2iMJRNxJZVd" role="1B3o_S" />
-      <node concept="355D3s" id="2iMJRNxJZVh" role="33vP2m">
-        <property role="B6XcY" value="true" />
-        <ref role="355D3t" to="tpck:gw2VY9q" resolve="BaseConcept" />
-        <ref role="355D3u" to="tpck:gOOYnlO" resolve="shortDescription" />
-      </node>
-      <node concept="3uibUv" id="7BIvS$tMzih" role="1tU5fm">
         <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
       </node>
     </node>
