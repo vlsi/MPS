@@ -12,7 +12,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ApplyGenerators = new ConceptPresentationBuilder().shortDesc("Collection of generators to apply directly").create();
   private final ConceptPresentation props_Checkpoint = new ConceptPresentationBuilder().shortDesc("Synchronization point of a generation plan").create();
   private final ConceptPresentation props_CheckpointDeclaration = new ConceptPresentationBuilder().shortDesc("Declaration of a checkpoint suitable for reuse, with no persistence/synchronization semantics attached.").create();
-  private final ConceptPresentation props_CheckpointSynchronization = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CheckpointSpecification = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CheckpointSynchronization = new ConceptPresentationBuilder().shortDesc("Take external references associated with the given checkpoint").create();
+  private final ConceptPresentation props_DeclaredCheckpointSpec = new ConceptPresentationBuilder().shortDesc("use a pure checkpoint declared elsewhere").create();
+  private final ConceptPresentation props_InPlaceCheckpointRefSpec = new ConceptPresentationBuilder().shortDesc("reference another checkpoint step with in-place declaration").create();
+  private final ConceptPresentation props_InPlaceCheckpointSpec = new ConceptPresentationBuilder().shortDesc("define checkpoint right here").create();
   private final ConceptPresentation props_Plan = new ConceptPresentationBuilder().shortDesc("Sequence of transformation steps").create();
   private final ConceptPresentation props_Step = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Transform = new ConceptPresentationBuilder().shortDesc("Collection of languages to reduce (iow, generators to apply)").create();
@@ -28,8 +32,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Checkpoint;
       case LanguageConceptSwitch.CheckpointDeclaration:
         return props_CheckpointDeclaration;
+      case LanguageConceptSwitch.CheckpointSpecification:
+        return props_CheckpointSpecification;
       case LanguageConceptSwitch.CheckpointSynchronization:
         return props_CheckpointSynchronization;
+      case LanguageConceptSwitch.DeclaredCheckpointSpec:
+        return props_DeclaredCheckpointSpec;
+      case LanguageConceptSwitch.InPlaceCheckpointRefSpec:
+        return props_InPlaceCheckpointRefSpec;
+      case LanguageConceptSwitch.InPlaceCheckpointSpec:
+        return props_InPlaceCheckpointSpec;
       case LanguageConceptSwitch.Plan:
         return props_Plan;
       case LanguageConceptSwitch.Step:

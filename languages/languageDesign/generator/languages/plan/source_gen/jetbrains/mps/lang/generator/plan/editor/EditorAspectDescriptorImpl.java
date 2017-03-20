@@ -26,8 +26,14 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 3:
         return Collections.<ConceptEditor>singletonList(new CheckpointSynchronization_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new Plan_Editor());
+        return Collections.<ConceptEditor>singletonList(new DeclaredCheckpointSpec_Editor());
       case 5:
+        return Collections.<ConceptEditor>singletonList(new InPlaceCheckpointRefSpec_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new InPlaceCheckpointSpec_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new Plan_Editor());
+      case 8:
         return Collections.<ConceptEditor>singletonList(new Transform_Editor());
       default:
     }
@@ -36,5 +42,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
-  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L), MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071801L), MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x56d679ca1f4b53ceL), MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0xc11e5088a794d07L), MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fbL), MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071802L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L), MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071801L), MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x56d679ca1f4b53ceL), MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0xc11e5088a794d07L), MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb2fdL), MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb32cL), MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7ca161L), MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fbL), MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071802L)).seal();
 }

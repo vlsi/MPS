@@ -15,7 +15,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptApplyGenerators = createDescriptorForApplyGenerators();
   /*package*/ final ConceptDescriptor myConceptCheckpoint = createDescriptorForCheckpoint();
   /*package*/ final ConceptDescriptor myConceptCheckpointDeclaration = createDescriptorForCheckpointDeclaration();
+  /*package*/ final ConceptDescriptor myConceptCheckpointSpecification = createDescriptorForCheckpointSpecification();
   /*package*/ final ConceptDescriptor myConceptCheckpointSynchronization = createDescriptorForCheckpointSynchronization();
+  /*package*/ final ConceptDescriptor myConceptDeclaredCheckpointSpec = createDescriptorForDeclaredCheckpointSpec();
+  /*package*/ final ConceptDescriptor myConceptInPlaceCheckpointRefSpec = createDescriptorForInPlaceCheckpointRefSpec();
+  /*package*/ final ConceptDescriptor myConceptInPlaceCheckpointSpec = createDescriptorForInPlaceCheckpointSpec();
   /*package*/ final ConceptDescriptor myConceptPlan = createDescriptorForPlan();
   /*package*/ final ConceptDescriptor myConceptStep = createDescriptorForStep();
   /*package*/ final ConceptDescriptor myConceptTransform = createDescriptorForTransform();
@@ -27,7 +31,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptApplyGenerators, myConceptCheckpoint, myConceptCheckpointDeclaration, myConceptCheckpointSynchronization, myConceptPlan, myConceptStep, myConceptTransform);
+    return Arrays.asList(myConceptApplyGenerators, myConceptCheckpoint, myConceptCheckpointDeclaration, myConceptCheckpointSpecification, myConceptCheckpointSynchronization, myConceptDeclaredCheckpointSpec, myConceptInPlaceCheckpointRefSpec, myConceptInPlaceCheckpointSpec, myConceptPlan, myConceptStep, myConceptTransform);
   }
 
   @Override
@@ -40,8 +44,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptCheckpoint;
       case LanguageConceptSwitch.CheckpointDeclaration:
         return myConceptCheckpointDeclaration;
+      case LanguageConceptSwitch.CheckpointSpecification:
+        return myConceptCheckpointSpecification;
       case LanguageConceptSwitch.CheckpointSynchronization:
         return myConceptCheckpointSynchronization;
+      case LanguageConceptSwitch.DeclaredCheckpointSpec:
+        return myConceptDeclaredCheckpointSpec;
+      case LanguageConceptSwitch.InPlaceCheckpointRefSpec:
+        return myConceptInPlaceCheckpointRefSpec;
+      case LanguageConceptSwitch.InPlaceCheckpointSpec:
+        return myConceptInPlaceCheckpointSpec;
       case LanguageConceptSwitch.Plan:
         return myConceptPlan;
       case LanguageConceptSwitch.Step:
@@ -72,6 +84,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.generator.plan.structure.Step", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/1820634577908471809");
+    b.aggregate("cpSpec", 0x340cd07aed7cb2d2L).target(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7ca164L).optional(false).ordered(true).multiple(false).origin("3750601816081740498").done();
+    b.alias("persist/synchronize checkpoint");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCheckpointDeclaration() {
@@ -80,6 +94,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.generator.plan.structure.Step", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/6257322641293267918");
+    b.alias("declare a checkpoint");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForCheckpointSpecification() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator.plan", "CheckpointSpecification", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7ca164L);
+    b.interface_();
+    b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/3750601816081736036");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCheckpointSynchronization() {
@@ -87,7 +108,32 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.generator.plan.structure.Step", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL);
     b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/869728027904920839");
-    b.associate("checkpoint", 0xc11e5088a794d08L).target(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071801L).optional(true).origin("869728027904920840").done();
+    b.aggregate("checkpoint", 0x340cd07aedd21238L).target(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7ca164L).optional(false).ordered(true).multiple(false).origin("3750601816087335480").done();
+    b.alias("synchronize with checkpoint");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForDeclaredCheckpointSpec() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator.plan", "DeclaredCheckpointSpec", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb2fdL);
+    b.class_(false, false, false);
+    b.parent(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7ca164L);
+    b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/3750601816081740541");
+    b.associate("cpDecl", 0x340cd07aed7cb300L).target(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x56d679ca1f4b53ceL).optional(false).origin("3750601816081740544").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForInPlaceCheckpointRefSpec() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator.plan", "InPlaceCheckpointRefSpec", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb32cL);
+    b.class_(false, false, false);
+    b.parent(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7ca164L);
+    b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/3750601816081740588");
+    b.associate("checkpoint", 0x340cd07aed7cb32fL).target(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071801L).optional(false).origin("3750601816081740591").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForInPlaceCheckpointSpec() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator.plan", "InPlaceCheckpointSpec", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7ca161L);
+    b.class_(false, false, false);
+    b.parent(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7ca164L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/3750601816081736033");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForPlan() {

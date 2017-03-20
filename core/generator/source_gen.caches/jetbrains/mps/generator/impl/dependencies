@@ -43,6 +43,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
   <dependency className="jetbrains.mps.generator.impl.GenPlanTranslator" file="GenPlanTranslator.java">
+    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationPlanBuilder" />
