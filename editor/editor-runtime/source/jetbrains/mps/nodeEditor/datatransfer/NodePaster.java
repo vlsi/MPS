@@ -272,6 +272,7 @@ public class NodePaster {
   }
 
   private SNode findSuitableLink(SNode sourceConcept, String role) {
+    //todo[MM] !!! remove "role" here!!!
     List<SNode> links;
     if (role != null) {
       SNode link = new ConceptAndSuperConceptsScope(sourceConcept).getMostSpecificLinkDeclarationByRole(role);

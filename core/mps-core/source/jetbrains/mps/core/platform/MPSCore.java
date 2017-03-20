@@ -19,7 +19,6 @@ import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPluginBase;
-import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
@@ -113,7 +112,6 @@ public final class MPSCore extends ComponentPluginBase {
                                       new LanguageDescriptorModelProvider(myClassLoaderManager),
                                       new GeneratorDescriptorModelProvider()));
     init(new ProjectStructureModule(myModuleRepository, myPersistenceFacade));
-    init(new CopyPasteManager(myClassLoaderManager));
     init(new BLDependenciesCache(myModuleRepository, cleanupManager));
 
     init(new ResolverComponent());

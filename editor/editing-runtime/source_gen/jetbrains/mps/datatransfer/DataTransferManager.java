@@ -66,10 +66,6 @@ public final class DataTransferManager implements LanguageRegistryListener {
       preProcessor.preProcessNode(copy, original);
       return;
     }
-    if (CopyPasteManager.getInstance().preProcessNodeInternal(copy, original)) {
-      // branch for legacy code interop. remove after 3.5 
-      return;
-    }
 
     Iterator<SNode> originalChildrenIterator = ListSequence.fromList(SNodeOperations.getChildren(original)).iterator();
     Iterator<SNode> copyChildrenIterator = ListSequence.fromList(SNodeOperations.getChildren(copy)).iterator();
@@ -82,10 +78,6 @@ public final class DataTransferManager implements LanguageRegistryListener {
     PastePostProcessor postProcessor = getPastePostProcessor(SNodeOperations.getConcept(pastedNode));
     if (postProcessor != null) {
       postProcessor.postProcessNode(pastedNode);
-      return;
-    }
-    if (CopyPasteManager.getInstance().postProcessNodeInternal(pastedNode)) {
-      // branch for legacy code interop. remove after 3.5 
       return;
     }
 
