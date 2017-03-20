@@ -263,78 +263,35 @@
   </root>
   <root nodeRef="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)/3700100223624426201">
     <file name="CompositeWithParentScope.java">
-      <node id="3700100223624426221" at="23,68,24,19" concept="9" />
-      <node id="3700100223624426235" at="24,19,25,69" concept="7" />
-      <node id="3700100223624426241" at="25,69,26,84" concept="8" />
-      <node id="7362994916699063561" at="34,78,35,120" concept="8" />
-      <node id="7362994916699063358" at="43,67,44,120" concept="8" />
-      <node id="8317913688490453151" at="51,42,52,337" concept="8" />
-      <node id="767594943503283414" at="56,79,57,19" concept="9" />
-      <node id="767594943503283416" at="57,19,58,57" concept="7" />
-      <node id="767594943503283424" at="58,57,59,84" concept="8" />
-      <node id="767594943503283444" at="61,89,62,120" concept="8" />
-      <node id="767594943503283469" at="64,78,65,120" concept="8" />
-      <node id="767594943503283440" at="61,0,64,0" concept="11" trace="from#(Ljava/lang/Iterable;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/scope/Scope;" />
-      <node id="767594943503283465" at="64,0,67,0" concept="11" trace="from#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/scope/Scope;" />
-      <node id="8317913688490453133" at="50,0,54,0" concept="6" trace="getName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="213885436671338177" at="32,0,37,0" concept="11" trace="from#(Ljava/lang/Iterable;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <node id="213885436671338216" at="41,0,46,0" concept="11" trace="from#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <node id="767594943503283410" at="56,0,61,0" concept="11" trace="from#(Ljetbrains/mps/scope/Scope;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/scope/Scope;" />
-      <node id="8317913688490453114" at="48,68,54,19" concept="8" />
-      <node id="3700100223624426216" at="21,0,28,0" concept="11" trace="from#(Ljetbrains/mps/scope/Scope;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <node id="8317913688490453068" at="46,0,56,0" concept="11" trace="fromLink#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <scope id="213885436671338180" at="34,78,35,120" />
-      <scope id="213885436671338219" at="43,67,44,120" />
-      <scope id="8317913688490453138" at="51,42,52,337" />
-      <scope id="767594943503283443" at="61,89,62,120" />
-      <scope id="767594943503283468" at="64,78,65,120" />
-      <scope id="3700100223624426219" at="23,68,26,84">
-        <var name="nextScope" id="3700100223624426236" />
-      </scope>
-      <scope id="767594943503283413" at="56,79,59,84">
+      <node id="767594943503283414" at="11,79,12,19" concept="9" />
+      <node id="767594943503283416" at="12,19,13,57" concept="7" />
+      <node id="767594943503283424" at="13,57,14,84" concept="8" />
+      <node id="767594943503283444" at="16,89,17,120" concept="8" />
+      <node id="767594943503283469" at="19,78,20,120" concept="8" />
+      <node id="767594943503283440" at="16,0,19,0" concept="11" trace="from#(Ljava/lang/Iterable;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/scope/Scope;" />
+      <node id="767594943503283465" at="19,0,22,0" concept="11" trace="from#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/scope/Scope;" />
+      <node id="767594943503283410" at="11,0,16,0" concept="11" trace="from#(Ljetbrains/mps/scope/Scope;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/scope/Scope;" />
+      <scope id="767594943503283443" at="16,89,17,120" />
+      <scope id="767594943503283468" at="19,78,20,120" />
+      <scope id="767594943503283413" at="11,79,14,84">
         <var name="nextScope" id="767594943503283417" />
       </scope>
-      <scope id="767594943503283440" at="61,0,64,0">
+      <scope id="767594943503283440" at="16,0,19,0">
         <var name="elements" id="767594943503283458" />
         <var name="kind" id="767594943503283463" />
         <var name="node" id="767594943503283461" />
       </scope>
-      <scope id="767594943503283465" at="64,0,67,0">
+      <scope id="767594943503283465" at="19,0,22,0">
         <var name="element" id="767594943503283483" />
         <var name="kind" id="767594943503283487" />
         <var name="node" id="767594943503283485" />
       </scope>
-      <scope id="8317913688490453133" at="50,0,54,0">
-        <var name="child" id="8317913688490453136" />
-      </scope>
-      <scope id="213885436671338177" at="32,0,37,0">
-        <var name="elements" id="213885436671338182" />
-        <var name="kind" id="213885436671338187" />
-        <var name="node" id="213885436671338184" />
-      </scope>
-      <scope id="213885436671338216" at="41,0,46,0">
-        <var name="element" id="213885436671338221" />
-        <var name="kind" id="213885436671338234" />
-        <var name="node" id="213885436671338225" />
-      </scope>
-      <scope id="767594943503283410" at="56,0,61,0">
+      <scope id="767594943503283410" at="11,0,16,0">
         <var name="kind" id="767594943503283438" />
         <var name="node" id="767594943503283436" />
         <var name="original" id="767594943503283434" />
       </scope>
-      <scope id="8317913688490453071" at="48,68,54,19" />
-      <scope id="3700100223624426216" at="21,0,28,0">
-        <var name="kind" id="3700100223624426229" />
-        <var name="node" id="3700100223624426226" />
-        <var name="original" id="3700100223624426224" />
-      </scope>
-      <scope id="8317913688490453068" at="46,0,56,0">
-        <var name="kind" id="8317913688490453096" />
-        <var name="link" id="8401916545537277562" />
-        <var name="node" id="8317913688490453078" />
-      </scope>
-      <unit id="8317913688490453131" at="49,20,54,5" name="jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope$1" />
-      <unit id="3700100223624426201" at="16,0,69,0" name="jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope" />
+      <unit id="3700100223624426201" at="10,0,24,0" name="jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope" />
     </file>
   </root>
   <root nodeRef="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)/4819084825497241580">
