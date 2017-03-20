@@ -421,8 +421,17 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public void setCaretX(int x) {
-    myTextLine.setCaretByXCoord(x - myX);
+    myTextLine.setCaretByXCoord(x - getShiftX());
     makePositionValid();
+  }
+
+  @Override
+  public int getCaretX() {
+    return myTextLine.getCaretX(getShiftX());
+  }
+
+  private int getShiftX() {
+    return isDrawBrackets() ? myX + myGapLeft + BRACKET_WIDTH : myX + myGapLeft;
   }
 
   private void makePositionValid() {
@@ -437,19 +446,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   @Override
-  public int getCaretX() {
-    return myTextLine.getCaretX(getShiftX());
-  }
-
-  private int getShiftX() {
-    return isDrawBrackets() ? myX + myGapLeft + BRACKET_WIDTH : myX + myGapLeft;
-  }
-
-  @Override
   public boolean processMousePressed(MouseEvent e) {
-    myTextLine.setCaretByXCoord(e.getX() - myX);
-    myTextLine.resetSelection();
-    makePositionValid();
+    setCaretX(e.getX());
     getEditor().repaint(this);
     return true;
   }
