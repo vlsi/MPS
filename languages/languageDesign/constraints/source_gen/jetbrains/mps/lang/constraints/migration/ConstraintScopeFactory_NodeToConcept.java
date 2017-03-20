@@ -168,13 +168,15 @@ public class ConstraintScopeFactory_NodeToConcept extends MigrationScriptBase {
 
   public boolean migrateScopeFactoryReturnExpresssion(SNode expression) {
     if (SNodeOperations.isInstanceOf(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"))) {
+      addScopeModelImportIfMissing(SNodeOperations.getModel(expression));
+      SNodeOperations.replaceWithAnother(expression, _quotation_createNode_djohgv_a0a1a0a51());
       return false;
     }
 
     SNode type = TypeChecker.getInstance().getTypeOf(expression);
 
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_djohgv_b0a4a51())) {
-      addListScopeModelImportIfMissing(SNodeOperations.getModel(expression));
+      addScopeModelImportIfMissing(SNodeOperations.getModel(expression));
       SNodeOperations.replaceWithAnother(expression, _quotation_createNode_djohgv_a0a1a4a51(expression));
       return false;
     }
@@ -190,11 +192,11 @@ public class ConstraintScopeFactory_NodeToConcept extends MigrationScriptBase {
   /**
    * smodel language provide no ways to get model reference
    */
-  private static final SModelReference modelRef_ListScope = PersistenceFacade.getInstance().createModelReference("r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)");
+  private static final SModelReference modelRef_Scope = PersistenceFacade.getInstance().createModelReference("r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)");
 
-  public static void addListScopeModelImportIfMissing(SModel m) {
+  public static void addScopeModelImportIfMissing(SModel m) {
     ModelImporter importer = new ModelImporter(m);
-    importer.prepare(modelRef_ListScope);
+    importer.prepare(modelRef_Scope);
     importer.execute();
   }
 
@@ -311,6 +313,16 @@ public class ConstraintScopeFactory_NodeToConcept extends MigrationScriptBase {
         }
       }
     }
+  }
+  private static SNode _quotation_createNode_djohgv_a0a1a0a51() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    SNode quotedNode_2 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x10ab8473cc5L, "GenericNewExpression"), null, null, false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x11a59b0fbceL, "ClassCreator"), null, null, false);
+    quotedNode_2.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), quotedNode_2, facade.createModelReference("r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)"), facade.createNodeId("8401916545537566969")));
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator"), quotedNode_2);
+    return quotedNode_1;
   }
   private static SNode _quotation_createNode_djohgv_a0a1a4a51(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

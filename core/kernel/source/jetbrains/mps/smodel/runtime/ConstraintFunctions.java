@@ -16,15 +16,12 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 /**
  *
@@ -42,9 +39,10 @@ public final class ConstraintFunctions {
    * Resulting constraint function returns true at only if all supplied constraint functions returns true.
    * If none constraint functions supplied, it always returns true.
    */
+  @NotNull
   public static <Context> ConstraintFunction<Context, Boolean> createBooleanComposition(Iterable<ConstraintFunction<Context, Boolean>> constraints) {
-    List<ConstraintFunction<Context, Boolean>> constraintList =
-        StreamSupport.stream(constraints.spliterator(), false).distinct().collect(Collectors.toList());
+    List<ConstraintFunction<Context, Boolean>> constraintList = collectConstraints(constraints);
+
     if (constraintList.size() == 0) {
       return (ConstraintFunction<Context, Boolean>) EMPTY_BOOLEAN_COMPOSITION;
     }
@@ -59,11 +57,12 @@ public final class ConstraintFunctions {
    *
    * TODO While a scope conjunction not implemented, it returns first not-null result of supplied constraint functions
    */
+  @NotNull
   public static <Context> ConstraintFunction<Context, ReferenceScopeProvider> createScopeProviderComposition(
       Iterable<ConstraintFunction<Context, ReferenceScopeProvider>> constraints
   ) {
-    List<ConstraintFunction<Context, ReferenceScopeProvider>> constraintList =
-        StreamSupport.stream(constraints.spliterator(), false).distinct().collect(Collectors.toList());
+    List<ConstraintFunction<Context, ReferenceScopeProvider>> constraintList = collectConstraints(constraints);
+
     if (constraintList.size() == 0) {
       return (ConstraintFunction<Context, ReferenceScopeProvider>) EMPTY_SCOPE_PROVIDER_COMPOSITION;
     }
@@ -108,6 +107,12 @@ public final class ConstraintFunctions {
     return (constraintContext_defaultScopeProvider, checkingNodeContext) -> cd.getDefaultScopeProvider();
   }
 
+  // filtering out duplicated constraint functions
+  private static <C, R> List<ConstraintFunction<C, R>> collectConstraints(Iterable<ConstraintFunction<C, R>> constraints) {
+    LinkedHashSet<ConstraintFunction<C, R>> constraintSet = new LinkedHashSet<>();
+    constraints.forEach(constraintSet::add);
+    return new ArrayList<>(constraintSet);
+  }
 
   private static final ConstraintFunction<?, Boolean> EMPTY_BOOLEAN_COMPOSITION = (context, checkingNodeContext) -> true;
 
@@ -121,7 +126,7 @@ public final class ConstraintFunctions {
 
     private final Iterable<ConstraintFunction<Context, Boolean>> myDirectParents;
 
-    public BooleanCompositionConstraintFunction(Iterable<ConstraintFunction<Context, Boolean>> directParents) {
+    /*package*/ BooleanCompositionConstraintFunction(Iterable<ConstraintFunction<Context, Boolean>> directParents) {
       myDirectParents = directParents;
     }
 
