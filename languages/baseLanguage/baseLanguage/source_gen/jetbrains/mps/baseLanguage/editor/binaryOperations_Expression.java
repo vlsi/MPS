@@ -42,15 +42,15 @@ public class binaryOperations_Expression extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new binaryOperations_Expression.TransformationMenuPart_Group_bai4z9_a0());
+      result.add(new binaryOperations_Expression.TMP_Group_bai4z9_a0());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new binaryOperations_Expression.TransformationMenuPart_Group_bai4z9_a1());
+      result.add(new binaryOperations_Expression.TMP_Group_bai4z9_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_bai4z9_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_bai4z9_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
@@ -58,9 +58,9 @@ public class binaryOperations_Expression extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new binaryOperations_Expression.TransformationMenuPart_Group_bai4z9_a0.TransformationMenuPart_WrapSubstituteMenu_bai4z9_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new binaryOperations_Expression.TMP_Group_bai4z9_a0.TMP_WrapSM_bai4z9_a0a());
     }
-    public class TransformationMenuPart_WrapSubstituteMenu_bai4z9_a0a extends WrapSubstituteMenuTransformationMenuPart {
+    public class TMP_WrapSM_bai4z9_a0a extends WrapSubstituteMenuTransformationMenuPart {
 
       @Nullable
       @Override
@@ -75,7 +75,7 @@ public class binaryOperations_Expression extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_Group_bai4z9_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_bai4z9_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
@@ -83,9 +83,9 @@ public class binaryOperations_Expression extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new binaryOperations_Expression.TransformationMenuPart_Group_bai4z9_a1.TransformationMenuPart_WrapSubstituteMenu_bai4z9_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new binaryOperations_Expression.TMP_Group_bai4z9_a1.TMP_WrapSM_bai4z9_a0b());
     }
-    public class TransformationMenuPart_WrapSubstituteMenu_bai4z9_a0b extends WrapSubstituteMenuTransformationMenuPart {
+    public class TMP_WrapSM_bai4z9_a0b extends WrapSubstituteMenuTransformationMenuPart {
 
       @Nullable
       @Override

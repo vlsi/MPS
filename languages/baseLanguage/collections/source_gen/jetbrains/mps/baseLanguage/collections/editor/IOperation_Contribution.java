@@ -25,13 +25,13 @@ public class IOperation_Contribution extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new IOperation_Contribution.SubstituteMenuPart_IncludeMenu_kt4yqg_a());
-    result.add(new IOperation_Contribution.SubstituteMenuPart_IncludeMenu_kt4yqg_b());
-    result.add(new IOperation_Contribution.SubstituteMenuPart_IncludeMenu_kt4yqg_c());
-    result.add(new IOperation_Contribution.SubstituteMenuPart_IncludeMenu_kt4yqg_d());
+    result.add(new IOperation_Contribution.SMP_Include_kt4yqg_a());
+    result.add(new IOperation_Contribution.SMP_Include_kt4yqg_b());
+    result.add(new IOperation_Contribution.SMP_Include_kt4yqg_c());
+    result.add(new IOperation_Contribution.SMP_Include_kt4yqg_d());
     return result;
   }
-  public class SubstituteMenuPart_IncludeMenu_kt4yqg_a extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_kt4yqg_a extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override
@@ -40,7 +40,7 @@ public class IOperation_Contribution extends SubstituteMenuBase {
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation"), "jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType");
     }
   }
-  public class SubstituteMenuPart_IncludeMenu_kt4yqg_b extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_kt4yqg_b extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override
@@ -49,7 +49,7 @@ public class IOperation_Contribution extends SubstituteMenuBase {
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation"), "jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType");
     }
   }
-  public class SubstituteMenuPart_IncludeMenu_kt4yqg_c extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_kt4yqg_c extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override
@@ -58,7 +58,7 @@ public class IOperation_Contribution extends SubstituteMenuBase {
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation"), "jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_ArrayType");
     }
   }
-  public class SubstituteMenuPart_IncludeMenu_kt4yqg_d extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_kt4yqg_d extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override

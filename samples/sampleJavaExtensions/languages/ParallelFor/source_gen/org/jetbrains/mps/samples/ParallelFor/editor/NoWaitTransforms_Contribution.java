@@ -37,12 +37,12 @@ public class NoWaitTransforms_Contribution extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new NoWaitTransforms_Contribution.TransformationMenuPart_Group_uv3amh_a0());
+      result.add(new NoWaitTransforms_Contribution.TMP_Group_uv3amh_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_uv3amh_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_uv3amh_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor")) && SNodeOperations.hasRole(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, 0x40a8d217b6d881feL, "threadPool"));
@@ -50,9 +50,9 @@ public class NoWaitTransforms_Contribution extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new NoWaitTransforms_Contribution.TransformationMenuPart_Group_uv3amh_a0.TransformationMenuPart_IncludeMenu_uv3amh_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new NoWaitTransforms_Contribution.TMP_Group_uv3amh_a0.TMP_Include_uv3amh_a0a());
     }
-    public class TransformationMenuPart_IncludeMenu_uv3amh_a0a extends IncludeTransformationMenuTransformationMenuPart {
+    public class TMP_Include_uv3amh_a0a extends IncludeTransformationMenuTransformationMenuPart {
       @Nullable
       @Override
       protected SNode getNode(TransformationMenuContext _context) {

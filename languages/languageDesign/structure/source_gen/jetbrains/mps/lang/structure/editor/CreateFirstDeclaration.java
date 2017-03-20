@@ -48,12 +48,12 @@ public class CreateFirstDeclaration extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new CreateFirstDeclaration.TransformationMenuPart_Group_ofqub7_a0());
+      result.add(new CreateFirstDeclaration.TMP_Group_ofqub7_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_ofqub7_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_ofqub7_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).isEmpty();
@@ -61,12 +61,12 @@ public class CreateFirstDeclaration extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new CreateFirstDeclaration.TransformationMenuPart_Group_ofqub7_a0.TransformationMenuPart_Action_ofqub7_a0a(), new CreateFirstDeclaration.TransformationMenuPart_Group_ofqub7_a0.TransformationMenuPart_Parameterized_ofqub7_b0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new CreateFirstDeclaration.TMP_Group_ofqub7_a0.TMP_Action_ofqub7_a0a(), new CreateFirstDeclaration.TMP_Group_ofqub7_a0.TMP_Param_ofqub7_b0a());
     }
-    private class TransformationMenuPart_Action_ofqub7_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_ofqub7_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new CreateFirstDeclaration.TransformationMenuPart_Group_ofqub7_a0.TransformationMenuPart_Action_ofqub7_a0a.Item(context);
+        return new CreateFirstDeclaration.TMP_Group_ofqub7_a0.TMP_Action_ofqub7_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -106,12 +106,12 @@ public class CreateFirstDeclaration extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Parameterized_ofqub7_b0a extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Param_ofqub7_b0a extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
 
       @NotNull
       @Override
       protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
-        return new CreateFirstDeclaration.TransformationMenuPart_Group_ofqub7_a0.TransformationMenuPart_Parameterized_ofqub7_b0a.TransformationMenuPart_Action_ofqub7_a1a0(parameter).createItems(context);
+        return new CreateFirstDeclaration.TMP_Group_ofqub7_a0.TMP_Param_ofqub7_b0a.TMP_Action_ofqub7_a1a0(parameter).createItems(context);
       }
 
       @Nullable
@@ -128,14 +128,14 @@ public class CreateFirstDeclaration extends TransformationMenuBase {
         }).toListSequence();
       }
 
-      private class TransformationMenuPart_Action_ofqub7_a1a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_ofqub7_a1a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         private final SNode myParameterObject;
-        public TransformationMenuPart_Action_ofqub7_a1a0(SNode parameterObject) {
+        public TMP_Action_ofqub7_a1a0(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new CreateFirstDeclaration.TransformationMenuPart_Group_ofqub7_a0.TransformationMenuPart_Parameterized_ofqub7_b0a.TransformationMenuPart_Action_ofqub7_a1a0.Item(context);
+          return new CreateFirstDeclaration.TMP_Group_ofqub7_a0.TMP_Param_ofqub7_b0a.TMP_Action_ofqub7_a1a0.Item(context);
         }
 
         private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

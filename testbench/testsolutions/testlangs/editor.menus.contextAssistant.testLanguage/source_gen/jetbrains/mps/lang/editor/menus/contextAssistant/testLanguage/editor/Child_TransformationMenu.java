@@ -44,23 +44,23 @@ public class Child_TransformationMenu extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
-      result.add(new Child_TransformationMenu.TransformationMenuPart_IncludeSubstituteMenu_qk1e79_a0());
+      result.add(new Child_TransformationMenu.TMP_IncludeSM_qk1e79_a0());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_a1());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b1());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c1());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d1());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_e1());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_IncludeMenu_qk1e79_f1());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_g1());
+      result.add(new Child_TransformationMenu.TMP_Group_qk1e79_a1());
+      result.add(new Child_TransformationMenu.TMP_Action_qk1e79_b1());
+      result.add(new Child_TransformationMenu.TMP_SubMenu_qk1e79_c1());
+      result.add(new Child_TransformationMenu.TMP_Group_qk1e79_d1());
+      result.add(new Child_TransformationMenu.TMP_Group_qk1e79_e1());
+      result.add(new Child_TransformationMenu.TMP_Include_qk1e79_f1());
+      result.add(new Child_TransformationMenu.TMP_Action_qk1e79_g1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeSubstituteMenu_qk1e79_a0 extends IncludeSubstituteMenuTransformationMenuPart {
+  public class TMP_IncludeSM_qk1e79_a0 extends IncludeSubstituteMenuTransformationMenuPart {
   }
-  public class TransformationMenuPart_Group_qk1e79_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_qk1e79_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       if ("error".equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
@@ -71,12 +71,12 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_a1.TransformationMenuPart_Action_qk1e79_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TMP_Group_qk1e79_a1.TMP_Action_qk1e79_a0b());
     }
-    private class TransformationMenuPart_Action_qk1e79_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_qk1e79_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_a1.TransformationMenuPart_Action_qk1e79_a0b.Item(context);
+        return new Child_TransformationMenu.TMP_Group_qk1e79_a1.TMP_Action_qk1e79_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -100,10 +100,10 @@ public class Child_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  private class TransformationMenuPart_Action_qk1e79_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_qk1e79_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b1.Item(context);
+      return new Child_TransformationMenu.TMP_Action_qk1e79_b1.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -127,7 +127,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  public class TransformationMenuPart_SubMenu_qk1e79_c1 extends SubMenuMenuTransformationMenuPart {
+  public class TMP_SubMenu_qk1e79_c1 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "tree operations";
@@ -135,12 +135,12 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c1.TransformationMenuPart_Action_qk1e79_a2b(), new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c1.TransformationMenuPart_Action_qk1e79_b2b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TMP_SubMenu_qk1e79_c1.TMP_Action_qk1e79_a2b(), new Child_TransformationMenu.TMP_SubMenu_qk1e79_c1.TMP_Action_qk1e79_b2b());
     }
-    private class TransformationMenuPart_Action_qk1e79_a2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_qk1e79_a2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c1.TransformationMenuPart_Action_qk1e79_a2b.Item(context);
+        return new Child_TransformationMenu.TMP_SubMenu_qk1e79_c1.TMP_Action_qk1e79_a2b.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -164,10 +164,10 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
       }
     }
-    private class TransformationMenuPart_Action_qk1e79_b2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_qk1e79_b2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c1.TransformationMenuPart_Action_qk1e79_b2b.Item(context);
+        return new Child_TransformationMenu.TMP_SubMenu_qk1e79_c1.TMP_Action_qk1e79_b2b.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -194,7 +194,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_Group_qk1e79_d1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_qk1e79_d1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).contains("a");
@@ -202,12 +202,12 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d1.TransformationMenuPart_Action_qk1e79_a3b(), new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d1.TransformationMenuPart_Action_qk1e79_b3b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TMP_Group_qk1e79_d1.TMP_Action_qk1e79_a3b(), new Child_TransformationMenu.TMP_Group_qk1e79_d1.TMP_Action_qk1e79_b3b());
     }
-    private class TransformationMenuPart_Action_qk1e79_a3b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_qk1e79_a3b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d1.TransformationMenuPart_Action_qk1e79_a3b.Item(context);
+        return new Child_TransformationMenu.TMP_Group_qk1e79_d1.TMP_Action_qk1e79_a3b.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -231,10 +231,10 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
       }
     }
-    private class TransformationMenuPart_Action_qk1e79_b3b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_qk1e79_b3b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d1.TransformationMenuPart_Action_qk1e79_b3b.Item(context);
+        return new Child_TransformationMenu.TMP_Group_qk1e79_d1.TMP_Action_qk1e79_b3b.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -258,7 +258,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_Group_qk1e79_e1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_qk1e79_e1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).endsWith("a"));
@@ -266,12 +266,12 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_e1.TransformationMenuPart_Action_qk1e79_a4b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TMP_Group_qk1e79_e1.TMP_Action_qk1e79_a4b());
     }
-    private class TransformationMenuPart_Action_qk1e79_a4b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_qk1e79_a4b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_e1.TransformationMenuPart_Action_qk1e79_a4b.Item(context);
+        return new Child_TransformationMenu.TMP_Group_qk1e79_e1.TMP_Action_qk1e79_a4b.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -296,7 +296,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_IncludeMenu_qk1e79_f1 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_qk1e79_f1 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
@@ -307,10 +307,10 @@ public class Child_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  private class TransformationMenuPart_Action_qk1e79_g1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_qk1e79_g1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_g1.Item(context);
+      return new Child_TransformationMenu.TMP_Action_qk1e79_g1.Item(context);
     }
 
     private class Item extends ActionItemBase {

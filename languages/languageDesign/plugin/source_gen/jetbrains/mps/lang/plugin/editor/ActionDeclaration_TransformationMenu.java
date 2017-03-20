@@ -41,18 +41,18 @@ public class ActionDeclaration_TransformationMenu extends TransformationMenuBase
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new ActionDeclaration_TransformationMenu.TransformationMenuPart_Action_xfq2dd_a0());
+      result.add(new ActionDeclaration_TransformationMenu.TMP_Action_xfq2dd_a0());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new ActionDeclaration_TransformationMenu.TransformationMenuPart_Action_xfq2dd_a1());
+      result.add(new ActionDeclaration_TransformationMenu.TMP_Action_xfq2dd_a1());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_xfq2dd_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_xfq2dd_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new ActionDeclaration_TransformationMenu.TransformationMenuPart_Action_xfq2dd_a0.Item(context);
+      return new ActionDeclaration_TransformationMenu.TMP_Action_xfq2dd_a0.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -104,10 +104,10 @@ public class ActionDeclaration_TransformationMenu extends TransformationMenuBase
 
     }
   }
-  private class TransformationMenuPart_Action_xfq2dd_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_xfq2dd_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new ActionDeclaration_TransformationMenu.TransformationMenuPart_Action_xfq2dd_a1.Item(context);
+      return new ActionDeclaration_TransformationMenu.TMP_Action_xfq2dd_a1.Item(context);
     }
 
     private class Item extends ActionItemBase {

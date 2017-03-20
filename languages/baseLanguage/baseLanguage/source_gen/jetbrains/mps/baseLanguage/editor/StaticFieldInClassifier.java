@@ -23,15 +23,15 @@ public class StaticFieldInClassifier extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new StaticFieldInClassifier.SubstituteMenuPart_Action_5xvqjt_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new StaticFieldInClassifier.SMP_Action_5xvqjt_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
     return result;
   }
-  private class SubstituteMenuPart_Action_5xvqjt_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_5xvqjt_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new StaticFieldInClassifier.SubstituteMenuPart_Action_5xvqjt_a.Item(_context);
+      return new StaticFieldInClassifier.SMP_Action_5xvqjt_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

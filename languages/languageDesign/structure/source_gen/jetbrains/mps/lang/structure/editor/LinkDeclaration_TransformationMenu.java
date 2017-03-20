@@ -48,13 +48,13 @@ public class LinkDeclaration_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new LinkDeclaration_TransformationMenu.TransformationMenuPart_Group_bjuler_a1());
-      result.add(new LinkDeclaration_TransformationMenu.TransformationMenuPart_Group_bjuler_b1());
+      result.add(new LinkDeclaration_TransformationMenu.TMP_Group_bjuler_a1());
+      result.add(new LinkDeclaration_TransformationMenu.TMP_Group_bjuler_b1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_bjuler_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_bjuler_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")) == null);
@@ -62,14 +62,14 @@ public class LinkDeclaration_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new LinkDeclaration_TransformationMenu.TransformationMenuPart_Group_bjuler_a1.TransformationMenuPart_Parameterized_bjuler_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new LinkDeclaration_TransformationMenu.TMP_Group_bjuler_a1.TMP_Param_bjuler_a0b());
     }
-    private class TransformationMenuPart_Parameterized_bjuler_a0b extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Param_bjuler_a0b extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
 
       @NotNull
       @Override
       protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
-        return new LinkDeclaration_TransformationMenu.TransformationMenuPart_Group_bjuler_a1.TransformationMenuPart_Parameterized_bjuler_a0b.TransformationMenuPart_Action_bjuler_a0a1(parameter).createItems(context);
+        return new LinkDeclaration_TransformationMenu.TMP_Group_bjuler_a1.TMP_Param_bjuler_a0b.TMP_Action_bjuler_a0a1(parameter).createItems(context);
       }
 
       @Nullable
@@ -93,14 +93,14 @@ public class LinkDeclaration_TransformationMenu extends TransformationMenuBase {
         return ListSequence.fromList(result).distinct().toListSequence();
       }
 
-      private class TransformationMenuPart_Action_bjuler_a0a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_bjuler_a0a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         private final SNode myParameterObject;
-        public TransformationMenuPart_Action_bjuler_a0a1(SNode parameterObject) {
+        public TMP_Action_bjuler_a0a1(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new LinkDeclaration_TransformationMenu.TransformationMenuPart_Group_bjuler_a1.TransformationMenuPart_Parameterized_bjuler_a0b.TransformationMenuPart_Action_bjuler_a0a1.Item(context);
+          return new LinkDeclaration_TransformationMenu.TMP_Group_bjuler_a1.TMP_Param_bjuler_a0b.TMP_Action_bjuler_a0a1.Item(context);
         }
 
         private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -127,7 +127,7 @@ public class LinkDeclaration_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_Group_bjuler_b1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_bjuler_b1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x213ed46fe94fc232L, "unordered")));
@@ -135,12 +135,12 @@ public class LinkDeclaration_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new LinkDeclaration_TransformationMenu.TransformationMenuPart_Group_bjuler_b1.TransformationMenuPart_Action_bjuler_a1b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new LinkDeclaration_TransformationMenu.TMP_Group_bjuler_b1.TMP_Action_bjuler_a1b());
     }
-    private class TransformationMenuPart_Action_bjuler_a1b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_bjuler_a1b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new LinkDeclaration_TransformationMenu.TransformationMenuPart_Group_bjuler_b1.TransformationMenuPart_Action_bjuler_a1b.Item(context);
+        return new LinkDeclaration_TransformationMenu.TMP_Group_bjuler_b1.TMP_Action_bjuler_a1b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

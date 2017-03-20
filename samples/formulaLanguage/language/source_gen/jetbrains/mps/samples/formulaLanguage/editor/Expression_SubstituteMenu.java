@@ -31,17 +31,17 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Expression_SubstituteMenu.SubstituteMenuPart_Action_or55c_a(), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Expression_SubstituteMenu.SubstituteMenuPart_Action_or55c_b(), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant")));
-    result.add(new Expression_SubstituteMenu.SubstituteMenuPart_Subconcepts_or55c_c());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Expression_SubstituteMenu.SMP_Action_or55c_a(), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Expression_SubstituteMenu.SMP_Action_or55c_b(), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant")));
+    result.add(new Expression_SubstituteMenu.SMP_Subconcepts_or55c_c());
     return result;
   }
-  private class SubstituteMenuPart_Action_or55c_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_or55c_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new Expression_SubstituteMenu.SubstituteMenuPart_Action_or55c_a.Item(_context);
+      return new Expression_SubstituteMenu.SMP_Action_or55c_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -82,12 +82,12 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  private class SubstituteMenuPart_Action_or55c_b extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_or55c_b extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new Expression_SubstituteMenu.SubstituteMenuPart_Action_or55c_b.Item(_context);
+      return new Expression_SubstituteMenu.SMP_Action_or55c_b.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -127,7 +127,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  public class SubstituteMenuPart_Subconcepts_or55c_c extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_or55c_c extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db824fa1L, "jetbrains.mps.samples.formulaLanguage.structure.Expression"));
     }

@@ -41,12 +41,12 @@ public class newExpression_DefaultClassCreator_ext_2 extends TransformationMenuB
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new newExpression_DefaultClassCreator_ext_2.TransformationMenuPart_Group_fd8jk1_a0());
+      result.add(new newExpression_DefaultClassCreator_ext_2.TMP_Group_fd8jk1_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_fd8jk1_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_fd8jk1_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, 0x2724644c0accfdb3L, "typeParameter"))).isEmpty();
@@ -54,12 +54,12 @@ public class newExpression_DefaultClassCreator_ext_2 extends TransformationMenuB
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new newExpression_DefaultClassCreator_ext_2.TransformationMenuPart_Group_fd8jk1_a0.TransformationMenuPart_Action_fd8jk1_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new newExpression_DefaultClassCreator_ext_2.TMP_Group_fd8jk1_a0.TMP_Action_fd8jk1_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator")));
     }
-    private class TransformationMenuPart_Action_fd8jk1_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_fd8jk1_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new newExpression_DefaultClassCreator_ext_2.TransformationMenuPart_Group_fd8jk1_a0.TransformationMenuPart_Action_fd8jk1_a0a.Item(context);
+        return new newExpression_DefaultClassCreator_ext_2.TMP_Group_fd8jk1_a0.TMP_Action_fd8jk1_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

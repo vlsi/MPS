@@ -35,18 +35,18 @@ public class TextCommentLinePart_ApplySideTransforms extends TransformationMenuB
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new TextCommentLinePart_ApplySideTransforms.TransformationMenuPart_IncludeMenu_v87s8j_a0());
+      result.add(new TextCommentLinePart_ApplySideTransforms.TMP_Include_v87s8j_a0());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
-      result.add(new TextCommentLinePart_ApplySideTransforms.TransformationMenuPart_IncludeMenu_v87s8j_a1());
+      result.add(new TextCommentLinePart_ApplySideTransforms.TMP_Include_v87s8j_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_v87s8j_a0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_v87s8j_a0 extends IncludeTransformationMenuTransformationMenuPart {
 
   }
-  public class TransformationMenuPart_IncludeMenu_v87s8j_a1 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_v87s8j_a1 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {

@@ -206,10 +206,10 @@
       <node id="1741258697587108234" at="30,67,31,63" concept="9" />
       <node id="1741258697587108234" at="36,124,37,156" concept="8" />
       <node id="1741258697587108234" at="38,173,39,246" concept="4" />
-      <node id="1741258697587108234" at="41,138,42,97" concept="4" />
+      <node id="1741258697587108234" at="41,138,42,78" concept="4" />
       <node id="1741258697587108234" at="43,5,44,18" concept="9" />
       <node id="1741258697587108247" at="49,72,50,247" concept="9" />
-      <node id="1741258697587108242" at="54,92,55,214" concept="9" />
+      <node id="1741258697587108242" at="54,92,55,172" concept="9" />
       <node id="1741258697587108259" at="60,67,61,238" concept="9" />
       <node id="1741258697587108234" at="37,156,40,5" concept="6" />
       <node id="1741258697587108234" at="40,5,43,5" concept="6" />
@@ -220,9 +220,9 @@
       <node id="1741258697587108234" at="34,0,46,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587108234" at="30,67,31,63" />
       <scope id="1741258697587108234" at="38,173,39,246" />
-      <scope id="1741258697587108234" at="41,138,42,97" />
+      <scope id="1741258697587108234" at="41,138,42,78" />
       <scope id="1741258697587108246" at="49,72,50,247" />
-      <scope id="1741258697587108242" at="54,92,55,214" />
+      <scope id="1741258697587108242" at="54,92,55,172" />
       <scope id="1741258697587108258" at="60,67,61,238" />
       <scope id="1741258697587108234" at="29,0,33,0">
         <var name="location" id="1741258697587108234" />
@@ -240,8 +240,8 @@
       <scope id="1741258697587108234" at="34,0,46,0">
         <var name="_context" id="1741258697587108234" />
       </scope>
-      <unit id="1741258697587108242" at="57,0,65,0" name="jetbrains.mps.make.facet.editor.FacetReference_TransformationMenu$TransformationMenuPart_Group_y0lqi1_a1$TransformationMenuPart_IncludeMenu_y0lqi1_a0b" />
-      <unit id="1741258697587108242" at="47,0,66,0" name="jetbrains.mps.make.facet.editor.FacetReference_TransformationMenu$TransformationMenuPart_Group_y0lqi1_a1" />
+      <unit id="1741258697587108242" at="57,0,65,0" name="jetbrains.mps.make.facet.editor.FacetReference_TransformationMenu$TMP_Group_y0lqi1_a1$TMP_Include_y0lqi1_a0b" />
+      <unit id="1741258697587108242" at="47,0,66,0" name="jetbrains.mps.make.facet.editor.FacetReference_TransformationMenu$TMP_Group_y0lqi1_a1" />
       <unit id="1741258697587108234" at="27,0,67,0" name="jetbrains.mps.make.facet.editor.FacetReference_TransformationMenu" />
     </file>
   </root>
@@ -251,11 +251,11 @@
       <node id="1741258697587108268" at="36,67,37,63" concept="9" />
       <node id="1741258697587108268" at="42,124,43,156" concept="8" />
       <node id="1741258697587108268" at="44,173,45,260" concept="4" />
-      <node id="1741258697587108268" at="47,138,48,102" concept="4" />
+      <node id="1741258697587108268" at="47,138,48,83" concept="4" />
       <node id="1741258697587108268" at="49,5,50,18" concept="9" />
       <node id="1741258697587108281" at="55,72,56,204" concept="9" />
-      <node id="1741258697587108276" at="60,92,61,440" concept="9" />
-      <node id="1741258697587108276" at="65,86,66,152" concept="9" />
+      <node id="1741258697587108276" at="60,92,61,402" concept="9" />
+      <node id="1741258697587108276" at="65,86,66,114" concept="9" />
       <node id="1741258697587108276" at="70,0,71,0" concept="5" trace="_context" />
       <node id="1741258697587108276" at="72,57,73,29" concept="4" />
       <node id="1741258697587108291" at="78,52,79,21" concept="9" />
@@ -277,10 +277,10 @@
       <node id="1741258697587108268" at="40,0,52,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587108268" at="36,67,37,63" />
       <scope id="1741258697587108268" at="44,173,45,260" />
-      <scope id="1741258697587108268" at="47,138,48,102" />
+      <scope id="1741258697587108268" at="47,138,48,83" />
       <scope id="1741258697587108280" at="55,72,56,204" />
-      <scope id="1741258697587108276" at="60,92,61,440" />
-      <scope id="1741258697587108276" at="65,86,66,152" />
+      <scope id="1741258697587108276" at="60,92,61,402" />
+      <scope id="1741258697587108276" at="65,86,66,114" />
       <scope id="1741258697587108276" at="72,57,73,29" />
       <scope id="1741258697587108290" at="78,52,79,21" />
       <scope id="1741258697587108276" at="91,52,92,185" />
@@ -315,9 +315,9 @@
       <scope id="1741258697587108268" at="40,0,52,0">
         <var name="_context" id="1741258697587108268" />
       </scope>
-      <unit id="1741258697587108276" at="69,0,99,0" name="jetbrains.mps.make.facet.editor.IPropertyExpression_TransformationMenu$TransformationMenuPart_Group_j2qvk8_a1$TransformationMenuPart_Action_j2qvk8_a0b$Item" />
-      <unit id="1741258697587108276" at="63,0,100,0" name="jetbrains.mps.make.facet.editor.IPropertyExpression_TransformationMenu$TransformationMenuPart_Group_j2qvk8_a1$TransformationMenuPart_Action_j2qvk8_a0b" />
-      <unit id="1741258697587108276" at="53,0,101,0" name="jetbrains.mps.make.facet.editor.IPropertyExpression_TransformationMenu$TransformationMenuPart_Group_j2qvk8_a1" />
+      <unit id="1741258697587108276" at="69,0,99,0" name="jetbrains.mps.make.facet.editor.IPropertyExpression_TransformationMenu$TMP_Group_j2qvk8_a1$TMP_Action_j2qvk8_a0b$Item" />
+      <unit id="1741258697587108276" at="63,0,100,0" name="jetbrains.mps.make.facet.editor.IPropertyExpression_TransformationMenu$TMP_Group_j2qvk8_a1$TMP_Action_j2qvk8_a0b" />
+      <unit id="1741258697587108276" at="53,0,101,0" name="jetbrains.mps.make.facet.editor.IPropertyExpression_TransformationMenu$TMP_Group_j2qvk8_a1" />
       <unit id="1741258697587108268" at="33,0,102,0" name="jetbrains.mps.make.facet.editor.IPropertyExpression_TransformationMenu" />
     </file>
   </root>
@@ -327,15 +327,15 @@
       <node id="1741258697587108319" at="40,67,41,63" concept="9" />
       <node id="1741258697587108319" at="46,124,47,156" concept="8" />
       <node id="1741258697587108319" at="48,173,49,256" concept="4" />
-      <node id="1741258697587108319" at="51,138,52,107" concept="4" />
+      <node id="1741258697587108319" at="51,138,52,88" concept="4" />
       <node id="1741258697587108319" at="53,5,54,18" concept="9" />
       <node id="1741258697587108332" at="59,72,60,250" concept="9" />
-      <node id="1741258697587108327" at="64,92,65,441" concept="9" />
-      <node id="1741258697587108327" at="71,110,72,224" concept="9" />
+      <node id="1741258697587108327" at="64,92,65,395" concept="9" />
+      <node id="1741258697587108327" at="71,110,72,159" concept="9" />
       <node id="1741258697587108345" at="77,93,78,527" concept="9" />
       <node id="1741258697587108327" at="82,0,83,0" concept="5" trace="myParameterObject" />
-      <node id="1741258697587108327" at="83,81,84,46" concept="4" />
-      <node id="1741258697587108327" at="87,88,88,208" concept="9" />
+      <node id="1741258697587108327" at="83,62,84,46" concept="4" />
+      <node id="1741258697587108327" at="87,88,88,143" concept="9" />
       <node id="1741258697587108327" at="92,0,93,0" concept="5" trace="_context" />
       <node id="1741258697587108327" at="94,59,95,31" concept="4" />
       <node id="1741258697587108357" at="100,54,101,188" concept="9" />
@@ -346,7 +346,7 @@
       <node id="1741258697587108327" at="115,54,116,176" concept="9" />
       <node id="1741258697587108319" at="47,156,50,5" concept="6" />
       <node id="1741258697587108319" at="50,5,53,5" concept="6" />
-      <node id="1741258697587108327" at="83,0,86,0" concept="2" trace="TransformationMenuPart_Action_bw4iz1_a0a1#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587108327" at="83,0,86,0" concept="2" trace="TMP_Action_bw4iz1_a0a1#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587108327" at="94,0,97,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
       <node id="1741258697587108319" at="39,0,43,0" concept="7" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
       <node id="1741258697587108327" at="58,0,62,0" concept="7" trace="isApplicable#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Z" />
@@ -360,13 +360,13 @@
       <node id="1741258697587108319" at="44,0,56,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587108319" at="40,67,41,63" />
       <scope id="1741258697587108319" at="48,173,49,256" />
-      <scope id="1741258697587108319" at="51,138,52,107" />
+      <scope id="1741258697587108319" at="51,138,52,88" />
       <scope id="1741258697587108331" at="59,72,60,250" />
-      <scope id="1741258697587108327" at="64,92,65,441" />
-      <scope id="1741258697587108327" at="71,110,72,224" />
+      <scope id="1741258697587108327" at="64,92,65,395" />
+      <scope id="1741258697587108327" at="71,110,72,159" />
       <scope id="1741258697587108344" at="77,93,78,527" />
-      <scope id="1741258697587108327" at="83,81,84,46" />
-      <scope id="1741258697587108327" at="87,88,88,208" />
+      <scope id="1741258697587108327" at="83,62,84,46" />
+      <scope id="1741258697587108327" at="87,88,88,143" />
       <scope id="1741258697587108327" at="94,59,95,31" />
       <scope id="1741258697587108356" at="100,54,101,188" />
       <scope id="1741258697587108327" at="115,54,116,176" />
@@ -409,10 +409,10 @@
       <scope id="1741258697587108319" at="44,0,56,0">
         <var name="_context" id="1741258697587108319" />
       </scope>
-      <unit id="1741258697587108327" at="91,0,119,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_TransformationMenu$TransformationMenuPart_Group_bw4iz1_a1$TransformationMenuPart_Parameterized_bw4iz1_a0b$TransformationMenuPart_Action_bw4iz1_a0a1$Item" />
-      <unit id="1741258697587108327" at="81,0,120,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_TransformationMenu$TransformationMenuPart_Group_bw4iz1_a1$TransformationMenuPart_Parameterized_bw4iz1_a0b$TransformationMenuPart_Action_bw4iz1_a0a1" />
-      <unit id="1741258697587108327" at="67,0,121,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_TransformationMenu$TransformationMenuPart_Group_bw4iz1_a1$TransformationMenuPart_Parameterized_bw4iz1_a0b" />
-      <unit id="1741258697587108327" at="57,0,122,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_TransformationMenu$TransformationMenuPart_Group_bw4iz1_a1" />
+      <unit id="1741258697587108327" at="91,0,119,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_TransformationMenu$TMP_Group_bw4iz1_a1$TMP_Param_bw4iz1_a0b$TMP_Action_bw4iz1_a0a1$Item" />
+      <unit id="1741258697587108327" at="81,0,120,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_TransformationMenu$TMP_Group_bw4iz1_a1$TMP_Param_bw4iz1_a0b$TMP_Action_bw4iz1_a0a1" />
+      <unit id="1741258697587108327" at="67,0,121,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_TransformationMenu$TMP_Group_bw4iz1_a1$TMP_Param_bw4iz1_a0b" />
+      <unit id="1741258697587108327" at="57,0,122,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_TransformationMenu$TMP_Group_bw4iz1_a1" />
       <unit id="1741258697587108319" at="37,0,123,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_TransformationMenu" />
     </file>
   </root>
@@ -421,11 +421,11 @@
       <node id="1741258697587108400" at="29,0,30,0" concept="5" trace="myLocations" />
       <node id="1741258697587108400" at="31,67,32,63" concept="9" />
       <node id="1741258697587108400" at="37,124,38,156" concept="8" />
-      <node id="1741258697587108400" at="39,137,40,94" concept="4" />
+      <node id="1741258697587108400" at="39,137,40,75" concept="4" />
       <node id="1741258697587108400" at="41,5,42,18" concept="9" />
       <node id="1741258697587108409" at="47,72,48,195" concept="9" />
-      <node id="1741258697587108404" at="52,92,53,206" concept="9" />
-      <node id="1741258697587108404" at="57,86,58,144" concept="9" />
+      <node id="1741258697587108404" at="52,92,53,168" concept="9" />
+      <node id="1741258697587108404" at="57,86,58,106" concept="9" />
       <node id="1741258697587108404" at="62,0,63,0" concept="5" trace="_context" />
       <node id="1741258697587108404" at="64,57,65,29" concept="4" />
       <node id="1741258697587108418" at="70,52,71,28" concept="9" />
@@ -441,10 +441,10 @@
       <node id="1741258697587108404" at="74,0,79,0" concept="7" trace="execute#(Ljava/lang/String;)V" />
       <node id="1741258697587108400" at="35,0,44,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587108400" at="31,67,32,63" />
-      <scope id="1741258697587108400" at="39,137,40,94" />
+      <scope id="1741258697587108400" at="39,137,40,75" />
       <scope id="1741258697587108408" at="47,72,48,195" />
-      <scope id="1741258697587108404" at="52,92,53,206" />
-      <scope id="1741258697587108404" at="57,86,58,144" />
+      <scope id="1741258697587108404" at="52,92,53,168" />
+      <scope id="1741258697587108404" at="57,86,58,106" />
       <scope id="1741258697587108404" at="64,57,65,29" />
       <scope id="1741258697587108417" at="70,52,71,28" />
       <scope id="1741258697587108421" at="75,54,77,262" />
@@ -473,17 +473,17 @@
       <scope id="1741258697587108400" at="35,0,44,0">
         <var name="_context" id="1741258697587108400" />
       </scope>
-      <unit id="1741258697587108404" at="61,0,82,0" name="jetbrains.mps.make.facet.editor.TargetDeclaration_makeOptional$TransformationMenuPart_Group_2cml4i_a0$TransformationMenuPart_Action_2cml4i_a0a$Item" />
-      <unit id="1741258697587108404" at="55,0,83,0" name="jetbrains.mps.make.facet.editor.TargetDeclaration_makeOptional$TransformationMenuPart_Group_2cml4i_a0$TransformationMenuPart_Action_2cml4i_a0a" />
-      <unit id="1741258697587108404" at="45,0,84,0" name="jetbrains.mps.make.facet.editor.TargetDeclaration_makeOptional$TransformationMenuPart_Group_2cml4i_a0" />
+      <unit id="1741258697587108404" at="61,0,82,0" name="jetbrains.mps.make.facet.editor.TargetDeclaration_makeOptional$TMP_Group_2cml4i_a0$TMP_Action_2cml4i_a0a$Item" />
+      <unit id="1741258697587108404" at="55,0,83,0" name="jetbrains.mps.make.facet.editor.TargetDeclaration_makeOptional$TMP_Group_2cml4i_a0$TMP_Action_2cml4i_a0a" />
+      <unit id="1741258697587108404" at="45,0,84,0" name="jetbrains.mps.make.facet.editor.TargetDeclaration_makeOptional$TMP_Group_2cml4i_a0" />
       <unit id="1741258697587108400" at="28,0,85,0" name="jetbrains.mps.make.facet.editor.TargetDeclaration_makeOptional" />
     </file>
   </root>
   <root nodeRef="r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)/1741258697587108453">
     <file name="ResourceClassifierType_SubstituteMenu.java">
       <node id="1741258697587108453" at="22,118,23,140" concept="8" />
-      <node id="1741258697587108453" at="23,140,24,94" concept="4" />
-      <node id="1741258697587108453" at="24,94,25,18" concept="9" />
+      <node id="1741258697587108453" at="23,140,24,79" concept="4" />
+      <node id="1741258697587108453" at="24,79,25,18" concept="9" />
       <node id="1741258697587108458" at="29,68,30,223" concept="9" />
       <node id="1741258697587108453" at="34,84,35,478" concept="9" />
       <node id="1741258697587108453" at="28,0,32,0" concept="7" trace="isApplicable#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Z" />
@@ -501,20 +501,20 @@
       <scope id="1741258697587108453" at="20,0,27,0">
         <var name="_context" id="1741258697587108453" />
       </scope>
-      <unit id="1741258697587108453" at="27,0,38,0" name="jetbrains.mps.make.facet.editor.ResourceClassifierType_SubstituteMenu$SubstituteMenuPart_Group_k868c7_a" />
+      <unit id="1741258697587108453" at="27,0,38,0" name="jetbrains.mps.make.facet.editor.ResourceClassifierType_SubstituteMenu$SMP_Group_k868c7_a" />
       <unit id="1741258697587108453" at="19,0,39,0" name="jetbrains.mps.make.facet.editor.ResourceClassifierType_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)/1741258697587108493">
     <file name="FacetReferenceExpression_SubstituteMenu.java">
       <node id="1741258697587108493" at="30,118,31,140" concept="8" />
-      <node id="1741258697587108493" at="31,140,32,314" concept="4" />
-      <node id="1741258697587108493" at="32,314,33,18" concept="9" />
-      <node id="1741258697587108493" at="38,100,39,167" concept="9" />
+      <node id="1741258697587108493" at="31,140,32,291" concept="4" />
+      <node id="1741258697587108493" at="32,291,33,18" concept="9" />
+      <node id="1741258697587108493" at="38,100,39,129" concept="9" />
       <node id="1741258697587108499" at="43,87,44,223" concept="9" />
       <node id="1741258697587108493" at="47,0,48,0" concept="5" trace="myParameterObject" />
-      <node id="1741258697587108493" at="48,73,49,44" concept="4" />
-      <node id="1741258697587108493" at="54,79,55,152" concept="9" />
+      <node id="1741258697587108493" at="48,58,49,44" concept="4" />
+      <node id="1741258697587108493" at="54,79,55,114" concept="9" />
       <node id="1741258697587108493" at="58,0,59,0" concept="5" trace="_context" />
       <node id="1741258697587108493" at="59,52,60,258" concept="11" />
       <node id="1741258697587108493" at="60,258,61,29" concept="4" />
@@ -531,7 +531,7 @@
       <node id="1741258697587108606" at="96,260,97,204" concept="4" />
       <node id="1741258697587108606" at="97,204,98,176" concept="4" />
       <node id="1741258697587108606" at="98,176,99,24" concept="9" />
-      <node id="1741258697587108493" at="48,0,51,0" concept="2" trace="SubstituteMenuPart_Action_micvva_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587108493" at="48,0,51,0" concept="2" trace="SMP_Action_micvva_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587108493" at="71,62,74,11" concept="6" />
       <node id="1741258697587108493" at="59,0,63,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
       <node id="1741258697587108493" at="36,0,41,0" concept="7" trace="createItems#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
@@ -543,10 +543,10 @@
       <node id="1741258697587108493" at="28,0,35,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <node id="1741258697587108493" at="69,0,77,0" concept="7" trace="getIcon#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <node id="1741258697587108606" at="91,0,101,0" concept="10" trace="_quotation_createNode_micvva_a0a0a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1741258697587108493" at="38,100,39,167" />
+      <scope id="1741258697587108493" at="38,100,39,129" />
       <scope id="1741258697587108498" at="43,87,44,223" />
-      <scope id="1741258697587108493" at="48,73,49,44" />
-      <scope id="1741258697587108493" at="54,79,55,152" />
+      <scope id="1741258697587108493" at="48,58,49,44" />
+      <scope id="1741258697587108493" at="54,79,55,114" />
       <scope id="1741258697587108493" at="66,58,67,72" />
       <scope id="1741258697587108493" at="72,51,73,88" />
       <scope id="1741258697587108531" at="79,64,80,186" />
@@ -595,9 +595,9 @@
       <scope id="1741258697587108606" at="91,0,101,0">
         <var name="parameter_1" id="1741258697587108606" />
       </scope>
-      <unit id="1741258697587108493" at="57,0,88,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_SubstituteMenu$SubstituteMenuPart_Parameterized_micvva_a$SubstituteMenuPart_Action_micvva_a0$Item" />
-      <unit id="1741258697587108493" at="46,0,89,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_SubstituteMenu$SubstituteMenuPart_Parameterized_micvva_a$SubstituteMenuPart_Action_micvva_a0" />
-      <unit id="1741258697587108493" at="35,0,91,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_SubstituteMenu$SubstituteMenuPart_Parameterized_micvva_a" />
+      <unit id="1741258697587108493" at="57,0,88,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_SubstituteMenu$SMP_Param_micvva_a$SMP_Action_micvva_a0$Item" />
+      <unit id="1741258697587108493" at="46,0,89,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_SubstituteMenu$SMP_Param_micvva_a$SMP_Action_micvva_a0" />
+      <unit id="1741258697587108493" at="35,0,91,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_SubstituteMenu$SMP_Param_micvva_a" />
       <unit id="1741258697587108493" at="27,0,102,0" name="jetbrains.mps.make.facet.editor.FacetReferenceExpression_SubstituteMenu" />
     </file>
   </root>
@@ -605,9 +605,9 @@
     <file name="Expression_Contribution.java">
       <node id="1741258697587108640" at="21,36,22,16" concept="11" />
       <node id="1741258697587108640" at="26,118,27,140" concept="8" />
-      <node id="1741258697587108640" at="27,140,28,86" concept="4" />
-      <node id="1741258697587108640" at="28,86,29,86" concept="4" />
-      <node id="1741258697587108640" at="29,86,30,18" concept="9" />
+      <node id="1741258697587108640" at="27,140,28,67" concept="4" />
+      <node id="1741258697587108640" at="28,67,29,67" concept="4" />
+      <node id="1741258697587108640" at="29,67,30,18" concept="9" />
       <node id="1741258697587108640" at="36,82,37,70" concept="8" />
       <node id="1741258697587108640" at="37,70,38,296" concept="9" />
       <node id="1741258697587108640" at="45,82,46,70" concept="8" />
@@ -636,17 +636,17 @@
       <scope id="1741258697587108640" at="24,0,32,0">
         <var name="_context" id="1741258697587108640" />
       </scope>
-      <unit id="1741258697587108640" at="32,0,41,0" name="jetbrains.mps.make.facet.editor.Expression_Contribution$SubstituteMenuPart_IncludeMenu_s9uhwr_a" />
-      <unit id="1741258697587108640" at="41,0,50,0" name="jetbrains.mps.make.facet.editor.Expression_Contribution$SubstituteMenuPart_IncludeMenu_s9uhwr_b" />
+      <unit id="1741258697587108640" at="32,0,41,0" name="jetbrains.mps.make.facet.editor.Expression_Contribution$SMP_Include_s9uhwr_a" />
+      <unit id="1741258697587108640" at="41,0,50,0" name="jetbrains.mps.make.facet.editor.Expression_Contribution$SMP_Include_s9uhwr_b" />
       <unit id="1741258697587108640" at="20,0,51,0" name="jetbrains.mps.make.facet.editor.Expression_Contribution" />
     </file>
   </root>
   <root nodeRef="r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)/1741258697587108642">
     <file name="ForeignParameters.java">
       <node id="1741258697587108642" at="37,118,38,140" concept="8" />
-      <node id="1741258697587108642" at="38,140,39,304" concept="4" />
-      <node id="1741258697587108642" at="39,304,40,18" concept="9" />
-      <node id="1741258697587108642" at="45,100,46,145" concept="9" />
+      <node id="1741258697587108642" at="38,140,39,281" concept="4" />
+      <node id="1741258697587108642" at="39,281,40,18" concept="9" />
+      <node id="1741258697587108642" at="45,100,46,107" concept="9" />
       <node id="1741258697587108648" at="50,87,51,245" concept="8" />
       <node id="1741258697587108656" at="51,245,52,218" concept="8" />
       <node id="1741258697587108675" at="54,43,55,28" concept="9" />
@@ -654,8 +654,8 @@
       <node id="1741258697587108700" at="62,40,63,185" concept="9" />
       <node id="1741258697587108709" at="66,51,67,174" concept="9" />
       <node id="1741258697587108642" at="72,0,73,0" concept="5" trace="myParameterObject" />
-      <node id="1741258697587108642" at="73,73,74,44" concept="4" />
-      <node id="1741258697587108642" at="79,79,80,130" concept="9" />
+      <node id="1741258697587108642" at="73,58,74,44" concept="4" />
+      <node id="1741258697587108642" at="79,79,80,92" concept="9" />
       <node id="1741258697587108642" at="83,0,84,0" concept="5" trace="_context" />
       <node id="1741258697587108642" at="84,52,85,270" concept="11" />
       <node id="1741258697587108642" at="85,270,86,29" concept="4" />
@@ -691,7 +691,7 @@
       <node id="1741258697587108687" at="58,0,61,0" concept="7" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="1741258697587108698" at="62,0,65,0" concept="7" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1741258697587108707" at="66,0,69,0" concept="7" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="1741258697587108642" at="73,0,76,0" concept="2" trace="SubstituteMenuPart_Action_gb3jz3_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587108642" at="73,0,76,0" concept="2" trace="SMP_Action_gb3jz3_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587108642" at="98,67,101,11" concept="6" />
       <node id="1741258697587108642" at="106,62,109,11" concept="6" />
       <node id="1741258697587108810" at="141,39,144,5" concept="6" />
@@ -709,13 +709,13 @@
       <node id="1741258697587108810" at="135,0,151,0" concept="10" trace="_quotation_createNode_gb3jz3_a2a0a0#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1741258697587108663" at="52,218,69,26" concept="9" />
       <node id="1741258697587108642" at="48,0,71,0" concept="7" trace="getParameters#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/lang/Iterable;" />
-      <scope id="1741258697587108642" at="45,100,46,145" />
+      <scope id="1741258697587108642" at="45,100,46,107" />
       <scope id="1741258697587108674" at="54,43,55,28" />
       <scope id="1741258697587108688" at="58,53,59,351" />
       <scope id="1741258697587108699" at="62,40,63,185" />
       <scope id="1741258697587108708" at="66,51,67,174" />
-      <scope id="1741258697587108642" at="73,73,74,44" />
-      <scope id="1741258697587108642" at="79,79,80,130" />
+      <scope id="1741258697587108642" at="73,58,74,44" />
+      <scope id="1741258697587108642" at="79,79,80,92" />
       <scope id="1741258697587108642" at="99,51,100,83" />
       <scope id="1741258697587108642" at="107,51,108,88" />
       <scope id="1741258697587108744" at="114,64,115,548" />
@@ -802,22 +802,22 @@
       <scope id="1741258697587108642" at="48,0,71,0">
         <var name="_context" id="1741258697587108642" />
       </scope>
-      <unit id="1741258697587108673" at="53,222,57,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a$1" />
-      <unit id="1741258697587108687" at="57,220,61,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a$2" />
-      <unit id="1741258697587108698" at="61,21,65,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a$3" />
-      <unit id="1741258697587108707" at="65,23,69,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a$4" />
-      <unit id="1741258697587108642" at="82,0,118,0" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a$SubstituteMenuPart_Action_gb3jz3_a0$Item" />
-      <unit id="1741258697587108642" at="71,0,119,0" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a$SubstituteMenuPart_Action_gb3jz3_a0" />
-      <unit id="1741258697587108642" at="42,0,121,0" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a" />
+      <unit id="1741258697587108673" at="53,222,57,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$SMP_Param_gb3jz3_a$1" />
+      <unit id="1741258697587108687" at="57,220,61,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$SMP_Param_gb3jz3_a$2" />
+      <unit id="1741258697587108698" at="61,21,65,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$SMP_Param_gb3jz3_a$3" />
+      <unit id="1741258697587108707" at="65,23,69,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$SMP_Param_gb3jz3_a$4" />
+      <unit id="1741258697587108642" at="82,0,118,0" name="jetbrains.mps.make.facet.editor.ForeignParameters$SMP_Param_gb3jz3_a$SMP_Action_gb3jz3_a0$Item" />
+      <unit id="1741258697587108642" at="71,0,119,0" name="jetbrains.mps.make.facet.editor.ForeignParameters$SMP_Param_gb3jz3_a$SMP_Action_gb3jz3_a0" />
+      <unit id="1741258697587108642" at="42,0,121,0" name="jetbrains.mps.make.facet.editor.ForeignParameters$SMP_Param_gb3jz3_a" />
       <unit id="1741258697587108642" at="34,0,152,0" name="jetbrains.mps.make.facet.editor.ForeignParameters" />
     </file>
   </root>
   <root nodeRef="r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)/1741258697587108850">
     <file name="TargetDependency_SubstituteMenu.java">
       <node id="1741258697587108850" at="39,118,40,140" concept="8" />
-      <node id="1741258697587108850" at="40,140,41,298" concept="4" />
-      <node id="1741258697587108850" at="41,298,42,18" concept="9" />
-      <node id="1741258697587108850" at="47,118,48,159" concept="9" />
+      <node id="1741258697587108850" at="40,140,41,275" concept="4" />
+      <node id="1741258697587108850" at="41,275,42,18" concept="9" />
+      <node id="1741258697587108850" at="47,118,48,121" concept="9" />
       <node id="1741258697587108858" at="52,105,53,335" concept="8" />
       <node id="1741258697587108879" at="55,42,56,264" concept="9" />
       <node id="1741258697587108891" at="63,0,64,0" concept="5" trace="__CP__" />
@@ -841,8 +841,8 @@
       <node id="1741258697587108899" at="98,0,99,0" concept="5" trace="_2_em" />
       <node id="1741258697587108899" at="99,0,100,0" concept="5" trace="_2_em_it" />
       <node id="1741258697587108850" at="107,0,108,0" concept="5" trace="myParameterObject" />
-      <node id="1741258697587108850" at="108,91,109,44" concept="4" />
-      <node id="1741258697587108850" at="114,79,115,144" concept="9" />
+      <node id="1741258697587108850" at="108,76,109,44" concept="4" />
+      <node id="1741258697587108850" at="114,79,115,106" concept="9" />
       <node id="1741258697587108850" at="118,0,119,0" concept="5" trace="_context" />
       <node id="1741258697587108850" at="119,52,120,250" concept="11" />
       <node id="1741258697587108850" at="120,250,121,29" concept="4" />
@@ -854,7 +854,7 @@
       <node id="1741258697587108850" at="139,62,140,22" concept="9" />
       <node id="1741258697587108938" at="144,64,145,251" concept="9" />
       <node id="1741258697587108877" at="55,0,58,0" concept="7" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1741258697587108850" at="108,0,111,0" concept="2" trace="SubstituteMenuPart_Action_70edxa_a0#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)V" />
+      <node id="1741258697587108850" at="108,0,111,0" concept="2" trace="SMP_Action_70edxa_a0#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)V" />
       <node id="1741258697587108893" at="74,29,78,25" concept="6" />
       <node id="1741258697587108850" at="119,0,123,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
       <node id="1741258697587108850" at="45,0,50,0" concept="7" trace="createItems#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
@@ -873,12 +873,12 @@
       <node id="1741258697587108891" at="59,0,104,0" concept="7" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="1741258697587108869" at="53,335,104,26" concept="9" />
       <node id="1741258697587108850" at="50,0,106,0" concept="7" trace="getParameters#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/lang/Iterable;" />
-      <scope id="1741258697587108850" at="47,118,48,159" />
+      <scope id="1741258697587108850" at="47,118,48,121" />
       <scope id="1741258697587108878" at="55,42,56,264" />
       <scope id="1741258697587108893" at="72,29,73,214" />
       <scope id="1741258697587108891" at="92,30,93,39" />
-      <scope id="1741258697587108850" at="108,91,109,44" />
-      <scope id="1741258697587108850" at="114,79,115,144" />
+      <scope id="1741258697587108850" at="108,76,109,44" />
+      <scope id="1741258697587108850" at="114,79,115,106" />
       <scope id="1741258697587108850" at="134,67,135,20" />
       <scope id="1741258697587108850" at="139,62,140,22" />
       <scope id="1741258697587108935" at="144,64,145,251" />
@@ -941,28 +941,28 @@
       <scope id="1741258697587108850" at="50,0,106,0">
         <var name="_context" id="1741258697587108850" />
       </scope>
-      <unit id="1741258697587108877" at="54,257,58,7" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a$1" />
-      <unit id="1741258697587108850" at="117,0,148,0" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a$SubstituteMenuPart_Action_70edxa_a0$Item" />
-      <unit id="1741258697587108891" at="62,25,100,15" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a$2$1$1" />
-      <unit id="1741258697587108891" at="60,21,102,11" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a$2$1" />
-      <unit id="1741258697587108850" at="106,0,149,0" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a$SubstituteMenuPart_Action_70edxa_a0" />
-      <unit id="1741258697587108891" at="58,23,104,7" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a$2" />
-      <unit id="1741258697587108850" at="44,0,151,0" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a" />
+      <unit id="1741258697587108877" at="54,257,58,7" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SMP_Param_70edxa_a$1" />
+      <unit id="1741258697587108850" at="117,0,148,0" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SMP_Param_70edxa_a$SMP_Action_70edxa_a0$Item" />
+      <unit id="1741258697587108891" at="62,25,100,15" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SMP_Param_70edxa_a$2$1$1" />
+      <unit id="1741258697587108891" at="60,21,102,11" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SMP_Param_70edxa_a$2$1" />
+      <unit id="1741258697587108850" at="106,0,149,0" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SMP_Param_70edxa_a$SMP_Action_70edxa_a0" />
+      <unit id="1741258697587108891" at="58,23,104,7" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SMP_Param_70edxa_a$2" />
+      <unit id="1741258697587108850" at="44,0,151,0" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SMP_Param_70edxa_a" />
       <unit id="1741258697587108850" at="36,0,152,0" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)/1741258697587109039">
     <file name="LocalParameters.java">
       <node id="1741258697587109039" at="35,118,36,140" concept="8" />
-      <node id="1741258697587109039" at="36,140,37,72" concept="4" />
-      <node id="1741258697587109039" at="37,72,38,18" concept="9" />
+      <node id="1741258697587109039" at="36,140,37,57" concept="4" />
+      <node id="1741258697587109039" at="37,57,38,18" concept="9" />
       <node id="1741258697587109044" at="42,68,43,245" concept="9" />
-      <node id="1741258697587109039" at="47,84,48,400" concept="9" />
-      <node id="1741258697587109039" at="53,102,54,181" concept="9" />
+      <node id="1741258697587109039" at="47,84,48,362" concept="9" />
+      <node id="1741258697587109039" at="53,102,54,128" concept="9" />
       <node id="1741258697587109083" at="58,89,59,556" concept="9" />
       <node id="1741258697587109039" at="62,0,63,0" concept="5" trace="myParameterObject" />
-      <node id="1741258697587109039" at="63,76,64,46" concept="4" />
-      <node id="1741258697587109039" at="69,81,70,166" concept="9" />
+      <node id="1741258697587109039" at="63,61,64,46" concept="4" />
+      <node id="1741258697587109039" at="69,81,70,113" concept="9" />
       <node id="1741258697587109039" at="73,0,74,0" concept="5" trace="_context" />
       <node id="1741258697587109039" at="74,54,75,270" concept="11" />
       <node id="1741258697587109039" at="75,270,76,31" concept="4" />
@@ -981,7 +981,7 @@
       <node id="1741258697587109177" at="116,30,117,279" concept="4" />
       <node id="1741258697587109177" at="117,279,118,198" concept="4" />
       <node id="1741258697587109177" at="118,198,119,24" concept="9" />
-      <node id="1741258697587109039" at="63,0,66,0" concept="2" trace="SubstituteMenuPart_Action_59frgq_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587109039" at="63,0,66,0" concept="2" trace="SMP_Action_59frgq_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587109039" at="90,69,93,13" concept="6" />
       <node id="1741258697587109039" at="98,64,101,13" concept="6" />
       <node id="1741258697587109039" at="41,0,45,0" concept="7" trace="isApplicable#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Z" />
@@ -997,11 +997,11 @@
       <node id="1741258697587109039" at="96,0,104,0" concept="7" trace="getIcon#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <node id="1741258697587109039" at="79,0,88,0" concept="7" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1741258697587109043" at="42,68,43,245" />
-      <scope id="1741258697587109039" at="47,84,48,400" />
-      <scope id="1741258697587109039" at="53,102,54,181" />
+      <scope id="1741258697587109039" at="47,84,48,362" />
+      <scope id="1741258697587109039" at="53,102,54,128" />
       <scope id="1741258697587109082" at="58,89,59,556" />
-      <scope id="1741258697587109039" at="63,76,64,46" />
-      <scope id="1741258697587109039" at="69,81,70,166" />
+      <scope id="1741258697587109039" at="63,61,64,46" />
+      <scope id="1741258697587109039" at="69,81,70,113" />
       <scope id="1741258697587109039" at="91,53,92,85" />
       <scope id="1741258697587109039" at="99,53,100,90" />
       <scope id="1741258697587109121" at="106,66,107,182" />
@@ -1057,10 +1057,10 @@
       <scope id="1741258697587109039" at="79,0,88,0">
         <var name="pattern" id="1741258697587109039" />
       </scope>
-      <unit id="1741258697587109039" at="72,0,110,0" name="jetbrains.mps.make.facet.editor.LocalParameters$SubstituteMenuPart_Group_59frgq_a$SubstituteMenuPart_Parameterized_59frgq_a0$SubstituteMenuPart_Action_59frgq_a0a$Item" />
-      <unit id="1741258697587109039" at="61,0,111,0" name="jetbrains.mps.make.facet.editor.LocalParameters$SubstituteMenuPart_Group_59frgq_a$SubstituteMenuPart_Parameterized_59frgq_a0$SubstituteMenuPart_Action_59frgq_a0a" />
-      <unit id="1741258697587109039" at="50,0,113,0" name="jetbrains.mps.make.facet.editor.LocalParameters$SubstituteMenuPart_Group_59frgq_a$SubstituteMenuPart_Parameterized_59frgq_a0" />
-      <unit id="1741258697587109039" at="40,0,114,0" name="jetbrains.mps.make.facet.editor.LocalParameters$SubstituteMenuPart_Group_59frgq_a" />
+      <unit id="1741258697587109039" at="72,0,110,0" name="jetbrains.mps.make.facet.editor.LocalParameters$SMP_Group_59frgq_a$SMP_Param_59frgq_a0$SMP_Action_59frgq_a0a$Item" />
+      <unit id="1741258697587109039" at="61,0,111,0" name="jetbrains.mps.make.facet.editor.LocalParameters$SMP_Group_59frgq_a$SMP_Param_59frgq_a0$SMP_Action_59frgq_a0a" />
+      <unit id="1741258697587109039" at="50,0,113,0" name="jetbrains.mps.make.facet.editor.LocalParameters$SMP_Group_59frgq_a$SMP_Param_59frgq_a0" />
+      <unit id="1741258697587109039" at="40,0,114,0" name="jetbrains.mps.make.facet.editor.LocalParameters$SMP_Group_59frgq_a" />
       <unit id="1741258697587109039" at="32,0,122,0" name="jetbrains.mps.make.facet.editor.LocalParameters" />
     </file>
   </root>

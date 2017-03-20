@@ -234,15 +234,15 @@
     <file name="SuperInterfaceMethodCall_Contribution.java">
       <node id="1741258697587052859" at="32,50,33,16" concept="8" />
       <node id="1741258697587052859" at="37,118,38,140" concept="5" />
-      <node id="1741258697587052859" at="38,140,39,319" concept="1" />
-      <node id="1741258697587052859" at="39,319,40,18" concept="6" />
-      <node id="1741258697587052859" at="45,100,46,165" concept="6" />
+      <node id="1741258697587052859" at="38,140,39,296" concept="1" />
+      <node id="1741258697587052859" at="39,296,40,18" concept="6" />
+      <node id="1741258697587052859" at="45,100,46,127" concept="6" />
       <node id="1741258697587052866" at="50,87,51,246" concept="5" />
       <node id="1741258697587052875" at="52,26,53,39" concept="6" />
       <node id="1741258697587052889" at="56,39,57,182" concept="6" />
       <node id="1741258697587052859" at="62,0,63,0" concept="2" trace="myParameterObject" />
-      <node id="1741258697587052859" at="63,73,64,44" concept="1" />
-      <node id="1741258697587052859" at="69,79,70,150" concept="6" />
+      <node id="1741258697587052859" at="63,58,64,44" concept="1" />
+      <node id="1741258697587052859" at="69,79,70,112" concept="6" />
       <node id="1741258697587052859" at="73,0,74,0" concept="2" trace="_context" />
       <node id="1741258697587052859" at="74,52,75,265" concept="8" />
       <node id="1741258697587052859" at="75,265,76,29" concept="1" />
@@ -256,7 +256,7 @@
       <node id="1741258697587052859" at="32,0,35,0" concept="0" trace="SuperInterfaceMethodCall_Contribution#()V" />
       <node id="1741258697587052873" at="51,246,54,7" concept="3" />
       <node id="1741258697587052887" at="56,0,59,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1741258697587052859" at="63,0,66,0" concept="0" trace="SubstituteMenuPart_Action_73nkqx_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587052859" at="63,0,66,0" concept="0" trace="SMP_Action_73nkqx_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587052859" at="88,62,91,11" concept="3" />
       <node id="1741258697587052859" at="74,0,78,0" concept="0" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
       <node id="1741258697587052859" at="43,0,48,0" concept="4" trace="createItems#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
@@ -269,11 +269,11 @@
       <node id="1741258697587052859" at="86,0,94,0" concept="4" trace="getIcon#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <node id="1741258697587052859" at="48,0,61,0" concept="4" trace="getParameters#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/lang/Iterable;" />
       <scope id="1741258697587052859" at="32,50,33,16" />
-      <scope id="1741258697587052859" at="45,100,46,165" />
+      <scope id="1741258697587052859" at="45,100,46,127" />
       <scope id="1741258697587052874" at="52,26,53,39" />
       <scope id="1741258697587052888" at="56,39,57,182" />
-      <scope id="1741258697587052859" at="63,73,64,44" />
-      <scope id="1741258697587052859" at="69,79,70,150" />
+      <scope id="1741258697587052859" at="63,58,64,44" />
+      <scope id="1741258697587052859" at="69,79,70,112" />
       <scope id="1741258697587052859" at="89,51,90,88" />
       <scope id="1741258697587052923" at="96,64,97,196" />
       <scope id="1741258697587052961" at="101,67,102,96" />
@@ -323,10 +323,10 @@
       <scope id="1741258697587052859" at="48,0,61,0">
         <var name="_context" id="1741258697587052859" />
       </scope>
-      <unit id="1741258697587052887" at="55,78,59,7" name="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_Contribution$SubstituteMenuPart_Parameterized_73nkqx_a$1" />
-      <unit id="1741258697587052859" at="72,0,105,0" name="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_Contribution$SubstituteMenuPart_Parameterized_73nkqx_a$SubstituteMenuPart_Action_73nkqx_a0$Item" />
-      <unit id="1741258697587052859" at="61,0,106,0" name="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_Contribution$SubstituteMenuPart_Parameterized_73nkqx_a$SubstituteMenuPart_Action_73nkqx_a0" />
-      <unit id="1741258697587052859" at="42,0,108,0" name="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_Contribution$SubstituteMenuPart_Parameterized_73nkqx_a" />
+      <unit id="1741258697587052887" at="55,78,59,7" name="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_Contribution$SMP_Param_73nkqx_a$1" />
+      <unit id="1741258697587052859" at="72,0,105,0" name="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_Contribution$SMP_Param_73nkqx_a$SMP_Action_73nkqx_a0$Item" />
+      <unit id="1741258697587052859" at="61,0,106,0" name="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_Contribution$SMP_Param_73nkqx_a$SMP_Action_73nkqx_a0" />
+      <unit id="1741258697587052859" at="42,0,108,0" name="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_Contribution$SMP_Param_73nkqx_a" />
       <unit id="1741258697587052859" at="31,0,109,0" name="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_Contribution" />
     </file>
   </root>

@@ -37,12 +37,12 @@ public class BuildSource_JavaExternalJarFolderRef_TransformationMenu extends Tra
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarFolderRef"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new BuildSource_JavaExternalJarFolderRef_TransformationMenu.TransformationMenuPart_IncludeMenu_5hw5q5_a1());
+      result.add(new BuildSource_JavaExternalJarFolderRef_TransformationMenu.TMP_Include_5hw5q5_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_5hw5q5_a1 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_5hw5q5_a1 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected SNode getNode(TransformationMenuContext _context) {

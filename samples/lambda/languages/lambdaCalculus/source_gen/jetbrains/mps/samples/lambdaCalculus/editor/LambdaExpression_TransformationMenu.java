@@ -38,14 +38,14 @@ public class LambdaExpression_TransformationMenu extends TransformationMenuBase 
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"))));
-      result.add(new LambdaExpression_TransformationMenu.TransformationMenuPart_IncludeMenu_a3sz0k_b0());
-      result.add(new LambdaExpression_TransformationMenu.TransformationMenuPart_IncludeMenu_a3sz0k_c0());
-      result.add(new LambdaExpression_TransformationMenu.TransformationMenuPart_IncludeMenu_a3sz0k_d0());
+      result.add(new LambdaExpression_TransformationMenu.TMP_Include_a3sz0k_b0());
+      result.add(new LambdaExpression_TransformationMenu.TMP_Include_a3sz0k_c0());
+      result.add(new LambdaExpression_TransformationMenu.TMP_Include_a3sz0k_d0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_a3sz0k_b0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_a3sz0k_b0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
@@ -56,7 +56,7 @@ public class LambdaExpression_TransformationMenu extends TransformationMenuBase 
     }
 
   }
-  public class TransformationMenuPart_IncludeMenu_a3sz0k_c0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_a3sz0k_c0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
@@ -67,7 +67,7 @@ public class LambdaExpression_TransformationMenu extends TransformationMenuBase 
     }
 
   }
-  public class TransformationMenuPart_IncludeMenu_a3sz0k_d0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_a3sz0k_d0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {

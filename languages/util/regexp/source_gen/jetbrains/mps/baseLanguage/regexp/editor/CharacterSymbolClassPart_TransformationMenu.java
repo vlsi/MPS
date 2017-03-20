@@ -45,15 +45,15 @@ public class CharacterSymbolClassPart_TransformationMenu extends TransformationM
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791ae82fL, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new CharacterSymbolClassPart_TransformationMenu.TransformationMenuPart_WrapSubstituteMenu_cs2k8u_a1());
+      result.add(new CharacterSymbolClassPart_TransformationMenu.TMP_WrapSM_cs2k8u_a1());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new CharacterSymbolClassPart_TransformationMenu.TransformationMenuPart_WrapSubstituteMenu_cs2k8u_a2());
+      result.add(new CharacterSymbolClassPart_TransformationMenu.TMP_WrapSM_cs2k8u_a2());
     }
     return result;
   }
 
-  public class TransformationMenuPart_WrapSubstituteMenu_cs2k8u_a1 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_cs2k8u_a1 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override
@@ -69,7 +69,7 @@ public class CharacterSymbolClassPart_TransformationMenu extends TransformationM
       SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), node, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
     }
   }
-  public class TransformationMenuPart_WrapSubstituteMenu_cs2k8u_a2 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_cs2k8u_a2 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override

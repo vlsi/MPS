@@ -38,12 +38,12 @@ public class WrapSubstitute extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new WrapSubstitute.TransformationMenuPart_WrapSubstituteMenu_bc8576_a0());
+      result.add(new WrapSubstitute.TMP_WrapSM_bc8576_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_WrapSubstituteMenu_bc8576_a0 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_bc8576_a0 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override

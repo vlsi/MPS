@@ -42,22 +42,22 @@ public class KeyMapKeystroke_TransformationMenu extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new KeyMapKeystroke_TransformationMenu.TransformationMenuPart_Action_ue7icm_a0());
-      result.add(new KeyMapKeystroke_TransformationMenu.TransformationMenuPart_Action_ue7icm_b0());
+      result.add(new KeyMapKeystroke_TransformationMenu.TMP_Action_ue7icm_a0());
+      result.add(new KeyMapKeystroke_TransformationMenu.TMP_Action_ue7icm_b0());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new KeyMapKeystroke_TransformationMenu.TransformationMenuPart_Action_ue7icm_a1());
+      result.add(new KeyMapKeystroke_TransformationMenu.TMP_Action_ue7icm_a1());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new KeyMapKeystroke_TransformationMenu.TransformationMenuPart_Action_ue7icm_a2());
+      result.add(new KeyMapKeystroke_TransformationMenu.TMP_Action_ue7icm_a2());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_ue7icm_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_ue7icm_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new KeyMapKeystroke_TransformationMenu.TransformationMenuPart_Action_ue7icm_a0.Item(context);
+      return new KeyMapKeystroke_TransformationMenu.TMP_Action_ue7icm_a0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -85,10 +85,10 @@ public class KeyMapKeystroke_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  private class TransformationMenuPart_Action_ue7icm_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_ue7icm_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new KeyMapKeystroke_TransformationMenu.TransformationMenuPart_Action_ue7icm_b0.Item(context);
+      return new KeyMapKeystroke_TransformationMenu.TMP_Action_ue7icm_b0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -117,10 +117,10 @@ public class KeyMapKeystroke_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  private class TransformationMenuPart_Action_ue7icm_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_ue7icm_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new KeyMapKeystroke_TransformationMenu.TransformationMenuPart_Action_ue7icm_a1.Item(context);
+      return new KeyMapKeystroke_TransformationMenu.TMP_Action_ue7icm_a1.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -191,10 +191,10 @@ public class KeyMapKeystroke_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private class TransformationMenuPart_Action_ue7icm_a2 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_ue7icm_a2 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new KeyMapKeystroke_TransformationMenu.TransformationMenuPart_Action_ue7icm_a2.Item(context);
+      return new KeyMapKeystroke_TransformationMenu.TMP_Action_ue7icm_a2.Item(context);
     }
 
     private class Item extends ActionItemBase {

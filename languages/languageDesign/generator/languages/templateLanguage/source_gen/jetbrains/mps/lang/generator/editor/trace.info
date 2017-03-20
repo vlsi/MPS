@@ -15018,16 +15018,16 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)/1741258697587212710">
     <file name="RuleConsequence_SubstituteMenu.java">
       <node id="1741258697587212710" at="30,118,31,140" concept="8" />
-      <node id="1741258697587212710" at="31,140,32,87" concept="3" />
-      <node id="1741258697587212710" at="32,87,33,87" concept="3" />
-      <node id="1741258697587212710" at="33,87,34,18" concept="9" />
+      <node id="1741258697587212710" at="31,140,32,72" concept="3" />
+      <node id="1741258697587212710" at="32,72,33,72" concept="3" />
+      <node id="1741258697587212710" at="33,72,34,18" concept="9" />
       <node id="1741258697587212715" at="38,68,39,219" concept="9" />
-      <node id="1741258697587212710" at="43,84,44,597" concept="9" />
+      <node id="1741258697587212710" at="43,84,44,567" concept="9" />
       <node id="1741258697587212710" at="49,57,50,52" concept="9" />
       <node id="2660922206083673424" at="54,95,55,800" concept="9" />
       <node id="1741258697587212710" at="58,127,59,151" concept="9" />
       <node id="2660922206083692530" at="65,68,66,222" concept="9" />
-      <node id="1741258697587212710" at="70,84,71,300" concept="9" />
+      <node id="1741258697587212710" at="70,84,71,240" concept="9" />
       <node id="1741258697587212758" at="75,70,76,223" concept="9" />
       <node id="1741258697587212710" at="80,86,81,492" concept="9" />
       <node id="1741258697587212710" at="85,78,86,221" concept="9" />
@@ -15055,12 +15055,12 @@
       <node id="1741258697587212710" at="47,0,54,0" concept="7" trace="getConcepts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/Collection;" />
       <node id="1741258697587212710" at="28,0,36,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587212714" at="38,68,39,219" />
-      <scope id="1741258697587212710" at="43,84,44,597" />
+      <scope id="1741258697587212710" at="43,84,44,567" />
       <scope id="1741258697587212710" at="49,57,50,52" />
       <scope id="2660922206083672965" at="54,95,55,800" />
       <scope id="1741258697587212710" at="58,127,59,151" />
       <scope id="2660922206083691855" at="65,68,66,222" />
-      <scope id="1741258697587212710" at="70,84,71,300" />
+      <scope id="1741258697587212710" at="70,84,71,240" />
       <scope id="1741258697587212757" at="75,70,76,223" />
       <scope id="1741258697587212710" at="80,86,81,492" />
       <scope id="1741258697587212710" at="85,78,86,221" />
@@ -15125,12 +15125,12 @@
       <scope id="1741258697587212710" at="28,0,36,0">
         <var name="_context" id="1741258697587212710" />
       </scope>
-      <unit id="1741258697587212710" at="48,241,52,9" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SubstituteMenuPart_Group_ygcyd4_a$SubstituteMenuPart_Subconcepts_ygcyd4_a0$1" />
-      <unit id="1741258697587212710" at="84,0,93,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SubstituteMenuPart_Group_ygcyd4_b$SubstituteMenuPart_Subconcepts_ygcyd4_b1" />
-      <unit id="1741258697587212710" at="73,0,84,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SubstituteMenuPart_Group_ygcyd4_b$SubstituteMenuPart_Group_ygcyd4_a1" />
-      <unit id="1741258697587212710" at="46,0,62,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SubstituteMenuPart_Group_ygcyd4_a$SubstituteMenuPart_Subconcepts_ygcyd4_a0" />
-      <unit id="1741258697587212710" at="36,0,63,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SubstituteMenuPart_Group_ygcyd4_a" />
-      <unit id="1741258697587212710" at="63,0,94,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SubstituteMenuPart_Group_ygcyd4_b" />
+      <unit id="1741258697587212710" at="48,241,52,9" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SMP_Group_ygcyd4_a$SMP_Subconcepts_ygcyd4_a0$1" />
+      <unit id="1741258697587212710" at="84,0,93,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SMP_Group_ygcyd4_b$SMP_Subconcepts_ygcyd4_b1" />
+      <unit id="1741258697587212710" at="73,0,84,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SMP_Group_ygcyd4_b$SMP_Group_ygcyd4_a1" />
+      <unit id="1741258697587212710" at="46,0,62,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SMP_Group_ygcyd4_a$SMP_Subconcepts_ygcyd4_a0" />
+      <unit id="1741258697587212710" at="36,0,63,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SMP_Group_ygcyd4_a" />
+      <unit id="1741258697587212710" at="63,0,94,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SMP_Group_ygcyd4_b" />
       <unit id="1741258697587212710" at="27,0,107,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu" />
     </file>
   </root>
@@ -15138,8 +15138,8 @@
     <file name="templateCallArguments_Contribution.java">
       <node id="1741258697587212793" at="20,47,21,16" concept="13" />
       <node id="1741258697587212793" at="25,118,26,140" concept="8" />
-      <node id="1741258697587212793" at="26,140,27,91" concept="3" />
-      <node id="1741258697587212793" at="27,91,28,18" concept="9" />
+      <node id="1741258697587212793" at="26,140,27,76" concept="3" />
+      <node id="1741258697587212793" at="27,76,28,18" concept="9" />
       <node id="1741258697587212799" at="32,68,33,253" concept="9" />
       <node id="1741258697587212793" at="37,84,38,506" concept="9" />
       <node id="1741258697587212793" at="20,0,23,0" concept="2" trace="templateCallArguments_Contribution#()V" />
@@ -15160,7 +15160,7 @@
       <scope id="1741258697587212793" at="23,0,30,0">
         <var name="_context" id="1741258697587212793" />
       </scope>
-      <unit id="1741258697587212793" at="30,0,41,0" name="jetbrains.mps.lang.generator.editor.templateCallArguments_Contribution$SubstituteMenuPart_Group_rzydzc_a" />
+      <unit id="1741258697587212793" at="30,0,41,0" name="jetbrains.mps.lang.generator.editor.templateCallArguments_Contribution$SMP_Group_rzydzc_a" />
       <unit id="1741258697587212793" at="19,0,42,0" name="jetbrains.mps.lang.generator.editor.templateCallArguments_Contribution" />
     </file>
   </root>

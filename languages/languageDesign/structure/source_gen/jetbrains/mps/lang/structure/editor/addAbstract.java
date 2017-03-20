@@ -38,12 +38,12 @@ public class addAbstract extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new addAbstract.TransformationMenuPart_Group_69tx4h_a0());
+      result.add(new addAbstract.TMP_Group_69tx4h_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_69tx4h_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_69tx4h_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec7L, "final")));
@@ -51,12 +51,12 @@ public class addAbstract extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new addAbstract.TransformationMenuPart_Group_69tx4h_a0.TransformationMenuPart_Action_69tx4h_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new addAbstract.TMP_Group_69tx4h_a0.TMP_Action_69tx4h_a0a());
     }
-    private class TransformationMenuPart_Action_69tx4h_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_69tx4h_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new addAbstract.TransformationMenuPart_Group_69tx4h_a0.TransformationMenuPart_Action_69tx4h_a0a.Item(context);
+        return new addAbstract.TMP_Group_69tx4h_a0.TMP_Action_69tx4h_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

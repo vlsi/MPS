@@ -22,10 +22,10 @@ public class SNodeOperation_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new SNodeOperation_SubstituteMenu.SubstituteMenuPart_IncludeMenu_u6z34j_a());
+    result.add(new SNodeOperation_SubstituteMenu.SMP_Include_u6z34j_a());
     return result;
   }
-  public class SubstituteMenuPart_IncludeMenu_u6z34j_a extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_u6z34j_a extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override

@@ -43,16 +43,16 @@ public class BaseEmitJumpStatement_TransformationMenu extends TransformationMenu
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bc8a99L, "jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new BaseEmitJumpStatement_TransformationMenu.TransformationMenuPart_Action_dkv885_a1(), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be47c5L, "jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement")));
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new BaseEmitJumpStatement_TransformationMenu.TransformationMenuPart_Action_dkv885_b1(), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be8165L, "jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new BaseEmitJumpStatement_TransformationMenu.TMP_Action_dkv885_a1(), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be47c5L, "jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new BaseEmitJumpStatement_TransformationMenu.TMP_Action_dkv885_b1(), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be8165L, "jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement")));
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_dkv885_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_dkv885_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new BaseEmitJumpStatement_TransformationMenu.TransformationMenuPart_Action_dkv885_a1.Item(context);
+      return new BaseEmitJumpStatement_TransformationMenu.TMP_Action_dkv885_a1.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -81,10 +81,10 @@ public class BaseEmitJumpStatement_TransformationMenu extends TransformationMenu
       }
     }
   }
-  private class TransformationMenuPart_Action_dkv885_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_dkv885_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new BaseEmitJumpStatement_TransformationMenu.TransformationMenuPart_Action_dkv885_b1.Item(context);
+      return new BaseEmitJumpStatement_TransformationMenu.TMP_Action_dkv885_b1.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

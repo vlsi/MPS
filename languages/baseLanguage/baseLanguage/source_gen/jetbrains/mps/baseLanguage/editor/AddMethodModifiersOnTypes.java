@@ -42,13 +42,13 @@ public class AddMethodModifiersOnTypes extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new AddMethodModifiersOnTypes.TransformationMenuPart_Group_svkn68_a0());
-      result.add(new AddMethodModifiersOnTypes.TransformationMenuPart_Group_svkn68_b0());
+      result.add(new AddMethodModifiersOnTypes.TMP_Group_svkn68_a0());
+      result.add(new AddMethodModifiersOnTypes.TMP_Group_svkn68_b0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_svkn68_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_svkn68_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
@@ -56,12 +56,12 @@ public class AddMethodModifiersOnTypes extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AddMethodModifiersOnTypes.TransformationMenuPart_Group_svkn68_a0.TransformationMenuPart_Action_svkn68_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")), new ConstraintsFilteringTransformationMenuPartDecorator(new AddMethodModifiersOnTypes.TransformationMenuPart_Group_svkn68_a0.TransformationMenuPart_Action_svkn68_b0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")), new ConstraintsFilteringTransformationMenuPartDecorator(new AddMethodModifiersOnTypes.TransformationMenuPart_Group_svkn68_a0.TransformationMenuPart_Action_svkn68_c0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AddMethodModifiersOnTypes.TMP_Group_svkn68_a0.TMP_Action_svkn68_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")), new ConstraintsFilteringTransformationMenuPartDecorator(new AddMethodModifiersOnTypes.TMP_Group_svkn68_a0.TMP_Action_svkn68_b0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")), new ConstraintsFilteringTransformationMenuPartDecorator(new AddMethodModifiersOnTypes.TMP_Group_svkn68_a0.TMP_Action_svkn68_c0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")));
     }
-    private class TransformationMenuPart_Action_svkn68_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_svkn68_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AddMethodModifiersOnTypes.TransformationMenuPart_Group_svkn68_a0.TransformationMenuPart_Action_svkn68_a0a.Item(context);
+        return new AddMethodModifiersOnTypes.TMP_Group_svkn68_a0.TMP_Action_svkn68_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -92,10 +92,10 @@ public class AddMethodModifiersOnTypes extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_svkn68_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_svkn68_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AddMethodModifiersOnTypes.TransformationMenuPart_Group_svkn68_a0.TransformationMenuPart_Action_svkn68_b0a.Item(context);
+        return new AddMethodModifiersOnTypes.TMP_Group_svkn68_a0.TMP_Action_svkn68_b0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -126,10 +126,10 @@ public class AddMethodModifiersOnTypes extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_svkn68_c0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_svkn68_c0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AddMethodModifiersOnTypes.TransformationMenuPart_Group_svkn68_a0.TransformationMenuPart_Action_svkn68_c0a.Item(context);
+        return new AddMethodModifiersOnTypes.TMP_Group_svkn68_a0.TMP_Action_svkn68_c0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -161,7 +161,7 @@ public class AddMethodModifiersOnTypes extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_Group_svkn68_b0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_svkn68_b0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
@@ -169,12 +169,12 @@ public class AddMethodModifiersOnTypes extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AddMethodModifiersOnTypes.TransformationMenuPart_Group_svkn68_b0.TransformationMenuPart_Action_svkn68_a1a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), new ConstraintsFilteringTransformationMenuPartDecorator(new AddMethodModifiersOnTypes.TransformationMenuPart_Group_svkn68_b0.TransformationMenuPart_Action_svkn68_b1a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AddMethodModifiersOnTypes.TMP_Group_svkn68_b0.TMP_Action_svkn68_a1a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), new ConstraintsFilteringTransformationMenuPartDecorator(new AddMethodModifiersOnTypes.TMP_Group_svkn68_b0.TMP_Action_svkn68_b1a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
     }
-    private class TransformationMenuPart_Action_svkn68_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_svkn68_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AddMethodModifiersOnTypes.TransformationMenuPart_Group_svkn68_b0.TransformationMenuPart_Action_svkn68_a1a.Item(context);
+        return new AddMethodModifiersOnTypes.TMP_Group_svkn68_b0.TMP_Action_svkn68_a1a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -205,10 +205,10 @@ public class AddMethodModifiersOnTypes extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_svkn68_b1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_svkn68_b1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AddMethodModifiersOnTypes.TransformationMenuPart_Group_svkn68_b0.TransformationMenuPart_Action_svkn68_b1a.Item(context);
+        return new AddMethodModifiersOnTypes.TMP_Group_svkn68_b0.TMP_Action_svkn68_b1a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

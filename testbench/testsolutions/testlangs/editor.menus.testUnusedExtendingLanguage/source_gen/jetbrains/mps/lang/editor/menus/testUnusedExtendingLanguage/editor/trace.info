@@ -19,9 +19,9 @@
       <node id="1068638940632617910" at="21,0,22,0" concept="2" trace="myLocations" />
       <node id="1068638940632617910" at="23,67,24,63" concept="6" />
       <node id="1068638940632617910" at="29,124,30,156" concept="5" />
-      <node id="1068638940632617910" at="31,119,32,101" concept="1" />
+      <node id="1068638940632617910" at="31,119,32,82" concept="1" />
       <node id="1068638940632617910" at="33,5,34,18" concept="6" />
-      <node id="1068638940632619209" at="39,84,40,108" concept="6" />
+      <node id="1068638940632619209" at="39,84,40,89" concept="6" />
       <node id="1068638940632619209" at="44,0,45,0" concept="2" trace="_context" />
       <node id="1068638940632619209" at="46,55,47,27" concept="1" />
       <node id="1068638940632619775" at="52,50,53,89" concept="6" />
@@ -34,8 +34,8 @@
       <node id="1068638940632617910" at="27,0,36,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1068638940632619226" at="57,52,57,52" />
       <scope id="1068638940632617910" at="23,67,24,63" />
-      <scope id="1068638940632617910" at="31,119,32,101" />
-      <scope id="1068638940632619209" at="39,84,40,108" />
+      <scope id="1068638940632617910" at="31,119,32,82" />
+      <scope id="1068638940632619209" at="39,84,40,89" />
       <scope id="1068638940632619209" at="46,55,47,27" />
       <scope id="1068638940632619222" at="52,50,53,89" />
       <scope id="1068638940632619209" at="46,0,49,0">
@@ -59,8 +59,8 @@
       <scope id="1068638940632617910" at="27,0,36,0">
         <var name="_context" id="1068638940632617910" />
       </scope>
-      <unit id="1068638940632619209" at="43,0,62,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.MenuForBaseInUnusedExtendingLanguage$TransformationMenuPart_Action_kkl41h_a0$Item" />
-      <unit id="1068638940632619209" at="37,0,63,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.MenuForBaseInUnusedExtendingLanguage$TransformationMenuPart_Action_kkl41h_a0" />
+      <unit id="1068638940632619209" at="43,0,62,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.MenuForBaseInUnusedExtendingLanguage$TMP_Action_kkl41h_a0$Item" />
+      <unit id="1068638940632619209" at="37,0,63,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.MenuForBaseInUnusedExtendingLanguage$TMP_Action_kkl41h_a0" />
       <unit id="1068638940632617910" at="20,0,64,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.MenuForBaseInUnusedExtendingLanguage" />
     </file>
   </root>
@@ -70,9 +70,9 @@
       <node id="189670312547646590" at="24,0,25,0" concept="2" trace="myLocations" />
       <node id="189670312547646590" at="26,67,27,63" concept="6" />
       <node id="189670312547646590" at="32,124,33,156" concept="5" />
-      <node id="189670312547646590" at="34,119,35,82" concept="1" />
+      <node id="189670312547646590" at="34,119,35,63" concept="1" />
       <node id="189670312547646590" at="36,5,37,18" concept="6" />
-      <node id="3526874291840080425" at="42,84,43,89" concept="6" />
+      <node id="3526874291840080425" at="42,84,43,70" concept="6" />
       <node id="3526874291840080425" at="47,0,48,0" concept="2" trace="_context" />
       <node id="3526874291840080425" at="49,55,50,27" concept="1" />
       <node id="3526874291840102539" at="55,50,56,109" concept="7" />
@@ -89,8 +89,8 @@
       <scope id="3526874291840080522" at="62,52,62,52" />
       <scope id="189670312547646590" at="21,31,22,16" />
       <scope id="189670312547646590" at="26,67,27,63" />
-      <scope id="189670312547646590" at="34,119,35,82" />
-      <scope id="3526874291840080425" at="42,84,43,89" />
+      <scope id="189670312547646590" at="34,119,35,63" />
+      <scope id="3526874291840080425" at="42,84,43,70" />
       <scope id="3526874291840080425" at="49,55,50,27" />
       <scope id="189670312547646590" at="21,0,24,0" />
       <scope id="3526874291840080425" at="49,0,52,0">
@@ -115,8 +115,8 @@
       <scope id="189670312547646590" at="30,0,39,0">
         <var name="_context" id="189670312547646590" />
       </scope>
-      <unit id="3526874291840080425" at="46,0,67,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.UnusedContribution$TransformationMenuPart_Action_upxn7_a0$Item" />
-      <unit id="3526874291840080425" at="40,0,68,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.UnusedContribution$TransformationMenuPart_Action_upxn7_a0" />
+      <unit id="3526874291840080425" at="46,0,67,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.UnusedContribution$TMP_Action_upxn7_a0$Item" />
+      <unit id="3526874291840080425" at="40,0,68,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.UnusedContribution$TMP_Action_upxn7_a0" />
       <unit id="189670312547646590" at="20,0,69,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.UnusedContribution" />
     </file>
   </root>

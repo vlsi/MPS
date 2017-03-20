@@ -5744,7 +5744,7 @@
     <property role="EcuMT" value="414384289274424754" />
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_AddConcept" />
-    <property role="34LRSv" value="simple action" />
+    <property role="34LRSv" value="simple concept action" />
     <property role="R4oN_" value="creates a new instance of the specified concept" />
     <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
     <node concept="1TJgyj" id="AIV2Sdu1tN" role="1TKVEi">
@@ -6317,7 +6317,7 @@
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_Placeholder" />
     <property role="EcuMT" value="2722384699544370949" />
-    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
   </node>
   <node concept="1TIwiD" id="39Jlgden1IE">
     <property role="EcuMT" value="3634216896999201706" />

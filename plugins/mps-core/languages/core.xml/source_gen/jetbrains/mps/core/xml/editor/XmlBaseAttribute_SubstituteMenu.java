@@ -30,16 +30,16 @@ public class XmlBaseAttribute_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlBaseAttribute_SubstituteMenu.SubstituteMenuPart_Action_xg7m8y_a(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, "jetbrains.mps.core.xml.structure.XmlAttribute")));
-    result.add(new XmlBaseAttribute_SubstituteMenu.SubstituteMenuPart_Subconcepts_xg7m8y_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlBaseAttribute_SubstituteMenu.SMP_Action_xg7m8y_a(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, "jetbrains.mps.core.xml.structure.XmlAttribute")));
+    result.add(new XmlBaseAttribute_SubstituteMenu.SMP_Subconcepts_xg7m8y_b());
     return result;
   }
-  private class SubstituteMenuPart_Action_xg7m8y_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_xg7m8y_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new XmlBaseAttribute_SubstituteMenu.SubstituteMenuPart_Action_xg7m8y_a.Item(_context);
+      return new XmlBaseAttribute_SubstituteMenu.SMP_Action_xg7m8y_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -86,7 +86,7 @@ public class XmlBaseAttribute_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  public class SubstituteMenuPart_Subconcepts_xg7m8y_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_xg7m8y_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b3L, "jetbrains.mps.core.xml.structure.XmlBaseAttribute"));
     }

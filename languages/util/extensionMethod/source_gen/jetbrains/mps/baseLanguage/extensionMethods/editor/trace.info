@@ -157,9 +157,9 @@
     <file name="Expression_Contribution.java">
       <node id="1741258697587119362" at="21,36,22,16" concept="9" />
       <node id="1741258697587119362" at="26,118,27,140" concept="5" />
-      <node id="1741258697587119362" at="27,140,28,86" concept="1" />
-      <node id="1741258697587119362" at="28,86,29,86" concept="1" />
-      <node id="1741258697587119362" at="29,86,30,18" concept="6" />
+      <node id="1741258697587119362" at="27,140,28,67" concept="1" />
+      <node id="1741258697587119362" at="28,67,29,67" concept="1" />
+      <node id="1741258697587119362" at="29,67,30,18" concept="6" />
       <node id="1741258697587119362" at="36,82,37,70" concept="5" />
       <node id="1741258697587119362" at="37,70,38,327" concept="6" />
       <node id="1741258697587119362" at="45,82,46,70" concept="5" />
@@ -188,24 +188,24 @@
       <scope id="1741258697587119362" at="24,0,32,0">
         <var name="_context" id="1741258697587119362" />
       </scope>
-      <unit id="1741258697587119362" at="32,0,41,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.Expression_Contribution$SubstituteMenuPart_IncludeMenu_s9uhwr_a" />
-      <unit id="1741258697587119362" at="41,0,50,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.Expression_Contribution$SubstituteMenuPart_IncludeMenu_s9uhwr_b" />
+      <unit id="1741258697587119362" at="32,0,41,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.Expression_Contribution$SMP_Include_s9uhwr_a" />
+      <unit id="1741258697587119362" at="41,0,50,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.Expression_Contribution$SMP_Include_s9uhwr_b" />
       <unit id="1741258697587119362" at="20,0,51,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.Expression_Contribution" />
     </file>
   </root>
   <root nodeRef="r:ba4ce2b4-b708-4183-95e3-2753aef5bf29(jetbrains.mps.baseLanguage.extensionMethods.editor)/1741258697587119364">
     <file name="ThisExtensionMethodSubstitute.java">
       <node id="1741258697587119364" at="32,118,33,140" concept="5" />
-      <node id="1741258697587119364" at="33,140,34,86" concept="1" />
-      <node id="1741258697587119364" at="34,86,35,18" concept="6" />
+      <node id="1741258697587119364" at="33,140,34,71" concept="1" />
+      <node id="1741258697587119364" at="34,71,35,18" concept="6" />
       <node id="1741258697587119379" at="40,315,41,20" concept="6" />
       <node id="1741258697587119381" at="42,7,43,19" concept="6" />
-      <node id="1741258697587119364" at="47,84,48,390" concept="6" />
-      <node id="1741258697587119364" at="53,102,54,195" concept="6" />
+      <node id="1741258697587119364" at="47,84,48,352" concept="6" />
+      <node id="1741258697587119364" at="53,102,54,142" concept="6" />
       <node id="1741258697587119414" at="58,89,59,514" concept="6" />
       <node id="1741258697587119364" at="62,0,63,0" concept="2" trace="myParameterObject" />
-      <node id="1741258697587119364" at="63,76,64,46" concept="1" />
-      <node id="1741258697587119364" at="69,81,70,180" concept="6" />
+      <node id="1741258697587119364" at="63,61,64,46" concept="1" />
+      <node id="1741258697587119364" at="69,81,70,127" concept="6" />
       <node id="1741258697587119364" at="73,0,74,0" concept="2" trace="_context" />
       <node id="1741258697587119364" at="74,54,75,246" concept="9" />
       <node id="1741258697587119364" at="75,246,76,31" concept="1" />
@@ -220,7 +220,7 @@
       <node id="1741258697587119364" at="106,53,107,90" concept="6" />
       <node id="1741258697587119364" at="108,13,109,24" concept="6" />
       <node id="1741258697587119369" at="39,68,42,7" concept="3" />
-      <node id="1741258697587119364" at="63,0,66,0" concept="0" trace="SubstituteMenuPart_Action_7qarbi_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587119364" at="63,0,66,0" concept="0" trace="SMP_Action_7qarbi_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587119364" at="89,66,92,13" concept="3" />
       <node id="1741258697587119364" at="97,69,100,13" concept="3" />
       <node id="1741258697587119364" at="105,64,108,13" concept="3" />
@@ -236,11 +236,11 @@
       <node id="1741258697587119364" at="95,0,103,0" concept="4" trace="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1741258697587119364" at="103,0,111,0" concept="4" trace="getIcon#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <scope id="1741258697587119378" at="40,315,41,20" />
-      <scope id="1741258697587119364" at="47,84,48,390" />
-      <scope id="1741258697587119364" at="53,102,54,195" />
+      <scope id="1741258697587119364" at="47,84,48,352" />
+      <scope id="1741258697587119364" at="53,102,54,142" />
       <scope id="1741258697587119413" at="58,89,59,514" />
-      <scope id="1741258697587119364" at="63,76,64,46" />
-      <scope id="1741258697587119364" at="69,81,70,180" />
+      <scope id="1741258697587119364" at="63,61,64,46" />
+      <scope id="1741258697587119364" at="69,81,70,127" />
       <scope id="1741258697587119364" at="90,53,91,95" />
       <scope id="1741258697587119364" at="98,53,99,85" />
       <scope id="1741258697587119364" at="106,53,107,90" />
@@ -291,28 +291,28 @@
       <scope id="1741258697587119364" at="103,0,111,0">
         <var name="pattern" id="1741258697587119364" />
       </scope>
-      <unit id="1741258697587119364" at="72,0,112,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.ThisExtensionMethodSubstitute$SubstituteMenuPart_Group_7qarbi_a$SubstituteMenuPart_Parameterized_7qarbi_a0$SubstituteMenuPart_Action_7qarbi_a0a$Item" />
-      <unit id="1741258697587119364" at="61,0,113,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.ThisExtensionMethodSubstitute$SubstituteMenuPart_Group_7qarbi_a$SubstituteMenuPart_Parameterized_7qarbi_a0$SubstituteMenuPart_Action_7qarbi_a0a" />
-      <unit id="1741258697587119364" at="50,0,115,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.ThisExtensionMethodSubstitute$SubstituteMenuPart_Group_7qarbi_a$SubstituteMenuPart_Parameterized_7qarbi_a0" />
-      <unit id="1741258697587119364" at="37,0,116,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.ThisExtensionMethodSubstitute$SubstituteMenuPart_Group_7qarbi_a" />
+      <unit id="1741258697587119364" at="72,0,112,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.ThisExtensionMethodSubstitute$SMP_Group_7qarbi_a$SMP_Param_7qarbi_a0$SMP_Action_7qarbi_a0a$Item" />
+      <unit id="1741258697587119364" at="61,0,113,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.ThisExtensionMethodSubstitute$SMP_Group_7qarbi_a$SMP_Param_7qarbi_a0$SMP_Action_7qarbi_a0a" />
+      <unit id="1741258697587119364" at="50,0,115,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.ThisExtensionMethodSubstitute$SMP_Group_7qarbi_a$SMP_Param_7qarbi_a0" />
+      <unit id="1741258697587119364" at="37,0,116,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.ThisExtensionMethodSubstitute$SMP_Group_7qarbi_a" />
       <unit id="1741258697587119364" at="29,0,117,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.ThisExtensionMethodSubstitute" />
     </file>
   </root>
   <root nodeRef="r:ba4ce2b4-b708-4183-95e3-2753aef5bf29(jetbrains.mps.baseLanguage.extensionMethods.editor)/1741258697587119514">
     <file name="InstanceMethodCallSubstitute.java">
       <node id="1741258697587119514" at="37,118,38,140" concept="5" />
-      <node id="1741258697587119514" at="38,140,39,85" concept="1" />
-      <node id="1741258697587119514" at="39,85,40,18" concept="6" />
+      <node id="1741258697587119514" at="38,140,39,70" concept="1" />
+      <node id="1741258697587119514" at="39,70,40,18" concept="6" />
       <node id="1741258697587119529" at="45,315,46,21" concept="6" />
       <node id="1741258697587119531" at="47,7,48,19" concept="6" />
-      <node id="1741258697587119514" at="52,84,53,389" concept="6" />
-      <node id="1741258697587119514" at="58,102,59,194" concept="6" />
+      <node id="1741258697587119514" at="52,84,53,351" concept="6" />
+      <node id="1741258697587119514" at="58,102,59,141" concept="6" />
       <node id="1741258697587119564" at="63,89,64,356" concept="5" />
       <node id="1741258697587119574" at="64,356,65,284" concept="5" />
       <node id="1741258697587119580" at="65,284,66,135" concept="6" />
       <node id="1741258697587119514" at="69,0,70,0" concept="2" trace="myParameterObject" />
-      <node id="1741258697587119514" at="70,76,71,46" concept="1" />
-      <node id="1741258697587119514" at="76,81,77,179" concept="6" />
+      <node id="1741258697587119514" at="70,61,71,46" concept="1" />
+      <node id="1741258697587119514" at="76,81,77,126" concept="6" />
       <node id="1741258697587119514" at="80,0,81,0" concept="2" trace="_context" />
       <node id="1741258697587119514" at="81,54,82,246" concept="9" />
       <node id="1741258697587119514" at="82,246,83,31" concept="1" />
@@ -328,7 +328,7 @@
       <node id="1741258697587119514" at="114,53,115,90" concept="6" />
       <node id="1741258697587119514" at="116,13,117,24" concept="6" />
       <node id="1741258697587119519" at="44,68,47,7" concept="3" />
-      <node id="1741258697587119514" at="70,0,73,0" concept="0" trace="SubstituteMenuPart_Action_ru4l93_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587119514" at="70,0,73,0" concept="0" trace="SMP_Action_ru4l93_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587119514" at="97,66,100,13" concept="3" />
       <node id="1741258697587119514" at="105,69,108,13" concept="3" />
       <node id="1741258697587119514" at="113,64,116,13" concept="3" />
@@ -344,10 +344,10 @@
       <node id="1741258697587119514" at="111,0,119,0" concept="4" trace="getIcon#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <node id="1741258697587119514" at="86,0,95,0" concept="4" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1741258697587119528" at="45,315,46,21" />
-      <scope id="1741258697587119514" at="52,84,53,389" />
-      <scope id="1741258697587119514" at="58,102,59,194" />
-      <scope id="1741258697587119514" at="70,76,71,46" />
-      <scope id="1741258697587119514" at="76,81,77,179" />
+      <scope id="1741258697587119514" at="52,84,53,351" />
+      <scope id="1741258697587119514" at="58,102,59,141" />
+      <scope id="1741258697587119514" at="70,61,71,46" />
+      <scope id="1741258697587119514" at="76,81,77,126" />
       <scope id="1741258697587119514" at="98,53,99,95" />
       <scope id="1741258697587119514" at="106,53,107,85" />
       <scope id="1741258697587119514" at="114,53,115,90" />
@@ -402,10 +402,10 @@
       <scope id="1741258697587119514" at="86,0,95,0">
         <var name="pattern" id="1741258697587119514" />
       </scope>
-      <unit id="1741258697587119514" at="79,0,120,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.InstanceMethodCallSubstitute$SubstituteMenuPart_Group_ru4l93_a$SubstituteMenuPart_Parameterized_ru4l93_a0$SubstituteMenuPart_Action_ru4l93_a0a$Item" />
-      <unit id="1741258697587119514" at="68,0,121,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.InstanceMethodCallSubstitute$SubstituteMenuPart_Group_ru4l93_a$SubstituteMenuPart_Parameterized_ru4l93_a0$SubstituteMenuPart_Action_ru4l93_a0a" />
-      <unit id="1741258697587119514" at="55,0,123,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.InstanceMethodCallSubstitute$SubstituteMenuPart_Group_ru4l93_a$SubstituteMenuPart_Parameterized_ru4l93_a0" />
-      <unit id="1741258697587119514" at="42,0,124,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.InstanceMethodCallSubstitute$SubstituteMenuPart_Group_ru4l93_a" />
+      <unit id="1741258697587119514" at="79,0,120,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.InstanceMethodCallSubstitute$SMP_Group_ru4l93_a$SMP_Param_ru4l93_a0$SMP_Action_ru4l93_a0a$Item" />
+      <unit id="1741258697587119514" at="68,0,121,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.InstanceMethodCallSubstitute$SMP_Group_ru4l93_a$SMP_Param_ru4l93_a0$SMP_Action_ru4l93_a0a" />
+      <unit id="1741258697587119514" at="55,0,123,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.InstanceMethodCallSubstitute$SMP_Group_ru4l93_a$SMP_Param_ru4l93_a0" />
+      <unit id="1741258697587119514" at="42,0,124,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.InstanceMethodCallSubstitute$SMP_Group_ru4l93_a" />
       <unit id="1741258697587119514" at="34,0,125,0" name="jetbrains.mps.baseLanguage.extensionMethods.editor.InstanceMethodCallSubstitute" />
     </file>
   </root>

@@ -35,12 +35,12 @@ public class Recursive extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new Recursive.TransformationMenuPart_IncludeMenu_q7lcll_a0());
+      result.add(new Recursive.TMP_Include_q7lcll_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_q7lcll_a0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_q7lcll_a0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {

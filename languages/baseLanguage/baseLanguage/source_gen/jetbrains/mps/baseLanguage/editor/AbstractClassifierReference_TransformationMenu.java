@@ -48,13 +48,13 @@ public class AbstractClassifierReference_TransformationMenu extends Transformati
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_a0());
-      result.add(new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_b0());
+      result.add(new AbstractClassifierReference_TransformationMenu.TMP_Group_j08dcv_a0());
+      result.add(new AbstractClassifierReference_TransformationMenu.TMP_Group_j08dcv_b0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_j08dcv_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_j08dcv_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
@@ -62,12 +62,12 @@ public class AbstractClassifierReference_TransformationMenu extends Transformati
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_a0.TransformationMenuPart_Action_j08dcv_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_a0.TransformationMenuPart_Action_j08dcv_b0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractClassifierReference_TransformationMenu.TMP_Group_j08dcv_a0.TMP_Action_j08dcv_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractClassifierReference_TransformationMenu.TMP_Group_j08dcv_a0.TMP_Action_j08dcv_b0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
     }
-    private class TransformationMenuPart_Action_j08dcv_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_j08dcv_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_a0.TransformationMenuPart_Action_j08dcv_a0a.Item(context);
+        return new AbstractClassifierReference_TransformationMenu.TMP_Group_j08dcv_a0.TMP_Action_j08dcv_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -102,10 +102,10 @@ public class AbstractClassifierReference_TransformationMenu extends Transformati
         }
       }
     }
-    private class TransformationMenuPart_Action_j08dcv_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_j08dcv_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_a0.TransformationMenuPart_Action_j08dcv_b0a.Item(context);
+        return new AbstractClassifierReference_TransformationMenu.TMP_Group_j08dcv_a0.TMP_Action_j08dcv_b0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -140,7 +140,7 @@ public class AbstractClassifierReference_TransformationMenu extends Transformati
       }
     }
   }
-  public class TransformationMenuPart_Group_j08dcv_b0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_j08dcv_b0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
@@ -148,12 +148,12 @@ public class AbstractClassifierReference_TransformationMenu extends Transformati
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference"))), new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_b0.TransformationMenuPart_Action_j08dcv_b1a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference"))), new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractClassifierReference_TransformationMenu.TMP_Group_j08dcv_b0.TMP_Action_j08dcv_b1a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType")));
     }
-    private class TransformationMenuPart_Action_j08dcv_b1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_j08dcv_b1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_b0.TransformationMenuPart_Action_j08dcv_b1a.Item(context);
+        return new AbstractClassifierReference_TransformationMenu.TMP_Group_j08dcv_b0.TMP_Action_j08dcv_b1a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

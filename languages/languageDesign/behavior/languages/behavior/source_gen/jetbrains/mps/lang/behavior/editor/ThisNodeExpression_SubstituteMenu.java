@@ -21,10 +21,10 @@ public class ThisNodeExpression_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ThisNodeExpression_SubstituteMenu.SubstituteMenuPart_Group_mpxvc0_a());
+    result.add(new ThisNodeExpression_SubstituteMenu.SMP_Group_mpxvc0_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_mpxvc0_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_mpxvc0_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return ConstraintsUtil.isInsideOfBehavior(_context.getParentNode(), false);

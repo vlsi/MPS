@@ -43,13 +43,13 @@ public class ArrayAndGenericTypesFromTypesInVarDeclarations extends Transformati
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ArrayAndGenericTypesFromTypesInVarDeclarations.TransformationMenuPart_Group_y9ko6u_a0());
-      result.add(new ArrayAndGenericTypesFromTypesInVarDeclarations.TransformationMenuPart_Group_y9ko6u_b0());
+      result.add(new ArrayAndGenericTypesFromTypesInVarDeclarations.TMP_Group_y9ko6u_a0());
+      result.add(new ArrayAndGenericTypesFromTypesInVarDeclarations.TMP_Group_y9ko6u_b0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_y9ko6u_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_y9ko6u_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")) != null);
@@ -57,12 +57,12 @@ public class ArrayAndGenericTypesFromTypesInVarDeclarations extends Transformati
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new ArrayAndGenericTypesFromTypesInVarDeclarations.TransformationMenuPart_Group_y9ko6u_a0.TransformationMenuPart_Action_y9ko6u_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new ArrayAndGenericTypesFromTypesInVarDeclarations.TMP_Group_y9ko6u_a0.TMP_Action_y9ko6u_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")));
     }
-    private class TransformationMenuPart_Action_y9ko6u_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_y9ko6u_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ArrayAndGenericTypesFromTypesInVarDeclarations.TransformationMenuPart_Group_y9ko6u_a0.TransformationMenuPart_Action_y9ko6u_a0a.Item(context);
+        return new ArrayAndGenericTypesFromTypesInVarDeclarations.TMP_Group_y9ko6u_a0.TMP_Action_y9ko6u_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -99,7 +99,7 @@ public class ArrayAndGenericTypesFromTypesInVarDeclarations extends Transformati
       }
     }
   }
-  public class TransformationMenuPart_Group_y9ko6u_b0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_y9ko6u_b0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")) && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).isEmpty();
@@ -107,12 +107,12 @@ public class ArrayAndGenericTypesFromTypesInVarDeclarations extends Transformati
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new ArrayAndGenericTypesFromTypesInVarDeclarations.TransformationMenuPart_Group_y9ko6u_b0.TransformationMenuPart_Action_y9ko6u_a1a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new ArrayAndGenericTypesFromTypesInVarDeclarations.TMP_Group_y9ko6u_b0.TMP_Action_y9ko6u_a1a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")));
     }
-    private class TransformationMenuPart_Action_y9ko6u_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_y9ko6u_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ArrayAndGenericTypesFromTypesInVarDeclarations.TransformationMenuPart_Group_y9ko6u_b0.TransformationMenuPart_Action_y9ko6u_a1a.Item(context);
+        return new ArrayAndGenericTypesFromTypesInVarDeclarations.TMP_Group_y9ko6u_b0.TMP_Action_y9ko6u_a1a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

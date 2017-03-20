@@ -30,10 +30,10 @@ public class ReportFeedbackStatement_subs extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ReportFeedbackStatement_subs.SubstituteMenuPart_Group_hskkdq_a());
+    result.add(new ReportFeedbackStatement_subs.SMP_Group_hskkdq_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_hskkdq_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_hskkdq_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return (SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dabL, "jetbrains.mps.make.script.structure.JobDefinition"), false, false) != null);
@@ -41,29 +41,29 @@ public class ReportFeedbackStatement_subs extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ReportFeedbackStatement_subs.SubstituteMenuPart_Group_hskkdq_a.SubstituteMenuPart_Parameterized_hskkdq_a0(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, "jetbrains.mps.make.script.structure.ReportFeedbackStatement")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ReportFeedbackStatement_subs.SMP_Group_hskkdq_a.SMP_Param_hskkdq_a0(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, "jetbrains.mps.make.script.structure.ReportFeedbackStatement")));
     }
-    private class SubstituteMenuPart_Parameterized_hskkdq_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+    private class SMP_Param_hskkdq_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
       @Override
       protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-        return new ReportFeedbackStatement_subs.SubstituteMenuPart_Group_hskkdq_a.SubstituteMenuPart_Parameterized_hskkdq_a0.SubstituteMenuPart_Action_hskkdq_a0a(parameter).createItems(context);
+        return new ReportFeedbackStatement_subs.SMP_Group_hskkdq_a.SMP_Param_hskkdq_a0.SMP_Action_hskkdq_a0a(parameter).createItems(context);
       }
       @Nullable
       @Override
       protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
         return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "Feedback"));
       }
-      private class SubstituteMenuPart_Action_hskkdq_a0a extends SingleItemSubstituteMenuPart {
+      private class SMP_Action_hskkdq_a0a extends SingleItemSubstituteMenuPart {
         private final SNode myParameterObject;
-        public SubstituteMenuPart_Action_hskkdq_a0a(SNode parameterObject) {
+        public SMP_Action_hskkdq_a0a(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
 
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new ReportFeedbackStatement_subs.SubstituteMenuPart_Group_hskkdq_a.SubstituteMenuPart_Parameterized_hskkdq_a0.SubstituteMenuPart_Action_hskkdq_a0a.Item(_context);
+          return new ReportFeedbackStatement_subs.SMP_Group_hskkdq_a.SMP_Param_hskkdq_a0.SMP_Action_hskkdq_a0a.Item(_context);
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;

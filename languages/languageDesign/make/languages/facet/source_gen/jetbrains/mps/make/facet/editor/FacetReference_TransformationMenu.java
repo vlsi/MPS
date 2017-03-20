@@ -39,12 +39,12 @@ public class FacetReference_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5979ed6d2b21b2f2L, "jetbrains.mps.make.facet.structure.FacetReference"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new FacetReference_TransformationMenu.TransformationMenuPart_Group_y0lqi1_a1());
+      result.add(new FacetReference_TransformationMenu.TMP_Group_y0lqi1_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_y0lqi1_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_y0lqi1_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x78c916bd7aecaff7L, "jetbrains.mps.make.facet.structure.TargetReferenceExpression"), false, false) == null);
@@ -52,9 +52,9 @@ public class FacetReference_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new FacetReference_TransformationMenu.TransformationMenuPart_Group_y0lqi1_a1.TransformationMenuPart_IncludeMenu_y0lqi1_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new FacetReference_TransformationMenu.TMP_Group_y0lqi1_a1.TMP_Include_y0lqi1_a0b());
     }
-    public class TransformationMenuPart_IncludeMenu_y0lqi1_a0b extends IncludeTransformationMenuTransformationMenuPart {
+    public class TMP_Include_y0lqi1_a0b extends IncludeTransformationMenuTransformationMenuPart {
       @Nullable
       @Override
       protected SNode getNode(TransformationMenuContext _context) {

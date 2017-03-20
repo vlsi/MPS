@@ -49,17 +49,17 @@ public class _Helgins_RT_Contribution extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new _Helgins_RT_Contribution.TransformationMenuPart_Parameterized_hjeljm_a0(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new _Helgins_RT_Contribution.TMP_Param_hjeljm_a0(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement")));
     }
     return result;
   }
 
-  private class TransformationMenuPart_Parameterized_hjeljm_a0 extends ParameterizedMenuPart<SConcept, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_hjeljm_a0 extends ParameterizedMenuPart<SConcept, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(SConcept parameter, TransformationMenuContext context) {
-      return new _Helgins_RT_Contribution.TransformationMenuPart_Parameterized_hjeljm_a0.TransformationMenuPart_Action_hjeljm_a0a(parameter).createItems(context);
+      return new _Helgins_RT_Contribution.TMP_Param_hjeljm_a0.TMP_Action_hjeljm_a0a(parameter).createItems(context);
     }
 
     @Nullable
@@ -73,14 +73,14 @@ public class _Helgins_RT_Contribution extends TransformationMenuBase {
       }).toListSequence();
     }
 
-    private class TransformationMenuPart_Action_hjeljm_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_hjeljm_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final SConcept myParameterObject;
-      public TransformationMenuPart_Action_hjeljm_a0a(SConcept parameterObject) {
+      public TMP_Action_hjeljm_a0a(SConcept parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new _Helgins_RT_Contribution.TransformationMenuPart_Parameterized_hjeljm_a0.TransformationMenuPart_Action_hjeljm_a0a.Item(context);
+        return new _Helgins_RT_Contribution.TMP_Param_hjeljm_a0.TMP_Action_hjeljm_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

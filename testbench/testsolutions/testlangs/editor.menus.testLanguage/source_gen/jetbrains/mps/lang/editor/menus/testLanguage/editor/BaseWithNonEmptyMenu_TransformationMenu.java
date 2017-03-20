@@ -29,15 +29,15 @@ public class BaseWithNonEmptyMenu_TransformationMenu extends TransformationMenuB
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), "test location").contains(_context.getMenuLocation())) {
-      result.add(new BaseWithNonEmptyMenu_TransformationMenu.TransformationMenuPart_Action_n7av48_a0());
+      result.add(new BaseWithNonEmptyMenu_TransformationMenu.TMP_Action_n7av48_a0());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_n7av48_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_n7av48_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new BaseWithNonEmptyMenu_TransformationMenu.TransformationMenuPart_Action_n7av48_a0.Item(context);
+      return new BaseWithNonEmptyMenu_TransformationMenu.TMP_Action_n7av48_a0.Item(context);
     }
 
     private class Item extends ActionItemBase {

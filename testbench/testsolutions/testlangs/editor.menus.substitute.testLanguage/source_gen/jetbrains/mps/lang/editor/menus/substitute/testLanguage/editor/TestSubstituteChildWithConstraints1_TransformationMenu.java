@@ -37,17 +37,17 @@ public class TestSubstituteChildWithConstraints1_TransformationMenu extends Tran
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new TestSubstituteChildWithConstraints1_TransformationMenu.TransformationMenuPart_Action_szzd63_a0(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b4L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints1")));
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new TestSubstituteChildWithConstraints1_TransformationMenu.TransformationMenuPart_Action_szzd63_b0(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b3L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints2")));
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new TestSubstituteChildWithConstraints1_TransformationMenu.TransformationMenuPart_Action_szzd63_c0(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ceddc8L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints3")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new TestSubstituteChildWithConstraints1_TransformationMenu.TMP_Action_szzd63_a0(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b4L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints1")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new TestSubstituteChildWithConstraints1_TransformationMenu.TMP_Action_szzd63_b0(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b3L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints2")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new TestSubstituteChildWithConstraints1_TransformationMenu.TMP_Action_szzd63_c0(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ceddc8L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints3")));
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_szzd63_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_szzd63_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new TestSubstituteChildWithConstraints1_TransformationMenu.TransformationMenuPart_Action_szzd63_a0.Item(context);
+      return new TestSubstituteChildWithConstraints1_TransformationMenu.TMP_Action_szzd63_a0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -76,10 +76,10 @@ public class TestSubstituteChildWithConstraints1_TransformationMenu extends Tran
       }
     }
   }
-  private class TransformationMenuPart_Action_szzd63_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_szzd63_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new TestSubstituteChildWithConstraints1_TransformationMenu.TransformationMenuPart_Action_szzd63_b0.Item(context);
+      return new TestSubstituteChildWithConstraints1_TransformationMenu.TMP_Action_szzd63_b0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -108,10 +108,10 @@ public class TestSubstituteChildWithConstraints1_TransformationMenu extends Tran
       }
     }
   }
-  private class TransformationMenuPart_Action_szzd63_c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_szzd63_c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new TestSubstituteChildWithConstraints1_TransformationMenu.TransformationMenuPart_Action_szzd63_c0.Item(context);
+      return new TestSubstituteChildWithConstraints1_TransformationMenu.TMP_Action_szzd63_c0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

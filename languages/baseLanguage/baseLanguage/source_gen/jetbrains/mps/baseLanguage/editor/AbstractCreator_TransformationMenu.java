@@ -37,12 +37,12 @@ public class AbstractCreator_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab844af9bL, "jetbrains.mps.baseLanguage.structure.AbstractCreator"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new AbstractCreator_TransformationMenu.TransformationMenuPart_IncludeMenu_iy64ji_a1());
+      result.add(new AbstractCreator_TransformationMenu.TMP_Include_iy64ji_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_iy64ji_a1 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_iy64ji_a1 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected SNode getNode(TransformationMenuContext _context) {

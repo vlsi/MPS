@@ -41,15 +41,15 @@ public class NonExactInstances extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new NonExactInstances.TransformationMenuPart_Action_bvz3fq_a0(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new NonExactInstances.TMP_Action_bvz3fq_a0(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression")));
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_bvz3fq_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_bvz3fq_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new NonExactInstances.TransformationMenuPart_Action_bvz3fq_a0.Item(context);
+      return new NonExactInstances.TMP_Action_bvz3fq_a0.Item(context);
     }
 
     private class Item extends ActionItemBase implements ConstraintsVerifiableActionItem {

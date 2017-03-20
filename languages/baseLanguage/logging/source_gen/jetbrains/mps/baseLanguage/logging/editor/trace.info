@@ -556,13 +556,13 @@
     <file name="logging_nodeSubstitute_Contribution.java">
       <node id="1741258697587101953" at="29,48,30,16" concept="7" />
       <node id="1741258697587101953" at="34,118,35,140" concept="5" />
-      <node id="1741258697587101953" at="35,140,36,303" concept="1" />
-      <node id="1741258697587101953" at="36,303,37,18" concept="6" />
-      <node id="1741258697587101953" at="42,100,43,163" concept="6" />
+      <node id="1741258697587101953" at="35,140,36,280" concept="1" />
+      <node id="1741258697587101953" at="36,280,37,18" concept="6" />
+      <node id="1741258697587101953" at="42,100,43,125" concept="6" />
       <node id="1741258697587101960" at="47,87,48,169" concept="6" />
       <node id="1741258697587101953" at="51,0,52,0" concept="2" trace="myParameterObject" />
-      <node id="1741258697587101953" at="52,73,53,44" concept="1" />
-      <node id="1741258697587101953" at="58,79,59,148" concept="6" />
+      <node id="1741258697587101953" at="52,58,53,44" concept="1" />
+      <node id="1741258697587101953" at="58,79,59,110" concept="6" />
       <node id="1741258697587101953" at="62,0,63,0" concept="2" trace="_context" />
       <node id="1741258697587101953" at="63,52,64,251" concept="7" />
       <node id="1741258697587101953" at="64,251,65,29" concept="1" />
@@ -579,7 +579,7 @@
       <node id="1741258697587102027" at="94,67,95,33" concept="6" />
       <node id="1741258697587102156" at="98,81,99,114" concept="1" />
       <node id="1741258697587101953" at="29,0,32,0" concept="0" trace="logging_nodeSubstitute_Contribution#()V" />
-      <node id="1741258697587101953" at="52,0,55,0" concept="0" trace="SubstituteMenuPart_Action_85vuih_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587101953" at="52,0,55,0" concept="0" trace="SMP_Action_85vuih_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587101953" at="63,0,67,0" concept="0" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
       <node id="1741258697587102153" at="97,0,101,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
       <node id="1741258697587101953" at="40,0,45,0" concept="4" trace="createItems#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
@@ -592,10 +592,10 @@
       <node id="1741258697587101953" at="32,0,39,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <node id="1741258697587101953" at="68,0,82,0" concept="4" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1741258697587101953" at="29,48,30,16" />
-      <scope id="1741258697587101953" at="42,100,43,163" />
+      <scope id="1741258697587101953" at="42,100,43,125" />
       <scope id="1741258697587101959" at="47,87,48,169" />
-      <scope id="1741258697587101953" at="52,73,53,44" />
-      <scope id="1741258697587101953" at="58,79,59,148" />
+      <scope id="1741258697587101953" at="52,58,53,44" />
+      <scope id="1741258697587101953" at="58,79,59,110" />
       <scope id="1741258697587101953" at="84,62,85,22" />
       <scope id="1741258697587101990" at="89,64,90,71" />
       <scope id="1741258697587102024" at="94,67,95,33" />
@@ -647,9 +647,9 @@
       <scope id="1741258697587101953" at="68,0,82,0">
         <var name="pattern" id="1741258697587101953" />
       </scope>
-      <unit id="1741258697587101953" at="61,0,102,0" name="jetbrains.mps.baseLanguage.logging.editor.logging_nodeSubstitute_Contribution$SubstituteMenuPart_Parameterized_85vuih_a$SubstituteMenuPart_Action_85vuih_a0$Item" />
-      <unit id="1741258697587101953" at="50,0,103,0" name="jetbrains.mps.baseLanguage.logging.editor.logging_nodeSubstitute_Contribution$SubstituteMenuPart_Parameterized_85vuih_a$SubstituteMenuPart_Action_85vuih_a0" />
-      <unit id="1741258697587101953" at="39,0,105,0" name="jetbrains.mps.baseLanguage.logging.editor.logging_nodeSubstitute_Contribution$SubstituteMenuPart_Parameterized_85vuih_a" />
+      <unit id="1741258697587101953" at="61,0,102,0" name="jetbrains.mps.baseLanguage.logging.editor.logging_nodeSubstitute_Contribution$SMP_Param_85vuih_a$SMP_Action_85vuih_a0$Item" />
+      <unit id="1741258697587101953" at="50,0,103,0" name="jetbrains.mps.baseLanguage.logging.editor.logging_nodeSubstitute_Contribution$SMP_Param_85vuih_a$SMP_Action_85vuih_a0" />
+      <unit id="1741258697587101953" at="39,0,105,0" name="jetbrains.mps.baseLanguage.logging.editor.logging_nodeSubstitute_Contribution$SMP_Param_85vuih_a" />
       <unit id="1741258697587101953" at="28,0,106,0" name="jetbrains.mps.baseLanguage.logging.editor.logging_nodeSubstitute_Contribution" />
     </file>
   </root>

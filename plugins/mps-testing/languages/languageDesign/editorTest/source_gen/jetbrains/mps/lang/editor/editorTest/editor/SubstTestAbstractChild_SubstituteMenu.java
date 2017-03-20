@@ -33,32 +33,32 @@ public class SubstTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstTestAbstractChild_SubstituteMenu.SubstituteMenuPart_Parameterized_3cisdk_a(), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c35aeL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstTestAbstractChild_SubstituteMenu.SubstituteMenuPart_Parameterized_3cisdk_b(), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c352dL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild")));
-    result.add(new SubstTestAbstractChild_SubstituteMenu.SubstituteMenuPart_Subconcepts_3cisdk_c());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstTestAbstractChild_SubstituteMenu.SMP_Param_3cisdk_a(), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c35aeL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstTestAbstractChild_SubstituteMenu.SMP_Param_3cisdk_b(), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c352dL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild")));
+    result.add(new SubstTestAbstractChild_SubstituteMenu.SMP_Subconcepts_3cisdk_c());
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_3cisdk_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_3cisdk_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new SubstTestAbstractChild_SubstituteMenu.SubstituteMenuPart_Parameterized_3cisdk_a.SubstituteMenuPart_Action_3cisdk_a0(parameter).createItems(context);
+      return new SubstTestAbstractChild_SubstituteMenu.SMP_Param_3cisdk_a.SMP_Action_3cisdk_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "SubstTestEnum"));
     }
-    private class SubstituteMenuPart_Action_3cisdk_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_3cisdk_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_3cisdk_a0(SNode parameterObject) {
+      public SMP_Action_3cisdk_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new SubstTestAbstractChild_SubstituteMenu.SubstituteMenuPart_Parameterized_3cisdk_a.SubstituteMenuPart_Action_3cisdk_a0.Item(_context);
+        return new SubstTestAbstractChild_SubstituteMenu.SMP_Param_3cisdk_a.SMP_Action_3cisdk_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -93,27 +93,27 @@ public class SubstTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
     }
 
   }
-  private class SubstituteMenuPart_Parameterized_3cisdk_b extends ParameterizedMenuPart<Boolean, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_3cisdk_b extends ParameterizedMenuPart<Boolean, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(Boolean parameter, SubstituteMenuContext context) {
-      return new SubstTestAbstractChild_SubstituteMenu.SubstituteMenuPart_Parameterized_3cisdk_b.SubstituteMenuPart_Action_3cisdk_a1(parameter).createItems(context);
+      return new SubstTestAbstractChild_SubstituteMenu.SMP_Param_3cisdk_b.SMP_Action_3cisdk_a1(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends Boolean> getParameters(SubstituteMenuContext _context) {
       return ListSequence.fromListAndArray(new ArrayList<Boolean>(), Boolean.TRUE, Boolean.FALSE);
     }
-    private class SubstituteMenuPart_Action_3cisdk_a1 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_3cisdk_a1 extends SingleItemSubstituteMenuPart {
       private final Boolean myParameterObject;
-      public SubstituteMenuPart_Action_3cisdk_a1(Boolean parameterObject) {
+      public SMP_Action_3cisdk_a1(Boolean parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new SubstTestAbstractChild_SubstituteMenu.SubstituteMenuPart_Parameterized_3cisdk_b.SubstituteMenuPart_Action_3cisdk_a1.Item(_context);
+        return new SubstTestAbstractChild_SubstituteMenu.SMP_Param_3cisdk_b.SMP_Action_3cisdk_a1.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -148,7 +148,7 @@ public class SubstTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
     }
 
   }
-  public class SubstituteMenuPart_Subconcepts_3cisdk_c extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_3cisdk_c extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestAbstractChild"));
     }

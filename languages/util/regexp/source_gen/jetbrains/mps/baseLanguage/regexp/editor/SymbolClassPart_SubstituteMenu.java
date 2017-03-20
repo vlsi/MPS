@@ -30,16 +30,16 @@ public class SymbolClassPart_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SymbolClassPart_SubstituteMenu.SubstituteMenuPart_Action_kfi2w2_a(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791ae82fL, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart")));
-    result.add(new SymbolClassPart_SubstituteMenu.SubstituteMenuPart_Subconcepts_kfi2w2_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SymbolClassPart_SubstituteMenu.SMP_Action_kfi2w2_a(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791ae82fL, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart")));
+    result.add(new SymbolClassPart_SubstituteMenu.SMP_Subconcepts_kfi2w2_b());
     return result;
   }
-  private class SubstituteMenuPart_Action_kfi2w2_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_kfi2w2_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new SymbolClassPart_SubstituteMenu.SubstituteMenuPart_Action_kfi2w2_a.Item(_context);
+      return new SymbolClassPart_SubstituteMenu.SMP_Action_kfi2w2_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -73,7 +73,7 @@ public class SymbolClassPart_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  public class SubstituteMenuPart_Subconcepts_kfi2w2_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_kfi2w2_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791aa602L, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"));
     }

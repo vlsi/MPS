@@ -37,12 +37,12 @@ public class AttributeQualifier_TransformationMenu extends TransformationMenuBas
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9abL, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new AttributeQualifier_TransformationMenu.TransformationMenuPart_IncludeMenu_5hmkak_a1());
+      result.add(new AttributeQualifier_TransformationMenu.TMP_Include_5hmkak_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_5hmkak_a1 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_5hmkak_a1 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected SNode getNode(TransformationMenuContext _context) {

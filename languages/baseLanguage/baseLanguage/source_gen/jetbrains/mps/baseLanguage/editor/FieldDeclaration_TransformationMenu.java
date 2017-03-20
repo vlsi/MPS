@@ -44,18 +44,18 @@ public class FieldDeclaration_TransformationMenu extends TransformationMenuBase 
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new FieldDeclaration_TransformationMenu.TransformationMenuPart_Action_rbz0oz_a1(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
-      result.add(new FieldDeclaration_TransformationMenu.TransformationMenuPart_Action_rbz0oz_b1());
-      result.add(new FieldDeclaration_TransformationMenu.TransformationMenuPart_Action_rbz0oz_c1());
-      result.add(new FieldDeclaration_TransformationMenu.TransformationMenuPart_Action_rbz0oz_d1());
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new FieldDeclaration_TransformationMenu.TMP_Action_rbz0oz_a1(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
+      result.add(new FieldDeclaration_TransformationMenu.TMP_Action_rbz0oz_b1());
+      result.add(new FieldDeclaration_TransformationMenu.TMP_Action_rbz0oz_c1());
+      result.add(new FieldDeclaration_TransformationMenu.TMP_Action_rbz0oz_d1());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_rbz0oz_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_rbz0oz_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new FieldDeclaration_TransformationMenu.TransformationMenuPart_Action_rbz0oz_a1.Item(context);
+      return new FieldDeclaration_TransformationMenu.TMP_Action_rbz0oz_a1.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -86,10 +86,10 @@ public class FieldDeclaration_TransformationMenu extends TransformationMenuBase 
       }
     }
   }
-  private class TransformationMenuPart_Action_rbz0oz_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_rbz0oz_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new FieldDeclaration_TransformationMenu.TransformationMenuPart_Action_rbz0oz_b1.Item(context);
+      return new FieldDeclaration_TransformationMenu.TMP_Action_rbz0oz_b1.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -114,10 +114,10 @@ public class FieldDeclaration_TransformationMenu extends TransformationMenuBase 
 
     }
   }
-  private class TransformationMenuPart_Action_rbz0oz_c1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_rbz0oz_c1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new FieldDeclaration_TransformationMenu.TransformationMenuPart_Action_rbz0oz_c1.Item(context);
+      return new FieldDeclaration_TransformationMenu.TMP_Action_rbz0oz_c1.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -142,10 +142,10 @@ public class FieldDeclaration_TransformationMenu extends TransformationMenuBase 
 
     }
   }
-  private class TransformationMenuPart_Action_rbz0oz_d1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_rbz0oz_d1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new FieldDeclaration_TransformationMenu.TransformationMenuPart_Action_rbz0oz_d1.Item(context);
+      return new FieldDeclaration_TransformationMenu.TMP_Action_rbz0oz_d1.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

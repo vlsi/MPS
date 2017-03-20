@@ -45,12 +45,12 @@ public class SuperConceptExpression_TransformationMenu extends TransformationMen
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x69a9d7dcb057a7a7L, "jetbrains.mps.lang.behavior.structure.SuperConceptExpression"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new SuperConceptExpression_TransformationMenu.TransformationMenuPart_Group_2w7hld_a1());
+      result.add(new SuperConceptExpression_TransformationMenu.TMP_Group_2w7hld_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_2w7hld_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_2w7hld_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x69a9d7dcb057a7a7L, 0x69a9d7dcb057a7a8L, "superConcept")) == null);
@@ -58,12 +58,12 @@ public class SuperConceptExpression_TransformationMenu extends TransformationMen
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new SuperConceptExpression_TransformationMenu.TransformationMenuPart_Group_2w7hld_a1.TransformationMenuPart_Action_2w7hld_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new SuperConceptExpression_TransformationMenu.TMP_Group_2w7hld_a1.TMP_Action_2w7hld_a0b());
     }
-    private class TransformationMenuPart_Action_2w7hld_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_2w7hld_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new SuperConceptExpression_TransformationMenu.TransformationMenuPart_Group_2w7hld_a1.TransformationMenuPart_Action_2w7hld_a0b.Item(context);
+        return new SuperConceptExpression_TransformationMenu.TMP_Group_2w7hld_a1.TMP_Action_2w7hld_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

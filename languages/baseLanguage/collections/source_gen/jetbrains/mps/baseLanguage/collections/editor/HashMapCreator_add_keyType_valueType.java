@@ -38,12 +38,12 @@ public class HashMapCreator_add_keyType_valueType extends TransformationMenuBase
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new HashMapCreator_add_keyType_valueType.TransformationMenuPart_Group_2d88er_a0());
+      result.add(new HashMapCreator_add_keyType_valueType.TMP_Group_2d88er_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_2d88er_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_2d88er_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x116dbb5b4d0L, "keyType")) == null && SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x116dbb5d76dL, "valueType")) == null;
@@ -51,12 +51,12 @@ public class HashMapCreator_add_keyType_valueType extends TransformationMenuBase
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new HashMapCreator_add_keyType_valueType.TransformationMenuPart_Group_2d88er_a0.TransformationMenuPart_Action_2d88er_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new HashMapCreator_add_keyType_valueType.TMP_Group_2d88er_a0.TMP_Action_2d88er_a0a());
     }
-    private class TransformationMenuPart_Action_2d88er_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_2d88er_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new HashMapCreator_add_keyType_valueType.TransformationMenuPart_Group_2d88er_a0.TransformationMenuPart_Action_2d88er_a0a.Item(context);
+        return new HashMapCreator_add_keyType_valueType.TMP_Group_2d88er_a0.TMP_Action_2d88er_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

@@ -31,12 +31,12 @@ public class CommandHolder_EmptyCell_TransformationMenu extends TransformationMe
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
-      result.add(new CommandHolder_EmptyCell_TransformationMenu.TransformationMenuPart_IncludeSubstituteMenu_8yeiqo_a0());
+      result.add(new CommandHolder_EmptyCell_TransformationMenu.TMP_IncludeSM_8yeiqo_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeSubstituteMenu_8yeiqo_a0 extends IncludeSubstituteMenuTransformationMenuPart {
+  public class TMP_IncludeSM_8yeiqo_a0 extends IncludeSubstituteMenuTransformationMenuPart {
     @Override
     protected SNode getParentNode(TransformationMenuContext context) {
       return context.getNode();

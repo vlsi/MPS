@@ -41,15 +41,15 @@ public class loopLabelsAndIfStatement extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new loopLabelsAndIfStatement.TransformationMenuPart_IncludeMenu_882oi7_a0());
+      result.add(new loopLabelsAndIfStatement.TMP_Include_882oi7_a0());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
-      result.add(new loopLabelsAndIfStatement.TransformationMenuPart_WrapSubstituteMenu_882oi7_a1());
+      result.add(new loopLabelsAndIfStatement.TMP_WrapSM_882oi7_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_882oi7_a0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_882oi7_a0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
@@ -60,7 +60,7 @@ public class loopLabelsAndIfStatement extends TransformationMenuBase {
     }
 
   }
-  public class TransformationMenuPart_WrapSubstituteMenu_882oi7_a1 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_882oi7_a1 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override

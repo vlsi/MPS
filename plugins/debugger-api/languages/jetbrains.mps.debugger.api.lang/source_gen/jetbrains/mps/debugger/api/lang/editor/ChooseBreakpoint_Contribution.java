@@ -36,14 +36,14 @@ public class ChooseBreakpoint_Contribution extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ChooseBreakpoint_Contribution.SubstituteMenuPart_Parameterized_5g1vpf_a(), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x23a852e9c43bcae9L, "jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ChooseBreakpoint_Contribution.SMP_Param_5g1vpf_a(), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x23a852e9c43bcae9L, "jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_5g1vpf_a extends ParameterizedMenuPart<IBreakpointKind, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_5g1vpf_a extends ParameterizedMenuPart<IBreakpointKind, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(IBreakpointKind parameter, SubstituteMenuContext context) {
-      return new ChooseBreakpoint_Contribution.SubstituteMenuPart_Parameterized_5g1vpf_a.SubstituteMenuPart_Action_5g1vpf_a0(parameter).createItems(context);
+      return new ChooseBreakpoint_Contribution.SMP_Param_5g1vpf_a.SMP_Action_5g1vpf_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -57,16 +57,16 @@ public class ChooseBreakpoint_Contribution extends SubstituteMenuBase {
       }
       return ListSequence.fromList(new ArrayList<IBreakpointKind>());
     }
-    private class SubstituteMenuPart_Action_5g1vpf_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_5g1vpf_a0 extends SingleItemSubstituteMenuPart {
       private final IBreakpointKind myParameterObject;
-      public SubstituteMenuPart_Action_5g1vpf_a0(IBreakpointKind parameterObject) {
+      public SMP_Action_5g1vpf_a0(IBreakpointKind parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new ChooseBreakpoint_Contribution.SubstituteMenuPart_Parameterized_5g1vpf_a.SubstituteMenuPart_Action_5g1vpf_a0.Item(_context);
+        return new ChooseBreakpoint_Contribution.SMP_Param_5g1vpf_a.SMP_Action_5g1vpf_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

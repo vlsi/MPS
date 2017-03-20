@@ -30,19 +30,19 @@ public class Regexp_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Regexp_SubstituteMenu.SubstituteMenuPart_Action_6gqf7r_a(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11831260718L, "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Regexp_SubstituteMenu.SubstituteMenuPart_Action_6gqf7r_b(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Regexp_SubstituteMenu.SubstituteMenuPart_Action_6gqf7r_c(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Regexp_SubstituteMenu.SubstituteMenuPart_Action_6gqf7r_d(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp")));
-    result.add(new Regexp_SubstituteMenu.SubstituteMenuPart_Subconcepts_6gqf7r_e());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Regexp_SubstituteMenu.SMP_Action_6gqf7r_a(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11831260718L, "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Regexp_SubstituteMenu.SMP_Action_6gqf7r_b(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Regexp_SubstituteMenu.SMP_Action_6gqf7r_c(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Regexp_SubstituteMenu.SMP_Action_6gqf7r_d(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp")));
+    result.add(new Regexp_SubstituteMenu.SMP_Subconcepts_6gqf7r_e());
     return result;
   }
-  private class SubstituteMenuPart_Action_6gqf7r_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_6gqf7r_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new Regexp_SubstituteMenu.SubstituteMenuPart_Action_6gqf7r_a.Item(_context);
+      return new Regexp_SubstituteMenu.SMP_Action_6gqf7r_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -76,12 +76,12 @@ public class Regexp_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  private class SubstituteMenuPart_Action_6gqf7r_b extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_6gqf7r_b extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new Regexp_SubstituteMenu.SubstituteMenuPart_Action_6gqf7r_b.Item(_context);
+      return new Regexp_SubstituteMenu.SMP_Action_6gqf7r_b.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -111,12 +111,12 @@ public class Regexp_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  private class SubstituteMenuPart_Action_6gqf7r_c extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_6gqf7r_c extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new Regexp_SubstituteMenu.SubstituteMenuPart_Action_6gqf7r_c.Item(_context);
+      return new Regexp_SubstituteMenu.SMP_Action_6gqf7r_c.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -155,12 +155,12 @@ public class Regexp_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  private class SubstituteMenuPart_Action_6gqf7r_d extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_6gqf7r_d extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new Regexp_SubstituteMenu.SubstituteMenuPart_Action_6gqf7r_d.Item(_context);
+      return new Regexp_SubstituteMenu.SMP_Action_6gqf7r_d.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -199,7 +199,7 @@ public class Regexp_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  public class SubstituteMenuPart_Subconcepts_6gqf7r_e extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_6gqf7r_e extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"));
     }

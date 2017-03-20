@@ -43,12 +43,12 @@ public class add_comparator_to_treeset_creator extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new add_comparator_to_treeset_creator.TransformationMenuPart_Group_mmx2q4_a0());
+      result.add(new add_comparator_to_treeset_creator.TMP_Group_mmx2q4_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_mmx2q4_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_mmx2q4_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x15ae66cec05cb2eaL, "initSize")) == null) && (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202e9082e6L, "copyFrom")) == null) && (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4838d33L, 0x1f622b3701eae8beL, "comparator")) == null);
@@ -56,12 +56,12 @@ public class add_comparator_to_treeset_creator extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_comparator_to_treeset_creator.TransformationMenuPart_Group_mmx2q4_a0.TransformationMenuPart_Action_mmx2q4_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_comparator_to_treeset_creator.TMP_Group_mmx2q4_a0.TMP_Action_mmx2q4_a0a());
     }
-    private class TransformationMenuPart_Action_mmx2q4_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_mmx2q4_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new add_comparator_to_treeset_creator.TransformationMenuPart_Group_mmx2q4_a0.TransformationMenuPart_Action_mmx2q4_a0a.Item(context);
+        return new add_comparator_to_treeset_creator.TMP_Group_mmx2q4_a0.TMP_Action_mmx2q4_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

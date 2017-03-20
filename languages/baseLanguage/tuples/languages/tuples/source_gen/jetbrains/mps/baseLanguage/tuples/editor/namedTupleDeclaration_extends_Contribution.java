@@ -39,10 +39,10 @@ public class namedTupleDeclaration_extends_Contribution extends SubstituteMenuBa
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new namedTupleDeclaration_extends_Contribution.SubstituteMenuPart_Group_evf1f9_a());
+    result.add(new namedTupleDeclaration_extends_Contribution.SMP_Group_evf1f9_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_evf1f9_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_evf1f9_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       SNode linkNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getDeclarationNode()));
@@ -51,13 +51,13 @@ public class namedTupleDeclaration_extends_Contribution extends SubstituteMenuBa
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new namedTupleDeclaration_extends_Contribution.SubstituteMenuPart_Group_evf1f9_a.SubstituteMenuPart_Parameterized_evf1f9_a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new namedTupleDeclaration_extends_Contribution.SMP_Group_evf1f9_a.SMP_Param_evf1f9_a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
     }
-    private class SubstituteMenuPart_Parameterized_evf1f9_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+    private class SMP_Param_evf1f9_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
       @Override
       protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-        return new namedTupleDeclaration_extends_Contribution.SubstituteMenuPart_Group_evf1f9_a.SubstituteMenuPart_Parameterized_evf1f9_a0.SubstituteMenuPart_Action_evf1f9_a0a(parameter).createItems(context);
+        return new namedTupleDeclaration_extends_Contribution.SMP_Group_evf1f9_a.SMP_Param_evf1f9_a0.SMP_Action_evf1f9_a0a(parameter).createItems(context);
       }
       @Nullable
       @Override
@@ -68,16 +68,16 @@ public class namedTupleDeclaration_extends_Contribution extends SubstituteMenuBa
           }
         });
       }
-      private class SubstituteMenuPart_Action_evf1f9_a0a extends SingleItemSubstituteMenuPart {
+      private class SMP_Action_evf1f9_a0a extends SingleItemSubstituteMenuPart {
         private final SNode myParameterObject;
-        public SubstituteMenuPart_Action_evf1f9_a0a(SNode parameterObject) {
+        public SMP_Action_evf1f9_a0a(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
 
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new namedTupleDeclaration_extends_Contribution.SubstituteMenuPart_Group_evf1f9_a.SubstituteMenuPart_Parameterized_evf1f9_a0.SubstituteMenuPart_Action_evf1f9_a0a.Item(_context);
+          return new namedTupleDeclaration_extends_Contribution.SMP_Group_evf1f9_a.SMP_Param_evf1f9_a0.SMP_Action_evf1f9_a0a.Item(_context);
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;

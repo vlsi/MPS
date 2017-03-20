@@ -40,13 +40,13 @@ public class ifStatement extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ifStatement.TransformationMenuPart_Group_dmkm09_a0());
-      result.add(new ifStatement.TransformationMenuPart_Parameterized_dmkm09_b0());
+      result.add(new ifStatement.TMP_Group_dmkm09_a0());
+      result.add(new ifStatement.TMP_Param_dmkm09_b0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_dmkm09_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_dmkm09_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xfc092b6b76L, "ifFalseStatement")) == null);
@@ -54,14 +54,14 @@ public class ifStatement extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ifStatement.TransformationMenuPart_Group_dmkm09_a0.TransformationMenuPart_Parameterized_dmkm09_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ifStatement.TMP_Group_dmkm09_a0.TMP_Param_dmkm09_a0a());
     }
-    private class TransformationMenuPart_Parameterized_dmkm09_a0a extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Param_dmkm09_a0a extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
 
       @NotNull
       @Override
       protected List<TransformationMenuItem> createItems(String parameter, TransformationMenuContext context) {
-        return new ifStatement.TransformationMenuPart_Group_dmkm09_a0.TransformationMenuPart_Parameterized_dmkm09_a0a.TransformationMenuPart_Action_dmkm09_a0a0(parameter).createItems(context);
+        return new ifStatement.TMP_Group_dmkm09_a0.TMP_Param_dmkm09_a0a.TMP_Action_dmkm09_a0a0(parameter).createItems(context);
       }
 
       @Nullable
@@ -70,14 +70,14 @@ public class ifStatement extends TransformationMenuBase {
         return ListSequence.fromListAndArray(new ArrayList<String>(), "else{", "else {");
       }
 
-      private class TransformationMenuPart_Action_dmkm09_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_dmkm09_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         private final String myParameterObject;
-        public TransformationMenuPart_Action_dmkm09_a0a0(String parameterObject) {
+        public TMP_Action_dmkm09_a0a0(String parameterObject) {
           myParameterObject = parameterObject;
         }
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new ifStatement.TransformationMenuPart_Group_dmkm09_a0.TransformationMenuPart_Parameterized_dmkm09_a0a.TransformationMenuPart_Action_dmkm09_a0a0.Item(context);
+          return new ifStatement.TMP_Group_dmkm09_a0.TMP_Param_dmkm09_a0a.TMP_Action_dmkm09_a0a0.Item(context);
         }
 
         private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -104,12 +104,12 @@ public class ifStatement extends TransformationMenuBase {
       }
     }
   }
-  private class TransformationMenuPart_Parameterized_dmkm09_b0 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_dmkm09_b0 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(String parameter, TransformationMenuContext context) {
-      return new ifStatement.TransformationMenuPart_Parameterized_dmkm09_b0.TransformationMenuPart_Action_dmkm09_a1a(parameter).createItems(context);
+      return new ifStatement.TMP_Param_dmkm09_b0.TMP_Action_dmkm09_a1a(parameter).createItems(context);
     }
 
     @Nullable
@@ -118,14 +118,14 @@ public class ifStatement extends TransformationMenuBase {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "else if", "elseif");
     }
 
-    private class TransformationMenuPart_Action_dmkm09_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_dmkm09_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final String myParameterObject;
-      public TransformationMenuPart_Action_dmkm09_a1a(String parameterObject) {
+      public TMP_Action_dmkm09_a1a(String parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ifStatement.TransformationMenuPart_Parameterized_dmkm09_b0.TransformationMenuPart_Action_dmkm09_a1a.Item(context);
+        return new ifStatement.TMP_Param_dmkm09_b0.TMP_Action_dmkm09_a1a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

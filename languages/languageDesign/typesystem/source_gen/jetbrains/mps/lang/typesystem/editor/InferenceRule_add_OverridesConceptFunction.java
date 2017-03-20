@@ -42,12 +42,12 @@ public class InferenceRule_add_OverridesConceptFunction extends TransformationMe
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new InferenceRule_add_OverridesConceptFunction.TransformationMenuPart_Group_5qd74_a0());
+      result.add(new InferenceRule_add_OverridesConceptFunction.TMP_Group_5qd74_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_5qd74_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_5qd74_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1164847e929L, 0x1885777d137135fcL, "overridesFun")) == null);
@@ -55,14 +55,14 @@ public class InferenceRule_add_OverridesConceptFunction extends TransformationMe
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new InferenceRule_add_OverridesConceptFunction.TransformationMenuPart_Group_5qd74_a0.TransformationMenuPart_Parameterized_5qd74_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new InferenceRule_add_OverridesConceptFunction.TMP_Group_5qd74_a0.TMP_Param_5qd74_a0a());
     }
-    private class TransformationMenuPart_Parameterized_5qd74_a0a extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Param_5qd74_a0a extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
 
       @NotNull
       @Override
       protected List<TransformationMenuItem> createItems(String parameter, TransformationMenuContext context) {
-        return new InferenceRule_add_OverridesConceptFunction.TransformationMenuPart_Group_5qd74_a0.TransformationMenuPart_Parameterized_5qd74_a0a.TransformationMenuPart_Action_5qd74_a0a0(parameter).createItems(context);
+        return new InferenceRule_add_OverridesConceptFunction.TMP_Group_5qd74_a0.TMP_Param_5qd74_a0a.TMP_Action_5qd74_a0a0(parameter).createItems(context);
       }
 
       @Nullable
@@ -71,14 +71,14 @@ public class InferenceRule_add_OverridesConceptFunction extends TransformationMe
         return Arrays.asList("true", "false", "{");
       }
 
-      private class TransformationMenuPart_Action_5qd74_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_5qd74_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         private final String myParameterObject;
-        public TransformationMenuPart_Action_5qd74_a0a0(String parameterObject) {
+        public TMP_Action_5qd74_a0a0(String parameterObject) {
           myParameterObject = parameterObject;
         }
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new InferenceRule_add_OverridesConceptFunction.TransformationMenuPart_Group_5qd74_a0.TransformationMenuPart_Parameterized_5qd74_a0a.TransformationMenuPart_Action_5qd74_a0a0.Item(context);
+          return new InferenceRule_add_OverridesConceptFunction.TMP_Group_5qd74_a0.TMP_Param_5qd74_a0a.TMP_Action_5qd74_a0a0.Item(context);
         }
 
         private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

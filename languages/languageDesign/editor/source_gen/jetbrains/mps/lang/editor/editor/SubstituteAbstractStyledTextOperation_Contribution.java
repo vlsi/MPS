@@ -37,14 +37,14 @@ public class SubstituteAbstractStyledTextOperation_Contribution extends Substitu
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstituteAbstractStyledTextOperation_Contribution.SubstituteMenuPart_Parameterized_86ir5e_a(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstituteAbstractStyledTextOperation_Contribution.SMP_Param_86ir5e_a(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_86ir5e_a extends ParameterizedMenuPart<SConcept, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_86ir5e_a extends ParameterizedMenuPart<SConcept, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SConcept parameter, SubstituteMenuContext context) {
-      return new SubstituteAbstractStyledTextOperation_Contribution.SubstituteMenuPart_Parameterized_86ir5e_a.SubstituteMenuPart_Action_86ir5e_a0(parameter).createItems(context);
+      return new SubstituteAbstractStyledTextOperation_Contribution.SMP_Param_86ir5e_a.SMP_Action_86ir5e_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -66,16 +66,16 @@ public class SubstituteAbstractStyledTextOperation_Contribution extends Substitu
         }
       }).toListSequence();
     }
-    private class SubstituteMenuPart_Action_86ir5e_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_86ir5e_a0 extends SingleItemSubstituteMenuPart {
       private final SConcept myParameterObject;
-      public SubstituteMenuPart_Action_86ir5e_a0(SConcept parameterObject) {
+      public SMP_Action_86ir5e_a0(SConcept parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new SubstituteAbstractStyledTextOperation_Contribution.SubstituteMenuPart_Parameterized_86ir5e_a.SubstituteMenuPart_Action_86ir5e_a0.Item(_context);
+        return new SubstituteAbstractStyledTextOperation_Contribution.SMP_Param_86ir5e_a.SMP_Action_86ir5e_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

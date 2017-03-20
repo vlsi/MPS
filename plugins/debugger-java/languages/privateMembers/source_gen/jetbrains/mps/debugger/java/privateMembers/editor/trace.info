@@ -18,16 +18,16 @@
     <file name="privateStaticAccess_Contribution.java">
       <node id="1741258697587208457" at="33,45,34,16" concept="8" />
       <node id="1741258697587208457" at="38,118,39,140" concept="5" />
-      <node id="1741258697587208457" at="39,140,40,328" concept="1" />
-      <node id="1741258697587208457" at="40,328,41,18" concept="6" />
-      <node id="1741258697587208457" at="46,100,47,160" concept="6" />
+      <node id="1741258697587208457" at="39,140,40,305" concept="1" />
+      <node id="1741258697587208457" at="40,305,41,18" concept="6" />
+      <node id="1741258697587208457" at="46,100,47,122" concept="6" />
       <node id="1741258697587208484" at="54,47,55,270" concept="6" />
       <node id="1741258697587208494" at="57,8,58,86" concept="5" />
       <node id="1741258697587208511" at="60,39,61,182" concept="6" />
       <node id="1741258697587208516" at="63,9,64,17" concept="6" />
       <node id="1741258697587208457" at="67,0,68,0" concept="2" trace="myParameterObject" />
-      <node id="1741258697587208457" at="68,73,69,44" concept="1" />
-      <node id="1741258697587208457" at="74,79,75,145" concept="6" />
+      <node id="1741258697587208457" at="68,58,69,44" concept="1" />
+      <node id="1741258697587208457" at="74,79,75,107" concept="6" />
       <node id="1741258697587208457" at="78,0,79,0" concept="2" trace="_context" />
       <node id="1741258697587208457" at="79,52,80,279" concept="8" />
       <node id="1741258697587208457" at="80,279,81,29" concept="1" />
@@ -40,7 +40,7 @@
       <node id="1741258697587208587" at="106,67,107,93" concept="6" />
       <node id="1741258697587208457" at="33,0,36,0" concept="0" trace="privateStaticAccess_Contribution#()V" />
       <node id="1741258697587208509" at="60,0,63,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1741258697587208457" at="68,0,71,0" concept="0" trace="SubstituteMenuPart_Action_53df4d_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587208457" at="68,0,71,0" concept="0" trace="SMP_Action_53df4d_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587208457" at="93,62,96,11" concept="3" />
       <node id="1741258697587208478" at="53,0,57,0" concept="4" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1741258697587208457" at="79,0,83,0" concept="0" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
@@ -55,11 +55,11 @@
       <node id="1741258697587208457" at="91,0,99,0" concept="4" trace="getIcon#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <node id="1741258697587208457" at="49,0,66,0" concept="4" trace="getParameters#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/lang/Iterable;" />
       <scope id="1741258697587208457" at="33,45,34,16" />
-      <scope id="1741258697587208457" at="46,100,47,160" />
+      <scope id="1741258697587208457" at="46,100,47,122" />
       <scope id="1741258697587208483" at="54,47,55,270" />
       <scope id="1741258697587208510" at="60,39,61,182" />
-      <scope id="1741258697587208457" at="68,73,69,44" />
-      <scope id="1741258697587208457" at="74,79,75,145" />
+      <scope id="1741258697587208457" at="68,58,69,44" />
+      <scope id="1741258697587208457" at="74,79,75,107" />
       <scope id="1741258697587208457" at="94,51,95,88" />
       <scope id="1741258697587208548" at="101,64,102,186" />
       <scope id="1741258697587208584" at="106,67,107,93" />
@@ -114,11 +114,11 @@
       <scope id="1741258697587208457" at="49,0,66,0">
         <var name="_context" id="1741258697587208457" />
       </scope>
-      <unit id="1741258697587208509" at="59,80,63,7" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SubstituteMenuPart_Parameterized_53df4d_a$2" />
-      <unit id="1741258697587208469" at="52,46,57,7" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SubstituteMenuPart_Parameterized_53df4d_a$1" />
-      <unit id="1741258697587208457" at="77,0,110,0" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SubstituteMenuPart_Parameterized_53df4d_a$SubstituteMenuPart_Action_53df4d_a0$Item" />
-      <unit id="1741258697587208457" at="66,0,111,0" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SubstituteMenuPart_Parameterized_53df4d_a$SubstituteMenuPart_Action_53df4d_a0" />
-      <unit id="1741258697587208457" at="43,0,113,0" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SubstituteMenuPart_Parameterized_53df4d_a" />
+      <unit id="1741258697587208509" at="59,80,63,7" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SMP_Param_53df4d_a$2" />
+      <unit id="1741258697587208469" at="52,46,57,7" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SMP_Param_53df4d_a$1" />
+      <unit id="1741258697587208457" at="77,0,110,0" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SMP_Param_53df4d_a$SMP_Action_53df4d_a0$Item" />
+      <unit id="1741258697587208457" at="66,0,111,0" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SMP_Param_53df4d_a$SMP_Action_53df4d_a0" />
+      <unit id="1741258697587208457" at="43,0,113,0" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SMP_Param_53df4d_a" />
       <unit id="1741258697587208457" at="32,0,114,0" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution" />
     </file>
   </root>

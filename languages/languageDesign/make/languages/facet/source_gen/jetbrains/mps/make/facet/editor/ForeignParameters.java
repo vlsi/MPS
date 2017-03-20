@@ -36,14 +36,14 @@ public class ForeignParameters extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ForeignParameters.SubstituteMenuPart_Parameterized_gb3jz3_a(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x2e69d2eba535f3b1L, "jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ForeignParameters.SMP_Param_gb3jz3_a(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x2e69d2eba535f3b1L, "jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_gb3jz3_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_gb3jz3_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new ForeignParameters.SubstituteMenuPart_Parameterized_gb3jz3_a.SubstituteMenuPart_Action_gb3jz3_a0(parameter).createItems(context);
+      return new ForeignParameters.SMP_Param_gb3jz3_a.SMP_Action_gb3jz3_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -68,16 +68,16 @@ public class ForeignParameters extends SubstituteMenuBase {
         }
       }).toListSequence();
     }
-    private class SubstituteMenuPart_Action_gb3jz3_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_gb3jz3_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_gb3jz3_a0(SNode parameterObject) {
+      public SMP_Action_gb3jz3_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new ForeignParameters.SubstituteMenuPart_Parameterized_gb3jz3_a.SubstituteMenuPart_Action_gb3jz3_a0.Item(_context);
+        return new ForeignParameters.SMP_Param_gb3jz3_a.SMP_Action_gb3jz3_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

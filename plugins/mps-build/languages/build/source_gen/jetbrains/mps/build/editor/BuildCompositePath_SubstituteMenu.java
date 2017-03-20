@@ -30,30 +30,30 @@ public class BuildCompositePath_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildCompositePath_SubstituteMenu.SubstituteMenuPart_Parameterized_xsu4fx_a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildCompositePath_SubstituteMenu.SMP_Param_xsu4fx_a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_xsu4fx_a extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_xsu4fx_a extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(String parameter, SubstituteMenuContext context) {
-      return new BuildCompositePath_SubstituteMenu.SubstituteMenuPart_Parameterized_xsu4fx_a.SubstituteMenuPart_Action_xsu4fx_a0(parameter).createItems(context);
+      return new BuildCompositePath_SubstituteMenu.SMP_Param_xsu4fx_a.SMP_Action_xsu4fx_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends String> getParameters(SubstituteMenuContext _context) {
       return (List<String>) BuildCompositePath__BehaviorDescriptor.getHeadSuggestions_id4jjtc7X04td.invoke(_context.getCurrentTargetNode(), BuildRelativePath__BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(SNodeOperations.getNodeAncestor(_context.getCurrentTargetNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"), false, false), Context.defaultContext()));
     }
-    private class SubstituteMenuPart_Action_xsu4fx_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_xsu4fx_a0 extends SingleItemSubstituteMenuPart {
       private final String myParameterObject;
-      public SubstituteMenuPart_Action_xsu4fx_a0(String parameterObject) {
+      public SMP_Action_xsu4fx_a0(String parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new BuildCompositePath_SubstituteMenu.SubstituteMenuPart_Parameterized_xsu4fx_a.SubstituteMenuPart_Action_xsu4fx_a0.Item(_context);
+        return new BuildCompositePath_SubstituteMenu.SMP_Param_xsu4fx_a.SMP_Action_xsu4fx_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

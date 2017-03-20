@@ -48,12 +48,12 @@ public class stringOperations_Contribution extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new stringOperations_Contribution.TransformationMenuPart_Group_uamzhl_a0());
+      result.add(new stringOperations_Contribution.TMP_Group_uamzhl_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_uamzhl_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_uamzhl_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), _quotation_createNode_uamzhl_b0a0a0a0(), false);
@@ -61,12 +61,12 @@ public class stringOperations_Contribution extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new stringOperations_Contribution.TransformationMenuPart_Group_uamzhl_a0.TransformationMenuPart_Action_uamzhl_a0a(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x550fbf4ebc5de3f5L, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression")), new ConstraintsFilteringTransformationMenuPartDecorator(new stringOperations_Contribution.TransformationMenuPart_Group_uamzhl_a0.TransformationMenuPart_Action_uamzhl_b0a(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x112972a0c32L, "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression")), new ConstraintsFilteringTransformationMenuPartDecorator(new stringOperations_Contribution.TransformationMenuPart_Group_uamzhl_a0.TransformationMenuPart_Action_uamzhl_c0a(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ef3f72dL, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression")), new ConstraintsFilteringTransformationMenuPartDecorator(new stringOperations_Contribution.TransformationMenuPart_Group_uamzhl_a0.TransformationMenuPart_Action_uamzhl_d0a(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1119d41c734L, "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new stringOperations_Contribution.TMP_Group_uamzhl_a0.TMP_Action_uamzhl_a0a(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x550fbf4ebc5de3f5L, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression")), new ConstraintsFilteringTransformationMenuPartDecorator(new stringOperations_Contribution.TMP_Group_uamzhl_a0.TMP_Action_uamzhl_b0a(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x112972a0c32L, "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression")), new ConstraintsFilteringTransformationMenuPartDecorator(new stringOperations_Contribution.TMP_Group_uamzhl_a0.TMP_Action_uamzhl_c0a(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ef3f72dL, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression")), new ConstraintsFilteringTransformationMenuPartDecorator(new stringOperations_Contribution.TMP_Group_uamzhl_a0.TMP_Action_uamzhl_d0a(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1119d41c734L, "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression")));
     }
-    private class TransformationMenuPart_Action_uamzhl_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_uamzhl_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new stringOperations_Contribution.TransformationMenuPart_Group_uamzhl_a0.TransformationMenuPart_Action_uamzhl_a0a.Item(context);
+        return new stringOperations_Contribution.TMP_Group_uamzhl_a0.TMP_Action_uamzhl_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -97,10 +97,10 @@ public class stringOperations_Contribution extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_uamzhl_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_uamzhl_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new stringOperations_Contribution.TransformationMenuPart_Group_uamzhl_a0.TransformationMenuPart_Action_uamzhl_b0a.Item(context);
+        return new stringOperations_Contribution.TMP_Group_uamzhl_a0.TMP_Action_uamzhl_b0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -131,10 +131,10 @@ public class stringOperations_Contribution extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_uamzhl_c0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_uamzhl_c0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new stringOperations_Contribution.TransformationMenuPart_Group_uamzhl_a0.TransformationMenuPart_Action_uamzhl_c0a.Item(context);
+        return new stringOperations_Contribution.TMP_Group_uamzhl_a0.TMP_Action_uamzhl_c0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -165,10 +165,10 @@ public class stringOperations_Contribution extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_uamzhl_d0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_uamzhl_d0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new stringOperations_Contribution.TransformationMenuPart_Group_uamzhl_a0.TransformationMenuPart_Action_uamzhl_d0a.Item(context);
+        return new stringOperations_Contribution.TMP_Group_uamzhl_a0.TMP_Action_uamzhl_d0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

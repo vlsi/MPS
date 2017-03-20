@@ -28,10 +28,10 @@ public class subs_AttributedNodeExpression_Contribution extends SubstituteMenuBa
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new subs_AttributedNodeExpression_Contribution.SubstituteMenuPart_Group_xeoaio_a());
+    result.add(new subs_AttributedNodeExpression_Contribution.SMP_Group_xeoaio_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_xeoaio_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_xeoaio_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       SNode absRule = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), false, false);

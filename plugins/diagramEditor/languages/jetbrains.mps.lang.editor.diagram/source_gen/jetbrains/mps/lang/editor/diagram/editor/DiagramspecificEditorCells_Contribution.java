@@ -31,10 +31,10 @@ public class DiagramspecificEditorCells_Contribution extends SubstituteMenuBase 
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new DiagramspecificEditorCells_Contribution.SubstituteMenuPart_Wrapper_ljrot4_a(), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new DiagramspecificEditorCells_Contribution.SMP_Wrap_ljrot4_a(), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode")));
     return result;
   }
-  private class SubstituteMenuPart_Wrapper_ljrot4_a extends WrapperSubstituteMenuPart {
+  private class SMP_Wrap_ljrot4_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {

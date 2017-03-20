@@ -33,12 +33,12 @@ public class BaseAssignmentExpression_Alias_TransformationMenu extends Transform
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
-      result.add(new BaseAssignmentExpression_Alias_TransformationMenu.TransformationMenuPart_IncludeSubstituteMenu_ayt46o_a0());
+      result.add(new BaseAssignmentExpression_Alias_TransformationMenu.TMP_IncludeSM_ayt46o_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeSubstituteMenu_ayt46o_a0 extends IncludeSubstituteMenuTransformationMenuPart {
+  public class TMP_IncludeSM_ayt46o_a0 extends IncludeSubstituteMenuTransformationMenuPart {
     @Override
     protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext context) {
       final EditorContext editorContext = context.getEditorContext();

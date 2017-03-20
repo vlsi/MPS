@@ -31,10 +31,10 @@ public class SConceptOperation_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new SConceptOperation_SubstituteMenu.SubstituteMenuPart_Group_gutaar_a());
+    result.add(new SConceptOperation_SubstituteMenu.SMP_Group_gutaar_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_gutaar_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_gutaar_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     private boolean isParentDot;
     @Override
     protected void initialize(SubstituteMenuContext _context) {
@@ -48,9 +48,9 @@ public class SConceptOperation_SubstituteMenu extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new SConceptOperation_SubstituteMenu.SubstituteMenuPart_Group_gutaar_a.SubstituteMenuPart_Group_gutaar_a0(), new SConceptOperation_SubstituteMenu.SubstituteMenuPart_Group_gutaar_a.SubstituteMenuPart_Group_gutaar_b0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new SConceptOperation_SubstituteMenu.SMP_Group_gutaar_a.SMP_Group_gutaar_a0(), new SConceptOperation_SubstituteMenu.SMP_Group_gutaar_a.SMP_Group_gutaar_b0());
     }
-    public class SubstituteMenuPart_Group_gutaar_a0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_gutaar_a0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return isParentDot;
@@ -58,9 +58,9 @@ public class SConceptOperation_SubstituteMenu extends SubstituteMenuBase {
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new SConceptOperation_SubstituteMenu.SubstituteMenuPart_Group_gutaar_a.SubstituteMenuPart_Group_gutaar_a0.SubstituteMenuPart_Group_gutaar_a0a());
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new SConceptOperation_SubstituteMenu.SMP_Group_gutaar_a.SMP_Group_gutaar_a0.SMP_Group_gutaar_a0a());
       }
-      public class SubstituteMenuPart_Group_gutaar_a0a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+      public class SMP_Group_gutaar_a0a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
         @Override
         protected boolean isApplicable(SubstituteMenuContext _context) {
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
@@ -70,9 +70,9 @@ public class SConceptOperation_SubstituteMenu extends SubstituteMenuBase {
 
         @Override
         protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-          return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new SConceptOperation_SubstituteMenu.SubstituteMenuPart_Group_gutaar_a.SubstituteMenuPart_Group_gutaar_a0.SubstituteMenuPart_Group_gutaar_a0a.SubstituteMenuPart_Subconcepts_gutaar_a0a0());
+          return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new SConceptOperation_SubstituteMenu.SMP_Group_gutaar_a.SMP_Group_gutaar_a0.SMP_Group_gutaar_a0a.SMP_Subconcepts_gutaar_a0a0());
         }
-        public class SubstituteMenuPart_Subconcepts_gutaar_a0a0 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+        public class SMP_Subconcepts_gutaar_a0a0 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
           protected Collection getConcepts(final SubstituteMenuContext _context) {
             return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8843faf9L, "jetbrains.mps.lang.smodel.structure.SConceptOperation"));
           }
@@ -83,7 +83,7 @@ public class SConceptOperation_SubstituteMenu extends SubstituteMenuBase {
         }
       }
     }
-    public class SubstituteMenuPart_Group_gutaar_b0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_gutaar_b0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return !(isParentDot);
@@ -91,9 +91,9 @@ public class SConceptOperation_SubstituteMenu extends SubstituteMenuBase {
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new SConceptOperation_SubstituteMenu.SubstituteMenuPart_Group_gutaar_a.SubstituteMenuPart_Group_gutaar_b0.SubstituteMenuPart_Subconcepts_gutaar_a1a());
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new SConceptOperation_SubstituteMenu.SMP_Group_gutaar_a.SMP_Group_gutaar_b0.SMP_Subconcepts_gutaar_a1a());
       }
-      public class SubstituteMenuPart_Subconcepts_gutaar_a1a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+      public class SMP_Subconcepts_gutaar_a1a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
         protected Collection getConcepts(final SubstituteMenuContext _context) {
           return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8843faf9L, "jetbrains.mps.lang.smodel.structure.SConceptOperation"));
         }

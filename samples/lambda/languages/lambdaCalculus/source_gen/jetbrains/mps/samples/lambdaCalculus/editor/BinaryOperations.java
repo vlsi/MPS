@@ -40,12 +40,12 @@ public class BinaryOperations extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new BinaryOperations.TransformationMenuPart_WrapSubstituteMenu_oy2y5y_a0());
+      result.add(new BinaryOperations.TMP_WrapSM_oy2y5y_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_WrapSubstituteMenu_oy2y5y_a0 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_oy2y5y_a0 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override

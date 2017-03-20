@@ -41,16 +41,16 @@ public class CommandHolder_Empty_Snippets extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new CommandHolder_Empty_Snippets.TransformationMenuPart_Action_vryvy0_a0());
-      result.add(new CommandHolder_Empty_Snippets.TransformationMenuPart_Action_vryvy0_b0());
+      result.add(new CommandHolder_Empty_Snippets.TMP_Action_vryvy0_a0());
+      result.add(new CommandHolder_Empty_Snippets.TMP_Action_vryvy0_b0());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_vryvy0_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_vryvy0_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new CommandHolder_Empty_Snippets.TransformationMenuPart_Action_vryvy0_a0.Item(context);
+      return new CommandHolder_Empty_Snippets.TMP_Action_vryvy0_a0.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -76,10 +76,10 @@ public class CommandHolder_Empty_Snippets extends TransformationMenuBase {
 
     }
   }
-  private class TransformationMenuPart_Action_vryvy0_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_vryvy0_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new CommandHolder_Empty_Snippets.TransformationMenuPart_Action_vryvy0_b0.Item(context);
+      return new CommandHolder_Empty_Snippets.TMP_Action_vryvy0_b0.Item(context);
     }
 
     private class Item extends ActionItemBase {

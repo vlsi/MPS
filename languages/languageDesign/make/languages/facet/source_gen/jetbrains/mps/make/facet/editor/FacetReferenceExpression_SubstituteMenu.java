@@ -29,30 +29,30 @@ public class FacetReferenceExpression_SubstituteMenu extends SubstituteMenuBase 
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new FacetReferenceExpression_SubstituteMenu.SubstituteMenuPart_Parameterized_micvva_a(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x639ef64ff4850bb0L, "jetbrains.mps.make.facet.structure.FacetReferenceExpression")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new FacetReferenceExpression_SubstituteMenu.SMP_Param_micvva_a(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x639ef64ff4850bb0L, "jetbrains.mps.make.facet.structure.FacetReferenceExpression")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_micvva_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_micvva_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new FacetReferenceExpression_SubstituteMenu.SubstituteMenuPart_Parameterized_micvva_a.SubstituteMenuPart_Action_micvva_a0(parameter).createItems(context);
+      return new FacetReferenceExpression_SubstituteMenu.SMP_Param_micvva_a.SMP_Action_micvva_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
       return SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"));
     }
-    private class SubstituteMenuPart_Action_micvva_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_micvva_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_micvva_a0(SNode parameterObject) {
+      public SMP_Action_micvva_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new FacetReferenceExpression_SubstituteMenu.SubstituteMenuPart_Parameterized_micvva_a.SubstituteMenuPart_Action_micvva_a0.Item(_context);
+        return new FacetReferenceExpression_SubstituteMenu.SMP_Param_micvva_a.SMP_Action_micvva_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

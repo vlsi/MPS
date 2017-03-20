@@ -23,15 +23,15 @@ public class ifStatement_ extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ifStatement_.SubstituteMenuPart_Action_vrmndy_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ifStatement_.SMP_Action_vrmndy_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement")));
     return result;
   }
-  private class SubstituteMenuPart_Action_vrmndy_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_vrmndy_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new ifStatement_.SubstituteMenuPart_Action_vrmndy_a.Item(_context);
+      return new ifStatement_.SMP_Action_vrmndy_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

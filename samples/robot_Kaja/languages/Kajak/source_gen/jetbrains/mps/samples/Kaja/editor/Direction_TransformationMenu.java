@@ -37,12 +37,12 @@ public class Direction_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed0d39L, "jetbrains.mps.samples.Kaja.structure.Direction"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new Direction_TransformationMenu.TransformationMenuPart_IncludeMenu_d9s39g_a1());
+      result.add(new Direction_TransformationMenu.TMP_Include_d9s39g_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_d9s39g_a1 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_d9s39g_a1 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected SNode getNode(TransformationMenuContext _context) {

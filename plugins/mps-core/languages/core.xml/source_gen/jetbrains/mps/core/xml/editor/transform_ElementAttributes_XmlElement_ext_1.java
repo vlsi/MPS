@@ -45,13 +45,13 @@ public class transform_ElementAttributes_XmlElement_ext_1 extends Transformation
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new transform_ElementAttributes_XmlElement_ext_1.TransformationMenuPart_WrapSubstituteMenu_gxyyd8_a0());
-      result.add(new transform_ElementAttributes_XmlElement_ext_1.TransformationMenuPart_Group_gxyyd8_b0());
+      result.add(new transform_ElementAttributes_XmlElement_ext_1.TMP_WrapSM_gxyyd8_a0());
+      result.add(new transform_ElementAttributes_XmlElement_ext_1.TMP_Group_gxyyd8_b0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_WrapSubstituteMenu_gxyyd8_a0 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_gxyyd8_a0 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override
@@ -65,7 +65,7 @@ public class transform_ElementAttributes_XmlElement_ext_1 extends Transformation
       SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b5L, "attributes"))).insertElement(0, createdNode), SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
     }
   }
-  public class TransformationMenuPart_Group_gxyyd8_b0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_gxyyd8_b0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x61218fae7b61b5d5L, "shortEmptyNotation"))) && ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b5L, "attributes"))).isEmpty();
@@ -73,12 +73,12 @@ public class transform_ElementAttributes_XmlElement_ext_1 extends Transformation
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new transform_ElementAttributes_XmlElement_ext_1.TransformationMenuPart_Group_gxyyd8_b0.TransformationMenuPart_Action_gxyyd8_a1a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new transform_ElementAttributes_XmlElement_ext_1.TMP_Group_gxyyd8_b0.TMP_Action_gxyyd8_a1a());
     }
-    private class TransformationMenuPart_Action_gxyyd8_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_gxyyd8_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new transform_ElementAttributes_XmlElement_ext_1.TransformationMenuPart_Group_gxyyd8_b0.TransformationMenuPart_Action_gxyyd8_a1a.Item(context);
+        return new transform_ElementAttributes_XmlElement_ext_1.TMP_Group_gxyyd8_b0.TMP_Action_gxyyd8_a1a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

@@ -45,17 +45,17 @@ public class TextCommentLinePart_TransformationMenu extends TransformationMenuBa
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new TextCommentLinePart_TransformationMenu.TransformationMenuPart_Parameterized_rifg0n_a1());
+      result.add(new TextCommentLinePart_TransformationMenu.TMP_Param_rifg0n_a1());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Parameterized_rifg0n_a1 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_rifg0n_a1 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(String parameter, TransformationMenuContext context) {
-      return new TextCommentLinePart_TransformationMenu.TransformationMenuPart_Parameterized_rifg0n_a1.TransformationMenuPart_Action_rifg0n_a0b(parameter).createItems(context);
+      return new TextCommentLinePart_TransformationMenu.TMP_Param_rifg0n_a1.TMP_Action_rifg0n_a0b(parameter).createItems(context);
     }
 
     @Nullable
@@ -72,14 +72,14 @@ public class TextCommentLinePart_TransformationMenu extends TransformationMenuBa
       return options;
     }
 
-    private class TransformationMenuPart_Action_rifg0n_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_rifg0n_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final String myParameterObject;
-      public TransformationMenuPart_Action_rifg0n_a0b(String parameterObject) {
+      public TMP_Action_rifg0n_a0b(String parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new TextCommentLinePart_TransformationMenu.TransformationMenuPart_Parameterized_rifg0n_a1.TransformationMenuPart_Action_rifg0n_a0b.Item(context);
+        return new TextCommentLinePart_TransformationMenu.TMP_Param_rifg0n_a1.TMP_Action_rifg0n_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

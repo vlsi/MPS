@@ -40,15 +40,15 @@ public class Customizes extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new Customizes.TransformationMenuPart_Group_3ero0o_a0());
+      result.add(new Customizes.TMP_Group_3ero0o_a0());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
-      result.add(new Customizes.TransformationMenuPart_Group_3ero0o_a0());
+      result.add(new Customizes.TMP_Group_3ero0o_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_3ero0o_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_3ero0o_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0xcfa085c9af881f8L, "customizes")) == null);
@@ -56,12 +56,12 @@ public class Customizes extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Customizes.TransformationMenuPart_Group_3ero0o_a0.TransformationMenuPart_Action_3ero0o_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Customizes.TMP_Group_3ero0o_a0.TMP_Action_3ero0o_a0a());
     }
-    private class TransformationMenuPart_Action_3ero0o_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_3ero0o_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Customizes.TransformationMenuPart_Group_3ero0o_a0.TransformationMenuPart_Action_3ero0o_a0a.Item(context);
+        return new Customizes.TMP_Group_3ero0o_a0.TMP_Action_3ero0o_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, SubstituteCompletionActionItem {

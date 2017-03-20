@@ -38,13 +38,13 @@ public class ParallelFor_TransformationMenu extends TransformationMenuBase {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"))));
-      result.add(new ParallelFor_TransformationMenu.TransformationMenuPart_IncludeMenu_5y1hyq_b0());
-      result.add(new ParallelFor_TransformationMenu.TransformationMenuPart_IncludeMenu_5y1hyq_c0());
+      result.add(new ParallelFor_TransformationMenu.TMP_Include_5y1hyq_b0());
+      result.add(new ParallelFor_TransformationMenu.TMP_Include_5y1hyq_c0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_5y1hyq_b0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_5y1hyq_b0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
@@ -55,7 +55,7 @@ public class ParallelFor_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TransformationMenuPart_IncludeMenu_5y1hyq_c0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_5y1hyq_c0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {

@@ -35,12 +35,12 @@ public class NoWaitTransforms_ParallelFor_ext_3 extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new NoWaitTransforms_ParallelFor_ext_3.TransformationMenuPart_Group_tp4f9n_a0());
+      result.add(new NoWaitTransforms_ParallelFor_ext_3.TMP_Group_tp4f9n_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_tp4f9n_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_tp4f9n_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, 0x74391c966b0f1304L, "nowait")));
@@ -48,12 +48,12 @@ public class NoWaitTransforms_ParallelFor_ext_3 extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new NoWaitTransforms_ParallelFor_ext_3.TransformationMenuPart_Group_tp4f9n_a0.TransformationMenuPart_Action_tp4f9n_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new NoWaitTransforms_ParallelFor_ext_3.TMP_Group_tp4f9n_a0.TMP_Action_tp4f9n_a0a());
     }
-    private class TransformationMenuPart_Action_tp4f9n_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_tp4f9n_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new NoWaitTransforms_ParallelFor_ext_3.TransformationMenuPart_Group_tp4f9n_a0.TransformationMenuPart_Action_tp4f9n_a0a.Item(context);
+        return new NoWaitTransforms_ParallelFor_ext_3.TMP_Group_tp4f9n_a0.TMP_Action_tp4f9n_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

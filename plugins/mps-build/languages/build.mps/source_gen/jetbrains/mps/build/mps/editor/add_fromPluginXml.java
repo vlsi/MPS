@@ -38,12 +38,12 @@ public class add_fromPluginXml extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new add_fromPluginXml.TransformationMenuPart_Group_ns9yce_a0());
+      result.add(new add_fromPluginXml.TMP_Group_ns9yce_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_ns9yce_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_ns9yce_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, 0x1131bde13f3dbe2aL, "pluginXml")) == null);
@@ -51,12 +51,12 @@ public class add_fromPluginXml extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_fromPluginXml.TransformationMenuPart_Group_ns9yce_a0.TransformationMenuPart_Action_ns9yce_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_fromPluginXml.TMP_Group_ns9yce_a0.TMP_Action_ns9yce_a0a());
     }
-    private class TransformationMenuPart_Action_ns9yce_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_ns9yce_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new add_fromPluginXml.TransformationMenuPart_Group_ns9yce_a0.TransformationMenuPart_Action_ns9yce_a0a.Item(context);
+        return new add_fromPluginXml.TMP_Group_ns9yce_a0.TMP_Action_ns9yce_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

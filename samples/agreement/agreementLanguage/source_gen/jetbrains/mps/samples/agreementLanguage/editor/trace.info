@@ -3002,10 +3002,10 @@
     <file name="quantity_Contribution.java">
       <node id="1741258697586938381" at="23,34,24,16" concept="8" />
       <node id="1741258697586938381" at="28,118,29,140" concept="6" />
-      <node id="1741258697586938381" at="29,140,30,283" concept="2" />
-      <node id="1741258697586938381" at="30,283,31,283" concept="2" />
-      <node id="1741258697586938381" at="31,283,32,18" concept="7" />
-      <node id="1741258697586938381" at="38,77,39,89" concept="7" />
+      <node id="1741258697586938381" at="29,140,30,268" concept="2" />
+      <node id="1741258697586938381" at="30,268,31,268" concept="2" />
+      <node id="1741258697586938381" at="31,268,32,18" concept="7" />
+      <node id="1741258697586938381" at="38,77,39,74" concept="7" />
       <node id="1741258697586938381" at="42,0,43,0" concept="3" trace="_context" />
       <node id="1741258697586938381" at="43,50,44,250" concept="8" />
       <node id="1741258697586938381" at="44,250,45,27" concept="2" />
@@ -3022,7 +3022,7 @@
       <node id="1741258697586938381" at="76,58,77,51" concept="7" />
       <node id="1741258697586938381" at="80,66,81,50" concept="7" />
       <node id="1741258697586938451" at="83,85,84,57" concept="7" />
-      <node id="1741258697586938381" at="92,77,93,89" concept="7" />
+      <node id="1741258697586938381" at="92,77,93,74" concept="7" />
       <node id="1741258697586938381" at="96,0,97,0" concept="3" trace="_context" />
       <node id="1741258697586938381" at="97,50,98,250" concept="8" />
       <node id="1741258697586938381" at="98,250,99,27" concept="2" />
@@ -3062,7 +3062,7 @@
       <node id="1741258697586938381" at="102,0,116,0" concept="5" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1741258697586938381" at="48,0,65,0" concept="5" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1741258697586938381" at="23,34,24,16" />
-      <scope id="1741258697586938381" at="38,77,39,89" />
+      <scope id="1741258697586938381" at="38,77,39,74" />
       <scope id="1741258697586938501" at="54,38,55,191" />
       <scope id="1741258697586938519" at="56,18,57,185" />
       <scope id="1741258697586938385" at="67,62,68,23" />
@@ -3070,7 +3070,7 @@
       <scope id="1741258697586938381" at="76,58,77,51" />
       <scope id="1741258697586938381" at="80,66,81,50" />
       <scope id="1741258697586938381" at="83,85,84,57" />
-      <scope id="1741258697586938381" at="92,77,93,89" />
+      <scope id="1741258697586938381" at="92,77,93,74" />
       <scope id="1741258697586938696" at="106,36,107,174" />
       <scope id="1741258697586938711" at="108,16,109,170" />
       <scope id="1741258697586938589" at="118,62,119,23" />
@@ -3146,10 +3146,10 @@
       <scope id="1741258697586938381" at="48,0,65,0">
         <var name="pattern" id="1741258697586938381" />
       </scope>
-      <unit id="1741258697586938381" at="95,0,138,0" name="jetbrains.mps.samples.agreementLanguage.editor.quantity_Contribution$SubstituteMenuPart_Action_82pfaq_b$Item" />
-      <unit id="1741258697586938381" at="41,0,87,0" name="jetbrains.mps.samples.agreementLanguage.editor.quantity_Contribution$SubstituteMenuPart_Action_82pfaq_a$Item" />
-      <unit id="1741258697586938381" at="88,0,139,0" name="jetbrains.mps.samples.agreementLanguage.editor.quantity_Contribution$SubstituteMenuPart_Action_82pfaq_b" />
-      <unit id="1741258697586938381" at="34,0,88,0" name="jetbrains.mps.samples.agreementLanguage.editor.quantity_Contribution$SubstituteMenuPart_Action_82pfaq_a" />
+      <unit id="1741258697586938381" at="95,0,138,0" name="jetbrains.mps.samples.agreementLanguage.editor.quantity_Contribution$SMP_Action_82pfaq_b$Item" />
+      <unit id="1741258697586938381" at="41,0,87,0" name="jetbrains.mps.samples.agreementLanguage.editor.quantity_Contribution$SMP_Action_82pfaq_a$Item" />
+      <unit id="1741258697586938381" at="88,0,139,0" name="jetbrains.mps.samples.agreementLanguage.editor.quantity_Contribution$SMP_Action_82pfaq_b" />
+      <unit id="1741258697586938381" at="34,0,88,0" name="jetbrains.mps.samples.agreementLanguage.editor.quantity_Contribution$SMP_Action_82pfaq_a" />
       <unit id="1741258697586938381" at="22,0,140,0" name="jetbrains.mps.samples.agreementLanguage.editor.quantity_Contribution" />
     </file>
   </root>

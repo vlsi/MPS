@@ -38,13 +38,13 @@ public class HashMapCreator_TransformationMenu extends TransformationMenuBase {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator"))));
-      result.add(new HashMapCreator_TransformationMenu.TransformationMenuPart_IncludeMenu_jcbzpg_b0());
-      result.add(new HashMapCreator_TransformationMenu.TransformationMenuPart_IncludeMenu_jcbzpg_c0());
+      result.add(new HashMapCreator_TransformationMenu.TMP_Include_jcbzpg_b0());
+      result.add(new HashMapCreator_TransformationMenu.TMP_Include_jcbzpg_c0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_jcbzpg_b0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_jcbzpg_b0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
@@ -55,7 +55,7 @@ public class HashMapCreator_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TransformationMenuPart_IncludeMenu_jcbzpg_c0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_jcbzpg_c0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {

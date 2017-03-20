@@ -32,12 +32,12 @@ public class expressionRTAfterAnonymous extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new expressionRTAfterAnonymous.TransformationMenuPart_IncludeMenu_4j11o5_a0());
+      result.add(new expressionRTAfterAnonymous.TMP_Include_4j11o5_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_4j11o5_a0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_4j11o5_a0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected SNode getNode(TransformationMenuContext _context) {

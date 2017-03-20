@@ -19,10 +19,10 @@ public class remove_ReturnStatement extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new remove_ReturnStatement.SubstituteMenuPart_Group_jk3faa_a());
+    result.add(new remove_ReturnStatement.SMP_Group_jk3faa_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_jk3faa_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_jk3faa_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       // return statements must be allowed until we find a way to implement early returns 
