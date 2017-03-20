@@ -79,7 +79,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.vcs.diff.changes.UsedLanguageChange;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
@@ -610,7 +609,7 @@ public class ChangesTracking {
 
     @Override
     public void visitLanguageEvent(SModelLanguageEvent event) {
-      final SLanguage eventLang = MetaAdapterFactory.getLanguage(event.getLanguageNamespace());
+      final SLanguage eventLang = event.getEventLanguage();
       final boolean deleted = !(event.isAdded());
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {

@@ -90,7 +90,6 @@
     <classNode dependClassName="jetbrains.mps.persistence.FilePerRootDataSource" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelChildEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelCommandListener" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelDevKitEvent" />
