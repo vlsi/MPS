@@ -22,7 +22,9 @@ import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -136,5 +138,18 @@ public interface ModelGenerationPlan {
     TemplateSwitchGraph getSwitchGraph() {
       return null;
     }
+  }
+
+
+  /**
+   * Marker to indicate source capable to supply ModelGenerationPlan for a model
+   */
+  interface Provider {
+    /**
+     * @param model what we need plan for.
+     * @return {@code null} if this provider could not give a plan for the model
+     */
+    @Nullable
+    ModelGenerationPlan getPlan(@NotNull SModel model);
   }
 }

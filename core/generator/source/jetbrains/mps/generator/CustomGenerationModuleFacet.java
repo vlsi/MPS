@@ -31,7 +31,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
  * @author Artem Tikhomirov
  * @since 3.3
  */
-public class CustomGenerationModuleFacet extends ModuleFacetBase {
+public class CustomGenerationModuleFacet extends ModuleFacetBase implements ModelGenerationPlan.Provider {
   public static final String FACET_TYPE = "generator";
   private SModelReference myPlanModel;
   private ModelGenerationPlan myCachedPlanInstance;
