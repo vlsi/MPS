@@ -9,14 +9,11 @@ import java.util.Map;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodeLegacy;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class VersionUtil {
@@ -75,27 +72,6 @@ public class VersionUtil {
       result.append(VERSION_SEPARATOR_CHAR).append(impElem.getUsedVersion());
     }
     return result.toString();
-  }
-  @NotNull
-  private String genReferenceString(@Nullable SNode node, @NotNull String text, boolean usemodel) {
-    return (node == null ? text : genReferenceString(node.getModel().getReference(), text, usemodel));
-  }
-  public String genType(@NotNull SNode node) {
-    return genReferenceString(new SNodeLegacy(node).getConceptDeclarationNode(), node.getConcept().getQualifiedName(), false);
-  }
-  public String genRole(@NotNull SNode node) {
-    return (node.getRoleInParent() == null ? null : genReferenceString((AttributeOperations.isAttribute(node) ? null : new SNodeLegacy(node).getRoleLink()), node.getRoleInParent(), true));
-  }
-  public String genRole(@NotNull SReference ref) {
-    return genReferenceString(new SNodeLegacy(ref.getSourceNode()).getLinkDeclaration(ref.getRole()), ref.getRole(), true);
-  }
-  public String genName(@NotNull SNode node, @NotNull String prop) {
-    return genReferenceString(new SNodeLegacy(node).getPropertyDeclaration(prop), prop, true);
-  }
-  public String genTarget(@NotNull SReference ref) {
-    String target = (ref instanceof StaticReference ? String.valueOf(ref.getTargetNodeId()) : "^");
-    SModelReference targetModel = ref.getTargetSModelReference();
-    return (targetModel == null ? target : genReferenceString(targetModel, target, true));
   }
   private Map<Integer, SModel.ImportElement> myImportByIx;
   public VersionUtil(SModelReference modelRef) {
