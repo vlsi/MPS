@@ -88,6 +88,8 @@ public class SModelUtil_new {
     }
   }
 
+  @Deprecated
+  @ToRemove(version = 2017.1)
   public static boolean isAcceptableTarget(SNode sourceNode, String role, SNode targetNode) {
     SNode conceptDeclaration = new SNodeLegacy(sourceNode).getConceptDeclarationNode();
     SNode linkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(conceptDeclaration, role);
