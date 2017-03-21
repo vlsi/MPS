@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +19,12 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
 import java.util.WeakHashMap;
@@ -37,14 +35,18 @@ public class MPSLanguagesVirtualFileSystem extends DeprecatedVirtualFileSystem i
     return ApplicationManager.getApplication().getComponent(MPSLanguagesVirtualFileSystem.class);
   }
 
-  private WeakHashMap<Language, MPSLanguageVirtualFile> myVirtualFiles = new WeakHashMap<Language, MPSLanguageVirtualFile>();
+  private WeakHashMap<SModuleReference, MPSLanguageVirtualFile> myVirtualFiles = new WeakHashMap<>();
 
   public MPSLanguageVirtualFile getFileFor(@NotNull final Language language) {
-    if (myVirtualFiles.containsKey(language)) {
-      return myVirtualFiles.get(language);
+    return getFileFor(language.getModuleReference());
+  }
+
+  public MPSLanguageVirtualFile getFileFor(@NotNull final SModuleReference language) {
+    MPSLanguageVirtualFile vf = myVirtualFiles.get(language);
+    if (vf != null) {
+      return vf;
     }
-    MPSLanguageVirtualFile vf = new MPSLanguageVirtualFile(language);
-    myVirtualFiles.put(language, vf);
+    myVirtualFiles.put(language, vf = new MPSLanguageVirtualFile(language));
     return vf;
   }
 
@@ -72,16 +74,7 @@ public class MPSLanguagesVirtualFileSystem extends DeprecatedVirtualFileSystem i
   @Override
   @Nullable
   public VirtualFile findFileByPath(final @NotNull @NonNls String path) {
-    return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
-      @Override
-      public VirtualFile compute() {
-        SModule language = MPSModuleRepository.getInstance().getModuleByFqName(path);
-        if (language instanceof Language) {
-          return getFileFor((Language) language);
-        }
-        return null;
-      }
-    });
+    return getFileFor(PersistenceFacade.getInstance().createModuleReference(path));
   }
 
   @Override
