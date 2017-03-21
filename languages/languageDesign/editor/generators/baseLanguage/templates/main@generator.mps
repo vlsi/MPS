@@ -6619,6 +6619,12 @@
         <ref role="v9R2y" to="tpe8:gCCYkhx" resolve="reduce_ConceptFunctionParameter_default" />
       </node>
     </node>
+    <node concept="3aamgX" id="31F3x8CY0cv" role="3acgRq">
+      <ref role="30HIoZ" to="tpc2:31F3x8CXY$U" resolve="CellMenuPart_ReplaceChild_defaultChildConcept" />
+      <node concept="j$656" id="31F3x8CY0cw" role="1lVwrX">
+        <ref role="v9R2y" to="tpe8:gCCYkhx" resolve="reduce_ConceptFunctionParameter_default" />
+      </node>
+    </node>
     <node concept="3aamgX" id="gZayldV" role="3acgRq">
       <ref role="30HIoZ" to="tpc2:gVGMtSf" resolve="CellMenuPart_Abstract_editedNode" />
       <node concept="j$656" id="h1mNJxQ" role="1lVwrX">

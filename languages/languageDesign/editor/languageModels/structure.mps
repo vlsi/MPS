@@ -1630,11 +1630,14 @@
     <property role="TrG5h" value="CellMenuPart_ReplaceChild_defaultConceptOfChild" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="CellMenu" />
-    <property role="34LRSv" value="defaultConceptOfChild" />
+    <property role="34LRSv" value="defaultConceptOfChild_deprecated" />
     <property role="EcuMT" value="1162498275506" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvANMX" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="asaX9" id="31F3x8CXY$W" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
     </node>
   </node>
   <node concept="1TIwiD" id="gVGJtLf">
@@ -6387,6 +6390,16 @@
     <property role="TrG5h" value="ConceptFunctionParameter_targetNode" />
     <property role="34LRSv" value="targetNode" />
     <property role="R4oN_" value="function parameter" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="31F3x8CXY$U">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="CellMenuPart_ReplaceChild_defaultChildConcept" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="CellMenu" />
+    <property role="34LRSv" value="defaultChildConcept" />
+    <property role="EcuMT" value="3488897807488117050" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
 </model>
