@@ -9,7 +9,7 @@
     <model modelUID="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </accessoryModels>
   <generators>
-    <generator name="java" generatorUID="jetbrains.mps.baseLanguage#1129914002933" uuid="985c8c6a-64b4-486d-a91e-7d4112742556">
+    <generator alias="java" namespace="jetbrains.mps.baseLanguage#1129914002933" uuid="985c8c6a-64b4-486d-a91e-7d4112742556">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/java/templates" />
