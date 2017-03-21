@@ -74,7 +74,7 @@ public class DefaultMenuContribution extends TransformationMenuBase {
 
     }
   }
-  private class TransformationMenuPart_Action_qwzmaw_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_qwzmaw_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new DefaultMenuContribution.TMP_Action_qwzmaw_a1.Item(context);

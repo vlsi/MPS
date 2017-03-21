@@ -41,7 +41,7 @@ public class Child_MoreDefaultActions extends TransformationMenuBase {
     return result;
   }
 
-  private class TransformationMenuPart_Action_ch35tm_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_ch35tm_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new Child_MoreDefaultActions.TMP_Action_ch35tm_a0.Item(context);

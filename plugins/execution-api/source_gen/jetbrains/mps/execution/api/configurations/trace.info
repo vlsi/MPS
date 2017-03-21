@@ -134,23 +134,23 @@
   </root>
   <root nodeRef="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)/6875903550967223425">
     <file name="ConsoleCreator.java">
-      <node id="6875903550967223545" at="11,84,12,66" concept="6" />
-      <node id="1213336866848784405" at="12,66,13,63" concept="1" />
-      <node id="6875903550967223552" at="13,63,14,58" concept="8" />
-      <node id="6875903550967223554" at="14,58,15,26" concept="1" />
-      <node id="6875903550967223564" at="15,26,16,18" concept="7" />
+      <node id="6875903550967223545" at="12,84,13,66" concept="6" />
+      <node id="1213336866848784405" at="13,66,14,63" concept="1" />
+      <node id="6875903550967223552" at="14,63,15,58" concept="8" />
+      <node id="6875903550967223554" at="15,58,16,26" concept="1" />
+      <node id="6875903550967223564" at="16,26,17,18" concept="7" />
       <node id="6875903550967223427" at="9,0,11,0" concept="0" trace="ConsoleCreator#()V" />
-      <node id="6875903550967223541" at="11,0,18,0" concept="10" trace="createConsoleView#(Lcom/intellij/openapi/project/Project;Z)Lcom/intellij/execution/impl/ConsoleViewImpl;" />
-      <scope id="6875903550967223430" at="9,27,9,27" />
+      <node id="6875903550967223541" at="12,0,19,0" concept="10" trace="createConsoleView#(Lcom/intellij/openapi/project/Project;Z)Lcom/intellij/execution/impl/ConsoleViewImpl;" />
+      <scope id="6875903550967223430" at="9,28,9,28" />
       <scope id="6875903550967223427" at="9,0,11,0" />
-      <scope id="6875903550967223544" at="11,84,16,18">
+      <scope id="6875903550967223544" at="12,84,17,18">
         <var name="result" id="6875903550967223546" />
       </scope>
-      <scope id="6875903550967223541" at="11,0,18,0">
+      <scope id="6875903550967223541" at="12,0,19,0">
         <var name="project" id="6875903550967223566" />
         <var name="viewer" id="6875903550967223568" />
       </scope>
-      <unit id="6875903550967223425" at="8,0,19,0" name="jetbrains.mps.execution.api.configurations.ConsoleCreator" />
+      <unit id="6875903550967223425" at="8,0,20,0" name="jetbrains.mps.execution.api.configurations.ConsoleCreator" />
     </file>
   </root>
   <root nodeRef="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)/7037083547575991021">

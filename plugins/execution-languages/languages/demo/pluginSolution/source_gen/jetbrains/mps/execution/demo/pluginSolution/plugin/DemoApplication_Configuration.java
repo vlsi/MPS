@@ -4,6 +4,8 @@ package jetbrains.mps.execution.demo.pluginSolution.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -16,8 +18,6 @@ import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import com.intellij.openapi.util.InvalidDataException;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
+  private static final Logger LOG = LogManager.getLogger(DemoApplication_Configuration.class);
   @NotNull
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
   private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration(MetaAdapterFactory.getConcept(0xe6081818930c4926L, 0xbdef3537bcc59087L, 0x446739e63be33684L, "jetbrains.mps.execution.demo.structure.SomeConcept"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
@@ -56,7 +57,6 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
       element.addContent(fieldElement);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(DemoApplication_Configuration.class);
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {

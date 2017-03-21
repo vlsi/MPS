@@ -1736,12 +1736,14 @@
   </node>
   <node concept="312cEu" id="5XG7t_TfTi1">
     <property role="TrG5h" value="ConsoleCreator" />
+    <property role="1EXbeo" value="true" />
     <node concept="3Tm1VV" id="5XG7t_TfTi2" role="1B3o_S" />
     <node concept="3clFbW" id="5XG7t_TfTi3" role="jymVt">
       <node concept="3cqZAl" id="5XG7t_TfTi4" role="3clF45" />
-      <node concept="3Tm1VV" id="5XG7t_TfTi5" role="1B3o_S" />
+      <node concept="3Tm6S6" id="LkEtoa0hIv" role="1B3o_S" />
       <node concept="3clFbS" id="5XG7t_TfTi6" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="LkEtoa0hIT" role="jymVt" />
     <node concept="2YIFZL" id="5XG7t_TfTjP" role="jymVt">
       <property role="TrG5h" value="createConsoleView" />
       <node concept="3uibUv" id="5XG7t_TfTjQ" role="3clF45">
