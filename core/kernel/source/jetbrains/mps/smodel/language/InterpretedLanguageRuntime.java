@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,15 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -79,8 +82,9 @@ class InterpretedLanguageRuntime extends LanguageRuntime {
   }
 
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    // FIXME why don't we extract dependencies from module descriptor?
-    return new String[0];
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    for (SModuleReference mr : myLang.getModuleDescriptor().getExtendedLanguages()) {
+      extendedLanguages.add(MetaAdapterFactory.getLanguage(mr));
+    }
   }
 }
