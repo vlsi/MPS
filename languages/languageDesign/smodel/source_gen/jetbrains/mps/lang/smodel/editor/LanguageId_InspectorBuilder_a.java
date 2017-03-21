@@ -55,7 +55,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
     return editorCell;
   }
   private EditorCell createConstant_2vmwcs_a0a() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "module uid");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "language id");
     editorCell.setCellId("Constant_2vmwcs_a0a");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

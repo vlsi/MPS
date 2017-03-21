@@ -9,7 +9,12 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 /*package*/ class LanguageId_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -40,6 +45,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.setCellId("property_namespace");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.AUTO_DELETABLE, _StyleParameter_QueryFunction_2vmwcs_a0a());
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
@@ -47,5 +55,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
+  }
+  private boolean _StyleParameter_QueryFunction_2vmwcs_a0a() {
+    return ListSequence.fromList(SNodeOperations.getAllSiblings(getNode(), false)).isEmpty();
   }
 }
