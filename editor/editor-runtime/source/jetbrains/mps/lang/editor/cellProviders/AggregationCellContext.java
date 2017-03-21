@@ -16,6 +16,8 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -26,9 +28,18 @@ public class AggregationCellContext extends BasicCellContext {
   public static final Object LINK_DECLARATION = new Object();
   public static final Object CURRENT_CHILD_NODE = new Object();
 
+  @Deprecated
+  @ToRemove(version = 3.5)
   public AggregationCellContext(SNode parentNode, SNode currentChild, SNode linkDeclaration) {
     super(parentNode);
     put(LINK_DECLARATION, linkDeclaration);
+    put(CURRENT_CHILD_NODE, currentChild);
+  }
+
+  public AggregationCellContext(SNode parentNode, SNode currentChild, SContainmentLink link) {
+    super(parentNode);
+    //todo make runtime work on top of SLink. The current solution allows to generate code, which will be correct in 2017.2
+    put(LINK_DECLARATION, link.getDeclarationNode());
     put(CURRENT_CHILD_NODE, currentChild);
   }
 }
