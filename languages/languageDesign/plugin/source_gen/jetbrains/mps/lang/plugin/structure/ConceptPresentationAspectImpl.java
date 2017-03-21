@@ -17,7 +17,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ActionConstructorParameterReferenceOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionDataParameterDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionDataParameterReferenceOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ActionDeclaration = new ConceptPresentationBuilder().helpUrl("http://confluence.jetbrains.com/display/MPSD34/Plugin#Plugin-actionsandactiongroups").icon(IconContainer.RESOURCE_a0a0h).create();
+  private final ConceptPresentation props_ActionDeclaration = new ConceptPresentationBuilder().helpUrl("http://confluence.jetbrains.com/display/MPSD20171/Plugin#Plugin-actionsandactiongroups").icon(IconContainer.RESOURCE_a0a0h).create();
   private final ConceptPresentation props_ActionGroupDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0i).create();
   private final ConceptPresentation props_ActionGroupMember = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionGroupRef = new ConceptPresentationBuilder().create();
