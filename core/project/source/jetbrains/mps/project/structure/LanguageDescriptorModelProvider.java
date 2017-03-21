@@ -250,6 +250,12 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
       importsToAdd.removeAll(m.usedLanguages()); // not adding the same language again
       importsToRemove.forEach(m::deleteLanguage); // applying calculated delta
       importsToAdd.forEach(m::addLanguage);
+      for (SLanguage lang : m.usedLanguages()) {
+        int versionFromModule = myModule.getUsedLanguageVersion(lang, false);
+        if (m.getLanguageImportVersion(lang) != versionFromModule) {
+          m.setLanguageImportVersion(lang, versionFromModule);
+        }
+      }
     }
 
     @Override
