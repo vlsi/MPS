@@ -27,6 +27,9 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -63,7 +66,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
           public SNode createChildNode(Object parameterConcept, SModel model, String pattern) {
             SNode parameterNode = (SNode) parameterConcept;
             if (isCustomCreateChildNode()) {
-              SNode newChild = AbstractCellMenuPart_ReplaceChild_Item.this.customCreateChildNode(parentNode, currentChild, defaultConceptOfChild,
+              SNode newChild = AbstractCellMenuPart_ReplaceChild_Item.this.customCreateChildNode(parentNode, currentChild, MetaAdapterByDeclaration.getConcept(defaultConceptOfChild),
                   parentNode.getModel(), context, editorContext);
               if (newChild != null) {
                 NodeFactoryManager.setupNode(parameterNode, newChild, currentChild, parentNode, model);
@@ -79,8 +82,18 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
     return false;
   }
 
-  protected abstract SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model,
-      IOperationContext operationContext, EditorContext editorContext);
+  @Deprecated
+  @ToRemove(version = 3.5)
+  protected SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model,
+      IOperationContext operationContext, EditorContext editorContext){
+    return customCreateChildNode(node, currentChild, MetaAdapterByDeclaration.getConcept(defaultConceptOfChild), model, operationContext, editorContext);
+  }
+
+  protected SNode customCreateChildNode(SNode node, SNode currentChild, SAbstractConcept defaultChildConcept, SModel model,
+                                         IOperationContext operationContext, EditorContext editorContext){
+    //todo remove body after 3.3, review callees, rewrite generator
+    return customCreateChildNode(node, currentChild, defaultChildConcept.getDeclarationNode(), model, operationContext, editorContext);
+  }
 
   protected abstract String getMatchingText();
 
