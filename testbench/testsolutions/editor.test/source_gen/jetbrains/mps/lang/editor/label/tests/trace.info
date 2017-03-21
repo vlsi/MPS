@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <root nodeRef="r:40a702b4-7737-42f4-8412-0355208396f3(jetbrains.mps.lang.editor.label.tests)/1070136247797346640">
+    <file name="LabelWithBrackets_Click_Test.java">
+      <node id="1070136247797346640" at="15,63,16,109" concept="1" />
+      <node id="1070136247797346640" at="16,109,17,112" concept="1" />
+      <node id="1070136247797346640" at="23,51,24,72" concept="1" />
+      <node id="1070136247797484342" at="24,72,25,93" concept="4" />
+      <node id="1070136247797347244" at="26,7,27,30" concept="3" />
+      <node id="1070136247797347244" at="27,30,28,29" concept="3" />
+      <node id="1070136247797347244" at="28,29,29,121" concept="3" />
+      <node id="1070136247797347244" at="29,121,30,120" concept="1" />
+      <node id="1070136247797347244" at="30,120,31,119" concept="1" />
+      <node id="1070136247797346646" at="32,7,33,25" concept="1" />
+      <node id="1070136247797346640" at="14,0,19,0" concept="2" trace="test_LabelWithBrackets_Click#()V" />
+      <node id="1070136247797347244" at="25,93,32,7" concept="0" />
+      <node id="1070136247797346640" at="22,0,35,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="1070136247797346640" at="15,63,17,112" />
+      <scope id="1070136247797346640" at="14,0,19,0" />
+      <scope id="1070136247797347244" at="26,7,31,119">
+        <var name="eventTargetComponent_l63k4n_b0" id="1070136247797347244" />
+        <var name="x_l63k4n_b0" id="1070136247797347244" />
+        <var name="y_l63k4n_b0" id="1070136247797347244" />
+      </scope>
+      <scope id="1070136247797346640" at="23,51,33,25" />
+      <scope id="1070136247797346640" at="22,0,35,0" />
+      <unit id="1070136247797346640" at="20,0,36,0" name="jetbrains.mps.lang.editor.label.tests.LabelWithBrackets_Click_Test$TestBody" />
+      <unit id="1070136247797346640" at="12,0,37,0" name="jetbrains.mps.lang.editor.label.tests.LabelWithBrackets_Click_Test" />
+    </file>
+  </root>
   <root nodeRef="r:40a702b4-7737-42f4-8412-0355208396f3(jetbrains.mps.lang.editor.label.tests)/1848195745380699572">
     <file name="LabelWithBrackets_AddText_Test.java">
-      <node id="1848195745380699572" at="13,65,14,109" concept="0" />
-      <node id="1848195745380699572" at="14,109,15,114" concept="0" />
-      <node id="1848195745380699572" at="21,51,22,72" concept="0" />
-      <node id="6546125805699762261" at="22,72,23,25" concept="0" />
-      <node id="1848195745380699572" at="12,0,17,0" concept="1" trace="test_LabelWithBrackets_AddText#()V" />
-      <node id="1848195745380699572" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <node id="1848195745380699572" at="13,65,14,109" concept="1" />
+      <node id="1848195745380699572" at="14,109,15,114" concept="1" />
+      <node id="1848195745380699572" at="21,51,22,72" concept="1" />
+      <node id="6546125805699762261" at="22,72,23,25" concept="1" />
+      <node id="1848195745380699572" at="12,0,17,0" concept="2" trace="test_LabelWithBrackets_AddText#()V" />
+      <node id="1848195745380699572" at="20,0,25,0" concept="2" trace="testMethodImpl#()V" />
       <scope id="1848195745380699572" at="13,65,15,114" />
       <scope id="1848195745380699572" at="21,51,23,25" />
       <scope id="1848195745380699572" at="12,0,17,0" />
@@ -20,15 +51,15 @@
   </root>
   <root nodeRef="r:40a702b4-7737-42f4-8412-0355208396f3(jetbrains.mps.lang.editor.label.tests)/6546125805699762592">
     <file name="LabelWithBrackets_RemoveText_Test.java">
-      <node id="6546125805699762592" at="13,68,14,109" concept="0" />
-      <node id="6546125805699762592" at="14,109,15,117" concept="0" />
-      <node id="6546125805699762592" at="21,51,22,72" concept="0" />
-      <node id="6546125805699762859" at="22,72,23,72" concept="0" />
-      <node id="6546125805699762890" at="23,72,24,72" concept="0" />
-      <node id="6546125805699762904" at="24,72,25,72" concept="0" />
-      <node id="6546125805699762920" at="25,72,26,72" concept="0" />
-      <node id="6546125805699762592" at="12,0,17,0" concept="1" trace="test_LabelWithBrackets_RemoveText#()V" />
-      <node id="6546125805699762592" at="20,0,28,0" concept="1" trace="testMethodImpl#()V" />
+      <node id="6546125805699762592" at="13,68,14,109" concept="1" />
+      <node id="6546125805699762592" at="14,109,15,117" concept="1" />
+      <node id="6546125805699762592" at="21,51,22,72" concept="1" />
+      <node id="6546125805699762859" at="22,72,23,72" concept="1" />
+      <node id="6546125805699762890" at="23,72,24,72" concept="1" />
+      <node id="6546125805699762904" at="24,72,25,72" concept="1" />
+      <node id="6546125805699762920" at="25,72,26,72" concept="1" />
+      <node id="6546125805699762592" at="12,0,17,0" concept="2" trace="test_LabelWithBrackets_RemoveText#()V" />
+      <node id="6546125805699762592" at="20,0,28,0" concept="2" trace="testMethodImpl#()V" />
       <scope id="6546125805699762592" at="13,68,15,117" />
       <scope id="6546125805699762592" at="12,0,17,0" />
       <scope id="6546125805699762592" at="21,51,26,72" />
@@ -39,12 +70,12 @@
   </root>
   <root nodeRef="r:40a702b4-7737-42f4-8412-0355208396f3(jetbrains.mps.lang.editor.label.tests)/6546125805699762938">
     <file name="LabelWithBrackets_Update_Test.java">
-      <node id="6546125805699762938" at="15,64,16,109" concept="0" />
-      <node id="6546125805699762938" at="16,109,17,113" concept="0" />
-      <node id="6546125805699762938" at="23,51,24,72" concept="0" />
-      <node id="6546125805699763087" at="24,72,25,79" concept="0" />
-      <node id="6546125805699762938" at="14,0,19,0" concept="1" trace="test_LabelWithBrackets_Update#()V" />
-      <node id="6546125805699762938" at="22,0,27,0" concept="1" trace="testMethodImpl#()V" />
+      <node id="6546125805699762938" at="15,64,16,109" concept="1" />
+      <node id="6546125805699762938" at="16,109,17,113" concept="1" />
+      <node id="6546125805699762938" at="23,51,24,72" concept="1" />
+      <node id="6546125805699763087" at="24,72,25,79" concept="1" />
+      <node id="6546125805699762938" at="14,0,19,0" concept="2" trace="test_LabelWithBrackets_Update#()V" />
+      <node id="6546125805699762938" at="22,0,27,0" concept="2" trace="testMethodImpl#()V" />
       <scope id="6546125805699762938" at="15,64,17,113" />
       <scope id="6546125805699762938" at="23,51,25,79" />
       <scope id="6546125805699762938" at="14,0,19,0" />
@@ -55,13 +86,13 @@
   </root>
   <root nodeRef="r:40a702b4-7737-42f4-8412-0355208396f3(jetbrains.mps.lang.editor.label.tests)/6546125805699826788">
     <file name="LabelWithBrackets_Undo_Test.java">
-      <node id="6546125805699826788" at="13,62,14,109" concept="0" />
-      <node id="6546125805699826788" at="14,109,15,111" concept="0" />
-      <node id="6546125805699826788" at="21,51,22,72" concept="0" />
-      <node id="6546125805699827546" at="22,72,23,22" concept="0" />
-      <node id="1954244792706921853" at="23,22,24,28" concept="0" />
-      <node id="6546125805699826788" at="12,0,17,0" concept="1" trace="test_LabelWithBrackets_Undo#()V" />
-      <node id="6546125805699826788" at="20,0,26,0" concept="1" trace="testMethodImpl#()V" />
+      <node id="6546125805699826788" at="13,62,14,109" concept="1" />
+      <node id="6546125805699826788" at="14,109,15,111" concept="1" />
+      <node id="6546125805699826788" at="21,51,22,72" concept="1" />
+      <node id="6546125805699827546" at="22,72,23,22" concept="1" />
+      <node id="1954244792706921853" at="23,22,24,28" concept="1" />
+      <node id="6546125805699826788" at="12,0,17,0" concept="2" trace="test_LabelWithBrackets_Undo#()V" />
+      <node id="6546125805699826788" at="20,0,26,0" concept="2" trace="testMethodImpl#()V" />
       <scope id="6546125805699826788" at="13,62,15,111" />
       <scope id="6546125805699826788" at="21,51,24,28" />
       <scope id="6546125805699826788" at="12,0,17,0" />

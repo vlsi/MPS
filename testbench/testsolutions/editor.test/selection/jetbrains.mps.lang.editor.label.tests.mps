@@ -9,6 +9,11 @@
   </languages>
   <imports>
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <import index="g51k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
+    <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
+    <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -36,6 +41,11 @@
       <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
         <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
       </concept>
+      <concept id="210559400605421433" name="jetbrains.mps.lang.test.structure.PressMouseStatement" flags="ng" index="37Q87h">
+        <property id="210559400606080744" name="y" index="37OD10" />
+        <property id="210559400606080743" name="x" index="37OD1f" />
+        <child id="1082485599096" name="statementList" index="9aQI4" />
+      </concept>
       <concept id="4239542196496927193" name="jetbrains.mps.lang.test.structure.MPSActionReference" flags="ng" index="1iFQzN">
         <reference id="4239542196496929559" name="action" index="1iFR8X" />
       </concept>
@@ -51,6 +61,12 @@
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -205,6 +221,44 @@
   </node>
   <node concept="2XOHcx" id="50UgHNTM2nS">
     <property role="2XOHcw" value="${mps_home}" />
+  </node>
+  <node concept="LiM7Y" id="VpSNXveJ5g">
+    <property role="TrG5h" value="LabelWithBrackets_Click" />
+    <node concept="3Bq18q" id="VpSNXveJ5h" role="LiRBU">
+      <property role="3BtyE7" value="myProperty" />
+      <node concept="LIFWc" id="VpSNXveWUl" role="lGtFl">
+        <property role="LIFWa" value="8" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="8" />
+        <property role="p6zMs" value="8" />
+        <property role="LIFWd" value="property_myProperty" />
+      </node>
+    </node>
+    <node concept="3Bq18q" id="VpSNXveJ5j" role="LiZbd">
+      <property role="3BtyE7" value="myTempProperty" />
+      <node concept="LIFWc" id="VpSNXveJ5k" role="lGtFl">
+        <property role="LIFWa" value="6" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="6" />
+        <property role="p6zMs" value="6" />
+        <property role="LIFWd" value="property_myProperty" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="VpSNXveJ5l" role="LjaKd">
+      <node concept="3SKdUt" id="VpSNXvfgGQ" role="3cqZAp">
+        <node concept="3SKdUq" id="VpSNXvfgGS" role="3SKWNk">
+          <property role="3SKdUp" value="TODO: modify press mouse statement in order to support expressions as x,y prameters" />
+        </node>
+      </node>
+      <node concept="37Q87h" id="VpSNXveJeG" role="3cqZAp">
+        <property role="37OD1f" value="100" />
+        <property role="37OD10" value="10" />
+        <node concept="3clFbS" id="VpSNXveJeI" role="9aQI4" />
+      </node>
+      <node concept="2TK7Tu" id="VpSNXveJ5m" role="3cqZAp">
+        <property role="2TTd_B" value="Temp" />
+      </node>
+    </node>
   </node>
 </model>
 
