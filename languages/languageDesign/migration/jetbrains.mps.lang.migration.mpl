@@ -10,7 +10,7 @@
     <model modelUID="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" />
   </accessoryModels>
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.lang.migration#3735414794051522719" uuid="1500dd24-6c0b-4efb-bf73-cc8384a27d84">
+    <generator alias="" namespace="jetbrains.mps.lang.migration#3735414794051522719" uuid="1500dd24-6c0b-4efb-bf73-cc8384a27d84">
       <models>
         <modelRoot contentPath="${module}/generator/template" type="default">
           <sourceRoot location="." />

@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.traceInfo.tracemacro.testlang#7980748436587788163" uuid="791a790e-6d6d-4aa8-8917-3b269a164450" generate-templates="true">
+    <generator alias="" namespace="jetbrains.mps.traceInfo.tracemacro.testlang#7980748436587788163" uuid="791a790e-6d6d-4aa8-8917-3b269a164450" generate-templates="true">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />

@@ -9,7 +9,7 @@
     <model modelUID="r:bdfa3a84-8ee6-4fba-b3f2-b16b2216a12b(jetbrains.mps.samples.Shapes.colors)" />
   </accessoryModels>
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.samples.Shapes#5898776707557467699" uuid="ee06d425-d7a1-494b-b52c-311d93bdcfbd">
+    <generator alias="" namespace="jetbrains.mps.samples.Shapes#5898776707557467699" uuid="ee06d425-d7a1-494b-b52c-311d93bdcfbd">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />

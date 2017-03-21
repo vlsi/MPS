@@ -10,7 +10,7 @@
     <model modelUID="r:00000000-0000-4000-0000-011c8959040b(jetbrains.mps.samples.agreementLanguage.declarations)" />
   </accessoryModels>
   <generators>
-    <generator name="" generatorUID="agreementLanguage#1130266708218" uuid="99486a30-6681-4388-952b-49b8af1fef48">
+    <generator alias="" namespace="agreementLanguage#1130266708218" uuid="99486a30-6681-4388-952b-49b8af1fef48">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator" />

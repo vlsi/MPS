@@ -2824,7 +2824,7 @@
   </node>
   <node concept="LiM7Y" id="1KsjPY0CJVD">
     <property role="3GE5qa" value="selection" />
-    <property role="TrG5h" value="MoveElementsUpFromCoumnSelection" />
+    <property role="TrG5h" value="MoveElementsUpFromColumnSelection" />
     <node concept="RCZfx" id="1KsjPY0CJVF" role="LiRBU">
       <property role="TrG5h" value="moveElementsUpFromColumnSelection" />
       <node concept="RCZfB" id="1KsjPY0CJVG" role="RCZfz">
@@ -2963,7 +2963,7 @@
   </node>
   <node concept="LiM7Y" id="1KsjPY0CJW$">
     <property role="3GE5qa" value="selection" />
-    <property role="TrG5h" value="MoveElementsDownFromCoumnSelection" />
+    <property role="TrG5h" value="MoveElementsDownFromColumnSelection" />
     <node concept="RCZfx" id="1KsjPY0CJW_" role="LiRBU">
       <property role="TrG5h" value="moveElementsDownFromColumnSelection" />
       <node concept="RCZfB" id="1KsjPY0CJWA" role="RCZfz">

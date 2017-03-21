@@ -9,7 +9,7 @@
     <model modelUID="r:2623dc86-b72d-4474-bafb-caa0418fe3c1(jetbrains.mps.testbench.suite.util)" />
   </accessoryModels>
   <generators>
-    <generator name="java" generatorUID="jetbrains.mps.testbench.suite#8749850441865775970" uuid="13b00428-a31f-4c99-b565-ebb37706f8e8">
+    <generator alias="java" namespace="jetbrains.mps.testbench.suite#8749850441865775970" uuid="13b00428-a31f-4c99-b565-ebb37706f8e8">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />

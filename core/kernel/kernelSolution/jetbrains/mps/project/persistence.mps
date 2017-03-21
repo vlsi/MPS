@@ -2412,11 +2412,6 @@
             </node>
           </node>
           <node concept="3clFbS" id="IMUMWuHQz1" role="3clFbx">
-            <node concept="3SKdUt" id="2NRMQ_$hqWc" role="3cqZAp">
-              <node concept="3SKdUq" id="2NRMQ_$hqWe" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME shall use 'alias' instead, see load(), above. Left to minimize changes in 2017.1" />
-              </node>
-            </node>
             <node concept="3clFbF" id="1Tieq1imh0U" role="3cqZAp">
               <node concept="2OqwBi" id="1Tieq1imh1a" role="3clFbG">
                 <node concept="37vLTw" id="1Tieq1imh0V" role="2Oq$k0">
@@ -2425,7 +2420,7 @@
                 <node concept="liA8E" id="1Tieq1imh1l" role="2OqNvi">
                   <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
                   <node concept="Xl_RD" id="1Tieq1imh1m" role="37wK5m">
-                    <property role="Xl_RC" value="name" />
+                    <property role="Xl_RC" value="alias" />
                   </node>
                   <node concept="2OqwBi" id="1Tieq1imh1v" role="37wK5m">
                     <node concept="37vLTw" id="2BHiRxgm5Rq" role="2Oq$k0">
@@ -2442,11 +2437,6 @@
         </node>
         <node concept="3clFbJ" id="IMUMWuHQz8" role="3cqZAp">
           <node concept="3clFbS" id="IMUMWuHQz9" role="3clFbx">
-            <node concept="3SKdUt" id="2NRMQ_$hqY5" role="3cqZAp">
-              <node concept="3SKdUq" id="2NRMQ_$hqY6" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME shall use 'namespace' instead, see load(), above. Left to minimize changes in 2017.1" />
-              </node>
-            </node>
             <node concept="3clFbF" id="1Tieq1imh1z" role="3cqZAp">
               <node concept="2OqwBi" id="1Tieq1imh1$" role="3clFbG">
                 <node concept="37vLTw" id="1Tieq1imh1_" role="2Oq$k0">
@@ -2455,7 +2445,7 @@
                 <node concept="liA8E" id="1Tieq1imh1A" role="2OqNvi">
                   <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
                   <node concept="Xl_RD" id="1Tieq1imh1B" role="37wK5m">
-                    <property role="Xl_RC" value="generatorUID" />
+                    <property role="Xl_RC" value="namespace" />
                   </node>
                   <node concept="2OqwBi" id="1Tieq1imh1X" role="37wK5m">
                     <node concept="37vLTw" id="2BHiRxgll5g" role="2Oq$k0">
