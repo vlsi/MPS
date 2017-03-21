@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 
 public final class UpdateRuntimeUtil_MigrationScript extends BaseMigrationScript {
-  protected static Logger LOG = LogManager.getLogger(UpdateRuntimeUtil_MigrationScript.class);
+  private static final Logger LOG = LogManager.getLogger(UpdateRuntimeUtil_MigrationScript.class);
   public UpdateRuntimeUtil_MigrationScript() {
     super("Update RuntimeUtil with references to function interfaces");
     this.addRefactoring(new AbstractMigrationRefactoring() {

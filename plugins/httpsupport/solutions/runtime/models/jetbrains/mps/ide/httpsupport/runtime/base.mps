@@ -172,9 +172,9 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -491,9 +491,9 @@
                 </node>
               </node>
             </node>
-            <node concept="34ab3g" id="7CAL8BWt7e" role="3cqZAp">
-              <property role="35gtTG" value="warn" />
-              <node concept="3cpWs3" id="602uc2JODyb" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB36UC" role="3cqZAp">
+              <property role="RRSoG" value="warn" />
+              <node concept="3cpWs3" id="602uc2JODyb" role="RRSoy">
                 <node concept="Xl_RD" id="602uc2JODyt" role="3uHU7w">
                   <property role="Xl_RC" value="' instead." />
                 </node>

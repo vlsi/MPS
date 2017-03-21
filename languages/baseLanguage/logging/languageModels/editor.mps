@@ -646,7 +646,7 @@
               <node concept="3clFbF" id="1KXtTGFTUxE" role="3cqZAp">
                 <node concept="3cpWs3" id="1KXtTGFTVgS" role="3clFbG">
                   <node concept="Xl_RD" id="1KXtTGFTVpX" role="3uHU7B">
-                    <property role="Xl_RC" value="log-" />
+                    <property role="Xl_RC" value="log " />
                   </node>
                   <node concept="2OqwBi" id="1KXtTGFTUxF" role="3uHU7w">
                     <node concept="2ZBlsa" id="1KXtTGFTUxG" role="2Oq$k0" />

@@ -8,7 +8,7 @@ import org.apache.log4j.LogManager;
 import junit.framework.Assert;
 
 public class Test_Test extends TestCase {
-  protected static Logger LOG = LogManager.getLogger(Test_Test.class);
+  private static final Logger LOG = LogManager.getLogger(Test_Test.class);
   public void test_test1() throws Exception {
     if (LOG.isInfoEnabled()) {
       LOG.info("info!");

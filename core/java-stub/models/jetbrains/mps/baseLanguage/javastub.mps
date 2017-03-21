@@ -348,9 +348,9 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -4337,9 +4337,9 @@
                               <property role="3SKdUp" value="TODO: avoid this quick fix for SchemeProcessor class in scheme.kt from IDEA platform" />
                             </node>
                           </node>
-                          <node concept="34ab3g" id="7KcHhTHUfQk" role="3cqZAp">
-                            <property role="35gtTG" value="warn" />
-                            <node concept="3cpWs3" id="68ZF3WBP9$D" role="34bqiv">
+                          <node concept="RRSsy" id="3jYQuSB34m3" role="3cqZAp">
+                            <property role="RRSoG" value="warn" />
+                            <node concept="3cpWs3" id="68ZF3WBP9$D" role="RRSoy">
                               <node concept="37vLTw" id="68ZF3WBP9EM" role="3uHU7w">
                                 <ref role="3cqZAo" node="4H5njqSyyM1" resolve="myClassifier" />
                               </node>
@@ -4671,9 +4671,9 @@
                               <property role="3SKdUp" value="TODO: avoid this quick fix for SchemeProcessor class in scheme.kt from IDEA platform" />
                             </node>
                           </node>
-                          <node concept="34ab3g" id="3ee2WmeEfpL" role="3cqZAp">
-                            <property role="35gtTG" value="warn" />
-                            <node concept="3cpWs3" id="3ee2WmeEfpM" role="34bqiv">
+                          <node concept="RRSsy" id="3jYQuSB34ml" role="3cqZAp">
+                            <property role="RRSoG" value="warn" />
+                            <node concept="3cpWs3" id="3ee2WmeEfpM" role="RRSoy">
                               <node concept="37vLTw" id="3ee2WmeEfpN" role="3uHU7w">
                                 <ref role="3cqZAo" node="3ee2WmeEbwu" resolve="typeByASMType" />
                               </node>
@@ -8270,9 +8270,9 @@
             </node>
           </node>
         </node>
-        <node concept="34ab3g" id="4sm8lF4oA4p" role="3cqZAp">
-          <property role="35gtTG" value="error" />
-          <node concept="3cpWs3" id="4sm8lF4oA4r" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB34mv" role="3cqZAp">
+          <property role="RRSoG" value="error" />
+          <node concept="3cpWs3" id="4sm8lF4oA4r" role="RRSoy">
             <node concept="3cpWs3" id="4sm8lF4oA4s" role="3uHU7B">
               <node concept="3cpWs3" id="4sm8lF4oA4t" role="3uHU7B">
                 <node concept="Xl_RD" id="4sm8lF4oA4u" role="3uHU7B">
@@ -9091,9 +9091,9 @@
             </node>
           </node>
         </node>
-        <node concept="34ab3g" id="4sm8lF4ovkl" role="3cqZAp">
-          <property role="35gtTG" value="error" />
-          <node concept="3cpWs3" id="4sm8lF4ovkn" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB34n5" role="3cqZAp">
+          <property role="RRSoG" value="error" />
+          <node concept="3cpWs3" id="4sm8lF4ovkn" role="RRSoy">
             <node concept="3cpWs3" id="4sm8lF4ovko" role="3uHU7B">
               <node concept="Xl_RD" id="4sm8lF4ovkp" role="3uHU7B">
                 <property role="Xl_RC" value="Can't convert type " />

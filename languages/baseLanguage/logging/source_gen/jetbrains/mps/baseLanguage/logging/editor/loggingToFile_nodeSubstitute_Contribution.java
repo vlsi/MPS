@@ -33,30 +33,30 @@ public class loggingToFile_nodeSubstitute_Contribution extends SubstituteMenuBas
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new loggingToFile_nodeSubstitute_Contribution.SubstituteMenuPart_Parameterized_y9jrg5_a(), MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, "jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new loggingToFile_nodeSubstitute_Contribution.SMP_Param_y9jrg5_a(), MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, "jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_y9jrg5_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_y9jrg5_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new loggingToFile_nodeSubstitute_Contribution.SubstituteMenuPart_Parameterized_y9jrg5_a.SubstituteMenuPart_Action_y9jrg5_a0(parameter).createItems(context);
+      return new loggingToFile_nodeSubstitute_Contribution.SMP_Param_y9jrg5_a.SMP_Action_y9jrg5_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)", "Severity"));
     }
-    private class SubstituteMenuPart_Action_y9jrg5_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_y9jrg5_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_y9jrg5_a0(SNode parameterObject) {
+      public SMP_Action_y9jrg5_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new loggingToFile_nodeSubstitute_Contribution.SubstituteMenuPart_Parameterized_y9jrg5_a.SubstituteMenuPart_Action_y9jrg5_a0.Item(_context);
+        return new loggingToFile_nodeSubstitute_Contribution.SMP_Param_y9jrg5_a.SMP_Action_y9jrg5_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -86,7 +86,7 @@ public class loggingToFile_nodeSubstitute_Contribution extends SubstituteMenuBas
         @Nullable
         @Override
         public String getMatchingText(@NotNull String pattern) {
-          return "log-" + SEnumOperations.getEnumMemberValue(myParameterObject);
+          return "log " + SEnumOperations.getEnumMemberValue(myParameterObject);
         }
         @Nullable
         @Override

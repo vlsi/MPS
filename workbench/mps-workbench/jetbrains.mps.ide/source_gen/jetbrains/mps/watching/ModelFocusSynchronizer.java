@@ -32,7 +32,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class ModelFocusSynchronizer implements ApplicationComponent {
-  protected static Logger LOG = LogManager.getLogger(ModelFocusSynchronizer.class);
+  private static final Logger LOG = LogManager.getLogger(ModelFocusSynchronizer.class);
   public ModelFocusSynchronizer(FrameStateManager frameStateManager) {
     frameStateManager.addListener(new FrameStateListener() {
       @Override

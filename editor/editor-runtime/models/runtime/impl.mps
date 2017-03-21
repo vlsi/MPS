@@ -243,11 +243,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1273,14 +1272,13 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="1ZE4Es_XcBH" role="TDEfX">
-                  <node concept="34ab3g" id="1ZE4Es_XhlA" role="3cqZAp">
-                    <property role="35gtTG" value="warn" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="37vLTw" id="1ZE4Es_XhTU" role="34bMjA">
-                      <ref role="3cqZAo" node="1ZE4Es_XcBF" resolve="ex" />
-                    </node>
-                    <node concept="Xl_RD" id="1ZE4Es_XiiR" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB379h" role="3cqZAp">
+                    <property role="RRSoG" value="warn" />
+                    <node concept="Xl_RD" id="1ZE4Es_XiiR" role="RRSoy">
                       <property role="Xl_RC" value="Failed to instantiate keymap" />
+                    </node>
+                    <node concept="37vLTw" id="1ZE4Es_XhTU" role="RRSow">
+                      <ref role="3cqZAo" node="1ZE4Es_XcBF" resolve="ex" />
                     </node>
                   </node>
                 </node>
@@ -1374,14 +1372,13 @@
               </node>
               <node concept="TDmWw" id="3cMIXQCK5Cq" role="TEbGg">
                 <node concept="3clFbS" id="3cMIXQCK5Cr" role="TDEfX">
-                  <node concept="34ab3g" id="3cMIXQCK8FJ" role="3cqZAp">
-                    <property role="35gtTG" value="error" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="37vLTw" id="3cMIXQCK8FK" role="34bMjA">
-                      <ref role="3cqZAo" node="3cMIXQCK5Cs" resolve="e" />
-                    </node>
-                    <node concept="Xl_RD" id="3cMIXQCK8FL" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB379p" role="3cqZAp">
+                    <property role="RRSoG" value="error" />
+                    <node concept="Xl_RD" id="3cMIXQCK8FL" role="RRSoy">
                       <property role="Xl_RC" value="Failed to instantiate keymap" />
+                    </node>
+                    <node concept="37vLTw" id="3cMIXQCK8FK" role="RRSow">
+                      <ref role="3cqZAo" node="3cMIXQCK5Cs" resolve="e" />
                     </node>
                   </node>
                 </node>
@@ -1394,14 +1391,13 @@
               </node>
               <node concept="TDmWw" id="3cMIXQCK5Cu" role="TEbGg">
                 <node concept="3clFbS" id="3cMIXQCK5Cv" role="TDEfX">
-                  <node concept="34ab3g" id="3cMIXQCK9S3" role="3cqZAp">
-                    <property role="35gtTG" value="error" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="37vLTw" id="3cMIXQCK9S4" role="34bMjA">
-                      <ref role="3cqZAo" node="3cMIXQCK5Cw" resolve="e" />
-                    </node>
-                    <node concept="Xl_RD" id="1ZE4Es_WWxV" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB379x" role="3cqZAp">
+                    <property role="RRSoG" value="error" />
+                    <node concept="Xl_RD" id="1ZE4Es_WWxV" role="RRSoy">
                       <property role="Xl_RC" value="Failed to instantiate keymap" />
+                    </node>
+                    <node concept="37vLTw" id="3cMIXQCK9S4" role="RRSow">
+                      <ref role="3cqZAo" node="3cMIXQCK5Cw" resolve="e" />
                     </node>
                   </node>
                 </node>

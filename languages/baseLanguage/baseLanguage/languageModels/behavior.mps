@@ -530,9 +530,9 @@
       <concept id="767145758118872830" name="jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation" flags="nn" index="2DeJnY" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1358,9 +1358,9 @@
         </node>
         <node concept="3clFbJ" id="7ffOojWMxLZ" role="3cqZAp">
           <node concept="3clFbS" id="7ffOojWMxM0" role="3clFbx">
-            <node concept="34ab3g" id="7ffOojWMxM1" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="3cpWs3" id="7ffOojWMxM2" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB32YF" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="3cpWs3" id="7ffOojWMxM2" role="RRSoy">
                 <node concept="BsUDl" id="7ffOojWMxM3" role="3uHU7w">
                   <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
                 </node>
@@ -1871,9 +1871,9 @@
           </node>
           <node concept="9aQIb" id="5Q2VFnW5CPg" role="9aQIa">
             <node concept="3clFbS" id="5Q2VFnW5CPh" role="9aQI4">
-              <node concept="34ab3g" id="5Q2VFnW5CPi" role="3cqZAp">
-                <property role="35gtTG" value="warn" />
-                <node concept="Xl_RD" id="5Q2VFnW5CPj" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB32YP" role="3cqZAp">
+                <property role="RRSoG" value="warn" />
+                <node concept="Xl_RD" id="5Q2VFnW5CPj" role="RRSoy">
                   <property role="Xl_RC" value="Superclass of Anonymous class is not ClassConcept or Interface" />
                 </node>
               </node>
@@ -2073,9 +2073,9 @@
       <node concept="3clFbS" id="6dL7A1DpKpl" role="3clF47">
         <node concept="3clFbJ" id="6dL7A1DpKpT" role="3cqZAp">
           <node concept="3clFbS" id="6dL7A1DpKpU" role="3clFbx">
-            <node concept="34ab3g" id="6dL7A1DpUv$" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="3cpWs3" id="6dL7A1DpUv_" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB36WY" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="3cpWs3" id="6dL7A1DpUv_" role="RRSoy">
                 <node concept="BsUDl" id="3xwsMyQkE$G" role="3uHU7w">
                   <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
                 </node>
@@ -2217,9 +2217,9 @@
       <node concept="3clFbS" id="3sXyOQUr5zg" role="3clF47">
         <node concept="3clFbJ" id="3sXyOQUr5zq" role="3cqZAp">
           <node concept="3clFbS" id="3sXyOQUr5zr" role="3clFbx">
-            <node concept="34ab3g" id="3sXyOQUr5zs" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="3cpWs3" id="3sXyOQUr5zt" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB36X8" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="3cpWs3" id="3sXyOQUr5zt" role="RRSoy">
                 <node concept="BsUDl" id="3xwsMyQkE$n" role="3uHU7w">
                   <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
                 </node>
@@ -10743,9 +10743,9 @@
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="getAccessibleMembers" />
       <node concept="3clFbS" id="_8Pw6zYiaa" role="3clF47">
-        <node concept="34ab3g" id="2bkB2xUtwKd" role="3cqZAp">
-          <property role="35gtTG" value="error" />
-          <node concept="Xl_RD" id="2bkB2xUtwKf" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB34nj" role="3cqZAp">
+          <property role="RRSoG" value="error" />
+          <node concept="Xl_RD" id="2bkB2xUtwKf" role="RRSoy">
             <property role="Xl_RC" value="The method Classifier.getAccessibleMembers() has been deprecated for years. No-op now, scheduled for removal" />
           </node>
         </node>
@@ -22087,9 +22087,9 @@
         </node>
         <node concept="3clFbJ" id="6dL7A1DpK40" role="3cqZAp">
           <node concept="3clFbS" id="6dL7A1DpK41" role="3clFbx">
-            <node concept="34ab3g" id="6dL7A1DpUmw" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="3cpWs3" id="6dL7A1DpUvq" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB34lr" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="3cpWs3" id="6dL7A1DpUvq" role="RRSoy">
                 <node concept="BsUDl" id="3xwsMyQkEyq" role="3uHU7w">
                   <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
                 </node>
@@ -22299,9 +22299,9 @@
       <node concept="3clFbS" id="3sXyOQUr5yb" role="3clF47">
         <node concept="3clFbJ" id="3sXyOQUr5ym" role="3cqZAp">
           <node concept="3clFbS" id="3sXyOQUr5yn" role="3clFbx">
-            <node concept="34ab3g" id="3sXyOQUr5yo" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="3cpWs3" id="3sXyOQUr5yp" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB34l_" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="3cpWs3" id="3sXyOQUr5yp" role="RRSoy">
                 <node concept="BsUDl" id="3xwsMyQkEzY" role="3uHU7w">
                   <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
                 </node>
@@ -23828,9 +23828,9 @@
             <node concept="3clFbH" id="5JktQqvmefl" role="3cqZAp" />
             <node concept="3clFbJ" id="25fD8OSg2$7" role="3cqZAp">
               <node concept="3clFbS" id="25fD8OSg2$8" role="3clFbx">
-                <node concept="34ab3g" id="25fD8OSg2$Q" role="3cqZAp">
-                  <property role="35gtTG" value="warn" />
-                  <node concept="3cpWs3" id="25fD8OSg2_e" role="34bqiv">
+                <node concept="RRSsy" id="3jYQuSB34lJ" role="3cqZAp">
+                  <property role="RRSoG" value="warn" />
+                  <node concept="3cpWs3" id="25fD8OSg2_e" role="RRSoy">
                     <node concept="13iPFW" id="25fD8OSg2_h" role="3uHU7w" />
                     <node concept="Xl_RD" id="25fD8OSg2$R" role="3uHU7B">
                       <property role="Xl_RC" value="Superclass classifier is null for not java.lang.Object classifier in " />
@@ -58739,9 +58739,9 @@
             <node concept="1X3_iC" id="3$ZLRFpPVQh" role="lGtFl">
               <property role="3V$3am" value="statement" />
               <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-              <node concept="34ab3g" id="7o4ozN$mxnz" role="8Wnug">
-                <property role="35gtTG" value="error" />
-                <node concept="Xl_RD" id="7o4ozN$mxn$" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB37x_" role="8Wnug">
+                <property role="RRSoG" value="error" />
+                <node concept="Xl_RD" id="7o4ozN$mxn$" role="RRSoy">
                   <property role="Xl_RC" value="variable scope is unavailable, when trying to resolve qualified name reference" />
                 </node>
               </node>

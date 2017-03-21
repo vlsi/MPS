@@ -31,7 +31,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class ConsoleUtil {
-  protected static Logger LOG = LogManager.getLogger(ConsoleUtil.class);
+  private static final Logger LOG = LogManager.getLogger(ConsoleUtil.class);
   public static boolean make(final Project project, final SModel model) {
     if (SwingUtilities.isEventDispatchThread()) {
       if (LOG.isEnabledFor(Level.ERROR)) {

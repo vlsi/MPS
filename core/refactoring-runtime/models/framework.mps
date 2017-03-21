@@ -246,11 +246,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -858,9 +857,9 @@
                         <node concept="10Nm6u" id="4a0HOMfn70G" role="3uHU7w" />
                       </node>
                       <node concept="3clFbS" id="4a0HOMfn70H" role="3clFbx">
-                        <node concept="34ab3g" id="3pbHAqzBgym" role="3cqZAp">
-                          <property role="35gtTG" value="warn" />
-                          <node concept="3cpWs3" id="3pbHAqzBhN2" role="34bqiv">
+                        <node concept="RRSsy" id="3jYQuSB37uN" role="3cqZAp">
+                          <property role="RRSoG" value="warn" />
+                          <node concept="3cpWs3" id="3pbHAqzBhN2" role="RRSoy">
                             <node concept="Xl_RD" id="3pbHAqzBhN3" role="3uHU7w">
                               <property role="Xl_RC" value=" for refactoring. Refactoring disabled." />
                             </node>
@@ -928,11 +927,10 @@
                   </node>
                   <node concept="TDmWw" id="3pbHAqz$k59" role="TEbGg">
                     <node concept="3clFbS" id="3pbHAqz$k5a" role="TDEfX">
-                      <node concept="34ab3g" id="3pbHAqzBp1g" role="3cqZAp">
-                        <property role="35gtTG" value="error" />
-                        <property role="34fQS0" value="true" />
-                        <node concept="Xl_RD" id="3pbHAqzBp1i" role="34bqiv" />
-                        <node concept="37vLTw" id="3pbHAqzBp1k" role="34bMjA">
+                      <node concept="RRSsy" id="3jYQuSB37v1" role="3cqZAp">
+                        <property role="RRSoG" value="error" />
+                        <node concept="Xl_RD" id="3pbHAqzBp1i" role="RRSoy" />
+                        <node concept="37vLTw" id="3pbHAqzBp1k" role="RRSow">
                           <ref role="3cqZAo" node="3pbHAqz$k5b" resolve="e" />
                         </node>
                       </node>
@@ -946,11 +944,10 @@
                   </node>
                   <node concept="TDmWw" id="3pbHAqz$k5d" role="TEbGg">
                     <node concept="3clFbS" id="3pbHAqz$k5e" role="TDEfX">
-                      <node concept="34ab3g" id="3pbHAqzBqbn" role="3cqZAp">
-                        <property role="35gtTG" value="error" />
-                        <property role="34fQS0" value="true" />
-                        <node concept="Xl_RD" id="3pbHAqzBqbo" role="34bqiv" />
-                        <node concept="37vLTw" id="3pbHAqzBqbp" role="34bMjA">
+                      <node concept="RRSsy" id="3jYQuSB37v9" role="3cqZAp">
+                        <property role="RRSoG" value="error" />
+                        <node concept="Xl_RD" id="3pbHAqzBqbo" role="RRSoy" />
+                        <node concept="37vLTw" id="3pbHAqzBqbp" role="RRSow">
                           <ref role="3cqZAo" node="3pbHAqz$k5f" resolve="e" />
                         </node>
                       </node>
@@ -964,11 +961,10 @@
                   </node>
                   <node concept="TDmWw" id="3pbHAqz$k5h" role="TEbGg">
                     <node concept="3clFbS" id="3pbHAqz$k5i" role="TDEfX">
-                      <node concept="34ab3g" id="3pbHAqzBrgT" role="3cqZAp">
-                        <property role="35gtTG" value="error" />
-                        <property role="34fQS0" value="true" />
-                        <node concept="Xl_RD" id="3pbHAqzBrgU" role="34bqiv" />
-                        <node concept="37vLTw" id="3pbHAqzBrgV" role="34bMjA">
+                      <node concept="RRSsy" id="3jYQuSB37vh" role="3cqZAp">
+                        <property role="RRSoG" value="error" />
+                        <node concept="Xl_RD" id="3pbHAqzBrgU" role="RRSoy" />
+                        <node concept="37vLTw" id="3pbHAqzBrgV" role="RRSow">
                           <ref role="3cqZAo" node="3pbHAqz$k5j" resolve="e" />
                         </node>
                       </node>
@@ -982,11 +978,10 @@
                   </node>
                   <node concept="TDmWw" id="3pbHAqz$oAO" role="TEbGg">
                     <node concept="3clFbS" id="3pbHAqz$oAP" role="TDEfX">
-                      <node concept="34ab3g" id="3pbHAqzBsmn" role="3cqZAp">
-                        <property role="35gtTG" value="error" />
-                        <property role="34fQS0" value="true" />
-                        <node concept="Xl_RD" id="3pbHAqzBsmo" role="34bqiv" />
-                        <node concept="37vLTw" id="3pbHAqzBsmp" role="34bMjA">
+                      <node concept="RRSsy" id="3jYQuSB37vp" role="3cqZAp">
+                        <property role="RRSoG" value="error" />
+                        <node concept="Xl_RD" id="3pbHAqzBsmo" role="RRSoy" />
+                        <node concept="37vLTw" id="3pbHAqzBsmp" role="RRSow">
                           <ref role="3cqZAo" node="3pbHAqz$oAQ" resolve="e" />
                         </node>
                       </node>
@@ -1513,13 +1508,9 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="4a0HOMfn745" role="TDEfX">
-                  <node concept="34ab3g" id="3pbHAqzBkkj" role="3cqZAp">
-                    <property role="35gtTG" value="error" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="37vLTw" id="3pbHAqzBkkn" role="34bMjA">
-                      <ref role="3cqZAo" node="4a0HOMfn74k" resolve="t" />
-                    </node>
-                    <node concept="3cpWs3" id="3pbHAqzBkvY" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB37vx" role="3cqZAp">
+                    <property role="RRSoG" value="error" />
+                    <node concept="3cpWs3" id="3pbHAqzBkvY" role="RRSoy">
                       <node concept="3cpWs3" id="3pbHAqzBkvZ" role="3uHU7B">
                         <node concept="37vLTw" id="3pbHAqzBkw0" role="3uHU7w">
                           <ref role="3cqZAo" node="4a0HOMfn73O" resolve="refactoringName" />
@@ -1531,6 +1522,9 @@
                       <node concept="Xl_RD" id="3pbHAqzBkw2" role="3uHU7w">
                         <property role="Xl_RC" value=".isApplicable(). This refactoring will not be available." />
                       </node>
+                    </node>
+                    <node concept="37vLTw" id="3pbHAqzBkkn" role="RRSow">
+                      <ref role="3cqZAo" node="4a0HOMfn74k" resolve="t" />
                     </node>
                   </node>
                   <node concept="3clFbF" id="4a0HOMfn74g" role="3cqZAp">

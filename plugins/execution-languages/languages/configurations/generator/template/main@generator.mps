@@ -433,11 +433,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
@@ -4254,10 +4253,9 @@
                       </node>
                     </node>
                     <node concept="3clFbS" id="3wpI_WBZUL5" role="TDEfX">
-                      <node concept="34ab3g" id="3wpI_WBZUL6" role="3cqZAp">
-                        <property role="35gtTG" value="error" />
-                        <property role="34fQS0" value="true" />
-                        <node concept="3cpWs3" id="3wpI_WBZUL7" role="34bqiv">
+                      <node concept="RRSsy" id="3jYQuSB37xF" role="3cqZAp">
+                        <property role="RRSoG" value="error" />
+                        <node concept="3cpWs3" id="3wpI_WBZUL7" role="RRSoy">
                           <node concept="Xl_RD" id="3wpI_WBZUL8" role="3uHU7w">
                             <property role="Xl_RC" value=". Check languages dependency." />
                           </node>
@@ -4270,7 +4268,7 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="37vLTw" id="3GM_nagTtvm" role="34bMjA">
+                        <node concept="37vLTw" id="3GM_nagTtvm" role="RRSow">
                           <ref role="3cqZAo" node="3wpI_WBZUL3" resolve="cl" />
                         </node>
                       </node>
@@ -7172,9 +7170,9 @@
                 <node concept="3w_OXm" id="2cIjP38VKU4" role="2OqNvi" />
               </node>
               <node concept="3clFbS" id="2cIjP38VKTS" role="3clFbx">
-                <node concept="34ab3g" id="2cIjP38VKUi" role="3cqZAp">
-                  <property role="35gtTG" value="error" />
-                  <node concept="3cpWs3" id="2cIjP38VKUt" role="34bqiv">
+                <node concept="RRSsy" id="3jYQuSB39NE" role="3cqZAp">
+                  <property role="RRSoG" value="error" />
+                  <node concept="3cpWs3" id="2cIjP38VKUt" role="RRSoy">
                     <node concept="3cpWs3" id="2cIjP38VKUk" role="3uHU7B">
                       <node concept="Xl_RD" id="2cIjP38VKUj" role="3uHU7B">
                         <property role="Xl_RC" value="Configuration " />

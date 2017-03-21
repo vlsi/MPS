@@ -386,11 +386,10 @@
       <concept id="1205769149993" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" flags="nn" index="2XshWL" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -2791,13 +2790,12 @@
                     </node>
                     <node concept="TDmWw" id="7pClCNY9ruZ" role="TEbGg">
                       <node concept="3clFbS" id="7pClCNY9rv0" role="TDEfX">
-                        <node concept="34ab3g" id="7pClCNY9rv1" role="3cqZAp">
-                          <property role="35gtTG" value="error" />
-                          <property role="34fQS0" value="true" />
-                          <node concept="Xl_RD" id="7pClCNY9rv2" role="34bqiv">
+                        <node concept="RRSsy" id="3jYQuSB39La" role="3cqZAp">
+                          <property role="RRSoG" value="error" />
+                          <node concept="Xl_RD" id="7pClCNY9rv2" role="RRSoy">
                             <property role="Xl_RC" value="Context actions update failed" />
                           </node>
-                          <node concept="37vLTw" id="7pClCNY9rv3" role="34bMjA">
+                          <node concept="37vLTw" id="7pClCNY9rv3" role="RRSow">
                             <ref role="3cqZAo" node="7pClCNY9rv4" resolve="ex" />
                           </node>
                         </node>
@@ -8420,10 +8418,9 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="5Xa7gk5ds7F" role="TDEfX">
-                  <node concept="34ab3g" id="5Xa7gk5ds_P" role="3cqZAp">
-                    <property role="35gtTG" value="warn" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="3cpWs3" id="5Xa7gk5ds_Q" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB36Xi" role="3cqZAp">
+                    <property role="RRSoG" value="warn" />
+                    <node concept="3cpWs3" id="5Xa7gk5ds_Q" role="RRSoy">
                       <node concept="Xl_RD" id="5Xa7gk5ds_R" role="3uHU7B">
                         <property role="Xl_RC" value="Error trying to get icon for " />
                       </node>
@@ -8431,7 +8428,7 @@
                         <ref role="3cqZAo" node="5Xa7gk5c8fP" resolve="actionItem" />
                       </node>
                     </node>
-                    <node concept="37vLTw" id="5Xa7gk5dsQY" role="34bMjA">
+                    <node concept="37vLTw" id="5Xa7gk5dsQY" role="RRSow">
                       <ref role="3cqZAo" node="5Xa7gk5ds7D" resolve="error" />
                     </node>
                   </node>
@@ -8445,10 +8442,9 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="5Xa7gk5chbR" role="TDEfX">
-                  <node concept="34ab3g" id="5Xa7gk5chL0" role="3cqZAp">
-                    <property role="35gtTG" value="warn" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="3cpWs3" id="5Xa7gk5cigx" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB36Xu" role="3cqZAp">
+                    <property role="RRSoG" value="warn" />
+                    <node concept="3cpWs3" id="5Xa7gk5cigx" role="RRSoy">
                       <node concept="Xl_RD" id="5Xa7gk5chL2" role="3uHU7B">
                         <property role="Xl_RC" value="Exception trying to get icon for " />
                       </node>
@@ -8456,7 +8452,7 @@
                         <ref role="3cqZAo" node="5Xa7gk5c8fP" resolve="actionItem" />
                       </node>
                     </node>
-                    <node concept="37vLTw" id="5Xa7gk5chL4" role="34bMjA">
+                    <node concept="37vLTw" id="5Xa7gk5chL4" role="RRSow">
                       <ref role="3cqZAo" node="5Xa7gk5chbP" resolve="exception" />
                     </node>
                   </node>
@@ -8490,10 +8486,9 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="5Xa7gk5cl1j" role="TDEfX">
-                  <node concept="34ab3g" id="5Xa7gk5cltK" role="3cqZAp">
-                    <property role="35gtTG" value="warn" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="3cpWs3" id="5Xa7gk5cltL" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB36XE" role="3cqZAp">
+                    <property role="RRSoG" value="warn" />
+                    <node concept="3cpWs3" id="5Xa7gk5cltL" role="RRSoy">
                       <node concept="Xl_RD" id="5Xa7gk5cltM" role="3uHU7B">
                         <property role="Xl_RC" value="Error trying to get tooltip text for " />
                       </node>
@@ -8501,7 +8496,7 @@
                         <ref role="3cqZAo" node="5Xa7gk5c8fP" resolve="actionItem" />
                       </node>
                     </node>
-                    <node concept="37vLTw" id="5Xa7gk5cltO" role="34bMjA">
+                    <node concept="37vLTw" id="5Xa7gk5cltO" role="RRSow">
                       <ref role="3cqZAo" node="5Xa7gk5cl1h" resolve="error" />
                     </node>
                   </node>
@@ -8515,10 +8510,9 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="5Xa7gk5dtil" role="TDEfX">
-                  <node concept="34ab3g" id="5Xa7gk5dtim" role="3cqZAp">
-                    <property role="35gtTG" value="warn" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="3cpWs3" id="5Xa7gk5dtin" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB36XQ" role="3cqZAp">
+                    <property role="RRSoG" value="warn" />
+                    <node concept="3cpWs3" id="5Xa7gk5dtin" role="RRSoy">
                       <node concept="Xl_RD" id="5Xa7gk5dtio" role="3uHU7B">
                         <property role="Xl_RC" value="Exception trying to get tooltip text for " />
                       </node>
@@ -8526,7 +8520,7 @@
                         <ref role="3cqZAo" node="5Xa7gk5c8fP" resolve="actionItem" />
                       </node>
                     </node>
-                    <node concept="37vLTw" id="5Xa7gk5dtiq" role="34bMjA">
+                    <node concept="37vLTw" id="5Xa7gk5dtiq" role="RRSow">
                       <ref role="3cqZAo" node="5Xa7gk5dtij" resolve="exception" />
                     </node>
                   </node>

@@ -4,12 +4,12 @@ package jetbrains.mps.execution.impl.configurations;
 
 import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.plugins.PluginReloadingListener;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import java.util.List;
 import jetbrains.mps.plugins.PluginContributor;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
 import java.util.Iterator;
@@ -43,6 +43,7 @@ import org.jdom.Element;
  * It saves all run configurations at the plugin unload and then restores them at the plugin load event
  */
 public class RunConfigurationsStateManager implements ProjectComponent, PluginReloadingListener {
+  private static final Logger LOG = LogManager.getLogger(RunConfigurationsStateManager.class);
   private final Project myProject;
   private final ProjectPluginManager myProjectPluginManager;
   private RunConfigurationsStateManager.RunConfigurationsState myState = null;
@@ -97,7 +98,6 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     clearAllRunConfigurations();
   }
 
-  protected static Logger LOG = LogManager.getLogger(RunConfigurationsStateManager.class);
   private void disposeRunContentDescriptors() {
     final List<RunContentDescriptor> descriptors = collectDescriptorsToDispose();
 

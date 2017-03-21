@@ -33,8 +33,8 @@ import jetbrains.mps.refactoring.participant.RefactoringSessionImpl;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class RefactoringProcessor {
+  private static final Logger LOG = LogManager.getLogger(RefactoringProcessor.class);
 
-  protected static Logger LOG = LogManager.getLogger(RefactoringProcessor.class);
   public static <IP, FP, IS, FS> Tuples._2<List<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS>>, SearchTask> askParticipantChanges(final RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, RefactoringUI refactoringUI, final SRepository repository, final SearchScope searchScope, final Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IS> nodes) {
 
     final List<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS>> participantStates = ListSequence.fromList(new ArrayList<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS>>());

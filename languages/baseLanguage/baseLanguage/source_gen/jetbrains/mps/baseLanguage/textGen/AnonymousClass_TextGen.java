@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.traceable.behavior.UnitConcept__BehaviorDescriptor;
 
 public class AnonymousClass_TextGen extends TextGenDescriptorBase {
-  protected static Logger LOG = LogManager.getLogger(AnonymousClass_TextGen.class);
+  private static final Logger LOG = LogManager.getLogger(AnonymousClass_TextGen.class);
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);

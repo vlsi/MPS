@@ -385,11 +385,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -8374,9 +8373,9 @@
         </node>
         <node concept="3clFbJ" id="5TtkZMYUq91" role="3cqZAp">
           <node concept="3clFbS" id="5TtkZMYUq92" role="3clFbx">
-            <node concept="34ab3g" id="5TtkZMYUq93" role="3cqZAp">
-              <property role="35gtTG" value="warn" />
-              <node concept="3cpWs3" id="5TtkZMYUq94" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB37cJ" role="3cqZAp">
+              <property role="RRSoG" value="warn" />
+              <node concept="3cpWs3" id="5TtkZMYUq94" role="RRSoy">
                 <node concept="Xl_RD" id="5TtkZMYUq95" role="3uHU7w">
                   <property role="Xl_RC" value="." />
                 </node>
@@ -8426,9 +8425,9 @@
         </node>
         <node concept="3clFbJ" id="5TtkZMYUq9j" role="3cqZAp">
           <node concept="3clFbS" id="5TtkZMYUq9k" role="3clFbx">
-            <node concept="34ab3g" id="5TtkZMYUq9l" role="3cqZAp">
-              <property role="35gtTG" value="warn" />
-              <node concept="3cpWs3" id="5TtkZMYUq9m" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB37cX" role="3cqZAp">
+              <property role="RRSoG" value="warn" />
+              <node concept="3cpWs3" id="5TtkZMYUq9m" role="RRSoy">
                 <node concept="Xl_RD" id="5TtkZMYUq9n" role="3uHU7w">
                   <property role="Xl_RC" value="." />
                 </node>
@@ -9394,9 +9393,9 @@
         </node>
         <node concept="3clFbJ" id="39r_V8zIm_4" role="3cqZAp">
           <node concept="3clFbS" id="39r_V8zIm_5" role="3clFbx">
-            <node concept="34ab3g" id="39r_V8zIm_6" role="3cqZAp">
-              <property role="35gtTG" value="warn" />
-              <node concept="3cpWs3" id="39r_V8zIm_7" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB37dj" role="3cqZAp">
+              <property role="RRSoG" value="warn" />
+              <node concept="3cpWs3" id="39r_V8zIm_7" role="RRSoy">
                 <node concept="Xl_RD" id="39r_V8zIm_8" role="3uHU7w">
                   <property role="Xl_RC" value="." />
                 </node>
@@ -9890,13 +9889,12 @@
               </node>
             </node>
             <node concept="3clFbS" id="5sLHcpg0JiF" role="TDEfX">
-              <node concept="34ab3g" id="5sLHcpg0Ke4" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="5sLHcpg0Ke6" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB37dD" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="Xl_RD" id="5sLHcpg0Ke6" role="RRSoy">
                   <property role="Xl_RC" value="Could not execute script" />
                 </node>
-                <node concept="37vLTw" id="5sLHcpg0Ke8" role="34bMjA">
+                <node concept="37vLTw" id="5sLHcpg0Ke8" role="RRSow">
                   <ref role="3cqZAo" node="5sLHcpg0JiB" resolve="e" />
                 </node>
               </node>
@@ -10267,13 +10265,12 @@
               </node>
             </node>
             <node concept="3clFbS" id="4yRsQKnv8ad" role="TDEfX">
-              <node concept="34ab3g" id="4yRsQKnv8ae" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="4yRsQKnv8af" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB37dL" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="Xl_RD" id="4yRsQKnv8af" role="RRSoy">
                   <property role="Xl_RC" value="Could not execute script" />
                 </node>
-                <node concept="37vLTw" id="4yRsQKnv8ag" role="34bMjA">
+                <node concept="37vLTw" id="4yRsQKnv8ag" role="RRSow">
                   <ref role="3cqZAo" node="4yRsQKnv8ab" resolve="e" />
                 </node>
               </node>
@@ -13175,9 +13172,9 @@
                         </node>
                       </node>
                       <node concept="3clFbS" id="2V3ml1v6o1G" role="3clFbx">
-                        <node concept="34ab3g" id="2V3ml1v6Cq5" role="3cqZAp">
-                          <property role="35gtTG" value="error" />
-                          <node concept="3cpWs3" id="2V3ml1v6o1J" role="34bqiv">
+                        <node concept="RRSsy" id="3jYQuSB37dT" role="3cqZAp">
+                          <property role="RRSoG" value="error" />
+                          <node concept="3cpWs3" id="2V3ml1v6o1J" role="RRSoy">
                             <node concept="3cpWs3" id="2V3ml1v6o1K" role="3uHU7B">
                               <node concept="3cpWs3" id="2V3ml1v6o1L" role="3uHU7B">
                                 <node concept="3cpWs3" id="2V3ml1v6o1M" role="3uHU7B">
@@ -13731,13 +13728,12 @@
                           </node>
                         </node>
                         <node concept="3clFbS" id="36$CdjYdETe" role="TDEfX">
-                          <node concept="34ab3g" id="36$CdjYdESU" role="3cqZAp">
-                            <property role="35gtTG" value="error" />
-                            <property role="34fQS0" value="true" />
-                            <node concept="Xl_RD" id="36$CdjYdESW" role="34bqiv">
+                          <node concept="RRSsy" id="3jYQuSB37eB" role="3cqZAp">
+                            <property role="RRSoG" value="error" />
+                            <node concept="Xl_RD" id="36$CdjYdESW" role="RRSoy">
                               <property role="Xl_RC" value="Could not execute script" />
                             </node>
-                            <node concept="37vLTw" id="36$CdjYdESY" role="34bMjA">
+                            <node concept="37vLTw" id="36$CdjYdESY" role="RRSow">
                               <ref role="3cqZAo" node="36$CdjYdET8" resolve="e" />
                             </node>
                           </node>

@@ -267,11 +267,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
@@ -842,10 +841,9 @@
                           </node>
                         </node>
                         <node concept="3clFbS" id="5zFeAub6Bt5" role="TDEfX">
-                          <node concept="34ab3g" id="5zFeAub6Bt6" role="3cqZAp">
-                            <property role="35gtTG" value="warn" />
-                            <property role="34fQS0" value="true" />
-                            <node concept="3cpWs3" id="5zFeAub6Bt7" role="34bqiv">
+                          <node concept="RRSsy" id="3jYQuSB35rN" role="3cqZAp">
+                            <property role="RRSoG" value="warn" />
+                            <node concept="3cpWs3" id="5zFeAub6Bt7" role="RRSoy">
                               <node concept="37vLTw" id="5zFeAub6Bt8" role="3uHU7w">
                                 <ref role="3cqZAo" node="5zFeAub6BtI" resolve="debuggableNode" />
                               </node>
@@ -853,7 +851,7 @@
                                 <property role="Xl_RC" value="Exception while creating breakpoint for node" />
                               </node>
                             </node>
-                            <node concept="37vLTw" id="5zFeAub6Bta" role="34bMjA">
+                            <node concept="37vLTw" id="5zFeAub6Bta" role="RRSow">
                               <ref role="3cqZAo" node="5zFeAub6Bt3" resolve="e" />
                             </node>
                           </node>

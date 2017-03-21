@@ -4,6 +4,8 @@ package jetbrains.mps.build.mps.intentions;
 
 import jetbrains.mps.intentions.IntentionDescriptorBase;
 import jetbrains.mps.intentions.IntentionFactory;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.Collection;
 import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -15,8 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.PathConverter;
@@ -28,6 +28,7 @@ import org.apache.log4j.Level;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public final class ReloadModulesFromDisk_Intention extends IntentionDescriptorBase implements IntentionFactory {
+  private static final Logger LOG = LogManager.getLogger(ReloadModulesFromDisk_Intention.class);
   private Collection<IntentionExecutable> myCachedExecutable;
   public ReloadModulesFromDisk_Intention() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), IntentionType.NORMAL, true, new SNodePointer("r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)", "1753793013241722025"));
@@ -56,7 +57,6 @@ public final class ReloadModulesFromDisk_Intention extends IntentionDescriptorBa
     }
     return myCachedExecutable;
   }
-  protected static Logger LOG = LogManager.getLogger(ReloadModulesFromDisk_Intention.class);
   /*package*/ final class IntentionImplementation extends IntentionExecutableBase {
     public IntentionImplementation() {
     }

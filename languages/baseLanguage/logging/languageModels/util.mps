@@ -25,6 +25,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -40,7 +41,9 @@
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
-      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
+      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <property id="1221565133444" name="isFinal" index="1EXbeo" />
+      </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -105,6 +108,7 @@
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+      <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -187,12 +191,14 @@
   </registry>
   <node concept="312cEu" id="hB49zQ_">
     <property role="TrG5h" value="LoggingGenerationUtil" />
+    <property role="1EXbeo" value="true" />
     <node concept="3Tm1VV" id="hB49zQA" role="1B3o_S" />
     <node concept="3clFbW" id="26wO4Z1xENQ" role="jymVt">
       <node concept="3cqZAl" id="26wO4Z1xENR" role="3clF45" />
       <node concept="3clFbS" id="26wO4Z1xENS" role="3clF47" />
-      <node concept="3Tm1VV" id="26wO4Z1xENT" role="1B3o_S" />
+      <node concept="3Tm6S6" id="59rAZgBOo4C" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="59rAZgBOo5I" role="jymVt" />
     <node concept="2YIFZL" id="hB49AgN" role="jymVt">
       <property role="TrG5h" value="toPlus" />
       <node concept="3Tqbb2" id="hB4a8xn" role="3clF45">
@@ -295,6 +301,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="59rAZgBOo8c" role="jymVt" />
     <node concept="2YIFZL" id="3yfK3xXHBMx" role="jymVt">
       <property role="TrG5h" value="generateUniqueFieldName" />
       <node concept="3Tm1VV" id="3yfK3xXHBMz" role="1B3o_S" />
@@ -433,8 +440,8 @@
             </node>
             <node concept="2Rf3mk" id="5MyQhnWGBCU" role="2OqNvi">
               <node concept="1xMEDy" id="5MyQhnWGBCV" role="1xVPHs">
-                <node concept="chp4Y" id="5MyQhnWGBCY" role="ri$Ld">
-                  <ref role="cht4Q" to="tpib:gZ4ab7v" resolve="LogStatement" />
+                <node concept="chp4Y" id="59rAZgBOgRs" role="ri$Ld">
+                  <ref role="cht4Q" to="tpib:1KXtTGFSJ2T" resolve="LogToFileStatement" />
                 </node>
               </node>
             </node>

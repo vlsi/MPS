@@ -356,11 +356,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -981,10 +980,9 @@
                                 </node>
                               </node>
                               <node concept="3clFbS" id="50RHf4RGiIX" role="TDEfX">
-                                <node concept="34ab3g" id="50RHf4RGvKZ" role="3cqZAp">
-                                  <property role="35gtTG" value="error" />
-                                  <property role="34fQS0" value="true" />
-                                  <node concept="2OqwBi" id="50RHf4RGvLi" role="34bqiv">
+                                <node concept="RRSsy" id="3jYQuSB37vL" role="3cqZAp">
+                                  <property role="RRSoG" value="error" />
+                                  <node concept="2OqwBi" id="50RHf4RGvLi" role="RRSoy">
                                     <node concept="37vLTw" id="3GM_nagTrgK" role="2Oq$k0">
                                       <ref role="3cqZAo" node="50RHf4RGiIV" resolve="ex" />
                                     </node>
@@ -992,7 +990,7 @@
                                       <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
                                     </node>
                                   </node>
-                                  <node concept="37vLTw" id="3GM_nagTu0z" role="34bMjA">
+                                  <node concept="37vLTw" id="3GM_nagTu0z" role="RRSow">
                                     <ref role="3cqZAo" node="50RHf4RGiIV" resolve="ex" />
                                   </node>
                                 </node>
@@ -1189,13 +1187,12 @@
                         </node>
                       </node>
                       <node concept="3clFbS" id="vgcurb$RBM" role="TDEfX">
-                        <node concept="34ab3g" id="vgcurb$RYF" role="3cqZAp">
-                          <property role="35gtTG" value="error" />
-                          <property role="34fQS0" value="true" />
-                          <node concept="Xl_RD" id="vgcurb$RYH" role="34bqiv">
+                        <node concept="RRSsy" id="3jYQuSB37vX" role="3cqZAp">
+                          <property role="RRSoG" value="error" />
+                          <node concept="Xl_RD" id="vgcurb$RYH" role="RRSoy">
                             <property role="Xl_RC" value="error processing test project" />
                           </node>
-                          <node concept="37vLTw" id="vgcurb$RYJ" role="34bMjA">
+                          <node concept="37vLTw" id="vgcurb$RYJ" role="RRSow">
                             <ref role="3cqZAo" node="vgcurb$RBK" resolve="ex" />
                           </node>
                         </node>
@@ -1681,9 +1678,9 @@
         </node>
         <node concept="3clFbJ" id="7vU6U502$mf" role="3cqZAp">
           <node concept="3clFbS" id="7vU6U502$mg" role="3clFbx">
-            <node concept="34ab3g" id="7vU6U505ua4" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="Xl_RD" id="7vU6U505ua6" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB39K0" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="Xl_RD" id="7vU6U505ua6" role="RRSoy">
                 <property role="Xl_RC" value="project file is null" />
               </node>
             </node>
@@ -1902,14 +1899,13 @@
                       </node>
                     </node>
                     <node concept="3clFbS" id="1w$c60CEqVd" role="TDEfX">
-                      <node concept="34ab3g" id="7vU6U505snW" role="3cqZAp">
-                        <property role="35gtTG" value="error" />
-                        <property role="34fQS0" value="true" />
-                        <node concept="37vLTw" id="7vU6U505so0" role="34bMjA">
-                          <ref role="3cqZAo" node="1w$c60CEqV9" resolve="ex" />
-                        </node>
-                        <node concept="Xl_RD" id="4WwUR8hvcxY" role="34bqiv">
+                      <node concept="RRSsy" id="3jYQuSB39K6" role="3cqZAp">
+                        <property role="RRSoG" value="error" />
+                        <node concept="Xl_RD" id="4WwUR8hvcxY" role="RRSoy">
                           <property role="Xl_RC" value="Failed to build project-relative path" />
+                        </node>
+                        <node concept="37vLTw" id="7vU6U505so0" role="RRSow">
+                          <ref role="3cqZAo" node="1w$c60CEqV9" resolve="ex" />
                         </node>
                       </node>
                       <node concept="3cpWs6" id="7vU6U505suF" role="3cqZAp">
@@ -1988,9 +1984,9 @@
         </node>
         <node concept="3clFbJ" id="7vU6U505wtE" role="3cqZAp">
           <node concept="3clFbS" id="7vU6U505wtF" role="3clFbx">
-            <node concept="34ab3g" id="7vU6U505wtG" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="Xl_RD" id="7vU6U505wtH" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB39Ke" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="Xl_RD" id="7vU6U505wtH" role="RRSoy">
                 <property role="Xl_RC" value="project file is null" />
               </node>
             </node>
@@ -2230,14 +2226,13 @@
                       </node>
                     </node>
                     <node concept="3clFbS" id="7vU6U505wuH" role="TDEfX">
-                      <node concept="34ab3g" id="7vU6U505wuI" role="3cqZAp">
-                        <property role="35gtTG" value="error" />
-                        <property role="34fQS0" value="true" />
-                        <node concept="37vLTw" id="7vU6U505wuJ" role="34bMjA">
-                          <ref role="3cqZAo" node="7vU6U505wuF" resolve="ex" />
-                        </node>
-                        <node concept="Xl_RD" id="7vU6U505wuK" role="34bqiv">
+                      <node concept="RRSsy" id="3jYQuSB39Kk" role="3cqZAp">
+                        <property role="RRSoG" value="error" />
+                        <node concept="Xl_RD" id="7vU6U505wuK" role="RRSoy">
                           <property role="Xl_RC" value="Failed to build project-relative path" />
+                        </node>
+                        <node concept="37vLTw" id="7vU6U505wuJ" role="RRSow">
+                          <ref role="3cqZAo" node="7vU6U505wuF" resolve="ex" />
                         </node>
                       </node>
                       <node concept="3cpWs6" id="7vU6U505wuL" role="3cqZAp">

@@ -271,9 +271,9 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1389,9 +1389,9 @@
         </node>
         <node concept="3clFbJ" id="hUQV8Af" role="3cqZAp">
           <node concept="3clFbS" id="hUQV8Ag" role="3clFbx">
-            <node concept="34ab3g" id="3l53ckIYMgT" role="3cqZAp">
-              <property role="35gtTG" value="warn" />
-              <node concept="3cpWs3" id="3l53ckIYMv7" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB36MR" role="3cqZAp">
+              <property role="RRSoG" value="warn" />
+              <node concept="3cpWs3" id="3l53ckIYMv7" role="RRSoy">
                 <node concept="Xl_RD" id="3l53ckIYMv9" role="3uHU7B">
                   <property role="Xl_RC" value="No classifier found:" />
                 </node>

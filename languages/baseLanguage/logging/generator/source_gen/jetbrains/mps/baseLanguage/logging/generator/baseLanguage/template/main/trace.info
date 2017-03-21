@@ -14,7 +14,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)/1167240570149">
     <file name="QueriesGenerated.java">
-      <node id="1210168259739" at="30,104,31,342" concept="4" />
+      <node id="1210168259739" at="30,104,31,353" concept="4" />
       <node id="5510373488321396558" at="33,104,34,228" concept="4" />
       <node id="2034914114981278220" at="36,110,37,228" concept="4" />
       <node id="3561282099138216050" at="127,116,128,305" concept="3" />
@@ -29,7 +29,7 @@
       <node id="6450631649356160128" at="144,113,145,666" concept="4" />
       <node id="3561282099138216135" at="130,214,133,5" concept="2" />
       <node id="1187224263927" at="135,84,138,5" concept="2" />
-      <scope id="1169464530673" at="30,104,31,342" />
+      <scope id="1169464530673" at="30,104,31,353" />
       <scope id="1232620749769" at="33,104,34,228" />
       <scope id="2034914114981278219" at="36,110,37,228" />
       <scope id="3561282099138216136" at="131,27,132,22" />

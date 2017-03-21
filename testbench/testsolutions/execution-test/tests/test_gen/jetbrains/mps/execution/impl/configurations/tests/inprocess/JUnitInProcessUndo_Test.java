@@ -4,9 +4,9 @@ package jetbrains.mps.execution.impl.configurations.tests.inprocess;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
-import org.junit.Test;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
@@ -33,13 +33,13 @@ import com.intellij.execution.ExecutionException;
 
 @MPSLaunch
 public class JUnitInProcessUndo_Test extends BaseTransformationTest {
+  private static final Logger LOG = LogManager.getLogger(JUnitInProcessUndo_Test.class);
   @Test
   public void test_startTrickyTestCase() throws Throwable {
     initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
     runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test$TestBody", "test_startTrickyTestCase", false);
   }
 
-  protected static Logger LOG = LogManager.getLogger(JUnitInProcessUndo_Test.class);
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startTrickyTestCase() throws Exception {

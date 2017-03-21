@@ -396,9 +396,9 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang">
@@ -1614,9 +1614,9 @@
         </node>
         <node concept="3clFbJ" id="4YEli8eI_Gp" role="3cqZAp">
           <node concept="3clFbS" id="4YEli8eI_Gr" role="3clFbx">
-            <node concept="34ab3g" id="4YEli8eID$Y" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="3cpWs3" id="4YEli8eIHg6" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB39O6" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="3cpWs3" id="4YEli8eIHg6" role="RRSoy">
                 <node concept="Xl_RD" id="4YEli8eIHg9" role="3uHU7w">
                   <property role="Xl_RC" value=" classes are not managed by MPS" />
                 </node>
@@ -1644,9 +1644,9 @@
         </node>
         <node concept="3clFbJ" id="7mvYbwTB7be" role="3cqZAp">
           <node concept="3clFbS" id="7mvYbwTB7bf" role="3clFbx">
-            <node concept="34ab3g" id="7mvYbwTB7br" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="3cpWs3" id="7mvYbwTB6gu" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB39Ok" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="3cpWs3" id="7mvYbwTB6gu" role="RRSoy">
                 <node concept="3cpWs3" id="7mvYbwTB6gv" role="3uHU7B">
                   <node concept="Xl_RD" id="7mvYbwTB6gw" role="3uHU7B">
                     <property role="Xl_RC" value="No trace.info found for model " />
@@ -1694,9 +1694,9 @@
               </node>
               <node concept="3clFbJ" id="7mvYbwTB7c6" role="3cqZAp">
                 <node concept="3clFbS" id="7mvYbwTB7c7" role="3clFbx">
-                  <node concept="34ab3g" id="7mvYbwTB7ck" role="3cqZAp">
-                    <property role="35gtTG" value="error" />
-                    <node concept="3cpWs3" id="7mvYbwTB6gP" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB39Oy" role="3cqZAp">
+                    <property role="RRSoG" value="error" />
+                    <node concept="3cpWs3" id="7mvYbwTB6gP" role="RRSoy">
                       <node concept="3cpWs3" id="7mvYbwTB6gQ" role="3uHU7B">
                         <node concept="Xl_RD" id="7mvYbwTB6gR" role="3uHU7B">
                           <property role="Xl_RC" value="No unitName found for " />

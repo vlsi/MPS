@@ -361,9 +361,9 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -3374,9 +3374,9 @@
                         <node concept="1X3_iC" id="3$ZLRFpPVTk" role="lGtFl">
                           <property role="3V$3am" value="statement" />
                           <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-                          <node concept="34ab3g" id="6AZ6c_Jr5Cc" role="8Wnug">
-                            <property role="35gtTG" value="warn" />
-                            <node concept="3cpWs3" id="6AZ6c_Jr5Cf" role="34bqiv">
+                          <node concept="RRSsy" id="3jYQuSB34lT" role="8Wnug">
+                            <property role="RRSoG" value="warn" />
+                            <node concept="3cpWs3" id="6AZ6c_Jr5Cf" role="RRSoy">
                               <node concept="Xl_RD" id="6AZ6c_Jr5Cg" role="3uHU7B">
                                 <property role="Xl_RC" value="Empty node: " />
                               </node>
