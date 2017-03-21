@@ -35,7 +35,7 @@ import java.net.URL;
  */
 public class FileDataSourceFactoryRule implements DataSourceFactoryRule {
   public FileDataSourceFactoryRule() {
-    // do not remove it is a service
+    // do not remove -- it is a service
   }
 
   @Nullable

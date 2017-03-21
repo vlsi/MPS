@@ -22,14 +22,15 @@ import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import java.net.URL;
 
 /**
- * Service-provider interface for breeding a new {@link DataSourceFactoryFromName} from the given data source type.
+ * Service-provider interface for breeding new {@link DataSourceFactoryFromName} and
+ * {@link DataSourceFactoryFromURL} from the given data source type.
  * Note that only core MPS developers are able to register it as a service.
  * Other clients are welcome to use the platform-level extension point which is located at
  * the <code>jetbrains.mps.persistence.DataSourceFactoryRuleRegistrar</code>
  * See how <code>jetbrains.mps.persistence.FileDataSourceFactoryRule</code> is implemented and
  * registered in the META-INF/services location.
  *
- * We provide a function here rather than register <code>DataSourceFactory</code>
+ * We provide functions here rather than register <code>DataSourceFactory</code>
  * themselves since we need to expose the logic of constructing factory from a specified data source type (or url)
  * For example: if we view a data source as a location in a file system
  * and we need to differentiate the locations by file names or file name extensions or
