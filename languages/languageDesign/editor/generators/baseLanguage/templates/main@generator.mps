@@ -27962,7 +27962,7 @@
                               </node>
                               <node concept="2ShNRf" id="XrrhtvD5Bk" role="37wK5m">
                                 <node concept="1pGfFk" id="XrrhtvD5Bl" role="2ShVmc">
-                                  <ref role="37wK5l" to="p9jd:~AggregationCellContext.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)" resolve="AggregationCellContext" />
+                                  <ref role="37wK5l" to="p9jd:~AggregationCellContext.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink)" resolve="AggregationCellContext" />
                                   <node concept="1rXfSq" id="7VRiLseUpes" role="37wK5m">
                                     <ref role="37wK5l" node="11v13Cs28zm" resolve="getNode" />
                                   </node>
@@ -27970,7 +27970,7 @@
                                     <ref role="3cqZAo" node="XrrhtvD5CE" resolve="elementNode" />
                                   </node>
                                   <node concept="3nyPlj" id="XrrhtvD5Bo" role="37wK5m">
-                                    <ref role="37wK5l" to="p9jd:~RefNodeListHandler.getLinkDeclaration():org.jetbrains.mps.openapi.model.SNode" resolve="getLinkDeclaration" />
+                                    <ref role="37wK5l" to="p9jd:~RefNodeListHandler.getSLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getSLink" />
                                   </node>
                                 </node>
                               </node>
