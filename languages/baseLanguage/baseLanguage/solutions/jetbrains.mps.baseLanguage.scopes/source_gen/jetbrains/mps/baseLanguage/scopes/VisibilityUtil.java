@@ -12,6 +12,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.DotExpression__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -83,7 +84,11 @@ public final class VisibilityUtil {
     }
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifier, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"))) {
       // parent cannot be null here 
-      for (SNode cls : ListSequence.fromList(SNodeOperations.getNodeAncestors(context, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true))) {
+      Iterable<SNode> enclosing = SNodeOperations.getNodeAncestors(context, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true);
+      if (SNodeOperations.hasRole(context, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")) || SNodeOperations.hasRole(context, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface")) || SNodeOperations.hasRole(context, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))) {
+        enclosing = Sequence.fromIterable(enclosing).skip(1);
+      }
+      for (SNode cls : Sequence.fromIterable(enclosing)) {
         if (BaseLanguageUtil.isAssignable(cls, parent) && isClassifierAccessible(context, parent)) {
           return true;
         }

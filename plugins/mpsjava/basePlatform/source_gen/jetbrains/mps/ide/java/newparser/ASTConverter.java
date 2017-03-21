@@ -63,7 +63,7 @@ import org.eclipse.jdt.internal.compiler.impl.IntConstant;
 import org.eclipse.jdt.internal.compiler.impl.LongConstant;
 import org.eclipse.jdt.internal.compiler.impl.ShortConstant;
 import org.eclipse.jdt.internal.compiler.impl.StringConstant;
-import jetbrains.mps.util.NameUtil;
+import org.eclipse.jdt.internal.compiler.util.Util;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -898,8 +898,9 @@ public class ASTConverter {
   }
   /*package*/ SNode convertConstant(CharConstant x, String source) {
     SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant"));
-    String value = NameUtil.escapeChar(x.charValue());
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, 0x1177d44ddefL, "charConstant"), value);
+    StringBuffer sb = new StringBuffer();
+    Util.appendEscapedChar(sb, x.charValue(), false);
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, 0x1177d44ddefL, "charConstant"), sb.toString());
     return result;
   }
   /*package*/ SNode convertConstant(DoubleConstant x, String source) {
@@ -940,7 +941,11 @@ public class ASTConverter {
   }
   /*package*/ SNode convertConstant(StringConstant x, String source) {
     SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), NameUtil.escapeString(x.stringValue()));
+    StringBuffer sb = new StringBuffer();
+    for (char c : x.stringValue().toCharArray()) {
+      Util.appendEscapedChar(sb, c, true);
+    }
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), sb.toString());
     return result;
   }
 
