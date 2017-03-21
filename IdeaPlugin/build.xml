@@ -87,8 +87,17 @@
     <copy todir="${base_dir}/IdeaPlugin/mps-testing">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing"/>
     </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-java/META-INF/platform/actions">
+      <file file="${base_dir}/plugins/mps-java-workbench/META-INF/platform/actions/JavaActions.xml"/>
+    </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-java/META-INF">
+      <file file="${base_dir}/plugins/mps-java-workbench/META-INF/JavaPlatform.xml"/>
+    </copy>
     <copy todir="${base_dir}/IdeaPlugin/mps-java/lib">
       <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsJavaPlatform/lib/mps-java-platform.jar"/>
+    </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-vcs/META-INF">
+      <file file="${base_dir}/plugins/vcs/META-INF/MPSVcs.xml"/>
     </copy>
     <!-- only for running tests in mps-core -->
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
