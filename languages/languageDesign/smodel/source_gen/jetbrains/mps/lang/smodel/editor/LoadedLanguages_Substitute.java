@@ -24,19 +24,19 @@ import jetbrains.mps.lang.smodel.behavior.LanguageIdentity__BehaviorDescriptor;
 import jetbrains.mps.util.PatternUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 
-public class LoadedLanguages extends SubstituteMenuBase {
+public class LoadedLanguages_Substitute extends SubstituteMenuBase {
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new LoadedLanguages.SubstituteMenuPart_Parameterized_ypm9iz_a(), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c318L, "jetbrains.mps.lang.smodel.structure.LanguageIdentity")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new LoadedLanguages_Substitute.SMP_Param_210zo1_a(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_ypm9iz_a extends ParameterizedMenuPart<SLanguage, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_210zo1_a extends ParameterizedMenuPart<SLanguage, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SLanguage parameter, SubstituteMenuContext context) {
-      return new LoadedLanguages.SubstituteMenuPart_Parameterized_ypm9iz_a.SubstituteMenuPart_Action_ypm9iz_a0(parameter).createItems(context);
+      return new LoadedLanguages_Substitute.SMP_Param_210zo1_a.SMP_Action_210zo1_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -44,21 +44,21 @@ public class LoadedLanguages extends SubstituteMenuBase {
       Collection<SLanguage> allLanguages = LanguageRegistry.getInstance(_context.getEditorContext().getRepository()).getAllLanguages();
       return new ArrayList<SLanguage>(allLanguages);
     }
-    private class SubstituteMenuPart_Action_ypm9iz_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_210zo1_a0 extends SingleItemSubstituteMenuPart {
       private final SLanguage myParameterObject;
-      public SubstituteMenuPart_Action_ypm9iz_a0(SLanguage parameterObject) {
+      public SMP_Action_210zo1_a0(SLanguage parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new LoadedLanguages.SubstituteMenuPart_Parameterized_ypm9iz_a.SubstituteMenuPart_Action_ypm9iz_a0.Item(_context);
+        return new LoadedLanguages_Substitute.SMP_Param_210zo1_a.SMP_Action_210zo1_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
         public Item(SubstituteMenuContext context) {
-          super(MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c318L, "jetbrains.mps.lang.smodel.structure.LanguageIdentity"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
+          super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
           _context = context;
         }
 

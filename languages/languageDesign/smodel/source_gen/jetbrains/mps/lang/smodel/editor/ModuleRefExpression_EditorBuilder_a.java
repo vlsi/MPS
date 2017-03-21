@@ -23,21 +23,10 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
+import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
-import java.util.List;
-import jetbrains.mps.smodel.IOperationContext;
-import java.util.ArrayList;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.behavior.ModuleIdentity__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParenStyleClass;
 
 /*package*/ class ModuleRefExpression_EditorBuilder_a extends AbstractEditorBuilder {
@@ -118,11 +107,12 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
 
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1749acf3d038bbe2L, 0x1749acf3d038bbe5L, "moduleId"))), new SubstituteInfoPartExt[]{new ModuleRefExpression_EditorBuilder_a.moduleIdSingleRoleHandler_mwn25y_c0.ModuleRefExpression_generic_cellMenu_mwn25y_a0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
+        editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1749acf3d038bbe2L, 0x1749acf3d038bbe5L, "moduleId"), child));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("moduleId");
       }
+      editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e85338e1eL, "jetbrains.mps.lang.smodel.structure.ModuleIdentity"), "jetbrains.mps.lang.smodel.editor.RepositoryModules_Transformation"));
     }
     @Override
     protected EditorCell createEmptyCell() {
@@ -140,34 +130,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     }
     protected String getNoTargetText() {
       return "<no moduleId>";
-    }
-    public static class ModuleRefExpression_generic_cellMenu_mwn25y_a0c0 extends AbstractCellMenuPart_Generic_Group {
-      public ModuleRefExpression_generic_cellMenu_mwn25y_a0c0() {
-      }
-      public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-        ArrayList<SModuleReference> rv = new ArrayList<SModuleReference>();
-        for (SModule m : editorContext.getRepository().getModules()) {
-          rv.add(m.getModuleReference());
-        }
-        return rv;
-      }
-      protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-        this.handleAction_impl((SModuleReference) parameterObject, node, model, operationContext, editorContext);
-      }
-      public void handleAction_impl(SModuleReference parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-        SNode v = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e853388b3L, "jetbrains.mps.lang.smodel.structure.ModulePointer"));
-        ModuleIdentity__BehaviorDescriptor.setModuleReference_idnJmxU5cSTj.invoke(v, parameterObject);
-        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1749acf3d038bbe2L, 0x1749acf3d038bbe5L, "moduleId"), v);
-      }
-      public boolean isReferentPresentation() {
-        return false;
-      }
-      public String getMatchingText(Object parameterObject) {
-        return this.getMatchingText_internal((SModuleReference) parameterObject);
-      }
-      public String getMatchingText_internal(SModuleReference parameterObject) {
-        return parameterObject.getModuleName();
-      }
     }
   }
   private EditorCell createConstant_mwn25y_d0() {
