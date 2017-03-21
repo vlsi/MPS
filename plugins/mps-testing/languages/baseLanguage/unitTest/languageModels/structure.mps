@@ -288,8 +288,8 @@
     <node concept="PrWs8" id="hGB2w3i" role="PrDN$">
       <ref role="PrY4T" node="hG8C14p" resolve="ITestable" />
     </node>
-    <node concept="PrWs8" id="hSQJLwA" role="PrDN$">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="LkEto9Xqid" role="PrDN$">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
   <node concept="PlHQZ" id="hGBgSCX">
