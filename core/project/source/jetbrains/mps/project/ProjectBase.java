@@ -201,7 +201,7 @@ public abstract class ProjectBase extends Project {
 
   @NotNull
   public String toString() {
-    return "MPS Project [" + myProjectDescriptor + (isDisposed() ? ", disposed]" : "]");
+    return "MPS Project [" + getName() + (isDisposed() ? ", disposed]" : "]");
   }
 
   /**
