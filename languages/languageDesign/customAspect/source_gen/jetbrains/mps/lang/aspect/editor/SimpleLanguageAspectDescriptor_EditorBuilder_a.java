@@ -39,16 +39,10 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Group;
+import jetbrains.mps.lang.smodel.editor.LoadedLanguages_CellMenu;
 import java.util.List;
-import jetbrains.mps.smodel.IOperationContext;
-import java.util.Collection;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.behavior.LanguageIdentity__BehaviorDescriptor;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /*package*/ class SimpleLanguageAspectDescriptor_EditorBuilder_a extends AbstractEditorBuilder {
@@ -476,7 +470,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new SimpleLanguageAspectDescriptor_EditorBuilder_a.SimpleLanguageAspectDescriptor_mainLanguages_cellMenu_rpszz1_a0b3b1a(), new SChildSubstituteInfoPartEx(elementCell)}));
+          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new SimpleLanguageAspectDescriptor_EditorBuilder_a.SimpleLanguageAspectDescriptor_component_cellMenu_rpszz1_a0b3b1a(), new SChildSubstituteInfoPartEx(elementCell)}));
         }
       }
     }
@@ -487,26 +481,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       return editorCell;
     }
   }
-  public static class SimpleLanguageAspectDescriptor_mainLanguages_cellMenu_rpszz1_a0b3b1a extends AbstractCellMenuPart_ReplaceChild_Group {
-    public SimpleLanguageAspectDescriptor_mainLanguages_cellMenu_rpszz1_a0b3b1a() {
+  public static class SimpleLanguageAspectDescriptor_component_cellMenu_rpszz1_a0b3b1a implements SubstituteInfoPartExt {
+    private LoadedLanguages_CellMenu myComponent;
+    public SimpleLanguageAspectDescriptor_component_cellMenu_rpszz1_a0b3b1a() {
+      this.myComponent = new LoadedLanguages_CellMenu();
     }
-    public List<?> createParameterObjects(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext operationContext, EditorContext editorContext) {
-      Collection<SLanguage> allLanguages = LanguageRegistry.getInstance().getAllLanguages();
-      return new ArrayList<SLanguage>(allLanguages);
-    }
-    public boolean isCustomCreateChildNode() {
-      return true;
-    }
-    public SNode customCreateChildNode(Object parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return this.customCreateChildNode_impl((SLanguage) parameterObject, node, currentChild, defaultConceptOfChild, model, operationContext, editorContext);
-    }
-    public SNode customCreateChildNode_impl(SLanguage parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNode lid = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId"));
-      LanguageIdentity__BehaviorDescriptor.setLanguage_id34EJa6aIcyw.invoke(lid, parameterObject);
-      return lid;
-    }
-    public boolean isReferentPresentation() {
-      return false;
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
   private EditorCell createCollection_rpszz1_e1b0() {
@@ -576,7 +557,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new SimpleLanguageAspectDescriptor_EditorBuilder_a.SimpleLanguageAspectDescriptor_additionalLanguages_cellMenu_rpszz1_a0b4b1a(), new SChildSubstituteInfoPartEx(elementCell)}));
+          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new SimpleLanguageAspectDescriptor_EditorBuilder_a.SimpleLanguageAspectDescriptor_component_cellMenu_rpszz1_a0b4b1a(), new SChildSubstituteInfoPartEx(elementCell)}));
         }
       }
     }
@@ -590,26 +571,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       return editorCell;
     }
   }
-  public static class SimpleLanguageAspectDescriptor_additionalLanguages_cellMenu_rpszz1_a0b4b1a extends AbstractCellMenuPart_ReplaceChild_Group {
-    public SimpleLanguageAspectDescriptor_additionalLanguages_cellMenu_rpszz1_a0b4b1a() {
+  public static class SimpleLanguageAspectDescriptor_component_cellMenu_rpszz1_a0b4b1a implements SubstituteInfoPartExt {
+    private LoadedLanguages_CellMenu myComponent;
+    public SimpleLanguageAspectDescriptor_component_cellMenu_rpszz1_a0b4b1a() {
+      this.myComponent = new LoadedLanguages_CellMenu();
     }
-    public List<?> createParameterObjects(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext operationContext, EditorContext editorContext) {
-      Collection<SLanguage> allLanguages = LanguageRegistry.getInstance().getAllLanguages();
-      return new ArrayList<SLanguage>(allLanguages);
-    }
-    public boolean isCustomCreateChildNode() {
-      return true;
-    }
-    public SNode customCreateChildNode(Object parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return this.customCreateChildNode_impl((SLanguage) parameterObject, node, currentChild, defaultConceptOfChild, model, operationContext, editorContext);
-    }
-    public SNode customCreateChildNode_impl(SLanguage parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNode lid = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId"));
-      LanguageIdentity__BehaviorDescriptor.setLanguage_id34EJa6aIcyw.invoke(lid, parameterObject);
-      return lid;
-    }
-    public boolean isReferentPresentation() {
-      return false;
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
   private EditorCell createConstant_rpszz1_f1b0() {
