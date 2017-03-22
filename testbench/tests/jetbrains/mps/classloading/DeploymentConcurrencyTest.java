@@ -95,29 +95,4 @@ public class DeploymentConcurrencyTest extends BaseMpsTest {
       Assert.fail();
     }
   }
-
-  @Test
-  public void naiveConcurrencyTest2() {
-    MPSModuleRepository repo = myEnvironment.getPlatform().findComponent(MPSModuleRepository.class);
-    @NotNull ModelAccess modelAccess = repo.getModelAccess();
-    ExecutorService pool = Executors.newSingleThreadExecutor();
-    pool.execute(() -> modelAccess.runReadAction(() -> {
-      try {
-        System.out.println("read taken");
-        Thread.sleep(4000);
-      } catch (InterruptedException ignored) {
-        throw new RuntimeException(ignored);
-      }
-      System.out.println("read released");
-    }));
-    pool.execute(() -> jetbrains.mps.smodel.ModelAccess.instance().tryRead(() -> {
-      System.out.println("write taken");
-    }));
-    try {
-      pool.awaitTermination(10000, TimeUnit.SECONDS);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-    myEnvironment.flushAllEvents();
-  }
 }
