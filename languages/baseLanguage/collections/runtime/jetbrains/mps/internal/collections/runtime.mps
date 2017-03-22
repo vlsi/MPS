@@ -121,6 +121,7 @@
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
+        <property id="1221565133444" name="isFinal" index="1EXbeo" />
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
@@ -27764,6 +27765,49 @@
     <node concept="3Tm1VV" id="2uw4Ef3whtL" role="1B3o_S" />
     <node concept="16euLQ" id="2uw4Ef3wlKV" role="16eVyc">
       <property role="TrG5h" value="T" />
+    </node>
+  </node>
+  <node concept="312cEu" id="1JuK1K9lRA">
+    <property role="TrG5h" value="NotNullWhereFilter" />
+    <property role="1EXbeo" value="true" />
+    <node concept="3Tm1VV" id="1JuK1K9lRB" role="1B3o_S" />
+    <node concept="16euLQ" id="1JuK1K9lRC" role="16eVyc">
+      <property role="TrG5h" value="T" />
+    </node>
+    <node concept="3uibUv" id="1JuK1K9lRD" role="1zkMxy">
+      <ref role="3uigEE" node="6H75epiauzn" resolve="IWhereFilter" />
+      <node concept="16syzq" id="1JuK1K9lRE" role="11_B2D">
+        <ref role="16sUi3" node="1JuK1K9lRC" resolve="T" />
+      </node>
+    </node>
+    <node concept="3clFbW" id="1JuK1K9lRL" role="jymVt">
+      <node concept="3Tm1VV" id="1JuK1K9lRM" role="1B3o_S" />
+      <node concept="3cqZAl" id="1JuK1K9lRN" role="3clF45" />
+      <node concept="3clFbS" id="1JuK1K9lRT" role="3clF47" />
+    </node>
+    <node concept="3clFb_" id="1JuK1K9lS0" role="jymVt">
+      <property role="TrG5h" value="accept" />
+      <node concept="3Tm1VV" id="1JuK1K9lS1" role="1B3o_S" />
+      <node concept="10P_77" id="1JuK1K9lS2" role="3clF45" />
+      <node concept="37vLTG" id="1JuK1K9lS3" role="3clF46">
+        <property role="TrG5h" value="t" />
+        <node concept="16syzq" id="1JuK1K9lS4" role="1tU5fm">
+          <ref role="16sUi3" node="1JuK1K9lRC" resolve="T" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1JuK1K9lS5" role="3clF47">
+        <node concept="3cpWs6" id="1JuK1K9lS6" role="3cqZAp">
+          <node concept="3y3z36" id="1JuK1K9mP4" role="3cqZAk">
+            <node concept="10Nm6u" id="1JuK1K9mSZ" role="3uHU7w" />
+            <node concept="37vLTw" id="1JuK1K9mCG" role="3uHU7B">
+              <ref role="3cqZAo" node="1JuK1K9lS3" resolve="t" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1JuK1K9lSc" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
   </node>
 </model>

@@ -91,8 +91,8 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.NotNullWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NotNullWhereFilter" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>

@@ -85,10 +85,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.collections.runtime.impl.NotNullWhereFilter" file="NotNullWhereFilter.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-  </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.NullCollectionSequence" file="NullCollectionSequence.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />

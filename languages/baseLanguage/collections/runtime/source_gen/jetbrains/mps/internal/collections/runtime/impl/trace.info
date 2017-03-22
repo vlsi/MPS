@@ -20,20 +20,6 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
-  <root nodeRef="r:242df33e-bb74-49e9-9cfb-0712ffc0ed0e(jetbrains.mps.internal.collections.runtime.impl)/31378964226596326">
-    <file name="NotNullWhereFilter.java">
-      <node id="31378964226596358" at="11,30,12,21" concept="12" />
-      <node id="31378964226596337" at="8,0,10,0" concept="3" trace="NotNullWhereFilter#()V" />
-      <node id="31378964226596352" at="10,0,14,0" concept="10" trace="accept#(null)Z" />
-      <scope id="31378964226596345" at="8,31,8,31" />
-      <scope id="31378964226596357" at="11,30,12,21" />
-      <scope id="31378964226596337" at="8,0,10,0" />
-      <scope id="31378964226596352" at="10,0,14,0">
-        <var name="t" id="31378964226596355" />
-      </scope>
-      <unit id="31378964226596326" at="7,0,15,0" name="jetbrains.mps.internal.collections.runtime.impl.NotNullWhereFilter" />
-    </file>
-  </root>
   <root nodeRef="r:242df33e-bb74-49e9-9cfb-0712ffc0ed0e(jetbrains.mps.internal.collections.runtime.impl)/4611582986551925179">
     <file name="OfTypeSequence.java">
       <node id="4611582986551925226" at="10,0,11,0" concept="7" trace="requestedType" />

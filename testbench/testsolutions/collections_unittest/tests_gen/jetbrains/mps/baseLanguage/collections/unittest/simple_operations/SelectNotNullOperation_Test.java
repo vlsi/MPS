@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import junit.framework.Assert;
-import jetbrains.mps.internal.collections.runtime.impl.NotNullWhereFilter;
+import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;

@@ -2965,7 +2965,7 @@
     <property role="EcuMT" value="31378964227347002" />
     <property role="3GE5qa" value="sequence.closures" />
     <property role="TrG5h" value="SelectNotNullOperation" />
-    <property role="34LRSv" value="selectNotNull" />
+    <property role="34LRSv" value="withoutNull" />
     <property role="R4oN_" value="exclude null elements" />
     <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
   </node>

@@ -1843,7 +1843,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", 0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7818f71827269adL);
     b.origin("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)/31378964227347002");
-    b.alias("selectNotNull");
+    b.alias("withoutNull");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSelectOperation() {
