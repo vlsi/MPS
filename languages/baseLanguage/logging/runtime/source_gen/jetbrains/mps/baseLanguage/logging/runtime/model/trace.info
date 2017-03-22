@@ -1,37 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:1b1ff4e2-cb15-42d7-96c0-10e4cb0c311f(jetbrains.mps.baseLanguage.logging.runtime.model)/2034914114980904326">
     <file name="LoggingRuntime.java">
-      <node id="2034914114981161137" at="17,74,18,74" concept="0" />
-      <node id="108963660037111132" at="19,7,20,13" concept="4" />
-      <node id="2034914114981161806" at="21,5,22,0" concept="5" />
-      <node id="2034914114981167152" at="22,0,23,55" concept="3" />
-      <node id="2034914114981192010" at="23,55,24,53" concept="3" />
-      <node id="2034914114981223666" at="24,53,25,38" concept="0" />
-      <node id="2034914114981230853" at="25,38,26,36" concept="0" />
-      <node id="2034914114981244621" at="26,36,27,81" concept="3" />
-      <node id="2034914114981239685" at="27,81,28,30" concept="0" />
-      <node id="2034914114981145091" at="16,26,19,7" concept="1" />
-      <node id="2034914114981144632" at="15,189,21,5" concept="2" />
-      <node id="2034914114980940549" at="15,0,30,0" concept="6" trace="printToMessagesView#(Lorg/apache/log4j/Level;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Throwable;Ljetbrains/mps/project/Project;)V" />
-      <scope id="2034914114981145094" at="17,74,18,74" />
-      <scope id="2034914114981145091" at="16,26,19,7">
+      <node id="8675406682877860491" at="17,0,18,0" concept="7" trace="LOG" />
+      <node id="2034914114981161137" at="21,74,22,74" concept="1" />
+      <node id="108963660037111132" at="23,7,24,13" concept="5" />
+      <node id="2034914114981161806" at="25,5,26,0" concept="6" />
+      <node id="2034914114981167152" at="26,0,27,55" concept="4" />
+      <node id="2034914114981192010" at="27,55,28,53" concept="4" />
+      <node id="2034914114981223666" at="28,53,29,38" concept="1" />
+      <node id="2034914114981230853" at="29,38,30,36" concept="1" />
+      <node id="2034914114981244621" at="30,36,31,81" concept="4" />
+      <node id="2034914114981239685" at="32,31,33,32" concept="1" />
+      <node id="8675406682877861498" at="34,12,35,52" concept="1" />
+      <node id="8675406682877858414" at="34,10,36,5" concept="0" />
+      <node id="2034914114981145091" at="20,26,23,7" concept="2" />
+      <node id="8675406682877844575" at="31,81,36,5" concept="3" />
+      <node id="2034914114981144632" at="19,189,25,5" concept="3" />
+      <node id="2034914114980940549" at="19,0,38,0" concept="8" trace="printToMessagesView#(Lorg/apache/log4j/Level;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Throwable;Ljetbrains/mps/project/Project;)V" />
+      <scope id="2034914114981145094" at="21,74,22,74" />
+      <scope id="8675406682877844577" at="32,31,33,32" />
+      <scope id="8675406682877858415" at="34,12,35,52" />
+      <scope id="2034914114981145091" at="20,26,23,7">
         <var name="p" id="2034914114981145092" />
       </scope>
-      <scope id="2034914114981144634" at="16,26,20,13" />
-      <scope id="2034914114980940550" at="15,189,28,30">
+      <scope id="2034914114981144634" at="20,26,24,13" />
+      <scope id="2034914114980940550" at="19,189,36,5">
         <var name="kind" id="2034914114981167153" />
         <var name="message" id="2034914114981192011" />
         <var name="messagesView" id="2034914114981244622" />
       </scope>
-      <scope id="2034914114980940549" at="15,0,30,0">
+      <scope id="2034914114980940549" at="19,0,38,0">
         <var name="hintObject" id="2034914114981216094" />
         <var name="level" id="2034914114980940560" />
         <var name="msg" id="2034914114980940563" />
@@ -39,7 +47,7 @@
         <var name="sender" id="2034914114980940565" />
         <var name="throwable" id="2034914114981218559" />
       </scope>
-      <unit id="2034914114980904326" at="14,0,31,0" name="jetbrains.mps.baseLanguage.logging.runtime.model.LoggingRuntime" />
+      <unit id="2034914114980904326" at="16,0,39,0" name="jetbrains.mps.baseLanguage.logging.runtime.model.LoggingRuntime" />
     </file>
   </root>
 </debug-info>
