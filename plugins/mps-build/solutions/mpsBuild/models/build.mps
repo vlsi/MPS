@@ -2,10 +2,10 @@
 <model ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
-    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
+    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="3" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
   </languages>
   <imports />
   <registry>
@@ -16267,19 +16267,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="28jJK3" id="7d8Y7G7PY3y" role="39821P">
-                    <node concept="55IIr" id="7d8Y7G7PY3$" role="28jJRO">
-                      <node concept="2Ry0Ak" id="7d8Y7G7PY3J" role="iGT6I">
-                        <property role="2Ry0Am" value="build" />
-                        <node concept="2Ry0Ak" id="7d8Y7G7PY3N" role="2Ry0An">
-                          <property role="2Ry0Am" value="resources" />
-                          <node concept="2Ry0Ak" id="7d8Y7G7Q2z7" role="2Ry0An">
-                            <property role="2Ry0Am" value="idea_appLauncher" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                 </node>
                 <node concept="28jJK3" id="3f6C5dcXexf" role="39821P">
                   <node concept="2$gBol" id="3f6C5dcXexg" role="28jJR8">
@@ -16950,19 +16937,6 @@
                       <property role="2Ry0Am" value="resources" />
                       <node concept="2Ry0Ak" id="2lgcjg39YuS" role="2Ry0An">
                         <property role="2Ry0Am" value="mps" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="28jJK3" id="7d8Y7G7PVHy" role="39821P">
-                <node concept="55IIr" id="7d8Y7G7PVH$" role="28jJRO">
-                  <node concept="2Ry0Ak" id="7d8Y7G7PVHJ" role="iGT6I">
-                    <property role="2Ry0Am" value="build" />
-                    <node concept="2Ry0Ak" id="7d8Y7G7PVHN" role="2Ry0An">
-                      <property role="2Ry0Am" value="resources" />
-                      <node concept="2Ry0Ak" id="7d8Y7G7Q2z9" role="2Ry0An">
-                        <property role="2Ry0Am" value="idea_appLauncher" />
                       </node>
                     </node>
                   </node>
