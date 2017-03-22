@@ -57,7 +57,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_6675136286173559993(final PropertyMacroContext _context) {
     return LoggingGenerationUtil.generateUniqueFieldName(_context.getNode(), _context.getTemplateValue());
   }
-  public static Object referenceMacro_GetReferent_2034914114981628096(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8675406682877209896(final ReferenceMacroContext _context) {
     if (SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc541df63L, "severity"), "fatal", "debug")) {
       return "FATAL";
     } else if (SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc541df63L, "severity"), "error", "debug")) {

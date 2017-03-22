@@ -15,7 +15,6 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
-      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -119,62 +118,6 @@
   <node concept="312cEu" id="1KXtTGFRnQ6">
     <property role="TrG5h" value="LoggingRuntime" />
     <property role="1EXbeo" value="true" />
-    <node concept="2YIFZL" id="1KXtTGFRqkp" role="jymVt">
-      <property role="TrG5h" value="log" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="1KXtTGFRqks" role="3clF47">
-        <node concept="3clFbF" id="1KXtTGFRv6A" role="3cqZAp">
-          <node concept="2OqwBi" id="1KXtTGFRvfv" role="3clFbG">
-            <node concept="2YIFZM" id="1KXtTGFRv7b" role="2Oq$k0">
-              <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
-              <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
-              <node concept="37vLTw" id="1KXtTGFRv7D" role="37wK5m">
-                <ref role="3cqZAo" node="1KXtTGFRv4z" resolve="sender" />
-              </node>
-            </node>
-            <node concept="liA8E" id="1KXtTGFRvth" role="2OqNvi">
-              <ref role="37wK5l" to="q7tw:~Category.log(org.apache.log4j.Priority,java.lang.Object):void" resolve="log" />
-              <node concept="37vLTw" id="1KXtTGFRvEF" role="37wK5m">
-                <ref role="3cqZAo" node="1KXtTGFRv2a" resolve="priority" />
-              </node>
-              <node concept="37vLTw" id="1KXtTGFRw6a" role="37wK5m">
-                <ref role="3cqZAo" node="1KXtTGFRv3E" resolve="msg" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="1KXtTGFRqk2" role="1B3o_S" />
-      <node concept="3cqZAl" id="1KXtTGFRqki" role="3clF45" />
-      <node concept="37vLTG" id="1KXtTGFRv2a" role="3clF46">
-        <property role="TrG5h" value="priority" />
-        <node concept="3uibUv" id="1KXtTGFRv29" role="1tU5fm">
-          <ref role="3uigEE" to="q7tw:~Priority" resolve="Priority" />
-        </node>
-        <node concept="2AHcQZ" id="1KXtTGFRv2N" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1KXtTGFRv3E" role="3clF46">
-        <property role="TrG5h" value="msg" />
-        <node concept="3uibUv" id="1KXtTGFRv40" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1KXtTGFRv4z" role="3clF46">
-        <property role="TrG5h" value="sender" />
-        <node concept="3uibUv" id="1KXtTGFRv4V" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-          <node concept="3qTvmN" id="1KXtTGFRv5h" role="11_B2D" />
-        </node>
-        <node concept="2AHcQZ" id="1KXtTGFSils" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1KXtTGFRwXX" role="jymVt" />
     <node concept="2YIFZL" id="1KXtTGFRwG5" role="jymVt">
       <property role="TrG5h" value="printToMessagesView" />
       <property role="od$2w" value="false" />
@@ -210,7 +153,7 @@
                   <node concept="1rXfSq" id="1KXtTGFSmyK" role="3clFbG">
                     <ref role="37wK5l" node="1KXtTGFRwG5" resolve="printToMessagesView" />
                     <node concept="37vLTw" id="1KXtTGFSmzo" role="37wK5m">
-                      <ref role="3cqZAo" node="1KXtTGFRwGg" resolve="priority" />
+                      <ref role="3cqZAo" node="1KXtTGFRwGg" resolve="level" />
                     </node>
                     <node concept="37vLTw" id="1KXtTGFSm_O" role="37wK5m">
                       <ref role="3cqZAo" node="1KXtTGFRwGj" resolve="msg" />
@@ -245,7 +188,7 @@
               <ref role="37wK5l" to="et5u:~MessageKind.fromPriority(org.apache.log4j.Priority):jetbrains.mps.messages.MessageKind" resolve="fromPriority" />
               <ref role="1Pybhc" to="et5u:~MessageKind" resolve="MessageKind" />
               <node concept="37vLTw" id="1KXtTGFSpIW" role="37wK5m">
-                <ref role="3cqZAo" node="1KXtTGFRwGg" resolve="priority" />
+                <ref role="3cqZAo" node="1KXtTGFRwGg" resolve="level" />
               </node>
             </node>
           </node>
@@ -334,9 +277,9 @@
       <node concept="3Tm1VV" id="1KXtTGFRwGe" role="1B3o_S" />
       <node concept="3cqZAl" id="1KXtTGFRwGf" role="3clF45" />
       <node concept="37vLTG" id="1KXtTGFRwGg" role="3clF46">
-        <property role="TrG5h" value="priority" />
-        <node concept="3uibUv" id="1KXtTGFRwGh" role="1tU5fm">
-          <ref role="3uigEE" to="q7tw:~Priority" resolve="Priority" />
+        <property role="TrG5h" value="level" />
+        <node concept="3uibUv" id="7x_f6BIWxWe" role="1tU5fm">
+          <ref role="3uigEE" to="q7tw:~Level" resolve="Level" />
         </node>
         <node concept="2AHcQZ" id="1KXtTGFRwGi" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
