@@ -14,6 +14,9 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
+        <child id="1082485599096" name="statements" index="9aQI4" />
+      </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
@@ -32,6 +35,13 @@
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
+        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
+        <property id="6468716278899125786" name="isTransient" index="2dld4O" />
+      </concept>
+      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
+        <property id="1070475926801" name="value" index="Xl_RC" />
+      </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
@@ -41,6 +51,7 @@
         <property id="1221565133444" name="isFinal" index="1EXbeo" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
@@ -63,6 +74,7 @@
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
@@ -96,6 +108,7 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -106,6 +119,7 @@
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+      <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
@@ -119,62 +133,24 @@
   <node concept="312cEu" id="1KXtTGFRnQ6">
     <property role="TrG5h" value="LoggingRuntime" />
     <property role="1EXbeo" value="true" />
-    <node concept="2YIFZL" id="1KXtTGFRqkp" role="jymVt">
-      <property role="TrG5h" value="log" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="1KXtTGFRqks" role="3clF47">
-        <node concept="3clFbF" id="1KXtTGFRv6A" role="3cqZAp">
-          <node concept="2OqwBi" id="1KXtTGFRvfv" role="3clFbG">
-            <node concept="2YIFZM" id="1KXtTGFRv7b" role="2Oq$k0">
-              <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
-              <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
-              <node concept="37vLTw" id="1KXtTGFRv7D" role="37wK5m">
-                <ref role="3cqZAo" node="1KXtTGFRv4z" resolve="sender" />
-              </node>
-            </node>
-            <node concept="liA8E" id="1KXtTGFRvth" role="2OqNvi">
-              <ref role="37wK5l" to="q7tw:~Category.log(org.apache.log4j.Priority,java.lang.Object):void" resolve="log" />
-              <node concept="37vLTw" id="1KXtTGFRvEF" role="37wK5m">
-                <ref role="3cqZAo" node="1KXtTGFRv2a" resolve="priority" />
-              </node>
-              <node concept="37vLTw" id="1KXtTGFRw6a" role="37wK5m">
-                <ref role="3cqZAo" node="1KXtTGFRv3E" resolve="msg" />
-              </node>
-            </node>
-          </node>
-        </node>
+    <node concept="Wx3nA" id="7x_f6BIZ1Eb" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="LOG" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="7x_f6BIZ1Cb" role="1B3o_S" />
+      <node concept="3uibUv" id="7x_f6BIZ1E3" role="1tU5fm">
+        <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
       </node>
-      <node concept="3Tm1VV" id="1KXtTGFRqk2" role="1B3o_S" />
-      <node concept="3cqZAl" id="1KXtTGFRqki" role="3clF45" />
-      <node concept="37vLTG" id="1KXtTGFRv2a" role="3clF46">
-        <property role="TrG5h" value="priority" />
-        <node concept="3uibUv" id="1KXtTGFRv29" role="1tU5fm">
-          <ref role="3uigEE" to="q7tw:~Priority" resolve="Priority" />
-        </node>
-        <node concept="2AHcQZ" id="1KXtTGFRv2N" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1KXtTGFRv3E" role="3clF46">
-        <property role="TrG5h" value="msg" />
-        <node concept="3uibUv" id="1KXtTGFRv40" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1KXtTGFRv4z" role="3clF46">
-        <property role="TrG5h" value="sender" />
-        <node concept="3uibUv" id="1KXtTGFRv4V" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-          <node concept="3qTvmN" id="1KXtTGFRv5h" role="11_B2D" />
-        </node>
-        <node concept="2AHcQZ" id="1KXtTGFSils" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      <node concept="2YIFZM" id="7x_f6BIZ1GH" role="33vP2m">
+        <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
+        <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
+        <node concept="3VsKOn" id="7x_f6BIZ1Hr" role="37wK5m">
+          <ref role="3VsUkX" node="1KXtTGFRnQ6" resolve="LoggingRuntime" />
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="1KXtTGFRwXX" role="jymVt" />
+    <node concept="2tJIrI" id="7x_f6BIZ1NF" role="jymVt" />
     <node concept="2YIFZL" id="1KXtTGFRwG5" role="jymVt">
       <property role="TrG5h" value="printToMessagesView" />
       <property role="od$2w" value="false" />
@@ -210,7 +186,7 @@
                   <node concept="1rXfSq" id="1KXtTGFSmyK" role="3clFbG">
                     <ref role="37wK5l" node="1KXtTGFRwG5" resolve="printToMessagesView" />
                     <node concept="37vLTw" id="1KXtTGFSmzo" role="37wK5m">
-                      <ref role="3cqZAo" node="1KXtTGFRwGg" resolve="priority" />
+                      <ref role="3cqZAo" node="1KXtTGFRwGg" resolve="level" />
                     </node>
                     <node concept="37vLTw" id="1KXtTGFSm_O" role="37wK5m">
                       <ref role="3cqZAo" node="1KXtTGFRwGj" resolve="msg" />
@@ -245,7 +221,7 @@
               <ref role="37wK5l" to="et5u:~MessageKind.fromPriority(org.apache.log4j.Priority):jetbrains.mps.messages.MessageKind" resolve="fromPriority" />
               <ref role="1Pybhc" to="et5u:~MessageKind" resolve="MessageKind" />
               <node concept="37vLTw" id="1KXtTGFSpIW" role="37wK5m">
-                <ref role="3cqZAo" node="1KXtTGFRwGg" resolve="priority" />
+                <ref role="3cqZAo" node="1KXtTGFRwGg" resolve="level" />
               </node>
             </node>
           </node>
@@ -317,15 +293,42 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="1KXtTGFSDI5" role="3cqZAp">
-          <node concept="2OqwBi" id="1KXtTGFSFFy" role="3clFbG">
-            <node concept="37vLTw" id="1KXtTGFSEVj" role="2Oq$k0">
+        <node concept="3clFbJ" id="7x_f6BIYXLv" role="3cqZAp">
+          <node concept="3clFbS" id="7x_f6BIYXLx" role="3clFbx">
+            <node concept="3clFbF" id="1KXtTGFSDI5" role="3cqZAp">
+              <node concept="2OqwBi" id="1KXtTGFSFFy" role="3clFbG">
+                <node concept="37vLTw" id="1KXtTGFSEVj" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1KXtTGFSEVe" resolve="messagesView" />
+                </node>
+                <node concept="liA8E" id="1KXtTGFSGcD" role="2OqNvi">
+                  <ref role="37wK5l" to="57ty:~MessagesViewTool.add(jetbrains.mps.messages.IMessage):void" resolve="add" />
+                  <node concept="37vLTw" id="1KXtTGFSGf6" role="37wK5m">
+                    <ref role="3cqZAo" node="1KXtTGFSu5b" resolve="message" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="7x_f6BIYYWR" role="3clFbw">
+            <node concept="10Nm6u" id="7x_f6BIYYX8" role="3uHU7w" />
+            <node concept="37vLTw" id="7x_f6BIYYlu" role="3uHU7B">
               <ref role="3cqZAo" node="1KXtTGFSEVe" resolve="messagesView" />
             </node>
-            <node concept="liA8E" id="1KXtTGFSGcD" role="2OqNvi">
-              <ref role="37wK5l" to="57ty:~MessagesViewTool.add(jetbrains.mps.messages.IMessage):void" resolve="add" />
-              <node concept="37vLTw" id="1KXtTGFSGf6" role="37wK5m">
-                <ref role="3cqZAo" node="1KXtTGFSu5b" resolve="message" />
+          </node>
+          <node concept="9aQIb" id="7x_f6BIZ19I" role="9aQIa">
+            <node concept="3clFbS" id="7x_f6BIZ19J" role="9aQI4">
+              <node concept="3clFbF" id="7x_f6BIZ1TU" role="3cqZAp">
+                <node concept="2OqwBi" id="7x_f6BIZ1X7" role="3clFbG">
+                  <node concept="37vLTw" id="7x_f6BIZ1TT" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7x_f6BIZ1Eb" resolve="LOG" />
+                  </node>
+                  <node concept="liA8E" id="7x_f6BIZ21l" role="2OqNvi">
+                    <ref role="37wK5l" to="q7tw:~Category.warn(java.lang.Object):void" resolve="warn" />
+                    <node concept="Xl_RD" id="7x_f6BIZ2aF" role="37wK5m">
+                      <property role="Xl_RC" value="MessagesView Tool cannot be found" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -334,9 +337,9 @@
       <node concept="3Tm1VV" id="1KXtTGFRwGe" role="1B3o_S" />
       <node concept="3cqZAl" id="1KXtTGFRwGf" role="3clF45" />
       <node concept="37vLTG" id="1KXtTGFRwGg" role="3clF46">
-        <property role="TrG5h" value="priority" />
-        <node concept="3uibUv" id="1KXtTGFRwGh" role="1tU5fm">
-          <ref role="3uigEE" to="q7tw:~Priority" resolve="Priority" />
+        <property role="TrG5h" value="level" />
+        <node concept="3uibUv" id="7x_f6BIWxWe" role="1tU5fm">
+          <ref role="3uigEE" to="q7tw:~Level" resolve="Level" />
         </node>
         <node concept="2AHcQZ" id="1KXtTGFRwGi" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
