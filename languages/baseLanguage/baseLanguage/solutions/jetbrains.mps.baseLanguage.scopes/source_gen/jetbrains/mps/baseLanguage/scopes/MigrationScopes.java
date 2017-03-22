@@ -27,9 +27,6 @@ public class MigrationScopes {
   public static Scope forVariables(SConcept declarationConcept, SNode contextNode, SContainmentLink link, int position) {
     return filterByConceptScope(Scope.getScope(contextNode, link, position, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")), declarationConcept);
   }
-  public static Scope forMethods(SConcept declarationConcept, SNode contextNode, String contextRole, int position) {
-    throw new UnsupportedOperationException();
-  }
   public static Scope forMethods(SConcept declarationConcept, SNode contextNode, SContainmentLink link, int position) {
     return filterByConceptScope(Scope.getScope(contextNode, link, position, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")), declarationConcept);
   }
