@@ -3140,17 +3140,12 @@
               <node concept="3cpWs8" id="6gEjUfB_kEy" role="3cqZAp">
                 <node concept="3cpWsn" id="6gEjUfB_kEz" role="3cpWs9">
                   <property role="TrG5h" value="modules" />
-                  <node concept="2OqwBi" id="6gEjUfB_kE$" role="33vP2m">
-                    <node concept="2OqwBi" id="6gEjUfB_kE_" role="2Oq$k0">
-                      <node concept="37vLTw" id="6gEjUfB_kEA" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6gEjUfBzAKO" resolve="project" />
-                      </node>
-                      <node concept="liA8E" id="6gEjUfB_kEB" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                      </node>
+                  <node concept="2OqwBi" id="6gEjUfB_kE_" role="33vP2m">
+                    <node concept="37vLTw" id="6gEjUfB_kEA" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6gEjUfBzAKO" resolve="project" />
                     </node>
-                    <node concept="liA8E" id="6gEjUfB_kEC" role="2OqNvi">
-                      <ref role="37wK5l" to="lui2:~SRepository.getModules():java.lang.Iterable" resolve="getModules" />
+                    <node concept="liA8E" id="2Qr33HihJbZ" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~ProjectBase.getProjectModules():java.util.List" resolve="getProjectModules" />
                     </node>
                   </node>
                   <node concept="A3Dl8" id="6gEjUfB_m0m" role="1tU5fm">

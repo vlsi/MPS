@@ -2503,7 +2503,7 @@
       <node id="7217668918197939909" at="73,29,74,103" concept="4" />
       <node id="7217668918198444477" at="75,5,76,0" concept="12" />
       <node id="7217668918198245482" at="76,0,77,104" concept="9" />
-      <node id="7217668918198225570" at="79,45,80,73" concept="9" />
+      <node id="7217668918198225570" at="79,45,80,64" concept="9" />
       <node id="3242492985820698267" at="82,54,83,84" concept="10" />
       <node id="2885146366746338116" at="86,53,87,30" concept="10" />
       <node id="7217668918198134657" at="91,8,92,113" concept="9" />
@@ -2535,7 +2535,7 @@
       <node id="7217668918197981586" at="65,0,72,0" concept="8" trace="run#()V" />
       <node id="7217668918197780713" at="48,61,57,7" concept="4" />
       <node id="7217668918197981584" at="63,72,72,7" concept="4" />
-      <node id="7217668918198437967" at="80,73,89,28" concept="10" />
+      <node id="7217668918198437967" at="80,64,89,28" concept="10" />
       <node id="7217668918198422608" at="79,0,91,0" concept="8" trace="invoke#()Ljava/util/List;" />
       <node id="7217668918198422606" at="77,104,91,8" concept="4" />
       <node id="7217668918197775400" at="44,0,60,0" concept="8" trace="isApplicable#(Ljetbrains/mps/project/MPSProject;Ljava/util/List;)Z" />

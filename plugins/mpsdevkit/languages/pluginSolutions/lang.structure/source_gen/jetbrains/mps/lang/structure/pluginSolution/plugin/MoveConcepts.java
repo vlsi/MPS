@@ -77,7 +77,7 @@ public class MoveConcepts implements MoveNodesAction {
     final Wrappers._T<List<SModelReference>> structureModels = new Wrappers._T<List<SModelReference>>();
     project.getRepository().getModelAccess().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<SModelReference>>() {
       public List<SModelReference> invoke() {
-        Iterable<SModule> modules = project.getRepository().getModules();
+        Iterable<SModule> modules = project.getProjectModules();
         return structureModels.value = Sequence.fromIterable(modules).ofType(Language.class).select(new ISelector<Language, SModelReference>() {
           public SModelReference select(Language it) {
             return check_u6ijv2_a0a0a0a0a1a0a0h0f(it.getStructureModelDescriptor());
