@@ -42,8 +42,8 @@
   </root>
   <root nodeRef="r:fe87d5f9-5256-4222-80d8-08ea6f3a69cf(jetbrains.mps.samples.customizedDebugger.Bottomline.debug.plugin)/567241428660124408">
     <file name="DebugInfoProvider_CustomApplicationPlugin.java">
-      <node id="567241428660124408" at="28,0,29,0" concept="3" trace="myCreators" />
-      <node id="567241428660124408" at="31,0,32,0" concept="11" trace="LOG" />
+      <node id="567241428660124408" at="28,0,29,0" concept="11" trace="LOG" />
+      <node id="567241428660124408" at="29,0,30,0" concept="3" trace="myCreators" />
       <node id="567241428660124408" at="32,24,33,118" concept="7" />
       <node id="567241428660124408" at="34,33,35,13" concept="8" />
       <node id="567241428660124408" at="36,5,37,80" concept="7" />
@@ -67,7 +67,7 @@
       <node id="567241428660124408" at="80,26,81,13" concept="8" />
       <node id="567241428660124408" at="83,118,84,37" concept="2" />
       <node id="567241428660124408" at="85,5,86,91" concept="2" />
-      <node id="567241428660124408" at="29,0,31,0" concept="1" trace="DebugInfoProvider_CustomApplicationPlugin#()V" />
+      <node id="567241428660124408" at="30,0,32,0" concept="1" trace="DebugInfoProvider_CustomApplicationPlugin#()V" />
       <node id="567241428660124408" at="43,58,45,5" concept="4" />
       <node id="567241428660124408" at="33,118,36,5" concept="5" />
       <node id="567241428660124408" at="37,80,40,5" concept="5" />
@@ -84,7 +84,7 @@
       <node id="567241428660124408" at="74,0,88,0" concept="6" trace="doDispose#()V" />
       <node id="567241428660124408" at="45,5,72,5" concept="0" />
       <node id="567241428660124408" at="32,0,74,0" concept="6" trace="doInit#()V" />
-      <scope id="567241428660124408" at="29,54,29,54" />
+      <scope id="567241428660124408" at="30,54,30,54" />
       <scope id="567241428660124408" at="44,118,44,118" />
       <scope id="567241428660124408" at="34,33,35,13" />
       <scope id="567241428660124408" at="38,26,39,13" />
@@ -94,7 +94,7 @@
       <scope id="567241428660124408" at="76,33,77,13" />
       <scope id="567241428660124408" at="80,26,81,13" />
       <scope id="567241428660124408" at="83,118,84,37" />
-      <scope id="567241428660124408" at="29,0,31,0" />
+      <scope id="567241428660124408" at="30,0,32,0" />
       <scope id="567241428660124408" at="43,58,45,5">
         <var name="creator" id="567241428660124408" />
       </scope>

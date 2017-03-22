@@ -19,17 +19,17 @@
   </root>
   <root nodeRef="r:2ed514bb-0dfc-4876-91d2-b5b2bfa150da(jetbrains.mps.samples.notesOrganizer.behavior)/3892287256988935420">
     <file name="Note__BehaviorDescriptor.java">
-      <node id="3892287256988935420" at="29,0,30,0" concept="6" trace="CONCEPT" />
-      <node id="3892287256988935420" at="30,0,31,0" concept="6" trace="REGISTRY" />
-      <node id="3892287256988935420" at="32,0,33,0" concept="6" trace="findColor_id3o4bEdkAIk2" />
-      <node id="3892287256988935420" at="34,0,35,0" concept="6" trace="BH_METHODS" />
-      <node id="3892287256988935420" at="39,0,40,0" concept="6" trace="LOG" />
+      <node id="3892287256988935420" at="29,0,30,0" concept="6" trace="LOG" />
+      <node id="3892287256988935420" at="30,0,31,0" concept="6" trace="CONCEPT" />
+      <node id="3892287256988935420" at="31,0,32,0" concept="6" trace="REGISTRY" />
+      <node id="3892287256988935420" at="33,0,34,0" concept="6" trace="findColor_id3o4bEdkAIk2" />
+      <node id="3892287256988935420" at="35,0,36,0" concept="6" trace="BH_METHODS" />
       <node id="3892287256988844902" at="42,30,43,54" concept="4" />
       <node id="3892287256988858571" at="44,28,45,48" concept="4" />
       <node id="3892287256988864765" at="45,48,46,65" concept="5" />
-      <node id="3892287256988876763" at="50,42,51,25" concept="1" />
-      <node id="3892287256988877514" at="54,42,55,25" concept="1" />
-      <node id="3892287256988878267" at="58,42,59,25" concept="1" />
+      <node id="3818729150937331349" at="50,42,51,25" concept="1" />
+      <node id="3818729150937331357" at="54,42,55,25" concept="1" />
+      <node id="3818729150937331365" at="58,42,59,25" concept="1" />
       <node id="3892287256988870106" at="61,5,62,23" concept="5" />
       <node id="3892287256988935420" at="65,42,66,20" concept="8" />
       <node id="3892287256988935420" at="70,114,71,21" concept="1" />
@@ -42,10 +42,10 @@
       <node id="3892287256988935420" at="95,14,96,58" concept="10" />
       <node id="3892287256988935420" at="102,48,103,22" concept="5" />
       <node id="3892287256988935420" at="108,40,109,19" concept="5" />
-      <node id="3892287256988935420" at="36,0,38,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3892287256988876763" at="49,38,52,7" concept="2" />
-      <node id="3892287256988877514" at="53,40,56,7" concept="2" />
-      <node id="3892287256988878267" at="57,35,60,7" concept="2" />
+      <node id="3892287256988935420" at="37,0,39,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3818729150937331349" at="49,38,52,7" concept="2" />
+      <node id="3818729150937331357" at="53,40,56,7" concept="2" />
+      <node id="3818729150937331365" at="57,35,60,7" concept="2" />
       <node id="3892287256988935420" at="65,0,68,0" concept="0" trace="Note__BehaviorDescriptor#()V" />
       <node id="3892287256988935420" at="76,49,79,5" concept="2" />
       <node id="3892287256988935420" at="90,49,93,5" concept="2" />
@@ -60,10 +60,10 @@
       <node id="3892287256988935420" at="74,0,87,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="3892287256988860755" at="40,99,61,5" concept="11" />
       <node id="3892287256988935420" at="40,0,64,0" concept="7" trace="findColor_id3o4bEdkAIk2#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/awt/Color;" />
-      <scope id="3892287256988935420" at="36,63,36,63" />
-      <scope id="3892287256988876763" at="50,42,51,25" />
-      <scope id="3892287256988877514" at="54,42,55,25" />
-      <scope id="3892287256988878267" at="58,42,59,25" />
+      <scope id="3892287256988935420" at="37,63,37,63" />
+      <scope id="3818729150937331349" at="50,42,51,25" />
+      <scope id="3818729150937331357" at="54,42,55,25" />
+      <scope id="3818729150937331365" at="58,42,59,25" />
       <scope id="3892287256988935420" at="65,42,66,20" />
       <scope id="3892287256988935420" at="70,114,71,21" />
       <scope id="3892287256988935420" at="77,26,78,56" />
@@ -73,7 +73,7 @@
       <scope id="3892287256988935420" at="95,14,96,58" />
       <scope id="3892287256988935420" at="102,48,103,22" />
       <scope id="3892287256988935420" at="108,40,109,19" />
-      <scope id="3892287256988935420" at="36,0,38,0">
+      <scope id="3892287256988935420" at="37,0,39,0">
         <var name="__thisNode__" id="3892287256988935420" />
       </scope>
       <scope id="3892287256988872066" at="44,28,46,65">

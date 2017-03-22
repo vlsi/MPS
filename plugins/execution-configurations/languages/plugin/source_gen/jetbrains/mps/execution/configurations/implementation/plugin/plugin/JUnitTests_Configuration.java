@@ -4,6 +4,8 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters1_Configuration;
@@ -12,8 +14,6 @@ import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import com.intellij.openapi.util.InvalidDataException;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -39,6 +39,7 @@ import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
+  private static final Logger LOG = LogManager.getLogger(JUnitTests_Configuration.class);
   @NotNull
   private JUnitTests_Configuration.MyState myState = new JUnitTests_Configuration.MyState();
   private JUnitSettings_Configuration myJUnitSettings = new JUnitSettings_Configuration(this.getProject());
@@ -60,7 +61,6 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       element.addContent(fieldElement);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(JUnitTests_Configuration.class);
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {

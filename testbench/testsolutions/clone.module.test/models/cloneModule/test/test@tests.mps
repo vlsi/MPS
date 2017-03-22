@@ -201,9 +201,9 @@
       <concept id="8243879142738613213" name="jetbrains.mps.baseLanguage.unitTest.structure.AfterTest" flags="in" index="1KhZuU" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -439,9 +439,9 @@
           <node concept="3clFbS" id="2eoJ2fRC2Px" role="3clFbx">
             <node concept="1DcWWT" id="2eoJ2fRC52g" role="3cqZAp">
               <node concept="3clFbS" id="2eoJ2fRC52i" role="2LFqv$">
-                <node concept="34ab3g" id="2eoJ2fRC5Ml" role="3cqZAp">
-                  <property role="35gtTG" value="error" />
-                  <node concept="3cpWs3" id="2eoJ2fRC6qr" role="34bqiv">
+                <node concept="RRSsy" id="3jYQuSB34np" role="3cqZAp">
+                  <property role="RRSoG" value="error" />
+                  <node concept="3cpWs3" id="2eoJ2fRC6qr" role="RRSoy">
                     <node concept="37vLTw" id="2eoJ2fRC6ru" role="3uHU7w">
                       <ref role="3cqZAo" node="2eoJ2fRC52j" resolve="error" />
                     </node>

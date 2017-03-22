@@ -4,6 +4,8 @@ package jetbrains.mps.build.pluginSolution.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -20,8 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import com.intellij.openapi.util.InvalidDataException;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
@@ -40,6 +40,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class BuildScript_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
+  private static final Logger LOG = LogManager.getLogger(BuildScript_Configuration.class);
   @NotNull
   private BuildScript_Configuration.MyState myState = new BuildScript_Configuration.MyState();
   private NodeByConcept_Configuration myNodePointer = new NodeByConcept_Configuration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
@@ -80,7 +81,6 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       element.addContent(fieldElement);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(BuildScript_Configuration.class);
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {

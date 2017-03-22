@@ -4,6 +4,8 @@ package jetbrains.mps.lang.dataFlow;
 
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.components.CoreComponent;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
@@ -14,8 +16,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -30,6 +30,7 @@ import org.apache.log4j.Level;
 @Deprecated
 @ToRemove(version = 3.4)
 public class DataFlowManager implements CoreComponent {
+  private static final Logger LOG = LogManager.getLogger(DataFlowManager.class);
   private static DataFlowManager INSTANCE;
   private final ClassLoaderManager myManager;
   private final MPSClassesListener myListener = new MPSClassesListenerAdapter() {
@@ -82,7 +83,6 @@ public class DataFlowManager implements CoreComponent {
     myLoaded = true;
     this.load();
   }
-  protected static Logger LOG = LogManager.getLogger(DataFlowManager.class);
   private void load() {
     for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       SModel dfaModel = SModuleOperations.getAspect(l, "dataFlow");

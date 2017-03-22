@@ -4,6 +4,8 @@ package jetbrains.mps.smodel.persistence.def.v8;
 
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.Stack;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.SModelHeader;
@@ -20,8 +22,6 @@ import jetbrains.mps.smodel.SModelLegacy;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.persistence.SNodeFactory;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
+  private static final Logger LOG = LogManager.getLogger(ModelReader8Handler.class);
   private ModelReader8Handler.ModelElementHandler modelHandler = new ModelReader8Handler.ModelElementHandler();
   private ModelReader8Handler.PersistenceElementHandler persistenceHandler = new ModelReader8Handler.PersistenceElementHandler();
   private ModelReader8Handler.Module_referenceElementHandler module_referenceHandler = new ModelReader8Handler.Module_referenceElementHandler();
@@ -327,7 +328,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       super.handleAttribute(resultObject, name, value);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ModelReader8Handler.class);
   public class NodeElementHandler extends ModelReader8Handler.ElementHandler {
     public NodeElementHandler() {
       setRequiredAttributes("type", "nodeInfo");

@@ -270,11 +270,10 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -808,14 +807,13 @@
                   <property role="3SKdUp" value="todo: !" />
                 </node>
               </node>
-              <node concept="34ab3g" id="3AvdXZVoSsO" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="37vLTw" id="7t1q1UzvCMy" role="34bMjA">
-                  <ref role="3cqZAo" node="3AvdXZVoIb_" resolve="e" />
-                </node>
-                <node concept="Xl_RD" id="3AvdXZVoSsQ" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB37p3" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="Xl_RD" id="3AvdXZVoSsQ" role="RRSoy">
                   <property role="Xl_RC" value="Cannot create runtime / sandbox module" />
+                </node>
+                <node concept="37vLTw" id="7t1q1UzvCMy" role="RRSow">
+                  <ref role="3cqZAo" node="3AvdXZVoIb_" resolve="e" />
                 </node>
               </node>
             </node>
@@ -3565,10 +3563,9 @@
             </node>
           </node>
         </node>
-        <node concept="34ab3g" id="7NdrMPxIVEW" role="3cqZAp">
-          <property role="35gtTG" value="error" />
-          <property role="34fQS0" value="true" />
-          <node concept="2OqwBi" id="2Mi1qAh_fD" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB35pL" role="3cqZAp">
+          <property role="RRSoG" value="error" />
+          <node concept="2OqwBi" id="2Mi1qAh_fD" role="RRSoy">
             <node concept="37vLTw" id="2Mi1qAh_1g" role="2Oq$k0">
               <ref role="3cqZAo" node="7NdrMPxIVFc" resolve="e" />
             </node>
@@ -3576,7 +3573,7 @@
               <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
             </node>
           </node>
-          <node concept="37vLTw" id="7NdrMPxIVFh" role="34bMjA">
+          <node concept="37vLTw" id="7NdrMPxIVFh" role="RRSow">
             <ref role="3cqZAo" node="7NdrMPxIVFc" resolve="e" />
           </node>
         </node>

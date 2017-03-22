@@ -22,15 +22,15 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)/2546981710035458892">
     <file name="FileMPSProject.java">
-      <node id="2546981710035458895" at="26,0,27,0" concept="14" trace="LOG" />
-      <node id="1259651549063093021" at="28,0,29,0" concept="5" trace="myProjectFile" />
-      <node id="2546981710035458910" at="30,45,31,49" concept="16" />
-      <node id="1259651549063096282" at="31,49,32,25" concept="4" />
-      <node id="1259651549063096849" at="32,25,33,11" concept="4" />
-      <node id="4455451047507514949" at="37,43,38,80" concept="11" />
-      <node id="2546981710035458892" at="41,0,42,0" concept="14" trace="LOG_1170860263" />
+      <node id="2546981710035458892" at="26,0,27,0" concept="14" trace="LOG_1170860263" />
+      <node id="2546981710035458895" at="27,0,28,0" concept="14" trace="LOG" />
+      <node id="1259651549063093021" at="29,0,30,0" concept="5" trace="myProjectFile" />
+      <node id="2546981710035458910" at="31,45,32,49" concept="16" />
+      <node id="1259651549063096282" at="32,49,33,25" concept="4" />
+      <node id="1259651549063096849" at="33,25,34,11" concept="4" />
+      <node id="4455451047507514949" at="38,43,39,80" concept="11" />
       <node id="2474867045963922316" at="45,9,46,56" concept="11" />
-      <node id="2474867045963930034" at="48,53,49,72" concept="4" />
+      <node id="3818729150937328767" at="48,53,49,72" concept="4" />
       <node id="2474867045963977550" at="50,7,51,37" concept="11" />
       <node id="4455451047507524970" at="56,22,57,45" concept="10" />
       <node id="4455451047507525168" at="57,45,58,89" concept="4" />
@@ -49,13 +49,13 @@
       <node id="7400034424451054297" at="106,25,107,12" concept="4" />
       <node id="1259651549063153493" at="107,12,108,20" concept="4" />
       <node id="1259651549063157181" at="113,38,114,25" concept="11" />
-      <node id="2474867045963930034" at="47,29,50,7" concept="8" />
+      <node id="3818729150937328767" at="47,29,50,7" concept="8" />
       <node id="4455451047507529550" at="86,0,89,0" concept="9" trace="loadProjectDescriptorWithMacros#()V" />
       <node id="7400034424451034680" at="96,79,99,5" concept="7" />
-      <node id="4455451047507514763" at="36,0,40,0" concept="9" trace="createMacroHelper#()Ljetbrains/mps/util/MacroHelper;" />
+      <node id="4455451047507514763" at="37,0,41,0" concept="9" trace="createMacroHelper#()Ljetbrains/mps/util/MacroHelper;" />
       <node id="1259651549063123807" at="75,0,79,0" concept="9" trace="getElement#()Lorg/jdom/Element;" />
       <node id="7400034424450887706" at="90,0,94,0" concept="15" trace="open#(Ljava/lang/String;)Ljetbrains/mps/core/tool/environment/util/FileMPSProject;" />
-      <node id="2546981710035458906" at="30,0,35,0" concept="2" trace="FileMPSProject#(Ljava/io/File;)V" />
+      <node id="2546981710035458906" at="31,0,36,0" concept="2" trace="FileMPSProject#(Ljava/io/File;)V" />
       <node id="1259651549063105936" at="55,0,60,0" concept="9" trace="save#()V" />
       <node id="2546981710035458938" at="65,0,70,0" concept="9" trace="getComponent#(Ljava/lang/Class;)null" />
       <node id="2546981710035459144" at="80,0,85,0" concept="9" trace="init#()V" />
@@ -64,9 +64,9 @@
       <node id="2474867045963922242" at="44,27,52,5" concept="17" />
       <node id="7400034424450935667" at="95,0,104,0" concept="9" trace="close#()Z" />
       <node id="2546981710035458916" at="42,0,54,0" concept="9" trace="getName#()Ljava/lang/String;" />
-      <scope id="4455451047507514766" at="37,43,38,80" />
+      <scope id="4455451047507514766" at="38,43,39,80" />
       <scope id="2474867045963922244" at="45,9,46,56" />
-      <scope id="2474867045963930034" at="48,53,49,72" />
+      <scope id="3818729150937328767" at="48,53,49,72" />
       <scope id="2546981710035458946" at="67,43,68,16" />
       <scope id="1259651549063123810" at="76,32,77,104" />
       <scope id="4455451047507529541" at="86,50,87,102" />
@@ -77,13 +77,13 @@
         <var name="helper" id="4455451047507524971" />
       </scope>
       <scope id="1259651549063152366" at="106,25,108,20" />
-      <scope id="2546981710035458909" at="30,45,33,11" />
+      <scope id="2546981710035458909" at="31,45,34,11" />
       <scope id="2546981710035459149" at="80,23,83,20" />
       <scope id="4455451047507529550" at="86,0,89,0" />
       <scope id="7400034424451034680" at="96,79,99,5">
         <var name="module" id="7400034424451034683" />
       </scope>
-      <scope id="4455451047507514763" at="36,0,40,0" />
+      <scope id="4455451047507514763" at="37,0,41,0" />
       <scope id="2474867045963922245" at="47,0,51,37">
         <var name="e" id="2474867045963922247" />
       </scope>
@@ -92,7 +92,7 @@
       <scope id="7400034424450887706" at="90,0,94,0">
         <var name="projectPath" id="7400034424450889656" />
       </scope>
-      <scope id="2546981710035458906" at="30,0,35,0">
+      <scope id="2546981710035458906" at="31,0,36,0">
         <var name="file" id="2546981710035458914" />
       </scope>
       <scope id="1259651549063105936" at="55,0,60,0" />
@@ -524,33 +524,33 @@
   </root>
   <root nodeRef="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)/5900076103425047615">
     <file name="MapPathMacrosProvider.java">
-      <node id="5900076103425047618" at="14,0,15,0" concept="5" trace="macros" />
-      <node id="5900076103425047627" at="15,60,16,25" concept="4" />
-      <node id="5900076103425047643" at="19,39,20,28" concept="11" />
-      <node id="5900076103425047653" at="23,37,24,56" concept="11" />
-      <node id="5900076103425047663" at="27,33,28,56" concept="11" />
-      <node id="5900076103425047615" at="30,0,31,0" concept="14" trace="LOG" />
-      <node id="2329394428277189087" at="33,39,34,61" concept="4" />
-      <node id="5900076103425047623" at="15,0,18,0" concept="2" trace="MapPathMacrosProvider#(Ljava/util/Map;)V" />
-      <node id="2329394428277189087" at="32,52,35,5" concept="8" />
-      <node id="5900076103425047637" at="18,0,22,0" concept="9" trace="getValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="5900076103425047648" at="22,0,26,0" concept="9" trace="getUserNames#()Ljava/util/Set;" />
-      <node id="5900076103425047658" at="26,0,30,0" concept="9" trace="getNames#()Ljava/util/Set;" />
+      <node id="5900076103425047615" at="14,0,15,0" concept="14" trace="LOG" />
+      <node id="5900076103425047618" at="15,0,16,0" concept="5" trace="macros" />
+      <node id="5900076103425047627" at="16,60,17,25" concept="4" />
+      <node id="5900076103425047643" at="20,39,21,28" concept="11" />
+      <node id="5900076103425047653" at="24,37,25,56" concept="11" />
+      <node id="5900076103425047663" at="28,33,29,56" concept="11" />
+      <node id="3818729150937330437" at="33,39,34,61" concept="4" />
+      <node id="5900076103425047623" at="16,0,19,0" concept="2" trace="MapPathMacrosProvider#(Ljava/util/Map;)V" />
+      <node id="3818729150937330437" at="32,52,35,5" concept="8" />
+      <node id="5900076103425047637" at="19,0,23,0" concept="9" trace="getValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="5900076103425047648" at="23,0,27,0" concept="9" trace="getUserNames#()Ljava/util/Set;" />
+      <node id="5900076103425047658" at="27,0,31,0" concept="9" trace="getNames#()Ljava/util/Set;" />
       <node id="5900076103425047668" at="31,0,37,0" concept="9" trace="report#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <scope id="5900076103425047626" at="15,60,16,25" />
-      <scope id="5900076103425047642" at="19,39,20,28" />
-      <scope id="5900076103425047652" at="23,37,24,56" />
-      <scope id="5900076103425047662" at="27,33,28,56" />
-      <scope id="2329394428277189087" at="33,39,34,61" />
-      <scope id="5900076103425047623" at="15,0,18,0">
+      <scope id="5900076103425047626" at="16,60,17,25" />
+      <scope id="5900076103425047642" at="20,39,21,28" />
+      <scope id="5900076103425047652" at="24,37,25,56" />
+      <scope id="5900076103425047662" at="28,33,29,56" />
+      <scope id="3818729150937330437" at="33,39,34,61" />
+      <scope id="5900076103425047623" at="16,0,19,0">
         <var name="macros" id="5900076103425047633" />
       </scope>
       <scope id="5900076103425047675" at="32,52,35,5" />
-      <scope id="5900076103425047637" at="18,0,22,0">
+      <scope id="5900076103425047637" at="19,0,23,0">
         <var name="name" id="5900076103425047640" />
       </scope>
-      <scope id="5900076103425047648" at="22,0,26,0" />
-      <scope id="5900076103425047658" at="26,0,30,0" />
+      <scope id="5900076103425047648" at="23,0,27,0" />
+      <scope id="5900076103425047658" at="27,0,31,0" />
       <scope id="5900076103425047668" at="31,0,37,0">
         <var name="macro" id="5900076103425047673" />
         <var name="message" id="5900076103425047671" />

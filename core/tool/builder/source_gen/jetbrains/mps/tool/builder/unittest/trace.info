@@ -180,105 +180,105 @@
   </root>
   <root nodeRef="r:128708be-e37c-484b-b372-892904c802d9(jetbrains.mps.tool.builder.unittest)/2546981710036147300">
     <file name="UnitTestOutputReader.java">
-      <node id="2546981710036147302" at="16,0,17,0" concept="4" trace="myUnitTestProcess" />
-      <node id="2546981710036147305" at="17,0,18,0" concept="4" trace="myInputReader" />
-      <node id="2546981710036147308" at="18,0,19,0" concept="4" trace="myErrorReader" />
-      <node id="2546981710036147311" at="19,0,20,0" concept="4" trace="myOutputWriter" />
-      <node id="2546981710036147314" at="20,0,21,0" concept="4" trace="myUnitTestListener" />
-      <node id="2546981710036147317" at="22,0,23,0" concept="4" trace="myInsideTestError" />
-      <node id="2546981710036147321" at="23,0,24,0" concept="4" trace="myLastError" />
-      <node id="2546981710036147326" at="24,0,25,0" concept="4" trace="myLastMessage" />
-      <node id="2546981710036147330" at="25,0,26,0" concept="4" trace="myCurrentlyRunningTest" />
-      <node id="2546981710036147343" at="27,109,28,40" concept="3" />
-      <node id="2546981710036147347" at="28,40,29,42" concept="3" />
-      <node id="2546981710036147366" at="32,55,33,37" concept="3" />
-      <node id="2546981710036147385" at="38,55,39,36" concept="3" />
-      <node id="2546981710036147389" at="41,6,42,101" concept="3" />
-      <node id="2546981710036147408" at="45,66,46,37" concept="9" />
-      <node id="2546981710036147509" at="47,60,48,32" concept="3" />
-      <node id="2546981710036147511" at="48,32,49,81" concept="3" />
-      <node id="2546981710036147517" at="49,81,50,61" concept="3" />
-      <node id="2546981710036147497" at="52,58,53,36" concept="3" />
-      <node id="2546981710036147501" at="53,36,54,87" concept="3" />
-      <node id="2546981710036147486" at="56,62,57,74" concept="3" />
-      <node id="2546981710036147492" at="57,74,58,31" concept="3" />
-      <node id="2546981710036147465" at="60,62,61,128" concept="3" />
-      <node id="2546981710036147476" at="61,128,62,39" concept="3" />
-      <node id="2546981710036147481" at="62,39,63,32" concept="3" />
-      <node id="2546981710036147454" at="66,30,67,40" concept="3" />
-      <node id="2546981710036147459" at="67,40,68,33" concept="3" />
-      <node id="2546981710036147448" at="69,14,70,42" concept="3" />
-      <node id="2546981710036147438" at="72,12,73,42" concept="3" />
-      <node id="2546981710036147531" at="78,41,79,62" concept="3" />
-      <node id="2546981710036147536" at="79,62,80,36" concept="3" />
-      <node id="2546981710036147548" at="84,56,85,43" concept="10" />
-      <node id="2546981710036147559" at="88,22,89,26" concept="3" />
-      <node id="2546981710036147563" at="89,26,90,26" concept="3" />
-      <node id="2546981710036147577" at="91,9,92,31" concept="3" />
-      <node id="2546981710036147581" at="92,31,93,29" concept="3" />
-      <node id="2546981710036147585" at="93,29,94,41" concept="10" />
-      <node id="2546981710036147589" at="97,5,98,14" concept="10" />
-      <node id="2546981710036147300" at="101,0,102,0" concept="12" trace="LOG" />
+      <node id="2546981710036147300" at="16,0,17,0" concept="12" trace="LOG" />
+      <node id="2546981710036147302" at="17,0,18,0" concept="4" trace="myUnitTestProcess" />
+      <node id="2546981710036147305" at="18,0,19,0" concept="4" trace="myInputReader" />
+      <node id="2546981710036147308" at="19,0,20,0" concept="4" trace="myErrorReader" />
+      <node id="2546981710036147311" at="20,0,21,0" concept="4" trace="myOutputWriter" />
+      <node id="2546981710036147314" at="21,0,22,0" concept="4" trace="myUnitTestListener" />
+      <node id="2546981710036147317" at="23,0,24,0" concept="4" trace="myInsideTestError" />
+      <node id="2546981710036147321" at="24,0,25,0" concept="4" trace="myLastError" />
+      <node id="2546981710036147326" at="25,0,26,0" concept="4" trace="myLastMessage" />
+      <node id="2546981710036147330" at="26,0,27,0" concept="4" trace="myCurrentlyRunningTest" />
+      <node id="2546981710036147343" at="28,109,29,40" concept="3" />
+      <node id="2546981710036147347" at="29,40,30,42" concept="3" />
+      <node id="2546981710036147366" at="33,55,34,37" concept="3" />
+      <node id="2546981710036147385" at="39,55,40,36" concept="3" />
+      <node id="2546981710036147389" at="42,6,43,101" concept="3" />
+      <node id="2546981710036147408" at="46,66,47,37" concept="9" />
+      <node id="2546981710036147509" at="48,60,49,32" concept="3" />
+      <node id="2546981710036147511" at="49,32,50,81" concept="3" />
+      <node id="2546981710036147517" at="50,81,51,61" concept="3" />
+      <node id="2546981710036147497" at="53,58,54,36" concept="3" />
+      <node id="2546981710036147501" at="54,36,55,87" concept="3" />
+      <node id="2546981710036147486" at="57,62,58,74" concept="3" />
+      <node id="2546981710036147492" at="58,74,59,31" concept="3" />
+      <node id="2546981710036147465" at="61,62,62,128" concept="3" />
+      <node id="2546981710036147476" at="62,128,63,39" concept="3" />
+      <node id="2546981710036147481" at="63,39,64,32" concept="3" />
+      <node id="2546981710036147454" at="67,30,68,40" concept="3" />
+      <node id="2546981710036147459" at="68,40,69,33" concept="3" />
+      <node id="2546981710036147448" at="70,14,71,42" concept="3" />
+      <node id="2546981710036147438" at="73,12,74,42" concept="3" />
+      <node id="2546981710036147531" at="79,41,80,62" concept="3" />
+      <node id="2546981710036147536" at="80,62,81,36" concept="3" />
+      <node id="2546981710036147548" at="85,56,86,43" concept="10" />
+      <node id="2546981710036147559" at="89,22,90,26" concept="3" />
+      <node id="2546981710036147563" at="90,26,91,26" concept="3" />
+      <node id="2546981710036147577" at="92,9,93,31" concept="3" />
+      <node id="2546981710036147581" at="93,31,94,29" concept="3" />
+      <node id="2546981710036147585" at="94,29,95,41" concept="10" />
+      <node id="2546981710036147589" at="98,5,99,14" concept="10" />
       <node id="2546981710036147595" at="103,0,104,0" concept="4" trace="myIs" />
       <node id="2546981710036147604" at="105,45,106,16" concept="3" />
       <node id="2546981710036147614" at="110,23,111,41" concept="9" />
       <node id="2546981710036147645" at="113,62,114,35" concept="3" />
-      <node id="6393573909194837874" at="117,44,118,27" concept="3" />
+      <node id="3818729150937341090" at="117,44,118,27" concept="3" />
       <node id="2546981710036147652" at="123,0,124,0" concept="8" trace="addMessage#(Ljava/lang/String;)V" />
-      <node id="2546981710036147446" at="69,12,71,7" concept="0" />
-      <node id="2546981710036147436" at="72,10,74,5" concept="0" />
-      <node id="2546981710036147540" at="84,0,87,0" concept="8" trace="removeTag#(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="2546981710036147446" at="70,12,72,7" concept="0" />
+      <node id="2546981710036147436" at="73,10,75,5" concept="0" />
+      <node id="2546981710036147540" at="85,0,88,0" concept="8" trace="removeTag#(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
       <node id="2546981710036147598" at="105,0,108,0" concept="1" trace="BaseOutputReader#(Ljava/io/InputStream;)V" />
       <node id="2546981710036147634" at="112,11,115,9" concept="15" />
-      <node id="6393573909194837874" at="116,29,119,9" concept="7" />
-      <node id="2546981710036147360" at="31,0,35,0" concept="8" trace="addMessage#(Ljava/lang/String;)V" />
-      <node id="2546981710036147379" at="37,0,41,0" concept="8" trace="addMessage#(Ljava/lang/String;)V" />
-      <node id="2546981710036147526" at="77,42,81,5" concept="7" />
-      <node id="2546981710036147351" at="29,42,35,6" concept="3" />
-      <node id="2546981710036147370" at="35,6,41,6" concept="3" />
-      <node id="2546981710036147444" at="65,16,71,7" concept="7" />
-      <node id="2546981710036147522" at="77,0,83,0" concept="8" trace="saveLastTestIfNecessary#()V" />
-      <node id="2546981710036147567" at="90,26,97,5" concept="14" />
+      <node id="3818729150937341090" at="116,29,119,9" concept="7" />
+      <node id="2546981710036147360" at="32,0,36,0" concept="8" trace="addMessage#(Ljava/lang/String;)V" />
+      <node id="2546981710036147379" at="38,0,42,0" concept="8" trace="addMessage#(Ljava/lang/String;)V" />
+      <node id="2546981710036147526" at="78,42,82,5" concept="7" />
+      <node id="2546981710036147351" at="30,42,36,6" concept="3" />
+      <node id="2546981710036147370" at="36,6,42,6" concept="3" />
+      <node id="2546981710036147444" at="66,16,72,7" concept="7" />
+      <node id="2546981710036147522" at="78,0,84,0" concept="8" trace="saveLastTestIfNecessary#()V" />
+      <node id="2546981710036147567" at="91,26,98,5" concept="14" />
       <node id="2546981710036147622" at="111,41,120,7" concept="14" />
-      <node id="2546981710036147434" at="64,10,74,5" concept="7" />
-      <node id="2546981710036147555" at="88,0,100,0" concept="8" trace="start#()I" />
+      <node id="2546981710036147434" at="65,10,75,5" concept="7" />
+      <node id="2546981710036147555" at="89,0,101,0" concept="8" trace="start#()I" />
       <node id="2546981710036147610" at="109,0,122,0" concept="8" trace="run#()V" />
-      <node id="2546981710036147429" at="59,10,74,5" concept="7" />
-      <node id="2546981710036147333" at="27,0,44,0" concept="1" trace="UnitTestOutputReader#(Ljava/lang/Process;Ljetbrains/mps/tool/builder/unittest/UnitTestListener;)V" />
-      <node id="2546981710036147424" at="55,10,74,5" concept="7" />
-      <node id="2546981710036147419" at="51,10,74,5" concept="7" />
-      <node id="2546981710036147414" at="46,37,74,5" concept="7" />
-      <node id="2546981710036147399" at="45,0,76,0" concept="8" trace="parseMessage#(Ljava/lang/String;Z)V" />
-      <scope id="2546981710036147568" at="95,0,95,44">
+      <node id="2546981710036147429" at="60,10,75,5" concept="7" />
+      <node id="2546981710036147333" at="28,0,45,0" concept="1" trace="UnitTestOutputReader#(Ljava/lang/Process;Ljetbrains/mps/tool/builder/unittest/UnitTestListener;)V" />
+      <node id="2546981710036147424" at="56,10,75,5" concept="7" />
+      <node id="2546981710036147419" at="52,10,75,5" concept="7" />
+      <node id="2546981710036147414" at="47,37,75,5" concept="7" />
+      <node id="2546981710036147399" at="46,0,77,0" concept="8" trace="parseMessage#(Ljava/lang/String;Z)V" />
+      <scope id="2546981710036147568" at="96,0,96,44">
         <var name="ignored" id="2546981710036147570" />
       </scope>
-      <scope id="2546981710036147569" at="95,44,95,44" />
-      <scope id="2546981710036147572" at="96,0,96,35">
+      <scope id="2546981710036147569" at="96,44,96,44" />
+      <scope id="2546981710036147572" at="97,0,97,35">
         <var name="ignored" id="2546981710036147574" />
       </scope>
-      <scope id="2546981710036147573" at="96,35,96,35" />
-      <scope id="2546981710036147365" at="32,55,33,37" />
-      <scope id="2546981710036147384" at="38,55,39,36" />
-      <scope id="2546981710036147447" at="69,14,70,42" />
-      <scope id="2546981710036147437" at="72,12,73,42" />
-      <scope id="2546981710036147547" at="84,56,85,43" />
+      <scope id="2546981710036147573" at="97,35,97,35" />
+      <scope id="2546981710036147365" at="33,55,34,37" />
+      <scope id="2546981710036147384" at="39,55,40,36" />
+      <scope id="2546981710036147447" at="70,14,71,42" />
+      <scope id="2546981710036147437" at="73,12,74,42" />
+      <scope id="2546981710036147547" at="85,56,86,43" />
       <scope id="2546981710036147603" at="105,45,106,16" />
       <scope id="2546981710036147644" at="113,62,114,35" />
-      <scope id="6393573909194837874" at="117,44,118,27" />
+      <scope id="3818729150937341090" at="117,44,118,27" />
       <scope id="2546981710036147652" at="123,0,124,0">
         <var name="message" id="2546981710036147655" />
       </scope>
-      <scope id="2546981710036147496" at="52,58,54,87" />
-      <scope id="2546981710036147485" at="56,62,58,31" />
-      <scope id="2546981710036147453" at="66,30,68,33" />
-      <scope id="2546981710036147530" at="78,41,80,36" />
-      <scope id="2546981710036147508" at="47,60,50,61" />
-      <scope id="2546981710036147464" at="60,62,63,32" />
-      <scope id="2546981710036147540" at="84,0,87,0">
+      <scope id="2546981710036147496" at="53,58,55,87" />
+      <scope id="2546981710036147485" at="57,62,59,31" />
+      <scope id="2546981710036147453" at="67,30,69,33" />
+      <scope id="2546981710036147530" at="79,41,81,36" />
+      <scope id="2546981710036147508" at="48,60,51,61" />
+      <scope id="2546981710036147464" at="61,62,64,32" />
+      <scope id="2546981710036147540" at="85,0,88,0">
         <var name="prefix" id="2546981710036147545" />
         <var name="text" id="2546981710036147543" />
       </scope>
-      <scope id="2546981710036147576" at="91,9,94,41" />
+      <scope id="2546981710036147576" at="92,9,95,41" />
       <scope id="2546981710036147598" at="105,0,108,0">
         <var name="is" id="2546981710036147601" />
       </scope>
@@ -287,35 +287,35 @@
         <var name="e" id="2546981710036147631" />
       </scope>
       <scope id="2546981710036147624" at="116,29,119,9" />
-      <scope id="2546981710036147360" at="31,0,35,0">
+      <scope id="2546981710036147360" at="32,0,36,0">
         <var name="message" id="2546981710036147363" />
       </scope>
-      <scope id="2546981710036147379" at="37,0,41,0">
+      <scope id="2546981710036147379" at="38,0,42,0">
         <var name="message" id="2546981710036147382" />
       </scope>
-      <scope id="2546981710036147525" at="77,42,81,5" />
-      <scope id="2546981710036147443" at="65,16,71,7" />
-      <scope id="2546981710036147522" at="77,0,83,0" />
-      <scope id="2546981710036147558" at="88,22,98,14" />
+      <scope id="2546981710036147525" at="78,42,82,5" />
+      <scope id="2546981710036147443" at="66,16,72,7" />
+      <scope id="2546981710036147522" at="78,0,84,0" />
+      <scope id="2546981710036147558" at="89,22,99,14" />
       <scope id="2546981710036147613" at="110,23,120,7">
         <var name="s" id="2546981710036147615" />
       </scope>
-      <scope id="2546981710036147555" at="88,0,100,0" />
+      <scope id="2546981710036147555" at="89,0,101,0" />
       <scope id="2546981710036147610" at="109,0,122,0" />
-      <scope id="2546981710036147342" at="27,109,42,101" />
-      <scope id="2546981710036147333" at="27,0,44,0">
+      <scope id="2546981710036147342" at="28,109,43,101" />
+      <scope id="2546981710036147333" at="28,0,45,0">
         <var name="unitTestListener" id="2546981710036147339" />
         <var name="unitTestProcess" id="2546981710036147336" />
       </scope>
-      <scope id="2546981710036147407" at="45,66,74,5">
+      <scope id="2546981710036147407" at="46,66,75,5">
         <var name="textTrimmed" id="2546981710036147409" />
       </scope>
-      <scope id="2546981710036147399" at="45,0,76,0">
+      <scope id="2546981710036147399" at="46,0,77,0">
         <var name="error" id="2546981710036147405" />
         <var name="text" id="2546981710036147402" />
       </scope>
-      <unit id="2546981710036147356" at="30,24,35,5" name="jetbrains.mps.tool.builder.unittest.UnitTestOutputReader$1" />
-      <unit id="2546981710036147375" at="36,24,41,5" name="jetbrains.mps.tool.builder.unittest.UnitTestOutputReader$2" />
+      <unit id="2546981710036147356" at="31,24,36,5" name="jetbrains.mps.tool.builder.unittest.UnitTestOutputReader$1" />
+      <unit id="2546981710036147375" at="37,24,42,5" name="jetbrains.mps.tool.builder.unittest.UnitTestOutputReader$2" />
       <unit id="2546981710036147592" at="102,0,125,0" name="jetbrains.mps.tool.builder.unittest.UnitTestOutputReader$BaseOutputReader" />
       <unit id="2546981710036147300" at="15,0,126,0" name="jetbrains.mps.tool.builder.unittest.UnitTestOutputReader" />
     </file>

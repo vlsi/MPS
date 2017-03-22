@@ -50,9 +50,9 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 public class VcsActionsUtil {
+  private static final Logger LOG = LogManager.getLogger(VcsActionsUtil.class);
   private VcsActionsUtil() {
   }
-  protected static Logger LOG = LogManager.getLogger(VcsActionsUtil.class);
   public static void showRootDifference(SModel model, final SNode node, Project project, @Nullable Bounds bounds) {
     try {
       DataSource source = model.getSource();

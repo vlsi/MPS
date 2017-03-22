@@ -22,8 +22,8 @@ import java.io.ByteArrayInputStream;
  */
 @Deprecated
 public class Icon2IconResourceAdapter_Deprecated extends IconResource {
+  private static final Logger LOG = LogManager.getLogger(Icon2IconResourceAdapter_Deprecated.class);
   private byte[] myIcon = null;
-  protected static Logger LOG = LogManager.getLogger(Icon2IconResourceAdapter_Deprecated.class);
   @Deprecated
   public Icon2IconResourceAdapter_Deprecated(Icon icon) {
     super(null, null);

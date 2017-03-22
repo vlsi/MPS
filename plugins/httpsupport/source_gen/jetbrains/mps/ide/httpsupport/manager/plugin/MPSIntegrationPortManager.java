@@ -8,6 +8,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 
 public class MPSIntegrationPortManager extends CustomPortServerManagerBase {
+  private static final Logger LOG = LogManager.getLogger(MPSIntegrationPortManager.class);
 
   public static final int PORT_FIRST = 63330;
   public static final int PORT_LAST = 63340;
@@ -19,7 +20,6 @@ public class MPSIntegrationPortManager extends CustomPortServerManagerBase {
     return port;
   }
 
-  protected static Logger LOG = LogManager.getLogger(MPSIntegrationPortManager.class);
   @Override
   public void cannotBind(Exception e, int port) {
     if (port >= PORT_LAST) {

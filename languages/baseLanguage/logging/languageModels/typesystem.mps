@@ -7,6 +7,7 @@
   </languages>
   <imports>
     <import index="tpib" ref="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" />
+    <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -110,10 +111,80 @@
           </node>
         </node>
       </node>
+      <node concept="2NvLDW" id="1KXtTGFTOJp" role="3cqZAp">
+        <node concept="mw_s8" id="1KXtTGFTOJq" role="1ZfhKB">
+          <node concept="2c44tf" id="1KXtTGFTOJr" role="mwGJk">
+            <node concept="3uibUv" id="1KXtTGFTP5a" role="2c44tc">
+              <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="1KXtTGFTOJt" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1KXtTGFTOJu" role="mwGJk">
+            <node concept="2OqwBi" id="1KXtTGFTOJv" role="1Z2MuG">
+              <node concept="3TrEf2" id="1KXtTGFTP1C" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpib:1KXtTGFTOJf" resolve="project" />
+              </node>
+              <node concept="1YBJjd" id="1KXtTGFTOJx" role="2Oq$k0">
+                <ref role="1YBMHb" node="30LfEMLAnHK" resolve="logStatement" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="1YaCAy" id="30LfEMLAnHK" role="1YuTPh">
       <property role="TrG5h" value="logStatement" />
       <ref role="1YaFvo" to="tpib:gZ4ab7v" resolve="LogStatement" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="1KXtTGFSJNl">
+    <property role="TrG5h" value="typeof_LogToFileStatement" />
+    <node concept="3clFbS" id="1KXtTGFSJNm" role="18ibNy">
+      <node concept="2NvLDW" id="1KXtTGFSJQc" role="3cqZAp">
+        <node concept="mw_s8" id="1KXtTGFSJQd" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1KXtTGFSJQe" role="mwGJk">
+            <node concept="2OqwBi" id="1KXtTGFSJQf" role="1Z2MuG">
+              <node concept="1YBJjd" id="1KXtTGFSJZP" role="2Oq$k0">
+                <ref role="1YBMHb" node="1KXtTGFSJNo" resolve="statement" />
+              </node>
+              <node concept="3TrEf2" id="1KXtTGFSKrH" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpib:1KXtTGFSJ6T" resolve="message" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="1KXtTGFSJQi" role="1ZfhKB">
+          <node concept="2c44tf" id="1KXtTGFSJQj" role="mwGJk">
+            <node concept="17QB3L" id="1KXtTGFSJQk" role="2c44tc" />
+          </node>
+        </node>
+      </node>
+      <node concept="2NvLDW" id="1KXtTGFSJQl" role="3cqZAp">
+        <node concept="mw_s8" id="1KXtTGFSJQm" role="1ZfhKB">
+          <node concept="2c44tf" id="1KXtTGFSJQn" role="mwGJk">
+            <node concept="3uibUv" id="1KXtTGFSJQo" role="2c44tc">
+              <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="1KXtTGFSJQp" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1KXtTGFSJQq" role="mwGJk">
+            <node concept="2OqwBi" id="1KXtTGFSJQr" role="1Z2MuG">
+              <node concept="3TrEf2" id="1KXtTGFSKSr" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpib:1KXtTGFSJ6V" resolve="throwable" />
+              </node>
+              <node concept="1YBJjd" id="1KXtTGFSKvf" role="2Oq$k0">
+                <ref role="1YBMHb" node="1KXtTGFSJNo" resolve="statement" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1KXtTGFSJNo" role="1YuTPh">
+      <property role="TrG5h" value="statement" />
+      <ref role="1YaFvo" to="tpib:1KXtTGFSJ2T" resolve="LogToFileStatement" />
     </node>
   </node>
 </model>

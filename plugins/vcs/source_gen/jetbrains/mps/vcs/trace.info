@@ -349,14 +349,14 @@
   </root>
   <root nodeRef="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)/7314351270975557769">
     <file name="TestMergeDialog.java">
-      <node id="2926331382165146701" at="45,0,46,0" concept="9" trace="ENV" />
-      <node id="7314351270975557776" at="46,0,47,0" concept="9" trace="myParentDisposable" />
-      <node id="949244662739165476" at="49,5,50,57" concept="2" />
-      <node id="7314351270975557808" at="57,47,58,49" concept="7" />
-      <node id="7314351270975557817" at="60,52,61,76" concept="7" />
-      <node id="7314351270975557824" at="62,7,63,18" concept="7" />
-      <node id="7314351270975557828" at="67,0,68,0" concept="9" trace="ourMPSProject" />
-      <node id="7314351270975557769" at="72,0,73,0" concept="9" trace="LOG" />
+      <node id="7314351270975557769" at="45,0,46,0" concept="9" trace="LOG" />
+      <node id="2926331382165146701" at="46,0,47,0" concept="9" trace="ENV" />
+      <node id="7314351270975557776" at="47,0,48,0" concept="9" trace="myParentDisposable" />
+      <node id="949244662739165476" at="50,5,51,57" concept="2" />
+      <node id="7314351270975557808" at="58,47,59,49" concept="7" />
+      <node id="7314351270975557817" at="61,52,62,76" concept="7" />
+      <node id="7314351270975557824" at="63,7,64,18" concept="7" />
+      <node id="7314351270975557828" at="68,0,69,0" concept="9" trace="ourMPSProject" />
       <node id="949244662739155928" at="74,27,75,52" concept="2" />
       <node id="949244662739158828" at="75,52,76,54" concept="6" />
       <node id="949244662739158848" at="76,54,77,65" concept="2" />
@@ -383,34 +383,34 @@
       <node id="4915141521380566783" at="109,91,110,132" concept="6" />
       <node id="4915141521380728663" at="111,9,112,255" concept="6" />
       <node id="4915141521380765409" at="112,255,113,63" concept="2" />
-      <node id="4915141521380968141" at="115,42,116,25" concept="2" />
-      <node id="7314351270975557834" at="69,0,71,0" concept="1" trace="TestMergeDialog#()V" />
+      <node id="3818729150937340920" at="115,42,116,25" concept="2" />
+      <node id="7314351270975557834" at="70,0,72,0" concept="1" trace="TestMergeDialog#()V" />
       <node id="7314351270975558005" at="90,12,92,7" concept="0" />
       <node id="7314351270975557942" at="100,12,102,7" concept="0" />
-      <node id="7314351270975557803" at="56,56,59,7" concept="4" />
-      <node id="7314351270975557812" at="59,7,62,7" concept="4" />
+      <node id="7314351270975557803" at="57,56,60,7" concept="4" />
+      <node id="7314351270975557812" at="60,7,63,7" concept="4" />
       <node id="7314351270975557888" at="103,10,106,5" concept="0" />
-      <node id="4915141521380968141" at="114,45,117,7" concept="4" />
-      <node id="949244662739164312" at="48,0,53,0" concept="9" trace="___init" />
+      <node id="3818729150937340920" at="114,45,117,7" concept="4" />
+      <node id="949244662739164312" at="49,0,54,0" concept="9" trace="___init" />
       <node id="949244662739155908" at="73,96,78,5" concept="4" />
       <node id="7314351270975557999" at="87,28,92,7" concept="4" />
       <node id="7314351270975557936" at="97,55,102,7" concept="4" />
       <node id="4915141521380953057" at="110,132,118,5" concept="12" />
-      <node id="7314351270975557786" at="55,0,65,0" concept="5" trace="getComponent#(Ljava/lang/Class;)null" />
-      <node id="7314351270975557780" at="54,0,66,0" concept="9" trace="ourProject" />
+      <node id="7314351270975557786" at="56,0,66,0" concept="5" trace="getComponent#(Ljava/lang/Class;)null" />
+      <node id="7314351270975557780" at="55,0,67,0" concept="9" trace="ourProject" />
       <node id="7314351270975557876" at="93,10,106,5" concept="4" />
       <node id="7314351270975557864" at="82,22,106,5" concept="4" />
       <node id="7314351270975557838" at="73,0,120,0" concept="10" trace="main#([Ljava/lang/String;)V" />
-      <scope id="7314351270975557837" at="69,28,69,28" />
-      <scope id="949244662739164342" at="49,5,50,57" />
-      <scope id="7314351270975557807" at="57,47,58,49" />
-      <scope id="7314351270975557816" at="60,52,61,76" />
+      <scope id="7314351270975557837" at="70,28,70,28" />
+      <scope id="949244662739164342" at="50,5,51,57" />
+      <scope id="7314351270975557807" at="58,47,59,49" />
+      <scope id="7314351270975557816" at="61,52,62,76" />
       <scope id="7314351270975558013" at="88,29,89,94" />
       <scope id="7314351270975558006" at="90,14,91,29" />
       <scope id="7314351270975557950" at="98,29,99,88" />
       <scope id="7314351270975557943" at="100,14,101,29" />
-      <scope id="4915141521380968141" at="115,42,116,25" />
-      <scope id="7314351270975557834" at="69,0,71,0" />
+      <scope id="3818729150937340920" at="115,42,116,25" />
+      <scope id="7314351270975557834" at="70,0,72,0" />
       <scope id="7314351270975557889" at="103,12,105,13" />
       <scope id="4915141521380953059" at="111,9,113,63">
         <var name="request" id="4915141521380728664" />
@@ -422,12 +422,12 @@
         <var name="e" id="4915141521380953062" />
       </scope>
       <scope id="4915141521380953066" at="114,45,117,7" />
-      <scope id="7314351270975557793" at="56,56,63,18" />
+      <scope id="7314351270975557793" at="57,56,64,18" />
       <scope id="7314351270975557896" at="94,47,102,7" />
       <scope id="7314351270975557959" at="83,47,92,7">
         <var name="zipped" id="7314351270975557961" />
       </scope>
-      <scope id="7314351270975557786" at="55,0,65,0">
+      <scope id="7314351270975557786" at="56,0,66,0">
         <var name="interfaceClass" id="7314351270975557790" />
       </scope>
       <scope id="7314351270975557844" at="73,96,118,5">
@@ -440,8 +440,8 @@
       <scope id="7314351270975557838" at="73,0,120,0">
         <var name="args" id="7314351270975557841" />
       </scope>
-      <unit id="949244662739164330" at="48,38,52,3" name="jetbrains.mps.vcs.TestMergeDialog$1" />
-      <unit id="7314351270975557785" at="54,42,65,3" name="jetbrains.mps.vcs.TestMergeDialog$2" />
+      <unit id="949244662739164330" at="49,38,53,3" name="jetbrains.mps.vcs.TestMergeDialog$1" />
+      <unit id="7314351270975557785" at="55,42,66,3" name="jetbrains.mps.vcs.TestMergeDialog$2" />
       <unit id="7314351270975557769" at="44,0,121,0" name="jetbrains.mps.vcs.TestMergeDialog" />
     </file>
   </root>

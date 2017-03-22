@@ -144,12 +144,12 @@
   </root>
   <root nodeRef="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/6407023681582958584">
     <file name="AttributeOperations.java">
-      <node id="6407023681583007509" at="34,39,35,36" concept="11" />
-      <node id="6407023681582958584" at="39,0,40,0" concept="14" trace="LOG" />
+      <node id="6407023681582958584" at="30,0,31,0" concept="14" trace="LOG" />
+      <node id="6407023681583007509" at="35,39,36,36" concept="11" />
       <node id="6407023681583007523" at="40,81,41,59" concept="10" />
       <node id="1287809918884497331" at="42,48,43,18" concept="11" />
-      <node id="3912421253250207012" at="46,42,47,140" concept="5" />
-      <node id="3912421253250607786" at="49,42,50,314" concept="5" />
+      <node id="3818729150937313217" at="46,42,47,140" concept="5" />
+      <node id="3818729150937313231" at="49,42,50,314" concept="5" />
       <node id="6407023681583007534" at="52,5,53,47" concept="11" />
       <node id="6407023681583007566" at="55,94,56,216" concept="5" />
       <node id="6407023681583007584" at="56,216,57,29" concept="5" />
@@ -165,8 +165,8 @@
       <node id="6407023681583011530" at="79,94,80,62" concept="10" />
       <node id="3912421253249258363" at="81,70,82,44" concept="5" />
       <node id="6407023681583030401" at="83,33,84,47" concept="5" />
-      <node id="3912421253250267052" at="87,44,88,164" concept="5" />
-      <node id="3912421253250648194" at="90,44,91,322" concept="5" />
+      <node id="3818729150937313289" at="87,44,88,164" concept="5" />
+      <node id="3818729150937313303" at="90,44,91,322" concept="5" />
       <node id="3912421253249237180" at="93,7,94,88" concept="5" />
       <node id="6407023681583011580" at="94,88,95,31" concept="5" />
       <node id="6407023681583066557" at="96,5,97,17" concept="11" />
@@ -229,15 +229,15 @@
       <node id="8917671305715580708" at="269,71,270,46" concept="11" />
       <node id="6958265084166759185" at="272,73,273,46" concept="11" />
       <node id="6958265084166759195" at="275,72,276,46" concept="11" />
-      <node id="6407023681582958586" at="30,0,32,0" concept="3" trace="AttributeOperations#()V" />
+      <node id="6407023681582958586" at="31,0,33,0" concept="3" trace="AttributeOperations#()V" />
       <node id="3930211753441979004" at="64,10,66,5" concept="1" />
-      <node id="6407023681583007505" at="34,0,37,0" concept="9" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6407023681583007505" at="35,0,38,0" concept="9" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1287809918884497321" at="41,59,44,5" concept="8" />
-      <node id="3912421253250207012" at="45,50,48,7" concept="8" />
-      <node id="3912421253250607786" at="48,7,51,7" concept="8" />
+      <node id="3818729150937313217" at="45,50,48,7" concept="8" />
+      <node id="3818729150937313231" at="48,7,51,7" concept="8" />
       <node id="6407023681583016445" at="73,57,76,7" concept="8" />
-      <node id="3912421253250267052" at="86,55,89,9" concept="8" />
-      <node id="3912421253250648194" at="89,9,92,9" concept="8" />
+      <node id="3818729150937313289" at="86,55,89,9" concept="8" />
+      <node id="3818729150937313303" at="89,9,92,9" concept="8" />
       <node id="6407023681583065611" at="99,0,102,0" concept="15" trace="getAttributeList#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)Ljava/util/List;" />
       <node id="1341860900489782224" at="112,172,115,5" concept="8" />
       <node id="4927972719736137613" at="121,170,124,5" concept="8" />
@@ -275,7 +275,7 @@
       <node id="6407023681583065681" at="244,0,248,0" concept="9" trace="insertAfter#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6407023681583065689" at="248,0,252,0" concept="9" trace="doAddReference#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6407023681583065695" at="252,0,256,0" concept="9" trace="doRemoveReference#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6407023681582958596" at="32,98,37,7" concept="11" />
+      <node id="6407023681582958596" at="33,98,38,7" concept="11" />
       <node id="6407023681583007554" at="55,0,60,0" concept="15" trace="addAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3930211753441975828" at="61,41,66,5" concept="8" />
       <node id="6407023681583016440" at="72,100,77,5" concept="7" />
@@ -286,7 +286,7 @@
       <node id="9062000705415603712" at="208,90,213,7" concept="11" />
       <node id="8917671305715580696" at="215,93,220,7" concept="11" />
       <node id="6958265084166759174" at="222,103,227,7" concept="11" />
-      <node id="6407023681582958591" at="32,0,39,0" concept="15" trace="getAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)Ljava/lang/Iterable;" />
+      <node id="6407023681582958591" at="33,0,40,0" concept="15" trace="getAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)Ljava/lang/Iterable;" />
       <node id="4744614252205482471" at="192,0,199,0" concept="15" trace="getPropertyAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SProperty;)Ljava/lang/Iterable;" />
       <node id="9062000705415603710" at="208,0,215,0" concept="15" trace="getLinkAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SReferenceLink;)Ljava/lang/Iterable;" />
       <node id="8917671305715580694" at="215,0,222,0" concept="15" trace="getChildAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Ljava/lang/Iterable;" />
@@ -305,18 +305,18 @@
       <node id="6407023681582990196" at="40,0,55,0" concept="15" trace="getAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6407023681583011539" at="80,62,96,5" concept="8" />
       <node id="6407023681582990187" at="79,0,99,0" concept="15" trace="setAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="6407023681582958589" at="30,33,30,33" />
-      <scope id="6407023681583007506" at="34,39,35,36" />
+      <scope id="6407023681582958589" at="31,33,31,33" />
+      <scope id="6407023681583007506" at="35,39,36,36" />
       <scope id="1287809918884497322" at="42,48,43,18" />
-      <scope id="3912421253250207012" at="46,42,47,140" />
-      <scope id="3912421253250607786" at="49,42,50,314" />
+      <scope id="3818729150937313217" at="46,42,47,140" />
+      <scope id="3818729150937313231" at="49,42,50,314" />
       <scope id="3930211753441975830" at="62,242,63,44" />
       <scope id="3930211753441979005" at="64,12,65,60" />
       <scope id="6407023681583016447" at="74,48,75,46" />
       <scope id="6407023681583011540" at="81,70,82,44" />
       <scope id="6407023681583011570" at="83,33,84,47" />
-      <scope id="3912421253250267052" at="87,44,88,164" />
-      <scope id="3912421253250648194" at="90,44,91,322" />
+      <scope id="3818729150937313289" at="87,44,88,164" />
+      <scope id="3818729150937313303" at="90,44,91,322" />
       <scope id="6407023681583065614" at="99,91,100,93" />
       <scope id="1341860900489782225" at="113,25,114,106" />
       <scope id="4927972719736137614" at="122,25,123,106" />
@@ -349,7 +349,7 @@
       <scope id="8917671305715580708" at="269,71,270,46" />
       <scope id="6958265084166759185" at="272,73,273,46" />
       <scope id="6958265084166759195" at="275,72,276,46" />
-      <scope id="6407023681582958586" at="30,0,32,0" />
+      <scope id="6407023681582958586" at="31,0,33,0" />
       <scope id="9062000705415657778" at="102,111,104,107">
         <var name="model" id="9062000705415657780" />
       </scope>
@@ -360,7 +360,7 @@
       <scope id="11692214889279424" at="132,70,134,168" />
       <scope id="1341860900489815562" at="150,71,152,178" />
       <scope id="6407023681583065642" at="240,77,242,41" />
-      <scope id="6407023681583007505" at="34,0,37,0">
+      <scope id="6407023681583007505" at="35,0,38,0">
         <var name="it" id="6407023681583007505" />
       </scope>
       <scope id="6407023681583007557" at="55,94,58,17" />
@@ -478,7 +478,7 @@
       <scope id="6407023681583065695" at="252,0,256,0">
         <var name="node" id="6407023681583065698" />
       </scope>
-      <scope id="6407023681582958594" at="32,98,37,7" />
+      <scope id="6407023681582958594" at="33,98,38,7" />
       <scope id="6407023681583007554" at="55,0,60,0">
         <var name="descriptor" id="6407023681583007560" />
         <var name="node" id="6407023681583007558" />
@@ -498,7 +498,7 @@
       <scope id="8452361719892525252" at="222,103,227,7" />
       <scope id="3912421253250199043" at="45,50,51,7" />
       <scope id="3912421253250259119" at="86,55,92,9" />
-      <scope id="6407023681582958591" at="32,0,39,0">
+      <scope id="6407023681582958591" at="33,0,40,0">
         <var name="descriptor" id="6407023681583007365" />
         <var name="node" id="6407023681582958598" />
       </scope>
@@ -587,7 +587,7 @@
         <var name="node" id="6407023681582990191" />
         <var name="value" id="6407023681582990193" />
       </scope>
-      <unit id="6407023681583007505" at="33,215,37,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$1" />
+      <unit id="6407023681583007505" at="34,215,38,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$1" />
       <unit id="9062000705415538879" at="186,391,190,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$2" />
       <unit id="4744614252205727297" at="193,391,197,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$3" />
       <unit id="4744614252205786427" at="202,387,206,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$4" />

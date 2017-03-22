@@ -236,9 +236,9 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -454,9 +454,9 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="3eUNqOk7mHy" role="3clF47">
-        <node concept="34ab3g" id="5lulEoOd9oT" role="3cqZAp">
-          <property role="35gtTG" value="info" />
-          <node concept="Xl_RD" id="5lulEoOd9oU" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB36W4" role="3cqZAp">
+          <property role="RRSoG" value="info" />
+          <node concept="Xl_RD" id="5lulEoOd9oU" role="RRSoy">
             <property role="Xl_RC" value="Creating IDEA environment" />
           </node>
         </node>
@@ -660,9 +660,9 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="6z7xhWku8L4" role="3clF47">
-        <node concept="34ab3g" id="3HZVFd9gFnA" role="3cqZAp">
-          <property role="35gtTG" value="info" />
-          <node concept="Xl_RD" id="3HZVFd9gFnC" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB36Wa" role="3cqZAp">
+          <property role="RRSoG" value="info" />
+          <node concept="Xl_RD" id="3HZVFd9gFnC" role="RRSoy">
             <property role="Xl_RC" value="Creating IdeaTestApplication" />
           </node>
         </node>
@@ -752,9 +752,9 @@
             <ref role="37wK5l" to="79ha:6LlhC3WLEQ3" resolve="checkInitialized" />
           </node>
         </node>
-        <node concept="34ab3g" id="kMLKV374Al" role="3cqZAp">
-          <property role="35gtTG" value="info" />
-          <node concept="Xl_RD" id="kMLKV374An" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB36Wg" role="3cqZAp">
+          <property role="RRSoG" value="info" />
+          <node concept="Xl_RD" id="kMLKV374An" role="RRSoy">
             <property role="Xl_RC" value="Creating an empty project" />
           </node>
         </node>
@@ -1259,9 +1259,9 @@
                             </node>
                           </node>
                           <node concept="3clFbS" id="5lgc1fDHibk" role="SfCbr">
-                            <node concept="34ab3g" id="5lgc1fDHibl" role="3cqZAp">
-                              <property role="35gtTG" value="info" />
-                              <node concept="3cpWs3" id="5lgc1fDHibm" role="34bqiv">
+                            <node concept="RRSsy" id="3jYQuSB36Wm" role="3cqZAp">
+                              <property role="RRSoG" value="info" />
+                              <node concept="3cpWs3" id="5lgc1fDHibm" role="RRSoy">
                                 <node concept="Xl_RD" id="5lgc1fDHibn" role="3uHU7w">
                                   <property role="Xl_RC" value="'" />
                                 </node>

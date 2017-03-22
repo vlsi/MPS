@@ -10,7 +10,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_LogStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrintStatement = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_LogToFileStatement = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_PrintStatement = new ConceptPresentationBuilder().deprecated(true).create();
 
   @Override
   @Nullable
@@ -19,6 +20,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.LogStatement:
         return props_LogStatement;
+      case LanguageConceptSwitch.LogToFileStatement:
+        return props_LogToFileStatement;
       case LanguageConceptSwitch.PrintStatement:
         return props_PrintStatement;
     }

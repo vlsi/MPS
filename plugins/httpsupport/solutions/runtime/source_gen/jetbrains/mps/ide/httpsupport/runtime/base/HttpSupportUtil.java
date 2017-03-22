@@ -19,9 +19,9 @@ import jetbrains.mps.ide.httpsupport.manager.plugin.MPSInternalPortManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class HttpSupportUtil {
+  private static final Logger LOG = LogManager.getLogger(HttpSupportUtil.class);
 
 
-  protected static Logger LOG = LogManager.getLogger(HttpSupportUtil.class);
   @Nullable
   public static Project getProjectByName(@NotNull final String name) {
     List<Project> openedProjects = ProjectManager.getInstance().getOpenedProjects();

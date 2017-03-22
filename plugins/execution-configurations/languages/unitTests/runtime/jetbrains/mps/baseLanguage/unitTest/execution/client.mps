@@ -388,9 +388,9 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang">
@@ -2514,9 +2514,9 @@
           <node concept="3clFbS" id="56tRMpP_fby" role="1HWHxc">
             <node concept="3clFbJ" id="3r8SyoZsWtc" role="3cqZAp">
               <node concept="3clFbS" id="3r8SyoZsWte" role="3clFbx">
-                <node concept="34ab3g" id="3r8SyoZt2mq" role="3cqZAp">
-                  <property role="35gtTG" value="error" />
-                  <node concept="Xl_RD" id="3r8SyoZt2ms" role="34bqiv">
+                <node concept="RRSsy" id="3jYQuSB39KO" role="3cqZAp">
+                  <property role="RRSoG" value="error" />
+                  <node concept="Xl_RD" id="3r8SyoZt2ms" role="RRSoy">
                     <property role="Xl_RC" value="Seems that the previous test is not finished yet" />
                   </node>
                 </node>
@@ -8618,9 +8618,9 @@
         </node>
         <node concept="3clFbJ" id="5gyVhZ1bgOY" role="3cqZAp">
           <node concept="3clFbS" id="5gyVhZ1bgOZ" role="3clFbx">
-            <node concept="34ab3g" id="5gyVhZ1bgP0" role="3cqZAp">
-              <property role="35gtTG" value="warn" />
-              <node concept="3cpWs3" id="5gyVhZ1bgP1" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB39NW" role="3cqZAp">
+              <property role="RRSoG" value="warn" />
+              <node concept="3cpWs3" id="5gyVhZ1bgP1" role="RRSoy">
                 <node concept="37vLTw" id="3GM_nagTukI" role="3uHU7w">
                   <ref role="3cqZAo" node="5gyVhZ1bgNB" resolve="skipped" />
                 </node>

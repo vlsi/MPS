@@ -20,6 +20,7 @@ import jetbrains.mps.extapi.persistence.CopyableModelRoot;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKind;
@@ -54,15 +55,20 @@ import static jetbrains.mps.extapi.module.SModuleBase.MODEL_BY_NAME_COMPARATOR;
  * This model root is responsible for loading models from the source roots
  * as well as for creating models and register them in itself.
  *
- * It looks for {@link DataSourceFactoryFromName} instances
+ * It looks for {@link DataSourceFactoryFromName} and {@link DataSourceFactoryFromURL} instances
  * through the {@link DataSourceFactoryRuleService} and
- * finds proper {@link ModelFactory} instances via the {@link jetbrains.mps.extapi.persistence.ModelFactoryRegistry}
+ * finds proper {@link ModelFactory} instances via the {@link ModelFactoryRegistry}
  * data source kind to model factory association.
  *
  * See a variety of model creation methods below.
  * See {@link #collectModels(SourceRoot)} for traversing logic of this model root.
  *
  * It is used by MPS to store all the kinds of models (except the java sources and classes stubs) -- therefore the poor naming.
+ *
+ * PLAN:
+ * It makes sense to unite this concept with other file-system-based model root concepts.
+ * Probably it is going to be transformed into a single {@code FileSystemModelRoot} entity which will be suitable for any
+ * model storage system which has a tree-like storage.
  *
  * @author apyshkin
  * @author evgeny
