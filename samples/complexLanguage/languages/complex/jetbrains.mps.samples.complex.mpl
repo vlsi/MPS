@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.samples.complex#1196260164557" uuid="5cf20145-0114-4f14-a81d-642f4fbc2d08">
+    <generator alias="" namespace="jetbrains.mps.samples.complex#1196260164557" uuid="5cf20145-0114-4f14-a81d-642f4fbc2d08">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/baseLanguage/template" />
