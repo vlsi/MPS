@@ -100,7 +100,6 @@ import jetbrains.mps.smodel.ConceptDeclarationScanner;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.util.Computable;
@@ -228,9 +227,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     myModule.setModuleDescriptor(myModuleDescriptor);
     //In case of Generator saving lead to reload of containing Language
     //As result Language unload old Generator module and creates new - so we need to update object
+    // FIXME why on Earth do we set module descriptor to a module?! Is there better way to tell module to refresh its settings????
     //TODO: remove when generator will be separated from language
     if (myModule instanceof Generator) {
-      myModule = (AbstractModule) MPSModuleRepository.getInstance().getModule(myModule.getModuleId());
+      myModule = (AbstractModule) myModuleDescriptor.getModuleReference().resolve(myModuleRepository);
     }
     myModule.save();
   }
