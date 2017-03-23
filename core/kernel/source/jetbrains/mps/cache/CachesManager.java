@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,22 +39,30 @@ public class CachesManager implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(CachesManager.class);
 
   private final ClassLoaderManager myClassLoaderManager;
-  private final SModelRepository mySModelRepository;
+  private final SRepository myRepository;
 
   private ConcurrentMap<Object, AbstractCache> myCaches = new ConcurrentHashMap<Object, AbstractCache>();
   private ConcurrentMap<AbstractCache, ModelEventRouter> myModelEventRouters = new ConcurrentHashMap<AbstractCache, ModelEventRouter>();
   private ConcurrentMap<Object, List<SModel>> myDependsOnModels = new ConcurrentHashMap<Object, List<SModel>>();
-  private SModelRepositoryAdapter myModelRepoListener = new SModelRepositoryAdapter(SModelRepositoryListenerPriority.PLATFORM) {
+  private SRepositoryContentAdapter myModelRepoListener = new SRepositoryContentAdapter() {
+
     @Override
-    public void modelRemoved(SModel modelDescriptor) {
-      onModelRemoved(modelDescriptor);
+    protected void startListening(SModel model) {
+      // I could have attached to models from myDependsOnModels.values() only, to listen to models with cached values only
+      // however, would need to attach this or another listener when cache is created, and I don't want to complicate matters, extra listener
+      // not gonna kill our performance, hopefully.
+      model.addModelListener(this);
     }
 
     @Override
-    public void modelsReplaced(Set<SModel> replacedModels) {
-      for (SModel replacedModel : replacedModels) {
-        onModelRemoved(replacedModel);
-      }
+    protected void stopListening(SModel model) {
+      model.removeModelListener(this);
+      onModelRemoved(model);
+    }
+
+    @Override
+    public void modelReplaced(SModel model) {
+      onModelRemoved(model);
     }
   };
 
@@ -69,9 +79,14 @@ public class CachesManager implements CoreComponent {
     return INSTANCE;
   }
 
-  public CachesManager(ClassLoaderManager classLoaderManager, SModelRepository repo) {
+  /**
+   * @deprecated Use of this cache is discouraged. There's only 1 use in MPS and it doesn't justify existence of this class, imo.
+   *             We shall switch ModelEventRouter to use openapi events if the class persists.
+   */
+  @Deprecated
+  public CachesManager(ClassLoaderManager classLoaderManager, SRepository repo) {
     myClassLoaderManager = classLoaderManager;
-    mySModelRepository = repo;
+    myRepository = repo;
   }
 
   @Override
@@ -81,14 +96,14 @@ public class CachesManager implements CoreComponent {
     }
 
     INSTANCE = this;
-    mySModelRepository.addModelRepositoryListener(myModelRepoListener);
+    new RepoListenerRegistrar(myRepository, myModelRepoListener).attach();
     myClassLoaderManager.addClassesHandler(myClassesListener);
   }
 
   @Override
   public void dispose() {
     myClassLoaderManager.removeClassesHandler(myClassesListener);
-    mySModelRepository.removeModelRepositoryListener(myModelRepoListener);
+    new RepoListenerRegistrar(myRepository, myModelRepoListener).detach();
     INSTANCE = null;
   }
 

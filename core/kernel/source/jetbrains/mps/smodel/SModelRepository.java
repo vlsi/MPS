@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,13 +21,11 @@ import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
-import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.util.containers.MultiMap;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -42,10 +40,8 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 // not deprecated yet, despite access and methods are, as it might be reasonable to
@@ -60,12 +56,6 @@ public class SModelRepository implements CoreComponent {
   private final List<SModel> myAllModels = new ArrayList<SModel>();
   private final Map<SModelId, SModel> myIdToModelDescriptorMap = new ConcurrentHashMap<SModelId, SModel>();
   private final Map<String, SModel> myFqNameToModelDescriptorMap = new ConcurrentHashMap<String, SModel>();
-
-
-  private final Object myListenersLock = new Object();
-  private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
-
-  private final MultiMap<SModel, jetbrains.mps.smodel.SModel> myReloadingDescriptorMap = new MultiMap<SModel, jetbrains.mps.smodel.SModel>();
 
   /*
    * SModelRepository used to be global repo listener. With ProjectRepository exposing all modules visible from a project?
@@ -286,132 +276,26 @@ public class SModelRepository implements CoreComponent {
   public void refreshModels() {
   }
 
+  /**
+   * FIXME Inline
+   */
+  @Deprecated
   public void notifyModelReplaced(SModel modelDescriptor, jetbrains.mps.smodel.SModel oldSModel) {
     ModelAccess.assertLegalWrite();
 
-    if (mySModelRepositoryListeners.isEmpty()) {
-      oldSModel.dispose();
-      return;
-    }
-
-    boolean needToNotify = false;
-    synchronized (myReloadingDescriptorMap) {
-      needToNotify = myReloadingDescriptorMap.isEmpty();
-      myReloadingDescriptorMap.putValue(modelDescriptor, oldSModel);
-    }
-
-    if (needToNotify) {
-      notifyAfterReload();
-    }
-  }
-
-  private void notifyAfterReload() {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        synchronized (myReloadingDescriptorMap) {
-
-          assert !myReloadingDescriptorMap.isEmpty();
-
-          fireModelsReplaced(myReloadingDescriptorMap.keySet());
-          disposeOldModels();
-          myReloadingDescriptorMap.clear();
-        }
-      }
-    });
-  }
-
-  private void disposeOldModels() {
-    for (jetbrains.mps.smodel.SModel oldModel : myReloadingDescriptorMap.values()) {
-      if (oldModel != null) {
-        oldModel.dispose();
-      }
-    }
+    oldSModel.dispose();
   }
 
   //---------------------------events----------------------------
 
   public void addModelRepositoryListener(@NotNull SModelRepositoryListener l) {
-    synchronized (myListenersLock) {
-      if (l.getPriority().equals(SModelRepositoryListenerPriority.PLATFORM)) {
-        mySModelRepositoryListeners.add(0, l);
-      } else {
-        mySModelRepositoryListeners.add(l);
-      }
-    }
+    throw new UnsupportedOperationException("SModelRepositoryListener has been deprecated since MPS 3.2, use openapi change notification mechanism instead.");
   }
 
   public void removeModelRepositoryListener(@NotNull SModelRepositoryListener l) {
-    synchronized (myListenersLock) {
-      mySModelRepositoryListeners.remove(l);
-    }
+    throw new UnsupportedOperationException("SModelRepositoryListener has been deprecated since MPS 3.2, use openapi change notification mechanism instead.");
   }
 
-  private List<SModelRepositoryListener> listeners() {
-    synchronized (myListenersLock) {
-      return new ArrayList<SModelRepositoryListener>(mySModelRepositoryListeners);
-    }
-  }
-
-  private void fireBeforeModelRemoved(SModel modelDescriptor) {
-    for (SModelRepositoryListener l : listeners()) {
-      try {
-        l.beforeModelRemoved(modelDescriptor);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireModelRemoved(SModel modelDescriptor) {
-    for (SModelRepositoryListener l : listeners()) {
-      try {
-        l.modelRemoved(modelDescriptor);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireModelAdded(SModel modelDescriptor) {
-    for (SModelRepositoryListener l : listeners()) {
-      try {
-        l.modelAdded(modelDescriptor);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireModelRenamed(SModel modelDescriptor) {
-    for (SModelRepositoryListener l : listeners()) {
-      try {
-        l.modelRenamed(modelDescriptor);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireModelsReplaced(Set<SModel> modelDescriptors) {
-    Set<SModel> unmodifiableModelDescriptorsSet = Collections.unmodifiableSet(modelDescriptors);
-    for (SModelRepositoryListener listener : listeners()) {
-      try {
-        listener.modelsReplaced(unmodifiableModelDescriptorsSet);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  //-------todo: changed functionality - is better to be moved to SModel fully
-
-  @Deprecated
-  public void markChanged(SModel model) {
-    if (model instanceof EditableSModel) {
-      ((EditableSModel) model).setChanged(true);
-    }
-  }
 
   // FIXME Why this method is different in implementation from #getModelDescriptorsByModelName(String modelName)?
   public SModel getModelDescriptor(String modelName) {
@@ -430,8 +314,6 @@ public class SModelRepository implements CoreComponent {
         myFqNameToModelDescriptorMap.remove(event.getOldName());
         myFqNameToModelDescriptorMap.put(event.getNewName(), event.getModelDescriptor());
       }
-
-      fireModelRenamed(event.getModelDescriptor());
 
       CleanupManager.getInstance().cleanup();
       MPSModuleRepository.getInstance().invalidateCaches();
@@ -454,12 +336,10 @@ public class SModelRepository implements CoreComponent {
       synchronized (myModelsLock) {
         myAllModels.add(model);
       }
-      fireModelAdded(model);
     }
 
     @Override
     protected void stopListening(SModel model) {
-      fireBeforeModelRemoved(model);
       synchronized (myModelsLock) {
         myAllModels.remove(model);
       }
@@ -469,7 +349,6 @@ public class SModelRepository implements CoreComponent {
       if (modelName != null) {
         myFqNameToModelDescriptorMap.remove(modelName);
       }
-      fireModelRemoved(model);
     }
   }
 }

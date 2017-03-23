@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,8 +87,8 @@ public final class MPSCore extends ComponentPluginBase {
 
     SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
     myModuleRepository = init(new MPSModuleRepository());
-    SModelRepository modelRepository = init(new SModelRepository(myModuleRepository));
-    init(new GlobalSModelEventsManager(modelRepository));
+    init(new SModelRepository(myModuleRepository));
+    init(new GlobalSModelEventsManager(myModuleRepository));
     myClassLoaderManager = init(new ClassLoaderManager(myModuleRepository));
     init(new DebugRegistry());
 
@@ -107,7 +107,7 @@ public final class MPSCore extends ComponentPluginBase {
     init(new ConceptRegistry(myLanguageRegistry));
     init(new ExtensionRegistry(myClassLoaderManager, myModuleRepository));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
-    init(new CachesManager(myClassLoaderManager, modelRepository));
+    init(new CachesManager(myClassLoaderManager, myModuleRepository));
     init(new DescriptorModelComponent(myModuleRepository,
                                       new LanguageDescriptorModelProvider(myClassLoaderManager),
                                       new GeneratorDescriptorModelProvider()));

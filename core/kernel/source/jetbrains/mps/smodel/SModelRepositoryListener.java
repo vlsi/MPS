@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 
 /**
+ * IMPORTANT! THIS INTERFACE IS NOT IN USE ANY MORE. LEFT FOR TRANSITION PERIOD AND WILL BE REMOVED IN MPS 2017.2 or 2017.3
+ *
  * use {@link org.jetbrains.mps.openapi.module.SRepositoryContentAdapter} via
  * {@link jetbrains.mps.extapi.module.SRepositoryRegistry#addGlobalListener(org.jetbrains.mps.openapi.module.SRepositoryListener)}
  */
