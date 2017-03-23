@@ -1142,7 +1142,7 @@
                   <node concept="2pNUuL" id="6u4p9jnVoCp" role="2pNNFR">
                     <property role="2pNUuO" value="value" />
                     <node concept="2pMdtt" id="6u4p9jnVoCq" role="2pMdts">
-                      <property role="2pMdty" value="-Xss1024k" />
+                      <property role="2pMdty" value="-Xss2048k" />
                     </node>
                   </node>
                 </node>
