@@ -31,6 +31,7 @@ public class CommandContextImpl implements CommandContext {
   private int myCommandLevel = 0;
   private List<CommandContextListener> myListeners = new ArrayList<>();
   private SNode myContextNode;
+  private boolean myFireEvents;
 
   public CommandContextImpl(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -39,7 +40,9 @@ public class CommandContextImpl implements CommandContext {
   @Override
   public void commandStarted() {
     if (myCommandLevel == 0) {
-      fireTopLevelCommandStarted();
+      if (myFireEvents = !myEditorComponent.isDisposed()) {
+        fireTopLevelCommandStarted();
+      }
     }
     myCommandLevel++;
   }
@@ -47,7 +50,7 @@ public class CommandContextImpl implements CommandContext {
   @Override
   public void commandFinished() {
     try {
-      if (myCommandLevel == 1) {
+      if (myCommandLevel == 1 && myFireEvents) {
         fireTopLevelCommandFinished();
       }
     } finally {
