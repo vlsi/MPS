@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,11 @@ package jetbrains.mps.typesystem.inference.util;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Map;
@@ -122,7 +122,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
       SNode value = map.get(conceptFQName);
       if (value != null) {
         SNode result = postprocessGetNode(value);
-        if (result != null && !org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(result, MPSModuleRepository.getInstance())) {
+        if (result != null && !isAccessible(result, subtype)) {
           map.remove(conceptFQName);
         } else {
           return new Pair<Boolean, SNode>(true, result);
@@ -153,15 +153,36 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
     if (map != null && map.containsKey(c)) {
       Pair<SNode, GeneratedMatchingPattern> patternPair = map.get(c);
       SNode resultNode = patternPair.o1;
-      if (resultNode != null && !org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(resultNode, MPSModuleRepository.getInstance())) {
+      if (resultNode != null && !isAccessible(resultNode, subtype)) {
         map.remove(c);
         return null;
       } else {
+        // XXX what's the difference between null return value, and Pair(true, null)?
         pattern.fillFieldValuesFrom(patternPair.o2);
         return new Pair<Boolean, SNode>(true, resultNode);
       }
     }
     return null;
+  }
+
+  /**
+   * The idea of cached nodes in a global instance is flawed (no respect to context repository), but it's impossible to fix without enormous effort.
+   * Here, to avoid use of global repository, we check if a result node would be accessible to caller, based on
+   * a repository of the node caller had supplied us.
+   * Alternative approach would be to keep result node's repository in the cache and check against that repository, although it bring troubles for short-lived
+   * repositories (e.g. one with transients in generation, once we have one).
+   * @param resultNode not null
+   * @param contextNode not null
+   * @return Tells if those with access to context node may access resultNode, too.
+   */
+  private boolean isAccessible(SNode resultNode, SNode contextNode) {
+    SModel m = contextNode.getModel();
+    if (m == null || m.getRepository() == null) {
+      // node we check subtype for is hanging in the air, no idea whether it could use resultNode
+      // it's unlikely m == null, but it doesn't hurt to check.
+      return false;
+    }
+    return org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(resultNode, m.getRepository());
   }
 
   private void addCacheEntry(SNode subtype, SAbstractConcept concept, SNode result, boolean isWeak) {
