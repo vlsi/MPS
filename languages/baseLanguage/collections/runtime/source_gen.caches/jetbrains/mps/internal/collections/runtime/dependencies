@@ -386,6 +386,10 @@
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.AbstractMapSequence" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.IMapSequence" />
   </dependency>
+  <dependency className="jetbrains.mps.internal.collections.runtime.NotNullWhereFilter" file="NotNullWhereFilter.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+  </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.QueueSequence" file="QueueSequence.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Arrays" />

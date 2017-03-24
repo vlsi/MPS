@@ -12,6 +12,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import java.util.function.Consumer;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.ModuleId;
 import java.util.List;
@@ -63,6 +64,9 @@ import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
       ((LanguageDescriptor) copyDescriptor).getGenerators().forEach(new Consumer<GeneratorDescriptor>() {
         public void accept(GeneratorDescriptor gd) {
           gd.setSourceLanguage(copyDescriptor.getModuleReference());
+          setNewIdAndTimestamp(gd);
+          // copied from Generator.generateGeneratorUID(Language sourceLanguage), I got no language instance here 
+          gd.setNamespace(myNewName + '#' + SModel.generateUniqueId());
         }
       });
     }
@@ -160,8 +164,6 @@ import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
   }
 
   private void hackGeneratorDescriptor(@NotNull GeneratorDescriptor genDescriptor) {
-    setNewIdAndTimestamp(genDescriptor);
-    genDescriptor.setGeneratorUID(null);
     String outputPath = genDescriptor.getOutputPath();
     if (outputPath != null) {
       genDescriptor.setOutputPath(myModulePathConverter.source2Target(outputPath));

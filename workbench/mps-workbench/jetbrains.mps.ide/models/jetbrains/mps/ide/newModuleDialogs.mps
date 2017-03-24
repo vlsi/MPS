@@ -241,6 +241,9 @@
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
+      <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
+        <property id="1200397540847" name="charConstant" index="1XhdNS" />
+      </concept>
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
         <child id="1201186121363" name="typeParameter" index="2Ghqu4" />
@@ -1173,6 +1176,43 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="3clFbF" id="6bOnpI4ApKk" role="3cqZAp">
+                        <node concept="1rXfSq" id="6bOnpI4ApKm" role="3clFbG">
+                          <ref role="37wK5l" node="6lh55E2DHFo" resolve="setNewIdAndTimestamp" />
+                          <node concept="37vLTw" id="6bOnpI4ApSS" role="37wK5m">
+                            <ref role="3cqZAo" node="4BlK4j80BFe" resolve="gd" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="6bOnpI4AtCK" role="3cqZAp">
+                        <node concept="3SKdUq" id="6bOnpI4AtCM" role="3SKWNk">
+                          <property role="3SKdUp" value="copied from Generator.generateGeneratorUID(Language sourceLanguage), I got no language instance here" />
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="6bOnpI4Ap8i" role="3cqZAp">
+                        <node concept="2OqwBi" id="6bOnpI4Apkv" role="3clFbG">
+                          <node concept="37vLTw" id="6bOnpI4Ap8g" role="2Oq$k0">
+                            <ref role="3cqZAo" node="4BlK4j80BFe" resolve="gd" />
+                          </node>
+                          <node concept="liA8E" id="6bOnpI4ApCe" role="2OqNvi">
+                            <ref role="37wK5l" to="w0gx:~ModuleDescriptor.setNamespace(java.lang.String):void" resolve="setNamespace" />
+                            <node concept="3cpWs3" id="6bOnpI4Asxv" role="37wK5m">
+                              <node concept="2YIFZM" id="6bOnpI4At88" role="3uHU7w">
+                                <ref role="37wK5l" to="w1kc:~SModel.generateUniqueId():jetbrains.mps.smodel.SNodeId" resolve="generateUniqueId" />
+                                <ref role="1Pybhc" to="w1kc:~SModel" resolve="SModel" />
+                              </node>
+                              <node concept="3cpWs3" id="6bOnpI4Aq_K" role="3uHU7B">
+                                <node concept="37vLTw" id="6bOnpI4Aq8I" role="3uHU7B">
+                                  <ref role="3cqZAo" node="6CFNGGphKi4" resolve="myNewName" />
+                                </node>
+                                <node concept="1Xhbcc" id="6bOnpI4AqIV" role="3uHU7w">
+                                  <property role="1XhdNS" value="#" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                     <node concept="37vLTG" id="4BlK4j80BFe" role="1bW2Oz">
                       <property role="TrG5h" value="gd" />
@@ -2063,25 +2103,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="6CFNGGphKnU" role="3clF47">
-        <node concept="3clFbF" id="6lh55E2DIQr" role="3cqZAp">
-          <node concept="1rXfSq" id="6lh55E2DIQp" role="3clFbG">
-            <ref role="37wK5l" node="6lh55E2DHFo" resolve="setNewIdAndTimestamp" />
-            <node concept="37vLTw" id="6lh55E2DIWE" role="37wK5m">
-              <ref role="3cqZAo" node="6CFNGGphKnR" resolve="genDescriptor" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6CFNGGphKnV" role="3cqZAp">
-          <node concept="2OqwBi" id="6CFNGGphKnW" role="3clFbG">
-            <node concept="37vLTw" id="6CFNGGphKnX" role="2Oq$k0">
-              <ref role="3cqZAo" node="6CFNGGphKnR" resolve="genDescriptor" />
-            </node>
-            <node concept="liA8E" id="6CFNGGphKnY" role="2OqNvi">
-              <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.setGeneratorUID(java.lang.String):void" resolve="setGeneratorUID" />
-              <node concept="10Nm6u" id="6lh55E2DDt_" role="37wK5m" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="7NdrMPxJ4FB" role="3cqZAp">
           <node concept="3cpWsn" id="7NdrMPxJ4FC" role="3cpWs9">
             <property role="TrG5h" value="outputPath" />
