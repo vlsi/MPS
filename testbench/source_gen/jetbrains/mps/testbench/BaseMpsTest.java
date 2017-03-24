@@ -32,16 +32,50 @@ public abstract class BaseMpsTest {
     return getEnvironment().openProject(projectFile);
   }
 
+  /**
+   * IMPORTANT: requires model read access!
+   * 
+   * @deprecated uses global repository, shall cease.
+   */
+  @Deprecated
   protected static <T extends SModule> T getModule(String moduleFqName, Class<T> cls) {
     return ModuleRepositoryFacade.getInstance().getModule(moduleFqName, cls);
   }
 
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.testbench.BaseMpsTest#getSolution(Project, String) } with context (project) instead
+   */
+  @Deprecated
   protected static Solution getSolution(String moduleFqName) {
     return getModule(moduleFqName, Solution.class);
   }
 
+  protected static Solution getSolution(Project project, String moduleFqName) {
+    for (SModule m : project.getProjectModules()) {
+      if (m instanceof Solution && moduleFqName.equals(m.getModuleName())) {
+        return (Solution) m;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.testbench.BaseMpsTest#getLanguage(Project, String) } with context (project) instead
+   */
+  @Deprecated
   protected static Language getLanguage(String moduleFqName) {
     return getModule(moduleFqName, Language.class);
+  }
+
+  protected static Language getLanguage(Project project, String moduleFqName) {
+    for (SModule m : project.getProjectModules()) {
+      if (m instanceof Language && moduleFqName.equals(m.getModuleName())) {
+        return (Language) m;
+      }
+    }
+    return null;
   }
 
   protected static Generator getGenerator(String moduleFqName) {
