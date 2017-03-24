@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -424,13 +424,10 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   protected synchronized void replaceModelAndFireEvent(jetbrains.mps.smodel.SModel oldModel, jetbrains.mps.smodel.SModel newModel) {
     if (oldModel != null) {
       oldModel.setModelDescriptor(null);
+      oldModel.dispose();
     }
     if (newModel != null) {
       newModel.setModelDescriptor(this);
-    }
-    if (oldModel != null) {
-      notifyModelReplaced(oldModel);
-      // ONCE notifyModelReplaced gone, don't forget to dispose oldModel here (SModelRepository does this in addition to notification dispatch)
     }
 
     fireModelReplaced();

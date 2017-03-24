@@ -134,7 +134,7 @@ public class SModelRepository implements CoreComponent {
     }
     if (value == null && id instanceof ModelNameSModelId) {
       // inexact search...
-      value = SModelRepository.getInstance().getModelDescriptor(id.getModelName());
+      value = getModelDescriptor(id.getModelName());
     }
     return value;
   }
@@ -271,19 +271,6 @@ public class SModelRepository implements CoreComponent {
         }
       }
     }
-  }
-
-  public void refreshModels() {
-  }
-
-  /**
-   * FIXME Inline
-   */
-  @Deprecated
-  public void notifyModelReplaced(SModel modelDescriptor, jetbrains.mps.smodel.SModel oldSModel) {
-    ModelAccess.assertLegalWrite();
-
-    oldSModel.dispose();
   }
 
   //---------------------------events----------------------------
