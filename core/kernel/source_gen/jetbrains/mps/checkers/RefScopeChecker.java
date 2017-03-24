@@ -37,6 +37,9 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     boolean executeImmediately = ReferenceResolverUtils.canExecuteImmediately(SNodeOperations.getModel(node), repository);
     for (SReference ref : SNodeOperations.getReferences(node)) {
       SNode target = SLinkOperations.getTargetNode(ref);
+      if (target == null) {
+        continue;
+      }
       // don't check unresolved and broken references, they should already have an error message 
       // do we need all these additional dependencies? mb. it's better to use .runcheckingAction() instead? 
       component.addDependency(target);
@@ -47,7 +50,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(ref);
       Scope refScope = refDescriptor.getScope();
       if (refScope instanceof ErrorScope) {
-        component.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(check_bt3k2y_a0d0a0a8a4a1(SLinkOperations.getRefLink(ref))));
+        component.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(check_bt3k2y_a0d0a0a9a4a1(SLinkOperations.getRefLink(ref))));
       } else if (!(refScope.contains(target))) {
         String name = target.getName();
         ReferenceScopeProvider scopeProvider = refDescriptor.getScopeProvider();
@@ -55,7 +58,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         if (scopeProvider != null) {
           ruleNode = scopeProvider.getSearchScopeValidatorNode();
         }
-        component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + check_bt3k2y_a0b0a4a0i0e0b(SLinkOperations.getRefLink(ref)) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(check_bt3k2y_a0d0a4a0i0e0b(SLinkOperations.getRefLink(ref))), createResolveReferenceQuickfix(ref, repository, executeImmediately));
+        component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + check_bt3k2y_a0b0a4a0j0e0b(SLinkOperations.getRefLink(ref)) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(check_bt3k2y_a0d0a4a0j0e0b(SLinkOperations.getRefLink(ref))), createResolveReferenceQuickfix(ref, repository, executeImmediately));
       }
     }
   }
@@ -104,19 +107,19 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     }
     return null;
   }
-  private static String check_bt3k2y_a0d0a0a8a4a1(SReferenceLink checkedDotOperand) {
+  private static String check_bt3k2y_a0d0a0a9a4a1(SReferenceLink checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getName();
     }
     return null;
   }
-  private static String check_bt3k2y_a0b0a4a0i0e0b(SReferenceLink checkedDotOperand) {
+  private static String check_bt3k2y_a0b0a4a0j0e0b(SReferenceLink checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getName();
     }
     return null;
   }
-  private static String check_bt3k2y_a0d0a4a0i0e0b(SReferenceLink checkedDotOperand) {
+  private static String check_bt3k2y_a0d0a4a0j0e0b(SReferenceLink checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getName();
     }

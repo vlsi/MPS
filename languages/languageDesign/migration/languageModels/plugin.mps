@@ -48,7 +48,7 @@
   <node concept="3vrhyV" id="2LiUEk8oQ$g">
     <property role="TrG5h" value="migration" />
     <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
-      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD34/Migrations" />
+      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD20171/Migrations" />
     </node>
     <node concept="2V$Bhx" id="7XWR6$5jjmC" role="QG$2i">
       <property role="2V$B1T" value="90746344-04fd-4286-97d5-b46ae6a81709" />
