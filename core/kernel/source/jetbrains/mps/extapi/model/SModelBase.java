@@ -432,9 +432,10 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
     fireModelReplaced();
 
-    if (getRepository() != null) { // for a model not yet visible to anyone, no reason to drop a cache
+    if (getRepository() instanceof MPSModuleRepository) { // for a model not yet visible to anyone, no reason to drop a cache
       // FIXME cache invalidation shall be a repository listener, and not done forcefully on model change
-      MPSModuleRepository.getInstance().invalidateCaches();
+      //       Besides, invalidateCaches() doesn't really care about model contents at all, it refreshes module scope which deals with modules only.
+      ((MPSModuleRepository) getRepository()).invalidateCaches();
     }
   }
 

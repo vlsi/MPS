@@ -252,7 +252,12 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     myLanguageDescriptor = (LanguageDescriptor) moduleDescriptor;
     SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getId());
     setModuleReference(reference);
-    MPSModuleRepository.getInstance().invalidateCaches();
+    if (getRepository() instanceof MPSModuleRepository) {
+      ((MPSModuleRepository) getRepository()).invalidateCaches();
+    }
+    // XXX in fact, getRepository could be ProjectRepository that delegates to MPSModuleRepository, and to clean at least this module's scope,
+    //     do it here explicitly.
+    ((ModuleScope) getScope()).invalidateCaches();
   }
 
   // fixme: remove, use #setModuleDescriptor instead
