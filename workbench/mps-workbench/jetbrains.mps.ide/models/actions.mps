@@ -14033,6 +14033,7 @@
       <node concept="pLAjd" id="2hVwt5feBE4" role="Zd501">
         <property role="pLAjf" value="VK_Q" />
         <property role="pLAjc" value="ctrl" />
+        <property role="3hacHL" value="replace all" />
       </node>
     </node>
     <node concept="1bYApB" id="73o9OgiF_r2" role="Zd508">
@@ -26337,7 +26338,7 @@
                   </node>
                   <node concept="3clFbJ" id="5FM3rB5WqIB" role="3cqZAp">
                     <node concept="37vLTw" id="2BHiRxeufSG" role="3clFbw">
-                      <ref role="3cqZAo" node="1$X$vL9KPJD" />
+                      <ref role="3cqZAo" node="1$X$vL9KPJD" resolve="myIsOverride" />
                     </node>
                     <node concept="3clFbS" id="5FM3rB5WqIE" role="3clFbx">
                       <node concept="3clFbF" id="5FM3rB5WqIn" role="3cqZAp">
