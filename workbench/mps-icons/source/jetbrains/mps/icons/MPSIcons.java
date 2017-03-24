@@ -127,7 +127,7 @@ public class MPSIcons {
     }
   }
 
-  public static final Icon LanguageRuntime = IconLoader.getIcon("/nodes/lang-rt.png");
+  public static final Icon LanguageRuntime = LayeredIcon.create(Nodes.Language, AllIcons.Nodes.Locked);
 
   public static class ProjectPane {
     @Deprecated /* To remove in 2017.1, use AllIcons.General#ProjectTab*/
