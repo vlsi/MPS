@@ -108,7 +108,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
     Computable<SModule> c = new Computable<SModule>() {
       @Override
       public SModule compute() {
-        return ref.getModuleId() != null ? REPO.getModule(ref.getModuleId()) : REPO.getModuleByFqName(ref.getModuleName());
+        return REPO.getModule(ref.getModuleId());
       }
     };
     if (REPO.getModelAccess().canRead()) {
@@ -133,9 +133,8 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   @ToRemove(version = 3.4)
   @Deprecated
   public <T extends SModule> T getModule(String fqName, Class<T> cls) {
-    SModule m = REPO.getModuleByFqName(fqName);
-    if (!cls.isInstance(m)) return null;
-    return (T) m;
+    SModule m = getModuleByName(fqName);
+    return cls.isInstance(m) ? cls.cast(m) : null;
   }
 
   public <T extends SModule> Collection<T> getAllModules(Class<T> cls) {
@@ -227,16 +226,6 @@ public final class ModuleRepositoryFacade implements CoreComponent {
 
   public Set<MPSModuleOwner> getModuleOwners(SModule module) {
     return new HashSet<MPSModuleOwner>(REPO.getOwners(module));
-  }
-
-  /**
-   * @deprecated dubious implementation, not in use.
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static SModuleReference createReference(String moduleName) {
-    SModule module = getInstance().REPO.getModuleByFqName(moduleName);
-    return module != null ? module.getModuleReference() : null;
   }
 
   /**

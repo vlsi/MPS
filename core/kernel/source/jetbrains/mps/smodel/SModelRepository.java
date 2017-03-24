@@ -17,11 +17,11 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -45,7 +45,7 @@ import java.util.stream.Collectors;
 // or to track changes (i.e. that would be too much for a search scope, hence need a separate class). The view, perhaps, could be filtered (e.g. by
 // Condition<SModel>). Non thread-safe
 public class SModelRepository implements CoreComponent {
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelRepository.class));
+  private static final Logger LOG = LogManager.getLogger(SModelRepository.class);
 
   private final Object myModelsLock = new Object();
   private final List<SModel> myAllModels = new ArrayList<SModel>();
@@ -129,7 +129,7 @@ public class SModelRepository implements CoreComponent {
   // XXX there are uses in mbeddr
   @Deprecated
   public List<SModel> getModelDescriptorsByModelName(String modelName) {
-    LOG.warning("Use of SModelRepository.getModelDescriptorsByModelName is ineffective, please refactor to use SModelReference");
+    LOG.warn("Use of SModelRepository.getModelDescriptorsByModelName is ineffective, please refactor to use SModelReference");
     return getModelDescriptors().stream().filter(m -> modelName.equals(m.getName().getLongName())).collect(Collectors.toList());
   }
 
@@ -199,7 +199,7 @@ public class SModelRepository implements CoreComponent {
     if (modelName == null) {
       return null;
     }
-    LOG.warning("Use of SModelRepository.getModelDescriptor(String) is ineffective, please refactor to use SModelReference");
+    LOG.warn("Use of SModelRepository.getModelDescriptor(String) is ineffective, please refactor to use SModelReference");
     return getModelDescriptors().stream().filter(m -> m.getName().getValue().equals(modelName)).findFirst().orElse(null);
   }
 
