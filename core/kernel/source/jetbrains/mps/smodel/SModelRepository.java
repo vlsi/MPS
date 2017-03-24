@@ -19,12 +19,10 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -37,7 +35,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -125,13 +122,6 @@ public class SModelRepository implements CoreComponent {
   @Deprecated
   public SModel getModelDescriptor(SModelId id) {
     SModel value = myIdToModelDescriptorMap.get(id);
-    if (value == null && isVerboseJavaStubModelId(id)) {
-      // basically, we've changed stub references to new on reference read/parse, and I don't see how we could
-      // get here, but doesn't hurt to be extra cautious here.
-      // The reason why we don't try new modelId here is that new ids are not global and never get into myIdToModelDescriptorMap
-      SModelId newStubModelId = stripModuleIdFromVerboseJavaStubModelId(id);
-      value = myIdToModelDescriptorMap.get(newStubModelId);
-    }
     if (value == null && id instanceof ModelNameSModelId) {
       // inexact search...
       value = getModelDescriptor(id.getModelName());
@@ -139,68 +129,8 @@ public class SModelRepository implements CoreComponent {
     return value;
   }
 
-  /**
-   * Compatibility code to migrate stub model id with module id to an 'honest' model id without module id.
-   *
-   * @return <code>true</code> if it's model id of java stub and it includes module id as it used to do in MPS 3.2 and earlier
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  /*package*/ static boolean isVerboseJavaStubModelId(SModelId id) {
-    if (ForeignSModelId.TYPE.equals(id.getType()) && id instanceof ForeignSModelId) {
-      String idValue = ((ForeignSModelId) id).getId();
-      String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-      if (idValue.length() > stereo.length() + 2 && idValue.startsWith(stereo) && idValue.charAt(stereo.length()) == '#') {
-        // legacy stub model id: f:java_stub#module id#package name
-        //    new stub model id: f:java_stub#package name
-        int secondHashIndex = idValue.indexOf('#', stereo.length() + 1);
-        // there are two hash chars and non-empty package name
-        return secondHashIndex != -1 && idValue.length() > secondHashIndex;
-      }
-    }
-    return false;
-  }
 
-  /**
-   * @return <code>true</code> if it's model id of java stub in its legacy form (i.e. foreign, f:java_stub#...), either with or without module id part.
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  /*package*/ static boolean isLegacyJavaStubModelId(SModelId id) {
-    if (ForeignSModelId.TYPE.equals(id.getType()) && id instanceof ForeignSModelId) {
-      String idValue = ((ForeignSModelId) id).getId();
-      String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-      return (idValue.length() > stereo.length() + 2 && idValue.startsWith(stereo) && idValue.charAt(stereo.length()) == '#');
-    }
-    return false;
-  }
-
-  /**
-   * Here we duplicate code of JavaPackageNameStub, not to introduce dependency to [java-stub] module
-   */
-  @ToRemove(version = 3.3)
-  @Hack
-  /*package*/ static SModelId newJavaPackageStubFromLegacy(SModelId id) {
-    // pre: isLegacyJavaStubModel()
-    String idValue = ((ForeignSModelId) id).getId();
-    int lastHash = idValue.lastIndexOf('#');
-    return PersistenceFacade.getInstance().createModelId(LanguageID.JAVA + ':' + idValue.substring(lastHash + 1));
-  }
-
-
-  // here we rely on internals otherwise hidden in JavaPackageNameStub. Since it's for transition period of 1 release only, deemed tolerable.
-  @ToRemove(version = 3.3)
-  private static SModelId stripModuleIdFromVerboseJavaStubModelId(SModelId verboseJavaStubId) {
-    // pre: isVerboseJavaStubModelId()
-    String idValue = ((ForeignSModelId) verboseJavaStubId).getId();
-    int firstHash = idValue.indexOf('#');
-    int lastHash = idValue.lastIndexOf('#');
-    assert firstHash != lastHash;
-    return jetbrains.mps.smodel.SModelId.foreign(idValue.substring(0, firstHash) + idValue.substring(lastHash));
-  }
-
-
-  // FIXME 2 uses in IdeaPlugin, MPSPackageFinder and MPSReferenceSearch
+  // XXX there are uses in mbeddr
   @Deprecated
   public List<SModel> getModelDescriptorsByModelName(String modelName) {
     List<SModel> result = new ArrayList<SModel>();
@@ -216,15 +146,6 @@ public class SModelRepository implements CoreComponent {
     Iterable<SModel> models = module.getModels();
     if (models instanceof List) return (List) models;
     return IterableUtil.copyToList(models);
-  }
-
-  /**
-   * @deprecated use {@link SModel#getModule()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public SModule getOwner(SModel modelDescriptor) {
-    return modelDescriptor.getModule();
   }
 
   //----------------------------stuff-----------------------------
@@ -248,8 +169,6 @@ public class SModelRepository implements CoreComponent {
    * Requires write access to model
    */
   public void saveAll() {
-    ModelAccess.assertLegalWrite();
-
     List<EditableSModel> modelsToRefresh;
     synchronized (myModelsLock) {
       modelsToRefresh = getModelsToSave();
@@ -285,6 +204,7 @@ public class SModelRepository implements CoreComponent {
 
 
   // FIXME Why this method is different in implementation from #getModelDescriptorsByModelName(String modelName)?
+  //       This one takes full name, including stereotype, while getModelDescriptorsByModelName() cares about fqn only
   public SModel getModelDescriptor(String modelName) {
     if (modelName == null) return null;
     return myFqNameToModelDescriptorMap.get(modelName);

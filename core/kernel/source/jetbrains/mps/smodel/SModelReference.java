@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -248,8 +248,8 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       moduleId = extractModuleIdFromModelIdIfJavaStub(modelId);
     }
 
-    if (SModelRepository.isLegacyJavaStubModelId(modelId)) {
-      modelId = SModelRepository.newJavaPackageStubFromLegacy(modelId);
+    if (isLegacyJavaStubModelId(modelId)) {
+      modelId = newJavaPackageStubFromLegacy(modelId);
     }
 
     return new Pair(new Pair(moduleId, moduleName), new Pair(modelId, modelName));
@@ -271,7 +271,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   @Nullable
   @Hack
   private static SModuleId extractModuleIdFromModelIdIfJavaStub(SModelId modelId) {
-    if (SModelRepository.isVerboseJavaStubModelId(modelId)) {
+    if (isVerboseJavaStubModelId(modelId)) {
       String idValue = ((ForeignSModelId) modelId).getId();
       String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
       if (idValue.length() > stereo.length() + 2 && idValue.startsWith(stereo) && idValue.charAt(stereo.length()) == '#') {
@@ -286,6 +286,57 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       }
     }
     return null;
+  }
+
+  /**
+   * IMPORTANT: see {@link #extractModuleIdFromModelIdIfJavaStub(SModelId)} for the reasons we didn't remove it.
+   *
+   * Compatibility code to migrate stub model id with module id to an 'honest' model id without module id.
+   *
+   * @return <code>true</code> if it's model id of java stub and it includes module id as it used to do in MPS 3.2 and earlier
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  private static boolean isVerboseJavaStubModelId(SModelId id) {
+    if (ForeignSModelId.TYPE.equals(id.getType()) && id instanceof ForeignSModelId) {
+      String idValue = ((ForeignSModelId) id).getId();
+      String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
+      if (idValue.length() > stereo.length() + 2 && idValue.startsWith(stereo) && idValue.charAt(stereo.length()) == '#') {
+        // legacy stub model id: f:java_stub#module id#package name
+        //    new stub model id: f:java_stub#package name
+        int secondHashIndex = idValue.indexOf('#', stereo.length() + 1);
+        // there are two hash chars and non-empty package name
+        return secondHashIndex != -1 && idValue.length() > secondHashIndex;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * IMPORTANT: see {@link #extractModuleIdFromModelIdIfJavaStub(SModelId)} for the reasons we didn't remove it.
+   * @return <code>true</code> if it's model id of java stub in its legacy form (i.e. foreign, f:java_stub#...), either with or without module id part.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  private static boolean isLegacyJavaStubModelId(SModelId id) {
+    if (ForeignSModelId.TYPE.equals(id.getType()) && id instanceof ForeignSModelId) {
+      String idValue = ((ForeignSModelId) id).getId();
+      String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
+      return (idValue.length() > stereo.length() + 2 && idValue.startsWith(stereo) && idValue.charAt(stereo.length()) == '#');
+    }
+    return false;
+  }
+
+  /**
+   * Here we duplicate code of JavaPackageNameStub, not to introduce dependency to [java-stub] module
+   */
+  @ToRemove(version = 3.3)
+  @Hack
+  private static SModelId newJavaPackageStubFromLegacy(SModelId id) {
+    // pre: isLegacyJavaStubModel()
+    String idValue = ((ForeignSModelId) id).getId();
+    int lastHash = idValue.lastIndexOf('#');
+    return PersistenceFacade.getInstance().createModelId(LanguageID.JAVA + ':' + idValue.substring(lastHash + 1));
   }
 
   public String toString() {
