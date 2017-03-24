@@ -15,13 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
-import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
@@ -40,6 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 // not deprecated yet, despite access and methods are, as it might be reasonable to
 // keep a facility that gives access to all models of an SRepository (alternative to SRepository.getAllModels method). Or do it with SearchScope?
@@ -52,7 +50,6 @@ public class SModelRepository implements CoreComponent {
   private final Object myModelsLock = new Object();
   private final List<SModel> myAllModels = new ArrayList<SModel>();
   private final Map<SModelId, SModel> myIdToModelDescriptorMap = new ConcurrentHashMap<SModelId, SModel>();
-  private final Map<String, SModel> myFqNameToModelDescriptorMap = new ConcurrentHashMap<String, SModel>();
 
   /*
    * SModelRepository used to be global repo listener. With ProjectRepository exposing all modules visible from a project?
@@ -62,7 +59,6 @@ public class SModelRepository implements CoreComponent {
    * and ignore project repositories, and once we switch to multiple repositories, there would be no SModelRepository.
    */
   private final GlobalRepositoriesListener myRepositoriesListener = new GlobalRepositoriesListener();
-  private final SModelListener myModelsListener = new ModelChangeListener();
 
   private static SModelRepository INSTANCE;
   private final MPSModuleRepository myRepository;
@@ -133,19 +129,13 @@ public class SModelRepository implements CoreComponent {
   // XXX there are uses in mbeddr
   @Deprecated
   public List<SModel> getModelDescriptorsByModelName(String modelName) {
-    List<SModel> result = new ArrayList<SModel>();
-    for (SModel d : getModelDescriptors()) {
-      if (modelName.equals(jetbrains.mps.util.SNodeOperations.getModelLongName(d))) {
-        result.add(d);
-      }
-    }
-    return result;
+    LOG.warning("Use of SModelRepository.getModelDescriptorsByModelName is ineffective, please refactor to use SModelReference");
+    return getModelDescriptors().stream().filter(m -> modelName.equals(m.getName().getLongName())).collect(Collectors.toList());
   }
 
+  // there's 1 use in mbeddr
   public List<SModel> getModelDescriptors(SModule module) {
-    Iterable<SModel> models = module.getModels();
-    if (models instanceof List) return (List) models;
-    return IterableUtil.copyToList(models);
+    return IterableUtil.asList(module.getModels());
   }
 
   //----------------------------stuff-----------------------------
@@ -206,40 +196,21 @@ public class SModelRepository implements CoreComponent {
   // FIXME Why this method is different in implementation from #getModelDescriptorsByModelName(String modelName)?
   //       This one takes full name, including stereotype, while getModelDescriptorsByModelName() cares about fqn only
   public SModel getModelDescriptor(String modelName) {
-    if (modelName == null) return null;
-    return myFqNameToModelDescriptorMap.get(modelName);
-  }
-
-  private class ModelChangeListener extends SModelAdapter {
-    public ModelChangeListener() {
-      super(SModelListenerPriority.PLATFORM);
+    if (modelName == null) {
+      return null;
     }
-
-    @Override
-    public void modelRenamed(SModelRenamedEvent event) {
-      synchronized (myModelsLock) {
-        myFqNameToModelDescriptorMap.remove(event.getOldName());
-        myFqNameToModelDescriptorMap.put(event.getNewName(), event.getModelDescriptor());
-      }
-
-      CleanupManager.getInstance().cleanup();
-      MPSModuleRepository.getInstance().invalidateCaches();
-    }
+    LOG.warning("Use of SModelRepository.getModelDescriptor(String) is ineffective, please refactor to use SModelReference");
+    return getModelDescriptors().stream().filter(m -> m.getName().getValue().equals(modelName)).findFirst().orElse(null);
   }
 
   private class GlobalRepositoriesListener extends SRepositoryContentAdapter {
 
     @Override
     protected void startListening(SModel model) {
-      String modelName = model.getModelName();
-      if (modelName != null) {
-        myFqNameToModelDescriptorMap.put(modelName, model);
-      }
       SModelId modelId = model.getModelId();
       if (modelId.isGloballyUnique()) {
         myIdToModelDescriptorMap.put(modelId, model);
       }
-      ((SModelInternal) model).addModelListener(myModelsListener);
       synchronized (myModelsLock) {
         myAllModels.add(model);
       }
@@ -250,12 +221,7 @@ public class SModelRepository implements CoreComponent {
       synchronized (myModelsLock) {
         myAllModels.remove(model);
       }
-      ((SModelInternal) model).removeModelListener(myModelsListener);
       myIdToModelDescriptorMap.remove(model.getModelId());
-      String modelName = model.getModelName();
-      if (modelName != null) {
-        myFqNameToModelDescriptorMap.remove(modelName);
-      }
     }
   }
 }
