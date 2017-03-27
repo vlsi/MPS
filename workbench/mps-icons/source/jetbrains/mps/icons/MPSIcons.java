@@ -130,7 +130,6 @@ public class MPSIcons {
   public static final Icon LanguageRuntime = LayeredIcon.create(Nodes.Language, AllIcons.Nodes.Locked);
 
   public static class ProjectPane {
-    @Deprecated /* To remove in 2017.1, use AllIcons.General#ProjectTab*/
     public static final Icon LogicalView = IconLoader.getIcon("/projectPane/logicalView.png");
   }
 

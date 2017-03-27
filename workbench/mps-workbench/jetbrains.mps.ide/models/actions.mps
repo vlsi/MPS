@@ -4075,9 +4075,9 @@
       </node>
     </node>
     <node concept="1QGGSu" id="3x2$JuFPfQb" role="3Uehp1">
-      <node concept="10M0yZ" id="7mT5s7ETq3N" role="3xaMm5">
-        <ref role="3cqZAo" to="z2i8:~AllIcons$General.ProjectTab" resolve="ProjectTab" />
-        <ref role="1PxDUh" to="z2i8:~AllIcons$General" resolve="AllIcons.General" />
+      <node concept="10M0yZ" id="5ezKql6hyvu" role="3xaMm5">
+        <ref role="3cqZAo" to="l7us:~MPSIcons$ProjectPane.LogicalView" resolve="LogicalView" />
+        <ref role="1PxDUh" to="l7us:~MPSIcons$ProjectPane" resolve="MPSIcons.ProjectPane" />
       </node>
     </node>
     <node concept="tnohg" id="hGAEUdR" role="tncku">
