@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.baseLanguage.jdk7.generator.template.main.TemplateModelImpl;
 import java.util.Arrays;
@@ -21,7 +22,8 @@ public class Generator extends TemplateModuleBase {
   private final Collection<TemplateMappingPriorityRule> priorities;
   private TemplateModel[] models;
 
-  public Generator(LanguageRuntime sourceLanguage) {
+  public Generator(LanguageRegistry languageRegistry, LanguageRuntime sourceLanguage) {
+    super(languageRegistry);
     this.sourceLanguage = sourceLanguage;
     priorities = TemplateUtil.asCollection(TemplateUtil.createBeforeOrTogetherRule(TemplateUtil.createRefExternal("2ec34c1e-7442-4656-9a59-44fa731a9286(jetbrains.mps.baseLanguage.jdk7#616711547384942258)", TemplateUtil.createRefLocal()), TemplateUtil.createRefExternal("46ef3033-ce72-4166-b19e-6ceed23b6844(jetbrains.mps.baseLanguageInternal#1238251529692)", TemplateUtil.createRefLocal())));
   }
@@ -64,4 +66,8 @@ public class Generator extends TemplateModuleBase {
     return sourceLanguage;
   }
 
+  @Override
+  protected void fillReferencedGenerators(TemplateModuleBase.ReferencedGenerators referencedGenerators) {
+    referencedGenerators.employed("46ef3033-ce72-4166-b19e-6ceed23b6844(jetbrains.mps.baseLanguageInternal#1238251529692)");
+  }
 }

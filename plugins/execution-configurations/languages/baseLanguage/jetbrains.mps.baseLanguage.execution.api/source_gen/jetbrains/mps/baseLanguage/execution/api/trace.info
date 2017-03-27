@@ -59,8 +59,8 @@
       <node id="8848323974581207659" at="155,71,156,72" concept="7" />
       <node id="1890336563088705819" at="156,72,157,73" concept="7" />
       <node id="1890336563088706661" at="157,73,158,61" concept="7" />
-      <node id="1890336563088717469" at="160,25,161,75" concept="7" />
-      <node id="345735828122135678" at="161,75,162,84" concept="2" />
+      <node id="1890336563088717469" at="160,25,161,71" concept="7" />
+      <node id="345735828122135678" at="161,71,162,77" concept="2" />
       <node id="2034046503361597150" at="163,35,164,72" concept="2" />
       <node id="1890336563088707814" at="165,16,166,90" concept="2" />
       <node id="1890336563088713198" at="166,90,167,57" concept="2" />
@@ -68,7 +68,7 @@
       <node id="8848323974581195997" at="172,34,173,52" concept="15" />
       <node id="345735828122227337" at="174,5,175,0" concept="10" />
       <node id="1240470842553275327" at="175,0,176,350" concept="8" />
-      <node id="1240470842553275385" at="178,150,179,469" concept="8" />
+      <node id="1240470842553275385" at="178,150,179,442" concept="8" />
       <node id="1240470842553275009" at="182,41,183,52" concept="8" />
       <node id="1240470842553275428" at="186,48,187,61" concept="8" />
       <node id="8475766493858784268" at="189,50,190,50" concept="7" />
@@ -203,16 +203,16 @@
       <node id="1240470842553275781" at="285,47,288,5" concept="5" />
       <node id="1240470842553275815" at="294,50,297,5" concept="4" />
       <node id="1240470842553275414" at="309,0,312,0" concept="6" trace="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
-      <node id="1240470842553275246" at="314,74,317,5" concept="5" />
-      <node id="539361164374568591" at="320,76,323,5" concept="5" />
-      <node id="1890336563088717471" at="326,107,329,5" concept="5" />
-      <node id="8848323974581195960" at="332,77,335,5" concept="5" />
-      <node id="3952212245317269904" at="338,75,341,5" concept="5" />
-      <node id="1240470842553275388" at="344,87,347,5" concept="5" />
-      <node id="1240470842553275394" at="350,87,353,5" concept="5" />
-      <node id="1240470842553275398" at="356,85,359,5" concept="5" />
-      <node id="1240470842553275406" at="362,89,365,5" concept="5" />
-      <node id="1240470842553275411" at="368,89,371,5" concept="5" />
+      <node id="1240470842553275246" at="314,73,317,5" concept="5" />
+      <node id="539361164374568591" at="320,75,323,5" concept="5" />
+      <node id="1890336563088717471" at="326,103,329,5" concept="5" />
+      <node id="8848323974581195960" at="332,73,335,5" concept="5" />
+      <node id="3952212245317269904" at="338,72,341,5" concept="5" />
+      <node id="1240470842553275388" at="344,81,347,5" concept="5" />
+      <node id="1240470842553275394" at="350,81,353,5" concept="5" />
+      <node id="1240470842553275398" at="356,81,359,5" concept="5" />
+      <node id="1240470842553275406" at="362,84,365,5" concept="5" />
+      <node id="1240470842553275411" at="368,83,371,5" concept="5" />
       <node id="4278380732218820440" at="401,0,404,0" concept="12" trace="isEmptyString#(Ljava/lang/String;)Z" />
       <node id="1240470842553275434" at="404,0,407,0" concept="12" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
       <node id="8475766493858861728" at="407,0,410,0" concept="12" trace="eq_kk96hj_a0a0a0a0a1a0a0b0a4a62#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
@@ -234,20 +234,20 @@
       <node id="1240470842553275009" at="99,0,105,0" concept="6" trace="setDebuggerSettings_String#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/execution/api/Java_Command;" />
       <node id="1240470842553275009" at="105,0,111,0" concept="6" trace="setVirtualMachineParameter_ProcessBuilderCommandPart#(Ljetbrains/mps/execution/api/commands/CommandPart;)Ljetbrains/mps/baseLanguage/execution/api/Java_Command;" />
       <node id="1240470842553275052" at="114,0,120,0" concept="6" trace="select#(Ljava/lang/String;)Ljava/io/File;" />
-      <node id="8848323974581195964" at="162,84,168,9" concept="5" />
+      <node id="8848323974581195964" at="162,77,168,9" concept="5" />
       <node id="8475766493858788169" at="214,12,220,7" concept="0" />
       <node id="1240470842553275009" at="223,0,229,0" concept="12" trace="getMaxCommandLine#()I" />
       <node id="1240470842553275009" at="285,0,291,0" concept="12" trace="protect#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1240470842553275246" at="314,0,320,0" concept="12" trace="check_kk96hj_a0a0d0s#(Ljetbrains/mps/execution/api/commands/CommandPart;)I" />
-      <node id="539361164374568591" at="320,0,326,0" concept="12" trace="check_kk96hj_a0a0d0s_0#(Ljetbrains/mps/execution/api/commands/CommandPart;)I" />
-      <node id="1890336563088717471" at="326,0,332,0" concept="12" trace="check_kk96hj_a0a0a0a4a91#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Lorg/jetbrains/mps/openapi/module/SRepository;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="8848323974581195960" at="332,0,338,0" concept="12" trace="check_kk96hj_a0b0a0a4a91#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="3952212245317269904" at="338,0,344,0" concept="12" trace="check_kk96hj_a0a1a0a0e0t#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="1240470842553275388" at="344,0,350,0" concept="12" trace="check_kk96hj_a0a0a0a0a0u#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
-      <node id="1240470842553275394" at="350,0,356,0" concept="12" trace="check_kk96hj_a0a0a0a0a02#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
-      <node id="1240470842553275398" at="356,0,362,0" concept="12" trace="check_kk96hj_a0a0a0a0u#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
-      <node id="1240470842553275406" at="362,0,368,0" concept="12" trace="check_kk96hj_a0a0a0a0a0u_0#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
-      <node id="1240470842553275411" at="368,0,374,0" concept="12" trace="check_kk96hj_a0a0a0a0a02_0#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+      <node id="1240470842553275246" at="314,0,320,0" concept="12" trace="check_yvpt_a0a0d0a2#(Ljetbrains/mps/execution/api/commands/CommandPart;)I" />
+      <node id="539361164374568591" at="320,0,326,0" concept="12" trace="check_yvpt_a0a0d0a2_0#(Ljetbrains/mps/execution/api/commands/CommandPart;)I" />
+      <node id="1890336563088717471" at="326,0,332,0" concept="12" trace="check_yvpt_a0a0a4a0d#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Lorg/jetbrains/mps/openapi/module/SRepository;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8848323974581195960" at="332,0,338,0" concept="12" trace="check_yvpt_a0b0a4a0d#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="3952212245317269904" at="338,0,344,0" concept="12" trace="check_yvpt_a0a1a0e0a3#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="1240470842553275388" at="344,0,350,0" concept="12" trace="check_yvpt_a0a0a0e#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+      <node id="1240470842553275394" at="350,0,356,0" concept="12" trace="check_yvpt_a3a0a0e#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+      <node id="1240470842553275398" at="356,0,362,0" concept="12" trace="check_yvpt_a4a0a0e#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+      <node id="1240470842553275406" at="362,0,368,0" concept="12" trace="check_yvpt_a0a0f0a0a4#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+      <node id="1240470842553275411" at="368,0,374,0" concept="12" trace="check_yvpt_a0a5a0a0e#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
       <node id="1240470842553275009" at="234,0,241,0" concept="12" trace="getClassRunnerClassPath#()Ljava/util/List;" />
       <node id="1240470842553275035" at="112,83,120,25" concept="8" />
       <node id="1240470842553275652" at="252,25,260,5" concept="5" />
@@ -263,7 +263,7 @@
       <node id="1240470842553275009" at="263,0,276,0" concept="12" trace="getJavaHomes#()Ljava/util/List;" />
       <node id="8475766493858788102" at="206,61,220,7" concept="5" />
       <node id="8475766493858788061" at="205,10,221,5" concept="0" />
-      <node id="1240470842553275166" at="131,191,148,7" concept="16" />
+      <node id="1240470842553275166" at="131,189,148,7" concept="16" />
       <node id="1240470842553275164" at="130,62,152,5" concept="5" />
       <node id="8475766493858788046" at="199,5,221,5" concept="5" />
       <node id="1240470842553275009" at="154,0,178,0" concept="6" trace="createProcess#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Lorg/jetbrains/mps/openapi/module/SRepository;)Lcom/intellij/execution/process/ProcessHandler;" />
@@ -290,7 +290,7 @@
       <scope id="1240470842553275250" at="150,12,151,244" />
       <scope id="8848323974581195965" at="163,35,164,72" />
       <scope id="345735828122227777" at="172,34,173,52" />
-      <scope id="1240470842553275384" at="178,150,179,469" />
+      <scope id="1240470842553275384" at="178,150,179,442" />
       <scope id="1240470842553275009" at="182,41,183,52" />
       <scope id="1240470842553275427" at="186,48,187,61" />
       <scope id="3066236890327707788" at="192,24,193,18" />
@@ -387,16 +387,16 @@
       <scope id="1240470842553275480" at="223,42,227,17" />
       <scope id="1240470842553275780" at="285,47,289,18" />
       <scope id="1240470842553275414" at="305,0,309,0" />
-      <scope id="1240470842553275246" at="314,74,318,13" />
-      <scope id="539361164374568591" at="320,76,324,13" />
-      <scope id="1890336563088717471" at="326,107,330,16" />
-      <scope id="8848323974581195960" at="332,77,336,16" />
-      <scope id="3952212245317269904" at="338,75,342,16" />
-      <scope id="1240470842553275388" at="344,87,348,16" />
-      <scope id="1240470842553275394" at="350,87,354,16" />
-      <scope id="1240470842553275398" at="356,85,360,16" />
-      <scope id="1240470842553275406" at="362,89,366,16" />
-      <scope id="1240470842553275411" at="368,89,372,16" />
+      <scope id="1240470842553275246" at="314,73,318,13" />
+      <scope id="539361164374568591" at="320,75,324,13" />
+      <scope id="1890336563088717471" at="326,103,330,16" />
+      <scope id="8848323974581195960" at="332,73,336,16" />
+      <scope id="3952212245317269904" at="338,72,342,16" />
+      <scope id="1240470842553275388" at="344,81,348,16" />
+      <scope id="1240470842553275394" at="350,81,354,16" />
+      <scope id="1240470842553275398" at="356,81,360,16" />
+      <scope id="1240470842553275406" at="362,84,366,16" />
+      <scope id="1240470842553275411" at="368,83,372,16" />
       <scope id="8475766493858788170" at="214,14,219,11" />
       <scope id="1240470842553275009" at="229,0,234,0">
         <var name="modules" id="2796391569759906203" />
@@ -511,7 +511,7 @@
       <scope id="8475766493858788062" at="205,12,220,7">
         <var name="unitNames" id="5111910545577616866" />
       </scope>
-      <scope id="1240470842553275165" at="131,191,149,0" />
+      <scope id="1240470842553275165" at="131,189,149,0" />
       <scope id="1240470842553275326" at="154,129,176,350">
         <var name="cn" id="1890336563088706664" />
         <var name="cp" id="1890336563088705825" />

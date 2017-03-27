@@ -128,7 +128,7 @@ public class Java_Command {
       throw new ExecutionException("Classname is empty");
     }
     File java = Java_Command.getJavaCommand(myJrePath_String);
-    if (check_kk96hj_a0a0d0s(programParameter) + check_kk96hj_a0a0d0s_0(myVirtualMachineParameter_ProcessBuilderCommandPart) + classPathPart.getLength() >= Java_Command.getMaxCommandLine()) {
+    if (check_yvpt_a0a0d0a2(programParameter) + check_yvpt_a0a0d0a2_0(myVirtualMachineParameter_ProcessBuilderCommandPart) + classPathPart.getLength() >= Java_Command.getMaxCommandLine()) {
       try {
         File parametersFile = Java_Command.writeToTmpFile(programParameter.getCommandList());
         File classPathFile = Java_Command.writeToTmpFile(ListSequence.fromList(classPath).select(new ISelector<File, String>() {
@@ -158,8 +158,8 @@ public class Java_Command {
     final Wrappers._T<String> cn = new Wrappers._T<String>();
     repository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode resolved = check_kk96hj_a0a0a0a4a91(nodePointer, repository);
-        module.value = check_kk96hj_a0b0a0a4a91(check_kk96hj_a0a1a0a0e0t(resolved));
+        SNode resolved = check_yvpt_a0a0a4a0d(nodePointer, repository);
+        module.value = check_yvpt_a0b0a4a0d(check_yvpt_a0a1a0e0a3(resolved));
         if (module.value == null) {
           errorText.value = "Can't find module for node " + nodePointer;
         } else {
@@ -176,7 +176,7 @@ public class Java_Command {
     return new Java_Command().setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setClassPath_ListString(cp.value).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(cn.value);
   }
   public ProcessHandler createProcess(JavaRunParameters runParameters, SNodeReference nodePointer, SRepository repository) throws ExecutionException {
-    return new Java_Command().setJrePath_String(check_kk96hj_a0a0a0a0a0u(runParameters)).setProgramParameter_String(check_kk96hj_a0a0a0a0a02(runParameters)).setVirtualMachineParameter_String(check_kk96hj_a0a0a0a0u(runParameters)).setWorkingDirectory_File((isEmptyString(check_kk96hj_a0a0a0a0a02_0(runParameters)) ? null : new File(check_kk96hj_a0a0a0a0a0u_0(runParameters)))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(nodePointer, repository);
+    return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a3a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a4a0a0e(runParameters)).setWorkingDirectory_File((isEmptyString(check_yvpt_a0a5a0a0e(runParameters)) ? null : new File(check_yvpt_a0a0f0a0a4(runParameters)))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(nodePointer, repository);
   }
 
   public static IDebugger getDebugger() {
@@ -311,61 +311,61 @@ public class Java_Command {
       }
     };
   }
-  private static int check_kk96hj_a0a0d0s(CommandPart checkedDotOperand) {
+  private static int check_yvpt_a0a0d0a2(CommandPart checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLength();
     }
     return 0;
   }
-  private static int check_kk96hj_a0a0d0s_0(CommandPart checkedDotOperand) {
+  private static int check_yvpt_a0a0d0a2_0(CommandPart checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLength();
     }
     return 0;
   }
-  private static SNode check_kk96hj_a0a0a0a4a91(SNodeReference checkedDotOperand, SRepository repository) {
+  private static SNode check_yvpt_a0a0a4a0d(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SModule check_kk96hj_a0b0a0a4a91(SModel checkedDotOperand) {
+  private static SModule check_yvpt_a0b0a4a0d(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModel check_kk96hj_a0a1a0a0e0t(SNode checkedDotOperand) {
+  private static SModel check_yvpt_a0a1a0e0a3(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
     return null;
   }
-  private static String check_kk96hj_a0a0a0a0a0u(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a0a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getAlternativeJre();
     }
     return null;
   }
-  private static String check_kk96hj_a0a0a0a0a02(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a3a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.programParameters();
     }
     return null;
   }
-  private static String check_kk96hj_a0a0a0a0u(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a4a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.vmOptions();
     }
     return null;
   }
-  private static String check_kk96hj_a0a0a0a0a0u_0(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a0a0f0a0a4(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.workingDirectory();
     }
     return null;
   }
-  private static String check_kk96hj_a0a0a0a0a02_0(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a0a5a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.workingDirectory();
     }

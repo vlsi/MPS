@@ -1758,7 +1758,7 @@
       <node id="6062668769034832918" at="61,5,62,16" concept="9" />
       <node id="6062668769034832918" at="65,35,66,49" concept="3" />
       <node id="6062668769034832918" at="67,5,68,16" concept="9" />
-      <node id="6062668769034832927" at="71,132,72,431" concept="9" />
+      <node id="6062668769034832927" at="71,132,72,418" concept="9" />
       <node id="6062668769034832975" at="75,24,76,61" concept="17" />
       <node id="1890336563087665777" at="79,50,80,26" concept="9" />
       <node id="1890336563087675034" at="83,55,84,54" concept="17" />
@@ -1839,9 +1839,9 @@
       <node id="1983475444937148506" at="181,52,184,11" concept="6" />
       <node id="8709825792049336612" at="195,45,198,9" concept="6" />
       <node id="6062668769034833304" at="211,0,214,0" concept="7" trace="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
-      <node id="6062668769034832932" at="216,86,219,5" concept="6" />
-      <node id="6062668769034832937" at="222,89,225,5" concept="6" />
-      <node id="6062668769034832953" at="228,88,231,5" concept="6" />
+      <node id="6062668769034832932" at="216,82,219,5" concept="6" />
+      <node id="6062668769034832937" at="222,84,225,5" concept="6" />
+      <node id="6062668769034832953" at="228,84,231,5" concept="6" />
       <node id="6062668769034832956" at="234,0,237,0" concept="13" trace="isEmptyString#(Ljava/lang/String;)Z" />
       <node id="2034046503361586322" at="101,116,105,9" concept="5" />
       <node id="2034046503361610674" at="147,81,151,9" concept="5" />
@@ -1857,9 +1857,9 @@
       <node id="6062668769034832918" at="58,0,64,0" concept="7" trace="setJrePath_String#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/JUnit_Command;" />
       <node id="6062668769034832918" at="64,0,70,0" concept="7" trace="setWorkingDirectory_File#(Ljava/io/File;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/JUnit_Command;" />
       <node id="669570128268068409" at="135,91,141,5" concept="5" />
-      <node id="6062668769034832932" at="216,0,222,0" concept="13" trace="check_ifael_a0a0a0a0a01#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
-      <node id="6062668769034832937" at="222,0,228,0" concept="13" trace="check_ifael_a0a0a0a0a01_0#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Z" />
-      <node id="6062668769034832953" at="228,0,234,0" concept="13" trace="check_ifael_a0a0a0a0a01_1#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+      <node id="6062668769034832932" at="216,0,222,0" concept="13" trace="check_txeh3_a1a0a0a#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+      <node id="6062668769034832937" at="222,0,228,0" concept="13" trace="check_txeh3_a0c0a0a0#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Z" />
+      <node id="6062668769034832953" at="228,0,234,0" concept="13" trace="check_txeh3_a0a3a0a0a#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
       <node id="2034046503361586311" at="100,0,107,0" concept="7" trace="run#()V" />
       <node id="8709825792049350415" at="193,39,200,5" concept="6" />
       <node id="669570128268405833" at="113,98,121,5" concept="5" />
@@ -1884,7 +1884,7 @@
       <scope id="6062668769034832918" at="53,42,54,65" />
       <scope id="6062668769034832918" at="59,26,60,33" />
       <scope id="6062668769034832918" at="65,35,66,49" />
-      <scope id="6062668769034832926" at="71,132,72,431" />
+      <scope id="6062668769034832926" at="71,132,72,418" />
       <scope id="6062668769034832974" at="75,24,76,61" />
       <scope id="1890336563087665776" at="79,50,80,26" />
       <scope id="6062668769034833146" at="83,55,84,54" />
@@ -1946,9 +1946,9 @@
         <var name="testable" id="2034046503361610694" />
       </scope>
       <scope id="6062668769034833304" at="207,0,211,0" />
-      <scope id="6062668769034832932" at="216,86,220,16" />
-      <scope id="6062668769034832937" at="222,89,226,17" />
-      <scope id="6062668769034832953" at="228,88,232,16" />
+      <scope id="6062668769034832932" at="216,82,220,16" />
+      <scope id="6062668769034832937" at="222,84,226,17" />
+      <scope id="6062668769034832953" at="228,84,232,16" />
       <scope id="2034046503361586312" at="100,25,105,9" />
       <scope id="8709825792049336607" at="194,27,199,7">
         <var name="childFile" id="8709825792049336609" />

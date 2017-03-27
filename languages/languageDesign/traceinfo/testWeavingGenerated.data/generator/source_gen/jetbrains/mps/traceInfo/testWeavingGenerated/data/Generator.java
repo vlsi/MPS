@@ -5,6 +5,7 @@ package jetbrains.mps.traceInfo.testWeavingGenerated.data;
 import jetbrains.mps.generator.runtime.TemplateModuleBase;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Collection;
 import jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.TemplateModelImpl;
 import java.util.Arrays;
@@ -18,7 +19,8 @@ public class Generator extends TemplateModuleBase {
   private final LanguageRuntime sourceLanguage;
   private TemplateModel[] models;
 
-  public Generator(LanguageRuntime sourceLanguage) {
+  public Generator(LanguageRegistry languageRegistry, LanguageRuntime sourceLanguage) {
+    super(languageRegistry);
     this.sourceLanguage = sourceLanguage;
   }
   @Override

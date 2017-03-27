@@ -5,6 +5,7 @@ package jetbrains.mps.lang.behavior;
 import jetbrains.mps.generator.runtime.TemplateModuleBase;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Collection;
 import jetbrains.mps.lang.behavior.generator.template.main.TemplateModelImpl;
 import java.util.Arrays;
@@ -18,7 +19,8 @@ public class Generator extends TemplateModuleBase {
   private final LanguageRuntime sourceLanguage;
   private TemplateModel[] models;
 
-  public Generator(LanguageRuntime sourceLanguage) {
+  public Generator(LanguageRegistry languageRegistry, LanguageRuntime sourceLanguage) {
+    super(languageRegistry);
     this.sourceLanguage = sourceLanguage;
   }
   @Override
@@ -57,4 +59,9 @@ public class Generator extends TemplateModuleBase {
     return sourceLanguage;
   }
 
+  @Override
+  protected void fillReferencedGenerators(TemplateModuleBase.ReferencedGenerators referencedGenerators) {
+    referencedGenerators.employed("e45a8b22-94f2-427f-b849-77f254c4eef5(jetbrains.mps.lang.aspect#3274906159125927726)");
+    referencedGenerators.employed("3ac18869-0828-4401-abad-822a47bf83f1(jetbrains.mps.lang.descriptor#9020561928507175817)");
+  }
 }
