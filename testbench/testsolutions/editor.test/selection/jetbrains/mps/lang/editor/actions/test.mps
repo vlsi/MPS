@@ -5,7 +5,7 @@
     <use id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest" version="0" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
@@ -228,6 +228,10 @@
       <concept id="5383578965096699278" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestChildSpecialContainer" flags="ng" index="3grck5" />
       <concept id="5383578965096699277" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestSpecialAbstractChild" flags="ng" index="3grck6" />
       <concept id="5383578965096740807" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestSpecialChild1" flags="ng" index="3grmtc" />
+      <concept id="1077509448393313703" name="jetbrains.mps.lang.editor.editorTest.structure.DeleteWrapperChild" flags="ng" index="1Bq5y5" />
+      <concept id="1077509448393313700" name="jetbrains.mps.lang.editor.editorTest.structure.DeleteWrapperRoot" flags="ng" index="1Bq5y6">
+        <child id="1077509448393313715" name="child" index="1Bq5yh" />
+      </concept>
       <concept id="7803854675610450426" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot" flags="ng" index="1QLem1">
         <child id="7803854675610450486" name="container" index="1QLepd" />
       </concept>
@@ -5250,6 +5254,40 @@
           </node>
         </node>
         <node concept="3grck6" id="2znOOs7hAIv" role="1QM1y8" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="VO5i9DBkaP">
+    <property role="TrG5h" value="DelWrapperChild" />
+    <property role="3GE5qa" value="delete" />
+    <property role="3YCmrE" value="nothing should happen and no exception should be thrown. Added for MPS-23505" />
+    <node concept="3clFbS" id="VO5i9DBkaW" role="LjaKd">
+      <node concept="2HxZob" id="VO5i9DBkaX" role="3cqZAp">
+        <node concept="1iFQzN" id="VO5i9DBkaY" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+        </node>
+      </node>
+    </node>
+    <node concept="1Bq5y6" id="VO5i9DBkbT" role="LiRBU">
+      <node concept="1Bq5y5" id="VO5i9DBkc3" role="1Bq5yh">
+        <node concept="LIFWc" id="VO5i9DBkcl" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="20" />
+          <property role="LIFWd" value="constant_0" />
+        </node>
+      </node>
+    </node>
+    <node concept="1Bq5y6" id="VO5i9DBkcv" role="LiZbd">
+      <node concept="1Bq5y5" id="VO5i9DBkcw" role="1Bq5yh">
+        <node concept="LIFWc" id="VO5i9DBkcx" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="20" />
+          <property role="LIFWd" value="constant_0" />
+        </node>
       </node>
     </node>
   </node>
