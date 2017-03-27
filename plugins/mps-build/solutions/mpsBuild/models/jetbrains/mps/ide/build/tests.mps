@@ -625,6 +625,32 @@
           </node>
         </node>
       </node>
+      <node concept="1E1JtD" id="1NaNvmffph4" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="3LESm3" value="d8e56c33-e308-4c18-be6a-751cd5d3c5ce" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="1NaNvmffph5" role="3LF7KH">
+          <node concept="2Ry0Ak" id="1NaNvmffph6" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="1NaNvmffph7" role="2Ry0An">
+              <property role="2Ry0Am" value="modules" />
+              <node concept="2Ry0Ak" id="1NaNvmffph8" role="2Ry0An">
+                <property role="2Ry0Am" value="testDefaultEditor" />
+                <node concept="2Ry0Ak" id="1NaNvmffph9" role="2Ry0An">
+                  <property role="2Ry0Am" value="languages" />
+                  <node concept="2Ry0Ak" id="1NaNvmffpha" role="2Ry0An">
+                    <property role="2Ry0Am" value="editor.languageForDeletedConcepts" />
+                    <node concept="2Ry0Ak" id="1NaNvmffpqH" role="2Ry0An">
+                      <property role="2Ry0Am" value="jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts.mpl" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="1E1JtD" id="2tTgVY$TuKU" role="2G$12L">
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="testMoveElements" />
