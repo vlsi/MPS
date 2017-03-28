@@ -38,3 +38,8 @@ teamcity-info.xml
 /plugins/terminal
 /lib/
 /mps-platform.zip
+/bin/linux
+/bin/mac
+/bin/win
+/build/conf
+/build/resources/mps
