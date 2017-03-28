@@ -176,6 +176,8 @@
       <!--TODO use license files from IDEA Community-->
       <patternset>
         <exclude name="license/*"/>
+        <!-- TODO: Exclude log.xml from platform-->
+        <exclude name="bin/log.xml"/>
       </patternset>
     </unzip>
   </target>
