@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -132,24 +131,6 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
       myModels = Arrays.asList(rv.toArray(new TemplateModelInterpreted[rv.size()]));
     }
     return myModels;
-  }
-
-  @Override
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public Collection<String> getReferencedModules() {
-    List<String> result = new ArrayList<>(2);
-    for (SDependency dep : generator.getDeclaredDependencies()) {
-      if (dep.getScope() != SDependencyScope.EXTENDS) {
-        continue;
-      }
-      SModule referencedGenerator = dep.getTarget();
-      if (referencedGenerator instanceof Generator) {
-        String moduleId = ((Generator) referencedGenerator).getSourceLanguage().getModuleName() + "/" + referencedGenerator.getModuleName();
-        result.add(moduleId);
-      }
-    }
-    return result;
   }
 
   @Override

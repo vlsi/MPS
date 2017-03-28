@@ -58,17 +58,9 @@ public abstract class TemplateModuleBase implements TemplateModule {
   }
 
 ///////////////////////////////////////////
-  // compatibility code, shall be removed/refactored once generated generators provide proper configuration/generated methods
-  // Marked ToRemove, although it's likely these methods will just change to convert simple configuration data from generated generator classes
 
   @Override
-  @ToRemove(version = 3.2)
   public Collection<TemplateModule> getExtendedGenerators() {
-    final Collection<String> extendedGenerators = getReferencedModules();
-    if (extendedGenerators != null ) {
-      return getExtendedGenerators_Legacy(extendedGenerators);
-    }
-    // FIXME drop the code above this line once 2017.1 is out
     ReferencedGenerators rg = new ReferencedGenerators();
     fillReferencedGenerators(rg);
     ArrayList<TemplateModule> rv = new ArrayList<>(rg.myExtendedGenerators.size());
@@ -76,28 +68,6 @@ public abstract class TemplateModuleBase implements TemplateModule {
       TemplateModule tm = resolveGenerator(generatorRef);
       if (tm != null) {
         rv.add(tm);
-      }
-    }
-    return rv;
-  }
-
-  /**
-   * FIXME compatibility code. To survive 2017.1 as its replacement, #fillReferencedGenerators() has been introduced in 2017.1 only,
-   *       and we need to support generators created with 3.4 in 2017.1
-   */
-  @ToRemove(version = 2017.1)
-  private Collection<TemplateModule> getExtendedGenerators_Legacy(Collection<String> extendedGenerators) {
-    ArrayList<TemplateModule> rv = new ArrayList<TemplateModule>(3);
-    for (String referenced : extendedGenerators) {
-      int slash = referenced.indexOf('/');
-      String extendedGenerator = referenced.substring(slash+1);
-      Generator g = ModuleRepositoryFacade.getInstance().getModule(extendedGenerator, Generator.class);
-      if (g == null) {
-        continue;
-      }
-      final GeneratorRuntime grt = myLanguageRegistry.getGenerator(g);
-      if (grt instanceof TemplateModule) {
-        rv.add((TemplateModule) grt);
       }
     }
     return rv;
@@ -111,19 +81,6 @@ public abstract class TemplateModuleBase implements TemplateModule {
   private TemplateModule resolveGenerator(SModuleReference generatorIdentity) {
     final GeneratorRuntime grt = myLanguageRegistry.getGenerator(generatorIdentity);
     return grt instanceof TemplateModule ? (TemplateModule) grt : null;
-  }
-
-  /**
-   * @deprecated Existence of API method that returns dependency information as two strings with "/" delimiter could be hardly justified.
-   * However, MPS 3.3 still generates getReferencedModules(), and I've left the method for binary compatibility. Shall remove once template for
-   * generator module registers extended generators in other way (at least as module reference, not as [name1/name2]). XXX perhaps,
-   * shall not supply module reference from code, but rather expose them from module.xml descriptor? Otherwise, need to pass some sort of registry
-   * here to resolve module reference to TemplateModule/GeneratorRuntime
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public Collection<String> getReferencedModules() {
-    return null;
   }
 
   /**

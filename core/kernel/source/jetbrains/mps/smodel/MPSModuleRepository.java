@@ -249,10 +249,8 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
    */
   @Deprecated
   @ToRemove(version = 3.4)
-  public SModule getModuleByFqName(@NotNull String fqName) {
-    // FIXME it's an error, but our tests don't like anything in the stderr. Once merge with 2017.1 changes that do not require Generator lookup by name
-    //       from TemplateModuleBase.getExtendedGenerators, change to .error!
-    LOG.info("Use of MPSModuleRepository.getModuleByFqName(String) may yield wrong result due to ambiguity. This method gives first module with matching name");
+  /*package*/ SModule getModuleByFqName(@NotNull String fqName) {
+    LOG.error("Use of MPSModuleRepository.getModuleByFqName(String) may yield wrong result due to ambiguity. This method gives first module with matching name");
 
     getModelAccess().checkReadAccess(); // if getModule(SModuleId) checks, why not byName()?
     return myModules.stream().filter(m -> fqName.equals(m.getModuleName())).findFirst().orElse(null);
