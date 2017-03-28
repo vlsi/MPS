@@ -40,6 +40,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ImplementationWithStubPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InterfacePart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LinkAttribute = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId")).create();
+  private final ConceptPresentation props_MigrationAnnotation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeAttribute = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PropertyAttribute = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId")).create();
   private final ConceptPresentation props_ReviewMigration = new ConceptPresentationBuilder().create();
@@ -113,6 +114,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_InterfacePart;
       case LanguageConceptSwitch.LinkAttribute:
         return props_LinkAttribute;
+      case LanguageConceptSwitch.MigrationAnnotation:
+        return props_MigrationAnnotation;
       case LanguageConceptSwitch.NodeAttribute:
         return props_NodeAttribute;
       case LanguageConceptSwitch.PropertyAttribute:

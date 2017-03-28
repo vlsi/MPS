@@ -526,6 +526,14 @@
         <property role="tnX3d" value="false" />
       </node>
     </node>
+    <node concept="PrWs8" id="29O0pTxWcb9" role="PzmwI">
+      <ref role="PrY4T" node="29O0pTxWcb8" resolve="MigrationAnnotation" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="29O0pTxWcb8">
+    <property role="EcuMT" value="2482611074347614920" />
+    <property role="3GE5qa" value="attributes.migration" />
+    <property role="TrG5h" value="MigrationAnnotation" />
   </node>
 </model>
 
