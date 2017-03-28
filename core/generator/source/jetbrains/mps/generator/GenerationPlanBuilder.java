@@ -17,10 +17,13 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.generator.plan.PlanIdentity;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+
+import java.util.Collection;
 
 /**
  * PROVISIONAL API
@@ -63,6 +66,15 @@ public interface GenerationPlanBuilder {
    * @param generators generator modules
    */
   void applyGeneratorWithExtended(@NotNull SModule ... generators);
+
+  /**
+   * IMPORTANT: USE OF THIS METHOD IS DISCOURAGED AS IT AFFECTS CONSISTENCY OF PLAN SPECIFICATION (namely, if applyGeneratorWithExtended() shall consider
+   * generators of explicit MCs for extensions). IT'S INTENDED FOR PROTOTYPE AND MIGHT CEASE ONCE PROVISION PHASE IS OVER. USE AT YOUR OWN RISK.
+   *
+   * Specific MCs for a transformation step, applied together.
+   * @param tmc MCs that constitute transformation step
+   */
+  void apply(@NotNull Collection<TemplateMappingConfiguration> tmc);
 
   /**
    * Tells generator there's a checkpoint identified certain way.
