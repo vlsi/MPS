@@ -16,13 +16,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.List;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import java.util.List;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class MigrateDeclarations extends MigrationScriptBase {
@@ -63,6 +64,12 @@ public class MigrateDeclarations extends MigrationScriptBase {
       }, false).visitAll(new IVisitor<SNode>() {
         public void visit(final SNode nodeToMigrate) {
           pattern.match(nodeToMigrate);
+          List<SNode> attributes = SNodeOperations.getNodeDescendants(nodeToMigrate, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute"), false, new SAbstractConcept[]{});
+          ListSequence.fromList(attributes).removeSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(pattern.getMatchedNode("deps"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute"), true, new SAbstractConcept[]{})));
+          if (ListSequence.fromList(attributes).isNotEmpty()) {
+            markAnnotatedNodeForReview(nodeToMigrate, attributes);
+            return;
+          }
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
               return _quotation_createNode_9wc3oy_a0a0f(MigrationScriptBase.detachListPatternVariable(pattern.getMatchedList("deps")), pattern.getMatchedProperty("name"));
