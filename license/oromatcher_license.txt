@@ -1,31 +1,53 @@
-OROMatcher library (bundled in lib/oromatcher.jar under MPS installation home) license is attached below:
-
-----------------------------------------------------------------------------
-Original Reusable Objects, Inc.
-
---------------------------------------------------------------------------------
-
-Copyright (c) 1996, 1997 Original Reusable Objects, Inc. 
-
-
-Copyright in this document and the software accompanying this document is owned by Original Reusable Objects, Inc. All rights reserved. 
-
-OROMatcher License 
-
-Original Reusable Objects, Inc., hereinafter referred to as ORO, grants you a non-exclusive, non-transferable limited license to use the Software Components comprising the OROMatcher Java class package. There is no fee for this license. You may not redistribute any of the Software Components except as follows: 
-
-You may reproduce and redistribute the Software Components in object code form only (Java .class files) and only when incorporated into your software product which adds substantial and primary functionality to the Software Components. 
-You may not permit further redistribution of the Software Components by your end users except as part of a new software product you develop that meets the restricions of item 1. 
-To clarify, you may use the Software Components only to build new software you develop, and you may only distribute the Software Components as part of this new software. Except as permitted by applicable law and this License, you may not decompile, reverse engineer, disassemble, modify, rent, lease, loan, distribute, create derivative works from the Software or transmit the Software over a network. 
-You may not use or otherwise export or reexport the Software Components except as authorized by United States law and the laws of the jurisdiction in which the Software was obtained. In particular, but without limitation, the Software may not be used or otherwise exported or reexported (1) into (or to a national or resident of) any United States embargoed country or (2) to anyone on the U.S. Treasury Department't list of Specially Designated Nationals or the U.S. Department of Commerce's Table of Denial Orders. By using the Software, you represent and warrant that you are not located in, under control of, or a national or resident of any such country or on any such list. 
-
-ORO MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. ORO SHALL NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES. THE SOFTWARE IS NOT DESIGNED FOR USE IN HIGH RISK ACTIVITIES REQUIRING FAIL-SAFE PERFORMANCE. ORO DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTY OF FITNESS FOR HIGH RISK ACTIVITIES. 
-
-Restricted Rights Legend 
-This software and documentation is a "commercial item," as defined in 48 C.F.R. 2.101 (10/95), consisting of "commercial computer software" and "commercial computer software documentation," as defined in 48 C.F.R. 12.212 (9/95). Use, duplication, or disclosure by the U.S. Government is subject to the restrictions of U.S. GOVERNMENT END USERS consistent with 48 C.F.R. 12.212 and 48 C.F.R. 227.7202-1 through 227.7202-4 (6/95). 
-
-Trademarks 
-ORO, the ORO logo, Original Reusable Objects, Component software for the Internet, and OROMatcher are trademarks or registered trademarks of Original Reusable Objects, Inc. in the United States and other countries. 
-Java is trademark of Sun Microsystems, Inc. Netscape is a trademark of Netscape Communications Corporation. All other product names mentioned are the trademarks of their respective owners. 
-
---------------------------------------------------------------------------------
+/* ====================================================================
+ * The Apache Software License, Version 1.1
+ *
+ * Copyright (c) 2000-2002 The Apache Software Foundation.  All rights
+ * reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ *
+ * 3. The end-user documentation included with the redistribution,
+ *    if any, must include the following acknowledgment:
+ *       "This product includes software developed by the
+ *        Apache Software Foundation (http://www.apache.org/)."
+ *    Alternately, this acknowledgment may appear in the software itself,
+ *    if and wherever such third-party acknowledgments normally appear.
+ *
+ * 4. The names "Apache" and "Apache Software Foundation", "Jakarta-Oro"
+ *    must not be used to endorse or promote products derived from this
+ *    software without prior written permission. For written
+ *    permission, please contact apache@apache.org.
+ *
+ * 5. Products derived from this software may not be called "Apache"
+ *    or "Jakarta-Oro", nor may "Apache" or "Jakarta-Oro" appear in their
+ *    name, without prior written permission of the Apache Software Foundation.
+ *
+ * THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED.  IN NO EVENT SHALL THE APACHE SOFTWARE FOUNDATION OR
+ * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+ * USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+ * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ * ====================================================================
+ *
+ * This software consists of voluntary contributions made by many
+ * individuals on behalf of the Apache Software Foundation.  For more
+ * information on the Apache Software Foundation, please see
+ * <http://www.apache.org/>.
+ */
