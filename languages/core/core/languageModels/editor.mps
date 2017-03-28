@@ -45,7 +45,6 @@
       <concept id="3459162043708467089" name="jetbrains.mps.lang.editor.structure.CellActionMap_CanExecuteFunction" flags="in" index="jK8Ss" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="2491174914159318432" name="jetbrains.mps.lang.editor.structure.DominatesRecord" flags="lg" index="2lhJJ2" />
-      <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
       <concept id="784421273959492578" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeMenu" flags="ng" index="mvV$s">
         <child id="784421273959492606" name="nodeFunction" index="mvV$0" />
@@ -183,6 +182,7 @@
       <concept id="5425882385312046132" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CurrentTargetNode" flags="nn" index="1yR$tW" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <property id="1139852716018" name="noTargetText" index="1$x2rV" />
+        <property id="1140017977771" name="readOnly" index="1Intyy" />
         <property id="1140114345053" name="allowEmptyText" index="1O74Pk" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
@@ -1140,9 +1140,11 @@
     <ref role="1XX52x" to="tpck:29O0pTxSzj9" resolve="ReviewMigration" />
     <node concept="3EZMnI" id="29O0pTxS_rT" role="2wV5jI">
       <node concept="3EZMnI" id="29O0pTxS_KG" role="3EZMnx">
+        <ref role="1ERwB7" node="7YdSxSAfUuX" resolve="ReviewMigration_ActionMap" />
         <node concept="2iRfu4" id="29O0pTxS_KH" role="2iSdaV" />
         <node concept="3F0ifn" id="29O0pTxS__X" role="3EZMnx">
-          <property role="3F0ifm" value="review" />
+          <property role="3F0ifm" value="@Review" />
+          <ref role="1ERwB7" node="7YdSxSAfUuX" resolve="ReviewMigration_ActionMap" />
           <node concept="VechU" id="29O0pTxS_A3" role="3F10Kt">
             <property role="Vb096" value="DARK_GREEN" />
           </node>
@@ -1156,13 +1158,17 @@
             <node concept="VechU" id="29O0pTxS_LI" role="3F10Kt">
               <property role="Vb096" value="DARK_GREEN" />
             </node>
+            <node concept="11LMrY" id="7FVQM9jqU$F" role="3F10Kt">
+              <property role="VOm3f" value="true" />
+            </node>
           </node>
           <node concept="3F0A7n" id="29O0pTxS_LA" role="3EZMnx">
+            <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:29O0pTxSzjm" resolve="reasonShort" />
             <node concept="VechU" id="29O0pTxS_LK" role="3F10Kt">
               <property role="Vb096" value="DARK_GREEN" />
             </node>
-            <node concept="VPxyj" id="29O0pTxSDsN" role="3F10Kt">
+            <node concept="VPxyj" id="22ReF3aTeHB" role="3F10Kt">
               <property role="VOm3f" value="false" />
             </node>
           </node>
@@ -1170,6 +1176,9 @@
             <property role="3F0ifm" value=")" />
             <node concept="VechU" id="29O0pTxS_LM" role="3F10Kt">
               <property role="Vb096" value="DARK_GREEN" />
+            </node>
+            <node concept="11L4FC" id="7FVQM9jqU$M" role="3F10Kt">
+              <property role="VOm3f" value="true" />
             </node>
           </node>
           <node concept="2iRfu4" id="29O0pTxS_Lb" role="2iSdaV" />
@@ -1189,18 +1198,12 @@
             </node>
           </node>
         </node>
-        <node concept="ljvvj" id="29O0pTxS_L0" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
       </node>
       <node concept="2SsqMj" id="7YdSxSAfZIN" role="3EZMnx">
         <node concept="VLuvy" id="29O0pTxS_rE" role="3F10Kt">
-          <property role="Vb096" value="orange" />
+          <property role="Vb096" value="DARK_GREEN" />
         </node>
         <node concept="3vyZuw" id="29O0pTxS_rM" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="lj46D" id="29O0pTxSB0s" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
@@ -1219,6 +1222,24 @@
       </node>
       <node concept="3F0A7n" id="29O0pTxSMqz" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:29O0pTxSzjh" resolve="todo" />
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="7YdSxSAfUuX">
+    <property role="TrG5h" value="ReviewMigration_ActionMap" />
+    <property role="3GE5qa" value="attributes.migration" />
+    <ref role="1h_SK9" to="tpck:29O0pTxSzj9" resolve="ReviewMigration" />
+    <node concept="1hA7zw" id="7YdSxSAfUuY" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="7YdSxSAfUuZ" role="1hA7z_">
+        <node concept="3clFbS" id="7YdSxSAfUv0" role="2VODD2">
+          <node concept="3clFbF" id="7YdSxSAfUv1" role="3cqZAp">
+            <node concept="2OqwBi" id="7YdSxSAfUvn" role="3clFbG">
+              <node concept="0IXxy" id="7YdSxSAfUv2" role="2Oq$k0" />
+              <node concept="3YRAZt" id="7YdSxSAfUvt" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
