@@ -132,10 +132,6 @@ public final class ReferenceUpdater {
     if (oldLanguage.getGenerators().size() != newLanguage.getGenerators().size()) {
       throw new RefUpdateException("The number of generators do not match!");
     }
-    Iterator<SModel> newAccessoryModelIt = newLanguage.getAccessoryModels().iterator();
-    for (SModel oldAccessoryModel: oldLanguage.getAccessoryModels()) {
-      myModelReferenceMap.put(oldAccessoryModel.getReference(), newAccessoryModelIt.next().getReference());
-    }
     Iterator<Generator> newGeneratorIt = newLanguage.getGenerators().iterator();
     for (Generator oldGenerator : oldLanguage.getGenerators()) {
       addModuleToAdjustImpl(oldGenerator, newGeneratorIt.next());
@@ -260,6 +256,8 @@ public final class ReferenceUpdater {
       SModelReference newModelReference = myModelReferenceMap.get(modelReference);
       newAccessoryModels.add(newModelReference != null ? newModelReference : modelReference);
     }
+    accessoryModels.clear();
+    accessoryModels.addAll(newAccessoryModels);
     language.setModuleDescriptor(descriptor);
   }
 
