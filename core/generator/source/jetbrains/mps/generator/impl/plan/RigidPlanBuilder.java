@@ -34,6 +34,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -88,6 +89,11 @@ public class RigidPlanBuilder implements GenerationPlanBuilder {
   @Override
   public void applyGeneratorWithExtended(@NotNull SModule ... generator) {
     throw new UnsupportedOperationException("This implementation of plan builder doesn't support requested functionality");
+  }
+
+  @Override
+  public void apply(@NotNull Collection<TemplateMappingConfiguration> tmc) {
+    mySteps.add(new Transform(tmc));
   }
 
   @Override
