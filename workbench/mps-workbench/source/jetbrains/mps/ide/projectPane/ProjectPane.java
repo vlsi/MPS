@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.projectPane;
 
-import com.intellij.icons.AllIcons.General;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
@@ -44,6 +43,7 @@ import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.platform.watching.ReloadListener;
@@ -222,7 +222,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   @Override
   public Icon getIcon() {
-    return General.ProjectTab;
+    return MPSIcons.ProjectPane.LogicalView;
   }
 
   @NotNull
