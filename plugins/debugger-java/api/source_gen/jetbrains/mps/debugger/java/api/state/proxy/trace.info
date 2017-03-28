@@ -136,21 +136,21 @@
   </root>
   <root nodeRef="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)/3432969378036014521">
     <file name="JavaThread.java">
-      <node id="1858303129749154084" at="27,0,28,0" concept="4" trace="myStackFrames" />
-      <node id="1858303129749154109" at="28,0,29,0" concept="4" trace="myInitialized" />
-      <node id="3157471211772903616" at="29,0,30,0" concept="4" trace="myPresentation" />
-      <node id="7279139148252606165" at="30,0,31,0" concept="4" trace="myDebugSession" />
-      <node id="3432969378036014546" at="32,110,33,27" concept="14" />
-      <node id="3432969378036014548" at="33,27,34,40" concept="3" />
-      <node id="3157471211772903621" at="34,40,35,45" concept="3" />
-      <node id="7743367690593939495" at="35,45,36,35" concept="3" />
-      <node id="7279139148252606170" at="36,35,37,34" concept="3" />
-      <node id="3432969378036014521" at="39,0,40,0" concept="12" trace="LOG" />
+      <node id="3432969378036014521" at="23,0,24,0" concept="12" trace="LOG" />
+      <node id="1858303129749154084" at="28,0,29,0" concept="4" trace="myStackFrames" />
+      <node id="1858303129749154109" at="29,0,30,0" concept="4" trace="myInitialized" />
+      <node id="3157471211772903616" at="30,0,31,0" concept="4" trace="myPresentation" />
+      <node id="7279139148252606165" at="31,0,32,0" concept="4" trace="myDebugSession" />
+      <node id="3432969378036014546" at="33,110,34,27" concept="14" />
+      <node id="3432969378036014548" at="34,27,35,40" concept="3" />
+      <node id="3157471211772903621" at="35,40,36,45" concept="3" />
+      <node id="7743367690593939495" at="36,45,37,35" concept="3" />
+      <node id="7279139148252606170" at="37,35,38,34" concept="3" />
       <node id="1858303129749160387" at="41,24,42,13" concept="10" />
       <node id="1858303129749160349" at="43,5,44,25" concept="3" />
       <node id="1858303129749160317" at="46,64,47,85" concept="3" />
-      <node id="1858303129749160368" at="50,33,51,58" concept="3" />
-      <node id="6180978056098802303" at="54,33,55,52" concept="3" />
+      <node id="3818729150937329556" at="50,33,51,58" concept="3" />
+      <node id="3818729150937329564" at="54,33,55,52" concept="3" />
       <node id="1858303129749154135" at="60,53,61,25" concept="10" />
       <node id="3432969378036014619" at="64,44,65,56" concept="10" />
       <node id="1858303129749160397" at="68,55,69,66" concept="10" />
@@ -173,13 +173,13 @@
       <node id="3432969378036014790" at="120,46,121,22" concept="10" />
       <node id="3432969378036014795" at="122,48,123,24" concept="10" />
       <node id="3432969378036014760" at="124,14,125,27" concept="10" />
-      <node id="3432969378036014530" at="23,0,25,0" concept="4" trace="myThreadReference" />
-      <node id="3432969378036014534" at="25,0,27,0" concept="4" trace="myCachedIcon" />
+      <node id="3432969378036014530" at="24,0,26,0" concept="4" trace="myThreadReference" />
+      <node id="3432969378036014534" at="26,0,28,0" concept="4" trace="myCachedIcon" />
       <node id="7743367690593939466" at="104,10,106,5" concept="1" />
       <node id="1858303129749160380" at="40,47,43,5" concept="7" />
       <node id="1858303129749160305" at="45,9,48,7" concept="5" />
-      <node id="1858303129749160368" at="49,51,52,7" concept="7" />
-      <node id="6180978056098802303" at="53,44,56,7" concept="7" />
+      <node id="3818729150937329556" at="49,51,52,7" concept="7" />
+      <node id="3818729150937329564" at="53,44,56,7" concept="7" />
       <node id="3432969378036014552" at="59,0,63,0" concept="8" trace="getFrames#()Ljava/util/List;" />
       <node id="3432969378036014601" at="63,0,67,0" concept="8" trace="getFramesCount#()I" />
       <node id="3432969378036014624" at="67,0,71,0" concept="8" trace="getFrame#(I)Ljetbrains/mps/debug/api/programState/IStackFrame;" />
@@ -190,7 +190,7 @@
       <node id="3157471211772903584" at="89,0,93,0" concept="8" trace="calculatePresentation#()Ljava/lang/String;" />
       <node id="3432969378036014711" at="93,0,97,0" concept="8" trace="getPresentationIcon#()Ljavax/swing/Icon;" />
       <node id="7743367690593939462" at="101,10,106,5" concept="7" />
-      <node id="3432969378036014539" at="32,0,39,0" concept="2" trace="JavaThread#(Ljetbrains/mps/debug/api/AbstractDebugSession;Lcom/sun/jdi/ThreadReference;)V" />
+      <node id="3432969378036014539" at="33,0,40,0" concept="2" trace="JavaThread#(Ljetbrains/mps/debug/api/AbstractDebugSession;Lcom/sun/jdi/ThreadReference;)V" />
       <node id="7743367690593939458" at="98,36,106,5" concept="7" />
       <node id="7743367690593939449" at="97,0,108,0" concept="8" trace="calculateIcon#()Ljavax/swing/Icon;" />
       <node id="1858303129749160285" at="44,25,57,5" concept="16" />
@@ -199,8 +199,8 @@
       <node id="3432969378036014751" at="108,0,128,0" concept="13" trace="getThreadStatusText#(I)Ljava/lang/String;" />
       <scope id="1858303129749160381" at="41,24,42,13" />
       <scope id="1858303129749160316" at="46,64,47,85" />
-      <scope id="1858303129749160368" at="50,33,51,58" />
-      <scope id="6180978056098802303" at="54,33,55,52" />
+      <scope id="3818729150937329556" at="50,33,51,58" />
+      <scope id="3818729150937329564" at="54,33,55,52" />
       <scope id="3432969378036014556" at="60,53,61,25" />
       <scope id="3432969378036014604" at="64,44,65,56" />
       <scope id="3432969378036014629" at="68,55,69,66" />
@@ -244,8 +244,8 @@
       <scope id="3432969378036014675" at="85,0,89,0" />
       <scope id="3157471211772903584" at="89,0,93,0" />
       <scope id="3432969378036014711" at="93,0,97,0" />
-      <scope id="3432969378036014545" at="32,110,37,34" />
-      <scope id="3432969378036014539" at="32,0,39,0">
+      <scope id="3432969378036014545" at="33,110,38,34" />
+      <scope id="3432969378036014539" at="33,0,40,0">
         <var name="debugSession" id="7279139148252561674" />
         <var name="threadReference" id="3432969378036014542" />
       </scope>

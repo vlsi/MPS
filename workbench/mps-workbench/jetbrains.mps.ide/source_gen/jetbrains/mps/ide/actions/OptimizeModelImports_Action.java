@@ -104,7 +104,7 @@ public class OptimizeModelImports_Action extends BaseAction {
                 }
               });
             }
-          }, ModalityState.any());
+          }, ModalityState.defaultModalityState());
           if (monitor.isCanceled()) {
             return;
           }

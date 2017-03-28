@@ -574,7 +574,7 @@
   </root>
   <root nodeRef="r:c29f530b-f74d-4627-9da2-61138cfa6722(jetbrains.mps.vcs.platform.actions)/8230098746512809101">
     <file name="VcsActionsUtil.java">
-      <node id="8230098746512809101" at="55,0,56,0" concept="14" trace="LOG" />
+      <node id="8230098746512809101" at="53,0,54,0" concept="14" trace="LOG" />
       <node id="5864860390570954316" at="57,9,58,44" concept="10" />
       <node id="5864860390571454227" at="58,44,59,25" concept="10" />
       <node id="5864860390571230325" at="60,45,61,52" concept="5" />
@@ -602,7 +602,7 @@
       <node id="3664956003245642157" at="92,53,93,70" concept="5" />
       <node id="3421562727908488603" at="93,70,94,68" concept="5" />
       <node id="6686221342493345807" at="94,68,95,59" concept="5" />
-      <node id="8230098746512809192" at="97,41,98,24" concept="5" />
+      <node id="3818729150937341110" at="97,41,98,24" concept="5" />
       <node id="8230098746512809195" at="99,7,100,120" concept="5" />
       <node id="8230098746512809233" at="109,0,110,0" concept="6" trace="__CP__" />
       <node id="8230098746512809233" at="115,28,116,54" concept="0" />
@@ -649,9 +649,9 @@
       <node id="8230098746512809288" at="186,49,187,93" concept="10" />
       <node id="8230098746512809295" at="187,93,188,95" concept="11" />
       <node id="8230098746512809319" at="192,57,193,56" concept="11" />
-      <node id="8230098746512809423" at="53,0,55,0" concept="3" trace="VcsActionsUtil#()V" />
+      <node id="8230098746512809423" at="54,0,56,0" concept="3" trace="VcsActionsUtil#()V" />
       <node id="5864860390572693857" at="64,0,67,0" concept="9" trace="compute#()Ljava/lang/String;" />
-      <node id="8230098746512809192" at="96,30,99,7" concept="8" />
+      <node id="3818729150937341110" at="96,30,99,7" concept="8" />
       <node id="8230098746512809273" at="182,73,185,5" concept="8" />
       <node id="8230098746512809317" at="192,0,195,0" concept="9" trace="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
       <node id="8230098746512809245" at="120,27,124,23" concept="8" />
@@ -675,16 +675,16 @@
       <node id="8230098746512809233" at="105,0,179,0" concept="9" trace="invoke#()Ljava/lang/Iterable;" />
       <node id="8230098746512809231" at="103,135,179,15" concept="11" />
       <node id="8230098746512809226" at="103,0,181,0" concept="15" trace="collectUnversionedFiles#(Lcom/intellij/openapi/vcs/impl/VcsFileStatusProvider;Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/Iterable;" />
-      <scope id="8230098746512809426" at="53,28,53,28" />
+      <scope id="8230098746512809426" at="54,28,54,28" />
       <scope id="5864860390570733825" at="60,45,61,52" />
       <scope id="5864860390572693859" at="64,35,65,34" />
-      <scope id="8230098746512809192" at="97,41,98,24" />
+      <scope id="3818729150937341110" at="97,41,98,24" />
       <scope id="8230098746512809245" at="118,27,119,113" />
       <scope id="8230098746512809253" at="128,27,129,147" />
       <scope id="8230098746512809233" at="165,28,166,37" />
       <scope id="8230098746512809274" at="183,33,184,73" />
       <scope id="8230098746512809318" at="192,57,193,56" />
-      <scope id="8230098746512809423" at="53,0,55,0" />
+      <scope id="8230098746512809423" at="54,0,56,0" />
       <scope id="8230098746512809233" at="115,28,117,35" />
       <scope id="8230098746512809245" at="121,58,123,30" />
       <scope id="8230098746512809253" at="131,76,133,30" />

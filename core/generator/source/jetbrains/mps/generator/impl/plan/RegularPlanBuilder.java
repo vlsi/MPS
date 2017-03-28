@@ -98,6 +98,11 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
   }
 
   @Override
+  public void apply(@NotNull Collection<TemplateMappingConfiguration> tmc) {
+    mySteps.add(new PreparedEntry(new ArrayList<>(tmc)));
+  }
+
+  @Override
   public void recordCheckpoint(@NotNull CheckpointIdentity cp) {
     mySteps.add(new CheckpointEntry(cp, false));
   }
@@ -246,6 +251,35 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
     @Override
     public Step createStep(RegularPlanBuilder planBuilder) {
       return new Checkpoint(myIdentity, myIsSynchOnly);
+    }
+  }
+
+  private static class PreparedEntry implements StepEntry {
+    private final List<TemplateMappingConfiguration> myElements;
+
+    PreparedEntry(List<TemplateMappingConfiguration> tmc) {
+      myElements = tmc;
+    }
+
+    @Override
+    public void reportInvolvedGenerators(Collection<TemplateModule> result) {
+      // Report tmc's module as 'involved', effectively telling that
+      // generators of explicitly specified TMCs are NOT available for consideration with
+      // 'generators with extensions' stmt. We treat explicitly specified MC as 'LD knows what to do with a generator'
+      for (TemplateMappingConfiguration tmc : myElements) {
+        result.add(tmc.getModel().getModule());
+      }
+    }
+
+    @Override
+    public boolean registerIfIntersects(Collection<SModuleReference> directExtendedGenerators, TemplateModule extCandidate) {
+      // no-op
+      return false;
+    }
+
+    @Override
+    public Step createStep(RegularPlanBuilder planBuilder) {
+      return new Transform(myElements);
     }
   }
 }

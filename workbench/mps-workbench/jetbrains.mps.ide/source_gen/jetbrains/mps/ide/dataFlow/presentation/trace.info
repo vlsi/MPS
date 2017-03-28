@@ -188,20 +188,20 @@
   </root>
   <root nodeRef="r:c6e01f98-6040-4dd0-a88b-62f17e77e610(jetbrains.mps.ide.dataFlow.presentation)/4282822416100097099">
     <file name="AbstractBlock.java">
-      <node id="4282822416100097106" at="19,0,20,0" concept="4" trace="myX" />
-      <node id="4282822416100097109" at="20,0,21,0" concept="4" trace="myY" />
-      <node id="4282822416100097112" at="21,0,22,0" concept="4" trace="myWidth" />
-      <node id="4282822416100097115" at="22,0,23,0" concept="4" trace="myHeight" />
-      <node id="4282822416100097118" at="23,0,24,0" concept="4" trace="mySourceNode" />
-      <node id="2593126716998345445" at="24,0,25,0" concept="4" trace="myRuleNodeReference" />
-      <node id="4282822416100097121" at="25,0,26,0" concept="4" trace="myPaddingX" />
-      <node id="4282822416100097125" at="26,0,27,0" concept="4" trace="myPaddingY" />
-      <node id="4282822416100097129" at="27,0,28,0" concept="4" trace="myCharHeight" />
-      <node id="4282822416100097133" at="28,0,29,0" concept="4" trace="myStringWidth" />
-      <node id="1351674898213478556" at="29,0,30,0" concept="4" trace="myCaption" />
-      <node id="4282822416100097137" at="30,0,31,0" concept="4" trace="myBlockListeners" />
-      <node id="7125738324217627810" at="31,0,32,0" concept="4" trace="mySucc" />
-      <node id="4282822416100097099" at="32,0,33,0" concept="12" trace="LOG" />
+      <node id="4282822416100097099" at="19,0,20,0" concept="12" trace="LOG" />
+      <node id="4282822416100097106" at="20,0,21,0" concept="4" trace="myX" />
+      <node id="4282822416100097109" at="21,0,22,0" concept="4" trace="myY" />
+      <node id="4282822416100097112" at="22,0,23,0" concept="4" trace="myWidth" />
+      <node id="4282822416100097115" at="23,0,24,0" concept="4" trace="myHeight" />
+      <node id="4282822416100097118" at="24,0,25,0" concept="4" trace="mySourceNode" />
+      <node id="2593126716998345445" at="25,0,26,0" concept="4" trace="myRuleNodeReference" />
+      <node id="4282822416100097121" at="26,0,27,0" concept="4" trace="myPaddingX" />
+      <node id="4282822416100097125" at="27,0,28,0" concept="4" trace="myPaddingY" />
+      <node id="4282822416100097129" at="28,0,29,0" concept="4" trace="myCharHeight" />
+      <node id="4282822416100097133" at="29,0,30,0" concept="4" trace="myStringWidth" />
+      <node id="1351674898213478556" at="30,0,31,0" concept="4" trace="myCaption" />
+      <node id="4282822416100097137" at="31,0,32,0" concept="4" trace="myBlockListeners" />
+      <node id="7125738324217627810" at="32,0,33,0" concept="4" trace="mySucc" />
       <node id="4282822416100097159" at="33,130,34,17" concept="3" />
       <node id="4282822416100097165" at="34,17,35,17" concept="3" />
       <node id="4282822416100097171" at="35,17,36,25" concept="3" />
@@ -209,7 +209,7 @@
       <node id="4282822416100097183" at="37,27,38,35" concept="3" />
       <node id="1351674898213478565" at="38,35,39,29" concept="3" />
       <node id="802679297406379451" at="41,11,42,106" concept="3" />
-      <node id="802679297407032594" at="44,44,45,64" concept="3" />
+      <node id="3818729150937313167" at="44,44,45,64" concept="3" />
       <node id="802679297407315914" at="46,9,47,40" concept="3" />
       <node id="4282822416100097193" at="52,41,53,29" concept="10" />
       <node id="2593126716999777342" at="56,48,57,36" concept="10" />
@@ -245,7 +245,7 @@
       <node id="4282822416100097555" at="143,33,144,37" concept="3" />
       <node id="4282822416100097560" at="144,37,145,39" concept="3" />
       <node id="4282822416100097307" at="101,10,103,5" concept="0" />
-      <node id="802679297407032594" at="43,44,46,9" concept="7" />
+      <node id="3818729150937313167" at="43,44,46,9" concept="7" />
       <node id="2593126716998233725" at="56,0,59,0" concept="8" trace="getRuleNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="4282822416100097312" at="96,105,99,7" concept="6" />
       <node id="4282822416100097404" at="114,0,117,0" concept="8" trace="getPaddingX#(Ljava/awt/FontMetrics;)I" />
@@ -272,7 +272,7 @@
       <node id="4282822416100097257" at="92,0,105,0" concept="8" trace="processMousePressed#(Ljava/awt/event/MouseEvent;)Z" />
       <node id="4282822416100097146" at="33,0,51,0" concept="2" trace="AbstractBlock#(IIIILorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljava/lang/String;)V" />
       <scope id="802679297406332899" at="41,11,42,106" />
-      <scope id="802679297407032594" at="44,44,45,64" />
+      <scope id="3818729150937313167" at="44,44,45,64" />
       <scope id="4282822416100097192" at="52,41,53,29" />
       <scope id="2593126716998233727" at="56,48,57,36" />
       <scope id="4282822416100097200" at="61,21,62,20" />

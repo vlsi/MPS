@@ -5,9 +5,10 @@ package jetbrains.mps.execution.api.configurations;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.openapi.project.Project;
 
-public class ConsoleCreator {
-  public ConsoleCreator() {
+public final class ConsoleCreator {
+  private ConsoleCreator() {
   }
+
   public static ConsoleViewImpl createConsoleView(Project project, boolean viewer) {
     ConsoleViewImpl result = new ConsoleViewImpl(project, viewer);
     result.setHelpId("reference.dialogs.debugview.consoletab");

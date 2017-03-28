@@ -7122,9 +7122,9 @@
     <node concept="312cEg" id="hP8D6fqe8n" role="jymVt">
       <property role="TrG5h" value="myIcon" />
       <property role="3TUv4t" value="true" />
-      <node concept="10M0yZ" id="215BGXOrs4j" role="33vP2m">
+      <node concept="10M0yZ" id="1MQq_m2RxRV" role="33vP2m">
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModelsWidget" resolve="TransientModelsWidget" />
         <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModels" resolve="TransientModels" />
       </node>
       <node concept="3Tm6S6" id="hP8D6fqe8o" role="1B3o_S" />
       <node concept="3uibUv" id="hP8D6fqe8p" role="1tU5fm">
@@ -7134,9 +7134,9 @@
     <node concept="312cEg" id="7hIrQB9J1nT" role="jymVt">
       <property role="TrG5h" value="myIconDisable" />
       <property role="3TUv4t" value="true" />
-      <node concept="10M0yZ" id="7hIrQB9J1nW" role="33vP2m">
+      <node concept="10M0yZ" id="1MQq_m2Rwxn" role="33vP2m">
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModelsWidgetDisable" resolve="TransientModelsWidgetDisable" />
         <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModelsDisable" resolve="TransientModelsDisable" />
       </node>
       <node concept="3Tm6S6" id="7hIrQB9J1nX" role="1B3o_S" />
       <node concept="3uibUv" id="7hIrQB9J1nY" role="1tU5fm">
@@ -9396,9 +9396,9 @@
                   <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
                   <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModels" resolve="TransientModels" />
                 </node>
-                <node concept="10M0yZ" id="5HzZDakJctW" role="37wK5m">
+                <node concept="10M0yZ" id="1MQq_m2R_6k" role="37wK5m">
+                  <ref role="3cqZAo" to="dxuu:~SwingConstants.LEFT" resolve="LEFT" />
                   <ref role="1PxDUh" to="dxuu:~SwingConstants" resolve="SwingConstants" />
-                  <ref role="3cqZAo" to="dxuu:~SwingConstants.RIGHT" resolve="RIGHT" />
                 </node>
               </node>
             </node>

@@ -4,6 +4,8 @@ package typesystemIntegration.languageChecker;
 
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.DisposableEditorChecker;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.Set;
 import jetbrains.mps.checkers.AbstractConstraintsChecker;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -23,8 +25,6 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import com.intellij.openapi.project.IndexNotReadyException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import org.apache.log4j.Level;
@@ -52,6 +52,7 @@ import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.nodeEditor.EditorSettings;
 
 public class LanguageEditorChecker extends BaseEditorChecker implements DisposableEditorChecker {
+  private static final Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);
   private boolean myMessagesChanged = false;
   private boolean myForceRunQuickFixes = false;
   private Set<AbstractConstraintsChecker> myRules = SetSequence.fromSet(new HashSet<AbstractConstraintsChecker>());
@@ -101,7 +102,6 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);
   private Set<EditorMessage> doCreateMessages(SNode node, boolean wasCheckedOnce, EditorContext editorContext, TypeCheckingContext typeCheckingContext, Cancellable cancellable) {
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
     boolean inspector = editorComponent instanceof InspectorEditorComponent;

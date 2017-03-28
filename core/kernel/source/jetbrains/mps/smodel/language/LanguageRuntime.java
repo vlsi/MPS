@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,10 @@ import java.util.concurrent.ConcurrentMap;
  * Language runtime keeps track of aspects queried (instantiates them lazily).
  */
 public abstract class LanguageRuntime {
-  private final ConcurrentMap<Class<? extends ILanguageAspect>, ILanguageAspect> myAspectDescriptors =
-      new ConcurrentHashMap<Class<? extends ILanguageAspect>, ILanguageAspect>();
+  private final ConcurrentMap<Class<? extends ILanguageAspect>, ILanguageAspect> myAspectDescriptors = new ConcurrentHashMap<>();
   // FIXME AP: is there a contract on duplication????
-  private final List<LanguageRuntime> myExtendingLanguages = new ArrayList<LanguageRuntime>();
-  private final List<LanguageRuntime> myExtendedLanguages = new ArrayList<LanguageRuntime>();
+  private final List<LanguageRuntime> myExtendingLanguages = new ArrayList<>();
+  private final List<LanguageRuntime> myExtendedLanguages = new ArrayList<>();
 
   /**
    * @return full name of the language, never {@code null}.
@@ -74,7 +73,7 @@ public abstract class LanguageRuntime {
   public abstract int getVersion();
 
   public Collection<? extends GeneratorRuntime> getGenerators() {
-    ArrayList<GeneratorRuntime> rv = new ArrayList<GeneratorRuntime>(4);
+    ArrayList<GeneratorRuntime> rv = new ArrayList<>(4);
     populateRegisteredGenerators(rv);
     return rv;
   }
@@ -131,7 +130,7 @@ public abstract class LanguageRuntime {
   /*
    * perhaps, could use WeakHashMap, although proper registration/un-registration sequence shall enforce no stale entries
    */
-  private final Map<SModuleReference, GeneratorRuntime> myRegisteredGenerators = new HashMap<SModuleReference, GeneratorRuntime>();
+  private final Map<SModuleReference, GeneratorRuntime> myRegisteredGenerators = new HashMap<>();
 
   protected final void populateRegisteredGenerators(List<? super GeneratorRuntime> consumer) {
     consumer.addAll(myRegisteredGenerators.values());
@@ -234,7 +233,6 @@ public abstract class LanguageRuntime {
     LanguageRuntime langCore = registry.getLanguage(BootstrapLanguages.getLangCore());
     assert langCore != null;
     if (this != langCore && !visitedLanguages.contains(langCore.getId())) {
-      myExtendedLanguages.add(langCore);
       langCore.registerExtendingLanguage(this);
     }
   }

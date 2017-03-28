@@ -117,7 +117,7 @@
   <node concept="3vrhyV" id="2LiUEk8oQ$g">
     <property role="TrG5h" value="test" />
     <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
-      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD34/Language+tests+language#Languagetestslanguage-introduction" />
+      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD20171/Language+tests+language#Languagetestslanguage-introduction" />
     </node>
     <node concept="1QGGSu" id="P5ZkC6x0ka" role="3vqPLo">
       <property role="1iqoE4" value="${module}/icons/tests.png" />

@@ -70,37 +70,37 @@
     </file>
   </root>
   <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)/2025581204008533737">
-    <file name="MoveElementsUpFromCoumnSelection_Test.java">
-      <node id="2025581204008533737" at="13,72,14,127" concept="0" />
-      <node id="2025581204008533737" at="14,127,15,133" concept="0" />
+    <file name="MoveElementsUpFromColumnSelection_Test.java">
+      <node id="2025581204008533737" at="13,73,14,127" concept="0" />
+      <node id="2025581204008533737" at="14,127,15,134" concept="0" />
       <node id="2025581204008533737" at="21,51,22,72" concept="0" />
       <node id="2025581204008533785" at="22,72,23,73" concept="0" />
       <node id="2025581204008533789" at="23,73,24,69" concept="0" />
-      <node id="2025581204008533737" at="12,0,17,0" concept="1" trace="test_MoveElementsUpFromCoumnSelection#()V" />
+      <node id="2025581204008533737" at="12,0,17,0" concept="1" trace="test_MoveElementsUpFromColumnSelection#()V" />
       <node id="2025581204008533737" at="20,0,26,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="2025581204008533737" at="13,72,15,133" />
+      <scope id="2025581204008533737" at="13,73,15,134" />
       <scope id="2025581204008533737" at="21,51,24,69" />
       <scope id="2025581204008533737" at="12,0,17,0" />
       <scope id="2025581204008533737" at="20,0,26,0" />
-      <unit id="2025581204008533737" at="18,0,27,0" name="jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsUpFromCoumnSelection_Test$TestBody" />
-      <unit id="2025581204008533737" at="10,0,28,0" name="jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsUpFromCoumnSelection_Test" />
+      <unit id="2025581204008533737" at="18,0,27,0" name="jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsUpFromColumnSelection_Test$TestBody" />
+      <unit id="2025581204008533737" at="10,0,28,0" name="jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsUpFromColumnSelection_Test" />
     </file>
   </root>
   <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)/2025581204008533796">
-    <file name="MoveElementsDownFromCoumnSelection_Test.java">
-      <node id="2025581204008533796" at="13,74,14,127" concept="0" />
-      <node id="2025581204008533796" at="14,127,15,135" concept="0" />
+    <file name="MoveElementsDownFromColumnSelection_Test.java">
+      <node id="2025581204008533796" at="13,75,14,127" concept="0" />
+      <node id="2025581204008533796" at="14,127,15,136" concept="0" />
       <node id="2025581204008533796" at="21,51,22,72" concept="0" />
       <node id="2025581204008533842" at="22,72,23,77" concept="0" />
       <node id="2025581204008533844" at="23,77,24,71" concept="0" />
-      <node id="2025581204008533796" at="12,0,17,0" concept="1" trace="test_MoveElementsDownFromCoumnSelection#()V" />
+      <node id="2025581204008533796" at="12,0,17,0" concept="1" trace="test_MoveElementsDownFromColumnSelection#()V" />
       <node id="2025581204008533796" at="20,0,26,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="2025581204008533796" at="13,74,15,135" />
+      <scope id="2025581204008533796" at="13,75,15,136" />
       <scope id="2025581204008533796" at="21,51,24,71" />
       <scope id="2025581204008533796" at="12,0,17,0" />
       <scope id="2025581204008533796" at="20,0,26,0" />
-      <unit id="2025581204008533796" at="18,0,27,0" name="jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsDownFromCoumnSelection_Test$TestBody" />
-      <unit id="2025581204008533796" at="10,0,28,0" name="jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsDownFromCoumnSelection_Test" />
+      <unit id="2025581204008533796" at="18,0,27,0" name="jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsDownFromColumnSelection_Test$TestBody" />
+      <unit id="2025581204008533796" at="10,0,28,0" name="jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsDownFromColumnSelection_Test" />
     </file>
   </root>
   <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)/5097407566121950102">

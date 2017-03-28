@@ -200,7 +200,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
   @Override
   public boolean isReadOnly() {
-    return isSetterDefault() || !isGetterDefault();
+    return isSetterDefault() && !isGetterDefault();
   }
 
   private interface InheritanceCalculateParameters {

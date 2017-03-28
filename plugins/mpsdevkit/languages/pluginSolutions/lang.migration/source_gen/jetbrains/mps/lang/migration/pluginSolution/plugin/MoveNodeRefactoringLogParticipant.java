@@ -6,6 +6,8 @@ import jetbrains.mps.refactoring.participant.RefactoringParticipantBase;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -17,8 +19,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
@@ -32,6 +32,7 @@ import java.util.Iterator;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBase<SNodeReference, SNodeReference, SNode, SNode> implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference> {
+  private static final Logger LOG = LogManager.getLogger(MoveNodeRefactoringLogParticipant.class);
 
   public static class MoveNodeRefactoringLogParticipant_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public MoveNodeRefactoringLogParticipant_extension() {
@@ -86,7 +87,6 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(MoveNodeRefactoringLogParticipant.class);
   @Override
   public List<List<RefactoringParticipant.Change<SNodeReference, SNodeReference>>> getChanges(List<SNodeReference> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
     if (!(isApplicable(initialStates, repository)) || !(ListSequence.fromList(selectedOptions).contains(OPTION))) {

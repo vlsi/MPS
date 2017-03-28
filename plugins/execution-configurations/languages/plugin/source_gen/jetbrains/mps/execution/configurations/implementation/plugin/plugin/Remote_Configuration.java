@@ -4,6 +4,8 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
@@ -12,8 +14,6 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.debugger.java.api.settings.RemoteConnectionSettings;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
@@ -29,6 +29,7 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.ide.project.ProjectHelper;
 
 public class Remote_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
+  private static final Logger LOG = LogManager.getLogger(Remote_Configuration.class);
   @NotNull
   private Remote_Configuration.MyState myState = new Remote_Configuration.MyState();
   public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
@@ -50,7 +51,6 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
   public void setSettings(RemoteConnectionSettings value) {
     myState.mySettings = value;
   }
-  protected static Logger LOG = LogManager.getLogger(Remote_Configuration.class);
   @Override
   public Remote_Configuration clone() {
     Remote_Configuration clone = null;

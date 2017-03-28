@@ -10,7 +10,7 @@
     <model modelUID="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" />
   </accessoryModels>
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.baseLanguage.regexp#1174510748147" uuid="bffd1385-a29f-4b76-bb8a-cfb3227968be">
+    <generator alias="" namespace="jetbrains.mps.baseLanguage.regexp#1174510748147" uuid="bffd1385-a29f-4b76-bb8a-cfb3227968be">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/baseLanguage/template" />

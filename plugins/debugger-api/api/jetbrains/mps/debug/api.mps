@@ -331,11 +331,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -3691,11 +3690,10 @@
                         </node>
                       </node>
                       <node concept="3clFbS" id="$msJHFI5IO" role="TDEfX">
-                        <node concept="34ab3g" id="$msJHFI5JQ" role="3cqZAp">
-                          <property role="35gtTG" value="error" />
-                          <property role="34fQS0" value="true" />
-                          <node concept="Xl_RD" id="$msJHFI5JS" role="34bqiv" />
-                          <node concept="37vLTw" id="$msJHFI5JU" role="34bMjA">
+                        <node concept="RRSsy" id="3jYQuSB32Yz" role="3cqZAp">
+                          <property role="RRSoG" value="error" />
+                          <node concept="Xl_RD" id="$msJHFI5JS" role="RRSoy" />
+                          <node concept="37vLTw" id="$msJHFI5JU" role="RRSow">
                             <ref role="3cqZAo" node="$msJHFI5IM" resolve="t" />
                           </node>
                         </node>
@@ -4364,9 +4362,9 @@
                 </node>
                 <node concept="3clFbJ" id="74nKSDp1YNi" role="3cqZAp">
                   <node concept="3clFbS" id="74nKSDp1YNj" role="3clFbx">
-                    <node concept="34ab3g" id="74nKSDp1YNR" role="3cqZAp">
-                      <property role="35gtTG" value="warn" />
-                      <node concept="3cpWs3" id="74nKSDp1YNT" role="34bqiv">
+                    <node concept="RRSsy" id="3jYQuSB33VA" role="3cqZAp">
+                      <property role="RRSoG" value="warn" />
+                      <node concept="3cpWs3" id="74nKSDp1YNT" role="RRSoy">
                         <node concept="Xl_RD" id="74nKSDp1YNU" role="3uHU7B">
                           <property role="Xl_RC" value="Could not create breakpoint for node " />
                         </node>

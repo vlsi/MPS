@@ -381,11 +381,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -2302,9 +2301,9 @@
       <node concept="3clFbS" id="6KmbN9hT18U" role="3clF47">
         <node concept="3clFbJ" id="3Ss$euZpw91" role="3cqZAp">
           <node concept="3clFbS" id="3Ss$euZpw93" role="3clFbx">
-            <node concept="34ab3g" id="3Ss$euZpA6M" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="2YIFZM" id="3Ss$euZpAGK" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB37k_" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="2YIFZM" id="3Ss$euZpAGK" role="RRSoy">
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <node concept="Xl_RD" id="3Ss$euZpA6O" role="37wK5m">
@@ -3324,13 +3323,9 @@
               </node>
             </node>
             <node concept="3clFbS" id="608sk1uSL7" role="TDEfX">
-              <node concept="34ab3g" id="608sk1uSLr" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="37vLTw" id="3GM_nagT$ku" role="34bMjA">
-                  <ref role="3cqZAo" node="608sk1uSL5" resolve="e" />
-                </node>
-                <node concept="3cpWs3" id="608sk1uSLs" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB37kX" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="3cpWs3" id="608sk1uSLs" role="RRSoy">
                   <node concept="2YIFZM" id="2n9zn0CqMNX" role="3uHU7w">
                     <ref role="37wK5l" to="unno:7WvVJ3rORmu" resolve="getModelLongName" />
                     <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
@@ -3341,6 +3336,9 @@
                   <node concept="Xl_RD" id="608sk1uSLw" role="3uHU7B">
                     <property role="Xl_RC" value="Cannot create backup during resolving disk-memory conflict for " />
                   </node>
+                </node>
+                <node concept="37vLTw" id="3GM_nagT$ku" role="RRSow">
+                  <ref role="3cqZAo" node="608sk1uSL5" resolve="e" />
                 </node>
               </node>
               <node concept="YS8fn" id="608sk1uSLy" role="3cqZAp">
@@ -4821,10 +4819,9 @@
             </node>
             <node concept="3clFbJ" id="5G$1ADP9P_h" role="3cqZAp">
               <node concept="3clFbS" id="5G$1ADP9P_i" role="3clFbx">
-                <node concept="34ab3g" id="5G$1ADP9P_j" role="3cqZAp">
-                  <property role="35gtTG" value="warn" />
-                  <property role="34fQS0" value="true" />
-                  <node concept="3cpWs3" id="5G$1ADP9RqM" role="34bqiv">
+                <node concept="RRSsy" id="3jYQuSB34oj" role="3cqZAp">
+                  <property role="RRSoG" value="warn" />
+                  <node concept="3cpWs3" id="5G$1ADP9RqM" role="RRSoy">
                     <node concept="2OqwBi" id="5G$1ADP9RPe" role="3uHU7w">
                       <node concept="2GrUjf" id="5G$1ADP9REA" role="2Oq$k0">
                         <ref role="2Gs0qQ" node="7yFo2Ea62w_" resolve="file" />
@@ -5719,9 +5716,9 @@
                   </node>
                   <node concept="3clFbJ" id="7yFo2Ea33qY" role="3cqZAp">
                     <node concept="3clFbS" id="7yFo2Ea33r1" role="3clFbx">
-                      <node concept="34ab3g" id="7yFo2Ea36KG" role="3cqZAp">
-                        <property role="35gtTG" value="info" />
-                        <node concept="3cpWs3" id="7yFo2Ea36U3" role="34bqiv">
+                      <node concept="RRSsy" id="3jYQuSB35lx" role="3cqZAp">
+                        <property role="RRSoG" value="info" />
+                        <node concept="3cpWs3" id="7yFo2Ea36U3" role="RRSoy">
                           <node concept="2OqwBi" id="7yFo2Ea3742" role="3uHU7w">
                             <node concept="37vLTw" id="7yFo2Ea36UU" role="2Oq$k0">
                               <ref role="3cqZAo" node="5O9exHkXIHD" resolve="baseModel" />
@@ -5770,9 +5767,9 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="34ab3g" id="7yFo2Ea384$" role="3cqZAp">
-                    <property role="35gtTG" value="info" />
-                    <node concept="3cpWs3" id="7yFo2Ea38Uy" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB35lJ" role="3cqZAp">
+                    <property role="RRSoG" value="info" />
+                    <node concept="3cpWs3" id="7yFo2Ea38Uy" role="RRSoy">
                       <node concept="2OqwBi" id="7yFo2Ea394C" role="3uHU7w">
                         <node concept="37vLTw" id="7yFo2Ea38Vr" role="2Oq$k0">
                           <ref role="3cqZAo" node="5O9exHkXIHD" resolve="baseModel" />
@@ -5843,9 +5840,9 @@
                               </node>
                               <node concept="3eNFk2" id="6DkrMsAdEzs" role="3eNLev">
                                 <node concept="3clFbS" id="6DkrMsAdEzu" role="3eOfB_">
-                                  <node concept="34ab3g" id="6DkrMsAcv5f" role="3cqZAp">
-                                    <property role="35gtTG" value="info" />
-                                    <node concept="2YIFZM" id="6DkrMsAcv5g" role="34bqiv">
+                                  <node concept="RRSsy" id="3jYQuSB35lX" role="3cqZAp">
+                                    <property role="RRSoG" value="info" />
+                                    <node concept="2YIFZM" id="6DkrMsAcv5g" role="RRSoy">
                                       <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                                       <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                                       <node concept="Xl_RD" id="6DkrMsAcv5h" role="37wK5m">
@@ -6023,10 +6020,9 @@
                                           </node>
                                           <node concept="9aQIb" id="29lH0gvXW04" role="9aQIa">
                                             <node concept="3clFbS" id="29lH0gvXW05" role="9aQI4">
-                                              <node concept="34ab3g" id="29lH0gvXW06" role="3cqZAp">
-                                                <property role="35gtTG" value="error" />
-                                                <property role="34fQS0" value="true" />
-                                                <node concept="3cpWs3" id="29lH0gvXW07" role="34bqiv">
+                                              <node concept="RRSsy" id="3jYQuSB35mb" role="3cqZAp">
+                                                <property role="RRSoG" value="error" />
+                                                <node concept="3cpWs3" id="29lH0gvXW07" role="RRSoy">
                                                   <node concept="2OqwBi" id="29lH0gvXW08" role="3uHU7w">
                                                     <node concept="37vLTw" id="29lH0gvXW09" role="2Oq$k0">
                                                       <ref role="3cqZAo" node="6DkrMsAbKiT" resolve="resultModel" />
@@ -6037,7 +6033,7 @@
                                                     <property role="Xl_RC" value="Cannot save merge resulting model " />
                                                   </node>
                                                 </node>
-                                                <node concept="37vLTw" id="29lH0gvXW0c" role="34bMjA">
+                                                <node concept="37vLTw" id="29lH0gvXW0c" role="RRSow">
                                                   <ref role="3cqZAo" node="6DkrMsAcDGr" resolve="error" />
                                                 </node>
                                               </node>
@@ -6080,13 +6076,9 @@
                                         <node concept="SfApY" id="68MS4n2IT_Y" role="3cqZAp">
                                           <node concept="TDmWw" id="68MS4n2IT_Z" role="TEbGg">
                                             <node concept="3clFbS" id="68MS4n2ITA0" role="TDEfX">
-                                              <node concept="34ab3g" id="68MS4n2ITA1" role="3cqZAp">
-                                                <property role="35gtTG" value="error" />
-                                                <property role="34fQS0" value="true" />
-                                                <node concept="37vLTw" id="68MS4n2ITA2" role="34bMjA">
-                                                  <ref role="3cqZAo" node="68MS4n2ITA4" resolve="e" />
-                                                </node>
-                                                <node concept="3cpWs3" id="2KwMPsppKrT" role="34bqiv">
+                                              <node concept="RRSsy" id="3jYQuSB35mr" role="3cqZAp">
+                                                <property role="RRSoG" value="error" />
+                                                <node concept="3cpWs3" id="2KwMPsppKrT" role="RRSoy">
                                                   <node concept="2OqwBi" id="2KwMPsppOuA" role="3uHU7w">
                                                     <node concept="2GrUjf" id="2KwMPsppN3s" role="2Oq$k0">
                                                       <ref role="2Gs0qQ" node="7yFo2Ea1tdf" resolve="file" />
@@ -6098,6 +6090,9 @@
                                                   <node concept="Xl_RD" id="68MS4n2ITA3" role="3uHU7B">
                                                     <property role="Xl_RC" value="Cannot save merge result into " />
                                                   </node>
+                                                </node>
+                                                <node concept="37vLTw" id="68MS4n2ITA2" role="RRSow">
+                                                  <ref role="3cqZAo" node="68MS4n2ITA4" resolve="e" />
                                                 </node>
                                               </node>
                                             </node>
@@ -6351,13 +6346,12 @@
                   </node>
                   <node concept="TDmWw" id="2Uzgk8K1Qok" role="TEbGg">
                     <node concept="3clFbS" id="2Uzgk8K1Qol" role="TDEfX">
-                      <node concept="34ab3g" id="2Uzgk8K1Qom" role="3cqZAp">
-                        <property role="35gtTG" value="error" />
-                        <property role="34fQS0" value="true" />
-                        <node concept="Xl_RD" id="2Uzgk8K1Qon" role="34bqiv">
+                      <node concept="RRSsy" id="3jYQuSB35mF" role="3cqZAp">
+                        <property role="RRSoG" value="error" />
+                        <node concept="Xl_RD" id="2Uzgk8K1Qon" role="RRSoy">
                           <property role="Xl_RC" value="Error loading revisions to merge" />
                         </node>
-                        <node concept="37vLTw" id="2Uzgk8K1Qoo" role="34bMjA">
+                        <node concept="37vLTw" id="2Uzgk8K1Qoo" role="RRSow">
                           <ref role="3cqZAo" node="2Uzgk8K1Qop" resolve="e" />
                         </node>
                       </node>
@@ -9945,10 +9939,9 @@
                                                 </node>
                                                 <node concept="9aQIb" id="4qk_0lIyudS" role="9aQIa">
                                                   <node concept="3clFbS" id="4qk_0lIyudT" role="9aQI4">
-                                                    <node concept="34ab3g" id="4qk_0lIyudU" role="3cqZAp">
-                                                      <property role="35gtTG" value="error" />
-                                                      <property role="34fQS0" value="true" />
-                                                      <node concept="3cpWs3" id="4qk_0lIyudV" role="34bqiv">
+                                                    <node concept="RRSsy" id="3jYQuSB37gd" role="3cqZAp">
+                                                      <property role="RRSoG" value="error" />
+                                                      <node concept="3cpWs3" id="4qk_0lIyudV" role="RRSoy">
                                                         <node concept="2OqwBi" id="4qk_0lIyudW" role="3uHU7w">
                                                           <node concept="37vLTw" id="4qk_0lIyudX" role="2Oq$k0">
                                                             <ref role="3cqZAo" node="4qk_0lIyubZ" resolve="resultModel" />
@@ -9959,7 +9952,7 @@
                                                           <property role="Xl_RC" value="Cannot save merge resulting model " />
                                                         </node>
                                                       </node>
-                                                      <node concept="37vLTw" id="4qk_0lIyue0" role="34bMjA">
+                                                      <node concept="37vLTw" id="4qk_0lIyue0" role="RRSow">
                                                         <ref role="3cqZAo" node="4qk_0lIyue1" resolve="error" />
                                                       </node>
                                                     </node>
@@ -9996,13 +9989,9 @@
                                             <node concept="SfApY" id="3j7bj9veATK" role="3cqZAp">
                                               <node concept="TDmWw" id="3j7bj9veATL" role="TEbGg">
                                                 <node concept="3clFbS" id="3j7bj9veATM" role="TDEfX">
-                                                  <node concept="34ab3g" id="3j7bj9veATN" role="3cqZAp">
-                                                    <property role="35gtTG" value="error" />
-                                                    <property role="34fQS0" value="true" />
-                                                    <node concept="37vLTw" id="3j7bj9veATO" role="34bMjA">
-                                                      <ref role="3cqZAo" node="3j7bj9veATU" resolve="e" />
-                                                    </node>
-                                                    <node concept="3cpWs3" id="3j7bj9veATP" role="34bqiv">
+                                                  <node concept="RRSsy" id="3jYQuSB37gt" role="3cqZAp">
+                                                    <property role="RRSoG" value="error" />
+                                                    <node concept="3cpWs3" id="3j7bj9veATP" role="RRSoy">
                                                       <node concept="2OqwBi" id="3j7bj9veATQ" role="3uHU7w">
                                                         <node concept="37vLTw" id="3j7bj9veD1G" role="2Oq$k0">
                                                           <ref role="3cqZAo" node="4qk_0lIxhm5" resolve="file" />
@@ -10014,6 +10003,9 @@
                                                       <node concept="Xl_RD" id="3j7bj9veATT" role="3uHU7B">
                                                         <property role="Xl_RC" value="Cannot save merge result into " />
                                                       </node>
+                                                    </node>
+                                                    <node concept="37vLTw" id="3j7bj9veATO" role="RRSow">
+                                                      <ref role="3cqZAo" node="3j7bj9veATU" resolve="e" />
                                                     </node>
                                                   </node>
                                                 </node>

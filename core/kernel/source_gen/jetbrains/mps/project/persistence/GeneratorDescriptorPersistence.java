@@ -125,12 +125,10 @@ public class GeneratorDescriptorPersistence {
   public Element save(@NotNull GeneratorDescriptor descriptor) {
     Element generator = new Element("generator");
     if (descriptor.getAlias() != null) {
-      // FIXME shall use 'alias' instead, see load(), above. Left to minimize changes in 2017.1 
-      generator.setAttribute("name", descriptor.getAlias());
+      generator.setAttribute("alias", descriptor.getAlias());
     }
     if (descriptor.getNamespace() != null) {
-      // FIXME shall use 'namespace' instead, see load(), above. Left to minimize changes in 2017.1 
-      generator.setAttribute("generatorUID", descriptor.getNamespace());
+      generator.setAttribute("namespace", descriptor.getNamespace());
     }
     if (descriptor.getId() != null) {
       generator.setAttribute("uuid", descriptor.getId().toString());

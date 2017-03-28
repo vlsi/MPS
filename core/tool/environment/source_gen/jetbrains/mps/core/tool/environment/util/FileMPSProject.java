@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 
 public class FileMPSProject extends ProjectBase implements FileBasedProject {
+  private static final Logger LOG_1170860263 = LogManager.getLogger(FileMPSProject.class);
   private static Logger LOG = LogManager.getLogger(FileMPSProject.class);
 
   private final File myProjectFile;
@@ -38,7 +39,6 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
     return MacrosFactory.forProjectFile(new IoFile(getProjectFile().getPath()));
   }
 
-  protected static Logger LOG_1170860263 = LogManager.getLogger(FileMPSProject.class);
   @Override
   @NotNull
   public String getName() {

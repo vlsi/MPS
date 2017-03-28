@@ -347,11 +347,10 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -1456,9 +1455,9 @@
                               <node concept="2es0OD" id="491od_YPeTj" role="2OqNvi">
                                 <node concept="1bVj0M" id="491od_YPeTk" role="23t8la">
                                   <node concept="3clFbS" id="491od_YPeTl" role="1bW5cS">
-                                    <node concept="34ab3g" id="491od_YPeTm" role="3cqZAp">
-                                      <property role="35gtTG" value="debug" />
-                                      <node concept="3cpWs3" id="491od_YPeTn" role="34bqiv">
+                                    <node concept="RRSsy" id="3jYQuSB36Cu" role="3cqZAp">
+                                      <property role="RRSoG" value="debug" />
+                                      <node concept="3cpWs3" id="491od_YPeTn" role="RRSoy">
                                         <node concept="37vLTw" id="491od_YPeTo" role="3uHU7w">
                                           <ref role="3cqZAo" node="491od_YPeTu" resolve="it" />
                                         </node>
@@ -1521,9 +1520,9 @@
           </node>
         </node>
         <node concept="3clFbS" id="7mrRUyVUv8R" role="3clF47">
-          <node concept="34ab3g" id="48TV87gch8" role="3cqZAp">
-            <property role="35gtTG" value="debug" />
-            <node concept="3cpWs3" id="48TV87gdtJ" role="34bqiv">
+          <node concept="RRSsy" id="3jYQuSB36CC" role="3cqZAp">
+            <property role="RRSoG" value="debug" />
+            <node concept="3cpWs3" id="48TV87gdtJ" role="RRSoy">
               <node concept="2OqwBi" id="48TV87gdtK" role="3uHU7w">
                 <node concept="37vLTw" id="2BHiRxgm6cx" role="2Oq$k0">
                   <ref role="3cqZAo" node="7mrRUyVUv8N" resolve="event" />
@@ -1539,9 +1538,9 @@
           </node>
           <node concept="3clFbJ" id="5qZkzcKiNeU" role="3cqZAp">
             <node concept="3clFbS" id="5qZkzcKiNeV" role="3clFbx">
-              <node concept="34ab3g" id="5qZkzcKiNfI" role="3cqZAp">
-                <property role="35gtTG" value="warn" />
-                <node concept="3cpWs3" id="5qZkzcKiNhA" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB36K_" role="3cqZAp">
+                <property role="RRSoG" value="warn" />
+                <node concept="3cpWs3" id="5qZkzcKiNhA" role="RRSoy">
                   <node concept="2OqwBi" id="5qZkzcKiNhW" role="3uHU7w">
                     <node concept="37vLTw" id="2BHiRxglK_r" role="2Oq$k0">
                       <ref role="3cqZAo" node="7mrRUyVUv8N" resolve="event" />
@@ -3109,9 +3108,9 @@
             <ref role="1Pybhc" to="fyhk:~InternalFlag" resolve="InternalFlag" />
           </node>
           <node concept="3clFbS" id="5biTR9bEC_O" role="3clFbx">
-            <node concept="34ab3g" id="5biTR9bEFJc" role="3cqZAp">
-              <property role="35gtTG" value="debug" />
-              <node concept="3cpWs3" id="5biTR9bEJDc" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB36M7" role="3cqZAp">
+              <property role="RRSoG" value="debug" />
+              <node concept="3cpWs3" id="5biTR9bEJDc" role="RRSoy">
                 <node concept="Xl_RD" id="5biTR9bEJDl" role="3uHU7w">
                   <property role="Xl_RC" value="s" />
                 </node>
@@ -5133,9 +5132,9 @@
         </node>
         <node concept="2GUZhq" id="9H$2_ta26s" role="3cqZAp">
           <node concept="3clFbS" id="9H$2_ta26t" role="2GVbov">
-            <node concept="34ab3g" id="9H$2_ta26u" role="3cqZAp">
-              <property role="35gtTG" value="info" />
-              <node concept="2YIFZM" id="5td12NyaeC3" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB37wT" role="3cqZAp">
+              <property role="RRSoG" value="info" />
+              <node concept="2YIFZM" id="5td12NyaeC3" role="RRSoy">
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <node concept="Xl_RD" id="9H$2_ta26v" role="37wK5m">
@@ -5176,9 +5175,9 @@
             </node>
           </node>
           <node concept="3clFbS" id="9H$2_ta26A" role="2GV8ay">
-            <node concept="34ab3g" id="4DjT7UC5JJL" role="3cqZAp">
-              <property role="35gtTG" value="debug" />
-              <node concept="Xl_RD" id="4DjT7UC5JJN" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB37xd" role="3cqZAp">
+              <property role="RRSoG" value="debug" />
+              <node concept="Xl_RD" id="4DjT7UC5JJN" role="RRSoy">
                 <property role="Xl_RC" value="File system reload started" />
               </node>
             </node>
@@ -5964,13 +5963,12 @@
               </node>
             </node>
             <node concept="3clFbS" id="491od_Y804p" role="TDEfX">
-              <node concept="34ab3g" id="491od_Y8gD2" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="491od_Y8gD4" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB37w5" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="Xl_RD" id="491od_Y8gD4" role="RRSoy">
                   <property role="Xl_RC" value="Exception during reload" />
                 </node>
-                <node concept="37vLTw" id="491od_Y8gD6" role="34bMjA">
+                <node concept="37vLTw" id="491od_Y8gD6" role="RRSow">
                   <ref role="3cqZAo" node="491od_Y804n" resolve="e" />
                 </node>
               </node>
@@ -7559,9 +7557,9 @@
         </node>
         <node concept="3clFbJ" id="501K0YLMPW9" role="3cqZAp">
           <node concept="3clFbS" id="501K0YLMPWa" role="3clFbx">
-            <node concept="34ab3g" id="25HKs5OuRf3" role="3cqZAp">
-              <property role="35gtTG" value="debug" />
-              <node concept="3cpWs3" id="25HKs5OuRLI" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB39Nc" role="3cqZAp">
+              <property role="RRSoG" value="debug" />
+              <node concept="3cpWs3" id="25HKs5OuRLI" role="RRSoy">
                 <node concept="Xl_RD" id="25HKs5OuRf5" role="3uHU7B">
                   <property role="Xl_RC" value="Adding watch request for the path " />
                 </node>
@@ -7592,9 +7590,9 @@
                 </node>
               </node>
             </node>
-            <node concept="34ab3g" id="1GI5MKbAya0" role="3cqZAp">
-              <property role="35gtTG" value="debug" />
-              <node concept="Xl_RD" id="1GI5MKbAya2" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB39Nm" role="3cqZAp">
+              <property role="RRSoG" value="debug" />
+              <node concept="Xl_RD" id="1GI5MKbAya2" role="RRSoy">
                 <property role="Xl_RC" value="Watch request added" />
               </node>
             </node>
@@ -7686,9 +7684,9 @@
         </node>
         <node concept="3clFbJ" id="5LhcIq1T4Kh" role="3cqZAp">
           <node concept="3clFbS" id="5LhcIq1T4Kj" role="3clFbx">
-            <node concept="34ab3g" id="69OmYVxlbOV" role="3cqZAp">
-              <property role="35gtTG" value="warn" />
-              <node concept="3cpWs3" id="25HKs5OuOT0" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB39Ns" role="3cqZAp">
+              <property role="RRSoG" value="warn" />
+              <node concept="3cpWs3" id="25HKs5OuOT0" role="RRSoy">
                 <node concept="Xl_RD" id="25HKs5OuOTp" role="3uHU7w">
                   <property role="Xl_RC" value=" is not presented" />
                 </node>

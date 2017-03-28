@@ -4,6 +4,8 @@ package jetbrains.mps.workbench.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
@@ -28,8 +30,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.findUsages.FindUsagesUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
@@ -49,6 +49,7 @@ import com.intellij.openapi.progress.ProcessCanceledException;
 import java.util.Collections;
 
 public class StubModelsFastFindSupport implements ApplicationComponent, FindUsagesParticipant {
+  private static final Logger LOG = LogManager.getLogger(StubModelsFastFindSupport.class);
   private final PersistenceRegistry myRegistry;
 
   public StubModelsFastFindSupport(MPSCoreComponents mpsCore) {
@@ -130,7 +131,6 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(StubModelsFastFindSupport.class);
   private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedConsumer, @Nullable Function<T, String> id) {
     MultiMap<SModel, T> result = new SetBasedMultiMap<SModel, T>();
     if (elems.isEmpty()) {

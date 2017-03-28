@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class ConceptInstances_Finder extends GeneratedFinder {
+  private static final Logger LOG_1127887887 = LogManager.getLogger(ConceptInstances_Finder.class);
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
   public ConceptInstances_Finder() {
   }
@@ -43,7 +44,6 @@ public class ConceptInstances_Finder extends GeneratedFinder {
     return MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
 
-  protected static Logger LOG_1127887887 = LogManager.getLogger(ConceptInstances_Finder.class);
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {

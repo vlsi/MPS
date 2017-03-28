@@ -221,11 +221,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -712,11 +711,10 @@
               </node>
             </node>
             <node concept="3clFbS" id="34SjXUxB1Bt" role="TDEfX">
-              <node concept="34ab3g" id="34SjXUxB1Bu" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="34SjXUxB1Bv" role="34bqiv" />
-                <node concept="37vLTw" id="34SjXUxB1Bw" role="34bMjA">
+              <node concept="RRSsy" id="3jYQuSB36LR" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="Xl_RD" id="34SjXUxB1Bv" role="RRSoy" />
+                <node concept="37vLTw" id="34SjXUxB1Bw" role="RRSow">
                   <ref role="3cqZAo" node="34SjXUxB1Br" resolve="e" />
                 </node>
               </node>
@@ -2749,10 +2747,9 @@
               </node>
             </node>
             <node concept="3clFbS" id="1BguvjG4Oir" role="TDEfX">
-              <node concept="34ab3g" id="1BguvjG4P6z" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="3cpWs3" id="1BguvjG4Pqs" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB34nF" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="3cpWs3" id="1BguvjG4Pqs" role="RRSoy">
                   <node concept="2OqwBi" id="1BguvjG4P$S" role="3uHU7w">
                     <node concept="13iPFW" id="1BguvjG4Pqz" role="2Oq$k0" />
                     <node concept="3TrcHB" id="1BguvjG4PGw" role="2OqNvi">

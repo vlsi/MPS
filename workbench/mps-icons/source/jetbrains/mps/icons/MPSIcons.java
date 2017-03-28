@@ -112,7 +112,8 @@ public class MPSIcons {
     public static final Icon TestModel = new LayeredIcon(Nodes.Model, AllIcons.Nodes.JunitTestMark);
     public static final Icon TextGen = IconLoader.getIcon("/nodes/textGen.png");
     public static final Icon TransientModels = IconLoader.getIcon("/nodes/transientModels.png");
-    public static final Icon TransientModelsDisable = IconLoader.getIcon("/nodes/transientModelsDisable.png");
+    public static final Icon TransientModelsWidget = IconLoader.getIcon("/nodes/transientWidget.png");
+    public static final Icon TransientModelsWidgetDisable = IconLoader.getIcon("/nodes/transientWidgetDisable.png");
     public static final Icon Type = IconLoader.getIcon("/nodes/type.png");
     public static final Icon Unknown = IconLoader.getIcon("/nodes/unknown.png");
     public static final Icon UsagesResultOverlay = IconLoader.getIcon("/nodes/usages-result-overlay.png");
@@ -126,10 +127,9 @@ public class MPSIcons {
     }
   }
 
-  public static final Icon LanguageRuntime = IconLoader.getIcon("/nodes/lang-rt.png");
+  public static final Icon LanguageRuntime = LayeredIcon.create(Nodes.Language, AllIcons.Nodes.Locked);
 
   public static class ProjectPane {
-    @Deprecated /* To remove in 2017.1, use AllIcons.General#ProjectTab*/
     public static final Icon LogicalView = IconLoader.getIcon("/projectPane/logicalView.png");
   }
 

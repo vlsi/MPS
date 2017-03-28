@@ -43,7 +43,7 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
   private SideSelectDirection mySideSelectDirection = SideSelectDirection.NONE;
 
   public EditorCellSelection(EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException,
-      SelectionRestoreException {
+                                                                                                                        SelectionRestoreException {
     super(editorComponent);
     if (cellInfo == null) {
       throw new SelectionStoreException("Required CellInfo parameter is null");
@@ -59,7 +59,7 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
     myCaretXRelative = SelectionInfoImpl.Util.getIntProperty(properties, CARET_X_RELATIVE_PROPERTY_NAME);
     mySideSelectDirection =
         (SideSelectDirection) SelectionInfoImpl.Util.getEnumProperty(properties, SIDE_SELECT_DIRECTION_PROPERTY_NAME, SideSelectDirection.class,
-            mySideSelectDirection);
+                                                                     mySideSelectDirection);
   }
 
   public EditorCellSelection(@NotNull EditorCell editorCell) {
@@ -190,10 +190,10 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
   }
 
   private static int getRelativeCaretX(EditorCell editorCell) {
-    return editorCell.getCaretX() - editorCell.getX();
+    return editorCell.getCaretX() - editorCell.getLeftGap() - editorCell.getX();
   }
 
   private static void setRelativeCaretX(EditorCell editorCell, int relativeCaretX) {
-    editorCell.setCaretX(editorCell.getX() + relativeCaretX);
+    editorCell.setCaretX(editorCell.getX() + editorCell.getLeftGap() + relativeCaretX);
   }
 }

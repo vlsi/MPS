@@ -229,9 +229,9 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -735,6 +735,24 @@
         <node concept="3clFbH" id="2cQuilFfjTF" role="3cqZAp" />
         <node concept="SfApY" id="4TtYrYGuXpd" role="3cqZAp">
           <node concept="3clFbS" id="4TtYrYGuXpq" role="SfCbr">
+            <node concept="1X3_iC" id="7AyV7KEnPPp" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3clFbF" id="7P16$vxBoTy" role="8Wnug">
+                <node concept="2YIFZM" id="7P16$vxBq31" role="3clFbG">
+                  <ref role="37wK5l" to="rkxj:7P16$vxBflg" resolve="tryResolveUnknowns" />
+                  <ref role="1Pybhc" to="rkxj:31WmxQNAJED" resolve="JavaParser" />
+                  <node concept="37vLTw" id="7P16$vxBq5Z" role="37wK5m">
+                    <ref role="3cqZAo" node="4TtYrYGuXps" resolve="nodes" />
+                  </node>
+                  <node concept="2ShNRf" id="2I$v6HVqvzR" role="37wK5m">
+                    <node concept="1pGfFk" id="2I$v6HVqGRy" role="2ShVmc">
+                      <ref role="37wK5l" to="mk8z:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="46EDkFIitJh" role="3cqZAp">
               <node concept="3cpWsn" id="46EDkFIitJk" role="3cpWs9">
                 <property role="TrG5h" value="context" />
@@ -1175,24 +1193,6 @@
             <node concept="3SKdUt" id="5rd_t15qdwv" role="3cqZAp">
               <node concept="3SKdUq" id="5rd_t15qdDl" role="3SKWNk">
                 <property role="3SKdUp" value="trying to resolve names when nodes are already in a model" />
-              </node>
-            </node>
-            <node concept="1X3_iC" id="7AyV7KEnPPp" role="lGtFl">
-              <property role="3V$3am" value="statement" />
-              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-              <node concept="3clFbF" id="7P16$vxBoTy" role="8Wnug">
-                <node concept="2YIFZM" id="7P16$vxBq31" role="3clFbG">
-                  <ref role="37wK5l" to="rkxj:7P16$vxBflg" resolve="tryResolveUnknowns" />
-                  <ref role="1Pybhc" to="rkxj:31WmxQNAJED" resolve="JavaParser" />
-                  <node concept="37vLTw" id="7P16$vxBq5Z" role="37wK5m">
-                    <ref role="3cqZAo" node="4TtYrYGuXps" resolve="nodes" />
-                  </node>
-                  <node concept="2ShNRf" id="2I$v6HVqvzR" role="37wK5m">
-                    <node concept="1pGfFk" id="2I$v6HVqGRy" role="2ShVmc">
-                      <ref role="37wK5l" to="mk8z:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
-                    </node>
-                  </node>
-                </node>
               </node>
             </node>
             <node concept="3cpWs8" id="1jKozQHwiw2" role="3cqZAp">
@@ -2372,9 +2372,9 @@
             </node>
           </node>
         </node>
-        <node concept="34ab3g" id="4FD577oSuV2" role="3cqZAp">
-          <property role="35gtTG" value="info" />
-          <node concept="3cpWs3" id="4FD577oSuV3" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB39F9" role="3cqZAp">
+          <property role="RRSoG" value="info" />
+          <node concept="3cpWs3" id="4FD577oSuV3" role="RRSoy">
             <node concept="Xl_RD" id="4FD577oSuV4" role="3uHU7w">
               <property role="Xl_RC" value=")" />
             </node>
@@ -2792,9 +2792,9 @@
                     </node>
                   </node>
                   <node concept="3clFbS" id="2odTO7An4Qu" role="3clFbx">
-                    <node concept="34ab3g" id="2odTO7An4Qv" role="3cqZAp">
-                      <property role="35gtTG" value="error" />
-                      <node concept="3cpWs3" id="2odTO7An4Qw" role="34bqiv">
+                    <node concept="RRSsy" id="3jYQuSB39FF" role="3cqZAp">
+                      <property role="RRSoG" value="error" />
+                      <node concept="3cpWs3" id="2odTO7An4Qw" role="RRSoy">
                         <node concept="2OqwBi" id="6OOlWTkvjZS" role="3uHU7w">
                           <node concept="37vLTw" id="6OOlWTkvjTA" role="2Oq$k0">
                             <ref role="3cqZAo" node="2odTO7An4OF" resolve="modelRef" />

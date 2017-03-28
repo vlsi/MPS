@@ -10,7 +10,7 @@
     <model modelUID="r:e6234636-faf1-4112-be6c-55df7ec7314a(jetbrains.mps.build.mps.tests.accessories)" />
   </accessoryModels>
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.build.mps.tests#4560297596904874237" uuid="46acce8c-467e-474a-98fc-a13494168c35">
+    <generator alias="" namespace="jetbrains.mps.build.mps.tests#4560297596904874237" uuid="46acce8c-467e-474a-98fc-a13494168c35">
       <models>
         <modelRoot contentPath="${module}/generator/template" type="default">
           <sourceRoot location="." />

@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.TemplateModelImpl;
 import java.util.Arrays;
@@ -19,13 +20,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class Generator extends TemplateModuleBase {
   private final LanguageRuntime sourceLanguage;
   private final Collection<TemplateMappingPriorityRule> priorities;
-  private final Collection<String> referencedGenerators;
   private TemplateModel[] models;
 
-  public Generator(LanguageRuntime sourceLanguage) {
+  public Generator(LanguageRegistry languageRegistry, LanguageRuntime sourceLanguage) {
+    super(languageRegistry);
     this.sourceLanguage = sourceLanguage;
     priorities = TemplateUtil.asCollection(TemplateUtil.createStrictlyBeforeRule(TemplateUtil.createRefExternal("791a790e-6d6d-4aa8-8917-3b269a164450(jetbrains.mps.traceInfo.tracemacro.testlang#7980748436587788163)", TemplateUtil.createRefNormal("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "*", "*")), TemplateUtil.createRefExternal("5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)", TemplateUtil.createRefLocal())));
-    referencedGenerators = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage.collections/jetbrains.mps.baseLanguage.collections#1151699677197");
   }
   @Override
   public String getAlias() {
@@ -67,7 +67,7 @@ public class Generator extends TemplateModuleBase {
   }
 
   @Override
-  public Collection<String> getReferencedModules() {
-    return referencedGenerators;
+  protected void fillReferencedGenerators(TemplateModuleBase.ReferencedGenerators referencedGenerators) {
+    referencedGenerators.extended("5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)");
   }
 }

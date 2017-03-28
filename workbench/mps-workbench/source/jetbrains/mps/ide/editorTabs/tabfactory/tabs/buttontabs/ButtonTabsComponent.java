@@ -56,7 +56,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
         getProject().getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
-            if (isDisposed()) {
+            if (isDisposed() || !getComponent().isDisplayable()) {
               return;
             }
             updateTabs();
