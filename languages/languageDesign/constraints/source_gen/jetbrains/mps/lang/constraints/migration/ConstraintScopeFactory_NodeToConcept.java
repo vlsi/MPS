@@ -117,7 +117,9 @@ public class ConstraintScopeFactory_NodeToConcept extends MigrationScriptBase {
         SNode newScopeFactroy = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x4d3a0509807b801fL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope"));
         SLinkOperations.setTarget(newScopeFactroy, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"), SNodeOperations.copyNode(SLinkOperations.getTarget(scopeFactory, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"))));
         SNodeOperations.replaceWithAnother(scopeFactory, newScopeFactroy);
+
         boolean migrateManually = migrateScopeFactoryParameters(SLinkOperations.getTarget(newScopeFactroy, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")));
+
         replaceScopeFactory(scopeFactory, newScopeFactroy, migrateManually);
         return;
       }
@@ -125,13 +127,15 @@ public class ConstraintScopeFactory_NodeToConcept extends MigrationScriptBase {
     {
       final SNode scopeFactory = sf;
       if (SNodeOperations.isInstanceOf(scopeFactory, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b72e99b73L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory"))) {
-        SNode newScopeFactroy = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x4d3a0509807b801fL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope"));
-        SLinkOperations.setTarget(newScopeFactroy, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"), SNodeOperations.copyNode(SLinkOperations.getTarget(scopeFactory, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"))));
-        SNodeOperations.replaceWithAnother(scopeFactory, newScopeFactroy);
+        SNode newScopeFactory = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x4d3a0509807b801fL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope"));
+        SLinkOperations.setTarget(newScopeFactory, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"), SNodeOperations.copyNode(SLinkOperations.getTarget(scopeFactory, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"))));
+        SNodeOperations.replaceWithAnother(scopeFactory, newScopeFactory);
+
         boolean migrateManualy = false;
-        migrateManualy |= migrateScopeFactoryParameters(SLinkOperations.getTarget(newScopeFactroy, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")));
-        migrateManualy |= migrateScopeFactoryReturnStatements(newScopeFactroy);
-        replaceScopeFactory(scopeFactory, newScopeFactroy, migrateManualy);
+        migrateManualy |= migrateScopeFactoryParameters(SLinkOperations.getTarget(newScopeFactory, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")));
+        migrateManualy |= migrateScopeFactoryReturnStatements(newScopeFactory);
+
+        replaceScopeFactory(scopeFactory, newScopeFactory, migrateManualy);
         return;
       }
     }
@@ -295,22 +299,28 @@ public class ConstraintScopeFactory_NodeToConcept extends MigrationScriptBase {
   }
 
   public void replaceScopeFactory(SNode oldScopeFactory, SNode newScopeFactory, boolean migrateManually) {
+    SNode p = SNodeOperations.getParent(newScopeFactory);
+    SNodeOperations.deleteNode(newScopeFactory);
+    ConstraintsMigrationUtil.swapReferences(oldScopeFactory, newScopeFactory);
     if (migrateManually) {
       // hack to insert commentouted node 
-      SNode p = SNodeOperations.getParent(newScopeFactory);
-      SNodeOperations.replaceWithAnother(newScopeFactory, oldScopeFactory);
+      attachScopeFactory(p, oldScopeFactory);
       CommentUtil.commentOut(oldScopeFactory);
-      {
-        final SNode parent = p;
-        if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"))) {
-          SLinkOperations.setTarget(parent, MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, 0x10dead647b3L, "searchScopeFactory"), newScopeFactory);
-        }
+    }
+    attachScopeFactory(p, newScopeFactory);
+  }
+
+  public void attachScopeFactory(SNode p, SNode sf) {
+    {
+      final SNode parent = p;
+      if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"))) {
+        SLinkOperations.setTarget(parent, MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, 0x10dead647b3L, "searchScopeFactory"), sf);
       }
-      {
-        final SNode parent = p;
-        if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"))) {
-          SLinkOperations.setTarget(parent, MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10b7319e797L, "searchScopeFactory"), newScopeFactory);
-        }
+    }
+    {
+      final SNode parent = p;
+      if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"))) {
+        SLinkOperations.setTarget(parent, MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10b7319e797L, "searchScopeFactory"), sf);
       }
     }
   }

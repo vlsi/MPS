@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
@@ -127,8 +128,15 @@ final class CopyDefaultModelRootHelper {
                                                                           myTargetModule));
     ModelCreationOptions options = prmCalculator.calculate(newModelName);
     SModel targetModel = myTargetModelRoot.createModel0(factory, targetDataSource, options);
+    // TODO Since model factory can provide any model implementation
+    // TODO model root doesn't know how to exactly copy the content of given model.
+    // TODO So model content copying should be carried by model itself.
+    // TODO This functionality should be extracted in separate interface (like CopyableSModel).
     CopyUtil.copyModelContentAndPreserveIds(modelDataToCopy, targetModel);
     CopyUtil.copyModelProperties(modelDataToCopy.getSModel(), ((SModelBase) targetModel).getSModel());
+    if (targetModel instanceof GeneratableSModel && modelDataToCopy instanceof GeneratableSModel) {
+      ((GeneratableSModel) targetModel).setDoNotGenerate(((GeneratableSModel) modelDataToCopy).isDoNotGenerate());
+    }
     saveModel(targetModel);
     return targetModel;
   }

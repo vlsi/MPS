@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation__BehaviorDescriptor;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -85,6 +86,17 @@ public final class ConstraintsMigrationUtil {
     return migrateManually;
   }
 
+  public static void swapReferences(SNode oldNode, SNode newNode) {
+    // Uses in order to set the old node identity to the new node 
+    // to avoid the necessity of updating references to the new node in other modules. 
+    // Old node id is also changed due to old node can be attached to the module before the new one. 
+    jetbrains.mps.smodel.SNode lNode = (jetbrains.mps.smodel.SNode) oldNode;
+    jetbrains.mps.smodel.SNode rNode = (jetbrains.mps.smodel.SNode) newNode;
+    SNodeId lNodeId = lNode.getNodeId();
+    SNodeId rNodeId = rNode.getNodeId();
+    lNode.setId(rNodeId);
+    rNode.setId(lNodeId);
+  }
 
   public static void findProblems(SNode context, List<Problem> collector) {
     ListSequence.fromList(collector).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(context, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1b2ace141eb6c35bL, "jetbrains.mps.lang.constraints.structure.ConstraintsMigration"), false, new SAbstractConcept[]{})).select(new ISelector<SNode, ConstraintsMigrationProblem>() {
