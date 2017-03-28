@@ -7,7 +7,7 @@
   </languages>
   <imports>
     <import index="tpib" ref="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" />
-    <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
+    <import index="jtsr" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.project(MPS.OpenAPI/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -114,8 +114,8 @@
       <node concept="2NvLDW" id="1KXtTGFTOJp" role="3cqZAp">
         <node concept="mw_s8" id="1KXtTGFTOJq" role="1ZfhKB">
           <node concept="2c44tf" id="1KXtTGFTOJr" role="mwGJk">
-            <node concept="3uibUv" id="1KXtTGFTP5a" role="2c44tc">
-              <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
+            <node concept="3uibUv" id="4vUv2fHMMGF" role="2c44tc">
+              <ref role="3uigEE" to="jtsr:~Project" resolve="Project" />
             </node>
           </node>
         </node>
@@ -184,7 +184,78 @@
     </node>
     <node concept="1YaCAy" id="1KXtTGFSJNo" role="1YuTPh">
       <property role="TrG5h" value="statement" />
-      <ref role="1YaFvo" to="tpib:1KXtTGFSJ2T" resolve="LogToFileStatement" />
+      <ref role="1YaFvo" to="tpib:1KXtTGFSJ2T" resolve="ApacheLogStatement" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="4XBaoL6chOn">
+    <property role="18ip37" value="true" />
+    <property role="TrG5h" value="typeof_LogToMessageViewStatement" />
+    <node concept="3clFbS" id="4XBaoL6chOo" role="18ibNy">
+      <node concept="2NvLDW" id="4XBaoL6chOp" role="3cqZAp">
+        <node concept="mw_s8" id="4XBaoL6chOq" role="1ZfhK$">
+          <node concept="1Z2H0r" id="4XBaoL6chOr" role="mwGJk">
+            <node concept="2OqwBi" id="4XBaoL6chOs" role="1Z2MuG">
+              <node concept="3TrEf2" id="4XBaoL6cjWp" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpib:4XBaoL6cc9u" resolve="message" />
+              </node>
+              <node concept="1YBJjd" id="4XBaoL6chOu" role="2Oq$k0">
+                <ref role="1YBMHb" node="4XBaoL6chOO" resolve="logStatement" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="4XBaoL6chOv" role="1ZfhKB">
+          <node concept="2c44tf" id="4XBaoL6chOw" role="mwGJk">
+            <node concept="17QB3L" id="4XBaoL6chOx" role="2c44tc" />
+          </node>
+        </node>
+      </node>
+      <node concept="2NvLDW" id="4XBaoL6chOy" role="3cqZAp">
+        <node concept="mw_s8" id="4XBaoL6chOz" role="1ZfhKB">
+          <node concept="2c44tf" id="4XBaoL6chO$" role="mwGJk">
+            <node concept="3uibUv" id="4XBaoL6chO_" role="2c44tc">
+              <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="4XBaoL6chOA" role="1ZfhK$">
+          <node concept="1Z2H0r" id="4XBaoL6chOB" role="mwGJk">
+            <node concept="2OqwBi" id="4XBaoL6chOC" role="1Z2MuG">
+              <node concept="3TrEf2" id="4XBaoL6ckhW" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpib:4XBaoL6cc9v" resolve="throwable" />
+              </node>
+              <node concept="1YBJjd" id="4XBaoL6chOE" role="2Oq$k0">
+                <ref role="1YBMHb" node="4XBaoL6chOO" resolve="logStatement" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2NvLDW" id="4XBaoL6chOF" role="3cqZAp">
+        <node concept="mw_s8" id="4XBaoL6chOG" role="1ZfhKB">
+          <node concept="2c44tf" id="4XBaoL6chOH" role="mwGJk">
+            <node concept="3uibUv" id="4vUv2fHMN0R" role="2c44tc">
+              <ref role="3uigEE" to="jtsr:~Project" resolve="Project" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="4XBaoL6chOJ" role="1ZfhK$">
+          <node concept="1Z2H0r" id="4XBaoL6chOK" role="mwGJk">
+            <node concept="2OqwBi" id="4XBaoL6chOL" role="1Z2MuG">
+              <node concept="3TrEf2" id="4XBaoL6chOM" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpib:4XBaoL6ccco" resolve="project" />
+              </node>
+              <node concept="1YBJjd" id="4XBaoL6chON" role="2Oq$k0">
+                <ref role="1YBMHb" node="4XBaoL6chOO" resolve="logStatement" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4XBaoL6chOO" role="1YuTPh">
+      <property role="TrG5h" value="logStatement" />
+      <ref role="1YaFvo" to="tpib:5vyNLjQPqst" resolve="LogToMessageViewStatement" />
     </node>
   </node>
 </model>

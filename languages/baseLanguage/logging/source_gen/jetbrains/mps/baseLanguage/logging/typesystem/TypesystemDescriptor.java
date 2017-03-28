@@ -15,5 +15,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InferenceRule_Runtime inferenceRule = new typeof_LogToFileStatement_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_LogToMessageViewStatement_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
   }
 }

@@ -16,12 +16,14 @@
 package jetbrains.mps.logging;
 
 
-import org.apache.log4j.AppenderSkeleton;
-import org.apache.log4j.Priority;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.*;
+import org.apache.log4j.Logger;
 import org.apache.log4j.spi.LoggingEvent;
 import org.apache.log4j.spi.ThrowableInformation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.project.Project;
 
 /**
  * Implement this to have your own appender.
@@ -33,34 +35,68 @@ public abstract class MPSAppenderBase extends AppenderSkeleton {
     this("MPS_APPENDER_" + ourCount++);
   }
 
+  @SuppressWarnings("ParameterHidesMemberVariable")
   protected MPSAppenderBase(String name) {
     setName(name);
   }
 
   public void register() {
-    org.apache.log4j.Logger.getRootLogger().addAppender(this);
+    register(Logger.getRootLogger());
   }
 
   public void unregister() {
-    org.apache.log4j.Logger.getRootLogger().removeAppender(this);
+    unregister(Logger.getRootLogger());
   }
 
-  protected abstract void append(@NotNull Priority level, @NotNull String categoryName, @NotNull String message, @Nullable Throwable t,
-      @Nullable Object hintObject);
+  protected void register(@NotNull Logger logger) {
+    logger.addAppender(this);
+  }
+
+  protected void unregister(@NotNull Logger logger) {
+    logger.removeAppender(this);
+  }
+
+  /**
+   * @deprecated use with a specified project method instead
+   */
+  @ToRemove(version = 2017.2)
+  @Deprecated
+  protected abstract void append(@NotNull Priority level,
+                                 @NotNull String categoryName,
+                                 @NotNull String message,
+                                 @Nullable Throwable t,
+                                 @Nullable Object hintObject);
+
+  protected /*abstract*/ void append(@Nullable Project project,
+                                 @NotNull Priority level,
+                                 @NotNull String categoryName,
+                                 @NotNull String message,
+                                 @Nullable Throwable t,
+                                 @Nullable Object hintObject) {
+    append(level, categoryName, message, t, hintObject);
+  }
 
   @Override
   protected void append(LoggingEvent event) {
     ThrowableInformation throwableInformation = event.getThrowableInformation();
     String renderedMessage = event.getRenderedMessage();
     Object message = event.getMessage();
+    String categoryName = event.getLoggerName();
+    Project project = null;
     if (renderedMessage != null && renderedMessage.equals(message)) {
       message = null;
     } else if (message instanceof MessageObject) {
-      renderedMessage = ((MessageObject) message).getMessage();
-      message = ((MessageObject) message).getHintObject();
+      MessageObject messageObject = (MessageObject) message;
+      renderedMessage = messageObject.getMessage();
+      message = messageObject.getHintObject();
+      if (messageObject.getSender() != null) {
+        categoryName = messageObject.getSender();
+      }
+      if (messageObject.getProject() != null) {
+        project = messageObject.getProject();
+      }
     }
     if (renderedMessage == null) {
-      // hate null strings
       renderedMessage = "";
     }
     Throwable throwable = null;
@@ -70,7 +106,7 @@ public abstract class MPSAppenderBase extends AppenderSkeleton {
       throwable = (Throwable) message;
     }
 
-    append(event.getLevel(), event.getLoggerName(), renderedMessage, throwable, message);
+    append(project, event.getLevel(), categoryName, renderedMessage, throwable, message);
   }
 
   @Override

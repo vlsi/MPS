@@ -38,6 +38,7 @@ import jetbrains.mps.ide.ThreadUtils.RunInUIRunnable;
 import jetbrains.mps.ide.messages.MessageList.MessageListState;
 import jetbrains.mps.ide.messages.MessagesViewTool.MessageViewToolState;
 import jetbrains.mps.ide.messages.navigation.NavigationManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
@@ -63,6 +64,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   private final ToolWindowManager myToolWindowManager;
   private final MyMessageList myDefaultList;
   private final Map<Object, List<MessageList>> myMessageLists = new HashMap<Object, List<MessageList>>();
+  private final MessageViewLoggingHandler myMessageViewLoggingHandler;
 
   public MessagesViewTool(Project project, NavigationManager navigationManager, ToolWindowManager toolWindowManager) {
     myProject = project;
@@ -75,6 +77,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     myDefaultList.setTitleUpdateFormat(
         "{1,choice,0#--|1#1 error|2#{1} errors}/{2,choice,0#--|1#1 warning|2#{2} warnings}/{3,choice,0#--|1#1 info|2#{3} infos}");
     addList(DEFAULT_LIST, myDefaultList);
+    myMessageViewLoggingHandler = new MessageViewLoggingHandler(this, ProjectHelper.fromIdeaProject(project));
   }
 
   @Override
@@ -123,10 +126,12 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
   @Override
   public void projectOpened() {
+    myMessageViewLoggingHandler.register();
   }
 
   @Override
   public void projectClosed() {
+    myMessageViewLoggingHandler.unregister();
   }
 
   public static class MessageViewToolState {

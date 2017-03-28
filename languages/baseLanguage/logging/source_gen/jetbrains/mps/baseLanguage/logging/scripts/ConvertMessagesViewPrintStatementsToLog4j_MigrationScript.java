@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public final class ConvertMessagesViewPrintStatementsToLog4j_MigrationScript extends BaseMigrationScript {
   public ConvertMessagesViewPrintStatementsToLog4j_MigrationScript() {
-    super("Convert Messages View Log Statements to Log4j statements");
+    super("Convert Legacy Log Statements to messages view statements");
     this.addRefactoring(new AbstractMigrationRefactoring() {
       @Override
       public String getName() {
@@ -36,10 +36,11 @@ public final class ConvertMessagesViewPrintStatementsToLog4j_MigrationScript ext
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        SNode newNode = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, "jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement")));
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, 0x1c3d779b2be2f1b9L, "message"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc42da590L, "logExpression")));
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, 0x1c3d779b2be2f1bbL, "throwable"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc42f25e9L, "exception")));
-        SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, 0x1c3d779b2be2f1b7L, "severity"), SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc541df63L, "severity"), "debug"));
+        SNode newNode = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, "jetbrains.mps.baseLanguage.logging.structure.LogToMessageViewStatement")));
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, 0x4f67298c4630c25eL, "message"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc42da590L, "logExpression")));
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, 0x4f67298c4630c25fL, "throwable"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc42f25e9L, "exception")));
+        SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, 0x57e2cf14f6d5d81fL, "severity"), SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc541df63L, "severity"), "debug"));
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, 0x4f67298c4630c318L, "project"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x1c3d779b2be74bcfL, "project")));
       }
       @Override
       public boolean isShowAsIntention() {
@@ -51,6 +52,6 @@ public final class ConvertMessagesViewPrintStatementsToLog4j_MigrationScript ext
   @Nullable
   @Override
   public SNodeReference getScriptNode() {
-    return PersistenceFacade.getInstance().createNodeReference("r:4d68829a-5f0e-4737-9dcf-eed0080fbaa6(jetbrains.mps.baseLanguage.logging.scripts)/1704189004094297789");
+    return PersistenceFacade.getInstance().createNodeReference("r:4d68829a-5f0e-4737-9dcf-eed0080fbaa6(jetbrains.mps.baseLanguage.logging.scripts)/5721587534047299317");
   }
 }

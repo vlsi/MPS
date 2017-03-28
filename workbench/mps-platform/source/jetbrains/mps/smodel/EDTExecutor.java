@@ -17,10 +17,7 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.application.ModalityStateListener;
 import com.intellij.openapi.application.TransactionGuard;
-import com.intellij.openapi.application.impl.LaterInvocator;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.Project;
 import org.apache.log4j.LogManager;
@@ -29,7 +26,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TransferQueue;
 
 /**
  * Asynchronous task scheduling MPS engine.

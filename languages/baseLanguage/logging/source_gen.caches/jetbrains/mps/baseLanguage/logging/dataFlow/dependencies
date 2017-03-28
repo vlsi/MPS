@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.ApacheLogStatement_DataFlow" file="ApacheLogStatement_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.DataFlowAspectDescriptorImpl" file="DataFlowAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.logging.dataFlow.ApacheLogStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.logging.dataFlow.LogStatement_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.logging.dataFlow.LogToFileStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.logging.dataFlow.LogToMessageViewStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.logging.dataFlow.PrintStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.IDataFlowBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
@@ -22,7 +30,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.LogToFileStatement_DataFlow" file="LogToFileStatement_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.logging.dataFlow.LogToMessageViewStatement_DataFlow" file="LogToMessageViewStatement_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

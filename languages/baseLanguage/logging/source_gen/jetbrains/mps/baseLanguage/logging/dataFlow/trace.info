@@ -6,11 +6,11 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root>
     <file name="DataFlowAspectDescriptorImpl.java">
-      <unit at="15,0,34,0" name="jetbrains.mps.baseLanguage.logging.dataFlow.DataFlowAspectDescriptorImpl" />
+      <unit at="15,0,36,0" name="jetbrains.mps.baseLanguage.logging.dataFlow.DataFlowAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:fb7c79f5-02eb-4c97-b60a-34f78483b2cb(jetbrains.mps.baseLanguage.logging.dataFlow)/2034914114981270022">
-    <file name="LogToFileStatement_DataFlow.java">
+    <file name="ApacheLogStatement_DataFlow.java">
       <node id="2034914114981270025" at="12,60,13,221" concept="0" />
       <node id="2034914114981270031" at="14,200,15,225" concept="0" />
       <node id="2034914114981270029" at="13,221,16,5" concept="2" />
@@ -20,7 +20,7 @@
       <scope id="2034914114981270022" at="12,0,18,0">
         <var name="_context" id="2034914114981270022" />
       </scope>
-      <unit id="2034914114981270022" at="11,0,19,0" name="jetbrains.mps.baseLanguage.logging.dataFlow.LogToFileStatement_DataFlow" />
+      <unit id="2034914114981270022" at="11,0,19,0" name="jetbrains.mps.baseLanguage.logging.dataFlow.ApacheLogStatement_DataFlow" />
     </file>
   </root>
   <root nodeRef="r:fb7c79f5-02eb-4c97-b60a-34f78483b2cb(jetbrains.mps.baseLanguage.logging.dataFlow)/5058855501989739747">
@@ -35,6 +35,20 @@
         <var name="_context" id="5058855501989739747" />
       </scope>
       <unit id="5058855501989739747" at="11,0,19,0" name="jetbrains.mps.baseLanguage.logging.dataFlow.LogStatement_DataFlow" />
+    </file>
+  </root>
+  <root nodeRef="r:fb7c79f5-02eb-4c97-b60a-34f78483b2cb(jetbrains.mps.baseLanguage.logging.dataFlow)/5721587534047314523">
+    <file name="LogToMessageViewStatement_DataFlow.java">
+      <node id="5721587534047314526" at="12,60,13,221" concept="0" />
+      <node id="5721587534047314532" at="14,200,15,225" concept="0" />
+      <node id="5721587534047314530" at="13,221,16,5" concept="2" />
+      <node id="5721587534047314523" at="12,0,18,0" concept="3" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="5721587534047314531" at="14,200,15,225" />
+      <scope id="5721587534047314525" at="12,60,16,5" />
+      <scope id="5721587534047314523" at="12,0,18,0">
+        <var name="_context" id="5721587534047314523" />
+      </scope>
+      <unit id="5721587534047314523" at="11,0,19,0" name="jetbrains.mps.baseLanguage.logging.dataFlow.LogToMessageViewStatement_DataFlow" />
     </file>
   </root>
   <root nodeRef="r:fb7c79f5-02eb-4c97-b60a-34f78483b2cb(jetbrains.mps.baseLanguage.logging.dataFlow)/8259962354560896642">
