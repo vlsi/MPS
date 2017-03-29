@@ -860,6 +860,32 @@
       <ref role="PrY4T" node="2znOOs7hk5B" resolve="ISpecialDelTestChild" />
     </node>
   </node>
+  <node concept="1TIwiD" id="VO5i9DB4QB">
+    <property role="EcuMT" value="1077509448393313703" />
+    <property role="3GE5qa" value="delete" />
+    <property role="TrG5h" value="DeleteWrapperChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="VO5i9DB4QC" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="VO5i9DB4Q$">
+    <property role="EcuMT" value="1077509448393313700" />
+    <property role="3GE5qa" value="delete" />
+    <property role="TrG5h" value="DeleteWrapperRoot" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="VO5i9DB4QN" role="1TKVEi">
+      <property role="IQ2ns" value="1077509448393313715" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="0..n" />
+      <property role="20kJfa" value="child" />
+      <ref role="20lvS9" node="VO5i9DB4QB" resolve="DeleteWrapperChild" />
+    </node>
+    <node concept="PrWs8" id="VO5i9DB4Q_" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
+    </node>
+  </node>
   <node concept="1TIwiD" id="1AA73NYNwSA">
     <property role="EcuMT" value="1848195745380699686" />
     <property role="TrG5h" value="LabelConceptWithProperty" />

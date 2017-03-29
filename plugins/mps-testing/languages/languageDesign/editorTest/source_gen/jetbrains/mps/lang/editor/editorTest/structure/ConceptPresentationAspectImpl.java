@@ -28,6 +28,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_DelTestRoot = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DelTestSpecialAbstractChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DelTestSpecialChild1 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_DeleteWrapperChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_DeleteWrapperRoot = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FoldingContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IBaseTestBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IDelTestChild = new ConceptPresentationBuilder().create();
@@ -115,6 +117,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_DelTestSpecialAbstractChild;
       case LanguageConceptSwitch.DelTestSpecialChild1:
         return props_DelTestSpecialChild1;
+      case LanguageConceptSwitch.DeleteWrapperChild:
+        return props_DeleteWrapperChild;
+      case LanguageConceptSwitch.DeleteWrapperRoot:
+        return props_DeleteWrapperRoot;
       case LanguageConceptSwitch.FoldingContainer:
         return props_FoldingContainer;
       case LanguageConceptSwitch.IBaseTestBlock:

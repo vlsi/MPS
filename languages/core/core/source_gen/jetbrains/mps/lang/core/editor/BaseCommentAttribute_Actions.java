@@ -7,7 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSimple;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 
 public class BaseCommentAttribute_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -23,7 +24,14 @@ public class BaseCommentAttribute_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.deleteNode(node);
+      new CellAction_DeleteSimple(node, CellAction_DeleteNode.DeleteDirection.FORWARD).execute(editorContext);
+    }
+    @Override
+    public boolean canExecute(EditorContext editorContext) {
+      return this.canExecute_internal(editorContext, this.myNode);
+    }
+    public boolean canExecute_internal(EditorContext editorContext, SNode node) {
+      return new CellAction_DeleteSimple(node, CellAction_DeleteNode.DeleteDirection.FORWARD).canExecute(editorContext);
     }
   }
   public static class BaseCommentAttribute_Actions_BACKSPACE extends AbstractCellAction {
@@ -35,7 +43,14 @@ public class BaseCommentAttribute_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.deleteNode(node);
+      new CellAction_DeleteSimple(node, CellAction_DeleteNode.DeleteDirection.BACKWARD).execute(editorContext);
+    }
+    @Override
+    public boolean canExecute(EditorContext editorContext) {
+      return this.canExecute_internal(editorContext, this.myNode);
+    }
+    public boolean canExecute_internal(EditorContext editorContext, SNode node) {
+      return new CellAction_DeleteSimple(node, CellAction_DeleteNode.DeleteDirection.BACKWARD).canExecute(editorContext);
     }
   }
 }

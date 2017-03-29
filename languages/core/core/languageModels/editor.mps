@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -18,6 +18,7 @@
     <import index="y4ob" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.menus(MPS.Editor/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
+    <import index="q4oi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cellActions(MPS.Editor/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
@@ -234,6 +235,10 @@
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
@@ -644,12 +649,93 @@
     <ref role="1h_SK9" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
     <node concept="1hA7zw" id="6cD7K5bTsay" role="1h_SK8">
       <property role="1hAc7j" value="delete_action_id" />
+      <node concept="jK8Ss" id="iVU$Vdi8lE" role="jK8aL">
+        <node concept="3clFbS" id="iVU$Vdi8lF" role="2VODD2">
+          <node concept="3clFbF" id="iVU$VdiaLV" role="3cqZAp">
+            <node concept="2OqwBi" id="iVU$VdihbP" role="3clFbG">
+              <node concept="2ShNRf" id="iVU$VdiaLT" role="2Oq$k0">
+                <node concept="1pGfFk" id="iVU$Vdigj7" role="2ShVmc">
+                  <ref role="37wK5l" to="wcxw:6xSPNrOme6o" resolve="CellAction_DeleteSimple" />
+                  <node concept="0IXxy" id="iVU$VdigNh" role="37wK5m" />
+                  <node concept="Rm8GO" id="7DH9HgSGW0V" role="37wK5m">
+                    <ref role="Rm8GQ" to="q4oi:~CellAction_DeleteNode$DeleteDirection.FORWARD" resolve="FORWARD" />
+                    <ref role="1Px2BO" to="q4oi:~CellAction_DeleteNode$DeleteDirection" resolve="CellAction_DeleteNode.DeleteDirection" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="iVU$VdihzB" role="2OqNvi">
+                <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.canExecute(jetbrains.mps.openapi.editor.EditorContext):boolean" resolve="canExecute" />
+                <node concept="1Q80Hx" id="iVU$VdihI6" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="1hAIg9" id="6cD7K5bTsaz" role="1hA7z_">
         <node concept="3clFbS" id="6cD7K5bTsa$" role="2VODD2">
-          <node concept="3clFbF" id="6cD7K5bTsby" role="3cqZAp">
-            <node concept="2OqwBi" id="6cD7K5bTsdj" role="3clFbG">
-              <node concept="0IXxy" id="6cD7K5bTsbx" role="2Oq$k0" />
-              <node concept="3YRAZt" id="6cD7K5bTwLI" role="2OqNvi" />
+          <node concept="3clFbF" id="iVU$VdihW4" role="3cqZAp">
+            <node concept="2OqwBi" id="iVU$VdihW5" role="3clFbG">
+              <node concept="2ShNRf" id="iVU$VdihW6" role="2Oq$k0">
+                <node concept="1pGfFk" id="iVU$VdihW7" role="2ShVmc">
+                  <ref role="37wK5l" to="wcxw:6xSPNrOme6o" resolve="CellAction_DeleteSimple" />
+                  <node concept="0IXxy" id="iVU$VdihW8" role="37wK5m" />
+                  <node concept="Rm8GO" id="7DH9HgSGWjx" role="37wK5m">
+                    <ref role="1Px2BO" to="q4oi:~CellAction_DeleteNode$DeleteDirection" resolve="CellAction_DeleteNode.DeleteDirection" />
+                    <ref role="Rm8GQ" to="q4oi:~CellAction_DeleteNode$DeleteDirection.FORWARD" resolve="FORWARD" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="iVU$VdihW9" role="2OqNvi">
+                <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
+                <node concept="1Q80Hx" id="iVU$VdihWa" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1hA7zw" id="7DH9HgSGWmf" role="1h_SK8">
+      <property role="1hAc7j" value="backspace_action_id" />
+      <node concept="1hAIg9" id="7DH9HgSGWmg" role="1hA7z_">
+        <node concept="3clFbS" id="7DH9HgSGWmh" role="2VODD2">
+          <node concept="3clFbF" id="7DH9HgSGWmi" role="3cqZAp">
+            <node concept="2OqwBi" id="7DH9HgSGWmj" role="3clFbG">
+              <node concept="2ShNRf" id="7DH9HgSGWmk" role="2Oq$k0">
+                <node concept="1pGfFk" id="7DH9HgSGWml" role="2ShVmc">
+                  <ref role="37wK5l" to="wcxw:6xSPNrOme6o" resolve="CellAction_DeleteSimple" />
+                  <node concept="0IXxy" id="7DH9HgSGWmm" role="37wK5m" />
+                  <node concept="Rm8GO" id="7DH9HgSGWQO" role="37wK5m">
+                    <ref role="Rm8GQ" to="q4oi:~CellAction_DeleteNode$DeleteDirection.BACKWARD" resolve="BACKWARD" />
+                    <ref role="1Px2BO" to="q4oi:~CellAction_DeleteNode$DeleteDirection" resolve="CellAction_DeleteNode.DeleteDirection" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="7DH9HgSGWmo" role="2OqNvi">
+                <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
+                <node concept="1Q80Hx" id="7DH9HgSGWmp" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="jK8Ss" id="7DH9HgSGWmq" role="jK8aL">
+        <node concept="3clFbS" id="7DH9HgSGWmr" role="2VODD2">
+          <node concept="3clFbF" id="7DH9HgSGWms" role="3cqZAp">
+            <node concept="2OqwBi" id="7DH9HgSGWmt" role="3clFbG">
+              <node concept="2ShNRf" id="7DH9HgSGWmu" role="2Oq$k0">
+                <node concept="1pGfFk" id="7DH9HgSGWmv" role="2ShVmc">
+                  <ref role="37wK5l" to="wcxw:6xSPNrOme6o" resolve="CellAction_DeleteSimple" />
+                  <node concept="0IXxy" id="7DH9HgSGWmw" role="37wK5m" />
+                  <node concept="Rm8GO" id="7DH9HgSGWCf" role="37wK5m">
+                    <ref role="Rm8GQ" to="q4oi:~CellAction_DeleteNode$DeleteDirection.BACKWARD" resolve="BACKWARD" />
+                    <ref role="1Px2BO" to="q4oi:~CellAction_DeleteNode$DeleteDirection" resolve="CellAction_DeleteNode.DeleteDirection" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="7DH9HgSGWmy" role="2OqNvi">
+                <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.canExecute(jetbrains.mps.openapi.editor.EditorContext):boolean" resolve="canExecute" />
+                <node concept="1Q80Hx" id="7DH9HgSGWmz" role="37wK5m" />
+              </node>
             </node>
           </node>
         </node>
