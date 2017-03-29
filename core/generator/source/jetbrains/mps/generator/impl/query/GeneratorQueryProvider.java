@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,44 +46,107 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  */
 public interface GeneratorQueryProvider {
   @NotNull
+  @Deprecated
   CreateRootCondition getCreateRootRuleCondition(@NotNull SNode rule);
   @NotNull
+  CreateRootCondition getCreateRootRuleCondition(@NotNull QueryKey identity);
+
+  @NotNull
+  @Deprecated
   MapRootRuleCondition getMapRootRuleCondition(@NotNull SNode rule);
   @NotNull
+  MapRootRuleCondition getMapRootRuleCondition(@NotNull QueryKey identity);
+
+  @NotNull
+  @Deprecated
   ReductionRuleCondition getReductionRuleCondition(@NotNull SNode rule);
   @NotNull
+  ReductionRuleCondition getReductionRuleCondition(@NotNull QueryKey identity);
+
+  @NotNull
+  @Deprecated
   PatternRuleQuery getPatternRuleCondition(@NotNull SNode rule);
   @NotNull
+  PatternRuleQuery getPatternRuleCondition(@NotNull QueryKey identity);
+
+  @NotNull
+  @Deprecated
   DropRuleCondition getDropRuleCondition(@NotNull SNode rule);
   @NotNull
+  DropRuleCondition getDropRuleCondition(@NotNull QueryKey identity);
+
+  @NotNull
+  @Deprecated
   DropAttributeRuleCondition getDropAttributeRuleCondition(@NotNull SNode rule);
   @NotNull
+  DropAttributeRuleCondition getDropAttributeRuleCondition(@NotNull QueryKey identity);
+
+  @NotNull
+  @Deprecated
   WeaveRuleCondition getWeaveRuleCondition(@NotNull SNode rule);
+  @NotNull
+  WeaveRuleCondition getWeaveRuleCondition(@NotNull QueryKey identity);
+
   /**
    * @param rule weaving rule
    */
   @NotNull
+  @Deprecated
   WeaveRuleQuery getWeaveRuleQuery(@NotNull SNode rule);
+  @NotNull
+  WeaveRuleQuery getWeaveRuleQuery(@NotNull QueryKey identity);
 
   /**
    * @param ruleOrMacro weaving rule or WeaveMacro
    */
   @NotNull
+  @Deprecated
   WeaveAnchorQuery getWeaveAnchorQuery(@NotNull SNode ruleOrMacro);
   @NotNull
+  WeaveAnchorQuery getWeaveAnchorQuery(@NotNull QueryKey identity);
+
+  @NotNull
+  @Deprecated
   ScriptCodeBlock getScriptCodeBlock(@NotNull SNode script);
   @NotNull
+  ScriptCodeBlock getScriptCodeBlock(@NotNull QueryKey identity);
+
+  @NotNull
+  @Deprecated
   MapConfigurationCondition getMapConfigurationCondition(@NotNull SNode mapCfg);
   @NotNull
+  MapConfigurationCondition getMapConfigurationCondition(@NotNull QueryKey identity);
+
+  @NotNull
+  @Deprecated
   SourceNodeQuery getSourceNodeQuery(@NotNull SNode query);
   @NotNull
+  SourceNodeQuery getSourceNodeQuery(@NotNull QueryKey identity);
+
+  @NotNull
+  @Deprecated
   SourceNodesQuery getSourceNodesQuery(@NotNull SNode query);
   @NotNull
+  SourceNodesQuery getSourceNodesQuery(@NotNull QueryKey identity);
+
+  @NotNull
+  @Deprecated
   PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro);
   @NotNull
+  PropertyValueQuery getPropertyValueQuery(@NotNull QueryKey identity);
+
+  @NotNull
+  @Deprecated
   IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro);
   @NotNull
+  IfMacroCondition getIfMacroCondition(@NotNull QueryKey identity);
+
+  @NotNull
+  @Deprecated
   InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode);
+
+  @NotNull
+  InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull QueryKey identity);
 
   @NotNull
   ReferenceTargetQuery getReferenceTargetQuery(@NotNull QueryKey identity);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -190,7 +190,9 @@ class TemplateNode {
           if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
             final SProperty propertyName = AttributeOperations.getProperty(templateChildNode);
             propsHandledWithMacro.add(propertyName);
-            final PropertyValueQuery q = queryProvider.getPropertyValueQuery(templateChildNode);
+            SNode function = RuleUtil.getPropertyMacro_ValueFunction(templateChildNode);
+            QueryKey qk = new QueryKeyImpl(templateChildNode.getReference(), function.getNodeId(), templateChildNode);
+            final PropertyValueQuery q = queryProvider.getPropertyValueQuery(qk);
             propertyMacros.add(new PropertyMacro(q, templateChildNode.getReference()));
           } else if (templateChildNodeConcept.equals(RuleUtil.concept_ReferenceMacro)) {
             final SReferenceLink refMacroRole = AttributeOperations.getLink(templateChildNode);
