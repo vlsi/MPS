@@ -16,14 +16,15 @@ import jetbrains.mps.lang.behavior.constraints.ConstraintsUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.List;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
-import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.migration.runtime.base.NotMigratedNode;
@@ -72,6 +73,11 @@ public class MigrateStaticBehaviorThisAndSuper extends MigrationScriptBase {
       }, false).visitAll(new IVisitor<SNode>() {
         public void visit(final SNode nodeToMigrate) {
           pattern.match(nodeToMigrate);
+          List<SNode> attributes = SNodeOperations.getNodeDescendants(nodeToMigrate, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute"), false, new SAbstractConcept[]{});
+          if (ListSequence.fromList(attributes).isNotEmpty()) {
+            markAnnotatedNodeForReview(nodeToMigrate, attributes);
+            return;
+          }
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
               return _quotation_createNode_bb55mu_a0a0g();
@@ -105,6 +111,11 @@ public class MigrateStaticBehaviorThisAndSuper extends MigrationScriptBase {
       }, false).visitAll(new IVisitor<SNode>() {
         public void visit(final SNode nodeToMigrate) {
           pattern.match(nodeToMigrate);
+          List<SNode> attributes = SNodeOperations.getNodeDescendants(nodeToMigrate, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute"), false, new SAbstractConcept[]{});
+          if (ListSequence.fromList(attributes).isNotEmpty()) {
+            markAnnotatedNodeForReview(nodeToMigrate, attributes);
+            return;
+          }
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
               return _quotation_createNode_bb55mu_a0b0g();
@@ -138,6 +149,11 @@ public class MigrateStaticBehaviorThisAndSuper extends MigrationScriptBase {
       }, false).visitAll(new IVisitor<SNode>() {
         public void visit(final SNode nodeToMigrate) {
           pattern.match(nodeToMigrate);
+          List<SNode> attributes = SNodeOperations.getNodeDescendants(nodeToMigrate, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute"), false, new SAbstractConcept[]{});
+          if (ListSequence.fromList(attributes).isNotEmpty()) {
+            markAnnotatedNodeForReview(nodeToMigrate, attributes);
+            return;
+          }
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
               return _quotation_createNode_bb55mu_a0c0g();

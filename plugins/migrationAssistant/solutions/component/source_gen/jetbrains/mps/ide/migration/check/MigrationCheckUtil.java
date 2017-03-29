@@ -26,8 +26,17 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.migration.runtime.base.MigrateManually;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
@@ -42,9 +51,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.project.validation.ConceptFeatureMissingError;
 import jetbrains.mps.project.validation.BrokenReferenceError;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SDependency;
 
 public class MigrationCheckUtil {
@@ -63,7 +70,7 @@ public class MigrationCheckUtil {
     return CollectionSequence.fromCollection(getNotMigrated(modules, mc, progressCallback, 1)).isNotEmpty();
   }
 
-  public static Collection<Problem> getNotMigrated(Iterable<SModule> modules, final MigrationComponent mc, @Nullable final _FunctionTypes._void_P1_E0<? super Double> progressCallback, int maxErrors) {
+  public static Collection<Problem> getNotMigrated(Iterable<SModule> modules, final MigrationComponent mc, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, int maxErrors) {
     List<Tuples._2<MigrationScript, SModule>> scriptsApplied = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, Tuples._2<MigrationScript, SModule>>() {
       public Iterable<Tuples._2<MigrationScript, SModule>> translate(final SModule module) {
         Set<SLanguage> allLanguages = new SLanguageHierarchy(LanguageRegistry.getInstance(module.getRepository()), module.getUsedLanguages()).getExtended();
@@ -136,13 +143,39 @@ __switch__:
       }
     }).toListSequence();
     final int allSteps = ListSequence.fromList(scriptsApplied).count();
-    final Wrappers._int stepsPassed = new Wrappers._int(0);
-    return ListSequence.fromList(scriptsApplied).translate(new ITranslator2<Tuples._2<MigrationScript, SModule>, Problem>() {
-      public Iterable<Problem> translate(Tuples._2<MigrationScript, SModule> scriptModule) {
-        progressCallback.invoke(0.1 + 0.9 * stepsPassed.value++ / allSteps);
-        return scriptModule._0().check(scriptModule._1());
+    int stepsPassed = 0;
+
+    final List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
+    {
+      final SearchScope scope = CommandUtil.createScope(modules);
+      QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope;
+        }
+      };
+      CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L, "jetbrains.mps.lang.core.structure.MigrationAnnotation"), false)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return ((boolean) (Boolean) BHReflection.invoke(it, SMethodTrimmedId.create("showInResults", null, "29O0pTxWdmG")));
+        }
+      }).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          ListSequence.fromList(result).addElement(new MigrateManually(it));
+        }
+      });
+    }
+    if (ListSequence.fromList(result).count() >= maxErrors) {
+      return result;
+    }
+
+    for (Tuples._2<MigrationScript, SModule> scriptModule : ListSequence.fromList(scriptsApplied)) {
+      progressCallback.invoke(0.1 + 0.9 * stepsPassed++ / allSteps);
+      ListSequence.fromList(result).addSequence(Sequence.fromIterable(scriptModule._0().check(scriptModule._1())));
+      if (ListSequence.fromList(result).count() >= maxErrors) {
+        return result;
       }
-    }).take(maxErrors).toListSequence();
+    }
+
+    return result;
   }
 
   public static boolean haveProblems(Iterable<SModule> modules, boolean includeBrokenReferences, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
