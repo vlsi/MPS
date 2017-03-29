@@ -396,7 +396,9 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
       targetModelRoot.setContentDirectory(targetContentDir);
       for (SourceRootKind kind : getSupportedFileKinds1()) {
         for (SourceRoot sourceRoot : getSourceRoots(kind)) {
-          String targetSourceRoot = targetContentDir.getDescendant(sourceRoot.getPath()).getPath();
+          String relativePath = relativize(sourceRoot.getAbsolutePath().getPath(), getContentDirectory());
+          IFile descendant = targetContentDir.getDescendant(relativePath);
+          String targetSourceRoot = descendant.getPath();
           targetModelRoot.addSourceRoot(kind, new DefaultSourceRoot(targetSourceRoot, targetContentDir));
         }
       }
