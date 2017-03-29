@@ -64,7 +64,6 @@ public abstract class ReferenceDescriptor {
 
   /**
    * @return null if there is no presentation for reference
-   *
    * @deprecated uses only in the editor
    */
   @Nullable
@@ -181,7 +180,7 @@ public abstract class ReferenceDescriptor {
       return myScopeProvider.getPresentation(
           getOperationContext(getModule()),
           new PresentationReferentConstraintsContextImpl(myContextNode, myContainmentLink, myPosition, myReferenceNode, myReference != null, myLinkTarget,
-              targetNode, visible, smartRef, inEditor)
+                                                         targetNode, visible, smartRef, inEditor)
       );
     }
 
@@ -205,12 +204,23 @@ public abstract class ReferenceDescriptor {
       return ConceptRegistryUtil.getConstraintsDescriptor(conceptForDefaultSearchScope).getDefaultScopeProvider();
     }
 
+    @NotNull
     private static SAbstractConcept getLinkTarget(@NotNull SReferenceLink genuineLink, @NotNull SAbstractConcept concreteConcept) {
       // TODO for now, link target is calculated using language sources.
       //      it will be possible to do it without sources when information about link specialization will be generated.
       SNode conceptDeclaration = concreteConcept.getDeclarationNode();
+
       SNode linkDeclaration = new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(genuineLink.getName());
-      return MetaAdapterByDeclaration.getConcept(SModelUtil.getLinkDeclarationTarget(linkDeclaration));
+
+      final SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
+      if (linkDeclarationTarget != null) {
+        SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(linkDeclarationTarget);
+        if (concept != null) {
+          return concept;
+        }
+      }
+
+      return genuineLink.getTargetConcept();
     }
 
     private SModel getModel() {

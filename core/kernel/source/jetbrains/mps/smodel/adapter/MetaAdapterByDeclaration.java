@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -50,7 +51,7 @@ public class MetaAdapterByDeclaration {
     return MetaAdapterFactory.getLanguage(MetaIdByDeclaration.getLanguageId(l), l.getModuleName());
   }
 
-  public static SAbstractConcept getConcept(SNode conceptNode) {
+  public static SAbstractConcept getConcept(@NotNull SNode conceptNode) {
     SModel model = conceptNode.getModel();
     if (model == null) return null;
     if (!(model.getModule() instanceof Language)) return null;
