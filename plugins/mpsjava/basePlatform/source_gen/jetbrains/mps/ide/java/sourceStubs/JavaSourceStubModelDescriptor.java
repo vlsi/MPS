@@ -34,6 +34,7 @@ import jetbrains.mps.ide.java.newparser.FeatureKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.Collection;
@@ -180,7 +181,7 @@ public class JavaSourceStubModelDescriptor extends RegularModelDescriptor implem
       try {
         myIsLoadInProgress = true;
         mi.enterUpdateMode();
-        JavaParser.tryResolveUnknowns(MapSequence.fromMap(myRootsById).values());
+        JavaParser.tryResolveUnknowns(MapSequence.fromMap(myRootsById).values(), new EmptyProgressMonitor());
         setLoadingState(ModelLoadingState.FULLY_LOADED);
         fireModelStateChanged(oldState, ModelLoadingState.FULLY_LOADED);
       } finally {

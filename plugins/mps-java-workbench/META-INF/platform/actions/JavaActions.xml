@@ -45,7 +45,6 @@
     </action>
     <action id="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action" class="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action"></action>
     <action id="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action" class="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action"></action>
-    <action id="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action" class="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action"></action>
     <action id="jetbrains.mps.ide.java.actions.OverrideMethod_Action" class="jetbrains.mps.ide.java.actions.OverrideMethod_Action">
       <keyboard-shortcut first-keystroke="ctrl O" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl O" keymap="Mac OS X 10.5+" replace-all="true" />
@@ -71,9 +70,6 @@
     <action id="jetbrains.mps.ide.java.actions.UncommentStatements_Action" class="jetbrains.mps.ide.java.actions.UncommentStatements_Action">
       <keyboard-shortcut first-keystroke="ctrl shift SLASH" keymap="$default" />
     </action>
-    <group id="jetbrains.mps.ide.java.actions.SolutionActionsEx_ActionGroup">
-      <reference ref="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action" />
-    </group>
     <group id="jetbrains.mps.ide.java.actions.RefactoringAdditions_ActionGroup">
       <reference ref="jetbrains.mps.ide.java.actions.ExtractMethod_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.InlineLocalVariable_Action" />
