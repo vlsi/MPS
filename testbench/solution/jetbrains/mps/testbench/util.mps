@@ -314,7 +314,7 @@
                               </node>
                             </node>
                             <node concept="Xl_RD" id="3zSLWWE6HcU" role="3uHU7w">
-                              <property role="Xl_RC" value="|(MPS EDT Executor Thread)|(ChangesManager command queue)|(TimerQueue)" />
+                              <property role="Xl_RC" value="|(MPS EDT Executor Thread.*)|(ChangesManager command queue)|(TimerQueue)" />
                             </node>
                           </node>
                           <node concept="Xl_RD" id="3zSLWWE6HF5" role="3uHU7w">
