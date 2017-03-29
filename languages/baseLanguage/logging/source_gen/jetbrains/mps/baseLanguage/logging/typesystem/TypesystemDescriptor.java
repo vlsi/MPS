@@ -8,11 +8,15 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
+      InferenceRule_Runtime inferenceRule = new typeof_LogLowLevelStatement_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_LogStatement_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_LogToFileStatement_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_MsgStatement_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
   }

@@ -113,7 +113,8 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
 
     if (result == null) {
-      editor = concept.isAbstract() ? new DefaultInterfaceEditor(getCellContext()) : AbstractDefaultEditor.createEditor(node);
+      boolean shouldShowInterfaceEditor = concept.isValid() && concept.isAbstract() && !isPushReflectiveEditorHintInContext;
+      editor = shouldShowInterfaceEditor ? new DefaultInterfaceEditor(getCellContext()) : AbstractDefaultEditor.createEditor(node);
       result = createCell(node, isInspector, editor);
       assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
     }
@@ -259,6 +260,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     @Override
     public EditorCell createEditorCell(EditorContext context, SNode node) {
       EditorCell_Error editorCell = new EditorCell_Error(context, node, "    ");
+      editorCell.setCellId("Error");
       editorCell.setBig(true);
       editorCell.setCellContext(myCellContext);
       return editorCell;

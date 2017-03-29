@@ -29,21 +29,11 @@ import java.util.List;
  *
  * Created by apyshkin on 11/3/15.
  */
-public interface IProject {
+public interface IProject extends org.jetbrains.mps.openapi.project.Project {
   /**
    * @return scope with all the modules from the project, including generators.
    */
   @NotNull ProjectScope getScope();
-
-  /**
-   * @return the project repository which contains all the project modules
-   */
-  @NotNull SRepository getRepository();
-
-  /**
-   * @return a shorthand for #getRepository().getModelAccess()
-   */
-  @NotNull ModelAccess getModelAccess();
 
   /**
    * Generic extension mechanism
@@ -51,11 +41,6 @@ public interface IProject {
    * @return component instance or <code>null</code> if no extension of specified kind found.
    */
   <T> T getComponent(Class<T> t);
-
-  /**
-   * @return the name of the project
-   */
-  @NotNull String getName();
 
   /**
    * api for the external project change : adding the module to the project
@@ -67,9 +52,20 @@ public interface IProject {
    */
   void removeModule(@NotNull SModule module);
 
-  /**
-   * @return all the modules this project owns (todo: contract to be: the same modules are in the #getRepository() repository)
-   * currently getRepository is the global repository (singleton) which hosts all the modules in the environment
-   */
-  @NotNull List<SModule> getProjectModules();
+  // not to fix the broken refs
+  @NotNull
+  @Override
+  SRepository getRepository();
+
+  @NotNull
+  @Override
+  ModelAccess getModelAccess();
+
+  @NotNull
+  @Override
+  String getName();
+
+  @NotNull
+  @Override
+  List<SModule> getProjectModules();
 }

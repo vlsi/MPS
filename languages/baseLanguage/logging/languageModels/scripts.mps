@@ -82,12 +82,12 @@
     </language>
   </registry>
   <node concept="_UgoZ" id="1uAvHUVaHqX">
-    <property role="_Wzho" value="Convert Messages View Log Statements to Log4j statements" />
+    <property role="_Wzho" value="Convert Legacy Log Statements to LogLowLevel statements" />
     <property role="3izfiF" value="baseLanguage" />
     <property role="3iz5xs" value="6252" />
-    <property role="TrG5h" value="ConvertMessagesViewPrintStatementsToLog4j" />
+    <property role="TrG5h" value="ConvertLegacyStatementsToLogLowLevel" />
     <node concept="_XfAh" id="1uAvHUVaHra" role="_YvDr">
-      <property role="_XH9r" value="ConvertToLog4jStatements" />
+      <property role="_XH9r" value="ConvertToLogLowLevelStatements" />
       <property role="1iWc8x" value="true" />
       <ref role="_XDHR" to="tpib:gZ4ab7v" resolve="LogStatement" />
       <node concept="_ZGcI" id="1uAvHUVaHrb" role="_XPhp">
@@ -96,12 +96,12 @@
             <node concept="3cpWsn" id="637tWpWM39" role="3cpWs9">
               <property role="TrG5h" value="newNode" />
               <node concept="3Tqbb2" id="637tWpWM36" role="1tU5fm">
-                <ref role="ehGHo" to="tpib:1KXtTGFSJ2T" resolve="LogToFileStatement" />
+                <ref role="ehGHo" to="tpib:1KXtTGFSJ2T" resolve="LogLowLevelStatement" />
               </node>
               <node concept="2OqwBi" id="637tWpWM3a" role="33vP2m">
                 <node concept="_YI3z" id="637tWpWM3b" role="2Oq$k0" />
                 <node concept="2DeJnW" id="637tWpWM3c" role="2OqNvi">
-                  <ref role="1_rbq0" to="tpib:1KXtTGFSJ2T" resolve="LogToFileStatement" />
+                  <ref role="1_rbq0" to="tpib:1KXtTGFSJ2T" resolve="LogLowLevelStatement" />
                 </node>
               </node>
             </node>
@@ -156,6 +156,107 @@
                 </node>
                 <node concept="3TrcHB" id="637tWpWQej" role="2OqNvi">
                   <ref role="3TsBF5" to="tpib:1KXtTGFSJ6R" resolve="severity" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="_UgoZ" id="4XBaoL6ckrP">
+    <property role="3izfiF" value="baseLanguage" />
+    <property role="3iz5xs" value="6252" />
+    <property role="TrG5h" value="ConvertLegacyStatementsToMessageStatements" />
+    <property role="_Wzho" value="Convert Legacy Log Statements to the Messages Statements" />
+    <node concept="_XfAh" id="4XBaoL6ckrQ" role="_YvDr">
+      <property role="_XH9r" value="ConvertToLog4jStatements" />
+      <property role="1iWc8x" value="true" />
+      <ref role="_XDHR" to="tpib:gZ4ab7v" resolve="LogStatement" />
+      <node concept="_ZGcI" id="4XBaoL6ckrR" role="_XPhp">
+        <node concept="3clFbS" id="4XBaoL6ckrS" role="2VODD2">
+          <node concept="3cpWs8" id="4XBaoL6ckrT" role="3cqZAp">
+            <node concept="3cpWsn" id="4XBaoL6ckrU" role="3cpWs9">
+              <property role="TrG5h" value="newNode" />
+              <node concept="3Tqbb2" id="4XBaoL6ckrV" role="1tU5fm">
+                <ref role="ehGHo" to="tpib:5vyNLjQPqst" resolve="MsgStatement" />
+              </node>
+              <node concept="2OqwBi" id="4XBaoL6ckrW" role="33vP2m">
+                <node concept="_YI3z" id="4XBaoL6ckrX" role="2Oq$k0" />
+                <node concept="2DeJnW" id="4XBaoL6ckrY" role="2OqNvi">
+                  <ref role="1_rbq0" to="tpib:5vyNLjQPqst" resolve="MsgStatement" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="4XBaoL6ckrZ" role="3cqZAp">
+            <node concept="37vLTI" id="4XBaoL6cks0" role="3clFbG">
+              <node concept="2OqwBi" id="4XBaoL6cks1" role="37vLTx">
+                <node concept="_YI3z" id="4XBaoL6cks2" role="2Oq$k0" />
+                <node concept="3TrEf2" id="4XBaoL6cks3" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpib:gZ4bqmg" resolve="logExpression" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4XBaoL6cks4" role="37vLTJ">
+                <node concept="37vLTw" id="4XBaoL6cks5" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4XBaoL6ckrU" resolve="newNode" />
+                </node>
+                <node concept="3TrEf2" id="4XBaoL6cks6" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpib:4XBaoL6cc9u" resolve="message" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="4XBaoL6cks7" role="3cqZAp">
+            <node concept="37vLTI" id="4XBaoL6cks8" role="3clFbG">
+              <node concept="2OqwBi" id="4XBaoL6cks9" role="37vLTx">
+                <node concept="_YI3z" id="4XBaoL6cksa" role="2Oq$k0" />
+                <node concept="3TrEf2" id="4XBaoL6cksb" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpib:gZ4bMnD" resolve="exception" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4XBaoL6cksc" role="37vLTJ">
+                <node concept="37vLTw" id="4XBaoL6cksd" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4XBaoL6ckrU" resolve="newNode" />
+                </node>
+                <node concept="3TrEf2" id="4XBaoL6ckse" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpib:4XBaoL6cc9v" resolve="throwable" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="4XBaoL6cksf" role="3cqZAp">
+            <node concept="37vLTI" id="4XBaoL6cksg" role="3clFbG">
+              <node concept="2OqwBi" id="4XBaoL6cksh" role="37vLTx">
+                <node concept="_YI3z" id="4XBaoL6cksi" role="2Oq$k0" />
+                <node concept="3TrcHB" id="4XBaoL6cksj" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpib:gZ5gtXz" resolve="severity" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4XBaoL6cksk" role="37vLTJ">
+                <node concept="37vLTw" id="4XBaoL6cksl" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4XBaoL6ckrU" resolve="newNode" />
+                </node>
+                <node concept="3TrcHB" id="4XBaoL6cksm" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpib:5vyNLjQPtwv" resolve="severity" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="4XBaoL6clOi" role="3cqZAp">
+            <node concept="37vLTI" id="4XBaoL6cmJF" role="3clFbG">
+              <node concept="2OqwBi" id="4XBaoL6cmWF" role="37vLTx">
+                <node concept="_YI3z" id="4XBaoL6cmK6" role="2Oq$k0" />
+                <node concept="3TrEf2" id="4XBaoL6cndz" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpib:1KXtTGFTOJf" resolve="project" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4XBaoL6clZW" role="37vLTJ">
+                <node concept="37vLTw" id="4XBaoL6clOg" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4XBaoL6ckrU" resolve="newNode" />
+                </node>
+                <node concept="3TrEf2" id="4XBaoL6cmlJ" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpib:4XBaoL6ccco" resolve="project" />
                 </node>
               </node>
             </node>

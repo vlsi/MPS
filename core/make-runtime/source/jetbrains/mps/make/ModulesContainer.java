@@ -23,14 +23,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import static jetbrains.mps.project.SModuleOperations.isCompileInMps;
+
 /**
  * sources saving and other utility methods are here
  */
-class ModulesContainer {
+final class ModulesContainer {
   private final Set<SModule> myModules;
   private final Dependencies myDependencies;
-  private Map<SModule, ModuleSources> myModuleSources = new HashMap<SModule, ModuleSources>();
-  private Map<String, SModule> myClassName2ModuleMap = new HashMap<String, SModule>();
+  private final Map<SModule, ModuleSources> myModuleSources = new HashMap<>();
+  private final Map<String, SModule> myClassName2ModuleMap = new HashMap<>();
 
   public ModulesContainer(Set<SModule> modules, Dependencies dependencies) {
     myModules = modules;
@@ -75,15 +77,8 @@ class ModulesContainer {
     return myClassName2ModuleMap.get(containerClassName);
   }
 
-  boolean containsClass(@NotNull String containerClassName) {
-    return myClassName2ModuleMap.containsKey(containerClassName);
-  }
-
   public static boolean isExcluded(@NotNull SModule m) {
     return m.isReadOnly() || !isCompileInMps(m);
   }
 
-  static boolean isCompileInMps(@NotNull SModule m) {
-    return SModuleOperations.isCompileInMps(m);
-  }
 }

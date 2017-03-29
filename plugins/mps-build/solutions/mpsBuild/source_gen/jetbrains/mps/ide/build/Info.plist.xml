@@ -103,6 +103,9 @@
         <key>idea.paths.selector</key>
         <string>MPS2017.2</string>
         
+        <key>idea.executable</key>
+        <string>mps</string>
+        
         <key>idea.java.redist</key>
         <string>NoJavaDistribution</string>
         <key>idea.home.path</key>

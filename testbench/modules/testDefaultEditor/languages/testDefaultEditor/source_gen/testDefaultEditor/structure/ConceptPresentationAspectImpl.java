@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AbstractDeveloper = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_BaseChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Canvas = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Company = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConcreteChild = new ConceptPresentationBuilder().create();
@@ -22,7 +23,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_DummyMethod = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Friend = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IConcreteChild = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IParent = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_InterfaceChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NotSubstitutableDeveloper = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Parent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Shape = new ConceptPresentationBuilder().create();
@@ -37,6 +38,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_AbstractChild;
       case LanguageConceptSwitch.AbstractDeveloper:
         return props_AbstractDeveloper;
+      case LanguageConceptSwitch.BaseChild:
+        return props_BaseChild;
       case LanguageConceptSwitch.Canvas:
         return props_Canvas;
       case LanguageConceptSwitch.Company:
@@ -59,8 +62,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Friend;
       case LanguageConceptSwitch.IConcreteChild:
         return props_IConcreteChild;
-      case LanguageConceptSwitch.IParent:
-        return props_IParent;
+      case LanguageConceptSwitch.InterfaceChild:
+        return props_InterfaceChild;
       case LanguageConceptSwitch.NotSubstitutableDeveloper:
         return props_NotSubstitutableDeveloper;
       case LanguageConceptSwitch.Parent:

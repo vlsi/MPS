@@ -12,8 +12,9 @@ public final class ScriptsDescriptor extends ScriptAspectBase {
   private final RefactoringScript[] myRefactoringScripts;
 
   public ScriptsDescriptor() {
-    myRefactoringScripts = new RefactoringScript[1];
-    myRefactoringScripts[0] = new ConvertMessagesViewPrintStatementsToLog4j_MigrationScript();
+    myRefactoringScripts = new RefactoringScript[2];
+    myRefactoringScripts[0] = new ConvertLegacyStatementsToLogLowLevel_MigrationScript();
+    myRefactoringScripts[1] = new ConvertLegacyStatementsToMessageStatements_MigrationScript();
   }
 
   @Override

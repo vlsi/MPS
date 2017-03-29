@@ -7,32 +7,21 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectManager;
-import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.ide.messages.MessagesViewTool;
+import org.jetbrains.mps.openapi.project.Project;
+import jetbrains.mps.logging.MessageObject;
 
 public final class LoggingRuntime {
-  private static final Logger LOG = LogManager.getLogger(LoggingRuntime.class);
+  private static final String MSG_VIEW_TOKEN = "###MESSAGES_VIEW_TOKEN###";
+  private static final Logger MSG_VIEW_LOG = LogManager.getLogger(MSG_VIEW_TOKEN);
 
-  public static void printToMessagesView(@NotNull Level level, String msg, @NotNull Class<?> sender, @Nullable Object hintObject, @Nullable Throwable throwable, @Nullable Project project) {
-    if (project == null) {
-      for (Project p : ProjectManager.getInstance().getOpenedProjects()) {
-        printToMessagesView(level, msg, sender, hintObject, throwable, p);
-      }
-      return;
-    }
+  @Deprecated
+  public static void legacyLog(@NotNull Level level, String msg, @NotNull Class<?> sender, @Nullable Throwable throwable) {
+    LogManager.getLogger(sender).log(level, msg, throwable);
+    logMsgView(level, msg, sender, throwable, null);
+  }
 
-    MessageKind kind = MessageKind.fromPriority(level);
-    Message message = new Message(kind, sender, msg);
-    message.setHintObject(hintObject);
-    message.setException(throwable);
-    MessagesViewTool messagesView = project.getComponent(MessagesViewTool.class);
-    if (messagesView != null) {
-      messagesView.add(message);
-    } else {
-      LOG.warn("MessagesView Tool cannot be found");
-    }
+  public static void logMsgView(@NotNull Level level, String msg, @NotNull Class<?> sender, @Nullable Throwable throwable, @Nullable Project project) {
+    MessageObject msgObject = new MessageObject(msg, null, sender.toString(), project);
+    MSG_VIEW_LOG.log(level, msgObject, throwable);
   }
 }

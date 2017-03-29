@@ -440,8 +440,8 @@
             </node>
             <node concept="2Rf3mk" id="5MyQhnWGBCU" role="2OqNvi">
               <node concept="1xMEDy" id="5MyQhnWGBCV" role="1xVPHs">
-                <node concept="chp4Y" id="59rAZgBOgRs" role="ri$Ld">
-                  <ref role="cht4Q" to="tpib:1KXtTGFSJ2T" resolve="LogToFileStatement" />
+                <node concept="chp4Y" id="2wL7FFZOU9Q" role="ri$Ld">
+                  <ref role="cht4Q" to="tpib:5vyNLjQPuUQ" resolve="IMessage" />
                 </node>
               </node>
             </node>

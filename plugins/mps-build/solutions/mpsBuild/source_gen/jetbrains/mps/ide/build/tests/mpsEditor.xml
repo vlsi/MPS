@@ -656,7 +656,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.lang.actions.testLanguage, java.compile.jetbrains.mps.lang.editor.tableTests, java.compile.testDefaultEditor, java.compile.testMoveElements, java.compile.testSpaceCompletion, java.compile.jetbrains.mps.lang.editor.styleTests, java.compile.jetbrains.mps.lang.editor.multiple.testLanguage, java.compile.jetbrains.mps.lang.editor.multiple.extension.testLanguage, java.compile.jetbrains.mps.lang.editor.table.tests, java.compile.jetbrains.mps.lang.actions.test, java.compile.jetbrains.mps.baseLanguage.test, java.compile.jetbrains.mps.console.test, java.compile.jetbrains.mps.lang.editor.multiple.tests, java.compile.jetbrains.mps.lang.editor.tests" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.lang.actions.testLanguage, java.compile.jetbrains.mps.lang.editor.tableTests, java.compile.testDefaultEditor, java.compile.jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts, java.compile.testMoveElements, java.compile.testSpaceCompletion, java.compile.jetbrains.mps.lang.editor.styleTests, java.compile.jetbrains.mps.lang.editor.multiple.testLanguage, java.compile.jetbrains.mps.lang.editor.multiple.extension.testLanguage, java.compile.jetbrains.mps.lang.editor.table.tests, java.compile.jetbrains.mps.lang.actions.test, java.compile.jetbrains.mps.baseLanguage.test, java.compile.jetbrains.mps.console.test, java.compile.jetbrains.mps.lang.editor.multiple.tests, java.compile.jetbrains.mps.lang.editor.tests" />
   
   <target name="processResources" />
   
@@ -694,6 +694,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.analyzers.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
@@ -752,6 +753,7 @@
         <module file="${basedir}/testbench/testsolutions/testlangs/editor.mult.testLang/jetbrains.mps.lang.editor.multiple.testLanguage.mpl" />
         <module file="${basedir}/testbench/testsolutions/testlangs/editor.style.testLang/jetbrains.mps.lang.editor.styleTests.mpl" />
         <module file="${basedir}/testbench/testsolutions/testlangs/editor.tableTests.testLang/jetbrains.mps.lang.editor.tableTests.mpl" />
+        <module file="${basedir}/testbench/modules/testDefaultEditor/languages/editor.languageForDeletedConcepts/jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts.mpl" />
         <module file="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/testDefaultEditor.mpl" />
         <module file="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/testMoveElements.mpl" />
         <module file="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/testSpaceCompletion.mpl" />
@@ -919,6 +921,49 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/testDefaultEditor">
       <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts" depends="fetchDependencies">
+    <mkdir dir="${basedir}/testbench/modules/testDefaultEditor/languages/editor.languageForDeletedConcepts/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts" />
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/testbench/modules/testDefaultEditor/languages/editor.languageForDeletedConcepts/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.testDefaultEditor.languageForDeletedConcepts">
+      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/editor.languageForDeletedConcepts/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1694,6 +1739,7 @@
     <delete dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.testLang/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/testlangs/editor.style.testLang/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/testlangs/editor.tableTests.testLang/source_gen" />
+    <delete dir="${basedir}/testbench/modules/testDefaultEditor/languages/editor.languageForDeletedConcepts/source_gen" />
     <delete dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" />
     <delete dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" />
     <delete dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" />

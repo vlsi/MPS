@@ -263,7 +263,7 @@
     <property role="EcuMT" value="8629363476785288577" />
     <property role="TrG5h" value="Container" />
     <property role="19KtqR" value="true" />
-    <property role="3GE5qa" value="deletion" />
+    <property role="3GE5qa" value="defaultEditor" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7v1E5Mvxhi1" role="1TKVEi">
       <property role="IQ2ns" value="8629363476785337473" />
@@ -274,7 +274,7 @@
   </node>
   <node concept="1TIwiD" id="7v1E5Mvx5m2">
     <property role="EcuMT" value="8629363476785288578" />
-    <property role="3GE5qa" value="deletion" />
+    <property role="3GE5qa" value="defaultEditor" />
     <property role="TrG5h" value="Parent" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7v1E5Mvx5m7" role="1TKVEi">
@@ -282,40 +282,58 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="child" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="7v1E5Mvx5m3" resolve="AbstractChild" />
+      <ref role="20lvS9" node="7v1E5Mvx5m3" resolve="BaseChild" />
     </node>
     <node concept="1TJgyj" id="2znOOs7hUS4" role="1TKVEi">
       <property role="IQ2ns" value="2943053183528185348" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="interfaceChild" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="2znOOs7hUg8" resolve="IParent" />
+      <ref role="20lvS9" node="2znOOs7hUg8" resolve="InterfaceChild" />
+    </node>
+    <node concept="1TJgyj" id="3ASrrZeFieW" role="1TKVEi">
+      <property role="IQ2ns" value="4159194926450287548" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="optionalAbstractChild" />
+      <ref role="20lvS9" node="3ASrrZeFnrm" resolve="AbstractChild" />
     </node>
   </node>
   <node concept="1TIwiD" id="7v1E5Mvx5m3">
     <property role="EcuMT" value="8629363476785288579" />
-    <property role="3GE5qa" value="deletion" />
-    <property role="TrG5h" value="AbstractChild" />
+    <property role="3GE5qa" value="defaultEditor" />
+    <property role="TrG5h" value="BaseChild" />
     <property role="R5$K7" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="7v1E5Mvxhi7">
     <property role="EcuMT" value="8629363476785337479" />
-    <property role="3GE5qa" value="deletion" />
+    <property role="3GE5qa" value="defaultEditor" />
     <property role="TrG5h" value="ConcreteChild" />
-    <ref role="1TJDcQ" node="7v1E5Mvx5m3" resolve="AbstractChild" />
+    <ref role="1TJDcQ" node="7v1E5Mvx5m3" resolve="BaseChild" />
   </node>
   <node concept="PlHQZ" id="2znOOs7hUg8">
     <property role="EcuMT" value="2943053183528182792" />
-    <property role="3GE5qa" value="deletion" />
-    <property role="TrG5h" value="IParent" />
+    <property role="3GE5qa" value="defaultEditor" />
+    <property role="TrG5h" value="InterfaceChild" />
   </node>
   <node concept="1TIwiD" id="2znOOs7hUg9">
     <property role="EcuMT" value="2943053183528182793" />
-    <property role="3GE5qa" value="deletion" />
+    <property role="3GE5qa" value="defaultEditor" />
     <property role="TrG5h" value="IConcreteChild" />
     <node concept="PrWs8" id="2znOOs7hUga" role="PzmwI">
-      <ref role="PrY4T" node="2znOOs7hUg8" resolve="IParent" />
+      <ref role="PrY4T" node="2znOOs7hUg8" resolve="InterfaceChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3ASrrZeFnrm">
+    <property role="EcuMT" value="4159194926450308822" />
+    <property role="3GE5qa" value="defaultEditor" />
+    <property role="TrG5h" value="AbstractChild" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3owEWSkkfg3" role="1TKVEl">
+      <property role="IQ2nx" value="3900306178895311875" />
+      <property role="TrG5h" value="name" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>
