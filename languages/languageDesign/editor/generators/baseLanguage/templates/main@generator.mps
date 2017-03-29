@@ -30166,6 +30166,20 @@
                   <node concept="10Oyi0" id="7hmFG5jOtxv" role="1tU5fm" />
                 </node>
               </node>
+              <node concept="3clFbF" id="2BNRL69r5Zd" role="3cqZAp">
+                <node concept="5jKBG" id="2BNRL69r5Ze" role="lGtFl">
+                  <ref role="v9R2y" node="5t2DUc51aVQ" resolve="template_cellSetSubstituteInfo" />
+                </node>
+                <node concept="2OqwBi" id="2BNRL69r5Zf" role="3clFbG">
+                  <node concept="liA8E" id="2BNRL69r5Zg" role="2OqNvi">
+                    <ref role="37wK5l" to="f4zo:~EditorCell.setSubstituteInfo(jetbrains.mps.openapi.editor.cells.SubstituteInfo):void" resolve="setSubstituteInfo" />
+                    <node concept="10Nm6u" id="2BNRL69r5Zh" role="37wK5m" />
+                  </node>
+                  <node concept="37vLTw" id="2BNRL69r5Zi" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7hmFG5jOgVt" resolve="editorCell" />
+                  </node>
+                </node>
+              </node>
               <node concept="3cpWs6" id="7hmFG5jOqeH" role="3cqZAp">
                 <node concept="37vLTw" id="5fIuys074Qy" role="3cqZAk">
                   <ref role="3cqZAo" node="7hmFG5jOgVt" resolve="editorCell" />
