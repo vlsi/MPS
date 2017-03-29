@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,9 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
+import jetbrains.mps.generator.impl.query.QueryKey;
+import jetbrains.mps.generator.impl.query.QueryKeyImpl;
+import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.MapRootRuleBase;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -54,7 +57,13 @@ public final class TemplateRootMappingRuleInterpreted extends MapRootRuleBase im
   @Override
   public boolean isApplicable(@NotNull TemplateContext context) throws GenerationFailureException {
     if (myCondition == null) {
-      myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getMapRootRuleCondition(myRuleNode);
+      SNode condition = RuleUtil.getBaseRuleCondition(myRuleNode);
+      if (condition != null) {
+        QueryKey identity = new QueryKeyImpl(getRuleNode(), condition.getNodeId(), myRuleNode);
+        myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getMapRootRuleCondition(identity);
+      } else {
+        myCondition = new QueryProviderBase.Defaults();
+      }
     }
     return myCondition.check(new MapRootRuleContext(context, getRuleNode()));
   }

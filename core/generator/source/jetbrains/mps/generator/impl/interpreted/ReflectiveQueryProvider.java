@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateQueryException;
 import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
@@ -97,168 +96,122 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
   @NotNull
   @Override
-  public CreateRootCondition getCreateRootRuleCondition(@NotNull SNode rule) {
-    SNode conditionFunction = RuleUtil.getCreateRootRuleCondition(rule);
-    String conditionMethod = conditionFunction == null ? null : TemplateFunctionMethodName.createRootRule_Condition(conditionFunction);
-    if (conditionMethod != null) {
-      return new Impl(myQueryMethods, conditionMethod);
-    }
-    return super.getCreateRootRuleCondition(rule);
+  public CreateRootCondition getCreateRootRuleCondition(@NotNull QueryKey identity) {
+    String conditionMethod = TemplateFunctionMethodName.createRootRule_Condition(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl(myQueryMethods, conditionMethod);
   }
 
   @NotNull
   @Override
-  public MapRootRuleCondition getMapRootRuleCondition(@NotNull SNode rule) {
-    String conditionMethod = getBaseRuleConditionMethod(rule);
-    if (conditionMethod != null) {
-      return new Impl(myQueryMethods, conditionMethod);
-    }
-    return super.getMapRootRuleCondition(rule);
+  public MapRootRuleCondition getMapRootRuleCondition(@NotNull QueryKey identity) {
+    String conditionMethod = TemplateFunctionMethodName.baseMappingRule_Condition(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl(myQueryMethods, conditionMethod);
   }
 
   @NotNull
   @Override
-  public ReductionRuleCondition getReductionRuleCondition(@NotNull SNode rule) {
-    String conditionMethod = getBaseRuleConditionMethod(rule);
-    if (conditionMethod != null) {
-      return new Impl(myQueryMethods, conditionMethod);
-    }
-    return super.getReductionRuleCondition(rule);
+  public ReductionRuleCondition getReductionRuleCondition(@NotNull QueryKey identity) {
+    String conditionMethod = TemplateFunctionMethodName.baseMappingRule_Condition(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl(myQueryMethods, conditionMethod);
   }
 
   @NotNull
   @Override
-  public PatternRuleQuery getPatternRuleCondition(@NotNull SNode rule) {
-    String methodName = TemplateFunctionMethodName.patternRule_Condition(rule);
-    if (methodName != null) {
-      return new Impl2<>(myQueryMethods, methodName, null);
-    }
-    return super.getPatternRuleCondition(rule);
+  public PatternRuleQuery getPatternRuleCondition(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.patternRule_Condition(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl2<>(myQueryMethods, methodName, null);
   }
 
   @NotNull
   @Override
-  public DropRuleCondition getDropRuleCondition(@NotNull SNode rule) {
-    SNode condition = RuleUtil.getDropRuleCondition(rule);
-    String conditionMethod = condition == null ? null : TemplateFunctionMethodName.dropRootRule_Condition(condition);
-    if (conditionMethod != null) {
-      return new Impl(myQueryMethods, conditionMethod, true);
-    }
-    return super.getDropRuleCondition(rule);
+  public DropRuleCondition getDropRuleCondition(@NotNull QueryKey identity) {
+    String conditionMethod = TemplateFunctionMethodName.dropRootRule_Condition(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl(myQueryMethods, conditionMethod, true);
   }
 
   @NotNull
   @Override
-  public DropAttributeRuleCondition getDropAttributeRuleCondition(@NotNull SNode rule) {
-    SNode condition = RuleUtil.getDropAttributeRule_Condition(rule);
-    String conditionMethod = condition == null ? null : TemplateFunctionMethodName.dropAttributeRule_Condition(condition);
-    if (conditionMethod != null) {
-      return new Impl(myQueryMethods, conditionMethod, true);
-    }
-    return super.getDropAttributeRuleCondition(rule);
+  public DropAttributeRuleCondition getDropAttributeRuleCondition(@NotNull QueryKey identity) {
+    String conditionMethod = TemplateFunctionMethodName.dropAttributeRule_Condition(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl(myQueryMethods, conditionMethod, true);
   }
 
   @NotNull
   @Override
-  public WeaveRuleCondition getWeaveRuleCondition(@NotNull SNode rule) {
-    String conditionMethod = getBaseRuleConditionMethod(rule);
-    if (conditionMethod != null) {
-      return new Impl(myQueryMethods, conditionMethod);
-    }
-    return super.getWeaveRuleCondition(rule);
+  public WeaveRuleCondition getWeaveRuleCondition(@NotNull QueryKey identity) {
+    String conditionMethod = TemplateFunctionMethodName.baseMappingRule_Condition(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl(myQueryMethods, conditionMethod);
   }
 
   @NotNull
   @Override
-  public WeaveRuleQuery getWeaveRuleQuery(@NotNull SNode rule) {
-    SNode contextQuery = RuleUtil.getWeaving_ContextNodeQuery(rule);
-    String contentNodeMethod = contextQuery == null ? null : TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(contextQuery);
-    if (contentNodeMethod != null) {
-      return new Impl2<>(myQueryMethods, contentNodeMethod, null);
-    }
-    return super.getWeaveRuleQuery(rule);
+  public WeaveRuleQuery getWeaveRuleQuery(@NotNull QueryKey identity) {
+    String contentNodeMethod = TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl2<>(myQueryMethods, contentNodeMethod, null);
   }
 
   @NotNull
   @Override
-  public WeaveAnchorQuery getWeaveAnchorQuery(@NotNull SNode ruleOrMacro) {
-    SNode anchorQuery = RuleUtil.isNodeMacro(ruleOrMacro) ? RuleUtil.getWeaveMacro_AnchorQuery(ruleOrMacro) : RuleUtil.getWeaveRule_AnchorQuery(ruleOrMacro);
-    String anchorQueryMethod = anchorQuery == null ? null : TemplateFunctionMethodName.weaving_AnchorQuery(anchorQuery);
-    if (anchorQueryMethod != null) {
-      return new Impl2<>(myQueryMethods, anchorQueryMethod, null);
-    }
-    return super.getWeaveAnchorQuery(ruleOrMacro);
+  public WeaveAnchorQuery getWeaveAnchorQuery(@NotNull QueryKey identity) {
+    String anchorQueryMethod = TemplateFunctionMethodName.weaving_AnchorQuery(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl2<>(myQueryMethods, anchorQueryMethod, null);
   }
 
   @NotNull
   @Override
-  public ScriptCodeBlock getScriptCodeBlock(@NotNull SNode script) {
-    SNode codeBlock = RuleUtil.getMappingScript_CodeBlock(script);
-    String codeBlockMethod = codeBlock == null ? null : TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock);
-    if (codeBlockMethod != null) {
-      return new Impl2<>(myQueryMethods, codeBlockMethod, null /*script doesn't return anything, this is just to tell we need default no-op behavior*/);
-    }
-    return super.getScriptCodeBlock(script);
+  public ScriptCodeBlock getScriptCodeBlock(@NotNull QueryKey identity) {
+    String codeBlockMethod = TemplateFunctionMethodName.mappingScript_CodeBlock(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl2<>(myQueryMethods, codeBlockMethod, null /*script doesn't return anything, this is just to tell we need default no-op behavior*/);
   }
 
   @NotNull
   @Override
-  public MapConfigurationCondition getMapConfigurationCondition(@NotNull SNode mapCfg) {
-    SNode condition = RuleUtil.getMappingConfiguration_IsApplicable(mapCfg);
-    String conditionMethod = condition == null ? null : TemplateFunctionMethodName.mappingConfiguration_Condition(condition);
-    if (conditionMethod != null) {
-      return new Impl(myQueryMethods, conditionMethod, true);
-    }
-    return super.getMapConfigurationCondition(mapCfg);
+  public MapConfigurationCondition getMapConfigurationCondition(@NotNull QueryKey identity) {
+    String conditionMethod = TemplateFunctionMethodName.mappingConfiguration_Condition(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl(myQueryMethods, conditionMethod, true);
   }
 
   @NotNull
   @Override
-  public SourceNodeQuery getSourceNodeQuery(@NotNull SNode query) {
-    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query);
+  public SourceNodeQuery getSourceNodeQuery(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(((QueryKeyImpl) identity).getQueryNodeId());
     return new Impl2<SNode>(myQueryMethods, methodName, null);
   }
 
   @NotNull
   @Override
-  public SourceNodesQuery getSourceNodesQuery(@NotNull SNode query) {
-    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query);
+  public SourceNodesQuery getSourceNodesQuery(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(((QueryKeyImpl) identity).getQueryNodeId());
     return new Impl2<Iterable<SNode>>(myQueryMethods, methodName, Collections.emptyList());
   }
 
   @NotNull
   @Override
-  public PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro) {
-    SNode function = RuleUtil.getPropertyMacro_ValueFunction(propertyMacro);
-    final SProperty property = AttributeOperations.getProperty(propertyMacro);
-    if (function == null || property == null) {
-      return super.getPropertyValueQuery(propertyMacro);
-    }
-    String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function);
+  public PropertyValueQuery getPropertyValueQuery(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(((QueryKeyImpl) identity).getQueryNodeId());
+    // FIXME this is wrong use of getAPITransitionNode(). The problem here is that PVQ, unlike other queries, is expected to tell
+    //       SProperty + default template value. Generated code could have these injected, interpreted needs to calculate these
+    //       and can easily do so in TemplateNode, however both need to hide behind QueryKey api which doesn't suggest means to pass extra values
+    //       Shall re-design this and decide whether I need Query to be more than just executable code (SProperty+default value look reasonable to
+    //       get generated right away along with the query!) or it complicates matters way too much.
+    SNode propertyMacro = ((QueryKeyImpl) identity).getAPITransitionNode();
     SNode templateNode = propertyMacro.getParent();
+    final SProperty property = AttributeOperations.getProperty(propertyMacro);
     final Object templateValue = SNodeAccessUtil.getProperty(templateNode, property);
     return new PropMacro(myQueryMethods, propertyMacro.getReference(), methodName, property, templateValue);
   }
 
   @NotNull
   @Override
-  public IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro) {
-    SNode function = RuleUtil.getIfMacro_ConditionFunction(ifMacro);
-    if (function == null) {
-      return super.getIfMacroCondition(ifMacro);
-    }
-    String methodName = TemplateFunctionMethodName.ifMacro_Condition(function);
+  public IfMacroCondition getIfMacroCondition(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.ifMacro_Condition(((QueryKeyImpl) identity).getQueryNodeId());
     return new Impl(myQueryMethods, methodName, false);
   }
 
   @NotNull
   @Override
-  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
-    SNode condition = RuleUtil.getInlineSwitch_caseCondition(caseNode);
-    if (condition == null) {
-      return super.getInlineSwitchCaseCondition(caseNode);
-    }
-    final String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition);
+  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull QueryKey identity) {
+    final String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(((QueryKeyImpl) identity).getQueryNodeId());
     return new Impl(myQueryMethods, methodName, false);
   }
 
@@ -312,11 +265,6 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   public MapPostProcessor getMapPostProcessor(@NotNull QueryKey identity) {
     String methodName = TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(((QueryKeyImpl) identity).getQueryNodeId());
     return new Impl2<>(myQueryMethods, methodName);
-  }
-
-  private String getBaseRuleConditionMethod(SNode rule) {
-    SNode condition = RuleUtil.getBaseRuleCondition(rule);
-    return condition == null ? null : TemplateFunctionMethodName.baseMappingRule_Condition(condition);
   }
 
   /*package*/ static GenerationFailureException fromQueryAccessCode(IllegalQueryMethodException ex) {

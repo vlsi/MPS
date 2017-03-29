@@ -60,15 +60,19 @@ import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
+import jetbrains.mps.generator.impl.query.WeaveAnchorQuery;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.generator.template.WeavingAnchorContext;
 import jetbrains.mps.generator.impl.query.ScriptCodeBlock;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import java.util.Collection;
 import jetbrains.mps.util.IterableUtil;
@@ -78,7 +82,6 @@ import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
-import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.MapNodeQuery;
@@ -3164,10 +3167,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @Override
   @NotNull
-  public ReductionRuleCondition getReductionRuleCondition(@NotNull SNode rule) {
-    final String id = rule.getNodeId().toString();
+  public ReductionRuleCondition getReductionRuleCondition(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
     if (!(rrcMethods.containsKey(id))) {
-      return super.getReductionRuleCondition(rule);
+      return super.getReductionRuleCondition(identity);
     }
     return rrcMethods.get(id);
   }
@@ -3242,10 +3245,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @Override
   @NotNull
-  public CreateRootCondition getCreateRootRuleCondition(@NotNull SNode rule) {
-    String id = rule.getNodeId().toString();
+  public CreateRootCondition getCreateRootRuleCondition(@NotNull QueryKey identity) {
+    String id = identity.getTemplateNode().getNodeId().toString();
     if (!(crcMethods.containsKey(id))) {
-      return super.getCreateRootRuleCondition(rule);
+      return super.getCreateRootRuleCondition(identity);
     }
     return crcMethods.get(id);
   }
@@ -3283,23 +3286,32 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @Override
   @NotNull
-  public WeaveRuleCondition getWeaveRuleCondition(@NotNull SNode rule) {
-    final String id = rule.getNodeId().toString();
+  public WeaveRuleCondition getWeaveRuleCondition(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
     if (!(wrcnMethods.containsKey(id))) {
-      return super.getWeaveRuleCondition(rule);
+      return super.getWeaveRuleCondition(identity);
     }
     return wrcnMethods.get(id);
   }
   @Override
   @NotNull
-  public WeaveRuleQuery getWeaveRuleQuery(@NotNull SNode rule) {
-    final String id = rule.getNodeId().toString();
+  public WeaveRuleQuery getWeaveRuleQuery(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
     if (!(wrcnMethods.containsKey(id))) {
-      return super.getWeaveRuleQuery(rule);
+      return super.getWeaveRuleQuery(identity);
     }
     return wrcnMethods.get(id);
   }
-  private static class WRQ implements WeaveRuleQuery, WeaveRuleCondition {
+  @NotNull
+  @Override
+  public WeaveAnchorQuery getWeaveAnchorQuery(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
+    if (!(wrcnMethods.containsKey(id))) {
+      return super.getWeaveAnchorQuery(identity);
+    }
+    return wrcnMethods.get(id);
+  }
+  private static class WRQ implements WeaveRuleQuery, WeaveRuleCondition, WeaveAnchorQuery {
     private final int methodKey;
     public WRQ(int methodKey) {
       this.methodKey = methodKey;
@@ -3361,6 +3373,37 @@ public class QueriesGenerated extends QueryProviderBase {
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no context node query method for weaving rule %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
+
+    }
+    @Nullable
+    @Override
+    public SNode anchorNode(WeavingAnchorContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return null;
+        case 1:
+          return null;
+        case 2:
+          return null;
+        case 3:
+          return null;
+        case 4:
+          return null;
+        case 5:
+          return null;
+        case 6:
+          return null;
+        case 7:
+          return null;
+        case 8:
+          return null;
+        case 9:
+          return null;
+        case 10:
+          return null;
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no anchor query method for rule %s (key: #%d)", ctx.getTemplateReference(), methodKey));
+      }
     }
   }
   private final Map<String, ScriptCodeBlock> mscbMethods = new HashMap<String, ScriptCodeBlock>();
@@ -3385,10 +3428,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @Override
   @NotNull
-  public ScriptCodeBlock getScriptCodeBlock(@NotNull SNode script) {
-    final String id = script.getNodeId().toString();
+  public ScriptCodeBlock getScriptCodeBlock(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
     if (!(mscbMethods.containsKey(id))) {
-      return super.getScriptCodeBlock(script);
+      return super.getScriptCodeBlock(identity);
     }
     return mscbMethods.get(id);
   }
@@ -3460,10 +3503,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @Override
   @NotNull
-  public MapConfigurationCondition getMapConfigurationCondition(@NotNull SNode mapCfg) {
-    final String id = mapCfg.getNodeId().toString();
+  public MapConfigurationCondition getMapConfigurationCondition(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
     if (!(mccMethods.containsKey(id))) {
-      return super.getMapConfigurationCondition(mapCfg);
+      return super.getMapConfigurationCondition(identity);
     }
     return mccMethods.get(id);
   }
@@ -3608,10 +3651,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @NotNull
   @Override
-  public SourceNodeQuery getSourceNodeQuery(@NotNull SNode query) {
-    final String id = query.getNodeId().toString();
+  public SourceNodeQuery getSourceNodeQuery(@NotNull QueryKey identity) {
+    final String id = ((QueryKeyImpl) identity).getQueryNodeId().toString();
     if (!(snqMethods.containsKey(id))) {
-      return super.getSourceNodeQuery(query);
+      return super.getSourceNodeQuery(identity);
     }
     return snqMethods.get(id);
   }
@@ -3977,10 +4020,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @NotNull
   @Override
-  public SourceNodesQuery getSourceNodesQuery(@NotNull SNode query) {
-    final String id = query.getNodeId().toString();
+  public SourceNodesQuery getSourceNodesQuery(@NotNull QueryKey identity) {
+    final String id = ((QueryKeyImpl) identity).getQueryNodeId().toString();
     if (!(snsqMethods.containsKey(id))) {
-      return super.getSourceNodesQuery(query);
+      return super.getSourceNodesQuery(identity);
     }
     return snsqMethods.get(id);
   }
@@ -4304,10 +4347,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @NotNull
   @Override
-  public PropertyValueQuery getPropertyValueQuery(@NotNull SNode macro) {
-    final String id = macro.getNodeId().toString();
+  public PropertyValueQuery getPropertyValueQuery(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
     if (!(pvqMethods.containsKey(id))) {
-      return super.getPropertyValueQuery(macro);
+      return super.getPropertyValueQuery(identity);
     }
     return pvqMethods.get(id);
   }
@@ -4590,10 +4633,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @NotNull
   @Override
-  public IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro) {
-    final String id = ifMacro.getNodeId().toString();
+  public IfMacroCondition getIfMacroCondition(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
     if (!(imcMethods.containsKey(id))) {
-      return super.getIfMacroCondition(ifMacro);
+      return super.getIfMacroCondition(identity);
     }
     return imcMethods.get(id);
   }
@@ -4773,10 +4816,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @NotNull
   @Override
-  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
-    final String id = caseNode.getNodeId().toString();
+  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
     if (!(isccMethods.containsKey(id))) {
-      return super.getInlineSwitchCaseCondition(caseNode);
+      return super.getInlineSwitchCaseCondition(identity);
     }
     return isccMethods.get(id);
   }

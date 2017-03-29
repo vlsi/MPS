@@ -14,6 +14,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 
 @Generated
 public class TemplateModelImpl extends TemplateModelBase implements TemplateModel {
@@ -43,5 +44,9 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
       return null;
     }
     return null;
+  }
+  @Override
+  public GeneratorQueryProvider getQueryProvider() {
+    return reflectiveProvider(QueriesGenerated.class);
   }
 }

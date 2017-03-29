@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   }
 
   @NotNull
+  @ToRemove(version = 2017.1)
   @Override
   public CreateRootCondition getCreateRootRuleCondition(@NotNull SNode rule) {
     return new Defaults();
@@ -89,11 +90,25 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
 
   @NotNull
   @Override
+  public CreateRootCondition getCreateRootRuleCondition(@NotNull QueryKey identity) {
+    return getCreateRootRuleCondition(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
+  @Override
   public MapRootRuleCondition getMapRootRuleCondition(@NotNull SNode rule) {
     return new Defaults();
   }
 
   @NotNull
+  @Override
+  public MapRootRuleCondition getMapRootRuleCondition(@NotNull QueryKey identity) {
+    return getMapRootRuleCondition(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
   @Override
   public ReductionRuleCondition getReductionRuleCondition(@NotNull SNode rule) {
     return new Defaults();
@@ -101,11 +116,25 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
 
   @NotNull
   @Override
+  public ReductionRuleCondition getReductionRuleCondition(@NotNull QueryKey identity) {
+    return getReductionRuleCondition(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
+  @Override
   public PatternRuleQuery getPatternRuleCondition(@NotNull SNode rule) {
     return new Defaults();
   }
 
   @NotNull
+  @Override
+  public PatternRuleQuery getPatternRuleCondition(@NotNull QueryKey identity) {
+    return getPatternRuleCondition(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
   @Override
   public DropRuleCondition getDropRuleCondition(@NotNull SNode rule) {
     return new Defaults();
@@ -113,11 +142,25 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
 
   @NotNull
   @Override
+  public DropRuleCondition getDropRuleCondition(@NotNull QueryKey identity) {
+    return getDropRuleCondition(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
+  @Override
   public DropAttributeRuleCondition getDropAttributeRuleCondition(@NotNull SNode rule) {
     return new Defaults();
   }
 
   @NotNull
+  @Override
+  public DropAttributeRuleCondition getDropAttributeRuleCondition(@NotNull QueryKey identity) {
+    return getDropAttributeRuleCondition(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
   @Override
   public WeaveRuleCondition getWeaveRuleCondition(@NotNull SNode rule) {
     return new Defaults();
@@ -125,11 +168,25 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
 
   @NotNull
   @Override
+  public WeaveRuleCondition getWeaveRuleCondition(@NotNull QueryKey identity) {
+    return getWeaveRuleCondition(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
+  @Override
   public WeaveRuleQuery getWeaveRuleQuery(@NotNull SNode rule) {
     return new Defaults();
   }
 
   @NotNull
+  @Override
+  public WeaveRuleQuery getWeaveRuleQuery(@NotNull QueryKey identity) {
+    return getWeaveRuleQuery(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
   @Override
   public WeaveAnchorQuery getWeaveAnchorQuery(@NotNull SNode rule) {
     return new Defaults();
@@ -137,11 +194,25 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
 
   @NotNull
   @Override
+  public WeaveAnchorQuery getWeaveAnchorQuery(@NotNull QueryKey identity) {
+    return getWeaveAnchorQuery(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
+  @Override
   public ScriptCodeBlock getScriptCodeBlock(@NotNull SNode script) {
     return new Defaults();
   }
 
   @NotNull
+  @Override
+  public ScriptCodeBlock getScriptCodeBlock(@NotNull QueryKey identity) {
+    return getScriptCodeBlock(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
   @Override
   public MapConfigurationCondition getMapConfigurationCondition(@NotNull SNode mapCfg) {
     return new Defaults();
@@ -149,11 +220,25 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
 
   @NotNull
   @Override
+  public MapConfigurationCondition getMapConfigurationCondition(@NotNull QueryKey identity) {
+    return getMapConfigurationCondition(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
+  @Override
   public SourceNodeQuery getSourceNodeQuery(@NotNull SNode query) {
     return new Defaults();
   }
 
   @NotNull
+  @Override
+  public SourceNodeQuery getSourceNodeQuery(@NotNull QueryKey identity) {
+    return getSourceNodeQuery(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
   @Override
   public SourceNodesQuery getSourceNodesQuery(@NotNull SNode query) {
     return new Defaults();
@@ -161,11 +246,27 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
 
   @NotNull
   @Override
-  public PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro) {
-    return new PropertyQuery(propertyMacro.getReference());
+  public SourceNodesQuery getSourceNodesQuery(@NotNull QueryKey identity) {
+    return getSourceNodesQuery(((QueryKeyImpl) identity).getAPITransitionNode());
   }
 
   @NotNull
+  @ToRemove(version = 2017.1)
+  @Override
+  public PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro) {
+    // XXX propertyMacro.getNodeId() is wrong identity for PM's query function, we shall rather use
+    // RuleUtil.getPropertyMacro_ValueFunction(propertyMacro).getNodeId(), but as long as it's 'fail-only' implementation, who cares?
+    return new PropertyQuery(new QueryKeyImpl(propertyMacro.getReference(), propertyMacro.getNodeId()));
+  }
+
+  @NotNull
+  @Override
+  public PropertyValueQuery getPropertyValueQuery(@NotNull QueryKey identity) {
+    return getPropertyValueQuery(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
   @Override
   public IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro) {
     return new Missing(ifMacro);
@@ -173,8 +274,21 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
 
   @NotNull
   @Override
+  public IfMacroCondition getIfMacroCondition(@NotNull QueryKey identity) {
+    return getIfMacroCondition(((QueryKeyImpl) identity).getAPITransitionNode());
+  }
+
+  @NotNull
+  @ToRemove(version = 2017.1)
+  @Override
   public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
     return new Missing(caseNode);
+  }
+
+  @NotNull
+  @Override
+  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull QueryKey identity) {
+    return getInlineSwitchCaseCondition(((QueryKeyImpl) identity).getAPITransitionNode());
   }
 
   @NotNull
@@ -321,10 +435,10 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   }
 
   private static class PropertyQuery implements PropertyValueQuery {
-    private final SNodeReference myMacro;
+    private final QueryKey myQueryKey;
 
-    PropertyQuery(@NotNull SNodeReference macro) {
-      myMacro = macro;
+    PropertyQuery(QueryKey identity) {
+      myQueryKey = identity;
     }
 
     @NotNull
@@ -341,7 +455,9 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     @NotNull
     @Override
     public SNodeReference getMacro() {
-      return myMacro;
+      // FIXME getTemplateNode is not necessarily macro node, but we don't need this method anyway, and will remove it soon.
+      //       OTOH, may utilize myQueryKey.getTemplateNode() in evaluate() to log location
+      return myQueryKey.getTemplateNode();
     }
 
     @Nullable
@@ -370,14 +486,13 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   }
 
   // unlike Defaults, complains about missing query
-  private static class Missing implements IfMacroCondition, InlineSwitchCaseCondition, CallArgumentQuery, VariableValueQuery, InsertMacroQuery, MapNodeQuery, MapPostProcessor {
+  public static class Missing implements IfMacroCondition, InlineSwitchCaseCondition, CallArgumentQuery, VariableValueQuery, InsertMacroQuery, MapNodeQuery, MapPostProcessor {
     private final SNodeReference myTemplate;
 
     public Missing(QueryKey identity) {
       myTemplate = identity.getTemplateNode();
     }
 
-    // FIXME switch to QueryKey
     public Missing(SNode identity) {
       myTemplate = identity.getReference();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,9 @@ package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.DropAttributeRuleCondition;
+import jetbrains.mps.generator.impl.query.QueryKey;
+import jetbrains.mps.generator.impl.query.QueryKeyImpl;
+import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.runtime.DropAttributeRuleBase;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -41,7 +44,13 @@ public class DropAttributeRuleInterpreted extends DropAttributeRuleBase {
   @Override
   public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
     if (myCondition == null) {
-      myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getDropAttributeRuleCondition(myRuleNode);
+      SNode condition = RuleUtil.getDropAttributeRule_Condition(myRuleNode);
+      if (condition != null) {
+        QueryKey identity = new QueryKeyImpl(getRuleNode(), condition.getNodeId(), myRuleNode);
+        myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getDropAttributeRuleCondition(identity);
+      } else {
+        myCondition = new QueryProviderBase.Defaults();
+      }
     }
     return myCondition.check(new DropAttributeRuleContext(context, getRuleNode()));
   }

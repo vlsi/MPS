@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,9 @@ package jetbrains.mps.generator.impl.interpreted;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
+import jetbrains.mps.generator.impl.query.QueryKey;
+import jetbrains.mps.generator.impl.query.QueryKeyImpl;
+import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.runtime.DropRootRuleBase;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
@@ -39,7 +42,13 @@ public class TemplateDropRuleInterpreted extends DropRootRuleBase implements Tem
   @Override
   public boolean isApplicable(@NotNull TemplateContext context) throws GenerationFailureException {
     if (myCondition == null) {
-      myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getDropRuleCondition(myRuleNode);
+      SNode condition = RuleUtil.getDropRuleCondition(myRuleNode);
+      if (condition != null) {
+        QueryKey identity = new QueryKeyImpl(getRuleNode(), condition.getNodeId(), myRuleNode);
+        myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getDropRuleCondition(identity);
+      } else {
+        myCondition = new QueryProviderBase.Defaults();
+      }
     }
     return myCondition.check(new DropRootRuleContext(context, getRuleNode()));
   }

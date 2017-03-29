@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import jetbrains.mps.generator.impl.query.InsertMacroQuery;
 import jetbrains.mps.generator.impl.query.MapNodeQuery;
 import jetbrains.mps.generator.impl.query.MapPostProcessor;
 import jetbrains.mps.generator.impl.query.QueryKeyImpl;
+import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.impl.query.VariableValueQuery;
@@ -357,7 +358,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     private SourceNodeQuery createNodeQuery() {
       SNode query = RuleUtil.getSourceNodeQuery(macro);
       if (query != null) {
-        return myTemplateProcessor.getQueryProvider(getMacroNodeRef()).getSourceNodeQuery(query);
+        return myTemplateProcessor.getQueryProvider(getMacroNodeRef()).getSourceNodeQuery(new QueryKeyImpl(getMacroNodeRef(), query.getNodeId(), query));
       } else {
         // <default> : propagate  current input node
         return new SourceNodeQuery() {
@@ -374,7 +375,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     private SourceNodesQuery createNodesQuery() {
       SNode nodesQuery = RuleUtil.getSourceNodesQuery(macro);
       if (nodesQuery != null) {
-        return myTemplateProcessor.getQueryProvider(getMacroNodeRef()).getSourceNodesQuery(nodesQuery);
+        return myTemplateProcessor.getQueryProvider(getMacroNodeRef()).getSourceNodesQuery(new QueryKeyImpl(getMacroNodeRef(), nodesQuery.getNodeId(), nodesQuery));
       }
       if (RuleUtil.doesMacroRequireInput(macro)) {
         return null;
@@ -582,7 +583,13 @@ public final class TemplateProcessor implements ITemplateProcessor {
       super(macro, templateNode, next, templateProcessor);
       SNode alternativeConsequence = RuleUtil.getIfMacro_AlternativeConsequence(macro);
       myAlternativeConsequence = alternativeConsequence == null ? null : RuleConsequenceProcessor.prepare(alternativeConsequence);
-      myCondition = templateProcessor.getQueryProvider(getMacroNodeRef()).getIfMacroCondition(macro);
+      SNode function = RuleUtil.getIfMacro_ConditionFunction(macro);
+      if (function != null) {
+        myCondition =
+            templateProcessor.getQueryProvider(getMacroNodeRef()).getIfMacroCondition(new QueryKeyImpl(getMacroNodeRef(), function.getNodeId(), macro));
+      } else {
+        myCondition = new QueryProviderBase.Missing(macro);
+      }
     }
 
     @NotNull

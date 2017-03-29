@@ -545,11 +545,13 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.query.MapConfigurationCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.PropertyValueQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.QueryKey" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.QueryKeyImpl" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.ReductionRuleCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.ReferenceTargetQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.SourceNodeQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.SourceNodesQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.VariableValueQuery" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.WeaveAnchorQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.WeaveRuleCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.WeaveRuleQuery" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
@@ -564,6 +566,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateArgumentContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateVarContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.WeavingAnchorContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.WeavingMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -962,8 +965,10 @@
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.TemplateModelImpl" file="TemplateModelImpl.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.GeneratorQueryProvider" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
@@ -987,6 +992,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Mapping_mc_reflection" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Mapping_mc_searchScope_operations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Mapping_mc_sequence_operations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_AggregationIdentity_SContainmentLink" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_AssociationIdentity_SReferenceLink" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_ConceptIdentity_SConcept" />
