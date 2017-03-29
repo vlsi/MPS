@@ -17,23 +17,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.migration.MigrationComponent;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
-import com.intellij.util.WaitForProgressToShow;
-import java.util.Set;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.SLanguageHierarchy;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
 
@@ -73,99 +65,25 @@ public class RunPreUpdateCheck_Action extends BaseAction {
     final List<Problem> problems = ListSequence.fromList(new ArrayList<Problem>());
     final MigrationComponent mc = event.getData(CommonDataKeys.PROJECT).getComponent(MigrationComponent.class);
     final List<SModule>[] modules = new List[1];
-    event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
+    final SRepository repos = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
+    repos.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         modules[0] = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(event.getData(MPSCommonDataKeys.MPS_PROJECT))).toListSequence();
       }
     });
 
     ProgressManager.getInstance().run(new Task.Modal(event.getData(CommonDataKeys.PROJECT), "Pre-Update Check", true) {
-      public void run(@NotNull ProgressIndicator progressIndicator) {
-        ProgressMonitorAdapter progressMonitor = new ProgressMonitorAdapter(progressIndicator);
-        int steps = modules[0].size();
-        progressMonitor.start("Running...", steps);
-        for (final SModule module : ListSequence.fromList(modules[0])) {
-          progressMonitor.step(module.getModuleName());
-          WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
-            public void run() {
-              event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().executeCommand(new Runnable() {
-                public void run() {
-                  Set<SLanguage> languages = new SLanguageHierarchy(LanguageRegistry.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository()), module.getUsedLanguages()).getExtended();
-                  Iterable<MigrationScript> scripts = SetSequence.fromSet(languages).translate(new ITranslator2<SLanguage, MigrationScript>() {
-                    public Iterable<MigrationScript> translate(final SLanguage it) {
-                      return new Iterable<MigrationScript>() {
-                        public Iterator<MigrationScript> iterator() {
-                          return new YieldingIterator<MigrationScript>() {
-                            private int __CP__ = 0;
-                            protected boolean moveToNext() {
-__loop__:
-                              do {
-__switch__:
-                                switch (this.__CP__) {
-                                  case -1:
-                                    assert false : "Internal error";
-                                    return false;
-                                  case 2:
-                                    this._2_ver = 0;
-                                  case 3:
-                                    if (!(_2_ver < it.getLanguageVersion())) {
-                                      this.__CP__ = 1;
-                                      break;
-                                    }
-                                    this.__CP__ = 4;
-                                    break;
-                                  case 5:
-                                    _2_ver++;
-                                    this.__CP__ = 3;
-                                    break;
-                                  case 8:
-                                    if (_7_script != null) {
-                                      this.__CP__ = 9;
-                                      break;
-                                    }
-                                    this.__CP__ = 5;
-                                    break;
-                                  case 10:
-                                    this.__CP__ = 5;
-                                    this.yield(_7_script);
-                                    return true;
-                                  case 0:
-                                    this.__CP__ = 2;
-                                    break;
-                                  case 4:
-                                    this._7_script = mc.fetchMigrationScript(new MigrationScriptReference(it, _2_ver), true);
-                                    this.__CP__ = 8;
-                                    break;
-                                  case 9:
-                                    this.__CP__ = 10;
-                                    break;
-                                  default:
-                                    break __loop__;
-                                }
-                              } while (true);
-                              return false;
-                            }
-                            private int _2_ver;
-                            private MigrationScript _7_script;
-                          };
-                        }
-                      };
-                    }
-                  });
-                  ListSequence.fromList(problems).addSequence(Sequence.fromIterable(scripts).translate(new ITranslator2<MigrationScript, Problem>() {
-                    public Iterable<Problem> translate(MigrationScript it) {
-                      return it.check(module);
-                    }
-                  }));
-                }
-              });
-            }
-          });
-          progressMonitor.advance(1);
-          if (progressMonitor.isCanceled()) {
-            break;
+      public void run(@NotNull final ProgressIndicator progressIndicator) {
+        progressIndicator.setIndeterminate(false);
+        repos.getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            ListSequence.fromList(problems).addSequence(CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(modules[0], mc, new _FunctionTypes._void_P1_E0<Double>() {
+              public void invoke(Double d) {
+                progressIndicator.setFraction(d);
+              }
+            }, 1000)));
           }
-        }
+        });
       }
     });
 
