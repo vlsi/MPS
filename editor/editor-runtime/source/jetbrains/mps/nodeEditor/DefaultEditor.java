@@ -129,10 +129,6 @@ public class DefaultEditor extends AbstractDefaultEditor {
       addCell(editorCell);
     } else {
       SingleRoleCellProvider provider = new SingleRoleCellProvider(link, getEditorContext()) {
-        @Override
-        protected String getNoTargetText() {
-          return link.getName();
-        }
 
         @Override
         protected EditorCell createEmptyCell() {
