@@ -87,7 +87,7 @@
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/716066598061903713">
     <file name="Info.plist.xml">
-      <unit id="716066598061903713" at="1,0,117,8" name="jetbrains.mps.ide.build.Info$plist" />
+      <unit id="716066598061903713" at="1,0,120,8" name="jetbrains.mps.ide.build.Info$plist" />
     </file>
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/7246064732104303799">

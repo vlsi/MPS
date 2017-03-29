@@ -899,6 +899,19 @@
                   </node>
                 </node>
               </node>
+              <node concept="3o6iSG" id="1ePL8LodEyZ" role="3o6s8t" />
+              <node concept="2pNNFK" id="1ePL8LodEWy" role="3o6s8t">
+                <property role="2pNNFO" value="key" />
+                <node concept="3o6iSG" id="1ePL8LodF9k" role="3o6s8t">
+                  <property role="3o6i5n" value="idea.executable" />
+                </node>
+              </node>
+              <node concept="2pNNFK" id="1ePL8LodFma" role="3o6s8t">
+                <property role="2pNNFO" value="string" />
+                <node concept="3o6iSG" id="1ePL8LodFyY" role="3o6s8t">
+                  <property role="3o6i5n" value="mps" />
+                </node>
+              </node>
               <node concept="3o6iSG" id="1KJW3X3W5FY" role="3o6s8t" />
               <node concept="2pNNFK" id="7d8Y7G7P4fl" role="3o6s8t">
                 <property role="2pNNFO" value="key" />
