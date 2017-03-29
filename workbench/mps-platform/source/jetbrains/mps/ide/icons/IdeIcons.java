@@ -65,7 +65,12 @@ public class IdeIcons {
   @Deprecated
   @ToRemove(version = 2017.1)
   public static final Icon PROJECT_MODELS_EXPANDED_ICON = AllIcons.Nodes.ModuleGroup;
-  public static final Icon TRANSIENT_MODELS_ICON = MPSIcons.Nodes.TransientModels;
+  /**
+   * @deprecated use {@link Nodes#TransientModule} instead
+  * */
+  @Deprecated
+  @ToRemove(version = 2017.1)
+  public static final Icon TRANSIENT_MODELS_ICON = MPSIcons.Nodes.TransientModule;
 
   public static final Icon PROPERTIES_ICON = General.Settings;
   public static final Icon INSPECTOR_ICON = Toolwindows.ToolWindowInspection;

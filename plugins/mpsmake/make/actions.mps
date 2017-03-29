@@ -7122,8 +7122,8 @@
     <node concept="312cEg" id="hP8D6fqe8n" role="jymVt">
       <property role="TrG5h" value="myIcon" />
       <property role="3TUv4t" value="true" />
-      <node concept="10M0yZ" id="1MQq_m2RxRV" role="33vP2m">
-        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModelsWidget" resolve="TransientModelsWidget" />
+      <node concept="10M0yZ" id="$0lM0JKK6$" role="33vP2m">
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModule" resolve="TransientModule" />
         <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
       </node>
       <node concept="3Tm6S6" id="hP8D6fqe8o" role="1B3o_S" />
@@ -7134,8 +7134,8 @@
     <node concept="312cEg" id="7hIrQB9J1nT" role="jymVt">
       <property role="TrG5h" value="myIconDisable" />
       <property role="3TUv4t" value="true" />
-      <node concept="10M0yZ" id="1MQq_m2Rwxn" role="33vP2m">
-        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModelsWidgetDisable" resolve="TransientModelsWidgetDisable" />
+      <node concept="10M0yZ" id="$0lM0JKLqr" role="33vP2m">
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModuleDisabled" resolve="TransientModuleDisabled" />
         <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
       </node>
       <node concept="3Tm6S6" id="7hIrQB9J1nX" role="1B3o_S" />
@@ -8095,9 +8095,9 @@
                 </node>
                 <node concept="liA8E" id="4_qBpm$bmGh" role="2OqNvi">
                   <ref role="37wK5l" to="qkt:~Presentation.setIcon(javax.swing.Icon):void" resolve="setIcon" />
-                  <node concept="10M0yZ" id="4_qBpm$bmGi" role="37wK5m">
-                    <ref role="3cqZAo" to="xnls:~IdeIcons.TRANSIENT_MODELS_ICON" resolve="TRANSIENT_MODELS_ICON" />
-                    <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
+                  <node concept="10M0yZ" id="$0lM0JKNI4" role="37wK5m">
+                    <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModule" resolve="TransientModule" />
+                    <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
                   </node>
                 </node>
               </node>
@@ -9392,9 +9392,9 @@
                     <ref role="37wK5l" node="4hZPELmBD3l" resolve="getMaxPossibleText" />
                   </node>
                 </node>
-                <node concept="10M0yZ" id="6uT0Sim07EL" role="37wK5m">
+                <node concept="10M0yZ" id="$0lM0JKFLd" role="37wK5m">
+                  <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModule" resolve="TransientModule" />
                   <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-                  <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModels" resolve="TransientModels" />
                 </node>
                 <node concept="10M0yZ" id="1MQq_m2R_6k" role="37wK5m">
                   <ref role="3cqZAo" to="dxuu:~SwingConstants.LEFT" resolve="LEFT" />

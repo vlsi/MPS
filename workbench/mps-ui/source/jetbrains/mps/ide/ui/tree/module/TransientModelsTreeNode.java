@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,7 +31,7 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   @Override
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
-    setIcon(IdeIcons.TRANSIENT_MODELS_ICON);
+    setIcon(Nodes.TransientModule);
   }
 
   @Override

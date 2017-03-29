@@ -111,9 +111,8 @@ public class MPSIcons {
     public static final Icon Structure = IconLoader.getIcon("/nodes/structure.png");
     public static final Icon TestModel = new LayeredIcon(Nodes.Model, AllIcons.Nodes.JunitTestMark);
     public static final Icon TextGen = IconLoader.getIcon("/nodes/textGen.png");
-    public static final Icon TransientModels = IconLoader.getIcon("/nodes/transientModels.png");
-    public static final Icon TransientModelsWidget = IconLoader.getIcon("/nodes/transientWidget.png");
-    public static final Icon TransientModelsWidgetDisable = IconLoader.getIcon("/nodes/transientWidgetDisable.png");
+    public static final Icon TransientModule = IconLoader.getIcon("/nodes/transient.png");
+    public static final Icon TransientModuleDisabled = IconLoader.getIcon("/nodes/transientDisable.png");
     public static final Icon Type = IconLoader.getIcon("/nodes/type.png");
     public static final Icon Unknown = IconLoader.getIcon("/nodes/unknown.png");
     public static final Icon UsagesResultOverlay = IconLoader.getIcon("/nodes/usages-result-overlay.png");
