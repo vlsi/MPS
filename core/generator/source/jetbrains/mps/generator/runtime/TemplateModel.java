@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ public interface TemplateModel {
    *
    * XXX On one hand, we need a generic API to access queries and thus shall override the method
    * in generated templates, OTOH, it's unlikely (error?) to use QueryProvider of a generated template
-   * as the code there invokes queries without the need for GQP. For the time being, I left generated
-   * TM classes without method implementation, and rely on TMB.getQP() as a fallback in case we ever
-   * ask for a QP of a generated generator
+   * as the code there invokes queries without the need for GQP (unless I decide to use QueryKey there and hold query instances).
    *
    * @return {@code null} if there's no generated provider, or it had failed to load
    * @since 3.5

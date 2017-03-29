@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,13 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModelBase;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -42,8 +44,8 @@ public class TemplateModelInterpreted extends TemplateModelBase {
   public TemplateModelInterpreted(TemplateModule module, SModel model) {
     super(module);
     myModel = model;
-    mySwitches = new ArrayList<TemplateSwitchMapping>();
-    myMappings = new ArrayList<TemplateMappingConfiguration>();
+    mySwitches = new ArrayList<>();
+    myMappings = new ArrayList<>();
     init();
   }
 
@@ -87,5 +89,28 @@ public class TemplateModelInterpreted extends TemplateModelBase {
   @Override
   public SModelReference getSModelReference() {
     return myModel.getReference();
+  }
+
+  @Override
+  public GeneratorQueryProvider getQueryProvider() {
+    String packageName = getSModelReference().getName().getLongName();
+    String queriesClassName = packageName + ".QueriesGenerated";
+    try {
+      Class<?> qg = getModule().loadClass(queriesClassName);
+      if (GeneratorQueryProvider.class.isAssignableFrom(qg)) {
+        @SuppressWarnings("unchecked")
+        Class<GeneratorQueryProvider> providerClass = (Class<GeneratorQueryProvider>) qg;
+        return providerClass.newInstance();
+      }
+      return reflectiveProvider(qg);
+    } catch (ClassNotFoundException ex) {
+      String msg = String.format("Failed to load class with generated queries: %s", queriesClassName);
+      Logger.getLogger(TemplateModelInterpreted.class).error(msg, ex);
+      return null;
+    } catch (IllegalAccessException | InstantiationException ex) {
+      String msg = String.format("Failed to instantiate class with generated queries: %s", queriesClassName);
+      Logger.getLogger(TemplateModelInterpreted.class).error(msg, ex);
+      return null;
+    }
   }
 }

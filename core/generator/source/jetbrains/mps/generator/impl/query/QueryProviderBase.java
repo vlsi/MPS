@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl.query;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.interpreted.ReflectiveQueryProvider;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.DropAttributeRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
@@ -56,29 +55,13 @@ import java.util.Collections;
  * @author Artem Tikhomirov
  */
 public abstract class QueryProviderBase implements GeneratorQueryProvider {
-  private final int myVersion;
-  private ReflectiveQueryProvider myReflectiveFallback;
 
   protected QueryProviderBase() {
     // this cons is invoked from previous version of QueriesGenerated that implements GeneratorQueryProvider
-    myVersion = 0;
   }
 
-  protected QueryProviderBase(int version) {
+  protected QueryProviderBase(int versionNowUnused) {
     // this one is invoked from newly generated implementations to indicate new methods were generated
-    myVersion = version;
-  }
-
-  // INTERNAL API for QueryProviderCache, to support non-reflective providers generated with MPS 3.3
-  @ToRemove(version = 3.4)
-  public boolean needsReflectiveFallback() {
-    return myVersion == 0;
-  }
-
-  // INTERNAL API for QueryProviderCache, to support non-reflective providers generated with MPS 3.3
-  @ToRemove(version = 3.4)
-  public void useReflectiveFallback(ReflectiveQueryProvider rqp) {
-    myReflectiveFallback = rqp;
   }
 
   @NotNull
@@ -294,20 +277,12 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @NotNull
   @Override
   public ReferenceTargetQuery getReferenceTargetQuery(@NotNull QueryKey identity) {
-    if (myVersion == 0) {
-      // XXX provisional code to support generated providers prior to addition of the method
-      return myReflectiveFallback.getReferenceTargetQuery(identity);
-    }
     return new RefQuery(identity);
   }
 
   @NotNull
   @Override
   public CallArgumentQuery getTemplateCallArgumentQuery(@NotNull QueryKey identity) {
-    if (myVersion == 0) {
-      // XXX provisional code to support generated providers prior to addition of the method
-      return myReflectiveFallback.getTemplateCallArgumentQuery(identity);
-    }
     // DefaultQueryExecutionContext used to evaluate to null if no method was found.
     // It is reasonable for scenarios like bootstrap of the generator itself (e.g. to generate a new CALL inside QueriesGenerate)
     // but for any other generator there's no reason to continue generation if QG is broken that's why we fail here with Missing.
@@ -319,10 +294,6 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @NotNull
   @Override
   public VariableValueQuery getVariableValueQuery(@NotNull QueryKey identity) {
-    if (myVersion == 0) {
-      // XXX provisional code to support generated providers prior to addition of the method
-      return myReflectiveFallback.getVariableValueQuery(identity);
-    }
     // Same as above, no reason to default to null.
     return new Missing(identity);
   }
@@ -330,10 +301,6 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @NotNull
   @Override
   public InsertMacroQuery getInsertMacroQuery(@NotNull QueryKey identity) {
-    if (myVersion == 0) {
-      // XXX provisional code to support generated providers prior to addition of the method
-      return myReflectiveFallback.getInsertMacroQuery(identity);
-    }
     // used to evaluate to null if missing in DQEC. Why not do the same here?
     return new Missing(identity);
   }
@@ -341,18 +308,12 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @NotNull
   @Override
   public MapNodeQuery getMapNodeQuery(@NotNull QueryKey identity) {
-    if (myVersion == 0) {
-      return myReflectiveFallback.getMapNodeQuery(identity);
-    }
     return new Missing(identity);
   }
 
   @NotNull
   @Override
   public MapPostProcessor getMapPostProcessor(@NotNull QueryKey identity) {
-    if (myVersion == 0) {
-      return myReflectiveFallback.getMapPostProcessor(identity);
-    }
     return new Missing(identity);
   }
 
