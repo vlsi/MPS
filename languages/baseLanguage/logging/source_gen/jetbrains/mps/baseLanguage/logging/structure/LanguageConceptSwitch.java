@@ -9,18 +9,18 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int ApacheLogStatement = 0;
-  public static final int IMessage = 1;
+  public static final int IMessage = 0;
+  public static final int LogLowLevelStatement = 1;
   public static final int LogStatement = 2;
-  public static final int LogToMessageViewStatement = 3;
+  public static final int MsgStatement = 3;
   public static final int PrintStatement = 4;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L);
-    builder.put(0x1c3d779b2be2f0b9L, ApacheLogStatement);
     builder.put(0x57e2cf14f6d5eeb6L, IMessage);
+    builder.put(0x1c3d779b2be2f0b9L, LogLowLevelStatement);
     builder.put(0x10fc428b1dfL, LogStatement);
-    builder.put(0x57e2cf14f6d5a71dL, LogToMessageViewStatement);
+    builder.put(0x57e2cf14f6d5a71dL, MsgStatement);
     builder.put(0x1100a2cc320L, PrintStatement);
     myIndex = builder.seal();
   }

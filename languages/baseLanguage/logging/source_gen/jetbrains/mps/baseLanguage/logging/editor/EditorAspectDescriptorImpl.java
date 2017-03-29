@@ -20,11 +20,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     SAbstractConcept cncpt = ((SAbstractConcept) concept);
     switch (index_xbvbvu_a0a.index(cncpt)) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new ApacheLogStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new LogLowLevelStatement_Editor());
       case 1:
         return Collections.<ConceptEditor>singletonList(new LogStatement_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new LogToMessageViewStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new MsgStatement_Editor());
       case 3:
         return Collections.<ConceptEditor>singletonList(new PrintStatement_Editor());
       default:
@@ -39,13 +39,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     SAbstractConcept cncpt = concept;
     switch (index_xbvbvu_a0d.index(cncpt)) {
       case 0:
-        return Collections.<SubstituteMenu>singletonList(new ApacheLogStatement_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new LogLowLevelStatement_SubstituteMenu());
       case 1:
         return Collections.<SubstituteMenu>singletonList(new LogStatement_SubstituteMenu());
       case 2:
-        return Collections.<SubstituteMenu>singletonList(new LogToMessageViewStatement_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new MsgStatement_SubstituteMenu());
       case 3:
-        return Arrays.asList(new SubstituteMenu[]{new logging4j_nodeSubstitute_Contribution(), new loggingToMsgView_nodeSubstitute_Contribution(), new logging_nodeSubstitute_Contribution()});
+        return Arrays.asList(new SubstituteMenu[]{new loggingLowLevel_nodeSubstitute_Contribution(), new loggingMsg_nodeSubstitute_Contribution(), new logging_nodeSubstitute_Contribution()});
       default:
     }
     return Collections.<SubstituteMenu>emptyList();

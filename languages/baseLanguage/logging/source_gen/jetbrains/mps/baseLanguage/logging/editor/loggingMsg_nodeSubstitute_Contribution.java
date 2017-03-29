@@ -25,50 +25,50 @@ import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
-public class loggingToMsgView_nodeSubstitute_Contribution extends SubstituteMenuBase {
-  public loggingToMsgView_nodeSubstitute_Contribution() {
+public class loggingMsg_nodeSubstitute_Contribution extends SubstituteMenuBase {
+  public loggingMsg_nodeSubstitute_Contribution() {
     super(true);
   }
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new loggingToMsgView_nodeSubstitute_Contribution.SMP_Param_jhomao_a(), MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, "jetbrains.mps.baseLanguage.logging.structure.LogToMessageViewStatement")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new loggingMsg_nodeSubstitute_Contribution.SMP_Param_ax7x23_a(), MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, "jetbrains.mps.baseLanguage.logging.structure.MsgStatement")));
     return result;
   }
-  private class SMP_Param_jhomao_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_ax7x23_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new loggingToMsgView_nodeSubstitute_Contribution.SMP_Param_jhomao_a.SMP_Action_jhomao_a0(parameter).createItems(context);
+      return new loggingMsg_nodeSubstitute_Contribution.SMP_Param_ax7x23_a.SMP_Action_ax7x23_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)", "Severity"));
     }
-    private class SMP_Action_jhomao_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_ax7x23_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SMP_Action_jhomao_a0(SNode parameterObject) {
+      public SMP_Action_ax7x23_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new loggingToMsgView_nodeSubstitute_Contribution.SMP_Param_jhomao_a.SMP_Action_jhomao_a0.Item(_context);
+        return new loggingMsg_nodeSubstitute_Contribution.SMP_Param_ax7x23_a.SMP_Action_ax7x23_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
         public Item(SubstituteMenuContext context) {
-          super(MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, "jetbrains.mps.baseLanguage.logging.structure.LogToMessageViewStatement"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
+          super(MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, "jetbrains.mps.baseLanguage.logging.structure.MsgStatement"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
           _context = context;
         }
 
         @Nullable
         @Override
         public SNode createNode(@NotNull String pattern) {
-          SNode logStatement = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, "jetbrains.mps.baseLanguage.logging.structure.LogToMessageViewStatement")), null);
+          SNode logStatement = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, "jetbrains.mps.baseLanguage.logging.structure.MsgStatement")), null);
           SPropertyOperations.set(logStatement, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, 0x57e2cf14f6d5d81fL, "severity"), SEnumOperations.getEnumMemberValue(myParameterObject));
           SNodeFactoryOperations.setNewChild(logStatement, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, 0x4f67298c4630c25eL, "message"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral")));
           SNode catchClause = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"), true, false);
@@ -86,12 +86,12 @@ public class loggingToMsgView_nodeSubstitute_Contribution extends SubstituteMenu
         @Nullable
         @Override
         public String getMatchingText(@NotNull String pattern) {
-          return "msgview " + SEnumOperations.getEnumMemberValue(myParameterObject);
+          return "message " + SEnumOperations.getEnumMemberValue(myParameterObject);
         }
         @Nullable
         @Override
         public String getDescriptionText(@NotNull String pattern) {
-          return "Log to messages view statement";
+          return "prints to the messages view";
         }
         @Override
         public void select(@NotNull SNode createdNode, @NotNull String pattern) {

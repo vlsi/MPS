@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class LogToMessageViewStatement_Editor extends DefaultNodeEditor {
+public class MsgStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new LogToMessageViewStatement_EditorBuilder_a(editorContext, node).createCell();
+    return new MsgStatement_EditorBuilder_a(editorContext, node).createCell();
   }
 }

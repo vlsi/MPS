@@ -380,7 +380,7 @@
             <node concept="3clFbS" id="1wEcoXjJh5a" role="2VODD2">
               <node concept="3clFbF" id="1wEcoXjJh5b" role="3cqZAp">
                 <node concept="Xl_RD" id="1wEcoXjJh5c" role="3clFbG">
-                  <property role="Xl_RC" value="Log statement" />
+                  <property role="Xl_RC" value="prints both to the messages view and the system log (legacy)" />
                 </node>
               </node>
             </node>
@@ -568,10 +568,10 @@
     <ref role="aqKnT" to="tpib:gZ4ab7v" resolve="LogStatement" />
   </node>
   <node concept="24kQdi" id="1KXtTGFSJ7n">
-    <ref role="1XX52x" to="tpib:1KXtTGFSJ2T" resolve="ApacheLogStatement" />
+    <ref role="1XX52x" to="tpib:1KXtTGFSJ2T" resolve="LogLowLevelStatement" />
     <node concept="3EZMnI" id="1KXtTGFSJh5" role="2wV5jI">
       <node concept="3F0ifn" id="L4fvOC6JwJ" role="3EZMnx">
-        <property role="3F0ifm" value="apache" />
+        <property role="3F0ifm" value="log" />
         <node concept="Vb9p2" id="L4fvOC6JwY" role="3F10Kt">
           <property role="Vbekb" value="BOLD" />
         </node>
@@ -617,10 +617,10 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1KXtTGFTPlu">
-    <ref role="aqKnT" to="tpib:1KXtTGFSJ2T" resolve="ApacheLogStatement" />
+    <ref role="aqKnT" to="tpib:1KXtTGFSJ2T" resolve="LogLowLevelStatement" />
   </node>
   <node concept="3p309x" id="1KXtTGFTUxt">
-    <property role="TrG5h" value="logging4j_nodeSubstitute_Contribution" />
+    <property role="TrG5h" value="loggingLowLevel_nodeSubstitute_Contribution" />
     <node concept="2kknPJ" id="1KXtTGFTUxu" role="1IG6uw">
       <ref role="2ZyFGn" to="tpee:fzclF8l" resolve="Statement" />
     </node>
@@ -639,14 +639,14 @@
         </node>
       </node>
       <node concept="3eGOop" id="1KXtTGFTUxA" role="2$S_pN">
-        <ref role="3EoQqy" to="tpib:1KXtTGFSJ2T" resolve="ApacheLogStatement" />
+        <ref role="3EoQqy" to="tpib:1KXtTGFSJ2T" resolve="LogLowLevelStatement" />
         <node concept="16NfWO" id="1KXtTGFTUxB" role="upBLP">
           <node concept="uGdhv" id="1KXtTGFTUxC" role="16NeZM">
             <node concept="3clFbS" id="1KXtTGFTUxD" role="2VODD2">
               <node concept="3clFbF" id="1KXtTGFTUxE" role="3cqZAp">
                 <node concept="3cpWs3" id="1KXtTGFTVgS" role="3clFbG">
                   <node concept="Xl_RD" id="1KXtTGFTVpX" role="3uHU7B">
-                    <property role="Xl_RC" value="apache " />
+                    <property role="Xl_RC" value="log " />
                   </node>
                   <node concept="2OqwBi" id="1KXtTGFTUxF" role="3uHU7w">
                     <node concept="2ZBlsa" id="1KXtTGFTUxG" role="2Oq$k0" />
@@ -662,7 +662,7 @@
             <node concept="3clFbS" id="1KXtTGFTUxK" role="2VODD2">
               <node concept="3clFbF" id="1KXtTGFTUxL" role="3cqZAp">
                 <node concept="Xl_RD" id="1KXtTGFTUxM" role="3clFbG">
-                  <property role="Xl_RC" value="Log statement to log via apache log4j" />
+                  <property role="Xl_RC" value="prints to the system log" />
                 </node>
               </node>
             </node>
@@ -674,12 +674,12 @@
               <node concept="3cpWsn" id="1KXtTGFTUxQ" role="3cpWs9">
                 <property role="TrG5h" value="logStatement" />
                 <node concept="3Tqbb2" id="1KXtTGFTUxR" role="1tU5fm">
-                  <ref role="ehGHo" to="tpib:1KXtTGFSJ2T" resolve="ApacheLogStatement" />
+                  <ref role="ehGHo" to="tpib:1KXtTGFSJ2T" resolve="LogLowLevelStatement" />
                 </node>
                 <node concept="2OqwBi" id="1KXtTGFTUxS" role="33vP2m">
                   <node concept="1rpKSd" id="1KXtTGFTUxT" role="2Oq$k0" />
                   <node concept="15TzpJ" id="1KXtTGFTUxU" role="2OqNvi">
-                    <ref role="I8UWU" to="tpib:1KXtTGFSJ2T" resolve="ApacheLogStatement" />
+                    <ref role="I8UWU" to="tpib:1KXtTGFSJ2T" resolve="LogLowLevelStatement" />
                   </node>
                 </node>
               </node>
@@ -830,10 +830,10 @@
     </node>
   </node>
   <node concept="24kQdi" id="5vyNLjQPtlZ">
-    <ref role="1XX52x" to="tpib:5vyNLjQPqst" resolve="LogToMessageViewStatement" />
+    <ref role="1XX52x" to="tpib:5vyNLjQPqst" resolve="LogMsgStatement" />
     <node concept="3EZMnI" id="5vyNLjQPtm1" role="2wV5jI">
       <node concept="3F0ifn" id="4XBaoL6co92" role="3EZMnx">
-        <property role="3F0ifm" value="msg view" />
+        <property role="3F0ifm" value="message" />
         <node concept="Vb9p2" id="4XBaoL6co9n" role="3F10Kt">
           <property role="Vbekb" value="BOLD" />
         </node>
@@ -894,7 +894,7 @@
     </node>
   </node>
   <node concept="3p309x" id="4XBaoL6cdtM">
-    <property role="TrG5h" value="loggingToMsgView_nodeSubstitute_Contribution" />
+    <property role="TrG5h" value="loggingMsg_nodeSubstitute_Contribution" />
     <node concept="2kknPJ" id="4XBaoL6cdtN" role="1IG6uw">
       <ref role="2ZyFGn" to="tpee:fzclF8l" resolve="Statement" />
     </node>
@@ -913,14 +913,14 @@
         </node>
       </node>
       <node concept="3eGOop" id="4XBaoL6cdtV" role="2$S_pN">
-        <ref role="3EoQqy" to="tpib:5vyNLjQPqst" resolve="LogToMessageViewStatement" />
+        <ref role="3EoQqy" to="tpib:5vyNLjQPqst" resolve="LogMsgStatement" />
         <node concept="16NfWO" id="4XBaoL6cdtW" role="upBLP">
           <node concept="uGdhv" id="4XBaoL6cdtX" role="16NeZM">
             <node concept="3clFbS" id="4XBaoL6cdtY" role="2VODD2">
               <node concept="3clFbF" id="4XBaoL6cdtZ" role="3cqZAp">
                 <node concept="3cpWs3" id="4XBaoL6cdu0" role="3clFbG">
                   <node concept="Xl_RD" id="4XBaoL6cdu1" role="3uHU7B">
-                    <property role="Xl_RC" value="msgview " />
+                    <property role="Xl_RC" value="message " />
                   </node>
                   <node concept="2OqwBi" id="4XBaoL6cdu2" role="3uHU7w">
                     <node concept="2ZBlsa" id="4XBaoL6cdu3" role="2Oq$k0" />
@@ -936,7 +936,7 @@
             <node concept="3clFbS" id="4XBaoL6cdu7" role="2VODD2">
               <node concept="3clFbF" id="4XBaoL6cdu8" role="3cqZAp">
                 <node concept="Xl_RD" id="4XBaoL6cdu9" role="3clFbG">
-                  <property role="Xl_RC" value="Log to messages view statement" />
+                  <property role="Xl_RC" value="prints to the messages view" />
                 </node>
               </node>
             </node>
@@ -948,12 +948,12 @@
               <node concept="3cpWsn" id="4XBaoL6cdud" role="3cpWs9">
                 <property role="TrG5h" value="logStatement" />
                 <node concept="3Tqbb2" id="4XBaoL6cdue" role="1tU5fm">
-                  <ref role="ehGHo" to="tpib:5vyNLjQPqst" resolve="LogToMessageViewStatement" />
+                  <ref role="ehGHo" to="tpib:5vyNLjQPqst" resolve="LogMsgStatement" />
                 </node>
                 <node concept="2OqwBi" id="4XBaoL6cduf" role="33vP2m">
                   <node concept="1rpKSd" id="4XBaoL6cdug" role="2Oq$k0" />
                   <node concept="15TzpJ" id="4XBaoL6cduh" role="2OqNvi">
-                    <ref role="I8UWU" to="tpib:5vyNLjQPqst" resolve="LogToMessageViewStatement" />
+                    <ref role="I8UWU" to="tpib:5vyNLjQPqst" resolve="LogMsgStatement" />
                   </node>
                 </node>
               </node>
@@ -1104,7 +1104,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="4XBaoL6cnua">
-    <ref role="aqKnT" to="tpib:5vyNLjQPqst" resolve="LogToMessageViewStatement" />
+    <ref role="aqKnT" to="tpib:5vyNLjQPqst" resolve="LogMsgStatement" />
   </node>
 </model>
 

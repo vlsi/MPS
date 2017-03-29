@@ -92,7 +92,7 @@ public class logging_nodeSubstitute_Contribution extends SubstituteMenuBase {
         @Nullable
         @Override
         public String getDescriptionText(@NotNull String pattern) {
-          return "Log statement";
+          return "prints both to the messages view and the system log (legacy)";
         }
         @Override
         public void select(@NotNull SNode createdNode, @NotNull String pattern) {

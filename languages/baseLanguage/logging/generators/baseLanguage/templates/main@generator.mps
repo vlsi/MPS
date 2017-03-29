@@ -510,10 +510,10 @@
       </node>
     </node>
     <node concept="3aamgX" id="4XBaoL6cTuF" role="3acgRq">
-      <ref role="30HIoZ" to="tpib:5vyNLjQPqst" resolve="LogToMessageViewStatement" />
+      <ref role="30HIoZ" to="tpib:5vyNLjQPqst" resolve="MsgStatement" />
       <ref role="2sgKRv" node="35GdNdw5NUQ" resolve="logFieldUsage" />
       <node concept="j$656" id="4XBaoL6cTuG" role="1lVwrX">
-        <ref role="v9R2y" node="gZ4XxVS" resolve="reduce_LogToMsgViewStatement" />
+        <ref role="v9R2y" node="gZ4XxVS" resolve="reduce_MsgStatement" />
       </node>
       <node concept="30G5F_" id="4XBaoL6cTuH" role="30HLyM">
         <node concept="3clFbS" id="4XBaoL6cTuI" role="2VODD2">
@@ -536,10 +536,10 @@
       </node>
     </node>
     <node concept="3aamgX" id="1KXtTGFSN88" role="3acgRq">
-      <ref role="30HIoZ" to="tpib:1KXtTGFSJ2T" resolve="ApacheLogStatement" />
+      <ref role="30HIoZ" to="tpib:1KXtTGFSJ2T" resolve="LogLowLevelStatement" />
       <ref role="2sgKRv" node="35GdNdw5NUQ" resolve="logFieldUsage" />
       <node concept="j$656" id="1KXtTGFTvhV" role="1lVwrX">
-        <ref role="v9R2y" node="1KXtTGFTnR_" resolve="reduce_LogApacheStatement" />
+        <ref role="v9R2y" node="1KXtTGFTnR_" resolve="reduce_LogLowLevelStatement" />
       </node>
       <node concept="30G5F_" id="1KXtTGFSN8a" role="30HLyM">
         <node concept="3clFbS" id="1KXtTGFSN8b" role="2VODD2">
@@ -1041,9 +1041,9 @@
     </node>
   </node>
   <node concept="13MO4I" id="1KXtTGFTnR_">
-    <property role="TrG5h" value="reduce_LogApacheStatement" />
+    <property role="TrG5h" value="reduce_LogLowLevelStatement" />
     <property role="3GE5qa" value="log4j" />
-    <ref role="3gUMe" to="tpib:1KXtTGFSJ2T" resolve="ApacheLogStatement" />
+    <ref role="3gUMe" to="tpib:1KXtTGFSJ2T" resolve="LogLowLevelStatement" />
     <node concept="312cEu" id="1KXtTGFTnRA" role="13RCb5">
       <property role="TrG5h" value="ClassWithLog" />
       <node concept="3Tm1VV" id="1KXtTGFTnRB" role="1B3o_S" />
@@ -1769,9 +1769,9 @@
     </node>
   </node>
   <node concept="13MO4I" id="gZ4XxVS">
-    <property role="TrG5h" value="reduce_LogToMsgViewStatement" />
+    <property role="TrG5h" value="reduce_MsgStatement" />
     <property role="3GE5qa" value="messagesview" />
-    <ref role="3gUMe" to="tpib:5vyNLjQPqst" resolve="LogToMessageViewStatement" />
+    <ref role="3gUMe" to="tpib:5vyNLjQPqst" resolve="MsgStatement" />
     <node concept="312cEu" id="h19CKg7" role="13RCb5">
       <property role="TrG5h" value="ClassSender" />
       <node concept="3Tm1VV" id="h9B3WDV" role="1B3o_S" />

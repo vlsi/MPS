@@ -82,12 +82,12 @@
     </language>
   </registry>
   <node concept="_UgoZ" id="1uAvHUVaHqX">
-    <property role="_Wzho" value="Convert Legacy Log Statements to Log4j statements" />
+    <property role="_Wzho" value="Convert Legacy Log Statements to LogLowLevel statements" />
     <property role="3izfiF" value="baseLanguage" />
     <property role="3iz5xs" value="6252" />
-    <property role="TrG5h" value="ConvertMessagesViewPrintStatementsToLog4j" />
+    <property role="TrG5h" value="ConvertLegacyStatementsToLogLowLevel" />
     <node concept="_XfAh" id="1uAvHUVaHra" role="_YvDr">
-      <property role="_XH9r" value="ConvertToLog4jStatements" />
+      <property role="_XH9r" value="ConvertToLogLowLevelStatements" />
       <property role="1iWc8x" value="true" />
       <ref role="_XDHR" to="tpib:gZ4ab7v" resolve="LogStatement" />
       <node concept="_ZGcI" id="1uAvHUVaHrb" role="_XPhp">
@@ -96,12 +96,12 @@
             <node concept="3cpWsn" id="637tWpWM39" role="3cpWs9">
               <property role="TrG5h" value="newNode" />
               <node concept="3Tqbb2" id="637tWpWM36" role="1tU5fm">
-                <ref role="ehGHo" to="tpib:1KXtTGFSJ2T" resolve="Log4jStatement" />
+                <ref role="ehGHo" to="tpib:1KXtTGFSJ2T" resolve="LogLowLevelStatement" />
               </node>
               <node concept="2OqwBi" id="637tWpWM3a" role="33vP2m">
                 <node concept="_YI3z" id="637tWpWM3b" role="2Oq$k0" />
                 <node concept="2DeJnW" id="637tWpWM3c" role="2OqNvi">
-                  <ref role="1_rbq0" to="tpib:1KXtTGFSJ2T" resolve="Log4jStatement" />
+                  <ref role="1_rbq0" to="tpib:1KXtTGFSJ2T" resolve="LogLowLevelStatement" />
                 </node>
               </node>
             </node>
@@ -165,10 +165,10 @@
     </node>
   </node>
   <node concept="_UgoZ" id="4XBaoL6ckrP">
-    <property role="_Wzho" value="Convert Legacy Log Statements to messages view statements" />
     <property role="3izfiF" value="baseLanguage" />
     <property role="3iz5xs" value="6252" />
-    <property role="TrG5h" value="ConvertMessagesViewPrintStatementsToLog4j" />
+    <property role="TrG5h" value="ConvertLegacyStatementsToMessageStatements" />
+    <property role="_Wzho" value="Convert Legacy Log Statements to the Messages Statements" />
     <node concept="_XfAh" id="4XBaoL6ckrQ" role="_YvDr">
       <property role="_XH9r" value="ConvertToLog4jStatements" />
       <property role="1iWc8x" value="true" />
@@ -179,12 +179,12 @@
             <node concept="3cpWsn" id="4XBaoL6ckrU" role="3cpWs9">
               <property role="TrG5h" value="newNode" />
               <node concept="3Tqbb2" id="4XBaoL6ckrV" role="1tU5fm">
-                <ref role="ehGHo" to="tpib:5vyNLjQPqst" resolve="LogToMessageViewStatement" />
+                <ref role="ehGHo" to="tpib:5vyNLjQPqst" resolve="MsgStatement" />
               </node>
               <node concept="2OqwBi" id="4XBaoL6ckrW" role="33vP2m">
                 <node concept="_YI3z" id="4XBaoL6ckrX" role="2Oq$k0" />
                 <node concept="2DeJnW" id="4XBaoL6ckrY" role="2OqNvi">
-                  <ref role="1_rbq0" to="tpib:5vyNLjQPqst" resolve="LogToMessageViewStatement" />
+                  <ref role="1_rbq0" to="tpib:5vyNLjQPqst" resolve="MsgStatement" />
                 </node>
               </node>
             </node>

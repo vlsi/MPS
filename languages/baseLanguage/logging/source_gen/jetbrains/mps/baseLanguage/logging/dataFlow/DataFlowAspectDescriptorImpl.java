@@ -20,11 +20,11 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
     SAbstractConcept cncpt = ((SAbstractConcept) concept);
     switch (index_vhxjlb_a0b.index(cncpt)) {
       case 0:
-        return Collections.<IDataFlowBuilder>singletonList(new ApacheLogStatement_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new LogLowLevelStatement_DataFlow());
       case 1:
         return Collections.<IDataFlowBuilder>singletonList(new LogStatement_DataFlow());
       case 2:
-        return Collections.<IDataFlowBuilder>singletonList(new LogToMessageViewStatement_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new MsgStatement_DataFlow());
       case 3:
         return Collections.<IDataFlowBuilder>singletonList(new PrintStatement_DataFlow());
       default:

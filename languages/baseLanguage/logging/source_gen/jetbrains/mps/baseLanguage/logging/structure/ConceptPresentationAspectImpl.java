@@ -9,10 +9,10 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_ApacheLogStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IMessage = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_LogLowLevelStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LogStatement = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_LogToMessageViewStatement = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MsgStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PrintStatement = new ConceptPresentationBuilder().deprecated(true).create();
 
   @Override
@@ -20,14 +20,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.ApacheLogStatement:
-        return props_ApacheLogStatement;
       case LanguageConceptSwitch.IMessage:
         return props_IMessage;
+      case LanguageConceptSwitch.LogLowLevelStatement:
+        return props_LogLowLevelStatement;
       case LanguageConceptSwitch.LogStatement:
         return props_LogStatement;
-      case LanguageConceptSwitch.LogToMessageViewStatement:
-        return props_LogToMessageViewStatement;
+      case LanguageConceptSwitch.MsgStatement:
+        return props_MsgStatement;
       case LanguageConceptSwitch.PrintStatement:
         return props_PrintStatement;
     }

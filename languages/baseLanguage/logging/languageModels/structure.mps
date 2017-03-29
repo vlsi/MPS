@@ -160,7 +160,7 @@
   </node>
   <node concept="1TIwiD" id="1KXtTGFSJ2T">
     <property role="EcuMT" value="2034914114981261497" />
-    <property role="TrG5h" value="ApacheLogStatement" />
+    <property role="TrG5h" value="LogLowLevelStatement" />
     <property role="R5$K2" value="true" />
     <property role="R5$K7" value="false" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
@@ -183,7 +183,7 @@
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="t5JxF" id="L4fvOC6Yhs" role="lGtFl">
-      <property role="t5JxN" value="prints the message to the apache log4j logger" />
+      <property role="t5JxN" value="prints the message to the system logger. It is supposed to be used for the low-level logging (eg to debug a language)" />
     </node>
     <node concept="PrWs8" id="4XBaoL6c7Mh" role="PzmwI">
       <ref role="PrY4T" node="5vyNLjQPuUQ" resolve="IMessage" />
@@ -191,7 +191,7 @@
   </node>
   <node concept="1TIwiD" id="5vyNLjQPqst">
     <property role="EcuMT" value="6332851714983831325" />
-    <property role="TrG5h" value="LogToMessageViewStatement" />
+    <property role="TrG5h" value="MsgStatement" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="4XBaoL6cc9u" role="1TKVEi">
       <property role="IQ2ns" value="5721587534047265374" />
@@ -219,6 +219,9 @@
     </node>
     <node concept="PrWs8" id="4XBaoL6cbtE" role="PzmwI">
       <ref role="PrY4T" node="5vyNLjQPuUQ" resolve="IMessage" />
+    </node>
+    <node concept="t5JxF" id="7su458LK9Ba" role="lGtFl">
+      <property role="t5JxN" value="as for 2017.1 logs the message to the message view tool window. It is supposed to be a high-level logging (yet to be done)" />
     </node>
   </node>
   <node concept="PlHQZ" id="5vyNLjQPuUQ">

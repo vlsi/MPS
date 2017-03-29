@@ -667,7 +667,7 @@
       <node id="1741258697587102122" at="79,11,80,30" concept="6" />
       <node id="1741258697587101953" at="84,62,85,22" concept="6" />
       <node id="1741258697587101993" at="89,64,90,71" concept="6" />
-      <node id="1741258697587102027" at="94,67,95,33" concept="6" />
+      <node id="1741258697587102027" at="94,67,95,80" concept="6" />
       <node id="1741258697587102156" at="98,81,99,114" concept="1" />
       <node id="1741258697587101953" at="29,0,32,0" concept="0" trace="logging_nodeSubstitute_Contribution#()V" />
       <node id="1741258697587101953" at="52,0,55,0" concept="0" trace="SMP_Action_85vuih_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -689,7 +689,7 @@
       <scope id="1741258697587101953" at="58,79,59,110" />
       <scope id="1741258697587101953" at="84,62,85,22" />
       <scope id="1741258697587101990" at="89,64,90,71" />
-      <scope id="1741258697587102024" at="94,67,95,33" />
+      <scope id="1741258697587102024" at="94,67,95,80" />
       <scope id="1741258697587102155" at="98,81,99,114" />
       <scope id="1741258697587101953" at="63,52,65,29" />
       <scope id="1741258697587101953" at="29,0,32,0" />
@@ -759,18 +759,18 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959057d(jetbrains.mps.baseLanguage.logging.editor)/2034914114981261783">
-    <file name="ApacheLogStatement_Editor.java">
-      <node id="2034914114981261783" at="11,79,12,84" concept="6" />
+    <file name="LogLowLevelStatement_Editor.java">
+      <node id="2034914114981261783" at="11,79,12,86" concept="6" />
       <node id="2034914114981261783" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="2034914114981261783" at="11,79,12,84" />
+      <scope id="2034914114981261783" at="11,79,12,86" />
       <scope id="2034914114981261783" at="11,0,14,0">
         <var name="editorContext" id="2034914114981261783" />
         <var name="node" id="2034914114981261783" />
       </scope>
-      <unit id="2034914114981261783" at="10,0,15,0" name="jetbrains.mps.baseLanguage.logging.editor.ApacheLogStatement_Editor" />
+      <unit id="2034914114981261783" at="10,0,15,0" name="jetbrains.mps.baseLanguage.logging.editor.LogLowLevelStatement_Editor" />
     </file>
-    <file name="ApacheLogStatement_EditorBuilder_a.java">
-      <node id="2034914114981261783" at="36,98,37,19" concept="7" />
+    <file name="LogLowLevelStatement_EditorBuilder_a.java">
+      <node id="2034914114981261783" at="36,100,37,19" concept="7" />
       <node id="2034914114981261783" at="37,19,38,18" concept="1" />
       <node id="2034914114981261783" at="43,26,44,18" concept="6" />
       <node id="2034914114981261783" at="47,39,48,39" concept="6" />
@@ -784,8 +784,8 @@
       <node id="2034914114981261783" at="58,56,59,59" concept="1" />
       <node id="2034914114981261783" at="59,59,60,57" concept="1" />
       <node id="2034914114981261783" at="60,57,61,22" concept="6" />
-      <node id="883899584380336175" at="63,49,64,99" concept="5" />
-      <node id="883899584380336175" at="64,99,65,47" concept="1" />
+      <node id="883899584380336175" at="63,49,64,96" concept="5" />
+      <node id="883899584380336175" at="64,96,65,47" concept="1" />
       <node id="883899584380336175" at="65,47,66,34" concept="5" />
       <node id="883899584380336175" at="66,34,67,57" concept="1" />
       <node id="883899584380336175" at="67,57,68,110" concept="1" />
@@ -807,8 +807,8 @@
       <node id="2034914114981262406" at="86,35,87,87" concept="5" />
       <node id="2034914114981262406" at="87,87,88,112" concept="6" />
       <node id="2034914114981262406" at="89,10,90,22" concept="6" />
-      <node id="2034914114981261783" at="92,48,93,274" concept="5" />
-      <node id="2034914114981261783" at="93,274,94,33" concept="6" />
+      <node id="2034914114981261783" at="92,48,93,276" concept="5" />
+      <node id="2034914114981261783" at="93,276,94,33" concept="6" />
       <node id="2034914114981261783" at="100,121,101,38" concept="7" />
       <node id="2034914114981261783" at="101,38,102,25" concept="1" />
       <node id="2034914114981261783" at="107,28,108,20" concept="6" />
@@ -844,8 +844,8 @@
       <node id="2034914114981262418" at="162,54,163,40" concept="1" />
       <node id="2034914114981262418" at="163,40,164,34" concept="1" />
       <node id="2034914114981262418" at="164,34,165,22" concept="6" />
-      <node id="2034914114981261783" at="167,49,168,279" concept="5" />
-      <node id="2034914114981261783" at="168,279,169,33" concept="6" />
+      <node id="2034914114981261783" at="167,49,168,281" concept="5" />
+      <node id="2034914114981261783" at="168,281,169,33" concept="6" />
       <node id="2034914114981261783" at="175,124,176,38" concept="7" />
       <node id="2034914114981261783" at="176,38,177,25" concept="1" />
       <node id="2034914114981261783" at="182,28,183,20" concept="6" />
@@ -882,11 +882,11 @@
       <node id="2034914114981261783" at="196,70,199,7" concept="3" />
       <node id="2034914114981261783" at="199,7,202,7" concept="3" />
       <node id="2034914114981261783" at="218,0,221,0" concept="4" trace="getNoTargetText#()Ljava/lang/String;" />
-      <node id="2034914114981261783" at="36,0,40,0" concept="0" trace="ApacheLogStatement_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2034914114981261783" at="92,0,96,0" concept="4" trace="createRefNode_ehx48p_c0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="2034914114981261783" at="100,0,104,0" concept="0" trace="messageSingleRoleHandler_ehx48p_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="2034914114981261783" at="167,0,171,0" concept="4" trace="createRefNode_ehx48p_b3a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="2034914114981261783" at="175,0,179,0" concept="0" trace="throwableSingleRoleHandler_ehx48p_b3a#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="2034914114981261783" at="36,0,40,0" concept="0" trace="LogLowLevelStatement_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2034914114981261783" at="92,0,96,0" concept="4" trace="createRefNode_8ff02w_c0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2034914114981261783" at="100,0,104,0" concept="0" trace="messageSingleRoleHandler_8ff02w_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="2034914114981261783" at="167,0,171,0" concept="4" trace="createRefNode_8ff02w_b3a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2034914114981261783" at="175,0,179,0" concept="0" trace="throwableSingleRoleHandler_8ff02w_b3a#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="2034914114981261783" at="41,0,46,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2034914114981262406" at="85,57,90,22" concept="3" />
       <node id="2034914114981261783" at="105,0,110,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -897,14 +897,14 @@
       <node id="2034914114981261783" at="196,0,204,0" concept="4" trace="installCellInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="2034914114981261783" at="132,221,141,7" concept="8" />
       <node id="2034914114981261783" at="207,223,216,7" concept="8" />
-      <node id="2034914114981262423" at="222,0,231,0" concept="4" trace="createConstant_ehx48p_e0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="883899584380336175" at="63,0,73,0" concept="4" trace="createConstant_ehx48p_a0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="2034914114981261783" at="147,0,157,0" concept="4" trace="createCollection_ehx48p_d0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="2034914114981262418" at="157,0,167,0" concept="4" trace="createConstant_ehx48p_a3a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="2034914114981261783" at="51,0,63,0" concept="4" trace="createCollection_ehx48p_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2034914114981262423" at="222,0,231,0" concept="4" trace="createConstant_8ff02w_e0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="883899584380336175" at="63,0,73,0" concept="4" trace="createConstant_8ff02w_a0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2034914114981261783" at="147,0,157,0" concept="4" trace="createCollection_8ff02w_d0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2034914114981262418" at="157,0,167,0" concept="4" trace="createConstant_8ff02w_a3a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2034914114981261783" at="51,0,63,0" concept="4" trace="createCollection_8ff02w_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2034914114981261783" at="129,0,143,0" concept="4" trace="createEmptyCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2034914114981261783" at="204,0,218,0" concept="4" trace="createEmptyCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="2034914114981262406" at="73,0,92,0" concept="4" trace="createProperty_ehx48p_b0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2034914114981262406" at="73,0,92,0" concept="4" trace="createProperty_8ff02w_b0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="2034914114981261783" at="43,26,44,18" />
       <scope id="2034914114981261783" at="47,39,48,39" />
       <scope id="2034914114981261783" at="107,28,108,20" />
@@ -917,7 +917,7 @@
       <scope id="2034914114981261783" at="200,41,201,40" />
       <scope id="2034914114981261783" at="214,17,215,42" />
       <scope id="2034914114981261783" at="218,40,219,30" />
-      <scope id="2034914114981261783" at="36,98,38,18" />
+      <scope id="2034914114981261783" at="36,100,38,18" />
       <scope id="2034914114981262406" at="86,35,88,112">
         <var name="manager" id="2034914114981262406" />
       </scope>
@@ -1014,13 +1014,13 @@
         <var name="style" id="2034914114981262406" />
       </scope>
       <scope id="2034914114981262406" at="73,0,92,0" />
-      <unit id="2034914114981261783" at="96,0,147,0" name="jetbrains.mps.baseLanguage.logging.editor.ApacheLogStatement_EditorBuilder_a$messageSingleRoleHandler_ehx48p_c0" />
-      <unit id="2034914114981261783" at="171,0,222,0" name="jetbrains.mps.baseLanguage.logging.editor.ApacheLogStatement_EditorBuilder_a$throwableSingleRoleHandler_ehx48p_b3a" />
-      <unit id="2034914114981261783" at="32,0,232,0" name="jetbrains.mps.baseLanguage.logging.editor.ApacheLogStatement_EditorBuilder_a" />
+      <unit id="2034914114981261783" at="96,0,147,0" name="jetbrains.mps.baseLanguage.logging.editor.LogLowLevelStatement_EditorBuilder_a$messageSingleRoleHandler_8ff02w_c0" />
+      <unit id="2034914114981261783" at="171,0,222,0" name="jetbrains.mps.baseLanguage.logging.editor.LogLowLevelStatement_EditorBuilder_a$throwableSingleRoleHandler_8ff02w_b3a" />
+      <unit id="2034914114981261783" at="32,0,232,0" name="jetbrains.mps.baseLanguage.logging.editor.LogLowLevelStatement_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959057d(jetbrains.mps.baseLanguage.logging.editor)/2034914114981549406">
-    <file name="ApacheLogStatement_SubstituteMenu.java">
+    <file name="LogLowLevelStatement_SubstituteMenu.java">
       <node id="2034914114981549406" at="16,118,17,140" concept="5" />
       <node id="2034914114981549406" at="17,140,18,18" concept="6" />
       <node id="2034914114981549406" at="14,0,20,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
@@ -1030,36 +1030,36 @@
       <scope id="2034914114981549406" at="14,0,20,0">
         <var name="_context" id="2034914114981549406" />
       </scope>
-      <unit id="2034914114981549406" at="13,0,21,0" name="jetbrains.mps.baseLanguage.logging.editor.ApacheLogStatement_SubstituteMenu" />
+      <unit id="2034914114981549406" at="13,0,21,0" name="jetbrains.mps.baseLanguage.logging.editor.LogLowLevelStatement_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959057d(jetbrains.mps.baseLanguage.logging.editor)/2034914114981570653">
-    <file name="logging4j_nodeSubstitute_Contribution.java">
-      <node id="2034914114981570653" at="29,50,30,16" concept="7" />
+    <file name="loggingLowLevel_nodeSubstitute_Contribution.java">
+      <node id="2034914114981570653" at="29,56,30,16" concept="7" />
       <node id="2034914114981570653" at="34,118,35,140" concept="5" />
-      <node id="2034914114981570653" at="35,140,36,293" concept="1" />
-      <node id="2034914114981570653" at="36,293,37,18" concept="6" />
-      <node id="2034914114981570653" at="42,100,43,127" concept="6" />
+      <node id="2034914114981570653" at="35,140,36,301" concept="1" />
+      <node id="2034914114981570653" at="36,301,37,18" concept="6" />
+      <node id="2034914114981570653" at="42,100,43,133" concept="6" />
       <node id="2034914114981570659" at="47,87,48,169" concept="6" />
       <node id="2034914114981570653" at="51,0,52,0" concept="2" trace="myParameterObject" />
       <node id="2034914114981570653" at="52,58,53,44" concept="1" />
-      <node id="2034914114981570653" at="58,79,59,112" concept="6" />
+      <node id="2034914114981570653" at="58,79,59,118" concept="6" />
       <node id="2034914114981570653" at="62,0,63,0" concept="2" trace="_context" />
-      <node id="2034914114981570653" at="63,52,64,262" concept="7" />
-      <node id="2034914114981570653" at="64,262,65,29" concept="1" />
-      <node id="2034914114981570677" at="70,58,71,298" concept="5" />
-      <node id="2034914114981570683" at="71,298,72,231" concept="1" />
+      <node id="2034914114981570653" at="63,52,64,264" concept="7" />
+      <node id="2034914114981570653" at="64,264,65,29" concept="1" />
+      <node id="2034914114981570677" at="70,58,71,300" concept="5" />
+      <node id="2034914114981570683" at="71,300,72,231" concept="1" />
       <node id="2034914114981570692" at="72,231,73,377" concept="1" />
       <node id="2034914114981570698" at="73,377,74,242" concept="5" />
       <node id="2034914114981570725" at="75,216,76,348" concept="5" />
       <node id="2034914114981570733" at="76,348,77,341" concept="1" />
       <node id="2034914114981570742" at="78,11,79,30" concept="6" />
       <node id="2034914114981570653" at="83,62,84,22" concept="6" />
-      <node id="2034914114981570666" at="88,64,89,83" concept="6" />
-      <node id="2034914114981570673" at="93,67,94,57" concept="6" />
+      <node id="2034914114981570666" at="88,64,89,80" concept="6" />
+      <node id="2034914114981570673" at="93,67,94,44" concept="6" />
       <node id="2034914114981570747" at="97,81,98,114" concept="1" />
-      <node id="2034914114981570653" at="29,0,32,0" concept="0" trace="logging4j_nodeSubstitute_Contribution#()V" />
-      <node id="2034914114981570653" at="52,0,55,0" concept="0" trace="SMP_Action_vbw08k_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2034914114981570653" at="29,0,32,0" concept="0" trace="loggingLowLevel_nodeSubstitute_Contribution#()V" />
+      <node id="2034914114981570653" at="52,0,55,0" concept="0" trace="SMP_Action_35gsnl_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2034914114981570653" at="63,0,67,0" concept="0" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
       <node id="2034914114981570707" at="74,242,78,11" concept="3" />
       <node id="2034914114981570744" at="96,0,100,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
@@ -1071,14 +1071,14 @@
       <node id="2034914114981570670" at="91,0,96,0" concept="4" trace="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="2034914114981570653" at="32,0,39,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <node id="2034914114981570653" at="68,0,81,0" concept="4" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2034914114981570653" at="29,50,30,16" />
-      <scope id="2034914114981570653" at="42,100,43,127" />
+      <scope id="2034914114981570653" at="29,56,30,16" />
+      <scope id="2034914114981570653" at="42,100,43,133" />
       <scope id="2034914114981570658" at="47,87,48,169" />
       <scope id="2034914114981570653" at="52,58,53,44" />
-      <scope id="2034914114981570653" at="58,79,59,112" />
+      <scope id="2034914114981570653" at="58,79,59,118" />
       <scope id="2034914114981570653" at="83,62,84,22" />
-      <scope id="2034914114981570663" at="88,64,89,83" />
-      <scope id="2034914114981570670" at="93,67,94,57" />
+      <scope id="2034914114981570663" at="88,64,89,80" />
+      <scope id="2034914114981570670" at="93,67,94,44" />
       <scope id="2034914114981570746" at="97,81,98,114" />
       <scope id="2034914114981570653" at="63,52,65,29" />
       <scope id="2034914114981570717" at="75,216,77,341">
@@ -1127,28 +1127,28 @@
       <scope id="2034914114981570653" at="68,0,81,0">
         <var name="pattern" id="2034914114981570653" />
       </scope>
-      <unit id="2034914114981570653" at="61,0,101,0" name="jetbrains.mps.baseLanguage.logging.editor.logging4j_nodeSubstitute_Contribution$SMP_Param_vbw08k_a$SMP_Action_vbw08k_a0$Item" />
-      <unit id="2034914114981570653" at="50,0,102,0" name="jetbrains.mps.baseLanguage.logging.editor.logging4j_nodeSubstitute_Contribution$SMP_Param_vbw08k_a$SMP_Action_vbw08k_a0" />
-      <unit id="2034914114981570653" at="39,0,104,0" name="jetbrains.mps.baseLanguage.logging.editor.logging4j_nodeSubstitute_Contribution$SMP_Param_vbw08k_a" />
-      <unit id="2034914114981570653" at="28,0,105,0" name="jetbrains.mps.baseLanguage.logging.editor.logging4j_nodeSubstitute_Contribution" />
+      <unit id="2034914114981570653" at="61,0,101,0" name="jetbrains.mps.baseLanguage.logging.editor.loggingLowLevel_nodeSubstitute_Contribution$SMP_Param_35gsnl_a$SMP_Action_35gsnl_a0$Item" />
+      <unit id="2034914114981570653" at="50,0,102,0" name="jetbrains.mps.baseLanguage.logging.editor.loggingLowLevel_nodeSubstitute_Contribution$SMP_Param_35gsnl_a$SMP_Action_35gsnl_a0" />
+      <unit id="2034914114981570653" at="39,0,104,0" name="jetbrains.mps.baseLanguage.logging.editor.loggingLowLevel_nodeSubstitute_Contribution$SMP_Param_35gsnl_a" />
+      <unit id="2034914114981570653" at="28,0,105,0" name="jetbrains.mps.baseLanguage.logging.editor.loggingLowLevel_nodeSubstitute_Contribution" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959057d(jetbrains.mps.baseLanguage.logging.editor)/5721587534047270770">
-    <file name="loggingToMsgView_nodeSubstitute_Contribution.java">
-      <node id="5721587534047270770" at="29,57,30,16" concept="7" />
+    <file name="loggingMsg_nodeSubstitute_Contribution.java">
+      <node id="5721587534047270770" at="29,51,30,16" concept="7" />
       <node id="5721587534047270770" at="34,118,35,140" concept="5" />
-      <node id="5721587534047270770" at="35,140,36,307" concept="1" />
-      <node id="5721587534047270770" at="36,307,37,18" concept="6" />
-      <node id="5721587534047270770" at="42,100,43,134" concept="6" />
+      <node id="5721587534047270770" at="35,140,36,288" concept="1" />
+      <node id="5721587534047270770" at="36,288,37,18" concept="6" />
+      <node id="5721587534047270770" at="42,100,43,128" concept="6" />
       <node id="5721587534047270776" at="47,87,48,169" concept="6" />
       <node id="5721587534047270770" at="51,0,52,0" concept="2" trace="myParameterObject" />
       <node id="5721587534047270770" at="52,58,53,44" concept="1" />
-      <node id="5721587534047270770" at="58,79,59,119" concept="6" />
+      <node id="5721587534047270770" at="58,79,59,113" concept="6" />
       <node id="5721587534047270770" at="62,0,63,0" concept="2" trace="_context" />
-      <node id="5721587534047270770" at="63,52,64,269" concept="7" />
-      <node id="5721587534047270770" at="64,269,65,29" concept="1" />
-      <node id="5721587534047270796" at="70,58,71,305" concept="5" />
-      <node id="5721587534047270802" at="71,305,72,231" concept="1" />
+      <node id="5721587534047270770" at="63,52,64,256" concept="7" />
+      <node id="5721587534047270770" at="64,256,65,29" concept="1" />
+      <node id="5721587534047270796" at="70,58,71,292" concept="5" />
+      <node id="5721587534047270802" at="71,292,72,231" concept="1" />
       <node id="5721587534047270811" at="72,231,73,377" concept="1" />
       <node id="5721587534047270817" at="73,377,74,242" concept="5" />
       <node id="5721587534047270837" at="75,216,76,348" concept="5" />
@@ -1156,10 +1156,10 @@
       <node id="5721587534047270854" at="78,11,79,30" concept="6" />
       <node id="5721587534047270770" at="83,62,84,22" concept="6" />
       <node id="5721587534047270783" at="88,64,89,84" concept="6" />
-      <node id="5721587534047270792" at="93,67,94,50" concept="6" />
+      <node id="5721587534047270792" at="93,67,94,47" concept="6" />
       <node id="5721587534047270859" at="97,81,98,114" concept="1" />
-      <node id="5721587534047270770" at="29,0,32,0" concept="0" trace="loggingToMsgView_nodeSubstitute_Contribution#()V" />
-      <node id="5721587534047270770" at="52,0,55,0" concept="0" trace="SMP_Action_jhomao_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5721587534047270770" at="29,0,32,0" concept="0" trace="loggingMsg_nodeSubstitute_Contribution#()V" />
+      <node id="5721587534047270770" at="52,0,55,0" concept="0" trace="SMP_Action_ax7x23_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5721587534047270770" at="63,0,67,0" concept="0" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
       <node id="5721587534047270826" at="74,242,78,11" concept="3" />
       <node id="5721587534047270856" at="96,0,100,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
@@ -1171,14 +1171,14 @@
       <node id="5721587534047270789" at="91,0,96,0" concept="4" trace="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="5721587534047270770" at="32,0,39,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <node id="5721587534047270770" at="68,0,81,0" concept="4" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="5721587534047270770" at="29,57,30,16" />
-      <scope id="5721587534047270770" at="42,100,43,134" />
+      <scope id="5721587534047270770" at="29,51,30,16" />
+      <scope id="5721587534047270770" at="42,100,43,128" />
       <scope id="5721587534047270775" at="47,87,48,169" />
       <scope id="5721587534047270770" at="52,58,53,44" />
-      <scope id="5721587534047270770" at="58,79,59,119" />
+      <scope id="5721587534047270770" at="58,79,59,113" />
       <scope id="5721587534047270770" at="83,62,84,22" />
       <scope id="5721587534047270780" at="88,64,89,84" />
-      <scope id="5721587534047270789" at="93,67,94,50" />
+      <scope id="5721587534047270789" at="93,67,94,47" />
       <scope id="5721587534047270858" at="97,81,98,114" />
       <scope id="5721587534047270770" at="63,52,65,29" />
       <scope id="5721587534047270836" at="75,216,77,341">
@@ -1227,14 +1227,14 @@
       <scope id="5721587534047270770" at="68,0,81,0">
         <var name="pattern" id="5721587534047270770" />
       </scope>
-      <unit id="5721587534047270770" at="61,0,101,0" name="jetbrains.mps.baseLanguage.logging.editor.loggingToMsgView_nodeSubstitute_Contribution$SMP_Param_jhomao_a$SMP_Action_jhomao_a0$Item" />
-      <unit id="5721587534047270770" at="50,0,102,0" name="jetbrains.mps.baseLanguage.logging.editor.loggingToMsgView_nodeSubstitute_Contribution$SMP_Param_jhomao_a$SMP_Action_jhomao_a0" />
-      <unit id="5721587534047270770" at="39,0,104,0" name="jetbrains.mps.baseLanguage.logging.editor.loggingToMsgView_nodeSubstitute_Contribution$SMP_Param_jhomao_a" />
-      <unit id="5721587534047270770" at="28,0,105,0" name="jetbrains.mps.baseLanguage.logging.editor.loggingToMsgView_nodeSubstitute_Contribution" />
+      <unit id="5721587534047270770" at="61,0,101,0" name="jetbrains.mps.baseLanguage.logging.editor.loggingMsg_nodeSubstitute_Contribution$SMP_Param_ax7x23_a$SMP_Action_ax7x23_a0$Item" />
+      <unit id="5721587534047270770" at="50,0,102,0" name="jetbrains.mps.baseLanguage.logging.editor.loggingMsg_nodeSubstitute_Contribution$SMP_Param_ax7x23_a$SMP_Action_ax7x23_a0" />
+      <unit id="5721587534047270770" at="39,0,104,0" name="jetbrains.mps.baseLanguage.logging.editor.loggingMsg_nodeSubstitute_Contribution$SMP_Param_ax7x23_a" />
+      <unit id="5721587534047270770" at="28,0,105,0" name="jetbrains.mps.baseLanguage.logging.editor.loggingMsg_nodeSubstitute_Contribution" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959057d(jetbrains.mps.baseLanguage.logging.editor)/5721587534047311754">
-    <file name="LogToMessageViewStatement_SubstituteMenu.java">
+    <file name="MsgStatement_SubstituteMenu.java">
       <node id="5721587534047311754" at="16,118,17,140" concept="5" />
       <node id="5721587534047311754" at="17,140,18,18" concept="6" />
       <node id="5721587534047311754" at="14,0,20,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
@@ -1244,22 +1244,22 @@
       <scope id="5721587534047311754" at="14,0,20,0">
         <var name="_context" id="5721587534047311754" />
       </scope>
-      <unit id="5721587534047311754" at="13,0,21,0" name="jetbrains.mps.baseLanguage.logging.editor.LogToMessageViewStatement_SubstituteMenu" />
+      <unit id="5721587534047311754" at="13,0,21,0" name="jetbrains.mps.baseLanguage.logging.editor.MsgStatement_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959057d(jetbrains.mps.baseLanguage.logging.editor)/6332851714983843199">
-    <file name="LogToMessageViewStatement_Editor.java">
-      <node id="6332851714983843199" at="11,79,12,91" concept="6" />
+    <file name="MsgStatement_Editor.java">
+      <node id="6332851714983843199" at="11,79,12,78" concept="6" />
       <node id="6332851714983843199" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="6332851714983843199" at="11,79,12,91" />
+      <scope id="6332851714983843199" at="11,79,12,78" />
       <scope id="6332851714983843199" at="11,0,14,0">
         <var name="editorContext" id="6332851714983843199" />
         <var name="node" id="6332851714983843199" />
       </scope>
-      <unit id="6332851714983843199" at="10,0,15,0" name="jetbrains.mps.baseLanguage.logging.editor.LogToMessageViewStatement_Editor" />
+      <unit id="6332851714983843199" at="10,0,15,0" name="jetbrains.mps.baseLanguage.logging.editor.MsgStatement_Editor" />
     </file>
-    <file name="LogToMessageViewStatement_EditorBuilder_a.java">
-      <node id="6332851714983843199" at="36,105,37,19" concept="7" />
+    <file name="MsgStatement_EditorBuilder_a.java">
+      <node id="6332851714983843199" at="36,92,37,19" concept="7" />
       <node id="6332851714983843199" at="37,19,38,18" concept="1" />
       <node id="6332851714983843199" at="43,26,44,18" concept="6" />
       <node id="6332851714983843199" at="47,39,48,39" concept="6" />
@@ -1274,8 +1274,8 @@
       <node id="6332851714983843199" at="59,59,60,59" concept="1" />
       <node id="6332851714983843199" at="60,59,61,57" concept="1" />
       <node id="6332851714983843199" at="61,57,62,22" concept="6" />
-      <node id="5721587534047314498" at="64,49,65,101" concept="5" />
-      <node id="5721587534047314498" at="65,101,66,47" concept="1" />
+      <node id="5721587534047314498" at="64,49,65,100" concept="5" />
+      <node id="5721587534047314498" at="65,100,66,47" concept="1" />
       <node id="5721587534047314498" at="66,47,67,34" concept="5" />
       <node id="5721587534047314498" at="67,34,68,57" concept="1" />
       <node id="5721587534047314498" at="68,57,69,110" concept="1" />
@@ -1297,8 +1297,8 @@
       <node id="6332851714983843202" at="87,35,88,87" concept="5" />
       <node id="6332851714983843202" at="88,87,89,112" concept="6" />
       <node id="6332851714983843202" at="90,10,91,22" concept="6" />
-      <node id="6332851714983843199" at="93,48,94,281" concept="5" />
-      <node id="6332851714983843199" at="94,281,95,33" concept="6" />
+      <node id="6332851714983843199" at="93,48,94,268" concept="5" />
+      <node id="6332851714983843199" at="94,268,95,33" concept="6" />
       <node id="6332851714983843199" at="101,121,102,38" concept="7" />
       <node id="6332851714983843199" at="102,38,103,25" concept="1" />
       <node id="6332851714983843199" at="108,28,109,20" concept="6" />
@@ -1331,8 +1331,8 @@
       <node id="6332851714983843207" at="160,54,161,40" concept="1" />
       <node id="6332851714983843207" at="161,40,162,34" concept="1" />
       <node id="6332851714983843207" at="162,34,163,22" concept="6" />
-      <node id="6332851714983843199" at="165,49,166,282" concept="5" />
-      <node id="6332851714983843199" at="166,282,167,33" concept="6" />
+      <node id="6332851714983843199" at="165,49,166,269" concept="5" />
+      <node id="6332851714983843199" at="166,269,167,33" concept="6" />
       <node id="6332851714983843199" at="173,122,174,38" concept="7" />
       <node id="6332851714983843199" at="174,38,175,25" concept="1" />
       <node id="6332851714983843199" at="180,28,181,20" concept="6" />
@@ -1368,8 +1368,8 @@
       <node id="6332851714983843220" at="235,54,236,40" concept="1" />
       <node id="6332851714983843220" at="236,40,237,34" concept="1" />
       <node id="6332851714983843220" at="237,34,238,22" concept="6" />
-      <node id="6332851714983843199" at="240,49,241,286" concept="5" />
-      <node id="6332851714983843199" at="241,286,242,33" concept="6" />
+      <node id="6332851714983843199" at="240,49,241,273" concept="5" />
+      <node id="6332851714983843199" at="241,273,242,33" concept="6" />
       <node id="6332851714983843199" at="248,124,249,38" concept="7" />
       <node id="6332851714983843199" at="249,38,250,25" concept="1" />
       <node id="6332851714983843199" at="255,28,256,20" concept="6" />
@@ -1410,20 +1410,20 @@
       <node id="6332851714983843199" at="269,70,272,7" concept="3" />
       <node id="6332851714983843199" at="272,7,275,7" concept="3" />
       <node id="6332851714983843199" at="291,0,294,0" concept="4" trace="getNoTargetText#()Ljava/lang/String;" />
-      <node id="6332851714983843199" at="36,0,40,0" concept="0" trace="LogToMessageViewStatement_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6332851714983843199" at="93,0,97,0" concept="4" trace="createRefNode_x43qh1_c0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6332851714983843199" at="101,0,105,0" concept="0" trace="messageSingleRoleHandler_x43qh1_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="6332851714983843199" at="165,0,169,0" concept="4" trace="createRefNode_x43qh1_b3a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6332851714983843199" at="173,0,177,0" concept="0" trace="projectSingleRoleHandler_x43qh1_b3a#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="6332851714983843199" at="240,0,244,0" concept="4" trace="createRefNode_x43qh1_b4a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6332851714983843199" at="248,0,252,0" concept="0" trace="throwableSingleRoleHandler_x43qh1_b4a#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="6332851714983843199" at="36,0,40,0" concept="0" trace="MsgStatement_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6332851714983843199" at="93,0,97,0" concept="4" trace="createRefNode_tetib3_c0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6332851714983843199" at="101,0,105,0" concept="0" trace="messageSingleRoleHandler_tetib3_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="6332851714983843199" at="165,0,169,0" concept="4" trace="createRefNode_tetib3_b3a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6332851714983843199" at="173,0,177,0" concept="0" trace="projectSingleRoleHandler_tetib3_b3a#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="6332851714983843199" at="240,0,244,0" concept="4" trace="createRefNode_tetib3_b4a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6332851714983843199" at="248,0,252,0" concept="0" trace="throwableSingleRoleHandler_tetib3_b4a#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="6332851714983843199" at="41,0,46,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6332851714983843202" at="86,57,91,22" concept="3" />
       <node id="6332851714983843199" at="106,0,111,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6332851714983843199" at="178,0,183,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6332851714983843199" at="253,0,258,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6332851714983843199" at="112,0,119,0" concept="4" trace="createChildCell#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6332851714983843199" at="148,0,155,0" concept="4" trace="createCollection_x43qh1_d0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6332851714983843199" at="148,0,155,0" concept="4" trace="createCollection_tetib3_d0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="6332851714983843199" at="184,0,191,0" concept="4" trace="createChildCell#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="6332851714983843199" at="259,0,266,0" concept="4" trace="createChildCell#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="6332851714983843199" at="122,0,130,0" concept="4" trace="installCellInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
@@ -1432,16 +1432,16 @@
       <node id="6332851714983843199" at="133,221,142,7" concept="8" />
       <node id="6332851714983843199" at="205,221,214,7" concept="8" />
       <node id="6332851714983843199" at="280,223,289,7" concept="8" />
-      <node id="6332851714983843225" at="295,0,304,0" concept="4" trace="createConstant_x43qh1_f0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="5721587534047314498" at="64,0,74,0" concept="4" trace="createConstant_x43qh1_a0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6332851714983843207" at="155,0,165,0" concept="4" trace="createConstant_x43qh1_a3a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6332851714983843199" at="220,0,230,0" concept="4" trace="createCollection_x43qh1_e0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6332851714983843220" at="230,0,240,0" concept="4" trace="createConstant_x43qh1_a4a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6332851714983843199" at="51,0,64,0" concept="4" trace="createCollection_x43qh1_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6332851714983843225" at="295,0,304,0" concept="4" trace="createConstant_tetib3_f0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="5721587534047314498" at="64,0,74,0" concept="4" trace="createConstant_tetib3_a0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6332851714983843207" at="155,0,165,0" concept="4" trace="createConstant_tetib3_a3a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6332851714983843199" at="220,0,230,0" concept="4" trace="createCollection_tetib3_e0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6332851714983843220" at="230,0,240,0" concept="4" trace="createConstant_tetib3_a4a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6332851714983843199" at="51,0,64,0" concept="4" trace="createCollection_tetib3_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="6332851714983843199" at="130,0,144,0" concept="4" trace="createEmptyCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="6332851714983843199" at="202,0,216,0" concept="4" trace="createEmptyCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="6332851714983843199" at="277,0,291,0" concept="4" trace="createEmptyCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6332851714983843202" at="74,0,93,0" concept="4" trace="createProperty_x43qh1_b0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6332851714983843202" at="74,0,93,0" concept="4" trace="createProperty_tetib3_b0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="6332851714983843199" at="43,26,44,18" />
       <scope id="6332851714983843199" at="47,39,48,39" />
       <scope id="6332851714983843199" at="108,28,109,20" />
@@ -1459,7 +1459,7 @@
       <scope id="6332851714983843199" at="273,41,274,40" />
       <scope id="6332851714983843199" at="287,17,288,42" />
       <scope id="6332851714983843199" at="291,40,292,30" />
-      <scope id="6332851714983843199" at="36,105,38,18" />
+      <scope id="6332851714983843199" at="36,92,38,18" />
       <scope id="6332851714983843202" at="87,35,89,112">
         <var name="manager" id="6332851714983843202" />
       </scope>
@@ -1593,10 +1593,10 @@
         <var name="style" id="6332851714983843202" />
       </scope>
       <scope id="6332851714983843202" at="74,0,93,0" />
-      <unit id="6332851714983843199" at="97,0,148,0" name="jetbrains.mps.baseLanguage.logging.editor.LogToMessageViewStatement_EditorBuilder_a$messageSingleRoleHandler_x43qh1_c0" />
-      <unit id="6332851714983843199" at="169,0,220,0" name="jetbrains.mps.baseLanguage.logging.editor.LogToMessageViewStatement_EditorBuilder_a$projectSingleRoleHandler_x43qh1_b3a" />
-      <unit id="6332851714983843199" at="244,0,295,0" name="jetbrains.mps.baseLanguage.logging.editor.LogToMessageViewStatement_EditorBuilder_a$throwableSingleRoleHandler_x43qh1_b4a" />
-      <unit id="6332851714983843199" at="32,0,305,0" name="jetbrains.mps.baseLanguage.logging.editor.LogToMessageViewStatement_EditorBuilder_a" />
+      <unit id="6332851714983843199" at="97,0,148,0" name="jetbrains.mps.baseLanguage.logging.editor.MsgStatement_EditorBuilder_a$messageSingleRoleHandler_tetib3_c0" />
+      <unit id="6332851714983843199" at="169,0,220,0" name="jetbrains.mps.baseLanguage.logging.editor.MsgStatement_EditorBuilder_a$projectSingleRoleHandler_tetib3_b3a" />
+      <unit id="6332851714983843199" at="244,0,295,0" name="jetbrains.mps.baseLanguage.logging.editor.MsgStatement_EditorBuilder_a$throwableSingleRoleHandler_tetib3_b4a" />
+      <unit id="6332851714983843199" at="32,0,305,0" name="jetbrains.mps.baseLanguage.logging.editor.MsgStatement_EditorBuilder_a" />
     </file>
   </root>
 </debug-info>

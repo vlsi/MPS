@@ -17,7 +17,7 @@
     </file>
   </root>
   <root nodeRef="r:10e26070-7ddd-4eff-9570-d2a7151f9936(jetbrains.mps.baseLanguage.logging.behavior)/5721587534047247532">
-    <file name="ApacheLogStatement__BehaviorDescriptor.java">
+    <file name="LogLowLevelStatement__BehaviorDescriptor.java">
       <node id="5721587534047247532" at="26,0,27,0" concept="6" trace="CONCEPT" />
       <node id="5721587534047247532" at="27,0,28,0" concept="6" trace="REGISTRY" />
       <node id="5721587534047247532" at="29,0,30,0" concept="6" trace="getMessage_id5vyNLjQPuX5" />
@@ -27,7 +27,7 @@
       <node id="5721587534047247765" at="38,82,39,185" concept="5" />
       <node id="5721587534047250853" at="41,84,42,196" concept="5" />
       <node id="5721587534047252701" at="44,84,45,187" concept="5" />
-      <node id="5721587534047247532" at="48,56,49,20" concept="8" />
+      <node id="5721587534047247532" at="48,58,49,20" concept="8" />
       <node id="5721587534047247532" at="53,114,54,21" concept="1" />
       <node id="5721587534047247532" at="58,114,59,49" concept="4" />
       <node id="5721587534047247532" at="60,26,61,56" concept="10" />
@@ -44,7 +44,7 @@
       <node id="5721587534047247532" at="38,0,41,0" concept="7" trace="getMessage_id5vyNLjQPuX5#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5721587534047247532" at="41,0,44,0" concept="7" trace="getSeverity_id5vyNLjQPuVr#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="5721587534047247532" at="44,0,47,0" concept="7" trace="getThrowable_id5vyNLjQPuWe#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5721587534047247532" at="48,0,51,0" concept="0" trace="ApacheLogStatement__BehaviorDescriptor#()V" />
+      <node id="5721587534047247532" at="48,0,51,0" concept="0" trace="LogLowLevelStatement__BehaviorDescriptor#()V" />
       <node id="5721587534047247532" at="59,49,62,5" concept="2" />
       <node id="5721587534047247532" at="77,49,80,5" concept="2" />
       <node id="5721587534047247532" at="52,0,56,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -58,7 +58,7 @@
       <scope id="5721587534047247549" at="38,82,39,185" />
       <scope id="5721587534047247555" at="41,84,42,196" />
       <scope id="5721587534047247561" at="44,84,45,187" />
-      <scope id="5721587534047247532" at="48,56,49,20" />
+      <scope id="5721587534047247532" at="48,58,49,20" />
       <scope id="5721587534047247532" at="53,114,54,21" />
       <scope id="5721587534047247532" at="60,26,61,56" />
       <scope id="5721587534047247532" at="64,13,65,60" />
@@ -105,7 +105,7 @@
         <var name="node" id="5721587534047247532" />
         <var name="parameters" id="5721587534047247532" />
       </scope>
-      <unit id="5721587534047247532" at="25,0,99,0" name="jetbrains.mps.baseLanguage.logging.behavior.ApacheLogStatement__BehaviorDescriptor" />
+      <unit id="5721587534047247532" at="25,0,99,0" name="jetbrains.mps.baseLanguage.logging.behavior.LogLowLevelStatement__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:10e26070-7ddd-4eff-9570-d2a7151f9936(jetbrains.mps.baseLanguage.logging.behavior)/5721587534047255156">
@@ -201,7 +201,7 @@
     </file>
   </root>
   <root nodeRef="r:10e26070-7ddd-4eff-9570-d2a7151f9936(jetbrains.mps.baseLanguage.logging.behavior)/5721587534047262597">
-    <file name="LogToMessageViewStatement__BehaviorDescriptor.java">
+    <file name="MsgStatement__BehaviorDescriptor.java">
       <node id="5721587534047262597" at="26,0,27,0" concept="6" trace="CONCEPT" />
       <node id="5721587534047262597" at="27,0,28,0" concept="6" trace="REGISTRY" />
       <node id="5721587534047262597" at="29,0,30,0" concept="6" trace="getMessage_id5vyNLjQPuX5" />
@@ -211,7 +211,7 @@
       <node id="5721587534047263225" at="38,82,39,185" concept="5" />
       <node id="5721587534047266506" at="41,84,42,196" concept="5" />
       <node id="5721587534047268344" at="44,84,45,187" concept="5" />
-      <node id="5721587534047262597" at="48,63,49,20" concept="8" />
+      <node id="5721587534047262597" at="48,50,49,20" concept="8" />
       <node id="5721587534047262597" at="53,114,54,21" concept="1" />
       <node id="5721587534047262597" at="58,114,59,49" concept="4" />
       <node id="5721587534047262597" at="60,26,61,56" concept="10" />
@@ -228,7 +228,7 @@
       <node id="5721587534047262597" at="38,0,41,0" concept="7" trace="getMessage_id5vyNLjQPuX5#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5721587534047262597" at="41,0,44,0" concept="7" trace="getSeverity_id5vyNLjQPuVr#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="5721587534047262597" at="44,0,47,0" concept="7" trace="getThrowable_id5vyNLjQPuWe#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5721587534047262597" at="48,0,51,0" concept="0" trace="LogToMessageViewStatement__BehaviorDescriptor#()V" />
+      <node id="5721587534047262597" at="48,0,51,0" concept="0" trace="MsgStatement__BehaviorDescriptor#()V" />
       <node id="5721587534047262597" at="59,49,62,5" concept="2" />
       <node id="5721587534047262597" at="77,49,80,5" concept="2" />
       <node id="5721587534047262597" at="52,0,56,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -242,7 +242,7 @@
       <scope id="5721587534047262612" at="38,82,39,185" />
       <scope id="5721587534047262618" at="41,84,42,196" />
       <scope id="5721587534047262624" at="44,84,45,187" />
-      <scope id="5721587534047262597" at="48,63,49,20" />
+      <scope id="5721587534047262597" at="48,50,49,20" />
       <scope id="5721587534047262597" at="53,114,54,21" />
       <scope id="5721587534047262597" at="60,26,61,56" />
       <scope id="5721587534047262597" at="64,13,65,60" />
@@ -289,7 +289,7 @@
         <var name="node" id="5721587534047262597" />
         <var name="parameters" id="5721587534047262597" />
       </scope>
-      <unit id="5721587534047262597" at="25,0,99,0" name="jetbrains.mps.baseLanguage.logging.behavior.LogToMessageViewStatement__BehaviorDescriptor" />
+      <unit id="5721587534047262597" at="25,0,99,0" name="jetbrains.mps.baseLanguage.logging.behavior.MsgStatement__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:10e26070-7ddd-4eff-9570-d2a7151f9936(jetbrains.mps.baseLanguage.logging.behavior)/6332851714983849680">

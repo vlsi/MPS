@@ -14,9 +14,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-public final class ConvertMessagesViewPrintStatementsToLog4j_MigrationScript extends BaseMigrationScript {
-  public ConvertMessagesViewPrintStatementsToLog4j_MigrationScript() {
-    super("Convert Legacy Log Statements to messages view statements");
+public final class ConvertLegacyStatementsToMessageStatements_MigrationScript extends BaseMigrationScript {
+  public ConvertLegacyStatementsToMessageStatements_MigrationScript() {
+    super("Convert Legacy Log Statements to the Messages Statements");
     this.addRefactoring(new AbstractMigrationRefactoring() {
       @Override
       public String getName() {
@@ -36,7 +36,7 @@ public final class ConvertMessagesViewPrintStatementsToLog4j_MigrationScript ext
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        SNode newNode = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, "jetbrains.mps.baseLanguage.logging.structure.LogToMessageViewStatement")));
+        SNode newNode = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, "jetbrains.mps.baseLanguage.logging.structure.MsgStatement")));
         SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, 0x4f67298c4630c25eL, "message"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc42da590L, "logExpression")));
         SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, 0x4f67298c4630c25fL, "throwable"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc42f25e9L, "exception")));
         SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL, 0x57e2cf14f6d5d81fL, "severity"), SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc541df63L, "severity"), "debug"));
