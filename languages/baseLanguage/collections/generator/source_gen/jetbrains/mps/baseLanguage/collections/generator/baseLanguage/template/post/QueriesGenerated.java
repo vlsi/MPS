@@ -21,6 +21,8 @@ import java.util.Map;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.generator.impl.query.QueryKey;
+import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
@@ -28,7 +30,6 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
-import jetbrains.mps.generator.impl.query.QueryKey;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -244,10 +245,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @NotNull
   @Override
-  public SourceNodeQuery getSourceNodeQuery(@NotNull SNode query) {
-    final String id = query.getNodeId().toString();
+  public SourceNodeQuery getSourceNodeQuery(@NotNull QueryKey identity) {
+    final String id = ((QueryKeyImpl) identity).getQueryNodeId().toString();
     if (!(snqMethods.containsKey(id))) {
-      return super.getSourceNodeQuery(query);
+      return super.getSourceNodeQuery(identity);
     }
     return snqMethods.get(id);
   }
@@ -316,10 +317,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @NotNull
   @Override
-  public PropertyValueQuery getPropertyValueQuery(@NotNull SNode macro) {
-    final String id = macro.getNodeId().toString();
+  public PropertyValueQuery getPropertyValueQuery(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
     if (!(pvqMethods.containsKey(id))) {
-      return super.getPropertyValueQuery(macro);
+      return super.getPropertyValueQuery(identity);
     }
     return pvqMethods.get(id);
   }
@@ -367,10 +368,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @NotNull
   @Override
-  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
-    final String id = caseNode.getNodeId().toString();
+  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
     if (!(isccMethods.containsKey(id))) {
-      return super.getInlineSwitchCaseCondition(caseNode);
+      return super.getInlineSwitchCaseCondition(identity);
     }
     return isccMethods.get(id);
   }

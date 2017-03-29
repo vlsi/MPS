@@ -31,7 +31,6 @@ import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.generator.behavior.VarMacro__BehaviorDescriptor;
-import java.util.List;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.generator.impl.CrossModelUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -43,6 +42,7 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.generator.behavior.NodeMacro__BehaviorDescriptor;
 import jetbrains.mps.generator.impl.RuleUtil;
+import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.generator.behavior.BaseMappingRule__BehaviorDescriptor;
 import jetbrains.mps.lang.generator.behavior.TemplateSwitchMacro__BehaviorDescriptor;
@@ -721,64 +721,67 @@ public class QueriesGenerated {
     return _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_5777101398024771993(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("mcWtihCondition"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_6269311107409466841(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_5777101398025471962(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("scriptsWithCode"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_6269311107407489390(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_5777101398026490051(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("rulesWithCondition"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_5777101398026914859(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_5777101398027060591(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("rulesWithCondition"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_5777101398027750728(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_5777101398027864345(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("rules"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_5777101398028648510(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_5777101398028941392(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("rulesWithCondition"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_5777101398029211234(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_5777101398029211334(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("rulesWithCondition"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_5777101398029963970(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_5777101398030860975(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("rules"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_6269311107410848033(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("rules"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
+  }
+  public static Object propertyMacro_GetPropertyValue_4560626146938627430(final PropertyMacroContext _context) {
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_1278277619664967171(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_1278277619664967269(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("queries"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_1278277619665299235(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_1278277619665299333(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("queries"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_3188250212959938105(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
@@ -806,19 +809,19 @@ public class QueriesGenerated {
     return SNodeOperations.getParent(_context.getNode()).getProperty(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_3188250212959938205(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("macros"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_9056552524812524628(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_9056552524812524722(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("macros"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_8530069850499411464(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_8530069850499411561(final PropertyMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("switchCaseNodes"))).indexOf(_context.getNode());
+    return ((Integer) _context.getVariable("cv:c"));
   }
   public static Object propertyMacro_GetPropertyValue_4426797670062877386(final PropertyMacroContext _context) {
     return (String) VarMacro__BehaviorDescriptor.getName_id2n6lsTIwojm.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3d6f2506d88aa028L, 0x25c655ce6e80fddaL, "varmacro")));
@@ -2032,6 +2035,9 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_5777101398030871995(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, 0x10fc0b719bdL, "conditionFunction")) != null);
   }
+  public static boolean ifMacro_Condition_4560626146938627410(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, 0xe2b8adb3abb51f8L, "anchorQuery")) != null);
+  }
   public static boolean ifMacro_Condition_4397791158780943302(final IfMacroContext _context) {
     return SNodeOperations.getParent(_context.getNode()).getProperty(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(_context.getNode())) != null;
   }
@@ -2366,6 +2372,9 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_5777101398031019093(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, 0x10fc0b719bdL, "conditionFunction"));
+  }
+  public static SNode sourceNodeQuery_4560626146938695854(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, 0xe2b8adb3abb51f8L, "anchorQuery"));
   }
   public static SNode sourceNodeQuery_8530069850499932443(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fdbf49L, 0x11645011ba5L, "conditionFunction"));
@@ -2978,6 +2987,9 @@ public class QueriesGenerated {
     return ((List<SNode>) _context.getVariable("rules"));
   }
   public static Iterable<SNode> sourceNodesQuery_6269311107410848025(final SourceSubstituteMacroNodesContext _context) {
+    return ((List<SNode>) _context.getVariable("rules"));
+  }
+  public static Iterable<SNode> sourceNodesQuery_4560626146938627422(final SourceSubstituteMacroNodesContext _context) {
     return ((List<SNode>) _context.getVariable("rules"));
   }
   public static Iterable<SNode> sourceNodesQuery_1278277619664967185(final SourceSubstituteMacroNodesContext _context) {

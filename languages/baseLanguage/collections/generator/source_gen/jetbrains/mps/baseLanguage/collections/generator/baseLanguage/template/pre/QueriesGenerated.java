@@ -18,10 +18,12 @@ import java.util.Map;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
+import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
@@ -83,10 +85,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @Override
   @NotNull
-  public ReductionRuleCondition getReductionRuleCondition(@NotNull SNode rule) {
-    final String id = rule.getNodeId().toString();
+  public ReductionRuleCondition getReductionRuleCondition(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
     if (!(rrcMethods.containsKey(id))) {
-      return super.getReductionRuleCondition(rule);
+      return super.getReductionRuleCondition(identity);
     }
     return rrcMethods.get(id);
   }
@@ -114,10 +116,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @Override
   @NotNull
-  public MapConfigurationCondition getMapConfigurationCondition(@NotNull SNode mapCfg) {
-    final String id = mapCfg.getNodeId().toString();
+  public MapConfigurationCondition getMapConfigurationCondition(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
     if (!(mccMethods.containsKey(id))) {
-      return super.getMapConfigurationCondition(mapCfg);
+      return super.getMapConfigurationCondition(identity);
     }
     return mccMethods.get(id);
   }
@@ -148,10 +150,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @NotNull
   @Override
-  public SourceNodeQuery getSourceNodeQuery(@NotNull SNode query) {
-    final String id = query.getNodeId().toString();
+  public SourceNodeQuery getSourceNodeQuery(@NotNull QueryKey identity) {
+    final String id = ((QueryKeyImpl) identity).getQueryNodeId().toString();
     if (!(snqMethods.containsKey(id))) {
-      return super.getSourceNodeQuery(query);
+      return super.getSourceNodeQuery(identity);
     }
     return snqMethods.get(id);
   }
@@ -188,10 +190,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   @NotNull
   @Override
-  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
-    final String id = caseNode.getNodeId().toString();
+  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
     if (!(isccMethods.containsKey(id))) {
-      return super.getInlineSwitchCaseCondition(caseNode);
+      return super.getInlineSwitchCaseCondition(identity);
     }
     return isccMethods.get(id);
   }
