@@ -54,12 +54,12 @@ public class BreakStatement_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, "jetbrains.mps.baseLanguage.structure.BreakStatement"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new BreakStatement_TransformationMenu.TransformationMenuPart_Group_n2nn3v_a1());
+      result.add(new BreakStatement_TransformationMenu.TMP_Group_n2nn3v_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_n2nn3v_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_n2nn3v_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       if ((SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, 0x7dae85d6eb42f8c4L, "loopLabelReference")) == null)) {
@@ -83,14 +83,14 @@ public class BreakStatement_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new BreakStatement_TransformationMenu.TransformationMenuPart_Group_n2nn3v_a1.TransformationMenuPart_Parameterized_n2nn3v_a0b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x50c493bf9552f6aL, "jetbrains.mps.baseLanguage.structure.LoopLabel")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new BreakStatement_TransformationMenu.TMP_Group_n2nn3v_a1.TMP_Param_n2nn3v_a0b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x50c493bf9552f6aL, "jetbrains.mps.baseLanguage.structure.LoopLabel")));
     }
-    private class TransformationMenuPart_Parameterized_n2nn3v_a0b extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Param_n2nn3v_a0b extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
 
       @NotNull
       @Override
       protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
-        return new BreakStatement_TransformationMenu.TransformationMenuPart_Group_n2nn3v_a1.TransformationMenuPart_Parameterized_n2nn3v_a0b.TransformationMenuPart_Action_n2nn3v_a0a1(parameter).createItems(context);
+        return new BreakStatement_TransformationMenu.TMP_Group_n2nn3v_a1.TMP_Param_n2nn3v_a0b.TMP_Action_n2nn3v_a0a1(parameter).createItems(context);
       }
 
       @Nullable
@@ -184,14 +184,14 @@ __switch__:
         return labels;
       }
 
-      private class TransformationMenuPart_Action_n2nn3v_a0a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_n2nn3v_a0a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         private final SNode myParameterObject;
-        public TransformationMenuPart_Action_n2nn3v_a0a1(SNode parameterObject) {
+        public TMP_Action_n2nn3v_a0a1(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new BreakStatement_TransformationMenu.TransformationMenuPart_Group_n2nn3v_a1.TransformationMenuPart_Parameterized_n2nn3v_a0b.TransformationMenuPart_Action_n2nn3v_a0a1.Item(context);
+          return new BreakStatement_TransformationMenu.TMP_Group_n2nn3v_a1.TMP_Param_n2nn3v_a0b.TMP_Action_n2nn3v_a0a1.Item(context);
         }
 
         private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

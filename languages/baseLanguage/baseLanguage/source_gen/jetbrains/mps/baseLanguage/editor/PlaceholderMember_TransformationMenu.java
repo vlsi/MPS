@@ -50,12 +50,12 @@ public class PlaceholderMember_TransformationMenu extends TransformationMenuBase
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1458378889e6d166L, "jetbrains.mps.baseLanguage.structure.PlaceholderMember"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new PlaceholderMember_TransformationMenu.TransformationMenuPart_Group_29uwod_a1());
+      result.add(new PlaceholderMember_TransformationMenu.TMP_Group_29uwod_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_29uwod_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_29uwod_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       SNode nextSibling = SNodeOperations.getNextSibling(_context.getNode());
@@ -67,12 +67,12 @@ public class PlaceholderMember_TransformationMenu extends TransformationMenuBase
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new PlaceholderMember_TransformationMenu.TransformationMenuPart_Group_29uwod_a1.TransformationMenuPart_Action_29uwod_a0b(), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new PlaceholderMember_TransformationMenu.TMP_Group_29uwod_a1.TMP_Action_29uwod_a0b(), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment")));
     }
-    private class TransformationMenuPart_Action_29uwod_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_29uwod_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new PlaceholderMember_TransformationMenu.TransformationMenuPart_Group_29uwod_a1.TransformationMenuPart_Action_29uwod_a0b.Item(context);
+        return new PlaceholderMember_TransformationMenu.TMP_Group_29uwod_a1.TMP_Action_29uwod_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

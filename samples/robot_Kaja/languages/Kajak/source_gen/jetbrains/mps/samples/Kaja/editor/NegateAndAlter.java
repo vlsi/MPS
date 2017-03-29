@@ -45,13 +45,13 @@ public class NegateAndAlter extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new NegateAndAlter.TransformationMenuPart_Group_egefa8_a0());
-      result.add(new NegateAndAlter.TransformationMenuPart_Parameterized_egefa8_b0());
+      result.add(new NegateAndAlter.TMP_Group_egefa8_a0());
+      result.add(new NegateAndAlter.TMP_Param_egefa8_b0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_egefa8_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_egefa8_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecb8b0L, "jetbrains.mps.samples.Kaja.structure.Not")));
@@ -59,12 +59,12 @@ public class NegateAndAlter extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new NegateAndAlter.TransformationMenuPart_Group_egefa8_a0.TransformationMenuPart_Action_egefa8_a0a(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecb8b0L, "jetbrains.mps.samples.Kaja.structure.Not")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new NegateAndAlter.TMP_Group_egefa8_a0.TMP_Action_egefa8_a0a(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecb8b0L, "jetbrains.mps.samples.Kaja.structure.Not")));
     }
-    private class TransformationMenuPart_Action_egefa8_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_egefa8_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new NegateAndAlter.TransformationMenuPart_Group_egefa8_a0.TransformationMenuPart_Action_egefa8_a0a.Item(context);
+        return new NegateAndAlter.TMP_Group_egefa8_a0.TMP_Action_egefa8_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -95,12 +95,12 @@ public class NegateAndAlter extends TransformationMenuBase {
       }
     }
   }
-  private class TransformationMenuPart_Parameterized_egefa8_b0 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_egefa8_b0 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(String parameter, TransformationMenuContext context) {
-      return new NegateAndAlter.TransformationMenuPart_Parameterized_egefa8_b0.TransformationMenuPart_Action_egefa8_a1a(parameter).createItems(context);
+      return new NegateAndAlter.TMP_Param_egefa8_b0.TMP_Action_egefa8_a1a(parameter).createItems(context);
     }
 
     @Nullable
@@ -109,14 +109,14 @@ public class NegateAndAlter extends TransformationMenuBase {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "heading", "mark", "full", "wall", "looking");
     }
 
-    private class TransformationMenuPart_Action_egefa8_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_egefa8_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final String myParameterObject;
-      public TransformationMenuPart_Action_egefa8_a1a(String parameterObject) {
+      public TMP_Action_egefa8_a1a(String parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new NegateAndAlter.TransformationMenuPart_Parameterized_egefa8_b0.TransformationMenuPart_Action_egefa8_a1a.Item(context);
+        return new NegateAndAlter.TMP_Param_egefa8_b0.TMP_Action_egefa8_a1a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

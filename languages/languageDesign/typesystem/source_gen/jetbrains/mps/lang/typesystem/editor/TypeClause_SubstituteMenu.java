@@ -33,11 +33,11 @@ public class TypeClause_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TypeClause_SubstituteMenu.SubstituteMenuPart_Wrapper_zbskfb_a(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1141682561cL, "jetbrains.mps.lang.typesystem.structure.NormalTypeClause")));
-    result.add(new TypeClause_SubstituteMenu.SubstituteMenuPart_Subconcepts_zbskfb_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TypeClause_SubstituteMenu.SMP_Wrap_zbskfb_a(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1141682561cL, "jetbrains.mps.lang.typesystem.structure.NormalTypeClause")));
+    result.add(new TypeClause_SubstituteMenu.SMP_Subconcepts_zbskfb_b());
     return result;
   }
-  private class SubstituteMenuPart_Wrapper_zbskfb_a extends WrapperSubstituteMenuPart {
+  private class SMP_Wrap_zbskfb_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
@@ -70,7 +70,7 @@ public class TypeClause_SubstituteMenu extends SubstituteMenuBase {
       return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
     }
   }
-  public class SubstituteMenuPart_Subconcepts_zbskfb_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_zbskfb_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114168188c7L, "jetbrains.mps.lang.typesystem.structure.TypeClause"));
     }

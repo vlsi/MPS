@@ -414,9 +414,9 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1502,9 +1502,9 @@
       </node>
       <node concept="3Tmbuc" id="5s44y2Llkfw" role="1B3o_S" />
       <node concept="3clFbS" id="hSPZQwZ" role="3clF47">
-        <node concept="34ab3g" id="4_5pru_JJC9" role="3cqZAp">
-          <property role="35gtTG" value="info" />
-          <node concept="Xl_RD" id="4_5pru_JJCb" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB331T" role="3cqZAp">
+          <property role="RRSoG" value="info" />
+          <node concept="Xl_RD" id="4_5pru_JJCb" role="RRSoy">
             <property role="Xl_RC" value="Initializing editor" />
           </node>
         </node>
@@ -5305,9 +5305,9 @@
         <node concept="17QB3L" id="5sV3JxOSGj$" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="5sV3JxOSGiv" role="3clF47">
-        <node concept="34ab3g" id="wQDhRCnzKI" role="3cqZAp">
-          <property role="35gtTG" value="info" />
-          <node concept="Xl_RD" id="wQDhRCnzKJ" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB30I4" role="3cqZAp">
+          <property role="RRSoG" value="info" />
+          <node concept="Xl_RD" id="wQDhRCnzKJ" role="RRSoy">
             <property role="Xl_RC" value="Initializing the test" />
           </node>
         </node>
@@ -5406,9 +5406,9 @@
         </node>
         <node concept="3clFbJ" id="wQDhRCDz1V" role="3cqZAp">
           <node concept="3clFbS" id="wQDhRCDz1Y" role="3clFbx">
-            <node concept="34ab3g" id="6jF$UvCGdPd" role="3cqZAp">
-              <property role="35gtTG" value="debug" />
-              <node concept="Xl_RD" id="6jF$UvCGdPf" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB39Li" role="3cqZAp">
+              <property role="RRSoG" value="debug" />
+              <node concept="Xl_RD" id="6jF$UvCGdPf" role="RRSoy">
                 <property role="Xl_RC" value="Using the cached model" />
               </node>
             </node>
@@ -5460,9 +5460,9 @@
           </node>
           <node concept="9aQIb" id="wQDhRCEEgC" role="9aQIa">
             <node concept="3clFbS" id="wQDhRCEEgD" role="9aQI4">
-              <node concept="34ab3g" id="6jF$UvCGe4h" role="3cqZAp">
-                <property role="35gtTG" value="debug" />
-                <node concept="Xl_RD" id="6jF$UvCGe4j" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB39Lo" role="3cqZAp">
+                <property role="RRSoG" value="debug" />
+                <node concept="Xl_RD" id="6jF$UvCGe4j" role="RRSoy">
                   <property role="Xl_RC" value="Recaching the model again" />
                 </node>
               </node>
@@ -5785,9 +5785,9 @@
         </node>
         <node concept="3clFbJ" id="49Kr40zYRtt" role="3cqZAp">
           <node concept="3clFbS" id="49Kr40zYRtu" role="3clFbx">
-            <node concept="34ab3g" id="5sV3JxORHiX" role="3cqZAp">
-              <property role="35gtTG" value="warn" />
-              <node concept="Xl_RD" id="5sV3JxORHiZ" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB39Lu" role="3cqZAp">
+              <property role="RRSoG" value="warn" />
+              <node concept="Xl_RD" id="5sV3JxORHiZ" role="RRSoy">
                 <property role="Xl_RC" value="Project path is empty" />
               </node>
             </node>
@@ -5970,9 +5970,9 @@
       </node>
       <node concept="3cqZAl" id="6azle7m3uJV" role="3clF45" />
       <node concept="3clFbS" id="6azle7m3uJX" role="3clF47">
-        <node concept="34ab3g" id="1K136DJAmRT" role="3cqZAp">
-          <property role="35gtTG" value="info" />
-          <node concept="3cpWs3" id="5sV3JxOSwKS" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB39L$" role="3cqZAp">
+          <property role="RRSoG" value="info" />
+          <node concept="3cpWs3" id="5sV3JxOSwKS" role="RRSoy">
             <node concept="Xl_RD" id="1K136DJAmRV" role="3uHU7B">
               <property role="Xl_RC" value="Running the test " />
             </node>
@@ -6375,9 +6375,9 @@
         </node>
         <node concept="3clFbJ" id="6azle7m3uMp" role="3cqZAp">
           <node concept="3clFbS" id="6azle7m3uMq" role="3clFbx">
-            <node concept="34ab3g" id="1iRM0tJA_e8" role="3cqZAp">
-              <property role="35gtTG" value="info" />
-              <node concept="Xl_RD" id="1iRM0tJA_ea" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB39LI" role="3cqZAp">
+              <property role="RRSoG" value="info" />
+              <node concept="Xl_RD" id="1iRM0tJA_ea" role="RRSoy">
                 <property role="Xl_RC" value="Test failed" />
               </node>
             </node>
@@ -6404,9 +6404,9 @@
             </node>
           </node>
         </node>
-        <node concept="34ab3g" id="1iRM0tJ_RmQ" role="3cqZAp">
-          <property role="35gtTG" value="info" />
-          <node concept="Xl_RD" id="1iRM0tJ_RmS" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB39LO" role="3cqZAp">
+          <property role="RRSoG" value="info" />
+          <node concept="Xl_RD" id="1iRM0tJ_RmS" role="RRSoy">
             <property role="Xl_RC" value="Test passed" />
           </node>
         </node>
@@ -9032,9 +9032,9 @@
           </node>
         </node>
         <node concept="3clFbH" id="63oasX2eHq0" role="3cqZAp" />
-        <node concept="34ab3g" id="6RioKE3GLOm" role="3cqZAp">
-          <property role="35gtTG" value="debug" />
-          <node concept="3cpWs3" id="6RioKE3H1JB" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB39L0" role="3cqZAp">
+          <property role="RRSoG" value="debug" />
+          <node concept="3cpWs3" id="6RioKE3H1JB" role="RRSoy">
             <node concept="37vLTw" id="6RioKE3H4gl" role="3uHU7w">
               <ref role="3cqZAo" node="3fCX6WCBvHQ" resolve="myRoot" />
             </node>

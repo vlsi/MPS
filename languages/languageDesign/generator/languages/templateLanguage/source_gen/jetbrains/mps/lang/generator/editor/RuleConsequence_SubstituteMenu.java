@@ -29,11 +29,11 @@ public class RuleConsequence_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new RuleConsequence_SubstituteMenu.SubstituteMenuPart_Group_ygcyd4_a());
-    result.add(new RuleConsequence_SubstituteMenu.SubstituteMenuPart_Group_ygcyd4_b());
+    result.add(new RuleConsequence_SubstituteMenu.SMP_Group_ygcyd4_a());
+    result.add(new RuleConsequence_SubstituteMenu.SMP_Group_ygcyd4_b());
     return result;
   }
-  public class SubstituteMenuPart_Group_ygcyd4_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_ygcyd4_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"));
@@ -41,9 +41,9 @@ public class RuleConsequence_SubstituteMenu extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new RuleConsequence_SubstituteMenu.SubstituteMenuPart_Group_ygcyd4_a.SubstituteMenuPart_Subconcepts_ygcyd4_a0(), new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence")), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new RuleConsequence_SubstituteMenu.SMP_Group_ygcyd4_a.SMP_Subconcepts_ygcyd4_a0(), new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence")), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence")));
     }
-    public class SubstituteMenuPart_Subconcepts_ygcyd4_a0 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Subconcepts_ygcyd4_a0 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
       protected Collection getConcepts(final SubstituteMenuContext _context) {
         return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x110138ccc4bL, "jetbrains.mps.lang.generator.structure.RuleConsequence")).stream().filter(new Predicate<SAbstractConcept>() {
           public boolean test(SAbstractConcept concept) {
@@ -60,7 +60,7 @@ public class RuleConsequence_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  public class SubstituteMenuPart_Group_ygcyd4_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_ygcyd4_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return !(SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule")));
@@ -68,9 +68,9 @@ public class RuleConsequence_SubstituteMenu extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new RuleConsequence_SubstituteMenu.SubstituteMenuPart_Group_ygcyd4_b.SubstituteMenuPart_Group_ygcyd4_a1(), new RuleConsequence_SubstituteMenu.SubstituteMenuPart_Group_ygcyd4_b.SubstituteMenuPart_Subconcepts_ygcyd4_b1());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new RuleConsequence_SubstituteMenu.SMP_Group_ygcyd4_b.SMP_Group_ygcyd4_a1(), new RuleConsequence_SubstituteMenu.SMP_Group_ygcyd4_b.SMP_Subconcepts_ygcyd4_b1());
     }
-    public class SubstituteMenuPart_Group_ygcyd4_a1 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_ygcyd4_a1 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fca296532L, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule"));
@@ -81,7 +81,7 @@ public class RuleConsequence_SubstituteMenu extends SubstituteMenuBase {
         return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fa2edeL, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence")), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fa2edeL, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence")));
       }
     }
-    public class SubstituteMenuPart_Subconcepts_ygcyd4_b1 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Subconcepts_ygcyd4_b1 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
       protected Collection getConcepts(final SubstituteMenuContext _context) {
         return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x110138ccc4bL, "jetbrains.mps.lang.generator.structure.RuleConsequence"));
       }

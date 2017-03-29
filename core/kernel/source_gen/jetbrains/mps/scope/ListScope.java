@@ -5,6 +5,7 @@ package jetbrains.mps.scope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.ArrayList;
@@ -26,11 +27,11 @@ public abstract class ListScope extends Scope {
   }
 
   @Override
-  public SNode resolve(SNode contextNode, String refText) {
+  public SNode resolve(SNode contextNode, @NotNull String refText) {
     SNode result = null;
     for (SNode n : elements) {
       String name = getName(n);
-      if (name.equals(refText)) {
+      if (refText.equals(name)) {
         if (result == null) {
           result = n;
         } else {

@@ -69,7 +69,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     Object value = query.getObjectHolder().getObject();
     SNode node = null;
     if (value instanceof SNodeReference) {
-      node = query.getScope().resolve((SNodeReference) value);
+      node = query.getSearchObjectResolver().resolve((SNodeReference) value);
     } else if (value instanceof SNode) {
       node = (SNode) value;
     }

@@ -4,6 +4,8 @@ package jetbrains.mps.console.tool;
 
 import com.intellij.openapi.ui.SimpleToolWindowPanel;
 import com.intellij.openapi.Disposable;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -18,8 +20,6 @@ import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.PasteProvider;
 import jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import org.apache.log4j.Level;
@@ -100,6 +100,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Disposable {
+  private static final Logger LOG = LogManager.getLogger(BaseConsoleTab.class);
   private ConsoleTool myTool;
   private SModel myModel;
   private MPSProject myProject;
@@ -155,7 +156,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
           return myFileEditor;
         }
         if (PlatformDataKeys.PASTE_PROVIDER.is(key)) {
-          PasteProvider parentPasteProvider = as_6q36mf_a0a0a1a0a0a0a0ab(super.getData(key), PasteProvider.class);
+          PasteProvider parentPasteProvider = as_6q36mf_a0a0a1a0a0a0a0bb(super.getData(key), PasteProvider.class);
           return (myTool.getPasteAsRef() ? new BaseConsoleTab.MyPasteProvider(parentPasteProvider) : parentPasteProvider);
         }
         return super.getData(key);
@@ -165,7 +166,6 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
     myEditor.editNode(myRoot);
   }
 
-  protected static Logger LOG = LogManager.getLogger(BaseConsoleTab.class);
   protected void createConsoleModel() {
     this.myModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModuleWithSourceAndClassesGen());
     if (myModel == null) {
@@ -667,7 +667,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
     }
 
   }
-  private static <T> T as_6q36mf_a0a0a1a0a0a0a0ab(Object o, Class<T> type) {
+  private static <T> T as_6q36mf_a0a0a1a0a0a0a0bb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

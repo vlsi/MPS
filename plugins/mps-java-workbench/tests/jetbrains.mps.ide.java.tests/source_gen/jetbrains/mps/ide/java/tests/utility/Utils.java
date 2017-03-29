@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.extapi.model.SModelBase;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -92,7 +93,7 @@ public class Utils {
       if (onlyStubs) {
         NodePatcher.removeStatements(expected);
       } else {
-        JavaParser.tryResolveUnknowns(Sequence.<SNode>singleton(result));
+        JavaParser.tryResolveUnknowns(Sequence.<SNode>singleton(result), new EmptyProgressMonitor());
       }
       NodePatcher.fixNonStatic(expected);
       NodePatcher.fixNonStatic(result);

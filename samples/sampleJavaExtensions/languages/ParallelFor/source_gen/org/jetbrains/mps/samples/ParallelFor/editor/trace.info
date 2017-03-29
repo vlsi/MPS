@@ -22,8 +22,8 @@
       <node id="1741258697587112640" at="27,0,28,0" concept="3" trace="myLocations" />
       <node id="1741258697587112640" at="29,67,30,63" concept="7" />
       <node id="1741258697587112640" at="35,124,36,156" concept="6" />
-      <node id="1741258697587112640" at="37,173,38,103" concept="2" />
-      <node id="1741258697587112640" at="38,103,39,103" concept="2" />
+      <node id="1741258697587112640" at="37,173,38,80" concept="2" />
+      <node id="1741258697587112640" at="38,80,39,80" concept="2" />
       <node id="1741258697587112640" at="40,5,41,18" concept="7" />
       <node id="1741258697587112640" at="47,90,48,44" concept="6" />
       <node id="1741258697587112640" at="48,44,49,70" concept="6" />
@@ -39,7 +39,7 @@
       <node id="1741258697587112640" at="56,0,64,0" concept="5" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuLookup;" />
       <node id="1741258697587112640" at="33,0,43,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587112640" at="29,67,30,63" />
-      <scope id="1741258697587112640" at="37,173,39,103" />
+      <scope id="1741258697587112640" at="37,173,39,80" />
       <scope id="1741258697587112640" at="28,0,32,0">
         <var name="location" id="1741258697587112640" />
       </scope>
@@ -63,8 +63,8 @@
       <scope id="1741258697587112640" at="33,0,43,0">
         <var name="_context" id="1741258697587112640" />
       </scope>
-      <unit id="1741258697587112640" at="44,0,55,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_ext_3_RTransform_Menu$TransformationMenuPart_IncludeMenu_w7u9im_a0" />
-      <unit id="1741258697587112640" at="55,0,66,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_ext_3_RTransform_Menu$TransformationMenuPart_IncludeMenu_w7u9im_b0" />
+      <unit id="1741258697587112640" at="44,0,55,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_ext_3_RTransform_Menu$TMP_Include_w7u9im_a0" />
+      <unit id="1741258697587112640" at="55,0,66,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_ext_3_RTransform_Menu$TMP_Include_w7u9im_b0" />
       <unit id="1741258697587112640" at="26,0,67,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_ext_3_RTransform_Menu" />
     </file>
   </root>
@@ -73,11 +73,11 @@
       <node id="1741258697587112642" at="27,0,28,0" concept="3" trace="myLocations" />
       <node id="1741258697587112642" at="29,67,30,63" concept="7" />
       <node id="1741258697587112642" at="35,124,36,156" concept="6" />
-      <node id="1741258697587112642" at="37,137,38,98" concept="2" />
+      <node id="1741258697587112642" at="37,137,38,79" concept="2" />
       <node id="1741258697587112642" at="39,5,40,18" concept="7" />
       <node id="1741258697587112650" at="45,72,46,193" concept="7" />
-      <node id="1741258697587112645" at="50,92,51,210" concept="7" />
-      <node id="1741258697587112645" at="55,86,56,148" concept="7" />
+      <node id="1741258697587112645" at="50,92,51,172" concept="7" />
+      <node id="1741258697587112645" at="55,86,56,110" concept="7" />
       <node id="1741258697587112645" at="60,0,61,0" concept="3" trace="_context" />
       <node id="1741258697587112645" at="62,57,63,29" concept="2" />
       <node id="1741258697587112659" at="68,52,69,27" concept="7" />
@@ -92,10 +92,10 @@
       <node id="1741258697587112645" at="66,0,71,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1741258697587112642" at="33,0,42,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587112642" at="29,67,30,63" />
-      <scope id="1741258697587112642" at="37,137,38,98" />
+      <scope id="1741258697587112642" at="37,137,38,79" />
       <scope id="1741258697587112649" at="45,72,46,193" />
-      <scope id="1741258697587112645" at="50,92,51,210" />
-      <scope id="1741258697587112645" at="55,86,56,148" />
+      <scope id="1741258697587112645" at="50,92,51,172" />
+      <scope id="1741258697587112645" at="55,86,56,110" />
       <scope id="1741258697587112645" at="62,57,63,29" />
       <scope id="1741258697587112658" at="68,52,69,27" />
       <scope id="1741258697587112662" at="73,54,74,193" />
@@ -124,9 +124,9 @@
       <scope id="1741258697587112642" at="33,0,42,0">
         <var name="_context" id="1741258697587112642" />
       </scope>
-      <unit id="1741258697587112645" at="59,0,79,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor_ext_3$TransformationMenuPart_Group_tp4f9n_a0$TransformationMenuPart_Action_tp4f9n_a0a$Item" />
-      <unit id="1741258697587112645" at="53,0,80,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor_ext_3$TransformationMenuPart_Group_tp4f9n_a0$TransformationMenuPart_Action_tp4f9n_a0a" />
-      <unit id="1741258697587112645" at="43,0,81,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor_ext_3$TransformationMenuPart_Group_tp4f9n_a0" />
+      <unit id="1741258697587112645" at="59,0,79,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor_ext_3$TMP_Group_tp4f9n_a0$TMP_Action_tp4f9n_a0a$Item" />
+      <unit id="1741258697587112645" at="53,0,80,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor_ext_3$TMP_Group_tp4f9n_a0$TMP_Action_tp4f9n_a0a" />
+      <unit id="1741258697587112645" at="43,0,81,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor_ext_3$TMP_Group_tp4f9n_a0" />
       <unit id="1741258697587112642" at="26,0,82,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor_ext_3" />
     </file>
   </root>
@@ -136,8 +136,8 @@
       <node id="1741258697587112680" at="31,67,32,63" concept="7" />
       <node id="1741258697587112680" at="37,124,38,156" concept="6" />
       <node id="1741258697587112680" at="39,173,40,256" concept="2" />
-      <node id="1741258697587112680" at="40,256,41,100" concept="2" />
-      <node id="1741258697587112680" at="41,100,42,100" concept="2" />
+      <node id="1741258697587112680" at="40,256,41,77" concept="2" />
+      <node id="1741258697587112680" at="41,77,42,77" concept="2" />
       <node id="1741258697587112680" at="43,5,44,18" concept="7" />
       <node id="1741258697587112680" at="50,90,51,44" concept="6" />
       <node id="1741258697587112680" at="51,44,52,70" concept="6" />
@@ -153,7 +153,7 @@
       <node id="1741258697587112680" at="59,0,67,0" concept="5" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuLookup;" />
       <node id="1741258697587112680" at="35,0,46,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587112680" at="31,67,32,63" />
-      <scope id="1741258697587112680" at="39,173,42,100" />
+      <scope id="1741258697587112680" at="39,173,42,77" />
       <scope id="1741258697587112680" at="30,0,34,0">
         <var name="location" id="1741258697587112680" />
       </scope>
@@ -177,8 +177,8 @@
       <scope id="1741258697587112680" at="35,0,46,0">
         <var name="_context" id="1741258697587112680" />
       </scope>
-      <unit id="1741258697587112680" at="47,0,58,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_TransformationMenu$TransformationMenuPart_IncludeMenu_5y1hyq_b0" />
-      <unit id="1741258697587112680" at="58,0,69,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_TransformationMenu$TransformationMenuPart_IncludeMenu_5y1hyq_c0" />
+      <unit id="1741258697587112680" at="47,0,58,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_TransformationMenu$TMP_Include_5y1hyq_b0" />
+      <unit id="1741258697587112680" at="58,0,69,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_TransformationMenu$TMP_Include_5y1hyq_c0" />
       <unit id="1741258697587112680" at="28,0,70,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_TransformationMenu" />
     </file>
   </root>
@@ -187,11 +187,11 @@
       <node id="1741258697587112686" at="27,0,28,0" concept="3" trace="myLocations" />
       <node id="1741258697587112686" at="29,67,30,63" concept="7" />
       <node id="1741258697587112686" at="35,124,36,156" concept="6" />
-      <node id="1741258697587112686" at="37,138,38,92" concept="2" />
+      <node id="1741258697587112686" at="37,138,38,73" concept="2" />
       <node id="1741258697587112686" at="39,5,40,18" concept="7" />
       <node id="1741258697587112694" at="45,72,46,193" concept="7" />
-      <node id="1741258697587112689" at="50,92,51,204" concept="7" />
-      <node id="1741258697587112689" at="55,86,56,142" concept="7" />
+      <node id="1741258697587112689" at="50,92,51,166" concept="7" />
+      <node id="1741258697587112689" at="55,86,56,104" concept="7" />
       <node id="1741258697587112689" at="60,0,61,0" concept="3" trace="_context" />
       <node id="1741258697587112689" at="62,57,63,29" concept="2" />
       <node id="1741258697587112703" at="68,52,69,27" concept="7" />
@@ -206,10 +206,10 @@
       <node id="1741258697587112689" at="66,0,71,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1741258697587112686" at="33,0,42,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587112686" at="29,67,30,63" />
-      <scope id="1741258697587112686" at="37,138,38,92" />
+      <scope id="1741258697587112686" at="37,138,38,73" />
       <scope id="1741258697587112693" at="45,72,46,193" />
-      <scope id="1741258697587112689" at="50,92,51,204" />
-      <scope id="1741258697587112689" at="55,86,56,142" />
+      <scope id="1741258697587112689" at="50,92,51,166" />
+      <scope id="1741258697587112689" at="55,86,56,104" />
       <scope id="1741258697587112689" at="62,57,63,29" />
       <scope id="1741258697587112702" at="68,52,69,27" />
       <scope id="1741258697587112706" at="73,54,74,193" />
@@ -238,9 +238,9 @@
       <scope id="1741258697587112686" at="33,0,42,0">
         <var name="_context" id="1741258697587112686" />
       </scope>
-      <unit id="1741258697587112689" at="59,0,79,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor$TransformationMenuPart_Group_rnbvuo_a0$TransformationMenuPart_Action_rnbvuo_a0a$Item" />
-      <unit id="1741258697587112689" at="53,0,80,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor$TransformationMenuPart_Group_rnbvuo_a0$TransformationMenuPart_Action_rnbvuo_a0a" />
-      <unit id="1741258697587112689" at="43,0,81,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor$TransformationMenuPart_Group_rnbvuo_a0" />
+      <unit id="1741258697587112689" at="59,0,79,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor$TMP_Group_rnbvuo_a0$TMP_Action_rnbvuo_a0a$Item" />
+      <unit id="1741258697587112689" at="53,0,80,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor$TMP_Group_rnbvuo_a0$TMP_Action_rnbvuo_a0a" />
+      <unit id="1741258697587112689" at="43,0,81,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor$TMP_Group_rnbvuo_a0" />
       <unit id="1741258697587112686" at="26,0,82,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor" />
     </file>
   </root>
@@ -249,11 +249,11 @@
       <node id="1741258697587112720" at="33,0,34,0" concept="3" trace="myLocations" />
       <node id="1741258697587112720" at="35,67,36,63" concept="7" />
       <node id="1741258697587112720" at="41,124,42,156" concept="6" />
-      <node id="1741258697587112720" at="43,137,44,90" concept="2" />
+      <node id="1741258697587112720" at="43,137,44,71" concept="2" />
       <node id="1741258697587112720" at="45,5,46,18" concept="7" />
       <node id="1741258697587112728" at="51,72,52,204" concept="7" />
-      <node id="1741258697587112723" at="56,92,57,202" concept="7" />
-      <node id="1741258697587112723" at="61,86,62,140" concept="7" />
+      <node id="1741258697587112723" at="56,92,57,164" concept="7" />
+      <node id="1741258697587112723" at="61,86,62,102" concept="7" />
       <node id="1741258697587112723" at="66,0,67,0" concept="3" trace="_context" />
       <node id="1741258697587112723" at="68,57,69,29" concept="2" />
       <node id="1741258697587112738" at="74,52,75,25" concept="7" />
@@ -274,10 +274,10 @@
       <node id="1741258697587112720" at="39,0,48,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <node id="1741258697587112723" at="78,0,89,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
       <scope id="1741258697587112720" at="35,67,36,63" />
-      <scope id="1741258697587112720" at="43,137,44,90" />
+      <scope id="1741258697587112720" at="43,137,44,71" />
       <scope id="1741258697587112727" at="51,72,52,204" />
-      <scope id="1741258697587112723" at="56,92,57,202" />
-      <scope id="1741258697587112723" at="61,86,62,140" />
+      <scope id="1741258697587112723" at="56,92,57,164" />
+      <scope id="1741258697587112723" at="61,86,62,102" />
       <scope id="1741258697587112723" at="68,57,69,29" />
       <scope id="1741258697587112737" at="74,52,75,25" />
       <scope id="1741258697587112752" at="81,34,82,368" />
@@ -310,9 +310,9 @@
       <scope id="1741258697587112723" at="78,0,89,0">
         <var name="pattern" id="1741258697587112723" />
       </scope>
-      <unit id="1741258697587112723" at="65,0,92,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms_ext_3$TransformationMenuPart_Group_z56g1d_a0$TransformationMenuPart_Action_z56g1d_a0a$Item" />
-      <unit id="1741258697587112723" at="59,0,93,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms_ext_3$TransformationMenuPart_Group_z56g1d_a0$TransformationMenuPart_Action_z56g1d_a0a" />
-      <unit id="1741258697587112723" at="49,0,94,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms_ext_3$TransformationMenuPart_Group_z56g1d_a0" />
+      <unit id="1741258697587112723" at="65,0,92,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms_ext_3$TMP_Group_z56g1d_a0$TMP_Action_z56g1d_a0a$Item" />
+      <unit id="1741258697587112723" at="59,0,93,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms_ext_3$TMP_Group_z56g1d_a0$TMP_Action_z56g1d_a0a" />
+      <unit id="1741258697587112723" at="49,0,94,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms_ext_3$TMP_Group_z56g1d_a0" />
       <unit id="1741258697587112720" at="32,0,95,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms_ext_3" />
     </file>
   </root>
@@ -321,11 +321,11 @@
       <node id="1741258697587112799" at="33,0,34,0" concept="3" trace="myLocations" />
       <node id="1741258697587112799" at="35,67,36,63" concept="7" />
       <node id="1741258697587112799" at="41,124,42,156" concept="6" />
-      <node id="1741258697587112799" at="43,138,44,84" concept="2" />
+      <node id="1741258697587112799" at="43,138,44,65" concept="2" />
       <node id="1741258697587112799" at="45,5,46,18" concept="7" />
       <node id="1741258697587112807" at="51,72,52,204" concept="7" />
-      <node id="1741258697587112802" at="56,92,57,196" concept="7" />
-      <node id="1741258697587112802" at="61,86,62,134" concept="7" />
+      <node id="1741258697587112802" at="56,92,57,158" concept="7" />
+      <node id="1741258697587112802" at="61,86,62,96" concept="7" />
       <node id="1741258697587112802" at="66,0,67,0" concept="3" trace="_context" />
       <node id="1741258697587112802" at="68,57,69,29" concept="2" />
       <node id="1741258697587112817" at="74,52,75,25" concept="7" />
@@ -346,10 +346,10 @@
       <node id="1741258697587112799" at="39,0,48,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <node id="1741258697587112802" at="78,0,89,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
       <scope id="1741258697587112799" at="35,67,36,63" />
-      <scope id="1741258697587112799" at="43,138,44,84" />
+      <scope id="1741258697587112799" at="43,138,44,65" />
       <scope id="1741258697587112806" at="51,72,52,204" />
-      <scope id="1741258697587112802" at="56,92,57,196" />
-      <scope id="1741258697587112802" at="61,86,62,134" />
+      <scope id="1741258697587112802" at="56,92,57,158" />
+      <scope id="1741258697587112802" at="61,86,62,96" />
       <scope id="1741258697587112802" at="68,57,69,29" />
       <scope id="1741258697587112816" at="74,52,75,25" />
       <scope id="1741258697587112831" at="81,34,82,368" />
@@ -382,9 +382,9 @@
       <scope id="1741258697587112802" at="78,0,89,0">
         <var name="pattern" id="1741258697587112802" />
       </scope>
-      <unit id="1741258697587112802" at="65,0,92,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms$TransformationMenuPart_Group_osxjd2_a0$TransformationMenuPart_Action_osxjd2_a0a$Item" />
-      <unit id="1741258697587112802" at="59,0,93,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms$TransformationMenuPart_Group_osxjd2_a0$TransformationMenuPart_Action_osxjd2_a0a" />
-      <unit id="1741258697587112802" at="49,0,94,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms$TransformationMenuPart_Group_osxjd2_a0" />
+      <unit id="1741258697587112802" at="65,0,92,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms$TMP_Group_osxjd2_a0$TMP_Action_osxjd2_a0a$Item" />
+      <unit id="1741258697587112802" at="59,0,93,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms$TMP_Group_osxjd2_a0$TMP_Action_osxjd2_a0a" />
+      <unit id="1741258697587112802" at="49,0,94,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms$TMP_Group_osxjd2_a0" />
       <unit id="1741258697587112799" at="32,0,95,0" name="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms" />
     </file>
   </root>
@@ -394,10 +394,10 @@
       <node id="1741258697587186486" at="29,0,30,0" concept="3" trace="myLocations" />
       <node id="1741258697587186486" at="31,67,32,63" concept="7" />
       <node id="1741258697587186486" at="37,124,38,156" concept="6" />
-      <node id="1741258697587186486" at="39,138,40,93" concept="2" />
+      <node id="1741258697587186486" at="39,138,40,74" concept="2" />
       <node id="1741258697587186486" at="41,5,42,18" concept="7" />
       <node id="1741258697587186495" at="47,72,48,430" concept="7" />
-      <node id="1741258697587186490" at="52,92,53,210" concept="7" />
+      <node id="1741258697587186490" at="52,92,53,168" concept="7" />
       <node id="1741258697587186511" at="58,67,59,61" concept="7" />
       <node id="1741258697587186486" at="26,0,29,0" concept="1" trace="NoWaitTransforms_Contribution#()V" />
       <node id="1741258697587186486" at="38,156,41,5" concept="4" />
@@ -408,9 +408,9 @@
       <node id="1741258697587186486" at="35,0,44,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587186486" at="26,42,27,16" />
       <scope id="1741258697587186486" at="31,67,32,63" />
-      <scope id="1741258697587186486" at="39,138,40,93" />
+      <scope id="1741258697587186486" at="39,138,40,74" />
       <scope id="1741258697587186494" at="47,72,48,430" />
-      <scope id="1741258697587186490" at="52,92,53,210" />
+      <scope id="1741258697587186490" at="52,92,53,168" />
       <scope id="1741258697587186510" at="58,67,59,61" />
       <scope id="1741258697587186486" at="26,0,29,0" />
       <scope id="1741258697587186486" at="30,0,34,0">
@@ -429,8 +429,8 @@
       <scope id="1741258697587186486" at="35,0,44,0">
         <var name="_context" id="1741258697587186486" />
       </scope>
-      <unit id="1741258697587186490" at="55,0,63,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_Contribution$TransformationMenuPart_Group_uv3amh_a0$TransformationMenuPart_IncludeMenu_uv3amh_a0a" />
-      <unit id="1741258697587186490" at="45,0,64,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_Contribution$TransformationMenuPart_Group_uv3amh_a0" />
+      <unit id="1741258697587186490" at="55,0,63,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_Contribution$TMP_Group_uv3amh_a0$TMP_Include_uv3amh_a0a" />
+      <unit id="1741258697587186490" at="45,0,64,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_Contribution$TMP_Group_uv3amh_a0" />
       <unit id="1741258697587186486" at="25,0,65,0" name="org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_Contribution" />
     </file>
   </root>

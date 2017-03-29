@@ -241,6 +241,9 @@
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
+      <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
+        <property id="1200397540847" name="charConstant" index="1XhdNS" />
+      </concept>
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
         <child id="1201186121363" name="typeParameter" index="2Ghqu4" />
@@ -270,11 +273,10 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -808,14 +810,13 @@
                   <property role="3SKdUp" value="todo: !" />
                 </node>
               </node>
-              <node concept="34ab3g" id="3AvdXZVoSsO" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="37vLTw" id="7t1q1UzvCMy" role="34bMjA">
-                  <ref role="3cqZAo" node="3AvdXZVoIb_" resolve="e" />
-                </node>
-                <node concept="Xl_RD" id="3AvdXZVoSsQ" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB37p3" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="Xl_RD" id="3AvdXZVoSsQ" role="RRSoy">
                   <property role="Xl_RC" value="Cannot create runtime / sandbox module" />
+                </node>
+                <node concept="37vLTw" id="7t1q1UzvCMy" role="RRSow">
+                  <ref role="3cqZAo" node="3AvdXZVoIb_" resolve="e" />
                 </node>
               </node>
             </node>
@@ -1170,6 +1171,43 @@
                               </node>
                               <node concept="liA8E" id="4BlK4j80CZb" role="2OqNvi">
                                 <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="6bOnpI4ApKk" role="3cqZAp">
+                        <node concept="1rXfSq" id="6bOnpI4ApKm" role="3clFbG">
+                          <ref role="37wK5l" node="6lh55E2DHFo" resolve="setNewIdAndTimestamp" />
+                          <node concept="37vLTw" id="6bOnpI4ApSS" role="37wK5m">
+                            <ref role="3cqZAo" node="4BlK4j80BFe" resolve="gd" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="6bOnpI4AtCK" role="3cqZAp">
+                        <node concept="3SKdUq" id="6bOnpI4AtCM" role="3SKWNk">
+                          <property role="3SKdUp" value="copied from Generator.generateGeneratorUID(Language sourceLanguage), I got no language instance here" />
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="6bOnpI4Ap8i" role="3cqZAp">
+                        <node concept="2OqwBi" id="6bOnpI4Apkv" role="3clFbG">
+                          <node concept="37vLTw" id="6bOnpI4Ap8g" role="2Oq$k0">
+                            <ref role="3cqZAo" node="4BlK4j80BFe" resolve="gd" />
+                          </node>
+                          <node concept="liA8E" id="6bOnpI4ApCe" role="2OqNvi">
+                            <ref role="37wK5l" to="w0gx:~ModuleDescriptor.setNamespace(java.lang.String):void" resolve="setNamespace" />
+                            <node concept="3cpWs3" id="6bOnpI4Asxv" role="37wK5m">
+                              <node concept="2YIFZM" id="6bOnpI4At88" role="3uHU7w">
+                                <ref role="37wK5l" to="w1kc:~SModel.generateUniqueId():jetbrains.mps.smodel.SNodeId" resolve="generateUniqueId" />
+                                <ref role="1Pybhc" to="w1kc:~SModel" resolve="SModel" />
+                              </node>
+                              <node concept="3cpWs3" id="6bOnpI4Aq_K" role="3uHU7B">
+                                <node concept="37vLTw" id="6bOnpI4Aq8I" role="3uHU7B">
+                                  <ref role="3cqZAo" node="6CFNGGphKi4" resolve="myNewName" />
+                                </node>
+                                <node concept="1Xhbcc" id="6bOnpI4AqIV" role="3uHU7w">
+                                  <property role="1XhdNS" value="#" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -2065,25 +2103,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="6CFNGGphKnU" role="3clF47">
-        <node concept="3clFbF" id="6lh55E2DIQr" role="3cqZAp">
-          <node concept="1rXfSq" id="6lh55E2DIQp" role="3clFbG">
-            <ref role="37wK5l" node="6lh55E2DHFo" resolve="setNewIdAndTimestamp" />
-            <node concept="37vLTw" id="6lh55E2DIWE" role="37wK5m">
-              <ref role="3cqZAo" node="6CFNGGphKnR" resolve="genDescriptor" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6CFNGGphKnV" role="3cqZAp">
-          <node concept="2OqwBi" id="6CFNGGphKnW" role="3clFbG">
-            <node concept="37vLTw" id="6CFNGGphKnX" role="2Oq$k0">
-              <ref role="3cqZAo" node="6CFNGGphKnR" resolve="genDescriptor" />
-            </node>
-            <node concept="liA8E" id="6CFNGGphKnY" role="2OqNvi">
-              <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.setGeneratorUID(java.lang.String):void" resolve="setGeneratorUID" />
-              <node concept="10Nm6u" id="6lh55E2DDt_" role="37wK5m" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="7NdrMPxJ4FB" role="3cqZAp">
           <node concept="3cpWsn" id="7NdrMPxJ4FC" role="3cpWs9">
             <property role="TrG5h" value="outputPath" />
@@ -3139,6 +3158,26 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="7l6b$KxsWq3" role="3clF47">
+        <node concept="3clFbJ" id="5ueUq782lER" role="3cqZAp">
+          <node concept="3clFbS" id="5ueUq782lET" role="3clFbx">
+            <node concept="3SKdUt" id="5ueUq782p00" role="3cqZAp">
+              <node concept="3SKdUq" id="5ueUq782p02" role="3SKWNk">
+                <property role="3SKdUp" value="Do not handle this case since packaged module may not contain it sources" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="5ueUq782nic" role="3cqZAp">
+              <node concept="10Nm6u" id="5ueUq782nma" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="5ueUq782mPs" role="3clFbw">
+            <node concept="37vLTw" id="5ueUq782mAR" role="2Oq$k0">
+              <ref role="3cqZAo" node="7l6b$KxsUru" resolve="myOriginal" />
+            </node>
+            <node concept="liA8E" id="5ueUq782n6B" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~AbstractModule.isPackaged():boolean" resolve="isPackaged" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="6CFNGGphPe1" role="3cqZAp">
           <node concept="3cpWsn" id="6CFNGGphPe0" role="3cpWs9">
             <property role="3TUv4t" value="false" />
@@ -3545,10 +3584,9 @@
             </node>
           </node>
         </node>
-        <node concept="34ab3g" id="7NdrMPxIVEW" role="3cqZAp">
-          <property role="35gtTG" value="error" />
-          <property role="34fQS0" value="true" />
-          <node concept="2OqwBi" id="2Mi1qAh_fD" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB35pL" role="3cqZAp">
+          <property role="RRSoG" value="error" />
+          <node concept="2OqwBi" id="2Mi1qAh_fD" role="RRSoy">
             <node concept="37vLTw" id="2Mi1qAh_1g" role="2Oq$k0">
               <ref role="3cqZAo" node="7NdrMPxIVFc" resolve="e" />
             </node>
@@ -3556,7 +3594,7 @@
               <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
             </node>
           </node>
-          <node concept="37vLTw" id="7NdrMPxIVFh" role="34bMjA">
+          <node concept="37vLTw" id="7NdrMPxIVFh" role="RRSow">
             <ref role="3cqZAo" node="7NdrMPxIVFc" resolve="e" />
           </node>
         </node>

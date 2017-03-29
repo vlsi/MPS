@@ -46,7 +46,7 @@ public class EclipseJavaCompilerTest extends CoreMpsTest {
   @BeforeClass
   public static void setUp() {
     ourProject = openProject(PROJECT_PATH);
-    ourSolution = getSolution("TestCompileSolution");
+    ourSolution = getSolution(ourProject, "TestCompileSolution");
   }
 
   @AfterClass

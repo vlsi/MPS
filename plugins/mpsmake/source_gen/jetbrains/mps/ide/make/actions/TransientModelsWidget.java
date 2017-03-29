@@ -27,8 +27,8 @@ import java.beans.PropertyChangeEvent;
   public static final String WIDGET_ID = "TransientModelsWidget";
   @NotNull
   private final StatusBar myStatusBar;
-  private final Icon myIcon = MPSIcons.Nodes.TransientModels;
-  private final Icon myIconDisable = MPSIcons.Nodes.TransientModelsDisable;
+  private final Icon myIcon = MPSIcons.Nodes.TransientModule;
+  private final Icon myIconDisable = MPSIcons.Nodes.TransientModuleDisabled;
   private final IModifiableGenerationSettings myGenerationSettins;
   private TransientModelsPanel myComponent;
   private KeyboardFocusManager myFocusManager;

@@ -24,6 +24,7 @@ import java.util.Collection;
 import java.util.Arrays;
 
 public class RefactoringUtil {
+  private static final Logger LOG_1635700302 = LogManager.getLogger(RefactoringUtil.class);
   private static final Logger LOG = LogManager.getLogger(RefactoringUtil.class);
   public RefactoringUtil() {
   }
@@ -43,7 +44,6 @@ public class RefactoringUtil {
     }
     return allRefactorings;
   }
-  protected static Logger LOG_1635700302 = LogManager.getLogger(RefactoringUtil.class);
   public static Set<IRefactoring> getRefactorings(Language language) {
     Set<IRefactoring> result = new HashSet<IRefactoring>();
     SModel refModelDescriptor = SModuleOperations.getAspect(language, "refactorings");

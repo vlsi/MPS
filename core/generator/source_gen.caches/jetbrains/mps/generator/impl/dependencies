@@ -43,11 +43,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
   <dependency className="jetbrains.mps.generator.impl.GenPlanTranslator" file="GenPlanTranslator.java">
+    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationPlanBuilder" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.plan.CheckpointIdentity" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.plan.PlanIdentity" />
+    <classNode dependClassName="jetbrains.mps.generator.plan.CheckpointIdentity" />
+    <classNode dependClassName="jetbrains.mps.generator.plan.PlanIdentity" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

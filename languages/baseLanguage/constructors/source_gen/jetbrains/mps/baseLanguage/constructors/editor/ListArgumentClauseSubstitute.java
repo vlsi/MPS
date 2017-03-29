@@ -26,10 +26,10 @@ public class ListArgumentClauseSubstitute extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ListArgumentClauseSubstitute.SubstituteMenuPart_Group_fp1u36_a());
+    result.add(new ListArgumentClauseSubstitute.SMP_Group_fp1u36_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_fp1u36_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_fp1u36_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       if (SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x7500da2cf0943c2L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor"))) {
@@ -40,14 +40,14 @@ public class ListArgumentClauseSubstitute extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ListArgumentClauseSubstitute.SubstituteMenuPart_Group_fp1u36_a.SubstituteMenuPart_Action_fp1u36_a0(), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6b9L, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ListArgumentClauseSubstitute.SMP_Group_fp1u36_a.SMP_Action_fp1u36_a0(), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6b9L, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause")));
     }
-    private class SubstituteMenuPart_Action_fp1u36_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_fp1u36_a0 extends SingleItemSubstituteMenuPart {
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new ListArgumentClauseSubstitute.SubstituteMenuPart_Group_fp1u36_a.SubstituteMenuPart_Action_fp1u36_a0.Item(_context);
+        return new ListArgumentClauseSubstitute.SMP_Group_fp1u36_a.SMP_Action_fp1u36_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

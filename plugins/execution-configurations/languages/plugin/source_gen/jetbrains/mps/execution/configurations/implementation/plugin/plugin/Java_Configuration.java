@@ -4,6 +4,8 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,8 +28,6 @@ import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.execution.actions.ConfigurationContext;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
@@ -50,6 +50,7 @@ import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class Java_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
+  private static final Logger LOG = LogManager.getLogger(Java_Configuration.class);
   @NotNull
   private Java_Configuration.MyState myState = new Java_Configuration.MyState();
   private NodeBySeveralConcepts_Configuration myNode = new NodeBySeveralConcepts_Configuration(ListSequence.fromListAndArray(new ArrayList<NodesDescriptor>(), new NodesDescriptor(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
@@ -93,7 +94,6 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       element.addContent(fieldElement);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(Java_Configuration.class);
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {

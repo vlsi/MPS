@@ -37,12 +37,12 @@ public class add_moduleLocationAndFlags_BuildMps_Module_ext_4 extends Transforma
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new add_moduleLocationAndFlags_BuildMps_Module_ext_4.TransformationMenuPart_Group_j2ah5k_a0());
+      result.add(new add_moduleLocationAndFlags_BuildMps_Module_ext_4.TMP_Group_j2ah5k_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_j2ah5k_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_j2ah5k_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x14d3fb6fb84ac614L, "doNotCompile")));
@@ -50,12 +50,12 @@ public class add_moduleLocationAndFlags_BuildMps_Module_ext_4 extends Transforma
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_moduleLocationAndFlags_BuildMps_Module_ext_4.TransformationMenuPart_Group_j2ah5k_a0.TransformationMenuPart_Action_j2ah5k_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_moduleLocationAndFlags_BuildMps_Module_ext_4.TMP_Group_j2ah5k_a0.TMP_Action_j2ah5k_a0a());
     }
-    private class TransformationMenuPart_Action_j2ah5k_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_j2ah5k_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new add_moduleLocationAndFlags_BuildMps_Module_ext_4.TransformationMenuPart_Group_j2ah5k_a0.TransformationMenuPart_Action_j2ah5k_a0a.Item(context);
+        return new add_moduleLocationAndFlags_BuildMps_Module_ext_4.TMP_Group_j2ah5k_a0.TMP_Action_j2ah5k_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

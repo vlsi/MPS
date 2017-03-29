@@ -55,9 +55,9 @@ public class ClassLoadingDescriptorChangedTest extends CoreMpsTest {
    */
   @Test
   public void testClassLoadingDescriptorChanged() {
-    final Language language1 = getLanguage("L1");
+    final Language language1 = getLanguage(myProject, "L1");
     assert language1 != null;
-    final Language language2 = getLanguage("L2");
+    final Language language2 = getLanguage(myProject, "L2");
     assert language2 != null;
     Generator generator1 = new TakeGenerator(language1).get();
     performCheck(generator1);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.ModelGenerationPlan.Step;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
-import jetbrains.mps.generator.impl.plan.PlanIdentity;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -81,11 +80,6 @@ final class GenPlanActiveStep {
   @Nullable
   public TemplateModel getTemplateModel(SModelReference modelReference) {
     return myModelMap.get(modelReference);
-  }
-
-  public PlanIdentity getPlanIdentity() {
-    // XXX perhaps, shall return MGP and let callers construct PlanIdentity?
-    return new PlanIdentity(myPlan);
   }
 
   @Nullable

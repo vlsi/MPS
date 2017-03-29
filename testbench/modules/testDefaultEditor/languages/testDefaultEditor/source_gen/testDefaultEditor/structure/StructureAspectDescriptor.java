@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractChild = createDescriptorForAbstractChild();
   /*package*/ final ConceptDescriptor myConceptAbstractDeveloper = createDescriptorForAbstractDeveloper();
+  /*package*/ final ConceptDescriptor myConceptBaseChild = createDescriptorForBaseChild();
   /*package*/ final ConceptDescriptor myConceptCanvas = createDescriptorForCanvas();
   /*package*/ final ConceptDescriptor myConceptCompany = createDescriptorForCompany();
   /*package*/ final ConceptDescriptor myConceptConcreteChild = createDescriptorForConcreteChild();
@@ -25,7 +26,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDummyMethod = createDescriptorForDummyMethod();
   /*package*/ final ConceptDescriptor myConceptFriend = createDescriptorForFriend();
   /*package*/ final ConceptDescriptor myConceptIConcreteChild = createDescriptorForIConcreteChild();
-  /*package*/ final ConceptDescriptor myConceptIParent = createDescriptorForIParent();
+  /*package*/ final ConceptDescriptor myConceptInterfaceChild = createDescriptorForInterfaceChild();
   /*package*/ final ConceptDescriptor myConceptNotSubstitutableDeveloper = createDescriptorForNotSubstitutableDeveloper();
   /*package*/ final ConceptDescriptor myConceptParent = createDescriptorForParent();
   /*package*/ final ConceptDescriptor myConceptShape = createDescriptorForShape();
@@ -38,7 +39,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractChild, myConceptAbstractDeveloper, myConceptCanvas, myConceptCompany, myConceptConcreteChild, myConceptContainer, myConceptDefaultNodeAttribute, myConceptDefaultPropertyAttribute, myConceptDefaultReferenceAttribute, myConceptDeveloper, myConceptDummyMethod, myConceptFriend, myConceptIConcreteChild, myConceptIParent, myConceptNotSubstitutableDeveloper, myConceptParent, myConceptShape, myConceptTeam);
+    return Arrays.asList(myConceptAbstractChild, myConceptAbstractDeveloper, myConceptBaseChild, myConceptCanvas, myConceptCompany, myConceptConcreteChild, myConceptContainer, myConceptDefaultNodeAttribute, myConceptDefaultPropertyAttribute, myConceptDefaultReferenceAttribute, myConceptDeveloper, myConceptDummyMethod, myConceptFriend, myConceptIConcreteChild, myConceptInterfaceChild, myConceptNotSubstitutableDeveloper, myConceptParent, myConceptShape, myConceptTeam);
   }
 
   @Override
@@ -49,6 +50,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptAbstractChild;
       case LanguageConceptSwitch.AbstractDeveloper:
         return myConceptAbstractDeveloper;
+      case LanguageConceptSwitch.BaseChild:
+        return myConceptBaseChild;
       case LanguageConceptSwitch.Canvas:
         return myConceptCanvas;
       case LanguageConceptSwitch.Company:
@@ -71,8 +74,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptFriend;
       case LanguageConceptSwitch.IConcreteChild:
         return myConceptIConcreteChild;
-      case LanguageConceptSwitch.IParent:
-        return myConceptIParent;
+      case LanguageConceptSwitch.InterfaceChild:
+        return myConceptInterfaceChild;
       case LanguageConceptSwitch.NotSubstitutableDeveloper:
         return myConceptNotSubstitutableDeveloper;
       case LanguageConceptSwitch.Parent:
@@ -91,9 +94,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForAbstractChild() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testDefaultEditor", "AbstractChild", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x77c1a85c9f845583L);
-    b.class_(false, false, false);
-    b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/8629363476785288579");
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testDefaultEditor", "AbstractChild", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x39b86dbfcead76d6L);
+    b.class_(false, true, false);
+    b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/4159194926450308822");
+    b.prop("name", 0x3620abce1450f403L, "3900306178895311875");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForAbstractDeveloper() {
@@ -101,6 +105,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/472942194665384072");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForBaseChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testDefaultEditor", "BaseChild", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x77c1a85c9f845583L);
+    b.class_(false, false, false);
+    b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/8629363476785288579");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCanvas() {
@@ -121,7 +131,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForConcreteChild() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testDefaultEditor", "ConcreteChild", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x77c1a85c9f851487L);
     b.class_(false, false, false);
-    b.super_("testDefaultEditor.structure.AbstractChild", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x77c1a85c9f845583L);
+    b.super_("testDefaultEditor.structure.BaseChild", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x77c1a85c9f845583L);
     b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/8629363476785337479");
     return b.create();
   }
@@ -190,8 +200,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/2943053183528182793");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForIParent() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testDefaultEditor", "IParent", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x28d7d3470747a408L);
+  private static ConceptDescriptor createDescriptorForInterfaceChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testDefaultEditor", "InterfaceChild", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x28d7d3470747a408L);
     b.interface_();
     b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/2943053183528182792");
     return b.create();
@@ -210,6 +220,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/8629363476785288578");
     b.aggregate("child", 0x77c1a85c9f845587L).target(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x77c1a85c9f845583L).optional(false).ordered(true).multiple(false).origin("8629363476785288583").done();
     b.aggregate("interfaceChild", 0x28d7d3470747ae04L).target(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x28d7d3470747a408L).optional(false).ordered(true).multiple(false).origin("2943053183528185348").done();
+    b.aggregate("optionalAbstractChild", 0x39b86dbfcead23bcL).target(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x39b86dbfcead76d6L).optional(true).ordered(true).multiple(false).origin("4159194926450287548").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForShape() {

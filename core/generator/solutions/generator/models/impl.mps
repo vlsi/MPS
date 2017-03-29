@@ -33,7 +33,7 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="av9" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.cache(MPS.Core/)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
-    <import index="tft2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.plan(MPS.Core/)" />
+    <import index="cgca" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.plan(MPS.Core/)" />
     <import index="tp2b" ref="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -353,6 +353,7 @@
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
         <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
       </concept>
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -7225,8 +7226,8 @@
       <property role="TrG5h" value="myPlanIdentity" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="1UVrAZQpeAL" role="1B3o_S" />
-      <node concept="3uibUv" id="1UVrAZQpgcM" role="1tU5fm">
-        <ref role="3uigEE" to="tft2:~PlanIdentity" resolve="PlanIdentity" />
+      <node concept="3uibUv" id="6jZAaWYYm$Z" role="1tU5fm">
+        <ref role="3uigEE" to="cgca:~PlanIdentity" resolve="PlanIdentity" />
       </node>
     </node>
     <node concept="2tJIrI" id="1UVrAZQpd2b" role="jymVt" />
@@ -7248,7 +7249,7 @@
           <node concept="37vLTI" id="1UVrAZQp9_4" role="3clFbG">
             <node concept="2ShNRf" id="1UVrAZQna0_" role="37vLTx">
               <node concept="1pGfFk" id="1UVrAZQnapX" role="2ShVmc">
-                <ref role="37wK5l" to="tft2:~PlanIdentity.&lt;init&gt;(java.lang.String)" resolve="PlanIdentity" />
+                <ref role="37wK5l" to="cgca:~PlanIdentity.&lt;init&gt;(java.lang.String)" resolve="PlanIdentity" />
                 <node concept="2OqwBi" id="1UVrAZQnaCL" role="37wK5m">
                   <node concept="37vLTw" id="1UVrAZQnaqX" role="2Oq$k0">
                     <ref role="3cqZAo" node="1UVrAZQmUqz" resolve="myPlanDeclaration" />
@@ -7291,7 +7292,7 @@
       </node>
       <node concept="3Tm1VV" id="1UVrAZQp6rg" role="1B3o_S" />
       <node concept="3uibUv" id="1UVrAZQp7ZR" role="3clF45">
-        <ref role="3uigEE" to="tft2:~PlanIdentity" resolve="PlanIdentity" />
+        <ref role="3uigEE" to="cgca:~PlanIdentity" resolve="PlanIdentity" />
       </node>
     </node>
     <node concept="2tJIrI" id="1UVrAZQmUxz" role="jymVt" />
@@ -7351,26 +7352,21 @@
                       <ref role="3cqZAo" node="1UVrAZQmUB_" resolve="planBuilder" />
                     </node>
                     <node concept="liA8E" id="1UVrAZQn2VU" role="2OqNvi">
-                      <ref role="37wK5l" to="ap4t:~GenerationPlanBuilder.recordCheckpoint(jetbrains.mps.generator.impl.plan.CheckpointIdentity):void" resolve="recordCheckpoint" />
-                      <node concept="2ShNRf" id="1UVrAZQn2WK" role="37wK5m">
-                        <node concept="1pGfFk" id="1UVrAZQn5hK" role="2ShVmc">
-                          <ref role="37wK5l" to="tft2:~CheckpointIdentity.&lt;init&gt;(jetbrains.mps.generator.impl.plan.PlanIdentity,java.lang.String)" resolve="CheckpointIdentity" />
-                          <node concept="37vLTw" id="1UVrAZQpl3R" role="37wK5m">
-                            <ref role="3cqZAo" node="1UVrAZQpeAK" resolve="myPlanIdentity" />
+                      <ref role="37wK5l" to="ap4t:~GenerationPlanBuilder.recordCheckpoint(jetbrains.mps.generator.plan.CheckpointIdentity):void" resolve="recordCheckpoint" />
+                      <node concept="1rXfSq" id="274NGw8PKDM" role="37wK5m">
+                        <ref role="37wK5l" node="274NGw8PHc0" resolve="cpIdentity" />
+                        <node concept="2OqwBi" id="274NGw8PLdd" role="37wK5m">
+                          <node concept="1PxgMI" id="274NGw8PL1l" role="2Oq$k0">
+                            <property role="1BlNFB" value="true" />
+                            <node concept="chp4Y" id="274NGw8PL3S" role="3oSUPX">
+                              <ref role="cht4Q" to="bjdw:1_4co2y1Lw1" resolve="Checkpoint" />
+                            </node>
+                            <node concept="37vLTw" id="274NGw8PKG$" role="1m5AlR">
+                              <ref role="3cqZAo" node="1UVrAZQmVl7" resolve="stepNode" />
+                            </node>
                           </node>
-                          <node concept="2OqwBi" id="1UVrAZQmViN" role="37wK5m">
-                            <node concept="1PxgMI" id="1UVrAZQmViO" role="2Oq$k0">
-                              <property role="1BlNFB" value="true" />
-                              <node concept="37vLTw" id="1UVrAZQmViP" role="1m5AlR">
-                                <ref role="3cqZAo" node="1UVrAZQmVl7" resolve="stepNode" />
-                              </node>
-                              <node concept="chp4Y" id="1UVrAZQmViQ" role="3oSUPX">
-                                <ref role="cht4Q" to="bjdw:1_4co2y1Lw1" resolve="Checkpoint" />
-                              </node>
-                            </node>
-                            <node concept="3TrcHB" id="1UVrAZQmViR" role="2OqNvi">
-                              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                            </node>
+                          <node concept="3TrEf2" id="274NGw8PLo5" role="2OqNvi">
+                            <ref role="3Tt5mk" to="bjdw:3gcO7FHvbbi" resolve="cpSpec" />
                           </node>
                         </node>
                       </node>
@@ -7522,20 +7518,46 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3cpWs8" id="7wteW1QvtdJ" role="3cqZAp">
+                    <node concept="3cpWsn" id="7wteW1QvtdK" role="3cpWs9">
+                      <property role="TrG5h" value="applyGeneratorsStep" />
+                      <node concept="3Tqbb2" id="7wteW1QvtdF" role="1tU5fm">
+                        <ref role="ehGHo" to="bjdw:7c$ruAHVa5L" resolve="ApplyGenerators" />
+                      </node>
+                      <node concept="1PxgMI" id="7wteW1QvtdL" role="33vP2m">
+                        <property role="1BlNFB" value="true" />
+                        <node concept="37vLTw" id="7wteW1QvtdM" role="1m5AlR">
+                          <ref role="3cqZAo" node="1UVrAZQmVl7" resolve="stepNode" />
+                        </node>
+                        <node concept="chp4Y" id="7wteW1QvtdN" role="3oSUPX">
+                          <ref role="cht4Q" to="bjdw:7c$ruAHVa5L" resolve="ApplyGenerators" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs8" id="7wteW1QvwrD" role="3cqZAp">
+                    <node concept="3cpWsn" id="7wteW1QvwrE" role="3cpWs9">
+                      <property role="TrG5h" value="withExtended" />
+                      <property role="3TUv4t" value="true" />
+                      <node concept="10P_77" id="7wteW1Qvwrz" role="1tU5fm" />
+                      <node concept="2OqwBi" id="7wteW1QvwrF" role="33vP2m">
+                        <node concept="37vLTw" id="7wteW1QvwrG" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7wteW1QvtdK" resolve="applyGeneratorsStep" />
+                        </node>
+                        <node concept="3TrcHB" id="7wteW1QvwrH" role="2OqNvi">
+                          <ref role="3TsBF5" to="bjdw:KhTgyaupdj" resolve="withExtended" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="2Gpval" id="1UVrAZQmVkd" role="3cqZAp">
                     <node concept="2GrKxI" id="1UVrAZQmVke" role="2Gsz3X">
                       <property role="TrG5h" value="generator" />
                     </node>
                     <node concept="2OqwBi" id="1UVrAZQmVkf" role="2GsD0m">
                       <node concept="2OqwBi" id="1UVrAZQmVkg" role="2Oq$k0">
-                        <node concept="1PxgMI" id="1UVrAZQmVkh" role="2Oq$k0">
-                          <property role="1BlNFB" value="true" />
-                          <node concept="37vLTw" id="1UVrAZQmVki" role="1m5AlR">
-                            <ref role="3cqZAo" node="1UVrAZQmVl7" resolve="stepNode" />
-                          </node>
-                          <node concept="chp4Y" id="1UVrAZQmVkj" role="3oSUPX">
-                            <ref role="cht4Q" to="bjdw:7c$ruAHVa5L" resolve="ApplyGenerators" />
-                          </node>
+                        <node concept="37vLTw" id="7wteW1QvtdO" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7wteW1QvtdK" resolve="applyGeneratorsStep" />
                         </node>
                         <node concept="3Tsc0h" id="1UVrAZQmVkk" role="2OqNvi">
                           <ref role="3TtcxE" to="bjdw:7c$ruAHXqhs" resolve="generator" />
@@ -7627,33 +7649,79 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbF" id="1UVrAZQnPm2" role="3cqZAp">
-                    <node concept="2OqwBi" id="1UVrAZQnPUx" role="3clFbG">
-                      <node concept="37vLTw" id="1UVrAZQnPm0" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1UVrAZQmUB_" resolve="planBuilder" />
-                      </node>
-                      <node concept="liA8E" id="1UVrAZQnYex" role="2OqNvi">
-                        <ref role="37wK5l" to="ap4t:~GenerationPlanBuilder.applyGenerator(org.jetbrains.mps.openapi.module.SModule...):void" resolve="applyGenerator" />
-                        <node concept="2OqwBi" id="1UVrAZQnZex" role="37wK5m">
-                          <node concept="37vLTw" id="1UVrAZQnYfC" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1UVrAZQnv5i" resolve="generators" />
+                  <node concept="3clFbJ" id="7wteW1QvsYF" role="3cqZAp">
+                    <node concept="3clFbS" id="7wteW1QvsYH" role="3clFbx">
+                      <node concept="3clFbF" id="7wteW1Qvv7X" role="3cqZAp">
+                        <node concept="2OqwBi" id="7wteW1QvvcF" role="3clFbG">
+                          <node concept="37vLTw" id="7wteW1Qvv7V" role="2Oq$k0">
+                            <ref role="3cqZAo" node="1UVrAZQmUB_" resolve="planBuilder" />
                           </node>
-                          <node concept="liA8E" id="1UVrAZQo1yN" role="2OqNvi">
-                            <ref role="37wK5l" to="33ny:~ArrayList.toArray(java.lang.Object[]):java.lang.Object[]" resolve="toArray" />
-                            <node concept="2ShNRf" id="1UVrAZQo1KM" role="37wK5m">
-                              <node concept="3$_iS1" id="1UVrAZQo2ky" role="2ShVmc">
-                                <node concept="3$GHV9" id="1UVrAZQo2k$" role="3$GQph">
-                                  <node concept="2OqwBi" id="1UVrAZQo3tj" role="3$I4v7">
-                                    <node concept="37vLTw" id="1UVrAZQo2sC" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="1UVrAZQnv5i" resolve="generators" />
+                          <node concept="liA8E" id="7wteW1Qvvig" role="2OqNvi">
+                            <ref role="37wK5l" to="ap4t:~GenerationPlanBuilder.applyGeneratorWithExtended(org.jetbrains.mps.openapi.module.SModule...):void" resolve="applyGeneratorWithExtended" />
+                            <node concept="2OqwBi" id="1R_onNGRHO2" role="37wK5m">
+                              <node concept="37vLTw" id="1R_onNGRHO3" role="2Oq$k0">
+                                <ref role="3cqZAo" node="1UVrAZQnv5i" resolve="generators" />
+                              </node>
+                              <node concept="liA8E" id="1R_onNGRHO4" role="2OqNvi">
+                                <ref role="37wK5l" to="33ny:~ArrayList.toArray(java.lang.Object[]):java.lang.Object[]" resolve="toArray" />
+                                <node concept="2ShNRf" id="1R_onNGRHO5" role="37wK5m">
+                                  <node concept="3$_iS1" id="1R_onNGRHO6" role="2ShVmc">
+                                    <node concept="3$GHV9" id="1R_onNGRHO7" role="3$GQph">
+                                      <node concept="2OqwBi" id="1R_onNGRHO8" role="3$I4v7">
+                                        <node concept="37vLTw" id="1R_onNGRHO9" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="1UVrAZQnv5i" resolve="generators" />
+                                        </node>
+                                        <node concept="liA8E" id="1R_onNGRHOa" role="2OqNvi">
+                                          <ref role="37wK5l" to="33ny:~ArrayList.size():int" resolve="size" />
+                                        </node>
+                                      </node>
                                     </node>
-                                    <node concept="liA8E" id="1UVrAZQo4DK" role="2OqNvi">
-                                      <ref role="37wK5l" to="33ny:~ArrayList.size():int" resolve="size" />
+                                    <node concept="3uibUv" id="1R_onNGRHOb" role="3$_nBY">
+                                      <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
                                     </node>
                                   </node>
                                 </node>
-                                <node concept="3uibUv" id="1UVrAZQo2hY" role="3$_nBY">
-                                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="7wteW1Qvxmt" role="3clFbw">
+                      <ref role="3cqZAo" node="7wteW1QvwrE" resolve="withExtended" />
+                    </node>
+                    <node concept="9aQIb" id="1R_onNGRG75" role="9aQIa">
+                      <node concept="3clFbS" id="1R_onNGRG76" role="9aQI4">
+                        <node concept="3clFbF" id="1UVrAZQnPm2" role="3cqZAp">
+                          <node concept="2OqwBi" id="1UVrAZQnPUx" role="3clFbG">
+                            <node concept="37vLTw" id="1UVrAZQnPm0" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1UVrAZQmUB_" resolve="planBuilder" />
+                            </node>
+                            <node concept="liA8E" id="1UVrAZQnYex" role="2OqNvi">
+                              <ref role="37wK5l" to="ap4t:~GenerationPlanBuilder.applyGenerator(org.jetbrains.mps.openapi.module.SModule...):void" resolve="applyGenerator" />
+                              <node concept="2OqwBi" id="1UVrAZQnZex" role="37wK5m">
+                                <node concept="37vLTw" id="1UVrAZQnYfC" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="1UVrAZQnv5i" resolve="generators" />
+                                </node>
+                                <node concept="liA8E" id="1UVrAZQo1yN" role="2OqNvi">
+                                  <ref role="37wK5l" to="33ny:~ArrayList.toArray(java.lang.Object[]):java.lang.Object[]" resolve="toArray" />
+                                  <node concept="2ShNRf" id="1UVrAZQo1KM" role="37wK5m">
+                                    <node concept="3$_iS1" id="1UVrAZQo2ky" role="2ShVmc">
+                                      <node concept="3$GHV9" id="1UVrAZQo2k$" role="3$GQph">
+                                        <node concept="2OqwBi" id="1UVrAZQo3tj" role="3$I4v7">
+                                          <node concept="37vLTw" id="1UVrAZQo2sC" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="1UVrAZQnv5i" resolve="generators" />
+                                          </node>
+                                          <node concept="liA8E" id="1UVrAZQo4DK" role="2OqNvi">
+                                            <ref role="37wK5l" to="33ny:~ArrayList.size():int" resolve="size" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="3uibUv" id="1UVrAZQo2hY" role="3$_nBY">
+                                        <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                                      </node>
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
@@ -7669,6 +7737,104 @@
                       </node>
                       <node concept="liA8E" id="1UVrAZQo7Iv" role="2OqNvi">
                         <ref role="37wK5l" to="33ny:~ArrayList.clear():void" resolve="clear" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="7wteW1QvknF" role="3eNLev">
+                <node concept="2OqwBi" id="7wteW1QvkXv" role="3eO9$A">
+                  <node concept="37vLTw" id="7wteW1QvkQ4" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1UVrAZQmVl7" resolve="stepNode" />
+                  </node>
+                  <node concept="1mIQ4w" id="7wteW1Qvl93" role="2OqNvi">
+                    <node concept="chp4Y" id="7wteW1Qvl9w" role="cj9EA">
+                      <ref role="cht4Q" to="bjdw:KhTgyaukO7" resolve="CheckpointSynchronization" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="7wteW1QvknH" role="3eOfB_">
+                  <node concept="3clFbF" id="7wteW1Qvlgl" role="3cqZAp">
+                    <node concept="2OqwBi" id="7wteW1Qvlgm" role="3clFbG">
+                      <node concept="37vLTw" id="7wteW1Qvlgn" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1UVrAZQmUB_" resolve="planBuilder" />
+                      </node>
+                      <node concept="liA8E" id="7wteW1Qvlgo" role="2OqNvi">
+                        <ref role="37wK5l" to="ap4t:~GenerationPlanBuilder.synchronizeWithCheckpoint(jetbrains.mps.generator.plan.CheckpointIdentity):void" resolve="synchronizeWithCheckpoint" />
+                        <node concept="1rXfSq" id="274NGw8PMVk" role="37wK5m">
+                          <ref role="37wK5l" node="274NGw8PHc0" resolve="cpIdentity" />
+                          <node concept="2OqwBi" id="7wteW1Qvsfr" role="37wK5m">
+                            <node concept="1PxgMI" id="7wteW1Qvnjc" role="2Oq$k0">
+                              <property role="1BlNFB" value="true" />
+                              <node concept="37vLTw" id="7wteW1Qvnjd" role="1m5AlR">
+                                <ref role="3cqZAo" node="1UVrAZQmVl7" resolve="stepNode" />
+                              </node>
+                              <node concept="chp4Y" id="7wteW1Qvnje" role="3oSUPX">
+                                <ref role="cht4Q" to="bjdw:KhTgyaukO7" resolve="CheckpointSynchronization" />
+                              </node>
+                            </node>
+                            <node concept="3TrEf2" id="274NGw8PBPS" role="2OqNvi">
+                              <ref role="3Tt5mk" to="bjdw:3gcO7FHOx8S" resolve="checkpoint" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="5rmusCvj1dG" role="3eNLev">
+                <node concept="2OqwBi" id="5rmusCvj1Qh" role="3eO9$A">
+                  <node concept="37vLTw" id="5rmusCvj1J4" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1UVrAZQmVl7" resolve="stepNode" />
+                  </node>
+                  <node concept="1mIQ4w" id="5rmusCvj21S" role="2OqNvi">
+                    <node concept="chp4Y" id="5rmusCvj246" role="cj9EA">
+                      <ref role="cht4Q" to="bjdw:5rmusCviPfe" resolve="CheckpointDeclaration" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="5rmusCvj1dI" role="3eOfB_">
+                  <node concept="3cpWs8" id="5rmusCvj2PZ" role="3cqZAp">
+                    <node concept="3cpWsn" id="5rmusCvj2Q0" role="3cpWs9">
+                      <property role="TrG5h" value="cpDecl" />
+                      <node concept="3Tqbb2" id="5rmusCvj2PY" role="1tU5fm">
+                        <ref role="ehGHo" to="bjdw:5rmusCviPfe" resolve="CheckpointDeclaration" />
+                      </node>
+                      <node concept="1PxgMI" id="5rmusCvj2Q1" role="33vP2m">
+                        <property role="1BlNFB" value="true" />
+                        <node concept="chp4Y" id="5rmusCvj2Q2" role="3oSUPX">
+                          <ref role="cht4Q" to="bjdw:5rmusCviPfe" resolve="CheckpointDeclaration" />
+                        </node>
+                        <node concept="37vLTw" id="5rmusCvj2Q3" role="1m5AlR">
+                          <ref role="3cqZAo" node="1UVrAZQmVl7" resolve="stepNode" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="5rmusCvj2SW" role="3cqZAp">
+                    <node concept="2OqwBi" id="5rmusCvj2Xt" role="3clFbG">
+                      <node concept="37vLTw" id="5rmusCvj2SU" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1UVrAZQmUB_" resolve="planBuilder" />
+                      </node>
+                      <node concept="liA8E" id="5rmusCvj334" role="2OqNvi">
+                        <ref role="37wK5l" to="ap4t:~GenerationPlanBuilder.declareCheckpoint(jetbrains.mps.generator.plan.CheckpointIdentity):void" resolve="declareCheckpoint" />
+                        <node concept="2ShNRf" id="5rmusCvj33W" role="37wK5m">
+                          <node concept="1pGfFk" id="5rmusCvj6fI" role="2ShVmc">
+                            <ref role="37wK5l" to="cgca:~CheckpointIdentity.&lt;init&gt;(jetbrains.mps.generator.plan.PlanIdentity,java.lang.String)" resolve="CheckpointIdentity" />
+                            <node concept="37vLTw" id="5rmusCvj6gN" role="37wK5m">
+                              <ref role="3cqZAo" node="1UVrAZQpeAK" resolve="myPlanIdentity" />
+                            </node>
+                            <node concept="2OqwBi" id="5rmusCvj6xl" role="37wK5m">
+                              <node concept="37vLTw" id="5rmusCvj6lA" role="2Oq$k0">
+                                <ref role="3cqZAo" node="5rmusCvj2Q0" resolve="cpDecl" />
+                              </node>
+                              <node concept="3TrcHB" id="5rmusCvj6ER" role="2OqNvi">
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -7716,6 +7882,267 @@
         </node>
         <node concept="x79VA" id="1UVrAZQpl1N" role="3nqlJM">
           <property role="x79VB" value="{@code this} for convenience" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="274NGw8PC0w" role="jymVt" />
+    <node concept="3clFb_" id="274NGw8PHc0" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="cpIdentity" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="274NGw8PHc3" role="3clF47">
+        <node concept="3clFbJ" id="274NGw8PNLC" role="3cqZAp">
+          <node concept="3clFbS" id="274NGw8PNLE" role="3clFbx">
+            <node concept="3cpWs6" id="274NGw8POaw" role="3cqZAp">
+              <node concept="2ShNRf" id="274NGw8PPR0" role="3cqZAk">
+                <node concept="1pGfFk" id="274NGw8PV5j" role="2ShVmc">
+                  <ref role="37wK5l" to="cgca:~CheckpointIdentity.&lt;init&gt;(jetbrains.mps.generator.plan.PlanIdentity,java.lang.String)" resolve="CheckpointIdentity" />
+                  <node concept="37vLTw" id="274NGw8PWLW" role="37wK5m">
+                    <ref role="3cqZAo" node="1UVrAZQpeAK" resolve="myPlanIdentity" />
+                  </node>
+                  <node concept="2OqwBi" id="274NGw8Q5NU" role="37wK5m">
+                    <node concept="1PxgMI" id="274NGw8Q29v" role="2Oq$k0">
+                      <property role="1BlNFB" value="true" />
+                      <node concept="chp4Y" id="274NGw8Q3VO" role="3oSUPX">
+                        <ref role="cht4Q" to="bjdw:3gcO7FHva5x" resolve="InPlaceCheckpointSpec" />
+                      </node>
+                      <node concept="37vLTw" id="274NGw8Q0aR" role="1m5AlR">
+                        <ref role="3cqZAo" node="274NGw8PIU7" resolve="cpSpec" />
+                      </node>
+                    </node>
+                    <node concept="3TrcHB" id="274NGw8Q7CO" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="274NGw8PNTH" role="3clFbw">
+            <node concept="37vLTw" id="274NGw8PNMz" role="2Oq$k0">
+              <ref role="3cqZAo" node="274NGw8PIU7" resolve="cpSpec" />
+            </node>
+            <node concept="1mIQ4w" id="274NGw8PO4S" role="2OqNvi">
+              <node concept="chp4Y" id="274NGw8PO70" role="cj9EA">
+                <ref role="cht4Q" to="bjdw:3gcO7FHva5x" resolve="InPlaceCheckpointSpec" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="274NGw8Qb7k" role="3cqZAp">
+          <node concept="3clFbS" id="274NGw8Qb7m" role="3clFbx">
+            <node concept="3cpWs8" id="274NGw8Qkkp" role="3cqZAp">
+              <node concept="3cpWsn" id="274NGw8Qkkq" role="3cpWs9">
+                <property role="TrG5h" value="cpDecl" />
+                <node concept="3Tqbb2" id="274NGw8Qkko" role="1tU5fm">
+                  <ref role="ehGHo" to="bjdw:5rmusCviPfe" resolve="CheckpointDeclaration" />
+                </node>
+                <node concept="2OqwBi" id="274NGw8Qkkr" role="33vP2m">
+                  <node concept="1PxgMI" id="274NGw8Qkks" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="274NGw8Qkkt" role="3oSUPX">
+                      <ref role="cht4Q" to="bjdw:3gcO7FHvbbX" resolve="DeclaredCheckpointSpec" />
+                    </node>
+                    <node concept="37vLTw" id="274NGw8Qkku" role="1m5AlR">
+                      <ref role="3cqZAo" node="274NGw8PIU7" resolve="cpSpec" />
+                    </node>
+                  </node>
+                  <node concept="3TrEf2" id="274NGw8Qkkv" role="2OqNvi">
+                    <ref role="3Tt5mk" to="bjdw:3gcO7FHvbc0" resolve="cpDecl" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="274NGw8QdeQ" role="3cqZAp">
+              <node concept="2ShNRf" id="7wteW1Qvlgp" role="3cqZAk">
+                <node concept="1pGfFk" id="7wteW1Qvlgq" role="2ShVmc">
+                  <ref role="37wK5l" to="cgca:~CheckpointIdentity.&lt;init&gt;(jetbrains.mps.generator.plan.PlanIdentity,java.lang.String)" resolve="CheckpointIdentity" />
+                  <node concept="2ShNRf" id="7wteW1QvprD" role="37wK5m">
+                    <node concept="1pGfFk" id="7wteW1QvrA7" role="2ShVmc">
+                      <ref role="37wK5l" to="cgca:~PlanIdentity.&lt;init&gt;(java.lang.String)" resolve="PlanIdentity" />
+                      <node concept="2OqwBi" id="7wteW1Qvp4L" role="37wK5m">
+                        <node concept="1PxgMI" id="7wteW1QvoWE" role="2Oq$k0">
+                          <property role="1BlNFB" value="true" />
+                          <node concept="chp4Y" id="7wteW1QvoXz" role="3oSUPX">
+                            <ref role="cht4Q" to="bjdw:1_4co2y1LvV" resolve="Plan" />
+                          </node>
+                          <node concept="2OqwBi" id="7wteW1QvnXa" role="1m5AlR">
+                            <node concept="37vLTw" id="274NGw8QuTF" role="2Oq$k0">
+                              <ref role="3cqZAo" node="274NGw8Qkkq" resolve="cpDecl" />
+                            </node>
+                            <node concept="1mfA1w" id="7wteW1Qvob0" role="2OqNvi" />
+                          </node>
+                        </node>
+                        <node concept="3TrcHB" id="7wteW1Qvpds" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="7wteW1Qvlgs" role="37wK5m">
+                    <node concept="37vLTw" id="274NGw8Qv20" role="2Oq$k0">
+                      <ref role="3cqZAo" node="274NGw8Qkkq" resolve="cpDecl" />
+                    </node>
+                    <node concept="3TrcHB" id="7wteW1Qvm8n" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="274NGw8QcYh" role="3clFbw">
+            <node concept="37vLTw" id="274NGw8QctI" role="2Oq$k0">
+              <ref role="3cqZAo" node="274NGw8PIU7" resolve="cpSpec" />
+            </node>
+            <node concept="1mIQ4w" id="274NGw8Qd9u" role="2OqNvi">
+              <node concept="chp4Y" id="274NGw8QdbC" role="cj9EA">
+                <ref role="cht4Q" to="bjdw:3gcO7FHvbbX" resolve="DeclaredCheckpointSpec" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="274NGw8QywN" role="3cqZAp">
+          <node concept="3clFbS" id="274NGw8QywP" role="3clFbx">
+            <node concept="3cpWs8" id="274NGw8QK5c" role="3cqZAp">
+              <node concept="3cpWsn" id="274NGw8QK5d" role="3cpWs9">
+                <property role="TrG5h" value="cpStep" />
+                <node concept="3Tqbb2" id="274NGw8QK58" role="1tU5fm">
+                  <ref role="ehGHo" to="bjdw:1_4co2y1Lw1" resolve="Checkpoint" />
+                </node>
+                <node concept="2OqwBi" id="274NGw8QK5e" role="33vP2m">
+                  <node concept="1PxgMI" id="274NGw8QK5f" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="274NGw8QK5g" role="3oSUPX">
+                      <ref role="cht4Q" to="bjdw:3gcO7FHvbcG" resolve="InPlaceCheckpointRefSpec" />
+                    </node>
+                    <node concept="37vLTw" id="274NGw8QK5h" role="1m5AlR">
+                      <ref role="3cqZAo" node="274NGw8PIU7" resolve="cpSpec" />
+                    </node>
+                  </node>
+                  <node concept="3TrEf2" id="274NGw8QK5i" role="2OqNvi">
+                    <ref role="3Tt5mk" to="bjdw:3gcO7FHvbcJ" resolve="checkpoint" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="274NGw8QFGT" role="3cqZAp">
+              <node concept="3cpWsn" id="274NGw8QFGU" role="3cpWs9">
+                <property role="TrG5h" value="inPlaceCPSpec" />
+                <node concept="3Tqbb2" id="274NGw8QFGS" role="1tU5fm">
+                  <ref role="ehGHo" to="bjdw:3gcO7FHva5x" resolve="InPlaceCheckpointSpec" />
+                </node>
+                <node concept="1PxgMI" id="274NGw8QJdX" role="33vP2m">
+                  <property role="1BlNFB" value="true" />
+                  <node concept="chp4Y" id="274NGw8QJm3" role="3oSUPX">
+                    <ref role="cht4Q" to="bjdw:3gcO7FHva5x" resolve="InPlaceCheckpointSpec" />
+                  </node>
+                  <node concept="2OqwBi" id="274NGw8QIhx" role="1m5AlR">
+                    <node concept="37vLTw" id="274NGw8QK5j" role="2Oq$k0">
+                      <ref role="3cqZAo" node="274NGw8QK5d" resolve="cpStep" />
+                    </node>
+                    <node concept="3TrEf2" id="274NGw8QIG5" role="2OqNvi">
+                      <ref role="3Tt5mk" to="bjdw:3gcO7FHvbbi" resolve="cpSpec" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="274NGw8QG8D" role="3cqZAp">
+              <node concept="3clFbS" id="274NGw8QG8F" role="3clFbx">
+                <node concept="YS8fn" id="274NGw8QL1n" role="3cqZAp">
+                  <node concept="2ShNRf" id="274NGw8QL22" role="YScLw">
+                    <node concept="1pGfFk" id="274NGw8QLoQ" role="2ShVmc">
+                      <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;()" resolve="IllegalStateException" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbC" id="274NGw8QKUT" role="3clFbw">
+                <node concept="10Nm6u" id="274NGw8QKZp" role="3uHU7w" />
+                <node concept="37vLTw" id="274NGw8QKnc" role="3uHU7B">
+                  <ref role="3cqZAo" node="274NGw8QFGU" resolve="inPlaceCPSpec" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="274NGw8QLw3" role="3cqZAp">
+              <node concept="2ShNRf" id="274NGw8QLxO" role="3cqZAk">
+                <node concept="1pGfFk" id="274NGw8QNC0" role="2ShVmc">
+                  <ref role="37wK5l" to="cgca:~CheckpointIdentity.&lt;init&gt;(jetbrains.mps.generator.plan.PlanIdentity,java.lang.String)" resolve="CheckpointIdentity" />
+                  <node concept="2ShNRf" id="274NGw8QPro" role="37wK5m">
+                    <node concept="1pGfFk" id="274NGw8QR$0" role="2ShVmc">
+                      <ref role="37wK5l" to="cgca:~PlanIdentity.&lt;init&gt;(java.lang.String)" resolve="PlanIdentity" />
+                      <node concept="2OqwBi" id="274NGw8R2I8" role="37wK5m">
+                        <node concept="1PxgMI" id="274NGw8QZml" role="2Oq$k0">
+                          <property role="1BlNFB" value="true" />
+                          <node concept="chp4Y" id="274NGw8R1cl" role="3oSUPX">
+                            <ref role="cht4Q" to="bjdw:1_4co2y1LvV" resolve="Plan" />
+                          </node>
+                          <node concept="2OqwBi" id="274NGw8QUPR" role="1m5AlR">
+                            <node concept="37vLTw" id="274NGw8QTkd" role="2Oq$k0">
+                              <ref role="3cqZAo" node="274NGw8QK5d" resolve="cpStep" />
+                            </node>
+                            <node concept="1mfA1w" id="274NGw8QX82" role="2OqNvi" />
+                          </node>
+                        </node>
+                        <node concept="3TrcHB" id="274NGw8R4_Z" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="274NGw8R9ZE" role="37wK5m">
+                    <node concept="37vLTw" id="274NGw8R88b" role="2Oq$k0">
+                      <ref role="3cqZAo" node="274NGw8QFGU" resolve="inPlaceCPSpec" />
+                    </node>
+                    <node concept="3TrcHB" id="274NGw8RbSD" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="274NGw8Q$o1" role="3clFbw">
+            <node concept="37vLTw" id="274NGw8Q$gP" role="2Oq$k0">
+              <ref role="3cqZAo" node="274NGw8PIU7" resolve="cpSpec" />
+            </node>
+            <node concept="1mIQ4w" id="274NGw8Q$zh" role="2OqNvi">
+              <node concept="chp4Y" id="274NGw8Q$_r" role="cj9EA">
+                <ref role="cht4Q" to="bjdw:3gcO7FHvbcG" resolve="InPlaceCheckpointRefSpec" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="YS8fn" id="274NGw8QAok" role="3cqZAp">
+          <node concept="2ShNRf" id="274NGw8QBJB" role="YScLw">
+            <node concept="1pGfFk" id="274NGw8QCvg" role="2ShVmc">
+              <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+              <node concept="3cpWs3" id="274NGw8QDKy" role="37wK5m">
+                <node concept="2OqwBi" id="274NGw8QDZT" role="3uHU7w">
+                  <node concept="37vLTw" id="274NGw8QDO7" role="2Oq$k0">
+                    <ref role="3cqZAo" node="274NGw8PIU7" resolve="cpSpec" />
+                  </node>
+                  <node concept="2yIwOk" id="274NGw8QEdS" role="2OqNvi" />
+                </node>
+                <node concept="Xl_RD" id="274NGw8QCyr" role="3uHU7B">
+                  <property role="Xl_RC" value="Unsupported checkpoint specification " />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="274NGw8PFtI" role="1B3o_S" />
+      <node concept="3uibUv" id="274NGw8PHb$" role="3clF45">
+        <ref role="3uigEE" to="cgca:~CheckpointIdentity" resolve="CheckpointIdentity" />
+      </node>
+      <node concept="37vLTG" id="274NGw8PIU7" role="3clF46">
+        <property role="TrG5h" value="cpSpec" />
+        <node concept="3Tqbb2" id="274NGw8PIU6" role="1tU5fm">
+          <ref role="ehGHo" to="bjdw:3gcO7FHva5$" resolve="CheckpointSpecification" />
         </node>
       </node>
     </node>

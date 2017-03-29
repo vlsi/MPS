@@ -30,10 +30,10 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ActionTestDefaultAbstractChild_SubstituteMenu.SubstituteMenuPart_Group_c1nwm3_a());
+    result.add(new ActionTestDefaultAbstractChild_SubstituteMenu.SMP_Group_c1nwm3_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_c1nwm3_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_c1nwm3_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     private boolean condition;
     private boolean condition1;
     private boolean condition2;
@@ -59,9 +59,9 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ActionTestDefaultAbstractChild_SubstituteMenu.SubstituteMenuPart_Group_c1nwm3_a.SubstituteMenuPart_IncludeMenu_c1nwm3_a0(), new ActionTestDefaultAbstractChild_SubstituteMenu.SubstituteMenuPart_Group_c1nwm3_a.SubstituteMenuPart_IncludeMenu_c1nwm3_b0(), new ActionTestDefaultAbstractChild_SubstituteMenu.SubstituteMenuPart_Group_c1nwm3_a.SubstituteMenuPart_IncludeMenu_c1nwm3_c0(), new ActionTestDefaultAbstractChild_SubstituteMenu.SubstituteMenuPart_Group_c1nwm3_a.SubstituteMenuPart_Group_c1nwm3_d0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ActionTestDefaultAbstractChild_SubstituteMenu.SMP_Group_c1nwm3_a.SMP_Include_c1nwm3_a0(), new ActionTestDefaultAbstractChild_SubstituteMenu.SMP_Group_c1nwm3_a.SMP_Include_c1nwm3_b0(), new ActionTestDefaultAbstractChild_SubstituteMenu.SMP_Group_c1nwm3_a.SMP_Include_c1nwm3_c0(), new ActionTestDefaultAbstractChild_SubstituteMenu.SMP_Group_c1nwm3_a.SMP_Group_c1nwm3_d0());
     }
-    public class SubstituteMenuPart_IncludeMenu_c1nwm3_a0 extends IncludeSubstituteMenuSubstituteMenuPart {
+    public class SMP_Include_c1nwm3_a0 extends IncludeSubstituteMenuSubstituteMenuPart {
 
       @Nullable
       @Override
@@ -70,7 +70,7 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
         return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25514b8dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild"), "jetbrains.mps.lang.actions.testLanguage.editor.RemoveDefaultsPart");
       }
     }
-    public class SubstituteMenuPart_IncludeMenu_c1nwm3_b0 extends IncludeSubstituteMenuSubstituteMenuPart {
+    public class SMP_Include_c1nwm3_b0 extends IncludeSubstituteMenuSubstituteMenuPart {
 
       @Nullable
       @Override
@@ -79,7 +79,7 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
         return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25514b8dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild"), "jetbrains.mps.lang.actions.testLanguage.editor.RemoveByConditionPart");
       }
     }
-    public class SubstituteMenuPart_IncludeMenu_c1nwm3_c0 extends IncludeSubstituteMenuSubstituteMenuPart {
+    public class SMP_Include_c1nwm3_c0 extends IncludeSubstituteMenuSubstituteMenuPart {
 
       @Nullable
       @Override
@@ -88,7 +88,7 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
         return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25514b8dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild"), "jetbrains.mps.lang.actions.testLanguage.editor.RemovePart");
       }
     }
-    public class SubstituteMenuPart_Group_c1nwm3_d0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_c1nwm3_d0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return !((condition || condition1 || condition2));
@@ -96,9 +96,9 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ActionTestDefaultAbstractChild_SubstituteMenu.SubstituteMenuPart_Group_c1nwm3_a.SubstituteMenuPart_Group_c1nwm3_d0.SubstituteMenuPart_Subconcepts_c1nwm3_a3a());
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ActionTestDefaultAbstractChild_SubstituteMenu.SMP_Group_c1nwm3_a.SMP_Group_c1nwm3_d0.SMP_Subconcepts_c1nwm3_a3a());
       }
-      public class SubstituteMenuPart_Subconcepts_c1nwm3_a3a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+      public class SMP_Subconcepts_c1nwm3_a3a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
         protected Collection getConcepts(final SubstituteMenuContext _context) {
           return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25514b8dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild"));
         }

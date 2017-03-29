@@ -55,7 +55,7 @@ public abstract class DescendantsScope extends Scope {
     SNode result = null;
     for (SNode n : Sequence.fromIterable(getAvailableElements(null))) {
       String name = getName(n);
-      if (name.equals(refText)) {
+      if (refText.equals(name)) {
         if (result == null) {
           result = n;
         } else {

@@ -36,15 +36,15 @@ public class GenerationContextOp_ContextVarRef_SubstituteMenu extends Substitute
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new GenerationContextOp_ContextVarRef_SubstituteMenu.SubstituteMenuPart_Parameterized_adcwvm_a(), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef")));
-    result.add(new GenerationContextOp_ContextVarRef_SubstituteMenu.SubstituteMenuPart_Subconcepts_adcwvm_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new GenerationContextOp_ContextVarRef_SubstituteMenu.SMP_Param_adcwvm_a(), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef")));
+    result.add(new GenerationContextOp_ContextVarRef_SubstituteMenu.SMP_Subconcepts_adcwvm_b());
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_adcwvm_a extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_adcwvm_a extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(String parameter, SubstituteMenuContext context) {
-      return new GenerationContextOp_ContextVarRef_SubstituteMenu.SubstituteMenuPart_Parameterized_adcwvm_a.SubstituteMenuPart_Action_adcwvm_a0(parameter).createItems(context);
+      return new GenerationContextOp_ContextVarRef_SubstituteMenu.SMP_Param_adcwvm_a.SMP_Action_adcwvm_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -63,16 +63,16 @@ public class GenerationContextOp_ContextVarRef_SubstituteMenu extends Substitute
       }
       return rv;
     }
-    private class SubstituteMenuPart_Action_adcwvm_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_adcwvm_a0 extends SingleItemSubstituteMenuPart {
       private final String myParameterObject;
-      public SubstituteMenuPart_Action_adcwvm_a0(String parameterObject) {
+      public SMP_Action_adcwvm_a0(String parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new GenerationContextOp_ContextVarRef_SubstituteMenu.SubstituteMenuPart_Parameterized_adcwvm_a.SubstituteMenuPart_Action_adcwvm_a0.Item(_context);
+        return new GenerationContextOp_ContextVarRef_SubstituteMenu.SMP_Param_adcwvm_a.SMP_Action_adcwvm_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -107,7 +107,7 @@ public class GenerationContextOp_ContextVarRef_SubstituteMenu extends Substitute
     }
 
   }
-  public class SubstituteMenuPart_Subconcepts_adcwvm_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_adcwvm_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef"));
     }

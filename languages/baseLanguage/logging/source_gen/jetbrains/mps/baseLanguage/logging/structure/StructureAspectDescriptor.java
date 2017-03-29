@@ -14,7 +14,10 @@ import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptIMessage = createDescriptorForIMessage();
+  /*package*/ final ConceptDescriptor myConceptLogLowLevelStatement = createDescriptorForLogLowLevelStatement();
   /*package*/ final ConceptDescriptor myConceptLogStatement = createDescriptorForLogStatement();
+  /*package*/ final ConceptDescriptor myConceptMsgStatement = createDescriptorForMsgStatement();
   /*package*/ final ConceptDescriptor myConceptPrintStatement = createDescriptorForPrintStatement();
   private final LanguageConceptSwitch myConceptIndex;
 
@@ -24,15 +27,21 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptLogStatement, myConceptPrintStatement);
+    return Arrays.asList(myConceptIMessage, myConceptLogLowLevelStatement, myConceptLogStatement, myConceptMsgStatement, myConceptPrintStatement);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myConceptIndex.index(id)) {
+      case LanguageConceptSwitch.IMessage:
+        return myConceptIMessage;
+      case LanguageConceptSwitch.LogLowLevelStatement:
+        return myConceptLogLowLevelStatement;
       case LanguageConceptSwitch.LogStatement:
         return myConceptLogStatement;
+      case LanguageConceptSwitch.MsgStatement:
+        return myConceptMsgStatement;
       case LanguageConceptSwitch.PrintStatement:
         return myConceptPrintStatement;
       default:
@@ -44,17 +53,47 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myConceptIndex.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForIMessage() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.logging", "IMessage", 0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5eeb6L);
+    b.interface_();
+    b.origin("r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)/6332851714983849654");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForLogLowLevelStatement() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.logging", "LogLowLevelStatement", 0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L);
+    b.class_(true, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
+    b.parent(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5eeb6L);
+    b.origin("r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)/2034914114981261497");
+    b.prop("severity", 0x1c3d779b2be2f1b7L, "2034914114981261751");
+    b.aggregate("message", 0x1c3d779b2be2f1b9L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("2034914114981261753").done();
+    b.aggregate("throwable", 0x1c3d779b2be2f1bbL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("2034914114981261755").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForLogStatement() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.logging", "LogStatement", 0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
+    b.parent(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5eeb6L);
     b.origin("r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)/1167227138527");
     b.prop("hasException", 0x10fc43f6f0fL, "1167228628751");
     b.prop("severity", 0x10fc541df63L, "1167245565795");
     b.aggregate("logExpression", 0x10fc42da590L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("1167227463056").done();
     b.aggregate("exception", 0x10fc42f25e9L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("1167227561449").done();
+    b.aggregate("project", 0x1c3d779b2be74bcfL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("2034914114981546959").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMsgStatement() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.logging", "MsgStatement", 0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
+    b.parent(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5eeb6L);
+    b.origin("r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)/6332851714983831325");
+    b.prop("severity", 0x57e2cf14f6d5d81fL, "6332851714983843871");
+    b.aggregate("message", 0x4f67298c4630c25eL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("5721587534047265374").done();
+    b.aggregate("throwable", 0x4f67298c4630c25fL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("5721587534047265375").done();
+    b.aggregate("project", 0x4f67298c4630c318L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("5721587534047265560").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForPrintStatement() {

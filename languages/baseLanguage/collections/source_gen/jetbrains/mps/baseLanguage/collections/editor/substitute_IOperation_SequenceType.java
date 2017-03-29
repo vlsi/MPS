@@ -37,10 +37,10 @@ public class substitute_IOperation_SequenceType extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new substitute_IOperation_SequenceType.SubstituteMenuPart_Group_yjz63_a());
+    result.add(new substitute_IOperation_SequenceType.SMP_Group_yjz63_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_yjz63_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_yjz63_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     private Iterable<SConcept> subconceptOfMapOp;
     private Iterable<SConcept> subconceptOfSortedMapOp;
     private Iterable<SAbstractConcept> subconceptOfIATN;
@@ -118,9 +118,9 @@ public class substitute_IOperation_SequenceType extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new substitute_IOperation_SequenceType.SubstituteMenuPart_Group_yjz63_a.SubstituteMenuPart_Concepts_yjz63_a0(), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new substitute_IOperation_SequenceType.SMP_Group_yjz63_a.SMP_Concepts_yjz63_a0(), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation")));
     }
-    public class SubstituteMenuPart_Concepts_yjz63_a0 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Concepts_yjz63_a0 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
       protected Collection getConcepts(SubstituteMenuContext _context) {
         List<SAbstractConcept> allApplicable = ListSequence.fromList(new ArrayList<SAbstractConcept>());
         if (TypeChecker.getInstance().getRuntimeSupport().coerce_(opndType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c482dd1aL, "jetbrains.mps.baseLanguage.collections.structure.SortedSetType")), false) != null) {

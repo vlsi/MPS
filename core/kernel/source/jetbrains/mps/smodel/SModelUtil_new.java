@@ -88,17 +88,6 @@ public class SModelUtil_new {
     }
   }
 
-  public static boolean isAcceptableTarget(SNode sourceNode, String role, SNode targetNode) {
-    SNode conceptDeclaration = new SNodeLegacy(sourceNode).getConceptDeclarationNode();
-    SNode linkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(conceptDeclaration, role);
-    if (linkDeclaration == null) {
-      LOG.error("couldn't find link declaration for role '" + role + "' in hierarchy of concept " + SNodeOperations.getDebugText(conceptDeclaration),
-          sourceNode);
-      return false;
-    }
-    return SModelUtil.isAcceptableTarget(linkDeclaration, targetNode);
-  }
-
   public static String getAlias(SNode conceptDeclaration) {
     return SNodeUtil.getConceptAlias(conceptDeclaration);
   }

@@ -67,7 +67,7 @@
         <node concept="1sVBvm" id="3pzUVOrWgY_" role="1sWHZn">
           <node concept="3F0A7n" id="3pzUVOrWiXt" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <ref role="1NtTu8" to="hypd:eY0iPzBCD4" resolve="generatorUID" />
+            <ref role="1NtTu8" to="hypd:5xDtKQA7vSz" resolve="namespace" />
           </node>
         </node>
       </node>

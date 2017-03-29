@@ -2448,9 +2448,9 @@
       <node id="1741258697587170571" at="32,67,33,63" concept="6" />
       <node id="1741258697587170571" at="38,124,39,156" concept="5" />
       <node id="1741258697587170571" at="40,173,41,243" concept="1" />
-      <node id="1741258697587170571" at="43,137,44,97" concept="1" />
+      <node id="1741258697587170571" at="43,137,44,78" concept="1" />
       <node id="1741258697587170571" at="45,5,46,18" concept="6" />
-      <node id="1741258697587170579" at="51,84,52,104" concept="6" />
+      <node id="1741258697587170579" at="51,84,52,85" concept="6" />
       <node id="1741258697587170579" at="56,0,57,0" concept="2" trace="_context" />
       <node id="1741258697587170579" at="58,55,59,27" concept="1" />
       <node id="1741258697587170584" at="64,50,65,24" concept="6" />
@@ -2465,8 +2465,8 @@
       <node id="1741258697587170571" at="36,0,48,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587170571" at="32,67,33,63" />
       <scope id="1741258697587170571" at="40,173,41,243" />
-      <scope id="1741258697587170571" at="43,137,44,97" />
-      <scope id="1741258697587170579" at="51,84,52,104" />
+      <scope id="1741258697587170571" at="43,137,44,78" />
+      <scope id="1741258697587170579" at="51,84,52,85" />
       <scope id="1741258697587170579" at="58,55,59,27" />
       <scope id="1741258697587170583" at="64,50,65,24" />
       <scope id="1741258697587170587" at="69,52,70,652" />
@@ -2491,8 +2491,8 @@
       <scope id="1741258697587170571" at="36,0,48,0">
         <var name="_context" id="1741258697587170571" />
       </scope>
-      <unit id="1741258697587170579" at="55,0,75,0" name="jetbrains.mps.lang.dataFlow.editor.EmitStatement_TransformationMenu$TransformationMenuPart_Action_dyx4xx_a1$Item" />
-      <unit id="1741258697587170579" at="49,0,76,0" name="jetbrains.mps.lang.dataFlow.editor.EmitStatement_TransformationMenu$TransformationMenuPart_Action_dyx4xx_a1" />
+      <unit id="1741258697587170579" at="55,0,75,0" name="jetbrains.mps.lang.dataFlow.editor.EmitStatement_TransformationMenu$TMP_Action_dyx4xx_a1$Item" />
+      <unit id="1741258697587170579" at="49,0,76,0" name="jetbrains.mps.lang.dataFlow.editor.EmitStatement_TransformationMenu$TMP_Action_dyx4xx_a1" />
       <unit id="1741258697587170571" at="29,0,77,0" name="jetbrains.mps.lang.dataFlow.editor.EmitStatement_TransformationMenu" />
     </file>
   </root>
@@ -2502,16 +2502,16 @@
       <node id="1741258697587170605" at="34,67,35,63" concept="6" />
       <node id="1741258697587170605" at="40,124,41,156" concept="5" />
       <node id="1741258697587170605" at="42,173,43,251" concept="1" />
-      <node id="1741258697587170605" at="45,137,46,312" concept="1" />
-      <node id="1741258697587170605" at="46,312,47,310" concept="1" />
+      <node id="1741258697587170605" at="45,137,46,293" concept="1" />
+      <node id="1741258697587170605" at="46,293,47,291" concept="1" />
       <node id="1741258697587170605" at="48,5,49,18" concept="6" />
-      <node id="1741258697587170605" at="54,84,55,112" concept="6" />
+      <node id="1741258697587170605" at="54,84,55,93" concept="6" />
       <node id="1741258697587170605" at="59,0,60,0" concept="2" trace="_context" />
       <node id="1741258697587170605" at="61,55,62,27" concept="1" />
       <node id="1741258697587170618" at="67,50,68,24" concept="6" />
       <node id="1741258697587170632" at="72,52,73,496" concept="1" />
       <node id="1741258697587170605" at="79,50,80,164" concept="6" />
-      <node id="1741258697587170605" at="86,84,87,112" concept="6" />
+      <node id="1741258697587170605" at="86,84,87,93" concept="6" />
       <node id="1741258697587170605" at="91,0,92,0" concept="2" trace="_context" />
       <node id="1741258697587170605" at="93,55,94,27" concept="1" />
       <node id="1741258697587170638" at="99,50,100,22" concept="6" />
@@ -2533,17 +2533,17 @@
       <node id="1741258697587170605" at="38,0,51,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587170605" at="34,67,35,63" />
       <scope id="1741258697587170605" at="42,173,43,251" />
-      <scope id="1741258697587170605" at="54,84,55,112" />
+      <scope id="1741258697587170605" at="54,84,55,93" />
       <scope id="1741258697587170605" at="61,55,62,27" />
       <scope id="1741258697587170617" at="67,50,68,24" />
       <scope id="1741258697587170621" at="72,52,73,496" />
       <scope id="1741258697587170605" at="79,50,80,164" />
-      <scope id="1741258697587170605" at="86,84,87,112" />
+      <scope id="1741258697587170605" at="86,84,87,93" />
       <scope id="1741258697587170605" at="93,55,94,27" />
       <scope id="1741258697587170637" at="99,50,100,22" />
       <scope id="1741258697587170641" at="104,52,105,494" />
       <scope id="1741258697587170605" at="111,50,112,162" />
-      <scope id="1741258697587170605" at="45,137,47,310" />
+      <scope id="1741258697587170605" at="45,137,47,291" />
       <scope id="1741258697587170605" at="61,0,64,0">
         <var name="context" id="1741258697587170605" />
       </scope>
@@ -2579,10 +2579,10 @@
       <scope id="1741258697587170605" at="38,0,51,0">
         <var name="_context" id="1741258697587170605" />
       </scope>
-      <unit id="1741258697587170605" at="58,0,83,0" name="jetbrains.mps.lang.dataFlow.editor.BaseEmitJumpStatement_TransformationMenu$TransformationMenuPart_Action_dkv885_a1$Item" />
-      <unit id="1741258697587170605" at="90,0,115,0" name="jetbrains.mps.lang.dataFlow.editor.BaseEmitJumpStatement_TransformationMenu$TransformationMenuPart_Action_dkv885_b1$Item" />
-      <unit id="1741258697587170605" at="52,0,84,0" name="jetbrains.mps.lang.dataFlow.editor.BaseEmitJumpStatement_TransformationMenu$TransformationMenuPart_Action_dkv885_a1" />
-      <unit id="1741258697587170605" at="84,0,116,0" name="jetbrains.mps.lang.dataFlow.editor.BaseEmitJumpStatement_TransformationMenu$TransformationMenuPart_Action_dkv885_b1" />
+      <unit id="1741258697587170605" at="58,0,83,0" name="jetbrains.mps.lang.dataFlow.editor.BaseEmitJumpStatement_TransformationMenu$TMP_Action_dkv885_a1$Item" />
+      <unit id="1741258697587170605" at="90,0,115,0" name="jetbrains.mps.lang.dataFlow.editor.BaseEmitJumpStatement_TransformationMenu$TMP_Action_dkv885_b1$Item" />
+      <unit id="1741258697587170605" at="52,0,84,0" name="jetbrains.mps.lang.dataFlow.editor.BaseEmitJumpStatement_TransformationMenu$TMP_Action_dkv885_a1" />
+      <unit id="1741258697587170605" at="84,0,116,0" name="jetbrains.mps.lang.dataFlow.editor.BaseEmitJumpStatement_TransformationMenu$TMP_Action_dkv885_b1" />
       <unit id="1741258697587170605" at="31,0,117,0" name="jetbrains.mps.lang.dataFlow.editor.BaseEmitJumpStatement_TransformationMenu" />
     </file>
   </root>

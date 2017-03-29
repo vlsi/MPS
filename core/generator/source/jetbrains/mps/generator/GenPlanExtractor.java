@@ -17,7 +17,8 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.GenerationOptions.OptionsBuilder;
 import jetbrains.mps.generator.impl.GenPlanTranslator;
-import jetbrains.mps.generator.impl.plan.RigidPlanBuilder;
+import jetbrains.mps.generator.impl.plan.EngagedGeneratorCollector;
+import jetbrains.mps.generator.impl.plan.RegularPlanBuilder;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -26,9 +27,11 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -41,13 +44,13 @@ import java.util.Set;
  * @author Artem Tikhomirov
  * @since 3.4
  */
-public final class GenPlanExtractor {
+public final class GenPlanExtractor implements ModelGenerationPlan.Provider {
   private final SRepository myRepository;
   private final OptionsBuilder myOptions;
-  private final Map<SModule, CustomGenerationModuleFacet> myOwnerModuleToFacet = new HashMap<SModule, CustomGenerationModuleFacet>();
-  private final Set<SModule> myOwnerModulesNoCustomFacet = new HashSet<SModule>();
+  private final Map<SModule, ModelGenerationPlan.Provider> myOwnerModuleToFacet = new HashMap<>();
+  private final Set<SModule> myOwnerModulesNoCustomFacet = new HashSet<>();
   // null value indicates there's no plan associated with devkit (or the plan couldn't get instantiated).
-  private final Map<SModuleReference, ModelGenerationPlan> myDevkitToPlan = new HashMap<SModuleReference, ModelGenerationPlan>();
+  private final Map<SModuleReference, PlanProviderInfo> myDevkitToPlan = new HashMap<>();
 
   public GenPlanExtractor(@NotNull SRepository repository) {
     myRepository = repository;
@@ -71,13 +74,13 @@ public final class GenPlanExtractor {
   @Nullable
   private ModelGenerationPlan planFromCustomFacet(SModel model) {
     final SModule ownerModule = model.getModule();
-    final CustomGenerationModuleFacet facet = myOwnerModuleToFacet.get(ownerModule);
+    final ModelGenerationPlan.Provider facet = myOwnerModuleToFacet.get(ownerModule);
     if (facet != null) {
       return facet.getPlan(model);
     }
     if (!myOwnerModulesNoCustomFacet.contains(ownerModule)) {
       // ok, it's the first time we see the module
-      CustomGenerationModuleFacet f = ownerModule.getFacet(CustomGenerationModuleFacet.class);
+      ModelGenerationPlan.Provider f = fromModuleFacets(ownerModule);
       if (f != null) {
         myOwnerModuleToFacet.put(ownerModule, f);
         return f.getPlan(model);
@@ -89,37 +92,70 @@ public final class GenPlanExtractor {
     return null;
   }
 
+  private static ModelGenerationPlan.Provider fromModuleFacets(SModule module) {
+    for (SModuleFacet mf : module.getFacets()) {
+      if (mf instanceof ModelGenerationPlan.Provider) {
+        return (ModelGenerationPlan.Provider) mf;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * First, look if any devkit specifies GP. First DevKit with associated plan is consulted, if any, and no further lookup is done.
+   * If there are no devkits with associated plans, check facets of devkit modules if any is an MGP.Provider. First facet found serves as provider then.
+   * @param model transformed model, the one we need plan for
+   * @return GP's API instance
+   */
   @Nullable
   private ModelGenerationPlan planFromDevKit(SModel model) {
+    // plans associated directly with devkit property has higher precedence than plans coming from DevKit's facets plan providers
+    ArrayList<ModelGenerationPlan.Provider> facetAssociatedPlan = new ArrayList<>();
     for (SModuleReference dkRef : ((SModelInternal) model).importedDevkits()) {
+      final SModelReference dkPlan;
       if (myDevkitToPlan.containsKey(dkRef)) {
-        final ModelGenerationPlan rv = myDevkitToPlan.get(dkRef);
+        final PlanProviderInfo rv = myDevkitToPlan.get(dkRef);
         if (rv == null) {
           // we've seen this devkit and know it has no plan
           continue;
         }
-        return rv;
-      }
-      final SModule dkModule = dkRef.resolve(myRepository);
-      if (!(dkModule instanceof DevKit)) {
-        continue;
-      }
-      final SModelReference dkPlan = ((DevKit) dkModule).getModuleDescriptor().getAssociatedGenPlan();
-      if (dkPlan == null) {
-        continue;
-      }
-      final ModelGenerationPlan plan;
-      final SModel planModel = dkPlan.resolve(myRepository);
-      if (planModel != null) {
-        GenPlanTranslator gpt = new GenPlanTranslator(planModel.getRootNodes().iterator().next());
-        RigidPlanBuilder planBuilder = new RigidPlanBuilder(LanguageRegistry.getInstance(myRepository));
-        gpt.feed(planBuilder);
-        plan = planBuilder.wrapUp(gpt.getPlanIdentity());
+        if (rv.isDirect) {
+          return rv.provider.getPlan(model);
+        } else {
+          facetAssociatedPlan.add(rv.provider);
+          // FALL-THROUGH, continue;
+        }
       } else {
-        plan = null;
+        final SModule dkModule = dkRef.resolve(myRepository);
+        if (!(dkModule instanceof DevKit)) {
+          continue;
+        }
+        DevKit devkit = (DevKit) dkModule;
+        ModelGenerationPlan.Provider mgpProvider;
+        if (devkit.getModuleDescriptor() != null && (dkPlan = devkit.getModuleDescriptor().getAssociatedGenPlan()) != null) {
+          mgpProvider = new InterpretedPlanProvider(dkPlan, myRepository);
+          myDevkitToPlan.put(dkRef, new PlanProviderInfo(mgpProvider, true));
+          return mgpProvider.getPlan(model);
+        } else {
+          mgpProvider = fromModuleFacets(devkit);
+          if (mgpProvider != null) {
+            myDevkitToPlan.put(dkRef, new PlanProviderInfo(mgpProvider, false));
+            facetAssociatedPlan.add(mgpProvider);
+          } else {
+            myDevkitToPlan.put(dkRef, null);
+          }
+        }
       }
-      myDevkitToPlan.put(dkRef, plan);
-      return plan;
+    }
+    for (ModelGenerationPlan.Provider p : facetAssociatedPlan) {
+      // we can get here only if there's no GP directly associated with any imported devkit
+      return p.getPlan(model);
+      // I use collection of facet-associated plans though need only first one to
+      // (a) avoid complicated already-set check when looping through all imported DK in attempt to find
+      // (b) might want to compose plans from devkit module facets and consult all of them. I.e. if there are 3 devkits in a model, each with a
+      //     facet/MGP.Provider, then I can ask all of them in order, to see if any could handle the model in question
+      //      NOTE, I could do the same for 'primary' plans (associated directly with a DK), although now stick to first one in an attempt to
+      //      make plan selection predictable.
     }
     return null;
   }
@@ -150,5 +186,42 @@ public final class GenPlanExtractor {
     }
     ModelGenerationPlan p = getPlan(model);
     myOptions.customPlan(model, p);
+  }
+
+  final class InterpretedPlanProvider implements ModelGenerationPlan.Provider {
+
+    private final SModelReference myPlanModelRef;
+    private final SRepository myRepository;
+
+    public InterpretedPlanProvider(SModelReference planModelRef, SRepository repository) {
+      myPlanModelRef = planModelRef;
+      myRepository = repository;
+    }
+
+    @Nullable
+    @Override
+    public ModelGenerationPlan getPlan(@NotNull SModel model) {
+      final SModel planModel = myPlanModelRef.resolve(myRepository);
+      if (planModel == null) {
+        return null;
+      }
+      GenPlanTranslator gpt = new GenPlanTranslator(planModel.getRootNodes().iterator().next());
+      // FIXME in fact, shall respect additional languages passed through GenerationParametersProviderEx.getAdditionalLanguages(SModel), like
+      // original GenerationPlan did. However, it's rarely (if ever) used feature and contemporary GPs replace it completely, so I do not bother.
+      EngagedGeneratorCollector egc = new EngagedGeneratorCollector(model, null);
+      RegularPlanBuilder planBuilder = new RegularPlanBuilder(LanguageRegistry.getInstance(myRepository), egc.getGenerators());
+      gpt.feed(planBuilder);
+      return planBuilder.wrapUp(gpt.getPlanIdentity());
+    }
+  }
+
+  final class PlanProviderInfo {
+    final boolean isDirect; // true if MGP is assocated with a devkit directly, false if comes through facets
+    final ModelGenerationPlan.Provider provider;
+
+    PlanProviderInfo(ModelGenerationPlan.Provider p, boolean direct) {
+      isDirect = direct;
+      provider = p;
+    }
   }
 }

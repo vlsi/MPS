@@ -17,7 +17,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -635,11 +635,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang">
@@ -795,7 +794,7 @@
     <property role="TrG5h" value="Execution Configurations" />
     <property role="9BnSO" value="171.1" />
     <property role="2PJ1tZ" value="true" />
-    <property role="9BnSK" value="2017.1" />
+    <property role="9BnSK" value="2017.2" />
     <node concept="26PsSl" id="5WZfybTHuxE" role="2Tc6Ou">
       <ref role="26PsSk" to="4dtg:5WZfybTHucy" resolve="Execution Languages" />
     </node>
@@ -9855,13 +9854,12 @@
               </node>
             </node>
             <node concept="3clFbS" id="3KKoaE5GAT9" role="TDEfX">
-              <node concept="34ab3g" id="3KKoaE5GBdS" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="3KKoaE5GBdU" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB36B0" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="Xl_RD" id="3KKoaE5GBdU" role="RRSoy">
                   <property role="Xl_RC" value="Can not deploy plugins" />
                 </node>
-                <node concept="37vLTw" id="3KKoaE5GBdW" role="34bMjA">
+                <node concept="37vLTw" id="3KKoaE5GBdW" role="RRSow">
                   <ref role="3cqZAo" node="3KKoaE5GAT5" resolve="e" />
                 </node>
               </node>
@@ -10731,9 +10729,9 @@
             </node>
             <node concept="3clFbJ" id="4oL4a6sn9kF" role="3cqZAp">
               <node concept="3clFbS" id="4oL4a6sn9kI" role="3clFbx">
-                <node concept="34ab3g" id="4oL4a6spk32" role="3cqZAp">
-                  <property role="35gtTG" value="error" />
-                  <node concept="Xl_RD" id="4oL4a6spk34" role="34bqiv">
+                <node concept="RRSsy" id="3jYQuSB36B8" role="3cqZAp">
+                  <property role="RRSoG" value="error" />
+                  <node concept="Xl_RD" id="4oL4a6spk34" role="RRSoy">
                     <property role="Xl_RC" value="Can not generate deploy script" />
                   </node>
                 </node>
@@ -12786,9 +12784,9 @@
       <node concept="3clFbS" id="5vt46J2P0gs" role="3clF47">
         <node concept="3clFbJ" id="75GAJQ7FZ7c" role="3cqZAp">
           <node concept="3clFbS" id="75GAJQ7FZ7e" role="3clFbx">
-            <node concept="34ab3g" id="7RBnpUxvlDi" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="Xl_RD" id="7RBnpUxvlDk" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB36L3" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="Xl_RD" id="7RBnpUxvlDk" role="RRSoy">
                 <property role="Xl_RC" value="Already destroyed" />
               </node>
             </node>
@@ -13964,13 +13962,12 @@
               </node>
             </node>
             <node concept="3clFbS" id="3L_EFdmAYWH" role="TDEfX">
-              <node concept="34ab3g" id="3L_EFdmAZTI" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="3L_EFdmAZTK" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB36L9" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="Xl_RD" id="3L_EFdmAZTK" role="RRSoy">
                   <property role="Xl_RC" value="Process could not be constructed" />
                 </node>
-                <node concept="37vLTw" id="3L_EFdmAZTM" role="34bMjA">
+                <node concept="37vLTw" id="3L_EFdmAZTM" role="RRSow">
                   <ref role="3cqZAo" node="3L_EFdmAYWD" resolve="e" />
                 </node>
               </node>
@@ -14353,11 +14350,10 @@
                 </node>
               </node>
               <node concept="3clFbS" id="3L_EFdmAzx6" role="TDEfX">
-                <node concept="34ab3g" id="3L_EFdmA$lY" role="3cqZAp">
-                  <property role="35gtTG" value="info" />
-                  <property role="34fQS0" value="true" />
-                  <node concept="Xl_RD" id="3L_EFdmA$m0" role="34bqiv" />
-                  <node concept="37vLTw" id="3L_EFdmA$m2" role="34bMjA">
+                <node concept="RRSsy" id="3jYQuSB36Lh" role="3cqZAp">
+                  <property role="RRSoG" value="info" />
+                  <node concept="Xl_RD" id="3L_EFdmA$m0" role="RRSoy" />
+                  <node concept="37vLTw" id="3L_EFdmA$m2" role="RRSow">
                     <ref role="3cqZAo" node="3L_EFdmAzx2" resolve="e" />
                   </node>
                 </node>
@@ -14371,11 +14367,10 @@
                 </node>
               </node>
               <node concept="3clFbS" id="3L_EFdmA$o0" role="TDEfX">
-                <node concept="34ab3g" id="3L_EFdmA_ek" role="3cqZAp">
-                  <property role="35gtTG" value="error" />
-                  <property role="34fQS0" value="true" />
-                  <node concept="Xl_RD" id="3L_EFdmA_em" role="34bqiv" />
-                  <node concept="37vLTw" id="3L_EFdmA_eo" role="34bMjA">
+                <node concept="RRSsy" id="3jYQuSB36Lp" role="3cqZAp">
+                  <property role="RRSoG" value="error" />
+                  <node concept="Xl_RD" id="3L_EFdmA_em" role="RRSoy" />
+                  <node concept="37vLTw" id="3L_EFdmA_eo" role="RRSow">
                     <ref role="3cqZAo" node="3L_EFdmA$nY" resolve="e" />
                   </node>
                 </node>
@@ -14392,13 +14387,12 @@
                 </node>
                 <node concept="TDmWw" id="3L_EFdmAOzE" role="TEbGg">
                   <node concept="3clFbS" id="3L_EFdmAOzF" role="TDEfX">
-                    <node concept="34ab3g" id="3L_EFdmAPfl" role="3cqZAp">
-                      <property role="35gtTG" value="error" />
-                      <property role="34fQS0" value="true" />
-                      <node concept="Xl_RD" id="3L_EFdmAPfn" role="34bqiv">
+                    <node concept="RRSsy" id="3jYQuSB36Lx" role="3cqZAp">
+                      <property role="RRSoG" value="error" />
+                      <node concept="Xl_RD" id="3L_EFdmAPfn" role="RRSoy">
                         <property role="Xl_RC" value="Cannot close stream" />
                       </node>
-                      <node concept="37vLTw" id="3L_EFdmAPfp" role="34bMjA">
+                      <node concept="37vLTw" id="3L_EFdmAPfp" role="RRSow">
                         <ref role="3cqZAo" node="3L_EFdmAOzG" resolve="e" />
                       </node>
                     </node>

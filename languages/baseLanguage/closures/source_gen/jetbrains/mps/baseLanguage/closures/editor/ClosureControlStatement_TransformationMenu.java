@@ -43,13 +43,13 @@ public class ClosureControlStatement_TransformationMenu extends TransformationMe
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ClosureControlStatement_TransformationMenu.TransformationMenuPart_Group_fx5ld9_a1());
-      result.add(new ClosureControlStatement_TransformationMenu.TransformationMenuPart_Group_fx5ld9_b1());
+      result.add(new ClosureControlStatement_TransformationMenu.TMP_Group_fx5ld9_a1());
+      result.add(new ClosureControlStatement_TransformationMenu.TMP_Group_fx5ld9_b1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_fx5ld9_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_fx5ld9_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, 0x11e4ba7ffe1L, "actualParameter"))).isEmpty() && ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, 0x11ef552e307L, "controlClosure")), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf02c34L, "parameter"))).isEmpty();
@@ -57,12 +57,12 @@ public class ClosureControlStatement_TransformationMenu extends TransformationMe
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ClosureControlStatement_TransformationMenu.TransformationMenuPart_Group_fx5ld9_a1.TransformationMenuPart_Action_fx5ld9_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ClosureControlStatement_TransformationMenu.TMP_Group_fx5ld9_a1.TMP_Action_fx5ld9_a0b());
     }
-    private class TransformationMenuPart_Action_fx5ld9_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_fx5ld9_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ClosureControlStatement_TransformationMenu.TransformationMenuPart_Group_fx5ld9_a1.TransformationMenuPart_Action_fx5ld9_a0b.Item(context);
+        return new ClosureControlStatement_TransformationMenu.TMP_Group_fx5ld9_a1.TMP_Action_fx5ld9_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -92,7 +92,7 @@ public class ClosureControlStatement_TransformationMenu extends TransformationMe
       }
     }
   }
-  public class TransformationMenuPart_Group_fx5ld9_b1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_fx5ld9_b1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, 0x11e4ba7ffe1L, "actualParameter"))).isEmpty() && ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, 0x11ef552e307L, "controlClosure")), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf02c34L, "parameter"))).isNotEmpty();
@@ -100,12 +100,12 @@ public class ClosureControlStatement_TransformationMenu extends TransformationMe
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ClosureControlStatement_TransformationMenu.TransformationMenuPart_Group_fx5ld9_b1.TransformationMenuPart_Action_fx5ld9_a1b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ClosureControlStatement_TransformationMenu.TMP_Group_fx5ld9_b1.TMP_Action_fx5ld9_a1b());
     }
-    private class TransformationMenuPart_Action_fx5ld9_a1b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_fx5ld9_a1b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ClosureControlStatement_TransformationMenu.TransformationMenuPart_Group_fx5ld9_b1.TransformationMenuPart_Action_fx5ld9_a1b.Item(context);
+        return new ClosureControlStatement_TransformationMenu.TMP_Group_fx5ld9_b1.TMP_Action_fx5ld9_a1b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

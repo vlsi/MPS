@@ -661,7 +661,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
+    <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TransientModelsNotification" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
   </dependency>

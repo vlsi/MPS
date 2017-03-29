@@ -14,21 +14,24 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Iterator;
@@ -62,17 +65,21 @@ public class SideTransformUtil {
       SetSequence.fromSet(tags).addElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "SideTransformTag"), "default_"));
     }
 
+    SRepository contextRepo = SNodeOperations.getModel(node).getRepository();
+    if (contextRepo == null) {
+      return Sequence.fromIterable(Collections.emptyList());
+    }
     Iterable<SNode> result = Sequence.fromIterable(Collections.<SNode>emptyList());
-    for (Language language : ListSequence.fromList(SModelOperations.getLanguages(SNodeOperations.getModel(node)))) {
-      SModel actionsModelDescriptor = SModuleOperations.getAspect(language, "actions");
+    for (SLanguage language : SetSequence.fromSet(new SLanguageHierarchy(LanguageRegistry.getInstance(contextRepo), SModelOperations.getAllLanguageImports(SNodeOperations.getModel(node))).getExtended())) {
+      SModuleReference sourceModuleRef = language.getSourceModuleReference();
+      if (sourceModuleRef == null) {
+        continue;
+      }
+      SModel actionsModelDescriptor = SModuleOperations.getAspect(sourceModuleRef.resolve(contextRepo), "actions");
       if (actionsModelDescriptor == null) {
         continue;
       }
-      result = Sequence.fromIterable(result).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(actionsModelDescriptor, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"))).translate(new ITranslator2<SNode, SNode>() {
-        public Iterable<SNode> translate(SNode it) {
-          return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, 0x108fad1c117L, "actionsBuilder"));
-        }
-      }).where(new IWhereFilter<SNode>() {
+      result = Sequence.fromIterable(result).concat(Sequence.fromIterable(SLinkOperations.collectMany(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(actionsModelDescriptor, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions")), MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, 0x108fad1c117L, "actionsBuilder"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"), true, false) == null) && isApplicable(node, tags, cellSide, it, context);
         }

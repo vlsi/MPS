@@ -41,15 +41,15 @@ public class SideTransformMultiple extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new SideTransformMultiple.TransformationMenuPart_Action_u26oaa_a0(), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x15b75b54f176d1a3L, "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new SideTransformMultiple.TMP_Action_u26oaa_a0(), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x15b75b54f176d1a3L, "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression")));
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_u26oaa_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_u26oaa_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new SideTransformMultiple.TransformationMenuPart_Action_u26oaa_a0.Item(context);
+      return new SideTransformMultiple.TMP_Action_u26oaa_a0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

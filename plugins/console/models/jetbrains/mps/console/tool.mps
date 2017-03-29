@@ -433,11 +433,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -5201,9 +5200,9 @@
         </node>
         <node concept="3clFbJ" id="6ysF3v1j_ct" role="3cqZAp">
           <node concept="3clFbS" id="6ysF3v1j_cu" role="3clFbx">
-            <node concept="34ab3g" id="6ysF3v1j_cv" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="Xl_RD" id="6ysF3v1j_cw" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB331h" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="Xl_RD" id="6ysF3v1j_cw" role="RRSoy">
                 <property role="Xl_RC" value="Error: could not create console model" />
               </node>
             </node>
@@ -7602,14 +7601,13 @@
                     </node>
                   </node>
                   <node concept="3clFbS" id="6ysF3v1G999" role="TDEfX">
-                    <node concept="34ab3g" id="6ysF3v1G99a" role="3cqZAp">
-                      <property role="35gtTG" value="warn" />
-                      <property role="34fQS0" value="true" />
-                      <node concept="37vLTw" id="6ysF3v1G99b" role="34bMjA">
-                        <ref role="3cqZAo" node="6ysF3v1G997" resolve="e" />
-                      </node>
-                      <node concept="Xl_RD" id="6ysF3v1G99c" role="34bqiv">
+                    <node concept="RRSsy" id="3jYQuSB331n" role="3cqZAp">
+                      <property role="RRSoG" value="warn" />
+                      <node concept="Xl_RD" id="6ysF3v1G99c" role="RRSoy">
                         <property role="Xl_RC" value="Error on console model saving" />
+                      </node>
+                      <node concept="37vLTw" id="6ysF3v1G99b" role="RRSow">
+                        <ref role="3cqZAo" node="6ysF3v1G997" resolve="e" />
                       </node>
                     </node>
                   </node>
@@ -7656,10 +7654,9 @@
         <node concept="SfApY" id="7QIjsKDa1lr" role="3cqZAp">
           <node concept="TDmWw" id="TxhJRbnccP" role="TEbGg">
             <node concept="3clFbS" id="TxhJRbnccQ" role="TDEfX">
-              <node concept="34ab3g" id="TxhJRbnu99" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="TxhJRbnu9a" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB331v" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="Xl_RD" id="TxhJRbnu9a" role="RRSoy">
                   <property role="Xl_RC" value="Console history was not loaded. Maybe you are opening project from previous MPS versions?" />
                 </node>
               </node>
@@ -7749,10 +7746,9 @@
                               <node concept="3YRAZt" id="3BQjGtYPbu_" role="2OqNvi" />
                             </node>
                           </node>
-                          <node concept="34ab3g" id="3BQjGtYQiyU" role="3cqZAp">
-                            <property role="35gtTG" value="error" />
-                            <property role="34fQS0" value="true" />
-                            <node concept="Xl_RD" id="3BQjGtYQiyV" role="34bqiv">
+                          <node concept="RRSsy" id="3jYQuSB331_" role="3cqZAp">
+                            <property role="RRSoG" value="error" />
+                            <node concept="Xl_RD" id="3BQjGtYQiyV" role="RRSoy">
                               <property role="Xl_RC" value="Unknown concept on loading console history: removing enclosing history item" />
                             </node>
                           </node>
@@ -7782,10 +7778,9 @@
                                 </node>
                               </node>
                             </node>
-                            <node concept="34ab3g" id="3BQjGtYQcZo" role="3cqZAp">
-                              <property role="35gtTG" value="error" />
-                              <property role="34fQS0" value="true" />
-                              <node concept="Xl_RD" id="3BQjGtYQcZp" role="34bqiv">
+                            <node concept="RRSsy" id="3jYQuSB331F" role="3cqZAp">
+                              <property role="RRSoG" value="error" />
+                              <node concept="Xl_RD" id="3BQjGtYQcZp" role="RRSoy">
                                 <property role="Xl_RC" value="Unknown concept on loading console history: not loading history" />
                               </node>
                             </node>
@@ -7815,13 +7810,12 @@
               </node>
             </node>
             <node concept="3clFbS" id="7QIjsKDa1l$" role="TDEfX">
-              <node concept="34ab3g" id="7QIjsKDaAs7" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="7QIjsKDaAs9" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB331L" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="Xl_RD" id="7QIjsKDaAs9" role="RRSoy">
                   <property role="Xl_RC" value="Error on loading console history." />
                 </node>
-                <node concept="37vLTw" id="7QIjsKDaAsb" role="34bMjA">
+                <node concept="37vLTw" id="7QIjsKDaAsb" role="RRSow">
                   <ref role="3cqZAo" node="7QIjsKDa1lw" resolve="e" />
                 </node>
               </node>
@@ -9490,10 +9484,9 @@
             <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
           </node>
           <node concept="3clFbS" id="6kErf9mKuu8" role="3clFbx">
-            <node concept="34ab3g" id="6tSARFM5y7s" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <property role="34fQS0" value="false" />
-              <node concept="Xl_RD" id="6kErf9mKzh$" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB35mN" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="Xl_RD" id="6kErf9mKzh$" role="RRSoy">
                 <property role="Xl_RC" value="Must be called not from EDT" />
               </node>
             </node>
@@ -9822,13 +9815,12 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="3$1OzWlnE2q" role="TDEfX">
-                  <node concept="34ab3g" id="6tSARFM5ZAq" role="3cqZAp">
-                    <property role="35gtTG" value="error" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="Xl_RD" id="6tSARFM5ZAr" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB35mT" role="3cqZAp">
+                    <property role="RRSoG" value="error" />
+                    <node concept="Xl_RD" id="6tSARFM5ZAr" role="RRSoy">
                       <property role="Xl_RC" value="Error on making temporary model" />
                     </node>
-                    <node concept="37vLTw" id="6tSARFM5ZAs" role="34bMjA">
+                    <node concept="37vLTw" id="6tSARFM5ZAs" role="RRSow">
                       <ref role="3cqZAo" node="3$1OzWlnE2m" resolve="e" />
                     </node>
                   </node>
@@ -9842,13 +9834,12 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="3$1OzWlnJab" role="TDEfX">
-                  <node concept="34ab3g" id="6tSARFM5GN8" role="3cqZAp">
-                    <property role="35gtTG" value="error" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="Xl_RD" id="6tSARFM5GNa" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB35n1" role="3cqZAp">
+                    <property role="RRSoG" value="error" />
+                    <node concept="Xl_RD" id="6tSARFM5GNa" role="RRSoy">
                       <property role="Xl_RC" value="Error on making temporary model" />
                     </node>
-                    <node concept="37vLTw" id="6tSARFM5GNc" role="34bMjA">
+                    <node concept="37vLTw" id="6tSARFM5GNc" role="RRSow">
                       <ref role="3cqZAo" node="3$1OzWlnJa9" resolve="e" />
                     </node>
                   </node>
@@ -9938,13 +9929,12 @@
               </node>
             </node>
             <node concept="3clFbS" id="6M9lfhDHQRB" role="TDEfX">
-              <node concept="34ab3g" id="6M9lfhDHRXD" role="3cqZAp">
-                <property role="35gtTG" value="warn" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="6M9lfhDHRXF" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB35n9" role="3cqZAp">
+                <property role="RRSoG" value="warn" />
+                <node concept="Xl_RD" id="6M9lfhDHRXF" role="RRSoy">
                   <property role="Xl_RC" value="Exception in showing custom console result" />
                 </node>
-                <node concept="37vLTw" id="6M9lfhDHSTh" role="34bMjA">
+                <node concept="37vLTw" id="6M9lfhDHSTh" role="RRSow">
                   <ref role="3cqZAo" node="6M9lfhDHQRz" resolve="e" />
                 </node>
               </node>

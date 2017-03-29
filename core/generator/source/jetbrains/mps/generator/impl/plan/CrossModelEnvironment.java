@@ -25,6 +25,8 @@ import jetbrains.mps.generator.impl.CloneUtil;
 import jetbrains.mps.generator.impl.MappingLabelExtractor;
 import jetbrains.mps.generator.impl.ModelStreamManager;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
+import jetbrains.mps.generator.plan.PlanIdentity;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -74,6 +76,9 @@ public class CrossModelEnvironment {
   }
 
   /**
+   * FIXME Given CP could be defined in a plan/CPSet other then the one being executed, is there any sense to
+   *       pass planIdentity, not CPIdentity here. Perhaps, could hide ModelCheckpoints concept altogether as
+   *       implementation detail?
    * @return recorded checkpoints for the model, if any
    */
   @Nullable
@@ -164,6 +169,11 @@ public class CrossModelEnvironment {
     return cpv;
   }
 
+  /**
+   * FIXME Not sure if it's right to pass CPI here, not CP. On one hand, we use CPI to identify any its use in any plan.
+   *       OTOH, here we construct name for a model being transformed (not *referenced*), and as such we care about specific CP in a specific plan,
+   *       not just its identity.
+   */
   /*package*/ static SModelName createCheckpointModelName(SModelReference originalModel, CheckpointIdentity step) {
     String longName = originalModel.getName().getLongName();
     String stereotype = step.getPersistenceValue();
@@ -176,8 +186,8 @@ public class CrossModelEnvironment {
     final SModelReference mr = PersistenceFacade.getInstance().createModelReference(myModule.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName.getValue());
     SModel checkpointModel = myModule.createTransientModel(mr);
     assert checkpointModel instanceof ModelWithAttributes;
-    ((ModelWithAttributes) checkpointModel).setAttribute(GENERATION_PLAN, step.getPlan().getPersistenceValue());
-    ((ModelWithAttributes) checkpointModel).setAttribute(CHECKPOINT, step.getPersistenceValue());
+    ((ModelWithAttributes) checkpointModel).setAttribute(GENERATION_PLAN, step.getPlan().getName());
+    ((ModelWithAttributes) checkpointModel).setAttribute(CHECKPOINT, step.getName());
     return checkpointModel;
   }
 

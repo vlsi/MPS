@@ -32,30 +32,30 @@ public class JUnit4TestCaseRef_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new JUnit4TestCaseRef_SubstituteMenu.SubstituteMenuPart_Parameterized_ojczeu_a(), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb8L, "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new JUnit4TestCaseRef_SubstituteMenu.SMP_Param_ojczeu_a(), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb8L, "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_ojczeu_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_ojczeu_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new JUnit4TestCaseRef_SubstituteMenu.SubstituteMenuPart_Parameterized_ojczeu_a.SubstituteMenuPart_Action_ojczeu_a0(parameter).createItems(context);
+      return new JUnit4TestCaseRef_SubstituteMenu.SMP_Param_ojczeu_a.SMP_Action_ojczeu_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
       return (Iterable<SNode>) JUnit3TestCaseRef__BehaviorDescriptor.getTestClassesForModule_id1k5vvhzzWoK.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef")), SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite"), true, false));
     }
-    private class SubstituteMenuPart_Action_ojczeu_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_ojczeu_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_ojczeu_a0(SNode parameterObject) {
+      public SMP_Action_ojczeu_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new JUnit4TestCaseRef_SubstituteMenu.SubstituteMenuPart_Parameterized_ojczeu_a.SubstituteMenuPart_Action_ojczeu_a0.Item(_context);
+        return new JUnit4TestCaseRef_SubstituteMenu.SMP_Param_ojczeu_a.SMP_Action_ojczeu_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

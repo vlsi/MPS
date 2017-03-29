@@ -4040,9 +4040,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895903aa(jetbrains.mps.baseLanguageInternal.editor)/1741258697587170903">
     <file name="InternalClassifierType_SubstituteMenu.java">
       <node id="1741258697587170903" at="28,118,29,140" concept="6" />
-      <node id="1741258697587170903" at="29,140,30,94" concept="2" />
-      <node id="1741258697587170903" at="30,94,31,100" concept="2" />
-      <node id="1741258697587170903" at="31,100,32,425" concept="2" />
+      <node id="1741258697587170903" at="29,140,30,79" concept="2" />
+      <node id="1741258697587170903" at="30,79,31,85" concept="2" />
+      <node id="1741258697587170903" at="31,85,32,425" concept="2" />
       <node id="1741258697587170903" at="32,425,33,18" concept="7" />
       <node id="1741258697587170908" at="37,68,38,935" concept="7" />
       <node id="1741258697587170903" at="42,84,43,490" concept="7" />
@@ -4095,8 +4095,8 @@
       <scope id="1741258697587170903" at="26,0,35,0">
         <var name="_context" id="1741258697587170903" />
       </scope>
-      <unit id="1741258697587170903" at="46,0,55,0" name="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_SubstituteMenu$SubstituteMenuPart_Subconcepts_88em4w_b" />
-      <unit id="1741258697587170903" at="35,0,46,0" name="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_SubstituteMenu$SubstituteMenuPart_Group_88em4w_a" />
+      <unit id="1741258697587170903" at="46,0,55,0" name="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_SubstituteMenu$SMP_Subconcepts_88em4w_b" />
+      <unit id="1741258697587170903" at="35,0,46,0" name="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_SubstituteMenu$SMP_Group_88em4w_a" />
       <unit id="1741258697587170903" at="25,0,65,0" name="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_SubstituteMenu" />
     </file>
   </root>

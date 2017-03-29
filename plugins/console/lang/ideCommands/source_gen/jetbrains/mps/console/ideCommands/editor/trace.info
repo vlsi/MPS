@@ -136,8 +136,8 @@
   <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/1741258697587063813">
     <file name="OfAspectOperation_SubstituteMenu.java">
       <node id="1741258697587063813" at="25,118,26,140" concept="6" />
-      <node id="1741258697587063813" at="26,140,27,94" concept="2" />
-      <node id="1741258697587063813" at="27,94,28,423" concept="2" />
+      <node id="1741258697587063813" at="26,140,27,79" concept="2" />
+      <node id="1741258697587063813" at="27,79,28,423" concept="2" />
       <node id="1741258697587063813" at="28,423,29,18" concept="7" />
       <node id="1741258697587063813" at="32,76,33,231" concept="7" />
       <node id="1741258697587063813" at="36,125,37,149" concept="7" />
@@ -159,7 +159,7 @@
       <scope id="1741258697587063813" at="23,0,31,0">
         <var name="_context" id="1741258697587063813" />
       </scope>
-      <unit id="1741258697587063813" at="31,0,40,0" name="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_SubstituteMenu$SubstituteMenuPart_Subconcepts_xdr5c_a" />
+      <unit id="1741258697587063813" at="31,0,40,0" name="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_SubstituteMenu$SMP_Subconcepts_xdr5c_a" />
       <unit id="1741258697587063813" at="22,0,41,0" name="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_SubstituteMenu" />
     </file>
   </root>
@@ -2502,17 +2502,17 @@
       <node id="9041541628639360365" at="33,0,34,0" concept="3" trace="myLocations" />
       <node id="9041541628639360365" at="35,67,36,63" concept="7" />
       <node id="9041541628639360365" at="41,124,42,156" concept="6" />
-      <node id="9041541628639360365" at="43,135,44,93" concept="2" />
-      <node id="9041541628639360365" at="44,93,45,93" concept="2" />
+      <node id="9041541628639360365" at="43,135,44,74" concept="2" />
+      <node id="9041541628639360365" at="44,74,45,74" concept="2" />
       <node id="9041541628639360365" at="46,5,47,18" concept="7" />
-      <node id="9041541628639360365" at="52,84,53,100" concept="7" />
+      <node id="9041541628639360365" at="52,84,53,81" concept="7" />
       <node id="9041541628639360365" at="57,0,58,0" concept="3" trace="_context" />
       <node id="9041541628639360365" at="59,55,60,27" concept="2" />
       <node id="9041541628638953248" at="65,50,66,47" concept="7" />
       <node id="3362819150777211503" at="70,52,71,60" concept="6" />
       <node id="9041541628639615251" at="71,60,72,195" concept="2" />
       <node id="9041541628639613515" at="72,195,73,475" concept="2" />
-      <node id="9041541628639360365" at="81,84,82,100" concept="7" />
+      <node id="9041541628639360365" at="81,84,82,81" concept="7" />
       <node id="9041541628639360365" at="86,0,87,0" concept="3" trace="_context" />
       <node id="9041541628639360365" at="88,55,89,27" concept="2" />
       <node id="7452996865427033959" at="94,50,95,45" concept="7" />
@@ -2655,13 +2655,13 @@
       <node id="8190804541713110048" at="108,0,201,0" concept="8" trace="createBLExpression_vryvy0_a0a0a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="9041541628639360365" at="30,41,31,16" />
       <scope id="9041541628639360365" at="35,67,36,63" />
-      <scope id="9041541628639360365" at="52,84,53,100" />
+      <scope id="9041541628639360365" at="52,84,53,81" />
       <scope id="9041541628639360365" at="59,55,60,27" />
       <scope id="9041541628638947538" at="65,50,66,47" />
-      <scope id="9041541628639360365" at="81,84,82,100" />
+      <scope id="9041541628639360365" at="81,84,82,81" />
       <scope id="9041541628639360365" at="88,55,89,27" />
       <scope id="7452996865427022507" at="94,50,95,45" />
-      <scope id="9041541628639360365" at="43,135,45,93" />
+      <scope id="9041541628639360365" at="43,135,45,74" />
       <scope id="8190804541713110048" at="124,15,126,164">
         <var name="n8" id="8190804541713110048" />
       </scope>
@@ -2805,10 +2805,10 @@
         <var name="n1" id="8190804541713110048" />
       </scope>
       <scope id="8190804541713110048" at="108,0,201,0" />
-      <unit id="9041541628639360365" at="56,0,78,0" name="jetbrains.mps.console.ideCommands.editor.CommandHolder_Empty_Snippets$TransformationMenuPart_Action_vryvy0_a0$Item" />
-      <unit id="9041541628639360365" at="85,0,107,0" name="jetbrains.mps.console.ideCommands.editor.CommandHolder_Empty_Snippets$TransformationMenuPart_Action_vryvy0_b0$Item" />
-      <unit id="9041541628639360365" at="50,0,79,0" name="jetbrains.mps.console.ideCommands.editor.CommandHolder_Empty_Snippets$TransformationMenuPart_Action_vryvy0_a0" />
-      <unit id="9041541628639360365" at="79,0,108,0" name="jetbrains.mps.console.ideCommands.editor.CommandHolder_Empty_Snippets$TransformationMenuPart_Action_vryvy0_b0" />
+      <unit id="9041541628639360365" at="56,0,78,0" name="jetbrains.mps.console.ideCommands.editor.CommandHolder_Empty_Snippets$TMP_Action_vryvy0_a0$Item" />
+      <unit id="9041541628639360365" at="85,0,107,0" name="jetbrains.mps.console.ideCommands.editor.CommandHolder_Empty_Snippets$TMP_Action_vryvy0_b0$Item" />
+      <unit id="9041541628639360365" at="50,0,79,0" name="jetbrains.mps.console.ideCommands.editor.CommandHolder_Empty_Snippets$TMP_Action_vryvy0_a0" />
+      <unit id="9041541628639360365" at="79,0,108,0" name="jetbrains.mps.console.ideCommands.editor.CommandHolder_Empty_Snippets$TMP_Action_vryvy0_b0" />
       <unit id="9041541628639360365" at="29,0,261,0" name="jetbrains.mps.console.ideCommands.editor.CommandHolder_Empty_Snippets" />
     </file>
   </root>

@@ -45,15 +45,15 @@ public class IBaseTestBlock_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getInterfaceConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L, "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new IBaseTestBlock_TransformationMenu.TransformationMenuPart_WrapSubstituteMenu_u2athv_a1());
+      result.add(new IBaseTestBlock_TransformationMenu.TMP_WrapSM_u2athv_a1());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new IBaseTestBlock_TransformationMenu.TransformationMenuPart_WrapSubstituteMenu_u2athv_a2());
+      result.add(new IBaseTestBlock_TransformationMenu.TMP_WrapSM_u2athv_a2());
     }
     return result;
   }
 
-  public class TransformationMenuPart_WrapSubstituteMenu_u2athv_a1 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_u2athv_a1 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override
@@ -69,7 +69,7 @@ public class IBaseTestBlock_TransformationMenu extends TransformationMenuBase {
       SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), createdNode, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
     }
   }
-  public class TransformationMenuPart_WrapSubstituteMenu_u2athv_a2 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_u2athv_a2 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override

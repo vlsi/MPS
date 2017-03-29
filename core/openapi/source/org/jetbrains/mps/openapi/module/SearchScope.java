@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  * {@code jetbrains.mps.ide.findusages.model.SearchQuery} or replaced with {@link SRepository} available separately. Perhaps, if the
  * only legitimate use of resolve() is query input, {@code jetbrains.mps.ide.findusages.model.holders.IHolder} needs re-work to pass objects, rather than
  * references (resolve them externally to Finder).
+ * <p/>
+ * There's now {@code SearchObjectResolver} responsible to translate IHolder's values into model objects, and {@code resolve()} methods of this interface
+ * serve as fall-back solution only.
  * <p/>
  * Besides, presence of both {@link #getModels()} and {@link #getModules()} method is confusing as well, as there's no contract whether they are
  * synchronized/aligned (i.e. if  {@link #getModules()} yields modules for any model from {@link #getModels()} and vice versa, if a presence of module means

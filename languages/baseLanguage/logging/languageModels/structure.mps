@@ -3,7 +3,6 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -11,6 +10,13 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <reference id="1083171729157" name="memberDataType" index="M4eZT" />
         <reference id="1083241965437" name="defaultMember" index="Qgau1" />
@@ -28,6 +34,7 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -49,6 +56,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -72,6 +82,12 @@
       <property role="IQ2ns" value="1167227561449" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="1TJgyj" id="1KXtTGFTOJf" role="1TKVEi">
+      <property role="IQ2ns" value="2034914114981546959" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="project" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
     <node concept="1TJgyi" id="gZ4fQWf" role="1TKVEl">
       <property role="TrG5h" value="hasException" />
       <property role="IQ2nx" value="1167228628751" />
@@ -82,8 +98,15 @@
       <property role="IQ2nx" value="1167245565795" />
       <ref role="AX2Wp" node="gZ5eI4j" resolve="Severity" />
     </node>
-    <node concept="PrWs8" id="1653mnvAmBZ" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    <node concept="t5JxF" id="1KXtTGFSJ6M" role="lGtFl">
+      <property role="t5JxN" value="prints message to the MessagesView and logs to log4j apache. It is going to be removed in 2017.3" />
+    </node>
+    <node concept="asaX9" id="5vyNLjQPqrZ" role="lGtFl">
+      <property role="YLQ7P" value="Deprecated because it prints both to apache log4j and to messages view; please consider using ApacheStatement and LogToMessagesViewStatement" />
+      <property role="YLPcu" value="171.1" />
+    </node>
+    <node concept="PrWs8" id="4XBaoL6c9Dp" role="PzmwI">
+      <ref role="PrY4T" node="5vyNLjQPuUQ" resolve="IMessage" />
     </node>
   </node>
   <node concept="AxPO7" id="gZ5eI4j">
@@ -130,6 +153,80 @@
       <property role="IQ2ns" value="1168401864803" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="asaX9" id="1KXtTGFSJ2I" role="lGtFl" />
+    <node concept="t5JxF" id="1KXtTGFSJ2N" role="lGtFl">
+      <property role="t5JxN" value="Please use LogStatement" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1KXtTGFSJ2T">
+    <property role="EcuMT" value="2034914114981261497" />
+    <property role="TrG5h" value="LogLowLevelStatement" />
+    <property role="R5$K2" value="true" />
+    <property role="R5$K7" value="false" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
+    <node concept="1TJgyi" id="1KXtTGFSJ6R" role="1TKVEl">
+      <property role="IQ2nx" value="2034914114981261751" />
+      <property role="TrG5h" value="severity" />
+      <ref role="AX2Wp" node="gZ5eI4j" resolve="Severity" />
+    </node>
+    <node concept="1TJgyj" id="1KXtTGFSJ6T" role="1TKVEi">
+      <property role="IQ2ns" value="2034914114981261753" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="message" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="1KXtTGFSJ6V" role="1TKVEi">
+      <property role="IQ2ns" value="2034914114981261755" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="throwable" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="t5JxF" id="L4fvOC6Yhs" role="lGtFl">
+      <property role="t5JxN" value="prints the message to the system logger. It is supposed to be used for the low-level logging (eg to debug a language)" />
+    </node>
+    <node concept="PrWs8" id="4XBaoL6c7Mh" role="PzmwI">
+      <ref role="PrY4T" node="5vyNLjQPuUQ" resolve="IMessage" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5vyNLjQPqst">
+    <property role="EcuMT" value="6332851714983831325" />
+    <property role="TrG5h" value="MsgStatement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
+    <node concept="1TJgyj" id="4XBaoL6cc9u" role="1TKVEi">
+      <property role="IQ2ns" value="5721587534047265374" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="message" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="4XBaoL6cc9v" role="1TKVEi">
+      <property role="IQ2ns" value="5721587534047265375" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="throwable" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="4XBaoL6ccco" role="1TKVEi">
+      <property role="IQ2ns" value="5721587534047265560" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="project" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyi" id="5vyNLjQPtwv" role="1TKVEl">
+      <property role="IQ2nx" value="6332851714983843871" />
+      <property role="TrG5h" value="severity" />
+      <ref role="AX2Wp" node="gZ5eI4j" resolve="Severity" />
+    </node>
+    <node concept="PrWs8" id="4XBaoL6cbtE" role="PzmwI">
+      <ref role="PrY4T" node="5vyNLjQPuUQ" resolve="IMessage" />
+    </node>
+    <node concept="t5JxF" id="7su458LK9Ba" role="lGtFl">
+      <property role="t5JxN" value="as for 2017.1 logs the message to the message view tool window. It is supposed to be a high-level logging (yet to be done)" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="5vyNLjQPuUQ">
+    <property role="EcuMT" value="6332851714983849654" />
+    <property role="TrG5h" value="IMessage" />
   </node>
 </model>
 

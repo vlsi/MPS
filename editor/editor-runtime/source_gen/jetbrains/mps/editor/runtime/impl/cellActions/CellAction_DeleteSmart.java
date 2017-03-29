@@ -7,18 +7,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 
 public class CellAction_DeleteSmart extends AbstractCellAction {
@@ -35,29 +32,6 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
   private SContainmentLink myLink;
 
   private SAbstractConcept myLinkTargetConcept;
-  /**
-   * use {@link jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart#CellAction_DeleteSmart(SNode, SContainmentLink, SNode) }
-   * 
-   * @deprecated 
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public CellAction_DeleteSmart(SNode source, SNode link, SNode target) {
-    mySource = source;
-    myLegacyLink = link;
-    myTarget = target;
-    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLegacyLink);
-    myLegacyRole = SPropertyOperations.getString(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
-
-    myLink = null;
-    // This action used only for aggregation links 
-    myEnabled = SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference") && (SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1"));
-    myCanBeNull = SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1");
-    if (myCanBeNull) {
-      return;
-    }
-    myEnabled = myEnabled && SNodeOperations.getConceptDeclaration(myTarget) != SLinkOperations.getTarget(myLegacyLink, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
-  }
   public CellAction_DeleteSmart(SNode source, SContainmentLink link, SNode target) {
     this(source, link, target, null);
   }
@@ -78,7 +52,7 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
     if (myCanBeNull) {
       return;
     }
-    myEnabled = !(link.isMultiple()) && neq_89lc4r_a0a0k0n(SNodeOperations.getConcept(myTarget), myLinkTargetConcept);
+    myEnabled = !(link.isMultiple()) && neq_89lc4r_a0a0k0m(SNodeOperations.getConcept(myTarget), myLinkTargetConcept);
   }
 
   @Override
@@ -105,7 +79,7 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
       }
     }
   }
-  private static boolean neq_89lc4r_a0a0k0n(Object a, Object b) {
+  private static boolean neq_89lc4r_a0a0k0m(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

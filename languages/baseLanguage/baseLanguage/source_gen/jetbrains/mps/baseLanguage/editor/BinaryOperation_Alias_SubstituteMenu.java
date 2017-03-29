@@ -28,11 +28,11 @@ public class BinaryOperation_Alias_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BinaryOperation_Alias_SubstituteMenu.SubstituteMenuPart_Wrapper_3xwgcg_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BinaryOperation_Alias_SubstituteMenu.SubstituteMenuPart_Wrapper_3xwgcg_b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BinaryOperation_Alias_SubstituteMenu.SMP_Wrap_3xwgcg_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BinaryOperation_Alias_SubstituteMenu.SMP_Wrap_3xwgcg_b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")));
     return result;
   }
-  private class SubstituteMenuPart_Wrapper_3xwgcg_a extends WrapperSubstituteMenuPart {
+  private class SMP_Wrap_3xwgcg_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
@@ -65,7 +65,7 @@ public class BinaryOperation_Alias_SubstituteMenu extends SubstituteMenuBase {
       return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
     }
   }
-  private class SubstituteMenuPart_Wrapper_3xwgcg_b extends WrapperSubstituteMenuPart {
+  private class SMP_Wrap_3xwgcg_b extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {

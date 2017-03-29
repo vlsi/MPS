@@ -43,10 +43,10 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a());
+    result.add(new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_6wdawe_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_6wdawe_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     private boolean condition;
     private boolean condition_1;
     private boolean condition_2;
@@ -72,9 +72,9 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_a0(), new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_b0(), new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_c0(), new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_d0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_a0(), new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_b0(), new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_c0(), new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_d0());
     }
-    public class SubstituteMenuPart_Group_6wdawe_a0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_6wdawe_a0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return condition;
@@ -82,13 +82,13 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_a0.SubstituteMenuPart_Parameterized_6wdawe_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_a0.SMP_Param_6wdawe_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
       }
-      private class SubstituteMenuPart_Parameterized_6wdawe_a0a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+      private class SMP_Param_6wdawe_a0a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
         @NotNull
         @Override
         protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-          return new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_a0.SubstituteMenuPart_Parameterized_6wdawe_a0a.SubstituteMenuPart_Action_6wdawe_a0a0(parameter).createItems(context);
+          return new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_a0.SMP_Param_6wdawe_a0a.SMP_Action_6wdawe_a0a0(parameter).createItems(context);
         }
         @Nullable
         @Override
@@ -99,16 +99,16 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
             }
           }).toListSequence();
         }
-        private class SubstituteMenuPart_Action_6wdawe_a0a0 extends SingleItemSubstituteMenuPart {
+        private class SMP_Action_6wdawe_a0a0 extends SingleItemSubstituteMenuPart {
           private final SNode myParameterObject;
-          public SubstituteMenuPart_Action_6wdawe_a0a0(SNode parameterObject) {
+          public SMP_Action_6wdawe_a0a0(SNode parameterObject) {
             myParameterObject = parameterObject;
           }
 
           @Nullable
           @Override
           protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-            return new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_a0.SubstituteMenuPart_Parameterized_6wdawe_a0a.SubstituteMenuPart_Action_6wdawe_a0a0.Item(_context);
+            return new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_a0.SMP_Param_6wdawe_a0a.SMP_Action_6wdawe_a0a0.Item(_context);
           }
           private class Item extends DefaultSubstituteMenuItem {
             private final SubstituteMenuContext _context;
@@ -150,7 +150,7 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
 
       }
     }
-    public class SubstituteMenuPart_Group_6wdawe_b0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_6wdawe_b0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return condition_1;
@@ -158,29 +158,29 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_b0.SubstituteMenuPart_Parameterized_6wdawe_a1a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_b0.SMP_Param_6wdawe_a1a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
       }
-      private class SubstituteMenuPart_Parameterized_6wdawe_a1a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+      private class SMP_Param_6wdawe_a1a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
         @NotNull
         @Override
         protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-          return new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_b0.SubstituteMenuPart_Parameterized_6wdawe_a1a.SubstituteMenuPart_Action_6wdawe_a0b0(parameter).createItems(context);
+          return new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_b0.SMP_Param_6wdawe_a1a.SMP_Action_6wdawe_a0b0(parameter).createItems(context);
         }
         @Nullable
         @Override
         protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
           return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleInterfacesScope(_context.getParentNode()).getAvailableElements(null)).toListSequence();
         }
-        private class SubstituteMenuPart_Action_6wdawe_a0b0 extends SingleItemSubstituteMenuPart {
+        private class SMP_Action_6wdawe_a0b0 extends SingleItemSubstituteMenuPart {
           private final SNode myParameterObject;
-          public SubstituteMenuPart_Action_6wdawe_a0b0(SNode parameterObject) {
+          public SMP_Action_6wdawe_a0b0(SNode parameterObject) {
             myParameterObject = parameterObject;
           }
 
           @Nullable
           @Override
           protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-            return new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_b0.SubstituteMenuPart_Parameterized_6wdawe_a1a.SubstituteMenuPart_Action_6wdawe_a0b0.Item(_context);
+            return new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_b0.SMP_Param_6wdawe_a1a.SMP_Action_6wdawe_a0b0.Item(_context);
           }
           private class Item extends DefaultSubstituteMenuItem {
             private final SubstituteMenuContext _context;
@@ -222,7 +222,7 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
 
       }
     }
-    public class SubstituteMenuPart_Group_6wdawe_c0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_6wdawe_c0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return condition_2;
@@ -230,29 +230,29 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_c0.SubstituteMenuPart_Parameterized_6wdawe_a2a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_c0.SMP_Param_6wdawe_a2a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
       }
-      private class SubstituteMenuPart_Parameterized_6wdawe_a2a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+      private class SMP_Param_6wdawe_a2a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
         @NotNull
         @Override
         protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-          return new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_c0.SubstituteMenuPart_Parameterized_6wdawe_a2a.SubstituteMenuPart_Action_6wdawe_a0c0(parameter).createItems(context);
+          return new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_c0.SMP_Param_6wdawe_a2a.SMP_Action_6wdawe_a0c0(parameter).createItems(context);
         }
         @Nullable
         @Override
         protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
           return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleInterfacesScope(_context.getParentNode()).getAvailableElements(null)).toListSequence();
         }
-        private class SubstituteMenuPart_Action_6wdawe_a0c0 extends SingleItemSubstituteMenuPart {
+        private class SMP_Action_6wdawe_a0c0 extends SingleItemSubstituteMenuPart {
           private final SNode myParameterObject;
-          public SubstituteMenuPart_Action_6wdawe_a0c0(SNode parameterObject) {
+          public SMP_Action_6wdawe_a0c0(SNode parameterObject) {
             myParameterObject = parameterObject;
           }
 
           @Nullable
           @Override
           protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-            return new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_c0.SubstituteMenuPart_Parameterized_6wdawe_a2a.SubstituteMenuPart_Action_6wdawe_a0c0.Item(_context);
+            return new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_c0.SMP_Param_6wdawe_a2a.SMP_Action_6wdawe_a0c0.Item(_context);
           }
           private class Item extends DefaultSubstituteMenuItem {
             private final SubstituteMenuContext _context;
@@ -294,7 +294,7 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
 
       }
     }
-    public class SubstituteMenuPart_Group_6wdawe_d0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_6wdawe_d0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return !((condition || condition_1 || condition_2)) && (_context.getLink() != null || !(SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"))));
@@ -302,9 +302,9 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ClassifierType_SubstituteMenu.SubstituteMenuPart_Group_6wdawe_a.SubstituteMenuPart_Group_6wdawe_d0.SubstituteMenuPart_Subconcepts_6wdawe_a3a(), new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ClassifierType_SubstituteMenu.SMP_Group_6wdawe_a.SMP_Group_6wdawe_d0.SMP_Subconcepts_6wdawe_a3a(), new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
       }
-      public class SubstituteMenuPart_Subconcepts_6wdawe_a3a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+      public class SMP_Subconcepts_6wdawe_a3a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
         protected Collection getConcepts(final SubstituteMenuContext _context) {
           return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
         }

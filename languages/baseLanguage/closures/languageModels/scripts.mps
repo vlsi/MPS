@@ -196,9 +196,9 @@
       <concept id="1196866233735" name="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" flags="ng" index="2EMmih" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -4416,9 +4416,9 @@
           <node concept="3clFbH" id="6pcVnMvGWfv" role="3cqZAp" />
           <node concept="3clFbJ" id="7Qab_gmichY" role="3cqZAp">
             <node concept="3clFbS" id="7Qab_gmici1" role="3clFbx">
-              <node concept="34ab3g" id="7Qab_gmifQz" role="3cqZAp">
-                <property role="35gtTG" value="warn" />
-                <node concept="Xl_RD" id="7Qab_gmifQ_" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB39ME" role="3cqZAp">
+                <property role="RRSoG" value="warn" />
+                <node concept="Xl_RD" id="7Qab_gmifQ_" role="RRSoy">
                   <property role="Xl_RC" value="broken code in RuntimeUtil: not found StringSwitchStatement in function" />
                 </node>
               </node>
@@ -4687,9 +4687,9 @@
           <node concept="3clFbH" id="6pcVnMvGVr3" role="3cqZAp" />
           <node concept="3clFbJ" id="6pcVnMvEk6k" role="3cqZAp">
             <node concept="3clFbS" id="6pcVnMvEk6l" role="3clFbx">
-              <node concept="34ab3g" id="6pcVnMvEk6m" role="3cqZAp">
-                <property role="35gtTG" value="warn" />
-                <node concept="Xl_RD" id="6pcVnMvEk6n" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB39MK" role="3cqZAp">
+                <property role="RRSoG" value="warn" />
+                <node concept="Xl_RD" id="6pcVnMvEk6n" role="RRSoy">
                   <property role="Xl_RC" value="broken code in RuntimeUtil: not found StringSwitchStatement in ufunction" />
                 </node>
               </node>

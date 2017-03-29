@@ -32,9 +32,8 @@ public final class NotExpression__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<NextProgramPoint> getNextProgramPoint_id3F8BxGibk8h = new SMethodBuilder<NextProgramPoint>(new SJavaCompoundTypeImpl(NextProgramPoint.class)).name("getNextProgramPoint").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3F8BxGibk8h").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(Boolean.TYPE, ""));
   public static final SMethod<Boolean> isCompileTimeConstant_idi1LOPRp = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isCompileTimeConstant").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i1LOPRp").registry(REGISTRY).build();
   public static final SMethod<Object> getCompileTimeConstantValue_idi1LP2xI = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("getCompileTimeConstantValue").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i1LP2xI").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SModule.class, ""));
-  public static final SMethod<Object> eval_idhEwJgmp = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("eval").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJgmp").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SModule.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getSyntacticallyRightSideExpression_id1wHCnsn590i, setSyntacticallyRightSideExpression_id1wHCnsn58ZY, getNextProgramPoint_id3F8BxGibk8h, isCompileTimeConstant_idi1LOPRp, getCompileTimeConstantValue_idi1LP2xI, eval_idhEwJgmp);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getSyntacticallyRightSideExpression_id1wHCnsn590i, setSyntacticallyRightSideExpression_id1wHCnsn58ZY, getNextProgramPoint_id3F8BxGibk8h, isCompileTimeConstant_idi1LOPRp, getCompileTimeConstantValue_idi1LP2xI);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -64,13 +63,6 @@ public final class NotExpression__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return null;
   }
-  /*package*/ static Object eval_idhEwJgmp(@NotNull SNode __thisNode__, SModule module) {
-    final Object result = Expression__BehaviorDescriptor.eval_idhEwJgmp.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression")), module);
-    if (result != null && result instanceof Boolean) {
-      return !(((Boolean) result).booleanValue());
-    }
-    return Expression__BehaviorDescriptor.eval_idhEwJgmp.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"), module);
-  }
 
   /*package*/ NotExpression__BehaviorDescriptor() {
     super(REGISTRY);
@@ -99,8 +91,6 @@ public final class NotExpression__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((Boolean) isCompileTimeConstant_idi1LOPRp(node));
       case 4:
         return (T) ((Object) getCompileTimeConstantValue_idi1LP2xI(node, (SModule) parameters[0]));
-      case 5:
-        return (T) ((Object) eval_idhEwJgmp(node, (SModule) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

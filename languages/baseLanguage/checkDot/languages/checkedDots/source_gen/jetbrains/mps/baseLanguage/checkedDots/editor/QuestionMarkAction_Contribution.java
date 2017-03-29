@@ -27,15 +27,15 @@ public class QuestionMarkAction_Contribution extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new QuestionMarkAction_Contribution.SubstituteMenuPart_Action_mhw6z7_a(), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new QuestionMarkAction_Contribution.SMP_Action_mhw6z7_a(), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation")));
     return result;
   }
-  private class SubstituteMenuPart_Action_mhw6z7_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_mhw6z7_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new QuestionMarkAction_Contribution.SubstituteMenuPart_Action_mhw6z7_a.Item(_context);
+      return new QuestionMarkAction_Contribution.SMP_Action_mhw6z7_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

@@ -42,16 +42,16 @@ public class prefix extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new prefix.TransformationMenuPart_Action_resfux_a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a46df580L, "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression")));
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new prefix.TransformationMenuPart_Action_resfux_b0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a472f0e8L, "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new prefix.TMP_Action_resfux_a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a46df580L, "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new prefix.TMP_Action_resfux_b0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a472f0e8L, "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression")));
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_resfux_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_resfux_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new prefix.TransformationMenuPart_Action_resfux_a0.Item(context);
+      return new prefix.TMP_Action_resfux_a0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -89,10 +89,10 @@ public class prefix extends TransformationMenuBase {
       }
     }
   }
-  private class TransformationMenuPart_Action_resfux_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_resfux_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new prefix.TransformationMenuPart_Action_resfux_b0.Item(context);
+      return new prefix.TMP_Action_resfux_b0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

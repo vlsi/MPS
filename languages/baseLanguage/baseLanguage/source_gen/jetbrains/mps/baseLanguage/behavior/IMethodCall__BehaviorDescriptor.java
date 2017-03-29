@@ -8,20 +8,18 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.HashMap;
@@ -39,7 +37,6 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Object[]> getActualArguments_idhJyuD6_ = new SMethodBuilder<Object[]>(new SJavaCompoundTypeImpl(Object[].class)).name("getActualArguments").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hJyuD6_").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SModule.class, ""));
   public static final SMethod<SNode> deriveType_idhEwIVPz = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("deriveType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIVPz").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   /*package*/ static final SMethod<SNode> getConcreteType_id6WzWPTX2xhN = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getConcreteType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("6WzWPTX2xhN").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<SNode> getTypeAnnotation_idhXbqSv6 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTypeAnnotation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PACKAGE)).concept(CONCEPT).id("hXbqSv6").registry(REGISTRY).build();
@@ -49,18 +46,11 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Boolean> isInTypeInferenceContext_id4cxv$9$kw67 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isInTypeInferenceContext").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cxv$9$kw67").registry(REGISTRY).build();
   public static final SMethod<Boolean> useScopesForMethodDeclarationFixer_id3EWPnx1lHq = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("useScopesForMethodDeclarationFixer").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3EWPnx1lHq").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getActualArguments_idhJyuD6_, deriveType_idhEwIVPz, getConcreteType_id6WzWPTX2xhN, getTypeAnnotation_idhXbqSv6, getInstanceType_id6WzWPTX2vuB, getTypesByTypeVars_idJfLh5LDMrj, getAvailableMethodDeclarations_id50EF2fWdwEN, isInTypeInferenceContext_id4cxv$9$kw67, useScopesForMethodDeclarationFixer_id3EWPnx1lHq);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(deriveType_idhEwIVPz, getConcreteType_id6WzWPTX2xhN, getTypeAnnotation_idhXbqSv6, getInstanceType_id6WzWPTX2vuB, getTypesByTypeVars_idJfLh5LDMrj, getAvailableMethodDeclarations_id50EF2fWdwEN, isInTypeInferenceContext_id4cxv$9$kw67, useScopesForMethodDeclarationFixer_id3EWPnx1lHq);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static Object[] getActualArguments_idhJyuD6_(@NotNull SNode __thisNode__, final SModule module) {
-    return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).select(new ISelector<SNode, Object>() {
-      public Object select(SNode it) {
-        return (Object) Expression__BehaviorDescriptor.eval_idhEwJgmp.invoke(it, module);
-      }
-    }).toGenericArray(Object.class);
-  }
   /*package*/ static SNode deriveType_idhEwIVPz(@NotNull SNode __thisNode__, SNode expression) {
     // is 'experssion' an actual argument in this method call? 
     if (SNodeOperations.getParent(expression) == __thisNode__ && SNodeOperations.hasRole(expression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))) {
@@ -75,15 +65,15 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
         }
         final SNode methodClassifier = SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
         {
-          GeneratedMatchingPattern pattern_fq0410_f0c0b0b = new Pattern_1ouf0mjhz0oob(_quotation_createNode_fq0410_a0a0a0f0c0b0b(methodClassifier));
-          SNode coercedNode_fq0410_f0c0b0b = TypeChecker.getInstance().getRuntimeSupport().coerce_(instanceType, pattern_fq0410_f0c0b0b);
-          if (coercedNode_fq0410_f0c0b0b != null) {
+          GeneratedMatchingPattern pattern_fq0410_f0c0b0a = new Pattern_1ouf0mjhz0oob(_quotation_createNode_fq0410_a0a0a0f0c0b0a(methodClassifier));
+          SNode coercedNode_fq0410_f0c0b0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(instanceType, pattern_fq0410_f0c0b0a);
+          if (coercedNode_fq0410_f0c0b0a != null) {
             SNode resultType;
             if (SNodeOperations.isInstanceOf(rawType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
-              resultType = IMethodCall__BehaviorDescriptor.getConcreteType_id6WzWPTX2xhN.invoke(__thisNode__, SNodeOperations.cast(rawType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), coercedNode_fq0410_f0c0b0b, methodClassifier);
+              resultType = IMethodCall__BehaviorDescriptor.getConcreteType_id6WzWPTX2xhN.invoke(__thisNode__, SNodeOperations.cast(rawType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), coercedNode_fq0410_f0c0b0a, methodClassifier);
             } else {
               for (SNode typeVariableReference : SNodeOperations.getNodeDescendants(rawType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SAbstractConcept[]{})) {
-                SNode concreteType = IMethodCall__BehaviorDescriptor.getConcreteType_id6WzWPTX2xhN.invoke(__thisNode__, typeVariableReference, coercedNode_fq0410_f0c0b0b, methodClassifier);
+                SNode concreteType = IMethodCall__BehaviorDescriptor.getConcreteType_id6WzWPTX2xhN.invoke(__thisNode__, typeVariableReference, coercedNode_fq0410_f0c0b0a, methodClassifier);
                 SNodeOperations.replaceWithAnother(typeVariableReference, concreteType);
               }
               resultType = rawType;
@@ -100,14 +90,14 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static SNode getConcreteType_id6WzWPTX2xhN(@NotNull SNode __thisNode__, SNode typeVariableReference, SNode coercedClt, SNode methodClassifier) {
     List<SNode> parameters = SLinkOperations.getChildren(coercedClt, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"));
     if (ListSequence.fromList(parameters).isEmpty()) {
-      return _quotation_createNode_fq0410_a0a1a2();
+      return _quotation_createNode_fq0410_a0a1a1();
     }
     SNode concreteType;
     int index = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVariableReference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")));
     if (SNodeOperations.getParent(SLinkOperations.getTarget(typeVariableReference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"))) == methodClassifier && ListSequence.fromList(parameters).count() > index) {
       concreteType = SNodeOperations.copyNode(ListSequence.fromList(parameters).getElement(index));
     } else {
-      concreteType = _quotation_createNode_fq0410_a0a0a4a2();
+      concreteType = _quotation_createNode_fq0410_a0a0a4a1();
     }
     return concreteType;
   }
@@ -159,22 +149,20 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((Object[]) getActualArguments_idhJyuD6_(node, (SModule) parameters[0]));
-      case 1:
         return (T) ((SNode) deriveType_idhEwIVPz(node, (SNode) parameters[0]));
-      case 2:
+      case 1:
         return (T) ((SNode) getConcreteType_id6WzWPTX2xhN(node, (SNode) parameters[0], (SNode) parameters[1], (SNode) parameters[2]));
-      case 3:
+      case 2:
         return (T) ((SNode) getTypeAnnotation_idhXbqSv6(node));
-      case 4:
+      case 3:
         return (T) ((SNode) getInstanceType_id6WzWPTX2vuB(node));
-      case 5:
+      case 4:
         return (T) ((Map<SNode, SNode>) getTypesByTypeVars_idJfLh5LDMrj(node));
-      case 6:
+      case 5:
         return (T) ((Iterable<SNode>) getAvailableMethodDeclarations_id50EF2fWdwEN(node, (String) parameters[0]));
-      case 7:
+      case 6:
         return (T) ((Boolean) isInTypeInferenceContext_id4cxv$9$kw67(node));
-      case 8:
+      case 7:
         return (T) ((Boolean) useScopesForMethodDeclarationFixer_id3EWPnx1lHq(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -204,7 +192,7 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SNode _quotation_createNode_fq0410_a0a0a0f0c0b0b(Object parameter_1) {
+  private static SNode _quotation_createNode_fq0410_a0a0a0f0c0b0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -214,14 +202,14 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"), quotedNode_3);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_fq0410_a0a1a2() {
+  private static SNode _quotation_createNode_fq0410_a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_fq0410_a0a0a4a2() {
+  private static SNode _quotation_createNode_fq0410_a0a0a4a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);

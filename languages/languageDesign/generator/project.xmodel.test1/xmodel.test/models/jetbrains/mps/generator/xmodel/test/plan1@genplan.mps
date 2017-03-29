@@ -2,7 +2,7 @@
 <model ref="r:85a0bc80-fc68-485e-a9a1-926c3cc284af(jetbrains.mps.generator.xmodel.test.plan1@genplan)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="7ab1a6fa-0a11-4b95-9e48-75f363d6cb00" name="jetbrains.mps.lang.generator.plan" version="0" />
+    <use id="7ab1a6fa-0a11-4b95-9e48-75f363d6cb00" name="jetbrains.mps.lang.generator.plan" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
   </languages>
   <imports />
@@ -11,10 +11,13 @@
       <concept id="1820634577908471803" name="jetbrains.mps.lang.generator.plan.structure.Plan" flags="ng" index="2VgMpV">
         <child id="1820634577908471815" name="steps" index="2VgMA7" />
       </concept>
-      <concept id="1820634577908471809" name="jetbrains.mps.lang.generator.plan.structure.Checkpoint" flags="ng" index="2VgMA1" />
+      <concept id="1820634577908471809" name="jetbrains.mps.lang.generator.plan.structure.Checkpoint" flags="ng" index="2VgMA1">
+        <child id="3750601816081740498" name="cpSpec" index="3ps6aC" />
+      </concept>
       <concept id="1820634577908471810" name="jetbrains.mps.lang.generator.plan.structure.Transform" flags="ng" index="2VgMA2">
         <child id="2944629966652439181" name="languages" index="1t_9vn" />
       </concept>
+      <concept id="3750601816081736033" name="jetbrains.mps.lang.generator.plan.structure.InPlaceCheckpointSpec" flags="ng" index="3ps74r" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
@@ -37,7 +40,9 @@
       </node>
     </node>
     <node concept="2VgMA1" id="4nEGcLMel2y" role="2VgMA7">
-      <property role="TrG5h" value="first" />
+      <node concept="3ps74r" id="6OITmG45Asa" role="3ps6aC">
+        <property role="TrG5h" value="first" />
+      </node>
     </node>
     <node concept="2VgMA2" id="4nEGcLMel2G" role="2VgMA7">
       <node concept="2V$Bhx" id="4nEGcLMemec" role="1t_9vn">

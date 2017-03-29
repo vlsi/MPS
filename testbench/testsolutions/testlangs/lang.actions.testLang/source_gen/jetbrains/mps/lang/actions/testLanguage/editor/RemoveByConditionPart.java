@@ -26,10 +26,10 @@ public class RemoveByConditionPart extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new RemoveByConditionPart.SubstituteMenuPart_Group_tbd9d5_a());
+    result.add(new RemoveByConditionPart.SMP_Group_tbd9d5_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_tbd9d5_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_tbd9d5_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return eq_tbd9d5_a0a0a1(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc2552e60aL, "removeByConditionPart"));
@@ -37,9 +37,9 @@ public class RemoveByConditionPart extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new RemoveByConditionPart.SubstituteMenuPart_Group_tbd9d5_a.SubstituteMenuPart_Subconcepts_tbd9d5_a0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new RemoveByConditionPart.SMP_Group_tbd9d5_a.SMP_Subconcepts_tbd9d5_a0());
     }
-    public class SubstituteMenuPart_Subconcepts_tbd9d5_a0 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Subconcepts_tbd9d5_a0 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
       protected Collection getConcepts(final SubstituteMenuContext _context) {
         return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25514b8dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild")).stream().filter(new Predicate<SAbstractConcept>() {
           public boolean test(SAbstractConcept concept) {

@@ -19,7 +19,7 @@
       <unit at="16,0,70,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="19,0,61,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.TemplateModelImpl" />
+      <unit at="20,0,66,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)/6186432342008486850">

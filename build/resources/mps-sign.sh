@@ -33,11 +33,6 @@ HELP_DIR=~/${EXPLODED}/"$BUILD_NAME"/Contents/Resources/"$HELP_FILE"/Contents/Re
 echo "Building help indices for $HELP_DIR"
 hiutil -Cagvf "$HELP_DIR/search.helpindex" "$HELP_DIR"
 
-for f in ~/${EXPLODED}/"$BUILD_NAME"/Contents/bin/*.jnilib ; do
-  b="$(basename "$f" .jnilib)"
-  ln -sf "$b.jnilib" "$(dirname "$f")/$b.dylib"
-done
-
 # Make sure JetBrainsMacApplication.p12 is imported into local KeyChain
 security unlock-keychain -p $3 $2
 

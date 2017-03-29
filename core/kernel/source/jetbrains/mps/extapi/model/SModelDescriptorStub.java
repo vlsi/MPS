@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.extapi.model;
 
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelLegacy;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
@@ -34,7 +32,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -94,10 +91,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   protected void clearListeners() {
     myModelListeners.clear();
-  }
-
-  protected void notifyModelReplaced(jetbrains.mps.smodel.SModel oldSModel) {
-    SModelRepository.getInstance().notifyModelReplaced(this, oldSModel);
   }
 
   // Not SModel-specific listener notifications

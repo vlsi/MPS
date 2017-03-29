@@ -28,10 +28,10 @@ public class TestSubstituteChildWithConstraintsWrapper3_SubstituteMenu extends S
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TestSubstituteChildWithConstraintsWrapper3_SubstituteMenu.SubstituteMenuPart_Wrapper_roif8s_a(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d41c8eL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraintsWrapper3")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TestSubstituteChildWithConstraintsWrapper3_SubstituteMenu.SMP_Wrap_roif8s_a(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d41c8eL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraintsWrapper3")));
     return result;
   }
-  private class SubstituteMenuPart_Wrapper_roif8s_a extends WrapperSubstituteMenuPart {
+  private class SMP_Wrap_roif8s_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {

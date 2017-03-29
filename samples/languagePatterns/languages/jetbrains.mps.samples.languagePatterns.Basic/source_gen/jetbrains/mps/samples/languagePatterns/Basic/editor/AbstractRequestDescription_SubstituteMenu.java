@@ -29,11 +29,11 @@ public class AbstractRequestDescription_SubstituteMenu extends SubstituteMenuBas
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new AbstractRequestDescription_SubstituteMenu.SubstituteMenuPart_Subconcepts_dcepxw_a());
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractRequestDescription_SubstituteMenu.SubstituteMenuPart_Action_dcepxw_b(), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription")));
+    result.add(new AbstractRequestDescription_SubstituteMenu.SMP_Subconcepts_dcepxw_a());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractRequestDescription_SubstituteMenu.SMP_Action_dcepxw_b(), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription")));
     return result;
   }
-  public class SubstituteMenuPart_Subconcepts_dcepxw_a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_dcepxw_a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription"));
     }
@@ -42,12 +42,12 @@ public class AbstractRequestDescription_SubstituteMenu extends SubstituteMenuBas
       return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
     }
   }
-  private class SubstituteMenuPart_Action_dcepxw_b extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_dcepxw_b extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new AbstractRequestDescription_SubstituteMenu.SubstituteMenuPart_Action_dcepxw_b.Item(_context);
+      return new AbstractRequestDescription_SubstituteMenu.SMP_Action_dcepxw_b.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

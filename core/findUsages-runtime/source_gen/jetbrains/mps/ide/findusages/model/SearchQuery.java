@@ -9,13 +9,13 @@ import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import org.jdom.Element;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.model.holders.ModuleRefHolder;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
 
@@ -24,35 +24,62 @@ public class SearchQuery implements IExternalizeable {
   private static final String HOLDER_CLASS = "holder_class";
   private SearchScope myScope;
   private IHolder myObjectHolder = new VoidHolder();
+  private SearchObjectResolver myObjectResolver;
+
   public SearchQuery(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
+    // intentionally not null. Null would default to CompatibilityResolver and issues like https://youtrack.jetbrains.com/issue/MPS-25530 
+    // would arise after reload of externalized query (e.g. project restart). It's not nice to use whole project as search object scope, but 
+    // given present 'externalization' mechanism I don't have much to choose from. 
+    myObjectResolver = new SearchObjectResolver.BasicResolver(project.getRepository());
   }
+
   public SearchQuery(IHolder objectHolder, SearchScope scope) {
     myScope = scope;
     myObjectHolder = objectHolder;
+    // null is legal field value, see getSearchObjectResolver() impl, but I don't want to allow null in the cons API 
+    myObjectResolver = null;
   }
+
+  public SearchQuery(IHolder objectHolder, @NotNull SearchObjectResolver objectResolver, SearchScope scope) {
+    myScope = scope;
+    myObjectHolder = objectHolder;
+    myObjectResolver = objectResolver;
+  }
+
   public SearchQuery(SModelReference modelReference, SearchScope scope) {
     this(new ModelHolder(modelReference), scope);
   }
+
   public SearchQuery(SNode node, SearchScope scope) {
-    this(new NodeHolder(node), scope);
+    this(new NodeHolder(node), SearchObjectResolver.forNode(node), scope);
   }
+
   public SearchQuery(SModule module, SearchScope scope) {
-    this(new ModuleRefHolder(module.getModuleReference()), scope);
+    this(new ModuleRefHolder(module.getModuleReference()), SearchObjectResolver.forModule(module), scope);
   }
+
   public SearchQuery(SearchScope scope) {
     this(new VoidHolder(), scope);
   }
+
   public SearchScope getScope() {
     return myScope;
   }
+
   public IHolder getObjectHolder() {
     return myObjectHolder;
   }
+
+  public SearchObjectResolver getSearchObjectResolver() {
+    return (myObjectResolver != null ? myObjectResolver : new SearchObjectResolver.CompatibilityResolver(myScope));
+  }
+
   @NotNull
   public String getCaption() {
     return myObjectHolder.getCaption();
   }
+
   @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     if (myScope instanceof FindUsagesScope) {

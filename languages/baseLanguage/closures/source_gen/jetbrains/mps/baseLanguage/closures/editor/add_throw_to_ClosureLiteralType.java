@@ -43,12 +43,12 @@ public class add_throw_to_ClosureLiteralType extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new add_throw_to_ClosureLiteralType.TransformationMenuPart_Group_buzigt_a0());
+      result.add(new add_throw_to_ClosureLiteralType.TMP_Group_buzigt_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_buzigt_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_buzigt_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       SNode parent = SNodeOperations.getParent(_context.getNode());
@@ -60,12 +60,12 @@ public class add_throw_to_ClosureLiteralType extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new add_throw_to_ClosureLiteralType.TransformationMenuPart_Group_buzigt_a0.TransformationMenuPart_Action_buzigt_a0a(), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new add_throw_to_ClosureLiteralType.TMP_Group_buzigt_a0.TMP_Action_buzigt_a0a(), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
     }
-    private class TransformationMenuPart_Action_buzigt_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_buzigt_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new add_throw_to_ClosureLiteralType.TransformationMenuPart_Group_buzigt_a0.TransformationMenuPart_Action_buzigt_a0a.Item(context);
+        return new add_throw_to_ClosureLiteralType.TMP_Group_buzigt_a0.TMP_Action_buzigt_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

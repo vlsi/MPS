@@ -21,14 +21,19 @@ import jetbrains.mps.messages.IMessageHandler;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.io.IOException;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -36,17 +41,14 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.IFileUtils;
-import javax.swing.SwingUtilities;
-import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -93,9 +95,10 @@ public class JavaToMpsConverter {
   private Map<String, Set<SNode>> classesPerPackage = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
   private Map<String, List<IFile>> filesPerPackage = MapSequence.fromMap(new HashMap<String, List<IFile>>());
   private Map<String, IFile> packageDirs = MapSequence.fromMap(new HashMap<String, IFile>());
-  private List<SModel> myModels = ListSequence.fromList(new ArrayList<SModel>());
+  private List<SModel> myModels;
   private List<SNode> myRoots = ListSequence.fromList(new ArrayList<SNode>());
   private List<SNode> myAttachedRoots = ListSequence.fromList(new ArrayList<SNode>());
+  private Map<SNode, SModel> myRootsToModels = MapSequence.fromMap(new HashMap<SNode, SModel>());
   private List<IFile> mySuccessfulFiles = ListSequence.fromList(new ArrayList<IFile>());
 
   private boolean wasDefaultPkg = false;
@@ -124,127 +127,163 @@ public class JavaToMpsConverter {
 
   public JavaToMpsConverter(SModel model, SRepository repository, IMessageHandler messageHandler) {
     myModel = model;
+    myModule = model.getModule();
     myRepository = repository;
     myModelAccess = repository.getModelAccess();
     myMessageHandler = messageHandler;
   }
 
-  public void convertToMps(final List<IFile> files, ProgressMonitor progress) throws JavaParseException, IOException {
+  public void saveAll() {
+    ListSequence.fromList(myModels).visitAll(new IVisitor<SModel>() {
+      public void visit(SModel it) {
+        ((EditableSModel) it).setChanged(true);
+        ((EditableSModel) it).save();
+      }
+    });
+  }
 
+  public void convertToMps(List<IFile> files, ProgressMonitor progress) throws JavaParseException, IOException {
     progress.start("Converting...", 31);
 
     // first we build AST 
-    final ProgressMonitor parseProgress = progress.subTask(1);
+    ProgressMonitor parseProgress = progress.subTask(1);
     parseProgress.start("Parsing...", ListSequence.fromList(files).count());
 
-    // read action needed only because java parser does new node<Concept> 
-
-    myModelAccess.runReadAction(new Runnable() {
-      public void run() {
-        for (IFile file : ListSequence.fromList(files)) {
-          try {
-            parseFile(file);
-            parseProgress.advance(1);
-          } catch (JavaParseException e) {
-            Message msg = new Message(MessageKind.ERROR, String.format("Parse error: %s", e.getMessage()));
-            if (e.getCause() != null) {
-              msg.setException(e.getCause());
-            }
-            myMessageHandler.handle(msg);
-          } catch (IOException e) {
-            myMessageHandler.handle(new Message(MessageKind.ERROR, String.format("IO error when converting (java->mps) file %s", file.getName())).setException(e));
-          }
+    for (IFile file : ListSequence.fromList(files)) {
+      try {
+        parseFile(file);
+        parseProgress.advance(1);
+      } catch (JavaParseException e) {
+        Message msg = new Message(MessageKind.ERROR, String.format("Parse error: %s", e.getMessage()));
+        if (e.getCause() != null) {
+          msg.setException(e.getCause());
         }
+        myMessageHandler.handle(msg);
+      } catch (IOException e) {
+        myMessageHandler.handle(new Message(MessageKind.ERROR, String.format("IO error when converting (java->mps) file %s", file.getName())).setException(e));
       }
-    });
+    }
 
     parseProgress.done();
-
 
     int rootCount = 0;
 
     // now we attach the models and try to resolve 
 
-    runCommand("roots creation pass", new Runnable() {
+    myModelAccess.runWriteAction(new Runnable() {
       public void run() {
+        ((AbstractModule) myModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
 
         if (myModel == null) {
+          myModels = ListSequence.fromList(new ArrayList<SModel>());
           for (String pakage : MapSequence.fromMap(classesPerPackage).keySet()) {
             final SModel model = getModel(pakage, MapSequence.fromMap(packageDirs).get(pakage));
             if (model == null) {
               continue;
             }
-
-            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"));
-            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(0xf280165065d5424eL, 0xbb1b463a8781b786L, "jetbrains.mps.baseLanguage.javadoc"));
-
             Set<SNode> roots = MapSequence.fromMap(classesPerPackage).get(pakage);
             SetSequence.fromSet(roots).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {
-                model.addRootNode(it);
+                MapSequence.fromMap(myRootsToModels).put(it, model);
               }
             });
 
             ListSequence.fromList(mySuccessfulFiles).addSequence(ListSequence.fromList(MapSequence.fromMap(filesPerPackage).get(pakage)));
             ListSequence.fromList(myAttachedRoots).addSequence(SetSequence.fromSet(roots));
-
-            ((EditableSModel) model).save();
             ListSequence.fromList(myModels).addElement(model);
           }
 
         } else {
           // todo maybe do something clever with packages <-> java imports 
           // with regard to model where we put it all 
+
           for (SNode root : ListSequence.fromList(myRoots)) {
             // todo be more accurate with duplicates 
-            myModel.addRootNode(root);
+            MapSequence.fromMap(myRootsToModels).put(root, myModel);
           }
+          myModels = Sequence.fromIterable(Sequence.<SModel>singleton(myModel)).toListSequence();
           myAttachedRoots = myRoots;
-          ((SModelBase) myModel).addLanguage(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"));
-          ((SModelBase) myModel).addLanguage(MetaAdapterFactory.getLanguage(0xf280165065d5424eL, 0xbb1b463a8781b786L, "jetbrains.mps.baseLanguage.javadoc"));
         }
+      }
+    });
 
-        JavaParser.tryResolveUnknowns(myAttachedRoots);
+    IncrementalModelAccess modelAccess;
+    if (myModelAccess.isCommandAction()) {
+      modelAccess = IncrementalModelAccess.INSIDE_COMMAND_OR_UPDATE_MODE;
+    } else if (myModel != null) {
+      // import into single already existing model; use proper command for replacing nodes 
+      modelAccess = new IncrementalModelAccessWithCommand(myModelAccess, myModels, myMessageHandler);
+    } else {
+      modelAccess = new IncrementalModelAccessWithoutCommand(myModelAccess, myModels, myMessageHandler);
+    }
+
+    // actually attach roots 
+    modelAccess.replaceNodes(new Runnable() {
+      public void run() {
+        ListSequence.fromList(myModels).visitAll(new IVisitor<SModel>() {
+          public void visit(SModel it) {
+            ((SModelBase) it).addLanguage(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"));
+            ((SModelBase) it).addLanguage(MetaAdapterFactory.getLanguage(0xf280165065d5424eL, 0xbb1b463a8781b786L, "jetbrains.mps.baseLanguage.javadoc"));
+          }
+        });
+
+        MapSequence.fromMap(myRootsToModels).visitAll(new IVisitor<IMapping<SNode, SModel>>() {
+          public void visit(IMapping<SNode, SModel> it) {
+            SModel m = it.value();
+            SNode root = it.key();
+            SModelOperations.addRootNode(m, root);
+          }
+        });
       }
     });
 
     myRootCount = myAttachedRoots.size();
 
     ProgressMonitor resolveProgress = progress.subTask(30);
-    tryResolveRefs(myAttachedRoots, FeatureKind.CLASS, resolveProgress);
+    tryResolveRefs(myAttachedRoots, FeatureKind.CLASS, resolveProgress, modelAccess);
+
     progress.done();
   }
 
   public void tryResolveRefs(Iterable<SNode> nodes, FeatureKind level, ProgressMonitor progress) {
-    progress.start("Resolving...", 10);
+    tryResolveRefs(nodes, level, progress, IncrementalModelAccess.INSIDE_COMMAND_OR_UPDATE_MODE);
+  }
+
+  private void tryResolveRefs(Iterable<SNode> nodes, FeatureKind level, ProgressMonitor progress, IncrementalModelAccess modelAccess) {
+    // 11 - number of progress.subTask() below 
+    progress.start("Resolving...", 11);
 
     if (FeatureKind.CLASS.equals(level)) {
       resolveUpdatePass("top level references", nodes, new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
         public Iterable<SReference> invoke(SNode node) {
           return getTopLevelRefs(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
         }
-      }, progress.subTask(1));
+      }, progress.subTask(1), modelAccess);
     }
 
-    if (FeatureKind.CLASS_CONTENT.equals(level) || FeatureKind.CLASS.equals(level)) {
+    if (FeatureKind.CLASS.equals(level) || FeatureKind.CLASS_CONTENT.equals(level)) {
       resolveUpdatePass("field/method type references", nodes, new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
         public Iterable<SReference> invoke(SNode node) {
           return getFieldAndMethodTypeRefs(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
         }
-      }, progress.subTask(1));
+      }, progress.subTask(1), modelAccess);
     }
+
+    // this happens on the level of expressions, but relies on top-level references (from class and method 
+    // declarations) having been resolved 
+    JavaParser.tryResolveUnknowns(myAttachedRoots, progress.subTask(1), modelAccess);
 
     resolveUpdatePass("type references", nodes, new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
       public Iterable<SReference> invoke(SNode node) {
         return getVarTypeRefs(node);
       }
-    }, progress.subTask(1));
+    }, progress.subTask(1), modelAccess);
 
     resolveUpdatePass("variable references", nodes, new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
       public Iterable<SReference> invoke(SNode node) {
         return getVariableRefs(node);
       }
-    }, progress.subTask(1));
+    }, progress.subTask(1), modelAccess);
 
     resolveUpdatePass("dot operands", nodes, new _FunctionTypes._return_P1_E0<ISequence<SReference>, SNode>() {
       public ISequence<SReference> invoke(SNode node) {
@@ -254,7 +293,7 @@ public class JavaToMpsConverter {
           }
         });
       }
-    }, progress.subTask(1));
+    }, progress.subTask(1), modelAccess);
 
     resolveUpdatePass("dot operations", nodes, new _FunctionTypes._return_P1_E0<ISequence<SReference>, SNode>() {
       public ISequence<SReference> invoke(SNode node) {
@@ -278,7 +317,7 @@ public class JavaToMpsConverter {
           }
         });
       }
-    }, progress.subTask(1));
+    }, progress.subTask(1), modelAccess);
 
     resolveUpdatePass("classifiers in static access", nodes, new _FunctionTypes._return_P1_E0<List<SReference>, SNode>() {
       public List<SReference> invoke(SNode node) {
@@ -297,7 +336,7 @@ public class JavaToMpsConverter {
 
         return result;
       }
-    }, progress.subTask(1));
+    }, progress.subTask(1), modelAccess);
 
     resolveUpdatePass("static member references", nodes, new _FunctionTypes._return_P1_E0<List<SReference>, SNode>() {
       public List<SReference> invoke(SNode node) {
@@ -316,17 +355,17 @@ public class JavaToMpsConverter {
 
         return result;
       }
-    }, progress.subTask(1));
+    }, progress.subTask(1), modelAccess);
 
     resolveUpdatePass("remaining references", nodes, new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
       public Iterable<SReference> invoke(SNode node) {
         return deepReferences(node);
       }
-    }, progress.subTask(1));
+    }, progress.subTask(1), modelAccess);
 
-    codeTransformPass(nodes, progress.subTask(1));
+    codeTransformPass(nodes, progress.subTask(1), modelAccess);
 
-    removeJavaImportsPass(nodes, progress.subTask(1));
+    removeJavaImportsPass(nodes, progress.subTask(1), modelAccess);
 
     progress.done();
   }
@@ -388,37 +427,15 @@ public class JavaToMpsConverter {
 
   }
 
-  private void runCommand(String name, final Runnable runnable) {
-    if (SwingUtilities.isEventDispatchThread()) {
-      myModelAccess.executeCommand(runnable);
-
-    } else {
-      try {
-        SwingUtilities.invokeAndWait(new Runnable() {
-          public void run() {
-            myModelAccess.executeCommand(runnable);
-          }
-        });
-
-      } catch (InterruptedException e) {
-        LOG.error(name + " was interrupted", e);
-      } catch (InvocationTargetException e) {
-        LOG.error("Exception in " + name, e.getCause());
-      }
-    }
-  }
-
   private Set<SReference> myVisitedRefs = SetSequence.fromSet(new HashSet<SReference>());
 
-  private void resolveUpdatePass(String name, final Iterable<SNode> nodes, final _FunctionTypes._return_P1_E0<? extends Iterable<SReference>, ? super SNode> extractor, final ProgressMonitor progress) {
+  private void resolveUpdatePass(String name, final Iterable<SNode> nodes, final _FunctionTypes._return_P1_E0<? extends Iterable<SReference>, ? super SNode> extractor, final ProgressMonitor progress, IncrementalModelAccess modelAccess) {
     final Map<SNodeReference, List<SReference>> resolveMap = MapSequence.fromMap(new HashMap<SNodeReference, List<SReference>>());
     progress.start(name, Sequence.fromIterable(nodes).count() + 1);
 
-    myModelAccess.runReadAction(new Runnable() {
+    modelAccess.accessModel(new Runnable() {
       public void run() {
-
         for (SNode node : Sequence.fromIterable(nodes)) {
-
           if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
             progress.step("class: " + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
           }
@@ -429,13 +446,11 @@ public class JavaToMpsConverter {
           SetSequence.fromSet(myVisitedRefs).addSequence(Sequence.fromIterable(refs));
           progress.advance(1);
         }
-
       }
     });
 
     progress.step("updating references...");
-
-    runCommand(name, new Runnable() {
+    modelAccess.replaceReferences(new Runnable() {
       public void run() {
         updateReference(resolveMap);
       }
@@ -445,9 +460,9 @@ public class JavaToMpsConverter {
     progress.done();
   }
 
-  private void codeTransformPass(final Iterable<SNode> nodes, final ProgressMonitor progress) {
+  private void codeTransformPass(final Iterable<SNode> nodes, final ProgressMonitor progress, IncrementalModelAccess modelAccess) {
     progress.start("Code transforms", Sequence.fromIterable(nodes).count() * 5 + 1);
-    final TypeChecker typeChecker = TypeChecker.getInstance();
+    final Wrappers._T<TypeChecker> typeChecker = new Wrappers._T<TypeChecker>(TypeChecker.getInstance());
 
     // all this can be replaced by one map old -> new 
     final List<SNode> toReplaceWithArrayLength = ListSequence.fromList(new ArrayList<SNode>());
@@ -456,10 +471,9 @@ public class JavaToMpsConverter {
     final Map<SNode, SNode> staticMethodQualifiers = MapSequence.fromMap(new HashMap<SNode, SNode>());
     final Map<SNode, SNode> staticFieldQualifiers = MapSequence.fromMap(new HashMap<SNode, SNode>());
 
-    myModelAccess.runReadAction(new Runnable() {
+    modelAccess.accessModel(new Runnable() {
       public void run() {
         for (SNode node : Sequence.fromIterable(nodes)) {
-
           for (SNode fieldRefOp : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), false, new SAbstractConcept[]{}))) {
 
             SReference fieldRef = SNodeOperations.getReference(fieldRefOp, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, 0x116b484a653L, "fieldDeclaration"));
@@ -478,7 +492,7 @@ public class JavaToMpsConverter {
               continue;
             }
 
-            SNode operandType = typeChecker.getTypeOf(operand);
+            SNode operandType = typeChecker.value.getTypeOf(operand);
             if (SNodeOperations.isInstanceOf(operandType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"))) {
               ListSequence.fromList(toReplaceWithArrayLength).addElement(fieldRefOp);
             }
@@ -504,7 +518,7 @@ public class JavaToMpsConverter {
               continue;
             }
 
-            SNode operandType = typeChecker.getTypeOf(operand);
+            SNode operandType = typeChecker.value.getTypeOf(operand);
             if (SNodeOperations.isInstanceOf(operandType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"))) {
               ListSequence.fromList(toReplaceWithArrayClone).addElement(imco);
             }
@@ -522,16 +536,15 @@ public class JavaToMpsConverter {
 
           progress.advance(1);
 
-          TypeChecker typeChecker = TypeChecker.getInstance();
+          typeChecker.value = TypeChecker.getInstance();
 
           for (SNode swicthCase : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, "jetbrains.mps.baseLanguage.structure.SwitchCase"), false, new SAbstractConcept[]{}))) {
-            SNode subst = transformUnqualifedEnumUnderSwitch(swicthCase, typeChecker);
+            SNode subst = transformUnqualifedEnumUnderSwitch(swicthCase, typeChecker.value);
             if ((subst == null)) {
               continue;
             }
             MapSequence.fromMap(enumConstRefs).put(SNodeOperations.cast(SLinkOperations.getTarget(swicthCase, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, 0x10ef02d67cfL, "expression")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")), subst);
           }
-
 
           progress.advance(1);
 
@@ -551,13 +564,12 @@ public class JavaToMpsConverter {
 
           progress.advance(1);
         }
-
       }
     });
 
     progress.step("updating models...");
 
-    runCommand("Code transforms", new Runnable() {
+    modelAccess.replaceNodes(new Runnable() {
       public void run() {
         for (SNode fieldRefOp : ListSequence.fromList(toReplaceWithArrayLength)) {
           SNodeOperations.replaceWithNewChild(fieldRefOp, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1197781411dL, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation"));
@@ -582,13 +594,12 @@ public class JavaToMpsConverter {
     progress.done();
   }
 
-  private void removeJavaImportsPass(final Iterable<SNode> nodes, final ProgressMonitor progress) {
+  private void removeJavaImportsPass(final Iterable<SNode> nodes, final ProgressMonitor progress, IncrementalModelAccess modelAccess) {
     progress.start("Removing java imports", Sequence.fromIterable(nodes).count() + 1);
     final Map<SNode, Iterable<SNode>> toRemove = MapSequence.fromMap(new HashMap<SNode, Iterable<SNode>>());
 
-    myRepository.getModelAccess().runReadAction(new Runnable() {
+    modelAccess.accessModel(new Runnable() {
       public void run() {
-
         for (SNode node : Sequence.fromIterable(nodes)) {
           progress.advance(1);
 
@@ -604,7 +615,7 @@ public class JavaToMpsConverter {
       }
     });
 
-    runCommand("removing java imports", new Runnable() {
+    modelAccess.replaceNodes(new Runnable() {
       public void run() {
         for (SNode node : SetSequence.fromSet(MapSequence.fromMap(toRemove).keySet())) {
           Iterable<SNode> imps = MapSequence.fromMap(toRemove).get(node);
@@ -1007,13 +1018,11 @@ public class JavaToMpsConverter {
       final SModel sourceModel = node.getModel();
       ListSequence.fromList(MapSequence.fromMap(refMap).get(nodeRef)).visitAll(new IVisitor<SReference>() {
         public void visit(SReference it) {
-
           SModelReference targetModelRef = it.getTargetSModelReference();
           if (!(sourceModel.getReference().equals(targetModelRef))) {
             // avoiding self-import 
             ((SModelInternal) sourceModel).addModelImport(targetModelRef, true);
           }
-
           node.setReference(it.getRole(), it);
         }
       });
@@ -1027,9 +1036,7 @@ public class JavaToMpsConverter {
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
       ListSequence.fromList(refs).addSequence(Sequence.fromIterable(deepReferences(child)));
     }
-
     return refs;
-
     // generator for yield broken? 
   }
 
@@ -1076,12 +1083,7 @@ public class JavaToMpsConverter {
       myMessageHandler.handle(new Message(MessageKind.ERROR, String.format("Failed to create model for package %s", pkgFqName)));
       return null;
     }
-
-    // load() is needed to mark model loaded (really?!), without it save() would be a no-op 
-    // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save() 
     modelDescr.load();
-    ((EditableSModel) modelDescr).setChanged(true);
-    ((EditableSModel) modelDescr).save();
 
     return modelDescr;
   }

@@ -33,30 +33,30 @@ public class logging_nodeSubstitute_Contribution extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new logging_nodeSubstitute_Contribution.SubstituteMenuPart_Parameterized_85vuih_a(), MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, "jetbrains.mps.baseLanguage.logging.structure.LogStatement")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new logging_nodeSubstitute_Contribution.SMP_Param_85vuih_a(), MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, "jetbrains.mps.baseLanguage.logging.structure.LogStatement")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_85vuih_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_85vuih_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new logging_nodeSubstitute_Contribution.SubstituteMenuPart_Parameterized_85vuih_a.SubstituteMenuPart_Action_85vuih_a0(parameter).createItems(context);
+      return new logging_nodeSubstitute_Contribution.SMP_Param_85vuih_a.SMP_Action_85vuih_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)", "Severity"));
     }
-    private class SubstituteMenuPart_Action_85vuih_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_85vuih_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_85vuih_a0(SNode parameterObject) {
+      public SMP_Action_85vuih_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new logging_nodeSubstitute_Contribution.SubstituteMenuPart_Parameterized_85vuih_a.SubstituteMenuPart_Action_85vuih_a0.Item(_context);
+        return new logging_nodeSubstitute_Contribution.SMP_Param_85vuih_a.SMP_Action_85vuih_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -92,7 +92,7 @@ public class logging_nodeSubstitute_Contribution extends SubstituteMenuBase {
         @Nullable
         @Override
         public String getDescriptionText(@NotNull String pattern) {
-          return "Log statement";
+          return "prints both to the messages view and the system log (legacy)";
         }
         @Override
         public void select(@NotNull SNode createdNode, @NotNull String pattern) {

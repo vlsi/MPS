@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -51,10 +52,9 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   private final GlobalModelAccess myGlobalModelAccess;
   private final CommandListener myCommandListener;
 
-  private Set<SModule> myModules = new LinkedHashSet<SModule>();
-  private Map<String, SModule> myFqNameToModulesMap = new ConcurrentHashMap<String, SModule>();
-  private Map<SModuleId, SModule> myIdToModuleMap = new ConcurrentHashMap<SModuleId, SModule>();
-  private ManyToManyMap<SModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<SModule, MPSModuleOwner>();
+  private Set<SModule> myModules = new LinkedHashSet<>();
+  private Map<SModuleId, SModule> myIdToModuleMap = new ConcurrentHashMap<>();
+  private ManyToManyMap<SModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<>();
 
   /**
    * Use {@link org.jetbrains.mps.openapi.module.SRepository} from the project whenever it is possible
@@ -121,9 +121,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     String moduleFqName = moduleToRegister.getModuleName();
 
     AbstractModule aModuleToRegister = (AbstractModule) moduleToRegister;
-    if (moduleId == null) {
-      throw new NullModuleIdException(aModuleToRegister);
-    }
 
     SModule existing = getModule(moduleId);
     if (existing != null) {
@@ -132,17 +129,13 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
         throw new RuntimeException("Module to register has class " + moduleToRegister.getClass().getSimpleName() +
             ", while there's already another module with the same id registered with class " + existing.getClass().getSimpleName());
       }
+      if (!Objects.equals(existing.getModuleName(), moduleFqName)) {
+        String msg = "Trying to register a module with the same identity but different name. There's module '%s' in the repository, and new module is '%s'.\n" +
+                     "Original module comes from %s, contesting from %s";
+        LOG.error(String.format(msg, existing.getModuleName(), moduleFqName, ((AbstractModule) existing).getDescriptorFile(), aModuleToRegister.getDescriptorFile()));
+      }
       myModuleToOwners.addLink(existing, owner);
       return (T) existing;
-    }
-
-    if (moduleFqName != null) {
-      if (myFqNameToModulesMap.containsKey(moduleFqName)) {
-        AbstractModule existingModule = (AbstractModule) myFqNameToModulesMap.get(moduleFqName);
-        LOG.error("", new ModuleWithSuchNameAlreadyExistsInTheRepositoryException(aModuleToRegister, existingModule));
-        return (T) existingModule;
-      }
-      myFqNameToModulesMap.put(moduleFqName, moduleToRegister);
     }
 
     myIdToModuleMap.put(moduleToRegister.getModuleId(), moduleToRegister);
@@ -168,7 +161,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   }
 
   public void unregisterModules(Collection<SModule> modules, MPSModuleOwner owner) {
-    Collection<SModule> modulesToDispose = new ArrayList<SModule>();
+    Collection<SModule> modulesToDispose = new ArrayList<>();
     for (SModule module : modules) {
       if (doUnregisterModule(module, owner)) {
         modulesToDispose.add(module);
@@ -220,9 +213,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
       fireBeforeModuleRemoved(module);
       myModules.remove(module);
       myIdToModuleMap.remove(module.getModuleReference().getModuleId());
-      if (module.getModuleName() != null) {
-        myFqNameToModulesMap.remove(module.getModuleName());
-      }
       return true;
     }
     return false;
@@ -260,18 +250,17 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   @Deprecated
   @ToRemove(version = 3.4)
   public SModule getModuleByFqName(@NotNull String fqName) {
-    //todo assertCanRead();
+    // FIXME it's an error, but our tests don't like anything in the stderr. Once merge with 2017.1 changes that do not require Generator lookup by name
+    //       from TemplateModuleBase.getExtendedGenerators, change to .error!
+    LOG.info("Use of MPSModuleRepository.getModuleByFqName(String) may yield wrong result due to ambiguity. This method gives first module with matching name");
 
-    return myFqNameToModulesMap.get(fqName);
+    getModelAccess().checkReadAccess(); // if getModule(SModuleId) checks, why not byName()?
+    return myModules.stream().filter(m -> fqName.equals(m.getModuleName())).findFirst().orElse(null);
   }
 
   @Override
   public SModule getModule(@NotNull SModuleId id) {
     getModelAccess().checkReadAccess();
-
-    if (id == null) {
-      return null;
-    }
     return myIdToModuleMap.get(id);
   }
 
@@ -291,7 +280,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+        for (Project p : ProjectManager.getInstance().getOpenedProjects()) {
           p.getScope().invalidateCaches();
         }
         for (SModule m : getModules()) {
@@ -325,41 +314,10 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     }
   }
 
-  public void moduleFqNameChanged(SModule module, String oldName) {
-    getModelAccess().checkWriteAccess();
-
-    if (myFqNameToModulesMap.get(oldName) != module || myFqNameToModulesMap.containsKey(module.getModuleName())) {
-      throw new IllegalStateException();
-    }
-    myFqNameToModulesMap.remove(oldName);
-    myFqNameToModulesMap.put(module.getModuleName(), module);
-  }
-
   //-------------------DEPRECATED
 
   @Deprecated //use ModuleRepositoryFacade instead
   public SModule getModule(@NotNull SModuleReference ref) {
     return ModuleRepositoryFacade.getInstance().getModule(ref);
-  }
-
-  private static class ModuleWithSuchNameAlreadyExistsInTheRepositoryException extends RuntimeException {
-    public ModuleWithSuchNameAlreadyExistsInTheRepositoryException(AbstractModule newModule, AbstractModule existingModule) {
-      super(getMessage(newModule, existingModule), new Throwable());
-    }
-
-    private static String getMessage(AbstractModule newModule, AbstractModule existingModule) {
-      String moduleName = newModule.getModuleName();
-      assert moduleName.equals(existingModule.getModuleName());
-      return String.format("Trying to register a module with the name %s at %s :" +
-          " module with the same name already exists at %s, ", moduleName, newModule.getDescriptorFile(), existingModule.getDescriptorFile());
-    }
-  }
-
-  private static class NullModuleIdException extends RuntimeException {
-    public NullModuleIdException(AbstractModule aModuleToRegister) {
-      super("Trying to add module with null id to the repository:\n" +
-          "moduleName: " + aModuleToRegister.getModuleName() + ";\n" +
-          "file: '" + aModuleToRegister.getDescriptorFile() + "'");
-    }
   }
 }

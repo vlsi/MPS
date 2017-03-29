@@ -299,11 +299,10 @@
       <concept id="5979988948250981289" name="jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer" flags="nn" index="2fJWfE" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1184,9 +1183,9 @@
                     </node>
                     <node concept="3clFbJ" id="2683XwGBBkB" role="3cqZAp">
                       <node concept="3clFbS" id="2683XwGBBkC" role="3clFbx">
-                        <node concept="34ab3g" id="7$YL1mQDxX4" role="3cqZAp">
-                          <property role="35gtTG" value="warn" />
-                          <node concept="3cpWs3" id="2683XwGBBkH" role="34bqiv">
+                        <node concept="RRSsy" id="3jYQuSB38ap" role="3cqZAp">
+                          <property role="RRSoG" value="warn" />
+                          <node concept="3cpWs3" id="2683XwGBBkH" role="RRSoy">
                             <node concept="Xl_RD" id="2683XwGBBkI" role="3uHU7B">
                               <property role="Xl_RC" value="Could not deduce type for a variable " />
                             </node>
@@ -1293,10 +1292,9 @@
                           </node>
                           <node concept="3clFbJ" id="33iODWTe7_T" role="3cqZAp">
                             <node concept="3clFbS" id="33iODWTe7_U" role="3clFbx">
-                              <node concept="34ab3g" id="7$YL1mQDxX7" role="3cqZAp">
-                                <property role="35gtTG" value="warn" />
-                                <property role="34fQS0" value="true" />
-                                <node concept="3cpWs3" id="33iODWTe7A8" role="34bqiv">
+                              <node concept="RRSsy" id="3jYQuSB38az" role="3cqZAp">
+                                <property role="RRSoG" value="warn" />
+                                <node concept="3cpWs3" id="33iODWTe7A8" role="RRSoy">
                                   <node concept="Xl_RD" id="33iODWTe7A9" role="3uHU7B">
                                     <property role="Xl_RC" value="Could not deduce type for a variable " />
                                   </node>
@@ -1371,19 +1369,18 @@
                         </node>
                         <node concept="9aQIb" id="33iODWTe7_Y" role="9aQIa">
                           <node concept="3clFbS" id="33iODWTe7_Z" role="9aQI4">
-                            <node concept="34ab3g" id="7$YL1mQDxXb" role="3cqZAp">
-                              <property role="35gtTG" value="warn" />
-                              <property role="34fQS0" value="true" />
-                              <node concept="37vLTw" id="3GM_nagTuBA" role="34bMjA">
-                                <ref role="3cqZAo" node="2683XwGBBkW" resolve="cne" />
-                              </node>
-                              <node concept="3cpWs3" id="2683XwGBBl2" role="34bqiv">
+                            <node concept="RRSsy" id="3jYQuSB38aH" role="3cqZAp">
+                              <property role="RRSoG" value="warn" />
+                              <node concept="3cpWs3" id="2683XwGBBl2" role="RRSoy">
                                 <node concept="37vLTw" id="3GM_nagTBJ3" role="3uHU7w">
                                   <ref role="3cqZAo" node="2683XwGBBko" resolve="name" />
                                 </node>
                                 <node concept="Xl_RD" id="2683XwGBBl4" role="3uHU7B">
                                   <property role="Xl_RC" value="Exception when creating variable " />
                                 </node>
+                              </node>
+                              <node concept="37vLTw" id="3GM_nagTuBA" role="RRSow">
+                                <ref role="3cqZAo" node="2683XwGBBkW" resolve="cne" />
                               </node>
                             </node>
                           </node>
@@ -1683,14 +1680,13 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="3QZrxpsYu76" role="TDEfX">
-                  <node concept="34ab3g" id="3QZrxpsYu77" role="3cqZAp">
-                    <property role="35gtTG" value="warn" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="37vLTw" id="3GM_nagTvfG" role="34bMjA">
-                      <ref role="3cqZAo" node="3QZrxpsYu74" resolve="e" />
-                    </node>
-                    <node concept="Xl_RD" id="3QZrxpsYu79" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB38aT" role="3cqZAp">
+                    <property role="RRSoG" value="warn" />
+                    <node concept="Xl_RD" id="3QZrxpsYu79" role="RRSoy">
                       <property role="Xl_RC" value="InvalidStackFrameException" />
+                    </node>
+                    <node concept="37vLTw" id="3GM_nagTvfG" role="RRSow">
+                      <ref role="3cqZAo" node="3QZrxpsYu74" resolve="e" />
                     </node>
                   </node>
                 </node>
@@ -2847,19 +2843,18 @@
                           </node>
                         </node>
                         <node concept="3clFbS" id="2683XwGBDgt" role="TDEfX">
-                          <node concept="34ab3g" id="7$YL1mQDxXv" role="3cqZAp">
-                            <property role="35gtTG" value="warn" />
-                            <property role="34fQS0" value="true" />
-                            <node concept="37vLTw" id="3GM_nagTvDs" role="34bMjA">
-                              <ref role="3cqZAo" node="2683XwGBDgr" resolve="ex" />
-                            </node>
-                            <node concept="3cpWs3" id="2683XwGBDh3" role="34bqiv">
+                          <node concept="RRSsy" id="3jYQuSB38b1" role="3cqZAp">
+                            <property role="RRSoG" value="warn" />
+                            <node concept="3cpWs3" id="2683XwGBDh3" role="RRSoy">
                               <node concept="37vLTw" id="2BHiRxgm9rK" role="3uHU7w">
                                 <ref role="3cqZAo" node="2683XwGBD56" resolve="variable" />
                               </node>
                               <node concept="Xl_RD" id="2683XwGBDh5" role="3uHU7B">
                                 <property role="Xl_RC" value="Exception when checking variable " />
                               </node>
+                            </node>
+                            <node concept="37vLTw" id="3GM_nagTvDs" role="RRSow">
+                              <ref role="3cqZAo" node="2683XwGBDgr" resolve="ex" />
                             </node>
                           </node>
                         </node>
@@ -4534,14 +4529,13 @@
               </node>
             </node>
             <node concept="3clFbS" id="hASWOEoLOc" role="TDEfX">
-              <node concept="34ab3g" id="hASWOEoLOd" role="3cqZAp">
-                <property role="35gtTG" value="warn" />
-                <property role="34fQS0" value="true" />
-                <node concept="37vLTw" id="3GM_nagTxwA" role="34bMjA">
-                  <ref role="3cqZAo" node="hASWOEoLOa" resolve="e" />
-                </node>
-                <node concept="Xl_RD" id="hASWOEoLOf" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB36Cm" role="3cqZAp">
+                <property role="RRSoG" value="warn" />
+                <node concept="Xl_RD" id="hASWOEoLOf" role="RRSoy">
                   <property role="Xl_RC" value="InvalidStackFrameException" />
+                </node>
+                <node concept="37vLTw" id="3GM_nagTxwA" role="RRSow">
+                  <ref role="3cqZAo" node="hASWOEoLOa" resolve="e" />
                 </node>
               </node>
             </node>

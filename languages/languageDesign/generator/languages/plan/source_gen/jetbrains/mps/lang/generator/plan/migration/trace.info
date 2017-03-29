@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <root>
+    <file name="MigrationDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.plan.migration.MigrationDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:18ce53c3-75ab-44c5-9292-2f157dd0081e(jetbrains.mps.lang.generator.plan.migration)/3750601816081858308">
+    <file name="InPlaceCheckpointDeclarations.java">
+      <node id="3750601816081858308" at="19,30,20,74" concept="4" />
+      <node id="3750601816081858308" at="23,33,24,16" concept="4" />
+      <node id="3750601816081858308" at="26,41,27,17" concept="0" />
+      <node id="3750601816081858308" at="27,17,28,16" concept="4" />
+      <node id="3750601816081893198" at="33,41,34,190" concept="4" />
+      <node id="2433297057223904681" at="36,11,37,111" concept="5" />
+      <node id="2433297057223871794" at="37,111,38,154" concept="3" />
+      <node id="3750601816081921048" at="38,154,39,144" concept="0" />
+      <node id="3750601816081902244" at="39,144,40,484" concept="0" />
+      <node id="3750601816081858308" at="44,51,45,154" concept="4" />
+      <node id="3750601816081858308" at="19,0,22,0" concept="2" trace="getCaption#()Ljava/lang/String;" />
+      <node id="3750601816081892520" at="33,0,36,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3750601816081858308" at="44,0,47,0" concept="2" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="3750601816081858308" at="22,0,26,0" concept="2" trace="isRerunnable#()Z" />
+      <node id="3750601816081858308" at="26,0,30,0" concept="2" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3750601816081867205" at="31,63,41,7" concept="1" />
+      <node id="3750601816081865298" at="30,42,42,5" concept="1" />
+      <node id="3750601816081858308" at="30,0,44,0" concept="2" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <scope id="3750601816081858308" at="19,30,20,74" />
+      <scope id="3750601816081858308" at="23,33,24,16" />
+      <scope id="3750601816081892521" at="33,41,34,190" />
+      <scope id="3750601816081858308" at="44,51,45,154" />
+      <scope id="3750601816081858308" at="26,41,28,16" />
+      <scope id="3750601816081858308" at="19,0,22,0" />
+      <scope id="3750601816081892520" at="33,0,36,0">
+        <var name="it" id="3750601816081892520" />
+      </scope>
+      <scope id="3750601816081858308" at="44,0,47,0" />
+      <scope id="3750601816081858308" at="22,0,26,0" />
+      <scope id="3750601816081858308" at="26,0,30,0">
+        <var name="m" id="3750601816081858308" />
+      </scope>
+      <scope id="3750601816081867208" at="36,11,40,484">
+        <var name="cpName" id="2433297057223871795" />
+      </scope>
+      <scope id="3750601816081865304" at="31,63,41,7" />
+      <scope id="3750601816081867205" at="31,63,41,7">
+        <var name="cps" id="3750601816081867206" />
+      </scope>
+      <scope id="3750601816081858308" at="30,42,42,5" />
+      <scope id="3750601816081865298" at="30,42,42,5">
+        <var name="model" id="3750601816081865300" />
+      </scope>
+      <scope id="3750601816081858308" at="30,0,44,0">
+        <var name="m" id="3750601816081858308" />
+      </scope>
+      <unit id="3750601816081892520" at="32,249,36,7" name="jetbrains.mps.lang.generator.plan.migration.InPlaceCheckpointDeclarations$1" />
+      <unit id="3750601816081858308" at="18,0,49,0" name="jetbrains.mps.lang.generator.plan.migration.InPlaceCheckpointDeclarations" />
+    </file>
+  </root>
+</debug-info>
+

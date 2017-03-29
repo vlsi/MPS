@@ -34,30 +34,30 @@ public class ActionTestChildToWrap1_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ActionTestChildToWrap1_SubstituteMenu.SubstituteMenuPart_Parameterized_kxaev4_a(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ee71badL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ActionTestChildToWrap1_SubstituteMenu.SMP_Param_kxaev4_a(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ee71badL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_kxaev4_a extends ParameterizedMenuPart<SConcept, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_kxaev4_a extends ParameterizedMenuPart<SConcept, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SConcept parameter, SubstituteMenuContext context) {
-      return new ActionTestChildToWrap1_SubstituteMenu.SubstituteMenuPart_Parameterized_kxaev4_a.SubstituteMenuPart_Action_kxaev4_a0(parameter).createItems(context);
+      return new ActionTestChildToWrap1_SubstituteMenu.SMP_Param_kxaev4_a.SMP_Action_kxaev4_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends SConcept> getParameters(SubstituteMenuContext _context) {
       return SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ee71badL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1"), _context.getModel());
     }
-    private class SubstituteMenuPart_Action_kxaev4_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_kxaev4_a0 extends SingleItemSubstituteMenuPart {
       private final SConcept myParameterObject;
-      public SubstituteMenuPart_Action_kxaev4_a0(SConcept parameterObject) {
+      public SMP_Action_kxaev4_a0(SConcept parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new ActionTestChildToWrap1_SubstituteMenu.SubstituteMenuPart_Parameterized_kxaev4_a.SubstituteMenuPart_Action_kxaev4_a0.Item(_context);
+        return new ActionTestChildToWrap1_SubstituteMenu.SMP_Param_kxaev4_a.SMP_Action_kxaev4_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

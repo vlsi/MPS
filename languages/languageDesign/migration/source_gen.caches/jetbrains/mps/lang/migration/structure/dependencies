@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.migration.structure.ConceptPresentationAspectImpl" file="ConceptPresentationAspectImpl.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.structure.IconContainer" />
     <classNode dependClassName="jetbrains.mps.lang.migration.structure.LanguageConceptSwitch" />
     <classNode dependClassName="jetbrains.mps.lang.migration.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentation" />
@@ -10,6 +11,9 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.structure.IconContainer" file="IconContainer.java">
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.IconResource" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.structure.LanguageConceptSwitch" file="LanguageConceptSwitch.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.LanguageConceptIndex" />

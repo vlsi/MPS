@@ -5,6 +5,7 @@ package jetbrains.mps.transformation.test.inputLang;
 import jetbrains.mps.generator.runtime.TemplateModuleBase;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Collection;
 import jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference.TemplateModelImpl;
 import java.util.Arrays;
@@ -18,7 +19,8 @@ public class Generator extends TemplateModuleBase {
   private final LanguageRuntime sourceLanguage;
   private TemplateModel[] models;
 
-  public Generator(LanguageRuntime sourceLanguage) {
+  public Generator(LanguageRegistry languageRegistry, LanguageRuntime sourceLanguage) {
+    super(languageRegistry);
     this.sourceLanguage = sourceLanguage;
   }
   @Override

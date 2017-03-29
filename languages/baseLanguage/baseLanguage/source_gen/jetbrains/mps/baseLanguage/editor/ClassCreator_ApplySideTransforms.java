@@ -35,13 +35,13 @@ public class ClassCreator_ApplySideTransforms extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ClassCreator_ApplySideTransforms.TransformationMenuPart_IncludeMenu_ftx9qo_a0());
-      result.add(new ClassCreator_ApplySideTransforms.TransformationMenuPart_IncludeMenu_ftx9qo_b0());
+      result.add(new ClassCreator_ApplySideTransforms.TMP_Include_ftx9qo_a0());
+      result.add(new ClassCreator_ApplySideTransforms.TMP_Include_ftx9qo_b0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_ftx9qo_a0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_ftx9qo_a0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
@@ -52,7 +52,7 @@ public class ClassCreator_ApplySideTransforms extends TransformationMenuBase {
     }
 
   }
-  public class TransformationMenuPart_IncludeMenu_ftx9qo_b0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_ftx9qo_b0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {

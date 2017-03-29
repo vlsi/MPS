@@ -40,10 +40,6 @@
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
-  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_test" file="TestModule_jetbrains_mps_baseLanguage_test.java">
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
-  </dependency>
   <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_tuples_test" file="TestModule_jetbrains_mps_baseLanguage_tuples_test.java">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
@@ -88,27 +84,11 @@
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
-  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_actions_test" file="TestModule_jetbrains_mps_lang_actions_test.java">
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
-  </dependency>
   <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_diagram_tests" file="TestModule_jetbrains_mps_lang_editor_diagram_tests.java">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
   <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_forms_tests" file="TestModule_jetbrains_mps_lang_editor_forms_tests.java">
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
-  </dependency>
-  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_multiple_tests" file="TestModule_jetbrains_mps_lang_editor_multiple_tests.java">
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
-  </dependency>
-  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_table_tests" file="TestModule_jetbrains_mps_lang_editor_table_tests.java">
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
-  </dependency>
-  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_tests" file="TestModule_jetbrains_mps_lang_editor_tests.java">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>

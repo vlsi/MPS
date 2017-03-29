@@ -30,6 +30,7 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="i290" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.java.stub(MPS.Core/)" />
     <import index="w827" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.openapi(MPS.Core/)" />
+    <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2189,6 +2190,11 @@
                         <ref role="3cqZAo" node="4YpB5dn4JhS" resolve="myRootsById" />
                       </node>
                       <node concept="T8wYR" id="5eZ0Wn_TyEz" role="2OqNvi" />
+                    </node>
+                    <node concept="2ShNRf" id="2I$v6HVqpKx" role="37wK5m">
+                      <node concept="1pGfFk" id="2I$v6HVqq$G" role="2ShVmc">
+                        <ref role="37wK5l" to="mk8z:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
+                      </node>
                     </node>
                   </node>
                 </node>

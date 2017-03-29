@@ -35,17 +35,17 @@ public class StaticMethodDeclaration_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new StaticMethodDeclaration_SubstituteMenu.SubstituteMenuPart_Action_dfg1om_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
-    result.add(new StaticMethodDeclaration_SubstituteMenu.SubstituteMenuPart_Subconcepts_dfg1om_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new StaticMethodDeclaration_SubstituteMenu.SMP_Action_dfg1om_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
+    result.add(new StaticMethodDeclaration_SubstituteMenu.SMP_Subconcepts_dfg1om_b());
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
     return result;
   }
-  private class SubstituteMenuPart_Action_dfg1om_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_dfg1om_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new StaticMethodDeclaration_SubstituteMenu.SubstituteMenuPart_Action_dfg1om_a.Item(_context);
+      return new StaticMethodDeclaration_SubstituteMenu.SMP_Action_dfg1om_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -72,7 +72,7 @@ public class StaticMethodDeclaration_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  public class SubstituteMenuPart_Subconcepts_dfg1om_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_dfg1om_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
     }

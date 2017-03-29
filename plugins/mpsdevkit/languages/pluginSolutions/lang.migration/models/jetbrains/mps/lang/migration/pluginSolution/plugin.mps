@@ -332,9 +332,9 @@
       <concept id="5480835971642160908" name="jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation" flags="nn" index="15Ty1b" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1493,9 +1493,9 @@
                     </node>
                   </node>
                 </node>
-                <node concept="34ab3g" id="3yvsPdSKRDI" role="3cqZAp">
-                  <property role="35gtTG" value="error" />
-                  <node concept="37vLTw" id="3yvsPdSKUE0" role="34bqiv">
+                <node concept="RRSsy" id="3jYQuSB37mp" role="3cqZAp">
+                  <property role="RRSoG" value="error" />
+                  <node concept="37vLTw" id="3yvsPdSKUE0" role="RRSoy">
                     <ref role="3cqZAo" node="3yvsPdSKGy8" resolve="message" />
                   </node>
                 </node>
@@ -2998,9 +2998,9 @@
                       </node>
                       <node concept="3clFbJ" id="6gU0oA5NdRM" role="3cqZAp">
                         <node concept="3clFbS" id="6gU0oA5NdRO" role="3clFbx">
-                          <node concept="34ab3g" id="6gU0oA5Nfab" role="3cqZAp">
-                            <property role="35gtTG" value="error" />
-                            <node concept="3cpWs3" id="6gU0oA5NPiX" role="34bqiv">
+                          <node concept="RRSsy" id="3jYQuSB379N" role="3cqZAp">
+                            <property role="RRSoG" value="error" />
+                            <node concept="3cpWs3" id="6gU0oA5NPiX" role="RRSoy">
                               <node concept="37vLTw" id="4nVmAemkNfP" role="3uHU7w">
                                 <ref role="3cqZAo" node="3r9sVr9T$g9" resolve="moduleVersion" />
                               </node>

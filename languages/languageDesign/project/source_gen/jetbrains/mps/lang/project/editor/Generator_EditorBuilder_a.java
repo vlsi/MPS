@@ -74,12 +74,12 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
   private EditorCell createProperty_cqvux8_b0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
-    provider.setRole("namespace");
+    provider.setRole("generatorAlias");
     provider.setNoTargetText("<no name>");
     provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
-    editorCell.setCellId("property_namespace");
+    editorCell.setCellId("property_generatorAlias");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
@@ -99,11 +99,11 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
   private EditorCell createProperty_cqvux8_d0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
-    provider.setRole("generatorUID");
-    provider.setNoTargetText("<no generatorUID>");
+    provider.setRole("namespace");
+    provider.setNoTargetText("<no namespace>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
-    editorCell.setCellId("property_generatorUID");
+    editorCell.setCellId("property_namespace");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {

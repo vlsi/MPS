@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -424,20 +424,18 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   protected synchronized void replaceModelAndFireEvent(jetbrains.mps.smodel.SModel oldModel, jetbrains.mps.smodel.SModel newModel) {
     if (oldModel != null) {
       oldModel.setModelDescriptor(null);
+      oldModel.dispose();
     }
     if (newModel != null) {
       newModel.setModelDescriptor(this);
     }
-    if (oldModel != null) {
-      notifyModelReplaced(oldModel);
-      // ONCE notifyModelReplaced gone, don't forget to dispose oldModel here (SModelRepository does this in addition to notification dispatch)
-    }
 
     fireModelReplaced();
 
-    if (getRepository() != null) { // for a model not yet visible to anyone, no reason to drop a cache
+    if (getRepository() instanceof MPSModuleRepository) { // for a model not yet visible to anyone, no reason to drop a cache
       // FIXME cache invalidation shall be a repository listener, and not done forcefully on model change
-      MPSModuleRepository.getInstance().invalidateCaches();
+      //       Besides, invalidateCaches() doesn't really care about model contents at all, it refreshes module scope which deals with modules only.
+      ((MPSModuleRepository) getRepository()).invalidateCaches();
     }
   }
 

@@ -37,12 +37,12 @@ public class SEnumOperation_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37273dL, "jetbrains.mps.lang.smodel.structure.SEnumOperation"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new SEnumOperation_TransformationMenu.TransformationMenuPart_IncludeMenu_boe1ai_a1());
+      result.add(new SEnumOperation_TransformationMenu.TMP_Include_boe1ai_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_boe1ai_a1 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_boe1ai_a1 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected SNode getNode(TransformationMenuContext _context) {

@@ -53,6 +53,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
       }
     }, getNode());
     cell.setEditable(false);
+    cell.setCellId("property_" + property);
     addCell(cell);
   }
 

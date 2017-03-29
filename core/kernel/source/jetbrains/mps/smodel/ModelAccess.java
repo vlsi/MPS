@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -142,27 +142,6 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
   @Override
   public boolean isCommandAction() {
     return isInsideCommand();
-  }
-
-  /**
-   * @deprecated Use {@link org.jetbrains.mps.openapi.module.ModelAccess#checkWriteAccess()} instead
-   *             There are uses in SModelRepository and ModelEventsCollector, both classes are scheduled
-   *             for removal as well. Few uses are in IDEA Plugin, pending clean-up.
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static void assertLegalWrite() {
-    instance().checkWriteAccess();
-  }
-
-  /**
-   * @deprecated Use {@link org.jetbrains.mps.openapi.module.ModelAccess#checkReadAccess()} instead
-   *             There are no uses in MPS code now (few left in IDEA Plugin codebase).
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static void assertLegalRead() {
-    instance().checkReadAccess();
   }
 
   protected void onCommandStarted() {

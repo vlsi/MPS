@@ -35,17 +35,17 @@ public class ParameterizedByPrimitiveType extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), "test location").contains(_context.getMenuLocation())) {
-      result.add(new ParameterizedByPrimitiveType.TransformationMenuPart_Parameterized_ud82js_a0());
+      result.add(new ParameterizedByPrimitiveType.TMP_Param_ud82js_a0());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Parameterized_ud82js_a0 extends ParameterizedMenuPart<Integer, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_ud82js_a0 extends ParameterizedMenuPart<Integer, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(Integer parameter, TransformationMenuContext context) {
-      return new ParameterizedByPrimitiveType.TransformationMenuPart_Parameterized_ud82js_a0.TransformationMenuPart_Action_ud82js_a0a(parameter).createItems(context);
+      return new ParameterizedByPrimitiveType.TMP_Param_ud82js_a0.TMP_Action_ud82js_a0a(parameter).createItems(context);
     }
 
     @Nullable
@@ -98,14 +98,14 @@ __switch__:
       }
     }
 
-    private class TransformationMenuPart_Action_ud82js_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_ud82js_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final Integer myParameterObject;
-      public TransformationMenuPart_Action_ud82js_a0a(Integer parameterObject) {
+      public TMP_Action_ud82js_a0a(Integer parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ParameterizedByPrimitiveType.TransformationMenuPart_Parameterized_ud82js_a0.TransformationMenuPart_Action_ud82js_a0a.Item(context);
+        return new ParameterizedByPrimitiveType.TMP_Param_ud82js_a0.TMP_Action_ud82js_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase {

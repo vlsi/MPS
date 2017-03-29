@@ -11,6 +11,7 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.PropertyValueQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.QueryKey" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.QueryKeyImpl" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.ReferenceTargetQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.SourceNodeQuery" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />

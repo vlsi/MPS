@@ -18,6 +18,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.structure.util.ConceptIdHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.behavior.ReferenceLinkId__BehaviorDescriptor;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
@@ -43,7 +46,12 @@ public class MoveReferenceLinkSpecialization extends StructureSpecializationBase
     AttributeOperations.setAttribute(from, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_w90w7j_a0e0b("The link was moved to concept \"" + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(targetConcept) + "\""));
     SPropertyOperations.set(from, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1");
     SPropertyOperations.set(to, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId"), ConceptIdHelper.generateLinkId(targetConcept, to) + "");
-    migrationBuilder.addPart(from, to, createMoveReferenceLink_w90w7j_c0a7a1());
+
+    SNode oldId = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, "jetbrains.mps.lang.smodel.structure.ReferenceLinkId"));
+    ReferenceLinkId__BehaviorDescriptor.setReference_id7jb4LXp9a6q.invoke(oldId, MetaAdapterByDeclaration.getReferenceLink(from));
+    SNode newId = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, "jetbrains.mps.lang.smodel.structure.ReferenceLinkId"));
+    ReferenceLinkId__BehaviorDescriptor.setReference_id7jb4LXp9a6q.invoke(newId, MetaAdapterByDeclaration.getReferenceLink(to));
+    migrationBuilder.addPart(from, to, createMoveReferenceLink_w90w7j_c0a21a1(SNodeOperations.cast(HUtil.copyIfNecessary(oldId), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, "jetbrains.mps.lang.smodel.structure.ReferenceLinkId")), SNodeOperations.cast(HUtil.copyIfNecessary(newId), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, "jetbrains.mps.lang.smodel.structure.ReferenceLinkId"))));
   }
   public Collection<SNode> findInstances(SReferenceLink oldLink, SearchScope searchScope) {
     {
@@ -65,9 +73,15 @@ public class MoveReferenceLinkSpecialization extends StructureSpecializationBase
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, 0x11d3ec760e8L, "comment"), p0 + "");
     return n1;
   }
-  private static SNode createMoveReferenceLink_w90w7j_c0a7a1() {
+  private static SNode createMoveReferenceLink_w90w7j_c0a21a1(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b7L, "jetbrains.mps.lang.migration.structure.MoveReferenceLink"), null, null, false);
+    if (p0 != null) {
+      n1.addChild(MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b7L, 0x74cb131f592e8abdL, "sourceId"), (SNode) p0);
+    }
+    if (p1 != null) {
+      n1.addChild(MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b7L, 0x74cb131f592e8abeL, "targetId"), (SNode) p1);
+    }
     return n1;
   }
 }

@@ -9,25 +9,6 @@
     <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.actions.AddModuleToProject_Action" file="AddModuleToProject_Action.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
-    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.actions.AddToFavoritesGroup_ActionGroup" file="AddToFavoritesGroup_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
@@ -297,7 +278,6 @@
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
-    <classNode dependClassName="com.intellij.util.Generator" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -319,7 +299,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.util.ModuleNameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
@@ -1519,7 +1501,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.AddModuleToProject_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddToFavoritesGroup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddToNewFavoritesList_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AnalyzeModuleDependencies_Action" />
@@ -1634,7 +1615,6 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.ReferenceNodeActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.RemoveAllBookmarks_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.RemoveFromFavorites_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.RemoveModuleFromProject_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.RemoveTransientModels_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.RenameFavoritesList_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action" />
@@ -2538,31 +2518,6 @@
     <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.TreeNodeValueExtractor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.actions.RemoveModuleFromProject_Action" file="RemoveModuleFromProject_Action.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
-    <classNode dependClassName="java.awt.GridBagConstraints" />
-    <classNode dependClassName="java.awt.GridBagLayout" />
-    <classNode dependClassName="java.awt.Insets" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JLabel" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.RemoveTransientModels_Action" file="RemoveTransientModels_Action.java">

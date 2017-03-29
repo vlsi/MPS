@@ -46,12 +46,12 @@ public class checkedDotExpression_Contribution extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new checkedDotExpression_Contribution.TransformationMenuPart_Group_y6cflm_a0());
+      result.add(new checkedDotExpression_Contribution.TMP_Group_y6cflm_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_y6cflm_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_y6cflm_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (TypeChecker.getInstance().getTypeOf(_context.getNode()) != null);
@@ -59,12 +59,12 @@ public class checkedDotExpression_Contribution extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new checkedDotExpression_Contribution.TransformationMenuPart_Group_y6cflm_a0.TransformationMenuPart_Action_y6cflm_a0a(), MetaAdapterFactory.getConcept(0x774bf8a062e541e1L, 0xaf63f4812e60e48bL, 0x389ce13592c3023bL, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new checkedDotExpression_Contribution.TMP_Group_y6cflm_a0.TMP_Action_y6cflm_a0a(), MetaAdapterFactory.getConcept(0x774bf8a062e541e1L, 0xaf63f4812e60e48bL, 0x389ce13592c3023bL, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression")));
     }
-    private class TransformationMenuPart_Action_y6cflm_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_y6cflm_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new checkedDotExpression_Contribution.TransformationMenuPart_Group_y6cflm_a0.TransformationMenuPart_Action_y6cflm_a0a.Item(context);
+        return new checkedDotExpression_Contribution.TMP_Group_y6cflm_a0.TMP_Action_y6cflm_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

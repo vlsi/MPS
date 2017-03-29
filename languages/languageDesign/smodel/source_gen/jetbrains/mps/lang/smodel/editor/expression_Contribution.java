@@ -49,14 +49,14 @@ public class expression_Contribution extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new expression_Contribution.TransformationMenuPart_Group_2hw6rf_a0());
-      result.add(new expression_Contribution.TransformationMenuPart_Group_2hw6rf_b0());
-      result.add(new expression_Contribution.TransformationMenuPart_Group_2hw6rf_c0());
+      result.add(new expression_Contribution.TMP_Group_2hw6rf_a0());
+      result.add(new expression_Contribution.TMP_Group_2hw6rf_b0());
+      result.add(new expression_Contribution.TMP_Group_2hw6rf_c0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_2hw6rf_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_2hw6rf_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       // use weak coerce because we want ':' to be applicable to SNode (class), linkAccess etc. 
@@ -66,12 +66,12 @@ public class expression_Contribution extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new expression_Contribution.TransformationMenuPart_Group_2hw6rf_a0.TransformationMenuPart_Action_2hw6rf_a0a(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression")), new ConstraintsFilteringTransformationMenuPartDecorator(new expression_Contribution.TransformationMenuPart_Group_2hw6rf_a0.TransformationMenuPart_Action_2hw6rf_b0a(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new expression_Contribution.TMP_Group_2hw6rf_a0.TMP_Action_2hw6rf_a0a(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression")), new ConstraintsFilteringTransformationMenuPartDecorator(new expression_Contribution.TMP_Group_2hw6rf_a0.TMP_Action_2hw6rf_b0a(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression")));
     }
-    private class TransformationMenuPart_Action_2hw6rf_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_2hw6rf_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new expression_Contribution.TransformationMenuPart_Group_2hw6rf_a0.TransformationMenuPart_Action_2hw6rf_a0a.Item(context);
+        return new expression_Contribution.TMP_Group_2hw6rf_a0.TMP_Action_2hw6rf_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -106,10 +106,10 @@ public class expression_Contribution extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Action_2hw6rf_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_2hw6rf_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new expression_Contribution.TransformationMenuPart_Group_2hw6rf_a0.TransformationMenuPart_Action_2hw6rf_b0a.Item(context);
+        return new expression_Contribution.TMP_Group_2hw6rf_a0.TMP_Action_2hw6rf_b0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -146,7 +146,7 @@ public class expression_Contribution extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_Group_2hw6rf_b0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_2hw6rf_b0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       SNode conceptType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, "jetbrains.mps.lang.smodel.structure.SConceptType")), true);
@@ -155,12 +155,12 @@ public class expression_Contribution extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new expression_Contribution.TransformationMenuPart_Group_2hw6rf_b0.TransformationMenuPart_Action_2hw6rf_a1a(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1871b2e3b0ef0078L, "jetbrains.mps.lang.smodel.structure.SConceptTypeCastExpression")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new expression_Contribution.TMP_Group_2hw6rf_b0.TMP_Action_2hw6rf_a1a(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1871b2e3b0ef0078L, "jetbrains.mps.lang.smodel.structure.SConceptTypeCastExpression")));
     }
-    private class TransformationMenuPart_Action_2hw6rf_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_2hw6rf_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new expression_Contribution.TransformationMenuPart_Group_2hw6rf_b0.TransformationMenuPart_Action_2hw6rf_a1a.Item(context);
+        return new expression_Contribution.TMP_Group_2hw6rf_b0.TMP_Action_2hw6rf_a1a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -196,7 +196,7 @@ public class expression_Contribution extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_Group_2hw6rf_c0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_2hw6rf_c0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       SNode expressionType = TypeChecker.getInstance().getTypeOf(_context.getNode());
@@ -220,12 +220,12 @@ public class expression_Contribution extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new expression_Contribution.TransformationMenuPart_Group_2hw6rf_c0.TransformationMenuPart_Action_2hw6rf_a2a(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new expression_Contribution.TMP_Group_2hw6rf_c0.TMP_Action_2hw6rf_a2a(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression")));
     }
-    private class TransformationMenuPart_Action_2hw6rf_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_2hw6rf_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new expression_Contribution.TransformationMenuPart_Group_2hw6rf_c0.TransformationMenuPart_Action_2hw6rf_a2a.Item(context);
+        return new expression_Contribution.TMP_Group_2hw6rf_c0.TMP_Action_2hw6rf_a2a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

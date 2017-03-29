@@ -36,14 +36,14 @@ public class SuperInterfaceMethodCall_Contribution extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SuperInterfaceMethodCall_Contribution.SubstituteMenuPart_Parameterized_73nkqx_a(), MetaAdapterFactory.getConcept(0xfdcdc48fbfd84831L, 0xaa765abac2ffa010L, 0x17dbb10eeb72e5d9L, "jetbrains.mps.baseLanguage.jdk8.structure.SuperInterfaceMethodCall")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SuperInterfaceMethodCall_Contribution.SMP_Param_73nkqx_a(), MetaAdapterFactory.getConcept(0xfdcdc48fbfd84831L, 0xaa765abac2ffa010L, 0x17dbb10eeb72e5d9L, "jetbrains.mps.baseLanguage.jdk8.structure.SuperInterfaceMethodCall")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_73nkqx_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_73nkqx_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new SuperInterfaceMethodCall_Contribution.SubstituteMenuPart_Parameterized_73nkqx_a.SubstituteMenuPart_Action_73nkqx_a0(parameter).createItems(context);
+      return new SuperInterfaceMethodCall_Contribution.SMP_Param_73nkqx_a.SMP_Action_73nkqx_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -58,16 +58,16 @@ public class SuperInterfaceMethodCall_Contribution extends SubstituteMenuBase {
         }
       });
     }
-    private class SubstituteMenuPart_Action_73nkqx_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_73nkqx_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_73nkqx_a0(SNode parameterObject) {
+      public SMP_Action_73nkqx_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new SuperInterfaceMethodCall_Contribution.SubstituteMenuPart_Parameterized_73nkqx_a.SubstituteMenuPart_Action_73nkqx_a0.Item(_context);
+        return new SuperInterfaceMethodCall_Contribution.SMP_Param_73nkqx_a.SMP_Action_73nkqx_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

@@ -81,6 +81,8 @@ public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
           return;
         }
       }
+    } else {
+      HandlerUtil.showNoProjectIsAvailablePopup();
     }
 
     this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));

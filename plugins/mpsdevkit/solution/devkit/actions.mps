@@ -53,7 +53,6 @@
     <import index="ljzk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.Platform/)" />
     <import index="tdww" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.wm.impl(MPS.IDEA/)" />
     <import index="3fkn" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileChooser(MPS.IDEA/)" />
-    <import index="upnl" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.workbench.editors(MPS.Workbench/)" />
     <import index="o6ex" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.generator(MPS.Workbench/)" />
     <import index="3qmy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.classloading(MPS.Core/)" />
     <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
@@ -130,8 +129,6 @@
     <import index="tya3" ref="r:b2afece2-23e8-4a6f-a918-9d117d839057(jetbrains.mps.lang.behavior.findUsages)" />
     <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
-    <import index="tqbz" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.actions(MPS.IDEA/)" />
-    <import index="v7ux" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.content(MPS.IDEA/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="sn11" ref="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)" />
   </imports>
@@ -870,7 +867,7 @@
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="MPS Languages DevKit" />
     <property role="9BnSO" value="171.1" />
-    <property role="9BnSK" value="2017.1" />
+    <property role="9BnSK" value="2017.2" />
   </node>
   <node concept="tC5Ba" id="56$IWKxe1aW">
     <property role="TrG5h" value="ProjectNewActionsEx" />
@@ -3607,38 +3604,27 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="1Fww89lnTky" role="3cqZAp">
-          <node concept="3cpWsn" id="1Fww89lnTkz" role="3cpWs9">
-            <property role="TrG5h" value="languageEditor" />
-            <node concept="3uibUv" id="1Fww89lnTk$" role="1tU5fm">
-              <ref role="3uigEE" to="upnl:~MPSLanguageEditor" resolve="MPSLanguageEditor" />
-            </node>
-            <node concept="10QFUN" id="1Fww89lnTk_" role="33vP2m">
-              <node concept="3uibUv" id="1Fww89lnTkA" role="10QFUM">
-                <ref role="3uigEE" to="upnl:~MPSLanguageEditor" resolve="MPSLanguageEditor" />
-              </node>
-              <node concept="AH0OO" id="1Fww89lnTkB" role="10QFUP">
-                <node concept="3cmrfG" id="1Fww89lnTkC" role="AHEQo">
+        <node concept="3SKdUt" id="2gFQE3umuvG" role="3cqZAp">
+          <node concept="3SKdUq" id="2gFQE3umuvI" role="3SKWNk">
+            <property role="3SKdUp" value="no idea why explicit requestFocus when openFile() already asked for one." />
+          </node>
+        </node>
+        <node concept="3clFbF" id="2gFQE3umpUF" role="3cqZAp">
+          <node concept="2OqwBi" id="2gFQE3umsIx" role="3clFbG">
+            <node concept="2OqwBi" id="2gFQE3umr5I" role="2Oq$k0">
+              <node concept="AH0OO" id="2gFQE3umq3O" role="2Oq$k0">
+                <node concept="3cmrfG" id="2gFQE3umq7B" role="AHEQo">
                   <property role="3cmrfH" value="0" />
                 </node>
-                <node concept="37vLTw" id="3GM_nagTupR" role="AHHXb">
+                <node concept="37vLTw" id="2gFQE3umpUD" role="AHHXb">
                   <ref role="3cqZAo" node="1Fww89lnTkq" resolve="res" />
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1Fww89lnTkE" role="3cqZAp">
-          <node concept="2OqwBi" id="1Fww89lnTkF" role="3clFbG">
-            <node concept="2OqwBi" id="1Fww89lnTkG" role="2Oq$k0">
-              <node concept="37vLTw" id="3GM_nagT$XE" role="2Oq$k0">
-                <ref role="3cqZAo" node="1Fww89lnTkz" resolve="languageEditor" />
-              </node>
-              <node concept="liA8E" id="1Fww89lnTkI" role="2OqNvi">
-                <ref role="37wK5l" to="upnl:~MPSLanguageEditor.getComponent():javax.swing.JComponent" resolve="getComponent" />
+              <node concept="liA8E" id="2gFQE3umrlS" role="2OqNvi">
+                <ref role="37wK5l" to="iwsx:~FileEditor.getComponent():javax.swing.JComponent" resolve="getComponent" />
               </node>
             </node>
-            <node concept="liA8E" id="1Fww89lnTkJ" role="2OqNvi">
+            <node concept="liA8E" id="2gFQE3umubW" role="2OqNvi">
               <ref role="37wK5l" to="dxuu:~JComponent.requestFocus():void" resolve="requestFocus" />
             </node>
           </node>

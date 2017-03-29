@@ -34,12 +34,12 @@ public class instanceOfIntoTernary extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new instanceOfIntoTernary.TransformationMenuPart_Group_v9arav_a0());
+      result.add(new instanceOfIntoTernary.TMP_Group_v9arav_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_v9arav_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_v9arav_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbff03700L, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression"));
@@ -47,9 +47,9 @@ public class instanceOfIntoTernary extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new instanceOfIntoTernary.TransformationMenuPart_Group_v9arav_a0.TransformationMenuPart_IncludeMenu_v9arav_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new instanceOfIntoTernary.TMP_Group_v9arav_a0.TMP_Include_v9arav_a0a());
     }
-    public class TransformationMenuPart_IncludeMenu_v9arav_a0a extends IncludeTransformationMenuTransformationMenuPart {
+    public class TMP_Include_v9arav_a0a extends IncludeTransformationMenuTransformationMenuPart {
       @Nullable
       @Override
       protected SNode getNode(TransformationMenuContext _context) {

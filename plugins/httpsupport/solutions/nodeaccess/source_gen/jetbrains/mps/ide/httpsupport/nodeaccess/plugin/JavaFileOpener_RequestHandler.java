@@ -10,22 +10,19 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
 import jetbrains.mps.project.ProjectManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSProject;
 import java.util.Iterator;
 import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.textgen.trace.BaseLanguageNodeLookup;
+import io.netty.handler.codec.http.HttpResponseStatus;
+import io.netty.buffer.Unpooled;
 import jetbrains.mps.textgen.trace.DebugInfoRoot;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.common.FileOpenUtil;
-import io.netty.handler.codec.http.HttpResponseStatus;
-import io.netty.buffer.Unpooled;
-import org.apache.log4j.Level;
 
 public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
 
@@ -83,7 +80,6 @@ public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
     return this.file.endsWith(".java");
   }
 
-  protected static Logger LOG = LogManager.getLogger(JavaFileOpener_RequestHandler.class);
   @Override
   public void handle() throws Exception {
 
@@ -103,7 +99,8 @@ public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
       if (this.line != null) {
         while (it.hasNext()) {
           final SNodeReference nodeReference = new BaseLanguageNodeLookup(it.next()).getNodeAt(fileName, this.line);
-          if (HandlerUtil.openNode(this.request, this.project, nodeReference)) {
+          if (HandlerUtil.openNode(this.project, nodeReference) != null) {
+            this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
             return;
           }
         }
@@ -115,7 +112,8 @@ public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
               return debugInfoRoot.getFileNames().contains(fileName);
             }
           }).first().getNodeRef();
-          if (HandlerUtil.openNode(this.request, this.project, nodeReference)) {
+          if (HandlerUtil.openNode(this.project, nodeReference) != null) {
+            this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
             return;
           }
         }
@@ -134,9 +132,7 @@ public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
       }
       this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
     } else {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("No project is available.");
-      }
+      HandlerUtil.showNoProjectIsAvailablePopup();
       this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
     }
   }

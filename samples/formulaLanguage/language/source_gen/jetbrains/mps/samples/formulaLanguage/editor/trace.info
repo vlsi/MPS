@@ -3136,7 +3136,7 @@
       <node id="1741258697587035631" at="36,67,37,63" concept="7" />
       <node id="1741258697587035631" at="42,124,43,156" concept="6" />
       <node id="1741258697587035631" at="44,173,45,250" concept="2" />
-      <node id="1741258697587035631" at="47,138,48,106" concept="2" />
+      <node id="1741258697587035631" at="47,138,48,75" concept="2" />
       <node id="1741258697587035631" at="49,5,50,18" concept="7" />
       <node id="1741258697587035639" at="57,96,58,70" concept="6" />
       <node id="1741258697587035639" at="58,70,59,256" concept="7" />
@@ -3152,7 +3152,7 @@
       <node id="1741258697587035631" at="40,0,52,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587035631" at="36,67,37,63" />
       <scope id="1741258697587035631" at="44,173,45,250" />
-      <scope id="1741258697587035631" at="47,138,48,106" />
+      <scope id="1741258697587035631" at="47,138,48,75" />
       <scope id="1741258697587035639" at="57,96,59,256">
         <var name="editorContext" id="1741258697587035639" />
       </scope>
@@ -3177,18 +3177,18 @@
       <scope id="1741258697587035631" at="40,0,52,0">
         <var name="_context" id="1741258697587035631" />
       </scope>
-      <unit id="1741258697587035639" at="53,0,69,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_TransformationMenu$TransformationMenuPart_WrapSubstituteMenu_g28b5z_a1" />
+      <unit id="1741258697587035639" at="53,0,69,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_TransformationMenu$TMP_WrapSM_g28b5z_a1" />
       <unit id="1741258697587035631" at="33,0,70,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_TransformationMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959043b(jetbrains.mps.samples.formulaLanguage.editor)/1741258697587035675">
     <file name="Expression_SubstituteMenu.java">
       <node id="1741258697587035675" at="32,118,33,140" concept="6" />
-      <node id="1741258697587035675" at="33,140,34,291" concept="2" />
-      <node id="1741258697587035675" at="34,291,35,297" concept="2" />
-      <node id="1741258697587035675" at="35,297,36,87" concept="2" />
-      <node id="1741258697587035675" at="36,87,37,18" concept="7" />
-      <node id="1741258697587035675" at="43,77,44,92" concept="7" />
+      <node id="1741258697587035675" at="33,140,34,276" concept="2" />
+      <node id="1741258697587035675" at="34,276,35,282" concept="2" />
+      <node id="1741258697587035675" at="35,282,36,72" concept="2" />
+      <node id="1741258697587035675" at="36,72,37,18" concept="7" />
+      <node id="1741258697587035675" at="43,77,44,77" concept="7" />
       <node id="1741258697587035675" at="47,0,48,0" concept="3" trace="_context" />
       <node id="1741258697587035675" at="48,50,49,255" concept="10" />
       <node id="1741258697587035675" at="49,255,50,27" concept="2" />
@@ -3202,7 +3202,7 @@
       <node id="1741258697587035712" at="75,54,76,59" concept="6" />
       <node id="1741258697587035714" at="77,37,78,24" concept="7" />
       <node id="1741258697587035724" at="80,9,81,21" concept="7" />
-      <node id="1741258697587035675" at="89,77,90,92" concept="7" />
+      <node id="1741258697587035675" at="89,77,90,77" concept="7" />
       <node id="1741258697587035675" at="93,0,94,0" concept="3" trace="_context" />
       <node id="1741258697587035675" at="94,50,95,261" concept="10" />
       <node id="1741258697587035675" at="95,261,96,27" concept="2" />
@@ -3242,12 +3242,12 @@
       <node id="1741258697587035675" at="73,0,83,0" concept="5" trace="canExecute_internal#(Ljava/lang/String;Z)Z" />
       <node id="1741258697587035675" at="118,0,128,0" concept="5" trace="canExecute_internal#(Ljava/lang/String;Z)Z" />
       <node id="1741258697587035675" at="99,0,110,0" concept="5" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1741258697587035675" at="43,77,44,92" />
+      <scope id="1741258697587035675" at="43,77,44,77" />
       <scope id="1741258697587035678" at="62,65,63,53" />
       <scope id="1741258697587035675" at="66,58,67,51" />
       <scope id="1741258697587035675" at="70,66,71,50" />
       <scope id="1741258697587035713" at="77,37,78,24" />
-      <scope id="1741258697587035675" at="89,77,90,92" />
+      <scope id="1741258697587035675" at="89,77,90,77" />
       <scope id="1741258697587035863" at="103,36,104,169" />
       <scope id="1741258697587035874" at="105,16,106,163" />
       <scope id="1741258697587035675" at="111,58,112,51" />
@@ -3327,11 +3327,11 @@
       <scope id="1741258697587035675" at="99,0,110,0">
         <var name="pattern" id="1741258697587035675" />
       </scope>
-      <unit id="1741258697587035675" at="130,0,139,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_SubstituteMenu$SubstituteMenuPart_Subconcepts_or55c_c" />
-      <unit id="1741258697587035675" at="92,0,129,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_SubstituteMenu$SubstituteMenuPart_Action_or55c_b$Item" />
-      <unit id="1741258697587035675" at="46,0,84,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_SubstituteMenu$SubstituteMenuPart_Action_or55c_a$Item" />
-      <unit id="1741258697587035675" at="85,0,130,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_SubstituteMenu$SubstituteMenuPart_Action_or55c_b" />
-      <unit id="1741258697587035675" at="39,0,85,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_SubstituteMenu$SubstituteMenuPart_Action_or55c_a" />
+      <unit id="1741258697587035675" at="130,0,139,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_SubstituteMenu$SMP_Subconcepts_or55c_c" />
+      <unit id="1741258697587035675" at="92,0,129,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_SubstituteMenu$SMP_Action_or55c_b$Item" />
+      <unit id="1741258697587035675" at="46,0,84,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_SubstituteMenu$SMP_Action_or55c_a$Item" />
+      <unit id="1741258697587035675" at="85,0,130,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_SubstituteMenu$SMP_Action_or55c_b" />
+      <unit id="1741258697587035675" at="39,0,85,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_SubstituteMenu$SMP_Action_or55c_a" />
       <unit id="1741258697587035675" at="29,0,142,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_SubstituteMenu" />
     </file>
   </root>

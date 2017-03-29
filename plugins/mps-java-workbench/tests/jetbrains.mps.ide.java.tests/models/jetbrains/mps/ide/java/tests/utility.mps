@@ -38,6 +38,7 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="ao3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.text(MPS.Core/)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
+    <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -811,6 +812,11 @@
                           <node concept="37vLTw" id="1c0m78SaFki" role="2HTEbv">
                             <ref role="3cqZAo" node="13DhuT6A0hE" resolve="result" />
                           </node>
+                        </node>
+                      </node>
+                      <node concept="2ShNRf" id="2I$v6HVrvc0" role="37wK5m">
+                        <node concept="1pGfFk" id="2I$v6HVrIPC" role="2ShVmc">
+                          <ref role="37wK5l" to="mk8z:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
                         </node>
                       </node>
                     </node>

@@ -14,6 +14,7 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -56,7 +57,7 @@ public class DirParser {
       public void run() {
         for (SModel m : ListSequence.fromList(myAffectedModels)) {
           Iterable<SNode> roots = SModelOperations.roots(m, null);
-          JavaParser.tryResolveUnknowns(roots);
+          JavaParser.tryResolveUnknowns(roots, new EmptyProgressMonitor(), IncrementalModelAccess.INSIDE_COMMAND_OR_UPDATE_MODE);
           JavaParser.tryResolveDynamicRefs(roots);
         }
       }

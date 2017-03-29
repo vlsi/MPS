@@ -43,12 +43,12 @@ public class Interface_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new Interface_TransformationMenu.TransformationMenuPart_Group_yvf7gn_a1());
+      result.add(new Interface_TransformationMenu.TMP_Group_yvf7gn_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_yvf7gn_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_yvf7gn_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !((boolean) ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(_context.getNode())) && (boolean) Interface__BehaviorDescriptor.canBeStatic_id2L7NFMC7$9I.invoke(_context.getNode());
@@ -56,12 +56,12 @@ public class Interface_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Interface_TransformationMenu.TransformationMenuPart_Group_yvf7gn_a1.TransformationMenuPart_Action_yvf7gn_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Interface_TransformationMenu.TMP_Group_yvf7gn_a1.TMP_Action_yvf7gn_a0b());
     }
-    private class TransformationMenuPart_Action_yvf7gn_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_yvf7gn_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Interface_TransformationMenu.TransformationMenuPart_Group_yvf7gn_a1.TransformationMenuPart_Action_yvf7gn_a0b.Item(context);
+        return new Interface_TransformationMenu.TMP_Group_yvf7gn_a1.TMP_Action_yvf7gn_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

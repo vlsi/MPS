@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.scope.FilteringScope;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -27,6 +26,7 @@ import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.build.behavior.BuildLayout_Node__BehaviorDescriptor;
 import java.util.List;
 import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor;
 
 public class ScopeUtil {
@@ -50,15 +50,6 @@ public class ScopeUtil {
         return !(filter.invoke(node));
       }
     };
-  }
-  /**
-   * 
-   * @deprecated use the version with conceptparameter
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static Iterable<Scope> imported(Iterable<SNode> importDeclarations, SNode concept, SNode child) {
-    return imported(importDeclarations, SNodeOperations.asSConcept(concept), child);
   }
   public static Iterable<Scope> imported(Iterable<SNode> importDeclarations, final SAbstractConcept concept, final SNode child) {
     return Sequence.fromIterable(importDeclarations).where(new IWhereFilter<SNode>() {
@@ -144,11 +135,11 @@ public class ScopeUtil {
       return result;
     }
     @Override
-    public SNode resolve(SNode contextNode, String refText) {
+    public SNode resolve(SNode contextNode, @NotNull String refText) {
       SNode result = null;
       for (SNode n : getAllNodes()) {
         String name = getName(n);
-        if (name.equals(refText)) {
+        if (refText.equals(name)) {
           if (result == null) {
             result = n;
           } else {
@@ -187,10 +178,7 @@ public class ScopeUtil {
     @Override
     public SNode resolve(SNode contextNode, String refText) {
       SNode resolve = wrapped.resolve(contextNode, refText);
-      if (resolve == null) {
-        return null;
-      }
-      return unwrap(resolve);
+      return (resolve == null ? null : unwrap(resolve));
     }
     @Override
     public Iterable<SNode> getAvailableElements(@Nullable String prefix) {

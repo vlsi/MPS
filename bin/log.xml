@@ -116,6 +116,10 @@
     <priority value="INFO"/>
     <appender-ref ref="CONSOLE-INFO"/>
   </category>
+  <category name="jetbrains.mps.smodel.EDTExecutor" additivity="false">
+    <priority value="TRACE"/>
+    <appender-ref ref="CONSOLE-ALL"/>
+  </category>
 
   <category name="jetbrains.mps.smodel.EDTExecutor" additivity="false">
     <priority value="TRACE"/>

@@ -33,10 +33,10 @@ public class CustomArgumentClauseSubstitute extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new CustomArgumentClauseSubstitute.SubstituteMenuPart_Group_79baz_a());
+    result.add(new CustomArgumentClauseSubstitute.SMP_Group_79baz_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_79baz_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_79baz_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       if (SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x7500da2cf0943c2L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor"))) {
@@ -47,9 +47,9 @@ public class CustomArgumentClauseSubstitute extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new CustomArgumentClauseSubstitute.SubstituteMenuPart_Group_79baz_a.SubstituteMenuPart_Wrapper_79baz_a0(), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6baL, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new CustomArgumentClauseSubstitute.SMP_Group_79baz_a.SMP_Wrap_79baz_a0(), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6baL, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause")));
     }
-    private class SubstituteMenuPart_Wrapper_79baz_a0 extends WrapperSubstituteMenuPart {
+    private class SMP_Wrap_79baz_a0 extends WrapperSubstituteMenuPart {
       @NotNull
       @Override
       protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {

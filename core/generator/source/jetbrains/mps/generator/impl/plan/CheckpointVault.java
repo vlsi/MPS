@@ -21,6 +21,8 @@ import jetbrains.mps.generator.impl.MappingLabelExtractor;
 import jetbrains.mps.generator.impl.ModelStreamManager;
 import jetbrains.mps.generator.impl.SingleStreamSource;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
+import jetbrains.mps.generator.plan.PlanIdentity;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.Pair;
@@ -152,10 +154,10 @@ public class CheckpointVault {
     Element root = new Element("checkpoints");
     for (Entry entry : myKnownCheckpoints) {
       Element planElement = new Element("plan");
-      planElement.setAttribute("id", entry.myPlan.getPersistenceValue());
+      planElement.setAttribute("id", entry.myPlan.getName());
       for (Pair<CheckpointIdentity, String> cpEntry : entry.myFiles){
         Element cpElement = new Element("checkpoint");
-        cpElement.setAttribute("id", cpEntry.o1.getPersistenceValue());
+        cpElement.setAttribute("id", cpEntry.o1.getName());
         // FIXME ensure names are unique
         String filename;
         if (cpEntry.o2 != null) {

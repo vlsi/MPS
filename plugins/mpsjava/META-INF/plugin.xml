@@ -21,7 +21,7 @@
   <id>jetbrains.mps.ide.java.platform</id>
   <name>MPS Java Platform Internal Plugin</name>
   <description>Allows MPS Startup From Sources</description>
-  <version>2017.1</version>
+  <version>2017.2</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="171.1" until-build="174.1"/>
   <depends>jetbrains.mps.core</depends>

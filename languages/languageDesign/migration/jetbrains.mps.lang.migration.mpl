@@ -10,7 +10,7 @@
     <model modelUID="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" />
   </accessoryModels>
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.lang.migration#3735414794051522719" uuid="1500dd24-6c0b-4efb-bf73-cc8384a27d84">
+    <generator alias="" namespace="jetbrains.mps.lang.migration#3735414794051522719" uuid="1500dd24-6c0b-4efb-bf73-cc8384a27d84">
       <models>
         <modelRoot contentPath="${module}/generator/template" type="default">
           <sourceRoot location="." />
@@ -18,6 +18,7 @@
       </models>
       <external-templates>
         <generator generatorUID="cedbe277-2e6e-42bf-ae23-90ac9db5a8e3(jetbrains.mps.baseLanguage.lightweightdsl#3751132065236752909)" />
+        <generator generatorUID="e7d4970e-3e9f-4cf0-a129-f5976c82d635(jetbrains.mps.lang.pattern#1174810948060)" />
       </external-templates>
       <dependencies>
         <dependency reexport="false">fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</dependency>
@@ -80,6 +81,7 @@
         <module reference="1500dd24-6c0b-4efb-bf73-cc8384a27d84(jetbrains.mps.lang.migration#3735414794051522719)" version="0" />
         <module reference="528ff3b9-5fc4-40dd-931f-c6ce3650640e(jetbrains.mps.lang.migration.runtime)" version="0" />
         <module reference="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" version="0" />
+        <module reference="e7d4970e-3e9f-4cf0-a129-f5976c82d635(jetbrains.mps.lang.pattern#1174810948060)" version="0" />
         <module reference="86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)" version="0" />
         <module reference="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" version="0" />
         <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />

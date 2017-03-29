@@ -176,8 +176,30 @@
       <!--TODO use license files from IDEA Community-->
       <patternset>
         <exclude name="license/*"/>
+        <!-- TODO: Exclude log.xml from platform-->
+        <exclude name="bin/log.xml"/>
       </patternset>
     </unzip>
+
+    <!-- Set executable flag to binaries -->
+    <chmod file="${basedir}/../bin/mac/fsnotifier" perm="755"/>
+    <chmod file="${basedir}/../bin/mac/restarter" perm="755"/>
+    <chmod file="${basedir}/../bin/mac/printenv.py" perm="755"/>
+    <chmod file="${basedir}/../build/resources/mps" perm="755"/>
+
+    <chmod file="${basedir}/../bin/linux/fsnotifier" perm="755"/>
+    <chmod file="${basedir}/../bin/linux/fsnotifier-arm" perm="755"/>
+    <chmod file="${basedir}/../bin/linux/fsnotifier64" perm="755"/>
+    <chmod file="${basedir}/../bin/linux/printenv.py" perm="755"/>
+    <chmod file="${basedir}/../bin/linux/restart.py" perm="755"/>
+
+    <chmod file="${basedir}/../bin/win/fsnotifier.exe" perm="755"/>
+    <chmod file="${basedir}/../bin/win/fsnotifier64.exe" perm="755"/>
+    <chmod file="${basedir}/../bin/win/restarter.exe" perm="755"/>
+    <chmod file="${basedir}/../bin/win/runnerw.exe" perm="755"/>
+    <chmod file="${basedir}/../bin/win/vistalauncher.exe" perm="755"/>
+    <chmod file="${basedir}/../bin/win/WinProcessListHelper.exe" perm="755"/>
+    <chmod file="${basedir}/../bin/win/append.bat" perm="755"/>
   </target>
 
   <target name="download-diffutils" depends="check-diffutils,install-ivy" if="${difutill.missing}"

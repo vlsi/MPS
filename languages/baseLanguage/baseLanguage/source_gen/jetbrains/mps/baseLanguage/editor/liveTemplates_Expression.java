@@ -31,16 +31,16 @@ public class liveTemplates_Expression extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new liveTemplates_Expression.SubstituteMenuPart_Action_9g126d_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new liveTemplates_Expression.SubstituteMenuPart_Action_9g126d_b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new liveTemplates_Expression.SMP_Action_9g126d_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new liveTemplates_Expression.SMP_Action_9g126d_b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")));
     return result;
   }
-  private class SubstituteMenuPart_Action_9g126d_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_9g126d_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new liveTemplates_Expression.SubstituteMenuPart_Action_9g126d_a.Item(_context);
+      return new liveTemplates_Expression.SMP_Action_9g126d_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -76,12 +76,12 @@ public class liveTemplates_Expression extends SubstituteMenuBase {
       }
     }
   }
-  private class SubstituteMenuPart_Action_9g126d_b extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_9g126d_b extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new liveTemplates_Expression.SubstituteMenuPart_Action_9g126d_b.Item(_context);
+      return new liveTemplates_Expression.SMP_Action_9g126d_b.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

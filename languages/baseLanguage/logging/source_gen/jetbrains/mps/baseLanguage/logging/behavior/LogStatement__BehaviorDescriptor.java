@@ -7,11 +7,17 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import java.util.List;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
+import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
+import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
+import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -20,12 +26,24 @@ public final class LogStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, "jetbrains.mps.baseLanguage.logging.structure.LogStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
+  public static final SMethod<SNode> getMessage_id5vyNLjQPuX5 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getMessage").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5vyNLjQPuX5").registry(REGISTRY).build();
+  public static final SMethod<String> getSeverity_id5vyNLjQPuVr = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getSeverity").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5vyNLjQPuVr").registry(REGISTRY).build();
+  public static final SMethod<SNode> getThrowable_id5vyNLjQPuWe = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getThrowable").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5vyNLjQPuWe").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList();
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getMessage_id5vyNLjQPuX5, getSeverity_id5vyNLjQPuVr, getThrowable_id5vyNLjQPuWe);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  /*package*/ static SNode getMessage_id5vyNLjQPuX5(@NotNull SNode __thisNode__) {
+    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc42da590L, "logExpression"));
+  }
+  /*package*/ static String getSeverity_id5vyNLjQPuVr(@NotNull SNode __thisNode__) {
+    return SPropertyOperations.getString_def(__thisNode__, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc541df63L, "severity"), "debug");
+  }
+  /*package*/ static SNode getThrowable_id5vyNLjQPuWe(@NotNull SNode __thisNode__) {
+    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, 0x10fc42f25e9L, "exception"));
+  }
 
   /*package*/ LogStatement__BehaviorDescriptor() {
     super(REGISTRY);
@@ -43,6 +61,12 @@ public final class LogStatement__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 0:
+        return (T) ((SNode) getMessage_id5vyNLjQPuX5(node));
+      case 1:
+        return (T) ((String) getSeverity_id5vyNLjQPuVr(node));
+      case 2:
+        return (T) ((SNode) getThrowable_id5vyNLjQPuWe(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

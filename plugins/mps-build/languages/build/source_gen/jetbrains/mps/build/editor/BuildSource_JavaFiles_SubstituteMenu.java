@@ -30,10 +30,10 @@ public class BuildSource_JavaFiles_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildSource_JavaFiles_SubstituteMenu.SubstituteMenuPart_Wrapper_xmzx4c_a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x14d3fb6fb8480882L, "jetbrains.mps.build.structure.BuildSource_JavaFiles")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildSource_JavaFiles_SubstituteMenu.SMP_Wrap_xmzx4c_a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x14d3fb6fb8480882L, "jetbrains.mps.build.structure.BuildSource_JavaFiles")));
     return result;
   }
-  private class SubstituteMenuPart_Wrapper_xmzx4c_a extends WrapperSubstituteMenuPart {
+  private class SMP_Wrap_xmzx4c_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {

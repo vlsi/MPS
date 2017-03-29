@@ -48,14 +48,14 @@
   <node concept="3vrhyV" id="2LiUEk8oQ$g">
     <property role="TrG5h" value="migration" />
     <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
-      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD34/Migrations" />
+      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD20171/Migrations" />
     </node>
     <node concept="2V$Bhx" id="7XWR6$5jjmC" role="QG$2i">
       <property role="2V$B1T" value="90746344-04fd-4286-97d5-b46ae6a81709" />
       <property role="2V$B1Q" value="jetbrains.mps.lang.migration" />
     </node>
     <node concept="1QGGSu" id="3hP8sYBd2EZ" role="3vqPLo">
-      <property role="1iqoE4" value="${module}/icons/migration.png" />
+      <property role="1iqoE4" value="${module}/icons/migrationModel.png" />
     </node>
     <node concept="2vPci8" id="264$spPfZhg" role="3F_NFc">
       <ref role="2vPcib" to="tpcc:264$spPfYX1" resolve="MPSAspects" />

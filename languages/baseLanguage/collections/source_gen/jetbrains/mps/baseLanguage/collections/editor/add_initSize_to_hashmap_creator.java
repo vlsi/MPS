@@ -40,12 +40,12 @@ public class add_initSize_to_hashmap_creator extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new add_initSize_to_hashmap_creator.TransformationMenuPart_Group_2aswz7_a0());
+      result.add(new add_initSize_to_hashmap_creator.TMP_Group_2aswz7_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_2aswz7_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_2aswz7_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x118f24c9eb0L, "initializer")) == null) && (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x15ae66cec0613b7fL, "initSize")) == null) && (boolean) HashMapCreator__BehaviorDescriptor.hasInitSize_id1653mnvAgqc.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getNode())));
@@ -53,12 +53,12 @@ public class add_initSize_to_hashmap_creator extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_initSize_to_hashmap_creator.TransformationMenuPart_Group_2aswz7_a0.TransformationMenuPart_Action_2aswz7_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_initSize_to_hashmap_creator.TMP_Group_2aswz7_a0.TMP_Action_2aswz7_a0a());
     }
-    private class TransformationMenuPart_Action_2aswz7_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_2aswz7_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new add_initSize_to_hashmap_creator.TransformationMenuPart_Group_2aswz7_a0.TransformationMenuPart_Action_2aswz7_a0a.Item(context);
+        return new add_initSize_to_hashmap_creator.TMP_Group_2aswz7_a0.TMP_Action_2aswz7_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

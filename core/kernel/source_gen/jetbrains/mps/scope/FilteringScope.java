@@ -18,10 +18,7 @@ public class FilteringScope extends DelegatingScope {
   @Override
   public SNode resolve(SNode contextNode, String refText) {
     SNode resolved = super.resolve(contextNode, refText);
-    if (isExcluded(resolved)) {
-      return null;
-    }
-    return resolved;
+    return (isExcluded(resolved) ? null : resolved);
   }
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {

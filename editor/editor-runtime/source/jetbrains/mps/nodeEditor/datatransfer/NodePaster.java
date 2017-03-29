@@ -121,7 +121,7 @@ public class NodePaster {
     for (SNode pasteNode : myPasteNodes) {
       model.addRootNode(pasteNode);
       if (dstPackage != null) {
-        SNodeAccessUtil.setProperty(pasteNode, SNodeUtil.propertyName_BaseConcept_virtualPackage, dstPackage);
+        SNodeAccessUtil.setProperty(pasteNode, SNodeUtil.property_BaseConcept_virtualPackage, dstPackage);
       }
       DataTransferManager.getInstance().postProcessNode(pasteNode);
     }
@@ -272,6 +272,7 @@ public class NodePaster {
   }
 
   private SNode findSuitableLink(SNode sourceConcept, String role) {
+    //todo[MM] !!! remove "role" here!!!
     List<SNode> links;
     if (role != null) {
       SNode link = new ConceptAndSuperConceptsScope(sourceConcept).getMostSpecificLinkDeclarationByRole(role);

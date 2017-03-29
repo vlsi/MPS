@@ -38,14 +38,14 @@ public class Expression_default_RTransform_Contribution extends TransformationMe
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new Expression_default_RTransform_Contribution.TransformationMenuPart_IncludeMenu_r8b07c_a0());
-      result.add(new Expression_default_RTransform_Contribution.TransformationMenuPart_IncludeMenu_r8b07c_b0());
-      result.add(new Expression_default_RTransform_Contribution.TransformationMenuPart_IncludeMenu_r8b07c_c0());
+      result.add(new Expression_default_RTransform_Contribution.TMP_Include_r8b07c_a0());
+      result.add(new Expression_default_RTransform_Contribution.TMP_Include_r8b07c_b0());
+      result.add(new Expression_default_RTransform_Contribution.TMP_Include_r8b07c_c0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_r8b07c_a0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_r8b07c_a0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
@@ -56,7 +56,7 @@ public class Expression_default_RTransform_Contribution extends TransformationMe
     }
 
   }
-  public class TransformationMenuPart_IncludeMenu_r8b07c_b0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_r8b07c_b0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
@@ -67,7 +67,7 @@ public class Expression_default_RTransform_Contribution extends TransformationMe
     }
 
   }
-  public class TransformationMenuPart_IncludeMenu_r8b07c_c0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_r8b07c_c0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {

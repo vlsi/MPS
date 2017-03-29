@@ -20,6 +20,8 @@ import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.ModelGenerationPlan.Step;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.RigidGenerationPlan;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
+import jetbrains.mps.generator.plan.PlanIdentity;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -32,6 +34,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -84,8 +87,13 @@ public class RigidPlanBuilder implements GenerationPlanBuilder {
   }
 
   @Override
-  public void applyGeneratorWithExtended(@NotNull SModule generator) {
+  public void applyGeneratorWithExtended(@NotNull SModule ... generator) {
     throw new UnsupportedOperationException("This implementation of plan builder doesn't support requested functionality");
+  }
+
+  @Override
+  public void apply(@NotNull Collection<TemplateMappingConfiguration> tmc) {
+    mySteps.add(new Transform(tmc));
   }
 
   @Override
@@ -106,7 +114,7 @@ public class RigidPlanBuilder implements GenerationPlanBuilder {
   @NotNull
   @Override
   public RigidGenerationPlan wrapUp(@NotNull PlanIdentity planIdentity) {
-    return new RigidGenerationPlan(planIdentity.getPersistenceValue(), mySteps);
+    return new RigidGenerationPlan(planIdentity, mySteps);
   }
 
   private static void fillMC(GeneratorRuntime gr, List<TemplateMappingConfiguration> mc) {

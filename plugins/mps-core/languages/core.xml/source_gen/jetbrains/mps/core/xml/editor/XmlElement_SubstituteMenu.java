@@ -25,15 +25,15 @@ public class XmlElement_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlElement_SubstituteMenu.SubstituteMenuPart_Action_xunnx5_a(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlElement_SubstituteMenu.SMP_Action_xunnx5_a(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement")));
     return result;
   }
-  private class SubstituteMenuPart_Action_xunnx5_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_xunnx5_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new XmlElement_SubstituteMenu.SubstituteMenuPart_Action_xunnx5_a.Item(_context);
+      return new XmlElement_SubstituteMenu.SMP_Action_xunnx5_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

@@ -230,12 +230,16 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   @Override
   public void selectNotify() {
     mySelected = true;
-    myNodeEditor.selectNotify();
+    if (myNodeEditor != null) {
+      myNodeEditor.selectNotify();
+    }
   }
 
   @Override
   public void deselectNotify() {
-    myNodeEditor.deselectNotify();
+    if (myNodeEditor != null) {
+      myNodeEditor.deselectNotify();
+    }
     mySelected = false;
   }
 

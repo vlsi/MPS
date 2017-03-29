@@ -48,12 +48,12 @@ public class InstanceMethodDeclaration_TransformationMenu extends Transformation
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new InstanceMethodDeclaration_TransformationMenu.TransformationMenuPart_Group_s1zz2p_a1());
+      result.add(new InstanceMethodDeclaration_TransformationMenu.TMP_Group_s1zz2p_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_s1zz2p_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_s1zz2p_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
@@ -61,12 +61,12 @@ public class InstanceMethodDeclaration_TransformationMenu extends Transformation
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new InstanceMethodDeclaration_TransformationMenu.TransformationMenuPart_Group_s1zz2p_a1.TransformationMenuPart_Action_s1zz2p_a0b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), new InstanceMethodDeclaration_TransformationMenu.TransformationMenuPart_Group_s1zz2p_a1.TransformationMenuPart_Action_s1zz2p_b0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new InstanceMethodDeclaration_TransformationMenu.TMP_Group_s1zz2p_a1.TMP_Action_s1zz2p_a0b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), new InstanceMethodDeclaration_TransformationMenu.TMP_Group_s1zz2p_a1.TMP_Action_s1zz2p_b0b());
     }
-    private class TransformationMenuPart_Action_s1zz2p_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_s1zz2p_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new InstanceMethodDeclaration_TransformationMenu.TransformationMenuPart_Group_s1zz2p_a1.TransformationMenuPart_Action_s1zz2p_a0b.Item(context);
+        return new InstanceMethodDeclaration_TransformationMenu.TMP_Group_s1zz2p_a1.TMP_Action_s1zz2p_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
@@ -98,10 +98,10 @@ public class InstanceMethodDeclaration_TransformationMenu extends Transformation
         }
       }
     }
-    private class TransformationMenuPart_Action_s1zz2p_b0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_s1zz2p_b0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new InstanceMethodDeclaration_TransformationMenu.TransformationMenuPart_Group_s1zz2p_a1.TransformationMenuPart_Action_s1zz2p_b0b.Item(context);
+        return new InstanceMethodDeclaration_TransformationMenu.TMP_Group_s1zz2p_a1.TMP_Action_s1zz2p_b0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

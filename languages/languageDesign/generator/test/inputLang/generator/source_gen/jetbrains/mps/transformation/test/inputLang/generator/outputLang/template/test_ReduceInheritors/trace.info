@@ -20,7 +20,7 @@
       <unit at="19,0,51,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="19,0,57,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateModelImpl" />
+      <unit at="20,0,62,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)/1206459766745">

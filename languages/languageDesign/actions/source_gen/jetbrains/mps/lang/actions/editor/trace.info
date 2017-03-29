@@ -11268,10 +11268,10 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a5(jetbrains.mps.lang.actions.editor)/1741258697587239333">
     <file name="ISubstitute_String_SubstituteMenu.java">
       <node id="1741258697587239333" at="30,118,31,140" concept="5" />
-      <node id="1741258697587239333" at="31,140,32,297" concept="1" />
-      <node id="1741258697587239333" at="32,297,33,96" concept="1" />
-      <node id="1741258697587239333" at="33,96,34,18" concept="6" />
-      <node id="1741258697587239333" at="40,77,41,101" concept="6" />
+      <node id="1741258697587239333" at="31,140,32,282" concept="1" />
+      <node id="1741258697587239333" at="32,282,33,81" concept="1" />
+      <node id="1741258697587239333" at="33,81,34,18" concept="6" />
+      <node id="1741258697587239333" at="40,77,41,86" concept="6" />
       <node id="1741258697587239333" at="44,0,45,0" concept="2" trace="_context" />
       <node id="1741258697587239333" at="45,50,46,252" concept="8" />
       <node id="1741258697587239333" at="46,252,47,27" concept="1" />
@@ -11288,7 +11288,7 @@
       <node id="1741258697587239336" at="57,0,62,0" concept="4" trace="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1741258697587239333" at="50,0,57,0" concept="4" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1741258697587239333" at="28,0,36,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587239333" at="40,77,41,101" />
+      <scope id="1741258697587239333" at="40,77,41,86" />
       <scope id="1741258697587239336" at="59,65,60,29" />
       <scope id="1741258697587239333" at="65,76,66,229" />
       <scope id="1741258697587239333" at="69,125,70,149" />
@@ -11321,9 +11321,9 @@
       <scope id="1741258697587239333" at="28,0,36,0">
         <var name="_context" id="1741258697587239333" />
       </scope>
-      <unit id="1741258697587239333" at="64,0,73,0" name="jetbrains.mps.lang.actions.editor.ISubstitute_String_SubstituteMenu$SubstituteMenuPart_Subconcepts_avx3gl_b" />
-      <unit id="1741258697587239333" at="43,0,63,0" name="jetbrains.mps.lang.actions.editor.ISubstitute_String_SubstituteMenu$SubstituteMenuPart_Action_avx3gl_a$Item" />
-      <unit id="1741258697587239333" at="36,0,64,0" name="jetbrains.mps.lang.actions.editor.ISubstitute_String_SubstituteMenu$SubstituteMenuPart_Action_avx3gl_a" />
+      <unit id="1741258697587239333" at="64,0,73,0" name="jetbrains.mps.lang.actions.editor.ISubstitute_String_SubstituteMenu$SMP_Subconcepts_avx3gl_b" />
+      <unit id="1741258697587239333" at="43,0,63,0" name="jetbrains.mps.lang.actions.editor.ISubstitute_String_SubstituteMenu$SMP_Action_avx3gl_a$Item" />
+      <unit id="1741258697587239333" at="36,0,64,0" name="jetbrains.mps.lang.actions.editor.ISubstitute_String_SubstituteMenu$SMP_Action_avx3gl_a" />
       <unit id="1741258697587239333" at="27,0,74,0" name="jetbrains.mps.lang.actions.editor.ISubstitute_String_SubstituteMenu" />
     </file>
   </root>

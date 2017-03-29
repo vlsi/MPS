@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,6 @@ import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPluginBase;
-import jetbrains.mps.datatransfer.CopyPasteManager;
-import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
@@ -89,8 +87,8 @@ public final class MPSCore extends ComponentPluginBase {
 
     SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
     myModuleRepository = init(new MPSModuleRepository());
-    SModelRepository modelRepository = init(new SModelRepository(myModuleRepository));
-    init(new GlobalSModelEventsManager(modelRepository));
+    init(new SModelRepository(myModuleRepository));
+    init(new GlobalSModelEventsManager(myModuleRepository));
     myClassLoaderManager = init(new ClassLoaderManager(myModuleRepository));
     init(new DebugRegistry());
 
@@ -109,13 +107,11 @@ public final class MPSCore extends ComponentPluginBase {
     init(new ConceptRegistry(myLanguageRegistry));
     init(new ExtensionRegistry(myClassLoaderManager, myModuleRepository));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
-    init(new CachesManager(myClassLoaderManager, modelRepository));
+    init(new CachesManager(myClassLoaderManager, myModuleRepository));
     init(new DescriptorModelComponent(myModuleRepository,
                                       new LanguageDescriptorModelProvider(myClassLoaderManager),
                                       new GeneratorDescriptorModelProvider()));
     init(new ProjectStructureModule(myModuleRepository, myPersistenceFacade));
-    init(new CopyPasteManager(myClassLoaderManager));
-    init(new PasteWrappersManager(myClassLoaderManager));
     init(new BLDependenciesCache(myModuleRepository, cleanupManager));
 
     init(new ResolverComponent());

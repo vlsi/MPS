@@ -24,7 +24,7 @@
       <unit at="52,0,656,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="19,0,65,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateModelImpl" />
+      <unit at="20,0,70,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)/1006429225401295242">

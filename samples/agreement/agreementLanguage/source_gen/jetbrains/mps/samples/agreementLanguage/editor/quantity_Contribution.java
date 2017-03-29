@@ -27,16 +27,16 @@ public class quantity_Contribution extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new quantity_Contribution.SubstituteMenuPart_Action_82pfaq_a(), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new quantity_Contribution.SubstituteMenuPart_Action_82pfaq_b(), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new quantity_Contribution.SMP_Action_82pfaq_a(), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new quantity_Contribution.SMP_Action_82pfaq_b(), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity")));
     return result;
   }
-  private class SubstituteMenuPart_Action_82pfaq_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_82pfaq_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new quantity_Contribution.SubstituteMenuPart_Action_82pfaq_a.Item(_context);
+      return new quantity_Contribution.SMP_Action_82pfaq_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -85,12 +85,12 @@ public class quantity_Contribution extends SubstituteMenuBase {
       }
     }
   }
-  private class SubstituteMenuPart_Action_82pfaq_b extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_82pfaq_b extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new quantity_Contribution.SubstituteMenuPart_Action_82pfaq_b.Item(_context);
+      return new quantity_Contribution.SMP_Action_82pfaq_b.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;

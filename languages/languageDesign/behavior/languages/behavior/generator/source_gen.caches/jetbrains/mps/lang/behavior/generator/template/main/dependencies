@@ -53,6 +53,7 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.query.IfMacroCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.PropertyValueQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.QueryKey" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.QueryKeyImpl" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.ReductionRuleCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.ReferenceTargetQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.SourceNodeQuery" />
@@ -174,8 +175,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.generator.template.main.TemplateModelImpl" file="TemplateModelImpl.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.GeneratorQueryProvider" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
@@ -183,6 +186,7 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.generator.template.main.Mapping_mc_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.generator.template.main.Switch_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.generator.template.main.Switch_switch_ClassFromType" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.generator.template.main.Switch_switch_Parameter" />

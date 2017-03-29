@@ -16,16 +16,13 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
-  private INodeChecker myChecker;
-  private String myCategory;
-  private SRepository myRepository;
+  private final INodeChecker myChecker;
+  private final String myCategory;
+  private final SRepository myRepository;
 
-  @Deprecated
-  public INodeCheckerSpecificCheckerAdapter(INodeChecker checker, String category) {
-    this(checker, category, null);
-  }
   public INodeCheckerSpecificCheckerAdapter(INodeChecker checker, String category, SRepository repository) {
     myChecker = checker;
     myCategory = category;
@@ -36,29 +33,39 @@ public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     monitor.start(myCategory, 1);
+    final SRepository repository = (myRepository != null ? myRepository : model.getRepository());
     for (final SNode rootNode : SModelOperations.roots(model, null)) {
-      SRepository repository = (myRepository != null ? myRepository : model.getRepository());
-      for (final IErrorReporter errorReporter : SetSequence.fromSet(myChecker.getErrors(rootNode, repository))) {
-        QuickFixProvider provider = check_m7souj_a0a0b0d0h(errorReporter);
+      for (IErrorReporter errorReporter : SetSequence.fromSet(myChecker.getErrors(rootNode, repository))) {
         IModelCheckerFix fix = null;
-        if (provider != null) {
-          final QuickFix_Runtime quickFix = provider.getQuickFix();
-          if (quickFix != null && provider.isExecutedImmediately()) {
-            fix = new IModelCheckerFix() {
-              public boolean doFix() {
-                quickFix.execute(errorReporter.getSNode());
-                return true;
-              }
-            };
+        final SNode reporterNode = errorReporter.getSNode();
+        if (reporterNode != null) {
+          QuickFixProvider provider = check_m7souj_a0a0c0a0e0g(errorReporter);
+          if (provider != null) {
+            final QuickFix_Runtime quickFix = provider.getQuickFix();
+            if (quickFix != null && provider.isExecutedImmediately()) {
+              final SNodeReference reporterNodeRef = reporterNode.getReference();
+              fix = new IModelCheckerFix() {
+                public boolean doFix() {
+                  SNode resolved = reporterNodeRef.resolve(repository);
+                  if (resolved != null) {
+                    quickFix.execute(reporterNode);
+                    return true;
+                  } else {
+                    return false;
+                  }
+                }
+              };
+            }
           }
         }
-        SpecificChecker.addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), "typesystem", fix);
+
+        SpecificChecker.addIssue(results, reporterNode, errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), "typesystem", fix);
       }
     }
     monitor.done();
     return results;
   }
-  private static QuickFixProvider check_m7souj_a0a0b0d0h(IErrorReporter checkedDotOperand) {
+  private static QuickFixProvider check_m7souj_a0a0c0a0e0g(IErrorReporter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getIntentionProvider();
     }

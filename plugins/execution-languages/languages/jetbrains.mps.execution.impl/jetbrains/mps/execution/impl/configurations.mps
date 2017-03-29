@@ -209,11 +209,10 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -662,9 +661,9 @@
                                   </node>
                                 </node>
                                 <node concept="3clFbS" id="4tfwdmbGEsR" role="3clFbx">
-                                  <node concept="34ab3g" id="4tfwdmbGEsS" role="3cqZAp">
-                                    <property role="35gtTG" value="warn" />
-                                    <node concept="3cpWs3" id="4tfwdmbGEsT" role="34bqiv">
+                                  <node concept="RRSsy" id="3jYQuSB37xV" role="3cqZAp">
+                                    <property role="RRSoG" value="warn" />
+                                    <node concept="3cpWs3" id="4tfwdmbGEsT" role="RRSoy">
                                       <node concept="3cpWs3" id="4tfwdmbGEsU" role="3uHU7B">
                                         <node concept="Xl_RD" id="4tfwdmbGEsV" role="3uHU7B">
                                           <property role="Xl_RC" value="Manager of attached content of descriptor " />
@@ -686,9 +685,9 @@
                                 </node>
                               </node>
                               <node concept="3clFbS" id="4tfwdmbGEt0" role="3clFbx">
-                                <node concept="34ab3g" id="4tfwdmbGEt1" role="3cqZAp">
-                                  <property role="35gtTG" value="warn" />
-                                  <node concept="3cpWs3" id="4tfwdmbGEt2" role="34bqiv">
+                                <node concept="RRSsy" id="3jYQuSB387X" role="3cqZAp">
+                                  <property role="RRSoG" value="warn" />
+                                  <node concept="3cpWs3" id="4tfwdmbGEt2" role="RRSoy">
                                     <node concept="3cpWs3" id="4tfwdmbGEt3" role="3uHU7B">
                                       <node concept="Xl_RD" id="4tfwdmbGEt4" role="3uHU7B">
                                         <property role="Xl_RC" value="Attached content of descriptor " />
@@ -1279,13 +1278,12 @@
             </node>
             <node concept="TDmWw" id="4tfwdmbFMee" role="TEbGg">
               <node concept="3clFbS" id="4tfwdmbFMef" role="TDEfX">
-                <node concept="34ab3g" id="7rvPfCBwHGh" role="3cqZAp">
-                  <property role="35gtTG" value="error" />
-                  <property role="34fQS0" value="true" />
-                  <node concept="Xl_RD" id="7rvPfCBwHGi" role="34bqiv">
+                <node concept="RRSsy" id="3jYQuSB388f" role="3cqZAp">
+                  <property role="RRSoG" value="error" />
+                  <node concept="Xl_RD" id="7rvPfCBwHGi" role="RRSoy">
                     <property role="Xl_RC" value="Can't read execution configurations state" />
                   </node>
-                  <node concept="37vLTw" id="3GM_nagTtBO" role="34bMjA">
+                  <node concept="37vLTw" id="3GM_nagTtBO" role="RRSow">
                     <ref role="3cqZAo" node="4tfwdmbFMeg" resolve="e" />
                   </node>
                 </node>
@@ -1342,13 +1340,12 @@
             </node>
             <node concept="TDmWw" id="4tfwdmbFJ_M" role="TEbGg">
               <node concept="3clFbS" id="4tfwdmbFJ_N" role="TDEfX">
-                <node concept="34ab3g" id="7rvPfCBwHGI" role="3cqZAp">
-                  <property role="35gtTG" value="error" />
-                  <property role="34fQS0" value="true" />
-                  <node concept="Xl_RD" id="7rvPfCBwHGJ" role="34bqiv">
+                <node concept="RRSsy" id="3jYQuSB388n" role="3cqZAp">
+                  <property role="RRSoG" value="error" />
+                  <node concept="Xl_RD" id="7rvPfCBwHGJ" role="RRSoy">
                     <property role="Xl_RC" value="Can't save run configurations state" />
                   </node>
-                  <node concept="37vLTw" id="3GM_nagTrLd" role="34bMjA">
+                  <node concept="37vLTw" id="3GM_nagTrLd" role="RRSow">
                     <ref role="3cqZAo" node="4tfwdmbFJ_O" resolve="e" />
                   </node>
                 </node>

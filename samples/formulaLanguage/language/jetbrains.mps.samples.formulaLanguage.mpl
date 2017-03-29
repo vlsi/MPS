@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.formulaLanguage#1130266266255" uuid="9e79e6dc-3005-4fdf-901d-d1d70047ef7b">
+    <generator alias="" namespace="jetbrains.mps.formulaLanguage#1130266266255" uuid="9e79e6dc-3005-4fdf-901d-d1d70047ef7b">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator" />
@@ -53,6 +53,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="true">daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)</dependency>
+    <dependency reexport="false" scope="generate-into">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="5" />
@@ -88,8 +89,6 @@
   <runtime>
     <dependency reexport="false">191c9cb2-d1d4-4aae-aafa-a30eaf3192a6(jetbrains.mps.samples.formula.runtime)</dependency>
   </runtime>
-  <extendedLanguages>
-    <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
-  </extendedLanguages>
+  <extendedLanguages />
 </language>
 

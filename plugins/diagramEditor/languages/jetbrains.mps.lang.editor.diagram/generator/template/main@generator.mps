@@ -6372,7 +6372,7 @@
         <node concept="3clFbS" id="7rLMM2UyZm4" role="3clF47">
           <node concept="3cpWs6" id="7PbCNsfbNpf" role="3cqZAp">
             <node concept="1rXfSq" id="7PbCNsfbUnZ" role="3cqZAk">
-              <ref role="37wK5l" to="8jsd:zxzBEO0unW" resolve="createNewDiagramNodeActions" />
+              <ref role="37wK5l" to="8jsd:4jf2Bbgqr95" resolve="createNewDiagramNodeActions" />
               <node concept="37vLTw" id="4wVpOa1OrjI" role="37wK5m">
                 <ref role="3cqZAo" node="7rLMM2Uz7tL" resolve="diagramNode" />
                 <node concept="29HgVG" id="4wVpOa1OrjJ" role="lGtFl">
@@ -6526,7 +6526,7 @@
         <node concept="3clFbS" id="ObbTRzELnW" role="3clF47">
           <node concept="3cpWs6" id="7PbCNsfcmSv" role="3cqZAp">
             <node concept="1rXfSq" id="7PbCNsfcoyh" role="3cqZAk">
-              <ref role="37wK5l" to="8jsd:zxzBEO0upj" resolve="createNewDiagramConnectorActions" />
+              <ref role="37wK5l" to="8jsd:4jf2BbgsFEI" resolve="createNewDiagramConnectorActions" />
               <node concept="37vLTw" id="4wVpOa1OEEB" role="37wK5m">
                 <ref role="3cqZAo" node="ObbTRzELpt" resolve="diagramNode" />
                 <node concept="29HgVG" id="4wVpOa1OEEC" role="lGtFl">

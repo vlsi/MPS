@@ -15,13 +15,13 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.DefaultModelRoot;
@@ -138,13 +138,8 @@ public class ModuleChecker {
   }
 
   public boolean checkModuleReference(ModuleChecker.CheckType type) {
-    SModuleReference moduleReference = myModuleDescriptor.getModuleReference();
-
-    String expectedModuleName = moduleReference.getModuleName();
-    if (SNodeOperations.isInstanceOf(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
-      expectedModuleName = ((GeneratorDescriptor) myModuleDescriptor).getGeneratorUID();
-    }
-    if (type.doCheck && (neq_yr5c5g_a0a0e0n(SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), expectedModuleName))) {
+    String expectedModuleName = myModuleDescriptor.getNamespace();
+    if (type.doCheck && (neq_yr5c5g_a0a0b0n(SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), expectedModuleName))) {
       report("name in import doesn't match file content " + SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ", should be: " + expectedModuleName);
       return false;
     }
@@ -152,13 +147,14 @@ public class ModuleChecker {
       SPropertyOperations.set(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), expectedModuleName);
     }
 
-    String expectedModuleUUID = moduleReference.getModuleId().toString();
-    if (type.doCheck && neq_yr5c5g_a0a8a31(SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid")), expectedModuleUUID)) {
-      report("module id in import doesn't match file content " + SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ", should be: " + moduleReference.getModuleId().toString());
+    String expectedModuleUUID = myModuleDescriptor.getId().toString();
+    if (type.doCheck && neq_yr5c5g_a0a5a31(SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid")), expectedModuleUUID)) {
+      String m = "module id in import doesn't match file content %s, should be: %s";
+      report(String.format(m, SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), myModuleDescriptor.getId()));
       return false;
     }
     if (type.doPartialImport) {
-      SPropertyOperations.set(myModule, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid"), moduleReference.getModuleId().toString());
+      SPropertyOperations.set(myModule, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid"), myModuleDescriptor.getId().toString());
     }
 
     return true;
@@ -686,7 +682,7 @@ public class ModuleChecker {
     }
 
     GeneratorDescriptor generatorDescriptor = languageDescriptor.getGenerators().get(0);
-    String generatorName = generatorDescriptor.getGeneratorUID();
+    String generatorName = generatorDescriptor.getNamespace();
     if (generatorName != null && !(generatorName.startsWith(langName + "#"))) {
       report("wrong generator name `" + generatorName + "', should start with `" + langName + "#'");
       return;
@@ -929,10 +925,10 @@ public class ModuleChecker {
     n1.setProperty(MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL, 0x48e82d5083341cc1L, "reexport"), false + "");
     return n1;
   }
-  private static boolean neq_yr5c5g_a0a0e0n(Object a, Object b) {
+  private static boolean neq_yr5c5g_a0a0b0n(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_yr5c5g_a0a8a31(Object a, Object b) {
+  private static boolean neq_yr5c5g_a0a5a31(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean eq_yr5c5g_a0a1a0a0a0a0b0a0d0y0bb(Object a, Object b) {

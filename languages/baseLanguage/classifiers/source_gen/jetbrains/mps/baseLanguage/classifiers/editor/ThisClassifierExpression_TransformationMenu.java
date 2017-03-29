@@ -47,12 +47,12 @@ public class ThisClassifierExpression_TransformationMenu extends TransformationM
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L, "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ThisClassifierExpression_TransformationMenu.TransformationMenuPart_Group_myg648_a1());
+      result.add(new ThisClassifierExpression_TransformationMenu.TMP_Group_myg648_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_myg648_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_myg648_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L, 0x11bc25d4bc3L, "classifier")) == null);
@@ -60,14 +60,14 @@ public class ThisClassifierExpression_TransformationMenu extends TransformationM
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ThisClassifierExpression_TransformationMenu.TransformationMenuPart_Group_myg648_a1.TransformationMenuPart_Parameterized_myg648_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ThisClassifierExpression_TransformationMenu.TMP_Group_myg648_a1.TMP_Param_myg648_a0b());
     }
-    private class TransformationMenuPart_Parameterized_myg648_a0b extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Param_myg648_a0b extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
 
       @NotNull
       @Override
       protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
-        return new ThisClassifierExpression_TransformationMenu.TransformationMenuPart_Group_myg648_a1.TransformationMenuPart_Parameterized_myg648_a0b.TransformationMenuPart_Action_myg648_a0a1(parameter).createItems(context);
+        return new ThisClassifierExpression_TransformationMenu.TMP_Group_myg648_a1.TMP_Param_myg648_a0b.TMP_Action_myg648_a0a1(parameter).createItems(context);
       }
 
       @Nullable
@@ -76,14 +76,14 @@ public class ThisClassifierExpression_TransformationMenu extends TransformationM
         return (List<SNode>) ThisClassifierExpression__BehaviorDescriptor.getPossibleClassifiers_idhJm8WEN.invoke(_context.getNode());
       }
 
-      private class TransformationMenuPart_Action_myg648_a0a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_myg648_a0a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         private final SNode myParameterObject;
-        public TransformationMenuPart_Action_myg648_a0a1(SNode parameterObject) {
+        public TMP_Action_myg648_a0a1(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new ThisClassifierExpression_TransformationMenu.TransformationMenuPart_Group_myg648_a1.TransformationMenuPart_Parameterized_myg648_a0b.TransformationMenuPart_Action_myg648_a0a1.Item(context);
+          return new ThisClassifierExpression_TransformationMenu.TMP_Group_myg648_a1.TMP_Param_myg648_a0b.TMP_Action_myg648_a0a1.Item(context);
         }
 
         private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

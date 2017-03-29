@@ -9,9 +9,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import javax.swing.Icon;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -34,11 +31,6 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
   private _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> myCallback;
   private DiagramCell myDiagramCell;
   private Icon myIcon;
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public PaletteElementsCreationActionGroup(DiagramCell diagramCell, SNode container, SNode childNodeConcept, SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
-    this(diagramCell, container, SNodeOperations.asSConcept(childNodeConcept), MetaAdapterByDeclaration.getContainmentLink(containingLink), setNodePositionCallback);
-  }
   public PaletteElementsCreationActionGroup(DiagramCell diagramCell, SNode container, SAbstractConcept childConcept, SContainmentLink containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
     myDiagramCell = diagramCell;
     myEditorContext = diagramCell.getContext();

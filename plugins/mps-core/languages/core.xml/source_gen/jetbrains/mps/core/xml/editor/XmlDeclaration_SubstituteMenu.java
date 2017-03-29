@@ -21,10 +21,10 @@ public class XmlDeclaration_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new XmlDeclaration_SubstituteMenu.SubstituteMenuPart_Group_c5s0sa_a());
+    result.add(new XmlDeclaration_SubstituteMenu.SMP_Group_c5s0sa_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_c5s0sa_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_c5s0sa_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return SNodeOperations.getIndexInParent(_context.getCurrentTargetNode()) <= 0;

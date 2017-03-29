@@ -26,30 +26,30 @@ public class BuildSource_JavaContentFolder_SubstituteMenu extends SubstituteMenu
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildSource_JavaContentFolder_SubstituteMenu.SubstituteMenuPart_Parameterized_v1e5qc_a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319546c6L, "jetbrains.mps.build.structure.BuildSource_JavaContentFolder")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildSource_JavaContentFolder_SubstituteMenu.SMP_Param_v1e5qc_a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319546c6L, "jetbrains.mps.build.structure.BuildSource_JavaContentFolder")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_v1e5qc_a extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_v1e5qc_a extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(String parameter, SubstituteMenuContext context) {
-      return new BuildSource_JavaContentFolder_SubstituteMenu.SubstituteMenuPart_Parameterized_v1e5qc_a.SubstituteMenuPart_Action_v1e5qc_a0(parameter).createItems(context);
+      return new BuildSource_JavaContentFolder_SubstituteMenu.SMP_Param_v1e5qc_a.SMP_Action_v1e5qc_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends String> getParameters(SubstituteMenuContext _context) {
       return Sequence.fromIterable(Sequence.fromArray(new String[]{"source", "test", "excluded"})).toListSequence();
     }
-    private class SubstituteMenuPart_Action_v1e5qc_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_v1e5qc_a0 extends SingleItemSubstituteMenuPart {
       private final String myParameterObject;
-      public SubstituteMenuPart_Action_v1e5qc_a0(String parameterObject) {
+      public SMP_Action_v1e5qc_a0(String parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new BuildSource_JavaContentFolder_SubstituteMenu.SubstituteMenuPart_Parameterized_v1e5qc_a.SubstituteMenuPart_Action_v1e5qc_a0.Item(_context);
+        return new BuildSource_JavaContentFolder_SubstituteMenu.SMP_Param_v1e5qc_a.SMP_Action_v1e5qc_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

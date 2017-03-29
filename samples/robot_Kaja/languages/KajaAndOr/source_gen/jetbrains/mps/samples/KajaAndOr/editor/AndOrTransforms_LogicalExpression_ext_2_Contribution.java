@@ -43,20 +43,20 @@ public class AndOrTransforms_LogicalExpression_ext_2_Contribution extends Transf
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new AndOrTransforms_LogicalExpression_ext_2_Contribution.TransformationMenuPart_Parameterized_m0wxkr_a0());
+      result.add(new AndOrTransforms_LogicalExpression_ext_2_Contribution.TMP_Param_m0wxkr_a0());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new AndOrTransforms_LogicalExpression_ext_2_Contribution.TransformationMenuPart_Parameterized_m0wxkr_a1());
+      result.add(new AndOrTransforms_LogicalExpression_ext_2_Contribution.TMP_Param_m0wxkr_a1());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Parameterized_m0wxkr_a0 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_m0wxkr_a0 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(String parameter, TransformationMenuContext context) {
-      return new AndOrTransforms_LogicalExpression_ext_2_Contribution.TransformationMenuPart_Parameterized_m0wxkr_a0.TransformationMenuPart_Action_m0wxkr_a0a(parameter).createItems(context);
+      return new AndOrTransforms_LogicalExpression_ext_2_Contribution.TMP_Param_m0wxkr_a0.TMP_Action_m0wxkr_a0a(parameter).createItems(context);
     }
 
     @Nullable
@@ -65,14 +65,14 @@ public class AndOrTransforms_LogicalExpression_ext_2_Contribution extends Transf
       return ListSequence.fromListAndArray(new ArrayList<String>(), "and", "or");
     }
 
-    private class TransformationMenuPart_Action_m0wxkr_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_m0wxkr_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final String myParameterObject;
-      public TransformationMenuPart_Action_m0wxkr_a0a(String parameterObject) {
+      public TMP_Action_m0wxkr_a0a(String parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AndOrTransforms_LogicalExpression_ext_2_Contribution.TransformationMenuPart_Parameterized_m0wxkr_a0.TransformationMenuPart_Action_m0wxkr_a0a.Item(context);
+        return new AndOrTransforms_LogicalExpression_ext_2_Contribution.TMP_Param_m0wxkr_a0.TMP_Action_m0wxkr_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -106,12 +106,12 @@ public class AndOrTransforms_LogicalExpression_ext_2_Contribution extends Transf
       }
     }
   }
-  private class TransformationMenuPart_Parameterized_m0wxkr_a1 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_m0wxkr_a1 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(String parameter, TransformationMenuContext context) {
-      return new AndOrTransforms_LogicalExpression_ext_2_Contribution.TransformationMenuPart_Parameterized_m0wxkr_a1.TransformationMenuPart_Action_m0wxkr_a0b(parameter).createItems(context);
+      return new AndOrTransforms_LogicalExpression_ext_2_Contribution.TMP_Param_m0wxkr_a1.TMP_Action_m0wxkr_a0b(parameter).createItems(context);
     }
 
     @Nullable
@@ -120,14 +120,14 @@ public class AndOrTransforms_LogicalExpression_ext_2_Contribution extends Transf
       return ListSequence.fromListAndArray(new ArrayList<String>(), "and", "or");
     }
 
-    private class TransformationMenuPart_Action_m0wxkr_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_m0wxkr_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final String myParameterObject;
-      public TransformationMenuPart_Action_m0wxkr_a0b(String parameterObject) {
+      public TMP_Action_m0wxkr_a0b(String parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new AndOrTransforms_LogicalExpression_ext_2_Contribution.TransformationMenuPart_Parameterized_m0wxkr_a1.TransformationMenuPart_Action_m0wxkr_a0b.Item(context);
+        return new AndOrTransforms_LogicalExpression_ext_2_Contribution.TMP_Param_m0wxkr_a1.TMP_Action_m0wxkr_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

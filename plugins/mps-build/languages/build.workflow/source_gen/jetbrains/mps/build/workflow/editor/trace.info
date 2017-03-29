@@ -340,11 +340,11 @@
       <node id="1741258697587102496" at="30,0,31,0" concept="2" trace="myLocations" />
       <node id="1741258697587102496" at="32,67,33,63" concept="6" />
       <node id="1741258697587102496" at="38,124,39,156" concept="5" />
-      <node id="1741258697587102496" at="40,138,41,94" concept="1" />
+      <node id="1741258697587102496" at="40,138,41,75" concept="1" />
       <node id="1741258697587102496" at="42,5,43,18" concept="6" />
       <node id="1741258697587102505" at="48,72,49,233" concept="6" />
-      <node id="1741258697587102500" at="53,92,54,206" concept="6" />
-      <node id="1741258697587102500" at="58,86,59,144" concept="6" />
+      <node id="1741258697587102500" at="53,92,54,168" concept="6" />
+      <node id="1741258697587102500" at="58,86,59,106" concept="6" />
       <node id="1741258697587102500" at="63,0,64,0" concept="2" trace="_context" />
       <node id="1741258697587102500" at="65,57,66,29" concept="1" />
       <node id="1741258697587102515" at="71,52,72,27" concept="6" />
@@ -360,10 +360,10 @@
       <node id="1741258697587102500" at="75,0,80,0" concept="4" trace="execute#(Ljava/lang/String;)V" />
       <node id="1741258697587102496" at="36,0,45,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587102496" at="32,67,33,63" />
-      <scope id="1741258697587102496" at="40,138,41,94" />
+      <scope id="1741258697587102496" at="40,138,41,75" />
       <scope id="1741258697587102504" at="48,72,49,233" />
-      <scope id="1741258697587102500" at="53,92,54,206" />
-      <scope id="1741258697587102500" at="58,86,59,144" />
+      <scope id="1741258697587102500" at="53,92,54,168" />
+      <scope id="1741258697587102500" at="58,86,59,106" />
       <scope id="1741258697587102500" at="65,57,66,29" />
       <scope id="1741258697587102514" at="71,52,72,27" />
       <scope id="1741258697587102518" at="76,54,78,262" />
@@ -392,9 +392,9 @@
       <scope id="1741258697587102496" at="36,0,45,0">
         <var name="_context" id="1741258697587102496" />
       </scope>
-      <unit id="1741258697587102500" at="62,0,83,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTask_ext_2$TransformationMenuPart_Group_1tk1c9_a0$TransformationMenuPart_Action_1tk1c9_a0a$Item" />
-      <unit id="1741258697587102500" at="56,0,84,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTask_ext_2$TransformationMenuPart_Group_1tk1c9_a0$TransformationMenuPart_Action_1tk1c9_a0a" />
-      <unit id="1741258697587102500" at="46,0,85,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTask_ext_2$TransformationMenuPart_Group_1tk1c9_a0" />
+      <unit id="1741258697587102500" at="62,0,83,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTask_ext_2$TMP_Group_1tk1c9_a0$TMP_Action_1tk1c9_a0a$Item" />
+      <unit id="1741258697587102500" at="56,0,84,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTask_ext_2$TMP_Group_1tk1c9_a0$TMP_Action_1tk1c9_a0a" />
+      <unit id="1741258697587102500" at="46,0,85,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTask_ext_2$TMP_Group_1tk1c9_a0" />
       <unit id="1741258697587102496" at="29,0,86,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTask_ext_2" />
     </file>
   </root>
@@ -403,11 +403,11 @@
       <node id="1741258697587102541" at="30,0,31,0" concept="2" trace="myLocations" />
       <node id="1741258697587102541" at="32,67,33,63" concept="6" />
       <node id="1741258697587102541" at="38,124,39,156" concept="5" />
-      <node id="1741258697587102541" at="40,138,41,97" concept="1" />
+      <node id="1741258697587102541" at="40,138,41,78" concept="1" />
       <node id="1741258697587102541" at="42,5,43,18" concept="6" />
       <node id="1741258697587102550" at="48,72,49,227" concept="6" />
-      <node id="1741258697587102545" at="53,92,54,209" concept="6" />
-      <node id="1741258697587102545" at="58,86,59,147" concept="6" />
+      <node id="1741258697587102545" at="53,92,54,171" concept="6" />
+      <node id="1741258697587102545" at="58,86,59,109" concept="6" />
       <node id="1741258697587102545" at="63,0,64,0" concept="2" trace="_context" />
       <node id="1741258697587102545" at="65,57,66,29" concept="1" />
       <node id="1741258697587102560" at="71,52,72,26" concept="6" />
@@ -423,10 +423,10 @@
       <node id="1741258697587102545" at="75,0,80,0" concept="4" trace="execute#(Ljava/lang/String;)V" />
       <node id="1741258697587102541" at="36,0,45,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587102541" at="32,67,33,63" />
-      <scope id="1741258697587102541" at="40,138,41,97" />
+      <scope id="1741258697587102541" at="40,138,41,78" />
       <scope id="1741258697587102549" at="48,72,49,227" />
-      <scope id="1741258697587102545" at="53,92,54,209" />
-      <scope id="1741258697587102545" at="58,86,59,147" />
+      <scope id="1741258697587102545" at="53,92,54,171" />
+      <scope id="1741258697587102545" at="58,86,59,109" />
       <scope id="1741258697587102545" at="65,57,66,29" />
       <scope id="1741258697587102559" at="71,52,72,26" />
       <scope id="1741258697587102563" at="76,54,78,262" />
@@ -455,9 +455,9 @@
       <scope id="1741258697587102541" at="36,0,45,0">
         <var name="_context" id="1741258697587102541" />
       </scope>
-      <unit id="1741258697587102545" at="62,0,83,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfSubTask_ext_3$TransformationMenuPart_Group_cfx569_a0$TransformationMenuPart_Action_cfx569_a0a$Item" />
-      <unit id="1741258697587102545" at="56,0,84,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfSubTask_ext_3$TransformationMenuPart_Group_cfx569_a0$TransformationMenuPart_Action_cfx569_a0a" />
-      <unit id="1741258697587102545" at="46,0,85,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfSubTask_ext_3$TransformationMenuPart_Group_cfx569_a0" />
+      <unit id="1741258697587102545" at="62,0,83,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfSubTask_ext_3$TMP_Group_cfx569_a0$TMP_Action_cfx569_a0a$Item" />
+      <unit id="1741258697587102545" at="56,0,84,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfSubTask_ext_3$TMP_Group_cfx569_a0$TMP_Action_cfx569_a0a" />
+      <unit id="1741258697587102545" at="46,0,85,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfSubTask_ext_3$TMP_Group_cfx569_a0" />
       <unit id="1741258697587102541" at="29,0,86,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfSubTask_ext_3" />
     </file>
   </root>
@@ -466,11 +466,11 @@
       <node id="1741258697587102586" at="30,0,31,0" concept="2" trace="myLocations" />
       <node id="1741258697587102586" at="32,67,33,63" concept="6" />
       <node id="1741258697587102586" at="38,124,39,156" concept="5" />
-      <node id="1741258697587102586" at="40,138,41,92" concept="1" />
+      <node id="1741258697587102586" at="40,138,41,73" concept="1" />
       <node id="1741258697587102586" at="42,5,43,18" concept="6" />
       <node id="1741258697587102595" at="48,72,49,243" concept="6" />
-      <node id="1741258697587102590" at="53,92,54,204" concept="6" />
-      <node id="1741258697587102590" at="58,86,59,142" concept="6" />
+      <node id="1741258697587102590" at="53,92,54,166" concept="6" />
+      <node id="1741258697587102590" at="58,86,59,104" concept="6" />
       <node id="1741258697587102590" at="63,0,64,0" concept="2" trace="_context" />
       <node id="1741258697587102590" at="65,57,66,29" concept="1" />
       <node id="1741258697587102605" at="71,52,72,27" concept="6" />
@@ -486,10 +486,10 @@
       <node id="1741258697587102590" at="75,0,80,0" concept="4" trace="execute#(Ljava/lang/String;)V" />
       <node id="1741258697587102586" at="36,0,45,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587102586" at="32,67,33,63" />
-      <scope id="1741258697587102586" at="40,138,41,92" />
+      <scope id="1741258697587102586" at="40,138,41,73" />
       <scope id="1741258697587102594" at="48,72,49,243" />
-      <scope id="1741258697587102590" at="53,92,54,204" />
-      <scope id="1741258697587102590" at="58,86,59,142" />
+      <scope id="1741258697587102590" at="53,92,54,166" />
+      <scope id="1741258697587102590" at="58,86,59,104" />
       <scope id="1741258697587102590" at="65,57,66,29" />
       <scope id="1741258697587102604" at="71,52,72,27" />
       <scope id="1741258697587102608" at="76,54,78,262" />
@@ -518,9 +518,9 @@
       <scope id="1741258697587102586" at="36,0,45,0">
         <var name="_context" id="1741258697587102586" />
       </scope>
-      <unit id="1741258697587102590" at="62,0,83,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTaskPart$TransformationMenuPart_Group_5stah4_a0$TransformationMenuPart_Action_5stah4_a0a$Item" />
-      <unit id="1741258697587102590" at="56,0,84,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTaskPart$TransformationMenuPart_Group_5stah4_a0$TransformationMenuPart_Action_5stah4_a0a" />
-      <unit id="1741258697587102590" at="46,0,85,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTaskPart$TransformationMenuPart_Group_5stah4_a0" />
+      <unit id="1741258697587102590" at="62,0,83,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTaskPart$TMP_Group_5stah4_a0$TMP_Action_5stah4_a0a$Item" />
+      <unit id="1741258697587102590" at="56,0,84,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTaskPart$TMP_Group_5stah4_a0$TMP_Action_5stah4_a0a" />
+      <unit id="1741258697587102590" at="46,0,85,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTaskPart$TMP_Group_5stah4_a0" />
       <unit id="1741258697587102586" at="29,0,86,0" name="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTaskPart" />
     </file>
   </root>
@@ -529,11 +529,11 @@
       <node id="1741258697587102631" at="30,0,31,0" concept="2" trace="myLocations" />
       <node id="1741258697587102631" at="32,67,33,63" concept="6" />
       <node id="1741258697587102631" at="38,124,39,156" concept="5" />
-      <node id="1741258697587102631" at="40,138,41,80" concept="1" />
+      <node id="1741258697587102631" at="40,138,41,61" concept="1" />
       <node id="1741258697587102631" at="42,5,43,18" concept="6" />
       <node id="1741258697587102640" at="48,72,49,226" concept="6" />
-      <node id="1741258697587102635" at="53,92,54,192" concept="6" />
-      <node id="1741258697587102635" at="58,86,59,130" concept="6" />
+      <node id="1741258697587102635" at="53,92,54,154" concept="6" />
+      <node id="1741258697587102635" at="58,86,59,92" concept="6" />
       <node id="1741258697587102635" at="63,0,64,0" concept="2" trace="_context" />
       <node id="1741258697587102635" at="65,57,66,29" concept="1" />
       <node id="1741258697587102650" at="71,52,72,25" concept="6" />
@@ -549,10 +549,10 @@
       <node id="1741258697587102635" at="75,0,80,0" concept="4" trace="execute#(Ljava/lang/String;)V" />
       <node id="1741258697587102631" at="36,0,45,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587102631" at="32,67,33,63" />
-      <scope id="1741258697587102631" at="40,138,41,80" />
+      <scope id="1741258697587102631" at="40,138,41,61" />
       <scope id="1741258697587102639" at="48,72,49,226" />
-      <scope id="1741258697587102635" at="53,92,54,192" />
-      <scope id="1741258697587102635" at="58,86,59,130" />
+      <scope id="1741258697587102635" at="53,92,54,154" />
+      <scope id="1741258697587102635" at="58,86,59,92" />
       <scope id="1741258697587102635" at="65,57,66,29" />
       <scope id="1741258697587102649" at="71,52,72,25" />
       <scope id="1741258697587102653" at="76,54,78,262" />
@@ -581,9 +581,9 @@
       <scope id="1741258697587102631" at="36,0,45,0">
         <var name="_context" id="1741258697587102631" />
       </scope>
-      <unit id="1741258697587102635" at="62,0,83,0" name="jetbrains.mps.build.workflow.editor.add_dependencies$TransformationMenuPart_Group_f5pfyb_a0$TransformationMenuPart_Action_f5pfyb_a0a$Item" />
-      <unit id="1741258697587102635" at="56,0,84,0" name="jetbrains.mps.build.workflow.editor.add_dependencies$TransformationMenuPart_Group_f5pfyb_a0$TransformationMenuPart_Action_f5pfyb_a0a" />
-      <unit id="1741258697587102635" at="46,0,85,0" name="jetbrains.mps.build.workflow.editor.add_dependencies$TransformationMenuPart_Group_f5pfyb_a0" />
+      <unit id="1741258697587102635" at="62,0,83,0" name="jetbrains.mps.build.workflow.editor.add_dependencies$TMP_Group_f5pfyb_a0$TMP_Action_f5pfyb_a0a$Item" />
+      <unit id="1741258697587102635" at="56,0,84,0" name="jetbrains.mps.build.workflow.editor.add_dependencies$TMP_Group_f5pfyb_a0$TMP_Action_f5pfyb_a0a" />
+      <unit id="1741258697587102635" at="46,0,85,0" name="jetbrains.mps.build.workflow.editor.add_dependencies$TMP_Group_f5pfyb_a0" />
       <unit id="1741258697587102631" at="29,0,86,0" name="jetbrains.mps.build.workflow.editor.add_dependencies" />
     </file>
   </root>
@@ -591,15 +591,15 @@
     <file name="java_module_content_XmlBaseElement_Contribution.java">
       <node id="1741258697587102676" at="28,60,29,16" concept="9" />
       <node id="1741258697587102676" at="33,118,34,140" concept="5" />
-      <node id="1741258697587102676" at="34,140,35,104" concept="1" />
-      <node id="1741258697587102676" at="35,104,36,18" concept="6" />
+      <node id="1741258697587102676" at="34,140,35,89" concept="1" />
+      <node id="1741258697587102676" at="35,89,36,18" concept="6" />
       <node id="1741258697587102682" at="40,68,41,634" concept="6" />
-      <node id="1741258697587102676" at="45,84,46,406" concept="6" />
-      <node id="1741258697587102676" at="51,103,52,213" concept="6" />
+      <node id="1741258697587102676" at="45,84,46,368" concept="6" />
+      <node id="1741258697587102676" at="51,103,52,160" concept="6" />
       <node id="1741258697587102730" at="56,90,57,124" concept="6" />
       <node id="1741258697587102676" at="60,0,61,0" concept="2" trace="myParameterObject" />
-      <node id="1741258697587102676" at="61,77,62,46" concept="1" />
-      <node id="1741258697587102676" at="67,81,68,198" concept="6" />
+      <node id="1741258697587102676" at="61,62,62,46" concept="1" />
+      <node id="1741258697587102676" at="67,81,68,145" concept="6" />
       <node id="1741258697587102676" at="71,0,72,0" concept="2" trace="_context" />
       <node id="1741258697587102676" at="72,54,73,244" concept="9" />
       <node id="1741258697587102676" at="73,244,74,31" concept="1" />
@@ -611,7 +611,7 @@
       <node id="1741258697587102676" at="92,64,93,24" concept="6" />
       <node id="1741258697587102771" at="97,66,98,50" concept="6" />
       <node id="1741258697587102676" at="28,0,31,0" concept="0" trace="java_module_content_XmlBaseElement_Contribution#()V" />
-      <node id="1741258697587102676" at="61,0,64,0" concept="0" trace="SubstituteMenuPart_Action_fc12n3_a0a#(Ljava/lang/String;)V" />
+      <node id="1741258697587102676" at="61,0,64,0" concept="0" trace="SMP_Action_fc12n3_a0a#(Ljava/lang/String;)V" />
       <node id="1741258697587102676" at="39,0,43,0" concept="4" trace="isApplicable#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Z" />
       <node id="1741258697587102676" at="44,0,48,0" concept="4" trace="getParts#()Ljava/util/List;" />
       <node id="1741258697587102676" at="72,0,76,0" concept="0" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
@@ -625,11 +625,11 @@
       <node id="1741258697587102676" at="77,0,85,0" concept="4" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1741258697587102676" at="28,60,29,16" />
       <scope id="1741258697587102681" at="40,68,41,634" />
-      <scope id="1741258697587102676" at="45,84,46,406" />
-      <scope id="1741258697587102676" at="51,103,52,213" />
+      <scope id="1741258697587102676" at="45,84,46,368" />
+      <scope id="1741258697587102676" at="51,103,52,160" />
       <scope id="1741258697587102729" at="56,90,57,124" />
-      <scope id="1741258697587102676" at="61,77,62,46" />
-      <scope id="1741258697587102676" at="67,81,68,198" />
+      <scope id="1741258697587102676" at="61,62,62,46" />
+      <scope id="1741258697587102676" at="67,81,68,145" />
       <scope id="1741258697587102676" at="87,69,88,22" />
       <scope id="1741258697587102676" at="92,64,93,24" />
       <scope id="1741258697587102768" at="97,66,98,50" />
@@ -676,18 +676,18 @@
       <scope id="1741258697587102676" at="77,0,85,0">
         <var name="pattern" id="1741258697587102676" />
       </scope>
-      <unit id="1741258697587102676" at="70,0,101,0" name="jetbrains.mps.build.workflow.editor.java_module_content_XmlBaseElement_Contribution$SubstituteMenuPart_Group_fc12n3_a$SubstituteMenuPart_Parameterized_fc12n3_a0$SubstituteMenuPart_Action_fc12n3_a0a$Item" />
-      <unit id="1741258697587102676" at="59,0,102,0" name="jetbrains.mps.build.workflow.editor.java_module_content_XmlBaseElement_Contribution$SubstituteMenuPart_Group_fc12n3_a$SubstituteMenuPart_Parameterized_fc12n3_a0$SubstituteMenuPart_Action_fc12n3_a0a" />
-      <unit id="1741258697587102676" at="48,0,104,0" name="jetbrains.mps.build.workflow.editor.java_module_content_XmlBaseElement_Contribution$SubstituteMenuPart_Group_fc12n3_a$SubstituteMenuPart_Parameterized_fc12n3_a0" />
-      <unit id="1741258697587102676" at="38,0,105,0" name="jetbrains.mps.build.workflow.editor.java_module_content_XmlBaseElement_Contribution$SubstituteMenuPart_Group_fc12n3_a" />
+      <unit id="1741258697587102676" at="70,0,101,0" name="jetbrains.mps.build.workflow.editor.java_module_content_XmlBaseElement_Contribution$SMP_Group_fc12n3_a$SMP_Param_fc12n3_a0$SMP_Action_fc12n3_a0a$Item" />
+      <unit id="1741258697587102676" at="59,0,102,0" name="jetbrains.mps.build.workflow.editor.java_module_content_XmlBaseElement_Contribution$SMP_Group_fc12n3_a$SMP_Param_fc12n3_a0$SMP_Action_fc12n3_a0a" />
+      <unit id="1741258697587102676" at="48,0,104,0" name="jetbrains.mps.build.workflow.editor.java_module_content_XmlBaseElement_Contribution$SMP_Group_fc12n3_a$SMP_Param_fc12n3_a0" />
+      <unit id="1741258697587102676" at="38,0,105,0" name="jetbrains.mps.build.workflow.editor.java_module_content_XmlBaseElement_Contribution$SMP_Group_fc12n3_a" />
       <unit id="1741258697587102676" at="27,0,106,0" name="jetbrains.mps.build.workflow.editor.java_module_content_XmlBaseElement_Contribution" />
     </file>
   </root>
   <root nodeRef="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)/1741258697587102856">
     <file name="BwfFileSet_SubstituteMenu.java">
       <node id="1741258697587102856" at="32,118,33,140" concept="5" />
-      <node id="1741258697587102856" at="33,140,34,284" concept="1" />
-      <node id="1741258697587102856" at="34,284,35,18" concept="6" />
+      <node id="1741258697587102856" at="33,140,34,266" concept="1" />
+      <node id="1741258697587102856" at="34,266,35,18" concept="6" />
       <node id="1741258697587102856" at="42,0,43,0" concept="2" trace="myCreatedNode" />
       <node id="1741258697587102856" at="46,52,47,163" concept="6" />
       <node id="1741258697587102856" at="51,58,52,55" concept="5" />
@@ -735,17 +735,17 @@
         <var name="_context" id="1741258697587102856" />
         <var name="item" id="1741258697587102856" />
       </scope>
-      <unit id="1741258697587102856" at="41,17,61,7" name="jetbrains.mps.build.workflow.editor.BwfFileSet_SubstituteMenu$SubstituteMenuPart_Wrapper_bkb34x_a$1" />
-      <unit id="1741258697587102856" at="37,0,70,0" name="jetbrains.mps.build.workflow.editor.BwfFileSet_SubstituteMenu$SubstituteMenuPart_Wrapper_bkb34x_a" />
+      <unit id="1741258697587102856" at="41,17,61,7" name="jetbrains.mps.build.workflow.editor.BwfFileSet_SubstituteMenu$SMP_Wrap_bkb34x_a$1" />
+      <unit id="1741258697587102856" at="37,0,70,0" name="jetbrains.mps.build.workflow.editor.BwfFileSet_SubstituteMenu$SMP_Wrap_bkb34x_a" />
       <unit id="1741258697587102856" at="29,0,71,0" name="jetbrains.mps.build.workflow.editor.BwfFileSet_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)/1741258697587102918">
     <file name="BwfJavaDependency_SubstituteMenu.java">
       <node id="1741258697587102918" at="36,118,37,140" concept="5" />
-      <node id="1741258697587102918" at="37,140,38,297" concept="1" />
-      <node id="1741258697587102918" at="38,297,39,95" concept="1" />
-      <node id="1741258697587102918" at="39,95,40,18" concept="6" />
+      <node id="1741258697587102918" at="37,140,38,279" concept="1" />
+      <node id="1741258697587102918" at="38,279,39,80" concept="1" />
+      <node id="1741258697587102918" at="39,80,40,18" concept="6" />
       <node id="1741258697587102918" at="47,0,48,0" concept="2" trace="myCreatedNode" />
       <node id="1741258697587102918" at="51,52,52,169" concept="6" />
       <node id="1741258697587102918" at="56,58,57,55" concept="5" />
@@ -826,10 +826,10 @@
         <var name="_context" id="1741258697587102918" />
         <var name="item" id="1741258697587102918" />
       </scope>
-      <unit id="1741258697587102918" at="77,246,81,7" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$SubstituteMenuPart_Subconcepts_qn58zx_b$1" />
-      <unit id="1741258697587102918" at="75,0,91,0" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$SubstituteMenuPart_Subconcepts_qn58zx_b" />
-      <unit id="1741258697587102918" at="46,17,66,7" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$SubstituteMenuPart_Wrapper_qn58zx_a$1" />
-      <unit id="1741258697587102918" at="42,0,75,0" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$SubstituteMenuPart_Wrapper_qn58zx_a" />
+      <unit id="1741258697587102918" at="77,246,81,7" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$SMP_Subconcepts_qn58zx_b$1" />
+      <unit id="1741258697587102918" at="75,0,91,0" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$SMP_Subconcepts_qn58zx_b" />
+      <unit id="1741258697587102918" at="46,17,66,7" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$SMP_Wrap_qn58zx_a$1" />
+      <unit id="1741258697587102918" at="42,0,75,0" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$SMP_Wrap_qn58zx_a" />
       <unit id="1741258697587102918" at="33,0,95,0" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu" />
     </file>
   </root>
@@ -838,8 +838,8 @@
       <node id="1741258697587217141" at="27,0,28,0" concept="2" trace="myLocations" />
       <node id="1741258697587217141" at="29,67,30,63" concept="6" />
       <node id="1741258697587217141" at="35,124,36,156" concept="5" />
-      <node id="1741258697587217141" at="37,173,38,100" concept="1" />
-      <node id="1741258697587217141" at="38,100,39,100" concept="1" />
+      <node id="1741258697587217141" at="37,173,38,77" concept="1" />
+      <node id="1741258697587217141" at="38,77,39,77" concept="1" />
       <node id="1741258697587217141" at="40,5,41,18" concept="6" />
       <node id="1741258697587217141" at="47,90,48,44" concept="5" />
       <node id="1741258697587217141" at="48,44,49,70" concept="5" />
@@ -855,7 +855,7 @@
       <node id="1741258697587217141" at="56,0,64,0" concept="4" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuLookup;" />
       <node id="1741258697587217141" at="33,0,43,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587217141" at="29,67,30,63" />
-      <scope id="1741258697587217141" at="37,173,39,100" />
+      <scope id="1741258697587217141" at="37,173,39,77" />
       <scope id="1741258697587217141" at="28,0,32,0">
         <var name="location" id="1741258697587217141" />
       </scope>
@@ -879,8 +879,8 @@
       <scope id="1741258697587217141" at="33,0,43,0">
         <var name="_context" id="1741258697587217141" />
       </scope>
-      <unit id="1741258697587217141" at="44,0,55,0" name="jetbrains.mps.build.workflow.editor.BwfSubTask_ApplySideTransforms$TransformationMenuPart_IncludeMenu_tasyps_a0" />
-      <unit id="1741258697587217141" at="55,0,66,0" name="jetbrains.mps.build.workflow.editor.BwfSubTask_ApplySideTransforms$TransformationMenuPart_IncludeMenu_tasyps_b0" />
+      <unit id="1741258697587217141" at="44,0,55,0" name="jetbrains.mps.build.workflow.editor.BwfSubTask_ApplySideTransforms$TMP_Include_tasyps_a0" />
+      <unit id="1741258697587217141" at="55,0,66,0" name="jetbrains.mps.build.workflow.editor.BwfSubTask_ApplySideTransforms$TMP_Include_tasyps_b0" />
       <unit id="1741258697587217141" at="26,0,67,0" name="jetbrains.mps.build.workflow.editor.BwfSubTask_ApplySideTransforms" />
     </file>
   </root>

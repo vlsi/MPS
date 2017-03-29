@@ -14,12 +14,8 @@ import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.lang.project.behavior.ModuleReference__BehaviorDescriptor;
-import jetbrains.mps.smodel.Generator;
 import java.util.List;
+import jetbrains.mps.lang.project.behavior.ModuleReference__BehaviorDescriptor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
@@ -36,7 +32,10 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.generator.impl.plan.ModelScanner;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -91,19 +90,9 @@ public class QueriesGenerated {
     SNode l = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, "jetbrains.mps.lang.project.structure.Language"));
     return (ListSequence.fromList(SLinkOperations.getChildren(l, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x5869770da61dfe37L, "generator"))).count() == 1 ? "Generator" : "Generator" + ListSequence.fromList(SLinkOperations.getChildren(l, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x5869770da61dfe37L, "generator"))).indexOf(_context.getNode()));
   }
-  public static Object propertyMacro_GetPropertyValue_263208052639706599(final PropertyMacroContext _context) {
-    SModule m = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(ModuleReference__BehaviorDescriptor.getModuleReference_id15qhGW3fE3K.invoke(_context.getNode())));
-    if (m instanceof Generator) {
-      Generator g = (Generator) m;
-      return g.getSourceLanguage().getModuleName() + "/" + g.getModuleName();
-    } else {
-      _context.showErrorMessage(_context.getNode(), "referenced generator is not available: " + _context.getNode());
-      return "????";
-    }
-  }
   public static Object propertyMacro_GetPropertyValue_263208052639706667(final PropertyMacroContext _context) {
     SNode l = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, "jetbrains.mps.lang.project.structure.Language"));
-    return SPropertyOperations.getString(l, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe23L, "namespace")) + "/" + ((isEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) ? "<no name>" : SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
+    return SPropertyOperations.getString(l, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe23L, "namespace")) + "/" + ((isEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x2cf7cb696461a282L, "generatorAlias"))) ? "<no name>" : SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x2cf7cb696461a282L, "generatorAlias"))));
   }
   public static Object propertyMacro_GetPropertyValue_947973959896225460(final PropertyMacroContext _context) {
     return ListSequence.fromList(((List<SNode>) _context.getVariable("var:templateModelNames"))).count();
@@ -122,6 +111,12 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_263208052639706843(final PropertyMacroContext _context) {
     return ((Integer) _context.getVariable("cv:c"));
+  }
+  public static Object propertyMacro_GetPropertyValue_6824413541682518561(final PropertyMacroContext _context) {
+    return (String) ModuleReference__BehaviorDescriptor.getModuleReference_id15qhGW3fE3K.invoke(_context.getNode());
+  }
+  public static Object propertyMacro_GetPropertyValue_6824413541682542601(final PropertyMacroContext _context) {
+    return (String) ModuleReference__BehaviorDescriptor.getModuleReference_id15qhGW3fE3K.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, 0x19bfb4173fb5241eL, "moduleRef")));
   }
   public static Object referenceMacro_GetReferent_5554116809065233210(final ReferenceMacroContext _context) {
     return Sequence.fromIterable(ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generator.descriptor"))).first();
@@ -145,20 +140,20 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_263208052639706518(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210bL, "priorityRules"))).isNotEmpty();
   }
-  public static boolean ifMacro_Condition_263208052639706531(final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210fL, "depGenerators"))).isNotEmpty();
-  }
   public static boolean ifMacro_Condition_263208052639706578(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210bL, "priorityRules"))).isNotEmpty();
-  }
-  public static boolean ifMacro_Condition_263208052639706650(final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210fL, "depGenerators"))).isNotEmpty();
   }
   public static boolean ifMacro_Condition_947973959896030236(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210bL, "priorityRules"))).isNotEmpty();
   }
-  public static boolean ifMacro_Condition_947973959896056659(final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210fL, "depGenerators"))).isNotEmpty();
+  public static boolean ifMacro_Condition_6824413541682335392(final IfMacroContext _context) {
+    // FIXME module name contains '#' is a hack to filter out dependencies to non-generator modules quickly. 
+    // node.dependencies include both generators we depend from, as well as other modules (languages and solutions) 
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210fL, "depGenerators"))).isNotEmpty() || ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe2cL, "dependencies"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, 0x19bfb4173fb5241eL, "moduleRef")), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210eL, "qualifiedName")).contains("#");
+      }
+    }).isNotEmpty();
   }
   public static SNode sourceNodeQuery_1820665478710839875(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe38L, 0x25c3f284595702edL, "left"));
@@ -219,14 +214,22 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_263208052639706571(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210bL, "priorityRules"));
   }
-  public static Iterable<SNode> sourceNodesQuery_263208052639706592(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210fL, "depGenerators"));
-  }
   public static Iterable<SNode> sourceNodesQuery_947973959896254222(final SourceSubstituteMacroNodesContext _context) {
     return ((List<SNode>) _context.getVariable("var:templateModelNames"));
   }
   public static Iterable<SNode> sourceNodesQuery_263208052639706858(final SourceSubstituteMacroNodesContext _context) {
     return ((List<SNode>) _context.getVariable("var:targetLanguages"));
+  }
+  public static Iterable<SNode> sourceNodesQuery_6824413541682421833(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210fL, "depGenerators"));
+  }
+  public static Iterable<SNode> sourceNodesQuery_6824413541682417040(final SourceSubstituteMacroNodesContext _context) {
+    // XXX see $IF$ for "#" reason 
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe2cL, "dependencies"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, 0x19bfb4173fb5241eL, "moduleRef")), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210eL, "qualifiedName")).contains("#");
+      }
+    });
   }
   public static boolean mappingConfiguration_Condition_3919235298192676609(final TemplateQueryContext _context) {
     //  can't use genContext.inputModel as it has lost stereotype (it's transient model) 

@@ -47,8 +47,6 @@ public class CommonModuleActions_ActionGroup extends GeneratedActionGroup {
       CommonModuleActions_ActionGroup.this.addAction(action);
     }
     CommonModuleActions_ActionGroup.this.addSeparator();
-    CommonModuleActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModuleToProject_Action");
-    CommonModuleActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action");
     CommonModuleActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModules_Action");
     {
       LabelledAnchor action = new LabelledAnchor(CommonModuleActions_ActionGroup.LABEL_ID_delete);

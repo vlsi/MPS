@@ -127,9 +127,9 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -169,9 +169,9 @@
         </node>
         <node concept="IWg2L" id="4Sf$XywNH39" role="IWgqQ">
           <node concept="3clFbS" id="4Sf$XywNH3b" role="2VODD2">
-            <node concept="34ab3g" id="4Sf$XywNHej" role="3cqZAp">
-              <property role="35gtTG" value="info" />
-              <node concept="Xl_RD" id="4Sf$XywNHel" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB34ll" role="3cqZAp">
+              <property role="RRSoG" value="info" />
+              <node concept="Xl_RD" id="4Sf$XywNHel" role="RRSoy">
                 <property role="Xl_RC" value="contributed action" />
               </node>
             </node>
@@ -388,9 +388,9 @@
         </node>
         <node concept="IWg2L" id="3EZUZhmTHgN" role="IWgqQ">
           <node concept="3clFbS" id="3EZUZhmTHgP" role="2VODD2">
-            <node concept="34ab3g" id="3EZUZhmTImb" role="3cqZAp">
-              <property role="35gtTG" value="info" />
-              <node concept="Xl_RD" id="3EZUZhmTImd" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB36AM" role="3cqZAp">
+              <property role="RRSoG" value="info" />
+              <node concept="Xl_RD" id="3EZUZhmTImd" role="RRSoy">
                 <property role="Xl_RC" value="sidebar-only action executed" />
               </node>
             </node>

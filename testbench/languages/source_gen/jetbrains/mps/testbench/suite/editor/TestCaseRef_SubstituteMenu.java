@@ -36,14 +36,14 @@ public class TestCaseRef_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TestCaseRef_SubstituteMenu.SubstituteMenuPart_Parameterized_dnvvk3_a(), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb7L, "jetbrains.mps.testbench.suite.structure.TestCaseRef")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TestCaseRef_SubstituteMenu.SMP_Param_dnvvk3_a(), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb7L, "jetbrains.mps.testbench.suite.structure.TestCaseRef")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_dnvvk3_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_dnvvk3_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new TestCaseRef_SubstituteMenu.SubstituteMenuPart_Parameterized_dnvvk3_a.SubstituteMenuPart_Action_dnvvk3_a0(parameter).createItems(context);
+      return new TestCaseRef_SubstituteMenu.SMP_Param_dnvvk3_a.SMP_Action_dnvvk3_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -55,16 +55,16 @@ public class TestCaseRef_SubstituteMenu extends SubstituteMenuBase {
         }
       }).toListSequence();
     }
-    private class SubstituteMenuPart_Action_dnvvk3_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_dnvvk3_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_dnvvk3_a0(SNode parameterObject) {
+      public SMP_Action_dnvvk3_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new TestCaseRef_SubstituteMenu.SubstituteMenuPart_Parameterized_dnvvk3_a.SubstituteMenuPart_Action_dnvvk3_a0.Item(_context);
+        return new TestCaseRef_SubstituteMenu.SMP_Param_dnvvk3_a.SMP_Action_dnvvk3_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

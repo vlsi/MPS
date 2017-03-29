@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.validation.ValidationProblem.Severity;
@@ -22,7 +23,10 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.ConceptDeclarationScanner;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -146,11 +150,31 @@ public class LanguageValidator {
         }
         continue;
       }
-      if (VisibilityUtil.isVisible(myLanguage, accModel)) {
-        continue;
+      if (!VisibilityUtil.isVisible(myLanguage, accModel)) {
+        if (!myProcessor.process(new ValidationProblem(Severity.ERROR, String.format("Accessory model %s is not visible in the module", accessory.getModelName())))) {
+          return;
+        }
       }
-      if (!myProcessor.process(new ValidationProblem(Severity.ERROR, String.format("Accessory model %s is not visible in the module", accessory.getModelName())))) {
-        return;
+      if (accModel.getModule() == myLanguage) {
+        // Towards clear scenario to use accessory models: we intend them to be design-time auxiliary elements, with no generated code generally.
+        // Generally, accessory models are written in a language they are part of. However, we can't generate them as there's no generator the moment language is built
+        // (although it's a bit superficial limitation, due to build dependency chunk being of module size). Generally, nobody could expect to build reasonable code
+        // from language's accessory model which uses the language, but it doesn't hurt to report an error so that LD get a chance to understand what's going on.
+        if (GenerationFacade.canGenerate(accModel)) {
+          SLanguage checkedLanguage = MetaAdapterFactory.getLanguage(myLanguage.getModuleReference());
+          if (SModelOperations.getAllLanguageImports(accModel).contains(checkedLanguage)) {
+            // accessory model written in a language it's part of. We could not possibly generate this model.
+            if (!myProcessor.process(new ValidationProblem(Severity.ERROR, String.format("Accessory model %s uses language it's part of. Mark the model as 'do not generate' to avoid unnecessary bootstrap dependency", accModel.getName())))) {
+              return;
+            }
+            return;
+          } else {
+            // just a model to generate some code, not the best way to utilize accessory models
+            if (!myProcessor.process(new ValidationProblem(Severity.WARNING, String.format("Accessory models are deemed design-time facility and generally shall be marked as 'do not generate': %s", accModel.getName())))) {
+              return;
+            }
+          }
+        }
       }
     }
   }

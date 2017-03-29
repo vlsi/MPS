@@ -393,9 +393,9 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -2005,9 +2005,9 @@
             <property role="3SKdUp" value="FIXME use (share) reported interface from ModuleChecker to report directly to gencontext, if available" />
           </node>
         </node>
-        <node concept="34ab3g" id="6qG_vx$4Kjm" role="3cqZAp">
-          <property role="35gtTG" value="error" />
-          <node concept="37vLTw" id="6qG_vx$4Kkg" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB39MY" role="3cqZAp">
+          <property role="RRSoG" value="error" />
+          <node concept="37vLTw" id="6qG_vx$4Kkg" role="RRSoy">
             <ref role="3cqZAo" node="50RHf4RGYAM" resolve="message" />
           </node>
         </node>
@@ -11301,71 +11301,18 @@
       <property role="TrG5h" value="checkModuleReference" />
       <node concept="3Tm1VV" id="6m8wrPCIHOR" role="1B3o_S" />
       <node concept="3clFbS" id="6m8wrPAU3C6" role="3clF47">
-        <node concept="3cpWs8" id="6m8wrPAU3Cb" role="3cqZAp">
-          <node concept="3cpWsn" id="6m8wrPAU3Cc" role="3cpWs9">
-            <property role="TrG5h" value="moduleReference" />
-            <node concept="2OqwBi" id="6m8wrPAU3Cd" role="33vP2m">
-              <node concept="37vLTw" id="6m8wrPB5aZr" role="2Oq$k0">
-                <ref role="3cqZAo" node="6m8wrPAU3pl" resolve="myModuleDescriptor" />
-              </node>
-              <node concept="liA8E" id="6m8wrPAU3Cf" role="2OqNvi">
-                <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
-              </node>
-            </node>
-            <node concept="3uibUv" id="6m8wrPAU3Cg" role="1tU5fm">
-              <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="6m8wrPBbN52" role="3cqZAp" />
         <node concept="3cpWs8" id="6m8wrPBbPzi" role="3cqZAp">
           <node concept="3cpWsn" id="6m8wrPBbPzl" role="3cpWs9">
             <property role="TrG5h" value="expectedModuleName" />
             <node concept="2OqwBi" id="6m8wrPBbYL5" role="33vP2m">
               <node concept="liA8E" id="6m8wrPBc8u_" role="2OqNvi">
-                <ref role="37wK5l" to="lui2:~SModuleReference.getModuleName():java.lang.String" resolve="getModuleName" />
+                <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getNamespace():java.lang.String" resolve="getNamespace" />
               </node>
-              <node concept="37vLTw" id="6m8wrPBbYGg" role="2Oq$k0">
-                <ref role="3cqZAo" node="6m8wrPAU3Cc" resolve="moduleReference" />
+              <node concept="37vLTw" id="2NRMQ_$jM5c" role="2Oq$k0">
+                <ref role="3cqZAo" node="6m8wrPAU3pl" resolve="myModuleDescriptor" />
               </node>
             </node>
             <node concept="17QB3L" id="6m8wrPBbPzg" role="1tU5fm" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="7YI57w6A2rQ" role="3cqZAp">
-          <node concept="2OqwBi" id="7YI57w6A7A9" role="3clFbw">
-            <node concept="1mIQ4w" id="7YI57w6AbWl" role="2OqNvi">
-              <node concept="chp4Y" id="7YI57w6AbWq" role="cj9EA">
-                <ref role="cht4Q" to="kdzh:4LHG7OIlEyO" resolve="BuildMps_Generator" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="7YI57w6A4Tw" role="2Oq$k0">
-              <ref role="3cqZAo" node="6m8wrPAU3pf" resolve="myModule" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="7YI57w6A2rT" role="3clFbx">
-            <node concept="3clFbF" id="7YI57w6AIPx" role="3cqZAp">
-              <node concept="37vLTI" id="7YI57w6AJ75" role="3clFbG">
-                <node concept="2OqwBi" id="7YI57w6Dyhm" role="37vLTx">
-                  <node concept="liA8E" id="7YI57w6D_Q1" role="2OqNvi">
-                    <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.getGeneratorUID():java.lang.String" resolve="getGeneratorUID" />
-                  </node>
-                  <node concept="1eOMI4" id="7YI57w6DybM" role="2Oq$k0">
-                    <node concept="10QFUN" id="7YI57w6DybN" role="1eOMHV">
-                      <node concept="3uibUv" id="7YI57w6DybS" role="10QFUM">
-                        <ref role="3uigEE" to="w0gx:~GeneratorDescriptor" resolve="GeneratorDescriptor" />
-                      </node>
-                      <node concept="37vLTw" id="7YI57w6DybL" role="10QFUP">
-                        <ref role="3cqZAo" node="6m8wrPAU3pl" resolve="myModuleDescriptor" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="7YI57w6AIPw" role="37vLTJ">
-                  <ref role="3cqZAo" node="6m8wrPBbPzl" resolve="expectedModuleName" />
-                </node>
-              </node>
-            </node>
           </node>
         </node>
         <node concept="3clFbJ" id="6m8wrPAU3Ch" role="3cqZAp">
@@ -11468,10 +11415,10 @@
               </node>
               <node concept="2OqwBi" id="6m8wrPAU3D8" role="2Oq$k0">
                 <node concept="liA8E" id="6m8wrPAU3D9" role="2OqNvi">
-                  <ref role="37wK5l" to="lui2:~SModuleReference.getModuleId():org.jetbrains.mps.openapi.module.SModuleId" resolve="getModuleId" />
+                  <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getId():jetbrains.mps.project.ModuleId" resolve="getId" />
                 </node>
-                <node concept="37vLTw" id="3GM_nagTzdh" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6m8wrPAU3Cc" resolve="moduleReference" />
+                <node concept="37vLTw" id="2NRMQ_$kNLo" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6m8wrPAU3pl" resolve="myModuleDescriptor" />
                 </node>
               </node>
             </node>
@@ -11502,39 +11449,40 @@
             </node>
           </node>
           <node concept="3clFbS" id="6m8wrPAU3CH" role="3clFbx">
+            <node concept="3cpWs8" id="2NRMQ_$ln9p" role="3cqZAp">
+              <node concept="3cpWsn" id="2NRMQ_$ln9q" role="3cpWs9">
+                <property role="TrG5h" value="m" />
+                <node concept="3uibUv" id="2NRMQ_$ln9r" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                </node>
+                <node concept="Xl_RD" id="6m8wrPAU3CT" role="33vP2m">
+                  <property role="Xl_RC" value="module id in import doesn't match file content %s, should be: %s" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="6m8wrPAU3CI" role="3cqZAp">
               <node concept="1rXfSq" id="4hiugqyzf2x" role="3clFbG">
                 <ref role="37wK5l" node="6m8wrPAU4fb" resolve="report" />
-                <node concept="3cpWs3" id="6m8wrPAU3CK" role="37wK5m">
-                  <node concept="2OqwBi" id="6m8wrPAU3CL" role="3uHU7w">
-                    <node concept="2OqwBi" id="6m8wrPAU3CM" role="2Oq$k0">
-                      <node concept="liA8E" id="6m8wrPAU3CN" role="2OqNvi">
-                        <ref role="37wK5l" to="lui2:~SModuleReference.getModuleId():org.jetbrains.mps.openapi.module.SModuleId" resolve="getModuleId" />
-                      </node>
-                      <node concept="37vLTw" id="3GM_nagT$FO" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6m8wrPAU3Cc" resolve="moduleReference" />
-                      </node>
+                <node concept="2YIFZM" id="2NRMQ_$lHI3" role="37wK5m">
+                  <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                  <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                  <node concept="37vLTw" id="2NRMQ_$lIgL" role="37wK5m">
+                    <ref role="3cqZAo" node="2NRMQ_$ln9q" resolve="m" />
+                  </node>
+                  <node concept="2OqwBi" id="6m8wrPAU3CU" role="37wK5m">
+                    <node concept="3TrcHB" id="6m8wrPAU3CV" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                     </node>
-                    <node concept="liA8E" id="6m8wrPAU3CP" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+                    <node concept="37vLTw" id="2BHiRxeumM5" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6m8wrPAU3pf" resolve="myModule" />
                     </node>
                   </node>
-                  <node concept="3cpWs3" id="6m8wrPAU3CQ" role="3uHU7B">
-                    <node concept="Xl_RD" id="6m8wrPAU3CR" role="3uHU7w">
-                      <property role="Xl_RC" value=", should be: " />
+                  <node concept="2OqwBi" id="2NRMQ_$lJvR" role="37wK5m">
+                    <node concept="liA8E" id="2NRMQ_$lJvS" role="2OqNvi">
+                      <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getId():jetbrains.mps.project.ModuleId" resolve="getId" />
                     </node>
-                    <node concept="3cpWs3" id="6m8wrPAU3CS" role="3uHU7B">
-                      <node concept="Xl_RD" id="6m8wrPAU3CT" role="3uHU7B">
-                        <property role="Xl_RC" value="module id in import doesn't match file content " />
-                      </node>
-                      <node concept="2OqwBi" id="6m8wrPAU3CU" role="3uHU7w">
-                        <node concept="3TrcHB" id="6m8wrPAU3CV" role="2OqNvi">
-                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                        </node>
-                        <node concept="37vLTw" id="2BHiRxeumM5" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6m8wrPAU3pf" resolve="myModule" />
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="2NRMQ_$lJvT" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6m8wrPAU3pl" resolve="myModuleDescriptor" />
                     </node>
                   </node>
                 </node>
@@ -11565,10 +11513,10 @@
                   </node>
                   <node concept="2OqwBi" id="6m8wrPBbtkk" role="2Oq$k0">
                     <node concept="liA8E" id="6m8wrPBbB34" role="2OqNvi">
-                      <ref role="37wK5l" to="lui2:~SModuleReference.getModuleId():org.jetbrains.mps.openapi.module.SModuleId" resolve="getModuleId" />
+                      <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getId():jetbrains.mps.project.ModuleId" resolve="getId" />
                     </node>
-                    <node concept="37vLTw" id="6m8wrPBbkcw" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6m8wrPAU3Cc" resolve="moduleReference" />
+                    <node concept="37vLTw" id="2NRMQ_$lLpg" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6m8wrPAU3pl" resolve="myModuleDescriptor" />
                     </node>
                   </node>
                 </node>
@@ -16994,7 +16942,7 @@
                 <ref role="3cqZAo" node="6tgFcyzbcKI" resolve="generatorDescriptor" />
               </node>
               <node concept="liA8E" id="1t$IKjgl0b8" role="2OqNvi">
-                <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.getGeneratorUID():java.lang.String" resolve="getGeneratorUID" />
+                <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getNamespace():java.lang.String" resolve="getNamespace" />
               </node>
             </node>
             <node concept="17QB3L" id="1t$IKjgl0bf" role="1tU5fm" />

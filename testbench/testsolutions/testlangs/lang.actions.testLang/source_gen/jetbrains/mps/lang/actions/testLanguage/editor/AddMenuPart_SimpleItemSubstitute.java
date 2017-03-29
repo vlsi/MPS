@@ -38,10 +38,10 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new AddMenuPart_SimpleItemSubstitute.SubstituteMenuPart_Group_mw8afp_a());
+    result.add(new AddMenuPart_SimpleItemSubstitute.SMP_Group_mw8afp_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_mw8afp_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_mw8afp_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     private StringHolder firstMatchingText;
     @Override
     protected void initialize(SubstituteMenuContext _context) {
@@ -66,14 +66,14 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new AddMenuPart_SimpleItemSubstitute.SubstituteMenuPart_Group_mw8afp_a.SubstituteMenuPart_Action_mw8afp_a0(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")), new ConstraintsFilteringSubstituteMenuPartDecorator(new AddMenuPart_SimpleItemSubstitute.SubstituteMenuPart_Group_mw8afp_a.SubstituteMenuPart_Action_mw8afp_b0(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")), new ConstraintsFilteringSubstituteMenuPartDecorator(new AddMenuPart_SimpleItemSubstitute.SubstituteMenuPart_Group_mw8afp_a.SubstituteMenuPart_Action_mw8afp_c0(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1672224dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new AddMenuPart_SimpleItemSubstitute.SMP_Group_mw8afp_a.SMP_Action_mw8afp_a0(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")), new ConstraintsFilteringSubstituteMenuPartDecorator(new AddMenuPart_SimpleItemSubstitute.SMP_Group_mw8afp_a.SMP_Action_mw8afp_b0(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")), new ConstraintsFilteringSubstituteMenuPartDecorator(new AddMenuPart_SimpleItemSubstitute.SMP_Group_mw8afp_a.SMP_Action_mw8afp_c0(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1672224dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2")));
     }
-    private class SubstituteMenuPart_Action_mw8afp_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_mw8afp_a0 extends SingleItemSubstituteMenuPart {
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new AddMenuPart_SimpleItemSubstitute.SubstituteMenuPart_Group_mw8afp_a.SubstituteMenuPart_Action_mw8afp_a0.Item(_context);
+        return new AddMenuPart_SimpleItemSubstitute.SMP_Group_mw8afp_a.SMP_Action_mw8afp_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -170,12 +170,12 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
         }
       }
     }
-    private class SubstituteMenuPart_Action_mw8afp_b0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_mw8afp_b0 extends SingleItemSubstituteMenuPart {
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new AddMenuPart_SimpleItemSubstitute.SubstituteMenuPart_Group_mw8afp_a.SubstituteMenuPart_Action_mw8afp_b0.Item(_context);
+        return new AddMenuPart_SimpleItemSubstitute.SMP_Group_mw8afp_a.SMP_Action_mw8afp_b0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -207,12 +207,12 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
         }
       }
     }
-    private class SubstituteMenuPart_Action_mw8afp_c0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_mw8afp_c0 extends SingleItemSubstituteMenuPart {
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new AddMenuPart_SimpleItemSubstitute.SubstituteMenuPart_Group_mw8afp_a.SubstituteMenuPart_Action_mw8afp_c0.Item(_context);
+        return new AddMenuPart_SimpleItemSubstitute.SMP_Group_mw8afp_a.SMP_Action_mw8afp_c0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

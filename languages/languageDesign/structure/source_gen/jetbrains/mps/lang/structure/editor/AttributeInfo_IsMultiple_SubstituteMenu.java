@@ -26,30 +26,30 @@ public class AttributeInfo_IsMultiple_SubstituteMenu extends SubstituteMenuBase 
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AttributeInfo_IsMultiple_SubstituteMenu.SubstituteMenuPart_Parameterized_lk1ofo_a(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x5405fd034959f7dcL, "jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AttributeInfo_IsMultiple_SubstituteMenu.SMP_Param_lk1ofo_a(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x5405fd034959f7dcL, "jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_lk1ofo_a extends ParameterizedMenuPart<Boolean, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_lk1ofo_a extends ParameterizedMenuPart<Boolean, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(Boolean parameter, SubstituteMenuContext context) {
-      return new AttributeInfo_IsMultiple_SubstituteMenu.SubstituteMenuPart_Parameterized_lk1ofo_a.SubstituteMenuPart_Action_lk1ofo_a0(parameter).createItems(context);
+      return new AttributeInfo_IsMultiple_SubstituteMenu.SMP_Param_lk1ofo_a.SMP_Action_lk1ofo_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends Boolean> getParameters(SubstituteMenuContext _context) {
       return ListSequence.fromListAndArray(new ArrayList<Boolean>(), Boolean.TRUE, Boolean.FALSE);
     }
-    private class SubstituteMenuPart_Action_lk1ofo_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_lk1ofo_a0 extends SingleItemSubstituteMenuPart {
       private final Boolean myParameterObject;
-      public SubstituteMenuPart_Action_lk1ofo_a0(Boolean parameterObject) {
+      public SMP_Action_lk1ofo_a0(Boolean parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new AttributeInfo_IsMultiple_SubstituteMenu.SubstituteMenuPart_Parameterized_lk1ofo_a.SubstituteMenuPart_Action_lk1ofo_a0.Item(_context);
+        return new AttributeInfo_IsMultiple_SubstituteMenu.SMP_Param_lk1ofo_a.SMP_Action_lk1ofo_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

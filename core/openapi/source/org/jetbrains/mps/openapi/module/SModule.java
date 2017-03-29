@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,30 +77,13 @@ public interface SModule {
   int getUsedLanguageVersion(@NotNull SLanguage usedLanguage);
 
   /**
-   * FIXME document whether this method required model read
-   * @deprecated This method has been deprecated since it doesn't help to resolve SModelId that are not unique
-   *   I.e. if few modules from dependencies provide model with the same id (happens for java package models),
-   *   then the model returned would depend from iteration order. Instead, use SModelReference.resolve(SRepository) meanwhile.
-   *
-   *   NOTE: returns {@link #getModel(SModelId)} now, pending method removal. The method will be removed after MPS 3.4 release
-   *
    * FIXME decide whether we need resolveInDependencies(SModelReference), which might be handy to give module control over
    *   dependency resolution, or do the scope control (whether module of model requested belongs to imports of this module) externally.
    *   Perhaps, there's a case when one knows only SModelId (i.e. looks up smth like "java.io", and we'd need a method to return a collection
    *   of models with this id visible from dependencies then).
    *   Another approach is to expose smth like getScope() (which is already in AbstractModule), to encapsulate scope control. It would be both separate and
    *   controlled by module (consider TransientModelsModule which needs to resolve references between transient models that are not published in a repository)
-   *
-   * Find the specified model among the dependencies.
-   * Models of this module ({@link #getModel(SModelId)}) are considered and take precedence over models from dependency modules
-   *
-   * @return The desired model or null, if not found.
    */
-  @Nullable
-  @Deprecated
-  //@ToRemove(version = 3.3)
-  // shall stay in MPS 3.4 with functionality limited to that of getModel(), remove once MPS 3.4 is out
-  SModel resolveInDependencies(SModelId ref);
 
   /**
    * FIXME document whether this method required model read

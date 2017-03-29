@@ -32,14 +32,14 @@ public class PrimitiveClassExpression extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new PrimitiveClassExpression.SubstituteMenuPart_Parameterized_vqoe2c_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3f57ea36bd70a4e1L, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new PrimitiveClassExpression.SMP_Param_vqoe2c_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3f57ea36bd70a4e1L, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_vqoe2c_a extends ParameterizedMenuPart<SConcept, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_vqoe2c_a extends ParameterizedMenuPart<SConcept, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SConcept parameter, SubstituteMenuContext context) {
-      return new PrimitiveClassExpression.SubstituteMenuPart_Parameterized_vqoe2c_a.SubstituteMenuPart_Action_vqoe2c_a0(parameter).createItems(context);
+      return new PrimitiveClassExpression.SMP_Param_vqoe2c_a.SMP_Action_vqoe2c_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -52,16 +52,16 @@ public class PrimitiveClassExpression extends SubstituteMenuBase {
       }
       return result;
     }
-    private class SubstituteMenuPart_Action_vqoe2c_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_vqoe2c_a0 extends SingleItemSubstituteMenuPart {
       private final SConcept myParameterObject;
-      public SubstituteMenuPart_Action_vqoe2c_a0(SConcept parameterObject) {
+      public SMP_Action_vqoe2c_a0(SConcept parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new PrimitiveClassExpression.SubstituteMenuPart_Parameterized_vqoe2c_a.SubstituteMenuPart_Action_vqoe2c_a0.Item(_context);
+        return new PrimitiveClassExpression.SMP_Param_vqoe2c_a.SMP_Action_vqoe2c_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

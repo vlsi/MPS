@@ -46,6 +46,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_InitGrandChildWithIndirectCycle_card1n = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InspectorBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IntegerLiteral = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_LabelConceptWithProperty = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NonEmptyProperty = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NotEditableVaraileReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PlusExpression = new ConceptPresentationBuilder().create();
@@ -150,6 +151,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_InspectorBlock;
       case LanguageConceptSwitch.IntegerLiteral:
         return props_IntegerLiteral;
+      case LanguageConceptSwitch.LabelConceptWithProperty:
+        return props_LabelConceptWithProperty;
       case LanguageConceptSwitch.NonEmptyProperty:
         return props_NonEmptyProperty;
       case LanguageConceptSwitch.NotEditableVaraileReference:

@@ -31,10 +31,10 @@ public class BuildString_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildString_SubstituteMenu.SubstituteMenuPart_Wrapper_q01vp8_a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildString_SubstituteMenu.SMP_Wrap_q01vp8_a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString")));
     return result;
   }
-  private class SubstituteMenuPart_Wrapper_q01vp8_a extends WrapperSubstituteMenuPart {
+  private class SMP_Wrap_q01vp8_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {

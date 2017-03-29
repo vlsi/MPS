@@ -30,18 +30,18 @@ public class XmlValuePart_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Action_rajt6d_a(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Action_rajt6d_b(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Action_rajt6d_c(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")));
-    result.add(new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Subconcepts_rajt6d_d());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlValuePart_SubstituteMenu.SMP_Action_rajt6d_a(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlValuePart_SubstituteMenu.SMP_Action_rajt6d_b(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlValuePart_SubstituteMenu.SMP_Action_rajt6d_c(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")));
+    result.add(new XmlValuePart_SubstituteMenu.SMP_Subconcepts_rajt6d_d());
     return result;
   }
-  private class SubstituteMenuPart_Action_rajt6d_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_rajt6d_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Action_rajt6d_a.Item(_context);
+      return new XmlValuePart_SubstituteMenu.SMP_Action_rajt6d_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -62,12 +62,12 @@ public class XmlValuePart_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  private class SubstituteMenuPart_Action_rajt6d_b extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_rajt6d_b extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Action_rajt6d_b.Item(_context);
+      return new XmlValuePart_SubstituteMenu.SMP_Action_rajt6d_b.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -88,12 +88,12 @@ public class XmlValuePart_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  private class SubstituteMenuPart_Action_rajt6d_c extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_rajt6d_c extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Action_rajt6d_c.Item(_context);
+      return new XmlValuePart_SubstituteMenu.SMP_Action_rajt6d_c.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -122,7 +122,7 @@ public class XmlValuePart_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  public class SubstituteMenuPart_Subconcepts_rajt6d_d extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_rajt6d_d extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart"));
     }

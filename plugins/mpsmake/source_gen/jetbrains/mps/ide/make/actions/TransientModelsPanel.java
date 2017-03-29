@@ -19,7 +19,7 @@ import java.awt.event.MouseEvent;
 
   public TransientModelsPanel(TransientModelsWidget widget) {
     myWidget = widget;
-    this.label = new JLabel(widget.getMaxPossibleText(), MPSIcons.Nodes.TransientModels, SwingConstants.RIGHT);
+    this.label = new JLabel(widget.getMaxPossibleText(), MPSIcons.Nodes.TransientModule, SwingConstants.LEFT);
     this.label.setIconTextGap(0);
     Font labelFont = UIUtil.getLabelFont();
     boolean framedStyle = SystemInfo.isMac || !(SystemProperties.getBooleanProperty("idea.ui.mem.use", false));

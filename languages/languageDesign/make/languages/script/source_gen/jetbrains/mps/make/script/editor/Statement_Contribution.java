@@ -25,12 +25,12 @@ public class Statement_Contribution extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new Statement_Contribution.SubstituteMenuPart_IncludeMenu_zhpsb4_a());
-    result.add(new Statement_Contribution.SubstituteMenuPart_IncludeMenu_zhpsb4_b());
-    result.add(new Statement_Contribution.SubstituteMenuPart_IncludeMenu_zhpsb4_c());
+    result.add(new Statement_Contribution.SMP_Include_zhpsb4_a());
+    result.add(new Statement_Contribution.SMP_Include_zhpsb4_b());
+    result.add(new Statement_Contribution.SMP_Include_zhpsb4_c());
     return result;
   }
-  public class SubstituteMenuPart_IncludeMenu_zhpsb4_a extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_zhpsb4_a extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override
@@ -39,7 +39,7 @@ public class Statement_Contribution extends SubstituteMenuBase {
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), "jetbrains.mps.make.script.editor.ResultStatement_subs");
     }
   }
-  public class SubstituteMenuPart_IncludeMenu_zhpsb4_b extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_zhpsb4_b extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override
@@ -48,7 +48,7 @@ public class Statement_Contribution extends SubstituteMenuBase {
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), "jetbrains.mps.make.script.editor.ReportFeedbackStatement_subs");
     }
   }
-  public class SubstituteMenuPart_IncludeMenu_zhpsb4_c extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_zhpsb4_c extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override

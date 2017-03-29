@@ -1,4 +1,4 @@
-Copyright 2003-2014. JetBrains s.r.o. All rights reserved.
+Copyright 2003-2017. JetBrains s.r.o. All rights reserved.
 
 This product includes software developed by
 
@@ -13,11 +13,16 @@ Anders Moeller
 http://www.brics.dk/automaton/index.html
 Copyright (c) 2001-2011
 
-BeanShell project
-http://www.beanshell.org/home.html
+Legion of the Bouncy Castle Inc.
+http://www.bouncycastle.org/about.html
+Copyright (c) 2000-2015
 
 CGLIB project
 https://github.com/cglib/cglib
+
+CLI Parser
+https://github.com/spullara/cli-parser
+Copyright (c) 2012 Sam Pullara
 
 Java Diff Utils
 http://code.google.com/p/java-diff-utils/
@@ -25,14 +30,17 @@ http://code.google.com/p/java-diff-utils/
 Eclipse Software Foundation
 http://www.eclipse.org/
 
-The Growl Project
-http://growl.info/
-
 Google
 http://www.google.com/
 
 Hamcrest project
 https://code.google.com/p/hamcrest/
+
+Java Image-Scaling Library
+https://github.com/rkalla/imgscalr
+
+SourceForge ISO-RELAX Project
+https://sourceforge.net/projects/iso-relax/
 
 Jaxen project
 http://jaxen.codehaus.org
@@ -44,12 +52,19 @@ JDOM Project
 http://www.jdom.org/
 Copyright (C) 2000-2002 Brett McLaughlin & Jason Hunter.
 
+Pure Java Terminal Emulator.
+https://github.com/JetBrains/jediterm
+
 JGoodies, Karsten Lentzsch
 http://www.jgoodies.com/freeware/
 Copyright (c) 2002-2006. All rights reserved.
 
 Sun Microsystems
 http://java.sun.com/javase/technologies/desktop/javahelp/
+
+Jing / RELAX NG validator in Java
+http://www.thaiopensource.com/relaxng/jing.html
+Copyright (c) 2001, 2002, 2003, 2008 Thai Open Source Software Center Ltd
 
 The jMock project
 http://jmock.org/
@@ -59,9 +74,6 @@ https://jna.dev.java.net/
 
 JCraft/JSch project
 http://www.jcraft.com/jsch/
-
-JSR166 group
-http://gee.cs.oswego.edu/dl/concurrency-interest/
 
 JSR 173: Streaming API for XML
 https://www.jcp.org/en/jsr/detail?id=173
@@ -83,9 +95,6 @@ Copyright (C) 2000-2008. All Rights Reserved.
 Netty project
 http://netty.io/index.html
 
-Objenesis project
-https://code.google.com/p/objenesis/
-
 NanoContainer Organization
 http://www.picocontainer.org/
 Copyright (c) 2003
@@ -93,27 +102,43 @@ Copyright (c) 2003
 Proxy Vole project
 https://code.google.com/p/proxy-vole/
 
+Pseudo terminal(PTY) implementation in Java
+https://github.com/traff/pty4j
+
+PureJavaComm
+http://www.sparetimelabs.com/purejavacomm/purejavacomm.php
+
+RELAX NG Object Model / Parser
+https://java.net/projects/rngom/
+
+Simple Logging Facade for Java
+https://www.slf4j.org
+
 Taro L. Saito
 https://github.com/xerial/snappy-java
+
+SQLite Project
+https://www.sqlite.org
 
 TMate Software Ltd
 http://svnkit.com/
 http://sqljet.com/
 
+StreamEx Project
+https://github.com/amaembo/streamex
+
 SwingLabs SwingX
 https://swingx.java.net
 
-Eric D. Friedman
-http://trove4j.sourceforge.net/
-Copyright (c) 2001, All Rights Reserved
+Trang Project
+http://www.thaiopensource.com/relaxng/trang.html
+Copyright (c) 2002, 2003, 2008 Thai Open Source Software Center Ltd
 
-CERN - European Organization for Nuclear Research
-http://trove4j.sourceforge.net/
-Copyright (c) 1999
+Trove High Performance Collections for Java
+http://trove.starlight-systems.com
 
 Winp project
-http://winp.kohsuke.org/
-https://github.com/kohsuke/winp
+https://java.net/projects/winp
 
 XML Pull Parser (XPP3) project
 http://www.extreme.indiana.edu/xgws/xsoap/xpp/

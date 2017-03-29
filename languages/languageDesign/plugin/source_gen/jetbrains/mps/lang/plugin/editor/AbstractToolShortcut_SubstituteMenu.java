@@ -36,11 +36,11 @@ public class AbstractToolShortcut_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new AbstractToolShortcut_SubstituteMenu.SubstituteMenuPart_Subconcepts_7ty2v0_a());
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractToolShortcut_SubstituteMenu.SubstituteMenuPart_Wrapper_7ty2v0_b(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76125L, "jetbrains.mps.lang.plugin.structure.CustomToolShortcut")));
+    result.add(new AbstractToolShortcut_SubstituteMenu.SMP_Subconcepts_7ty2v0_a());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractToolShortcut_SubstituteMenu.SMP_Wrap_7ty2v0_b(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76125L, "jetbrains.mps.lang.plugin.structure.CustomToolShortcut")));
     return result;
   }
-  public class SubstituteMenuPart_Subconcepts_7ty2v0_a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_7ty2v0_a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b5f981L, "jetbrains.mps.lang.plugin.structure.AbstractToolShortcut")).stream().filter(new Predicate<SAbstractConcept>() {
         public boolean test(SAbstractConcept concept) {
@@ -56,7 +56,7 @@ public class AbstractToolShortcut_SubstituteMenu extends SubstituteMenuBase {
       return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
     }
   }
-  private class SubstituteMenuPart_Wrapper_7ty2v0_b extends WrapperSubstituteMenuPart {
+  private class SMP_Wrap_7ty2v0_b extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {

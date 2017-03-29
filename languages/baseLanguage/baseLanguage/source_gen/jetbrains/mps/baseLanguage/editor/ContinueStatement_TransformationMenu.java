@@ -53,12 +53,12 @@ public class ContinueStatement_TransformationMenu extends TransformationMenuBase
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, "jetbrains.mps.baseLanguage.structure.ContinueStatement"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ContinueStatement_TransformationMenu.TransformationMenuPart_Group_j8waen_a1());
+      result.add(new ContinueStatement_TransformationMenu.TMP_Group_j8waen_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_j8waen_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_j8waen_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, 0x7dae85d6eb43bbbdL, "loopLabelReference")) == null) && ListSequence.fromList(SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), false)).translate(new ITranslator2<SNode, SNode>() {
@@ -107,14 +107,14 @@ __switch__:
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new ContinueStatement_TransformationMenu.TransformationMenuPart_Group_j8waen_a1.TransformationMenuPart_Parameterized_j8waen_a0b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x50c493bf9552f6aL, "jetbrains.mps.baseLanguage.structure.LoopLabel")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new ContinueStatement_TransformationMenu.TMP_Group_j8waen_a1.TMP_Param_j8waen_a0b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x50c493bf9552f6aL, "jetbrains.mps.baseLanguage.structure.LoopLabel")));
     }
-    private class TransformationMenuPart_Parameterized_j8waen_a0b extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Param_j8waen_a0b extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
 
       @NotNull
       @Override
       protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
-        return new ContinueStatement_TransformationMenu.TransformationMenuPart_Group_j8waen_a1.TransformationMenuPart_Parameterized_j8waen_a0b.TransformationMenuPart_Action_j8waen_a0a1(parameter).createItems(context);
+        return new ContinueStatement_TransformationMenu.TMP_Group_j8waen_a1.TMP_Param_j8waen_a0b.TMP_Action_j8waen_a0a1(parameter).createItems(context);
       }
 
       @Nullable
@@ -164,14 +164,14 @@ __switch__:
         }).toListSequence();
       }
 
-      private class TransformationMenuPart_Action_j8waen_a0a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_j8waen_a0a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         private final SNode myParameterObject;
-        public TransformationMenuPart_Action_j8waen_a0a1(SNode parameterObject) {
+        public TMP_Action_j8waen_a0a1(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new ContinueStatement_TransformationMenu.TransformationMenuPart_Group_j8waen_a1.TransformationMenuPart_Parameterized_j8waen_a0b.TransformationMenuPart_Action_j8waen_a0a1.Item(context);
+          return new ContinueStatement_TransformationMenu.TMP_Group_j8waen_a1.TMP_Param_j8waen_a0b.TMP_Action_j8waen_a0a1.Item(context);
         }
 
         private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

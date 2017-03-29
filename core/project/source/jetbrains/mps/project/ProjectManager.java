@@ -37,16 +37,6 @@ public final class ProjectManager {
 
   private final List<Project> myOpenedProjects = new ArrayList<Project>();
 
-  /**
-   * @deprecated use {@link #getOpenedProjects()} instead
-   */
-  @Deprecated
-  public Project[] getOpenProjects() {
-    List<Project> openedProjects = getOpenedProjects();
-    Project[] ts = new Project[openedProjects.size()];
-    return openedProjects.toArray(ts);
-  }
-
   public List<Project> getOpenedProjects() {
     synchronized (myOpenedProjects) {
       return Collections.unmodifiableList(myOpenedProjects);

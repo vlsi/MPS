@@ -28,10 +28,10 @@ public class BaseAssignmentExpression_Alias_SubstituteMenu extends SubstituteMen
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BaseAssignmentExpression_Alias_SubstituteMenu.SubstituteMenuPart_Wrapper_dm6i2g_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BaseAssignmentExpression_Alias_SubstituteMenu.SMP_Wrap_dm6i2g_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
     return result;
   }
-  private class SubstituteMenuPart_Wrapper_dm6i2g_a extends WrapperSubstituteMenuPart {
+  private class SMP_Wrap_dm6i2g_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {

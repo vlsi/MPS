@@ -15,8 +15,8 @@ import java.util.Arrays;
  * This class is generated with the "UpdateRuntimeUtil" script.
  */
 public class RuntimeUtil {
+  private static final Logger LOG = LogManager.getLogger(RuntimeUtil.class);
 
-  protected static Logger LOG = LogManager.getLogger(RuntimeUtil.class);
   public static SNode functionClassifier(String fnClassifierName, String fnSignature) {
     // these references must point to the @java_stub models 
     SNode ftypes = functionClassifierContainer();

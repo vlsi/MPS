@@ -38,14 +38,14 @@ public class TargetDependency_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TargetDependency_SubstituteMenu.SubstituteMenuPart_Parameterized_70edxa_a(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, "jetbrains.mps.make.facet.structure.TargetDependency")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TargetDependency_SubstituteMenu.SMP_Param_70edxa_a(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, "jetbrains.mps.make.facet.structure.TargetDependency")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_70edxa_a extends ParameterizedMenuPart<Tuples._2<SNode, SNode>, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_70edxa_a extends ParameterizedMenuPart<Tuples._2<SNode, SNode>, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(Tuples._2<SNode, SNode> parameter, SubstituteMenuContext context) {
-      return new TargetDependency_SubstituteMenu.SubstituteMenuPart_Parameterized_70edxa_a.SubstituteMenuPart_Action_70edxa_a0(parameter).createItems(context);
+      return new TargetDependency_SubstituteMenu.SMP_Param_70edxa_a.SMP_Action_70edxa_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -103,16 +103,16 @@ __switch__:
         }
       }).toListSequence();
     }
-    private class SubstituteMenuPart_Action_70edxa_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_70edxa_a0 extends SingleItemSubstituteMenuPart {
       private final Tuples._2<SNode, SNode> myParameterObject;
-      public SubstituteMenuPart_Action_70edxa_a0(Tuples._2<SNode, SNode> parameterObject) {
+      public SMP_Action_70edxa_a0(Tuples._2<SNode, SNode> parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new TargetDependency_SubstituteMenu.SubstituteMenuPart_Parameterized_70edxa_a.SubstituteMenuPart_Action_70edxa_a0.Item(_context);
+        return new TargetDependency_SubstituteMenu.SMP_Param_70edxa_a.SMP_Action_70edxa_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

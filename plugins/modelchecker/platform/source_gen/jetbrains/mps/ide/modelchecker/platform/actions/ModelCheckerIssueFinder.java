@@ -40,6 +40,9 @@ public class ModelCheckerIssueFinder extends BaseFinder {
     final SearchScope scope = searchQuery.getScope();
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
     List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
+    // FIXME IT'S PLAIN WRONG TO PASS SET OF MODELS/MODULES TO CHECK THROUGH IHolder. 
+    //       SearchScope tells where to look for, SearchQuery.getObjectHolder tells what to look for 
+    //       That's why I didn't change scope.resolve here to use query.getSearchObjectResolver()! 
     if (objectHolder instanceof ModelsHolder) {
       ModelsHolder modelsHolder = (ModelsHolder) objectHolder;
       for (SModelReference ref : modelsHolder.getObject()) {

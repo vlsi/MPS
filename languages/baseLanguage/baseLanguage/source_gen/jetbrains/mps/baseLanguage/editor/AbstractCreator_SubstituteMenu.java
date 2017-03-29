@@ -48,16 +48,16 @@ public class AbstractCreator_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCreator_SubstituteMenu.SubstituteMenuPart_Parameterized_p790zr_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCreator_SubstituteMenu.SubstituteMenuPart_Parameterized_p790zr_b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4952f12L, "jetbrains.mps.baseLanguage.structure.ArrayCreator")));
-    result.add(new AbstractCreator_SubstituteMenu.SubstituteMenuPart_Subconcepts_p790zr_c());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCreator_SubstituteMenu.SMP_Param_p790zr_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCreator_SubstituteMenu.SMP_Param_p790zr_b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4952f12L, "jetbrains.mps.baseLanguage.structure.ArrayCreator")));
+    result.add(new AbstractCreator_SubstituteMenu.SMP_Subconcepts_p790zr_c());
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_p790zr_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_p790zr_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new AbstractCreator_SubstituteMenu.SubstituteMenuPart_Parameterized_p790zr_a.SubstituteMenuPart_Action_p790zr_a0(parameter).createItems(context);
+      return new AbstractCreator_SubstituteMenu.SMP_Param_p790zr_a.SMP_Action_p790zr_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -80,16 +80,16 @@ public class AbstractCreator_SubstituteMenu extends SubstituteMenuBase {
         }
       }).toListSequence();
     }
-    private class SubstituteMenuPart_Action_p790zr_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_p790zr_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_p790zr_a0(SNode parameterObject) {
+      public SMP_Action_p790zr_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new AbstractCreator_SubstituteMenu.SubstituteMenuPart_Parameterized_p790zr_a.SubstituteMenuPart_Action_p790zr_a0.Item(_context);
+        return new AbstractCreator_SubstituteMenu.SMP_Param_p790zr_a.SMP_Action_p790zr_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -187,11 +187,11 @@ public class AbstractCreator_SubstituteMenu extends SubstituteMenuBase {
     }
 
   }
-  private class SubstituteMenuPart_Parameterized_p790zr_b extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_p790zr_b extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new AbstractCreator_SubstituteMenu.SubstituteMenuPart_Parameterized_p790zr_b.SubstituteMenuPart_Action_p790zr_a1(parameter).createItems(context);
+      return new AbstractCreator_SubstituteMenu.SMP_Param_p790zr_b.SMP_Action_p790zr_a1(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -211,16 +211,16 @@ public class AbstractCreator_SubstituteMenu extends SubstituteMenuBase {
       }
       return types;
     }
-    private class SubstituteMenuPart_Action_p790zr_a1 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_p790zr_a1 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_p790zr_a1(SNode parameterObject) {
+      public SMP_Action_p790zr_a1(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new AbstractCreator_SubstituteMenu.SubstituteMenuPart_Parameterized_p790zr_b.SubstituteMenuPart_Action_p790zr_a1.Item(_context);
+        return new AbstractCreator_SubstituteMenu.SMP_Param_p790zr_b.SMP_Action_p790zr_a1.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -262,7 +262,7 @@ public class AbstractCreator_SubstituteMenu extends SubstituteMenuBase {
     }
 
   }
-  public class SubstituteMenuPart_Subconcepts_p790zr_c extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_p790zr_c extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab844af9bL, "jetbrains.mps.baseLanguage.structure.AbstractCreator"));
     }

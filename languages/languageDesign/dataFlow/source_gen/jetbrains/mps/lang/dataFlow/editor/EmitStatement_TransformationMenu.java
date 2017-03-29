@@ -41,15 +41,15 @@ public class EmitStatement_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, "jetbrains.mps.lang.dataFlow.structure.EmitStatement"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new EmitStatement_TransformationMenu.TransformationMenuPart_Action_dyx4xx_a1());
+      result.add(new EmitStatement_TransformationMenu.TMP_Action_dyx4xx_a1());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_dyx4xx_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_dyx4xx_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EmitStatement_TransformationMenu.TransformationMenuPart_Action_dyx4xx_a1.Item(context);
+      return new EmitStatement_TransformationMenu.TMP_Action_dyx4xx_a1.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

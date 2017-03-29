@@ -307,11 +307,10 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
@@ -1658,13 +1657,12 @@
           </node>
           <node concept="TDmWw" id="5Ti9jVZ8rxI" role="TEXxN">
             <node concept="3clFbS" id="5Ti9jVZ8rxJ" role="TDEfX">
-              <node concept="34ab3g" id="5Ti9jVZ8rxK" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="5Ti9jVZ8rxL" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB32Yr" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="Xl_RD" id="5Ti9jVZ8rxL" role="RRSoy">
                   <property role="Xl_RC" value="Exception in the test framework" />
                 </node>
-                <node concept="37vLTw" id="5Ti9jVZ8rxM" role="34bMjA">
+                <node concept="37vLTw" id="5Ti9jVZ8rxM" role="RRSow">
                   <ref role="3cqZAo" node="5Ti9jVZ8rxN" resolve="t" />
                 </node>
               </node>
@@ -3198,9 +3196,9 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
       <node concept="3clFbS" id="5Ti9jVZ8rFP" role="3clF47">
-        <node concept="34ab3g" id="5Ti9jVZ8rFQ" role="3cqZAp">
-          <property role="35gtTG" value="debug" />
-          <node concept="Xl_RD" id="5Ti9jVZ8rFR" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB39J8" role="3cqZAp">
+          <property role="RRSoG" value="debug" />
+          <node concept="Xl_RD" id="5Ti9jVZ8rFR" role="RRSoy">
             <property role="Xl_RC" value="Initializing TestInProcessExecutor" />
           </node>
         </node>
@@ -3222,9 +3220,9 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
       <node concept="3clFbS" id="5Ti9jVZ8rHE" role="3clF47">
-        <node concept="34ab3g" id="2KIjP935cDq" role="3cqZAp">
-          <property role="35gtTG" value="debug" />
-          <node concept="Xl_RD" id="2KIjP935cDr" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB39Je" role="3cqZAp">
+          <property role="RRSoG" value="debug" />
+          <node concept="Xl_RD" id="2KIjP935cDr" role="RRSoy">
             <property role="Xl_RC" value="Disposing TestLightExecutor" />
           </node>
         </node>
@@ -3341,9 +3339,9 @@
             </node>
           </node>
         </node>
-        <node concept="34ab3g" id="2MAXfGnRk4n" role="3cqZAp">
-          <property role="35gtTG" value="warn" />
-          <node concept="3cpWs3" id="2MAXfGnRmon" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB39Jk" role="3cqZAp">
+          <property role="RRSoG" value="warn" />
+          <node concept="3cpWs3" id="2MAXfGnRmon" role="RRSoy">
             <node concept="Xl_RD" id="2MAXfGnRmA4" role="3uHU7w">
               <property role="Xl_RC" value="The code is being executed within the current MPS environment and might do a lot of damage if written without caution." />
             </node>
@@ -3352,9 +3350,9 @@
             </node>
           </node>
         </node>
-        <node concept="34ab3g" id="1Q6gjHMsj0Y" role="3cqZAp">
-          <property role="35gtTG" value="info" />
-          <node concept="Xl_RD" id="1Q6gjHMsj10" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB39Ju" role="3cqZAp">
+          <property role="RRSoG" value="info" />
+          <node concept="Xl_RD" id="1Q6gjHMsj10" role="RRSoy">
             <property role="Xl_RC" value="Executing tests in-process" />
           </node>
         </node>
@@ -3555,9 +3553,9 @@
             </node>
           </node>
         </node>
-        <node concept="34ab3g" id="KJkipGwae5" role="3cqZAp">
-          <property role="35gtTG" value="info" />
-          <node concept="37vLTw" id="KJkipGwCs_" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB39J$" role="3cqZAp">
+          <property role="RRSoG" value="info" />
+          <node concept="37vLTw" id="KJkipGwCs_" role="RRSoy">
             <ref role="3cqZAo" node="KJkipGwl6G" resolve="terminateMessage" />
           </node>
         </node>
@@ -4545,10 +4543,9 @@
               </node>
             </node>
             <node concept="3clFbS" id="6BB1EWXdfFI" role="TDEfX">
-              <node concept="34ab3g" id="6BB1EWXdfFJ" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="3cpWs3" id="5iBqK23NaHR" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB34nT" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="3cpWs3" id="5iBqK23NaHR" role="RRSoy">
                   <node concept="3cpWs3" id="5iBqK23NaVN" role="3uHU7B">
                     <node concept="37vLTw" id="5iBqK23Nc$B" role="3uHU7w">
                       <ref role="3cqZAo" node="6BB1EWXdfFO" resolve="className" />
@@ -4561,7 +4558,7 @@
                     <property role="Xl_RC" value=" has not been found: it will be skipped" />
                   </node>
                 </node>
-                <node concept="37vLTw" id="6BB1EWXdfFL" role="34bMjA">
+                <node concept="37vLTw" id="6BB1EWXdfFL" role="RRSow">
                   <ref role="3cqZAo" node="6BB1EWXdfFG" resolve="e" />
                 </node>
               </node>

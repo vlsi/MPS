@@ -798,7 +798,6 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.workbench.editors.MPSLanguageEditor" />
     <classNode dependClassName="jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile" />
     <classNode dependClassName="jetbrains.mps.workbench.languagesFs.MPSLanguagesVirtualFileSystem" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

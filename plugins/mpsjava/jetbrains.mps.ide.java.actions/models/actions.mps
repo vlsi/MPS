@@ -38,9 +38,6 @@
       <node concept="2zDLo0" id="4LlSeg0P5_" role="2zDLrY">
         <ref role="2zDLo1" to="xq5q:__m$GJJjC5" resolve="Mac_10_5" />
       </node>
-      <node concept="2zDL_x" id="3CM_lYH0f04" role="2zDL_s">
-        <ref role="2zDL_u" to="xq5q:1bRM4HyGOKM" resolve="SolutionActionsEx" />
-      </node>
       <node concept="2zDL_x" id="3CM_lYH0f08" role="2zDL_s">
         <ref role="2zDL_u" to="xq5q:cvGLnZnRqZ" resolve="RefactoringAdditions" />
       </node>

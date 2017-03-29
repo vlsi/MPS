@@ -8,6 +8,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 
 public class MPSInternalPortManager extends CustomPortServerManagerBase {
+  private static final Logger LOG = LogManager.getLogger(MPSInternalPortManager.class);
 
   public static final int PORT = 63320;
 
@@ -16,7 +17,6 @@ public class MPSInternalPortManager extends CustomPortServerManagerBase {
     return PORT;
   }
 
-  protected static Logger LOG = LogManager.getLogger(MPSInternalPortManager.class);
   @Override
   public void cannotBind(Exception e, int port) {
     if (LOG.isEnabledFor(Level.ERROR)) {

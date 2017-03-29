@@ -20,16 +20,18 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class OverrideImplementMethodAction {
-  private Project myProject;
-  private SNode mySelectedNode;
-  private EditorContext myEditorContext;
-  private boolean myIsOverride;
+  private final Project myProject;
+  private final SNode mySelectedNode;
+  private final EditorContext myEditorContext;
+  private final boolean myIsOverride;
+
   public OverrideImplementMethodAction(Project project, SNode selectedNode, EditorContext editorContext, boolean isOverride) {
     myProject = project;
     mySelectedNode = selectedNode;
     myEditorContext = editorContext;
-    this.myIsOverride = isOverride;
+    myIsOverride = isOverride;
   }
+
   public void run() {
     ModelAccessHelper mah = new ModelAccessHelper(myProject.getModelAccess());
     final SNode contextClass = mah.runReadAction(new Computable<SNode>() {
@@ -55,7 +57,7 @@ public class OverrideImplementMethodAction {
 
     final OverrideImplementMethodsDialog dialog = new OverrideImplementMethodsDialog(methods, ProjectHelper.toIdeaProject(myProject));
 
-    dialog.setTitle((myIsOverride ? "Select Methods to Override" : "Select Methods to Implement"));
+    dialog.setTitle((myIsOverride ? "Select Methods to Override/Implement" : "Select Methods to Implement"));
     dialog.show();
 
     if (dialog.isOK()) {

@@ -115,7 +115,7 @@
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJSt" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/migrationScript.png" />
+      <property role="1iqoE4" value="${module}/icons/scriptsIcon.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8_Xfy3">

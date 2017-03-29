@@ -24,8 +24,8 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/1136850375741968751">
     <file name="Icon2IconResourceAdapter_Deprecated.java">
-      <node id="1136850375741968743" at="25,0,26,0" concept="6" trace="myIcon" />
-      <node id="1136850375741968751" at="26,0,27,0" concept="15" trace="LOG" />
+      <node id="1136850375741968751" at="25,0,26,0" concept="15" trace="LOG" />
+      <node id="1136850375741968743" at="26,0,27,0" concept="6" trace="myIcon" />
       <node id="1136850375741968761" at="28,57,29,22" concept="17" />
       <node id="7952719687879892497" at="29,22,30,116" concept="11" />
       <node id="7952719687879892504" at="30,116,31,42" concept="11" />
@@ -37,7 +37,7 @@
       <node id="7952719687879892549" at="38,41,39,64" concept="13" />
       <node id="7952719687879892531" at="40,17,41,20" concept="5" />
       <node id="7952719687879911229" at="42,7,43,34" concept="5" />
-      <node id="7952719687879969529" at="45,42,46,41" concept="5" />
+      <node id="3818729150937329346" at="45,42,46,41" concept="5" />
       <node id="1136850375741753229" at="51,38,52,17" concept="12" />
       <node id="1136850375741931627" at="56,25,57,18" concept="12" />
       <node id="7952719687879925035" at="58,5,59,44" concept="12" />
@@ -47,7 +47,7 @@
       <node id="1136850375741963408" at="69,87,70,48" concept="12" />
       <node id="7952719687879960951" at="73,25,74,52" concept="12" />
       <node id="7952719687879958028" at="76,62,77,46" concept="12" />
-      <node id="7952719687879969529" at="44,30,47,7" concept="9" />
+      <node id="3818729150937329346" at="44,30,47,7" concept="9" />
       <node id="1136850375741926186" at="55,36,58,5" concept="9" />
       <node id="1136850375741961440" at="62,35,65,5" concept="9" />
       <node id="1136850375741961448" at="65,5,68,5" concept="9" />
@@ -60,7 +60,7 @@
       <node id="7952719687879892546" at="33,16,48,5" concept="19" />
       <node id="1136850375741968755" at="27,0,50,0" concept="3" trace="Icon2IconResourceAdapter_Deprecated#(Ljavax/swing/Icon;)V" />
       <scope id="7952719687879892530" at="40,17,41,20" />
-      <scope id="7952719687879969529" at="45,42,46,41" />
+      <scope id="3818729150937329346" at="45,42,46,41" />
       <scope id="1136850375741753226" at="51,38,52,17" />
       <scope id="1136850375741926188" at="56,25,57,18" />
       <scope id="1136850375741961445" at="63,20,64,18" />
@@ -580,69 +580,64 @@
   </root>
   <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/5504093910384079631">
     <file name="StringsIO.java">
-      <node id="5504093910384079639" at="22,27,23,18" concept="12" />
-      <node id="5504093910384079645" at="24,5,25,0" concept="14" />
-      <node id="5504093910384079648" at="26,9,27,50" concept="12" />
-      <node id="5504093910384079657" at="28,40,29,19" concept="0" />
-      <node id="5504093910384079659" at="29,19,30,18" concept="12" />
-      <node id="5504093910384079668" at="33,59,34,72" concept="11" />
-      <node id="5504093910384079675" at="34,72,35,36" concept="11" />
-      <node id="5504093910384079686" at="36,30,37,34" concept="11" />
-      <node id="5504093910384079692" at="37,34,38,52" concept="5" />
-      <node id="5504093910384079697" at="39,5,40,15" concept="5" />
-      <node id="5504093910384079701" at="40,15,41,17" concept="12" />
-      <node id="5504093910384079709" at="43,87,44,50" concept="5" />
-      <node id="5504093910384079725" at="46,78,47,46" concept="11" />
-      <node id="5504093910384079735" at="48,31,49,24" concept="5" />
-      <node id="5504093910384079740" at="50,5,51,16" concept="5" />
-      <node id="5504093910384079750" at="19,0,21,0" concept="3" trace="StringsIO#()V" />
-      <node id="5504093910384079637" at="21,51,24,5" concept="9" />
-      <node id="5504093910384079705" at="43,0,46,0" concept="16" trace="writeLines#(Ljava/io/File;Ljava/lang/Iterable;)V" />
-      <node id="5504093910384079731" at="47,46,50,5" concept="8" />
-      <node id="5504093910384079681" at="35,36,39,5" concept="21" />
-      <node id="5504093910384079646" at="25,0,31,5" concept="19" />
-      <node id="5504093910384079721" at="46,0,53,0" concept="16" trace="writeLines#(Ljava/io/OutputStream;Ljava/lang/Iterable;)V" />
-      <node id="5504093910384079663" at="33,0,43,0" concept="16" trace="readLines#(Ljava/io/InputStream;)Ljava/util/List;" />
-      <node id="5504093910384079632" at="21,0,33,0" concept="16" trace="readLines#(Ljava/io/File;)Ljava/util/List;" />
-      <scope id="5504093910384079753" at="19,23,19,23" />
-      <scope id="5504093910384079638" at="22,27,23,18" />
-      <scope id="5504093910384079647" at="26,9,27,50" />
-      <scope id="5504093910384079708" at="43,87,44,50" />
-      <scope id="5504093910384079734" at="48,31,49,24" />
-      <scope id="5504093910384079750" at="19,0,21,0" />
-      <scope id="5504093910384079653" at="28,0,30,18">
+      <node id="5504093910384079648" at="24,9,25,50" concept="12" />
+      <node id="5504093910384079659" at="26,40,27,60" concept="12" />
+      <node id="5504093910384079668" at="30,59,31,72" concept="11" />
+      <node id="5504093910384079675" at="31,72,32,36" concept="11" />
+      <node id="5504093910384079686" at="33,30,34,34" concept="11" />
+      <node id="5504093910384079692" at="34,34,35,52" concept="5" />
+      <node id="5504093910384079697" at="36,5,37,15" concept="5" />
+      <node id="5504093910384079701" at="37,15,38,17" concept="12" />
+      <node id="5504093910384079709" at="40,87,41,50" concept="5" />
+      <node id="5504093910384079725" at="43,78,44,46" concept="11" />
+      <node id="5504093910384079735" at="45,31,46,24" concept="5" />
+      <node id="5504093910384079740" at="47,5,48,16" concept="5" />
+      <node id="5504093910384079750" at="20,0,22,0" concept="3" trace="StringsIO#()V" />
+      <node id="5504093910384079705" at="40,0,43,0" concept="16" trace="writeLines#(Ljava/io/File;Ljava/lang/Iterable;)V" />
+      <node id="5504093910384079731" at="44,46,47,5" concept="8" />
+      <node id="5504093910384079681" at="32,36,36,5" concept="21" />
+      <node id="5504093910384079646" at="23,51,28,5" concept="19" />
+      <node id="5504093910384079721" at="43,0,50,0" concept="16" trace="writeLines#(Ljava/io/OutputStream;Ljava/lang/Iterable;)V" />
+      <node id="5504093910384079632" at="22,0,30,0" concept="16" trace="readLines#(Ljava/io/File;)Ljava/util/List;" />
+      <node id="5504093910384079663" at="30,0,40,0" concept="16" trace="readLines#(Ljava/io/InputStream;)Ljava/util/List;" />
+      <scope id="5504093910384079753" at="20,23,20,23" />
+      <scope id="5504093910384079647" at="24,9,25,50" />
+      <scope id="5504093910384079653" at="26,0,27,60">
         <var name="ex" id="5504093910384079654" />
       </scope>
-      <scope id="5504093910384079656" at="28,40,30,18" />
-      <scope id="5504093910384079685" at="36,30,38,52">
+      <scope id="5504093910384079656" at="26,40,27,60" />
+      <scope id="5504093910384079708" at="40,87,41,50" />
+      <scope id="5504093910384079734" at="45,31,46,24" />
+      <scope id="5504093910384079750" at="20,0,22,0" />
+      <scope id="5504093910384079685" at="33,30,35,52">
         <var name="line" id="5504093910384079687" />
       </scope>
-      <scope id="5504093910384079705" at="43,0,46,0">
+      <scope id="5504093910384079705" at="40,0,43,0">
         <var name="file" id="5504093910384079715" />
         <var name="lines" id="5504093910384079717" />
       </scope>
-      <scope id="5504093910384079731" at="47,46,50,5">
+      <scope id="5504093910384079731" at="44,46,47,5">
         <var name="line" id="5504093910384079732" />
       </scope>
-      <scope id="5504093910384079724" at="46,78,51,16">
+      <scope id="5504093910384079636" at="23,51,28,5" />
+      <scope id="5504093910384079724" at="43,78,48,16">
         <var name="out" id="5504093910384079726" />
       </scope>
-      <scope id="5504093910384079721" at="46,0,53,0">
+      <scope id="5504093910384079721" at="43,0,50,0">
         <var name="lines" id="5504093910384079746" />
         <var name="output" id="5504093910384079744" />
       </scope>
-      <scope id="5504093910384079667" at="33,59,41,17">
+      <scope id="5504093910384079632" at="22,0,30,0">
+        <var name="file" id="5504093910384079661" />
+      </scope>
+      <scope id="5504093910384079667" at="30,59,38,17">
         <var name="lines" id="5504093910384079669" />
         <var name="sc" id="5504093910384079676" />
       </scope>
-      <scope id="5504093910384079636" at="21,51,31,5" />
-      <scope id="5504093910384079663" at="33,0,43,0">
+      <scope id="5504093910384079663" at="30,0,40,0">
         <var name="input" id="5504093910384079703" />
       </scope>
-      <scope id="5504093910384079632" at="21,0,33,0">
-        <var name="file" id="5504093910384079661" />
-      </scope>
-      <unit id="5504093910384079631" at="18,0,54,0" name="jetbrains.mps.util.StringsIO" />
+      <unit id="5504093910384079631" at="19,0,51,0" name="jetbrains.mps.util.StringsIO" />
     </file>
   </root>
   <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/5755638771828906585">

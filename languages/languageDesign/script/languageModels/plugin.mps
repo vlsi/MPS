@@ -11,6 +11,11 @@
     <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
+      </concept>
+    </language>
     <language id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect">
       <concept id="5177162104569058199" name="jetbrains.mps.lang.aspect.structure.HelpURL" flags="ng" index="1sEMCm">
         <property id="5177162104569058200" name="url" index="1sEMCp" />
@@ -18,6 +23,7 @@
       <concept id="3433054418424672374" name="jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor" flags="ng" index="3vrhyV">
         <child id="6106419185511570295" name="mainLanguages" index="QG$2i" />
         <child id="5177162104569174921" name="httpHelpUrl" index="1sFm88" />
+        <child id="3433054418425083029" name="icon" index="3vqPLo" />
         <child id="2343319097654255233" name="order" index="3F_NFc" />
       </concept>
     </language>
@@ -41,7 +47,7 @@
   <node concept="3vrhyV" id="2LiUEk8oQ$g">
     <property role="TrG5h" value="scripts" />
     <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
-      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD34/Scripts" />
+      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD20171/Scripts" />
     </node>
     <node concept="2V$Bhx" id="4r4fzRRxNib" role="QG$2i">
       <property role="2V$B1T" value="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" />
@@ -49,6 +55,9 @@
     </node>
     <node concept="2vPci8" id="264$spPfZhg" role="3F_NFc">
       <ref role="2vPcib" to="tpcc:264$spPfYX1" resolve="MPSAspects" />
+    </node>
+    <node concept="1QGGSu" id="6b2iNnrWt16" role="3vqPLo">
+      <property role="1iqoE4" value="${module}/icons/scriptsModel.png" />
     </node>
   </node>
 </model>

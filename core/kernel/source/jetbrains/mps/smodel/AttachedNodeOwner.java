@@ -79,6 +79,8 @@ final class AttachedNodeOwner extends SNodeOwner {
       return;
     }
     repo.getModelAccess().checkWriteAccess();
+    // due to isCommandAction() check one can't modify an attached model from within a write action (e.g. JavaDebugEvaluate facet during make).
+    // Is it right? What's the reason to have write action then?
     if (!repo.getModelAccess().isCommandAction()) {
       throw new IllegalModelChangeError("registered node can be modified only inside a command or during model loading process " + myModel);
     }

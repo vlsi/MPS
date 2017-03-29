@@ -32,12 +32,12 @@ public class TestSubstituteSpecialParent_Single_EmptyCell_TransformationMenu ext
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
-      result.add(new TestSubstituteSpecialParent_Single_EmptyCell_TransformationMenu.TransformationMenuPart_IncludeSubstituteMenu_rig8ur_a0());
+      result.add(new TestSubstituteSpecialParent_Single_EmptyCell_TransformationMenu.TMP_IncludeSM_rig8ur_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeSubstituteMenu_rig8ur_a0 extends IncludeSubstituteMenuTransformationMenuPart {
+  public class TMP_IncludeSM_rig8ur_a0 extends IncludeSubstituteMenuTransformationMenuPart {
     @Override
     protected SNode getParentNode(TransformationMenuContext context) {
       return context.getNode();

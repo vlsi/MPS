@@ -37,10 +37,10 @@ public class AddMenuPart_WrapperSubstitute extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new AddMenuPart_WrapperSubstitute.SubstituteMenuPart_Group_n7g34w_a());
+    result.add(new AddMenuPart_WrapperSubstitute.SMP_Group_n7g34w_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_n7g34w_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_n7g34w_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return eq_n7g34w_a0a0a1(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x47ad1fca2ec50831L, "addMenu_wrapperSubstitute"));
@@ -48,9 +48,9 @@ public class AddMenuPart_WrapperSubstitute extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new AddMenuPart_WrapperSubstitute.SubstituteMenuPart_Group_n7g34w_a.SubstituteMenuPart_Wrapper_n7g34w_a0(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ec9ad4dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new AddMenuPart_WrapperSubstitute.SMP_Group_n7g34w_a.SMP_Wrap_n7g34w_a0(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ec9ad4dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper")));
     }
-    private class SubstituteMenuPart_Wrapper_n7g34w_a0 extends WrapperSubstituteMenuPart {
+    private class SMP_Wrap_n7g34w_a0 extends WrapperSubstituteMenuPart {
       @NotNull
       @Override
       protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {

@@ -48,13 +48,13 @@ public class BuildCompositePath_TransformationMenu extends TransformationMenuBas
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new BuildCompositePath_TransformationMenu.TransformationMenuPart_Group_a4cilw_a1());
-      result.add(new BuildCompositePath_TransformationMenu.TransformationMenuPart_Action_a4cilw_b1());
+      result.add(new BuildCompositePath_TransformationMenu.TMP_Group_a4cilw_a1());
+      result.add(new BuildCompositePath_TransformationMenu.TMP_Action_a4cilw_b1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_a4cilw_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_a4cilw_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       SNode curr = _context.getNode();
@@ -66,9 +66,9 @@ public class BuildCompositePath_TransformationMenu extends TransformationMenuBas
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new BuildCompositePath_TransformationMenu.TransformationMenuPart_Group_a4cilw_a1.TransformationMenuPart_IncludeMenu_a4cilw_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new BuildCompositePath_TransformationMenu.TMP_Group_a4cilw_a1.TMP_Include_a4cilw_a0b());
     }
-    public class TransformationMenuPart_IncludeMenu_a4cilw_a0b extends IncludeTransformationMenuTransformationMenuPart {
+    public class TMP_Include_a4cilw_a0b extends IncludeTransformationMenuTransformationMenuPart {
       @Nullable
       @Override
       protected SNode getNode(TransformationMenuContext _context) {
@@ -81,10 +81,10 @@ public class BuildCompositePath_TransformationMenu extends TransformationMenuBas
 
     }
   }
-  private class TransformationMenuPart_Action_a4cilw_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_a4cilw_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new BuildCompositePath_TransformationMenu.TransformationMenuPart_Action_a4cilw_b1.Item(context);
+      return new BuildCompositePath_TransformationMenu.TMP_Action_a4cilw_b1.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

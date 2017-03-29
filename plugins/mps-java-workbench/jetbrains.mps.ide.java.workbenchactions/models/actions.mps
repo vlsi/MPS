@@ -3,6 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
   </languages>
   <imports>
     <import index="9d7t" ref="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)" />
@@ -40,6 +41,9 @@
       </node>
       <node concept="2zDL_x" id="60HWYcsjXw5" role="2zDL_s">
         <ref role="2zDL_u" to="9d7t:60HWYcsjXvR" resolve="ModelNewActions" />
+      </node>
+      <node concept="2zDL_x" id="Ss5mQlo4wG" role="2zDL_s">
+        <ref role="2zDL_u" to="9d7t:1bRM4HyGOKM" resolve="SolutionActionsEx" />
       </node>
       <node concept="2zDLo0" id="4LlSeg3Dss" role="2zDLrY">
         <ref role="2zDLo1" to="9d7t:5U9rQri5Gky" resolve="Default" />

@@ -525,11 +525,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1510,9 +1509,9 @@
                       <property role="3SKdUp" value="TODO once we allow standalone generators in Build language, have to put reasonable code here" />
                     </node>
                   </node>
-                  <node concept="34ab3g" id="wIkNewsz4Z" role="3cqZAp">
-                    <property role="35gtTG" value="debug" />
-                    <node concept="Xl_RD" id="wIkNewsz51" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB36W$" role="3cqZAp">
+                    <property role="RRSoG" value="debug" />
+                    <node concept="Xl_RD" id="wIkNewsz51" role="RRSoy">
                       <property role="Xl_RC" value="Standalone generators are not yet implemented" />
                     </node>
                   </node>
@@ -1568,10 +1567,9 @@
                   <property role="3SKdUp" value="ignore" />
                 </node>
               </node>
-              <node concept="34ab3g" id="2hkCNA7Z6pi" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="2OqwBi" id="2hkCNA7Z6pF" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB36WE" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="2OqwBi" id="2hkCNA7Z6pF" role="RRSoy">
                   <node concept="37vLTw" id="3GM_nagTshH" role="2Oq$k0">
                     <ref role="3cqZAo" node="2hkCNA7Z6o_" resolve="ex" />
                   </node>
@@ -1765,10 +1763,9 @@
               </node>
             </node>
             <node concept="3clFbS" id="2hkCNA7ZbkY" role="TDEfX">
-              <node concept="34ab3g" id="2hkCNA7Zbl3" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="2OqwBi" id="2hkCNA7ZblD" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB36WO" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="2OqwBi" id="2hkCNA7ZblD" role="RRSoy">
                   <node concept="37vLTw" id="3GM_nagT_tq" role="2Oq$k0">
                     <ref role="3cqZAo" node="2hkCNA7ZbkW" resolve="ex" />
                   </node>
@@ -10565,10 +10562,9 @@
               </node>
             </node>
             <node concept="3clFbS" id="6Ti13it32$G" role="TDEfX">
-              <node concept="34ab3g" id="6Ti13it32_8" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="3cpWs3" id="6Ti13it32_9" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB33VK" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="3cpWs3" id="6Ti13it32_9" role="RRSoy">
                   <node concept="Xl_RD" id="6Ti13it32_a" role="3uHU7w">
                     <property role="Xl_RC" value="." />
                   </node>
@@ -10591,7 +10587,7 @@
                     </node>
                   </node>
                 </node>
-                <node concept="37vLTw" id="3GM_nagTxF$" role="34bMjA">
+                <node concept="37vLTw" id="3GM_nagTxF$" role="RRSow">
                   <ref role="3cqZAo" node="6Ti13it32$E" resolve="e" />
                 </node>
               </node>
@@ -10720,10 +10716,9 @@
               </node>
             </node>
             <node concept="3clFbS" id="6Ti13it31kz" role="TDEfX">
-              <node concept="34ab3g" id="6Ti13it31k$" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="3cpWs3" id="6Ti13it31k_" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB33W8" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="3cpWs3" id="6Ti13it31k_" role="RRSoy">
                   <node concept="Xl_RD" id="6Ti13it31kA" role="3uHU7w">
                     <property role="Xl_RC" value="." />
                   </node>
@@ -10746,7 +10741,7 @@
                     </node>
                   </node>
                 </node>
-                <node concept="37vLTw" id="3GM_nagTstT" role="34bMjA">
+                <node concept="37vLTw" id="3GM_nagTstT" role="RRSow">
                   <ref role="3cqZAo" node="6Ti13it31jJ" resolve="e" />
                 </node>
               </node>
@@ -11475,10 +11470,9 @@
           </node>
           <node concept="TDmWw" id="7xbAEiFvuHo" role="TEbGg">
             <node concept="3clFbS" id="7xbAEiFvuHr" role="TDEfX">
-              <node concept="34ab3g" id="7xbAEiFvwKp" role="3cqZAp">
-                <property role="35gtTG" value="warn" />
-                <property role="34fQS0" value="true" />
-                <node concept="3cpWs3" id="7xbAEiFvwKC" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB33Ww" role="3cqZAp">
+                <property role="RRSoG" value="warn" />
+                <node concept="3cpWs3" id="7xbAEiFvwKC" role="RRSoy">
                   <node concept="2OqwBi" id="7xbAEiFvwKS" role="3uHU7w">
                     <node concept="2JrnkZ" id="281cAWYlC2g" role="2Oq$k0">
                       <node concept="37vLTw" id="2BHiRxghflk" role="2JrQYb">
@@ -11493,7 +11487,7 @@
                     <property role="Xl_RC" value="Can't calculate project path relative to module " />
                   </node>
                 </node>
-                <node concept="37vLTw" id="3GM_nagTASV" role="34bMjA">
+                <node concept="37vLTw" id="3GM_nagTASV" role="RRSow">
                   <ref role="3cqZAo" node="7xbAEiFvwKn" resolve="e" />
                 </node>
               </node>
@@ -12881,10 +12875,9 @@
               </node>
               <node concept="TDmWw" id="7$e6lgA3BwN" role="TEbGg">
                 <node concept="3clFbS" id="7$e6lgA3BwO" role="TDEfX">
-                  <node concept="34ab3g" id="7$e6lgA3BwP" role="3cqZAp">
-                    <property role="35gtTG" value="error" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="2OqwBi" id="7$e6lgA3BwQ" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB33WM" role="3cqZAp">
+                    <property role="RRSoG" value="error" />
+                    <node concept="2OqwBi" id="7$e6lgA3BwQ" role="RRSoy">
                       <node concept="37vLTw" id="3GM_nagT_n1" role="2Oq$k0">
                         <ref role="3cqZAo" node="7$e6lgA3BwT" resolve="ex" />
                       </node>
@@ -13142,7 +13135,7 @@
                 <node concept="aVJcg" id="3f6C5dcXB1j" role="aVJcv">
                   <node concept="NbPM2" id="3f6C5dcXB1k" role="aVJcq">
                     <node concept="3Mxwew" id="3f6C5dcXB1l" role="3MwsjC">
-                      <property role="3MwjfP" value="2017.1" />
+                      <property role="3MwjfP" value="2017.2" />
                     </node>
                   </node>
                 </node>
@@ -15028,10 +15021,9 @@
               </node>
             </node>
             <node concept="3clFbS" id="7vf_vNz43ya" role="TDEfX">
-              <node concept="34ab3g" id="7vf_vNz43yb" role="3cqZAp">
-                <property role="35gtTG" value="warn" />
-                <property role="34fQS0" value="true" />
-                <node concept="3cpWs3" id="7vf_vNz43yc" role="34bqiv">
+              <node concept="RRSsy" id="3jYQuSB33WW" role="3cqZAp">
+                <property role="RRSoG" value="warn" />
+                <node concept="3cpWs3" id="7vf_vNz43yc" role="RRSoy">
                   <node concept="37vLTw" id="3GM_nagTuVw" role="3uHU7w">
                     <ref role="3cqZAo" node="7vf_vNz43xM" resolve="module" />
                   </node>
@@ -15039,7 +15031,7 @@
                     <property role="Xl_RC" value="Can't make relative path from build model base directory to module " />
                   </node>
                 </node>
-                <node concept="37vLTw" id="3GM_nagTyKR" role="34bMjA">
+                <node concept="37vLTw" id="3GM_nagTyKR" role="RRSow">
                   <ref role="3cqZAo" node="7vf_vNz43y8" resolve="e" />
                 </node>
               </node>

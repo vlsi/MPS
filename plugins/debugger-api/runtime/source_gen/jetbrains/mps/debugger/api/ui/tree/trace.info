@@ -399,26 +399,26 @@
   </root>
   <root nodeRef="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)/4474271214083120082">
     <file name="WatchableNode.java">
-      <node id="4474271214083120085" at="22,0,23,0" concept="4" trace="myInitialized" />
-      <node id="654837219998855735" at="25,0,26,0" concept="4" trace="myState" />
-      <node id="6728906170459763119" at="26,0,27,0" concept="4" trace="myInitializationInProgress" />
-      <node id="1299344279960668964" at="27,0,28,0" concept="4" trace="myCallbacks" />
-      <node id="4474271214083120111" at="28,70,29,134" concept="15" />
-      <node id="4474271214083120116" at="29,134,30,20" concept="3" />
-      <node id="654837219998856133" at="30,20,31,20" concept="3" />
-      <node id="4474271214083120120" at="31,20,32,42" concept="3" />
-      <node id="1664413227959648087" at="32,42,33,37" concept="3" />
-      <node id="4474271214083120130" at="36,29,37,29" concept="3" />
-      <node id="4474271214083120134" at="37,29,38,26" concept="3" />
-      <node id="4474271214083120142" at="41,34,42,25" concept="10" />
-      <node id="7279139148251920501" at="44,63,45,40" concept="9" />
-      <node id="7279139148251920512" at="46,24,47,45" concept="10" />
-      <node id="7279139148251920518" at="48,5,49,70" concept="10" />
-      <node id="4474271214083120189" at="52,27,53,30" concept="9" />
-      <node id="4474271214083120193" at="53,30,54,51" concept="10" />
-      <node id="4474271214083120207" at="56,28,57,34" concept="10" />
-      <node id="8234781197225484419" at="59,34,60,73" concept="3" />
-      <node id="4474271214083120082" at="69,0,70,0" concept="13" trace="LOG" />
+      <node id="4474271214083120082" at="22,0,23,0" concept="13" trace="LOG" />
+      <node id="4474271214083120085" at="23,0,24,0" concept="4" trace="myInitialized" />
+      <node id="654837219998855735" at="26,0,27,0" concept="4" trace="myState" />
+      <node id="6728906170459763119" at="27,0,28,0" concept="4" trace="myInitializationInProgress" />
+      <node id="1299344279960668964" at="28,0,29,0" concept="4" trace="myCallbacks" />
+      <node id="4474271214083120111" at="29,70,30,134" concept="15" />
+      <node id="4474271214083120116" at="30,134,31,20" concept="3" />
+      <node id="654837219998856133" at="31,20,32,20" concept="3" />
+      <node id="4474271214083120120" at="32,20,33,42" concept="3" />
+      <node id="1664413227959648087" at="33,42,34,37" concept="3" />
+      <node id="4474271214083120130" at="37,29,38,29" concept="3" />
+      <node id="4474271214083120134" at="38,29,39,26" concept="3" />
+      <node id="4474271214083120142" at="42,34,43,25" concept="10" />
+      <node id="7279139148251920501" at="45,63,46,40" concept="9" />
+      <node id="7279139148251920512" at="47,24,48,45" concept="10" />
+      <node id="7279139148251920518" at="49,5,50,70" concept="10" />
+      <node id="4474271214083120189" at="53,27,54,30" concept="9" />
+      <node id="4474271214083120193" at="54,30,55,51" concept="10" />
+      <node id="4474271214083120207" at="57,28,58,34" concept="10" />
+      <node id="8234781197225484419" at="60,34,61,73" concept="3" />
       <node id="3766037951090041350" at="71,24,72,24" concept="3" />
       <node id="3766037951090037528" at="72,24,73,13" concept="10" />
       <node id="3766037951090037546" at="79,17,80,53" concept="3" />
@@ -428,29 +428,29 @@
       <node id="3766037951090037583" at="89,41,90,41" concept="3" />
       <node id="8608243852860311421" at="90,41,91,38" concept="3" />
       <node id="1299344279960770597" at="93,27,94,42" concept="3" />
-      <node id="1299344279960772113" at="96,60,97,43" concept="3" />
+      <node id="3818729150937341124" at="96,60,97,43" concept="3" />
       <node id="1299344279960772620" at="100,21,101,63" concept="3" />
       <node id="5563300976506487054" at="101,63,102,34" concept="3" />
       <node id="6728906170459951899" at="103,29,104,58" concept="3" />
       <node id="4005470869503151807" at="108,35,109,52" concept="3" />
       <node id="1299344279960798390" at="113,14,114,54" concept="11" />
       <node id="1299344279960669701" at="114,54,115,64" concept="3" />
-      <node id="4474271214083120088" at="23,0,25,0" concept="4" trace="myWatchable" />
-      <node id="3766037951090046174" at="65,0,67,0" concept="8" trace="invoke#()V" />
-      <node id="7279139148251920507" at="45,40,48,5" concept="7" />
-      <node id="4474271214083120203" at="56,0,59,0" concept="8" trace="getValue#()Ljetbrains/mps/debug/api/programState/IValue;" />
-      <node id="8234781197225484532" at="59,0,62,0" concept="8" trace="nodeChanged#()V" />
+      <node id="4474271214083120088" at="24,0,26,0" concept="4" trace="myWatchable" />
+      <node id="3766037951090046174" at="66,0,68,0" concept="8" trace="invoke#()V" />
+      <node id="7279139148251920507" at="46,40,49,5" concept="7" />
+      <node id="4474271214083120203" at="57,0,60,0" concept="8" trace="getValue#()Ljetbrains/mps/debug/api/programState/IValue;" />
+      <node id="8234781197225484532" at="60,0,63,0" concept="8" trace="nodeChanged#()V" />
       <node id="3766037951090037569" at="85,40,88,21" concept="6" />
-      <node id="1299344279960772113" at="95,45,98,25" concept="7" />
+      <node id="3818729150937341124" at="95,45,98,25" concept="7" />
       <node id="1299344279960666960" at="113,12,116,7" concept="0" />
-      <node id="4474271214083120138" at="40,0,44,0" concept="8" trace="isInitialized#()Z" />
-      <node id="3766037951090046132" at="63,27,67,7" concept="3" />
+      <node id="4474271214083120138" at="41,0,45,0" concept="8" trace="isInitialized#()Z" />
+      <node id="3766037951090046132" at="64,27,68,7" concept="3" />
       <node id="3766037951090037526" at="70,63,74,5" concept="7" />
-      <node id="4474271214083120126" at="35,0,40,0" concept="8" trace="doUpdate#()V" />
-      <node id="4474271214083120185" at="51,0,56,0" concept="8" trace="isLeaf#()Z" />
-      <node id="4474271214083120092" at="28,0,35,0" concept="2" trace="WatchableNode#(Ljetbrains/mps/debug/api/programState/IWatchable;Ljetbrains/mps/debug/api/AbstractUiState;)V" />
-      <node id="7279139148251920496" at="44,0,51,0" concept="14" trace="calculateNodeId#(Ljetbrains/mps/debug/api/programState/IWatchable;)Ljava/lang/String;" />
-      <node id="4474271214083120211" at="62,0,69,0" concept="8" trace="doInit#()V" />
+      <node id="4474271214083120126" at="36,0,41,0" concept="8" trace="doUpdate#()V" />
+      <node id="4474271214083120185" at="52,0,57,0" concept="8" trace="isLeaf#()Z" />
+      <node id="4474271214083120092" at="29,0,36,0" concept="2" trace="WatchableNode#(Ljetbrains/mps/debug/api/programState/IWatchable;Ljetbrains/mps/debug/api/AbstractUiState;)V" />
+      <node id="7279139148251920496" at="45,0,52,0" concept="14" trace="calculateNodeId#(Ljetbrains/mps/debug/api/programState/IWatchable;)Ljava/lang/String;" />
+      <node id="4474271214083120211" at="63,0,70,0" concept="8" trace="doInit#()V" />
       <node id="1299344279960771633" at="92,100,99,23" concept="16" />
       <node id="1299344279960769706" at="91,38,100,21" concept="6" />
       <node id="6728906170459951530" at="83,35,105,19" concept="17" />
@@ -462,28 +462,28 @@
       <node id="1299344279960666092" at="75,22,116,7" concept="7" />
       <node id="3766037951090037536" at="74,5,117,5" concept="7" />
       <node id="3766037951090036403" at="70,0,119,0" concept="8" trace="init#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
-      <scope id="3766037951090046175" at="65,28,65,28" />
-      <scope id="4474271214083120141" at="41,34,42,25" />
-      <scope id="7279139148251920511" at="46,24,47,45" />
-      <scope id="4474271214083120206" at="56,28,57,34" />
-      <scope id="8234781197225484418" at="59,34,60,73" />
+      <scope id="3766037951090046175" at="66,28,66,28" />
+      <scope id="4474271214083120141" at="42,34,43,25" />
+      <scope id="7279139148251920511" at="47,24,48,45" />
+      <scope id="4474271214083120206" at="57,28,58,34" />
+      <scope id="8234781197225484418" at="60,34,61,73" />
       <scope id="3766037951090037574" at="86,99,87,65" />
       <scope id="1299344279960771635" at="93,27,94,42" />
-      <scope id="1299344279960772113" at="96,60,97,43" />
+      <scope id="3818729150937341124" at="96,60,97,43" />
       <scope id="6728906170459951533" at="103,29,104,58" />
       <scope id="6728906170459945759" at="108,0,109,52">
         <var name="t" id="6728906170459945761" />
       </scope>
       <scope id="6728906170459945765" at="108,35,109,52" />
-      <scope id="4474271214083120129" at="36,29,38,26" />
-      <scope id="4474271214083120188" at="52,27,54,51">
+      <scope id="4474271214083120129" at="37,29,39,26" />
+      <scope id="4474271214083120188" at="53,27,55,51">
         <var name="value" id="4474271214083120190" />
       </scope>
-      <scope id="3766037951090046174" at="65,0,67,0" />
+      <scope id="3766037951090046174" at="66,0,68,0" />
       <scope id="3766037951090037527" at="71,24,73,13" />
       <scope id="1299344279960666961" at="113,14,115,64" />
-      <scope id="4474271214083120203" at="56,0,59,0" />
-      <scope id="8234781197225484532" at="59,0,62,0" />
+      <scope id="4474271214083120203" at="57,0,60,0" />
+      <scope id="8234781197225484532" at="60,0,63,0" />
       <scope id="3766037951090037569" at="85,40,88,21">
         <var name="watchable" id="3766037951090037573" />
       </scope>
@@ -491,22 +491,22 @@
         <var name="t" id="1299344279960771638" />
       </scope>
       <scope id="1299344279960771642" at="95,45,98,25" />
-      <scope id="4474271214083120138" at="40,0,44,0" />
-      <scope id="4474271214083120214" at="63,27,67,7" />
-      <scope id="4474271214083120098" at="28,70,33,37" />
-      <scope id="4474271214083120126" at="35,0,40,0" />
-      <scope id="7279139148251920500" at="44,63,49,70">
+      <scope id="4474271214083120138" at="41,0,45,0" />
+      <scope id="4474271214083120214" at="64,27,68,7" />
+      <scope id="4474271214083120098" at="29,70,34,37" />
+      <scope id="4474271214083120126" at="36,0,41,0" />
+      <scope id="7279139148251920500" at="45,63,50,70">
         <var name="value" id="7279139148251920502" />
       </scope>
-      <scope id="4474271214083120185" at="51,0,56,0" />
-      <scope id="4474271214083120092" at="28,0,35,0">
+      <scope id="4474271214083120185" at="52,0,57,0" />
+      <scope id="4474271214083120092" at="29,0,36,0">
         <var name="state" id="654837219999186603" />
         <var name="w" id="4474271214083120095" />
       </scope>
-      <scope id="7279139148251920496" at="44,0,51,0">
+      <scope id="7279139148251920496" at="45,0,52,0">
         <var name="watchable" id="7279139148251920528" />
       </scope>
-      <scope id="4474271214083120211" at="62,0,69,0" />
+      <scope id="4474271214083120211" at="63,0,70,0" />
       <scope id="1299344279960769712" at="92,100,99,23" />
       <scope id="1299344279960769706" at="91,38,100,21">
         <var name="callback" id="1299344279960769708" />
@@ -523,7 +523,7 @@
       <scope id="3766037951090036403" at="70,0,119,0">
         <var name="callback" id="3766037951090037050" />
       </scope>
-      <unit id="3766037951090046174" at="64,13,67,5" name="jetbrains.mps.debugger.api.ui.tree.WatchableNode$1" />
+      <unit id="3766037951090046174" at="65,13,68,5" name="jetbrains.mps.debugger.api.ui.tree.WatchableNode$1" />
       <unit id="3766037951090037557" at="81,66,107,15" name="jetbrains.mps.debugger.api.ui.tree.WatchableNode$2$1" />
       <unit id="3766037951090037544" at="77,37,112,9" name="jetbrains.mps.debugger.api.ui.tree.WatchableNode$2" />
       <unit id="4474271214083120082" at="21,0,120,0" name="jetbrains.mps.debugger.api.ui.tree.WatchableNode" />

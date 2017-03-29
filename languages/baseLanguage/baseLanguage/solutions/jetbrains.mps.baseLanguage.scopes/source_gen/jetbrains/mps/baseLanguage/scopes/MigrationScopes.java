@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.scopes;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
@@ -23,11 +24,11 @@ public class MigrationScopes {
   @Deprecated
   private MigrationScopes() {
   }
-  public static Scope forVariables(SConcept declarationConcept, SNode contextNode, String contextRole, int position) {
-    return filterByConceptScope(Scope.getScope(contextNode, contextRole, position, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration").getDeclarationNode()), declarationConcept);
+  public static Scope forVariables(SConcept declarationConcept, SNode contextNode, SContainmentLink link, int position) {
+    return filterByConceptScope(Scope.getScope(contextNode, link, position, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")), declarationConcept);
   }
-  public static Scope forMethods(SConcept declarationConcept, SNode contextNode, String contextRole, int position) {
-    return filterByConceptScope(Scope.getScope(contextNode, contextRole, position, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration").getDeclarationNode()), declarationConcept);
+  public static Scope forMethods(SConcept declarationConcept, SNode contextNode, SContainmentLink link, int position) {
+    return filterByConceptScope(Scope.getScope(contextNode, link, position, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")), declarationConcept);
   }
   private static Scope filterByConceptScope(@Nullable Scope innerScope, @NotNull SAbstractConcept concept) {
     if (innerScope != null) {

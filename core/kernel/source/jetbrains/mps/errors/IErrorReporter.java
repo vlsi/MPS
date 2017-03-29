@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.List;
 
+/**
+ * This interface is poorly designed and its use is discouraged.
+ */
 // FIXME Bloody mess this interface is. Documented nicely for others to waste their time not. List<Pair<String,String>>, ORLY?!
 public interface IErrorReporter {
   public String reportError();
@@ -51,5 +54,11 @@ public interface IErrorReporter {
 
   public MessageTarget getErrorTarget();
 
+  /**
+   * There's no guarantee this method returns a valid node if used in a model read different from the one this reporter originates from.
+   * IOW, you are safe to access this node provided you're in the same read. If you need to pass node value to another read, please
+   * use {@link SNodeReference} instead.
+   */
+  @Nullable
   public SNode getSNode();
 }

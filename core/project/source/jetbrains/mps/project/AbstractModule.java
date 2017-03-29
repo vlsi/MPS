@@ -35,7 +35,6 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
@@ -57,7 +56,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
@@ -246,27 +244,10 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
   }
 
-  @Override
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public final SModel resolveInDependencies(SModelId ref) {
-    return getModel(ref);
-  }
-
   protected void setModuleReference(@NotNull SModuleReference reference) {
     assertCanChange();
-
-    assert reference.getModuleId() != null : "module must have an id";
     assert myModuleReference == null || reference.getModuleId().equals(myModuleReference.getModuleId()) : "module id can't be changed";
-
-    SModuleReference oldValue = myModuleReference;
     myModuleReference = reference;
-    if (oldValue != null &&
-        oldValue.getModuleName() != null &&
-        !oldValue.getModuleName().equals(myModuleReference.getModuleName())) {
-
-      MPSModuleRepository.getInstance().moduleFqNameChanged(this, oldValue.getModuleName());
-    }
   }
 
   @Override

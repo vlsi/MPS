@@ -31,17 +31,17 @@ public class ConstantStringAppendPart_SubstituteMenu extends SubstituteMenuBase 
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ConstantStringAppendPart_SubstituteMenu.SubstituteMenuPart_Action_q0hc0b_a(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")));
-    result.add(new ConstantStringAppendPart_SubstituteMenu.SubstituteMenuPart_Subconcepts_q0hc0b_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ConstantStringAppendPart_SubstituteMenu.SMP_Action_q0hc0b_a(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")));
+    result.add(new ConstantStringAppendPart_SubstituteMenu.SMP_Subconcepts_q0hc0b_b());
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")));
     return result;
   }
-  private class SubstituteMenuPart_Action_q0hc0b_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_q0hc0b_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new ConstantStringAppendPart_SubstituteMenu.SubstituteMenuPart_Action_q0hc0b_a.Item(_context);
+      return new ConstantStringAppendPart_SubstituteMenu.SMP_Action_q0hc0b_a.Item(_context);
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -75,7 +75,7 @@ public class ConstantStringAppendPart_SubstituteMenu extends SubstituteMenuBase 
       }
     }
   }
-  public class SubstituteMenuPart_Subconcepts_q0hc0b_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_q0hc0b_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"));
     }

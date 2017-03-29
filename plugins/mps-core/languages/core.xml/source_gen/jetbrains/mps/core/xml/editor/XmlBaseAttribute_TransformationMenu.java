@@ -54,13 +54,13 @@ public class XmlBaseAttribute_TransformationMenu extends TransformationMenuBase 
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b3L, "jetbrains.mps.core.xml.structure.XmlBaseAttribute"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new XmlBaseAttribute_TransformationMenu.TransformationMenuPart_Group_xjbv2x_a1());
-      result.add(new XmlBaseAttribute_TransformationMenu.TransformationMenuPart_Group_xjbv2x_b1());
+      result.add(new XmlBaseAttribute_TransformationMenu.TMP_Group_xjbv2x_a1());
+      result.add(new XmlBaseAttribute_TransformationMenu.TMP_Group_xjbv2x_b1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_xjbv2x_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_xjbv2x_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement"));
@@ -68,9 +68,9 @@ public class XmlBaseAttribute_TransformationMenu extends TransformationMenuBase 
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new XmlBaseAttribute_TransformationMenu.TransformationMenuPart_Group_xjbv2x_a1.TransformationMenuPart_WrapSubstituteMenu_xjbv2x_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new XmlBaseAttribute_TransformationMenu.TMP_Group_xjbv2x_a1.TMP_WrapSM_xjbv2x_a0b());
     }
-    public class TransformationMenuPart_WrapSubstituteMenu_xjbv2x_a0b extends WrapSubstituteMenuTransformationMenuPart {
+    public class TMP_WrapSM_xjbv2x_a0b extends WrapSubstituteMenuTransformationMenuPart {
 
       @Nullable
       @Override
@@ -87,7 +87,7 @@ public class XmlBaseAttribute_TransformationMenu extends TransformationMenuBase 
       }
     }
   }
-  public class TransformationMenuPart_Group_xjbv2x_b1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_xjbv2x_b1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement"))) || (SNodeOperations.getNextSibling(_context.getNode()) != null)) {
@@ -99,12 +99,12 @@ public class XmlBaseAttribute_TransformationMenu extends TransformationMenuBase 
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new XmlBaseAttribute_TransformationMenu.TransformationMenuPart_Group_xjbv2x_b1.TransformationMenuPart_Action_xjbv2x_a1b(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new XmlBaseAttribute_TransformationMenu.TMP_Group_xjbv2x_b1.TMP_Action_xjbv2x_a1b(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement")));
     }
-    private class TransformationMenuPart_Action_xjbv2x_a1b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_xjbv2x_a1b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new XmlBaseAttribute_TransformationMenu.TransformationMenuPart_Group_xjbv2x_b1.TransformationMenuPart_Action_xjbv2x_a1b.Item(context);
+        return new XmlBaseAttribute_TransformationMenu.TMP_Group_xjbv2x_b1.TMP_Action_xjbv2x_a1b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

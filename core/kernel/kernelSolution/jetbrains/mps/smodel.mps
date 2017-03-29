@@ -224,6 +224,9 @@
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
       <concept id="2217234381367049075" name="jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag" flags="ng" index="VVOAv">
         <child id="3106559687488741665" name="line" index="2Xj1qM" />
       </concept>
@@ -248,10 +251,6 @@
       </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
-      </concept>
-      <concept id="5253134957341870583" name="jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression" flags="nn" index="pqAIu">
-        <reference id="5253134957341870585" name="propertyDeclaration" index="pqAIg" />
-        <reference id="5253134957341870584" name="conceptDeclaration" index="pqAIh" />
       </concept>
       <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
@@ -1595,29 +1594,6 @@
         <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
       </node>
     </node>
-    <node concept="Wx3nA" id="2iMJRNxJZUU" role="jymVt">
-      <property role="TrG5h" value="property_IResolveInfo_resolveInfo" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="2iMJRNxJZUV" role="1B3o_S" />
-      <node concept="355D3s" id="2iMJRNxJZUZ" role="33vP2m">
-        <property role="B6XcY" value="true" />
-        <ref role="355D3t" to="tpck:hqLv6T6" resolve="IResolveInfo" />
-        <ref role="355D3u" to="tpck:hqLvdgl" resolve="resolveInfo" />
-      </node>
-      <node concept="3uibUv" id="7BIvS$tMzie" role="1tU5fm">
-        <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
-      </node>
-    </node>
-    <node concept="Wx3nA" id="6pIEkniRZWw" role="jymVt">
-      <property role="TrG5h" value="propertyName_BaseConcept_virtualPackage" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="6pIEkniRZWx" role="1B3o_S" />
-      <node concept="17QB3L" id="6pIEkniRZWy" role="1tU5fm" />
-      <node concept="pqAIu" id="4jf2Bbgo_F5" role="33vP2m">
-        <ref role="pqAIh" to="tpck:gw2VY9q" resolve="BaseConcept" />
-        <ref role="pqAIg" to="tpck:hnGE5uv" resolve="virtualPackage" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="2iMJRNxJZV0" role="jymVt">
       <property role="TrG5h" value="property_BaseConcept_virtualPackage" />
       <property role="3TUv4t" value="true" />
@@ -1641,19 +1617,6 @@
         <ref role="355D3u" to="tpck:gOOYy9I" resolve="alias" />
       </node>
       <node concept="3uibUv" id="7BIvS$tMzig" role="1tU5fm">
-        <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
-      </node>
-    </node>
-    <node concept="Wx3nA" id="2iMJRNxJZVc" role="jymVt">
-      <property role="TrG5h" value="property_BaseConcept_shortDescription" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="2iMJRNxJZVd" role="1B3o_S" />
-      <node concept="355D3s" id="2iMJRNxJZVh" role="33vP2m">
-        <property role="B6XcY" value="true" />
-        <ref role="355D3t" to="tpck:gw2VY9q" resolve="BaseConcept" />
-        <ref role="355D3u" to="tpck:gOOYnlO" resolve="shortDescription" />
-      </node>
-      <node concept="3uibUv" id="7BIvS$tMzih" role="1tU5fm">
         <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
       </node>
     </node>
@@ -1783,6 +1746,18 @@
       <node concept="37vLTG" id="7vc5PjWu3B6" role="3clF46">
         <property role="TrG5h" value="concept" />
         <node concept="3bZ5Sz" id="7vc5PjWu4az" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="zFlAU0Tibv" role="lGtFl">
+        <node concept="TZ5HI" id="zFlAU0Tibw" role="3nqlJM">
+          <node concept="TZ5HA" id="zFlAU0Tibx" role="3HnX3l">
+            <node concept="1dT_AC" id="zFlAU0Tif1" role="1dT_Ay">
+              <property role="1dT_AB" value="Since 2017.1 editor automatically detects whether the concept cannot be used as a substitute by noticing that its substitute menu is empty" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="zFlAU0Tiby" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="7kDY1n$F1IM" role="jymVt">

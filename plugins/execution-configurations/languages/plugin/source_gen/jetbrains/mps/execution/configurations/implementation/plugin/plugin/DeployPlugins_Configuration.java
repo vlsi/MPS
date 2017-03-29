@@ -4,6 +4,8 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
@@ -12,8 +14,6 @@ import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import com.intellij.openapi.util.InvalidDataException;
 import java.io.File;
 import com.intellij.openapi.application.PathManager;
@@ -35,6 +35,7 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.ide.project.ProjectHelper;
 
 public class DeployPlugins_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
+  private static final Logger LOG = LogManager.getLogger(DeployPlugins_Configuration.class);
   @NotNull
   private DeployPlugins_Configuration.MyState myState = new DeployPlugins_Configuration.MyState();
   private DeployPluginsSettings_Configuration myPluginsSettings = new DeployPluginsSettings_Configuration(this.getProject());
@@ -53,7 +54,6 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
       element.addContent(fieldElement);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(DeployPlugins_Configuration.class);
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,9 @@ import jetbrains.mps.generator.impl.GeneratorUtilEx.ConsequenceDispatch;
 import jetbrains.mps.generator.impl.interpreted.TemplateCall;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.impl.query.QueryKey;
+import jetbrains.mps.generator.impl.query.QueryKeyImpl;
+import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.impl.template.QueryExecutor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
@@ -86,9 +89,16 @@ public abstract class RuleConsequenceProcessor {
     private CaseRuntime[] getCases(GeneratorQueryProvider.Source qps) {
       CaseRuntime[] rv = myCases;
       if (rv == null) {
-        ArrayList<CaseRuntime> l = new ArrayList<CaseRuntime>();
+        ArrayList<CaseRuntime> l = new ArrayList<>();
         for (SNode switchCase : RuleUtil.getInlineSwitch_case(mySwitchNode)) {
-          final InlineSwitchCaseCondition condition = qps.getQueryProvider(mySwitchNode.getReference()).getInlineSwitchCaseCondition(switchCase);
+          SNode caseConditionNode = RuleUtil.getInlineSwitch_caseCondition(switchCase);
+          final InlineSwitchCaseCondition condition;
+          if (caseConditionNode != null) {
+            QueryKey identity = new QueryKeyImpl(switchCase.getReference(), caseConditionNode.getNodeId(), switchCase);
+            condition = qps.getQueryProvider(mySwitchNode.getReference()).getInlineSwitchCaseCondition(identity);
+          } else {
+            condition = new QueryProviderBase.Missing(switchCase);
+          }
           SNode caseConsequence = RuleUtil.getInlineSwitch_caseConsequence(switchCase);
           RuleConsequenceProcessor rcp = RuleConsequenceProcessor.prepare(caseConsequence);
           l.add(new CaseRuntime(condition, rcp, switchCase.getReference()));
@@ -219,7 +229,7 @@ public abstract class RuleConsequenceProcessor {
     public void inlineTemplate(SNode ruleConsequence) {
       SNode templateNode = RuleUtil.getInlineTemplate_templateNode(ruleConsequence);
       if (templateNode != null) {
-        myConsequence = new TemplateContainer(new Pair<SNode, String>(templateNode, null));
+        myConsequence = new TemplateContainer(new Pair<>(templateNode, null));
       } else {
         myConsequence = new BadConsequence(ruleConsequence, "no template node");
       }

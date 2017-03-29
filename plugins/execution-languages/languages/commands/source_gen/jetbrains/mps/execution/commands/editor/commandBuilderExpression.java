@@ -28,30 +28,30 @@ public class commandBuilderExpression extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new commandBuilderExpression.SubstituteMenuPart_Parameterized_rk0f2c_a(), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bf4L, "jetbrains.mps.execution.commands.structure.CommandBuilderExpression")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new commandBuilderExpression.SMP_Param_rk0f2c_a(), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bf4L, "jetbrains.mps.execution.commands.structure.CommandBuilderExpression")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_rk0f2c_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_rk0f2c_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new commandBuilderExpression.SubstituteMenuPart_Parameterized_rk0f2c_a.SubstituteMenuPart_Action_rk0f2c_a0(parameter).createItems(context);
+      return new commandBuilderExpression.SMP_Param_rk0f2c_a.SMP_Action_rk0f2c_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
       return SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x550ea9458ea107acL, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"));
     }
-    private class SubstituteMenuPart_Action_rk0f2c_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_rk0f2c_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_rk0f2c_a0(SNode parameterObject) {
+      public SMP_Action_rk0f2c_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new commandBuilderExpression.SubstituteMenuPart_Parameterized_rk0f2c_a.SubstituteMenuPart_Action_rk0f2c_a0.Item(_context);
+        return new commandBuilderExpression.SMP_Param_rk0f2c_a.SMP_Action_rk0f2c_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

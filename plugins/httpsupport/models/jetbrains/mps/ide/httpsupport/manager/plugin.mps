@@ -188,11 +188,10 @@
       <concept id="3175313036448560967" name="jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation" flags="nn" index="SfwO_" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -504,14 +503,13 @@
             </node>
           </node>
         </node>
-        <node concept="34ab3g" id="6C6WuS9MEKt" role="3cqZAp">
-          <property role="35gtTG" value="error" />
-          <property role="34fQS0" value="true" />
-          <node concept="37vLTw" id="6C6WuS9MFm5" role="34bMjA">
-            <ref role="3cqZAo" node="6C6WuS9MG5H" resolve="e" />
-          </node>
-          <node concept="37vLTw" id="6C6WuS9MEKv" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB37bf" role="3cqZAp">
+          <property role="RRSoG" value="error" />
+          <node concept="37vLTw" id="6C6WuS9MEKv" role="RRSoy">
             <ref role="3cqZAo" node="6C6WuS9MEKb" resolve="errorHeader" />
+          </node>
+          <node concept="37vLTw" id="6C6WuS9MFm5" role="RRSow">
+            <ref role="3cqZAo" node="6C6WuS9MG5H" resolve="e" />
           </node>
         </node>
       </node>
@@ -1241,9 +1239,9 @@
       <node concept="3clFbS" id="G$0uqqCcrK" role="3clF47">
         <node concept="3clFbJ" id="3whKZwB1OWd" role="3cqZAp">
           <node concept="3clFbS" id="3whKZwB1OWf" role="3clFbx">
-            <node concept="34ab3g" id="6dOBq74Q2Fx" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="3cpWs3" id="6dOBq74QaGt" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB37al" role="3cqZAp">
+              <property role="RRSoG" value="error" />
+              <node concept="3cpWs3" id="6dOBq74QaGt" role="RRSoy">
                 <node concept="Xl_RD" id="6dOBq74QaQz" role="3uHU7w">
                   <property role="Xl_RC" value=". Integration with YouTrack/TeamCity is disabled " />
                 </node>
@@ -1471,9 +1469,9 @@
         <node concept="10Oyi0" id="3PMO5H7WJ5v" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="3PMO5H7WJ5w" role="3clF47">
-        <node concept="34ab3g" id="3PMO5H7WJ5z" role="3cqZAp">
-          <property role="35gtTG" value="error" />
-          <node concept="3cpWs3" id="3PMO5H7Xr4R" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB37aL" role="3cqZAp">
+          <property role="RRSoG" value="error" />
+          <node concept="3cpWs3" id="3PMO5H7Xr4R" role="RRSoy">
             <node concept="Xl_RD" id="3PMO5H7WJ5_" role="3uHU7w">
               <property role="Xl_RC" value=". Internal HTTP Support Plugin features are disabled." />
             </node>

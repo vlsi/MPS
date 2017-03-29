@@ -36,17 +36,17 @@ public class DrawCommand_TransformationMenu extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new DrawCommand_TransformationMenu.TransformationMenuPart_Parameterized_oy1rtc_a0());
+      result.add(new DrawCommand_TransformationMenu.TMP_Param_oy1rtc_a0());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Parameterized_oy1rtc_a0 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_oy1rtc_a0 extends ParameterizedMenuPart<String, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(String parameter, TransformationMenuContext context) {
-      return new DrawCommand_TransformationMenu.TransformationMenuPart_Parameterized_oy1rtc_a0.TransformationMenuPart_Action_oy1rtc_a0a(parameter).createItems(context);
+      return new DrawCommand_TransformationMenu.TMP_Param_oy1rtc_a0.TMP_Action_oy1rtc_a0a(parameter).createItems(context);
     }
 
     @Nullable
@@ -55,14 +55,14 @@ public class DrawCommand_TransformationMenu extends TransformationMenuBase {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "solid", "dotted");
     }
 
-    private class TransformationMenuPart_Action_oy1rtc_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_oy1rtc_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final String myParameterObject;
-      public TransformationMenuPart_Action_oy1rtc_a0a(String parameterObject) {
+      public TMP_Action_oy1rtc_a0a(String parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new DrawCommand_TransformationMenu.TransformationMenuPart_Parameterized_oy1rtc_a0.TransformationMenuPart_Action_oy1rtc_a0a.Item(context);
+        return new DrawCommand_TransformationMenu.TMP_Param_oy1rtc_a0.TMP_Action_oy1rtc_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

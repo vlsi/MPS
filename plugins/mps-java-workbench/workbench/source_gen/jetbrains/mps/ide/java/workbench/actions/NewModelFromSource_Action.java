@@ -44,8 +44,9 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import java.io.IOException;
-import org.jetbrains.mps.openapi.model.SModel;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.tree.module.StereotypeProvider;
 
 public class NewModelFromSource_Action extends BaseAction {
@@ -166,6 +167,7 @@ public class NewModelFromSource_Action extends BaseAction {
     final JavaToMpsConverter parser = new JavaToMpsConverter(((SModule) MapSequence.fromMap(_params).get("module")), repository, ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(MessagesViewTool.class).newHandler());
     final Ref<JavaParseException> parseException = new Ref<JavaParseException>();
 
+
     ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
       public void run(@NotNull ProgressIndicator indicator) {
 
@@ -181,6 +183,19 @@ public class NewModelFromSource_Action extends BaseAction {
       }
     });
 
+    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      public void run() {
+        ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runWriteAction(new Runnable() {
+          public void run() {
+            parser.saveAll();
+          }
+        });
+      }
+    });
+    // workaround for project pane not rebuilding itself when a model has been added 
+    // not in a command but in a write action 
+    ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project"))).rebuild();
+
     if (!(parseException.isNull())) {
       JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), parseException.get().getMessage(), "Parse error", JOptionPane.ERROR_MESSAGE);
     }
@@ -190,7 +205,6 @@ public class NewModelFromSource_Action extends BaseAction {
       SModel firstModel = ListSequence.fromList(resulting).first();
       ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project"))).selectModel(firstModel, false);
     }
-
   }
   protected String getStereotype(final Map<String, Object> _params) {
     if (((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof StereotypeProvider) {

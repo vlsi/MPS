@@ -39,12 +39,12 @@ public class SceneBuildingCommands extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a0());
+      result.add(new SceneBuildingCommands.TMP_SubMenu_572eic_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_SubMenu_572eic_a0 extends SubMenuMenuTransformationMenuPart {
+  public class TMP_SubMenu_572eic_a0 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "Scene builder";
@@ -52,12 +52,12 @@ public class SceneBuildingCommands extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a0.TransformationMenuPart_Action_572eic_a0a(), new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a0.TransformationMenuPart_Action_572eic_b0a(), new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a0.TransformationMenuPart_Action_572eic_c0a(), new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a0.TransformationMenuPart_Action_572eic_d0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new SceneBuildingCommands.TMP_SubMenu_572eic_a0.TMP_Action_572eic_a0a(), new SceneBuildingCommands.TMP_SubMenu_572eic_a0.TMP_Action_572eic_b0a(), new SceneBuildingCommands.TMP_SubMenu_572eic_a0.TMP_Action_572eic_c0a(), new SceneBuildingCommands.TMP_SubMenu_572eic_a0.TMP_Action_572eic_d0a());
     }
-    private class TransformationMenuPart_Action_572eic_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_572eic_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a0.TransformationMenuPart_Action_572eic_a0a.Item(context);
+        return new SceneBuildingCommands.TMP_SubMenu_572eic_a0.TMP_Action_572eic_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -82,10 +82,10 @@ public class SceneBuildingCommands extends TransformationMenuBase {
 
       }
     }
-    private class TransformationMenuPart_Action_572eic_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_572eic_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a0.TransformationMenuPart_Action_572eic_b0a.Item(context);
+        return new SceneBuildingCommands.TMP_SubMenu_572eic_a0.TMP_Action_572eic_b0a.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -111,10 +111,10 @@ public class SceneBuildingCommands extends TransformationMenuBase {
 
       }
     }
-    private class TransformationMenuPart_Action_572eic_c0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_572eic_c0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a0.TransformationMenuPart_Action_572eic_c0a.Item(context);
+        return new SceneBuildingCommands.TMP_SubMenu_572eic_a0.TMP_Action_572eic_c0a.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -139,10 +139,10 @@ public class SceneBuildingCommands extends TransformationMenuBase {
 
       }
     }
-    private class TransformationMenuPart_Action_572eic_d0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_572eic_d0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a0.TransformationMenuPart_Action_572eic_d0a.Item(context);
+        return new SceneBuildingCommands.TMP_SubMenu_572eic_a0.TMP_Action_572eic_d0a.Item(context);
       }
 
       private class Item extends ActionItemBase {

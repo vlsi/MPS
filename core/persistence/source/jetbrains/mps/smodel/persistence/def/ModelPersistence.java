@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,7 +147,7 @@ public class ModelPersistence {
     IModelPersistence mp;
     if (!isSupported(ver) || (mp = getPersistence(ver)) == null) {
       String m = "Can not find appropriate persistence version for model %s (requested:%d)\n Use newer version of JetBrains MPS to load this model.";
-      throw new PersistenceVersionNotFoundException(String.format(m, ver, header.getModelReference()), header.getModelReference());
+      throw new PersistenceVersionNotFoundException(String.format(m, header.getModelReference(), ver), header.getModelReference());
     }
 
     XMLSAXHandler<ModelLoadResult> handler = mp.getModelReaderHandler(state, header);

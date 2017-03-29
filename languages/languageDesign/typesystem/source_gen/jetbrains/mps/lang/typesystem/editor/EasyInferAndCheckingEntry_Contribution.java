@@ -33,10 +33,10 @@ public class EasyInferAndCheckingEntry_Contribution extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new EasyInferAndCheckingEntry_Contribution.SubstituteMenuPart_Group_myynyp_a());
+    result.add(new EasyInferAndCheckingEntry_Contribution.SMP_Group_myynyp_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_myynyp_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_myynyp_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       if ((SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), false, false) != null)) {
@@ -52,29 +52,29 @@ public class EasyInferAndCheckingEntry_Contribution extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new EasyInferAndCheckingEntry_Contribution.SubstituteMenuPart_Group_myynyp_a.SubstituteMenuPart_Parameterized_myynyp_a0(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f60bfd5L, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new EasyInferAndCheckingEntry_Contribution.SMP_Group_myynyp_a.SMP_Param_myynyp_a0(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f60bfd5L, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement")));
     }
-    private class SubstituteMenuPart_Parameterized_myynyp_a0 extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
+    private class SMP_Param_myynyp_a0 extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
       @Override
       protected List<SubstituteMenuItem> createItems(String parameter, SubstituteMenuContext context) {
-        return new EasyInferAndCheckingEntry_Contribution.SubstituteMenuPart_Group_myynyp_a.SubstituteMenuPart_Parameterized_myynyp_a0.SubstituteMenuPart_Action_myynyp_a0a(parameter).createItems(context);
+        return new EasyInferAndCheckingEntry_Contribution.SMP_Group_myynyp_a.SMP_Param_myynyp_a0.SMP_Action_myynyp_a0a(parameter).createItems(context);
       }
       @Nullable
       @Override
       protected Iterable<? extends String> getParameters(SubstituteMenuContext _context) {
         return ListSequence.fromListAndArray(new ArrayList<String>(), "infer typeof", "check typeof");
       }
-      private class SubstituteMenuPart_Action_myynyp_a0a extends SingleItemSubstituteMenuPart {
+      private class SMP_Action_myynyp_a0a extends SingleItemSubstituteMenuPart {
         private final String myParameterObject;
-        public SubstituteMenuPart_Action_myynyp_a0a(String parameterObject) {
+        public SMP_Action_myynyp_a0a(String parameterObject) {
           myParameterObject = parameterObject;
         }
 
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new EasyInferAndCheckingEntry_Contribution.SubstituteMenuPart_Group_myynyp_a.SubstituteMenuPart_Parameterized_myynyp_a0.SubstituteMenuPart_Action_myynyp_a0a.Item(_context);
+          return new EasyInferAndCheckingEntry_Contribution.SMP_Group_myynyp_a.SMP_Param_myynyp_a0.SMP_Action_myynyp_a0a.Item(_context);
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;

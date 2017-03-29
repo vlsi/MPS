@@ -13,6 +13,9 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myLogStatement__BehaviorDescriptor = new LogStatement__BehaviorDescriptor();
+  private final BHDescriptor myLogLowLevelStatement__BehaviorDescriptor = new LogLowLevelStatement__BehaviorDescriptor();
+  private final BHDescriptor myMsgStatement__BehaviorDescriptor = new MsgStatement__BehaviorDescriptor();
+  private final BHDescriptor myIMessage__BehaviorDescriptor = new IMessage__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
   }
@@ -20,12 +23,18 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     SAbstractConcept cncpt = concept;
-    switch (index_846f5o_a0e.index(cncpt)) {
+    switch (index_846f5o_a0h.index(cncpt)) {
       case 0:
+        return myIMessage__BehaviorDescriptor;
+      case 1:
+        return myLogLowLevelStatement__BehaviorDescriptor;
+      case 2:
         return myLogStatement__BehaviorDescriptor;
+      case 3:
+        return myMsgStatement__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex index_846f5o_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL)).seal();
+  private static final ConceptSwitchIndex index_846f5o_a0h = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5eeb6L), MetaIdFactory.conceptId(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L), MetaIdFactory.conceptId(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL), MetaIdFactory.conceptId(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x57e2cf14f6d5a71dL)).seal();
 }

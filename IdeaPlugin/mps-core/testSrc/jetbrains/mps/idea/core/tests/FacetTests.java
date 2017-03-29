@@ -179,16 +179,21 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
   @Deprecated
   @ToRemove(version = 3.4)
   public void testAddRemoveUsedLanguage() throws InterruptedException {
-    Language baseLanguage = (Language) myModuleRepositoryFacade.getModuleByName("jetbrains.mps.baseLanguage");
-    assertNotNull(baseLanguage);
-    Language editorLanguage = (Language) myModuleRepositoryFacade.getModuleByName("jetbrains.mps.lang.editor");
-    assertNotNull(editorLanguage);
+    final Language[] usedLanguages = new Language[2];
+    final MPSConfigurationBean configurationBean = runModelRead(() -> {
+      Language baseLanguage = (Language) myModuleRepositoryFacade.getModuleByName("jetbrains.mps.baseLanguage");
+      assertNotNull(baseLanguage);
+      Language editorLanguage = (Language) myModuleRepositoryFacade.getModuleByName("jetbrains.mps.lang.editor");
+      assertNotNull(editorLanguage);
 
-    String[] usedLanguageStrings = new String[]{baseLanguage.getModuleReference().toString(), editorLanguage.getModuleReference().toString()};
-    final Language[] usedLanguages = new Language[]{baseLanguage, editorLanguage};
+      String[] usedLanguageStrings = new String[]{baseLanguage.getModuleReference().toString(), editorLanguage.getModuleReference().toString()};
+      usedLanguages[0] = baseLanguage;
+      usedLanguages[1] = editorLanguage;
 
-    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
-    configurationBean.setUsedLanguages(usedLanguageStrings);
+      MPSConfigurationBean cb = myFacet.getConfiguration().getBean();
+      cb.setUsedLanguages(usedLanguageStrings);
+      return cb;
+    });
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 

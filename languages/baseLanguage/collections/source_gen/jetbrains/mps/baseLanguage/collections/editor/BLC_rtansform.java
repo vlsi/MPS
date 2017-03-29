@@ -45,12 +45,12 @@ public class BLC_rtansform extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new BLC_rtansform.TransformationMenuPart_Group_ahju1d_a0());
+      result.add(new BLC_rtansform.TMP_Group_ahju1d_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_ahju1d_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_ahju1d_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     private SNode mapType;
     @Override
     protected void initialize(TransformationMenuContext _context) {
@@ -69,12 +69,12 @@ public class BLC_rtansform extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new BLC_rtansform.TransformationMenuPart_Group_ahju1d_a0.TransformationMenuPart_Action_ahju1d_a0a(), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116ea555a25L, "jetbrains.mps.baseLanguage.collections.structure.MapElement")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new BLC_rtansform.TMP_Group_ahju1d_a0.TMP_Action_ahju1d_a0a(), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116ea555a25L, "jetbrains.mps.baseLanguage.collections.structure.MapElement")));
     }
-    private class TransformationMenuPart_Action_ahju1d_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_ahju1d_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new BLC_rtansform.TransformationMenuPart_Group_ahju1d_a0.TransformationMenuPart_Action_ahju1d_a0a.Item(context);
+        return new BLC_rtansform.TMP_Group_ahju1d_a0.TMP_Action_ahju1d_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

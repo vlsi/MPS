@@ -35,22 +35,22 @@ public class NamedMenu extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0());
-      result.add(new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0());
-      result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0());
+      result.add(new NamedMenu.TMP_Action_qsw3kc_a0());
+      result.add(new NamedMenu.TMP_Intention_qsw3kc_b0());
+      result.add(new NamedMenu.TMP_Action_qsw3kc_c0());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0());
-      result.add(new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0());
-      result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0());
+      result.add(new NamedMenu.TMP_Action_qsw3kc_a0());
+      result.add(new NamedMenu.TMP_Intention_qsw3kc_b0());
+      result.add(new NamedMenu.TMP_Action_qsw3kc_c0());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_qsw3kc_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_qsw3kc_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0.Item(context);
+      return new NamedMenu.TMP_Action_qsw3kc_a0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -78,14 +78,14 @@ public class NamedMenu extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_Intention_qsw3kc_b0 extends IntentionMenuPartBase {
-    public TransformationMenuPart_Intention_qsw3kc_b0() {
+  public class TMP_Intention_qsw3kc_b0 extends IntentionMenuPartBase {
+    public TMP_Intention_qsw3kc_b0() {
       super("jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.intentions.AddLetterToName_Intention");
     }
 
     @Override
     protected TransformationMenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable) {
-      return new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0.Item(context, executable);
+      return new NamedMenu.TMP_Intention_qsw3kc_b0.Item(context, executable);
     }
 
     private class Item extends IntentionMenuPartBase.ItemBase implements SideTransformCompletionActionItem {
@@ -99,10 +99,10 @@ public class NamedMenu extends TransformationMenuBase {
       }
     }
   }
-  private class TransformationMenuPart_Action_qsw3kc_c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_qsw3kc_c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0.Item(context);
+      return new NamedMenu.TMP_Action_qsw3kc_c0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

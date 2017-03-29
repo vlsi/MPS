@@ -20,6 +20,7 @@
     <import index="mmaq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
+    <import index="9erk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model(MPS.Core/)" />
     <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -35,6 +36,7 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -198,6 +200,11 @@
       </concept>
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615">
         <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
+      </concept>
+      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
+        <child id="1163668914799" name="condition" index="3K4Cdx" />
+        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
+        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
@@ -2017,6 +2024,17 @@
       </node>
       <node concept="3Tm6S6" id="J2bOg0capT" role="1B3o_S" />
     </node>
+    <node concept="312cEg" id="A$29MCdxfm" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myObjectResolver" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="A$29MCdrIl" role="1B3o_S" />
+      <node concept="3uibUv" id="A$29MCdx4L" role="1tU5fm">
+        <ref role="3uigEE" to="9erk:~SearchObjectResolver" resolve="SearchObjectResolver" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="A$29MCdqxk" role="jymVt" />
     <node concept="3clFbW" id="J2bOg0capU" role="jymVt">
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
@@ -2050,9 +2068,45 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="A$29MCefz3" role="3cqZAp">
+          <node concept="3SKdUq" id="A$29MCefz5" role="3SKWNk">
+            <property role="3SKdUp" value="intentionally not null. Null would default to CompatibilityResolver and issues like https://youtrack.jetbrains.com/issue/MPS-25530" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="A$29MCegNL" role="3cqZAp">
+          <node concept="3SKdUq" id="A$29MCegNN" role="3SKWNk">
+            <property role="3SKdUp" value="would arise after reload of externalized query (e.g. project restart). It's not nice to use whole project as search object scope, but" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="A$29MCeh2E" role="3cqZAp">
+          <node concept="3SKdUq" id="A$29MCeh2G" role="3SKWNk">
+            <property role="3SKdUp" value="given present 'externalization' mechanism I don't have much to choose from." />
+          </node>
+        </node>
+        <node concept="3clFbF" id="A$29MCdy0j" role="3cqZAp">
+          <node concept="37vLTI" id="A$29MCdycJ" role="3clFbG">
+            <node concept="2ShNRf" id="A$29MCdynK" role="37vLTx">
+              <node concept="1pGfFk" id="A$29MCdMB4" role="2ShVmc">
+                <ref role="37wK5l" to="9erk:~SearchObjectResolver$BasicResolver.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="SearchObjectResolver.BasicResolver" />
+                <node concept="2OqwBi" id="A$29MCdMUW" role="37wK5m">
+                  <node concept="37vLTw" id="A$29MCdMJ$" role="2Oq$k0">
+                    <ref role="3cqZAo" node="J2bOg0capY" resolve="project" />
+                  </node>
+                  <node concept="liA8E" id="A$29MCdN6K" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="A$29MCdy0h" role="37vLTJ">
+              <ref role="3cqZAo" node="A$29MCdxfm" resolve="myObjectResolver" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3Tm1VV" id="J2bOg0caq6" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="A$29MCdNc8" role="jymVt" />
     <node concept="3clFbW" id="J2bOg0caq7" role="jymVt">
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
@@ -2072,29 +2126,105 @@
         </node>
       </node>
       <node concept="3clFbS" id="J2bOg0caqd" role="3clF47">
-        <node concept="3clFbF" id="J2bOg0caqe" role="3cqZAp">
-          <node concept="37vLTI" id="J2bOg0caqf" role="3clFbG">
-            <node concept="37vLTw" id="J2bOg0caqg" role="37vLTJ">
+        <node concept="3clFbF" id="A$29MCeeSB" role="3cqZAp">
+          <node concept="37vLTI" id="A$29MCeeSC" role="3clFbG">
+            <node concept="37vLTw" id="A$29MCeeSD" role="37vLTJ">
               <ref role="3cqZAo" node="J2bOg0capL" resolve="myScope" />
             </node>
-            <node concept="37vLTw" id="J2bOg0caqh" role="37vLTx">
+            <node concept="37vLTw" id="A$29MCeeSE" role="37vLTx">
               <ref role="3cqZAo" node="J2bOg0caqb" resolve="scope" />
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="J2bOg0caqi" role="3cqZAp">
-          <node concept="37vLTI" id="J2bOg0caqj" role="3clFbG">
-            <node concept="37vLTw" id="J2bOg0caqk" role="37vLTJ">
+        <node concept="3clFbF" id="A$29MCeeSF" role="3cqZAp">
+          <node concept="37vLTI" id="A$29MCeeSG" role="3clFbG">
+            <node concept="37vLTw" id="A$29MCeeSH" role="37vLTJ">
               <ref role="3cqZAo" node="J2bOg0capP" resolve="myObjectHolder" />
             </node>
-            <node concept="37vLTw" id="J2bOg0caql" role="37vLTx">
+            <node concept="37vLTw" id="A$29MCeeSI" role="37vLTx">
               <ref role="3cqZAo" node="J2bOg0caq9" resolve="objectHolder" />
             </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="A$29MCefil" role="3cqZAp">
+          <node concept="3SKdUq" id="A$29MCefin" role="3SKWNk">
+            <property role="3SKdUp" value="null is legal field value, see getSearchObjectResolver() impl, but I don't want to allow null in the cons API" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="A$29MCeeSJ" role="3cqZAp">
+          <node concept="37vLTI" id="A$29MCeeSK" role="3clFbG">
+            <node concept="37vLTw" id="A$29MCeeSM" role="37vLTJ">
+              <ref role="3cqZAo" node="A$29MCdxfm" resolve="myObjectResolver" />
+            </node>
+            <node concept="10Nm6u" id="A$29MCef7B" role="37vLTx" />
           </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="J2bOg0caqm" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="A$29MCe1Rl" role="jymVt" />
+    <node concept="3clFbW" id="A$29MCe1dl" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3cqZAl" id="A$29MCe1dm" role="3clF45" />
+      <node concept="37vLTG" id="A$29MCe1dn" role="3clF46">
+        <property role="TrG5h" value="objectHolder" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="A$29MCe1do" role="1tU5fm">
+          <ref role="3uigEE" to="z3o9:~IHolder" resolve="IHolder" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="A$29MCe2wG" role="3clF46">
+        <property role="TrG5h" value="objectResolver" />
+        <node concept="3uibUv" id="A$29MCe2FR" role="1tU5fm">
+          <ref role="3uigEE" to="9erk:~SearchObjectResolver" resolve="SearchObjectResolver" />
+        </node>
+        <node concept="2AHcQZ" id="A$29MCeevS" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="A$29MCe1dp" role="3clF46">
+        <property role="TrG5h" value="scope" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="A$29MCe1dq" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="A$29MCe1dr" role="3clF47">
+        <node concept="3clFbF" id="A$29MCe1ds" role="3cqZAp">
+          <node concept="37vLTI" id="A$29MCe1dt" role="3clFbG">
+            <node concept="37vLTw" id="A$29MCe1du" role="37vLTJ">
+              <ref role="3cqZAo" node="J2bOg0capL" resolve="myScope" />
+            </node>
+            <node concept="37vLTw" id="A$29MCe1dv" role="37vLTx">
+              <ref role="3cqZAo" node="A$29MCe1dp" resolve="scope" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="A$29MCe1dw" role="3cqZAp">
+          <node concept="37vLTI" id="A$29MCe1dx" role="3clFbG">
+            <node concept="37vLTw" id="A$29MCe1dy" role="37vLTJ">
+              <ref role="3cqZAo" node="J2bOg0capP" resolve="myObjectHolder" />
+            </node>
+            <node concept="37vLTw" id="A$29MCe1dz" role="37vLTx">
+              <ref role="3cqZAo" node="A$29MCe1dn" resolve="objectHolder" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="A$29MCe2V4" role="3cqZAp">
+          <node concept="37vLTI" id="A$29MCe3gV" role="3clFbG">
+            <node concept="37vLTw" id="A$29MCe3vw" role="37vLTx">
+              <ref role="3cqZAo" node="A$29MCe2wG" resolve="objectResolver" />
+            </node>
+            <node concept="37vLTw" id="A$29MCe2V2" role="37vLTJ">
+              <ref role="3cqZAo" node="A$29MCdxfm" resolve="myObjectResolver" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="A$29MCe1d$" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="A$29MCdNO6" role="jymVt" />
     <node concept="3clFbW" id="J2bOg0caqn" role="jymVt">
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
@@ -2131,6 +2261,7 @@
       </node>
       <node concept="3Tm1VV" id="J2bOg0caqy" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="A$29MCdOs5" role="jymVt" />
     <node concept="3clFbW" id="J2bOg0caqz" role="jymVt">
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
@@ -2151,13 +2282,20 @@
       </node>
       <node concept="3clFbS" id="J2bOg0caqD" role="3clF47">
         <node concept="1VxSAg" id="J2bOg0cav3" role="3cqZAp">
-          <ref role="37wK5l" node="J2bOg0caq7" resolve="SearchQuery" />
+          <ref role="37wK5l" node="A$29MCe1dl" resolve="SearchQuery" />
           <node concept="2ShNRf" id="J2bOg0cav4" role="37wK5m">
             <node concept="1pGfFk" id="J2bOg0cav5" role="2ShVmc">
               <ref role="37wK5l" to="z3o9:~NodeHolder.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="NodeHolder" />
               <node concept="37vLTw" id="J2bOg0caqG" role="37wK5m">
                 <ref role="3cqZAo" node="J2bOg0caq_" resolve="node" />
               </node>
+            </node>
+          </node>
+          <node concept="2YIFZM" id="A$29MCe641" role="37wK5m">
+            <ref role="37wK5l" to="9erk:~SearchObjectResolver.forNode(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.ide.findusages.model.SearchObjectResolver" resolve="forNode" />
+            <ref role="1Pybhc" to="9erk:~SearchObjectResolver" resolve="SearchObjectResolver" />
+            <node concept="37vLTw" id="A$29MCe6bY" role="37wK5m">
+              <ref role="3cqZAo" node="J2bOg0caq_" resolve="node" />
             </node>
           </node>
           <node concept="37vLTw" id="J2bOg0caqH" role="37wK5m">
@@ -2167,6 +2305,7 @@
       </node>
       <node concept="3Tm1VV" id="J2bOg0caqI" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="A$29MCdP45" role="jymVt" />
     <node concept="3clFbW" id="J2bOg0caqJ" role="jymVt">
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
@@ -2187,7 +2326,7 @@
       </node>
       <node concept="3clFbS" id="J2bOg0caqP" role="3clF47">
         <node concept="1VxSAg" id="J2bOg0cav6" role="3cqZAp">
-          <ref role="37wK5l" node="J2bOg0caq7" resolve="SearchQuery" />
+          <ref role="37wK5l" node="A$29MCe1dl" resolve="SearchQuery" />
           <node concept="2ShNRf" id="J2bOg0cav7" role="37wK5m">
             <node concept="1pGfFk" id="J2bOg0cav8" role="2ShVmc">
               <ref role="37wK5l" to="z3o9:~ModuleRefHolder.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModuleReference)" resolve="ModuleRefHolder" />
@@ -2201,6 +2340,13 @@
               </node>
             </node>
           </node>
+          <node concept="2YIFZM" id="A$29MCe7$j" role="37wK5m">
+            <ref role="37wK5l" to="9erk:~SearchObjectResolver.forModule(org.jetbrains.mps.openapi.module.SModule):jetbrains.mps.ide.findusages.model.SearchObjectResolver" resolve="forModule" />
+            <ref role="1Pybhc" to="9erk:~SearchObjectResolver" resolve="SearchObjectResolver" />
+            <node concept="37vLTw" id="A$29MCe7Gq" role="37wK5m">
+              <ref role="3cqZAo" node="J2bOg0caqL" resolve="module" />
+            </node>
+          </node>
           <node concept="37vLTw" id="J2bOg0caqT" role="37wK5m">
             <ref role="3cqZAo" node="J2bOg0caqN" resolve="scope" />
           </node>
@@ -2208,6 +2354,7 @@
       </node>
       <node concept="3Tm1VV" id="J2bOg0caqU" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="A$29MCdPG6" role="jymVt" />
     <node concept="3clFbW" id="J2bOg0caqV" role="jymVt">
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
@@ -2234,6 +2381,7 @@
       </node>
       <node concept="3Tm1VV" id="J2bOg0car3" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="A$29MCdQk8" role="jymVt" />
     <node concept="3clFb_" id="J2bOg0car4" role="jymVt">
       <property role="TrG5h" value="getScope" />
       <property role="DiZV1" value="false" />
@@ -2250,6 +2398,7 @@
         <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
       </node>
     </node>
+    <node concept="2tJIrI" id="A$29MCdQWb" role="jymVt" />
     <node concept="3clFb_" id="J2bOg0cara" role="jymVt">
       <property role="TrG5h" value="getObjectHolder" />
       <property role="DiZV1" value="false" />
@@ -2266,6 +2415,38 @@
         <ref role="3uigEE" to="z3o9:~IHolder" resolve="IHolder" />
       </node>
     </node>
+    <node concept="2tJIrI" id="A$29MCdSOq" role="jymVt" />
+    <node concept="3clFb_" id="A$29MCdU6X" role="jymVt">
+      <property role="TrG5h" value="getSearchObjectResolver" />
+      <node concept="3uibUv" id="A$29MCdUOf" role="3clF45">
+        <ref role="3uigEE" to="9erk:~SearchObjectResolver" resolve="SearchObjectResolver" />
+      </node>
+      <node concept="3Tm1VV" id="A$29MCdU70" role="1B3o_S" />
+      <node concept="3clFbS" id="A$29MCdU71" role="3clF47">
+        <node concept="3cpWs6" id="A$29MCdZkL" role="3cqZAp">
+          <node concept="3K4zz7" id="A$29MCe9Zp" role="3cqZAk">
+            <node concept="37vLTw" id="A$29MCeaI5" role="3K4E3e">
+              <ref role="3cqZAo" node="A$29MCdxfm" resolve="myObjectResolver" />
+            </node>
+            <node concept="2ShNRf" id="A$29MCebnR" role="3K4GZi">
+              <node concept="1pGfFk" id="A$29MCec_g" role="2ShVmc">
+                <ref role="37wK5l" to="9erk:~SearchObjectResolver$CompatibilityResolver.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="SearchObjectResolver.CompatibilityResolver" />
+                <node concept="37vLTw" id="A$29MCecLp" role="37wK5m">
+                  <ref role="3cqZAo" node="J2bOg0capL" resolve="myScope" />
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="A$29MCe8R6" role="3K4Cdx">
+              <node concept="10Nm6u" id="A$29MCe9$7" role="3uHU7w" />
+              <node concept="37vLTw" id="A$29MCe0CO" role="3uHU7B">
+                <ref role="3cqZAo" node="A$29MCdxfm" resolve="myObjectResolver" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="A$29MCdR$f" role="jymVt" />
     <node concept="3clFb_" id="J2bOg0carg" role="jymVt">
       <property role="TrG5h" value="getCaption" />
       <property role="DiZV1" value="false" />
@@ -2290,6 +2471,7 @@
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
     </node>
+    <node concept="2tJIrI" id="A$29MCdSck" role="jymVt" />
     <node concept="3clFb_" id="J2bOg0caro" role="jymVt">
       <property role="TrG5h" value="write" />
       <property role="DiZV1" value="false" />
@@ -2317,11 +2499,11 @@
       <node concept="3clFbS" id="J2bOg0carv" role="3clF47">
         <node concept="3clFbJ" id="J2bOg0carw" role="3cqZAp">
           <node concept="2ZW3vV" id="J2bOg0carz" role="3clFbw">
-            <node concept="37vLTw" id="J2bOg0carx" role="2ZW6bz">
-              <ref role="3cqZAo" node="J2bOg0capL" resolve="myScope" />
-            </node>
             <node concept="3uibUv" id="J2bOg0cary" role="2ZW6by">
               <ref role="3uigEE" to="mte5:~FindUsagesScope" resolve="FindUsagesScope" />
+            </node>
+            <node concept="37vLTw" id="J2bOg0carx" role="2ZW6bz">
+              <ref role="3cqZAo" node="J2bOg0capL" resolve="myScope" />
             </node>
           </node>
           <node concept="9aQIb" id="J2bOg0carI" role="9aQIa">

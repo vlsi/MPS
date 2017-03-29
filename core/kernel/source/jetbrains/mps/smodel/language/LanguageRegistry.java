@@ -213,8 +213,19 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
                 g.getModuleName()));
           }
           Constructor<? extends GeneratorRuntime> constructor = null;
-          for (Constructor<?> cons : aClass.getConstructors()) {
-            if (cons.getParameterTypes().length != 1) {
+          // First, look up a newer constructor, the one that takes LanguageRegistry and LanguageRuntime
+          Constructor<?>[] allConstructors = aClass.getConstructors();
+          for (Constructor<?> cons : allConstructors) {
+            if (cons.getParameterCount() != 2) {
+              continue;
+            }
+            Class<?>[] parameterTypes = cons.getParameterTypes();
+            if (parameterTypes[0] == LanguageRegistry.class && parameterTypes[1] == LanguageRuntime.class) {
+              return aClass.getConstructor(LanguageRegistry.class, LanguageRuntime.class).newInstance(this, sourceLanguageRuntime);
+            }
+          }
+          for (Constructor<?> cons : allConstructors) {
+            if (cons.getParameterCount() != 1) {
               continue;
             }
             final Class<?> paramType = cons.getParameterTypes()[0];
@@ -222,6 +233,8 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
               // Generator classes used to accept instance of Language runtime class as their cons argument.
               // However, once moved to own module and being generated from distinct descriptor model, the reference become cross-model one,
               // and given the choice between export labels and base RT class as cons argument, the pick is no-brainer.
+              // FIXME drop this code as we no longer generate Generator rt class as part of language. Just find first cons with single argument
+              // compatible (cast, not ==) with LanguageRuntime.class
               constructor = aClass.getConstructor(sourceLanguageRuntime.getClass());
               break;
             }
@@ -321,6 +334,22 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     }
     return null;
   }
+
+  /**
+   *
+   * @param generatorIdentity we use {@link SModuleReference} to identify generator, not to introduce a dedicated {@code SGenerator} similar to {@link SLanguage}
+   */
+  @Nullable
+  public GeneratorRuntime getGenerator(@NotNull SModuleReference generatorIdentity) {
+    // XXX perhaps, shall take model read itself, but since this code has been copied from TemplateModuleBase, where no lock has been obtained, didn't put
+    //     one here either.
+    SModule resolved = generatorIdentity.resolve(myRepository);
+    if (resolved instanceof Generator) {
+      return getGenerator((Generator) resolved);
+    }
+    return null;
+  }
+
 
   // MPSClassesListener part
   @Override

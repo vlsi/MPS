@@ -39,10 +39,13 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.jdk7.generator.template.main.TemplateModelImpl" file="TemplateModelImpl.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Mapping_main" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Template_string_switch_template" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.GeneratorQueryProvider" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />

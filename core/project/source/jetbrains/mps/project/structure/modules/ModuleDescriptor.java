@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -109,7 +110,7 @@ public class ModuleDescriptor implements CopyableDescriptor<ModuleDescriptor>  {
   }
 
   public final SModuleReference getModuleReference() {
-    return new jetbrains.mps.project.structure.modules.ModuleReference(getNamespace(), myId);
+    return PersistenceFacade.getInstance().createModuleReference(getId(), getNamespace());
   }
 
   public final String getTimestamp() {

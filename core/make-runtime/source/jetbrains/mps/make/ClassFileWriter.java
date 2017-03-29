@@ -122,10 +122,10 @@ public class ClassFileWriter {
   private void writeClassFile(@NotNull ClassFile cf, ClassesErrorsTracker errorsTracker) {
     String fqName = convertCompoundToFqName(cf.getCompoundName());
     String containerClassName = getContainerClassName(fqName); // the name up to dollar sign
-    if (!myModulesContainer.containsClass(containerClassName)) {
+    SModule moduleForClass = myModulesContainer.getModuleContainingClass(containerClassName);
+    if (moduleForClass == null) {
       mySender.error(String.format(MODULE_FOR_CLASS_NOT_FOUND, fqName));
     } else {
-      SModule moduleForClass = myModulesContainer.getModuleContainingClass(containerClassName);
       myChangedModulesTracker.addChanged(moduleForClass);
       File outputDir = createOutputDir(fqName, moduleForClass);
       String className = NameUtil.shortNameFromLongName(fqName);

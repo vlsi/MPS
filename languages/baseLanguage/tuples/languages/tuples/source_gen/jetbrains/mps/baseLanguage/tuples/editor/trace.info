@@ -3503,16 +3503,16 @@
     <file name="namedTupleDeclaration_extends_Contribution.java">
       <node id="1741258697587120925" at="35,55,36,16" concept="11" />
       <node id="1741258697587120925" at="40,118,41,140" concept="7" />
-      <node id="1741258697587120925" at="41,140,42,99" concept="2" />
-      <node id="1741258697587120925" at="42,99,43,18" concept="8" />
+      <node id="1741258697587120925" at="41,140,42,84" concept="2" />
+      <node id="1741258697587120925" at="42,84,43,18" concept="8" />
       <node id="1741258697587120957" at="47,68,48,111" concept="7" />
       <node id="1741258697587120931" at="48,111,49,399" concept="8" />
-      <node id="1741258697587120925" at="53,84,54,404" concept="8" />
-      <node id="1741258697587120925" at="59,102,60,208" concept="8" />
+      <node id="1741258697587120925" at="53,84,54,366" concept="8" />
+      <node id="1741258697587120925" at="59,102,60,155" concept="8" />
       <node id="1741258697587120991" at="66,43,67,59" concept="8" />
       <node id="1741258697587120925" at="72,0,73,0" concept="3" trace="myParameterObject" />
-      <node id="1741258697587120925" at="73,76,74,46" concept="2" />
-      <node id="1741258697587120925" at="79,81,80,193" concept="8" />
+      <node id="1741258697587120925" at="73,61,74,46" concept="2" />
+      <node id="1741258697587120925" at="79,81,80,140" concept="8" />
       <node id="1741258697587120925" at="83,0,84,0" concept="3" trace="_context" />
       <node id="1741258697587120925" at="84,54,85,247" concept="11" />
       <node id="1741258697587120925" at="85,247,86,31" concept="2" />
@@ -3530,7 +3530,7 @@
       <node id="1741258697587121027" at="127,199,128,24" concept="8" />
       <node id="1741258697587120925" at="35,0,38,0" concept="1" trace="namedTupleDeclaration_extends_Contribution#()V" />
       <node id="1741258697587120989" at="66,0,69,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1741258697587120925" at="73,0,76,0" concept="1" trace="SubstituteMenuPart_Action_evf1f9_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587120925" at="73,0,76,0" concept="1" trace="SMP_Action_evf1f9_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587120925" at="96,66,99,13" concept="5" />
       <node id="1741258697587120925" at="104,69,107,13" concept="5" />
       <node id="1741258697587120925" at="112,64,115,13" concept="5" />
@@ -3548,11 +3548,11 @@
       <node id="1741258697587120925" at="110,0,118,0" concept="6" trace="getIcon#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <node id="1741258697587120925" at="62,0,71,0" concept="6" trace="getParameters#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/lang/Iterable;" />
       <scope id="1741258697587120925" at="35,55,36,16" />
-      <scope id="1741258697587120925" at="53,84,54,404" />
-      <scope id="1741258697587120925" at="59,102,60,208" />
+      <scope id="1741258697587120925" at="53,84,54,366" />
+      <scope id="1741258697587120925" at="59,102,60,155" />
       <scope id="1741258697587120990" at="66,43,67,59" />
-      <scope id="1741258697587120925" at="73,76,74,46" />
-      <scope id="1741258697587120925" at="79,81,80,193" />
+      <scope id="1741258697587120925" at="73,61,74,46" />
+      <scope id="1741258697587120925" at="79,81,80,140" />
       <scope id="1741258697587120925" at="91,60,92,75" />
       <scope id="1741258697587120925" at="97,53,98,95" />
       <scope id="1741258697587120925" at="105,53,106,85" />
@@ -3614,11 +3614,11 @@
       <scope id="1741258697587120925" at="62,0,71,0">
         <var name="_context" id="1741258697587120925" />
       </scope>
-      <unit id="1741258697587120989" at="65,318,69,9" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SubstituteMenuPart_Group_evf1f9_a$SubstituteMenuPart_Parameterized_evf1f9_a0$1" />
-      <unit id="1741258697587120925" at="82,0,119,0" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SubstituteMenuPart_Group_evf1f9_a$SubstituteMenuPart_Parameterized_evf1f9_a0$SubstituteMenuPart_Action_evf1f9_a0a$Item" />
-      <unit id="1741258697587120925" at="71,0,120,0" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SubstituteMenuPart_Group_evf1f9_a$SubstituteMenuPart_Parameterized_evf1f9_a0$SubstituteMenuPart_Action_evf1f9_a0a" />
-      <unit id="1741258697587120925" at="56,0,122,0" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SubstituteMenuPart_Group_evf1f9_a$SubstituteMenuPart_Parameterized_evf1f9_a0" />
-      <unit id="1741258697587120925" at="45,0,123,0" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SubstituteMenuPart_Group_evf1f9_a" />
+      <unit id="1741258697587120989" at="65,318,69,9" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SMP_Group_evf1f9_a$SMP_Param_evf1f9_a0$1" />
+      <unit id="1741258697587120925" at="82,0,119,0" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SMP_Group_evf1f9_a$SMP_Param_evf1f9_a0$SMP_Action_evf1f9_a0a$Item" />
+      <unit id="1741258697587120925" at="71,0,120,0" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SMP_Group_evf1f9_a$SMP_Param_evf1f9_a0$SMP_Action_evf1f9_a0a" />
+      <unit id="1741258697587120925" at="56,0,122,0" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SMP_Group_evf1f9_a$SMP_Param_evf1f9_a0" />
+      <unit id="1741258697587120925" at="45,0,123,0" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SMP_Group_evf1f9_a" />
       <unit id="1741258697587120925" at="34,0,131,0" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution" />
     </file>
   </root>
@@ -3626,13 +3626,13 @@
     <file name="NamedTupleLiteral_Contribution.java">
       <node id="1741258697587121060" at="37,43,38,16" concept="11" />
       <node id="1741258697587121060" at="42,118,43,140" concept="7" />
-      <node id="1741258697587121060" at="43,140,44,302" concept="2" />
-      <node id="1741258697587121060" at="44,302,45,18" concept="8" />
-      <node id="1741258697587121060" at="50,100,51,158" concept="8" />
+      <node id="1741258697587121060" at="43,140,44,279" concept="2" />
+      <node id="1741258697587121060" at="44,279,45,18" concept="8" />
+      <node id="1741258697587121060" at="50,100,51,120" concept="8" />
       <node id="1741258697587121076" at="57,42,58,73" concept="8" />
       <node id="1741258697587121060" at="63,0,64,0" concept="3" trace="myParameterObject" />
-      <node id="1741258697587121060" at="64,73,65,44" concept="2" />
-      <node id="1741258697587121060" at="70,79,71,143" concept="8" />
+      <node id="1741258697587121060" at="64,58,65,44" concept="2" />
+      <node id="1741258697587121060" at="70,79,71,105" concept="8" />
       <node id="1741258697587121060" at="74,0,75,0" concept="3" trace="_context" />
       <node id="1741258697587121060" at="75,52,76,255" concept="11" />
       <node id="1741258697587121060" at="76,255,77,29" concept="2" />
@@ -3662,7 +3662,7 @@
       <node id="1741258697587121166" at="141,5,142,24" concept="8" />
       <node id="1741258697587121060" at="37,0,40,0" concept="1" trace="NamedTupleLiteral_Contribution#()V" />
       <node id="1741258697587121074" at="57,0,60,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1741258697587121060" at="64,0,67,0" concept="1" trace="SubstituteMenuPart_Action_4kfnt3_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587121060" at="64,0,67,0" concept="1" trace="SMP_Action_4kfnt3_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587121155" at="84,0,87,0" concept="6" trace="invoke#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1741258697587121175" at="89,0,92,0" concept="6" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="1741258697587121060" at="96,67,99,11" concept="5" />
@@ -3684,10 +3684,10 @@
       <node id="1741258697587121060" at="80,0,94,0" concept="6" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1741258697587121166" at="129,0,144,0" concept="10" trace="_quotation_createNode_4kfnt3_a1a0a0#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1741258697587121060" at="37,43,38,16" />
-      <scope id="1741258697587121060" at="50,100,51,158" />
+      <scope id="1741258697587121060" at="50,100,51,120" />
       <scope id="1741258697587121075" at="57,42,58,73" />
-      <scope id="1741258697587121060" at="64,73,65,44" />
-      <scope id="1741258697587121060" at="70,79,71,143" />
+      <scope id="1741258697587121060" at="64,58,65,44" />
+      <scope id="1741258697587121060" at="70,79,71,105" />
       <scope id="1741258697587121158" at="84,44,85,66" />
       <scope id="1741258697587121176" at="89,57,90,180" />
       <scope id="1741258697587121060" at="97,51,98,83" />
@@ -3769,12 +3769,12 @@
         <var name="parameter_1" id="1741258697587121166" />
         <var name="parameter_2" id="1741258697587121166" />
       </scope>
-      <unit id="1741258697587121074" at="56,265,60,7" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SubstituteMenuPart_Parameterized_4kfnt3_a$1" />
-      <unit id="1741258697587121155" at="83,83,87,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SubstituteMenuPart_Parameterized_4kfnt3_a$SubstituteMenuPart_Action_4kfnt3_a0$Item$1" />
-      <unit id="1741258697587121175" at="88,198,92,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SubstituteMenuPart_Parameterized_4kfnt3_a$SubstituteMenuPart_Action_4kfnt3_a0$Item$2" />
-      <unit id="1741258697587121060" at="73,0,116,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SubstituteMenuPart_Parameterized_4kfnt3_a$SubstituteMenuPart_Action_4kfnt3_a0$Item" />
-      <unit id="1741258697587121060" at="62,0,117,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SubstituteMenuPart_Parameterized_4kfnt3_a$SubstituteMenuPart_Action_4kfnt3_a0" />
-      <unit id="1741258697587121060" at="47,0,119,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SubstituteMenuPart_Parameterized_4kfnt3_a" />
+      <unit id="1741258697587121074" at="56,265,60,7" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SMP_Param_4kfnt3_a$1" />
+      <unit id="1741258697587121155" at="83,83,87,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SMP_Param_4kfnt3_a$SMP_Action_4kfnt3_a0$Item$1" />
+      <unit id="1741258697587121175" at="88,198,92,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SMP_Param_4kfnt3_a$SMP_Action_4kfnt3_a0$Item$2" />
+      <unit id="1741258697587121060" at="73,0,116,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SMP_Param_4kfnt3_a$SMP_Action_4kfnt3_a0$Item" />
+      <unit id="1741258697587121060" at="62,0,117,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SMP_Param_4kfnt3_a$SMP_Action_4kfnt3_a0" />
+      <unit id="1741258697587121060" at="47,0,119,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SMP_Param_4kfnt3_a" />
       <unit id="1741258697587121060" at="36,0,145,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution" />
     </file>
   </root>
@@ -3782,13 +3782,13 @@
     <file name="NamedTupleType_Contribution.java">
       <node id="1741258697587121223" at="32,40,33,16" concept="11" />
       <node id="1741258697587121223" at="37,118,38,140" concept="7" />
-      <node id="1741258697587121223" at="38,140,39,296" concept="2" />
-      <node id="1741258697587121223" at="39,296,40,18" concept="8" />
-      <node id="1741258697587121223" at="45,100,46,155" concept="8" />
+      <node id="1741258697587121223" at="38,140,39,273" concept="2" />
+      <node id="1741258697587121223" at="39,273,40,18" concept="8" />
+      <node id="1741258697587121223" at="45,100,46,117" concept="8" />
       <node id="1741258697587121239" at="52,42,53,73" concept="8" />
       <node id="1741258697587121223" at="58,0,59,0" concept="3" trace="myParameterObject" />
-      <node id="1741258697587121223" at="59,73,60,44" concept="2" />
-      <node id="1741258697587121223" at="65,79,66,140" concept="8" />
+      <node id="1741258697587121223" at="59,58,60,44" concept="2" />
+      <node id="1741258697587121223" at="65,79,66,102" concept="8" />
       <node id="1741258697587121223" at="69,0,70,0" concept="3" trace="_context" />
       <node id="1741258697587121223" at="70,52,71,252" concept="11" />
       <node id="1741258697587121223" at="71,252,72,29" concept="2" />
@@ -3805,7 +3805,7 @@
       <node id="1741258697587121314" at="109,199,110,24" concept="8" />
       <node id="1741258697587121223" at="32,0,35,0" concept="1" trace="NamedTupleType_Contribution#()V" />
       <node id="1741258697587121237" at="52,0,55,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1741258697587121223" at="59,0,62,0" concept="1" trace="SubstituteMenuPart_Action_rx1mqb_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587121223" at="59,0,62,0" concept="1" trace="SMP_Action_rx1mqb_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587121223" at="82,67,85,11" concept="5" />
       <node id="1741258697587121223" at="90,62,93,11" concept="5" />
       <node id="1741258697587121223" at="70,0,74,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
@@ -3820,10 +3820,10 @@
       <node id="1741258697587121223" at="88,0,96,0" concept="6" trace="getIcon#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <node id="1741258697587121223" at="48,0,57,0" concept="6" trace="getParameters#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/lang/Iterable;" />
       <scope id="1741258697587121223" at="32,40,33,16" />
-      <scope id="1741258697587121223" at="45,100,46,155" />
+      <scope id="1741258697587121223" at="45,100,46,117" />
       <scope id="1741258697587121238" at="52,42,53,73" />
-      <scope id="1741258697587121223" at="59,73,60,44" />
-      <scope id="1741258697587121223" at="65,79,66,140" />
+      <scope id="1741258697587121223" at="59,58,60,44" />
+      <scope id="1741258697587121223" at="65,79,66,102" />
       <scope id="1741258697587121223" at="77,58,78,72" />
       <scope id="1741258697587121223" at="83,51,84,83" />
       <scope id="1741258697587121223" at="91,51,92,88" />
@@ -3877,10 +3877,10 @@
       <scope id="1741258697587121223" at="48,0,57,0">
         <var name="_context" id="1741258697587121223" />
       </scope>
-      <unit id="1741258697587121237" at="51,265,55,7" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution$SubstituteMenuPart_Parameterized_rx1mqb_a$1" />
-      <unit id="1741258697587121223" at="68,0,102,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution$SubstituteMenuPart_Parameterized_rx1mqb_a$SubstituteMenuPart_Action_rx1mqb_a0$Item" />
-      <unit id="1741258697587121223" at="57,0,103,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution$SubstituteMenuPart_Parameterized_rx1mqb_a$SubstituteMenuPart_Action_rx1mqb_a0" />
-      <unit id="1741258697587121223" at="42,0,105,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution$SubstituteMenuPart_Parameterized_rx1mqb_a" />
+      <unit id="1741258697587121237" at="51,265,55,7" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution$SMP_Param_rx1mqb_a$1" />
+      <unit id="1741258697587121223" at="68,0,102,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution$SMP_Param_rx1mqb_a$SMP_Action_rx1mqb_a0$Item" />
+      <unit id="1741258697587121223" at="57,0,103,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution$SMP_Param_rx1mqb_a$SMP_Action_rx1mqb_a0" />
+      <unit id="1741258697587121223" at="42,0,105,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution$SMP_Param_rx1mqb_a" />
       <unit id="1741258697587121223" at="31,0,113,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution" />
     </file>
   </root>
@@ -3918,11 +3918,11 @@
       <node id="1741258697587186728" at="40,0,41,0" concept="3" trace="myLocations" />
       <node id="1741258697587186728" at="42,67,43,63" concept="8" />
       <node id="1741258697587186728" at="48,124,49,156" concept="7" />
-      <node id="1741258697587186728" at="50,138,51,96" concept="2" />
+      <node id="1741258697587186728" at="50,138,51,77" concept="2" />
       <node id="1741258697587186728" at="52,5,53,18" concept="8" />
       <node id="1741258697587186737" at="58,72,59,331" concept="8" />
-      <node id="1741258697587186732" at="63,92,64,436" concept="8" />
-      <node id="1741258697587186732" at="68,86,69,146" concept="8" />
+      <node id="1741258697587186732" at="63,92,64,398" concept="8" />
+      <node id="1741258697587186732" at="68,86,69,108" concept="8" />
       <node id="1741258697587186732" at="73,0,74,0" concept="3" trace="_context" />
       <node id="1741258697587186732" at="75,57,76,29" concept="2" />
       <node id="1741258697587186749" at="81,52,82,21" concept="8" />
@@ -3945,10 +3945,10 @@
       <node id="1741258697587186728" at="46,0,55,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587186728" at="37,45,38,16" />
       <scope id="1741258697587186728" at="42,67,43,63" />
-      <scope id="1741258697587186728" at="50,138,51,96" />
+      <scope id="1741258697587186728" at="50,138,51,77" />
       <scope id="1741258697587186736" at="58,72,59,331" />
-      <scope id="1741258697587186732" at="63,92,64,436" />
-      <scope id="1741258697587186732" at="68,86,69,146" />
+      <scope id="1741258697587186732" at="63,92,64,398" />
+      <scope id="1741258697587186732" at="68,86,69,108" />
       <scope id="1741258697587186732" at="75,57,76,29" />
       <scope id="1741258697587186748" at="81,52,82,21" />
       <scope id="1741258697587186732" at="95,52,96,187" />
@@ -3986,9 +3986,9 @@
       <scope id="1741258697587186728" at="46,0,55,0">
         <var name="_context" id="1741258697587186728" />
       </scope>
-      <unit id="1741258697587186732" at="72,0,103,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution$TransformationMenuPart_Group_dlrmni_a0$TransformationMenuPart_Action_dlrmni_a0a$Item" />
-      <unit id="1741258697587186732" at="66,0,104,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution$TransformationMenuPart_Group_dlrmni_a0$TransformationMenuPart_Action_dlrmni_a0a" />
-      <unit id="1741258697587186732" at="56,0,105,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution$TransformationMenuPart_Group_dlrmni_a0" />
+      <unit id="1741258697587186732" at="72,0,103,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution$TMP_Group_dlrmni_a0$TMP_Action_dlrmni_a0a$Item" />
+      <unit id="1741258697587186732" at="66,0,104,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution$TMP_Group_dlrmni_a0$TMP_Action_dlrmni_a0a" />
+      <unit id="1741258697587186732" at="56,0,105,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution$TMP_Group_dlrmni_a0" />
       <unit id="1741258697587186728" at="36,0,106,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution" />
     </file>
   </root>
@@ -3998,11 +3998,11 @@
       <node id="1741258697587186787" at="36,0,37,0" concept="3" trace="myLocations" />
       <node id="1741258697587186787" at="38,67,39,63" concept="8" />
       <node id="1741258697587186787" at="44,124,45,156" concept="7" />
-      <node id="1741258697587186787" at="46,137,47,91" concept="2" />
+      <node id="1741258697587186787" at="46,137,47,72" concept="2" />
       <node id="1741258697587186787" at="48,5,49,18" concept="8" />
       <node id="1741258697587186796" at="54,72,55,642" concept="8" />
-      <node id="1741258697587186791" at="59,92,60,427" concept="8" />
-      <node id="1741258697587186791" at="64,86,65,141" concept="8" />
+      <node id="1741258697587186791" at="59,92,60,389" concept="8" />
+      <node id="1741258697587186791" at="64,86,65,103" concept="8" />
       <node id="1741258697587186791" at="69,0,70,0" concept="3" trace="_context" />
       <node id="1741258697587186791" at="71,57,72,29" concept="2" />
       <node id="1741258697587186808" at="77,52,78,25" concept="8" />
@@ -4022,10 +4022,10 @@
       <node id="1741258697587186787" at="42,0,51,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587186787" at="33,40,34,16" />
       <scope id="1741258697587186787" at="38,67,39,63" />
-      <scope id="1741258697587186787" at="46,137,47,91" />
+      <scope id="1741258697587186787" at="46,137,47,72" />
       <scope id="1741258697587186795" at="54,72,55,642" />
-      <scope id="1741258697587186791" at="59,92,60,427" />
-      <scope id="1741258697587186791" at="64,86,65,141" />
+      <scope id="1741258697587186791" at="59,92,60,389" />
+      <scope id="1741258697587186791" at="64,86,65,103" />
       <scope id="1741258697587186791" at="71,57,72,29" />
       <scope id="1741258697587186807" at="77,52,78,25" />
       <scope id="1741258697587186791" at="90,52,91,183" />
@@ -4057,9 +4057,9 @@
       <scope id="1741258697587186787" at="42,0,51,0">
         <var name="_context" id="1741258697587186787" />
       </scope>
-      <unit id="1741258697587186791" at="68,0,94,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution$TransformationMenuPart_Group_d177af_a0$TransformationMenuPart_Action_d177af_a0a$Item" />
-      <unit id="1741258697587186791" at="62,0,95,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution$TransformationMenuPart_Group_d177af_a0$TransformationMenuPart_Action_d177af_a0a" />
-      <unit id="1741258697587186791" at="52,0,96,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution$TransformationMenuPart_Group_d177af_a0" />
+      <unit id="1741258697587186791" at="68,0,94,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution$TMP_Group_d177af_a0$TMP_Action_d177af_a0a$Item" />
+      <unit id="1741258697587186791" at="62,0,95,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution$TMP_Group_d177af_a0$TMP_Action_d177af_a0a" />
+      <unit id="1741258697587186791" at="52,0,96,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution$TMP_Group_d177af_a0" />
       <unit id="1741258697587186787" at="32,0,97,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution" />
     </file>
   </root>

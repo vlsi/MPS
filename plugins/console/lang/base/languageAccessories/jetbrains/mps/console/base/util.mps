@@ -448,14 +448,14 @@
             </node>
             <node concept="3clFbJ" id="13YBgBBS67W" role="3cqZAp">
               <node concept="2OqwBi" id="13YBgBBS68b" role="3clFbw">
-                <node concept="37vLTw" id="3GM_nagTy58" role="2Oq$k0">
-                  <ref role="3cqZAo" node="13YBgBBS67S" resolve="name" />
-                </node>
                 <node concept="liA8E" id="13YBgBBS68d" role="2OqNvi">
                   <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                  <node concept="37vLTw" id="2BHiRxgm8vY" role="37wK5m">
-                    <ref role="3cqZAo" node="60B$8333qa$" resolve="refText" />
+                  <node concept="37vLTw" id="3GM_nagTy58" role="37wK5m">
+                    <ref role="3cqZAo" node="13YBgBBS67S" resolve="name" />
                   </node>
+                </node>
+                <node concept="37vLTw" id="2BHiRxgm8vY" role="2Oq$k0">
+                  <ref role="3cqZAo" node="60B$8333qa$" resolve="refText" />
                 </node>
               </node>
               <node concept="3clFbS" id="13YBgBBS67X" role="3clFbx">

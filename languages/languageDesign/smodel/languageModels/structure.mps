@@ -881,7 +881,7 @@
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
     <node concept="asaX9" id="4eGV4eBU7tU" role="lGtFl">
-      <property role="YLQ7P" value="use an explicit node&lt;AbstractConceptDeclaration&gt; instead" />
+      <property role="YLQ7P" value="use an explicit node&lt;AbstractConceptDeclaration&gt; instead, planned to be removed after 2017.2" />
     </node>
   </node>
   <node concept="1TIwiD" id="h3TUQj6">

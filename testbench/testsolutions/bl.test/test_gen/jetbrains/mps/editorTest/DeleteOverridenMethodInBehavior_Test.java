@@ -20,8 +20,7 @@ public class DeleteOverridenMethodInBehavior_Test extends BaseTransformationTest
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1232554649248", "1232555746044");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      for (int i = 0; i < 5; i++) {
+      for (int i = 0; i < ".getPresentation".length(); i++) {
         invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
       }
     }

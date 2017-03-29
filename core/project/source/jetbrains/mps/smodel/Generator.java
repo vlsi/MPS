@@ -72,9 +72,10 @@ public class Generator extends ReloadableModuleBase {
     getRepository().saveAll();
 
     // MPS-22787 - update generator id
-    String uid = myGeneratorDescriptor.getGeneratorUID();
+    String uid = myGeneratorDescriptor.getNamespace();
     int sharpIndex = uid.indexOf('#');
-    myGeneratorDescriptor.setGeneratorUID(newName + "#" + uid.substring(sharpIndex + 1));
+    myGeneratorDescriptor.setNamespace(newName + "#" + uid.substring(sharpIndex + 1));
+    // FIXME why there's no fireModuleRenamed() as in super.rename()???
   }
 
   @Override
@@ -119,7 +120,7 @@ public class Generator extends ReloadableModuleBase {
   }
 
   public String getAlias() {
-    String name = myGeneratorDescriptor.getNamespace();
+    String name = myGeneratorDescriptor.getAlias();
     return getSourceLanguage().getModuleName() + "/" + (name == null ? "<no name>" : name);
   }
 
@@ -209,9 +210,10 @@ public class Generator extends ReloadableModuleBase {
   private void initGeneratorDescriptor(GeneratorDescriptor generatorDescriptor) {
     myGeneratorDescriptor = generatorDescriptor;
 
-    String uid = myGeneratorDescriptor.getGeneratorUID();
+    String uid = myGeneratorDescriptor.getNamespace();
     if (uid == null) {
-      myGeneratorDescriptor.setGeneratorUID(generateGeneratorUID(mySourceLanguage));
+      // FIXME is missing namespace/uuid a valid scenario? If yes, why no alias init then?
+      myGeneratorDescriptor.setNamespace(generateGeneratorUID(mySourceLanguage));
     }
 
     ModuleId uuid = myGeneratorDescriptor.getId();
@@ -219,8 +221,7 @@ public class Generator extends ReloadableModuleBase {
       uuid = ModuleId.regular();
       myGeneratorDescriptor.setId(uuid);
     }
-    SModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myGeneratorDescriptor.getGeneratorUID(), uuid);
-    setModuleReference(mp);
+    setModuleReference(myGeneratorDescriptor.getModuleReference());
   }
 
   private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {

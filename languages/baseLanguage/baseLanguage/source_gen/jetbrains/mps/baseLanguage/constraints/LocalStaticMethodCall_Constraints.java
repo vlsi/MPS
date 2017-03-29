@@ -43,7 +43,7 @@ public class LocalStaticMethodCall_Constraints extends BaseConstraintsDescriptor
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return MigrationScopes.forMethods(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), _context.getContextNode(), (_context.getContainmentLink() == null ? null : _context.getContainmentLink().getName()), _context.getPosition());
+            return MigrationScopes.forMethods(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), _context.getContextNode(), _context.getContainmentLink(), _context.getPosition());
           }
         };
       }

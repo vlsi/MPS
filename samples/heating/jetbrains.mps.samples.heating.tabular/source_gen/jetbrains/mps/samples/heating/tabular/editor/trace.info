@@ -102,8 +102,8 @@
       <node id="1741258697587239262" at="27,0,28,0" concept="3" trace="myLocations" />
       <node id="1741258697587239262" at="29,67,30,63" concept="7" />
       <node id="1741258697587239262" at="35,124,36,156" concept="6" />
-      <node id="1741258697587239262" at="37,173,38,99" concept="2" />
-      <node id="1741258697587239262" at="40,128,41,99" concept="2" />
+      <node id="1741258697587239262" at="37,173,38,76" concept="2" />
+      <node id="1741258697587239262" at="40,128,41,76" concept="2" />
       <node id="1741258697587239262" at="42,5,43,18" concept="7" />
       <node id="1741258697587239263" at="49,90,50,44" concept="6" />
       <node id="1741258697587239263" at="50,44,51,70" concept="6" />
@@ -115,8 +115,8 @@
       <node id="1741258697587239263" at="47,0,55,0" concept="5" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuLookup;" />
       <node id="1741258697587239262" at="33,0,45,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587239262" at="29,67,30,63" />
-      <scope id="1741258697587239262" at="37,173,38,99" />
-      <scope id="1741258697587239262" at="40,128,41,99" />
+      <scope id="1741258697587239262" at="37,173,38,76" />
+      <scope id="1741258697587239262" at="40,128,41,76" />
       <scope id="1741258697587239262" at="28,0,32,0">
         <var name="location" id="1741258697587239262" />
       </scope>
@@ -133,7 +133,7 @@
       <scope id="1741258697587239262" at="33,0,45,0">
         <var name="_context" id="1741258697587239262" />
       </scope>
-      <unit id="1741258697587239263" at="46,0,57,0" name="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_ApplySideTransforms$TransformationMenuPart_IncludeMenu_dzntsn_a0" />
+      <unit id="1741258697587239263" at="46,0,57,0" name="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_ApplySideTransforms$TMP_Include_dzntsn_a0" />
       <unit id="1741258697587239262" at="26,0,58,0" name="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_ApplySideTransforms" />
     </file>
   </root>

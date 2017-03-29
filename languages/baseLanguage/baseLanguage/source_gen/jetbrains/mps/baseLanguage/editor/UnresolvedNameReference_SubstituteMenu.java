@@ -35,10 +35,10 @@ public class UnresolvedNameReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new UnresolvedNameReference_SubstituteMenu.SubstituteMenuPart_Group_46ekb8_a());
+    result.add(new UnresolvedNameReference_SubstituteMenu.SMP_Group_46ekb8_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_46ekb8_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_46ekb8_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
@@ -46,9 +46,9 @@ public class UnresolvedNameReference_SubstituteMenu extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new UnresolvedNameReference_SubstituteMenu.SubstituteMenuPart_Group_46ekb8_a.SubstituteMenuPart_Wrapper_46ekb8_a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")), new ConstraintsFilteringSubstituteMenuPartDecorator(new UnresolvedNameReference_SubstituteMenu.SubstituteMenuPart_Group_46ekb8_a.SubstituteMenuPart_Wrapper_46ekb8_b0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")), new ConstraintsFilteringSubstituteMenuPartDecorator(new UnresolvedNameReference_SubstituteMenu.SubstituteMenuPart_Group_46ekb8_a.SubstituteMenuPart_Wrapper_46ekb8_c0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new UnresolvedNameReference_SubstituteMenu.SMP_Group_46ekb8_a.SMP_Wrap_46ekb8_a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")), new ConstraintsFilteringSubstituteMenuPartDecorator(new UnresolvedNameReference_SubstituteMenu.SMP_Group_46ekb8_a.SMP_Wrap_46ekb8_b0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")), new ConstraintsFilteringSubstituteMenuPartDecorator(new UnresolvedNameReference_SubstituteMenu.SMP_Group_46ekb8_a.SMP_Wrap_46ekb8_c0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")));
     }
-    private class SubstituteMenuPart_Wrapper_46ekb8_a0 extends WrapperSubstituteMenuPart {
+    private class SMP_Wrap_46ekb8_a0 extends WrapperSubstituteMenuPart {
       @NotNull
       @Override
       protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
@@ -81,7 +81,7 @@ public class UnresolvedNameReference_SubstituteMenu extends SubstituteMenuBase {
         return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f2L, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
       }
     }
-    private class SubstituteMenuPart_Wrapper_46ekb8_b0 extends WrapperSubstituteMenuPart {
+    private class SMP_Wrap_46ekb8_b0 extends WrapperSubstituteMenuPart {
       @NotNull
       @Override
       protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
@@ -114,7 +114,7 @@ public class UnresolvedNameReference_SubstituteMenu extends SubstituteMenuBase {
         return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7faL, "jetbrains.mps.baseLanguage.structure.ParameterReference"));
       }
     }
-    private class SubstituteMenuPart_Wrapper_46ekb8_c0 extends WrapperSubstituteMenuPart {
+    private class SMP_Wrap_46ekb8_c0 extends WrapperSubstituteMenuPart {
       @NotNull
       @Override
       protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {

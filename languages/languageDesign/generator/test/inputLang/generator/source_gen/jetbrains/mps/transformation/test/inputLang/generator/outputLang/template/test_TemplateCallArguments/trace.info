@@ -18,7 +18,7 @@
       <unit at="21,0,59,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="20,0,62,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.TemplateModelImpl" />
+      <unit at="21,0,67,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)/6736062018948353408">

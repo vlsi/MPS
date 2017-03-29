@@ -30,13 +30,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
 import java.util.Deque;
@@ -318,32 +320,68 @@ public class JavaParser {
    * Must be called from a context where 1) nodes are attached to a model 2) model modification is allowed.
    * E.g. either inside a command or during smodel.SModel.isUpdateMode() == true
    */
-  public static void tryResolveUnknowns(Iterable<SNode> roots) {
-    for (SNode node : Sequence.fromIterable(roots)) {
-      List<SNode> unknowns = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), false, new SAbstractConcept[]{});
-      for (SNode unk : ListSequence.fromList(unknowns)) {
-        final SNode unkNode = unk;
-        final _FunctionTypes._return_P0_E0<? extends SNode> subst = ((_FunctionTypes._return_P0_E0<? extends SNode>) BHReflection.invoke(unk, SMethodTrimmedId.create("evaluateSubst", null, "73E7sj5sxxG")));
-        if (subst == null) {
-          continue;
-        }
+  public static void tryResolveUnknowns(Iterable<SNode> roots, ProgressMonitor progress) {
+    tryResolveUnknowns(roots, progress, IncrementalModelAccess.INSIDE_COMMAND_OR_UPDATE_MODE);
+  }
 
-        final SNode theRightNode = subst.invoke();
-        SNodeOperations.replaceWithAnother(unkNode, theRightNode);
-
-        // FIXME maybe it's better to re-use auto model import 
-        Sequence.fromIterable(JavaToMpsConverter.deepReferences(theRightNode)).ofType(StaticReference.class).visitAll(new IVisitor<StaticReference>() {
-          public void visit(StaticReference it) {
-            SModel sourceModel = theRightNode.getModel();
-            SModelReference targetModel = it.getTargetSModelReference();
-            if (!(sourceModel.getReference().equals(targetModel))) {
-              ((SModelInternal) sourceModel).addModelImport(targetModel, true);
+  /*package*/ static void tryResolveUnknowns(final Iterable<SNode> roots, final ProgressMonitor progress, IncrementalModelAccess modelAccess) {
+    progress.start("Ambiguous concepts...", Sequence.fromIterable(roots).count() + 1);
+    final Map<SNode, SNode> resolutionMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    modelAccess.accessModel(new Runnable() {
+      public void run() {
+        for (SNode node : Sequence.fromIterable(roots)) {
+          List<SNode> unknowns = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), false, new SAbstractConcept[]{});
+          for (SNode unk : ListSequence.fromList(unknowns)) {
+            final SNode unkNode = unk;
+            final _FunctionTypes._return_P0_E0<? extends SNode> subst = ((_FunctionTypes._return_P0_E0<? extends SNode>) BHReflection.invoke(unk, SMethodTrimmedId.create("evaluateSubst", null, "73E7sj5sxxG")));
+            if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+              progress.step("class: " + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
             }
+
+            progress.advance(1);
+            if (subst == null) {
+              continue;
+            }
+
+            SNode theRightNode = subst.invoke();
+            MapSequence.fromMap(resolutionMap).put(unkNode, theRightNode);
+          }
+        }
+      }
+    });
+
+    progress.step("replacing nodes");
+    modelAccess.replaceNodes(new Runnable() {
+      public void run() {
+        MapSequence.fromMap(resolutionMap).visitAll(new IVisitor<IMapping<SNode, SNode>>() {
+          public void visit(IMapping<SNode, SNode> it) {
+            SNode unresolved = it.key();
+            SNode resolved = it.value();
+            SNodeOperations.replaceWithAnother(unresolved, resolved);
+
+            // FIXME maybe it's better to re-use auto model import 
+            final SModel sourceModel = resolved.getModel();
+            if (sourceModel != null) {
+              Sequence.fromIterable(JavaToMpsConverter.deepReferences(resolved)).ofType(StaticReference.class).visitAll(new IVisitor<StaticReference>() {
+                public void visit(StaticReference it) {
+                  SModelReference targetModel = it.getTargetSModelReference();
+                  if (!(sourceModel.getReference().equals(targetModel))) {
+                    ((SModelInternal) sourceModel).addModelImport(targetModel, true);
+                  }
+                }
+              });
+            } else {
+              // hmm.... 
+            }
+
           }
         });
       }
-    }
+    });
+    progress.advance(1);
+    progress.done();
   }
+
   public static void tryResolveDynamicRefs(Iterable<SNode> nodes) {
     Deque<SNode> stack = DequeSequence.fromDequeNew(new LinkedList<SNode>());
     DequeSequence.fromDequeNew(stack).addSequence(Sequence.fromIterable(nodes));

@@ -344,9 +344,9 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -7974,9 +7974,9 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="3KdzVirf_ku" role="3clF47">
-        <node concept="34ab3g" id="4rTwHtpVHMB" role="3cqZAp">
-          <property role="35gtTG" value="debug" />
-          <node concept="2YIFZM" id="4rTwHtpVIrZ" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB35qR" role="3cqZAp">
+          <property role="RRSoG" value="debug" />
+          <node concept="2YIFZM" id="4rTwHtpVIrZ" role="RRSoy">
             <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
             <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
             <node concept="Xl_RD" id="4rTwHtpVIBl" role="37wK5m">
@@ -8407,9 +8407,9 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="4rTwHtpVWBP" role="3clF47">
-        <node concept="34ab3g" id="4rTwHtpVYaH" role="3cqZAp">
-          <property role="35gtTG" value="debug" />
-          <node concept="2YIFZM" id="4rTwHtpVYaI" role="34bqiv">
+        <node concept="RRSsy" id="3jYQuSB35r1" role="3cqZAp">
+          <property role="RRSoG" value="debug" />
+          <node concept="2YIFZM" id="4rTwHtpVYaI" role="RRSoy">
             <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
             <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
             <node concept="Xl_RD" id="4rTwHtpVYaJ" role="37wK5m">

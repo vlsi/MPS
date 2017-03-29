@@ -45,12 +45,12 @@ public class SNodeOperation_TransformationMenu extends TransformationMenuBase {
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new SNodeOperation_TransformationMenu.TransformationMenuPart_Group_umtya2_a1());
+      result.add(new SNodeOperation_TransformationMenu.TMP_Group_umtya2_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_umtya2_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_umtya2_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       boolean alreadyHasParms = ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, 0x10a61ef5a56L, "parameter"))).isNotEmpty();
@@ -62,12 +62,12 @@ public class SNodeOperation_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new SNodeOperation_TransformationMenu.TransformationMenuPart_Group_umtya2_a1.TransformationMenuPart_Action_umtya2_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new SNodeOperation_TransformationMenu.TMP_Group_umtya2_a1.TMP_Action_umtya2_a0b());
     }
-    private class TransformationMenuPart_Action_umtya2_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_umtya2_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new SNodeOperation_TransformationMenu.TransformationMenuPart_Group_umtya2_a1.TransformationMenuPart_Action_umtya2_a0b.Item(context);
+        return new SNodeOperation_TransformationMenu.TMP_Group_umtya2_a1.TMP_Action_umtya2_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

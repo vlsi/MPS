@@ -53,22 +53,22 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_a0());
-      result.add(new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_b0());
-      result.add(new EditorCellModel_TransformationMenu.TransformationMenuPart_Parameterized_puymhi_c0());
-      result.add(new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_d0());
-      result.add(new EditorCellModel_TransformationMenu.TransformationMenuPart_Parameterized_puymhi_e0());
-      result.add(new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_f0());
-      result.add(new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_g0());
-      result.add(new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_h0());
+      result.add(new EditorCellModel_TransformationMenu.TMP_Action_puymhi_a0());
+      result.add(new EditorCellModel_TransformationMenu.TMP_Action_puymhi_b0());
+      result.add(new EditorCellModel_TransformationMenu.TMP_Param_puymhi_c0());
+      result.add(new EditorCellModel_TransformationMenu.TMP_Action_puymhi_d0());
+      result.add(new EditorCellModel_TransformationMenu.TMP_Param_puymhi_e0());
+      result.add(new EditorCellModel_TransformationMenu.TMP_Action_puymhi_f0());
+      result.add(new EditorCellModel_TransformationMenu.TMP_Action_puymhi_g0());
+      result.add(new EditorCellModel_TransformationMenu.TMP_Action_puymhi_h0());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_puymhi_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_puymhi_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_a0.Item(context);
+      return new EditorCellModel_TransformationMenu.TMP_Action_puymhi_a0.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -97,10 +97,10 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private class TransformationMenuPart_Action_puymhi_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_puymhi_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_b0.Item(context);
+      return new EditorCellModel_TransformationMenu.TMP_Action_puymhi_b0.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -144,12 +144,12 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private class TransformationMenuPart_Parameterized_puymhi_c0 extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_puymhi_c0 extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TransformationMenuPart_Parameterized_puymhi_c0.TransformationMenuPart_Action_puymhi_a2a(parameter).createItems(context);
+      return new EditorCellModel_TransformationMenu.TMP_Param_puymhi_c0.TMP_Action_puymhi_a2a(parameter).createItems(context);
     }
 
     @Nullable
@@ -184,14 +184,14 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
       return (Sequence.fromIterable(notEditedProperties).isEmpty() ? Collections.<SNode>emptyList() : Collections.singletonList(Sequence.fromIterable(notEditedProperties).first()));
     }
 
-    private class TransformationMenuPart_Action_puymhi_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_puymhi_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final SNode myParameterObject;
-      public TransformationMenuPart_Action_puymhi_a2a(SNode parameterObject) {
+      public TMP_Action_puymhi_a2a(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new EditorCellModel_TransformationMenu.TransformationMenuPart_Parameterized_puymhi_c0.TransformationMenuPart_Action_puymhi_a2a.Item(context);
+        return new EditorCellModel_TransformationMenu.TMP_Param_puymhi_c0.TMP_Action_puymhi_a2a.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -216,10 +216,10 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  private class TransformationMenuPart_Action_puymhi_d0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_puymhi_d0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_d0.Item(context);
+      return new EditorCellModel_TransformationMenu.TMP_Action_puymhi_d0.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -264,12 +264,12 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private class TransformationMenuPart_Parameterized_puymhi_e0 extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Param_puymhi_e0 extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TransformationMenuPart_Parameterized_puymhi_e0.TransformationMenuPart_Action_puymhi_a4a(parameter).createItems(context);
+      return new EditorCellModel_TransformationMenu.TMP_Param_puymhi_e0.TMP_Action_puymhi_a4a(parameter).createItems(context);
     }
 
     @Nullable
@@ -314,14 +314,14 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
       return (Sequence.fromIterable(notEditedLinks).isEmpty() ? Collections.<SNode>emptyList() : Collections.singletonList(Sequence.fromIterable(notEditedLinks).first()));
     }
 
-    private class TransformationMenuPart_Action_puymhi_a4a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_puymhi_a4a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       private final SNode myParameterObject;
-      public TransformationMenuPart_Action_puymhi_a4a(SNode parameterObject) {
+      public TMP_Action_puymhi_a4a(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new EditorCellModel_TransformationMenu.TransformationMenuPart_Parameterized_puymhi_e0.TransformationMenuPart_Action_puymhi_a4a.Item(context);
+        return new EditorCellModel_TransformationMenu.TMP_Param_puymhi_e0.TMP_Action_puymhi_a4a.Item(context);
       }
 
       private class Item extends ActionItemBase {
@@ -362,10 +362,10 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  private class TransformationMenuPart_Action_puymhi_f0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_puymhi_f0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_f0.Item(context);
+      return new EditorCellModel_TransformationMenu.TMP_Action_puymhi_f0.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -446,10 +446,10 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private class TransformationMenuPart_Action_puymhi_g0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_puymhi_g0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_g0.Item(context);
+      return new EditorCellModel_TransformationMenu.TMP_Action_puymhi_g0.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -490,10 +490,10 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private class TransformationMenuPart_Action_puymhi_h0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_puymhi_h0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_h0.Item(context);
+      return new EditorCellModel_TransformationMenu.TMP_Action_puymhi_h0.Item(context);
     }
 
     private class Item extends ActionItemBase {

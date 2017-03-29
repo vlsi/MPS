@@ -18,8 +18,6 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetModuleFolder_Action");
     DevkitActions_ActionGroup.this.addSeparator();
-    DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModuleToProject_Action");
-    DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action");
     DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModules_Action");
     {
       LabelledAnchor action = new LabelledAnchor(DevkitActions_ActionGroup.LABEL_ID_analyze);

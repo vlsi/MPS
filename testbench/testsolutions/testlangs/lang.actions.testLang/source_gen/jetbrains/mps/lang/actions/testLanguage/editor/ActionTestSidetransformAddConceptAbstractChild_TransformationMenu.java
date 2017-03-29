@@ -44,15 +44,15 @@ public class ActionTestSidetransformAddConceptAbstractChild_TransformationMenu e
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x43d1b15d415e8d80L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptAbstractChild"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ActionTestSidetransformAddConceptAbstractChild_TransformationMenu.TransformationMenuPart_WrapSubstituteMenu_eewfkw_a1());
+      result.add(new ActionTestSidetransformAddConceptAbstractChild_TransformationMenu.TMP_WrapSM_eewfkw_a1());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ActionTestSidetransformAddConceptAbstractChild_TransformationMenu.TransformationMenuPart_WrapSubstituteMenu_eewfkw_a2());
+      result.add(new ActionTestSidetransformAddConceptAbstractChild_TransformationMenu.TMP_WrapSM_eewfkw_a2());
     }
     return result;
   }
 
-  public class TransformationMenuPart_WrapSubstituteMenu_eewfkw_a1 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_eewfkw_a1 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override
@@ -67,7 +67,7 @@ public class ActionTestSidetransformAddConceptAbstractChild_TransformationMenu e
       SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), createdNode, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
     }
   }
-  public class TransformationMenuPart_WrapSubstituteMenu_eewfkw_a2 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_eewfkw_a2 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override

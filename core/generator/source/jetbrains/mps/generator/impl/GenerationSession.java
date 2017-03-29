@@ -38,7 +38,6 @@ import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.cache.QueryProviderCache;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
-import jetbrains.mps.generator.impl.plan.CheckpointIdentity;
 import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.impl.plan.Conflict;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
@@ -47,6 +46,7 @@ import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.MapCfgComparator;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.generator.impl.plan.PlanSignature;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -256,7 +256,7 @@ class GenerationSession {
             if (!checkpointStep.isPersisted()) {
               continue;
             }
-            CheckpointIdentity checkpointIdentity = new CheckpointIdentity(myGenerationPlan, checkpointStep);
+            CheckpointIdentity checkpointIdentity = checkpointStep.getIdentity();
             final CrossModelEnvironment xmodelEnv = mySessionContext.getCrossModelEnvironment();
             SModel checkpointModel = xmodelEnv.createBlankCheckpointModel(myOriginalInputModel.getReference(), checkpointIdentity);
             CheckpointStateBuilder cpBuilder = new CheckpointStateBuilder(currInputModel, checkpointModel, transitionTrace.getActiveTransition());

@@ -45,12 +45,12 @@ public class SuperNodeExpression_TransformationMenu extends TransformationMenuBa
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new SuperNodeExpression_TransformationMenu.TransformationMenuPart_Group_gori8p_a1());
+      result.add(new SuperNodeExpression_TransformationMenu.TMP_Group_gori8p_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_gori8p_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_gori8p_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, 0x498a2c3387127040L, "superConcept")) == null);
@@ -58,12 +58,12 @@ public class SuperNodeExpression_TransformationMenu extends TransformationMenuBa
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new SuperNodeExpression_TransformationMenu.TransformationMenuPart_Group_gori8p_a1.TransformationMenuPart_Action_gori8p_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new SuperNodeExpression_TransformationMenu.TMP_Group_gori8p_a1.TMP_Action_gori8p_a0b());
     }
-    private class TransformationMenuPart_Action_gori8p_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_gori8p_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new SuperNodeExpression_TransformationMenu.TransformationMenuPart_Group_gori8p_a1.TransformationMenuPart_Action_gori8p_a0b.Item(context);
+        return new SuperNodeExpression_TransformationMenu.TMP_Group_gori8p_a1.TMP_Action_gori8p_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

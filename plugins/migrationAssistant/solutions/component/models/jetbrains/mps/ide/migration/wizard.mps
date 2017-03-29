@@ -2,12 +2,12 @@
 <model ref="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
     <import index="uxeh" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.wizard(MPS.IDEA/)" />
@@ -290,11 +290,10 @@
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -1307,13 +1306,12 @@
                                 </node>
                               </node>
                             </node>
-                            <node concept="34ab3g" id="4pYGyBVuU58" role="3cqZAp">
-                              <property role="35gtTG" value="error" />
-                              <property role="34fQS0" value="true" />
-                              <node concept="Xl_RD" id="4pYGyBVuU5a" role="34bqiv">
+                            <node concept="RRSsy" id="3jYQuSB37fh" role="3cqZAp">
+                              <property role="RRSoG" value="error" />
+                              <node concept="Xl_RD" id="4pYGyBVuU5a" role="RRSoy">
                                 <property role="Xl_RC" value="exception occurred on migration" />
                               </node>
-                              <node concept="37vLTw" id="4pYGyBVuU5c" role="34bMjA">
+                              <node concept="37vLTw" id="4pYGyBVuU5c" role="RRSow">
                                 <ref role="3cqZAo" node="4pYGyBVuTXn" resolve="t" />
                               </node>
                             </node>
@@ -2048,9 +2046,9 @@
         </node>
         <node concept="3clFbF" id="6khVpJexXT$" role="3cqZAp">
           <node concept="37vLTI" id="6khVpJexZ76" role="3clFbG">
-            <node concept="2YIFZM" id="1XQRSQI2ry4" role="37vLTx">
-              <ref role="37wK5l" to="bd8o:~ModalityState.defaultModalityState():com.intellij.openapi.application.ModalityState" resolve="defaultModalityState" />
-              <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+            <node concept="10M0yZ" id="40oD5Ly$eg$" role="37vLTx">
+              <ref role="3cqZAo" to="bd8o:~ModalityState.NON_MODAL" resolve="NON_MODAL" />
+              <ref role="1PxDUh" to="bd8o:~ModalityState" resolve="ModalityState" />
             </node>
             <node concept="2OqwBi" id="6khVpJexYmC" role="37vLTJ">
               <node concept="37vLTw" id="6khVpJexXTy" role="2Oq$k0">

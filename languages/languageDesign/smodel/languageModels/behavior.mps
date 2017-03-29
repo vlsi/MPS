@@ -918,7 +918,9 @@
         <node concept="3cpWs8" id="hEwIqRs" role="3cqZAp">
           <node concept="3cpWsn" id="hEwIqRt" role="3cpWs9">
             <property role="TrG5h" value="concept" />
-            <node concept="3THzug" id="hEwIqRu" role="1tU5fm" />
+            <node concept="3Tqbb2" id="39J_OMsqp7t" role="1tU5fm">
+              <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+            </node>
             <node concept="2OqwBi" id="hEwIqRv" role="33vP2m">
               <node concept="13iPFW" id="hEwIqRw" role="2Oq$k0" />
               <node concept="3TrEf2" id="hEwIqRx" role="2OqNvi">

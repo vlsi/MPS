@@ -3909,9 +3909,9 @@
       <node id="8113079483879306406" at="33,0,34,0" concept="3" trace="myLocations" />
       <node id="8113079483879306406" at="35,67,36,63" concept="7" />
       <node id="8113079483879306406" at="41,124,42,156" concept="6" />
-      <node id="8113079483879306406" at="43,135,44,298" concept="2" />
+      <node id="8113079483879306406" at="43,135,44,279" concept="2" />
       <node id="8113079483879306406" at="45,5,46,18" concept="7" />
-      <node id="8113079483879322739" at="51,84,52,89" concept="7" />
+      <node id="8113079483879322739" at="51,84,52,70" concept="7" />
       <node id="8113079483879322739" at="56,0,57,0" concept="3" trace="_context" />
       <node id="8113079483879322739" at="58,55,59,27" concept="2" />
       <node id="8113079483879323300" at="64,50,65,43" concept="7" />
@@ -3932,8 +3932,8 @@
       <node id="8113079483879306406" at="39,0,48,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="8113079483879306406" at="30,30,31,16" />
       <scope id="8113079483879306406" at="35,67,36,63" />
-      <scope id="8113079483879306406" at="43,135,44,298" />
-      <scope id="8113079483879322739" at="51,84,52,89" />
+      <scope id="8113079483879306406" at="43,135,44,279" />
+      <scope id="8113079483879322739" at="51,84,52,70" />
       <scope id="8113079483879322739" at="58,55,59,27" />
       <scope id="8113079483879322750" at="64,50,65,43" />
       <scope id="8113079483879508016" at="70,204,71,401" />
@@ -3966,8 +3966,8 @@
       <scope id="8113079483879306406" at="39,0,48,0">
         <var name="_context" id="8113079483879306406" />
       </scope>
-      <unit id="8113079483879322739" at="55,0,87,0" name="jetbrains.mps.lang.migration.editor.NonExactInstances$TransformationMenuPart_Action_bvz3fq_a0$Item" />
-      <unit id="8113079483879322739" at="49,0,88,0" name="jetbrains.mps.lang.migration.editor.NonExactInstances$TransformationMenuPart_Action_bvz3fq_a0" />
+      <unit id="8113079483879322739" at="55,0,87,0" name="jetbrains.mps.lang.migration.editor.NonExactInstances$TMP_Action_bvz3fq_a0$Item" />
+      <unit id="8113079483879322739" at="49,0,88,0" name="jetbrains.mps.lang.migration.editor.NonExactInstances$TMP_Action_bvz3fq_a0" />
       <unit id="8113079483879306406" at="29,0,89,0" name="jetbrains.mps.lang.migration.editor.NonExactInstances" />
     </file>
   </root>

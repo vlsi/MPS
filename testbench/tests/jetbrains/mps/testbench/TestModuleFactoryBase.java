@@ -122,6 +122,9 @@ public class TestModuleFactoryBase implements TestModuleFactory {
   public Language createLanguageWithGenerator() {
     GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     String uuid = UUID.randomUUID().toString();
+    // XXX GD.namespace used to mean alias. Not sure if it's relevant to enforce generator's namespace to
+    // be that of sourceLanguage#whatever for tests, left 'improper' namespace and no alias set. If fails,
+    // shall move TEST_PREFIX_GENERATOR... to setAlias() and setNamespace() to that based on source language's one.
     generatorDescriptor.setNamespace(TEST_PREFIX_GENERATOR + "_" + getNewId() + "_" + uuid);
     generatorDescriptor.setId(ModuleId.fromString(uuid));
     LanguageDescriptor languageDescriptor = createLanguageDescriptor();

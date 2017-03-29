@@ -18,13 +18,17 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelOperations;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.scope.ModelsScope;
 import jetbrains.mps.smodel.SNodePointer;
@@ -53,15 +57,27 @@ public class AttributeStyleClassItem_Constraints extends BaseConstraintsDescript
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              List<Language> languages = SModelOperations.getLanguages(SNodeOperations.getModel(_context.getContextNode()));
               List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
               ListSequence.fromList(models).addElement(SNodeOperations.getModel(_context.getContextNode()));
               ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelOperations.allImportedModels(SNodeOperations.getModel(_context.getContextNode()))));
-              ListSequence.fromList(models).addSequence(ListSequence.fromList(languages).select(new ISelector<Language, SModel>() {
-                public SModel select(Language it) {
-                  return SModuleOperations.getAspect(it, "editor");
+              SRepository contextRepo = SNodeOperations.getModel(_context.getContextNode()).getRepository();
+              if (contextRepo != null) {
+                for (SLanguage l : new SLanguageHierarchy(LanguageRegistry.getInstance(contextRepo), SModelOperations.getAllLanguageImports(SNodeOperations.getModel(_context.getContextNode()))).getExtended()) {
+                  SModuleReference sourceModuleRef = l.getSourceModuleReference();
+                  if (sourceModuleRef == null) {
+                    continue;
+                  }
+                  SModule sourceLang = sourceModuleRef.resolve(contextRepo);
+                  if (sourceLang == null) {
+                    continue;
+                  }
+                  SModel editorAspectModel = SModuleOperations.getAspect(sourceLang, "editor");
+                  if (editorAspectModel == null) {
+                    continue;
+                  }
+                  ListSequence.fromList(models).addElement(editorAspectModel);
                 }
-              }));
+              }
               return new ModelsScope(models, false, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"));
             }
           }

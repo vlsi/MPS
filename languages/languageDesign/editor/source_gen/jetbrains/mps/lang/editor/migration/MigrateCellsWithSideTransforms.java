@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -46,11 +47,17 @@ public class MigrateCellsWithSideTransforms extends MigrationScriptBase {
           return scope;
         }
       };
-      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, "jetbrains.mps.lang.editor.structure.TransformationMenuContribution"), false)).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> notMigratedAnchorTags = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, "jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation"))) != null);
         }
-      }).select(new ISelector<SNode, MigrateManuallyProblem>() {
+      });
+      Iterable<SNode> notMigratedApplySideTransforms = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72449b609d0e77bbL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms"), false)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, "jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation"))) != null);
+        }
+      });
+      return Sequence.fromIterable(notMigratedAnchorTags).concat(Sequence.fromIterable(notMigratedApplySideTransforms)).select(new ISelector<SNode, MigrateManuallyProblem>() {
         public MigrateManuallyProblem select(SNode it) {
           return new MigrateManuallyProblem(it);
         }

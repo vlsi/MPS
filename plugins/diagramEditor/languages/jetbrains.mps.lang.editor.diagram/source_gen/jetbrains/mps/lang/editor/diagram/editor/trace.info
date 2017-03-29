@@ -999,17 +999,17 @@
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/1741258697587116152">
     <file name="AbstractArgument_SubstituteMenu.java">
       <node id="1741258697587116152" at="36,118,37,140" concept="7" />
-      <node id="1741258697587116152" at="37,140,38,302" concept="2" />
-      <node id="1741258697587116152" at="38,302,39,306" concept="2" />
-      <node id="1741258697587116152" at="39,306,40,298" concept="2" />
-      <node id="1741258697587116152" at="40,298,41,18" concept="8" />
-      <node id="1741258697587116152" at="46,100,47,159" concept="8" />
+      <node id="1741258697587116152" at="37,140,38,279" concept="2" />
+      <node id="1741258697587116152" at="38,279,39,283" concept="2" />
+      <node id="1741258697587116152" at="39,283,40,283" concept="2" />
+      <node id="1741258697587116152" at="40,283,41,18" concept="8" />
+      <node id="1741258697587116152" at="46,100,47,121" concept="8" />
       <node id="1741258697587116158" at="51,87,52,255" concept="7" />
       <node id="1741258697587116167" at="53,41,54,39" concept="8" />
       <node id="1741258697587116181" at="57,39,58,188" concept="8" />
       <node id="1741258697587116152" at="63,0,64,0" concept="3" trace="myParameterObject" />
-      <node id="1741258697587116152" at="64,73,65,44" concept="2" />
-      <node id="1741258697587116152" at="70,79,71,144" concept="8" />
+      <node id="1741258697587116152" at="64,58,65,44" concept="2" />
+      <node id="1741258697587116152" at="70,79,71,106" concept="8" />
       <node id="1741258697587116152" at="74,0,75,0" concept="3" trace="_context" />
       <node id="1741258697587116152" at="75,52,76,254" concept="11" />
       <node id="1741258697587116152" at="76,254,77,29" concept="2" />
@@ -1022,13 +1022,13 @@
       <node id="1741258697587116152" at="100,11,101,22" concept="8" />
       <node id="1741258697587116218" at="105,64,106,178" concept="8" />
       <node id="1741258697587116297" at="109,81,110,133" concept="2" />
-      <node id="1741258697587116152" at="119,100,120,159" concept="8" />
+      <node id="1741258697587116152" at="119,100,120,121" concept="8" />
       <node id="1741258697587116339" at="124,87,125,263" concept="7" />
       <node id="1741258697587116348" at="126,45,127,39" concept="8" />
       <node id="1741258697587116362" at="130,39,131,192" concept="8" />
       <node id="1741258697587116152" at="136,0,137,0" concept="3" trace="myParameterObject" />
-      <node id="1741258697587116152" at="137,73,138,44" concept="2" />
-      <node id="1741258697587116152" at="143,79,144,144" concept="8" />
+      <node id="1741258697587116152" at="137,58,138,44" concept="2" />
+      <node id="1741258697587116152" at="143,79,144,106" concept="8" />
       <node id="1741258697587116152" at="147,0,148,0" concept="3" trace="_context" />
       <node id="1741258697587116152" at="148,52,149,258" concept="11" />
       <node id="1741258697587116152" at="149,258,150,29" concept="2" />
@@ -1042,7 +1042,7 @@
       <node id="1741258697587116399" at="178,64,179,180" concept="8" />
       <node id="1741258697587116478" at="182,81,183,133" concept="2" />
       <node id="1741258697587116485" at="183,133,184,17" concept="8" />
-      <node id="1741258697587116152" at="194,77,195,99" concept="8" />
+      <node id="1741258697587116152" at="194,77,195,84" concept="8" />
       <node id="1741258697587116152" at="198,0,199,0" concept="3" trace="_context" />
       <node id="1741258697587116152" at="199,50,200,255" concept="11" />
       <node id="1741258697587116152" at="200,255,201,27" concept="2" />
@@ -1052,12 +1052,12 @@
       <node id="1741258697587116563" at="216,131,217,15" concept="8" />
       <node id="1741258697587116165" at="52,255,55,7" concept="5" />
       <node id="1741258697587116179" at="57,0,60,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1741258697587116152" at="64,0,67,0" concept="1" trace="SubstituteMenuPart_Action_eitulo_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587116152" at="64,0,67,0" concept="1" trace="SMP_Action_eitulo_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587116152" at="89,67,92,11" concept="5" />
       <node id="1741258697587116152" at="97,62,100,11" concept="5" />
       <node id="1741258697587116346" at="125,263,128,7" concept="5" />
       <node id="1741258697587116360" at="130,0,133,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1741258697587116152" at="137,0,140,0" concept="1" trace="SubstituteMenuPart_Action_eitulo_a1#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587116152" at="137,0,140,0" concept="1" trace="SMP_Action_eitulo_a1#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587116152" at="162,67,165,11" concept="5" />
       <node id="1741258697587116152" at="170,62,173,11" concept="5" />
       <node id="1741258697587116152" at="75,0,79,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
@@ -1086,24 +1086,24 @@
       <node id="1741258697587116152" at="34,0,43,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <node id="1741258697587116152" at="49,0,62,0" concept="6" trace="getParameters#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/lang/Iterable;" />
       <node id="1741258697587116152" at="122,0,135,0" concept="6" trace="getParameters#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/lang/Iterable;" />
-      <scope id="1741258697587116152" at="46,100,47,159" />
+      <scope id="1741258697587116152" at="46,100,47,121" />
       <scope id="1741258697587116166" at="53,41,54,39" />
       <scope id="1741258697587116180" at="57,39,58,188" />
-      <scope id="1741258697587116152" at="64,73,65,44" />
-      <scope id="1741258697587116152" at="70,79,71,144" />
+      <scope id="1741258697587116152" at="64,58,65,44" />
+      <scope id="1741258697587116152" at="70,79,71,106" />
       <scope id="1741258697587116152" at="90,51,91,83" />
       <scope id="1741258697587116152" at="98,51,99,88" />
       <scope id="1741258697587116215" at="105,64,106,178" />
       <scope id="1741258697587116296" at="109,81,110,133" />
-      <scope id="1741258697587116152" at="119,100,120,159" />
+      <scope id="1741258697587116152" at="119,100,120,121" />
       <scope id="1741258697587116347" at="126,45,127,39" />
       <scope id="1741258697587116361" at="130,39,131,192" />
-      <scope id="1741258697587116152" at="137,73,138,44" />
-      <scope id="1741258697587116152" at="143,79,144,144" />
+      <scope id="1741258697587116152" at="137,58,138,44" />
+      <scope id="1741258697587116152" at="143,79,144,106" />
       <scope id="1741258697587116152" at="163,51,164,83" />
       <scope id="1741258697587116152" at="171,51,172,88" />
       <scope id="1741258697587116396" at="178,64,179,180" />
-      <scope id="1741258697587116152" at="194,77,195,99" />
+      <scope id="1741258697587116152" at="194,77,195,84" />
       <scope id="1741258697587116152" at="206,56,207,283" />
       <scope id="1741258697587116517" at="211,62,212,31" />
       <scope id="1741258697587116152" at="75,52,77,29" />
@@ -1219,16 +1219,16 @@
       <scope id="1741258697587116152" at="122,0,135,0">
         <var name="_context" id="1741258697587116152" />
       </scope>
-      <unit id="1741258697587116179" at="56,93,60,7" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SubstituteMenuPart_Parameterized_eitulo_a$1" />
-      <unit id="1741258697587116360" at="129,97,133,7" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SubstituteMenuPart_Parameterized_eitulo_b$1" />
-      <unit id="1741258697587116152" at="197,0,220,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SubstituteMenuPart_Action_eitulo_c$Item" />
-      <unit id="1741258697587116152" at="190,0,221,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SubstituteMenuPart_Action_eitulo_c" />
-      <unit id="1741258697587116152" at="73,0,113,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SubstituteMenuPart_Parameterized_eitulo_a$SubstituteMenuPart_Action_eitulo_a0$Item" />
-      <unit id="1741258697587116152" at="146,0,187,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SubstituteMenuPart_Parameterized_eitulo_b$SubstituteMenuPart_Action_eitulo_a1$Item" />
-      <unit id="1741258697587116152" at="62,0,114,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SubstituteMenuPart_Parameterized_eitulo_a$SubstituteMenuPart_Action_eitulo_a0" />
-      <unit id="1741258697587116152" at="135,0,188,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SubstituteMenuPart_Parameterized_eitulo_b$SubstituteMenuPart_Action_eitulo_a1" />
-      <unit id="1741258697587116152" at="43,0,116,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SubstituteMenuPart_Parameterized_eitulo_a" />
-      <unit id="1741258697587116152" at="116,0,190,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SubstituteMenuPart_Parameterized_eitulo_b" />
+      <unit id="1741258697587116179" at="56,93,60,7" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SMP_Param_eitulo_a$1" />
+      <unit id="1741258697587116360" at="129,97,133,7" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SMP_Param_eitulo_b$1" />
+      <unit id="1741258697587116152" at="197,0,220,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SMP_Action_eitulo_c$Item" />
+      <unit id="1741258697587116152" at="190,0,221,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SMP_Action_eitulo_c" />
+      <unit id="1741258697587116152" at="73,0,113,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SMP_Param_eitulo_a$SMP_Action_eitulo_a0$Item" />
+      <unit id="1741258697587116152" at="146,0,187,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SMP_Param_eitulo_b$SMP_Action_eitulo_a1$Item" />
+      <unit id="1741258697587116152" at="62,0,114,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SMP_Param_eitulo_a$SMP_Action_eitulo_a0" />
+      <unit id="1741258697587116152" at="135,0,188,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SMP_Param_eitulo_b$SMP_Action_eitulo_a1" />
+      <unit id="1741258697587116152" at="43,0,116,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SMP_Param_eitulo_a" />
+      <unit id="1741258697587116152" at="116,0,190,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu$SMP_Param_eitulo_b" />
       <unit id="1741258697587116152" at="33,0,222,0" name="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu" />
     </file>
   </root>
@@ -1236,8 +1236,8 @@
     <file name="DiagramspecificEditorCells_Contribution.java">
       <node id="1741258697587116595" at="27,52,28,16" concept="11" />
       <node id="1741258697587116595" at="32,118,33,140" concept="7" />
-      <node id="1741258697587116595" at="33,140,34,313" concept="2" />
-      <node id="1741258697587116595" at="34,313,35,18" concept="8" />
+      <node id="1741258697587116595" at="33,140,34,295" concept="2" />
+      <node id="1741258697587116595" at="34,295,35,18" concept="8" />
       <node id="1741258697587116595" at="42,0,43,0" concept="3" trace="myCreatedNode" />
       <node id="1741258697587116595" at="46,52,47,178" concept="8" />
       <node id="1741258697587116595" at="51,58,52,55" concept="7" />
@@ -1289,8 +1289,8 @@
         <var name="_context" id="1741258697587116595" />
         <var name="item" id="1741258697587116595" />
       </scope>
-      <unit id="1741258697587116595" at="41,17,62,7" name="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution$SubstituteMenuPart_Wrapper_ljrot4_a$1" />
-      <unit id="1741258697587116595" at="37,0,71,0" name="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution$SubstituteMenuPart_Wrapper_ljrot4_a" />
+      <unit id="1741258697587116595" at="41,17,62,7" name="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution$SMP_Wrap_ljrot4_a$1" />
+      <unit id="1741258697587116595" at="37,0,71,0" name="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution$SMP_Wrap_ljrot4_a" />
       <unit id="1741258697587116595" at="26,0,72,0" name="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution" />
     </file>
   </root>

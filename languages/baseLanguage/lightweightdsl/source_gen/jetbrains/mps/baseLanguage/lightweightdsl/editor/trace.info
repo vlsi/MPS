@@ -21,8 +21,8 @@
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:60fc5d65-00f5-411a-8513-c8d5fe6ffc51(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.editor)/1741258697586929252">
     <file name="MemberModifier_SubstituteMenu.java">
       <node id="1741258697586929252" at="28,118,29,140" concept="6" />
-      <node id="1741258697586929252" at="29,140,30,92" concept="2" />
-      <node id="1741258697586929252" at="30,92,31,18" concept="7" />
+      <node id="1741258697586929252" at="29,140,30,77" concept="2" />
+      <node id="1741258697586929252" at="30,77,31,18" concept="7" />
       <node id="1741258697586929252" at="36,55,37,50" concept="7" />
       <node id="6305381134221450767" at="41,93,42,518" concept="7" />
       <node id="1741258697586929252" at="45,125,46,149" concept="7" />
@@ -56,8 +56,8 @@
       <scope id="1741258697586929252" at="34,0,41,0">
         <var name="_context" id="1741258697586929252" />
       </scope>
-      <unit id="1741258697586929252" at="35,265,39,7" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.MemberModifier_SubstituteMenu$SubstituteMenuPart_Subconcepts_aj0y4j_a$1" />
-      <unit id="1741258697586929252" at="33,0,49,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.MemberModifier_SubstituteMenu$SubstituteMenuPart_Subconcepts_aj0y4j_a" />
+      <unit id="1741258697586929252" at="35,265,39,7" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.MemberModifier_SubstituteMenu$SMP_Subconcepts_aj0y4j_a$1" />
+      <unit id="1741258697586929252" at="33,0,49,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.MemberModifier_SubstituteMenu$SMP_Subconcepts_aj0y4j_a" />
       <unit id="1741258697586929252" at="25,0,50,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.MemberModifier_SubstituteMenu" />
     </file>
   </root>
@@ -65,15 +65,15 @@
     <file name="ClassLikeMembers_Contribution.java">
       <node id="1741258697586929256" at="32,42,33,16" concept="11" />
       <node id="1741258697586929256" at="37,118,38,140" concept="6" />
-      <node id="1741258697586929256" at="38,140,39,311" concept="2" />
-      <node id="1741258697586929256" at="39,311,40,313" concept="2" />
-      <node id="1741258697586929256" at="40,313,41,302" concept="2" />
-      <node id="1741258697586929256" at="41,302,42,18" concept="7" />
-      <node id="1741258697586929256" at="47,100,48,157" concept="7" />
+      <node id="1741258697586929256" at="38,140,39,288" concept="2" />
+      <node id="1741258697586929256" at="39,288,40,290" concept="2" />
+      <node id="1741258697586929256" at="40,290,41,279" concept="2" />
+      <node id="1741258697586929256" at="41,279,42,18" concept="7" />
+      <node id="1741258697586929256" at="47,100,48,119" concept="7" />
       <node id="1741258697586929263" at="52,87,53,435" concept="7" />
       <node id="1741258697586929256" at="56,0,57,0" concept="3" trace="myParameterObject" />
-      <node id="1741258697586929256" at="57,73,58,44" concept="2" />
-      <node id="1741258697586929256" at="63,79,64,142" concept="7" />
+      <node id="1741258697586929256" at="57,58,58,44" concept="2" />
+      <node id="1741258697586929256" at="63,79,64,104" concept="7" />
       <node id="1741258697586929256" at="67,0,68,0" concept="3" trace="_context" />
       <node id="1741258697586929256" at="68,52,69,265" concept="11" />
       <node id="1741258697586929256" at="69,265,70,29" concept="2" />
@@ -83,11 +83,11 @@
       <node id="1741258697586929256" at="88,11,89,22" concept="7" />
       <node id="1741258697586929301" at="93,64,94,180" concept="7" />
       <node id="1741258697586929335" at="98,67,99,26" concept="7" />
-      <node id="1741258697586929256" at="108,100,109,157" concept="7" />
+      <node id="1741258697586929256" at="108,100,109,119" concept="7" />
       <node id="1741258697586929422" at="113,87,114,439" concept="7" />
       <node id="1741258697586929256" at="117,0,118,0" concept="3" trace="myParameterObject" />
-      <node id="1741258697586929256" at="118,73,119,44" concept="2" />
-      <node id="1741258697586929256" at="124,79,125,142" concept="7" />
+      <node id="1741258697586929256" at="118,58,119,44" concept="2" />
+      <node id="1741258697586929256" at="124,79,125,104" concept="7" />
       <node id="1741258697586929256" at="128,0,129,0" concept="3" trace="_context" />
       <node id="1741258697586929256" at="129,52,130,267" concept="11" />
       <node id="1741258697586929256" at="130,267,131,29" concept="2" />
@@ -97,11 +97,11 @@
       <node id="1741258697586929256" at="149,11,150,22" concept="7" />
       <node id="1741258697586929460" at="154,64,155,180" concept="7" />
       <node id="1741258697586929494" at="159,67,160,28" concept="7" />
-      <node id="1741258697586929256" at="169,100,170,157" concept="7" />
+      <node id="1741258697586929256" at="169,100,170,119" concept="7" />
       <node id="1741258697586929581" at="174,87,175,447" concept="7" />
       <node id="1741258697586929256" at="178,0,179,0" concept="3" trace="myParameterObject" />
-      <node id="1741258697586929256" at="179,73,180,44" concept="2" />
-      <node id="1741258697586929256" at="185,79,186,142" concept="7" />
+      <node id="1741258697586929256" at="179,58,180,44" concept="2" />
+      <node id="1741258697586929256" at="185,79,186,104" concept="7" />
       <node id="1741258697586929256" at="189,0,190,0" concept="3" trace="_context" />
       <node id="1741258697586929256" at="190,52,191,256" concept="11" />
       <node id="1741258697586929256" at="191,256,192,29" concept="2" />
@@ -113,13 +113,13 @@
       <node id="1741258697586929256" at="218,11,219,22" concept="7" />
       <node id="1741258697586929619" at="223,64,224,286" concept="7" />
       <node id="1741258697586929256" at="32,0,35,0" concept="1" trace="ClassLikeMembers_Contribution#()V" />
-      <node id="1741258697586929256" at="57,0,60,0" concept="1" trace="SubstituteMenuPart_Action_hyz1k2_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697586929256" at="57,0,60,0" concept="1" trace="SMP_Action_hyz1k2_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697586929373" at="77,0,80,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697586929256" at="85,62,88,11" concept="4" />
-      <node id="1741258697586929256" at="118,0,121,0" concept="1" trace="SubstituteMenuPart_Action_hyz1k2_a1#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697586929256" at="118,0,121,0" concept="1" trace="SMP_Action_hyz1k2_a1#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697586929532" at="138,0,141,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697586929256" at="146,62,149,11" concept="4" />
-      <node id="1741258697586929256" at="179,0,182,0" concept="1" trace="SubstituteMenuPart_Action_hyz1k2_a2#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697586929256" at="179,0,182,0" concept="1" trace="SMP_Action_hyz1k2_a2#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697586929662" at="199,0,202,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697586929256" at="207,67,210,11" concept="4" />
       <node id="1741258697586929256" at="215,62,218,11" concept="4" />
@@ -152,26 +152,26 @@
       <node id="1741258697586929256" at="134,0,144,0" concept="5" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1741258697586929256" at="195,0,205,0" concept="5" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1741258697586929256" at="32,42,33,16" />
-      <scope id="1741258697586929256" at="47,100,48,157" />
+      <scope id="1741258697586929256" at="47,100,48,119" />
       <scope id="1741258697586929262" at="52,87,53,435" />
-      <scope id="1741258697586929256" at="57,73,58,44" />
-      <scope id="1741258697586929256" at="63,79,64,142" />
+      <scope id="1741258697586929256" at="57,58,58,44" />
+      <scope id="1741258697586929256" at="63,79,64,104" />
       <scope id="1741258697586929374" at="77,41,78,45" />
       <scope id="1741258697586929256" at="86,51,87,88" />
       <scope id="1741258697586929298" at="93,64,94,180" />
       <scope id="1741258697586929332" at="98,67,99,26" />
-      <scope id="1741258697586929256" at="108,100,109,157" />
+      <scope id="1741258697586929256" at="108,100,109,119" />
       <scope id="1741258697586929421" at="113,87,114,439" />
-      <scope id="1741258697586929256" at="118,73,119,44" />
-      <scope id="1741258697586929256" at="124,79,125,142" />
+      <scope id="1741258697586929256" at="118,58,119,44" />
+      <scope id="1741258697586929256" at="124,79,125,104" />
       <scope id="1741258697586929533" at="138,41,139,45" />
       <scope id="1741258697586929256" at="147,51,148,88" />
       <scope id="1741258697586929457" at="154,64,155,180" />
       <scope id="1741258697586929491" at="159,67,160,28" />
-      <scope id="1741258697586929256" at="169,100,170,157" />
+      <scope id="1741258697586929256" at="169,100,170,119" />
       <scope id="1741258697586929580" at="174,87,175,447" />
-      <scope id="1741258697586929256" at="179,73,180,44" />
-      <scope id="1741258697586929256" at="185,79,186,142" />
+      <scope id="1741258697586929256" at="179,58,180,44" />
+      <scope id="1741258697586929256" at="185,79,186,104" />
       <scope id="1741258697586929663" at="199,41,200,45" />
       <scope id="1741258697586929256" at="208,51,209,83" />
       <scope id="1741258697586929256" at="216,51,217,88" />
@@ -286,18 +286,18 @@
       <scope id="1741258697586929256" at="195,0,205,0">
         <var name="pattern" id="1741258697586929256" />
       </scope>
-      <unit id="1741258697586929373" at="76,327,80,11" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_a$SubstituteMenuPart_Action_hyz1k2_a0$Item$1" />
-      <unit id="1741258697586929532" at="137,327,141,11" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_b$SubstituteMenuPart_Action_hyz1k2_a1$Item$1" />
-      <unit id="1741258697586929662" at="198,327,202,11" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_c$SubstituteMenuPart_Action_hyz1k2_a2$Item$1" />
-      <unit id="1741258697586929256" at="66,0,102,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_a$SubstituteMenuPart_Action_hyz1k2_a0$Item" />
-      <unit id="1741258697586929256" at="127,0,163,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_b$SubstituteMenuPart_Action_hyz1k2_a1$Item" />
-      <unit id="1741258697586929256" at="188,0,227,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_c$SubstituteMenuPart_Action_hyz1k2_a2$Item" />
-      <unit id="1741258697586929256" at="55,0,103,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_a$SubstituteMenuPart_Action_hyz1k2_a0" />
-      <unit id="1741258697586929256" at="116,0,164,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_b$SubstituteMenuPart_Action_hyz1k2_a1" />
-      <unit id="1741258697586929256" at="177,0,228,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_c$SubstituteMenuPart_Action_hyz1k2_a2" />
-      <unit id="1741258697586929256" at="44,0,105,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_a" />
-      <unit id="1741258697586929256" at="105,0,166,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_b" />
-      <unit id="1741258697586929256" at="166,0,230,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_c" />
+      <unit id="1741258697586929373" at="76,327,80,11" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SMP_Param_hyz1k2_a$SMP_Action_hyz1k2_a0$Item$1" />
+      <unit id="1741258697586929532" at="137,327,141,11" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SMP_Param_hyz1k2_b$SMP_Action_hyz1k2_a1$Item$1" />
+      <unit id="1741258697586929662" at="198,327,202,11" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SMP_Param_hyz1k2_c$SMP_Action_hyz1k2_a2$Item$1" />
+      <unit id="1741258697586929256" at="66,0,102,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SMP_Param_hyz1k2_a$SMP_Action_hyz1k2_a0$Item" />
+      <unit id="1741258697586929256" at="127,0,163,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SMP_Param_hyz1k2_b$SMP_Action_hyz1k2_a1$Item" />
+      <unit id="1741258697586929256" at="188,0,227,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SMP_Param_hyz1k2_c$SMP_Action_hyz1k2_a2$Item" />
+      <unit id="1741258697586929256" at="55,0,103,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SMP_Param_hyz1k2_a$SMP_Action_hyz1k2_a0" />
+      <unit id="1741258697586929256" at="116,0,164,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SMP_Param_hyz1k2_b$SMP_Action_hyz1k2_a1" />
+      <unit id="1741258697586929256" at="177,0,228,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SMP_Param_hyz1k2_c$SMP_Action_hyz1k2_a2" />
+      <unit id="1741258697586929256" at="44,0,105,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SMP_Param_hyz1k2_a" />
+      <unit id="1741258697586929256" at="105,0,166,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SMP_Param_hyz1k2_b" />
+      <unit id="1741258697586929256" at="166,0,230,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SMP_Param_hyz1k2_c" />
       <unit id="1741258697586929256" at="31,0,231,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution" />
     </file>
   </root>

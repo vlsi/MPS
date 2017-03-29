@@ -10,6 +10,7 @@ import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
@@ -33,7 +34,7 @@ public class ModelsScope extends Scope {
     return SNodeUtil.isInstanceOf(node, myTargetConcept) && (!(myRootsOnly) || SNodeOperations.isRoot(node)) && SetSequence.fromSet(myModels).contains(node.getModel());
   }
   @Override
-  public SNode resolve(SNode contextNode, String refText) {
+  public SNode resolve(SNode contextNode, @NotNull String refText) {
     SNode result = null;
     for (SModel model : myModels) {
       if (model == null) {
@@ -58,7 +59,7 @@ public class ModelsScope extends Scope {
           continue;
         }
         String nodeRefText = getReferenceText(null, node);
-        if (nodeRefText == null || !(nodeRefText.equals(refText))) {
+        if (!(refText.equals(nodeRefText))) {
           continue;
         }
 

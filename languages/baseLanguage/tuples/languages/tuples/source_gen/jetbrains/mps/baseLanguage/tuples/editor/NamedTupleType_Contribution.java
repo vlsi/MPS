@@ -36,14 +36,14 @@ public class NamedTupleType_Contribution extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new NamedTupleType_Contribution.SubstituteMenuPart_Parameterized_rx1mqb_a(), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new NamedTupleType_Contribution.SMP_Param_rx1mqb_a(), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_rx1mqb_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_rx1mqb_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
-      return new NamedTupleType_Contribution.SubstituteMenuPart_Parameterized_rx1mqb_a.SubstituteMenuPart_Action_rx1mqb_a0(parameter).createItems(context);
+      return new NamedTupleType_Contribution.SMP_Param_rx1mqb_a.SMP_Action_rx1mqb_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
@@ -54,16 +54,16 @@ public class NamedTupleType_Contribution extends SubstituteMenuBase {
         }
       }).toListSequence();
     }
-    private class SubstituteMenuPart_Action_rx1mqb_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_rx1mqb_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_rx1mqb_a0(SNode parameterObject) {
+      public SMP_Action_rx1mqb_a0(SNode parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new NamedTupleType_Contribution.SubstituteMenuPart_Parameterized_rx1mqb_a.SubstituteMenuPart_Action_rx1mqb_a0.Item(_context);
+        return new NamedTupleType_Contribution.SMP_Param_rx1mqb_a.SMP_Action_rx1mqb_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

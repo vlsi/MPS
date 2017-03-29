@@ -31,10 +31,10 @@ public class StyleClassReferenceList_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new StyleClassReferenceList_SubstituteMenu.SubstituteMenuPart_Wrapper_cyyevv_a(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1cb5b6d8L, "jetbrains.mps.lang.editor.structure.StyleClassReferenceList")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new StyleClassReferenceList_SubstituteMenu.SMP_Wrap_cyyevv_a(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1cb5b6d8L, "jetbrains.mps.lang.editor.structure.StyleClassReferenceList")));
     return result;
   }
-  private class SubstituteMenuPart_Wrapper_cyyevv_a extends WrapperSubstituteMenuPart {
+  private class SMP_Wrap_cyyevv_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {

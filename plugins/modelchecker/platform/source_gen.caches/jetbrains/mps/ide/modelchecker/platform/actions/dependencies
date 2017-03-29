@@ -27,7 +27,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.platform.actions.IModelCheckerFix" file="IModelCheckerFix.java" />
   <dependency className="jetbrains.mps.ide.modelchecker.platform.actions.INodeCheckerSpecificCheckerAdapter" file="INodeCheckerSpecificCheckerAdapter.java">
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -43,6 +42,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.platform.actions.SpecificChecker" />

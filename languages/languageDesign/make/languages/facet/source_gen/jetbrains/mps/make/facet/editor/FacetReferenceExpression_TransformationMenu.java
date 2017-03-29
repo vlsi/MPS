@@ -49,12 +49,12 @@ public class FacetReferenceExpression_TransformationMenu extends TransformationM
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x639ef64ff4850bb0L, "jetbrains.mps.make.facet.structure.FacetReferenceExpression"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new FacetReferenceExpression_TransformationMenu.TransformationMenuPart_Group_bw4iz1_a1());
+      result.add(new FacetReferenceExpression_TransformationMenu.TMP_Group_bw4iz1_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_bw4iz1_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_bw4iz1_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x78c916bd7aecaff7L, "jetbrains.mps.make.facet.structure.TargetReferenceExpression")));
@@ -62,14 +62,14 @@ public class FacetReferenceExpression_TransformationMenu extends TransformationM
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new FacetReferenceExpression_TransformationMenu.TransformationMenuPart_Group_bw4iz1_a1.TransformationMenuPart_Parameterized_bw4iz1_a0b(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x78c916bd7aecaff7L, "jetbrains.mps.make.facet.structure.TargetReferenceExpression")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new FacetReferenceExpression_TransformationMenu.TMP_Group_bw4iz1_a1.TMP_Param_bw4iz1_a0b(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x78c916bd7aecaff7L, "jetbrains.mps.make.facet.structure.TargetReferenceExpression")));
     }
-    private class TransformationMenuPart_Parameterized_bw4iz1_a0b extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Param_bw4iz1_a0b extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
 
       @NotNull
       @Override
       protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
-        return new FacetReferenceExpression_TransformationMenu.TransformationMenuPart_Group_bw4iz1_a1.TransformationMenuPart_Parameterized_bw4iz1_a0b.TransformationMenuPart_Action_bw4iz1_a0a1(parameter).createItems(context);
+        return new FacetReferenceExpression_TransformationMenu.TMP_Group_bw4iz1_a1.TMP_Param_bw4iz1_a0b.TMP_Action_bw4iz1_a0a1(parameter).createItems(context);
       }
 
       @Nullable
@@ -78,14 +78,14 @@ public class FacetReferenceExpression_TransformationMenu extends TransformationM
         return SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x639ef64ff4850bb0L, 0x639ef64ff4850bb2L, "reference")), MetaAdapterFactory.getReferenceLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5979ed6d2b21b2f2L, 0x5979ed6d2b21b2f3L, "facet")), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, 0x5912a2ab1cd4153eL, "targetDeclaration"));
       }
 
-      private class TransformationMenuPart_Action_bw4iz1_a0a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TMP_Action_bw4iz1_a0a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         private final SNode myParameterObject;
-        public TransformationMenuPart_Action_bw4iz1_a0a1(SNode parameterObject) {
+        public TMP_Action_bw4iz1_a0a1(SNode parameterObject) {
           myParameterObject = parameterObject;
         }
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new FacetReferenceExpression_TransformationMenu.TransformationMenuPart_Group_bw4iz1_a1.TransformationMenuPart_Parameterized_bw4iz1_a0b.TransformationMenuPart_Action_bw4iz1_a0a1.Item(context);
+          return new FacetReferenceExpression_TransformationMenu.TMP_Group_bw4iz1_a1.TMP_Param_bw4iz1_a0b.TMP_Action_bw4iz1_a0a1.Item(context);
         }
 
         private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

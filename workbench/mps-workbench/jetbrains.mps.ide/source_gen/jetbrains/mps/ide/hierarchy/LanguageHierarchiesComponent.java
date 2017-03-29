@@ -6,7 +6,7 @@ import javax.swing.JComponent;
 import javax.swing.Scrollable;
 import com.intellij.openapi.actionSystem.DataProvider;
 import javax.swing.JPanel;
-import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import java.util.ArrayList;
@@ -30,9 +30,11 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Map;
 import java.util.HashMap;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -71,7 +73,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   private static final int PADDING_X = 5;
   private static final int PADDING_Y = 5;
   private JPanel myPanel = new JPanel();
-  private final Language myLanguage;
+  private final SModuleReference myLanguage;
   private final MPSProject myProject;
   private List<LanguageHierarchiesComponent.ConceptContainer> myRoots = new ArrayList<LanguageHierarchiesComponent.ConceptContainer>();
   private float myScale = 1.0f;
@@ -80,7 +82,8 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   private int myHeight = 0;
   private LanguageHierarchiesComponent.ConceptContainer mySelectedConceptContainer;
   public JTextField myScaleField;
-  public LanguageHierarchiesComponent(Language language, MPSProject project) {
+
+  public LanguageHierarchiesComponent(SModuleReference language, MPSProject project) {
     myLanguage = language;
     myProject = project;
     addMouseListener(new MouseAdapter() {
@@ -205,10 +208,19 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     BaseGroup group = ActionUtils.getGroup(ProjectPaneActionGroups.NODE_ACTIONS);
     ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent().show(this, e.getX(), e.getY());
   }
-  public List<LanguageHierarchiesComponent.ConceptContainer> createHierarchyForest() {
+
+  /**
+   * requires model read lock
+   */
+  /*package*/ List<LanguageHierarchiesComponent.ConceptContainer> createHierarchyForest() {
     List<LanguageHierarchiesComponent.ConceptContainer> result = new ArrayList<LanguageHierarchiesComponent.ConceptContainer>();
+    SModule resolved = myLanguage.resolve(myProject.getRepository());
+    if (!(resolved instanceof Language)) {
+      return result;
+    }
+    SModel structureModel = ((Language) resolved).getStructureModelDescriptor();
+
     Map<SNode, LanguageHierarchiesComponent.ConceptContainer> processed = new HashMap<SNode, LanguageHierarchiesComponent.ConceptContainer>();
-    SModel structureModel = myLanguage.getStructureModelDescriptor();
     SNode baseConcept = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
 outer:
     for (SNode concept : SModelOperations.roots(structureModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {

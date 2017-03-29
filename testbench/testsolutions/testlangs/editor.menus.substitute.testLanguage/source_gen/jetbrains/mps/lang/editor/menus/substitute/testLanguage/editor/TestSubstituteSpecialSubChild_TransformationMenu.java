@@ -31,12 +31,12 @@ public class TestSubstituteSpecialSubChild_TransformationMenu extends Transforma
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
-      result.add(new TestSubstituteSpecialSubChild_TransformationMenu.TransformationMenuPart_IncludeMenu_wi258v_a0());
+      result.add(new TestSubstituteSpecialSubChild_TransformationMenu.TMP_Include_wi258v_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_IncludeMenu_wi258v_a0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_wi258v_a0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected SNode getNode(TransformationMenuContext _context) {

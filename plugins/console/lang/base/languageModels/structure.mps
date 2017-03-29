@@ -395,6 +395,9 @@
     <node concept="PrWs8" id="6D0CP__qHGT" role="PzmwI">
       <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
     </node>
+    <node concept="PrWs8" id="4Lw1UpBwr6I" role="PzmwI">
+      <ref role="PrY4T" to="3xdn:s5v6K2pSK7" resolve="QueryExpressionScopeProvider" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6M9lfhDDWgw">
     <property role="3GE5qa" value="expression.print" />

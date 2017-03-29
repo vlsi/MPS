@@ -42,12 +42,12 @@ public class BuildMps_IdeaPluginGroup_TransformationMenu extends TransformationM
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new BuildMps_IdeaPluginGroup_TransformationMenu.TransformationMenuPart_Group_a80zlz_a1());
+      result.add(new BuildMps_IdeaPluginGroup_TransformationMenu.TMP_Group_a80zlz_a1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_a80zlz_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_a80zlz_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, 0x37fdb3de482e2b2fL, "customPackaging"))).isEmpty();
@@ -55,12 +55,12 @@ public class BuildMps_IdeaPluginGroup_TransformationMenu extends TransformationM
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new BuildMps_IdeaPluginGroup_TransformationMenu.TransformationMenuPart_Group_a80zlz_a1.TransformationMenuPart_Action_a80zlz_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new BuildMps_IdeaPluginGroup_TransformationMenu.TMP_Group_a80zlz_a1.TMP_Action_a80zlz_a0b());
     }
-    private class TransformationMenuPart_Action_a80zlz_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_a80zlz_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new BuildMps_IdeaPluginGroup_TransformationMenu.TransformationMenuPart_Group_a80zlz_a1.TransformationMenuPart_Action_a80zlz_a0b.Item(context);
+        return new BuildMps_IdeaPluginGroup_TransformationMenu.TMP_Group_a80zlz_a1.TMP_Action_a80zlz_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

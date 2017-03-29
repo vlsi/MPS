@@ -188,8 +188,9 @@ public class NewModuleUtil {
     templateModelsLocation.mkdirs();
 
     final GeneratorDescriptor generatorDescriptor = createGeneratorDescriptor(Generator.generateGeneratorUID(language), generatorLocation, templateModelsLocation);
+    generatorDescriptor.setSourceLanguage(language.getModuleReference());
     descriptor.getGenerators().add(generatorDescriptor);
-    language.setLanguageDescriptor(descriptor);
+    language.setModuleDescriptor(descriptor);
     language.save();
 
     final Generator newGenerator = projectRepoFacade.getModule(generatorDescriptor.getModuleReference(), Generator.class);
@@ -238,9 +239,9 @@ public class NewModuleUtil {
   @NotNull
   public static GeneratorDescriptor createGeneratorDescriptor(String namespace, @NotNull IFile generatorModuleLocation, @Nullable IFile templateModelsLocation) {
     final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
-    generatorDescriptor.setGeneratorUID(namespace);
-    // unlike other modules, in outburst of pure antagonism, namespace in generator means alias 
-    generatorDescriptor.setNamespace("main");
+    generatorDescriptor.setNamespace(namespace);
+    // unlike other modules, in outburst of pure antagonism, namespace in generator used to mean alias. Now, it's the way it has to be. 
+    generatorDescriptor.setAlias("main");
     DefaultModelRoot templateModelsRoot = new DefaultModelRoot();
     // XXX instead of this odd logic and conventions, need a factory object with reasobable defaults, so that external code that cares about 
     // IFile.mkdirs doesn't need to pass location here, and instead can rely on factory to obtain actual value. 

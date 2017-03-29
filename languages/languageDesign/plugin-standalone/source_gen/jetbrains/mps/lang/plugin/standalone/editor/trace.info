@@ -19,13 +19,13 @@
     <file name="AddWorkbenchToActionParameters_Contribution.java">
       <node id="1741258697587122055" at="32,56,33,16" concept="8" />
       <node id="1741258697587122055" at="37,118,38,140" concept="5" />
-      <node id="1741258697587122055" at="38,140,39,320" concept="1" />
-      <node id="1741258697587122055" at="39,320,40,18" concept="6" />
-      <node id="1741258697587122055" at="45,100,46,171" concept="6" />
+      <node id="1741258697587122055" at="38,140,39,297" concept="1" />
+      <node id="1741258697587122055" at="39,297,40,18" concept="6" />
+      <node id="1741258697587122055" at="45,100,46,133" concept="6" />
       <node id="1741258697587122062" at="50,87,51,452" concept="6" />
       <node id="1741258697587122055" at="54,0,55,0" concept="2" trace="myParameterObject" />
-      <node id="1741258697587122055" at="55,73,56,44" concept="1" />
-      <node id="1741258697587122055" at="61,79,62,156" concept="6" />
+      <node id="1741258697587122055" at="55,58,56,44" concept="1" />
+      <node id="1741258697587122055" at="61,79,62,118" concept="6" />
       <node id="1741258697587122055" at="65,0,66,0" concept="2" trace="_context" />
       <node id="1741258697587122055" at="66,52,67,260" concept="8" />
       <node id="1741258697587122055" at="67,260,68,29" concept="1" />
@@ -43,7 +43,7 @@
       <node id="1741258697587122067" at="106,252,107,464" concept="1" />
       <node id="1741258697587122067" at="107,464,108,24" concept="6" />
       <node id="1741258697587122055" at="32,0,35,0" concept="0" trace="AddWorkbenchToActionParameters_Contribution#()V" />
-      <node id="1741258697587122055" at="55,0,58,0" concept="0" trace="SubstituteMenuPart_Action_bkyuyj_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1741258697587122055" at="55,0,58,0" concept="0" trace="SMP_Action_bkyuyj_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587122055" at="80,64,83,11" concept="3" />
       <node id="1741258697587122055" at="88,62,91,11" concept="3" />
       <node id="1741258697587122055" at="66,0,70,0" concept="0" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
@@ -57,10 +57,10 @@
       <node id="1741258697587122055" at="78,0,86,0" concept="4" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1741258697587122055" at="86,0,94,0" concept="4" trace="getIcon#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <scope id="1741258697587122055" at="32,56,33,16" />
-      <scope id="1741258697587122055" at="45,100,46,171" />
+      <scope id="1741258697587122055" at="45,100,46,133" />
       <scope id="1741258697587122061" at="50,87,51,452" />
-      <scope id="1741258697587122055" at="55,73,56,44" />
-      <scope id="1741258697587122055" at="61,79,62,156" />
+      <scope id="1741258697587122055" at="55,58,56,44" />
+      <scope id="1741258697587122055" at="61,79,62,118" />
       <scope id="1741258697587122055" at="81,51,82,93" />
       <scope id="1741258697587122055" at="89,51,90,88" />
       <scope id="1741258697587122097" at="96,67,97,318" />
@@ -110,9 +110,9 @@
       <scope id="1741258697587122055" at="86,0,94,0">
         <var name="pattern" id="1741258697587122055" />
       </scope>
-      <unit id="1741258697587122055" at="64,0,100,0" name="jetbrains.mps.lang.plugin.standalone.editor.AddWorkbenchToActionParameters_Contribution$SubstituteMenuPart_Parameterized_bkyuyj_a$SubstituteMenuPart_Action_bkyuyj_a0$Item" />
-      <unit id="1741258697587122055" at="53,0,101,0" name="jetbrains.mps.lang.plugin.standalone.editor.AddWorkbenchToActionParameters_Contribution$SubstituteMenuPart_Parameterized_bkyuyj_a$SubstituteMenuPart_Action_bkyuyj_a0" />
-      <unit id="1741258697587122055" at="42,0,103,0" name="jetbrains.mps.lang.plugin.standalone.editor.AddWorkbenchToActionParameters_Contribution$SubstituteMenuPart_Parameterized_bkyuyj_a" />
+      <unit id="1741258697587122055" at="64,0,100,0" name="jetbrains.mps.lang.plugin.standalone.editor.AddWorkbenchToActionParameters_Contribution$SMP_Param_bkyuyj_a$SMP_Action_bkyuyj_a0$Item" />
+      <unit id="1741258697587122055" at="53,0,101,0" name="jetbrains.mps.lang.plugin.standalone.editor.AddWorkbenchToActionParameters_Contribution$SMP_Param_bkyuyj_a$SMP_Action_bkyuyj_a0" />
+      <unit id="1741258697587122055" at="42,0,103,0" name="jetbrains.mps.lang.plugin.standalone.editor.AddWorkbenchToActionParameters_Contribution$SMP_Param_bkyuyj_a" />
       <unit id="1741258697587122055" at="31,0,111,0" name="jetbrains.mps.lang.plugin.standalone.editor.AddWorkbenchToActionParameters_Contribution" />
     </file>
   </root>

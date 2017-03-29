@@ -42,14 +42,14 @@ public class InlineRegexpExpression_TransformationMenu extends TransformationMen
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new InlineRegexpExpression_TransformationMenu.TransformationMenuPart_Group_iqtkly_a1());
-      result.add(new InlineRegexpExpression_TransformationMenu.TransformationMenuPart_Group_iqtkly_b1());
-      result.add(new InlineRegexpExpression_TransformationMenu.TransformationMenuPart_Group_iqtkly_c1());
+      result.add(new InlineRegexpExpression_TransformationMenu.TMP_Group_iqtkly_a1());
+      result.add(new InlineRegexpExpression_TransformationMenu.TMP_Group_iqtkly_b1());
+      result.add(new InlineRegexpExpression_TransformationMenu.TMP_Group_iqtkly_c1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_iqtkly_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_iqtkly_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x1119ceddfe3L, "multiLine")));
@@ -57,12 +57,12 @@ public class InlineRegexpExpression_TransformationMenu extends TransformationMen
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new InlineRegexpExpression_TransformationMenu.TransformationMenuPart_Group_iqtkly_a1.TransformationMenuPart_Action_iqtkly_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new InlineRegexpExpression_TransformationMenu.TMP_Group_iqtkly_a1.TMP_Action_iqtkly_a0b());
     }
-    private class TransformationMenuPart_Action_iqtkly_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_iqtkly_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new InlineRegexpExpression_TransformationMenu.TransformationMenuPart_Group_iqtkly_a1.TransformationMenuPart_Action_iqtkly_a0b.Item(context);
+        return new InlineRegexpExpression_TransformationMenu.TMP_Group_iqtkly_a1.TMP_Action_iqtkly_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -92,7 +92,7 @@ public class InlineRegexpExpression_TransformationMenu extends TransformationMen
       }
     }
   }
-  public class TransformationMenuPart_Group_iqtkly_b1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_iqtkly_b1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x1119cedcf38L, "dotAll")));
@@ -100,12 +100,12 @@ public class InlineRegexpExpression_TransformationMenu extends TransformationMen
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new InlineRegexpExpression_TransformationMenu.TransformationMenuPart_Group_iqtkly_b1.TransformationMenuPart_Action_iqtkly_a1b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new InlineRegexpExpression_TransformationMenu.TMP_Group_iqtkly_b1.TMP_Action_iqtkly_a1b());
     }
-    private class TransformationMenuPart_Action_iqtkly_a1b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_iqtkly_a1b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new InlineRegexpExpression_TransformationMenu.TransformationMenuPart_Group_iqtkly_b1.TransformationMenuPart_Action_iqtkly_a1b.Item(context);
+        return new InlineRegexpExpression_TransformationMenu.TMP_Group_iqtkly_b1.TMP_Action_iqtkly_a1b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -135,7 +135,7 @@ public class InlineRegexpExpression_TransformationMenu extends TransformationMen
       }
     }
   }
-  public class TransformationMenuPart_Group_iqtkly_c1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_iqtkly_c1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x1119cf15020L, "caseInsensitive")));
@@ -143,12 +143,12 @@ public class InlineRegexpExpression_TransformationMenu extends TransformationMen
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new InlineRegexpExpression_TransformationMenu.TransformationMenuPart_Group_iqtkly_c1.TransformationMenuPart_Action_iqtkly_a2b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new InlineRegexpExpression_TransformationMenu.TMP_Group_iqtkly_c1.TMP_Action_iqtkly_a2b());
     }
-    private class TransformationMenuPart_Action_iqtkly_a2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_iqtkly_a2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new InlineRegexpExpression_TransformationMenu.TransformationMenuPart_Group_iqtkly_c1.TransformationMenuPart_Action_iqtkly_a2b.Item(context);
+        return new InlineRegexpExpression_TransformationMenu.TMP_Group_iqtkly_c1.TMP_Action_iqtkly_a2b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

@@ -213,9 +213,9 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -368,9 +368,9 @@
                 </node>
               </node>
             </node>
-            <node concept="34ab3g" id="5vTxdEzyTYX" role="3cqZAp">
-              <property role="35gtTG" value="info" />
-              <node concept="Xl_RD" id="5vTxdEzyTYY" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB36Y2" role="3cqZAp">
+              <property role="RRSoG" value="info" />
+              <node concept="Xl_RD" id="5vTxdEzyTYY" role="RRSoy">
                 <property role="Xl_RC" value="Starting in-process-execution" />
               </node>
             </node>
@@ -952,9 +952,9 @@
                 </node>
               </node>
             </node>
-            <node concept="34ab3g" id="5vTxdEzz10A" role="3cqZAp">
-              <property role="35gtTG" value="info" />
-              <node concept="Xl_RD" id="5vTxdEzz10B" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB36Y8" role="3cqZAp">
+              <property role="RRSoG" value="info" />
+              <node concept="Xl_RD" id="5vTxdEzz10B" role="RRSoy">
                 <property role="Xl_RC" value="Starting in-process-execution" />
               </node>
             </node>
@@ -1610,9 +1610,9 @@
                 </node>
               </node>
             </node>
-            <node concept="34ab3g" id="5XEoQWrnLF" role="3cqZAp">
-              <property role="35gtTG" value="info" />
-              <node concept="Xl_RD" id="5XEoQWrnLG" role="34bqiv">
+            <node concept="RRSsy" id="3jYQuSB36Ye" role="3cqZAp">
+              <property role="RRSoG" value="info" />
+              <node concept="Xl_RD" id="5XEoQWrnLG" role="RRSoy">
                 <property role="Xl_RC" value="Starting in-process-execution" />
               </node>
             </node>

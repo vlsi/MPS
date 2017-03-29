@@ -25,10 +25,10 @@ public class EditorCellId_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new EditorCellId_SubstituteMenu.SubstituteMenuPart_Group_3s2nlz_a());
+    result.add(new EditorCellId_SubstituteMenu.SMP_Group_3s2nlz_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_3s2nlz_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_3s2nlz_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return _context.getCurrentTargetNode() == null;
@@ -36,14 +36,14 @@ public class EditorCellId_SubstituteMenu extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new EditorCellId_SubstituteMenu.SubstituteMenuPart_Group_3s2nlz_a.SubstituteMenuPart_Action_3s2nlz_a0(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb846a5817L, "jetbrains.mps.lang.editor.structure.EditorCellId")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new EditorCellId_SubstituteMenu.SMP_Group_3s2nlz_a.SMP_Action_3s2nlz_a0(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb846a5817L, "jetbrains.mps.lang.editor.structure.EditorCellId")));
     }
-    private class SubstituteMenuPart_Action_3s2nlz_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_3s2nlz_a0 extends SingleItemSubstituteMenuPart {
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new EditorCellId_SubstituteMenu.SubstituteMenuPart_Group_3s2nlz_a.SubstituteMenuPart_Action_3s2nlz_a0.Item(_context);
+        return new EditorCellId_SubstituteMenu.SMP_Group_3s2nlz_a.SMP_Action_3s2nlz_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

@@ -45,12 +45,12 @@ public class transform_CompositePath_BuildSourcePath extends TransformationMenuB
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new transform_CompositePath_BuildSourcePath.TransformationMenuPart_Group_qnu3dg_a0());
+      result.add(new transform_CompositePath_BuildSourcePath.TMP_Group_qnu3dg_a0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_qnu3dg_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TMP_Group_qnu3dg_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       String localPath = BuildSourcePath__BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(_context.getNode(), Context.defaultContext());
@@ -65,12 +65,12 @@ public class transform_CompositePath_BuildSourcePath extends TransformationMenuB
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new transform_CompositePath_BuildSourcePath.TransformationMenuPart_Group_qnu3dg_a0.TransformationMenuPart_Action_qnu3dg_a0a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath")));
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new transform_CompositePath_BuildSourcePath.TMP_Group_qnu3dg_a0.TMP_Action_qnu3dg_a0a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath")));
     }
-    private class TransformationMenuPart_Action_qnu3dg_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Action_qnu3dg_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new transform_CompositePath_BuildSourcePath.TransformationMenuPart_Group_qnu3dg_a0.TransformationMenuPart_Action_qnu3dg_a0a.Item(context);
+        return new transform_CompositePath_BuildSourcePath.TMP_Group_qnu3dg_a0.TMP_Action_qnu3dg_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

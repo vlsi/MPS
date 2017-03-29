@@ -35,10 +35,10 @@ public class BuildLayout_JarManifest_Part_SubstituteMenu extends SubstituteMenuB
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new BuildLayout_JarManifest_Part_SubstituteMenu.SubstituteMenuPart_Group_aabwkk_a());
+    result.add(new BuildLayout_JarManifest_Part_SubstituteMenu.SMP_Group_aabwkk_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_aabwkk_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_aabwkk_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     private boolean condition;
     private boolean condition_1;
     @Override
@@ -58,9 +58,9 @@ public class BuildLayout_JarManifest_Part_SubstituteMenu extends SubstituteMenuB
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BuildLayout_JarManifest_Part_SubstituteMenu.SubstituteMenuPart_Group_aabwkk_a.SubstituteMenuPart_Group_aabwkk_a0(), new BuildLayout_JarManifest_Part_SubstituteMenu.SubstituteMenuPart_Group_aabwkk_a.SubstituteMenuPart_Group_aabwkk_b0(), new BuildLayout_JarManifest_Part_SubstituteMenu.SubstituteMenuPart_Group_aabwkk_a.SubstituteMenuPart_Group_aabwkk_c0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BuildLayout_JarManifest_Part_SubstituteMenu.SMP_Group_aabwkk_a.SMP_Group_aabwkk_a0(), new BuildLayout_JarManifest_Part_SubstituteMenu.SMP_Group_aabwkk_a.SMP_Group_aabwkk_b0(), new BuildLayout_JarManifest_Part_SubstituteMenu.SMP_Group_aabwkk_a.SMP_Group_aabwkk_c0());
     }
-    public class SubstituteMenuPart_Group_aabwkk_a0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_aabwkk_a0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return condition;
@@ -68,14 +68,14 @@ public class BuildLayout_JarManifest_Part_SubstituteMenu extends SubstituteMenuB
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildLayout_JarManifest_Part_SubstituteMenu.SubstituteMenuPart_Group_aabwkk_a.SubstituteMenuPart_Group_aabwkk_a0.SubstituteMenuPart_Action_aabwkk_a0a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf47d7bL, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section")));
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildLayout_JarManifest_Part_SubstituteMenu.SMP_Group_aabwkk_a.SMP_Group_aabwkk_a0.SMP_Action_aabwkk_a0a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf47d7bL, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section")));
       }
-      private class SubstituteMenuPart_Action_aabwkk_a0a extends SingleItemSubstituteMenuPart {
+      private class SMP_Action_aabwkk_a0a extends SingleItemSubstituteMenuPart {
 
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new BuildLayout_JarManifest_Part_SubstituteMenu.SubstituteMenuPart_Group_aabwkk_a.SubstituteMenuPart_Group_aabwkk_a0.SubstituteMenuPart_Action_aabwkk_a0a.Item(_context);
+          return new BuildLayout_JarManifest_Part_SubstituteMenu.SMP_Group_aabwkk_a.SMP_Group_aabwkk_a0.SMP_Action_aabwkk_a0a.Item(_context);
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;
@@ -104,7 +104,7 @@ public class BuildLayout_JarManifest_Part_SubstituteMenu extends SubstituteMenuB
         }
       }
     }
-    public class SubstituteMenuPart_Group_aabwkk_b0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_aabwkk_b0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return condition_1;
@@ -112,14 +112,14 @@ public class BuildLayout_JarManifest_Part_SubstituteMenu extends SubstituteMenuB
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildLayout_JarManifest_Part_SubstituteMenu.SubstituteMenuPart_Group_aabwkk_a.SubstituteMenuPart_Group_aabwkk_b0.SubstituteMenuPart_Action_aabwkk_a1a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f30L, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Attribute")));
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildLayout_JarManifest_Part_SubstituteMenu.SMP_Group_aabwkk_a.SMP_Group_aabwkk_b0.SMP_Action_aabwkk_a1a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f30L, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Attribute")));
       }
-      private class SubstituteMenuPart_Action_aabwkk_a1a extends SingleItemSubstituteMenuPart {
+      private class SMP_Action_aabwkk_a1a extends SingleItemSubstituteMenuPart {
 
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new BuildLayout_JarManifest_Part_SubstituteMenu.SubstituteMenuPart_Group_aabwkk_a.SubstituteMenuPart_Group_aabwkk_b0.SubstituteMenuPart_Action_aabwkk_a1a.Item(_context);
+          return new BuildLayout_JarManifest_Part_SubstituteMenu.SMP_Group_aabwkk_a.SMP_Group_aabwkk_b0.SMP_Action_aabwkk_a1a.Item(_context);
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;
@@ -168,7 +168,7 @@ public class BuildLayout_JarManifest_Part_SubstituteMenu extends SubstituteMenuB
         }
       }
     }
-    public class SubstituteMenuPart_Group_aabwkk_c0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public class SMP_Group_aabwkk_c0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return !((condition || condition_1));
@@ -176,9 +176,9 @@ public class BuildLayout_JarManifest_Part_SubstituteMenu extends SubstituteMenuB
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BuildLayout_JarManifest_Part_SubstituteMenu.SubstituteMenuPart_Group_aabwkk_a.SubstituteMenuPart_Group_aabwkk_c0.SubstituteMenuPart_Subconcepts_aabwkk_a2a());
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BuildLayout_JarManifest_Part_SubstituteMenu.SMP_Group_aabwkk_a.SMP_Group_aabwkk_c0.SMP_Subconcepts_aabwkk_a2a());
       }
-      public class SubstituteMenuPart_Subconcepts_aabwkk_a2a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+      public class SMP_Subconcepts_aabwkk_a2a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
         protected Collection getConcepts(final SubstituteMenuContext _context) {
           return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x76d807f8dd95718eL, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Part"));
         }

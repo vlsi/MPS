@@ -27,7 +27,6 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.fileEditor.FileEditorManagerAdapter;
 import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.Project;
@@ -106,7 +105,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   public static final String ID = ProjectViewPane.ID;
 
-  private final FileEditorManagerAdapter myEditorListener = new FileEditorManagerAdapter() {
+  private final FileEditorManagerListener myEditorListener = new FileEditorManagerListener() {
     @Override
     public void selectionChanged(@NotNull FileEditorManagerEvent event) {
       FileEditor fileEditor = event.getNewEditor();
@@ -456,15 +455,12 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     //In unit test mode projectViewToolWindow == null
     // besides, https://youtrack.jetbrains.com/issue/MPS-24516 suggests tool window may be missing even in non-test mode (in plugin?)
     if (!ApplicationManager.getApplication().isUnitTestMode() && projectViewToolWindow != null) {
-      projectViewToolWindow.activate(new Runnable() {
-        @Override
-        public void run() {
-          // I'm not quite sure next changeView is essential (what does toolWindow.activate() does then?),
-          // but since there's no documentation what to expect, leave it the way it used to be in PaneActivator.
-          getProjectView().changeView(getId());
-          if (postActivate != null) {
-            postActivate.run();
-          }
+      projectViewToolWindow.activate(() -> {
+        // I'm not quite sure next changeView is essential (what does toolWindow.activate() does then?),
+        // but since there's no documentation what to expect, leave it the way it used to be in PaneActivator.
+        getProjectView().changeView(getId());
+        if (postActivate != null) {
+          postActivate.run();
         }
       }, autoFocusContents);
     }

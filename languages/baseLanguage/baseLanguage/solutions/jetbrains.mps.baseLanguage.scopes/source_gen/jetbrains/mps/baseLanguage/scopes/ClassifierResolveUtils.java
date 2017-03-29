@@ -262,7 +262,8 @@ public class ClassifierResolveUtils {
       }
     }
 
-    for (SNode enclosingClass : Sequence.fromIterable(getPathToRoot(ourClass))) {
+    Iterable<SNode> pathToRoot = getPathToRoot(ourClass);
+    for (SNode enclosingClass : Sequence.fromIterable(pathToRoot)) {
       if (SNodeOperations.isInstanceOf(enclosingClass, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
         continue;
       }
@@ -276,8 +277,9 @@ public class ClassifierResolveUtils {
       }
     }
 
-    if (includeAncestors) {
-      for (SNode ancestor : Sequence.fromIterable(getAncestors(ourClass))) {
+    Iterable<SNode> classesWhoseSuperIsInteresting = (includeAncestors ? pathToRoot : Sequence.fromIterable(pathToRoot).skip(1));
+    for (SNode enclosing : Sequence.fromIterable(classesWhoseSuperIsInteresting)) {
+      for (SNode ancestor : Sequence.fromIterable(getAncestors(enclosing))) {
         for (SNode nested : Sequence.fromIterable(getImmediateNestedClassifiers(ancestor))) {
           if (token.equals(SPropertyOperations.getString(nested, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
             return construct(nested, tokenizer);
@@ -286,7 +288,7 @@ public class ClassifierResolveUtils {
       }
     }
 
-    SNode root = Sequence.fromIterable(getPathToRoot(ourClass)).last();
+    SNode root = Sequence.fromIterable(pathToRoot).last();
     SNode javaImports = AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports")));
 
     if (javaImports == null) {

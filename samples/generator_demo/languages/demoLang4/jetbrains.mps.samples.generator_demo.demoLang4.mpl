@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="swing" generatorUID="jetbrains.mps.samples.generator_demo.demoLang4#1228678587345" uuid="fba3f122-376d-47a5-9857-db3c00612598">
+    <generator alias="swing" namespace="jetbrains.mps.samples.generator_demo.demoLang4#1228678587345" uuid="fba3f122-376d-47a5-9857-db3c00612598">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
@@ -54,6 +54,10 @@
     </generator>
   </generators>
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">772f6dcd-8c0d-48f7-869c-908e036f7c8e(jetbrains.mps.sampleXML)</dependency>
+    <dependency reexport="false" scope="generate-into">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
+  </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="5" />
     <language slang="l:443f4c36-fcf5-4eb6-9500-8d06ed259e3e:jetbrains.mps.baseLanguage.classifiers" version="0" />
@@ -86,9 +90,6 @@
     <module reference="772f6dcd-8c0d-48f7-869c-908e036f7c8e(jetbrains.mps.sampleXML)" version="0" />
     <module reference="1409a436-ea24-4d03-a196-53795139ce8d(jetbrains.mps.samples.generator_demo.demoLang4)" version="0" />
   </dependencyVersions>
-  <extendedLanguages>
-    <extendedLanguage>772f6dcd-8c0d-48f7-869c-908e036f7c8e(jetbrains.mps.sampleXML)</extendedLanguage>
-    <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
-  </extendedLanguages>
+  <extendedLanguages />
 </language>
 

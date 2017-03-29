@@ -251,11 +251,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -933,10 +932,9 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="5j5ipK2gpFw" role="TDEfX">
-                  <node concept="34ab3g" id="5j5ipK2gpQo" role="3cqZAp">
-                    <property role="35gtTG" value="error" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="3cpWs3" id="5j5ipK2gtig" role="34bqiv">
+                  <node concept="RRSsy" id="3jYQuSB35qF" role="3cqZAp">
+                    <property role="RRSoG" value="error" />
+                    <node concept="3cpWs3" id="5j5ipK2gtig" role="RRSoy">
                       <node concept="Xl_RD" id="5j5ipK2gpQq" role="3uHU7B">
                         <property role="Xl_RC" value="Error while trying to select best custom viewer. Current factory is " />
                       </node>
@@ -944,7 +942,7 @@
                         <ref role="2Gs0qQ" node="5j5ipK2fXC7" resolve="factory" />
                       </node>
                     </node>
-                    <node concept="37vLTw" id="5j5ipK2gpQs" role="34bMjA">
+                    <node concept="37vLTw" id="5j5ipK2gpQs" role="RRSow">
                       <ref role="3cqZAo" node="5j5ipK2gpFs" resolve="e" />
                     </node>
                   </node>

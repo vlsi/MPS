@@ -372,11 +372,10 @@
       <concept id="1225797177491" name="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" flags="nn" index="1Bd96e" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -8124,10 +8123,9 @@
                 </node>
               </node>
               <node concept="3clFbS" id="36vIONTtQiC" role="TDEfX">
-                <node concept="34ab3g" id="36vIONTtQiD" role="3cqZAp">
-                  <property role="35gtTG" value="error" />
-                  <property role="34fQS0" value="true" />
-                  <node concept="3cpWs3" id="36vIONTtQiE" role="34bqiv">
+                <node concept="RRSsy" id="3jYQuSB39Ks" role="3cqZAp">
+                  <property role="RRSoG" value="error" />
+                  <node concept="3cpWs3" id="36vIONTtQiE" role="RRSoy">
                     <node concept="37vLTw" id="2BHiRxeuu2R" role="3uHU7w">
                       <ref role="3cqZAo" node="36vIONTtQh3" resolve="myMethod" />
                     </node>
@@ -8135,7 +8133,7 @@
                       <property role="Xl_RC" value="Cant write messages for " />
                     </node>
                   </node>
-                  <node concept="37vLTw" id="3GM_nagTzO_" role="34bMjA">
+                  <node concept="37vLTw" id="3GM_nagTzO_" role="RRSow">
                     <ref role="3cqZAo" node="36vIONTtQiA" resolve="e" />
                   </node>
                 </node>
@@ -8525,10 +8523,9 @@
                         </node>
                       </node>
                       <node concept="3clFbS" id="36vIONTtQle" role="TDEfX">
-                        <node concept="34ab3g" id="36vIONTtQlf" role="3cqZAp">
-                          <property role="35gtTG" value="error" />
-                          <property role="34fQS0" value="true" />
-                          <node concept="3cpWs3" id="36vIONTtQlg" role="34bqiv">
+                        <node concept="RRSsy" id="3jYQuSB39KC" role="3cqZAp">
+                          <property role="RRSoG" value="error" />
+                          <node concept="3cpWs3" id="36vIONTtQlg" role="RRSoy">
                             <node concept="37vLTw" id="2BHiRxeuFKs" role="3uHU7w">
                               <ref role="3cqZAo" node="36vIONTtQh3" resolve="myMethod" />
                             </node>
@@ -8536,7 +8533,7 @@
                               <property role="Xl_RC" value="Cant read messages for test " />
                             </node>
                           </node>
-                          <node concept="37vLTw" id="3GM_nagT_bH" role="34bMjA">
+                          <node concept="37vLTw" id="3GM_nagT_bH" role="RRSow">
                             <ref role="3cqZAo" node="36vIONTtQlc" resolve="e" />
                           </node>
                         </node>

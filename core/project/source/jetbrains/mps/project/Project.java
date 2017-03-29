@@ -166,8 +166,6 @@ public abstract class Project implements MPSModuleOwner, IProject {
     return false;
   }
 
-  public abstract boolean isOpened();
-
   @NotNull
   public String toString() {
     return "MPS Project [" + myName + "] " + (myDisposed ? ", disposed]" : "]");

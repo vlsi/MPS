@@ -108,7 +108,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
     Computable<SModule> c = new Computable<SModule>() {
       @Override
       public SModule compute() {
-        return ref.getModuleId() != null ? REPO.getModule(ref.getModuleId()) : REPO.getModuleByFqName(ref.getModuleName());
+        return REPO.getModule(ref.getModuleId());
       }
     };
     if (REPO.getModelAccess().canRead()) {
@@ -133,9 +133,8 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   @ToRemove(version = 3.4)
   @Deprecated
   public <T extends SModule> T getModule(String fqName, Class<T> cls) {
-    SModule m = REPO.getModuleByFqName(fqName);
-    if (!cls.isInstance(m)) return null;
-    return (T) m;
+    SModule m = getModuleByName(fqName);
+    return cls.isInstance(m) ? cls.cast(m) : null;
   }
 
   public <T extends SModule> Collection<T> getAllModules(Class<T> cls) {
@@ -230,16 +229,6 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   }
 
   /**
-   * @deprecated dubious implementation, not in use.
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static SModuleReference createReference(String moduleName) {
-    SModule module = getInstance().REPO.getModuleByFqName(moduleName);
-    return module != null ? module.getModuleReference() : null;
-  }
-
-  /**
    * Instantiate a new module according to description and register it with the facade's repository.
    * If there's module already (expected scenario), just updates its relation to another {@linkplain MPSModuleOwner module owner}
    *   (same module could get published with few owners)
@@ -315,11 +304,11 @@ public final class ModuleRepositoryFacade implements CoreComponent {
       //     generally we shall not insist on the ordering (generator could obtain source language lazily, not at construction time,
       //     or we can make up a proxy Language instance, and replace it with real once proper module comes to the repository).
       String msg =
-          String.format("Can't register generator %s for not yet known language module %s", descriptor.getGeneratorUID(), descriptor.getSourceLanguage());
+          String.format("Can't register generator %s for not yet known language module %s", descriptor.getNamespace(), descriptor.getSourceLanguage());
       throw new IllegalStateException(msg);
     }
     if (false == module instanceof Language) {
-      String msg = String.format("Module %s specified as source language of genrator %s in not a Language module", descriptor.getSourceLanguage(), descriptor.getGeneratorUID());
+      String msg = String.format("Module %s specified as source language of generator %s in not a Language module", descriptor.getSourceLanguage(), descriptor.getNamespace());
       throw new IllegalStateException(msg);
     }
     return new Generator((Language) module, descriptor);

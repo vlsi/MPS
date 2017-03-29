@@ -24,30 +24,30 @@ public class ParameterizedByPrimitiveType extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ParameterizedByPrimitiveType.SubstituteMenuPart_Parameterized_ud82js_a(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestConceptForMenuParameterizedByPrimitiveType")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ParameterizedByPrimitiveType.SMP_Param_ud82js_a(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestConceptForMenuParameterizedByPrimitiveType")));
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_ud82js_a extends ParameterizedMenuPart<Integer, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_ud82js_a extends ParameterizedMenuPart<Integer, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(Integer parameter, SubstituteMenuContext context) {
-      return new ParameterizedByPrimitiveType.SubstituteMenuPart_Parameterized_ud82js_a.SubstituteMenuPart_Action_ud82js_a0(parameter).createItems(context);
+      return new ParameterizedByPrimitiveType.SMP_Param_ud82js_a.SMP_Action_ud82js_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
     protected Iterable<? extends Integer> getParameters(SubstituteMenuContext _context) {
       return Arrays.asList(1, 2, 3);
     }
-    private class SubstituteMenuPart_Action_ud82js_a0 extends SingleItemSubstituteMenuPart {
+    private class SMP_Action_ud82js_a0 extends SingleItemSubstituteMenuPart {
       private final Integer myParameterObject;
-      public SubstituteMenuPart_Action_ud82js_a0(Integer parameterObject) {
+      public SMP_Action_ud82js_a0(Integer parameterObject) {
         myParameterObject = parameterObject;
       }
 
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new ParameterizedByPrimitiveType.SubstituteMenuPart_Parameterized_ud82js_a.SubstituteMenuPart_Action_ud82js_a0.Item(_context);
+        return new ParameterizedByPrimitiveType.SMP_Param_ud82js_a.SMP_Action_ud82js_a0.Item(_context);
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;

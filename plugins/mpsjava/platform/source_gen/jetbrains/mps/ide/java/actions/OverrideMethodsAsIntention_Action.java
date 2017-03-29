@@ -25,7 +25,7 @@ public class OverrideMethodsAsIntention_Action extends BaseAction {
   public OverrideMethodsAsIntention_Action() {
     super("Override Methods", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {

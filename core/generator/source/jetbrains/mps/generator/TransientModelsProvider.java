@@ -89,16 +89,23 @@ public class TransientModelsProvider {
    */
   public void publishAll() {
     for (TransientModelsModule m : getModuleMapValues()) {
+      myRepository.registerModule(m, myOwner);
       m.publishAll();
     }
-    myCheckpointsModule.publishAll();
+    if (myCheckpointsModule != null) {
+      myCheckpointsModule.publishAll();
+    }
   }
 
   private static final AtomicInteger ourModuleCounter = new AtomicInteger();
 
   /**
-   * Instantiate new transient module with given {@code moduleName} augmented with implementation-specific stereotype,
-   * registers it with associated {@linkplain #getRepository() repository}
+   * Instantiate new transient, free-floating module with given {@code moduleName} augmented with implementation-specific stereotype.
+   * The module is NOT registered with any repository (including associated {@linkplain #getRepository() one}). Transient modules
+   * get registered in the associated repository when {@link #publishAll()} is requested. Thus, only publish activity would require write lock,
+   * while the transformation process is ok with a read on source model's repository. It's not final, though. If we manage to maintain distinct
+   * repository for transients, we still may lock it for write during transformation process (transitively locking source model's one for read)
+   * and there'd be no reason to be minimalistic about write lock then.
    * @param moduleName name for a new transient module, without stereotype
    * @return new module instance
    */
@@ -107,7 +114,6 @@ public class TransientModelsProvider {
     String fqName = moduleName + "@transient" + ourModuleCounter.getAndIncrement();
     SModuleReference reference = PersistenceFacade.getInstance().createModuleReference(ModuleId.regular(), fqName);
     final TransientModelsModule transientModelsModule = new TransientModelsModule(this, reference);
-    myRepository.registerModule(transientModelsModule, myOwner);
     return transientModelsModule;
   }
 

@@ -16,7 +16,6 @@ import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
 import jetbrains.mps.workbench.languagesFs.MPSLanguagesVirtualFileSystem;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditor;
-import jetbrains.mps.workbench.editors.MPSLanguageEditor;
 
 public class LanguageHierarchy_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -63,7 +62,7 @@ public class LanguageHierarchy_Action extends BaseAction {
     MPSLanguageVirtualFile file = MPSLanguagesVirtualFileSystem.getInstance().getFileFor(language);
     FileEditorManager editorManager = FileEditorManager.getInstance(event.getData(CommonDataKeys.PROJECT));
     FileEditor[] res = editorManager.openFile(file, true, true);
-    MPSLanguageEditor languageEditor = (MPSLanguageEditor) res[0];
-    languageEditor.getComponent().requestFocus();
+    // no idea why explicit requestFocus when openFile() already asked for one. 
+    res[0].getComponent().requestFocus();
   }
 }
