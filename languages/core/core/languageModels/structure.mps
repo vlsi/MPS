@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)">
   <persistence version="9" />
   <languages>
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -450,9 +450,6 @@
     </node>
     <node concept="PrWs8" id="1z_FduHlNUv" role="PzmwI">
       <ref role="PrY4T" node="2WmWrdnSpX3" resolve="ISuppressErrors" />
-    </node>
-    <node concept="PrWs8" id="1trYAiej20c" role="PzmwI">
-      <ref role="PrY4T" node="hLJPP0O" resolve="IWrapper" />
     </node>
   </node>
   <node concept="1TIwiD" id="BpxLfMhSxq">
