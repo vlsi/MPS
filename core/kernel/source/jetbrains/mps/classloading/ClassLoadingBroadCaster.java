@@ -88,14 +88,18 @@ public class ClassLoadingBroadCaster {
       for (MPSClassesListener listener : myClassesHandlers) {
         try {
           listener.onUnloaded(modulesToUnload, monitor.subTask(1));
-        } catch (Exception e) {
+        } catch (VirtualMachineError e) {
+          throw e;
+        } catch (Throwable e) {
           LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
         }
       }
       for (DeployListener listener : myDeployListeners) {
         try {
           listener.onUnloaded(modulesToUnload, monitor.subTask(1));
-        } catch (Exception e) {
+        } catch (VirtualMachineError e) {
+          throw e;
+        } catch (Throwable e) {
           LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
         }
       }
@@ -123,14 +127,18 @@ public class ClassLoadingBroadCaster {
       for (MPSClassesListener listener : myClassesHandlers) {
         try {
           listener.onLoaded(toLoad, monitor.subTask(1));
-        } catch (Exception e) {
+        } catch (VirtualMachineError e) {
+          throw e;
+        } catch (Throwable e) {
           LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
         }
       }
       for (DeployListener listener : myDeployListeners) {
         try {
           listener.onLoaded(toLoad, monitor.subTask(1));
-        } catch (Exception e) {
+        } catch (VirtualMachineError e) {
+          throw e;
+        } catch (Throwable e) {
           LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
         }
       }
