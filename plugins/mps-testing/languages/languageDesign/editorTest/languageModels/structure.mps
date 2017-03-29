@@ -436,6 +436,12 @@
       <property role="IQ2ns" value="9133079350911740921" />
       <ref role="20lvS9" node="7UZdOvgzaIm" resolve="SubstMiddlewareChild" />
     </node>
+    <node concept="1TJgyj" id="woUdQL2A4G" role="1TKVEi">
+      <property role="IQ2ns" value="583472190600143148" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childWithNextEditorAndMenu" />
+      <ref role="20lvS9" node="woUdQL3814" resolve="Abstract_SubstTestChild_WithNextApplicableEditorAndMenu" />
+    </node>
   </node>
   <node concept="1TIwiD" id="P9hc2Kf3iI">
     <property role="3GE5qa" value="substitute" />
@@ -896,6 +902,30 @@
       <property role="TrG5h" value="myProperty" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="woUdQL2A4u">
+    <property role="EcuMT" value="583472190600143134" />
+    <property role="3GE5qa" value="substitute.childWithNextApplicableEditorAndMenu" />
+    <property role="TrG5h" value="SubstTestChild_WithNextApplicableEditorAndMenu_1" />
+    <ref role="1TJDcQ" node="woUdQL3814" resolve="Abstract_SubstTestChild_WithNextApplicableEditorAndMenu" />
+    <node concept="1TJgyi" id="woUdQL2A79" role="1TKVEl">
+      <property role="IQ2nx" value="583472190600143305" />
+      <property role="TrG5h" value="property" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="woUdQL2Leg">
+    <property role="EcuMT" value="583472190600188816" />
+    <property role="3GE5qa" value="substitute.childWithNextApplicableEditorAndMenu" />
+    <property role="TrG5h" value="SubstTestChild_WithNextApplicableEditorAndMenu_2" />
+    <ref role="1TJDcQ" node="woUdQL3814" resolve="Abstract_SubstTestChild_WithNextApplicableEditorAndMenu" />
+  </node>
+  <node concept="1TIwiD" id="woUdQL3814">
+    <property role="EcuMT" value="583472190600282180" />
+    <property role="3GE5qa" value="substitute.childWithNextApplicableEditorAndMenu" />
+    <property role="TrG5h" value="Abstract_SubstTestChild_WithNextApplicableEditorAndMenu" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
 
