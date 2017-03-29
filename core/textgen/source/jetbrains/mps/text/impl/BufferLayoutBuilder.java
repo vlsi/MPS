@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.TextAreaToken;
 import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.TextMark;
-import jetbrains.mps.textGen.TextGenBuffer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedHashMap;
@@ -32,7 +31,6 @@ import java.util.Set;
 
 /**
  * Prepare {@link BufferLayoutConfiguration}.
- * This class is utility used by generated code to parameterize {@link RegularTextUnit2}
  * @author Artem Tikhomirov
  */
 public class BufferLayoutBuilder {

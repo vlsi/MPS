@@ -18,10 +18,6 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
-        <property id="1225118929411" name="build" index="YLPcu" />
-        <property id="1225118933224" name="comment" index="YLQ7P" />
-      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
@@ -57,7 +53,6 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -254,17 +249,6 @@
       <ref role="20lvS9" node="hXbweBj" resolve="OperationDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="hXwNldb">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="ContextParameter" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="parameter" />
-    <property role="34LRSv" value="context" />
-    <property role="EcuMT" value="1234279682891" />
-    <ref role="1TJDcQ" node="hY4Spyd" resolve="AbstractTextGenParameter" />
-    <node concept="asaX9" id="4egH7UduX$m" role="lGtFl" />
-  </node>
   <node concept="1TIwiD" id="hXwW6D9">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
@@ -277,20 +261,6 @@
     </node>
     <node concept="PrWs8" id="2deFRo6z$SA" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="hX_6nRM">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="BufferParameter" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="parameter" />
-    <property role="34LRSv" value="buffer" />
-    <property role="EcuMT" value="1234351783410" />
-    <ref role="1TJDcQ" node="hY4Spyd" resolve="AbstractTextGenParameter" />
-    <node concept="asaX9" id="5NT4nYgHicq" role="lGtFl">
-      <property role="YLPcu" value="MPS 3.3" />
-      <property role="YLQ7P" value="Type of the buffer is TextGenBuffer, which we shall change to TextBuffer soon (either changing type of this CF parameter, or by introducing a new one. In any case, uses of TextGenBuffer shall get re-written, and thus uses of this CF parameter shall cease." />
     </node>
   </node>
   <node concept="1TIwiD" id="hXJqxz$">
@@ -345,9 +315,6 @@
     <property role="3GE5qa" value="parameter" />
     <property role="EcuMT" value="1234884991117" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvB2BF" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hZizx56">
     <property role="R5$K7" value="false" />
@@ -485,32 +452,6 @@
     <property role="34LRSv" value="extension" />
     <property role="EcuMT" value="8931911391946696733" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-  </node>
-  <node concept="1TIwiD" id="5ZG7NfXc0vS">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="reference" />
-    <property role="TrG5h" value="ReferenceAppendPart" />
-    <property role="3GE5qa" value="operation.append.part" />
-    <property role="34LRSv" value="$ref{" />
-    <property role="EcuMT" value="6911933836258445304" />
-    <ref role="1TJDcQ" node="i0l8shm" resolve="AbstractAppendPart" />
-    <node concept="1TJgyi" id="4aY8Uu2MbC4" role="1TKVEl">
-      <property role="TrG5h" value="uniqNameInFile" />
-      <property role="IQ2nx" value="4809320654438971908" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyj" id="5ZG7NfXc0vV" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="reference" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="6911933836258445307" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="asaX9" id="4Y2pJ9JAVRp" role="lGtFl">
-      <property role="YLPcu" value="3.3" />
-      <property role="YLQ7P" value="Semantics of the operation is unclear, its implementation (SNodeTextGen.getReferentPresentation) has been deprecated since 2012" />
-    </node>
   </node>
   <node concept="1TIwiD" id="6dPjpvxM6Ic">
     <property role="R5$K7" value="false" />

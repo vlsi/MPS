@@ -19,13 +19,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractTextGenParameter = createDescriptorForAbstractTextGenParameter();
   /*package*/ final ConceptDescriptor myConceptAppendOperation = createDescriptorForAppendOperation();
   /*package*/ final ConceptDescriptor myConceptAttributedNodePart = createDescriptorForAttributedNodePart();
-  /*package*/ final ConceptDescriptor myConceptBufferParameter = createDescriptorForBufferParameter();
   /*package*/ final ConceptDescriptor myConceptClassConceptUnitContext = createDescriptorForClassConceptUnitContext();
   /*package*/ final ConceptDescriptor myConceptCollectionAppendPart = createDescriptorForCollectionAppendPart();
   /*package*/ final ConceptDescriptor myConceptConceptTextGenDeclaration = createDescriptorForConceptTextGenDeclaration();
   /*package*/ final ConceptDescriptor myConceptConstantStringAppendPart = createDescriptorForConstantStringAppendPart();
   /*package*/ final ConceptDescriptor myConceptContextInstanceSpecification = createDescriptorForContextInstanceSpecification();
-  /*package*/ final ConceptDescriptor myConceptContextParameter = createDescriptorForContextParameter();
   /*package*/ final ConceptDescriptor myConceptDecreaseDepthOperation = createDescriptorForDecreaseDepthOperation();
   /*package*/ final ConceptDescriptor myConceptEncodingDeclaration = createDescriptorForEncodingDeclaration();
   /*package*/ final ConceptDescriptor myConceptEncodingDeclarationBase = createDescriptorForEncodingDeclarationBase();
@@ -45,7 +43,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptNodeParameter = createDescriptorForNodeParameter();
   /*package*/ final ConceptDescriptor myConceptOperationCall = createDescriptorForOperationCall();
   /*package*/ final ConceptDescriptor myConceptOperationDeclaration = createDescriptorForOperationDeclaration();
-  /*package*/ final ConceptDescriptor myConceptReferenceAppendPart = createDescriptorForReferenceAppendPart();
   /*package*/ final ConceptDescriptor myConceptSimpleTextGenOperation = createDescriptorForSimpleTextGenOperation();
   /*package*/ final ConceptDescriptor myConceptStubOperationDeclaration = createDescriptorForStubOperationDeclaration();
   /*package*/ final ConceptDescriptor myConceptTextUnitLayout = createDescriptorForTextUnitLayout();
@@ -63,7 +60,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractAppendPart, myConceptAbstractTextGenDeclaration, myConceptAbstractTextGenParameter, myConceptAppendOperation, myConceptAttributedNodePart, myConceptBufferParameter, myConceptClassConceptUnitContext, myConceptCollectionAppendPart, myConceptConceptTextGenDeclaration, myConceptConstantStringAppendPart, myConceptContextInstanceSpecification, myConceptContextParameter, myConceptDecreaseDepthOperation, myConceptEncodingDeclaration, myConceptEncodingDeclarationBase, myConceptEncodingLiteral, myConceptExtensionDeclaration, myConceptFilenameFunction, myConceptFoundErrorOperation, myConceptGenerateTextDeclaration, myConceptIncreaseDepthOperation, myConceptIndentBufferOperation, myConceptIndentPart, myConceptInstancePerUnitContextObject, myConceptLanguageTextGenDeclaration, myConceptLayoutPart, myConceptNewLineAppendPart, myConceptNodeAppendPart, myConceptNodeParameter, myConceptOperationCall, myConceptOperationDeclaration, myConceptReferenceAppendPart, myConceptSimpleTextGenOperation, myConceptStubOperationDeclaration, myConceptTextUnitLayout, myConceptUnitContextDeclaration, myConceptUnitContextObject, myConceptUnitContextReference, myConceptUtilityMethodCall, myConceptUtilityMethodDeclaration, myConceptWithIndentOperation);
+    return Arrays.asList(myConceptAbstractAppendPart, myConceptAbstractTextGenDeclaration, myConceptAbstractTextGenParameter, myConceptAppendOperation, myConceptAttributedNodePart, myConceptClassConceptUnitContext, myConceptCollectionAppendPart, myConceptConceptTextGenDeclaration, myConceptConstantStringAppendPart, myConceptContextInstanceSpecification, myConceptDecreaseDepthOperation, myConceptEncodingDeclaration, myConceptEncodingDeclarationBase, myConceptEncodingLiteral, myConceptExtensionDeclaration, myConceptFilenameFunction, myConceptFoundErrorOperation, myConceptGenerateTextDeclaration, myConceptIncreaseDepthOperation, myConceptIndentBufferOperation, myConceptIndentPart, myConceptInstancePerUnitContextObject, myConceptLanguageTextGenDeclaration, myConceptLayoutPart, myConceptNewLineAppendPart, myConceptNodeAppendPart, myConceptNodeParameter, myConceptOperationCall, myConceptOperationDeclaration, myConceptSimpleTextGenOperation, myConceptStubOperationDeclaration, myConceptTextUnitLayout, myConceptUnitContextDeclaration, myConceptUnitContextObject, myConceptUnitContextReference, myConceptUtilityMethodCall, myConceptUtilityMethodDeclaration, myConceptWithIndentOperation);
   }
 
   @Override
@@ -80,8 +77,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptAppendOperation;
       case LanguageConceptSwitch.AttributedNodePart:
         return myConceptAttributedNodePart;
-      case LanguageConceptSwitch.BufferParameter:
-        return myConceptBufferParameter;
       case LanguageConceptSwitch.ClassConceptUnitContext:
         return myConceptClassConceptUnitContext;
       case LanguageConceptSwitch.CollectionAppendPart:
@@ -92,8 +87,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptConstantStringAppendPart;
       case LanguageConceptSwitch.ContextInstanceSpecification:
         return myConceptContextInstanceSpecification;
-      case LanguageConceptSwitch.ContextParameter:
-        return myConceptContextParameter;
       case LanguageConceptSwitch.DecreaseDepthOperation:
         return myConceptDecreaseDepthOperation;
       case LanguageConceptSwitch.EncodingDeclaration:
@@ -132,8 +125,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptOperationCall;
       case LanguageConceptSwitch.OperationDeclaration:
         return myConceptOperationDeclaration;
-      case LanguageConceptSwitch.ReferenceAppendPart:
-        return myConceptReferenceAppendPart;
       case LanguageConceptSwitch.SimpleTextGenOperation:
         return myConceptSimpleTextGenOperation;
       case LanguageConceptSwitch.StubOperationDeclaration:
@@ -180,7 +171,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.textGen", "AbstractTextGenParameter", 0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f84e1988dL);
     b.class_(false, true, false);
     b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)/1234884991117");
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
@@ -202,15 +192,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart", 0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L);
     b.origin("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)/8937790975493363649");
     b.alias("${ attributed node }$");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForBufferParameter() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.textGen", "BufferParameter", 0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f65197df2L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", 0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f84e1988dL);
-    b.origin("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)/1234351783410");
-    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("buffer");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForClassConceptUnitContext() {
@@ -262,15 +243,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.textGen", "ContextInstanceSpecification", 0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961ac9072L);
     b.interface_();
     b.origin("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)/3996543181682151538");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForContextParameter() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.textGen", "ContextParameter", 0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60cd534bL);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", 0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f84e1988dL);
-    b.origin("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)/1234279682891");
-    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("context");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDecreaseDepthOperation() {
@@ -443,16 +415,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("operationName", 0x11f5fdf3bedL, "1234264079341");
     b.kind(ConceptKind.IMPLEMENTATION_WITH_STUB, StaticScope.GLOBAL);
     b.alias("new operation");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForReferenceAppendPart() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.textGen", "ReferenceAppendPart", 0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x5fec1f33fd3007f8L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart", 0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L);
-    b.origin("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)/6911933836258445304");
-    b.prop("uniqNameInFile", 0x42be23a782c8ba04L, "4809320654438971908");
-    b.aggregate("reference", 0x5fec1f33fd3007fbL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("6911933836258445307").done();
-    b.alias("$ref{");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSimpleTextGenOperation() {

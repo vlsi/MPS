@@ -178,7 +178,6 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
-      <concept id="8758390115029295477" name="jetbrains.mps.lang.smodel.structure.SReferenceType" flags="in" index="2z4iKi" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
@@ -968,35 +967,6 @@
     <node concept="1YaCAy" id="6VAHsmHnR9W" role="1YuTPh">
       <property role="TrG5h" value="declaration" />
       <ref role="1YaFvo" to="2omo:hWWtQdD" resolve="ConceptTextGenDeclaration" />
-    </node>
-  </node>
-  <node concept="1YbPZF" id="5ZG7NfXc0Gb">
-    <property role="TrG5h" value="typeof_ReferenceAppendPart" />
-    <property role="3GE5qa" value="operation.append.part" />
-    <node concept="3clFbS" id="5ZG7NfXc0Gc" role="18ibNy">
-      <node concept="1Z5TYs" id="5ZG7NfXc0Gn" role="3cqZAp">
-        <node concept="mw_s8" id="5ZG7NfXc0Gv" role="1ZfhKB">
-          <node concept="2c44tf" id="5ZG7NfXc0Gw" role="mwGJk">
-            <node concept="2z4iKi" id="5ZG7NfXc0Gz" role="2c44tc" />
-          </node>
-        </node>
-        <node concept="mw_s8" id="5ZG7NfXc0Gq" role="1ZfhK$">
-          <node concept="1Z2H0r" id="5ZG7NfXc0Gf" role="mwGJk">
-            <node concept="2OqwBi" id="5ZG7NfXc0Gi" role="1Z2MuG">
-              <node concept="1YBJjd" id="5ZG7NfXc0Gh" role="2Oq$k0">
-                <ref role="1YBMHb" node="5ZG7NfXc0Gd" resolve="part" />
-              </node>
-              <node concept="3TrEf2" id="5ZG7NfXc0Gm" role="2OqNvi">
-                <ref role="3Tt5mk" to="2omo:5ZG7NfXc0vV" resolve="reference" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="5ZG7NfXc0Gd" role="1YuTPh">
-      <property role="TrG5h" value="part" />
-      <ref role="1YaFvo" to="2omo:5ZG7NfXc0vS" resolve="ReferenceAppendPart" />
     </node>
   </node>
   <node concept="18kY7G" id="3fG6dkheQ6l">

@@ -12,7 +12,6 @@
     <classNode dependClassName="jetbrains.mps.lang.textGen.typesystem.typeof_NodeParameter_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.typesystem.typeof_NodePart_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.typesystem.typeof_PrivateMethodCall_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.typesystem.typeof_ReferenceAppendPart_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.typesystem.typeof_SimplestTextGenOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.typesystem.typeof_UnitContextReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
@@ -166,19 +165,6 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.textGen.typesystem.typeof_ReferenceAppendPart_InferenceRule" file="typeof_ReferenceAppendPart_InferenceRule.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>

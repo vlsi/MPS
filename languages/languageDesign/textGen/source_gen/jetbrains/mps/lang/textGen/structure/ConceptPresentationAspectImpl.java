@@ -14,13 +14,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AbstractTextGenParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AppendOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttributedNodePart = new ConceptPresentationBuilder().shortDesc("next attribute or parent node").create();
-  private final ConceptPresentation props_BufferParameter = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ClassConceptUnitContext = new ConceptPresentationBuilder().shortDesc("Instantiate a class as unit context object").create();
   private final ConceptPresentation props_CollectionAppendPart = new ConceptPresentationBuilder().shortDesc("collection").create();
-  private final ConceptPresentation props_ConceptTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0i).create();
+  private final ConceptPresentation props_ConceptTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0h).create();
   private final ConceptPresentation props_ConstantStringAppendPart = new ConceptPresentationBuilder().shortDesc("constant string").create();
   private final ConceptPresentation props_ContextInstanceSpecification = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ContextParameter = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_DecreaseDepthOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EncodingDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EncodingDeclarationBase = new ConceptPresentationBuilder().create();
@@ -33,14 +31,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IndentBufferOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IndentPart = new ConceptPresentationBuilder().shortDesc("append indentation").create();
   private final ConceptPresentation props_InstancePerUnitContextObject = new ConceptPresentationBuilder().shortDesc("Associate new instance of a context object with a text unit (one context object for each text unit)").create();
-  private final ConceptPresentation props_LanguageTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0y).create();
+  private final ConceptPresentation props_LanguageTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0w).create();
   private final ConceptPresentation props_LayoutPart = new ConceptPresentationBuilder().shortDesc("area within text unit layout").create();
   private final ConceptPresentation props_NewLineAppendPart = new ConceptPresentationBuilder().shortDesc("new line").create();
   private final ConceptPresentation props_NodeAppendPart = new ConceptPresentationBuilder().shortDesc("node or property").create();
   private final ConceptPresentation props_NodeParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OperationCall = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OperationDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ReferenceAppendPart = new ConceptPresentationBuilder().deprecated(true).shortDesc("reference").create();
   private final ConceptPresentation props_SimpleTextGenOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StubOperationDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TextUnitLayout = new ConceptPresentationBuilder().shortDesc("outline named text areas outcome unit consists of").create();
@@ -66,8 +63,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_AppendOperation;
       case LanguageConceptSwitch.AttributedNodePart:
         return props_AttributedNodePart;
-      case LanguageConceptSwitch.BufferParameter:
-        return props_BufferParameter;
       case LanguageConceptSwitch.ClassConceptUnitContext:
         return props_ClassConceptUnitContext;
       case LanguageConceptSwitch.CollectionAppendPart:
@@ -78,8 +73,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConstantStringAppendPart;
       case LanguageConceptSwitch.ContextInstanceSpecification:
         return props_ContextInstanceSpecification;
-      case LanguageConceptSwitch.ContextParameter:
-        return props_ContextParameter;
       case LanguageConceptSwitch.DecreaseDepthOperation:
         return props_DecreaseDepthOperation;
       case LanguageConceptSwitch.EncodingDeclaration:
@@ -118,8 +111,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_OperationCall;
       case LanguageConceptSwitch.OperationDeclaration:
         return props_OperationDeclaration;
-      case LanguageConceptSwitch.ReferenceAppendPart:
-        return props_ReferenceAppendPart;
       case LanguageConceptSwitch.SimpleTextGenOperation:
         return props_SimpleTextGenOperation;
       case LanguageConceptSwitch.StubOperationDeclaration:

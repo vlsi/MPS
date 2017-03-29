@@ -45,13 +45,6 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
           intentions[0] = new AddRemoveSeparator_Intention();
         }
         break;
-      case 2:
-        if (true) {
-          // Concept: ReferenceAppendPart 
-          intentions = new IntentionFactory[1];
-          intentions[0] = new SetUniqueNameInFile_Intention();
-        }
-        break;
       default:
     }
     myCached.put(concept, intentions);
@@ -61,11 +54,10 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[3];
+    IntentionFactory[] rv = new IntentionFactory[2];
     rv[0] = new SetWithIndent_Intention();
     rv[1] = new AddRemoveSeparator_Intention();
-    rv[2] = new SetUniqueNameInFile_Intention();
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x5fec1f33fd3007f8L)).seal();
+  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL)).seal();
 }

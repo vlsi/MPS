@@ -311,9 +311,6 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_4710719082913298096(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f7f7ff1bdL, 0x1201f00bb34L, "text"));
   }
-  public static SNode sourceNodeQuery_4340589516981966480(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x5fec1f33fd3007f8L, 0x5fec1f33fd3007fbL, "reference"));
-  }
   public static SNode sourceNodeQuery_998325320688504218(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("parentPart"));
   }

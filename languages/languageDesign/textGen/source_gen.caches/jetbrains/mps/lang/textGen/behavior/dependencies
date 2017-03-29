@@ -73,11 +73,9 @@
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.AbstractAppendPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.AbstractTextGenDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.AbstractTextGenParameter__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.BufferParameter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.CollectionAppendPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ConceptTextGenDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ConstantStringAppendPart__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ContextParameter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.EncodingDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ExtensionDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.FilenameFunction__BehaviorDescriptor" />
@@ -94,31 +92,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.textGen.behavior.BufferParameter__BehaviorDescriptor" file="BufferParameter__BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.behavior.CollectionAppendPart__BehaviorDescriptor" file="CollectionAppendPart__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -189,31 +162,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.textGen.behavior.ContextParameter__BehaviorDescriptor" file="ContextParameter__BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.behavior.EncodingDeclaration__BehaviorDescriptor" file="EncodingDeclaration__BehaviorDescriptor.java">

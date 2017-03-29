@@ -111,9 +111,6 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -317,59 +314,6 @@
               <node concept="2Sf5sV" id="i0XBftR" role="2Oq$k0" />
               <node concept="3TrcHB" id="i0XBg7G" role="2OqNvi">
                 <ref role="3TsBF5" to="2omo:i0XA4av" resolve="withSeparator" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="2S6QgY" id="wMMLLptOZ6">
-    <property role="TrG5h" value="SetUniqueNameInFile" />
-    <property role="2ZfUl0" value="true" />
-    <property role="3GE5qa" value="operation.append.part" />
-    <ref role="2ZfgGC" to="2omo:5ZG7NfXc0vS" resolve="ReferenceAppendPart" />
-    <node concept="2S6ZIM" id="wMMLLptOZ7" role="2ZfVej">
-      <node concept="3clFbS" id="wMMLLptOZ8" role="2VODD2">
-        <node concept="3clFbF" id="wMMLLptOZd" role="3cqZAp">
-          <node concept="3K4zz7" id="wMMLLptOZe" role="3clFbG">
-            <node concept="2OqwBi" id="wMMLLptOZj" role="3K4Cdx">
-              <node concept="2Sf5sV" id="wMMLLptOZi" role="2Oq$k0" />
-              <node concept="3TrcHB" id="wMMLLptOZn" role="2OqNvi">
-                <ref role="3TsBF5" to="2omo:4aY8Uu2MbC4" resolve="uniqNameInFile" />
-              </node>
-            </node>
-            <node concept="3cpWs3" id="wMMLLptOZq" role="3K4GZi">
-              <node concept="Xl_RD" id="wMMLLptOZt" role="3uHU7w">
-                <property role="Xl_RC" value=" Unique Name in File" />
-              </node>
-              <node concept="Xl_RD" id="wMMLLptOZp" role="3uHU7B">
-                <property role="Xl_RC" value="Set" />
-              </node>
-            </node>
-            <node concept="Xl_RD" id="wMMLLptOZo" role="3K4E3e">
-              <property role="Xl_RC" value="Unset" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2Sbjvc" id="wMMLLptOZ9" role="2ZfgGD">
-      <node concept="3clFbS" id="wMMLLptOZa" role="2VODD2">
-        <node concept="3clFbF" id="wMMLLptOZu" role="3cqZAp">
-          <node concept="37vLTI" id="wMMLLptOZ_" role="3clFbG">
-            <node concept="3fqX7Q" id="wMMLLptOZC" role="37vLTx">
-              <node concept="2OqwBi" id="wMMLLptOZF" role="3fr31v">
-                <node concept="2Sf5sV" id="wMMLLptOZE" role="2Oq$k0" />
-                <node concept="3TrcHB" id="wMMLLptOZJ" role="2OqNvi">
-                  <ref role="3TsBF5" to="2omo:4aY8Uu2MbC4" resolve="uniqNameInFile" />
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="wMMLLptOZw" role="37vLTJ">
-              <node concept="2Sf5sV" id="wMMLLptOZv" role="2Oq$k0" />
-              <node concept="3TrcHB" id="wMMLLptOZ$" role="2OqNvi">
-                <ref role="3TsBF5" to="2omo:4aY8Uu2MbC4" resolve="uniqNameInFile" />
               </node>
             </node>
           </node>

@@ -214,7 +214,6 @@
       <concept id="1114729360583" name="jetbrains.mps.lang.generator.structure.CopySrcListMacro" flags="ln" index="2b32R4">
         <child id="1168278589236" name="sourceNodesQuery" index="2P8S$" />
       </concept>
-      <concept id="1202776937179" name="jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence" flags="lg" index="b5Tf3" />
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
         <child id="1200911492601" name="mappingLabel" index="2rTMjI" />
         <child id="1167088157977" name="createRootRule" index="2VS0gm" />
@@ -637,17 +636,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="3aamgX" id="5NT4nYgHgKu" role="3acgRq">
-      <ref role="30HIoZ" to="2omo:hX_6nRM" resolve="BufferParameter" />
-      <node concept="j$656" id="5NT4nYgHgSp" role="1lVwrX">
-        <ref role="v9R2y" node="5NT4nYgHgSn" resolve="reduce_BufferParameter" />
-      </node>
-    </node>
-    <node concept="3aamgX" id="5NT4nYgHgQ0" role="3acgRq">
-      <property role="2n97ot" value="ContextParameter has been deprecated for a while, do not generate anything" />
-      <ref role="30HIoZ" to="2omo:hXwNldb" resolve="ContextParameter" />
-      <node concept="b5Tf3" id="5NT4nYgHgQ_" role="1lVwrX" />
     </node>
     <node concept="3aamgX" id="hXJGP00" role="3acgRq">
       <ref role="30HIoZ" to="2omo:hXJECMo" resolve="UtilityMethodCall" />
@@ -1929,12 +1917,6 @@
         <ref role="v9R2y" node="hY4Datl" resolve="reduce_OperationCallPart" />
       </node>
     </node>
-    <node concept="3aamgX" id="3KWRMGjvU_T" role="3aUrZf">
-      <ref role="30HIoZ" to="2omo:5ZG7NfXc0vS" resolve="ReferenceAppendPart" />
-      <node concept="j$656" id="3KWRMGjvU_V" role="1lVwrX">
-        <ref role="v9R2y" node="5ZG7NfXc0Hw" resolve="reduce_ReferenceAppendPart" />
-      </node>
-    </node>
     <node concept="3aamgX" id="7K9qoAEYpCT" role="3aUrZf">
       <ref role="30HIoZ" to="2omo:7K9qoAEYlv1" resolve="AttributedNodePart" />
       <node concept="j$656" id="7K9qoAEYpCU" role="1lVwrX">
@@ -2588,54 +2570,6 @@
       <node concept="3Tm1VV" id="i0v1v8h" role="1B3o_S" />
     </node>
   </node>
-  <node concept="13MO4I" id="5ZG7NfXc0Hw">
-    <property role="TrG5h" value="reduce_ReferenceAppendPart" />
-    <property role="3GE5qa" value="append" />
-    <ref role="3gUMe" to="2omo:5ZG7NfXc0vS" resolve="ReferenceAppendPart" />
-    <node concept="312cEu" id="5ZG7NfXc0Hy" role="13RCb5">
-      <property role="TrG5h" value="A" />
-      <node concept="3Tm1VV" id="5ZG7NfXc0Hz" role="1B3o_S" />
-      <node concept="3clFbW" id="5ZG7NfXc0H$" role="jymVt">
-        <node concept="3cqZAl" id="5ZG7NfXc0H_" role="3clF45" />
-        <node concept="3Tm1VV" id="5ZG7NfXc0HA" role="1B3o_S" />
-        <node concept="3clFbS" id="5ZG7NfXc0HB" role="3clF47">
-          <node concept="3clFbF" id="5ZG7NfXc0HF" role="3cqZAp">
-            <node concept="2OqwBi" id="5ZG7NfXc0HH" role="3clFbG">
-              <node concept="37vLTw" id="2BHiRxgm6ZL" role="2Oq$k0">
-                <ref role="3cqZAo" node="5ZG7NfXc0HD" resolve="tgs" />
-              </node>
-              <node concept="liA8E" id="5ZG7NfXc0HL" role="2OqNvi">
-                <ref role="37wK5l" to="kpbf:~TextGenSupport.appendReferentText(org.jetbrains.mps.openapi.model.SReference):void" resolve="appendReferentText" />
-                <node concept="10Nm6u" id="3KWRMGjvDq9" role="37wK5m">
-                  <node concept="29HgVG" id="3KWRMGjvDqf" role="lGtFl">
-                    <node concept="3NFfHV" id="3KWRMGjvDqg" role="3NFExx">
-                      <node concept="3clFbS" id="3KWRMGjvDqh" role="2VODD2">
-                        <node concept="3clFbF" id="3KWRMGjvDqi" role="3cqZAp">
-                          <node concept="2OqwBi" id="3KWRMGjvDqk" role="3clFbG">
-                            <node concept="30H73N" id="3KWRMGjvDqj" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="3KWRMGjvDqo" role="2OqNvi">
-                              <ref role="3Tt5mk" to="2omo:5ZG7NfXc0vV" resolve="reference" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="raruj" id="3KWRMGjvDqc" role="lGtFl" />
-          </node>
-        </node>
-        <node concept="37vLTG" id="5ZG7NfXc0HD" role="3clF46">
-          <property role="TrG5h" value="tgs" />
-          <node concept="3uibUv" id="7LjUJcc35$i" role="1tU5fm">
-            <ref role="3uigEE" to="kpbf:~TextGenSupport" resolve="TextGenSupport" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="jVnub" id="45vPwK_GCyW">
     <property role="TrG5h" value="switch_SimpleTextGenOperation" />
     <node concept="3aamgX" id="45vPwK_GCyX" role="3aUrZf">
@@ -2744,37 +2678,6 @@
       <node concept="1lLz0L" id="45vPwK_GD4v" role="1lHHLF">
         <property role="1lMjX7" value="error" />
         <property role="1lLB17" value="Unknown TextGen operation" />
-      </node>
-    </node>
-  </node>
-  <node concept="13MO4I" id="5NT4nYgHgSn">
-    <property role="TrG5h" value="reduce_BufferParameter" />
-    <ref role="3gUMe" to="2omo:hX_6nRM" resolve="BufferParameter" />
-    <node concept="312cEu" id="5NT4nYgHgSv" role="13RCb5">
-      <property role="TrG5h" value="A" />
-      <node concept="3Tm1VV" id="5NT4nYgHgSw" role="1B3o_S" />
-      <node concept="3clFbW" id="5NT4nYgHgSx" role="jymVt">
-        <node concept="3cqZAl" id="5NT4nYgHgSy" role="3clF45" />
-        <node concept="3Tm1VV" id="5NT4nYgHgSz" role="1B3o_S" />
-        <node concept="3clFbS" id="5NT4nYgHgS$" role="3clF47">
-          <node concept="3clFbF" id="5NT4nYgHgS_" role="3cqZAp">
-            <node concept="2OqwBi" id="5NT4nYgHgSA" role="3clFbG">
-              <node concept="37vLTw" id="5NT4nYgHgSB" role="2Oq$k0">
-                <ref role="3cqZAo" node="5NT4nYgHgSE" resolve="tgs" />
-              </node>
-              <node concept="liA8E" id="5NT4nYgHgSC" role="2OqNvi">
-                <ref role="37wK5l" to="kpbf:~TextGenSupport.getLegacyBuffer():jetbrains.mps.textGen.TextGenBuffer" resolve="getLegacyBuffer" />
-              </node>
-              <node concept="raruj" id="5NT4nYgHgSD" role="lGtFl" />
-            </node>
-          </node>
-        </node>
-        <node concept="37vLTG" id="5NT4nYgHgSE" role="3clF46">
-          <property role="TrG5h" value="tgs" />
-          <node concept="3uibUv" id="5NT4nYgHgTf" role="1tU5fm">
-            <ref role="3uigEE" to="kpbf:~TextGenSupport" resolve="TextGenSupport" />
-          </node>
-        </node>
       </node>
     </node>
   </node>

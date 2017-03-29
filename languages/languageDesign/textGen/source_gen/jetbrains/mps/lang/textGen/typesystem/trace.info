@@ -14,7 +14,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="9,0,69,0" name="jetbrains.mps.lang.textGen.typesystem.TypesystemDescriptor" />
+      <unit at="9,0,65,0" name="jetbrains.mps.lang.textGen.typesystem.TypesystemDescriptor" />
     </file>
   </root>
   <root nodeRef="r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)/1233748139235">
@@ -612,53 +612,6 @@
         <var name="typeCheckingContext" id="3741392693834244501" />
       </scope>
       <unit id="3741392693834244501" at="18,0,43,0" name="jetbrains.mps.lang.textGen.typesystem.check_MissingTextGenBlock_NonTypesystemRule" />
-    </file>
-  </root>
-  <root nodeRef="r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)/6911933836258446091">
-    <file name="typeof_ReferenceAppendPart_InferenceRule.java">
-      <node id="6911933836258446103" at="21,5,22,209" concept="6" />
-      <node id="6911933836258446103" at="22,209,23,203" concept="6" />
-      <node id="6911933836258446103" at="23,203,24,280" concept="2" />
-      <node id="6911933836258446091" at="27,50,28,164" concept="7" />
-      <node id="6911933836258446091" at="30,68,31,102" concept="7" />
-      <node id="6911933836258446091" at="33,30,34,17" concept="7" />
-      <node id="6911933836258446112" at="36,61,37,63" concept="6" />
-      <node id="6911933836258446112" at="37,63,38,30" concept="6" />
-      <node id="6911933836258446112" at="38,30,39,256" concept="2" />
-      <node id="6911933836258446112" at="39,256,40,24" concept="7" />
-      <node id="6911933836258446091" at="18,0,20,0" concept="1" trace="typeof_ReferenceAppendPart_InferenceRule#()V" />
-      <node id="6911933836258446091" at="27,0,30,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="6911933836258446091" at="30,0,33,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="6911933836258446091" at="33,0,36,0" concept="5" trace="overrides#()Z" />
-      <node id="6911933836258446103" at="20,117,25,5" concept="0" />
-      <node id="6911933836258446112" at="36,0,42,0" concept="10" trace="_quotation_createNode_yl1fyo_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6911933836258446091" at="20,0,27,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="6911933836258446091" at="18,53,18,53" />
-      <scope id="6911933836258446091" at="27,50,28,164" />
-      <scope id="6911933836258446091" at="30,68,31,102" />
-      <scope id="6911933836258446091" at="33,30,34,17" />
-      <scope id="6911933836258446091" at="18,0,20,0" />
-      <scope id="6911933836258446103" at="21,5,24,280">
-        <var name="_info_12389875345" id="6911933836258446103" />
-        <var name="_nodeToCheck_1029348928467" id="6911933836258446103" />
-      </scope>
-      <scope id="6911933836258446091" at="27,0,30,0" />
-      <scope id="6911933836258446091" at="30,0,33,0">
-        <var name="argument" id="6911933836258446091" />
-      </scope>
-      <scope id="6911933836258446091" at="33,0,36,0" />
-      <scope id="6911933836258446112" at="36,61,40,24">
-        <var name="facade" id="6911933836258446112" />
-        <var name="quotedNode_1" id="6911933836258446112" />
-      </scope>
-      <scope id="6911933836258446092" at="20,117,25,5" />
-      <scope id="6911933836258446112" at="36,0,42,0" />
-      <scope id="6911933836258446091" at="20,0,27,0">
-        <var name="part" id="6911933836258446091" />
-        <var name="status" id="6911933836258446091" />
-        <var name="typeCheckingContext" id="6911933836258446091" />
-      </scope>
-      <unit id="6911933836258446091" at="17,0,43,0" name="jetbrains.mps.lang.textGen.typesystem.typeof_ReferenceAppendPart_InferenceRule" />
     </file>
   </root>
   <root nodeRef="r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)/7991274449437422202">

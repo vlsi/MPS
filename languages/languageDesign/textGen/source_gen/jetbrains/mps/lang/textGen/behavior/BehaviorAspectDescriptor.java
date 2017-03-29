@@ -17,9 +17,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myGenerateTextDeclaration__BehaviorDescriptor = new GenerateTextDeclaration__BehaviorDescriptor();
   private final BHDescriptor myLanguageTextGenDeclaration__BehaviorDescriptor = new LanguageTextGenDeclaration__BehaviorDescriptor();
   private final BHDescriptor myOperationDeclaration__BehaviorDescriptor = new OperationDeclaration__BehaviorDescriptor();
-  private final BHDescriptor myContextParameter__BehaviorDescriptor = new ContextParameter__BehaviorDescriptor();
   private final BHDescriptor myAbstractTextGenDeclaration__BehaviorDescriptor = new AbstractTextGenDeclaration__BehaviorDescriptor();
-  private final BHDescriptor myBufferParameter__BehaviorDescriptor = new BufferParameter__BehaviorDescriptor();
   private final BHDescriptor myUtilityMethodCall__BehaviorDescriptor = new UtilityMethodCall__BehaviorDescriptor();
   private final BHDescriptor myAbstractTextGenParameter__BehaviorDescriptor = new AbstractTextGenParameter__BehaviorDescriptor();
   private final BHDescriptor myWithIndentOperation__BehaviorDescriptor = new WithIndentOperation__BehaviorDescriptor();
@@ -38,7 +36,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     SAbstractConcept cncpt = concept;
-    switch (index_846f5o_a0w.index(cncpt)) {
+    switch (index_846f5o_a0u.index(cncpt)) {
       case 0:
         return myAbstractAppendPart__BehaviorDescriptor;
       case 1:
@@ -46,40 +44,36 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 2:
         return myAbstractTextGenParameter__BehaviorDescriptor;
       case 3:
-        return myBufferParameter__BehaviorDescriptor;
-      case 4:
         return myCollectionAppendPart__BehaviorDescriptor;
-      case 5:
+      case 4:
         return myConceptTextGenDeclaration__BehaviorDescriptor;
-      case 6:
+      case 5:
         return myConstantStringAppendPart__BehaviorDescriptor;
-      case 7:
-        return myContextParameter__BehaviorDescriptor;
-      case 8:
+      case 6:
         return myEncodingDeclaration__BehaviorDescriptor;
-      case 9:
+      case 7:
         return myExtensionDeclaration__BehaviorDescriptor;
-      case 10:
+      case 8:
         return myFilenameFunction__BehaviorDescriptor;
-      case 11:
+      case 9:
         return myGenerateTextDeclaration__BehaviorDescriptor;
-      case 12:
+      case 10:
         return myLanguageTextGenDeclaration__BehaviorDescriptor;
-      case 13:
+      case 11:
         return myNodeAppendPart__BehaviorDescriptor;
-      case 14:
+      case 12:
         return myNodeParameter__BehaviorDescriptor;
-      case 15:
+      case 13:
         return myOperationDeclaration__BehaviorDescriptor;
-      case 16:
+      case 14:
         return myStubOperationDeclaration__BehaviorDescriptor;
-      case 17:
+      case 15:
         return myUtilityMethodCall__BehaviorDescriptor;
-      case 18:
+      case 16:
         return myWithIndentOperation__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex index_846f5o_a0w = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f84e1988dL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f65197df2L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60cd534bL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x10fd02ec599e8f93L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x7bf48616723f681dL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0xa0f73089d40b8eL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f412f8790L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015251a28L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f411d576bL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b80e9d3L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bacbf19e457bd3bL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11fd28e1146L)).seal();
+  private static final ConceptSwitchIndex index_846f5o_a0u = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f84e1988dL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x10fd02ec599e8f93L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x7bf48616723f681dL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0xa0f73089d40b8eL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f412f8790L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015251a28L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f411d576bL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b80e9d3L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bacbf19e457bd3bL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11fd28e1146L)).seal();
 }
