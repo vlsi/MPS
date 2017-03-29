@@ -21,7 +21,7 @@
       <unit at="30,0,198,0" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="19,0,141,0" name="jetbrains.mps.samples.Kaja.generator.template.main.TemplateModelImpl" />
+      <unit at="20,0,146,0" name="jetbrains.mps.samples.Kaja.generator.template.main.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3210697320273763071">
