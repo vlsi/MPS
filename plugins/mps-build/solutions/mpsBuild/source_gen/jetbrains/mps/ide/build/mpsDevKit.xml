@@ -990,7 +990,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.structure.pluginSolution" depends="java.compile.jetbrains.mps.lang.migration.pluginSolution, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.structure.pluginSolution" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mpsdevkit/languages/pluginSolutions/lang.structure/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.structure.pluginSolution" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.structure.pluginSolution" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -1018,7 +1018,6 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.migration.pluginSolution" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
