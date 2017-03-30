@@ -95,7 +95,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
 
   @Override
   protected void addPropertyCell(SProperty property) {
-    EditorCell_Property editorCell = new EditorCell_Property(getEditorContext(), new SPropertyAccessor(getNode(), property, false, true), getNode());
+    EditorCell_Property editorCell = new EditorCell_Property(getEditorContext(), new SPropertyAccessor(getNode(), property, false, false), getNode());
     getUpdateSession().registerCleanDependency(editorCell, new Pair<>(new SNodePointer(getNode()), property.getName()));
     editorCell.setDefaultText("<no " + property.getName() + ">");
     if (editorCell.getCellId() == null) {
