@@ -22,7 +22,7 @@ public class ShowDoc_Action extends BaseAction {
   public ShowDoc_Action() {
     super("Show Documentation", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
