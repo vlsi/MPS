@@ -253,6 +253,10 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     private EditorCell createConstant_w7w00h_a5b0() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
       editorCell.setCellId("Constant_w7w00h_a5b0");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.SELECTABLE, true);
+      style.set(StyleAttributes.EDITABLE, true);
+      editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no attributed concepts>");
       return editorCell;
     }
