@@ -5302,15 +5302,15 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/5772383102104979493">
     <file name="PropertySetterReturn_Test.java">
-      <node id="5772383102104979493" at="17,80,18,116" concept="3" />
-      <node id="5772383102104979493" at="18,116,19,137" concept="3" />
+      <node id="5772383102104979493" at="17,98,18,116" concept="3" />
+      <node id="5772383102104979493" at="18,116,19,155" concept="3" />
       <node id="5772383102104979493" at="22,88,23,116" concept="3" />
       <node id="5772383102104979493" at="23,116,24,145" concept="3" />
       <node id="5772383102104979493" at="27,89,28,116" concept="3" />
       <node id="5772383102104979493" at="28,116,29,146" concept="3" />
       <node id="5772383102104979493" at="32,77,33,116" concept="3" />
       <node id="5772383102104979493" at="33,116,34,134" concept="3" />
-      <node id="5772383102104979493" at="40,82,41,242" concept="5" />
+      <node id="5772383102104979493" at="40,100,41,242" concept="5" />
       <node id="5772383102104979493" at="41,242,42,123" concept="3" />
       <node id="5772383102104979493" at="44,90,45,242" concept="5" />
       <node id="5772383102104979493" at="45,242,46,123" concept="3" />
@@ -5318,19 +5318,19 @@
       <node id="5772383102104979493" at="49,242,50,123" concept="3" />
       <node id="5772383102104979493" at="52,79,53,242" concept="5" />
       <node id="5772383102104979493" at="53,242,54,123" concept="3" />
-      <node id="5772383102104979493" at="40,0,44,0" concept="4" trace="test_NodeNotStatementCheck6696611297029671896#()V" />
+      <node id="5772383102104979493" at="40,0,44,0" concept="4" trace="test_NodeNotLegalStatementTheExpressionCheck6696611297029671896#()V" />
       <node id="5772383102104979493" at="44,0,48,0" concept="4" trace="test_NodeTheConditionIsAlwaysCheck2857825852305744070#()V" />
       <node id="5772383102104979493" at="48,0,52,0" concept="4" trace="test_NodeNoReturnValueExpectedCheck6696611297029670760#()V" />
       <node id="5772383102104979493" at="52,0,56,0" concept="4" trace="test_ErrorMessagesCheck5772383102105107061#()V" />
-      <node id="5772383102104979493" at="16,0,21,0" concept="4" trace="test_NodeNotStatementCheck6696611297029671896#()V" />
+      <node id="5772383102104979493" at="16,0,21,0" concept="4" trace="test_NodeNotLegalStatementTheExpressionCheck6696611297029671896#()V" />
       <node id="5772383102104979493" at="21,0,26,0" concept="4" trace="test_NodeTheConditionIsAlwaysCheck2857825852305744070#()V" />
       <node id="5772383102104979493" at="26,0,31,0" concept="4" trace="test_NodeNoReturnValueExpectedCheck6696611297029670760#()V" />
       <node id="5772383102104979493" at="31,0,36,0" concept="4" trace="test_ErrorMessagesCheck5772383102105107061#()V" />
-      <scope id="5772383102104979493" at="17,80,19,137" />
+      <scope id="5772383102104979493" at="17,98,19,155" />
       <scope id="5772383102104979493" at="22,88,24,145" />
       <scope id="5772383102104979493" at="27,89,29,146" />
       <scope id="5772383102104979493" at="32,77,34,134" />
-      <scope id="5772383102104979493" at="40,82,42,123">
+      <scope id="5772383102104979493" at="40,100,42,123">
         <var name="operation" id="5772383102104979493" />
       </scope>
       <scope id="5772383102104979493" at="44,90,46,123">

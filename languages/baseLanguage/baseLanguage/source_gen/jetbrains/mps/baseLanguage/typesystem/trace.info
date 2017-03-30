@@ -10080,7 +10080,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/1239212909416">
     <file name="check_ExpressionStatement_NonTypesystemRule.java">
       <node id="1239212949442" at="23,371,24,58" concept="12" />
-      <node id="1239212949442" at="24,58,25,237" concept="12" />
+      <node id="1239212949442" at="24,58,25,292" concept="12" />
       <node id="1239212909416" at="28,50,29,158" concept="13" />
       <node id="1239212909416" at="31,68,32,102" concept="13" />
       <node id="1239212909416" at="34,30,35,17" concept="13" />
@@ -10095,7 +10095,7 @@
       <scope id="1239212909416" at="31,68,32,102" />
       <scope id="1239212909416" at="34,30,35,17" />
       <scope id="1239212909416" at="20,0,22,0" />
-      <scope id="1239212949442" at="23,371,25,237">
+      <scope id="1239212949442" at="23,371,25,292">
         <var name="_reporter_2309309498" id="1239212949442" />
         <var name="errorTarget" id="1239212949442" />
       </scope>

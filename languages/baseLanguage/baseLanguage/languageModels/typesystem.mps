@@ -570,7 +570,7 @@
       <concept id="767145758118872828" name="jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation" flags="nn" index="2DeJnW" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
@@ -20012,7 +20012,7 @@
           </node>
         </node>
         <node concept="Xl_RD" id="i26Qjeh" role="2MkJ7o">
-          <property role="Xl_RC" value="Not a statement" />
+          <property role="Xl_RC" value="Not a legal statement, the expression value should be used or returned" />
         </node>
         <node concept="1YBJjd" id="i26QlsS" role="2OEOjV">
           <ref role="1YBMHb" node="i26Qdom" resolve="expressionStatement" />
