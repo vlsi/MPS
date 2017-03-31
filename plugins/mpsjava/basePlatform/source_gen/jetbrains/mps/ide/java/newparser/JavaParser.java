@@ -31,6 +31,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BHReflection;
@@ -324,21 +325,34 @@ public class JavaParser {
     tryResolveUnknowns(roots, progress, IncrementalModelAccess.INSIDE_COMMAND_OR_UPDATE_MODE);
   }
 
-  /*package*/ static void tryResolveUnknowns(final Iterable<SNode> roots, final ProgressMonitor progress, IncrementalModelAccess modelAccess) {
-    progress.start("Ambiguous concepts...", Sequence.fromIterable(roots).count() + 1);
+
+  /*package*/ static void tryResolveUnknowns(Iterable<SNode> roots, ProgressMonitor progress, IncrementalModelAccess modelAccess) {
+    // make room for this many passes, and just don't advance the progress afterwards 
+    final int PASSES_TO_SHOW_UNDER_PROGRESS = 5;
+    Iterable<SNode> nextPass = roots;
+    int k = 0;
+    while (Sequence.fromIterable(nextPass).isNotEmpty()) {
+      ProgressMonitor progressForThisPass;
+      if (k++ < PASSES_TO_SHOW_UNDER_PROGRESS) {
+        progressForThisPass = progress.subTask(Sequence.fromIterable(nextPass).count());
+      } else {
+        progressForThisPass = new EmptyProgressMonitor();
+      }
+      nextPass = tryResolveUnknowns0(nextPass, progressForThisPass, modelAccess);
+    }
+  }
+
+  private static Iterable<SNode> tryResolveUnknowns0(final Iterable<SNode> roots, final ProgressMonitor progress, IncrementalModelAccess modelAccess) {
+    progress.start("Ambiguous concepts...", Sequence.fromIterable(roots).count());
     final Map<SNode, SNode> resolutionMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
     modelAccess.accessModel(new Runnable() {
       public void run() {
         for (SNode node : Sequence.fromIterable(roots)) {
-          List<SNode> unknowns = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), false, new SAbstractConcept[]{});
+          progress.step((SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")) ? ("node: " + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) : ""));
+          List<SNode> unknowns = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), false, new SAbstractConcept[]{MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved")});
           for (SNode unk : ListSequence.fromList(unknowns)) {
             final SNode unkNode = unk;
             final _FunctionTypes._return_P0_E0<? extends SNode> subst = ((_FunctionTypes._return_P0_E0<? extends SNode>) BHReflection.invoke(unk, SMethodTrimmedId.create("evaluateSubst", null, "73E7sj5sxxG")));
-            if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-              progress.step("class: " + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-            }
-
-            progress.advance(1);
             if (subst == null) {
               continue;
             }
@@ -346,6 +360,7 @@ public class JavaParser {
             SNode theRightNode = subst.invoke();
             MapSequence.fromMap(resolutionMap).put(unkNode, theRightNode);
           }
+          progress.advance(1);
         }
       }
     });
@@ -361,18 +376,14 @@ public class JavaParser {
 
             // FIXME maybe it's better to re-use auto model import 
             final SModel sourceModel = resolved.getModel();
-            if (sourceModel != null) {
-              Sequence.fromIterable(JavaToMpsConverter.deepReferences(resolved)).ofType(StaticReference.class).visitAll(new IVisitor<StaticReference>() {
-                public void visit(StaticReference it) {
-                  SModelReference targetModel = it.getTargetSModelReference();
-                  if (!(sourceModel.getReference().equals(targetModel))) {
-                    ((SModelInternal) sourceModel).addModelImport(targetModel, true);
-                  }
+            Sequence.fromIterable(JavaToMpsConverter.deepReferences(resolved)).ofType(StaticReference.class).visitAll(new IVisitor<StaticReference>() {
+              public void visit(StaticReference it) {
+                SModelReference targetModel = it.getTargetSModelReference();
+                if (!(sourceModel.getReference().equals(targetModel))) {
+                  ((SModelInternal) sourceModel).addModelImport(targetModel, true);
                 }
-              });
-            } else {
-              // hmm.... 
-            }
+              }
+            });
 
           }
         });
@@ -380,6 +391,7 @@ public class JavaParser {
     });
     progress.advance(1);
     progress.done();
+    return MapSequence.fromMap(resolutionMap).values();
   }
 
   public static void tryResolveDynamicRefs(Iterable<SNode> nodes) {
