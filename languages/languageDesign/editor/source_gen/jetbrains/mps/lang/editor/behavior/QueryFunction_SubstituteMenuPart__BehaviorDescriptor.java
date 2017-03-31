@@ -18,6 +18,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -36,6 +37,10 @@ public final class QueryFunction_SubstituteMenuPart__BehaviorDescriptor extends 
 
   /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
     List<SConcept> result = ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5a8bc23a16218182L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenuPart"));
+    SNode extensibleMenuPart = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bcee99dL, "jetbrains.mps.lang.editor.structure.IExtensibleSubstituteMenuPart"), false, false);
+    if ((extensibleMenuPart != null)) {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(IExtensibleSubstituteMenuPart__BehaviorDescriptor.getAdditionalFeatureParameters_id394Ruzxf8fe.invoke(extensibleMenuPart)));
+    }
     ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e2c89d1L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_pattern"));
     return result;
   }

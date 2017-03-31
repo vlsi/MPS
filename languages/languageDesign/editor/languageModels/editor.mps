@@ -2,11 +2,11 @@
 <model ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -14644,6 +14644,25 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
+      <node concept="3F2HdR" id="5$9pa3i4BMz" role="3EZMnx">
+        <ref role="1NtTu8" to="tpc2:7L5lpRJINkn" resolve="features" />
+        <node concept="l2Vlx" id="5$9pa3i4BM$" role="2czzBx" />
+        <node concept="pVoyu" id="5$9pa3i4BM_" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="pj6Ft" id="5$9pa3i4BMA" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="5$9pa3i4BMB" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="5$9pa3i4BMC" role="2czzBI">
+          <property role="ilYzB" value="&lt;no additional features&gt;" />
+          <node concept="VPxyj" id="5$9pa3i4BMD" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+      </node>
       <node concept="l2Vlx" id="6K28JrTTrQL" role="2iSdaV" />
     </node>
   </node>
@@ -21876,6 +21895,9 @@
             </node>
             <node concept="3clFbF" id="1wEcoXjJsUJ" role="3cqZAp">
               <node concept="17R0WA" id="1wEcoXjJsUK" role="3clFbG">
+                <node concept="37vLTw" id="42Ryvd4D7nS" role="3uHU7B">
+                  <ref role="3cqZAo" node="1wEcoXjJsV1" resolve="linkNode" />
+                </node>
                 <node concept="2OqwBi" id="1wEcoXjJsUL" role="3uHU7w">
                   <node concept="359W_D" id="1wEcoXjJsUM" role="2Oq$k0">
                     <ref role="359W_E" to="tpc2:6V0bp$oHeYW" resolve="TransformationMenuSection" />
@@ -21884,9 +21906,6 @@
                   <node concept="liA8E" id="1wEcoXjJsUN" role="2OqNvi">
                     <ref role="37wK5l" to="c17a:~SContainmentLink.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
                   </node>
-                </node>
-                <node concept="37vLTw" id="42Ryvd4D7nS" role="3uHU7B">
-                  <ref role="3cqZAo" node="1wEcoXjJsV1" resolve="linkNode" />
                 </node>
               </node>
             </node>
@@ -24449,6 +24468,9 @@
             </node>
             <node concept="3clFbF" id="1wEcoXjJtL3" role="3cqZAp">
               <node concept="17R0WA" id="1wEcoXjJtL4" role="3clFbG">
+                <node concept="37vLTw" id="42Ryvd4D8Fc" role="3uHU7B">
+                  <ref role="3cqZAo" node="1wEcoXjJtLl" resolve="linkNode" />
+                </node>
                 <node concept="2OqwBi" id="1wEcoXjJtL5" role="3uHU7w">
                   <node concept="359W_D" id="1wEcoXjJtL6" role="2Oq$k0">
                     <ref role="359W_E" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleTransformationMenuPart" />
@@ -24457,9 +24479,6 @@
                   <node concept="liA8E" id="1wEcoXjJtL7" role="2OqNvi">
                     <ref role="37wK5l" to="c17a:~SContainmentLink.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
                   </node>
-                </node>
-                <node concept="37vLTw" id="42Ryvd4D8Fc" role="3uHU7B">
-                  <ref role="3cqZAo" node="1wEcoXjJtLl" resolve="linkNode" />
                 </node>
               </node>
             </node>
@@ -25245,13 +25264,13 @@
     <property role="3GE5qa" value="QueryFunction" />
     <ref role="aqKnT" to="tpc2:601LQojMcdN" resolve="QueryFunction_RefPresentation" />
   </node>
-  <node concept="3p36aQ" id="5c5foM6uZaj">
-    <property role="3GE5qa" value="Stylesheet" />
-    <ref role="aqKnT" to="tpc2:hEV7CQ5" resolve="SideTransformAnchorTagStyleClassItem" />
-  </node>
   <node concept="3p36aQ" id="5c5foM6v03Z">
     <property role="3GE5qa" value="CellMenu" />
     <ref role="aqKnT" to="tpc2:794AQ2t3BuV" resolve="CellMenuPart_ApplySideTransforms" />
+  </node>
+  <node concept="3p36aQ" id="5c5foM6uZaj">
+    <property role="3GE5qa" value="Stylesheet" />
+    <ref role="aqKnT" to="tpc2:hEV7CQ5" resolve="SideTransformAnchorTagStyleClassItem" />
   </node>
   <node concept="PKFIW" id="7WoWfGXKj7A">
     <property role="3GE5qa" value="Menu.Substitute" />
@@ -25276,6 +25295,15 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="394Ruzxosp0">
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
+    <ref role="1XX52x" to="tpc2:394RuzxkcZO" resolve="SubstituteMenuItem_AbstractOperation" />
+    <node concept="PMmxH" id="2wdLO7KhY6p" role="2wV5jI">
+      <property role="1cu_pB" value="0" />
+      <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
     </node>
   </node>
 </model>

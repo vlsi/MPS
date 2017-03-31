@@ -40,7 +40,7 @@ public final class TransformationMenuPart_WrapSubstituteMenu__BehaviorDescriptor
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d670600cL, 0x1a533160d670600dL, "menuReference"));
   }
   /*package*/ static List<SConcept> getAdditionalFeatureParameters_id6kJcyCQ_bk0(@NotNull SNode __thisNode__) {
-    return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e2c89d1L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_pattern"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d6709f7aL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_CreatedNode"));
+    return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e2c89d1L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_pattern"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3244dde8e1280eecL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_WrappedItem"));
   }
 
   /*package*/ TransformationMenuPart_WrapSubstituteMenu__BehaviorDescriptor() {

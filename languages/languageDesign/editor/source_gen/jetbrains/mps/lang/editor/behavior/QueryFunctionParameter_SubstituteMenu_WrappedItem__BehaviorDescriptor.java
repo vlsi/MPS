@@ -8,43 +8,36 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
-import java.util.List;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class QueryFunction_TransformationMenu_Extensible__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a36971630L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Extensible");
+public final class QueryFunctionParameter_SubstituteMenu_WrappedItem__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3244dde8e1280eecL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_WrappedItem");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<List<SConcept>> getParameterConcepts_id2xELmDxyi2v = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getParameterConcepts").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xELmDxyi2v").registry(REGISTRY).build();
+  public static final SMethod<SNode> getType_id27DJnJtIQ9C = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("27DJnJtIQ9C").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameterConcepts_id2xELmDxyi2v);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getType_id27DJnJtIQ9C);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
-    List<SConcept> result = ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a36971630L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Extensible"));
-    SNode extensibleMenuPart = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleTransformationMenuPart"), false, false);
-    if ((extensibleMenuPart != null)) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(IExtensibleTransformationMenuPart__BehaviorDescriptor.getAdditionalFeatureParameters_id6kJcyCQ_bk0.invoke(extensibleMenuPart)));
-    }
-    return result;
+  /*package*/ static SNode getType_id27DJnJtIQ9C(@NotNull SNode __thisNode__) {
+    return _quotation_createNode_m9opg_a0a0();
   }
 
-  /*package*/ QueryFunction_TransformationMenu_Extensible__BehaviorDescriptor() {
+  /*package*/ QueryFunctionParameter_SubstituteMenu_WrappedItem__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -61,7 +54,7 @@ public final class QueryFunction_TransformationMenu_Extensible__BehaviorDescript
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((List<SConcept>) getParameterConcepts_id2xELmDxyi2v(node));
+        return (T) ((SNode) getType_id27DJnJtIQ9C(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -89,5 +82,11 @@ public final class QueryFunction_TransformationMenu_Extensible__BehaviorDescript
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
+  }
+  private static SNode _quotation_createNode_m9opg_a0a0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor"), 0x3244dde8e1280eedL, "SubstituteMenuItemType"), null, null, false);
+    return quotedNode_1;
   }
 }

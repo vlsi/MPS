@@ -20,6 +20,7 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -42,7 +43,7 @@ public abstract class WrapSubstituteMenuTransformationMenuPart implements Transf
     }.collect();
   }
 
-  private TransformationMenuItem createTransformationItem(SNode targetNode, SubstituteMenuItem item, TransformationMenuContext context) {
+  protected TransformationMenuItem createTransformationItem(SNode targetNode, SubstituteMenuItem item, TransformationMenuContext context) {
     return new SubstituteMenuItemAsActionItem(item) {
       @Override
       public void execute(@NotNull String pattern) {
@@ -58,5 +59,10 @@ public abstract class WrapSubstituteMenuTransformationMenuPart implements Transf
   protected SNode getTargetNode(TransformationMenuContext context) {
     return context.getNode();
   }
-  protected abstract void execute(SNode targetNode, SubstituteMenuItem item,TransformationMenuContext context, String pattern);
+
+  @Deprecated
+  @ToRemove(version = 2017.2)
+  protected void execute(SNode targetNode, SubstituteMenuItem item,TransformationMenuContext context, String pattern) {
+    // made not abstract for compatibility reasons.
+  }
 }

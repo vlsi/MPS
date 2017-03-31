@@ -125,6 +125,18 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_SubstituteMenuItem_DescriptionText_Operation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_SubstituteMenuItem_MatchingText_Operation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_SubstituteMenuItem_OutputConcept_Operation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_TransactionPropertyHandler_newValue_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }

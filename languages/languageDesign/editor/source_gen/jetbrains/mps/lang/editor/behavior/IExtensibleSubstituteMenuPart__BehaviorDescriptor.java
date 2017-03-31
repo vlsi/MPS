@@ -14,8 +14,11 @@ import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -25,14 +28,18 @@ public final class IExtensibleSubstituteMenuPart__BehaviorDescriptor extends Bas
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SNode> getCreatedConcept_id6e716hiEcRp = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getCreatedConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6e716hiEcRp").registry(REGISTRY).build();
+  public static final SMethod<List<SConcept>> getAdditionalFeatureParameters_id394Ruzxf8fe = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getAdditionalFeatureParameters").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("394Ruzxf8fe").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getCreatedConcept_id6e716hiEcRp);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getCreatedConcept_id6e716hiEcRp, getAdditionalFeatureParameters_id394Ruzxf8fe);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static SNode getCreatedConcept_id6e716hiEcRp(@NotNull SNode __thisNode__) {
     return null;
+  }
+  /*package*/ static List<SConcept> getAdditionalFeatureParameters_id394Ruzxf8fe(@NotNull SNode __thisNode__) {
+    return ListSequence.fromList(new ArrayList<SConcept>());
   }
 
   /*package*/ IExtensibleSubstituteMenuPart__BehaviorDescriptor() {
@@ -53,6 +60,8 @@ public final class IExtensibleSubstituteMenuPart__BehaviorDescriptor extends Bas
     switch (methodIndex) {
       case 0:
         return (T) ((SNode) getCreatedConcept_id6e716hiEcRp(node));
+      case 1:
+        return (T) ((List<SConcept>) getAdditionalFeatureParameters_id394Ruzxf8fe(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

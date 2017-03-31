@@ -43,7 +43,7 @@ public final class QueryFunction_Menu__BehaviorDescriptor extends BaseBHDescript
     return (parameterizable != null) && (boolean) IParameterizableMenuPart__BehaviorDescriptor.isParameterized_id1quYWAD0Tfz.invoke(parameterizable);
   }
   /*package*/ static boolean usesParameterObjectFor_idhEwIGRw(@NotNull SNode __thisNode__, SNode parameter) {
-    return !(SNodeOperations.getConcept(parameter).equals(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e2c89d1L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_pattern")));
+    return !((SNodeOperations.getConcept(parameter).equals(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e2c89d1L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_pattern")) || SNodeOperations.getConcept(parameter).equals(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3244dde8e1280eecL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_WrappedItem"))));
   }
   /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
     ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9039c3cL, "jetbrains.mps.lang.editor.structure.QueryFunction_Menu"));

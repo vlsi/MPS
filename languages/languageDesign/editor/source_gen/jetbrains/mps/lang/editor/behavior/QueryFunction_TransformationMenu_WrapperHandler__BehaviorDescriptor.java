@@ -38,6 +38,7 @@ public final class QueryFunction_TransformationMenu_WrapperHandler__BehaviorDesc
   /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
     List<SConcept> result = ListSequence.fromList(new ArrayList<SConcept>());
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d6706a40L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_WrapperHandler"))));
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d6709f7aL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_CreatedNode"));
     ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x407fe8717d6b5494L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_targetNode"));
     return result;
   }

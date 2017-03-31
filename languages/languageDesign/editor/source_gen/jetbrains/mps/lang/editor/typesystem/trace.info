@@ -17,7 +17,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="9,0,257,0" name="jetbrains.mps.lang.editor.typesystem.TypesystemDescriptor" />
+      <unit at="9,0,269,0" name="jetbrains.mps.lang.editor.typesystem.TypesystemDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/1142538758625100724">
@@ -878,6 +878,147 @@
         <var name="typeCheckingContext" id="1630016958697307782" />
       </scope>
       <unit id="1630016958697307782" at="15,0,35,0" name="jetbrains.mps.lang.editor.typesystem.typeof_QueryFunctionParameter_parameterObject_InferenceRule" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/1786743323643063304">
+    <file name="typeof_SubstituteMenuItem_DescriptionText_Operation_InferenceRule.java">
+      <node id="1786743323643064805" at="20,5,21,51" concept="8" />
+      <node id="1786743323643064805" at="21,51,22,202" concept="8" />
+      <node id="1786743323643064805" at="22,202,23,279" concept="4" />
+      <node id="1786743323643063304" at="26,50,27,188" concept="9" />
+      <node id="1786743323643063304" at="29,68,30,102" concept="9" />
+      <node id="1786743323643063304" at="32,30,33,17" concept="9" />
+      <node id="1786743323643064821" at="35,61,36,63" concept="8" />
+      <node id="1786743323643064821" at="36,63,37,30" concept="8" />
+      <node id="1786743323643064821" at="37,30,38,248" concept="4" />
+      <node id="1786743323643064821" at="38,248,39,24" concept="9" />
+      <node id="1786743323643063304" at="17,0,19,0" concept="2" trace="typeof_SubstituteMenuItem_DescriptionText_Operation_InferenceRule#()V" />
+      <node id="1786743323643063304" at="26,0,29,0" concept="7" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1786743323643063304" at="29,0,32,0" concept="7" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1786743323643063304" at="32,0,35,0" concept="7" trace="overrides#()Z" />
+      <node id="1786743323643064805" at="19,122,24,5" concept="0" />
+      <node id="1786743323643064821" at="35,0,41,0" concept="12" trace="_quotation_createNode_4b587l_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1786743323643063304" at="19,0,26,0" concept="7" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1786743323643063304" at="17,78,17,78" />
+      <scope id="1786743323643063304" at="26,50,27,188" />
+      <scope id="1786743323643063304" at="29,68,30,102" />
+      <scope id="1786743323643063304" at="32,30,33,17" />
+      <scope id="1786743323643063304" at="17,0,19,0" />
+      <scope id="1786743323643064805" at="20,5,23,279">
+        <var name="_info_12389875345" id="1786743323643064805" />
+        <var name="_nodeToCheck_1029348928467" id="1786743323643064805" />
+      </scope>
+      <scope id="1786743323643063304" at="26,0,29,0" />
+      <scope id="1786743323643063304" at="29,0,32,0">
+        <var name="argument" id="1786743323643063304" />
+      </scope>
+      <scope id="1786743323643063304" at="32,0,35,0" />
+      <scope id="1786743323643064821" at="35,61,39,24">
+        <var name="facade" id="1786743323643064821" />
+        <var name="quotedNode_1" id="1786743323643064821" />
+      </scope>
+      <scope id="1786743323643063305" at="19,122,24,5" />
+      <scope id="1786743323643064821" at="35,0,41,0" />
+      <scope id="1786743323643063304" at="19,0,26,0">
+        <var name="operation" id="1786743323643063304" />
+        <var name="status" id="1786743323643063304" />
+        <var name="typeCheckingContext" id="1786743323643063304" />
+      </scope>
+      <unit id="1786743323643063304" at="16,0,42,0" name="jetbrains.mps.lang.editor.typesystem.typeof_SubstituteMenuItem_DescriptionText_Operation_InferenceRule" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/1786743323643064956">
+    <file name="typeof_SubstituteMenuItem_MatchingText_Operation_InferenceRule.java">
+      <node id="1786743323643064958" at="20,5,21,51" concept="8" />
+      <node id="1786743323643064958" at="21,51,22,202" concept="8" />
+      <node id="1786743323643064958" at="22,202,23,279" concept="4" />
+      <node id="1786743323643064956" at="26,50,27,185" concept="9" />
+      <node id="1786743323643064956" at="29,68,30,102" concept="9" />
+      <node id="1786743323643064956" at="32,30,33,17" concept="9" />
+      <node id="1786743323643064960" at="35,61,36,63" concept="8" />
+      <node id="1786743323643064960" at="36,63,37,30" concept="8" />
+      <node id="1786743323643064960" at="37,30,38,248" concept="4" />
+      <node id="1786743323643064960" at="38,248,39,24" concept="9" />
+      <node id="1786743323643064956" at="17,0,19,0" concept="2" trace="typeof_SubstituteMenuItem_MatchingText_Operation_InferenceRule#()V" />
+      <node id="1786743323643064956" at="26,0,29,0" concept="7" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1786743323643064956" at="29,0,32,0" concept="7" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1786743323643064956" at="32,0,35,0" concept="7" trace="overrides#()Z" />
+      <node id="1786743323643064958" at="19,122,24,5" concept="0" />
+      <node id="1786743323643064960" at="35,0,41,0" concept="12" trace="_quotation_createNode_xhri86_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1786743323643064956" at="19,0,26,0" concept="7" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1786743323643064956" at="17,75,17,75" />
+      <scope id="1786743323643064956" at="26,50,27,185" />
+      <scope id="1786743323643064956" at="29,68,30,102" />
+      <scope id="1786743323643064956" at="32,30,33,17" />
+      <scope id="1786743323643064956" at="17,0,19,0" />
+      <scope id="1786743323643064958" at="20,5,23,279">
+        <var name="_info_12389875345" id="1786743323643064958" />
+        <var name="_nodeToCheck_1029348928467" id="1786743323643064958" />
+      </scope>
+      <scope id="1786743323643064956" at="26,0,29,0" />
+      <scope id="1786743323643064956" at="29,0,32,0">
+        <var name="argument" id="1786743323643064956" />
+      </scope>
+      <scope id="1786743323643064956" at="32,0,35,0" />
+      <scope id="1786743323643064960" at="35,61,39,24">
+        <var name="facade" id="1786743323643064960" />
+        <var name="quotedNode_1" id="1786743323643064960" />
+      </scope>
+      <scope id="1786743323643064957" at="19,122,24,5" />
+      <scope id="1786743323643064960" at="35,0,41,0" />
+      <scope id="1786743323643064956" at="19,0,26,0">
+        <var name="operation" id="1786743323643064956" />
+        <var name="status" id="1786743323643064956" />
+        <var name="typeCheckingContext" id="1786743323643064956" />
+      </scope>
+      <unit id="1786743323643064956" at="16,0,42,0" name="jetbrains.mps.lang.editor.typesystem.typeof_SubstituteMenuItem_MatchingText_Operation_InferenceRule" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/1786743323643065316">
+    <file name="typeof_SubstituteMenuItem_OutputConcept_Operation_InferenceRule.java">
+      <node id="1786743323643065318" at="20,5,21,51" concept="8" />
+      <node id="1786743323643065318" at="21,51,22,202" concept="8" />
+      <node id="1786743323643065318" at="22,202,23,279" concept="4" />
+      <node id="1786743323643065316" at="26,50,27,186" concept="9" />
+      <node id="1786743323643065316" at="29,68,30,102" concept="9" />
+      <node id="1786743323643065316" at="32,30,33,17" concept="9" />
+      <node id="1786743323643065320" at="35,61,36,63" concept="8" />
+      <node id="1786743323643065320" at="36,63,37,30" concept="8" />
+      <node id="1786743323643065320" at="37,30,38,254" concept="4" />
+      <node id="1786743323643065320" at="38,254,39,24" concept="9" />
+      <node id="1786743323643065316" at="17,0,19,0" concept="2" trace="typeof_SubstituteMenuItem_OutputConcept_Operation_InferenceRule#()V" />
+      <node id="1786743323643065316" at="26,0,29,0" concept="7" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1786743323643065316" at="29,0,32,0" concept="7" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1786743323643065316" at="32,0,35,0" concept="7" trace="overrides#()Z" />
+      <node id="1786743323643065318" at="19,122,24,5" concept="0" />
+      <node id="1786743323643065320" at="35,0,41,0" concept="12" trace="_quotation_createNode_txk528_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1786743323643065316" at="19,0,26,0" concept="7" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1786743323643065316" at="17,76,17,76" />
+      <scope id="1786743323643065316" at="26,50,27,186" />
+      <scope id="1786743323643065316" at="29,68,30,102" />
+      <scope id="1786743323643065316" at="32,30,33,17" />
+      <scope id="1786743323643065316" at="17,0,19,0" />
+      <scope id="1786743323643065318" at="20,5,23,279">
+        <var name="_info_12389875345" id="1786743323643065318" />
+        <var name="_nodeToCheck_1029348928467" id="1786743323643065318" />
+      </scope>
+      <scope id="1786743323643065316" at="26,0,29,0" />
+      <scope id="1786743323643065316" at="29,0,32,0">
+        <var name="argument" id="1786743323643065316" />
+      </scope>
+      <scope id="1786743323643065316" at="32,0,35,0" />
+      <scope id="1786743323643065320" at="35,61,39,24">
+        <var name="facade" id="1786743323643065320" />
+        <var name="quotedNode_1" id="1786743323643065320" />
+      </scope>
+      <scope id="1786743323643065317" at="19,122,24,5" />
+      <scope id="1786743323643065320" at="35,0,41,0" />
+      <scope id="1786743323643065316" at="19,0,26,0">
+        <var name="operation" id="1786743323643065316" />
+        <var name="status" id="1786743323643065316" />
+        <var name="typeCheckingContext" id="1786743323643065316" />
+      </scope>
+      <unit id="1786743323643065316" at="16,0,42,0" name="jetbrains.mps.lang.editor.typesystem.typeof_SubstituteMenuItem_OutputConcept_Operation_InferenceRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/1901504820902746966">

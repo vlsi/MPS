@@ -6008,5 +6008,77 @@
       <ref role="1YaFvo" to="tpc2:601LQojMpCR" resolve="ConceptFunctionParameter_targetNode" />
     </node>
   </node>
+  <node concept="1YbPZF" id="1zbMpomyUK8">
+    <property role="TrG5h" value="typeof_SubstituteMenuItem_DescriptionText_Operation" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
+    <node concept="3clFbS" id="1zbMpomyUK9" role="18ibNy">
+      <node concept="1Z5TYs" id="1zbMpomyV7_" role="3cqZAp">
+        <node concept="mw_s8" id="1zbMpomyV7T" role="1ZfhKB">
+          <node concept="2c44tf" id="1zbMpomyV7P" role="mwGJk">
+            <node concept="17QB3L" id="1zbMpomyV8S" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="1zbMpomyV7C" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1zbMpomyUVv" role="mwGJk">
+            <node concept="1YBJjd" id="1zbMpomyUYP" role="1Z2MuG">
+              <ref role="1YBMHb" node="1zbMpomyUKb" resolve="operation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1zbMpomyUKb" role="1YuTPh">
+      <property role="TrG5h" value="operation" />
+      <ref role="1YaFvo" to="tpc2:394Ruzxk7F9" resolve="SubstituteMenuItem_DescriptionText_Operation" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="1zbMpomyV9W">
+    <property role="TrG5h" value="typeof_SubstituteMenuItem_MatchingText_Operation" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
+    <node concept="3clFbS" id="1zbMpomyV9X" role="18ibNy">
+      <node concept="1Z5TYs" id="1zbMpomyV9Y" role="3cqZAp">
+        <node concept="mw_s8" id="1zbMpomyV9Z" role="1ZfhKB">
+          <node concept="2c44tf" id="1zbMpomyVa0" role="mwGJk">
+            <node concept="17QB3L" id="1zbMpomyVa1" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="1zbMpomyVa2" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1zbMpomyVa3" role="mwGJk">
+            <node concept="1YBJjd" id="1zbMpomyVa4" role="1Z2MuG">
+              <ref role="1YBMHb" node="1zbMpomyVa5" resolve="operation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1zbMpomyVa5" role="1YuTPh">
+      <property role="TrG5h" value="operation" />
+      <ref role="1YaFvo" to="tpc2:394Ruzxk7F6" resolve="SubstituteMenuItem_MatchingText_Operation" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="1zbMpomyVf$">
+    <property role="TrG5h" value="typeof_SubstituteMenuItem_OutputConcept_Operation" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
+    <node concept="3clFbS" id="1zbMpomyVf_" role="18ibNy">
+      <node concept="1Z5TYs" id="1zbMpomyVfA" role="3cqZAp">
+        <node concept="mw_s8" id="1zbMpomyVfB" role="1ZfhKB">
+          <node concept="2c44tf" id="1zbMpomyVfC" role="mwGJk">
+            <node concept="3bZ5Sz" id="1zbMpomyVl1" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="1zbMpomyVfE" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1zbMpomyVfF" role="mwGJk">
+            <node concept="1YBJjd" id="1zbMpomyVfG" role="1Z2MuG">
+              <ref role="1YBMHb" node="1zbMpomyVfH" resolve="operation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1zbMpomyVfH" role="1YuTPh">
+      <property role="TrG5h" value="operation" />
+      <ref role="1YaFvo" to="tpc2:394Ruzxk7Fb" resolve="SubstituteMenuItem_OutputConcept_Operation" />
+    </node>
+  </node>
 </model>
 
