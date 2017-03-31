@@ -17,7 +17,7 @@ package jetbrains.mps.ide.undo;
 
 import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.undo.DocumentReferenceManager;
-import com.intellij.openapi.diff.FragmentContent;
+import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
@@ -37,7 +37,7 @@ public class MPSUndoUtil {
   }
 
   public static DocumentReference getRefForDoc(Document doc) {
-    Document origin = doc.getUserData(FragmentContent.ORIGINAL_DOCUMENT);
+    Document origin = doc.getUserData(UndoManager.ORIGINAL_DOCUMENT);
     return DocumentReferenceManager.getInstance().create(origin == null ? doc : origin);
   }
 }

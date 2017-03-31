@@ -27,6 +27,7 @@
         <child id="1207145201301" name="reference" index="ftvYc" />
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
+        <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
@@ -127,6 +128,7 @@
   <node concept="sE7Ow" id="_dFfuhhYCb">
     <property role="TrG5h" value="ShowDoc" />
     <property role="2uzpH1" value="Show Documentation" />
+    <property role="72QZ$" value="true" />
     <node concept="tnohg" id="_dFfuhhYCc" role="tncku">
       <node concept="3clFbS" id="_dFfuhhYCd" role="2VODD2">
         <node concept="3cpWs8" id="_dFfuhiv_K" role="3cqZAp">
