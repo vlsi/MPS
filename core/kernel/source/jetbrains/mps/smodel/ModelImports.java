@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 /**
  * Auxiliary facility to deal with model imports without knowledge
@@ -62,6 +61,18 @@ public final class ModelImports {
 
   public void removeModelImport(@NotNull org.jetbrains.mps.openapi.model.SModelReference modelToRemove) {
     myModel.deleteModelImport(modelToRemove);
+  }
+
+  public Collection<SLanguage> getUsedLanguages() {
+    return myModel.importedLanguageIds();
+  }
+
+  public void addUsedLanguage(@NotNull SLanguage language) {
+    myModel.addLanguage(language);
+  }
+
+  public void removeUsedLanguage(@NotNull SLanguage language) {
+    myModel.deleteLanguageId(language);
   }
 
   /**

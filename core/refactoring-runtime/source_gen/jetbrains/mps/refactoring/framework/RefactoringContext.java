@@ -21,7 +21,7 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
@@ -147,7 +147,12 @@ public class RefactoringContext {
     for (SNode node : sourceNodes) {
       node.delete();
     }
-    SModelOperations.validateLanguagesAndImports(targetModel, true, true);
+    ModelDependencyUpdate mdu = new ModelDependencyUpdate(targetModel);
+    SRepository repo = targetModel.getRepository();
+    mdu.updateUsedLanguages().updateImportedModels(repo);
+    if (targetModel.getModule() != null && repo != null) {
+      mdu.updateModuleDependencies(repo);
+    }
     return targetNodes;
   }
   public void setRefactoring(IRefactoring refactoring) {

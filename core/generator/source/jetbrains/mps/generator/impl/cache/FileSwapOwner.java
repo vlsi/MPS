@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import jetbrains.mps.generator.TransientModelsProvider.TransientSwapOwner;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.persistence.binary.BareNodeReader;
 import jetbrains.mps.persistence.binary.BareNodeWriter;
-import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.smodel.TrivialModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.IterableUtil;
@@ -223,7 +223,8 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
   }
 
   // method created for testing
-  public static SModel writeAndReadModel(jetbrains.mps.smodel.SModel model) throws IOException, ModelReadException {
+  // FIXME can take openapi.SModel
+  public static SModel writeAndReadModel(SModel model) throws IOException, ModelReadException {
     // write
     final ByteArrayOutputStream os = new ByteArrayOutputStream(2048);
     final ModelOutputStream mos = new ModelOutputStream(os);
@@ -244,7 +245,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     new BareNodeReader(resultModel.getReference(), mis).readNodesInto(resultModel);
 
     SModelBase result = new TrivialModelDescriptor(resultModel);
-    SModelOperations.validateLanguagesAndImports(result, false, false);
+    new ModelDependencyUpdate(result).updateUsedLanguages().updateImportedModels(model.getRepository());
 
     return result;
   }

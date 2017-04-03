@@ -16,9 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.SModelDescriptorStub;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
@@ -37,7 +34,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -121,44 +117,23 @@ public class SModelOperations {
   }
 
   /**
+   * @deprecated Use {@link ModelDependencyUpdate} instead. Although it's a bit different (imports languages first, than
+   *   updates model imports; and uses module's scope instead of GMDM to figure out visible models), I don't think any
+   *   client relies on this particular behaviour.
    * Populate given model with proper imports/languages according to actual model content (i.e. nodes)
    * @param model model to populate with language/import dependencies
    * @param updateModuleImports <code>true</code> to update imports of model's module (if any)
    * @param firstVersion whether to use unspecified or actual model version, doesn't make sense for present MPS state (we don't keep these versions in v9), value is ignored
    */
+  @Deprecated
+  @ToRemove(version = 2017.1)
   public static void validateLanguagesAndImports(@NotNull SModel model, boolean updateModuleImports, boolean firstVersion) {
-    final SModule module = model.getModule();
-    final Collection<SModule> moduleDeclaredDependencies = module != null && updateModuleImports ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
-    Set<SLanguage> modelDeclaredUsedLanguages = getAllLanguageImports(model);
-
-    Set<SModelReference> importedModels = new HashSet<SModelReference>();
-    // XXX why allImportedModels? it gives models from used language accessories, is it what we really need here?
-    for (SModel sm : allImportedModels(model)) {
-      importedModels.add(sm.getReference());
+    ModelDependencyUpdate mdu = new ModelDependencyUpdate(model);
+    mdu.updateUsedLanguages();
+    mdu.updateImportedModels(MPSModuleRepository.getInstance());
+    if (updateModuleImports && model.getModule() != null) {
+      mdu.updateModuleDependencies(MPSModuleRepository.getInstance());
     }
-
-    final ModelDependencyScanner modelScanner = new ModelDependencyScanner();
-    modelScanner.crossModelReferences(true).usedLanguages(true).walk(model);
-    for (SLanguage language : modelScanner.getUsedLanguages()) {
-      if (!modelDeclaredUsedLanguages.contains(language)) {
-        modelDeclaredUsedLanguages.add(language);
-        ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(language);
-      }
-    }
-    ModelImports modelImports = new ModelImports(model);
-    for (SModelReference targetModelReference : modelScanner.getCrossModelReferences()) {
-      if (importedModels.add(targetModelReference)) {
-        if (updateModuleImports && module != null) {
-          SModel targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
-          SModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
-          if (targetModule != null && !moduleDeclaredDependencies.contains(targetModule)) {
-            ((AbstractModule) module).addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
-          }
-        }
-        modelImports.addModelImport(targetModelReference);
-      }
-    }
-    importedModels.clear();
   }
 
   /**
@@ -171,6 +146,7 @@ public class SModelOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<Language> getLanguages(SModel model) {
+    // in use in mbeddr
     ArrayList<Language> languages = new ArrayList<>();
     SRepository repository = model.getRepository();
     if (repository == null) {
@@ -213,6 +189,7 @@ public class SModelOperations {
 
   //todo rewrite using iterators
   public static List<SModel> allImportedModels(SModel model) {
+    // no uses in mbeddr
     Set<SModel> result = new LinkedHashSet<SModel>();
     result.addAll(importedModels(model));
 

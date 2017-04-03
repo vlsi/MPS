@@ -23,11 +23,10 @@ import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.generator.impl.ModelVault;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.FastNodeFinderManager;
+import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelHeader;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.references.ImmatureReferencesTracker;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -42,6 +41,7 @@ import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
@@ -51,7 +51,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BiConsumer;
 
 public class TransientModelsModule extends AbstractModule implements TransientSModule {
@@ -280,7 +279,11 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
           mySModel.setModelDescriptor(this);
           if (wasUnloaded) {
             // ensure imports are back
-            SModelOperations.validateLanguagesAndImports(this, false, false);
+            // XXX don't ask me why we don't swap out models with imports, but bare nodes only.
+            // TransientModelsModule is not necessarily inside a repository, need to take one
+            // where it would end up if published
+            SRepository repository = TransientModelsModule.this.myComponent.getRepository();
+            new ModelDependencyUpdate(this).updateUsedLanguages().updateImportedModels(repository);
             wasUnloaded = false;
           }
           setLoadingState(ModelLoadingState.FULLY_LOADED);

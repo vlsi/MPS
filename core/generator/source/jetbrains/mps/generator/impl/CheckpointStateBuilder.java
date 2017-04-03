@@ -16,10 +16,10 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
-import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.generator.impl.plan.CheckpointState;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
+import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.smodel.ModelImports;
-import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -128,7 +128,9 @@ class CheckpointStateBuilder {
       new CloneUtil(myTransientModel, myCheckpointModel).cloneModel();
       // ReferenceResolvers could have added references to nodes in other checkpoint models, we need to propagate these
       // dependencies into imports to ensure subsequent module.forget() could find and clear all dependant models as well
-      SModelOperations.validateLanguagesAndImports(myCheckpointModel, false, true);
+      // RR would not change list of languages, hence no updateUsedLanguages() call. And we don't care about explicit
+      // imports of language's accessory models either.
+      new ModelDependencyUpdate(myCheckpointModel).updateImportedModels(null);
       myCloneDone = true;
     }
   }

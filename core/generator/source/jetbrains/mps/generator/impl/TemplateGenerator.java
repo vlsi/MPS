@@ -58,7 +58,7 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.FastNodeFinderManager;
-import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.SNodeOperations;
@@ -254,7 +254,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       // Unless we manage to update set of used languages along with changes being generated,
       // we shall maintain set of used languages prior to any attempt to resolve references, as they might
       // be using model scopes and TypeSystem, and latter is quite picky about imports.
-      SModelOperations.validateLanguagesAndImports(getOutputModel(), false, false);
+      // we don't use any repository as it's ok to reference language's accessory model explicitly for a transient model
+      new ModelDependencyUpdate(getOutputModel()).updateUsedLanguages().updateImportedModels(null);
     }
 
     // replace reference placeholders (PostponedReference) with resolved
