@@ -18,11 +18,11 @@ package jetbrains.mps.smodel.tempmodel;
 import gnu.trove.THashMap;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
-import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.ModelDependencyUpdate;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Map;
 
@@ -66,10 +66,10 @@ public class TemporaryModels {
 
   //todo: this must be removed as soon as we have module API and can create a module that shows its model dependencies as its dependencies ("auto fixes" imports)
   public void addMissingImports(SModel model) {
-    assert model instanceof TempModel : "TemporaryModels is asked to handle non-temporary model " + model.getModelName();
+    assert model instanceof TempModel : "TemporaryModels is asked to handle non-temporary model " + model.getName();
 
-    SModelOperations.validateLanguagesAndImports(model, false, true);
-    new MissingDependenciesFixer(model).fixModuleDependencies();
+    SRepository repo = model.getRepository();
+    new ModelDependencyUpdate(model).updateUsedLanguages().updateImportedModels(repo).updateModuleDependencies(repo);
   }
 
   public void dispose(SModel model) {
