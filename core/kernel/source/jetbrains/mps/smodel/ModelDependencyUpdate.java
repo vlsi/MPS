@@ -54,6 +54,9 @@ public final class ModelDependencyUpdate {
   }
 
   public ModelDependencyUpdate updateUsedLanguages() {
+    // we look at directly mentioned languages only, and don't respect the languages they extend.
+    // Is it what we really want here? If we try to minimize imported models (see updateImportedModels), why
+    // not minimize used languages?
     Set<SLanguage> modelDeclaredUsedLanguages = SModelOperations.getAllLanguageImports(myModel);
 
     ModelImports modelImports = new ModelImports(myModel);

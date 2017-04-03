@@ -17,6 +17,7 @@
     <import index="tpcq" ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="80j5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl(MPS.Core/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -415,18 +416,32 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="3clFbF" id="3wgj6mgNuBb" role="3cqZAp">
-                            <node concept="2YIFZM" id="3wgj6mgNuM1" role="3clFbG">
-                              <ref role="37wK5l" to="w1kc:~SModelOperations.validateLanguagesAndImports(org.jetbrains.mps.openapi.model.SModel,boolean,boolean):void" resolve="validateLanguagesAndImports" />
-                              <ref role="1Pybhc" to="w1kc:~SModelOperations" resolve="SModelOperations" />
-                              <node concept="37vLTw" id="3wgj6mgNuSK" role="37wK5m">
-                                <ref role="3cqZAo" node="3wgj6mgLjol" resolve="newModel" />
+                          <node concept="3cpWs8" id="2oydWVqpDCl" role="3cqZAp">
+                            <node concept="3cpWsn" id="2oydWVqpDCm" role="3cpWs9">
+                              <property role="TrG5h" value="cu" />
+                              <node concept="3uibUv" id="2oydWVqpDCn" role="1tU5fm">
+                                <ref role="3uigEE" to="80j5:~CloneUtil" resolve="CloneUtil" />
                               </node>
-                              <node concept="3clFbT" id="3wgj6mgNv2q" role="37wK5m">
-                                <property role="3clFbU" value="false" />
+                              <node concept="2ShNRf" id="2oydWVqpEx4" role="33vP2m">
+                                <node concept="1pGfFk" id="2oydWVqpFyi" role="2ShVmc">
+                                  <ref role="37wK5l" to="80j5:~CloneUtil.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SModel)" resolve="CloneUtil" />
+                                  <node concept="37vLTw" id="2oydWVqpFOe" role="37wK5m">
+                                    <ref role="3cqZAo" node="3wgj6mgKGSt" resolve="outcomeModel" />
+                                  </node>
+                                  <node concept="37vLTw" id="2oydWVqpG6y" role="37wK5m">
+                                    <ref role="3cqZAo" node="3wgj6mgLjol" resolve="newModel" />
+                                  </node>
+                                </node>
                               </node>
-                              <node concept="3clFbT" id="3wgj6mgNvd1" role="37wK5m">
-                                <property role="3clFbU" value="false" />
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="2oydWVqpGHo" role="3cqZAp">
+                            <node concept="2OqwBi" id="2oydWVqpH7v" role="3clFbG">
+                              <node concept="37vLTw" id="2oydWVqpGHm" role="2Oq$k0">
+                                <ref role="3cqZAo" node="2oydWVqpDCm" resolve="cu" />
+                              </node>
+                              <node concept="liA8E" id="2oydWVqpHuw" role="2OqNvi">
+                                <ref role="37wK5l" to="80j5:~CloneUtil.cloneModelWithImports():void" resolve="cloneModelWithImports" />
                               </node>
                             </node>
                           </node>

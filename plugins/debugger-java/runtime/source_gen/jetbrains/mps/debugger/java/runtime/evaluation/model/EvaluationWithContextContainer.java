@@ -16,10 +16,10 @@ import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationConta
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.BaseLanguagesImportHelper;
@@ -41,6 +41,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.sun.jdi.InvalidStackFrameException;
 import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -88,7 +89,8 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     createVars();
     tryToImport(evaluatorNode, nodesToImport);
 
-    SModelOperations.validateLanguagesAndImports(containerModel, true, true);
+    // XXX updateImportedModels() likely could live with null here, accessory models may be imported directly 
+    new ModelDependencyUpdate(containerModel).updateUsedLanguages().updateImportedModels(myDebuggerRepository).updateModuleDependencies(myDebuggerRepository);
   }
   private void setUpDependencies(final EvaluationModule containerModule, SModel containerModel) {
     ListSequence.fromList(myEvaluationContext.getClassPath()).union(ListSequence.fromList(getDebuggerStubPath())).visitAll(new IVisitor<String>() {
@@ -98,8 +100,9 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     });
     containerModule.updateModelsSet();
 
-    ((SModelInternal) containerModel).addLanguage(MetaAdapterFactory.getLanguage(0x7da4580f9d754603L, 0x816251a896d78375L, "jetbrains.mps.debugger.java.evaluation"));
-    ((SModelInternal) containerModel).addLanguage(MetaAdapterFactory.getLanguage(0x802088974572437dL, 0xb50e8f050cba9566L, "jetbrains.mps.debugger.java.privateMembers"));
+    ModelImports modelImports = new ModelImports(containerModel);
+    modelImports.addUsedLanguage(MetaAdapterFactory.getLanguage(0x7da4580f9d754603L, 0x816251a896d78375L, "jetbrains.mps.debugger.java.evaluation"));
+    modelImports.addUsedLanguage(MetaAdapterFactory.getLanguage(0x802088974572437dL, 0xb50e8f050cba9566L, "jetbrains.mps.debugger.java.privateMembers"));
     containerModule.addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
   }
   private void tryToImport(final SNode evaluatorNode, List<SNodeReference> nodesToImport) {
@@ -201,7 +204,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     SModel stub = findStubForFqName(modelFqNameFromUnitName(unitName));
     if (stub != null) {
       SModel model = stub;
-      SNode node = ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.nodes(model, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"))).findFirst(new IWhereFilter<SNode>() {
+      SNode node = ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return eq_v5yv3u_a0a0a0a0a0a0b0d0p(((String) BHReflection.invoke(it, SMethodTrimmedId.create("getUnitName", null, "4pl5GY7LKmR"))), unitName) && SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
         }

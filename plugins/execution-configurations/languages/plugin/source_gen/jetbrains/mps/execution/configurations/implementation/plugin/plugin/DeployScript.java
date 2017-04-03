@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.ModelDependencyUpdate;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
@@ -63,7 +63,7 @@ public class DeployScript {
     myDeployScriptPath = new File(myModule.getBaseDirectory(), ((String) BHReflection.invoke(deployScriptNode, SMethodTrimmedId.create("getOutputFileName", MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), "4gSHdTptyu0")))).getAbsolutePath();
     myArtifactsPath = new File(new File(new File(myModule.getBaseDirectory(), "build"), "artifacts"), SPropertyOperations.getString(deployScriptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))).getAbsolutePath();
 
-    SModelOperations.validateLanguagesAndImports(model, true, true);
+    new ModelDependencyUpdate(model).updateUsedLanguages().updateImportedModels(projectRepo).updateModuleDependencies(projectRepo);
   }
 
   @Nullable

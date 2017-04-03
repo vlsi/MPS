@@ -635,7 +635,7 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -10582,18 +10582,34 @@
           </node>
         </node>
         <node concept="3clFbH" id="4oL4a6sm6o3" role="3cqZAp" />
-        <node concept="3clFbF" id="4oL4a6slScx" role="3cqZAp">
-          <node concept="2YIFZM" id="4oL4a6slScy" role="3clFbG">
-            <ref role="37wK5l" to="w1kc:~SModelOperations.validateLanguagesAndImports(org.jetbrains.mps.openapi.model.SModel,boolean,boolean):void" resolve="validateLanguagesAndImports" />
-            <ref role="1Pybhc" to="w1kc:~SModelOperations" resolve="SModelOperations" />
-            <node concept="37vLTw" id="4oL4a6slScz" role="37wK5m">
-              <ref role="3cqZAo" node="4oL4a6slSc7" resolve="model" />
+        <node concept="3clFbF" id="3lMTlvhVLNe" role="3cqZAp">
+          <node concept="2OqwBi" id="3lMTlvhWgl4" role="3clFbG">
+            <node concept="2OqwBi" id="3lMTlvhWd$E" role="2Oq$k0">
+              <node concept="2OqwBi" id="3lMTlvhWbNN" role="2Oq$k0">
+                <node concept="2ShNRf" id="3lMTlvhVLNa" role="2Oq$k0">
+                  <node concept="1pGfFk" id="3lMTlvhWbAF" role="2ShVmc">
+                    <ref role="37wK5l" to="w1kc:~ModelDependencyUpdate.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel)" resolve="ModelDependencyUpdate" />
+                    <node concept="37vLTw" id="3lMTlvhWcFj" role="37wK5m">
+                      <ref role="3cqZAo" node="4oL4a6slSc7" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="3lMTlvhWd23" role="2OqNvi">
+                  <ref role="37wK5l" to="w1kc:~ModelDependencyUpdate.updateUsedLanguages():jetbrains.mps.smodel.ModelDependencyUpdate" resolve="updateUsedLanguages" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3lMTlvhWfyP" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~ModelDependencyUpdate.updateImportedModels(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.ModelDependencyUpdate" resolve="updateImportedModels" />
+                <node concept="37vLTw" id="3lMTlvhWfYL" role="37wK5m">
+                  <ref role="3cqZAo" node="3YA7anLPwFB" resolve="projectRepo" />
+                </node>
+              </node>
             </node>
-            <node concept="3clFbT" id="4oL4a6slSc$" role="37wK5m">
-              <property role="3clFbU" value="true" />
-            </node>
-            <node concept="3clFbT" id="4oL4a6slSc_" role="37wK5m">
-              <property role="3clFbU" value="true" />
+            <node concept="liA8E" id="3lMTlvhWiM4" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~ModelDependencyUpdate.updateModuleDependencies(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.ModelDependencyUpdate" resolve="updateModuleDependencies" />
+              <node concept="37vLTw" id="3lMTlvhWjCa" role="37wK5m">
+                <ref role="3cqZAo" node="3YA7anLPwFB" resolve="projectRepo" />
+              </node>
             </node>
           </node>
         </node>

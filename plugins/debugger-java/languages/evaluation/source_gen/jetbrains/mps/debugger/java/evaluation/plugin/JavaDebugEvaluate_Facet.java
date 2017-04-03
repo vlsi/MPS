@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_configure;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.generator.impl.CloneUtil;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -95,7 +96,8 @@ public class JavaDebugEvaluate_Facet extends IFacet.Stub {
                       // Nor do I want to relax ANO's requirement for the command now (I failed to figure out a reason for it). 
                       // That's why we make a copy of generator output model here, modify the copy, publish it and expose as a final outcome. 
                       CopyUtil.copyModelContent(outcomeModel, newModel);
-                      SModelOperations.validateLanguagesAndImports(newModel, false, false);
+                      CloneUtil cu = new CloneUtil(outcomeModel, newModel);
+                      cu.cloneModelWithImports();
                       evaluator.value = SModelOperations.getRootByName(newModel, Properties.EVALUATOR_NAME);
                       if (evaluator.value != null) {
                         try {

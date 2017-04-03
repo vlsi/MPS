@@ -27,13 +27,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.ModelDependencyUpdate;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -99,7 +100,7 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   @Override
   public String getPresentation() {
-    return jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Computable<String>() {
+    return new ModelAccessHelper(myDebuggerRepository).runReadAction(new Computable<String>() {
       @Override
       public String compute() {
         return PresentationUtil.getPresentation(((SNode) BHReflection.invoke(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7f4a99699cea367bL, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept")), SMethodTrimmedId.create("getCode", null, "hASWOEj0jB"))));
@@ -130,9 +131,11 @@ public class EvaluationContainer implements IEvaluationContainer {
     // todo: variables 
     new EvaluationContainer.MyBaseLanguagesImportHelper().tryToImport(((SNode) BHReflection.invoke(evaluatorNode, SMethodTrimmedId.create("getCode", null, "hASWOEj0jB"))), nodesToImport);
 
-    SModelOperations.validateLanguagesAndImports(containerModel, true, true);
-    ((SModelInternal) containerModel).addLanguage(MetaAdapterFactory.getLanguage(0x7da4580f9d754603L, 0x816251a896d78375L, "jetbrains.mps.debugger.java.evaluation"));
-    ((SModelInternal) containerModel).addLanguage(MetaAdapterFactory.getLanguage(0x802088974572437dL, 0xb50e8f050cba9566L, "jetbrains.mps.debugger.java.privateMembers"));
+    // XXX likely, don't need a repo in updateImportedModels() here, as it's not vital to import accessories implicitly 
+    new ModelDependencyUpdate(containerModel).updateUsedLanguages().updateImportedModels(myDebuggerRepository).updateModuleDependencies(myDebuggerRepository);
+    ModelImports modelImports = new ModelImports(containerModel);
+    modelImports.addUsedLanguage(MetaAdapterFactory.getLanguage(0x7da4580f9d754603L, 0x816251a896d78375L, "jetbrains.mps.debugger.java.evaluation"));
+    modelImports.addUsedLanguage(MetaAdapterFactory.getLanguage(0x802088974572437dL, 0xb50e8f050cba9566L, "jetbrains.mps.debugger.java.privateMembers"));
   }
   protected SNode createEvaluatorNode() {
     return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0xbbe5b47d7cc5fa1L, "jetbrains.mps.debugger.java.evaluation.structure.Evaluator")), null);

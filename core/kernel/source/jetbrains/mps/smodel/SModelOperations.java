@@ -130,9 +130,9 @@ public class SModelOperations {
   public static void validateLanguagesAndImports(@NotNull SModel model, boolean updateModuleImports, boolean firstVersion) {
     ModelDependencyUpdate mdu = new ModelDependencyUpdate(model);
     mdu.updateUsedLanguages();
-    mdu.updateImportedModels(MPSModuleRepository.getInstance());
-    if (updateModuleImports && model.getModule() != null) {
-      mdu.updateModuleDependencies(MPSModuleRepository.getInstance());
+    mdu.updateImportedModels(null); // throw-away method, don't care to get proper imports
+    if (updateModuleImports && model.getModule() != null && model.getRepository() != null) {
+      mdu.updateModuleDependencies(model.getRepository());
     }
   }
 
