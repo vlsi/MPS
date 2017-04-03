@@ -40,6 +40,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import java.awt.event.ActionListener;
 
@@ -165,23 +166,23 @@ public abstract class MigrationScriptsView implements ResultsListener {
   }
   private void checkMigrationResults() {
     final MigrationScriptFinder newFinder = new MigrationScriptFinder(myFinder.getScripts());
-    getMPSProject().getModelAccess().runReadInEDT(new Runnable() {
+    ProgressManager.getInstance().run(new Task.Modal(myTool.getProject(), "Searching", true) {
       @Override
-      public void run() {
-        ProgressManager.getInstance().run(new Task.Modal(myTool.getProject(), "Searching", true) {
-          @Override
-          public void run(@NotNull final ProgressIndicator indicator) {
-            indicator.setIndeterminate(true);
-            IResultProvider provider = FindUtils.makeProvider(newFinder);
-            SearchResults results = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), myQuery, provider);
-            int newCount = results.getSearchResults().size();
-            if (newCount > 0) {
-              updateControls(false, new JLabel("done, but there " + ((newCount == 1 ? "is 1" : "are " + newCount)) + " applicable node" + ((newCount > 1 ? "s" : "")) + " left"), createShowInNewTabButton(newFinder, provider, myQuery));
-            } else {
-              updateControls(false, new JLabel("done"));
-            }
+      public void run(@NotNull final ProgressIndicator indicator) {
+        indicator.setIndeterminate(true);
+        final IResultProvider provider = FindUtils.makeProvider(newFinder);
+        final Wrappers._T<SearchResults> results = new Wrappers._T<SearchResults>();
+        getMPSProject().getRepository().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            results.value = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), myQuery, provider);
           }
         });
+        int newCount = results.value.getSearchResults().size();
+        if (newCount > 0) {
+          updateControls(false, new JLabel("done, but there " + ((newCount == 1 ? "is 1" : "are " + newCount)) + " applicable node" + ((newCount > 1 ? "s" : "")) + " left"), createShowInNewTabButton(newFinder, provider, myQuery));
+        } else {
+          updateControls(false, new JLabel("done"));
+        }
       }
     });
   }
