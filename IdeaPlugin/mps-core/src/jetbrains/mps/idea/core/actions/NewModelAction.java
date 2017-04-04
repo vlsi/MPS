@@ -20,31 +20,41 @@ import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.psi.PsiDirectory;
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.SourceRoot;
-import jetbrains.mps.extapi.persistence.SourceRootKinds;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.ModelCannotBeCreatedException;
+import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModelListenerBase;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import javax.lang.model.SourceVersion;
-import java.io.IOException;
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -81,13 +91,9 @@ public class NewModelAction extends NewModelActionBase {
 
             EditableSModel model = null;
             try {
-              SourceRoot sourceRoot0 = null;
-              for (SourceRoot sourceRoot : myModelRoot.getSourceRoots(SourceRootKinds.SOURCES)) {
-                if (sourceRoot.getPath().equals(myRootForModel)) {
-                  sourceRoot0 = sourceRoot;
-                }
-              }
-              model = (EditableSModel) myModelRoot.createFileModel(modelName, sourceRoot0); // fixme file or per-root??
+              ModelFactory modelFactory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PLAIN_XML);
+              SModelName sModelName = new SModelName(modelName);
+              model = (EditableSModel) myModelRoot.createModel(sModelName, mySourceRoot, createDataSourceFactory(), modelFactory);
               model.setChanged(true);
               model.save();
             } catch (ModelCannotBeCreatedException e) {
@@ -169,4 +175,26 @@ public class NewModelAction extends NewModelActionBase {
     }
     dialog.show();
   }
+
+  @NotNull
+  private DataSourceFactoryFromName createDataSourceFactory() {
+    return new DataSourceFactoryFromName() {
+      @NotNull
+      @Override
+      public DataSourceType getType() {
+        return PreinstalledDataSourceTypes.MPS;
+      }
+
+      @NotNull
+      @Override
+      public DataSource create(@NotNull SModelName modelName, @NotNull SourceRoot sourceRoot, @Nullable ModelRoot modelRoot) {
+        String modelFilePath = modelName.getLongName();
+        modelFilePath = modelFilePath.replace('.', File.separatorChar) + MPSExtentions.DOT_MODEL;
+        modelFilePath = sourceRoot.getAbsolutePath().getPath() + File.separator + modelFilePath;
+        IFile modelFile = sourceRoot.getAbsolutePath().getFileSystem().getFile(modelFilePath);
+        return new FileDataSource(modelFile, modelRoot);
+      }
+    };
+  }
+
 }
