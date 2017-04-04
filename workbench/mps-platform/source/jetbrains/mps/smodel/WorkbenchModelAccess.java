@@ -209,6 +209,34 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     return null;
   }
 
+  @Override
+  public void requireRead(Runnable r) {
+    int i;
+    long start;
+    long waited;
+    do {
+      start = System.currentTimeMillis();
+      for (i = 0; i < REQUIRE_MAX_TRIES && !tryRead(r); ++i) {
+        try {
+          Thread.sleep((1 << i) * 100);
+        } catch (InterruptedException ignore) {
+        }
+      }
+      waited = System.currentTimeMillis() - start;
+    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
+
+    if (i >= REQUIRE_MAX_TRIES) {
+      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for " + waited + "ms");
+    }
+  }
+
+  @Override
+  public <T> T requireRead(Computable<T> c) {
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    requireRead(r);
+    return r.getResult();
+  }
+
   private boolean tryWrite(final Runnable r) {
     Computable<Boolean> c = () -> {
       r.run();
