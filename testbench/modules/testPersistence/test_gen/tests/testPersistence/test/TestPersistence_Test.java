@@ -6,9 +6,9 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import java.io.ByteArrayInputStream;
 import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
 import junit.framework.Assert;
@@ -18,14 +18,13 @@ import jetbrains.mps.java.stub.JavaPackageNameStub;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import java.io.InputStream;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.persistence.ByteArrayInputSource;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.HashMap;
 import java.util.List;
@@ -64,19 +63,15 @@ public class TestPersistence_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_testLastVersionIndexing() throws Exception {
-      final TestPersistenceHelper helper = new TestPersistenceHelper();
-      final CollectCallback c = new CollectCallback();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          String serialized = PersistenceUtil.saveModel(helper.getTestModel(), helper.getDefaultExt());
+      TestPersistenceHelper helper = new TestPersistenceHelper(myProject.getRepository());
+      CollectCallback c = new CollectCallback();
+      String serialized = PersistenceUtil.saveModel(helper.getTestModel(), helper.getDefaultExt());
 
-          try {
-            ModelPersistence.index(serialized.getBytes(FileUtil.DEFAULT_CHARSET), c);
-          } catch (IOException e) {
-            Assert.fail(e.getMessage());
-          }
-        }
-      });
+      try {
+        ModelPersistence.index(new ByteArrayInputStream(serialized.getBytes(FileUtil.DEFAULT_CHARSET)), c);
+      } catch (IOException e) {
+        Assert.fail(e.getMessage());
+      }
 
       Assert.assertTrue(c.myConcepts.contains(((SConceptAdapterById) MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")).getId()));
       Assert.assertTrue(c.myImports.contains(new JavaPackageNameStub("java.io").asModelReference(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))));
@@ -85,12 +80,10 @@ public class TestPersistence_Test extends BaseTransformationTest {
     }
     public void test_testPersistenceReadWrite() throws Exception {
       // tests write and read in each supported persistence, check that model is not changed after write/read cycle 
-      final TestPersistenceHelper helper = new TestPersistenceHelper();
-      SModel model = helper.getTestModel();
-      DefaultSModelDescriptor md = (DefaultSModelDescriptor) model;
+      TestPersistenceHelper helper = new TestPersistenceHelper(myProject.getRepository());
       for (int i = TestPersistenceHelper.START_PERSISTENCE_TEST_VERSION; i <= ModelPersistence.LAST_VERSION; ++i) {
         PersistenceUtil.InMemoryStreamDataSource dataSource = new PersistenceUtil.InMemoryStreamDataSource();
-        helper.saveModelInPersistence(md, dataSource, i);
+        helper.saveTestModelInPersistence(dataSource, i);
         InputStream contentStream = dataSource.getContentAsStream();
 
         byte[] content = null;
@@ -101,26 +94,21 @@ public class TestPersistence_Test extends BaseTransformationTest {
         } catch (IOException e) {
           Assert.fail(e.getMessage());
         }
-        final ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(i), new ByteArrayInputSource(content), ModelLoadingState.FULLY_LOADED);
+        ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(i), new ByteArrayInputSource(content), ModelLoadingState.FULLY_LOADED);
 
         Assert.assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            TestBody.this.assertDeepModelEquals(helper.getTestModel().getSModel(), result.getModel());
-          }
-        });
+        this.assertDeepModelEquals(helper.getTestModel().getSModel(), result.getModel());
         result.getModel().dispose();
       }
     }
     public void test_testPersistenceUpgrade() throws Exception {
-      TestPersistenceHelper helper = new TestPersistenceHelper();
-      SModel model = helper.getTestModel();
+      TestPersistenceHelper helper = new TestPersistenceHelper(myProject.getRepository());
 
       // tests that it's possible to upgrade to the latest persistence from any supported persistence 
       for (int fromVersion = TestPersistenceHelper.START_PERSISTENCE_TEST_VERSION; fromVersion < ModelPersistence.LAST_VERSION; fromVersion++) {
         // prepare data source in requested version 
         PersistenceUtil.InMemoryStreamDataSource notUpgradedData = new PersistenceUtil.InMemoryStreamDataSource();
-        helper.saveModelInPersistence(((SModelBase) model), notUpgradedData, fromVersion);
+        helper.saveTestModelInPersistence(notUpgradedData, fromVersion);
 
         // load model from source version 
         String notUpgradedContent = notUpgradedData.getContent(FileUtil.DEFAULT_CHARSET_NAME);
@@ -128,7 +116,7 @@ public class TestPersistence_Test extends BaseTransformationTest {
 
         // save model in last persistence 
         PersistenceUtil.InMemoryStreamDataSource upgradedData = new PersistenceUtil.InMemoryStreamDataSource();
-        helper.saveModelInPersistence(notUpgradedModel, upgradedData, ModelPersistence.LAST_VERSION);
+        ModelPersistence.saveModel(notUpgradedModel.getSModel(), upgradedData, ModelPersistence.LAST_VERSION);
 
         // load model in last persistence from saved 
         String upgradedContent = upgradedData.getContent(FileUtil.DEFAULT_CHARSET_NAME);
@@ -143,8 +131,7 @@ public class TestPersistence_Test extends BaseTransformationTest {
     }
 
 
-    public void assertDeepModelEquals(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
-      ModelAccess.instance().checkReadAccess();
+    public void assertDeepModelEquals(SModel expectedModel, SModel actualModel) {
       this.assertSameImports(expectedModel, actualModel);
       this.assertSameModelImports(expectedModel, actualModel);
       this.assertSameLanguageAspects(expectedModel, actualModel);
@@ -164,15 +151,15 @@ public class TestPersistence_Test extends BaseTransformationTest {
       }
       Assert.assertTrue("Found not expected " + objectName + " " + actualIdToNodeMap, actualIdToNodeMap.isEmpty());
     }
-    public void assertSameModelImports(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
+    public void assertSameModelImports(SModel expectedModel, SModel actualModel) {
       TestPersistenceHelper.assertListsEqual(this.getImportedModelUIDs(expectedModel), this.getImportedModelUIDs(actualModel), "model import");
     }
-    public void assertSameLanguageAspects(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
-      List<jetbrains.mps.smodel.SModel.ImportElement> expectedLanguageAspects = expectedModel.getImplicitImportsSupport().getAdditionalModelVersions();
-      List<jetbrains.mps.smodel.SModel.ImportElement> actualLanguageAspects = actualModel.getImplicitImportsSupport().getAdditionalModelVersions();
-      for (jetbrains.mps.smodel.SModel.ImportElement expectedEl : expectedLanguageAspects) {
+    public void assertSameLanguageAspects(SModel expectedModel, SModel actualModel) {
+      List<SModel.ImportElement> expectedLanguageAspects = expectedModel.getImplicitImportsSupport().getAdditionalModelVersions();
+      List<SModel.ImportElement> actualLanguageAspects = actualModel.getImplicitImportsSupport().getAdditionalModelVersions();
+      for (SModel.ImportElement expectedEl : expectedLanguageAspects) {
         boolean found = false;
-        for (jetbrains.mps.smodel.SModel.ImportElement actualEl : actualLanguageAspects) {
+        for (SModel.ImportElement actualEl : actualLanguageAspects) {
           if (actualEl.getModelReference().equals(expectedEl.getModelReference())) {
             found = true;
             break;
@@ -182,9 +169,9 @@ public class TestPersistence_Test extends BaseTransformationTest {
           Assert.fail("Not found expected language aspect " + expectedEl.getModelReference());
         }
       }
-      for (jetbrains.mps.smodel.SModel.ImportElement actualEl : actualLanguageAspects) {
+      for (SModel.ImportElement actualEl : actualLanguageAspects) {
         boolean found = false;
-        for (jetbrains.mps.smodel.SModel.ImportElement expectedEl : expectedLanguageAspects) {
+        for (SModel.ImportElement expectedEl : expectedLanguageAspects) {
           if (actualEl.getModelReference().equals(expectedEl.getModelReference())) {
             found = true;
             break;
@@ -195,14 +182,14 @@ public class TestPersistence_Test extends BaseTransformationTest {
         }
       }
     }
-    public void assertSameImports(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
+    public void assertSameImports(SModel expectedModel, SModel actualModel) {
       final ImplicitImportsLegacyHolder is1 = expectedModel.getImplicitImportsSupport();
       final ImplicitImportsLegacyHolder is2 = actualModel.getImplicitImportsSupport();
       is1.calculateImplicitImports();
       is2.calculateImplicitImports();
-      TestPersistenceHelper.assertListsEqual(is1.getAdditionalModelVersions(), is2.getAdditionalModelVersions(), new Comparator<jetbrains.mps.smodel.SModel.ImportElement>() {
+      TestPersistenceHelper.assertListsEqual(is1.getAdditionalModelVersions(), is2.getAdditionalModelVersions(), new Comparator<SModel.ImportElement>() {
         @Override
-        public int compare(jetbrains.mps.smodel.SModel.ImportElement import1, jetbrains.mps.smodel.SModel.ImportElement import2) {
+        public int compare(SModel.ImportElement import1, SModel.ImportElement import2) {
           return (import1.getModelReference().equals(import2.getModelReference()) ? 0 : 1);
         }
       }, "import");
@@ -290,9 +277,9 @@ public class TestPersistence_Test extends BaseTransformationTest {
       Assert.assertNotNull(errorString, actualNode);
       Assert.assertEquals(errorString, expectedNode.getNodeId(), actualNode.getNodeId());
     }
-    public List<SModelReference> getImportedModelUIDs(jetbrains.mps.smodel.SModel sModel) {
+    public List<SModelReference> getImportedModelUIDs(SModel sModel) {
       List<SModelReference> references = new ArrayList<SModelReference>();
-      for (jetbrains.mps.smodel.SModel.ImportElement importElement : sModel.importedModels()) {
+      for (SModel.ImportElement importElement : sModel.importedModels()) {
         references.add(importElement.getModelReference());
       }
       return Collections.unmodifiableList(references);
