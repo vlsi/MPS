@@ -2974,6 +2974,40 @@
       <unit id="3009615984010100006" at="10,0,27,0" name="jetbrains.mps.editorTest.AddConstructorInEnumCaret5_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3048587904660326413">
+    <file name="TypePrimitiveClassExpression_Test.java">
+      <node id="3048587904660326413" at="13,68,14,102" concept="2" />
+      <node id="3048587904660326413" at="14,102,15,104" concept="2" />
+      <node id="3048587904660326413" at="21,51,22,72" concept="2" />
+      <node id="3048587904660327348" at="22,72,23,33" concept="2" />
+      <node id="3048587904660326413" at="12,0,17,0" concept="5" trace="test_TypePrimitiveClassExpression#()V" />
+      <node id="3048587904660326413" at="20,0,25,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3048587904660326413" at="13,68,15,104" />
+      <scope id="3048587904660326413" at="21,51,23,33" />
+      <scope id="3048587904660326413" at="12,0,17,0" />
+      <scope id="3048587904660326413" at="20,0,25,0" />
+      <unit id="3048587904660326413" at="18,0,26,0" name="jetbrains.mps.editorTest.TypePrimitiveClassExpression_Test$TestBody" />
+      <unit id="3048587904660326413" at="10,0,27,0" name="jetbrains.mps.editorTest.TypePrimitiveClassExpression_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3048587904660599262">
+    <file name="CompleteNullTypePrimitiveClassExpression_Test.java">
+      <node id="3048587904660599262" at="14,80,15,102" concept="2" />
+      <node id="3048587904660599262" at="15,102,16,116" concept="2" />
+      <node id="3048587904660599262" at="22,51,23,72" concept="2" />
+      <node id="3048587904660647294" at="23,72,24,71" concept="2" />
+      <node id="3048587904660599271" at="24,71,25,35" concept="2" />
+      <node id="3048587904660647881" at="25,35,26,99" concept="2" />
+      <node id="3048587904660599262" at="13,0,18,0" concept="5" trace="test_CompleteNullTypePrimitiveClassExpression#()V" />
+      <node id="3048587904660599262" at="21,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3048587904660599262" at="14,80,16,116" />
+      <scope id="3048587904660599262" at="22,51,26,99" />
+      <scope id="3048587904660599262" at="13,0,18,0" />
+      <scope id="3048587904660599262" at="21,0,28,0" />
+      <unit id="3048587904660599262" at="19,0,29,0" name="jetbrains.mps.editorTest.CompleteNullTypePrimitiveClassExpression_Test$TestBody" />
+      <unit id="3048587904660599262" at="11,0,30,0" name="jetbrains.mps.editorTest.CompleteNullTypePrimitiveClassExpression_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3066122669860253913">
     <file name="SUBST_DotExpression_with_Smart_Cast_Test.java">
       <node id="3066122669860253913" at="15,75,16,102" concept="2" />

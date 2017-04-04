@@ -11,99 +11,83 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import jetbrains.mps.lang.editor.menus.substitute.WrapperSubstituteMenuPart;
+import jetbrains.mps.editor.runtime.menus.SubstituteItemFacade;
+import jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemWrapper;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.smodel.runtime.IconResource;
-import jetbrains.mps.smodel.runtime.IconResourceUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 
 public class PrimitiveClassExpression extends SubstituteMenuBase {
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new PrimitiveClassExpression.SMP_Param_vqoe2c_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3f57ea36bd70a4e1L, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new PrimitiveClassExpression.SMP_Wrap_vqoe2c_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
     return result;
   }
-  private class SMP_Param_vqoe2c_a extends ParameterizedMenuPart<SConcept, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Wrap_vqoe2c_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
-    protected List<SubstituteMenuItem> createItems(SConcept parameter, SubstituteMenuContext context) {
-      return new PrimitiveClassExpression.SMP_Param_vqoe2c_a.SMP_Action_vqoe2c_a0(parameter).createItems(context);
-    }
-    @Nullable
-    @Override
-    protected Iterable<? extends SConcept> getParameters(SubstituteMenuContext _context) {
-      List<SConcept> result = ListSequence.fromList(new ArrayList<SConcept>());
-      for (SAbstractConcept concept : MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage").getConcepts()) {
-        if (!(concept.isAbstract()) && SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"))) && isNotEmptyString(concept.getConceptAlias())) {
-          ListSequence.fromList(result).addElement((SConcept) concept);
-        }
-      }
-      return result;
-    }
-    private class SMP_Action_vqoe2c_a0 extends SingleItemSubstituteMenuPart {
-      private final SConcept myParameterObject;
-      public SMP_Action_vqoe2c_a0(SConcept parameterObject) {
-        myParameterObject = parameterObject;
-      }
+    protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
+      final SubstituteItemFacade wrappedItem = new SubstituteItemFacade(item);
+      return new SubstituteMenuItemWrapper(item) {
+        private SNode myCreatedNode;
 
-      @Nullable
-      @Override
-      protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new PrimitiveClassExpression.SMP_Param_vqoe2c_a.SMP_Action_vqoe2c_a0.Item(_context);
-      }
-      private class Item extends DefaultSubstituteMenuItem {
-        private final SubstituteMenuContext _context;
-        public Item(SubstituteMenuContext context) {
-          super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3f57ea36bd70a4e1L, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
-          _context = context;
+        @Nullable
+        @Override
+        public SAbstractConcept getOutputConcept() {
+          return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression");
         }
-
         @Nullable
         @Override
         public SNode createNode(@NotNull String pattern) {
+          SNode nodeToWrap = super.createNode(pattern);
           SNode result = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3f57ea36bd70a4e1L, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression")), null);
-          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3f57ea36bd70a4e1L, 0x3f57ea36bd70a4e2L, "primitiveType"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(myParameterObject), null));
+          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3f57ea36bd70a4e1L, 0x3f57ea36bd70a4e2L, "primitiveType"), nodeToWrap);
           return result;
         }
-        @Nullable
         @Override
-        public String getDescriptionText(@NotNull String pattern) {
-          if (myParameterObject instanceof SAbstractConcept) {
-            return NodePresentationUtil.descriptionText((SAbstractConcept) myParameterObject);
-          }
-          return "" + myParameterObject;
+        public boolean canExecute(@NotNull String pattern) {
+          return canExecute_internal(pattern, false);
         }
-        @Nullable
         @Override
-        public IconResource getIcon(@NotNull String pattern) {
-          if (myParameterObject instanceof SAbstractConcept) {
-            return IconResourceUtil.getIconResourceForConcept(((SAbstractConcept) myParameterObject));
+        public boolean canExecuteStrictly(@NotNull String pattern) {
+          return canExecute_internal(pattern, true);
+        }
+        public boolean canExecute_internal(@NotNull String pattern, boolean strictly) {
+          String matchingText = SConceptOperations.conceptAlias(wrappedItem.getOutputConcept()) + ".class";
+          if (strictly) {
+            return matchingText.equals(pattern);
+          } else {
+            return matchingText.startsWith(pattern);
           }
-          return null;
+        }
+        @Override
+        public void select(@NotNull SNode createdNode, @NotNull String pattern) {
+          SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), createdNode, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
         }
         @Nullable
         @Override
         public String getMatchingText(@NotNull String pattern) {
-          String alias = myParameterObject.getConceptAlias();
-          return alias + ".class";
+          return SConceptOperations.conceptAlias(wrappedItem.getOutputConcept()) + ".class";
         }
-      }
+      };
     }
-
-  }
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
+    @Nullable
+    @Override
+    protected SubstituteMenuLookup getLookup(SubstituteMenuContext _context) {
+      final EditorContext editorContext = _context.getEditorContext();
+      return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
+    }
   }
 }
