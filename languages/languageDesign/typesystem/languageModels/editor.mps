@@ -28,7 +28,6 @@
     <import index="tpd9" ref="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)" />
     <import index="tpdd" ref="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
@@ -5288,42 +5287,6 @@
     </node>
     <node concept="2VfDsV" id="1wEcoXjJwVe" role="3ft7WO" />
   </node>
-  <node concept="3p309x" id="1wEcoXjJwRe">
-    <property role="TrG5h" value="_Helgins_Substitute_Contribution" />
-    <node concept="2kknPJ" id="1wEcoXjJwRf" role="1IG6uw">
-      <ref role="2ZyFGn" to="tp25:g$eCIIG" resolve="SNodeOperation" />
-    </node>
-    <node concept="3ft6gV" id="1wEcoXjJwRh" role="3ft7WO">
-      <node concept="3ft6gW" id="1wEcoXjJwRi" role="3ft5RY">
-        <node concept="3clFbS" id="1wEcoXjJwRj" role="2VODD2">
-          <node concept="3cpWs6" id="1wEcoXjJwRk" role="3cqZAp">
-            <node concept="1Wc70l" id="1wEcoXjJwRl" role="3cqZAk">
-              <node concept="3fqX7Q" id="1wEcoXjJwRm" role="3uHU7w">
-                <node concept="2YIFZM" id="1wEcoXjJwRn" role="3fr31v">
-                  <ref role="37wK5l" to="tpd9:Z3KWg1iMhu" resolve="withinTypeManagingItem" />
-                  <ref role="1Pybhc" to="tpd9:hgVo$$B" resolve="RulesUtil" />
-                  <node concept="3bvxqY" id="1wEcoXjJwRs" role="37wK5m" />
-                </node>
-              </node>
-              <node concept="3fqX7Q" id="1wEcoXjJwRp" role="3uHU7B">
-                <node concept="2YIFZM" id="1wEcoXjJwRq" role="3fr31v">
-                  <ref role="37wK5l" to="tpd9:hq1J4IC" resolve="withinInferenceItem" />
-                  <ref role="1Pybhc" to="tpd9:hgVo$$B" resolve="RulesUtil" />
-                  <node concept="3bvxqY" id="1wEcoXjJwRt" role="37wK5m" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3ft5Ry" id="1wEcoXjJwRS" role="3ft5RZ">
-        <ref role="4PJHt" to="tpd4:h7JvlS3" resolve="Node_TypeOperation" />
-      </node>
-      <node concept="3ft5Ry" id="1wEcoXjJwRU" role="3ft5RZ">
-        <ref role="4PJHt" to="tpd4:5x0erXP9MLB" resolve="Node_InferTypeOperation" />
-      </node>
-    </node>
-  </node>
   <node concept="3p309x" id="1wEcoXjJwRX">
     <property role="TrG5h" value="EasyInferAndCheckingEntry_Contribution" />
     <node concept="2kknPJ" id="1wEcoXjJwRY" role="1IG6uw">
@@ -5552,6 +5515,33 @@
   </node>
   <node concept="3p36aQ" id="1wEcoXjJwVi">
     <ref role="aqKnT" to="tpd4:5x0erXP9MLB" resolve="Node_InferTypeOperation" />
+    <node concept="3ft6gV" id="1zbMpomxYRN" role="3ft7WO">
+      <node concept="3ft6gW" id="1zbMpomxYRO" role="3ft5RY">
+        <node concept="3clFbS" id="1zbMpomxYRP" role="2VODD2">
+          <node concept="3cpWs6" id="1zbMpomxYRQ" role="3cqZAp">
+            <node concept="1Wc70l" id="1zbMpomxYRR" role="3cqZAk">
+              <node concept="3fqX7Q" id="1zbMpomxYRS" role="3uHU7w">
+                <node concept="2YIFZM" id="1zbMpomxYRT" role="3fr31v">
+                  <ref role="37wK5l" to="tpd9:Z3KWg1iMhu" resolve="withinTypeManagingItem" />
+                  <ref role="1Pybhc" to="tpd9:hgVo$$B" resolve="RulesUtil" />
+                  <node concept="3bvxqY" id="1zbMpomxYRU" role="37wK5m" />
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="1zbMpomxYRV" role="3uHU7B">
+                <node concept="2YIFZM" id="1zbMpomxYRW" role="3fr31v">
+                  <ref role="1Pybhc" to="tpd9:hgVo$$B" resolve="RulesUtil" />
+                  <ref role="37wK5l" to="tpd9:hq1J4IC" resolve="withinInferenceItem" />
+                  <node concept="3bvxqY" id="1zbMpomxYRX" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3ft5Ry" id="1zbMpomxYRZ" role="3ft5RZ">
+        <ref role="4PJHt" to="tpd4:5x0erXP9MLB" resolve="Node_InferTypeOperation" />
+      </node>
+    </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJwVj">
     <ref role="aqKnT" to="tpd4:hS7gLIB" resolve="ConceptFunctionParameter_var" />
@@ -5564,6 +5554,33 @@
   </node>
   <node concept="3p36aQ" id="1wEcoXjJwVm">
     <ref role="aqKnT" to="tpd4:h7JvlS3" resolve="Node_TypeOperation" />
+    <node concept="3ft6gV" id="1zbMpomxYJ8" role="3ft7WO">
+      <node concept="3ft6gW" id="1zbMpomxYJ9" role="3ft5RY">
+        <node concept="3clFbS" id="1zbMpomxYJa" role="2VODD2">
+          <node concept="3cpWs6" id="1zbMpomxYJb" role="3cqZAp">
+            <node concept="1Wc70l" id="1zbMpomxYJc" role="3cqZAk">
+              <node concept="3fqX7Q" id="1zbMpomxYJd" role="3uHU7w">
+                <node concept="2YIFZM" id="1zbMpomxYJe" role="3fr31v">
+                  <ref role="37wK5l" to="tpd9:Z3KWg1iMhu" resolve="withinTypeManagingItem" />
+                  <ref role="1Pybhc" to="tpd9:hgVo$$B" resolve="RulesUtil" />
+                  <node concept="3bvxqY" id="1zbMpomxYJf" role="37wK5m" />
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="1zbMpomxYJg" role="3uHU7B">
+                <node concept="2YIFZM" id="1zbMpomxYJh" role="3fr31v">
+                  <ref role="1Pybhc" to="tpd9:hgVo$$B" resolve="RulesUtil" />
+                  <ref role="37wK5l" to="tpd9:hq1J4IC" resolve="withinInferenceItem" />
+                  <node concept="3bvxqY" id="1zbMpomxYJi" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3ft5Ry" id="1zbMpomxYJj" role="3ft5RZ">
+        <ref role="4PJHt" to="tpd4:h7JvlS3" resolve="Node_TypeOperation" />
+      </node>
+    </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJwVn">
     <ref role="aqKnT" to="tpd4:25idkGdk026" resolve="AttributedNodeExpression" />
