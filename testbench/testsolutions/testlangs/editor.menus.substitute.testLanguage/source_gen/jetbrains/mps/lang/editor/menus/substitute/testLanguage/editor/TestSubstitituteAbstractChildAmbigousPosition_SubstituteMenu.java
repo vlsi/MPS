@@ -15,6 +15,7 @@ import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.WrapperSubstituteMenuPart;
+import jetbrains.mps.editor.runtime.menus.SubstituteItemFacade;
 import jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemWrapper;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
@@ -73,6 +74,7 @@ public class TestSubstitituteAbstractChildAmbigousPosition_SubstituteMenu extend
       @NotNull
       @Override
       protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
+        final SubstituteItemFacade wrappedItem = new SubstituteItemFacade(item);
         return new SubstituteMenuItemWrapper(item) {
           private SNode myCreatedNode;
 
@@ -107,6 +109,7 @@ public class TestSubstitituteAbstractChildAmbigousPosition_SubstituteMenu extend
       @NotNull
       @Override
       protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
+        final SubstituteItemFacade wrappedItem = new SubstituteItemFacade(item);
         return new SubstituteMenuItemWrapper(item) {
           private SNode myCreatedNode;
 
@@ -152,6 +155,7 @@ public class TestSubstitituteAbstractChildAmbigousPosition_SubstituteMenu extend
       @NotNull
       @Override
       protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
+        final SubstituteItemFacade wrappedItem = new SubstituteItemFacade(item);
         return new SubstituteMenuItemWrapper(item) {
           private SNode myCreatedNode;
 
@@ -186,6 +190,7 @@ public class TestSubstitituteAbstractChildAmbigousPosition_SubstituteMenu extend
       @NotNull
       @Override
       protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
+        final SubstituteItemFacade wrappedItem = new SubstituteItemFacade(item);
         return new SubstituteMenuItemWrapper(item) {
           private SNode myCreatedNode;
 

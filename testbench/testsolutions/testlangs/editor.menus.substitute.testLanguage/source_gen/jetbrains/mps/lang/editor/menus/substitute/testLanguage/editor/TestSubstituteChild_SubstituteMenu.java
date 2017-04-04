@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.WrapperSubstituteMenuPart;
+import jetbrains.mps.editor.runtime.menus.SubstituteItemFacade;
 import jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemWrapper;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -268,6 +269,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
       @NotNull
       @Override
       protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
+        final SubstituteItemFacade wrappedItem = new SubstituteItemFacade(item);
         return new SubstituteMenuItemWrapper(item) {
           private SNode myCreatedNode;
 
@@ -286,6 +288,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
             tmpVar = tmpVar && _context.getEditorContext() != null;
             tmpVar = tmpVar && pattern != null;
             tmpVar = tmpVar && nodeToWrap != null;
+            tmpVar = tmpVar && wrappedItem != null;
 
             SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a8L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild1"));
             SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a8L, 0x7ce1116e3a6ff2acL, "conceptToWrap"), nodeToWrap);
@@ -299,6 +302,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
             tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getEditorContext() != null;
             tmpVar = tmpVar && pattern != null;
+            tmpVar = tmpVar && wrappedItem != null;
             return pattern;
           }
           @Nullable
@@ -309,6 +313,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
             tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getEditorContext() != null;
             tmpVar = tmpVar && pattern != null;
+            tmpVar = tmpVar && wrappedItem != null;
             return "wrap";
           }
           @Override
@@ -325,6 +330,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
             tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getEditorContext() != null;
             tmpVar = tmpVar && pattern != null;
+            tmpVar = tmpVar && wrappedItem != null;
             return true;
           }
           @Nullable
@@ -335,6 +341,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
             tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getEditorContext() != null;
             tmpVar = tmpVar && pattern != null;
+            tmpVar = tmpVar && wrappedItem != null;
             return null;
           }
           @Nullable
@@ -345,6 +352,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
             tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getEditorContext() != null;
             tmpVar = tmpVar && pattern != null;
+            tmpVar = tmpVar && wrappedItem != null;
             return null;
           }
           @Override
@@ -353,6 +361,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
             tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getEditorContext() != null;
             tmpVar = tmpVar && pattern != null;
+            tmpVar = tmpVar && wrappedItem != null;
             SelectionUtil.selectCell(_context.getEditorContext(), createdNode, SelectionManager.FIRST_CELL);
           }
         };

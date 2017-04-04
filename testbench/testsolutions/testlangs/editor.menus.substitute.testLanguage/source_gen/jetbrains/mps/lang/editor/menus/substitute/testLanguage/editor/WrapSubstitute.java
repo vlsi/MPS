@@ -23,6 +23,8 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
+import jetbrains.mps.editor.runtime.menus.SubstituteItemFacade;
+import jetbrains.mps.lang.editor.menus.transformation.SubstituteMenuItemAsActionItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -57,10 +59,18 @@ public class WrapSubstitute extends TransformationMenuBase {
       boolean b = _context.getEditorContext() != null && _context.getNode() != null & _context.getModel() != null;
       return _context.getNode();
     }
-    protected void execute(SNode targetNode, SubstituteMenuItem item, TransformationMenuContext _context, String pattern) {
-      SNode createdNode = item.createNode(pattern);
-      boolean b = _context.getEditorContext() != null && _context.getNode() != null & _context.getModel() != null && createdNode != null && targetNode != null;
-      ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParent")), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x407fe8717d8c3029L, "wrapSubstituteFromTransform"))).addElement(createdNode);
+
+    @Override
+    protected TransformationMenuItem createTransformationItem(final SNode targetNode, final SubstituteMenuItem item, final TransformationMenuContext _context) {
+      final SubstituteItemFacade wrappedItem = new SubstituteItemFacade(item);
+      return new SubstituteMenuItemAsActionItem(item) {
+        @Override
+        public void execute(@NotNull String pattern) {
+          SNode createdNode = item.createNode(pattern);
+          boolean b = _context.getEditorContext() != null && _context.getNode() != null & _context.getModel() != null && createdNode != null && targetNode != null;
+          ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParent")), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x407fe8717d8c3029L, "wrapSubstituteFromTransform"))).addElement(createdNode);
+        }
+      };
     }
   }
 }

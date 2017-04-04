@@ -14,8 +14,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TestSubstitituteAbstractSubChildAmbigousPosition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstitituteChildAmbigousPosition1 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstitituteChildAmbigousPosition2 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstitituteChildOfWrapper = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstitituteParentOfWrapper = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstitituteSubChildAmbigousPosition1 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstitituteSubChildAmbigousPosition2 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstitituteWrapper = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteAbstractChildWithConstraints = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteChildBrother = new ConceptPresentationBuilder().create();
@@ -61,10 +64,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_TestSubstitituteChildAmbigousPosition1;
       case LanguageConceptSwitch.TestSubstitituteChildAmbigousPosition2:
         return props_TestSubstitituteChildAmbigousPosition2;
+      case LanguageConceptSwitch.TestSubstitituteChildOfWrapper:
+        return props_TestSubstitituteChildOfWrapper;
+      case LanguageConceptSwitch.TestSubstitituteParentOfWrapper:
+        return props_TestSubstitituteParentOfWrapper;
       case LanguageConceptSwitch.TestSubstitituteSubChildAmbigousPosition1:
         return props_TestSubstitituteSubChildAmbigousPosition1;
       case LanguageConceptSwitch.TestSubstitituteSubChildAmbigousPosition2:
         return props_TestSubstitituteSubChildAmbigousPosition2;
+      case LanguageConceptSwitch.TestSubstitituteWrapper:
+        return props_TestSubstitituteWrapper;
       case LanguageConceptSwitch.TestSubstituteAbstractChildWithConstraints:
         return props_TestSubstituteAbstractChildWithConstraints;
       case LanguageConceptSwitch.TestSubstituteChild:
