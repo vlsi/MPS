@@ -1234,64 +1234,67 @@
   </root>
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/1741258697587116595">
     <file name="DiagramspecificEditorCells_Contribution.java">
-      <node id="1741258697587116595" at="27,52,28,16" concept="11" />
-      <node id="1741258697587116595" at="32,118,33,140" concept="7" />
-      <node id="1741258697587116595" at="33,140,34,295" concept="2" />
-      <node id="1741258697587116595" at="34,295,35,18" concept="8" />
-      <node id="1741258697587116595" at="42,0,43,0" concept="3" trace="myCreatedNode" />
-      <node id="1741258697587116595" at="46,52,47,178" concept="8" />
-      <node id="1741258697587116595" at="51,58,52,55" concept="7" />
-      <node id="1741258697587116595" at="52,55,53,37" concept="2" />
-      <node id="1741258697587116602" at="53,37,54,229" concept="7" />
-      <node id="1741258697587116608" at="54,229,55,196" concept="2" />
-      <node id="1741258697587116614" at="55,196,56,33" concept="8" />
-      <node id="1741258697587116595" at="59,81,60,47" concept="2" />
-      <node id="1741258697587116595" at="66,78,67,70" concept="7" />
-      <node id="1741258697587116595" at="67,70,68,270" concept="8" />
-      <node id="1741258697587116595" at="27,0,30,0" concept="1" trace="DiagramspecificEditorCells_Contribution#()V" />
-      <node id="1741258697587116595" at="58,0,62,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
-      <node id="1741258697587116595" at="44,0,49,0" concept="6" trace="getOutputConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="1741258697587116595" at="64,0,70,0" concept="6" trace="getLookup#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuLookup;" />
-      <node id="1741258697587116595" at="30,0,37,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <node id="1741258697587116595" at="49,0,58,0" concept="6" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1741258697587116595" at="40,112,62,8" concept="8" />
-      <node id="1741258697587116595" at="38,0,64,0" concept="6" trace="wrapItem#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuItem;Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuItem;" />
-      <scope id="1741258697587116595" at="27,52,28,16" />
-      <scope id="1741258697587116595" at="46,52,47,178" />
-      <scope id="1741258697587116595" at="59,81,60,47" />
-      <scope id="1741258697587116595" at="66,78,68,270">
+      <node id="1741258697587116595" at="28,52,29,16" concept="11" />
+      <node id="1741258697587116595" at="33,118,34,140" concept="7" />
+      <node id="1741258697587116595" at="34,140,35,295" concept="2" />
+      <node id="1741258697587116595" at="35,295,36,18" concept="8" />
+      <node id="1741258697587116595" at="41,112,42,78" concept="7" />
+      <node id="1741258697587116595" at="44,0,45,0" concept="3" trace="myCreatedNode" />
+      <node id="1741258697587116595" at="48,52,49,178" concept="8" />
+      <node id="1741258697587116595" at="53,58,54,55" concept="7" />
+      <node id="1741258697587116595" at="54,55,55,37" concept="2" />
+      <node id="1741258697587116602" at="55,37,56,229" concept="7" />
+      <node id="1741258697587116608" at="56,229,57,196" concept="2" />
+      <node id="1741258697587116614" at="57,196,58,33" concept="8" />
+      <node id="1741258697587116595" at="61,81,62,47" concept="2" />
+      <node id="1741258697587116595" at="68,78,69,70" concept="7" />
+      <node id="1741258697587116595" at="69,70,70,270" concept="8" />
+      <node id="1741258697587116595" at="28,0,31,0" concept="1" trace="DiagramspecificEditorCells_Contribution#()V" />
+      <node id="1741258697587116595" at="60,0,64,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
+      <node id="1741258697587116595" at="46,0,51,0" concept="6" trace="getOutputConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1741258697587116595" at="66,0,72,0" concept="6" trace="getLookup#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuLookup;" />
+      <node id="1741258697587116595" at="31,0,38,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1741258697587116595" at="51,0,60,0" concept="6" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1741258697587116595" at="42,78,64,8" concept="8" />
+      <node id="1741258697587116595" at="39,0,66,0" concept="6" trace="wrapItem#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuItem;Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuItem;" />
+      <scope id="1741258697587116595" at="28,52,29,16" />
+      <scope id="1741258697587116595" at="48,52,49,178" />
+      <scope id="1741258697587116595" at="61,81,62,47" />
+      <scope id="1741258697587116595" at="68,78,70,270">
         <var name="editorContext" id="1741258697587116595" />
       </scope>
-      <scope id="1741258697587116595" at="27,0,30,0" />
-      <scope id="1741258697587116595" at="32,118,35,18">
+      <scope id="1741258697587116595" at="28,0,31,0" />
+      <scope id="1741258697587116595" at="33,118,36,18">
         <var name="result" id="1741258697587116595" />
       </scope>
-      <scope id="1741258697587116595" at="58,0,62,0">
+      <scope id="1741258697587116595" at="60,0,64,0">
         <var name="createdNode" id="1741258697587116595" />
         <var name="pattern" id="1741258697587116595" />
       </scope>
-      <scope id="1741258697587116595" at="44,0,49,0" />
-      <scope id="1741258697587116595" at="51,58,56,33">
+      <scope id="1741258697587116595" at="46,0,51,0" />
+      <scope id="1741258697587116595" at="53,58,58,33">
         <var name="diagramNodeCell" id="1741258697587116603" />
         <var name="nodeToWrap" id="1741258697587116595" />
       </scope>
-      <scope id="1741258697587116595" at="64,0,70,0">
+      <scope id="1741258697587116595" at="66,0,72,0">
         <var name="_context" id="1741258697587116595" />
       </scope>
-      <scope id="1741258697587116595" at="30,0,37,0">
+      <scope id="1741258697587116595" at="31,0,38,0">
         <var name="_context" id="1741258697587116595" />
       </scope>
-      <scope id="1741258697587116595" at="49,0,58,0">
+      <scope id="1741258697587116595" at="51,0,60,0">
         <var name="pattern" id="1741258697587116595" />
       </scope>
-      <scope id="1741258697587116595" at="40,112,62,8" />
-      <scope id="1741258697587116595" at="38,0,64,0">
+      <scope id="1741258697587116595" at="41,112,64,8">
+        <var name="wrappedItem" id="1741258697587116595" />
+      </scope>
+      <scope id="1741258697587116595" at="39,0,66,0">
         <var name="_context" id="1741258697587116595" />
         <var name="item" id="1741258697587116595" />
       </scope>
-      <unit id="1741258697587116595" at="41,17,62,7" name="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution$SMP_Wrap_ljrot4_a$1" />
-      <unit id="1741258697587116595" at="37,0,71,0" name="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution$SMP_Wrap_ljrot4_a" />
-      <unit id="1741258697587116595" at="26,0,72,0" name="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution" />
+      <unit id="1741258697587116595" at="43,17,64,7" name="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution$SMP_Wrap_ljrot4_a$1" />
+      <unit id="1741258697587116595" at="38,0,73,0" name="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution$SMP_Wrap_ljrot4_a" />
+      <unit id="1741258697587116595" at="27,0,74,0" name="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution" />
     </file>
   </root>
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/1741258697587116645">

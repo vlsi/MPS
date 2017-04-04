@@ -44,6 +44,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
+import jetbrains.mps.editor.runtime.menus.SubstituteItemFacade;
+import jetbrains.mps.lang.editor.menus.transformation.SubstituteMenuItemAsActionItem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -315,11 +317,19 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
       return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"));
     }
 
-    protected void execute(SNode targetNode, SubstituteMenuItem item, TransformationMenuContext _context, String pattern) {
-      SNode createdNode = item.createNode(pattern);
-      SNodeOperations.replaceWithAnother(_context.getNode(), createdNode);
-      SLinkOperations.setTarget(createdNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, 0x11174c59241L, "left"), _context.getNode());
-      SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), createdNode, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
+
+    @Override
+    protected TransformationMenuItem createTransformationItem(final SNode targetNode, final SubstituteMenuItem item, final TransformationMenuContext _context) {
+      final SubstituteItemFacade wrappedItem = new SubstituteItemFacade(item);
+      return new SubstituteMenuItemAsActionItem(item) {
+        @Override
+        public void execute(@NotNull String pattern) {
+          SNode createdNode = item.createNode(pattern);
+          SNodeOperations.replaceWithAnother(_context.getNode(), createdNode);
+          SLinkOperations.setTarget(createdNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, 0x11174c59241L, "left"), _context.getNode());
+          SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), createdNode, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
+        }
+      };
     }
   }
   private class TMP_Action_luzgqn_c1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {

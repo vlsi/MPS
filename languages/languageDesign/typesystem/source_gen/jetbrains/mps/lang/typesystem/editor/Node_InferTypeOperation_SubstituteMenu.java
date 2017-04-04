@@ -21,10 +21,10 @@ public class Node_InferTypeOperation_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new Node_InferTypeOperation_SubstituteMenu.SubstituteMenuPart_Group_no6eem_a());
+    result.add(new Node_InferTypeOperation_SubstituteMenu.SMP_Group_no6eem_a());
     return result;
   }
-  public class SubstituteMenuPart_Group_no6eem_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Group_no6eem_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return !(RulesUtil.withinInferenceItem(_context.getParentNode())) && !(RulesUtil.withinTypeManagingItem(_context.getParentNode()));
