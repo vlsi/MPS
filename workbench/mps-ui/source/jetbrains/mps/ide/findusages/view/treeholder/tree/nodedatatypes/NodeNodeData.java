@@ -24,10 +24,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.StringUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -42,12 +40,15 @@ public class NodeNodeData extends AbstractResultNodeData {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(NodeNodeData.class));
 
   private static final String NODE = "nodePtr";
+  private static final String IS_ROOT = "isRoot";
 
   private SNodeReference myNodePointer;
+  private boolean myIsRootNode;
 
   public NodeNodeData(PathItemRole role, @Nullable String caption, @NotNull SNode pathObject, boolean isPathTail, boolean resultsSection) {
     super(role, caption != null ? caption : snodeRepresentation(pathObject), nodeAdditionalInfo(pathObject), false, isPathTail, resultsSection);
     myNodePointer = pathObject.getReference();
+    myIsRootNode = pathObject.getModel() != null && pathObject.getParent() == null;
   }
 
   public NodeNodeData(Element element, Project project) throws CantLoadSomethingException {
@@ -56,15 +57,6 @@ public class NodeNodeData extends AbstractResultNodeData {
 
   public SNodeReference getNodePointer() {
     return myNodePointer;
-  }
-
-  /**
-   * @deprecated use {@link #getNodePointer()} and resolve as appropriate
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public SNode getNode() {
-    return myNodePointer.resolve(MPSModuleRepository.getInstance());
   }
 
   @Override
@@ -82,6 +74,9 @@ public class NodeNodeData extends AbstractResultNodeData {
   public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
     element.setAttribute(NODE, PersistenceFacade.getInstance().asString(myNodePointer));
+    if (myIsRootNode) {
+      element.setAttribute(IS_ROOT, Boolean.TRUE.toString());
+    }
   }
 
   @Override
@@ -89,6 +84,7 @@ public class NodeNodeData extends AbstractResultNodeData {
     super.read(element, project);
     try {
       myNodePointer = PersistenceFacade.getInstance().createNodeReference(element.getAttributeValue(NODE));
+      myIsRootNode = Boolean.parseBoolean(element.getAttributeValue(IS_ROOT)); // false for null if fine.
     } catch (Exception ex) {
       throw new CantLoadSomethingException(ex);
     }
@@ -118,6 +114,10 @@ public class NodeNodeData extends AbstractResultNodeData {
       "<i>" +
       snodeRepresentation(node.getParent()) +
       "</i>";
+  }
+
+  public boolean isRootNode() {
+    return myIsRootNode;
   }
 
   @Override

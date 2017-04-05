@@ -38,7 +38,6 @@ import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
@@ -313,16 +312,9 @@ public class UsagesTree extends MPSTree {
   private void sortByCaption(List<UsagesTreeNode> children) {
     Collections.sort(children, new Comparator<UsagesTreeNode>() {
       private boolean isIgnored(UsagesTreeNode node) {
+        // need to keep order of non-root nodes as they seen in an editor (see MPS-6113)
         BaseNodeData data = node.getUserObject().getData();
-        SNode snode = null;
-        if (data instanceof NodeNodeData) {
-          snode = ((NodeNodeData) data).getNode();
-        } else {
-          if (data.getIdObject() instanceof SNode) {
-            snode = (SNode) data.getIdObject();
-          }
-        }
-        return snode != null && !(snode.getModel() != null && snode.getParent() == null);
+        return (data instanceof NodeNodeData) && !((NodeNodeData) data).isRootNode();
       }
 
       @Override
