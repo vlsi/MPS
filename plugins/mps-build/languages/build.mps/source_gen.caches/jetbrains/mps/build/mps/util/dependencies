@@ -113,7 +113,6 @@
     <classNode dependClassName="jetbrains.mps.persistence.DefaultModelRoot" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.project.ProjectPathUtil" />
-    <classNode dependClassName="jetbrains.mps.project.facets.TestsFacet" />
     <classNode dependClassName="jetbrains.mps.project.facets.TestsFacetImpl" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.Dependency" />

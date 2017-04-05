@@ -27,7 +27,6 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.build.mps.behavior.BuildMps_Solution__BehaviorDescriptor;
 import jetbrains.mps.project.ProjectPathUtil;
-import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import java.util.Map;
 import java.util.HashMap;
@@ -480,15 +479,12 @@ public class ModuleChecker {
       }
 
       // FIXME shall not limit tests sources to solutions only (even TestsFacetImpl allows Languages to have tests). Shall look to tests facet descriptor instead of blind forModuleDescriptor 
-      TestsFacet testsFacet = TestsFacetImpl.fromModuleDescriptor(myModuleDescriptor, myModuleDescriptorFile);
+      IFile testsPathFile = TestsFacetImpl.getTestsOutputPath(myModuleDescriptor, myModuleDescriptorFile);
       boolean hasTests = SNodeOperations.isInstanceOf(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) && (boolean) BuildMps_Solution__BehaviorDescriptor.hasTestsSources_id6ogfLD6evrW.invoke(SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution")));
-      if (testsFacet != null && hasTests) {
-        IFile testsPathFile = testsFacet.getTestsOutputPath();
-        if (testsPathFile != null) {
-          String testPath = testsPathFile.getPath();
-          SNode p = ListSequence.fromList(convertPath(testPath)).first();
-          buildModuleFacade.addTestSources(p, true);
-        }
+      if (testsPathFile != null && hasTests) {
+        String testPath = testsPathFile.getPath();
+        SNode p = ListSequence.fromList(convertPath(testPath)).first();
+        buildModuleFacade.addTestSources(p, true);
       }
     }
   }

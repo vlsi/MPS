@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class TestsFacetImpl extends ModuleFacetBase implements TestsFacet {
@@ -38,11 +39,6 @@ public class TestsFacetImpl extends ModuleFacetBase implements TestsFacet {
     }
   }
 
-  private TestsFacetImpl(IFile moduleHome) {
-    this();
-    myModuleHome = moduleHome;
-  }
-
   @Nullable
   @Override
   public IFile getTestsOutputPath() {
@@ -51,11 +47,13 @@ public class TestsFacetImpl extends ModuleFacetBase implements TestsFacet {
   }
 
   @Nullable
-  public static TestsFacet fromModuleDescriptor(ModuleDescriptor descriptor, IFile descriptorFile) {
+  public static IFile getTestsOutputPath(ModuleDescriptor descriptor, @NotNull IFile moduleDescriptorFile) {
     if (descriptor instanceof LanguageDescriptor || descriptor instanceof SolutionDescriptor) {
-      return new TestsFacetImpl(descriptorFile.getParent());
+      // XXX tests facet shall record value in the descriptor and use it instead of hardcoded value
+      return moduleDescriptorFile.getParent().getDescendant("test_gen");
     } else {
       return null;
     }
+
   }
 }

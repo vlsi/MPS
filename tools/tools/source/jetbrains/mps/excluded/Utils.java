@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.excluded;
 
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ProjectPathUtil;
+import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -119,7 +119,7 @@ public class Utils {
 
         String srcPath = ProjectPathUtil.getGeneratorOutputPath(sd);
         result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(srcPath));
-        String testPath = ProjectPathUtil.getGeneratorTestsOutputPath(moduleIFile, sd).getPath();
+        String testPath = TestsFacetImpl.getTestsOutputPath(sd, moduleIFile).getPath();
         result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(testPath));
       } else {
         LanguageDescriptor ld = LanguageDescriptorPersistence.loadLanguageDescriptor(moduleIFile, expander);

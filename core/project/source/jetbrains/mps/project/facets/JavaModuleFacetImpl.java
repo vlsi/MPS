@@ -139,6 +139,10 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
         // Case 1. Deployed generator modules have no DD and are read independently from their source languages.
         //         Include their separate jar (hard-coded knowledge about build layout) into classpath.
         if (getModule() instanceof Generator) {
+          LOG.error(String.format("Deployed generator module %s without deployment descriptor. File: %s",
+                                  getModule().getModuleReference(),
+                                  getModule().getDescriptorFile()));
+          // FIXME COMPATIBILITY CODE BELOW SHALL CEASE TO EXIST IN 2017.2 (case 1)
           IFile descriptorFile = ((Generator) getModule()).getSourceLanguage().getDescriptorFile();
           IFile bundleHome = descriptorFile == null ? null : descriptorFile.getBundleHome();
           if (bundleHome != null) {
