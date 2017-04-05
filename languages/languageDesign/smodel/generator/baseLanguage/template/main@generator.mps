@@ -6,8 +6,8 @@
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -43,9 +43,14 @@
     <import index="cm63" ref="d936855b-48da-4812-a8a0-2bfddd633ac5/java:jetbrains.mps.smodel.behaviour(jetbrains.mps.lang.behavior.api/)" />
     <import index="u65r" ref="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)" />
     <import index="ksn4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.smodel(MPS.Core/)" />
+    <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
+        <child id="1224071154657" name="classifierType" index="0kSFW" />
+        <child id="1224071154656" name="expression" index="0kSFX" />
+      </concept>
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
@@ -448,6 +453,7 @@
         <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="6995935425733782641" name="jetbrains.mps.lang.smodel.structure.Model_GetModule" flags="nn" index="13u695" />
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
@@ -8712,609 +8718,82 @@
   <node concept="bUwia" id="i2Zh0j2">
     <property role="TrG5h" value="mc_enum_operations" />
     <property role="3GE5qa" value="enum" />
-    <node concept="3aamgX" id="i39Qc16" role="3acgRq">
+    <node concept="3aamgX" id="2nIYwg$9aL8" role="3acgRq">
+      <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tp25:i3HcIAb" resolve="SEnumOperationInvocation" />
-      <node concept="gft3U" id="i39Qc17" role="1lVwrX">
-        <node concept="2YIFZM" id="32AgDtIXeVD" role="gfFT$">
-          <ref role="37wK5l" to="i51s:~SEnumOperations.getEnumMembers(org.jetbrains.mps.openapi.model.SNode):java.util.List" resolve="getEnumMembers" />
-          <ref role="1Pybhc" to="i51s:~SEnumOperations" resolve="SEnumOperations" />
-          <node concept="10Nm6u" id="32AgDtIXeVE" role="37wK5m">
-            <node concept="xERo3" id="32AgDtIXeVF" role="lGtFl">
-              <ref role="xH3mL" node="i3LQZMt" resolve="reduce_EnumRef" />
-              <node concept="3NFfHV" id="32AgDtIXeVG" role="xEYEz">
-                <node concept="3clFbS" id="32AgDtIXeVH" role="2VODD2">
-                  <node concept="3clFbF" id="32AgDtIXeVI" role="3cqZAp">
-                    <node concept="2OqwBi" id="32AgDtIXeVJ" role="3clFbG">
-                      <node concept="30H73N" id="32AgDtIXeVK" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="32AgDtIXeVL" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tp25:i3HcIAc" resolve="enumDeclaration" />
-                      </node>
+      <node concept="gft3U" id="2nIYwg$9cJE" role="1lVwrX">
+        <node concept="10Nm6u" id="2nIYwg$9cJK" role="gfFT$">
+          <node concept="1sPUBX" id="2nIYwg$9cJU" role="lGtFl">
+            <ref role="v9R2y" node="2nIYwg$6r0p" resolve="switch_EnumOperation" />
+            <node concept="3NFfHV" id="2nIYwg$9cK3" role="1sPUBK">
+              <node concept="3clFbS" id="2nIYwg$9cK4" role="2VODD2">
+                <node concept="3clFbF" id="2nIYwg$9cNs" role="3cqZAp">
+                  <node concept="2OqwBi" id="2nIYwg$9cYJ" role="3clFbG">
+                    <node concept="30H73N" id="2nIYwg$9cNr" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="2nIYwg$9d9h" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tp25:i3HdvpB" resolve="operation" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-      </node>
-      <node concept="30G5F_" id="i3LQvTy" role="30HLyM">
-        <node concept="3clFbS" id="i3LQvTz" role="2VODD2">
-          <node concept="3clFbF" id="i3LQwLI" role="3cqZAp">
-            <node concept="2OqwBi" id="i3LQxSz" role="3clFbG">
-              <node concept="2OqwBi" id="i3LQwOF" role="2Oq$k0">
-                <node concept="30H73N" id="i3LQwLJ" role="2Oq$k0" />
-                <node concept="3TrEf2" id="i3LQx_f" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp25:i3HdvpB" resolve="operation" />
-                </node>
-              </node>
-              <node concept="1mIQ4w" id="i3LQypk" role="2OqNvi">
-                <node concept="chp4Y" id="i3LQyMJ" role="cj9EA">
-                  <ref role="cht4Q" to="tp25:i3HdYqO" resolve="SEnum_MembersOperation" />
-                </node>
+            <node concept="2OqwBi" id="2nIYwg$9dtU" role="v9R3O">
+              <node concept="30H73N" id="2nIYwg$9deX" role="2Oq$k0" />
+              <node concept="3TrEf2" id="2nIYwg$9dEM" role="2OqNvi">
+                <ref role="3Tt5mk" to="tp25:i3HcIAc" resolve="enumDeclaration" />
               </node>
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="3aamgX" id="i2ZuEq2" role="3acgRq">
-      <ref role="30HIoZ" to="tp25:i3HcIAb" resolve="SEnumOperationInvocation" />
-      <node concept="gft3U" id="i39Q2tR" role="1lVwrX">
-        <node concept="2YIFZM" id="i39Q52u" role="gfFT$">
-          <ref role="37wK5l" to="i51s:~SEnumOperations.getEnumMember(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getEnumMember" />
-          <ref role="1Pybhc" to="i51s:~SEnumOperations" resolve="SEnumOperations" />
-          <node concept="10Nm6u" id="i39Q6Te" role="37wK5m">
-            <node concept="xERo3" id="i3LRuzc" role="lGtFl">
-              <ref role="xH3mL" node="i3LQZMt" resolve="reduce_EnumRef" />
-              <node concept="3NFfHV" id="i3LRuZy" role="xEYEz">
-                <node concept="3clFbS" id="i3LRuZz" role="2VODD2">
-                  <node concept="3clFbF" id="i3LRuZ$" role="3cqZAp">
-                    <node concept="2OqwBi" id="i3LRuZ_" role="3clFbG">
-                      <node concept="30H73N" id="i3LRuZA" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="i3LRuZB" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tp25:i3HcIAc" resolve="enumDeclaration" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="Xl_RD" id="i39Q7am" role="37wK5m">
-            <property role="Xl_RC" value="name" />
-            <node concept="17Uvod" id="i39Q7Zm" role="lGtFl">
-              <property role="2qtEX9" value="value" />
-              <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-              <node concept="3zFVjK" id="i39Q7Zn" role="3zH0cK">
-                <node concept="3clFbS" id="i39Q7Zo" role="2VODD2">
-                  <node concept="3clFbF" id="i39Q8tU" role="3cqZAp">
-                    <node concept="2OqwBi" id="i39Q8tV" role="3clFbG">
-                      <node concept="2OqwBi" id="i39Q8tW" role="2Oq$k0">
-                        <node concept="1PxgMI" id="i3LTw4A" role="2Oq$k0">
-                          <node concept="2OqwBi" id="i3LTu6j" role="1m5AlR">
-                            <node concept="30H73N" id="i39Q8tX" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="i3LTuKm" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tp25:i3HdvpB" resolve="operation" />
-                            </node>
-                          </node>
-                          <node concept="chp4Y" id="714IaVdGZi4" role="3oSUPX">
-                            <ref role="cht4Q" to="tp25:i3HdYqh" resolve="SEnum_MemberOperation" />
-                          </node>
-                        </node>
-                        <node concept="3TrEf2" id="i3Hr5eI" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tp25:i3HdYqi" resolve="member" />
-                        </node>
-                      </node>
-                      <node concept="2qgKlT" id="i3nZGAB" role="2OqNvi">
-                        <ref role="37wK5l" to="tpcn:i2ZRO7Q" resolve="getName" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="30G5F_" id="i3LQ$Af" role="30HLyM">
-        <node concept="3clFbS" id="i3LQ$Ag" role="2VODD2">
-          <node concept="3clFbF" id="i3LQ$Ah" role="3cqZAp">
-            <node concept="2OqwBi" id="i3LQ$Ai" role="3clFbG">
-              <node concept="2OqwBi" id="i3LQ$Aj" role="2Oq$k0">
-                <node concept="30H73N" id="i3LQ$Ak" role="2Oq$k0" />
-                <node concept="3TrEf2" id="i3LQGaQ" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp25:i3HdvpB" resolve="operation" />
-                </node>
-              </node>
-              <node concept="1mIQ4w" id="i3LQ$Am" role="2OqNvi">
-                <node concept="chp4Y" id="i3LQAJ_" role="cj9EA">
-                  <ref role="cht4Q" to="tp25:i3HdYqh" resolve="SEnum_MemberOperation" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3aamgX" id="i38XSO5" role="3acgRq">
-      <ref role="30HIoZ" to="tp25:i3HcIAb" resolve="SEnumOperationInvocation" />
-      <node concept="gft3U" id="i39Qr4y" role="1lVwrX">
-        <node concept="2YIFZM" id="i39QuMg" role="gfFT$">
-          <ref role="37wK5l" to="i51s:~SEnumOperations.enumMemberForValue(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="enumMemberForValue" />
-          <ref role="1Pybhc" to="i51s:~SEnumOperations" resolve="SEnumOperations" />
-          <node concept="10Nm6u" id="i39QuMh" role="37wK5m">
-            <node concept="xERo3" id="i3LRzoD" role="lGtFl">
-              <ref role="xH3mL" node="i3LQZMt" resolve="reduce_EnumRef" />
-              <node concept="3NFfHV" id="i3LRzRb" role="xEYEz">
-                <node concept="3clFbS" id="i3LRzRc" role="2VODD2">
-                  <node concept="3clFbF" id="i3LRzRd" role="3cqZAp">
-                    <node concept="2OqwBi" id="i3LRzRe" role="3clFbG">
-                      <node concept="30H73N" id="i3LRzRf" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="i3LRzRg" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tp25:i3HcIAc" resolve="enumDeclaration" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3cpWs3" id="6u1pduf9wSV" role="37wK5m">
-            <node concept="1W57fq" id="2$CGp_LLmcD" role="lGtFl">
-              <node concept="3IZrLx" id="2$CGp_LLmcF" role="3IZSJc">
-                <node concept="3clFbS" id="2$CGp_LLmcH" role="2VODD2">
-                  <node concept="3clFbF" id="2$CGp_LLE6r" role="3cqZAp">
-                    <node concept="17QLQc" id="2$CGp_LLRxr" role="3clFbG">
-                      <node concept="3B5_sB" id="2$CGp_LLRYt" role="3uHU7w">
-                        <ref role="3B5MYn" to="tpck:fKAOsGN" resolve="string" />
-                      </node>
-                      <node concept="2OqwBi" id="2$CGp_LLPVp" role="3uHU7B">
-                        <node concept="2OqwBi" id="2$CGp_LLEjt" role="2Oq$k0">
-                          <node concept="30H73N" id="2$CGp_LLE6q" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="2$CGp_LLPuQ" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tp25:i3HcIAc" resolve="enumDeclaration" />
-                          </node>
-                        </node>
-                        <node concept="3TrEf2" id="2$CGp_LLQWr" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpce:fKM4eW5" resolve="memberDataType" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="gft3U" id="2$CGp_LLSyy" role="UU_$l">
-                <node concept="Xl_RD" id="2$CGp_LLSSN" role="gfFT$">
-                  <property role="Xl_RC" value="value" />
-                  <node concept="29HgVG" id="2$CGp_LLSSO" role="lGtFl">
-                    <node concept="3NFfHV" id="2$CGp_LLSSP" role="3NFExx">
-                      <node concept="3clFbS" id="2$CGp_LLSSQ" role="2VODD2">
-                        <node concept="3clFbF" id="2$CGp_LLSSR" role="3cqZAp">
-                          <node concept="2OqwBi" id="2$CGp_LLSSS" role="3clFbG">
-                            <node concept="1PxgMI" id="2$CGp_LLSST" role="2Oq$k0">
-                              <node concept="2OqwBi" id="2$CGp_LLSSU" role="1m5AlR">
-                                <node concept="30H73N" id="2$CGp_LLSSV" role="2Oq$k0" />
-                                <node concept="3TrEf2" id="2$CGp_LLSSW" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="tp25:i3HdvpB" resolve="operation" />
-                                </node>
-                              </node>
-                              <node concept="chp4Y" id="714IaVdGZh6" role="3oSUPX">
-                                <ref role="cht4Q" to="tp25:i3HdYpe" resolve="SEnum_MemberForValueOperation" />
-                              </node>
-                            </node>
-                            <node concept="3TrEf2" id="2$CGp_LLSSX" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tp25:i3HdYpf" resolve="valueExpression" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="Xl_RD" id="6u1pduf9AWP" role="3uHU7B">
-              <property role="Xl_RC" value="" />
-            </node>
-            <node concept="Xl_RD" id="i39QDpA" role="3uHU7w">
-              <property role="Xl_RC" value="value" />
-              <node concept="29HgVG" id="i39QICg" role="lGtFl">
-                <node concept="3NFfHV" id="i39QICh" role="3NFExx">
-                  <node concept="3clFbS" id="i39QICi" role="2VODD2">
-                    <node concept="3clFbF" id="i39QJ$7" role="3cqZAp">
-                      <node concept="2OqwBi" id="i39QJCM" role="3clFbG">
-                        <node concept="1PxgMI" id="i3LTyvJ" role="2Oq$k0">
-                          <node concept="2OqwBi" id="i3LTxEs" role="1m5AlR">
-                            <node concept="30H73N" id="i39QLcG" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="i3LTxWO" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tp25:i3HdvpB" resolve="operation" />
-                            </node>
-                          </node>
-                          <node concept="chp4Y" id="714IaVdGZio" role="3oSUPX">
-                            <ref role="cht4Q" to="tp25:i3HdYpe" resolve="SEnum_MemberForValueOperation" />
-                          </node>
-                        </node>
-                        <node concept="3TrEf2" id="i3Hr3qw" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tp25:i3HdYpf" resolve="valueExpression" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="30G5F_" id="i3LQClj" role="30HLyM">
-        <node concept="3clFbS" id="i3LQClk" role="2VODD2">
-          <node concept="3clFbF" id="i3LQCll" role="3cqZAp">
-            <node concept="2OqwBi" id="i3LQClm" role="3clFbG">
-              <node concept="2OqwBi" id="i3LQCln" role="2Oq$k0">
-                <node concept="30H73N" id="i3LQClo" role="2Oq$k0" />
-                <node concept="3TrEf2" id="i3LQKfR" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp25:i3HdvpB" resolve="operation" />
-                </node>
-              </node>
-              <node concept="1mIQ4w" id="i3LQClq" role="2OqNvi">
-                <node concept="chp4Y" id="i3LQL7M" role="cj9EA">
-                  <ref role="cht4Q" to="tp25:i3HdYpe" resolve="SEnum_MemberForValueOperation" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3aamgX" id="i39H8_s" role="3acgRq">
-      <ref role="30HIoZ" to="tp25:i3HcIAb" resolve="SEnumOperationInvocation" />
-      <node concept="gft3U" id="i39QrIg" role="1lVwrX">
-        <node concept="2YIFZM" id="i39QvNC" role="gfFT$">
-          <ref role="37wK5l" to="i51s:~SEnumOperations.enumMemberForName(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="enumMemberForName" />
-          <ref role="1Pybhc" to="i51s:~SEnumOperations" resolve="SEnumOperations" />
-          <node concept="10Nm6u" id="i39QvND" role="37wK5m">
-            <node concept="xERo3" id="i3LRCOa" role="lGtFl">
-              <ref role="xH3mL" node="i3LQZMt" resolve="reduce_EnumRef" />
-              <node concept="3NFfHV" id="i3LRDl9" role="xEYEz">
-                <node concept="3clFbS" id="i3LRDla" role="2VODD2">
-                  <node concept="3clFbF" id="i3LRDlb" role="3cqZAp">
-                    <node concept="2OqwBi" id="i3LRDlc" role="3clFbG">
-                      <node concept="30H73N" id="i3LRDld" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="i3LRDle" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tp25:i3HcIAc" resolve="enumDeclaration" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="Xl_RD" id="i39QObE" role="37wK5m">
-            <property role="Xl_RC" value="name" />
-            <node concept="29HgVG" id="i39QObF" role="lGtFl">
-              <node concept="3NFfHV" id="i39QObG" role="3NFExx">
-                <node concept="3clFbS" id="i39QObH" role="2VODD2">
-                  <node concept="3clFbF" id="i39QObI" role="3cqZAp">
-                    <node concept="2OqwBi" id="i39QObJ" role="3clFbG">
-                      <node concept="1PxgMI" id="i3LT_1H" role="2Oq$k0">
-                        <node concept="2OqwBi" id="i3LT$8h" role="1m5AlR">
-                          <node concept="30H73N" id="i39QObK" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="i3LT$mv" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tp25:i3HdvpB" resolve="operation" />
-                          </node>
-                        </node>
-                        <node concept="chp4Y" id="714IaVdGZih" role="3oSUPX">
-                          <ref role="cht4Q" to="tp25:i3HdYoc" resolve="SEnum_MemberForNameOperation" />
-                        </node>
-                      </node>
-                      <node concept="3TrEf2" id="i3Hr2rJ" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tp25:i3HdYod" resolve="nameExpression" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="30G5F_" id="i3LQDeX" role="30HLyM">
-        <node concept="3clFbS" id="i3LQDeY" role="2VODD2">
-          <node concept="3clFbF" id="i3LQDeZ" role="3cqZAp">
-            <node concept="2OqwBi" id="i3LQDf0" role="3clFbG">
-              <node concept="2OqwBi" id="i3LQDf1" role="2Oq$k0">
-                <node concept="30H73N" id="i3LQDf2" role="2Oq$k0" />
-                <node concept="3TrEf2" id="i3LQNDc" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp25:i3HdvpB" resolve="operation" />
-                </node>
-              </node>
-              <node concept="1mIQ4w" id="i3LQDf4" role="2OqNvi">
-                <node concept="chp4Y" id="i3LQMue" role="cj9EA">
-                  <ref role="cht4Q" to="tp25:i3HdYoc" resolve="SEnum_MemberForNameOperation" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3aamgX" id="i3LQQMo" role="3acgRq">
+    <node concept="3aamgX" id="2nIYwg$9exK" role="3acgRq">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
-      <node concept="gft3U" id="i3LQQMp" role="1lVwrX">
-        <node concept="2YIFZM" id="i3LQQMq" role="gfFT$">
-          <ref role="37wK5l" to="i8bi:X9k2kW5hM7" resolve="getEnumMemberName" />
-          <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
-          <node concept="10Nm6u" id="i3LQQMr" role="37wK5m">
-            <node concept="29HgVG" id="i3LQQMs" role="lGtFl">
-              <node concept="3NFfHV" id="i3LQQMt" role="3NFExx">
-                <node concept="3clFbS" id="i3LQQMu" role="2VODD2">
-                  <node concept="3clFbF" id="i3LQQMv" role="3cqZAp">
-                    <node concept="2OqwBi" id="i3LT27E" role="3clFbG">
-                      <node concept="30H73N" id="i3LQQMx" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="i3LT2BH" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
+      <node concept="gft3U" id="2nIYwg$9gR3" role="1lVwrX">
+        <node concept="10Nm6u" id="2nIYwg$9gRc" role="gfFT$">
+          <node concept="1sPUBX" id="2nIYwg$9gRm" role="lGtFl">
+            <ref role="v9R2y" node="2nIYwg$6t4b" resolve="switch_EnumMemberOperation" />
+            <node concept="3NFfHV" id="2nIYwg$9h0f" role="1sPUBK">
+              <node concept="3clFbS" id="2nIYwg$9h0g" role="2VODD2">
+                <node concept="3clFbF" id="2nIYwg$9h3C" role="3cqZAp">
+                  <node concept="1PxgMI" id="2nIYwg$9lja" role="3clFbG">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="2nIYwg$9luN" role="3oSUPX">
+                      <ref role="cht4Q" to="tp25:i3MheXj" resolve="SEnumMemberOperation" />
+                    </node>
+                    <node concept="2OqwBi" id="2nIYwg$9heP" role="1m5AlR">
+                      <node concept="30H73N" id="2nIYwg$9h3B" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="2nIYwg$9kgR" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
+            <node concept="2OqwBi" id="2nIYwg$9ma1" role="v9R3O">
+              <node concept="30H73N" id="2nIYwg$9lXG" role="2Oq$k0" />
+              <node concept="3TrEf2" id="2nIYwg$9mq9" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
-      <node concept="30G5F_" id="i3MoeOr" role="30HLyM">
-        <node concept="3clFbS" id="i3MoeOs" role="2VODD2">
-          <node concept="3clFbF" id="i3MofV1" role="3cqZAp">
-            <node concept="2OqwBi" id="i3Moh7d" role="3clFbG">
-              <node concept="2OqwBi" id="i3MofYu" role="2Oq$k0">
-                <node concept="30H73N" id="i3MofV2" role="2Oq$k0" />
-                <node concept="3TrEf2" id="i3MogSj" role="2OqNvi">
+      <node concept="30G5F_" id="2nIYwg$9g_8" role="30HLyM">
+        <node concept="3clFbS" id="2nIYwg$9g_9" role="2VODD2">
+          <node concept="3clFbF" id="2nIYwg$9gGi" role="3cqZAp">
+            <node concept="2OqwBi" id="2nIYwg$9jRR" role="3clFbG">
+              <node concept="2OqwBi" id="2nIYwg$9jRS" role="2Oq$k0">
+                <node concept="30H73N" id="2nIYwg$9jRT" role="2Oq$k0" />
+                <node concept="3TrEf2" id="2nIYwg$9jRU" role="2OqNvi">
                   <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                 </node>
               </node>
-              <node concept="1mIQ4w" id="i3MohCY" role="2OqNvi">
-                <node concept="chp4Y" id="i3Moi$l" role="cj9EA">
-                  <ref role="cht4Q" to="tp25:i305Nnj" resolve="EnumMember_NameOperation" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3aamgX" id="i3LQQMG" role="3acgRq">
-      <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
-      <node concept="gft3U" id="i3LQQMH" role="1lVwrX">
-        <node concept="2YIFZM" id="i3LQQMI" role="gfFT$">
-          <ref role="37wK5l" to="i8bi:X9k2kW5hMk" resolve="getEnumMemberValue" />
-          <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
-          <node concept="10Nm6u" id="i3LQQMJ" role="37wK5m">
-            <node concept="29HgVG" id="i3LQQMK" role="lGtFl">
-              <node concept="3NFfHV" id="i3LQQML" role="3NFExx">
-                <node concept="3clFbS" id="i3LQQMM" role="2VODD2">
-                  <node concept="3clFbF" id="i3LT6cf" role="3cqZAp">
-                    <node concept="2OqwBi" id="i3LT6cg" role="3clFbG">
-                      <node concept="30H73N" id="i3LT6cj" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="i3LT6cl" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="30G5F_" id="i3Mok09" role="30HLyM">
-        <node concept="3clFbS" id="i3Mok0a" role="2VODD2">
-          <node concept="3clFbF" id="i3MopFn" role="3cqZAp">
-            <node concept="1Wc70l" id="6u1pdufeK32" role="3clFbG">
-              <node concept="2OqwBi" id="i3MopFo" role="3uHU7B">
-                <node concept="2OqwBi" id="i3MopFp" role="2Oq$k0">
-                  <node concept="30H73N" id="i3MopFq" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="i3MopFr" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
-                  </node>
-                </node>
-                <node concept="1mIQ4w" id="i3MopFs" role="2OqNvi">
-                  <node concept="chp4Y" id="i3Moq__" role="cj9EA">
-                    <ref role="cht4Q" to="tp25:i2ZYiQY" resolve="EnumMember_ValueOperation" />
-                  </node>
-                </node>
-              </node>
-              <node concept="17R0WA" id="6u1pdufeVQr" role="3uHU7w">
-                <node concept="3B5_sB" id="6u1pdufeWak" role="3uHU7w">
-                  <ref role="3B5MYn" to="tpck:fKAOsGN" resolve="string" />
-                </node>
-                <node concept="2OqwBi" id="6u1pdufeQ7W" role="3uHU7B">
-                  <node concept="2OqwBi" id="6u1pdufeO3Z" role="2Oq$k0">
-                    <node concept="3TrEf2" id="6u1pdufePvx" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp25:i2ZWj0V" resolve="enum" />
-                    </node>
-                    <node concept="1UdQGJ" id="3XaonnNVGN1" role="2Oq$k0">
-                      <node concept="1YaCAy" id="3XaonnNVHmU" role="1Ub_4A">
-                        <property role="TrG5h" value="var" />
-                        <ref role="1YaFvo" to="tp25:i2ZThgx" resolve="SEnumMemberType" />
-                      </node>
-                      <node concept="2OqwBi" id="3XaonnNVH4O" role="1Ub_4B">
-                        <node concept="2OqwBi" id="3XaonnNVH4P" role="2Oq$k0">
-                          <node concept="30H73N" id="3XaonnNVH4Q" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="3XaonnNVH4R" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
-                          </node>
-                        </node>
-                        <node concept="3JvlWi" id="3XaonnNVH4S" role="2OqNvi" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3TrEf2" id="6u1pdufeSde" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpce:fKM4eW5" resolve="memberDataType" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3aamgX" id="6u1pdufeWXa" role="3acgRq">
-      <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
-      <node concept="30G5F_" id="6u1pdufeWXb" role="30HLyM">
-        <node concept="3clFbS" id="6u1pdufeWXc" role="2VODD2">
-          <node concept="3clFbF" id="6u1pdufeWXd" role="3cqZAp">
-            <node concept="1Wc70l" id="6u1pdufeWXe" role="3clFbG">
-              <node concept="17R0WA" id="6u1pdufeWXf" role="3uHU7w">
-                <node concept="3B5_sB" id="6u1pdufeWXg" role="3uHU7w">
-                  <ref role="3B5MYn" to="tpck:fKAQMTA" resolve="integer" />
-                </node>
-                <node concept="2OqwBi" id="6u1pdufeWXh" role="3uHU7B">
-                  <node concept="2OqwBi" id="6u1pdufeWXi" role="2Oq$k0">
-                    <node concept="3TrEf2" id="6u1pdufeWXp" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp25:i2ZWj0V" resolve="enum" />
-                    </node>
-                    <node concept="1UdQGJ" id="3XaonnNVJCn" role="2Oq$k0">
-                      <node concept="1YaCAy" id="3XaonnNVJCo" role="1Ub_4A">
-                        <property role="TrG5h" value="var" />
-                        <ref role="1YaFvo" to="tp25:i2ZThgx" resolve="SEnumMemberType" />
-                      </node>
-                      <node concept="2OqwBi" id="3XaonnNVJCp" role="1Ub_4B">
-                        <node concept="2OqwBi" id="3XaonnNVJCq" role="2Oq$k0">
-                          <node concept="30H73N" id="3XaonnNVJCr" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="3XaonnNVJCs" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
-                          </node>
-                        </node>
-                        <node concept="3JvlWi" id="3XaonnNVJCt" role="2OqNvi" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3TrEf2" id="6u1pdufeWXq" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpce:fKM4eW5" resolve="memberDataType" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2OqwBi" id="6u1pdufeWXr" role="3uHU7B">
-                <node concept="2OqwBi" id="6u1pdufeWXs" role="2Oq$k0">
-                  <node concept="30H73N" id="6u1pdufeWXt" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="6u1pdufeWXu" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
-                  </node>
-                </node>
-                <node concept="1mIQ4w" id="6u1pdufeWXv" role="2OqNvi">
-                  <node concept="chp4Y" id="6u1pdufeWXw" role="cj9EA">
-                    <ref role="cht4Q" to="tp25:i2ZYiQY" resolve="EnumMember_ValueOperation" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="gft3U" id="3XaonnNOyHc" role="1lVwrX">
-        <node concept="2YIFZM" id="3XaonnNOz1h" role="gfFT$">
-          <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
-          <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
-          <node concept="2YIFZM" id="3XaonnNOz1i" role="37wK5m">
-            <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
-            <ref role="37wK5l" to="i8bi:X9k2kW5hMk" resolve="getEnumMemberValue" />
-            <node concept="10Nm6u" id="3XaonnNOz1j" role="37wK5m">
-              <node concept="29HgVG" id="3XaonnNOz1k" role="lGtFl">
-                <node concept="3NFfHV" id="3XaonnNOz1l" role="3NFExx">
-                  <node concept="3clFbS" id="3XaonnNOz1m" role="2VODD2">
-                    <node concept="3clFbF" id="3XaonnNOz1n" role="3cqZAp">
-                      <node concept="2OqwBi" id="3XaonnNOz1o" role="3clFbG">
-                        <node concept="30H73N" id="3XaonnNOz1p" role="2Oq$k0" />
-                        <node concept="3TrEf2" id="3XaonnNOz1q" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3aamgX" id="6u1pdufeXEG" role="3acgRq">
-      <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
-      <node concept="30G5F_" id="6u1pdufeXEH" role="30HLyM">
-        <node concept="3clFbS" id="6u1pdufeXEI" role="2VODD2">
-          <node concept="3clFbF" id="6u1pdufeXEJ" role="3cqZAp">
-            <node concept="1Wc70l" id="6u1pdufeXEK" role="3clFbG">
-              <node concept="17R0WA" id="6u1pdufeXEL" role="3uHU7w">
-                <node concept="3B5_sB" id="6u1pdufeXEM" role="3uHU7w">
-                  <ref role="3B5MYn" to="tpck:fKAQMTB" resolve="boolean" />
-                </node>
-                <node concept="2OqwBi" id="6u1pdufeXEN" role="3uHU7B">
-                  <node concept="2OqwBi" id="6u1pdufeXEO" role="2Oq$k0">
-                    <node concept="3TrEf2" id="6u1pdufeXEV" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp25:i2ZWj0V" resolve="enum" />
-                    </node>
-                    <node concept="1UdQGJ" id="3XaonnNVKcu" role="2Oq$k0">
-                      <node concept="1YaCAy" id="3XaonnNVKcv" role="1Ub_4A">
-                        <property role="TrG5h" value="var" />
-                        <ref role="1YaFvo" to="tp25:i2ZThgx" resolve="SEnumMemberType" />
-                      </node>
-                      <node concept="2OqwBi" id="3XaonnNVKcw" role="1Ub_4B">
-                        <node concept="2OqwBi" id="3XaonnNVKcx" role="2Oq$k0">
-                          <node concept="30H73N" id="3XaonnNVKcy" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="3XaonnNVKcz" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
-                          </node>
-                        </node>
-                        <node concept="3JvlWi" id="3XaonnNVKc$" role="2OqNvi" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3TrEf2" id="6u1pdufeXEW" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpce:fKM4eW5" resolve="memberDataType" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2OqwBi" id="6u1pdufeXEX" role="3uHU7B">
-                <node concept="2OqwBi" id="6u1pdufeXEY" role="2Oq$k0">
-                  <node concept="30H73N" id="6u1pdufeXEZ" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="6u1pdufeXF0" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
-                  </node>
-                </node>
-                <node concept="1mIQ4w" id="6u1pdufeXF1" role="2OqNvi">
-                  <node concept="chp4Y" id="6u1pdufeXF2" role="cj9EA">
-                    <ref role="cht4Q" to="tp25:i2ZYiQY" resolve="EnumMember_ValueOperation" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="gft3U" id="48WPkFI_T_j" role="1lVwrX">
-        <node concept="2YIFZM" id="48WPkFI_TJn" role="gfFT$">
-          <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
-          <ref role="37wK5l" to="wyt6:~Boolean.parseBoolean(java.lang.String):boolean" resolve="parseBoolean" />
-          <node concept="2YIFZM" id="48WPkFI_TJo" role="37wK5m">
-            <ref role="37wK5l" to="i8bi:X9k2kW5hMk" resolve="getEnumMemberValue" />
-            <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
-            <node concept="10Nm6u" id="48WPkFI_TJp" role="37wK5m">
-              <node concept="29HgVG" id="48WPkFI_TJq" role="lGtFl">
-                <node concept="3NFfHV" id="48WPkFI_TJr" role="3NFExx">
-                  <node concept="3clFbS" id="48WPkFI_TJs" role="2VODD2">
-                    <node concept="3clFbF" id="48WPkFI_TJt" role="3cqZAp">
-                      <node concept="2OqwBi" id="48WPkFI_TJu" role="3clFbG">
-                        <node concept="30H73N" id="48WPkFI_TJv" role="2Oq$k0" />
-                        <node concept="3TrEf2" id="48WPkFI_TJw" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
+              <node concept="1mIQ4w" id="2nIYwg$9jRV" role="2OqNvi">
+                <node concept="chp4Y" id="2nIYwg$9lGI" role="cj9EA">
+                  <ref role="cht4Q" to="tp25:i3MheXj" resolve="SEnumMemberOperation" />
                 </node>
               </node>
             </node>
@@ -9365,8 +8844,8 @@
     <node concept="3aamgX" id="i39gvIj" role="3acgRq">
       <ref role="30HIoZ" to="tp25:i2ZThgx" resolve="SEnumMemberType" />
       <node concept="gft3U" id="i39gvIk" role="1lVwrX">
-        <node concept="3Tqbb2" id="i39gvIl" role="gfFT$">
-          <ref role="ehGHo" to="tpce:fKM4N6M" resolve="EnumerationMemberDeclaration" />
+        <node concept="3uibUv" id="3iWdTCn8YfL" role="gfFT$">
+          <ref role="3uigEE" to="c17a:~SEnumerationLiteral" resolve="SEnumerationLiteral" />
         </node>
       </node>
     </node>
@@ -9389,64 +8868,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </node>
-  <node concept="13MO4I" id="i3LQZMt">
-    <property role="TrG5h" value="reduce_EnumRef" />
-    <property role="3GE5qa" value="enum" />
-    <ref role="3gUMe" to="tpce:fKAxPRV" resolve="EnumerationDataTypeDeclaration" />
-    <node concept="2YIFZM" id="i3LRIlz" role="13RCb5">
-      <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
-      <ref role="37wK5l" to="i8bi:X9k2kW5hL6" resolve="getEnum" />
-      <node concept="Xl_RD" id="i3LRIl$" role="37wK5m">
-        <property role="Xl_RC" value="modelUID" />
-        <node concept="17Uvod" id="i3LRIl_" role="lGtFl">
-          <property role="2qtEX9" value="value" />
-          <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-          <node concept="3zFVjK" id="i3LRIlA" role="3zH0cK">
-            <node concept="3clFbS" id="i3LRIlB" role="2VODD2">
-              <node concept="3clFbF" id="i3LRIlC" role="3cqZAp">
-                <node concept="2OqwBi" id="i3LRIlD" role="3clFbG">
-                  <node concept="2OqwBi" id="2n9zn0CqN4_" role="2Oq$k0">
-                    <node concept="liA8E" id="2n9zn0CqN4A" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                    </node>
-                    <node concept="2JrnkZ" id="2n9zn0CqN4B" role="2Oq$k0">
-                      <node concept="2OqwBi" id="2n9zn0CqN4C" role="2JrQYb">
-                        <node concept="30H73N" id="2n9zn0CqN4D" role="2Oq$k0" />
-                        <node concept="I4A8Y" id="2n9zn0CqN4E" role="2OqNvi" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="i3LRIlK" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="Xl_RD" id="i3LRIlL" role="37wK5m">
-        <property role="Xl_RC" value="nodeUID" />
-        <node concept="17Uvod" id="i3LRIlM" role="lGtFl">
-          <property role="2qtEX9" value="value" />
-          <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-          <node concept="3zFVjK" id="i3LRIlN" role="3zH0cK">
-            <node concept="3clFbS" id="i3LRIlO" role="2VODD2">
-              <node concept="3clFbF" id="i3LRIlP" role="3cqZAp">
-                <node concept="2OqwBi" id="i3LRIlQ" role="3clFbG">
-                  <node concept="30H73N" id="i3LRIlR" role="2Oq$k0" />
-                  <node concept="3TrcHB" id="i3LRIlS" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="raruj" id="i3LRJ3z" role="lGtFl" />
     </node>
   </node>
   <node concept="bUwia" id="6zcS2WveYLr">
@@ -20921,6 +20342,767 @@
         <node concept="3uibUv" id="50fTm6QQSZ9" role="2jfP_h">
           <ref role="3uigEE" to="e8bb:~SLanguageId" resolve="SLanguageId" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13MO4I" id="2nIYwg$6DcQ">
+    <property role="3GE5qa" value="enum" />
+    <property role="TrG5h" value="reduce_EnumDeclaration_indentityValueSequence" />
+    <ref role="3gUMe" to="tpce:fKAxPRV" resolve="EnumerationDataTypeDeclaration" />
+    <node concept="2YIFZM" id="2nIYwg$6DfU" role="13RCb5">
+      <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
+      <ref role="37wK5l" to="i8bi:2nIYwg$4REO" resolve="getMembers" />
+      <node concept="1adDum" id="2nIYwg$6V7u" role="37wK5m">
+        <property role="1adDun" value="1L" />
+        <node concept="raruj" id="2nIYwg$6VkW" role="lGtFl" />
+        <node concept="17Uvod" id="2nIYwg$6Vy6" role="lGtFl">
+          <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/4269842503726207156/4269842503726207157" />
+          <property role="2qtEX9" value="value" />
+          <node concept="3zFVjK" id="2nIYwg$6Vy7" role="3zH0cK">
+            <node concept="3clFbS" id="2nIYwg$6Vy8" role="2VODD2">
+              <node concept="3cpWs8" id="2nIYwg$6YW6" role="3cqZAp">
+                <node concept="3cpWsn" id="2nIYwg$6YW9" role="3cpWs9">
+                  <property role="TrG5h" value="v" />
+                  <node concept="3cpWsb" id="2nIYwg$6YW4" role="1tU5fm" />
+                  <node concept="2OqwBi" id="2nIYwg$7qZP" role="33vP2m">
+                    <node concept="2YIFZM" id="2nIYwg$7qZQ" role="2Oq$k0">
+                      <ref role="37wK5l" to="e8bb:~MetaIdByDeclaration.getLanguageId(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguageId" />
+                      <ref role="1Pybhc" to="e8bb:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
+                      <node concept="0kSF2" id="2nIYwg$7qZR" role="37wK5m">
+                        <node concept="3uibUv" id="2nIYwg$7qZS" role="0kSFW">
+                          <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+                        </node>
+                        <node concept="2OqwBi" id="2nIYwg$7qZT" role="0kSFX">
+                          <node concept="2JrnkZ" id="2nIYwg$7qZU" role="2Oq$k0">
+                            <node concept="2OqwBi" id="2nIYwg$7qZV" role="2JrQYb">
+                              <node concept="30H73N" id="2nIYwg$7qZW" role="2Oq$k0" />
+                              <node concept="I4A8Y" id="2nIYwg$7qZX" role="2OqNvi" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="2nIYwg$7qZY" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="2nIYwg$7qZZ" role="2OqNvi">
+                      <ref role="37wK5l" to="e8bb:~SLanguageId.getHighBits():long" resolve="getHighBits" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="2nIYwg$6VJI" role="3cqZAp">
+                <node concept="3cpWs3" id="2nIYwg$6WPb" role="3clFbG">
+                  <node concept="1Xhbcc" id="2nIYwg$6Y6L" role="3uHU7w">
+                    <property role="1XhdNS" value="L" />
+                  </node>
+                  <node concept="3cpWs3" id="2nIYwg$6WGu" role="3uHU7B">
+                    <node concept="Xl_RD" id="2nIYwg$6VJH" role="3uHU7B">
+                      <property role="Xl_RC" value="0x" />
+                    </node>
+                    <node concept="2YIFZM" id="2nIYwg$6XU0" role="3uHU7w">
+                      <ref role="37wK5l" to="wyt6:~Long.toHexString(long):java.lang.String" resolve="toHexString" />
+                      <ref role="1Pybhc" to="wyt6:~Long" resolve="Long" />
+                      <node concept="37vLTw" id="2nIYwg$6Zm2" role="37wK5m">
+                        <ref role="3cqZAo" node="2nIYwg$6YW9" resolve="v" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1adDum" id="2nIYwg$700$" role="37wK5m">
+        <property role="1adDun" value="2L" />
+        <node concept="raruj" id="2nIYwg$700_" role="lGtFl" />
+        <node concept="17Uvod" id="2nIYwg$700A" role="lGtFl">
+          <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/4269842503726207156/4269842503726207157" />
+          <property role="2qtEX9" value="value" />
+          <node concept="3zFVjK" id="2nIYwg$700B" role="3zH0cK">
+            <node concept="3clFbS" id="2nIYwg$700C" role="2VODD2">
+              <node concept="3cpWs8" id="2nIYwg$700D" role="3cqZAp">
+                <node concept="3cpWsn" id="2nIYwg$700E" role="3cpWs9">
+                  <property role="TrG5h" value="v" />
+                  <node concept="3cpWsb" id="2nIYwg$700F" role="1tU5fm" />
+                  <node concept="2OqwBi" id="2nIYwg$7qa2" role="33vP2m">
+                    <node concept="2YIFZM" id="2nIYwg$7lGd" role="2Oq$k0">
+                      <ref role="37wK5l" to="e8bb:~MetaIdByDeclaration.getLanguageId(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguageId" />
+                      <ref role="1Pybhc" to="e8bb:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
+                      <node concept="0kSF2" id="2nIYwg$7pLA" role="37wK5m">
+                        <node concept="3uibUv" id="2nIYwg$7pLD" role="0kSFW">
+                          <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+                        </node>
+                        <node concept="2OqwBi" id="2nIYwg$7otR" role="0kSFX">
+                          <node concept="2JrnkZ" id="2nIYwg$7o78" role="2Oq$k0">
+                            <node concept="2OqwBi" id="2nIYwg$7mhf" role="2JrQYb">
+                              <node concept="30H73N" id="2nIYwg$7lU_" role="2Oq$k0" />
+                              <node concept="I4A8Y" id="2nIYwg$7mG7" role="2OqNvi" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="2nIYwg$7oTg" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="2nIYwg$7q_0" role="2OqNvi">
+                      <ref role="37wK5l" to="e8bb:~SLanguageId.getLowBits():long" resolve="getLowBits" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="2nIYwg$700G" role="3cqZAp">
+                <node concept="3cpWs3" id="2nIYwg$700H" role="3clFbG">
+                  <node concept="1Xhbcc" id="2nIYwg$700I" role="3uHU7w">
+                    <property role="1XhdNS" value="L" />
+                  </node>
+                  <node concept="3cpWs3" id="2nIYwg$700J" role="3uHU7B">
+                    <node concept="Xl_RD" id="2nIYwg$700K" role="3uHU7B">
+                      <property role="Xl_RC" value="0x" />
+                    </node>
+                    <node concept="2YIFZM" id="2nIYwg$700L" role="3uHU7w">
+                      <ref role="1Pybhc" to="wyt6:~Long" resolve="Long" />
+                      <ref role="37wK5l" to="wyt6:~Long.toHexString(long):java.lang.String" resolve="toHexString" />
+                      <node concept="37vLTw" id="2nIYwg$700M" role="37wK5m">
+                        <ref role="3cqZAo" node="2nIYwg$700E" resolve="v" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="Xl_RD" id="2nIYwg$6GFx" role="37wK5m">
+        <property role="Xl_RC" value="language" />
+        <node concept="raruj" id="2nIYwg$6NZA" role="lGtFl" />
+        <node concept="17Uvod" id="2nIYwg$6O1N" role="lGtFl">
+          <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+          <property role="2qtEX9" value="value" />
+          <node concept="3zFVjK" id="2nIYwg$6O1O" role="3zH0cK">
+            <node concept="3clFbS" id="2nIYwg$6O1P" role="2VODD2">
+              <node concept="3SKdUt" id="2nIYwg$7cyn" role="3cqZAp">
+                <node concept="3SKdUq" id="2nIYwg$7cyp" role="3SKWNk">
+                  <property role="3SKdUp" value="XXX not sure this gonna work for nodes that are tranient (i.e. if we generate enums from " />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="2nIYwg$7d1L" role="3cqZAp">
+                <node concept="3SKdUq" id="2nIYwg$7d1N" role="3SKWNk">
+                  <property role="3SKdUp" value="another, high-level, language). Perhaps, would need resort to NameUtil.namespaceFromLongName(node.model.name)." />
+                </node>
+              </node>
+              <node concept="3clFbF" id="2nIYwg$79Sh" role="3cqZAp">
+                <node concept="2OqwBi" id="2nIYwg$7bpU" role="3clFbG">
+                  <node concept="2OqwBi" id="2nIYwg$7aSH" role="2Oq$k0">
+                    <node concept="2OqwBi" id="2nIYwg$7a7Q" role="2Oq$k0">
+                      <node concept="30H73N" id="2nIYwg$79Sf" role="2Oq$k0" />
+                      <node concept="I4A8Y" id="2nIYwg$7awx" role="2OqNvi" />
+                    </node>
+                    <node concept="13u695" id="2nIYwg$7b92" role="2OqNvi" />
+                  </node>
+                  <node concept="3TrcHB" id="2nIYwg$7bHw" role="2OqNvi">
+                    <ref role="3TsBF5" to="hypd:5xDtKQA7vSz" resolve="namespace" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1adDum" id="2nIYwg$71tE" role="37wK5m">
+        <property role="1adDun" value="3L" />
+        <node concept="raruj" id="2nIYwg$71tF" role="lGtFl" />
+        <node concept="17Uvod" id="2nIYwg$71tG" role="lGtFl">
+          <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/4269842503726207156/4269842503726207157" />
+          <property role="2qtEX9" value="value" />
+          <node concept="3zFVjK" id="2nIYwg$71tH" role="3zH0cK">
+            <node concept="3clFbS" id="2nIYwg$71tI" role="2VODD2">
+              <node concept="3SKdUt" id="2nIYwg$7dZQ" role="3cqZAp">
+                <node concept="3SKdUq" id="2nIYwg$7dZS" role="3SKWNk">
+                  <property role="3SKdUp" value="FIXME likely, need a dedicated property in EnumerationDataTypeDeclaration to hold id value, but for now, live with SNodeId" />
+                </node>
+              </node>
+              <node concept="3cpWs8" id="2nIYwg$71tJ" role="3cqZAp">
+                <node concept="3cpWsn" id="2nIYwg$71tK" role="3cpWs9">
+                  <property role="TrG5h" value="v" />
+                  <node concept="3cpWsb" id="2nIYwg$71tL" role="1tU5fm" />
+                  <node concept="2OqwBi" id="2nIYwg$7jXh" role="33vP2m">
+                    <node concept="1eOMI4" id="2nIYwg$7iWw" role="2Oq$k0">
+                      <node concept="10QFUN" id="2nIYwg$7iWt" role="1eOMHV">
+                        <node concept="3uibUv" id="2nIYwg$7j9G" role="10QFUM">
+                          <ref role="3uigEE" to="w1kc:~SNodeId$Regular" resolve="SNodeId.Regular" />
+                        </node>
+                        <node concept="2OqwBi" id="2nIYwg$7fCq" role="10QFUP">
+                          <node concept="2JrnkZ" id="2nIYwg$7hjo" role="2Oq$k0">
+                            <node concept="30H73N" id="2nIYwg$7fj7" role="2JrQYb" />
+                          </node>
+                          <node concept="liA8E" id="2nIYwg$7hFO" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="2nIYwg$7ks2" role="2OqNvi">
+                      <ref role="37wK5l" to="w1kc:~SNodeId$Regular.getId():long" resolve="getId" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="2nIYwg$71tM" role="3cqZAp">
+                <node concept="3cpWs3" id="2nIYwg$71tN" role="3clFbG">
+                  <node concept="1Xhbcc" id="2nIYwg$71tO" role="3uHU7w">
+                    <property role="1XhdNS" value="L" />
+                  </node>
+                  <node concept="3cpWs3" id="2nIYwg$71tP" role="3uHU7B">
+                    <node concept="Xl_RD" id="2nIYwg$71tQ" role="3uHU7B">
+                      <property role="Xl_RC" value="0x" />
+                    </node>
+                    <node concept="2YIFZM" id="2nIYwg$71tR" role="3uHU7w">
+                      <ref role="1Pybhc" to="wyt6:~Long" resolve="Long" />
+                      <ref role="37wK5l" to="wyt6:~Long.toHexString(long):java.lang.String" resolve="toHexString" />
+                      <node concept="37vLTw" id="2nIYwg$71tS" role="37wK5m">
+                        <ref role="3cqZAo" node="2nIYwg$71tK" resolve="v" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="Xl_RD" id="2nIYwg$6Itc" role="37wK5m">
+        <property role="Xl_RC" value="enum" />
+        <node concept="raruj" id="2nIYwg$6OfF" role="lGtFl" />
+        <node concept="17Uvod" id="2nIYwg$6OhU" role="lGtFl">
+          <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+          <property role="2qtEX9" value="value" />
+          <node concept="3zFVjK" id="2nIYwg$6OhV" role="3zH0cK">
+            <node concept="3clFbS" id="2nIYwg$6OhW" role="2VODD2">
+              <node concept="3clFbF" id="2nIYwg$6OsB" role="3cqZAp">
+                <node concept="2OqwBi" id="2nIYwg$6OHr" role="3clFbG">
+                  <node concept="30H73N" id="2nIYwg$6OsA" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="2nIYwg$6P2o" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="jVnub" id="2nIYwg$6r0p">
+    <property role="3GE5qa" value="enum" />
+    <property role="TrG5h" value="switch_EnumOperation" />
+    <node concept="3aamgX" id="2nIYwg$6snB" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tp25:i3HdYqh" resolve="SEnum_MemberOperation" />
+      <node concept="gft3U" id="2nIYwg$6svn" role="1lVwrX">
+        <node concept="2YIFZM" id="2nIYwg$7Ge$" role="gfFT$">
+          <ref role="37wK5l" to="i8bi:2nIYwg$4YBM" resolve="getMember" />
+          <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
+          <node concept="3cmrfG" id="2nIYwg$7Ge_" role="37wK5m">
+            <property role="3cmrfH" value="1" />
+            <node concept="5jKBG" id="2nIYwg$7GeA" role="lGtFl">
+              <ref role="v9R2y" node="2nIYwg$6DcQ" resolve="reduce_EnumDeclaration_indentityValueSequence" />
+              <node concept="3NFfHV" id="5NcYPwqCr3J" role="5jGum">
+                <node concept="3clFbS" id="5NcYPwqCr3K" role="2VODD2">
+                  <node concept="3clFbF" id="5NcYPwqCrpA" role="3cqZAp">
+                    <node concept="v3LJS" id="5NcYPwqCrp_" role="3clFbG">
+                      <ref role="v3LJV" node="2nIYwg$6rFh" resolve="enumDecl" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1adDum" id="2nIYwg$7GeB" role="37wK5m">
+            <property role="1adDun" value="1L" />
+            <node concept="17Uvod" id="2nIYwg$7GeC" role="lGtFl">
+              <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/4269842503726207156/4269842503726207157" />
+              <property role="2qtEX9" value="value" />
+              <node concept="3zFVjK" id="2nIYwg$7GeD" role="3zH0cK">
+                <node concept="3clFbS" id="2nIYwg$7GeE" role="2VODD2">
+                  <node concept="3cpWs8" id="2nIYwg$7GeF" role="3cqZAp">
+                    <node concept="3cpWsn" id="2nIYwg$7GeG" role="3cpWs9">
+                      <property role="TrG5h" value="v" />
+                      <node concept="3cpWsb" id="2nIYwg$7GeH" role="1tU5fm" />
+                      <node concept="2OqwBi" id="2nIYwg$7GeI" role="33vP2m">
+                        <node concept="1eOMI4" id="2nIYwg$7GeJ" role="2Oq$k0">
+                          <node concept="10QFUN" id="2nIYwg$7GeK" role="1eOMHV">
+                            <node concept="3uibUv" id="2nIYwg$7GeL" role="10QFUM">
+                              <ref role="3uigEE" to="w1kc:~SNodeId$Regular" resolve="SNodeId.Regular" />
+                            </node>
+                            <node concept="2OqwBi" id="2nIYwg$7GeM" role="10QFUP">
+                              <node concept="2JrnkZ" id="2nIYwg$7GeN" role="2Oq$k0">
+                                <node concept="2OqwBi" id="2nIYwg$7GeO" role="2JrQYb">
+                                  <node concept="30H73N" id="2nIYwg$7GeP" role="2Oq$k0" />
+                                  <node concept="3TrEf2" id="2nIYwg$7GeQ" role="2OqNvi">
+                                    <ref role="3Tt5mk" to="tp25:i3HdYqi" resolve="member" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="2nIYwg$7GeR" role="2OqNvi">
+                                <ref role="37wK5l" to="mhbf:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="2nIYwg$7GeS" role="2OqNvi">
+                          <ref role="37wK5l" to="w1kc:~SNodeId$Regular.getId():long" resolve="getId" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="2nIYwg$7GeT" role="3cqZAp">
+                    <node concept="3cpWs3" id="2nIYwg$7GeU" role="3clFbG">
+                      <node concept="1Xhbcc" id="2nIYwg$7GeV" role="3uHU7w">
+                        <property role="1XhdNS" value="L" />
+                      </node>
+                      <node concept="3cpWs3" id="2nIYwg$7GeW" role="3uHU7B">
+                        <node concept="Xl_RD" id="2nIYwg$7GeX" role="3uHU7B">
+                          <property role="Xl_RC" value="0x" />
+                        </node>
+                        <node concept="2YIFZM" id="2nIYwg$7GeY" role="3uHU7w">
+                          <ref role="37wK5l" to="wyt6:~Long.toHexString(long):java.lang.String" resolve="toHexString" />
+                          <ref role="1Pybhc" to="wyt6:~Long" resolve="Long" />
+                          <node concept="37vLTw" id="2nIYwg$7GeZ" role="37wK5m">
+                            <ref role="3cqZAo" node="2nIYwg$7GeG" resolve="v" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="Xl_RD" id="2nIYwg$7Gf0" role="37wK5m">
+            <property role="Xl_RC" value="v" />
+            <node concept="17Uvod" id="2nIYwg$7Gf1" role="lGtFl">
+              <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+              <property role="2qtEX9" value="value" />
+              <node concept="3zFVjK" id="2nIYwg$7Gf2" role="3zH0cK">
+                <node concept="3clFbS" id="2nIYwg$7Gf3" role="2VODD2">
+                  <node concept="3clFbF" id="2nIYwg$7Gf4" role="3cqZAp">
+                    <node concept="2OqwBi" id="2nIYwg$7Gf5" role="3clFbG">
+                      <node concept="2OqwBi" id="2nIYwg$7Gf6" role="2Oq$k0">
+                        <node concept="30H73N" id="2nIYwg$7Gf7" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="2nIYwg$7Gf8" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tp25:i3HdYqi" resolve="member" />
+                        </node>
+                      </node>
+                      <node concept="3TrcHB" id="2nIYwg$7Gf9" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpce:fLuS6pz" resolve="internalValue" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="2nIYwg$6suO" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tp25:i3HdYqO" resolve="SEnum_MembersOperation" />
+      <node concept="gft3U" id="2nIYwg$6sF9" role="1lVwrX">
+        <node concept="2YIFZM" id="3iWdTCn7GHe" role="gfFT$">
+          <ref role="37wK5l" to="i8bi:2nIYwg$4REO" resolve="getMembers" />
+          <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
+          <node concept="3cmrfG" id="3iWdTCn7GHf" role="37wK5m">
+            <property role="3cmrfH" value="1" />
+            <node concept="5jKBG" id="3iWdTCn7GHg" role="lGtFl">
+              <ref role="v9R2y" node="2nIYwg$6DcQ" resolve="reduce_EnumDeclaration_indentityValueSequence" />
+              <node concept="3NFfHV" id="3iWdTCn7GHh" role="5jGum">
+                <node concept="3clFbS" id="3iWdTCn7GHi" role="2VODD2">
+                  <node concept="3clFbF" id="3iWdTCn7GHj" role="3cqZAp">
+                    <node concept="v3LJS" id="3iWdTCn7GHk" role="3clFbG">
+                      <ref role="v3LJV" node="2nIYwg$6rFh" resolve="enumDecl" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="2nIYwg$6suU" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tp25:i3HdYoc" resolve="SEnum_MemberForNameOperation" />
+      <node concept="gft3U" id="2nIYwg$6sLV" role="1lVwrX">
+        <node concept="2YIFZM" id="2nIYwg$6sQ3" role="gfFT$">
+          <ref role="37wK5l" to="i8bi:2nIYwg$4XBo" resolve="getMemberForName" />
+          <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
+          <node concept="Xl_RD" id="2nIYwg$7GBa" role="37wK5m">
+            <property role="Xl_RC" value="value" />
+            <node concept="29HgVG" id="2nIYwg$7K3c" role="lGtFl">
+              <node concept="3NFfHV" id="2nIYwg$7K4Y" role="3NFExx">
+                <node concept="3clFbS" id="2nIYwg$7K4Z" role="2VODD2">
+                  <node concept="3clFbF" id="2nIYwg$7K9j" role="3cqZAp">
+                    <node concept="2OqwBi" id="2nIYwg$7KkB" role="3clFbG">
+                      <node concept="30H73N" id="2nIYwg$7K9i" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="2nIYwg$7Kv9" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tp25:i3HdYod" resolve="nameExpression" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cmrfG" id="2nIYwg$7GD8" role="37wK5m">
+            <property role="3cmrfH" value="1" />
+            <node concept="5jKBG" id="2nIYwg$7GD9" role="lGtFl">
+              <ref role="v9R2y" node="2nIYwg$6DcQ" resolve="reduce_EnumDeclaration_indentityValueSequence" />
+              <node concept="3NFfHV" id="5NcYPwqCrFs" role="5jGum">
+                <node concept="3clFbS" id="5NcYPwqCrFt" role="2VODD2">
+                  <node concept="3clFbF" id="5NcYPwqCrHN" role="3cqZAp">
+                    <node concept="v3LJS" id="5NcYPwqCrHM" role="3clFbG">
+                      <ref role="v3LJV" node="2nIYwg$6rFh" resolve="enumDecl" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="2nIYwg$6sv2" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tp25:i3HdYpe" resolve="SEnum_MemberForValueOperation" />
+      <node concept="gft3U" id="2nIYwg$6sQV" role="1lVwrX">
+        <node concept="2YIFZM" id="2nIYwg$6sV3" role="gfFT$">
+          <ref role="37wK5l" to="i8bi:2nIYwg$4Yan" resolve="getMemberForValue" />
+          <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
+          <node concept="3cpWs3" id="2nIYwg$7L1n" role="37wK5m">
+            <node concept="1W57fq" id="2nIYwg$7L1o" role="lGtFl">
+              <node concept="3IZrLx" id="2nIYwg$7L1p" role="3IZSJc">
+                <node concept="3clFbS" id="2nIYwg$7L1q" role="2VODD2">
+                  <node concept="3clFbF" id="2nIYwg$7L1r" role="3cqZAp">
+                    <node concept="17QLQc" id="2nIYwg$7L1s" role="3clFbG">
+                      <node concept="3B5_sB" id="2nIYwg$7L1t" role="3uHU7w">
+                        <ref role="3B5MYn" to="tpck:fKAOsGN" resolve="string" />
+                      </node>
+                      <node concept="2OqwBi" id="2nIYwg$7L1u" role="3uHU7B">
+                        <node concept="2OqwBi" id="2nIYwg$7OiV" role="2Oq$k0">
+                          <node concept="1iwH7S" id="2nIYwg$7O2p" role="2Oq$k0" />
+                          <node concept="3cR$yn" id="2nIYwg$7Oyl" role="2OqNvi">
+                            <ref role="3cRzXn" node="2nIYwg$6rFh" resolve="enumDecl" />
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="2nIYwg$7OZK" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpce:fKM4eW5" resolve="memberDataType" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="gft3U" id="2nIYwg$7L1z" role="UU_$l">
+                <node concept="Xl_RD" id="2nIYwg$7L1$" role="gfFT$">
+                  <property role="Xl_RC" value="value" />
+                  <node concept="29HgVG" id="2nIYwg$7L1_" role="lGtFl">
+                    <node concept="3NFfHV" id="2nIYwg$7L1A" role="3NFExx">
+                      <node concept="3clFbS" id="2nIYwg$7L1B" role="2VODD2">
+                        <node concept="3clFbF" id="2nIYwg$7L1C" role="3cqZAp">
+                          <node concept="2OqwBi" id="2nIYwg$7L1D" role="3clFbG">
+                            <node concept="30H73N" id="2nIYwg$7L1G" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="2nIYwg$7L1J" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tp25:i3HdYpf" resolve="valueExpression" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="Xl_RD" id="2nIYwg$7L1K" role="3uHU7B">
+              <property role="Xl_RC" value="" />
+            </node>
+            <node concept="Xl_RD" id="2nIYwg$7L1L" role="3uHU7w">
+              <property role="Xl_RC" value="value" />
+              <node concept="29HgVG" id="2nIYwg$7L1M" role="lGtFl">
+                <node concept="3NFfHV" id="2nIYwg$7L1N" role="3NFExx">
+                  <node concept="3clFbS" id="2nIYwg$7L1O" role="2VODD2">
+                    <node concept="3clFbF" id="2nIYwg$7L1P" role="3cqZAp">
+                      <node concept="2OqwBi" id="2nIYwg$7L1Q" role="3clFbG">
+                        <node concept="30H73N" id="2nIYwg$7L1T" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="2nIYwg$7L1W" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tp25:i3HdYpf" resolve="valueExpression" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cmrfG" id="2nIYwg$7GKH" role="37wK5m">
+            <property role="3cmrfH" value="1" />
+            <node concept="5jKBG" id="2nIYwg$7GKI" role="lGtFl">
+              <ref role="v9R2y" node="2nIYwg$6DcQ" resolve="reduce_EnumDeclaration_indentityValueSequence" />
+              <node concept="3NFfHV" id="5NcYPwqCs0P" role="5jGum">
+                <node concept="3clFbS" id="5NcYPwqCs0Q" role="2VODD2">
+                  <node concept="3clFbF" id="5NcYPwqCsdV" role="3cqZAp">
+                    <node concept="v3LJS" id="5NcYPwqCsdU" role="3clFbG">
+                      <ref role="v3LJV" node="2nIYwg$6rFh" resolve="enumDecl" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1N15co" id="2nIYwg$6rFh" role="1s_3oS">
+      <property role="TrG5h" value="enumDecl" />
+      <node concept="3Tqbb2" id="2nIYwg$6rKe" role="1N15GL">
+        <ref role="ehGHo" to="tpce:fKAxPRV" resolve="EnumerationDataTypeDeclaration" />
+      </node>
+    </node>
+    <node concept="j$LIH" id="2nIYwg$6svi" role="jxRDz">
+      <node concept="1lLz0L" id="2nIYwg$6svl" role="1lHHLF">
+        <property role="1lMjX7" value="error" />
+        <property role="1lLB17" value="Unsupported enum operation" />
+      </node>
+    </node>
+  </node>
+  <node concept="jVnub" id="2nIYwg$6t4b">
+    <property role="3GE5qa" value="enum" />
+    <property role="TrG5h" value="switch_EnumMemberOperation" />
+    <node concept="1N15co" id="2nIYwg$6wjd" role="1s_3oS">
+      <property role="TrG5h" value="operand" />
+      <node concept="3Tqbb2" id="2nIYwg$6wHs" role="1N15GL">
+        <ref role="ehGHo" to="tpee:fz3vP1J" resolve="Expression" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="2nIYwg$6t57" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tp25:i305Nnj" resolve="EnumMember_NameOperation" />
+      <node concept="gft3U" id="2nIYwg$6wcF" role="1lVwrX">
+        <node concept="2YIFZM" id="2nIYwg$6wg_" role="gfFT$">
+          <ref role="37wK5l" to="i8bi:2nIYwg$4ZtA" resolve="getMemberName" />
+          <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
+          <node concept="10Nm6u" id="2nIYwg$6yjG" role="37wK5m">
+            <node concept="29HgVG" id="2nIYwg$6ylB" role="lGtFl">
+              <node concept="3NFfHV" id="2nIYwg$6ym_" role="3NFExx">
+                <node concept="3clFbS" id="2nIYwg$6ymA" role="2VODD2">
+                  <node concept="3clFbF" id="2nIYwg$6yq6" role="3cqZAp">
+                    <node concept="2OqwBi" id="2nIYwg$6y_m" role="3clFbG">
+                      <node concept="1iwH7S" id="2nIYwg$6yq5" role="2Oq$k0" />
+                      <node concept="3cR$yn" id="2nIYwg$6yKC" role="2OqNvi">
+                        <ref role="3cRzXn" node="2nIYwg$6wjd" resolve="operand" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="2nIYwg$6tly" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tp25:i2ZYiQY" resolve="EnumMember_ValueOperation" />
+      <node concept="30G5F_" id="2nIYwg$6tlK" role="30HLyM">
+        <node concept="3clFbS" id="2nIYwg$6tlL" role="2VODD2">
+          <node concept="3clFbF" id="2nIYwg$6t$Y" role="3cqZAp">
+            <node concept="17R0WA" id="2nIYwg$6t_0" role="3clFbG">
+              <node concept="3B5_sB" id="2nIYwg$6t_1" role="3uHU7w">
+                <ref role="3B5MYn" to="tpck:fKAOsGN" resolve="string" />
+              </node>
+              <node concept="2OqwBi" id="2nIYwg$6t_2" role="3uHU7B">
+                <node concept="2OqwBi" id="2nIYwg$6t_3" role="2Oq$k0">
+                  <node concept="3TrEf2" id="2nIYwg$6t_4" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tp25:i2ZWj0V" resolve="enum" />
+                  </node>
+                  <node concept="1UdQGJ" id="2nIYwg$6t_5" role="2Oq$k0">
+                    <node concept="1YaCAy" id="2nIYwg$6t_6" role="1Ub_4A">
+                      <property role="TrG5h" value="var" />
+                      <ref role="1YaFvo" to="tp25:i2ZThgx" resolve="SEnumMemberType" />
+                    </node>
+                    <node concept="2OqwBi" id="2nIYwg$6t_7" role="1Ub_4B">
+                      <node concept="v3LJS" id="2nIYwg$6wUR" role="2Oq$k0">
+                        <ref role="v3LJV" node="2nIYwg$6wjd" resolve="operand" />
+                      </node>
+                      <node concept="3JvlWi" id="2nIYwg$6t_b" role="2OqNvi" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="2nIYwg$6t_c" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpce:fKM4eW5" resolve="memberDataType" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="gft3U" id="2nIYwg$6yZn" role="1lVwrX">
+        <node concept="2YIFZM" id="2nIYwg$6z7y" role="gfFT$">
+          <ref role="37wK5l" to="i8bi:2nIYwg$4ZtN" resolve="getMemberValue" />
+          <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
+          <node concept="10Nm6u" id="2nIYwg$6z7z" role="37wK5m">
+            <node concept="29HgVG" id="2nIYwg$6z7$" role="lGtFl">
+              <node concept="3NFfHV" id="2nIYwg$6z7_" role="3NFExx">
+                <node concept="3clFbS" id="2nIYwg$6z7A" role="2VODD2">
+                  <node concept="3clFbF" id="2nIYwg$6z7B" role="3cqZAp">
+                    <node concept="2OqwBi" id="2nIYwg$6z7C" role="3clFbG">
+                      <node concept="1iwH7S" id="2nIYwg$6z7D" role="2Oq$k0" />
+                      <node concept="3cR$yn" id="2nIYwg$6z7E" role="2OqNvi">
+                        <ref role="3cRzXn" node="2nIYwg$6wjd" resolve="operand" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="2nIYwg$6tlC" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tp25:i2ZYiQY" resolve="EnumMember_ValueOperation" />
+      <node concept="gft3U" id="2nIYwg$6zg$" role="1lVwrX">
+        <node concept="2YIFZM" id="2nIYwg$6zgO" role="gfFT$">
+          <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
+          <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
+          <node concept="2YIFZM" id="2nIYwg$6zif" role="37wK5m">
+            <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
+            <ref role="37wK5l" to="i8bi:2nIYwg$4ZtN" resolve="getMemberValue" />
+            <node concept="10Nm6u" id="2nIYwg$6zig" role="37wK5m">
+              <node concept="29HgVG" id="2nIYwg$6zih" role="lGtFl">
+                <node concept="3NFfHV" id="2nIYwg$6zii" role="3NFExx">
+                  <node concept="3clFbS" id="2nIYwg$6zij" role="2VODD2">
+                    <node concept="3clFbF" id="2nIYwg$6zik" role="3cqZAp">
+                      <node concept="2OqwBi" id="2nIYwg$6zil" role="3clFbG">
+                        <node concept="1iwH7S" id="2nIYwg$6zim" role="2Oq$k0" />
+                        <node concept="3cR$yn" id="2nIYwg$6zin" role="2OqNvi">
+                          <ref role="3cRzXn" node="2nIYwg$6wjd" resolve="operand" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="30G5F_" id="2nIYwg$6u8E" role="30HLyM">
+        <node concept="3clFbS" id="2nIYwg$6u8F" role="2VODD2">
+          <node concept="3clFbF" id="2nIYwg$6ufN" role="3cqZAp">
+            <node concept="17R0WA" id="2nIYwg$6ufP" role="3clFbG">
+              <node concept="3B5_sB" id="2nIYwg$6ufQ" role="3uHU7w">
+                <ref role="3B5MYn" to="tpck:fKAQMTA" resolve="integer" />
+              </node>
+              <node concept="2OqwBi" id="2nIYwg$6ufR" role="3uHU7B">
+                <node concept="2OqwBi" id="2nIYwg$6ufS" role="2Oq$k0">
+                  <node concept="3TrEf2" id="2nIYwg$6ufT" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tp25:i2ZWj0V" resolve="enum" />
+                  </node>
+                  <node concept="1UdQGJ" id="2nIYwg$6ufU" role="2Oq$k0">
+                    <node concept="1YaCAy" id="2nIYwg$6ufV" role="1Ub_4A">
+                      <property role="TrG5h" value="var" />
+                      <ref role="1YaFvo" to="tp25:i2ZThgx" resolve="SEnumMemberType" />
+                    </node>
+                    <node concept="2OqwBi" id="2nIYwg$6ufW" role="1Ub_4B">
+                      <node concept="v3LJS" id="2nIYwg$6xeP" role="2Oq$k0">
+                        <ref role="v3LJV" node="2nIYwg$6wjd" resolve="operand" />
+                      </node>
+                      <node concept="3JvlWi" id="2nIYwg$6ug0" role="2OqNvi" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="2nIYwg$6ug1" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpce:fKM4eW5" resolve="memberDataType" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="2nIYwg$6uIJ" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tp25:i2ZYiQY" resolve="EnumMember_ValueOperation" />
+      <node concept="30G5F_" id="2nIYwg$6v95" role="30HLyM">
+        <node concept="3clFbS" id="2nIYwg$6v96" role="2VODD2">
+          <node concept="3clFbF" id="2nIYwg$6vge" role="3cqZAp">
+            <node concept="17R0WA" id="2nIYwg$6vgg" role="3clFbG">
+              <node concept="3B5_sB" id="2nIYwg$6vgh" role="3uHU7w">
+                <ref role="3B5MYn" to="tpck:fKAQMTB" resolve="boolean" />
+              </node>
+              <node concept="2OqwBi" id="2nIYwg$6vgi" role="3uHU7B">
+                <node concept="2OqwBi" id="2nIYwg$6vgj" role="2Oq$k0">
+                  <node concept="3TrEf2" id="2nIYwg$6vgk" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tp25:i2ZWj0V" resolve="enum" />
+                  </node>
+                  <node concept="1UdQGJ" id="2nIYwg$6vgl" role="2Oq$k0">
+                    <node concept="1YaCAy" id="2nIYwg$6vgm" role="1Ub_4A">
+                      <property role="TrG5h" value="var" />
+                      <ref role="1YaFvo" to="tp25:i2ZThgx" resolve="SEnumMemberType" />
+                    </node>
+                    <node concept="2OqwBi" id="2nIYwg$6vgn" role="1Ub_4B">
+                      <node concept="v3LJS" id="2nIYwg$6xyN" role="2Oq$k0">
+                        <ref role="v3LJV" node="2nIYwg$6wjd" resolve="operand" />
+                      </node>
+                      <node concept="3JvlWi" id="2nIYwg$6vgr" role="2OqNvi" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="2nIYwg$6vgs" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpce:fKM4eW5" resolve="memberDataType" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="gft3U" id="2nIYwg$6zoB" role="1lVwrX">
+        <node concept="2YIFZM" id="2nIYwg$6zxv" role="gfFT$">
+          <ref role="37wK5l" to="wyt6:~Boolean.parseBoolean(java.lang.String):boolean" resolve="parseBoolean" />
+          <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
+          <node concept="2YIFZM" id="2nIYwg$6zxw" role="37wK5m">
+            <ref role="37wK5l" to="i8bi:2nIYwg$4ZtN" resolve="getMemberValue" />
+            <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
+            <node concept="10Nm6u" id="2nIYwg$6zxx" role="37wK5m">
+              <node concept="29HgVG" id="2nIYwg$6zxy" role="lGtFl">
+                <node concept="3NFfHV" id="2nIYwg$6zxz" role="3NFExx">
+                  <node concept="3clFbS" id="2nIYwg$6zx$" role="2VODD2">
+                    <node concept="3clFbF" id="2nIYwg$6zx_" role="3cqZAp">
+                      <node concept="2OqwBi" id="2nIYwg$6zxA" role="3clFbG">
+                        <node concept="1iwH7S" id="2nIYwg$6zxB" role="2Oq$k0" />
+                        <node concept="3cR$yn" id="2nIYwg$6zxC" role="2OqNvi">
+                          <ref role="3cRzXn" node="2nIYwg$6wjd" resolve="operand" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="j$LIH" id="2nIYwg$6t4c" role="jxRDz">
+      <node concept="1lLz0L" id="2nIYwg$6t4e" role="1lHHLF">
+        <property role="1lMjX7" value="error" />
+        <property role="1lLB17" value="Unsupported enum literal operation" />
       </node>
     </node>
   </node>

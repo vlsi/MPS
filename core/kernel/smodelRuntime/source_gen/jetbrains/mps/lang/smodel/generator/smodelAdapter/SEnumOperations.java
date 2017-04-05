@@ -6,23 +6,29 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import org.jetbrains.mps.openapi.language.SEnumeration;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.adapter.structure.SEnumAdapter;
+import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 
 public class SEnumOperations {
   public static SNode getEnum(String modelUID, final String nodeName) {
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(modelUID);
-    SModel m = SModelRepository.getInstance().getModelDescriptor(ref);
-    return (ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))).where(new IWhereFilter<SNode>() {
+    SModel m = ref.resolve(MPSModuleRepository.getInstance());
+    return ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals(nodeName);
       }
-    }).first());
+    }).first();
   }
   public static List<SNode> getEnumMembers(SNode enumm) {
     return SLinkOperations.getChildren(enumm, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"));
@@ -31,27 +37,72 @@ public class SEnumOperations {
     return enumMemberForName(enumm, name);
   }
   public static String getEnumMemberName(SNode member) {
-    return ((String) BHReflection.invoke(((SNode) member), SMethodTrimmedId.create("getName", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"), "i2ZRO7Q")));
+    return ((String) BHReflection.invoke(member, SMethodTrimmedId.create("getName", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"), "i2ZRO7Q")));
   }
   public static String getEnumMemberValue(SNode member) {
-    return SPropertyOperations.getString(((SNode) member), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue"));
+    return SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue"));
   }
   public static SNode enumMemberForName(SNode enumm, final String name) {
-    SNode enumNode = (SNode) enumm;
-    return ((SNode) ListSequence.fromList(SLinkOperations.getChildren(enumNode, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(enumm, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return ((String) BHReflection.invoke(it, SMethodTrimmedId.create("getName", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"), "i2ZRO7Q"))).equals(name);
       }
-    }));
+    });
   }
   public static SNode enumMemberForValue(SNode enumm, final String value) {
     if (value == null) {
-      return ((SNode) ((SNode) BHReflection.invoke(enumm, SMethodTrimmedId.create("getDefaultMember", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "hEwIM$p"))));
+      return ((SNode) BHReflection.invoke(enumm, SMethodTrimmedId.create("getDefaultMember", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "hEwIM$p")));
     }
-    return ((SNode) ListSequence.fromList(SLinkOperations.getChildren(enumm, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(enumm, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")).equals(value);
       }
-    }));
+    });
+  }
+
+  private static SEnumeration getEnum(long uuidHigh, long uuidLow, String languageNameHint, long enumId, String enumNameHint) {
+    SLanguage language = MetaAdapterFactory.getLanguage(uuidHigh, uuidLow, languageNameHint);
+    // XXX I know getSourceModule is wrong, but I hope this code won't last long and we replace it with generated EnumDescriptor in structure aspect. 
+    SModule sourceModule = language.getSourceModule();
+    // and this one is an ugly way to find out structure aspect model 
+    SModel structureAspect = SModuleOperations.getAspect(sourceModule, "structure");
+    if (structureAspect == null) {
+      return new SEnumAdapter();
+    }
+    SNode enumDecl = structureAspect.getNode(new SNodeId.Regular(enumId));
+    if (SNodeOperations.isInstanceOf(enumDecl, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))) {
+      assert enumNameHint.equals(SPropertyOperations.getString(SNodeOperations.as(enumDecl, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      return new SEnumAdapter(enumDecl);
+    }
+    return new SEnumAdapter();
+  }
+  public static Iterable<SEnumerationLiteral> getMembers(long uuidHigh, long uuidLow, String languageNameHint, long enumId, String enumNameHint) {
+    SEnumeration e = getEnum(uuidHigh, uuidLow, languageNameHint, enumId, enumNameHint);
+    return e.getLiterals();
+  }
+  public static SEnumerationLiteral getMember(long uuidHigh, long uuidLow, String languageNameHint, long enumId, String enumNameHint, long memberId, String memberValueHint) {
+    // FIXME we don't support identity of enum literals yet, resort to liternal name 
+    SEnumeration e = getEnum(uuidHigh, uuidLow, languageNameHint, enumId, enumNameHint);
+    return e.getLiteral(memberValueHint);
+  }
+
+  public static SEnumerationLiteral getMemberForName(String name, long uuidHigh, long uuidLow, String languageNameHint, long enumId, String enumNameHint) {
+    SEnumeration e = getEnum(uuidHigh, uuidLow, languageNameHint, enumId, enumNameHint);
+    for (SEnumerationLiteral l : e.getLiterals()) {
+      if (l.getPresentation().equals(name)) {
+        return l;
+      }
+    }
+    return null;
+  }
+  public static SEnumerationLiteral getMemberForValue(String value, long uuidHigh, long uuidLow, String languageNameHint, long enumId, String enumNameHint) {
+    SEnumeration e = getEnum(uuidHigh, uuidLow, languageNameHint, enumId, enumNameHint);
+    return e.getLiteral(value);
+  }
+  public static String getMemberName(SEnumerationLiteral enumMember) {
+    return (enumMember == null ? null : enumMember.getPresentation());
+  }
+  public static String getMemberValue(SEnumerationLiteral enumMember) {
+    return (enumMember == null ? null : enumMember.getName());
   }
 }

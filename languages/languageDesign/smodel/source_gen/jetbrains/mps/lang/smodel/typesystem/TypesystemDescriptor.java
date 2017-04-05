@@ -613,10 +613,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myComparisonRules.add(comparisonRule);
     }
     {
-      ComparisonRule_Runtime comparisonRule = new comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule();
-      this.myComparisonRules.add(comparisonRule);
-    }
-    {
       ComparisonRule_Runtime comparisonRule = new interface_node_types_are_comparable_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
     }

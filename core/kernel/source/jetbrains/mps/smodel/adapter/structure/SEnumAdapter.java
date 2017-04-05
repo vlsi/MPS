@@ -1,0 +1,113 @@
+/*
+ * Copyright 2003-2017 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.smodel.adapter.structure;
+
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import org.jetbrains.mps.openapi.language.SEnumeration;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+/**
+ * Provisional implementation of SEnumeration, backed-up by {@code node<EnumerationDataTypeDeclaration>} till we generate proper EnumDescriptor in
+ * structure aspect, add enum identity (optional). If we manage to do this in 2017.2, there's no need to keep SNode-based implementation.
+ *
+ * @author Artem Tikhomirov
+ * @since 2017.2
+ */
+public class SEnumAdapter implements SEnumeration {
+  private final Literal[] myLiterals;
+  private final Literal myDefaultLiteral;
+
+  /**
+   * NULL value, when no enum found.
+   */
+  public SEnumAdapter() {
+    myLiterals = new Literal[0];
+    myDefaultLiteral = null;
+  }
+
+  public SEnumAdapter(SNode/*node<EnumerationDataTypeDeclaration>*/ enumDeclaration) {
+    ArrayList<Literal> literals = new ArrayList<>();
+    for (SNode/*enummember<>*/ enumMember : SEnumOperations.getEnumMembers(enumDeclaration)) {
+      String value = SEnumOperations.getEnumMemberValue(enumMember);
+      String presentation = SEnumOperations.getEnumMemberName(enumMember);
+      literals.add(new Literal(value, presentation));
+    }
+    myLiterals = literals.toArray(new Literal[literals.size()]);
+    myDefaultLiteral = myLiterals[0];
+  }
+
+  @Override
+  public Iterable<SEnumerationLiteral> getLiterals() {
+    return Arrays.asList(myLiterals);
+  }
+
+
+  @Override
+  public SEnumerationLiteral getLiteral(String name) {
+    for (Literal l : myLiterals) {
+      if (l.getName().equals(name)) {
+        return l;
+      }
+    }
+    return null;
+  }
+
+  @Override
+  public SEnumerationLiteral getDefault() {
+    return myDefaultLiteral;
+  }
+
+  @Override
+  public Object fromString(String value) {
+    // XXX I don't think we use these for SEnumeration. Need to check how node.property of enum type is set, whether there's literal name and no conversion
+    //     There's conversion code in lang.smodel generator, perhaps, it's the answer?
+    return getLiteral(value);
+  }
+
+  @Override
+  public String toString(Object value) {
+    return ((SEnumerationLiteral) value).getName();
+  }
+
+  private class Literal implements SEnumerationLiteral {
+    private final String myName;
+    private final String myPresentation;
+
+    Literal(String name, String presentation) {
+      myName = name;
+      myPresentation = presentation;
+    }
+
+    @Override
+    public SEnumeration getEnumeration() {
+      return SEnumAdapter.this;
+    }
+
+    @Override
+    public String getPresentation() {
+      return myPresentation;
+    }
+
+    @Override
+    public String getName() {
+      return myName;
+    }
+  }
+}

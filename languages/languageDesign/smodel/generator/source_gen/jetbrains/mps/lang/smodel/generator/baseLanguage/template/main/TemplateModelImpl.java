@@ -26,7 +26,7 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
   public TemplateModelImpl(TemplateModule module) {
     super(module);
     mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mapping_mc_main(this), new Mapping_mc_property_operations(this), new Mapping_mc_link_operations(this), new Mapping_mc_node_operations(this), new Mapping_mc_model_operations(this), new Mapping_mc_linklist_operations(this), new Mapping_mc_concept_operations(this), new Mapping_mc_assignmentStatement(this), new Mapping_mc_searchScope_operations(this), new Mapping_mc_enum_operations(this), new Mapping_mc_enums(this), new Mapping_mc_implicitSelect(this), new Mapping_mc_reflection(this), new Mapping_mc_attribute_access(this), new Mapping_mc_concept_method_call(this), new Mapping_mc_concept_switch(this), new Mapping_mc_sequence_operations(this));
-    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new Switch_switch_toLinkRoleSLinkExp(), new Switch_switch_toConceptNameStringExpr(), new Switch_switch_ILinkAccessQualifier_toSLink(), new Switch_switch_toSAbstractConcept(), new Switch_switch_IPropertyQualifier_toSProperty(), new Switch_switch_ILinkQualifier_toSLink(), new Switch_switch_ConceptMethodReflectiveCall(), new Switch_switch_ConceptMethodCall(), new Switch_switch_AbstractLanguageIdentity_SLanguage(), new Switch_switch_ModuleIdentity_SModuleReference(), new Switch_switch_ConceptIdentity_SConcept(), new Switch_switch_PropertyIdentity_SProperty(), new Switch_switch_AssociationIdentity_SReferenceLink(), new Switch_switch_AggregationIdentity_SContainmentLink());
+    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new Switch_switch_toLinkRoleSLinkExp(), new Switch_switch_toConceptNameStringExpr(), new Switch_switch_ILinkAccessQualifier_toSLink(), new Switch_switch_toSAbstractConcept(), new Switch_switch_IPropertyQualifier_toSProperty(), new Switch_switch_ILinkQualifier_toSLink(), new Switch_switch_ConceptMethodReflectiveCall(), new Switch_switch_ConceptMethodCall(), new Switch_switch_AbstractLanguageIdentity_SLanguage(), new Switch_switch_ModuleIdentity_SModuleReference(), new Switch_switch_ConceptIdentity_SConcept(), new Switch_switch_PropertyIdentity_SProperty(), new Switch_switch_AssociationIdentity_SReferenceLink(), new Switch_switch_AggregationIdentity_SContainmentLink(), new Switch_switch_EnumOperation(), new Switch_switch_EnumMemberOperation());
     model = PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)");
   }
   public String getLongName() {
@@ -224,10 +224,6 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1182511568451"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_Model_NodesIncludingImportedOperation_noConcept();
-    }
-    if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1241008307357"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new Template_reduce_EnumRef();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6119287946611399777"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
@@ -428,6 +424,10 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3099391750892235826"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_reduce_reflectiveInvokeSuper();
+    }
+    if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2733396919553004342"))) {
+      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
+      return new Template_reduce_EnumDeclaration_indentityValueSequence();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "5769081855527316896"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);

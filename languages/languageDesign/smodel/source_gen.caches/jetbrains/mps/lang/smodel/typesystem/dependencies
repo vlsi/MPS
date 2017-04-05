@@ -71,10 +71,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.Pattern_ftszhvjm" file="Pattern_ftszhvjm.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.typesystem.Pattern_js7wmyu14mtm" file="Pattern_js7wmyu14mtm.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -143,7 +139,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_Node_GetReferentSearchScopeOperation_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_SLinkListAccess_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_SNodeOperation_NonTypesystemRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.interface_node_types_are_comparable_ComparisonRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.nlist_subtypeOf_list_of_nodes_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.nlist_subtypeOf_sequence_of_nodes_InequationReplacementRule" />
@@ -451,19 +446,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule" file="comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.java">
-    <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.Pattern_ftszhvjm" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.typesystem.interface_node_types_are_comparable_ComparisonRule" file="interface_node_types_are_comparable_ComparisonRule.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
