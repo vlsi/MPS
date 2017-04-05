@@ -35,7 +35,7 @@ public class SearchedNodesNodeData extends BaseNodeData {
   }
 
   @Override
-  public Icon getIcon() {
+  public Icon getIcon(PresentationContext presentationContext) {
     return Actions.SearchedNodes;
   }
 

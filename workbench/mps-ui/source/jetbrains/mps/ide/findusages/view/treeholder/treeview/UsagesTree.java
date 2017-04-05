@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -408,7 +408,7 @@ public class UsagesTree extends MPSTree {
   private void setUIProperties(UsagesTreeNode root) {
     BaseNodeData data = root.getUserObject().getData();
 
-    Icon icon = data.getIcon();
+    Icon icon = data.getIcon(() -> myProject.getRepository());
     if (data.isResultNode()) {
       final LayeredIcon result = new LayeredIcon(2);
       result.setIcon(icon, 0);

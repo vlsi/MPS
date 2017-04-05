@@ -32,7 +32,7 @@ public class MainNodeData extends BaseNodeData {
   }
 
   @Override
-  public Icon getIcon() {
+  public Icon getIcon(PresentationContext presentationContext) {
     return null;
   }
 

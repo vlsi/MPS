@@ -48,7 +48,7 @@ public class ResultsNodeData extends BaseNodeData {
   }
 
   @Override
-  public Icon getIcon() {
+  public Icon getIcon(PresentationContext presentationContext) {
     if (myNodeRepresentator == null) {
       return Nodes.UsagesFinder;
     } else {

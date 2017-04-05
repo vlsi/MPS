@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,8 +68,8 @@ public class NodeNodeData extends AbstractResultNodeData {
   }
 
   @Override
-  public Icon getIcon() {
-    final SNode node = getNode();
+  public Icon getIcon(PresentationContext presentationContext) {
+    final SNode node = myNodePointer.resolve(presentationContext.getRepository());
     return node == null ? null : IconManager.getIconFor(node);
   }
 

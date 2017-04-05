@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -53,19 +51,9 @@ public class ModuleNodeData extends AbstractResultNodeData {
 
 
   @Override
-  public Icon getIcon() {
-    SModule module = getModule();
-    if (module == null) return null;
-    return IconManager.getIconFor(module);
-  }
-
-  /**
-   * @deprecated use {@link #getModuleReference()} and resolve as appropriate from the calling context
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public SModule getModule() {
-    return ModuleRepositoryFacade.getInstance().getModule(myModuleReference);
+  public Icon getIcon(PresentationContext presentationContext) {
+    SModule module = myModuleReference.resolve(presentationContext.getRepository());
+    return module == null ? null : IconManager.getIconFor(module);
   }
 
   public SModuleReference getModuleReference() {

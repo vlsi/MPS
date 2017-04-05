@@ -48,7 +48,7 @@ public class CategoryNodeData extends BaseNodeData {
   }
 
   @Override
-  public Icon getIcon() {
+  public Icon getIcon(PresentationContext presentationContext) {
     if (myNodeRepresentator == null) {
       return IdeIcons.CLOSED_FOLDER;
     } else {
