@@ -11,14 +11,15 @@ import jetbrains.mps.project.Project;
 import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import junit.framework.Assert;
-import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.module.ReloadableModule;
@@ -33,7 +34,6 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.core.tool.environment.util.CanonicalPath;
 import jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider;
 import jetbrains.mps.project.PathMacros;
-import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class TransformationTestRunner implements TestRunner {
   private static final Logger LOG = LogManager.getLogger(TransformationTestRunner.class);
@@ -88,7 +88,7 @@ public class TransformationTestRunner implements TestRunner {
             }
 
             private void initialize(final TransformationTest test, final String modelName) {
-              SModel modelDescriptor = findModel(modelName);
+              SModel modelDescriptor = findModel(testProject.getRepository(), modelName);
               test.setModelDescriptor(modelDescriptor);
               test.init();
             }
@@ -103,11 +103,13 @@ public class TransformationTestRunner implements TestRunner {
     }
   }
 
-  protected SModel findModel(final String modelName) {
-    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelName));
+  /*package*/ SModel findModel(SRepository repo, String modelName) {
+    // method expects model read, otherwise why SModel as return value 
+    SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(modelName);
+    SModel modelDescriptor = modelRef.resolve(repo);
 
     if (modelDescriptor == null) {
-      Assert.fail("Can't find model " + modelName + " in projects " + ProjectManager.getInstance().getOpenedProjects() + ".");
+      Assert.fail(String.format("Can't find model %s in supplied repository %s.", modelName, repo));
     }
     return modelDescriptor;
   }
