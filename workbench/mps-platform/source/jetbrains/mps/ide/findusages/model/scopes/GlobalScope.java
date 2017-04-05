@@ -16,7 +16,10 @@
 package jetbrains.mps.ide.findusages.model.scopes;
 
 import jetbrains.mps.VisibleModuleRegistry;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jdom.Element;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class GlobalScope extends FindUsagesScope {
@@ -27,6 +30,12 @@ public class GlobalScope extends FindUsagesScope {
         addModule(module);
       }
     }
+  }
+
+  // XXX DO NOT REMOVE THIS CONS. IT'S VITAL FOR FIND USAGES VIEW PERSISTENCE. See FindUsagesScope.load()
+  public GlobalScope(Element element, Project project) throws CantLoadSomethingException {
+    // nothing saved
+    this();
   }
 
   public String toString() {
