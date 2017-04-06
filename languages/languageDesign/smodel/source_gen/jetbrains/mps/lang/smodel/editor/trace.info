@@ -20805,14 +20805,14 @@
       <node id="5503407155931295401" at="35,128,36,79" concept="2" />
       <node id="5503407155931295401" at="37,5,38,18" concept="8" />
       <node id="5503407155930899644" at="43,95,44,69" concept="7" />
-      <node id="5503407155930899644" at="44,69,45,326" concept="8" />
+      <node id="5503407155930899644" at="44,69,45,311" concept="8" />
       <node id="5503407155931295401" at="34,156,37,5" concept="5" />
       <node id="5503407155931295401" at="26,0,30,0" concept="6" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
       <node id="5503407155930899644" at="42,0,47,0" concept="6" trace="getSubstituteMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuLookup;" />
       <node id="5503407155931295401" at="31,0,40,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="5503407155931295401" at="27,67,28,63" />
       <scope id="5503407155931295401" at="35,128,36,79" />
-      <scope id="5503407155930899644" at="43,95,45,326">
+      <scope id="5503407155930899644" at="43,95,45,311">
         <var name="editorContext" id="5503407155930899644" />
       </scope>
       <scope id="5503407155931295401" at="26,0,30,0">
@@ -24089,14 +24089,14 @@
       <node id="8228083397230764457" at="35,128,36,81" concept="2" />
       <node id="8228083397230764457" at="37,5,38,18" concept="8" />
       <node id="8228083397230764458" at="43,95,44,69" concept="7" />
-      <node id="8228083397230764458" at="44,69,45,325" concept="8" />
+      <node id="8228083397230764458" at="44,69,45,315" concept="8" />
       <node id="8228083397230764457" at="34,156,37,5" concept="5" />
       <node id="8228083397230764457" at="26,0,30,0" concept="6" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
       <node id="8228083397230764458" at="42,0,47,0" concept="6" trace="getSubstituteMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuLookup;" />
       <node id="8228083397230764457" at="31,0,40,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="8228083397230764457" at="27,67,28,63" />
       <scope id="8228083397230764457" at="35,128,36,81" />
-      <scope id="8228083397230764458" at="43,95,45,325">
+      <scope id="8228083397230764458" at="43,95,45,315">
         <var name="editorContext" id="8228083397230764458" />
       </scope>
       <scope id="8228083397230764457" at="26,0,30,0">

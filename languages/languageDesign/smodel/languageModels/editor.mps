@@ -8131,7 +8131,7 @@
   <node concept="Q6S24" id="4Lw1UpBAAma">
     <property role="3GE5qa" value="identity" />
     <property role="TrG5h" value="LoadedLanguages_Substitute" />
-    <ref role="aqKnT" to="tp25:34EJa6aIcco" resolve="LanguageIdentity" />
+    <ref role="aqKnT" to="tp25:34EJa6aIcz0" resolve="LanguageId" />
     <node concept="2F$Pav" id="4Lw1UpB$j0p" role="3ft7WO">
       <node concept="3eGOop" id="4Lw1UpB$jNR" role="2$S_pN">
         <ref role="3EoQqy" to="tp25:34EJa6aIcz0" resolve="LanguageId" />
@@ -8409,7 +8409,7 @@
   <node concept="Q6S24" id="78K1$5Edbd5">
     <property role="3GE5qa" value="identity" />
     <property role="TrG5h" value="RepositoryModules_Substitute" />
-    <ref role="aqKnT" to="tp25:nJmxU5cSSu" resolve="ModuleIdentity" />
+    <ref role="aqKnT" to="tp25:nJmxU5cSyN" resolve="ModulePointer" />
     <node concept="2F$Pav" id="78K1$5Edbd6" role="3ft7WO">
       <node concept="3eGOop" id="78K1$5Edbd7" role="2$S_pN">
         <ref role="3EoQqy" to="tp25:nJmxU5cSyN" resolve="ModulePointer" />
