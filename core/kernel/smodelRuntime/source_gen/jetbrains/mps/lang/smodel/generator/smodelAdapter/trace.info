@@ -52,9 +52,10 @@
       <node id="2733396919552626077" at="92,45,93,17" concept="11" />
       <node id="2733396919552570877" at="95,5,96,16" concept="11" />
       <node id="2733396919552567028" at="98,157,99,88" concept="10" />
-      <node id="2733396919552571062" at="99,88,100,31" concept="11" />
-      <node id="2733396919552588348" at="102,70,103,70" concept="11" />
-      <node id="2733396919552591068" at="105,71,106,62" concept="11" />
+      <node id="6386453557144300068" at="99,88,100,54" concept="10" />
+      <node id="2733396919552571062" at="100,54,101,73" concept="11" />
+      <node id="2733396919552588348" at="103,70,104,70" concept="11" />
+      <node id="2733396919552591068" at="106,71,107,62" concept="11" />
       <node id="1101499704720825439" at="28,0,31,0" concept="9" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1101499704720825456" at="33,0,36,0" concept="15" trace="getEnumMembers#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="1101499704720825467" at="36,0,39,0" concept="15" trace="getEnumMember#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -65,16 +66,16 @@
       <node id="1101499704720825563" at="57,0,60,0" concept="9" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2733396919552679040" at="68,84,71,5" concept="8" />
       <node id="2733396919552621551" at="91,51,94,7" concept="8" />
-      <node id="2733396919552571238" at="102,0,105,0" concept="15" trace="getMemberName#(Lorg/jetbrains/mps/openapi/language/SEnumerationLiteral;)Ljava/lang/String;" />
-      <node id="2733396919552571251" at="105,0,108,0" concept="15" trace="getMemberValue#(Lorg/jetbrains/mps/openapi/language/SEnumerationLiteral;)Ljava/lang/String;" />
+      <node id="2733396919552571238" at="103,0,106,0" concept="15" trace="getMemberName#(Lorg/jetbrains/mps/openapi/language/SEnumerationLiteral;)Ljava/lang/String;" />
+      <node id="2733396919552571251" at="106,0,109,0" concept="15" trace="getMemberValue#(Lorg/jetbrains/mps/openapi/language/SEnumerationLiteral;)Ljava/lang/String;" />
       <node id="2733396919552702388" at="72,74,76,5" concept="8" />
       <node id="2733396919552539316" at="79,0,83,0" concept="15" trace="getMembers#(JJLjava/lang/String;JLjava/lang/String;)Ljava/lang/Iterable;" />
-      <node id="2733396919552565911" at="98,0,102,0" concept="15" trace="getMemberForValue#(Ljava/lang/String;JJLjava/lang/String;JLjava/lang/String;)Lorg/jetbrains/mps/openapi/language/SEnumerationLiteral;" />
       <node id="1101499704720825431" at="26,62,31,15" concept="11" />
       <node id="1101499704720825515" at="45,73,50,7" concept="11" />
       <node id="1101499704720825555" at="55,5,60,7" concept="11" />
       <node id="2733396919552567794" at="83,0,88,0" concept="15" trace="getMember#(JJLjava/lang/String;JLjava/lang/String;JLjava/lang/String;)Lorg/jetbrains/mps/openapi/language/SEnumerationLiteral;" />
       <node id="2733396919552616755" at="90,88,95,5" concept="7" />
+      <node id="2733396919552565911" at="98,0,103,0" concept="15" trace="getMemberForValue#(Ljava/lang/String;JJLjava/lang/String;JLjava/lang/String;)Lorg/jetbrains/mps/openapi/language/SEnumerationLiteral;" />
       <node id="1101499704720825505" at="45,0,52,0" concept="15" trace="enumMemberForName#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1101499704720825414" at="24,0,33,0" concept="15" trace="getEnum#(Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2733396919552563672" at="89,0,98,0" concept="15" trace="getMemberForName#(Ljava/lang/String;JJLjava/lang/String;JLjava/lang/String;)Lorg/jetbrains/mps/openapi/language/SEnumerationLiteral;" />
@@ -90,14 +91,11 @@
       <scope id="1101499704720825564" at="57,39,58,184" />
       <scope id="2733396919552679042" at="69,34,70,32" />
       <scope id="2733396919552621553" at="92,45,93,17" />
-      <scope id="2733396919552571241" at="102,70,103,70" />
-      <scope id="2733396919552571254" at="105,71,106,62" />
+      <scope id="2733396919552571241" at="103,70,104,70" />
+      <scope id="2733396919552571254" at="106,71,107,62" />
       <scope id="2733396919552702390" at="73,210,75,40" />
       <scope id="2733396919552539319" at="79,146,81,27">
         <var name="e" id="2733396919552552569" />
-      </scope>
-      <scope id="2733396919552565922" at="98,157,100,31">
-        <var name="e" id="2733396919552567029" />
       </scope>
       <scope id="1101499704720825439" at="28,0,31,0">
         <var name="it" id="1101499704720825439" />
@@ -125,10 +123,14 @@
         <var name="e" id="2733396919552567803" />
       </scope>
       <scope id="2733396919552616757" at="91,51,94,7" />
-      <scope id="2733396919552571238" at="102,0,105,0">
+      <scope id="2733396919552565922" at="98,157,101,73">
+        <var name="e" id="2733396919552567029" />
+        <var name="literal" id="6386453557144300069" />
+      </scope>
+      <scope id="2733396919552571238" at="103,0,106,0">
         <var name="enumMember" id="2733396919552645125" />
       </scope>
-      <scope id="2733396919552571251" at="105,0,108,0">
+      <scope id="2733396919552571251" at="106,0,109,0">
         <var name="enumMember" id="2733396919552645977" />
       </scope>
       <scope id="2733396919552539316" at="79,0,83,0">
@@ -137,14 +139,6 @@
         <var name="languageNameHint" id="2733396919552756250" />
         <var name="uuidHigh" id="2733396919552539604" />
         <var name="uuidLow" id="2733396919552539606" />
-      </scope>
-      <scope id="2733396919552565911" at="98,0,102,0">
-        <var name="enumId" id="2733396919552565916" />
-        <var name="enumNameHint" id="2733396919552770465" />
-        <var name="languageNameHint" id="2733396919552768324" />
-        <var name="uuidHigh" id="2733396919552565912" />
-        <var name="uuidLow" id="2733396919552565914" />
-        <var name="value" id="2733396919552565918" />
       </scope>
       <scope id="1101499704720825508" at="45,73,50,7" />
       <scope id="2733396919552567794" at="83,0,88,0">
@@ -158,6 +152,14 @@
       </scope>
       <scope id="2733396919552616755" at="90,88,95,5">
         <var name="l" id="2733396919552616758" />
+      </scope>
+      <scope id="2733396919552565911" at="98,0,103,0">
+        <var name="enumId" id="2733396919552565916" />
+        <var name="enumNameHint" id="2733396919552770465" />
+        <var name="languageNameHint" id="2733396919552768324" />
+        <var name="uuidHigh" id="2733396919552565912" />
+        <var name="uuidLow" id="2733396919552565914" />
+        <var name="value" id="2733396919552565918" />
       </scope>
       <scope id="1101499704720825416" at="24,71,31,15">
         <var name="m" id="1101499704720825423" />
@@ -203,7 +205,7 @@
       <unit id="1101499704720825439" at="27,231,31,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations$1" />
       <unit id="1101499704720825523" at="46,204,50,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations$2" />
       <unit id="1101499704720825563" at="56,204,60,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations$3" />
-      <unit id="1101499704720825413" at="23,0,109,0" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
+      <unit id="1101499704720825413" at="23,0,110,0" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
     </file>
   </root>
   <root nodeRef="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/6171083915388368126">

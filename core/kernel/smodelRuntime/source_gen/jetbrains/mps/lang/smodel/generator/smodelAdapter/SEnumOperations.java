@@ -97,7 +97,8 @@ public class SEnumOperations {
   }
   public static SEnumerationLiteral getMemberForValue(String value, long uuidHigh, long uuidLow, String languageNameHint, long enumId, String enumNameHint) {
     SEnumeration e = getEnum(uuidHigh, uuidLow, languageNameHint, enumId, enumNameHint);
-    return e.getLiteral(value);
+    SEnumerationLiteral literal = e.getLiteral(value);
+    return (literal == null && value == null ? e.getDefault() : literal);
   }
   public static String getMemberName(SEnumerationLiteral enumMember) {
     return (enumMember == null ? null : enumMember.getPresentation());

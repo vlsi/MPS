@@ -16,12 +16,15 @@
 package jetbrains.mps.smodel.adapter.structure;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import jetbrains.mps.smodel.SNodeId.Regular;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SEnumeration;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Provisional implementation of SEnumeration, backed-up by {@code node<EnumerationDataTypeDeclaration>} till we generate proper EnumDescriptor in
@@ -33,16 +36,19 @@ import java.util.Arrays;
 public class SEnumAdapter implements SEnumeration {
   private final Literal[] myLiterals;
   private final Literal myDefaultLiteral;
+  private final long myEnumDeclId;
 
   /**
    * NULL value, when no enum found.
    */
   public SEnumAdapter() {
+    myEnumDeclId = -1;
     myLiterals = new Literal[0];
     myDefaultLiteral = null;
   }
 
   public SEnumAdapter(SNode/*node<EnumerationDataTypeDeclaration>*/ enumDeclaration) {
+    myEnumDeclId = ((Regular) enumDeclaration.getNodeId()).getId(); // FIXME shall become SEnumId object
     ArrayList<Literal> literals = new ArrayList<>();
     for (SNode/*enummember<>*/ enumMember : SEnumOperations.getEnumMembers(enumDeclaration)) {
       String value = SEnumOperations.getEnumMemberValue(enumMember);
@@ -62,7 +68,7 @@ public class SEnumAdapter implements SEnumeration {
   @Override
   public SEnumerationLiteral getLiteral(String name) {
     for (Literal l : myLiterals) {
-      if (l.getName().equals(name)) {
+      if (Objects.equals(l.getName(), name)) {
         return l;
       }
     }
@@ -72,6 +78,23 @@ public class SEnumAdapter implements SEnumeration {
   @Override
   public SEnumerationLiteral getDefault() {
     return myDefaultLiteral;
+  }
+
+  @Override
+  public int hashCode() {
+    return (int) myEnumDeclId;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (myEnumDeclId == -1 || false == obj instanceof SEnumAdapter) {
+      // non-existend enum doesn't match any other
+      return false;
+    }
+    return myEnumDeclId == ((SEnumAdapter) obj).myEnumDeclId;
   }
 
   @Override
@@ -90,7 +113,11 @@ public class SEnumAdapter implements SEnumeration {
     private final String myName;
     private final String myPresentation;
 
-    Literal(String name, String presentation) {
+    /**
+     * @param name correstponds to internalValue
+     * @param presentation getName() result
+     */
+    Literal(@Nullable String name, String presentation) {
       myName = name;
       myPresentation = presentation;
     }
@@ -108,6 +135,23 @@ public class SEnumAdapter implements SEnumeration {
     @Override
     public String getName() {
       return myName;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj instanceof Literal) {
+        if (this == obj) {
+          return true;
+        }
+        Literal other = (Literal) obj;
+        return getEnumeration().equals(other.getEnumeration()) && Objects.equals(myName, other.myName) && Objects.equals(myPresentation, other.myPresentation);
+      }
+      return false;
+    }
+
+    @Override
+    public int hashCode() {
+      return myPresentation.hashCode();
     }
   }
 }
