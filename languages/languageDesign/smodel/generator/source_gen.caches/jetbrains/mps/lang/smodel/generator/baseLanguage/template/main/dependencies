@@ -621,6 +621,30 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.QueryProviderBase" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_AbstractLanguageIdentity_SLanguage" file="Switch_switch_AbstractLanguageIdentity_SLanguage.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.DismissTopMappingRuleException" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.GeneratorUtil" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_LanguageId_SLanguage" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModulePointer_SLanguage" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchBase" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_AggregationIdentity_SContainmentLink" file="Switch_switch_AggregationIdentity_SContainmentLink.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -816,29 +840,6 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_LanguageIdentity_SLanguage" file="Switch_switch_LanguageIdentity_SLanguage.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.DismissTopMappingRuleException" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.GeneratorUtil" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_LanguageId_SLanguage" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchBase" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_ModuleIdentity_SModuleReference" file="Switch_switch_ModuleIdentity_SModuleReference.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -993,6 +994,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Mapping_mc_searchScope_operations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Mapping_mc_sequence_operations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.QueriesGenerated" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_AbstractLanguageIdentity_SLanguage" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_AggregationIdentity_SContainmentLink" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_AssociationIdentity_SReferenceLink" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_ConceptIdentity_SConcept" />
@@ -1001,7 +1003,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_ILinkAccessQualifier_toSLink" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_ILinkQualifier_toSLink" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_IPropertyQualifier_toSProperty" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_LanguageIdentity_SLanguage" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_ModuleIdentity_SModuleReference" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_PropertyIdentity_SProperty" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Switch_switch_toConceptNameStringExpr" />
@@ -1078,6 +1079,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_RootsIncludingImportedOperation_noConcept" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_RootsOperation_hasConcept" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_Model_RootsOperation_noConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModulePointer_SLanguage" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModulePointer_SModuleReference" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModuleRefExpression" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModuleReferenceExpression" />
@@ -2859,6 +2861,33 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModulePointer_SLanguage" file="Template_reduce_ModulePointer_SLanguage.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.TemplateVarContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.QueriesGenerated" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />

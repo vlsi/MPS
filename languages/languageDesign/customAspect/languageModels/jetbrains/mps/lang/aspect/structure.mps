@@ -102,14 +102,14 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="mainLanguages" />
       <property role="20lbJX" value="1..n" />
-      <ref role="20lvS9" to="tp25:34EJa6aIcco" resolve="LanguageIdentity" />
+      <ref role="20lvS9" to="tp25:50fTm6QQzRL" resolve="AbstractLanguageIdentity" />
     </node>
     <node concept="1TJgyj" id="5iYmYly31HX" role="1TKVEi">
       <property role="IQ2ns" value="6106419185511570301" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="additionalLanguages" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" to="tp25:34EJa6aIcco" resolve="LanguageIdentity" />
+      <ref role="20lvS9" to="tp25:50fTm6QQzRL" resolve="AbstractLanguageIdentity" />
     </node>
     <node concept="1TJgyj" id="2Y$EcRKNZil" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

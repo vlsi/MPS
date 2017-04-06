@@ -2421,13 +2421,16 @@
       <property role="20kJfa" value="languageId" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="3542851458883491298" />
-      <ref role="20lvS9" node="34EJa6aIcco" resolve="LanguageIdentity" />
+      <ref role="20lvS9" node="50fTm6QQzRL" resolve="AbstractLanguageIdentity" />
     </node>
   </node>
   <node concept="PlHQZ" id="34EJa6aIcco">
     <property role="TrG5h" value="LanguageIdentity" />
     <property role="3GE5qa" value="identity" />
     <property role="EcuMT" value="3542851458883437336" />
+    <node concept="PrWs8" id="50fTm6QQzRM" role="PrDN$">
+      <ref role="PrY4T" node="50fTm6QQzRL" resolve="AbstractLanguageIdentity" />
+    </node>
   </node>
   <node concept="1TIwiD" id="BpxLfMiwTr">
     <property role="TrG5h" value="ChildAttributeQualifier" />
@@ -2509,6 +2512,9 @@
     <property role="3GE5qa" value="identity" />
     <property role="TrG5h" value="ModuleIdentity" />
     <property role="EcuMT" value="427659576753753630" />
+    <node concept="PrWs8" id="50fTm6QQQQo" role="PrDN$">
+      <ref role="PrY4T" node="50fTm6QQzRL" resolve="AbstractLanguageIdentity" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1t9FffgebJy">
     <property role="3GE5qa" value="reference.module" />
@@ -2777,6 +2783,11 @@
     <node concept="PrWs8" id="2ytHpS0VKmm" role="PzmwI">
       <ref role="PrY4T" node="1lUJQtrPjRM" resolve="IReferenceOperation" />
     </node>
+  </node>
+  <node concept="PlHQZ" id="50fTm6QQzRL">
+    <property role="TrG5h" value="AbstractLanguageIdentity" />
+    <property role="3GE5qa" value="identity" />
+    <property role="EcuMT" value="5769081855527239153" />
   </node>
 </model>
 

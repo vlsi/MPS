@@ -21,10 +21,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 
 @Generated
-public class Switch_switch_LanguageIdentity_SLanguage extends TemplateSwitchBase implements TemplateSwitchMapping {
+public class Switch_switch_AbstractLanguageIdentity_SLanguage extends TemplateSwitchBase implements TemplateSwitchMapping {
   private final Iterable<TemplateReductionRule> rules;
-  public Switch_switch_LanguageIdentity_SLanguage() {
-    rules = TemplateUtil.<TemplateReductionRule>asIterable(new Switch_switch_LanguageIdentity_SLanguage.ReductionRule0());
+  public Switch_switch_AbstractLanguageIdentity_SLanguage() {
+    rules = TemplateUtil.<TemplateReductionRule>asIterable(new Switch_switch_AbstractLanguageIdentity_SLanguage.ReductionRule0(), new Switch_switch_AbstractLanguageIdentity_SLanguage.ReductionRule1());
   }
   public SNodeReference getSwitchNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2944629966652298601");
@@ -36,13 +36,13 @@ public class Switch_switch_LanguageIdentity_SLanguage extends TemplateSwitchBase
     return rules;
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    DismissTopMappingRuleException ex_pqno5i_a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unsupported LanguageIdentity kind\"");
-    ex_pqno5i_a.setTemplateContext(context);
-    ex_pqno5i_a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2944629966652298616"));
-    throw ex_pqno5i_a;
+    DismissTopMappingRuleException ex_iufkvb_a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "\"Unsupported AbstractLanguageIdentity kind\"");
+    ex_iufkvb_a.setTemplateContext(context);
+    ex_iufkvb_a.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2944629966652298616"));
+    throw ex_iufkvb_a;
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
-    environment.getLogger().error(templateSwitch, "\"Need an instance of LanguageIdentity\"", GeneratorUtil.describeInput(context));
+    environment.getLogger().error(templateSwitch, "\"Need an instance of AbstractLanguageIdentity\"", GeneratorUtil.describeInput(context));
   }
   public final class ReductionRule0 extends ReductionRuleBase {
     public ReductionRule0() {
@@ -52,6 +52,17 @@ public class Switch_switch_LanguageIdentity_SLanguage extends TemplateSwitchBase
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Template_reduce_LanguageId_SLanguage().apply(environment, context);
+      return tlist1;
+    }
+  }
+  public final class ReductionRule1 extends ReductionRuleBase {
+    public ReductionRule1() {
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "5769081855527316890"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e853388b3L, "jetbrains.mps.lang.smodel.structure.ModulePointer"), true);
+    }
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
+      Collection<SNode> tlist1 = new Template_reduce_ModulePointer_SLanguage().apply(environment, context);
       return tlist1;
     }
   }

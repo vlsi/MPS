@@ -21,7 +21,7 @@ import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class LoadedLanguages_Transformation extends TransformationMenuBase {
+public class AbstractLanguageIdentity_Transformation extends TransformationMenuBase {
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.SUBSTITUTE);
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
@@ -33,16 +33,16 @@ public class LoadedLanguages_Transformation extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
-      result.add(new LoadedLanguages_Transformation.TMP_IncludeSM_nsinbd_a0());
+      result.add(new AbstractLanguageIdentity_Transformation.TMP_IncludeSM_n8gl3s_a0());
     }
     return result;
   }
 
-  public class TMP_IncludeSM_nsinbd_a0 extends IncludeSubstituteMenuTransformationMenuPart {
+  public class TMP_IncludeSM_n8gl3s_a0 extends IncludeSubstituteMenuTransformationMenuPart {
     @Override
     protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext context) {
       final EditorContext editorContext = context.getEditorContext();
-      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId"), "jetbrains.mps.lang.smodel.editor.LoadedLanguages_Substitute");
+      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e853388b3L, "jetbrains.mps.lang.smodel.structure.ModulePointer"), "jetbrains.mps.lang.smodel.editor.RepositoryLanguages_Substitute");
     }
   }
 }

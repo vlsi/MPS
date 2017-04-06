@@ -148,8 +148,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("helpUrl", 0x2fa4a8cdf0c9b099L, "3433054418424672409");
     b.aggregate("oldMainLanguages", 0x2fa4a8cdf0c9b094L).target(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9c87aL).optional(true).ordered(true).multiple(true).origin("3433054418424672404").done();
     b.aggregate("oldAdditionalLanguages", 0x2fa4a8cdf0c9b096L).target(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9c87aL).optional(true).ordered(true).multiple(true).origin("3433054418424672406").done();
-    b.aggregate("mainLanguages", 0x54be5be5620c1b77L).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c318L).optional(false).ordered(true).multiple(true).origin("6106419185511570295").done();
-    b.aggregate("additionalLanguages", 0x54be5be5620c1b7dL).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c318L).optional(true).ordered(true).multiple(true).origin("6106419185511570301").done();
+    b.aggregate("mainLanguages", 0x54be5be5620c1b77L).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x500fe561b6da3df1L).optional(false).ordered(true).multiple(true).origin("6106419185511570295").done();
+    b.aggregate("additionalLanguages", 0x54be5be5620c1b7dL).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x500fe561b6da3df1L).optional(true).ordered(true).multiple(true).origin("6106419185511570301").done();
     b.aggregate("icon", 0x2fa4a8cdf0cff495L).target(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL).optional(true).ordered(true).multiple(false).origin("3433054418425083029").done();
     b.aggregate("httpHelpUrl", 0x47d8f9811b759b89L).target(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L).optional(true).ordered(true).multiple(false).origin("5177162104569174921").done();
     b.aggregate("order", 0x2085244dcb121e81L).target(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x22035699bdd78145L).optional(true).ordered(true).multiple(false).origin("2343319097654255233").done();
