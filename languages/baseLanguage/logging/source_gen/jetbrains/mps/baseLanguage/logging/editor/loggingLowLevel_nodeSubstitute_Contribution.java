@@ -12,11 +12,12 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -36,20 +37,20 @@ public class loggingLowLevel_nodeSubstitute_Contribution extends SubstituteMenuB
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new loggingLowLevel_nodeSubstitute_Contribution.SMP_Param_35gsnl_a(), MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, "jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement")));
     return result;
   }
-  private class SMP_Param_35gsnl_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_35gsnl_a extends ParameterizedMenuPart<SEnumerationLiteral, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
-    protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
+    protected List<SubstituteMenuItem> createItems(SEnumerationLiteral parameter, SubstituteMenuContext context) {
       return new loggingLowLevel_nodeSubstitute_Contribution.SMP_Param_35gsnl_a.SMP_Action_35gsnl_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
-    protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
-      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)", "Severity"));
+    protected Iterable<? extends SEnumerationLiteral> getParameters(SubstituteMenuContext _context) {
+      return SEnumOperations.getMembers(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, "jetbrains.mps.baseLanguage.logging", 0x10fc53ae113L, "Severity");
     }
     private class SMP_Action_35gsnl_a0 extends SingleItemSubstituteMenuPart {
-      private final SNode myParameterObject;
-      public SMP_Action_35gsnl_a0(SNode parameterObject) {
+      private final SEnumerationLiteral myParameterObject;
+      public SMP_Action_35gsnl_a0(SEnumerationLiteral parameterObject) {
         myParameterObject = parameterObject;
       }
 
@@ -69,7 +70,7 @@ public class loggingLowLevel_nodeSubstitute_Contribution extends SubstituteMenuB
         @Override
         public SNode createNode(@NotNull String pattern) {
           SNode logStatement = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, "jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement")), null);
-          SPropertyOperations.set(logStatement, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, 0x1c3d779b2be2f1b7L, "severity"), SEnumOperations.getEnumMemberValue(myParameterObject));
+          SPropertyOperations.set(logStatement, MetaAdapterFactory.getProperty(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, 0x1c3d779b2be2f1b7L, "severity"), SEnumOperations.getMemberValue(myParameterObject));
           SNodeFactoryOperations.setNewChild(logStatement, MetaAdapterFactory.getContainmentLink(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1c3d779b2be2f0b9L, 0x1c3d779b2be2f1b9L, "message"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral")));
           SNode catchClause = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"), true, false);
           if ((catchClause != null) && (SLinkOperations.getTarget(catchClause, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, 0x10f39a6a2f1L, "throwable")) != null)) {
@@ -86,7 +87,7 @@ public class loggingLowLevel_nodeSubstitute_Contribution extends SubstituteMenuB
         @Nullable
         @Override
         public String getMatchingText(@NotNull String pattern) {
-          return "log " + SEnumOperations.getEnumMemberValue(myParameterObject);
+          return "log " + SEnumOperations.getMemberValue(myParameterObject);
         }
         @Nullable
         @Override

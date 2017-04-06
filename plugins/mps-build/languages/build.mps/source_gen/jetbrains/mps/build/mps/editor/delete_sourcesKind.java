@@ -25,7 +25,7 @@ public class delete_sourcesKind {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), "" + (SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)", "BuildMps_ModuleSourcesKind"), "sources")));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), "" + (SEnumOperations.getMember(0xcf935df46994e9cL, 0xa132fa109541cba3L, "jetbrains.mps.build.mps", 0x3be316509db4513L, "BuildMps_ModuleSourcesKind", 0x3be316509db4552L, "sources")));
     }
   }
   public static class delete_sourcesKind_BACKSPACE extends AbstractCellAction {
@@ -37,7 +37,7 @@ public class delete_sourcesKind {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), "" + (SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)", "BuildMps_ModuleSourcesKind"), "sources")));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), "" + (SEnumOperations.getMember(0xcf935df46994e9cL, 0xa132fa109541cba3L, "jetbrains.mps.build.mps", 0x3be316509db4513L, "BuildMps_ModuleSourcesKind", 0x3be316509db4552L, "sources")));
     }
   }
 }

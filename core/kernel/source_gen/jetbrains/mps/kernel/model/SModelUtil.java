@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.annotations.NotNull;
@@ -115,8 +116,8 @@ public class SModelUtil {
     List<SAbstractConcept> result = new ArrayList<SAbstractConcept>(resultSet);
     return result;
   }
-  public static SNode getGenuineLinkSourceCardinality(SNode linkDecl) {
-    return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), SPropertyOperations.getString_def(getGenuineLinkDeclaration(linkDecl), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1"));
+  public static SEnumerationLiteral getGenuineLinkSourceCardinality(SNode linkDecl) {
+    return SEnumOperations.getMemberForValue(SPropertyOperations.getString_def(getGenuineLinkDeclaration(linkDecl), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1"), 0xc72da2b97cce4447L, 0x8389f407dc1158b7L, "jetbrains.mps.lang.structure", 0xfc6f3944c2L, "Cardinality");
   }
   public static boolean isAcceptableTarget(SNode linkDeclaration, SNode referentNode) {
     SAbstractConcept targetConcept = MetaAdapterByDeclaration.getConcept(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")));

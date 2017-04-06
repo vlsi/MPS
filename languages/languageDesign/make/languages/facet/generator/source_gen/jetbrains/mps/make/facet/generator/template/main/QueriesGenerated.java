@@ -30,6 +30,7 @@ import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.IfMacroContext;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
@@ -117,11 +118,11 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x642ffc6d854ec1c5L, "optional"));
   }
   public static Object propertyMacro_GetPropertyValue_3097736894717613589(final PropertyMacroContext _context) {
-    return (SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "transform")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x1740bd43b75c4b28L, "resourcesPolicy"), "TRANSFORM")) || SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "consume")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x1740bd43b75c4b28L, "resourcesPolicy"), "TRANSFORM")));
+    return (SEnumOperations.getMemberValue(SEnumOperations.getMember(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet", 0x1740bd43b75c4b23L, "ResourcesPolicy", 0x1740bd43b75c4b24L, "TRANSFORM")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x1740bd43b75c4b28L, "resourcesPolicy"), "TRANSFORM")) || SEnumOperations.getMemberValue(SEnumOperations.getMember(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet", 0x1740bd43b75c4b23L, "ResourcesPolicy", 0x1740bd43b75c4b26L, "CONSUME")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x1740bd43b75c4b28L, "resourcesPolicy"), "TRANSFORM")));
 
   }
   public static Object propertyMacro_GetPropertyValue_7082294419595105985(final PropertyMacroContext _context) {
-    return (SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "transform")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x1740bd43b75c4b28L, "resourcesPolicy"), "TRANSFORM")) || SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "produce")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x1740bd43b75c4b28L, "resourcesPolicy"), "TRANSFORM")));
+    return (SEnumOperations.getMemberValue(SEnumOperations.getMember(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet", 0x1740bd43b75c4b23L, "ResourcesPolicy", 0x1740bd43b75c4b24L, "TRANSFORM")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x1740bd43b75c4b28L, "resourcesPolicy"), "TRANSFORM")) || SEnumOperations.getMemberValue(SEnumOperations.getMember(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet", 0x1740bd43b75c4b23L, "ResourcesPolicy", 0x1740bd43b75c4b27L, "PRODUCE")).equals(SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x1740bd43b75c4b28L, "resourcesPolicy"), "TRANSFORM")));
   }
   public static Object propertyMacro_GetPropertyValue_3868725017587329779(final PropertyMacroContext _context) {
     return JavaNameUtil.fqClassName(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x6598ce4d2f20bbdfL, "parameters")), IWillBeClassifier__BehaviorDescriptor.classifierName_id3ZSHU3pg$b_.invoke(_context.getNode()) + "." + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x6598ce4d2f20bbdfL, "parameters")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
@@ -242,7 +243,7 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_5189627237350267862(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x5912a2ab1cd41539L, "dependency"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode d) {
-        return SPropertyOperations.getString_def(d, MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, 0x73e720709e3139e9L, "qualifier"), "BEFORE") == SEnumOperations.getEnumMemberValue(((SNode) _context.getVariable("qualifier")));
+        return SPropertyOperations.getString_def(d, MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, 0x73e720709e3139e9L, "qualifier"), "BEFORE") == SEnumOperations.getMemberValue(((SEnumerationLiteral) _context.getVariable("qualifier")));
       }
     });
   }
@@ -293,16 +294,16 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, 0x5979ed6d2b21b2feL, "extended"));
   }
   public static Object templateArgumentQuery_5189627237350268044(final TemplateArgumentContext _context) {
-    return SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "TargetDependencyQualifier"), "not after");
+    return SEnumOperations.getMember(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet", 0x73e720709e3139e2L, "TargetDependencyQualifier", 0x73e720709e3139e7L, "NOT_AFTER");
   }
   public static Object templateArgumentQuery_5189627237350268053(final TemplateArgumentContext _context) {
-    return SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "TargetDependencyQualifier"), "after");
+    return SEnumOperations.getMember(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet", 0x73e720709e3139e2L, "TargetDependencyQualifier", 0x73e720709e3139e6L, "AFTER");
   }
   public static Object templateArgumentQuery_5189627237350268062(final TemplateArgumentContext _context) {
-    return SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "TargetDependencyQualifier"), "not before");
+    return SEnumOperations.getMember(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet", 0x73e720709e3139e2L, "TargetDependencyQualifier", 0x73e720709e3139e5L, "NOT_BEFORE");
   }
   public static Object templateArgumentQuery_5189627237350268071(final TemplateArgumentContext _context) {
-    return SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "TargetDependencyQualifier"), "before");
+    return SEnumOperations.getMember(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet", 0x73e720709e3139e2L, "TargetDependencyQualifier", 0x73e720709e3139e3L, "BEFORE");
   }
   public static Object templateArgumentQuery_4565427742315565556(final TemplateArgumentContext _context) {
     return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".FacetAspectDescriptor";
@@ -334,7 +335,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_5189627237350267857(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x5912a2ab1cd41539L, "dependency"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode d) {
-        return SPropertyOperations.getString_def(d, MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, 0x73e720709e3139e9L, "qualifier"), "BEFORE") == SEnumOperations.getEnumMemberValue(((SNode) _context.getVariable("qualifier")));
+        return SPropertyOperations.getString_def(d, MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, 0x73e720709e3139e9L, "qualifier"), "BEFORE") == SEnumOperations.getMemberValue(((SEnumerationLiteral) _context.getVariable("qualifier")));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode d) {

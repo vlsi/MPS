@@ -23,11 +23,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.plugin.behavior.SimpleShortcutChange__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ActionDeclaration_TransformationMenu extends TransformationMenuBase {
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.CONTEXT_ASSISTANT, MenuLocations.CONTEXT_ASSISTANT);
@@ -76,9 +77,9 @@ public class ActionDeclaration_TransformationMenu extends TransformationMenuBase
         SNode keystroke = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, "jetbrains.mps.lang.plugin.structure.KeyMapKeystroke"));
         ListSequence.fromList(SLinkOperations.getChildren(shortcutChange, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, 0x15afe07f2a9bb07eL, "keystroke"))).addElement(keystroke);
 
-        SimpleShortcutChange__BehaviorDescriptor.addToKeymapChanges_id1adAGAvXyr3.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange")), shortcutChange, _context.getModel(), ListSequence.fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "Keymap"))).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SEnumOperations.getEnumMemberValue(it).equals("$default");
+        SimpleShortcutChange__BehaviorDescriptor.addToKeymapChanges_id1adAGAvXyr3.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange")), shortcutChange, _context.getModel(), Sequence.fromIterable(SEnumOperations.getMembers(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin", 0x15afe07f2a9bb078L, "Keymap")).where(new IWhereFilter<SEnumerationLiteral>() {
+          public boolean accept(SEnumerationLiteral it) {
+            return SEnumOperations.getMemberValue(it).equals("$default");
           }
         }), _context.getEditorContext());
       }
@@ -132,9 +133,9 @@ public class ActionDeclaration_TransformationMenu extends TransformationMenuBase
         SNode keystroke = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, "jetbrains.mps.lang.plugin.structure.KeyMapKeystroke"));
         ListSequence.fromList(SLinkOperations.getChildren(shortcutChange, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, 0x15afe07f2a9bb07eL, "keystroke"))).addElement(keystroke);
 
-        SimpleShortcutChange__BehaviorDescriptor.addToKeymapChanges_id1adAGAvXyr3.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange")), shortcutChange, _context.getModel(), ListSequence.fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "Keymap"))).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SEnumOperations.getEnumMemberValue(it).equals("Mac OS X") || SEnumOperations.getEnumMemberValue(it).equals("Mac OS X 10.5+") || SEnumOperations.getEnumMemberValue(it).equals("Default for GNOME");
+        SimpleShortcutChange__BehaviorDescriptor.addToKeymapChanges_id1adAGAvXyr3.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange")), shortcutChange, _context.getModel(), Sequence.fromIterable(SEnumOperations.getMembers(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin", 0x15afe07f2a9bb078L, "Keymap")).where(new IWhereFilter<SEnumerationLiteral>() {
+          public boolean accept(SEnumerationLiteral it) {
+            return SEnumOperations.getMemberValue(it).equals("Mac OS X") || SEnumOperations.getMemberValue(it).equals("Mac OS X 10.5+") || SEnumOperations.getMemberValue(it).equals("Default for GNOME");
           }
         }), _context.getEditorContext());
       }

@@ -13,6 +13,7 @@ import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstitute
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.make.facet.behavior.FacetDeclaration__BehaviorDescriptor;
@@ -41,25 +42,25 @@ public class TargetDependency_SubstituteMenu extends SubstituteMenuBase {
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TargetDependency_SubstituteMenu.SMP_Param_70edxa_a(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, "jetbrains.mps.make.facet.structure.TargetDependency")));
     return result;
   }
-  private class SMP_Param_70edxa_a extends ParameterizedMenuPart<Tuples._2<SNode, SNode>, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_70edxa_a extends ParameterizedMenuPart<Tuples._2<SEnumerationLiteral, SNode>, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
-    protected List<SubstituteMenuItem> createItems(Tuples._2<SNode, SNode> parameter, SubstituteMenuContext context) {
+    protected List<SubstituteMenuItem> createItems(Tuples._2<SEnumerationLiteral, SNode> parameter, SubstituteMenuContext context) {
       return new TargetDependency_SubstituteMenu.SMP_Param_70edxa_a.SMP_Action_70edxa_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
-    protected Iterable<? extends Tuples._2<SNode, SNode>> getParameters(SubstituteMenuContext _context) {
+    protected Iterable<? extends Tuples._2<SEnumerationLiteral, SNode>> getParameters(SubstituteMenuContext _context) {
       final Iterable<SNode> relatedFacets = FacetDeclaration__BehaviorDescriptor.allRelated_id7fB872uckWE.invoke(SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"), false, false));
       return ListSequence.fromList(SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, "jetbrains.mps.make.facet.structure.TargetDeclaration"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode fct) {
           return Sequence.fromIterable(relatedFacets).contains(SNodeOperations.getNodeAncestor(fct, MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"), false, false));
         }
-      }).translate(new ITranslator2<SNode, Tuples._2<SNode, SNode>>() {
-        public Iterable<Tuples._2<SNode, SNode>> translate(final SNode td) {
-          return new Iterable<Tuples._2<SNode, SNode>>() {
-            public Iterator<Tuples._2<SNode, SNode>> iterator() {
-              return new YieldingIterator<Tuples._2<SNode, SNode>>() {
+      }).translate(new ITranslator2<SNode, Tuples._2<SEnumerationLiteral, SNode>>() {
+        public Iterable<Tuples._2<SEnumerationLiteral, SNode>> translate(final SNode td) {
+          return new Iterable<Tuples._2<SEnumerationLiteral, SNode>>() {
+            public Iterator<Tuples._2<SEnumerationLiteral, SNode>> iterator() {
+              return new YieldingIterator<Tuples._2<SEnumerationLiteral, SNode>>() {
                 private int __CP__ = 0;
                 protected boolean moveToNext() {
 __loop__:
@@ -70,7 +71,7 @@ __switch__:
                         assert false : "Internal error";
                         return false;
                       case 2:
-                        this._2_em_it = SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "TargetDependencyQualifier")).iterator();
+                        this._2_em_it = SEnumOperations.getMembers(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet", 0x73e720709e3139e2L, "TargetDependencyQualifier").iterator();
                       case 3:
                         if (!(this._2_em_it.hasNext())) {
                           this.__CP__ = 1;
@@ -81,7 +82,7 @@ __switch__:
                         break;
                       case 5:
                         this.__CP__ = 3;
-                        this.yield(MultiTuple.<SNode,SNode>from(_2_em, td));
+                        this.yield(MultiTuple.<SEnumerationLiteral,SNode>from(_2_em, td));
                         return true;
                       case 0:
                         this.__CP__ = 2;
@@ -95,8 +96,8 @@ __switch__:
                   } while (true);
                   return false;
                 }
-                private SNode _2_em;
-                private Iterator<SNode> _2_em_it;
+                private SEnumerationLiteral _2_em;
+                private Iterator<SEnumerationLiteral> _2_em_it;
               };
             }
           };
@@ -104,8 +105,8 @@ __switch__:
       }).toListSequence();
     }
     private class SMP_Action_70edxa_a0 extends SingleItemSubstituteMenuPart {
-      private final Tuples._2<SNode, SNode> myParameterObject;
-      public SMP_Action_70edxa_a0(Tuples._2<SNode, SNode> parameterObject) {
+      private final Tuples._2<SEnumerationLiteral, SNode> myParameterObject;
+      public SMP_Action_70edxa_a0(Tuples._2<SEnumerationLiteral, SNode> parameterObject) {
         myParameterObject = parameterObject;
       }
 
@@ -125,7 +126,7 @@ __switch__:
         @Override
         public SNode createNode(@NotNull String pattern) {
           SNode dep = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, "jetbrains.mps.make.facet.structure.TargetDependency")), null);
-          SPropertyOperations.set(dep, MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, 0x73e720709e3139e9L, "qualifier"), SEnumOperations.getEnumMemberValue(myParameterObject._0()));
+          SPropertyOperations.set(dep, MetaAdapterFactory.getProperty(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, 0x73e720709e3139e9L, "qualifier"), SEnumOperations.getMemberValue(myParameterObject._0()));
           SLinkOperations.setTarget(dep, MetaAdapterFactory.getReferenceLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, 0x5912a2ab1cd24c63L, "dependsOn"), myParameterObject._1());
           return dep;
         }
@@ -142,7 +143,7 @@ __switch__:
         @Nullable
         @Override
         public String getMatchingText(@NotNull String pattern) {
-          return SEnumOperations.getEnumMemberName(myParameterObject._0()) + " " + SPropertyOperations.getString(myParameterObject._1(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+          return SEnumOperations.getMemberName(myParameterObject._0()) + " " + SPropertyOperations.getString(myParameterObject._1(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
         }
       }
     }

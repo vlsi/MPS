@@ -130,9 +130,9 @@
   </dependency>
   <dependency className="smodelLanguage.samples.StructureLanguageEnums" file="StructureLanguageEnums.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SEnumerationLiteral" />
   </dependency>
   <dependency className="smodelLanguage.samples.TypeCast" file="TypeCast.java">
     <classNode dependClassName="java.util.List" />

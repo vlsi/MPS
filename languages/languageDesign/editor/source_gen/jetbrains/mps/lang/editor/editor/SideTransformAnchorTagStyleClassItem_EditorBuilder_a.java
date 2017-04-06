@@ -32,6 +32,7 @@ import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -126,14 +127,14 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     public SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_a0c0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "RightTransformAnchorTag"));
+      return Sequence.fromIterable(SEnumOperations.getMembers(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1099dccd655L, "RightTransformAnchorTag")).toListSequence();
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
+      this.handleAction_impl((SEnumerationLiteral) parameterObject, node, model, operationContext, editorContext);
     }
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SEnumerationLiteral parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, 0x3212fe82cb95ffe6L, "tags"))).clear();
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, 0x11abb1e8d86L, "tag"), SEnumOperations.getEnumMemberValue(parameterObject));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, 0x11abb1e8d86L, "tag"), SEnumOperations.getMemberValue(parameterObject));
     }
     public boolean isReferentPresentation() {
       return false;

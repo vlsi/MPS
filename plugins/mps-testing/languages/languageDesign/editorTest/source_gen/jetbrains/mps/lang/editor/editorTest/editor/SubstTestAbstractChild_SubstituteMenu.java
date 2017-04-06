@@ -12,11 +12,12 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.runtime.IconResource;
@@ -38,20 +39,20 @@ public class SubstTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
     result.add(new SubstTestAbstractChild_SubstituteMenu.SMP_Subconcepts_3cisdk_c());
     return result;
   }
-  private class SMP_Param_3cisdk_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_3cisdk_a extends ParameterizedMenuPart<SEnumerationLiteral, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
-    protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
+    protected List<SubstituteMenuItem> createItems(SEnumerationLiteral parameter, SubstituteMenuContext context) {
       return new SubstTestAbstractChild_SubstituteMenu.SMP_Param_3cisdk_a.SMP_Action_3cisdk_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
-    protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
-      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "SubstTestEnum"));
+    protected Iterable<? extends SEnumerationLiteral> getParameters(SubstituteMenuContext _context) {
+      return SEnumOperations.getMembers(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, "jetbrains.mps.lang.editor.editorTest", 0xd4944c0b03f658cL, "SubstTestEnum");
     }
     private class SMP_Action_3cisdk_a0 extends SingleItemSubstituteMenuPart {
-      private final SNode myParameterObject;
-      public SMP_Action_3cisdk_a0(SNode parameterObject) {
+      private final SEnumerationLiteral myParameterObject;
+      public SMP_Action_3cisdk_a0(SEnumerationLiteral parameterObject) {
         myParameterObject = parameterObject;
       }
 
@@ -71,7 +72,7 @@ public class SubstTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
         @Override
         public SNode createNode(@NotNull String pattern) {
           SNode child = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c35aeL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild")), null);
-          SPropertyOperations.set(child, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c35aeL, 0xd4944c0b03fa02eL, "myEnumProperty"), SEnumOperations.getEnumMemberValue(myParameterObject));
+          SPropertyOperations.set(child, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c35aeL, 0xd4944c0b03fa02eL, "myEnumProperty"), SEnumOperations.getMemberValue(myParameterObject));
           return child;
         }
         @Nullable
@@ -87,7 +88,7 @@ public class SubstTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
         @Nullable
         @Override
         public String getMatchingText(@NotNull String pattern) {
-          return SEnumOperations.getEnumMemberName(myParameterObject);
+          return SEnumOperations.getMemberName(myParameterObject);
         }
       }
     }

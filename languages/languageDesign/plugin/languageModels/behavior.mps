@@ -5395,9 +5395,7 @@
                                     <node concept="37vLTw" id="22mwDBT2YUP" role="2Oq$k0">
                                       <ref role="3cqZAo" node="1adAGAvXHls" resolve="it" />
                                     </node>
-                                    <node concept="3TrcHB" id="22mwDBT307J" role="2OqNvi">
-                                      <ref role="3TsBF5" to="tpce:fLuS6pz" resolve="internalValue" />
-                                    </node>
+                                    <node concept="2ZYiMu" id="5yxfqLw7KcW" role="2OqNvi" />
                                   </node>
                                 </node>
                               </node>

@@ -14,6 +14,7 @@ import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.List;
 import java.util.Arrays;
@@ -39,19 +40,19 @@ public final class SimpleShortcutChange__BehaviorDescriptor extends BaseBHDescri
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> addToKeymapChanges_id1adAGAvXyr3 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("addToKeymapChanges").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1adAGAvXyr3").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SModel>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<Iterable<SNode>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(EditorContext.class, ""));
+  public static final SMethod<Void> addToKeymapChanges_id1adAGAvXyr3 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("addToKeymapChanges").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1adAGAvXyr3").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SModel>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<Iterable<SEnumerationLiteral>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(EditorContext.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(addToKeymapChanges_id1adAGAvXyr3);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static void addToKeymapChanges_id1adAGAvXyr3(@NotNull SAbstractConcept __thisConcept__, SNode shortcutChange, final SModel model, Iterable<SNode> keymaps, final EditorContext editorContext) {
+  /*package*/ static void addToKeymapChanges_id1adAGAvXyr3(@NotNull SAbstractConcept __thisConcept__, SNode shortcutChange, final SModel model, Iterable<SEnumerationLiteral> keymaps, final EditorContext editorContext) {
     final Wrappers._T<SNode> _shortcutChange = new Wrappers._T<SNode>(shortcutChange);
-    Sequence.fromIterable(keymaps).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
+    Sequence.fromIterable(keymaps).visitAll(new IVisitor<SEnumerationLiteral>() {
+      public void visit(SEnumerationLiteral it) {
         {
-          final String currentEnum = SEnumOperations.getEnumMemberValue(it);
+          final String currentEnum = SEnumOperations.getMemberValue(it);
           final Wrappers._T<SNode> keyMap = new Wrappers._T<SNode>(ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"))).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SPropertyOperations.getString_def(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), "$default").equals(currentEnum);
@@ -60,8 +61,8 @@ public final class SimpleShortcutChange__BehaviorDescriptor extends BaseBHDescri
           if ((keyMap.value == null)) {
             keyMap.value = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"));
             // Enum value has not got any constraint, so it needs to be converted to valid identifier 
-            SPropertyOperations.set(keyMap.value, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue"))));
-            SPropertyOperations.set(keyMap.value, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), SEnumOperations.getEnumMemberValue(it));
+            SPropertyOperations.set(keyMap.value, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), NameUtil.toValidCamelIdentifier(SEnumOperations.getMemberValue(it)));
+            SPropertyOperations.set(keyMap.value, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb0c9L, "keymap"), SEnumOperations.getMemberValue(it));
             // If IdeaConfigurationXml exists, take it in account 
             SPropertyOperations.set(keyMap.value, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x77ff578948f6b772L, "isPluginXmlKeymap"), "" + (ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7d36ab0e3b095aL, "jetbrains.mps.lang.plugin.structure.IdeaConfigurationXml"))).isNotEmpty()));
             if (ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7d36ab0e3b095aL, "jetbrains.mps.lang.plugin.structure.IdeaConfigurationXml"))).isNotEmpty()) {
@@ -127,7 +128,7 @@ public final class SimpleShortcutChange__BehaviorDescriptor extends BaseBHDescri
     }
     switch (methodIndex) {
       case 0:
-        addToKeymapChanges_id1adAGAvXyr3(concept, (SNode) parameters[0], (SModel) parameters[1], (Iterable<SNode>) parameters[2], (EditorContext) parameters[3]);
+        addToKeymapChanges_id1adAGAvXyr3(concept, (SNode) parameters[0], (SModel) parameters[1], (Iterable<SEnumerationLiteral>) parameters[2], (EditorContext) parameters[3]);
         return null;
       default:
         throw new BHMethodNotFoundException(this, method);

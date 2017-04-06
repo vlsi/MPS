@@ -376,6 +376,7 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
       <concept id="1240325842691" name="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" flags="nn" index="39bAoz" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
@@ -3588,9 +3589,12 @@
             <node concept="3GJtP1" id="4BLpc15iu50" role="1ou48n">
               <node concept="3clFbS" id="4BLpc15iu51" role="2VODD2">
                 <node concept="3clFbF" id="4BLpc15iu52" role="3cqZAp">
-                  <node concept="3HcIyF" id="4BLpc15iu53" role="3clFbG">
-                    <ref role="3HcIyG" to="kdzh:eYcmk9QOkj" resolve="BuildMps_ModuleSourcesKind" />
-                    <node concept="3HdYuk" id="4BLpc15iu54" role="3Hdvt7" />
+                  <node concept="2OqwBi" id="5yxfqLwdsWN" role="3clFbG">
+                    <node concept="3HcIyF" id="4BLpc15iu53" role="2Oq$k0">
+                      <ref role="3HcIyG" to="kdzh:eYcmk9QOkj" resolve="BuildMps_ModuleSourcesKind" />
+                      <node concept="3HdYuk" id="4BLpc15iu54" role="3Hdvt7" />
+                    </node>
+                    <node concept="ANE8D" id="5yxfqLwdtww" role="2OqNvi" />
                   </node>
                 </node>
               </node>
@@ -3653,14 +3657,17 @@
         <node concept="1ou48o" id="6ogfLD6h$Q4" role="OY2wv">
           <property role="1ezIyd" value="custom" />
           <node concept="2ZThk1" id="6ogfLD6h$Q5" role="1eyP2E">
-            <ref role="2ZWj4r" to="kdzh:eYcmk9QOkj" resolve="BuildMps_ModuleSourcesKind" />
+            <ref role="2ZWj4r" to="3ior:4zlO3QTanjR" resolve="BuildSource_JavaContentFolderKind" />
           </node>
           <node concept="3GJtP1" id="6ogfLD6h$Q6" role="1ou48n">
             <node concept="3clFbS" id="6ogfLD6h$Q7" role="2VODD2">
               <node concept="3clFbF" id="6ogfLD6h$Q8" role="3cqZAp">
-                <node concept="3HcIyF" id="6ogfLD6h$Q9" role="3clFbG">
-                  <ref role="3HcIyG" to="3ior:4zlO3QTanjR" resolve="BuildSource_JavaContentFolderKind" />
-                  <node concept="3HdYuk" id="6ogfLD6h$Qa" role="3Hdvt7" />
+                <node concept="2OqwBi" id="5yxfqLwjyQ5" role="3clFbG">
+                  <node concept="3HcIyF" id="6ogfLD6h$Q9" role="2Oq$k0">
+                    <ref role="3HcIyG" to="3ior:4zlO3QTanjR" resolve="BuildSource_JavaContentFolderKind" />
+                    <node concept="3HdYuk" id="6ogfLD6h$Qa" role="3Hdvt7" />
+                  </node>
+                  <node concept="ANE8D" id="5yxfqLwjz$2" role="2OqNvi" />
                 </node>
               </node>
             </node>

@@ -45,6 +45,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.ConceptNam
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.NumericLiteralStyleClass;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.EqualUtil;
@@ -291,12 +292,12 @@ import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClas
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       if (SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
-        for (SNode member : ListSequence.fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality")))) {
-          ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(member));
+        for (SEnumerationLiteral member : Sequence.fromIterable(SEnumOperations.getMembers(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, "jetbrains.mps.lang.structure", 0xfc6f3944c2L, "Cardinality"))) {
+          ListSequence.fromList(result).addElement(SEnumOperations.getMemberValue(member));
         }
       } else {
-        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "0..1")));
-        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "1")));
+        ListSequence.fromList(result).addElement(SEnumOperations.getMemberValue(SEnumOperations.getMember(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, "jetbrains.mps.lang.structure", 0xfc6f3944c2L, "Cardinality", 0xfc6f3944c3L, "0..1")));
+        ListSequence.fromList(result).addElement(SEnumOperations.getMemberValue(SEnumOperations.getMember(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, "jetbrains.mps.lang.structure", 0xfc6f3944c2L, "Cardinality", 0xfc6f3944c4L, "1")));
       }
       return result;
     }
@@ -304,7 +305,7 @@ import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClas
   private EditorCell createReadOnlyModelAccessor_6h6dhy_d2a() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
-        return SEnumOperations.getEnumMemberName(SModelUtil.getGenuineLinkSourceCardinality(myNode));
+        return SEnumOperations.getMemberName(SModelUtil.getGenuineLinkSourceCardinality(myNode));
       }
       public void setText(String s) {
       }

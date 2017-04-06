@@ -15,11 +15,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -43,20 +44,20 @@ public class ReportFeedbackStatement_subs extends SubstituteMenuBase {
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
       return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ReportFeedbackStatement_subs.SMP_Group_hskkdq_a.SMP_Param_hskkdq_a0(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, "jetbrains.mps.make.script.structure.ReportFeedbackStatement")));
     }
-    private class SMP_Param_hskkdq_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+    private class SMP_Param_hskkdq_a0 extends ParameterizedMenuPart<SEnumerationLiteral, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
       @Override
-      protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
+      protected List<SubstituteMenuItem> createItems(SEnumerationLiteral parameter, SubstituteMenuContext context) {
         return new ReportFeedbackStatement_subs.SMP_Group_hskkdq_a.SMP_Param_hskkdq_a0.SMP_Action_hskkdq_a0a(parameter).createItems(context);
       }
       @Nullable
       @Override
-      protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
-        return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "Feedback"));
+      protected Iterable<? extends SEnumerationLiteral> getParameters(SubstituteMenuContext _context) {
+        return SEnumOperations.getMembers(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, "jetbrains.mps.make.script", 0x32eac1b57fc1b82aL, "Feedback");
       }
       private class SMP_Action_hskkdq_a0a extends SingleItemSubstituteMenuPart {
-        private final SNode myParameterObject;
-        public SMP_Action_hskkdq_a0a(SNode parameterObject) {
+        private final SEnumerationLiteral myParameterObject;
+        public SMP_Action_hskkdq_a0a(SEnumerationLiteral parameterObject) {
           myParameterObject = parameterObject;
         }
 
@@ -75,7 +76,7 @@ public class ReportFeedbackStatement_subs extends SubstituteMenuBase {
           @Nullable
           @Override
           public SNode createNode(@NotNull String pattern) {
-            return _quotation_createNode_hskkdq_a0a0a0a(SEnumOperations.getEnumMemberValue(myParameterObject));
+            return _quotation_createNode_hskkdq_a0a0a0a(SEnumOperations.getMemberValue(myParameterObject));
           }
           @Nullable
           @Override

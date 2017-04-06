@@ -18,6 +18,7 @@ import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.runtime.IconResource;
@@ -77,20 +78,20 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  private class SMP_Param_1rdeze_c extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_1rdeze_c extends ParameterizedMenuPart<SEnumerationLiteral, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
-    protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
+    protected List<SubstituteMenuItem> createItems(SEnumerationLiteral parameter, SubstituteMenuContext context) {
       return new AbstractCellSelector_SubstituteMenu.SMP_Param_1rdeze_c.SMP_Action_1rdeze_a2(parameter).createItems(context);
     }
     @Nullable
     @Override
-    protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
-      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "PredefinedCellID"));
+    protected Iterable<? extends SEnumerationLiteral> getParameters(SubstituteMenuContext _context) {
+      return SEnumOperations.getMembers(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1e02662c4b880a97L, "PredefinedCellID");
     }
     private class SMP_Action_1rdeze_a2 extends SingleItemSubstituteMenuPart {
-      private final SNode myParameterObject;
-      public SMP_Action_1rdeze_a2(SNode parameterObject) {
+      private final SEnumerationLiteral myParameterObject;
+      public SMP_Action_1rdeze_a2(SEnumerationLiteral parameterObject) {
         myParameterObject = parameterObject;
       }
 
@@ -110,7 +111,7 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
         @Override
         public SNode createNode(@NotNull String pattern) {
           SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector"));
-          SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, 0x1e02662c4b881e34L, "cellId"), SEnumOperations.getEnumMemberValue(myParameterObject));
+          SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, 0x1e02662c4b881e34L, "cellId"), SEnumOperations.getMemberValue(myParameterObject));
           return result;
         }
         @Nullable
@@ -126,7 +127,7 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
         @Nullable
         @Override
         public String getDescriptionText(@NotNull String pattern) {
-          return SEnumOperations.getEnumMemberValue(myParameterObject) + " cell";
+          return SEnumOperations.getMemberValue(myParameterObject) + " cell";
         }
       }
     }

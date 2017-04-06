@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -30,20 +30,20 @@ public class ToolKeystroke_SubstituteMenu extends SubstituteMenuBase {
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ToolKeystroke_SubstituteMenu.SMP_Param_846jr0_a(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b765b0L, "jetbrains.mps.lang.plugin.structure.ToolKeystroke")));
     return result;
   }
-  private class SMP_Param_846jr0_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SMP_Param_846jr0_a extends ParameterizedMenuPart<SEnumerationLiteral, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
-    protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
+    protected List<SubstituteMenuItem> createItems(SEnumerationLiteral parameter, SubstituteMenuContext context) {
       return new ToolKeystroke_SubstituteMenu.SMP_Param_846jr0_a.SMP_Action_846jr0_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
-    protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
-      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "Keymap"));
+    protected Iterable<? extends SEnumerationLiteral> getParameters(SubstituteMenuContext _context) {
+      return SEnumOperations.getMembers(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin", 0x15afe07f2a9bb078L, "Keymap");
     }
     private class SMP_Action_846jr0_a0 extends SingleItemSubstituteMenuPart {
-      private final SNode myParameterObject;
-      public SMP_Action_846jr0_a0(SNode parameterObject) {
+      private final SEnumerationLiteral myParameterObject;
+      public SMP_Action_846jr0_a0(SEnumerationLiteral parameterObject) {
         myParameterObject = parameterObject;
       }
 
@@ -62,8 +62,8 @@ public class ToolKeystroke_SubstituteMenu extends SubstituteMenuBase {
         @Nullable
         @Override
         public SNode createNode(@NotNull String pattern) {
-          String defaultModifier = (SPropertyOperations.getString(myParameterObject, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")).contains("Mac") ? "meta" : "alt");
-          return createToolKeystroke_846jr0_a1a0a0(SPropertyOperations.getString(myParameterObject, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")), defaultModifier);
+          String defaultModifier = (myParameterObject.getName().contains("Mac") ? "meta" : "alt");
+          return createToolKeystroke_846jr0_a1a0a0(myParameterObject.getName(), defaultModifier);
         }
         @Nullable
         @Override
@@ -78,7 +78,7 @@ public class ToolKeystroke_SubstituteMenu extends SubstituteMenuBase {
         @Nullable
         @Override
         public String getMatchingText(@NotNull String pattern) {
-          return SPropertyOperations.getString(myParameterObject, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue"));
+          return myParameterObject.getPresentation();
         }
       }
     }

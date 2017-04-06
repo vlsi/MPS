@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
@@ -57,23 +57,23 @@ public class add_moduleLocationAndFlags extends TransformationMenuBase {
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
       return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new add_moduleLocationAndFlags.TMP_Group_vydzh3_a0.TMP_Param_vydzh3_a0a());
     }
-    private class TMP_Param_vydzh3_a0a extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
+    private class TMP_Param_vydzh3_a0a extends ParameterizedMenuPart<SEnumerationLiteral, TransformationMenuItem, TransformationMenuContext> {
 
       @NotNull
       @Override
-      protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
+      protected List<TransformationMenuItem> createItems(SEnumerationLiteral parameter, TransformationMenuContext context) {
         return new add_moduleLocationAndFlags.TMP_Group_vydzh3_a0.TMP_Param_vydzh3_a0a.TMP_Action_vydzh3_a0a0(parameter).createItems(context);
       }
 
       @Nullable
       @Override
-      protected Iterable<? extends SNode> getParameters(TransformationMenuContext _context) {
-        return Sequence.fromArray(new SNode[]{SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)", "BuildMps_ModuleSourcesKind"), "tests"), SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)", "BuildMps_ModuleSourcesKind"), "sources and tests")});
+      protected Iterable<? extends SEnumerationLiteral> getParameters(TransformationMenuContext _context) {
+        return Sequence.fromArray(new SEnumerationLiteral[]{SEnumOperations.getMember(0xcf935df46994e9cL, 0xa132fa109541cba3L, "jetbrains.mps.build.mps", 0x3be316509db4513L, "BuildMps_ModuleSourcesKind", 0x3be316509db455cL, "tests"), SEnumOperations.getMember(0xcf935df46994e9cL, 0xa132fa109541cba3L, "jetbrains.mps.build.mps", 0x3be316509db4513L, "BuildMps_ModuleSourcesKind", 0x3be316509db4553L, "sources and tests")});
       }
 
       private class TMP_Action_vydzh3_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-        private final SNode myParameterObject;
-        public TMP_Action_vydzh3_a0a0(SNode parameterObject) {
+        private final SEnumerationLiteral myParameterObject;
+        public TMP_Action_vydzh3_a0a0(SEnumerationLiteral parameterObject) {
           myParameterObject = parameterObject;
         }
         @Nullable
@@ -91,7 +91,7 @@ public class add_moduleLocationAndFlags extends TransformationMenuBase {
           @Nullable
           @Override
           public String getLabelText(String pattern) {
-            return "(with " + SEnumOperations.getEnumMemberName(myParameterObject) + ")";
+            return "(with " + SEnumOperations.getMemberName(myParameterObject) + ")";
           }
 
           @Override

@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -56,13 +57,13 @@ public class SideTransformUtil {
   }
   public static Iterable<SNode> getApplicableActionsBuilders(final SNode node, Set<String> stringTags, final CellSide cellSide, final IOperationContext context) {
 
-    final Set<SNode> tags = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(stringTags).select(new ISelector<String, SNode>() {
-      public SNode select(String it) {
-        return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "SideTransformTag"), it);
+    final Set<SEnumerationLiteral> tags = SetSequence.fromSetWithValues(new HashSet<SEnumerationLiteral>(), SetSequence.fromSet(stringTags).select(new ISelector<String, SEnumerationLiteral>() {
+      public SEnumerationLiteral select(String it) {
+        return SEnumOperations.getMemberForValue(it, 0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, "jetbrains.mps.lang.actions", 0x1099eb83606L, "SideTransformTag");
       }
     }));
     if (SetSequence.fromSet(tags).isEmpty()) {
-      SetSequence.fromSet(tags).addElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "SideTransformTag"), "default_"));
+      SetSequence.fromSet(tags).addElement(SEnumOperations.getMember(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, "jetbrains.mps.lang.actions", 0x1099eb83606L, "SideTransformTag", 0x1099eb94002L, "default_RTransform"));
     }
 
     SRepository contextRepo = SNodeOperations.getModel(node).getRepository();
@@ -115,8 +116,8 @@ public class SideTransformUtil {
 
     return result;
   }
-  private static boolean isApplicable(SNode node, Set<SNode> tags, CellSide cellSide, SNode actionsBuilder, IOperationContext context) {
-    if (!(SetSequence.fromSet(tags).contains(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "SideTransformTag"), SPropertyOperations.getString_def(actionsBuilder, MetaAdapterFactory.getProperty(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x1099eb798f9L, "transformTag"), "default_RTransform"))))) {
+  private static boolean isApplicable(SNode node, Set<SEnumerationLiteral> tags, CellSide cellSide, SNode actionsBuilder, IOperationContext context) {
+    if (!(SetSequence.fromSet(tags).contains(SEnumOperations.getMemberForValue(SPropertyOperations.getString_def(actionsBuilder, MetaAdapterFactory.getProperty(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x1099eb798f9L, "transformTag"), "default_RTransform"), 0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, "jetbrains.mps.lang.actions", 0x1099eb83606L, "SideTransformTag")))) {
       return false;
     }
     if ((cellSide == CellSide.LEFT ? SPropertyOperations.hasValue(actionsBuilder, MetaAdapterFactory.getProperty(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x11b07b83602L, "side"), null, null) : SPropertyOperations.hasValue(actionsBuilder, MetaAdapterFactory.getProperty(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x11b07b83602L, "side"), "left", null))) {

@@ -26,7 +26,7 @@
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="tpfp" ref="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -6155,8 +6155,8 @@
                   <node concept="2OqwBi" id="qbzkx3Wlza" role="3K4Cdx">
                     <node concept="2OqwBi" id="qbzkx3WkNt" role="2Oq$k0">
                       <node concept="2ZBlsa" id="qbzkx3Wk_g" role="2Oq$k0" />
-                      <node concept="3TrcHB" id="qbzkx3Wl4X" role="2OqNvi">
-                        <ref role="3TsBF5" to="tpce:fLuS6pz" resolve="internalValue" />
+                      <node concept="liA8E" id="9OE2USymuZ" role="2OqNvi">
+                        <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getName():java.lang.String" resolve="getName" />
                       </node>
                     </node>
                     <node concept="liA8E" id="qbzkx3Wmth" role="2OqNvi">
@@ -6177,8 +6177,8 @@
                     <ref role="2pJxcJ" to="tp4k:qbzkx3HQmQ" resolve="keymap" />
                     <node concept="2OqwBi" id="qbzkx3Qhao" role="2pJxcZ">
                       <node concept="2ZBlsa" id="qbzkx3Qgmp" role="2Oq$k0" />
-                      <node concept="3TrcHB" id="qbzkx3QiCd" role="2OqNvi">
-                        <ref role="3TsBF5" to="tpce:fLuS6pz" resolve="internalValue" />
+                      <node concept="liA8E" id="9OE2USymTP" role="2OqNvi">
+                        <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getName():java.lang.String" resolve="getName" />
                       </node>
                     </node>
                   </node>
@@ -6205,8 +6205,8 @@
               <node concept="3clFbF" id="qbzkx3Qj01" role="3cqZAp">
                 <node concept="2OqwBi" id="qbzkx3Qjcj" role="3clFbG">
                   <node concept="2ZBlsa" id="qbzkx3Qj00" role="2Oq$k0" />
-                  <node concept="3TrcHB" id="qbzkx3QjvY" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpce:fLuS6p$" resolve="externalValue" />
+                  <node concept="liA8E" id="9OE2USylRS" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getPresentation():java.lang.String" resolve="getPresentation" />
                   </node>
                 </node>
               </node>
