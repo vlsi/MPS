@@ -23,7 +23,6 @@ import com.intellij.ui.FieldPanel;
 import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.io.File;
@@ -101,7 +100,7 @@ public class NewDevKitDialog extends DialogWrapper {
   }
 
   private void check() {
-    setErrorText(NewModuleUtil.check(new ModuleRepositoryFacade(myProject), MPSExtentions.DOT_DEVKIT, getDevkitName(), getDevkitLocation()));
+    setErrorText(NewModuleUtil.check(myProject.getRepository(), MPSExtentions.DOT_DEVKIT, getDevkitName(), getDevkitLocation()));
   }
 
   @Override

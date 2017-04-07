@@ -10,7 +10,6 @@
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.modules.AbstractModuleCreationSettings" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>

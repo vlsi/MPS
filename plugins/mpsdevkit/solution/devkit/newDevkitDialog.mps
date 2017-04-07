@@ -23,7 +23,6 @@
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
     <import index="3fkn" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileChooser(MPS.IDEA/)" />
     <import index="tsn" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.components.panels(MPS.IDEA/)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -759,12 +758,12 @@
             <node concept="2YIFZM" id="WvMI7quAxV" role="37wK5m">
               <ref role="1Pybhc" to="tprr:56Y$nab_bZy" resolve="NewModuleUtil" />
               <ref role="37wK5l" to="tprr:3WcIkZau4TB" resolve="check" />
-              <node concept="2ShNRf" id="7vEL9Rt7j2_" role="37wK5m">
-                <node concept="1pGfFk" id="7vEL9Rt7_Y9" role="2ShVmc">
-                  <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleRepositoryFacade" />
-                  <node concept="37vLTw" id="7vEL9Rt7A3H" role="37wK5m">
-                    <ref role="3cqZAo" node="5qUkmeYC_mj" resolve="myProject" />
-                  </node>
+              <node concept="2OqwBi" id="5z$T2YvOME_" role="37wK5m">
+                <node concept="37vLTw" id="5z$T2YvOMur" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5qUkmeYC_mj" resolve="myProject" />
+                </node>
+                <node concept="liA8E" id="5z$T2YvON6T" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                 </node>
               </node>
               <node concept="10M0yZ" id="WvMI7quAxW" role="37wK5m">

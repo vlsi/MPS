@@ -28,8 +28,11 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
+import org.jetbrains.mps.openapi.module.SRepository;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.ide.NewModuleCheckUtil;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
@@ -132,7 +135,7 @@ public class NewModuleUtil {
     });
   }
 
-  public static String check(ModuleRepositoryFacade repo, String extension, String namespace, String rootPath) {
+  public static String check(final SRepository repo, String extension, final String namespace, String rootPath) {
     if (MPSExtentions.DOT_LANGUAGE.equals(extension) && !(SourceVersion.isName(namespace))) {
       return "Language namespace should be valid Java package";
     }
@@ -146,7 +149,12 @@ public class NewModuleUtil {
     if (namespace.length() == 0) {
       return "Namespace should be specified";
     }
-    if (repo.getModuleByName(namespace) != null) {
+    boolean duplicateName = new ModelAccessHelper(repo).runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return new ModuleRepositoryFacade(repo).getModelByName(namespace) != null;
+      }
+    });
+    if (duplicateName) {
       return "Module namespace already exists";
     }
     if (NameUtil.shortNameFromLongName(namespace).length() == 0) {

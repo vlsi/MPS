@@ -11,7 +11,6 @@ import com.intellij.project.ProjectKt;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 public abstract class AbstractModuleCreationDialog<R extends AbstractModule> extends DialogWrapper {
   protected R myResult;
@@ -67,7 +66,7 @@ public abstract class AbstractModuleCreationDialog<R extends AbstractModule> ext
   }
 
   protected boolean check() {
-    myError = NewModuleUtil.check(new ModuleRepositoryFacade(myProject), getExtension(), mySettings.getModuleName(), mySettings.getModuleLocation());
+    myError = NewModuleUtil.check(myProject.getRepository(), getExtension(), mySettings.getModuleName(), mySettings.getModuleLocation());
     setErrorText(myError);
     return myError == null;
   }
