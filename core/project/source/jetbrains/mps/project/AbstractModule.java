@@ -393,6 +393,13 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     if (deplDescriptor == null) {
       return;
     }
+    if (getDescriptorFile() == null) {
+      // this implicitly filters out Generator modules from updatePackagedDescriptor().
+      // however, generators never got DD (now they do, and that's the reason we could get NPE here),
+      // and the method doesn't look like something to persist forever, so I don't care to update generator's source descriptor.
+      // Instead, proper locations have to be specified right in deployment time
+      return;
+    }
 
     final IFile bundleHomeFile = getDescriptorFile().getBundleHome();
     if (bundleHomeFile == null) {

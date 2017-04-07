@@ -255,7 +255,11 @@ public final class ModuleRepositoryFacade implements CoreComponent {
       throw new IllegalArgumentException("Unknown module " + handle.getFile().getName());
     }
     AbstractModule actualRepoModule = registerModule(instance, instance instanceof Generator ? ((Generator) instance).getSourceLanguage(): owner);
-    if (moduleDescriptor instanceof LanguageDescriptor && actualRepoModule == instance) {
+    if (moduleDescriptor instanceof LanguageDescriptor && actualRepoModule == instance && moduleDescriptor.getDeploymentDescriptor() == null) {
+      // Compatibility code, when a language module with generators is loaded from sources.
+      // Deployed languages shall not care about generators as these would get discovered and registered based on their own DDs.
+      // FIXME Code below is sort of a hack. ProjectModulesFiller seems to register all modules reported, including generators (MM discovers generator
+      // FIXME modules from sources as well). Drop this code and see if anything breaks.
       // once Generator modules are standalone, technically we could have their instances already.
       // Now, I don't care as original revalidateGenerators didn't care. Perhaps, the code would stay the same
       // even for pre-registered generators as registerModule() is aware of module multi registration

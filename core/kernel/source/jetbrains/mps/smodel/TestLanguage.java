@@ -28,6 +28,14 @@ public final class TestLanguage extends Language {
     super(descriptor, file);
   }
 
+  @Override
+  public boolean isPackaged() {
+    // test languages are always without a file, and modules without a file are deemed
+    // packed due to some perverted logic. Since packed gains more meaning now (deployment descriptor et al.)
+    // tell explicitly this one, constructed manually, is not packed.
+    return false;
+  }
+
   /**
    * Factory for a Language, deemed for use solely in tests.
    */
