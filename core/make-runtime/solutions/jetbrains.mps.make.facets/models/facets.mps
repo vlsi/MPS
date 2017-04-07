@@ -533,19 +533,14 @@
                             <node concept="2YIFZM" id="3k48dctF1Ll" role="37wK5m">
                               <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
                               <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.String):org.apache.log4j.Logger" resolve="getLogger" />
-                              <node concept="2OqwBi" id="3k48dctF3LF" role="37wK5m">
-                                <node concept="2OqwBi" id="3k48dctF3ok" role="2Oq$k0">
-                                  <node concept="2n6ZRZ" id="3k48dctF3dw" role="2Oq$k0">
-                                    <node concept="2e$Q_j" id="3k48dctF3dx" role="2n6ZRX">
-                                      <ref role="1Mm5Yu" node="5L5h3brvDPx" resolve="JavaCompile" />
-                                    </node>
-                                  </node>
-                                  <node concept="liA8E" id="3k48dctF3zn" role="2OqNvi">
-                                    <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+                              <node concept="2OqwBi" id="3k48dctF3ok" role="37wK5m">
+                                <node concept="2n6ZRZ" id="3k48dctF3dw" role="2Oq$k0">
+                                  <node concept="2e$Q_j" id="3k48dctF3dx" role="2n6ZRX">
+                                    <ref role="1Mm5Yu" node="5L5h3brvDPx" resolve="JavaCompile" />
                                   </node>
                                 </node>
-                                <node concept="liA8E" id="3k48dctF405" role="2OqNvi">
-                                  <ref role="37wK5l" to="wyt6:~Class.toString():java.lang.String" resolve="toString" />
+                                <node concept="liA8E" id="2SVpevUn6Od" role="2OqNvi">
+                                  <ref role="37wK5l" to="rk9m:hxx6lM0OuF" resolve="getName" />
                                 </node>
                               </node>
                             </node>

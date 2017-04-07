@@ -36,4 +36,9 @@ public final class FileWithPosition {
   public int getOffset() {
     return myOffset;
   }
+
+  @Override
+  public String toString() {
+    return String.format("%s@%d", myFile, myOffset);
+  }
 }

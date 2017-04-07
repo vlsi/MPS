@@ -102,7 +102,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.SUCCESS(_output_wf1ya0_a0a);
               }
               final IMessageHandler msgHandler = new IMessageHandler() {
-                private final IMessageHandler myErrorsLoggingHandler = new ErrorsLoggingHandler(LogManager.getLogger(new IFacet.Name("jetbrains.mps.make.facets.JavaCompile").getClass().toString()));
+                private final IMessageHandler myErrorsLoggingHandler = new ErrorsLoggingHandler(LogManager.getLogger(new IFacet.Name("jetbrains.mps.make.facets.JavaCompile").getName()));
 
                 public void handle(@NotNull IMessage msg) {
                   myErrorsLoggingHandler.handle(msg);
