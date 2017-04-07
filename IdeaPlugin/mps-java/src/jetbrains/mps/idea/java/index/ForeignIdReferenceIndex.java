@@ -175,12 +175,7 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
   }
 
   @Override
-  public boolean keyIsUniqueForIndexedFile() {
-    return true;
-  }
-
-  @Override
   public int getVersion() {
-    return 2;
+    return 3;
   }
 }
