@@ -50,7 +50,7 @@ public class AbstractConstraintsCheckerINodeCheckerAdapter implements INodeCheck
 
   public static final AbstractConstraintsCheckerINodeCheckerAdapter.ErrorSkipCondition SUPRESS_ERRORS_CONDITION = new AbstractConstraintsCheckerINodeCheckerAdapter.ErrorSkipCondition() {
     public boolean skipSingleNode(SNode node) {
-      return ErrorReportUtil.shouldReportError(node);
+      return !(ErrorReportUtil.shouldReportError(node));
     }
     public boolean skipSubtree(SNode root) {
       return false;
@@ -89,7 +89,7 @@ public class AbstractConstraintsCheckerINodeCheckerAdapter implements INodeCheck
         if (mySkipCondition.skipSingleNode(errorReporter.getSNode())) {
           return;
         }
-        cancelled.set(cancelled.get() || processor.process(errorReporter));
+        cancelled.set(cancelled.get() || !(processor.process(errorReporter)));
       }
     };
 
