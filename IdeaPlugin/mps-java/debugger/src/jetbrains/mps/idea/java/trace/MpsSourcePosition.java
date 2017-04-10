@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.java.trace;
 
 import com.intellij.debugger.SourcePosition;
+import com.intellij.openapi.application.ReadAction;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
@@ -80,29 +81,31 @@ public class MpsSourcePosition extends SourcePosition {
   @Override
   public PsiElement getElementAt() {
     PsiFile psiFile = getFile();
-    Document document = PsiDocumentManager.getInstance(myProject).getDocument(psiFile);
-    if (document == null) {
-      return null;
-    }
-    int line = getLine();
-    if (line < 0) {
-      return psiFile;
-    }
-
-    int startOffset = document.getLineStartOffset(line);
-    PsiElement element = psiFile.findElementAt(startOffset);
-    for (; element instanceof PsiWhiteSpace || element instanceof PsiComment; element = psiFile.findElementAt(startOffset)) {
-      startOffset = element.getTextRange().getEndOffset();
-    }
-
-    if (element != null && element.getParent() instanceof PsiForStatement) {
-      PsiStatement initialization = ((PsiForStatement) element.getParent()).getInitialization();
-      if (initialization != null) {
-        element = initialization;
+    return ReadAction.compute(() -> {
+      Document document = PsiDocumentManager.getInstance(myProject).getDocument(psiFile);
+      if (document == null) {
+        return null;
       }
-    }
+      int line = getLine();
+      if (line < 0) {
+        return psiFile;
+      }
 
-    return element;
+      int startOffset = document.getLineStartOffset(line);
+      PsiElement element = psiFile.findElementAt(startOffset);
+      for (; element instanceof PsiWhiteSpace || element instanceof PsiComment; element = psiFile.findElementAt(startOffset)) {
+        startOffset = element.getTextRange().getEndOffset();
+      }
+
+      if (element != null && element.getParent() instanceof PsiForStatement) {
+        PsiStatement initialization = ((PsiForStatement) element.getParent()).getInitialization();
+        if (initialization != null) {
+          element = initialization;
+        }
+      }
+
+      return element;
+    });
   }
 
   @Override
