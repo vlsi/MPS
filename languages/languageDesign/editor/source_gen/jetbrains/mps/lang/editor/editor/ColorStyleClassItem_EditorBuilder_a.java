@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
@@ -126,7 +127,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     public ColorStyleClassItem_generic_cellMenu_azr75j_a0c0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return Sequence.fromIterable(SEnumOperations.getMembers(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0xfc609b3d55L, "_Colors_Enum")).toListSequence();
+      return CollectionSequence.fromCollection(SEnumOperations.getMembers(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0xfc609b3d55L, "_Colors_Enum")).toListSequence();
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SEnumerationLiteral) parameterObject, node, model, operationContext, editorContext);
@@ -230,7 +231,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       public ColorStyleClassItem_generic_cellMenu_azr75j_a0d0() {
       }
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-        return Sequence.fromIterable(SEnumOperations.getMembers(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0xfc609b3d55L, "_Colors_Enum")).toListSequence();
+        return CollectionSequence.fromCollection(SEnumOperations.getMembers(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0xfc609b3d55L, "_Colors_Enum")).toListSequence();
       }
       protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
         this.handleAction_impl((SEnumerationLiteral) parameterObject, node, model, operationContext, editorContext);

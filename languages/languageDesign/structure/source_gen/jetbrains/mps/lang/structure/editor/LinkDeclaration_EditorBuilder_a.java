@@ -46,6 +46,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.NumericLiteralStyleClass;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.EqualUtil;
@@ -292,7 +293,7 @@ import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClas
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       if (SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
-        for (SEnumerationLiteral member : Sequence.fromIterable(SEnumOperations.getMembers(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, "jetbrains.mps.lang.structure", 0xfc6f3944c2L, "Cardinality"))) {
+        for (SEnumerationLiteral member : CollectionSequence.fromCollection(SEnumOperations.getMembers(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, "jetbrains.mps.lang.structure", 0xfc6f3944c2L, "Cardinality"))) {
           ListSequence.fromList(result).addElement(SEnumOperations.getMemberValue(member));
         }
       } else {

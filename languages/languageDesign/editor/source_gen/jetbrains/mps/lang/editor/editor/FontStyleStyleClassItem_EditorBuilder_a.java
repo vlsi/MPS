@@ -28,7 +28,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -126,7 +126,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     public FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0c0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return Sequence.fromIterable(SEnumOperations.getMembers(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1006551b180L, "_FontStyle_Enum")).toListSequence();
+      return CollectionSequence.fromCollection(SEnumOperations.getMembers(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1006551b180L, "_FontStyle_Enum")).toListSequence();
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SEnumerationLiteral) parameterObject, node, model, operationContext, editorContext);
@@ -205,7 +205,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
       public FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0d0() {
       }
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-        return Sequence.fromIterable(SEnumOperations.getMembers(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1006551b180L, "_FontStyle_Enum")).toListSequence();
+        return CollectionSequence.fromCollection(SEnumOperations.getMembers(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1006551b180L, "_FontStyle_Enum")).toListSequence();
       }
       protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
         this.handleAction_impl((SEnumerationLiteral) parameterObject, node, model, operationContext, editorContext);

@@ -9,7 +9,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
@@ -24,7 +24,7 @@ public class TargetDeclaration_resourcesPolicy extends AbstractCellMenuComponent
     public TargetDeclaration_generic_cellMenu_2gyyww_a0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return Sequence.fromIterable(SEnumOperations.getMembers(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet", 0x1740bd43b75c4b23L, "ResourcesPolicy")).toListSequence();
+      return CollectionSequence.fromCollection(SEnumOperations.getMembers(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet", 0x1740bd43b75c4b23L, "ResourcesPolicy")).toListSequence();
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SEnumerationLiteral) parameterObject, node, model, operationContext, editorContext);

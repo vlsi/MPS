@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.plugin.behavior.SimpleShortcutChange__BehaviorDescriptor;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
@@ -148,7 +148,7 @@ public class KeyMapKeystroke_TransformationMenu extends TransformationMenuBase {
         SPropertyOperations.set(keyStrokeCopy, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), "replace all");
         ListSequence.fromList(SLinkOperations.getChildren(shortcut, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, 0x15afe07f2a9bb07eL, "keystroke"))).addElement(keyStrokeCopy);
 
-        SimpleShortcutChange__BehaviorDescriptor.addToKeymapChanges_id1adAGAvXyr3.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange")), shortcut, _context.getModel(), Sequence.fromIterable(SEnumOperations.getMembers(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin", 0x15afe07f2a9bb078L, "Keymap")).where(new IWhereFilter<SEnumerationLiteral>() {
+        SimpleShortcutChange__BehaviorDescriptor.addToKeymapChanges_id1adAGAvXyr3.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange")), shortcut, _context.getModel(), CollectionSequence.fromCollection(SEnumOperations.getMembers(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin", 0x15afe07f2a9bb078L, "Keymap")).where(new IWhereFilter<SEnumerationLiteral>() {
           public boolean accept(SEnumerationLiteral it) {
             return SEnumOperations.getMemberValue(it).equals("Mac OS X") || SEnumOperations.getMemberValue(it).equals("Mac OS X 10.5+");
           }
@@ -225,7 +225,7 @@ public class KeyMapKeystroke_TransformationMenu extends TransformationMenuBase {
         SPropertyOperations.set(keyStrokeConverted, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), "replace all");
         ListSequence.fromList(SLinkOperations.getChildren(shortcut, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, 0x15afe07f2a9bb07eL, "keystroke"))).addElement(keyStrokeConverted);
 
-        SimpleShortcutChange__BehaviorDescriptor.addToKeymapChanges_id1adAGAvXyr3.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange")), shortcut, _context.getModel(), Sequence.fromIterable(SEnumOperations.getMembers(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin", 0x15afe07f2a9bb078L, "Keymap")).where(new IWhereFilter<SEnumerationLiteral>() {
+        SimpleShortcutChange__BehaviorDescriptor.addToKeymapChanges_id1adAGAvXyr3.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange")), shortcut, _context.getModel(), CollectionSequence.fromCollection(SEnumOperations.getMembers(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin", 0x15afe07f2a9bb078L, "Keymap")).where(new IWhereFilter<SEnumerationLiteral>() {
           public boolean accept(SEnumerationLiteral it) {
             return SEnumOperations.getMemberValue(it).equals("Default for KDE") || SEnumOperations.getMemberValue(it).equals("Default for GNOME");
           }

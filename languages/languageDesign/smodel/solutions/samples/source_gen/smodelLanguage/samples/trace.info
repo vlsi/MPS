@@ -975,13 +975,13 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1241018402608">
     <file name="StructureLanguageEnums.java">
-      <node id="1241018645359" at="11,194,12,60" concept="5" />
+      <node id="1241018645359" at="11,206,12,60" concept="5" />
       <node id="1241018693382" at="12,60,13,58" concept="5" />
       <node id="1241018719427" at="13,58,14,183" concept="5" />
       <node id="1241018727183" at="14,183,15,186" concept="5" />
       <node id="1241018438639" at="10,27,16,5" concept="2" />
       <node id="1241018421130" at="10,0,18,0" concept="4" trace="iteration#()V" />
-      <scope id="1241018438642" at="11,194,15,186">
+      <scope id="1241018438642" at="11,206,15,186">
         <var name="cardinality" id="1241018719428" />
         <var name="cardinality2" id="1241018727184" />
         <var name="name" id="1241018693383" />
