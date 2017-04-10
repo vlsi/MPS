@@ -11,11 +11,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.validation.MessageCollectProcessor;
+import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.junit.Assert;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.NodeValidationProblem;
 import jetbrains.mps.project.validation.SuppressingAwareProcessorDecorator;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -44,7 +44,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
         }
 
         for (SModule sm : modules) {
-          MessageCollectProcessor processor = new MessageCollectProcessor(false);
+          MessageCollectProcessor<ValidationProblem> processor = new MessageCollectProcessor<ValidationProblem>(false);
           ValidationUtil.validateModule(sm, processor);
           if (processor.getErrors().isEmpty()) {
             continue;
@@ -68,7 +68,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SModel sm : extractModels(true)) {
-          MessageCollectProcessor collector = new MessageCollectProcessor(false);
+          MessageCollectProcessor<ValidationProblem> collector = new MessageCollectProcessor<ValidationProblem>(false);
           ValidationUtil.validateModel(sm, collector);
           if (collector.getErrors().isEmpty()) {
             continue;
@@ -95,14 +95,11 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SModel sm : extractModels(true)) {
-          MessageCollectProcessor collector = new MessageCollectProcessor(false) {
+          MessageCollectProcessor<NodeValidationProblem> collector = new MessageCollectProcessor<NodeValidationProblem>(false) {
             @Override
-            protected String formatMessage(ValidationProblem problem) {
+            protected String formatMessage(NodeValidationProblem problem) {
               String err = super.formatMessage(problem);
-              if (!((problem instanceof NodeValidationProblem))) {
-                return err;
-              }
-              return err + " in node " + ((NodeValidationProblem) problem).getNode().getNodeId();
+              return err + " in node " + problem.getNode().getNodeId();
             }
           };
           ValidationUtil.validateModelContent(sm.getRootNodes(), new SuppressingAwareProcessorDecorator(collector));
@@ -145,7 +142,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
               }
 
               withErrors = true;
-              errorMessages.append("Broken reference in model {").append(SNodeOperations.getModelLongName(node.getModel())).append("}").append(" node ").append(node.getNodeId().toString()).append("(").append(node).append(")\n");
+              errorMessages.append("Broken reference in model {").append(node.getModel().getName().getLongName()).append("}").append(" node ").append(node.getNodeId().toString()).append("(").append(node).append(")\n");
             }
           }
 

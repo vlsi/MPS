@@ -103,12 +103,12 @@ public class ModelCheckerPreferencesPage implements SearchableConfigurable {
   public void apply() throws ConfigurationException {
     myModelCheckerSettings.setCheckingLevel(ModelCheckerSettings.CheckingLevel.values()[myCheckingLevelSlider.getValue()]);
     myModelCheckerSettings.setCheckStubs(myCheckStubsCheckBox.isSelected());
-    myModelCheckerSettings.setCheckSpecific(myCheckSpecificCheckBox.isSelected());
+    myModelCheckerSettings.setIncludeAdditionalChecks(myCheckSpecificCheckBox.isSelected());
   }
   public void reset() {
     myCheckingLevelSlider.setValue(Arrays.binarySearch(ModelCheckerSettings.CheckingLevel.values(), myModelCheckerSettings.getCheckingLevel()));
     myCheckStubsCheckBox.setSelected(myModelCheckerSettings.isCheckStubs());
-    myCheckSpecificCheckBox.setSelected(myModelCheckerSettings.isCheckSpecific());
+    myCheckSpecificCheckBox.setSelected(myModelCheckerSettings.isIncludeAdditionalChecks());
   }
   @Override
   public boolean isModified() {
@@ -118,7 +118,7 @@ public class ModelCheckerPreferencesPage implements SearchableConfigurable {
     if (myModelCheckerSettings.isCheckStubs() != myCheckStubsCheckBox.isSelected()) {
       return true;
     }
-    if (myModelCheckerSettings.isCheckSpecific() != myCheckSpecificCheckBox.isSelected()) {
+    if (myModelCheckerSettings.isIncludeAdditionalChecks() != myCheckSpecificCheckBox.isSelected()) {
       return true;
     }
     return false;

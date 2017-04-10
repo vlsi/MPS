@@ -7,20 +7,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.checkers.ErrorReportUtil;
 
 public class SuppressingAwareProcessorDecorator implements Processor<ValidationProblem> {
-  private Processor<ValidationProblem> myProcessor;
+  private Processor<NodeValidationProblem> myProcessor;
 
-  public SuppressingAwareProcessorDecorator(Processor<ValidationProblem> processor) {
+  public SuppressingAwareProcessorDecorator(Processor<NodeValidationProblem> processor) {
     myProcessor = processor;
   }
 
   public boolean process(ValidationProblem problem) {
     if (!((problem instanceof NodeValidationProblem))) {
-      return myProcessor.process(problem);
+      return myProcessor.process((NodeValidationProblem) problem);
     }
     SNode node = ((NodeValidationProblem) problem).getNode();
     if (!(ErrorReportUtil.shouldReportError(node))) {
       return true;
     }
-    return myProcessor.process(problem);
+    return myProcessor.process((NodeValidationProblem) problem);
   }
 }

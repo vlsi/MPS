@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -38,8 +37,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
       return results;
     }
     monitor.start("unresolved references", 1);
-
-    for (SNode node : Sequence.fromIterable(SNodeUtil.getDescendants(model))) {
+    for (SNode node : SNodeUtil.getDescendants(model)) {
       if (monitor.isCanceled()) {
         break;
       }
@@ -78,12 +76,12 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
               return false;
             }
 
-            SModuleReference moduleReference = check_xiru3y_a0f0f0i0c0e0c(check_xiru3y_a0a5a5a8a2a4a2(m2));
+            SModuleReference moduleReference = check_xiru3y_a0f0f0i0c0d0c(check_xiru3y_a0a5a5a8a2a3a2(m2));
             if (moduleReference == null) {
               return false;
             }
 
-            SModule module = check_xiru3y_a0i0f0i0c0e0c(model);
+            SModule module = check_xiru3y_a0i0f0i0c0d0c(model);
             if (module == null) {
               return false;
             }
@@ -97,19 +95,19 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     monitor.done();
     return results;
   }
-  private static SModuleReference check_xiru3y_a0f0f0i0c0e0c(SModule checkedDotOperand) {
+  private static SModuleReference check_xiru3y_a0f0f0i0c0d0c(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
-  private static SModule check_xiru3y_a0a5a5a8a2a4a2(SModel checkedDotOperand) {
+  private static SModule check_xiru3y_a0a5a5a8a2a3a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModule check_xiru3y_a0i0f0i0c0e0c(SModel checkedDotOperand) {
+  private static SModule check_xiru3y_a0i0f0i0c0d0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

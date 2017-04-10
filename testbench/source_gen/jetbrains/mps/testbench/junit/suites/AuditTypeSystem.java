@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
+import jetbrains.mps.ide.modelchecker.platform.actions.TypesystemChecker;
 import org.junit.Assert;
 
 public class AuditTypeSystem extends BaseCheckModulesTest {
