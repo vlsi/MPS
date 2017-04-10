@@ -53,9 +53,6 @@
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
-    <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
-      <concept id="1161622753914" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" flags="nn" index="1Q79dO" />
-    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
@@ -1749,7 +1746,6 @@
                           <node concept="30H73N" id="3SXwVgLRhwi" role="2Oq$k0" />
                           <node concept="I4A8Y" id="3SXwVgLRhwj" role="2OqNvi" />
                         </node>
-                        <node concept="1Q79dO" id="3SXwVgLRhwk" role="37wK5m" />
                       </node>
                     </node>
                   </node>
@@ -2945,7 +2941,6 @@
                           <node concept="30H73N" id="L0xQjiUhYB" role="2Oq$k0" />
                           <node concept="I4A8Y" id="L0xQjiUhYC" role="2OqNvi" />
                         </node>
-                        <node concept="1Q79dO" id="L0xQjiUhYD" role="37wK5m" />
                       </node>
                     </node>
                   </node>
@@ -3528,7 +3523,6 @@
                           <node concept="30H73N" id="4K12N3pJJlQ" role="2Oq$k0" />
                           <node concept="I4A8Y" id="4K12N3pJJlR" role="2OqNvi" />
                         </node>
-                        <node concept="1Q79dO" id="4K12N3pJJlS" role="37wK5m" />
                       </node>
                     </node>
                   </node>

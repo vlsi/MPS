@@ -22,7 +22,7 @@ public class QueriesGenerated {
     return (String) PatternTest__BehaviorDescriptor.getPatternTestName_idlS$o0er$H8.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_602731281382637730(final PropertyMacroContext _context) {
-    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()), _context.getGenerator().getGeneratorSessionContext());
+    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_602731281382637740(final PropertyMacroContext _context) {
     return _context.getOriginalInputModel().getReference().toString();

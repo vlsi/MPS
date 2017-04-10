@@ -98,7 +98,7 @@ public class QueriesGenerated {
     return (String) ITestMethod__BehaviorDescriptor.getTestName_idhGBohAB.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_4484885613884807181(final PropertyMacroContext _context) {
-    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()), _context.getGenerator().getGeneratorSessionContext());
+    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_4484885613884807191(final PropertyMacroContext _context) {
     return _context.getOriginalInputModel().getReference().toString();
@@ -155,7 +155,7 @@ public class QueriesGenerated {
     return (String) ITestMethod__BehaviorDescriptor.getTestName_idhGBohAB.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_1229198973224(final PropertyMacroContext _context) {
-    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()), _context.getGenerator().getGeneratorSessionContext());
+    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_1229198973269(final PropertyMacroContext _context) {
     return _context.getOriginalInputModel().getReference().toString();
@@ -186,7 +186,7 @@ public class QueriesGenerated {
     return (String) ITestMethod__BehaviorDescriptor.getTestName_idhGBohAB.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_5476670926298740081(final PropertyMacroContext _context) {
-    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()), _context.getGenerator().getGeneratorSessionContext());
+    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_5476670926298740091(final PropertyMacroContext _context) {
     return _context.getOriginalInputModel().getReference().toString();

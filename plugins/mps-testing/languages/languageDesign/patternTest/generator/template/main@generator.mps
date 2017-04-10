@@ -35,9 +35,6 @@
         <child id="1211979322383" name="after" index="JAdkl" />
       </concept>
     </language>
-    <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
-      <concept id="1161622753914" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" flags="nn" index="1Q79dO" />
-    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
@@ -293,7 +290,6 @@
                             <node concept="30H73N" id="xtlewLP02B" role="2Oq$k0" />
                             <node concept="I4A8Y" id="xtlewLP02C" role="2OqNvi" />
                           </node>
-                          <node concept="1Q79dO" id="xtlewLP02D" role="37wK5m" />
                         </node>
                       </node>
                     </node>
