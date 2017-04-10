@@ -21,7 +21,6 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.FileSystems;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -121,8 +120,11 @@ final class ModuleLoader {
     }
     int loadedModules = 0;
     ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(myProject);
+    ArrayList<ModuleHandle> postponedGeneratorHandles = new ArrayList<>(pathsToLoad.size());
+    // XXX This code resembles ProjectModulesFiller (ProjectStrategyBase). Do we need to keep them separate?
     for (ModuleHandle handle : modulesMiner.getCollectedModules()) {
       if (handle.getDescriptor() instanceof GeneratorDescriptor) {
+        postponedGeneratorHandles.add(handle);
         // FIXME getCollectedModules() yields extended set of ModuleHandle compared to collection of MM.loadModuleHandle return values
         //       that are keys in handleToPath. Namely, there are distinct mined handles for generator modules, which Project implementation
         //       at the moment doesn't expect to see. Perhaps, handleToPath shall map descriptorFile -> ModulePath instead?
@@ -142,6 +144,13 @@ final class ModuleLoader {
         error(String.format("Can't load module from %s. Unknown file type.", handle.getFile().getPath()));
         fireModuleTypeIsUnknown(modulePath);
       }
+    }
+    // at the moment, MRF is not capable to register a generator sooner that its language. To make sure no generator comes first,
+    // we postpone instantiation of all of them.
+    for (ModuleHandle generatorHandle : postponedGeneratorHandles) {
+      repoFacade.instantiateModule(generatorHandle, myProject);
+      // neither myProject.addModule() nor ++loadedModules, nor fireModuleLoaded were considered here as existing code never did it for generator modules
+      // XXX This, however, likely to change once generators become standalone modules.
     }
 
     return loadedModules;
