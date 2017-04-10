@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import java.util.Collection;
+
 /**
  * Represents an enumeration - a collections of related options (SEnumerationLiterals)
  */
@@ -26,5 +28,8 @@ public interface SEnumeration extends SDataType {
 
   SEnumerationLiteral getDefault();
 
-  Iterable<SEnumerationLiteral> getLiterals();
+  /**
+   * @return ordered set of enumeration literals
+   */
+  Collection<SEnumerationLiteral> getLiterals();
 }

@@ -470,7 +470,11 @@
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
+      <concept id="7125221305512719026" name="jetbrains.mps.baseLanguage.collections.structure.CollectionType" flags="in" index="3vKaQO" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
+      <concept id="5686963296372573083" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType" flags="in" index="3O5elB">
+        <child id="5686963296372573084" name="elementType" index="3O5elw" />
+      </concept>
     </language>
   </registry>
   <node concept="1YbPZF" id="h9nq4ne">
@@ -7892,8 +7896,8 @@
         </node>
         <node concept="mw_s8" id="3iWdTCnfrds" role="1ZfhKB">
           <node concept="2c44tf" id="3iWdTCnfrdt" role="mwGJk">
-            <node concept="A3Dl8" id="3iWdTCnfror" role="2c44tc">
-              <node concept="2ZThk1" id="3iWdTCnfrp6" role="A3Ik2">
+            <node concept="3vKaQO" id="JmAKg2X7xw" role="2c44tc">
+              <node concept="2ZThk1" id="3iWdTCnfrp6" role="3O5elw">
                 <node concept="2c44tb" id="3iWdTCnfrp7" role="lGtFl">
                   <property role="2qtEX8" value="enum" />
                   <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1240170042401/1240170836027" />

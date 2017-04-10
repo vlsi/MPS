@@ -5226,11 +5226,11 @@
       <node id="3799973320548266845" at="37,79,38,63" concept="7" />
       <node id="3799973320548266845" at="38,63,39,30" concept="7" />
       <node id="3799973320548266845" at="39,30,40,30" concept="7" />
-      <node id="3799973320548266845" at="40,30,41,262" concept="2" />
-      <node id="3799973320548266845" at="41,262,42,252" concept="2" />
+      <node id="3799973320548266845" at="40,30,41,269" concept="2" />
+      <node id="3799973320548266845" at="41,269,42,252" concept="2" />
       <node id="3799973320548266845" at="42,252,43,193" concept="2" />
-      <node id="3799973320548266845" at="43,193,44,168" concept="2" />
-      <node id="3799973320548266845" at="44,168,45,24" concept="8" />
+      <node id="3799973320548266845" at="43,193,44,178" concept="2" />
+      <node id="3799973320548266845" at="44,178,45,24" concept="8" />
       <node id="1240156075297" at="19,0,21,0" concept="1" trace="typeof_SEnum_MembersOperation_InferenceRule#()V" />
       <node id="1240156075297" at="28,0,31,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1240156075297" at="31,0,34,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />

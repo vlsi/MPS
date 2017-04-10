@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Objects;
 
 /**
@@ -60,7 +61,7 @@ public class SEnumAdapter implements SEnumeration {
   }
 
   @Override
-  public Iterable<SEnumerationLiteral> getLiterals() {
+  public Collection<SEnumerationLiteral> getLiterals() {
     return Arrays.asList(myLiterals);
   }
 

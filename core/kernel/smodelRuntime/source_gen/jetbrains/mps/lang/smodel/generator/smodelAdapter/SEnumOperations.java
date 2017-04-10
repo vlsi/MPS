@@ -18,6 +18,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.adapter.structure.SEnumAdapter;
 import jetbrains.mps.smodel.SNodeId;
+import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 
 public class SEnumOperations {
@@ -76,7 +77,7 @@ public class SEnumOperations {
     }
     return new SEnumAdapter();
   }
-  public static Iterable<SEnumerationLiteral> getMembers(long uuidHigh, long uuidLow, String languageNameHint, long enumId, String enumNameHint) {
+  public static Collection<SEnumerationLiteral> getMembers(long uuidHigh, long uuidLow, String languageNameHint, long enumId, String enumNameHint) {
     SEnumeration e = getEnum(uuidHigh, uuidLow, languageNameHint, enumId, enumNameHint);
     return e.getLiterals();
   }

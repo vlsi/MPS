@@ -438,11 +438,15 @@
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
+      <concept id="7125221305512719026" name="jetbrains.mps.baseLanguage.collections.structure.CollectionType" flags="in" index="3vKaQO" />
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
+      <concept id="5686963296372573083" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType" flags="in" index="3O5elB">
+        <child id="5686963296372573084" name="elementType" index="3O5elw" />
+      </concept>
     </language>
   </registry>
   <node concept="312cEu" id="X9k2kW5hL5">
@@ -1034,14 +1038,14 @@
               <ref role="3cqZAo" node="2nIYwg$4UTT" resolve="e" />
             </node>
             <node concept="liA8E" id="2nIYwg$4WNF" role="2OqNvi">
-              <ref role="37wK5l" to="c17a:~SEnumeration.getLiterals():java.lang.Iterable" resolve="getLiterals" />
+              <ref role="37wK5l" to="c17a:~SEnumeration.getLiterals():java.util.Collection" resolve="getLiterals" />
             </node>
           </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="2nIYwg$4R_7" role="1B3o_S" />
-      <node concept="A3Dl8" id="2nIYwg$5efe" role="3clF45">
-        <node concept="3uibUv" id="2nIYwg$5efg" role="A3Ik2">
+      <node concept="3vKaQO" id="JmAKg2X5zN" role="3clF45">
+        <node concept="3uibUv" id="JmAKg2X5zP" role="3O5elw">
           <ref role="3uigEE" to="c17a:~SEnumerationLiteral" resolve="SEnumerationLiteral" />
         </node>
       </node>
@@ -1227,7 +1231,7 @@
               <ref role="3cqZAo" node="2nIYwg$4Yqa" resolve="e" />
             </node>
             <node concept="liA8E" id="2nIYwg$5bFp" role="2OqNvi">
-              <ref role="37wK5l" to="c17a:~SEnumeration.getLiterals():java.lang.Iterable" resolve="getLiterals" />
+              <ref role="37wK5l" to="c17a:~SEnumeration.getLiterals():java.util.Collection" resolve="getLiterals" />
             </node>
           </node>
         </node>
