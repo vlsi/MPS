@@ -48,6 +48,11 @@ public class UsedLanguagesTable extends MpsElementsTable<SModuleReference> imple
     return usedLanguages;
   }
 
+  public UsedLanguagesTable() {
+    // languages cannot be added/removed to/from module, they're derived from models
+    super(false);
+  }
+
   public void reset(MPSConfigurationBean data) {
     setElements(getUsedLanguages(data));
   }
