@@ -1316,27 +1316,6 @@
                         </node>
                       </node>
                       <node concept="3clFbS" id="2$EeqAz24$k" role="3clFbx">
-                        <node concept="3clFbJ" id="2$EeqAz24$l" role="3cqZAp">
-                          <node concept="2OqwBi" id="2$EeqAz24$m" role="3clFbw">
-                            <node concept="2OqwBi" id="2$EeqAz24$n" role="2Oq$k0">
-                              <node concept="37vLTw" id="2$EeqAz24$o" role="2Oq$k0">
-                                <ref role="3cqZAo" node="2$EeqAz24$1" resolve="reporter" />
-                              </node>
-                              <node concept="liA8E" id="2$EeqAz24$p" role="2OqNvi">
-                                <ref role="37wK5l" to="2gg1:~IErrorReporter.reportError():java.lang.String" resolve="reportError" />
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="2$EeqAz24$q" role="2OqNvi">
-                              <ref role="37wK5l" to="wyt6:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
-                              <node concept="Xl_RD" id="2$EeqAz24$r" role="37wK5m">
-                                <property role="Xl_RC" value="a class should have" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbS" id="2$EeqAz24$s" role="3clFbx">
-                            <node concept="3N13vt" id="2$EeqAz24$t" role="3cqZAp" />
-                          </node>
-                        </node>
                         <node concept="3cpWs8" id="2$EeqAz24$u" role="3cqZAp">
                           <node concept="3cpWsn" id="2$EeqAz24$v" role="3cpWs9">
                             <property role="3TUv4t" value="false" />

@@ -48,9 +48,6 @@ public class CheckingTestsUtil {
           }
 
           if (reporter.getMessageStatus().equals(MessageStatus.ERROR)) {
-            if (reporter.reportError().startsWith("a class should have")) {
-              continue;
-            }
             SNode node = reporter.getSNode();
             if (!(CheckingTestsUtil.filterIssue(node))) {
               continue;
