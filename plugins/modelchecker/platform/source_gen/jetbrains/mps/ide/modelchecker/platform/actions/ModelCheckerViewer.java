@@ -20,6 +20,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.Messages;
 import java.util.ArrayList;
@@ -108,18 +110,23 @@ public class ModelCheckerViewer extends JPanel {
 
     // Perform quick fixes 
     final Wrappers._int fixedTotal = new Wrappers._int(0);
+    // Select all fixable issues 
+    final List<ModelCheckerIssue> issuesToFix = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<List<ModelCheckerIssue>>() {
+      public List<ModelCheckerIssue> compute() {
+        return getIssuesToFix();
+      }
+    });
+    if (ListSequence.fromList(issuesToFix).isEmpty()) {
+      Messages.showInfoMessage("There are no quick fixes for current problems", "No Quick Fixes");
+      return;
+    }
+    int dialogAnswer = Messages.showYesNoDialog(myIdeaProject, "You are going to remove undeclared properties, children from nodes and resolve references. " + "You may not be able to undo it. Are you sure?", "Warning", null);
+    if (dialogAnswer != 0) {
+      return;
+    }
+
     myProject.getModelAccess().executeCommandInEDT(new Runnable() {
       public void run() {
-        // Select all fixable issues 
-        List<ModelCheckerIssue> issuesToFix = ModelCheckerViewer.this.getIssuesToFix();
-        if (ListSequence.fromList(issuesToFix).isEmpty()) {
-          Messages.showInfoMessage("There are no quick fixes for current problems", "No Quick Fixes");
-          return;
-        }
-        int dialogAnswer = Messages.showYesNoDialog(myIdeaProject, "You are going to remove undeclared properties, children from nodes and resolve references. " + "You may not be able to undo it. Are you sure?", "Warning", null);
-        if (dialogAnswer != 0) {
-          return;
-        }
         while (true) {
           int fixedBefore = fixedTotal.value;
           for (ModelCheckerIssue issue : ListSequence.fromListWithValues(new ArrayList<ModelCheckerIssue>(), issuesToFix)) {
