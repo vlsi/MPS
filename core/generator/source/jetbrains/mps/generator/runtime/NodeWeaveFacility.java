@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,21 +55,6 @@ public interface NodeWeaveFacility {
    * @throws GenerationFailureException
    */
   void weaveNode(@NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave) throws GenerationFailureException;
-
-  /**
-   * Inject new node with respect to anchor supplied by the context of this facility, but with overridden parent.
-   * FIXME This is provisional method, until we get rid of TF that override parent node for weaved nodes.
-   * @param contextParentNode node in output model to weave child to
-   * @param childRole role for the child
-   * @param outputNodeToWeave new child node
-   * @throws GenerationFailureException
-   *
-   * IMPORTANT The method is left in MPS 3.5 release cycle as there might be generated generator with MPS 3.4 that
-   *           uses this method. We don't want compilation error before user gets a change to re-generate it.
-   */
-  @ToRemove(version = 3.3)
-  void weaveNode(@NotNull SNode contextParentNode, @NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave) throws GenerationFailureException;
-
 
   /**
    * weave template from another generator

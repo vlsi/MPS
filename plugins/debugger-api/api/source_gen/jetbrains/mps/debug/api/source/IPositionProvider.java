@@ -6,28 +6,11 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.programState.ILocation;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.util.annotation.ToRemove;
 
 public interface IPositionProvider<P extends SourcePosition> {
 
   @Nullable
   P getPosition(@Nullable ILocation location, @NotNull AbstractDebugSession session);
 
-  /**
-   * 
-   * @deprecated implement {@link jetbrains.mps.debug.api.source.IPositionProvider#getPosition(ILocation, AbstractDebugSession) } instead
-   */
-  @Nullable
-  @Deprecated
-  P getPosition(@Nullable ILocation location);
-
-  /**
-   * 
-   * @deprecated  implement {@link jetbrains.mps.debug.api.source.IPositionProvider#getPosition(ILocation, AbstractDebugSession) } instead (wrap arguments with {@link jetbrains.mps.debug.api.programState.GenericSourceCodeLocation } as needed)
-   */
-  @Nullable
-  @Deprecated
-  @ToRemove(version = 3.4)
-  P getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber);
   boolean accepts(AbstractDebugSession session);
 }

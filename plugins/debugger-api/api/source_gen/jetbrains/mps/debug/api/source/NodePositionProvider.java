@@ -16,9 +16,6 @@ import java.util.Iterator;
 import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
-import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class NodePositionProvider implements IPositionProvider<NodeSourcePosition> {
   private final MPSProject myProject;
@@ -59,54 +56,6 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
         return null;
       }
     });
-  }
-
-  @Nullable
-  @Override
-  @Deprecated
-  public NodeSourcePosition getPosition(@Nullable ILocation location) {
-    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
-  }
-
-  @Nullable
-  @Override
-  @Deprecated
-  public NodeSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
-    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
-  }
-
-  @Nullable
-  @Deprecated
-  protected SNodeReference getSNodePointer(@Nullable ILocation location) {
-    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
-  }
-
-  @Nullable
-  @Deprecated
-  protected SNodeReference getSNodePointer(@NonNls final String unitName, @NonNls final String fileName, final int position) {
-    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
-  }
-
-  /**
-   * 
-   * @deprecated {@link jetbrains.mps.debug.api.source.NodePositionProvider#getSNodePointer(ILocation, AbstractDebugSession) } shall be sufficient}
-   */
-  @Nullable
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public SNode getNode(@Nullable ILocation location) {
-    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
-  }
-
-  /**
-   * 
-   * @deprecated {@link jetbrains.mps.debug.api.source.NodePositionProvider#getSNodePointer(ILocation, AbstractDebugSession) shall be sufficient}
-   */
-  @Nullable
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public SNode getNode(@NonNls String unitName, @NonNls String fileName, int position) {
-    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
   }
 
   @Override

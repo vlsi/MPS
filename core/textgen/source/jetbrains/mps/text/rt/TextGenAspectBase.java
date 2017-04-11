@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.text.rt;
 
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Base implementation of {@link TextGenAspectDescriptor} to extend from generated code
@@ -26,11 +23,6 @@ import org.jetbrains.annotations.Nullable;
  * @since 3.3
  */
 public abstract class TextGenAspectBase implements TextGenAspectDescriptor {
-  @Nullable
-  @Override
-  public TextGenDescriptor getDescriptor(@NotNull SConceptId concept) {
-    return getDescriptor(MetaAdapterFactory.getConceptById(concept));
-  }
 
   public void breakdownToUnits(@NotNull TextGenModelOutline modelOutline) {
     // no-op by default, descriptors generated with MPS 3.3 override, if any root textgen present

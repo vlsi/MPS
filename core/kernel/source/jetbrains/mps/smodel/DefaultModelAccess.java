@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -292,10 +292,5 @@ class DefaultModelAccess extends ModelAccess {
   public void removeCommandListener(@NotNull CommandListener listener) {
     @NotNull CommandWriteActionAdapter adapter = myAdaptersMap.remove(listener);
     removeWriteActionListener(adapter);
-  }
-
-  @Override
-  public void writeFilesInEDT(@NotNull Runnable action) {
-    throw new UnsupportedOperationException("cannot invoke write files in EDT");
   }
 }

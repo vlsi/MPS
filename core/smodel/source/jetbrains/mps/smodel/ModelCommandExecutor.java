@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.repository.CommandListener;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.concurrent.ConcurrentMap;
@@ -58,25 +57,6 @@ public interface ModelCommandExecutor {
    * Run write asynchronously, in EDT thread
    */
   void runWriteInEDT(Runnable r);
-
-  /**
-   * @deprecated initial intention of the method was to allow generator to hold a global (write) lock and allow parallel reads from
-   *             other (presumably, generation) threads. However, it's quite complicated approach, with unclear contract (did
-   *             you know you need to get write lock first, and that other threads intended to read shall use regular runReadAction?),
-   *             and has been replaced since with {@link #setReadEnabledFlag(boolean)}
-   *             which does almost the same, but doesn't hold write lock in the originating thread.
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  <T> T runReadInWriteAction(Computable<T> c);
-
-  /**
-   * @deprecated it's impossible to figure out the problem this code tried to address.
-   *             Now it adopts 'cut through' approach, the action would be executed as is and the error logged.
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  void writeFilesInEDT(@NotNull final Runnable action);
 
   /**
    * use runWriteActionInCommand(final Computable<T> c, Project project)

@@ -21,7 +21,6 @@
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="rjhg" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit(jetbrains.mps.baseLanguage.unitTest.libs/)" />
     <import index="q1l7" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.template(MPS.Core/)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
   </imports>
@@ -1355,28 +1354,6 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
-      <node concept="3clFb_" id="5FtnUVJQPCH" role="jymVt">
-        <property role="IEkAT" value="false" />
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getInvocationContext" />
-        <property role="DiZV1" value="false" />
-        <node concept="3Tm1VV" id="5FtnUVJQPCI" role="1B3o_S" />
-        <node concept="3uibUv" id="5FtnUVJQPCJ" role="3clF45">
-          <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
-        </node>
-        <node concept="3clFbS" id="5FtnUVJQPCK" role="3clF47">
-          <node concept="YS8fn" id="5FtnUVJQPFs" role="3cqZAp">
-            <node concept="2ShNRf" id="5FtnUVJQPFt" role="YScLw">
-              <node concept="1pGfFk" id="5FtnUVJQPFu" role="2ShVmc">
-                <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2AHcQZ" id="5FtnUVJQPCL" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-        </node>
-      </node>
       <node concept="3clFb_" id="5FtnUVJQPCw" role="jymVt">
         <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
@@ -1545,34 +1522,6 @@
           </node>
         </node>
         <node concept="2AHcQZ" id="5FtnUVJQPAY" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-        </node>
-      </node>
-      <node concept="3clFb_" id="5FtnUVJQPAG" role="jymVt">
-        <property role="IEkAT" value="false" />
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getOutputNodeByMappingLabel" />
-        <property role="DiZV1" value="false" />
-        <node concept="3Tm1VV" id="5FtnUVJQPAH" role="1B3o_S" />
-        <node concept="3uibUv" id="5FtnUVJQPAI" role="3clF45">
-          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-        </node>
-        <node concept="37vLTG" id="5FtnUVJQPAJ" role="3clF46">
-          <property role="TrG5h" value="string" />
-          <node concept="3uibUv" id="5FtnUVJQPAK" role="1tU5fm">
-            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-          </node>
-        </node>
-        <node concept="3clFbS" id="5FtnUVJQPAL" role="3clF47">
-          <node concept="YS8fn" id="5FtnUVJQPFU" role="3cqZAp">
-            <node concept="2ShNRf" id="5FtnUVJQPFV" role="YScLw">
-              <node concept="1pGfFk" id="5FtnUVJQPFW" role="2ShVmc">
-                <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2AHcQZ" id="5FtnUVJQPAM" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>

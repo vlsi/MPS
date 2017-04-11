@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,6 @@ import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.Reference;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
@@ -135,13 +134,6 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     ComputeRunnable<T> r = new ComputeRunnable<>(c);
     runWriteAction(r);
     return r.getResult();
-  }
-
-  @ToRemove(version = 3.4)
-  @Override
-  public void writeFilesInEDT(@NotNull final Runnable action) {
-    LOG.error("STOP USING ModelAccess.writeFilesInEDT (see javadoc for explanation)", new Throwable());
-    action.run();
   }
 
   private void assertNotWriteFromRead() {

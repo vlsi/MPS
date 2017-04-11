@@ -57,7 +57,6 @@
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
-      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -693,16 +692,7 @@
       </node>
       <node concept="3clFbS" id="4yI1maGH7U2" role="3clF47">
         <node concept="3cpWs6" id="4yI1maGH9_3" role="3cqZAp">
-          <node concept="2OqwBi" id="4yI1maGH9wk" role="3cqZAk">
-            <node concept="2YIFZM" id="4yI1maGH9vi" role="2Oq$k0">
-              <ref role="1Pybhc" to="ogzp:~FindersManager" resolve="FindersManager" />
-              <ref role="37wK5l" to="ogzp:~FindersManager.getInstance():jetbrains.mps.ide.findusages.FindersManager" resolve="getInstance" />
-            </node>
-            <node concept="liA8E" id="4yI1maGH9z9" role="2OqNvi">
-              <ref role="37wK5l" to="ogzp:~FindersManager.getDeclarationNode(jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder):org.jetbrains.mps.openapi.model.SNodeReference" resolve="getDeclarationNode" />
-              <node concept="Xjq3P" id="4yI1maGHgbz" role="37wK5m" />
-            </node>
-          </node>
+          <node concept="10Nm6u" id="7v5ch11OTCL" role="3cqZAk" />
         </node>
       </node>
     </node>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,10 @@
  */
 package jetbrains.mps.smodel.language;
 
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -85,25 +81,6 @@ public class ConstraintsRegistry implements CoreAspectRegistry {
       myStorage.finishLoading(concept);
     }
 
-  }
-
-  /**
-   * Use {@link jetbrains.mps.smodel.language.ConceptRegistryUtil#getConstraintsDescriptor(org.jetbrains.mps.openapi.language.SAbstractConcept)}
-   * if you got SConcept
-   */
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SConceptId conceptId) {
-    String cname = "<ConstraintsRegistry: this name must not be used>";
-
-    ConstraintsDescriptor cd = getConstraintsDescriptor(MetaAdapterFactory.getConceptById(conceptId));
-    //todo !=BaseConstraintsDescriptor is better to be removed, now this is a hack to provide compatibility
-    if (!(cd instanceof IllegalConstraintsDescriptor) && cd.getClass() != BaseConstraintsDescriptor.class) {
-      return cd;
-    }
-
-    return getConstraintsDescriptor(MetaAdapterFactory.getInterfaceConcept(conceptId, cname));
   }
 
   @Override

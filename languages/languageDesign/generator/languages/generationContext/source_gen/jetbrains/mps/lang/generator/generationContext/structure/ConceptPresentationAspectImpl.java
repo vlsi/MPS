@@ -18,7 +18,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_GenerationContextOp_GetCopiedOutputByInput = new ConceptPresentationBuilder().shortDesc("search output node").create();
   private final ConceptPresentation props_GenerationContextOp_GetExport = new ConceptPresentationBuilder().shortDesc("retrieve proxy object for cross-model reference target").create();
   private final ConceptPresentation props_GenerationContextOp_GetInputModel = new ConceptPresentationBuilder().shortDesc("current input model").create();
-  private final ConceptPresentation props_GenerationContextOp_GetInvocationContext = new ConceptPresentationBuilder().deprecated(true).shortDesc("generator invocation context (IOperationContext)").create();
   private final ConceptPresentation props_GenerationContextOp_GetOriginalCopiedInputByOutput = new ConceptPresentationBuilder().shortDesc("original input node copied to output").create();
   private final ConceptPresentation props_GenerationContextOp_GetOriginalInputModel = new ConceptPresentationBuilder().shortDesc("original input model").create();
   private final ConceptPresentation props_GenerationContextOp_GetOutputByLabel = new ConceptPresentationBuilder().shortDesc("search output node").create();
@@ -69,8 +68,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_GenerationContextOp_GetExport;
       case LanguageConceptSwitch.GenerationContextOp_GetInputModel:
         return props_GenerationContextOp_GetInputModel;
-      case LanguageConceptSwitch.GenerationContextOp_GetInvocationContext:
-        return props_GenerationContextOp_GetInvocationContext;
       case LanguageConceptSwitch.GenerationContextOp_GetOriginalCopiedInputByOutput:
         return props_GenerationContextOp_GetOriginalCopiedInputByOutput;
       case LanguageConceptSwitch.GenerationContextOp_GetOriginalInputModel:

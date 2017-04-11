@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,13 +23,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collection;
 
 /**
- * This is provisional interface to migrate from uses of {@link TemplateDeclarationWeavingAware} to
+ * This is provisional interface to migrate from uses of {@code TemplateDeclarationWeavingAware} to
  * {@link TemplateDeclaration}. Denoted @ToRemove as this interface shall become integral part of <code>TemplateDeclaration</code> (if survives).
  *
  * IMPLEMENTATION NOTE:
  * For unknown reason, interpreted templates were not <code>TemplateDeclarationWeavingAware</code>, thus, a call from generated code to interpreted template
  * would fail with CCE in TEEI#weaveTemplate(). For that reason, I don't implement <code>TemplateDeclarationWeavingAware2</code> for interpreted templates, too.
  * I'd need to refactor generated templates and TEE first.
+ * FWIW, {@code TemplateDeclarationWeavingAware} used to extend {@code TemplateDeclaration}
  *
  * DESIGN NOTE:
  * The only reason this interface is standalone, and not part of <code>TemplateDeclaration</code> right away is that I hope to drop TF.contextNodeQuery

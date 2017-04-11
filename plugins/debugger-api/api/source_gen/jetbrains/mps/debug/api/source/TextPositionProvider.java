@@ -31,16 +31,6 @@ public class TextPositionProvider implements IPositionProvider<TextSourcePositio
     return null;
   }
   @Nullable
-  @Override
-  public TextSourcePosition getPosition(@Nullable ILocation location) {
-    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
-  }
-  @Nullable
-  @Override
-  public TextSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
-    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
-  }
-  @Nullable
   public VirtualFile getFile(@Nullable ILocation location) {
     if (location == null || location instanceof NullLocation) {
       return null;

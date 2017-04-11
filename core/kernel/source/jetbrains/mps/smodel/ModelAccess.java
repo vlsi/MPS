@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -101,13 +100,6 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
   @Override
   public boolean canWrite() {
     return myReadWriteLock.isWriteLockedByCurrentThread();
-  }
-
-  @Deprecated
-  @Override
-  public <T> T runReadInWriteAction(final Computable<T> c) {
-    checkWriteAccess();
-    return c.compute();
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
@@ -37,7 +36,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -145,13 +143,6 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
     return null;
   }
 
-  // this reference is part of GeneratedFinder now, the map left for compatibility with old code.
-  // New GeneratedFinder classes override respective method and do not rely on GF.getDeclarationNode implementation
-  @ToRemove(version = 3.5)
-  public SNodeReference getDeclarationNode(GeneratedFinder finder) {
-    return myNodesByFinder.get(finder);
-  }
-
   //-------------reloading stuff----------------
 
   private void checkLoaded() {
@@ -160,23 +151,6 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
     }
     myLoaded = true;
     load();
-  }
-
-  /**
-   * @deprecated Aspects generated with MPS 3.4 rely on this method, drop once 3.5 is out.
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public void addFinder(GeneratedFinder finder, SModuleReference moduleRef, SNodeReference np) {
-    SLanguageId declaringLanguage = MetaIdByDeclaration.ref2LangId(moduleRef);
-    LanguageFinders languageFinders;
-    if ((languageFinders = myLanguageFindersMap.get(declaringLanguage)) == null) {
-      LOG.warn("shall not happen, provided we've populated the map in #initFindersDescriptor");
-      myLanguageFindersMap.put(declaringLanguage, languageFinders = new LanguageFinders(myLanguageRegistry.getLanguage(declaringLanguage)));
-    }
-    languageFinders.addLegacy(finder);
-
-    myNodesByFinder.put(finder, np);
   }
 
   private void load() {
