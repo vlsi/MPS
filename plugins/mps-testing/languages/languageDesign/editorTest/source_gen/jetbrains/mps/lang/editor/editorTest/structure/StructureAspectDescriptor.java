@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptAbstract_SubstTestChild_WithNextApplicableEditorAndMenu = createDescriptorForAbstract_SubstTestChild_WithNextApplicableEditorAndMenu();
   /*package*/ final ConceptDescriptor myConceptAttractsFocusBlock = createDescriptorForAttractsFocusBlock();
   /*package*/ final ConceptDescriptor myConceptAttributeChild = createDescriptorForAttributeChild();
   /*package*/ final ConceptDescriptor myConceptAttributeWithChildren = createDescriptorForAttributeWithChildren();
@@ -70,6 +71,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSubstMiddlewareChild = createDescriptorForSubstMiddlewareChild();
   /*package*/ final ConceptDescriptor myConceptSubstTestAbstractChild = createDescriptorForSubstTestAbstractChild();
   /*package*/ final ConceptDescriptor myConceptSubstTestBooleanPropertyChild = createDescriptorForSubstTestBooleanPropertyChild();
+  /*package*/ final ConceptDescriptor myConceptSubstTestChild_WithNextApplicableEditorAndMenu_1 = createDescriptorForSubstTestChild_WithNextApplicableEditorAndMenu_1();
+  /*package*/ final ConceptDescriptor myConceptSubstTestChild_WithNextApplicableEditorAndMenu_2 = createDescriptorForSubstTestChild_WithNextApplicableEditorAndMenu_2();
   /*package*/ final ConceptDescriptor myConceptSubstTestEnumPropertyChild = createDescriptorForSubstTestEnumPropertyChild();
   /*package*/ final ConceptDescriptor myConceptSubstTestRoot = createDescriptorForSubstTestRoot();
   /*package*/ final ConceptDescriptor myConceptTestBlockList = createDescriptorForTestBlockList();
@@ -84,13 +87,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAttractsFocusBlock, myConceptAttributeChild, myConceptAttributeWithChildren, myConceptAttributedConcept, myConceptBinaryExpression, myConceptBracesBlock, myConceptBracesStubBlock, myConceptClassReference, myConceptCollapsedByDefault, myConceptCollapsedConditionally, myConceptCollapsibleConcept, myConceptComposition, myConceptDelTestAbstractChild, myConceptDelTestChild1, myConceptDelTestChildContainer, myConceptDelTestChildSpecialContainer, myConceptDelTestRoot, myConceptDelTestSpecialAbstractChild, myConceptDelTestSpecialChild1, myConceptDeleteWrapperChild, myConceptDeleteWrapperRoot, myConceptFoldingContainer, myConceptIBaseTestBlock, myConceptIDelTestChild, myConceptIDelTestConcreteChild, myConceptISpecialDelTestChild, myConceptISpecialDelTestConcreteChild, myConceptInitAbstractChild, myConceptInitChildWithDirectCycle_card1, myConceptInitChildWithDirectCycle_card1n, myConceptInitChildWithIndirectCycle_card1, myConceptInitChildWithIndirectCycle_card1n, myConceptInitChildWithTwoSameConceptChildren, myConceptInitContainer, myConceptInitGrandChild, myConceptInitGrandChildWithIndirectCycle_card1, myConceptInitGrandChildWithIndirectCycle_card1n, myConceptInspectorBlock, myConceptIntegerLiteral, myConceptLabelConceptWithProperty, myConceptNonEmptyProperty, myConceptNotEditableVaraileReference, myConceptPlusExpression, myConceptReferenceAnnotataion, myConceptSelectionChild, myConceptSelectionContainer, myConceptSideTranformWrapper, myConceptSimpleNode, myConceptSimpleNodeHidingAttribute, myConceptSimpleNodesContainer, myConceptSimplePropertyAttribute, myConceptSimplePropertyContainer, myConceptStubBlock, myConceptStyleChild, myConceptStyleParent, myConceptSubstMiddlewareChild, myConceptSubstTestAbstractChild, myConceptSubstTestBooleanPropertyChild, myConceptSubstTestEnumPropertyChild, myConceptSubstTestRoot, myConceptTestBlockList, myConceptVariableDeclarationBlock, myConceptVariableDeclarationReference, myConceptVerticalLayoutBlockList);
+    return Arrays.asList(myConceptAbstract_SubstTestChild_WithNextApplicableEditorAndMenu, myConceptAttractsFocusBlock, myConceptAttributeChild, myConceptAttributeWithChildren, myConceptAttributedConcept, myConceptBinaryExpression, myConceptBracesBlock, myConceptBracesStubBlock, myConceptClassReference, myConceptCollapsedByDefault, myConceptCollapsedConditionally, myConceptCollapsibleConcept, myConceptComposition, myConceptDelTestAbstractChild, myConceptDelTestChild1, myConceptDelTestChildContainer, myConceptDelTestChildSpecialContainer, myConceptDelTestRoot, myConceptDelTestSpecialAbstractChild, myConceptDelTestSpecialChild1, myConceptDeleteWrapperChild, myConceptDeleteWrapperRoot, myConceptFoldingContainer, myConceptIBaseTestBlock, myConceptIDelTestChild, myConceptIDelTestConcreteChild, myConceptISpecialDelTestChild, myConceptISpecialDelTestConcreteChild, myConceptInitAbstractChild, myConceptInitChildWithDirectCycle_card1, myConceptInitChildWithDirectCycle_card1n, myConceptInitChildWithIndirectCycle_card1, myConceptInitChildWithIndirectCycle_card1n, myConceptInitChildWithTwoSameConceptChildren, myConceptInitContainer, myConceptInitGrandChild, myConceptInitGrandChildWithIndirectCycle_card1, myConceptInitGrandChildWithIndirectCycle_card1n, myConceptInspectorBlock, myConceptIntegerLiteral, myConceptLabelConceptWithProperty, myConceptNonEmptyProperty, myConceptNotEditableVaraileReference, myConceptPlusExpression, myConceptReferenceAnnotataion, myConceptSelectionChild, myConceptSelectionContainer, myConceptSideTranformWrapper, myConceptSimpleNode, myConceptSimpleNodeHidingAttribute, myConceptSimpleNodesContainer, myConceptSimplePropertyAttribute, myConceptSimplePropertyContainer, myConceptStubBlock, myConceptStyleChild, myConceptStyleParent, myConceptSubstMiddlewareChild, myConceptSubstTestAbstractChild, myConceptSubstTestBooleanPropertyChild, myConceptSubstTestChild_WithNextApplicableEditorAndMenu_1, myConceptSubstTestChild_WithNextApplicableEditorAndMenu_2, myConceptSubstTestEnumPropertyChild, myConceptSubstTestRoot, myConceptTestBlockList, myConceptVariableDeclarationBlock, myConceptVariableDeclarationReference, myConceptVerticalLayoutBlockList);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myConceptIndex.index(id)) {
+      case LanguageConceptSwitch.Abstract_SubstTestChild_WithNextApplicableEditorAndMenu:
+        return myConceptAbstract_SubstTestChild_WithNextApplicableEditorAndMenu;
       case LanguageConceptSwitch.AttractsFocusBlock:
         return myConceptAttractsFocusBlock;
       case LanguageConceptSwitch.AttributeChild:
@@ -207,6 +212,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptSubstTestAbstractChild;
       case LanguageConceptSwitch.SubstTestBooleanPropertyChild:
         return myConceptSubstTestBooleanPropertyChild;
+      case LanguageConceptSwitch.SubstTestChild_WithNextApplicableEditorAndMenu_1:
+        return myConceptSubstTestChild_WithNextApplicableEditorAndMenu_1;
+      case LanguageConceptSwitch.SubstTestChild_WithNextApplicableEditorAndMenu_2:
+        return myConceptSubstTestChild_WithNextApplicableEditorAndMenu_2;
       case LanguageConceptSwitch.SubstTestEnumPropertyChild:
         return myConceptSubstTestEnumPropertyChild;
       case LanguageConceptSwitch.SubstTestRoot:
@@ -228,6 +237,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myConceptIndex.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForAbstract_SubstTestChild_WithNextApplicableEditorAndMenu() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "Abstract_SubstTestChild_WithNextApplicableEditorAndMenu", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x818e8ddb10c8044L);
+    b.class_(false, true, false);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/583472190600282180");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForAttractsFocusBlock() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "AttractsFocusBlock", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f8d778L);
     b.class_(false, false, false);
@@ -664,6 +679,21 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("myProperty", 0xd4944c0b03c7179L, "957371990174101881");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForSubstTestChild_WithNextApplicableEditorAndMenu_1() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "SubstTestChild_WithNextApplicableEditorAndMenu_1", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x818e8ddb10a611eL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.editorTest.structure.Abstract_SubstTestChild_WithNextApplicableEditorAndMenu", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x818e8ddb10c8044L);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/583472190600143134");
+    b.prop("property", 0x818e8ddb10a61c9L, "583472190600143305");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSubstTestChild_WithNextApplicableEditorAndMenu_2() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "SubstTestChild_WithNextApplicableEditorAndMenu_2", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x818e8ddb10b1390L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.editorTest.structure.Abstract_SubstTestChild_WithNextApplicableEditorAndMenu", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x818e8ddb10c8044L);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/583472190600188816");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForSubstTestEnumPropertyChild() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "SubstTestEnumPropertyChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c35aeL);
     b.class_(false, false, false);
@@ -682,6 +712,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("multiChild", 0xd4944c0b0434672L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL).optional(true).ordered(true).multiple(true).origin("957371990174549618").done();
     b.aggregate("separatorChild", 0x7ebf3747d08ca4f6L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL).optional(true).ordered(true).multiple(true).origin("9133079350911739126").done();
     b.aggregate("middlewareChild", 0x7ebf3747d08cabf9L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x7ebf3747d08cab96L).optional(true).ordered(true).multiple(false).origin("9133079350911740921").done();
+    b.aggregate("childWithNextEditorAndMenu", 0x818e8ddb10a612cL).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x818e8ddb10c8044L).optional(true).ordered(true).multiple(false).origin("583472190600143148").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTestBlockList() {

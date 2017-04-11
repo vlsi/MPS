@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private final ConceptPresentation props_Abstract_SubstTestChild_WithNextApplicableEditorAndMenu = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttractsFocusBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttributeChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttributeWithChildren = new ConceptPresentationBuilder().create();
@@ -67,6 +68,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SubstMiddlewareChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstTestAbstractChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstTestBooleanPropertyChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SubstTestChild_WithNextApplicableEditorAndMenu_1 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SubstTestChild_WithNextApplicableEditorAndMenu_2 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstTestEnumPropertyChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstTestRoot = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestBlockList = new ConceptPresentationBuilder().create();
@@ -79,6 +82,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.Abstract_SubstTestChild_WithNextApplicableEditorAndMenu:
+        return props_Abstract_SubstTestChild_WithNextApplicableEditorAndMenu;
       case LanguageConceptSwitch.AttractsFocusBlock:
         return props_AttractsFocusBlock;
       case LanguageConceptSwitch.AttributeChild:
@@ -195,6 +200,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_SubstTestAbstractChild;
       case LanguageConceptSwitch.SubstTestBooleanPropertyChild:
         return props_SubstTestBooleanPropertyChild;
+      case LanguageConceptSwitch.SubstTestChild_WithNextApplicableEditorAndMenu_1:
+        return props_SubstTestChild_WithNextApplicableEditorAndMenu_1;
+      case LanguageConceptSwitch.SubstTestChild_WithNextApplicableEditorAndMenu_2:
+        return props_SubstTestChild_WithNextApplicableEditorAndMenu_2;
       case LanguageConceptSwitch.SubstTestEnumPropertyChild:
         return props_SubstTestEnumPropertyChild;
       case LanguageConceptSwitch.SubstTestRoot:
