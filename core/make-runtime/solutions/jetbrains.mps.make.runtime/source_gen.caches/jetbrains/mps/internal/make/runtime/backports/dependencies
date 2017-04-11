@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter" file="JobProgressMonitorAdapter.java">
-    <classNode dependClassName="java.lang.Math" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
-    <classNode extendsClassName="jetbrains.mps.progress.ProgressMonitorBase" />
-  </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.backports.ProgressMonitorProgressStrategy" file="ProgressMonitorProgressStrategy.java">
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />
