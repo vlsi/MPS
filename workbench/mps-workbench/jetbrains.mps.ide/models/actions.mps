@@ -18208,6 +18208,7 @@
     <property role="2uzpH1" value="File" />
     <property role="3GE5qa" value="Menu.FileView.Actions" />
     <property role="1teQrl" value="true" />
+    <property role="72QZ$" value="true" />
     <node concept="1QGGSu" id="3YM7NwaMEmV" role="3Uehp1">
       <node concept="10M0yZ" id="3YM7NwaN8$c" role="3xaMm5">
         <ref role="1PxDUh" to="z2i8:~AllIcons$FileTypes" resolve="AllIcons.FileTypes" />
