@@ -22,6 +22,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.generator.impl.reference.RefResolver;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -91,7 +92,12 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
             {
               final SNode tnode9 = environment.createOutputNode(myConcepts[3]);
               try {
-                environment.resolveInTemplateLater(tnode9, myAssociationLinks[2], templateNode_nyxx76_c0a0a1a3a1a2a3a3a6, "tpl/r:00000000-0000-4000-0000-011c89590303/75056552358309511", "cncpt", context4);
+                environment.resolve(new RefResolver(tnode9, myAssociationLinks[2], context4, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "4217968694108143881"), "cncpt") {
+                  @Override
+                  public Object resolve() {
+                    return QueriesGenerated.referenceMacro_GetReferent_4217968694108143882(createQueryContext());
+                  }
+                });
               } finally {
               }
               tnode8.addChild(myAggregationLinks[2], tnode9);
@@ -189,7 +195,6 @@ public class Template_reduce_ConceptSwitch_SubconceptCases extends TemplateDecla
   private static SNodePointer loopMacroRef_nyxx76_b0a0a2a6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "75056552358317728");
   private static SNodePointer copySrcListMacro_nyxx76_b0a0a1a1a1a1a1a3a3a6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "75056552358317719");
   private static SNodePointer ifMacroRef_nyxx76_b0a0b0b0b0b0d0d0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "75056552358317704");
-  private static SNodePointer templateNode_nyxx76_c0a0a1a3a1a2a3a3a6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "75056552358317754");
   private static SNodePointer includeMacro_nyxx76_b0a0a0a1a4a1a2a3a3a6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "75056552358317756");
   private static SNodePointer copySrcListMacro_nyxx76_b0a0a1a2a7 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "75056552358330361");
   private static SNodePointer ifMacroRef_nyxx76_b0a0c0h = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "75056552358338157");
