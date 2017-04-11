@@ -10,8 +10,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 public interface IScriptController {
   void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code);
   void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code);
-  @Deprecated
-  void setup(IPropertiesPool ppool);
   void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input);
   @Deprecated
   void useMonitor(ProgressMonitor monitor);
@@ -34,8 +32,7 @@ public interface IScriptController {
     public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
       code.invoke(cmon);
     }
-    @Override
-    public void setup(IPropertiesPool ppool) {
+    protected void setup(IPropertiesPool ppool) {
     }
     @Override
     public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {

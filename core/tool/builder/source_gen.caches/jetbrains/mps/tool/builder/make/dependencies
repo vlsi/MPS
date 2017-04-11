@@ -22,6 +22,7 @@
     <classNode dependClassName="jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer" />
     <classNode dependClassName="jetbrains.mps.internal.make.cfg.TextGenFacetInitializer" />
     <classNode dependClassName="jetbrains.mps.make.MakeSession" />
+    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
