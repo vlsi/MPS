@@ -820,18 +820,101 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="10_gAdIjVfp" role="3cqZAp">
-          <node concept="3cpWsn" id="10_gAdIjVfn" role="3cpWs9">
-            <property role="3TUv4t" value="true" />
-            <property role="TrG5h" value="monitor" />
-            <node concept="3uibUv" id="10_gAdIjWg6" role="1tU5fm">
-              <ref role="3uigEE" to="4rvk:7UozGIEQkbu" resolve="AbstractMakeService.DefaultMonitor" />
+        <node concept="3SKdUt" id="5OeL7nc1Jxb" role="3cqZAp">
+          <node concept="3SKdUq" id="5OeL7nc1Jym" role="3SKWNk">
+            <property role="3SKdUp" value="trace.info is useless for tests, however we do keep these files in repo, and diffModule test" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5OeL7nc1MC0" role="3cqZAp">
+          <node concept="3SKdUq" id="5OeL7nc1MDd" role="3SKWNk">
+            <property role="3SKdUp" value="fails if we don't generate one here" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5Pnc_qQloLK" role="3cqZAp">
+          <node concept="3cpWsn" id="5Pnc_qQloLL" role="3cpWs9">
+            <property role="TrG5h" value="tgfi" />
+            <node concept="3uibUv" id="5Pnc_qQloLI" role="1tU5fm">
+              <ref role="3uigEE" to="1gam:7UozGIEOUte" resolve="TextGenFacetInitializer" />
             </node>
-            <node concept="2ShNRf" id="10_gAdIjXl7" role="33vP2m">
-              <node concept="1pGfFk" id="10_gAdIk7YJ" role="2ShVmc">
-                <ref role="37wK5l" to="4rvk:7UozGIEQUec" resolve="AbstractMakeService.DefaultMonitor" />
-                <node concept="37vLTw" id="10_gAdIk8wB" role="37wK5m">
-                  <ref role="3cqZAo" node="7UozGIEOt5z" resolve="session" />
+            <node concept="2OqwBi" id="5Pnc_qQloLM" role="33vP2m">
+              <node concept="2OqwBi" id="5Pnc_qQloLN" role="2Oq$k0">
+                <node concept="2ShNRf" id="5Pnc_qQloLO" role="2Oq$k0">
+                  <node concept="1pGfFk" id="5Pnc_qQloLP" role="2ShVmc">
+                    <ref role="37wK5l" to="1gam:7UozGIEOUu1" resolve="TextGenFacetInitializer" />
+                    <node concept="37vLTw" id="5Pnc_qQloLQ" role="37wK5m">
+                      <ref role="3cqZAo" node="7UozGIEOt5z" resolve="session" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="5Pnc_qQloLR" role="2OqNvi">
+                  <ref role="37wK5l" to="1gam:7UozGIEPmYI" resolve="failNoTextGen" />
+                  <node concept="3clFbT" id="5Pnc_qQloLS" role="37wK5m">
+                    <property role="3clFbU" value="false" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="5Pnc_qQloLT" role="2OqNvi">
+                <ref role="37wK5l" to="1gam:7UozGIEPrKT" resolve="generateDebugInfo" />
+                <node concept="3clFbT" id="5Pnc_qQloLU" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5Pnc_qQlqS9" role="3cqZAp">
+          <node concept="3cpWsn" id="5Pnc_qQlqSa" role="3cpWs9">
+            <property role="TrG5h" value="mfi" />
+            <node concept="3uibUv" id="5Pnc_qQlqRV" role="1tU5fm">
+              <ref role="3uigEE" to="1gam:5OeL7nc7B8$" resolve="MakeFacetInitializer" />
+            </node>
+            <node concept="2OqwBi" id="5Pnc_qQlqSb" role="33vP2m">
+              <node concept="2ShNRf" id="5Pnc_qQlqSc" role="2Oq$k0">
+                <node concept="1pGfFk" id="5Pnc_qQlqSd" role="2ShVmc">
+                  <ref role="37wK5l" to="1gam:5OeL7nc7VFF" resolve="MakeFacetInitializer" />
+                </node>
+              </node>
+              <node concept="liA8E" id="5Pnc_qQlqSe" role="2OqNvi">
+                <ref role="37wK5l" to="1gam:5OeL7nc7PFI" resolve="setPathToFile" />
+                <node concept="1bVj0M" id="5Pnc_qQlqSf" role="37wK5m">
+                  <node concept="37vLTG" id="5Pnc_qQlqSg" role="1bW2Oz">
+                    <property role="TrG5h" value="path" />
+                    <node concept="17QB3L" id="5Pnc_qQlqSh" role="1tU5fm" />
+                  </node>
+                  <node concept="3clFbS" id="5Pnc_qQlqSi" role="1bW5cS">
+                    <node concept="3clFbF" id="5Pnc_qQlqSj" role="3cqZAp">
+                      <node concept="1rXfSq" id="5Pnc_qQlqSk" role="3clFbG">
+                        <ref role="37wK5l" node="5hswj9tKfWT" resolve="tmpFile" />
+                        <node concept="37vLTw" id="5Pnc_qQlqSl" role="37wK5m">
+                          <ref role="3cqZAo" node="5Pnc_qQlqSg" resolve="path" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5Pnc_qQlsJW" role="3cqZAp">
+          <node concept="3cpWsn" id="5Pnc_qQlsJX" role="3cpWs9">
+            <property role="TrG5h" value="gfi" />
+            <node concept="3uibUv" id="5Pnc_qQlsJV" role="1tU5fm">
+              <ref role="3uigEE" to="1gam:7UozGIENo9e" resolve="GenerateFacetInitializer" />
+            </node>
+            <node concept="2OqwBi" id="5Pnc_qQlsJY" role="33vP2m">
+              <node concept="2ShNRf" id="5Pnc_qQlsJZ" role="2Oq$k0">
+                <node concept="1pGfFk" id="5Pnc_qQlsK0" role="2ShVmc">
+                  <ref role="37wK5l" to="1gam:7UozGIENpId" resolve="GenerateFacetInitializer" />
+                  <node concept="37vLTw" id="5Pnc_qQlsK1" role="37wK5m">
+                    <ref role="3cqZAo" node="7UozGIEOt5z" resolve="session" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="5Pnc_qQlsK2" role="2OqNvi">
+                <ref role="37wK5l" to="1gam:5OeL7ncc90L" resolve="setGenerationOptions" />
+                <node concept="37vLTw" id="5Pnc_qQlsK3" role="37wK5m">
+                  <ref role="3cqZAo" node="NauThptQnK" resolve="optBuilder" />
                 </node>
               </node>
             </node>
@@ -843,148 +926,25 @@
             <node concept="3uibUv" id="7V$GMzHGXZS" role="1tU5fm">
               <ref role="3uigEE" to="i9so:4231y0oKQyu" resolve="IScriptController" />
             </node>
-            <node concept="2ShNRf" id="7V$GMzHGXZh" role="33vP2m">
-              <node concept="YeOm9" id="7V$GMzHGXZi" role="2ShVmc">
-                <node concept="1Y3b0j" id="7V$GMzHGXZj" role="YeSDq">
-                  <property role="2bfB8j" value="true" />
-                  <ref role="1Y3XeK" to="i9so:4TqQgK0ryjt" resolve="IScriptController.Stub" />
-                  <ref role="37wK5l" to="i9so:4TqQgK0ryjv" resolve="IScriptController.Stub" />
-                  <node concept="3Tm1VV" id="7V$GMzHGXZk" role="1B3o_S" />
-                  <node concept="3clFb_" id="7V$GMzHGXZl" role="jymVt">
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="setup" />
-                    <node concept="37vLTG" id="7V$GMzHGXZm" role="3clF46">
-                      <property role="TrG5h" value="ppool" />
-                      <node concept="3uibUv" id="7V$GMzHGXZn" role="1tU5fm">
-                        <ref role="3uigEE" to="i9so:5XvfMqim0Fp" resolve="IPropertiesPool" />
-                      </node>
-                    </node>
-                    <node concept="3cqZAl" id="7V$GMzHGXZo" role="3clF45" />
-                    <node concept="3Tm1VV" id="7V$GMzHGXZp" role="1B3o_S" />
-                    <node concept="3clFbS" id="7V$GMzHGXZq" role="3clF47">
-                      <node concept="3SKdUt" id="5OeL7nc1Jxb" role="3cqZAp">
-                        <node concept="3SKdUq" id="5OeL7nc1Jym" role="3SKWNk">
-                          <property role="3SKdUp" value="trace.info is useless for tests, however we do keep these files in repo, and diffModule test" />
-                        </node>
-                      </node>
-                      <node concept="3SKdUt" id="5OeL7nc1MC0" role="3cqZAp">
-                        <node concept="3SKdUq" id="5OeL7nc1MDd" role="3SKWNk">
-                          <property role="3SKdUp" value="fails if we don't generate one here" />
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="7UozGIEPZ$t" role="3cqZAp">
-                        <node concept="2OqwBi" id="7UozGIEQ25m" role="3clFbG">
-                          <node concept="2OqwBi" id="7UozGIEQ0Sa" role="2Oq$k0">
-                            <node concept="2OqwBi" id="7UozGIEPZTm" role="2Oq$k0">
-                              <node concept="2ShNRf" id="5OeL7nccMBY" role="2Oq$k0">
-                                <node concept="1pGfFk" id="5OeL7nccMBZ" role="2ShVmc">
-                                  <ref role="37wK5l" to="1gam:7UozGIEOUu1" resolve="TextGenFacetInitializer" />
-                                  <node concept="37vLTw" id="72ouys9KrRx" role="37wK5m">
-                                    <ref role="3cqZAo" node="7UozGIEOt5z" resolve="session" />
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="liA8E" id="7UozGIEQ0y9" role="2OqNvi">
-                                <ref role="37wK5l" to="1gam:7UozGIEPmYI" resolve="failNoTextGen" />
-                                <node concept="3clFbT" id="7UozGIEQ0Hj" role="37wK5m">
-                                  <property role="3clFbU" value="false" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="7UozGIEQ1GW" role="2OqNvi">
-                              <ref role="37wK5l" to="1gam:7UozGIEPrKT" resolve="generateDebugInfo" />
-                              <node concept="3clFbT" id="7UozGIEQ1To" role="37wK5m">
-                                <property role="3clFbU" value="true" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="7UozGIEQ2Qj" role="2OqNvi">
-                            <ref role="37wK5l" to="1gam:7UozGIEP8Yt" resolve="populate" />
-                            <node concept="37vLTw" id="7UozGIEQ33P" role="37wK5m">
-                              <ref role="3cqZAo" node="7V$GMzHGXZm" resolve="ppool" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="5OeL7ncbdgp" role="3cqZAp">
-                        <node concept="2OqwBi" id="5OeL7ncbfML" role="3clFbG">
-                          <node concept="2OqwBi" id="5OeL7ncbeB0" role="2Oq$k0">
-                            <node concept="2ShNRf" id="5OeL7ncbdgl" role="2Oq$k0">
-                              <node concept="1pGfFk" id="5OeL7ncbet3" role="2ShVmc">
-                                <ref role="37wK5l" to="1gam:5OeL7nc7VFF" resolve="MakeFacetInitializer" />
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="5OeL7ncbf9b" role="2OqNvi">
-                              <ref role="37wK5l" to="1gam:5OeL7nc7PFI" resolve="setPathToFile" />
-                              <node concept="1bVj0M" id="4_Slee3u3DC" role="37wK5m">
-                                <node concept="37vLTG" id="4_Slee3u3DD" role="1bW2Oz">
-                                  <property role="TrG5h" value="path" />
-                                  <node concept="17QB3L" id="4_Slee3u3DE" role="1tU5fm" />
-                                </node>
-                                <node concept="3clFbS" id="4_Slee3u3DF" role="1bW5cS">
-                                  <node concept="3clFbF" id="4_Slee3u3DG" role="3cqZAp">
-                                    <node concept="1rXfSq" id="4hiugqyz9VL" role="3clFbG">
-                                      <ref role="37wK5l" node="5hswj9tKfWT" resolve="tmpFile" />
-                                      <node concept="37vLTw" id="2BHiRxgmzmI" role="37wK5m">
-                                        <ref role="3cqZAo" node="4_Slee3u3DD" resolve="path" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="5OeL7ncbgex" role="2OqNvi">
-                            <ref role="37wK5l" to="1gam:5OeL7nc7B92" resolve="populate" />
-                            <node concept="37vLTw" id="5OeL7ncbg$x" role="37wK5m">
-                              <ref role="3cqZAo" node="7V$GMzHGXZm" resolve="ppool" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="5OeL7nccEf9" role="3cqZAp">
-                        <node concept="2OqwBi" id="5OeL7nccGbY" role="3clFbG">
-                          <node concept="2OqwBi" id="5OeL7nccFiv" role="2Oq$k0">
-                            <node concept="2ShNRf" id="5OeL7nccEf5" role="2Oq$k0">
-                              <node concept="1pGfFk" id="5OeL7nccF7G" role="2ShVmc">
-                                <ref role="37wK5l" to="1gam:7UozGIENpId" resolve="GenerateFacetInitializer" />
-                                <node concept="37vLTw" id="5OeL7nccLDa" role="37wK5m">
-                                  <ref role="3cqZAo" node="7UozGIEOt5z" resolve="session" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="5OeL7nccFO8" role="2OqNvi">
-                              <ref role="37wK5l" to="1gam:5OeL7ncc90L" resolve="setGenerationOptions" />
-                              <node concept="37vLTw" id="5OeL7nccFZk" role="37wK5m">
-                                <ref role="3cqZAo" node="NauThptQnK" resolve="optBuilder" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="5OeL7nccGwN" role="2OqNvi">
-                            <ref role="37wK5l" to="1gam:7UozGIENpIK" resolve="populate" />
-                            <node concept="37vLTw" id="5OeL7nccMmT" role="37wK5m">
-                              <ref role="3cqZAo" node="7V$GMzHGXZm" resolve="ppool" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2AHcQZ" id="7V$GMzHGXZM" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="10_gAdIk93$" role="37wK5m">
-                    <ref role="3cqZAo" node="10_gAdIjVfn" resolve="monitor" />
-                  </node>
-                  <node concept="37vLTw" id="10_gAdIk9LA" role="37wK5m">
-                    <ref role="3cqZAo" node="10_gAdIjVfn" resolve="monitor" />
-                  </node>
+            <node concept="2ShNRf" id="5Pnc_qQlceK" role="33vP2m">
+              <node concept="1pGfFk" id="5Pnc_qQlk1N" role="2ShVmc">
+                <ref role="37wK5l" to="i9so:3rCIVT6G0sF" resolve="IScriptController.Stub2" />
+                <node concept="37vLTw" id="5Pnc_qQlk3O" role="37wK5m">
+                  <ref role="3cqZAo" node="7UozGIEOt5z" resolve="session" />
+                </node>
+                <node concept="37vLTw" id="5Pnc_qQloLV" role="37wK5m">
+                  <ref role="3cqZAo" node="5Pnc_qQloLL" resolve="tgfi" />
+                </node>
+                <node concept="37vLTw" id="5Pnc_qQlqSm" role="37wK5m">
+                  <ref role="3cqZAo" node="5Pnc_qQlqSa" resolve="mfi" />
+                </node>
+                <node concept="37vLTw" id="5Pnc_qQlsK4" role="37wK5m">
+                  <ref role="3cqZAo" node="5Pnc_qQlsJX" resolve="gfi" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5OeL7nccJYh" role="3cqZAp" />
         <node concept="3clFbF" id="1PHw7mnlmND" role="3cqZAp">
           <node concept="37vLTI" id="1PHw7mnlmNE" role="3clFbG">
             <node concept="2OqwBi" id="7UmW2QiY5fw" role="37vLTx">
@@ -3493,26 +3453,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="5oXcJSdWLjQ" role="3clF47">
-        <node concept="3SKdUt" id="5OeL7nccTdf" role="3cqZAp">
-          <node concept="3SKdUq" id="5OeL7nccTdS" role="3SKWNk">
-            <property role="3SKdUp" value="client is responsible to populate properties of possible facets, don't do anything if" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="5OeL7nccUbf" role="3cqZAp">
-          <node concept="3SKdUq" id="5OeL7nccUvN" role="3SKWNk">
-            <property role="3SKdUp" value="client has supplied a conrtoller. If not, create a default controller that expects Generate facet to" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="5OeL7nccUUW" role="3cqZAp">
-          <node concept="3SKdUq" id="5OeL7nccVwv" role="3SKWNk">
-            <property role="3SKdUp" value="jump in. It's not a nice idea, and we'll drop this soon, as it's MakeService client's responsibility" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="5OeL7nccVUM" role="3cqZAp">
-          <node concept="3SKdUq" id="5OeL7nccVVx" role="3SKWNk">
-            <property role="3SKdUp" value="to configure scripts, not ours" />
-          </node>
-        </node>
         <node concept="3clFbJ" id="5OeL7nccPAq" role="3cqZAp">
           <node concept="3clFbS" id="5OeL7nccPAt" role="3clFbx">
             <node concept="3cpWs6" id="5OeL7nccQuE" role="3cqZAp">
@@ -3528,83 +3468,17 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="7UozGIENMdr" role="3cqZAp">
-          <node concept="3cpWsn" id="7UozGIENMdp" role="3cpWs9">
-            <property role="3TUv4t" value="true" />
-            <property role="TrG5h" value="initGenFacet" />
-            <node concept="3uibUv" id="5OeL7ncb378" role="1tU5fm">
-              <ref role="3uigEE" to="1gam:7UozGIENo9e" resolve="GenerateFacetInitializer" />
-            </node>
-            <node concept="2ShNRf" id="7UozGIENNsH" role="33vP2m">
-              <node concept="1pGfFk" id="7UozGIENOoq" role="2ShVmc">
-                <ref role="37wK5l" to="1gam:7UozGIENpId" resolve="GenerateFacetInitializer" />
-                <node concept="37vLTw" id="7UozGIENXNk" role="37wK5m">
-                  <ref role="3cqZAo" node="7UozGIENSpO" resolve="makeSession" />
-                </node>
-              </node>
-            </node>
+        <node concept="3SKdUt" id="5Pnc_qQmmG6" role="3cqZAp">
+          <node concept="3SKdUq" id="5Pnc_qQmmG8" role="3SKWNk">
+            <property role="3SKdUp" value="it's MakeService client's responsibility to populate properties of possible facets, by default, we do nothing and use blank default controller" />
           </node>
         </node>
-        <node concept="3cpWs8" id="7UozGIER9gx" role="3cqZAp">
-          <node concept="3cpWsn" id="7UozGIER9gy" role="3cpWs9">
-            <property role="TrG5h" value="monitor" />
-            <node concept="3uibUv" id="7UozGIER9HE" role="1tU5fm">
-              <ref role="3uigEE" to="i9so:7eUbKP2Zue8" resolve="IConfigMonitor" />
-            </node>
-            <node concept="2ShNRf" id="7UozGIER9gz" role="33vP2m">
-              <node concept="1pGfFk" id="7UozGIER9g$" role="2ShVmc">
-                <ref role="37wK5l" to="4rvk:7UozGIEQUec" resolve="AbstractMakeService.DefaultMonitor" />
-                <node concept="37vLTw" id="7UozGIER9g_" role="37wK5m">
-                  <ref role="3cqZAo" node="7UozGIENSpO" resolve="makeSession" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="7UozGIERaRf" role="3cqZAp">
-          <node concept="2ShNRf" id="5oXcJSdWLlx" role="3cqZAk">
-            <node concept="YeOm9" id="5oXcJSdWLly" role="2ShVmc">
-              <node concept="1Y3b0j" id="5oXcJSdWLlz" role="YeSDq">
-                <property role="2bfB8j" value="true" />
-                <ref role="1Y3XeK" to="i9so:4TqQgK0ryjt" resolve="IScriptController.Stub" />
-                <ref role="37wK5l" to="i9so:4TqQgK0ryjv" resolve="IScriptController.Stub" />
-                <node concept="3Tm1VV" id="5oXcJSdWLl$" role="1B3o_S" />
-                <node concept="3clFb_" id="5oXcJSdWLmT" role="jymVt">
-                  <property role="1EzhhJ" value="false" />
-                  <property role="TrG5h" value="setup" />
-                  <node concept="37vLTG" id="5oXcJSdWLmU" role="3clF46">
-                    <property role="TrG5h" value="pool" />
-                    <node concept="3uibUv" id="5oXcJSdWLmV" role="1tU5fm">
-                      <ref role="3uigEE" to="i9so:5XvfMqim0Fp" resolve="IPropertiesPool" />
-                    </node>
-                  </node>
-                  <node concept="3cqZAl" id="5oXcJSdWLmW" role="3clF45" />
-                  <node concept="3Tm1VV" id="5oXcJSdWLmX" role="1B3o_S" />
-                  <node concept="3clFbS" id="5oXcJSdWLmY" role="3clF47">
-                    <node concept="3clFbF" id="7UozGIEQcpT" role="3cqZAp">
-                      <node concept="2OqwBi" id="7UozGIEQcCd" role="3clFbG">
-                        <node concept="37vLTw" id="7UozGIEQcpS" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7UozGIENMdp" resolve="initGenFacet" />
-                        </node>
-                        <node concept="liA8E" id="7UozGIEQd0W" role="2OqNvi">
-                          <ref role="37wK5l" to="1gam:7UozGIENpIK" resolve="populate" />
-                          <node concept="37vLTw" id="7UozGIEQd43" role="37wK5m">
-                            <ref role="3cqZAo" node="5oXcJSdWLmU" resolve="pool" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2AHcQZ" id="3tYsUK_Seo5" role="2AJF6D">
-                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                  </node>
-                </node>
-                <node concept="37vLTw" id="7UozGIER9gA" role="37wK5m">
-                  <ref role="3cqZAo" node="7UozGIER9gy" resolve="monitor" />
-                </node>
-                <node concept="37vLTw" id="7UozGIERajo" role="37wK5m">
-                  <ref role="3cqZAo" node="7UozGIER9gy" resolve="monitor" />
-                </node>
+        <node concept="3cpWs6" id="5Pnc_qQmoOh" role="3cqZAp">
+          <node concept="2ShNRf" id="5Pnc_qQmpji" role="3cqZAk">
+            <node concept="1pGfFk" id="5Pnc_qQmq0d" role="2ShVmc">
+              <ref role="37wK5l" to="i9so:3rCIVT6G0sF" resolve="IScriptController.Stub2" />
+              <node concept="37vLTw" id="5Pnc_qQmqvn" role="37wK5m">
+                <ref role="3cqZAo" node="7UozGIENSpO" resolve="makeSession" />
               </node>
             </node>
           </node>
@@ -3612,6 +3486,13 @@
       </node>
       <node concept="3uibUv" id="5oXcJSdWLo3" role="3clF45">
         <ref role="3uigEE" to="i9so:4231y0oKQyu" resolve="IScriptController" />
+      </node>
+    </node>
+    <node concept="3UR2Jj" id="5Pnc_qQmCXD" role="lGtFl">
+      <node concept="TZ5HA" id="5Pnc_qQmCXE" role="TZ5H$">
+        <node concept="1dT_AC" id="5Pnc_qQmCXF" role="1dT_Ay">
+          <property role="1dT_AB" value="Simplistic make service tailored for MPS own tests" />
+        </node>
       </node>
     </node>
   </node>

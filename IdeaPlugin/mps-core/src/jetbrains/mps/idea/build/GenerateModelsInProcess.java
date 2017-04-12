@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.idea.build;
 
 import com.intellij.openapi.project.Project;
@@ -22,16 +21,13 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
-import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
+import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.make.service.AbstractMakeService;
+import jetbrains.mps.make.script.PropertyPoolInitializer;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
@@ -57,24 +53,21 @@ public class GenerateModelsInProcess {
     Iterable<IResource> resources = new ModelsToResources(myModels).resources(false);
     MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
     IMessageHandler msgHandler = messagesView.newHandler("MPS generator");
-    final MessageFeedbackStrategy mfs = new MessageFeedbackStrategy(msgHandler);
 
     final MakeSession makeSession = new MakeSession(ProjectHelper.fromIdeaProject(myProject), msgHandler, true);
+    TextGenFacetInitializer tgfi = new TextGenFacetInitializer(makeSession);
+    JavaCompileFacetInitializer jcfi = new JavaCompileFacetInitializer().skipCompilation(true);
     BuildMakeService makeService = new BuildMakeService();
-    AbstractMakeService.DefaultMonitor monitor = new AbstractMakeService.DefaultMonitor(makeSession);
-    IScriptController controller = new IScriptController.Stub(monitor, monitor) {
+    IScriptController controller = new IScriptController.Stub2(makeSession, tgfi, jcfi, new PropertyPoolInitializer() {
       @Override
-      public void setup(IPropertiesPool ppool) {
-        // this should always be done
-        new jetbrains.mps.internal.make.cfg.TextGenFacetInitializer(makeSession).populate(ppool);
-        new JavaCompileFacetInitializer().skipCompilation(true).populate(ppool);
+      public void populate(IPropertiesPool ppool) {
         // now custom configuration
         if (makeConfigurator != null) {
           makeConfigurator.configureProperties(ppool);
         }
       }
-    };
+    });
     Future<IResult> future = makeService.make(makeSession, resources, null, controller);
-    // todo write message at the botoom of the window like idea does after compilation
+    // todo write message at the bottom of the window like idea does after compilation
   }
 }

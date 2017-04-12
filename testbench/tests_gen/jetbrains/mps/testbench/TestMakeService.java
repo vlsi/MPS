@@ -19,10 +19,10 @@ import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.make.dependencies.MakeSequence;
 import jetbrains.mps.make.service.CoreMakeTask;
 import jetbrains.mps.make.IMakeNotificationListener;
-import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
-import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.make.script.IPropertiesPool;
 
+/**
+ * Simplistic make service tailored for MPS own tests
+ */
 public class TestMakeService extends AbstractMakeService implements IMakeService {
   public TestMakeService() {
   }
@@ -64,20 +64,10 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
     throw new UnsupportedOperationException();
   }
   private IScriptController completeController(final IScriptController ctl, MakeSession makeSession) {
-    // client is responsible to populate properties of possible facets, don't do anything if 
-    // client has supplied a conrtoller. If not, create a default controller that expects Generate facet to 
-    // jump in. It's not a nice idea, and we'll drop this soon, as it's MakeService client's responsibility 
-    // to configure scripts, not ours 
     if (ctl != null) {
       return ctl;
     }
-    final GenerateFacetInitializer initGenFacet = new GenerateFacetInitializer(makeSession);
-    IConfigMonitor monitor = new AbstractMakeService.DefaultMonitor(makeSession);
-    return new IScriptController.Stub(monitor, monitor) {
-      @Override
-      public void setup(IPropertiesPool pool) {
-        initGenFacet.populate(pool);
-      }
-    };
+    // it's MakeService client's responsibility to populate properties of possible facets, by default, we do nothing and use blank default controller 
+    return new IScriptController.Stub2(makeSession);
   }
 }
