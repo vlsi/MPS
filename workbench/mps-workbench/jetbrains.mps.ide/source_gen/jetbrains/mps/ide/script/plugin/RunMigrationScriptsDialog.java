@@ -4,10 +4,13 @@ package jetbrains.mps.ide.script.plugin;
 
 import javax.swing.JDialog;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import javax.swing.JTable;
 import javax.swing.JButton;
+import jetbrains.mps.project.MPSProject;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 import javax.swing.WindowConstants;
@@ -26,12 +29,15 @@ import javax.swing.event.TableModelListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.ListSelectionEvent;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.table.TableCellRenderer;
 import java.awt.Component;
 import javax.swing.JLabel;
@@ -46,8 +52,8 @@ import java.awt.Graphics;
 import javax.swing.UIManager;
 
 public class RunMigrationScriptsDialog extends JDialog {
-  private List<SNode> myScripts;
-  private Set<String> mySelectedScriptIds;
+  private List<SNodeReference> myScripts;
+  private Set<SNodeReference> mySelectedScriptIds = SetSequence.fromSet(new HashSet<SNodeReference>());
   private JTable myTable;
   private JButton myCheckButton;
   private JButton myUnCheckButton;
@@ -55,10 +61,11 @@ public class RunMigrationScriptsDialog extends JDialog {
   private JButton myOpenSelectedButton;
   private boolean myRunChecked;
   private boolean myOpenSelected;
-  public RunMigrationScriptsDialog(Frame owner, List<SNode> scripts, Set<String> selectedScriptIds) throws HeadlessException {
+  private MPSProject myProject;
+  public RunMigrationScriptsDialog(MPSProject p, Frame owner, List<SNodeReference> scripts) throws HeadlessException {
     super(owner, "Migration Scripts", true);
+    myProject = p;
     myScripts = scripts;
-    mySelectedScriptIds = selectedScriptIds;
     init();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     setSize(750, 600);
@@ -164,11 +171,11 @@ public class RunMigrationScriptsDialog extends JDialog {
     }
     myCheckButton.setEnabled(enableCheck);
     myUnCheckButton.setEnabled(enableUnCheck);
-    myOpenSelectedButton.setEnabled(getSelectedScripts().size() == 1);
-    myRunCheckedButton.setEnabled(getCheckedScripts().size() >= 1);
+    myOpenSelectedButton.setEnabled(ListSequence.fromList(getSelectedScripts()).count() == 1);
+    myRunCheckedButton.setEnabled(ListSequence.fromList(getCheckedScripts()).count() >= 1);
   }
-  public List<SNode> getSelectedScripts() {
-    List<SNode> list = new ArrayList<SNode>();
+  public List<SNodeReference> getSelectedScripts() {
+    List<SNodeReference> list = ListSequence.fromList(new ArrayList<SNodeReference>());
     int[] ints = myTable.getSelectedRows();
     for (int anInt : ints) {
       int modelIndex = ((RunMigrationScriptsDialog.MySortingTableModel) myTable.getModel()).convertRowIndexToModel(anInt);
@@ -176,8 +183,8 @@ public class RunMigrationScriptsDialog extends JDialog {
     }
     return list;
   }
-  public List<SNode> getCheckedScripts() {
-    List<SNode> list = new ArrayList<SNode>();
+  public List<SNodeReference> getCheckedScripts() {
+    List<SNodeReference> list = ListSequence.fromList(new ArrayList<SNodeReference>());
     int count = myTable.getModel().getRowCount();
     for (int i = 0; i < count; i++) {
       if (((RunMigrationScriptsDialog.MySortingTableModel) myTable.getModel()).isChecked(i)) {
@@ -208,30 +215,32 @@ public class RunMigrationScriptsDialog extends JDialog {
       return super.getColumnClass(column);
     }
     @Override
-    public Object getValueAt(int row, int column) {
-      SNode sn = ListSequence.fromList(myScripts).getElement(row);
-      if (column == 0) {
-        SNode script = sn;
-        return mySelectedScriptIds.contains(script.getNodeId().toString());
-      }
-      if (column == 1) {
-        return "  " + SPropertyOperations.getString(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x11225f2354aL, "title"));
-      }
-      if (column == 2) {
-        if (SPropertyOperations.hasValue(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "migration", "enhancement")) {
-          return SPropertyOperations.getString_def(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "enhancement") + " (" + SPropertyOperations.getString(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081155L, "toBuild")) + ")";
-        } else {
-          return SPropertyOperations.getString_def(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "enhancement");
+    public Object getValueAt(final int row, final int column) {
+      final Wrappers._T<Object> result = new Wrappers._T<Object>(null);
+      final SRepository repo = myProject.getRepository();
+      repo.getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          SNode sn = SNodeOperations.cast(ListSequence.fromList(myScripts).getElement(row).resolve(repo), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, "jetbrains.mps.lang.script.structure.MigrationScript"));
+          if (column == 0) {
+            result.value = mySelectedScriptIds.contains(sn.getReference());
+          } else if (column == 1) {
+            result.value = "  " + SPropertyOperations.getString(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x11225f2354aL, "title"));
+          } else if (column == 2) {
+            if (SPropertyOperations.hasValue(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "migration", "enhancement")) {
+              result.value = SPropertyOperations.getString_def(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "enhancement") + " (" + SPropertyOperations.getString(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081155L, "toBuild")) + ")";
+            } else {
+              result.value = SPropertyOperations.getString_def(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "enhancement");
+            }
+          } else if (column == 3) {
+            result.value = SNodeOperations.getModel(sn).getModule().getModuleName();
+          }
         }
-      }
-      if (column == 3) {
-        return SNodeOperations.getModel(sn).getModule().getModuleName();
-      }
-      return null;
+      });
+      return result.value;
     }
     @Override
     public void setValueAt(Object aValue, int row, int column) {
-      String id = ListSequence.fromList(myScripts).getElement(row).getNodeId().toString();
+      SNodeReference id = ListSequence.fromList(myScripts).getElement(row);
       if ((Boolean) aValue) {
         mySelectedScriptIds.add(id);
       } else {
