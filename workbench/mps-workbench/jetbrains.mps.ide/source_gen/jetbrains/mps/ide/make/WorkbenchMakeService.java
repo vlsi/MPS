@@ -58,6 +58,7 @@ import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
+import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
 import jetbrains.mps.make.script.IProgress;
 
 public class WorkbenchMakeService extends AbstractMakeService implements IMakeService, ApplicationComponent {
@@ -383,7 +384,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         }
         @Override
         public void reportFeedback(IFeedback fdbk) {
-          new UIFeedbackStrategy(mh).reportFeedback(fdbk);
+          new MessageFeedbackStrategy(mh).reportFeedback(fdbk);
         }
         @Override
         public IProgress currentProgress() {

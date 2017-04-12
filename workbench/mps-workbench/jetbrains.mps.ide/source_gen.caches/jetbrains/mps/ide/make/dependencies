@@ -57,12 +57,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.vfs.newvfs.impl.StubVirtualFile" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.UIFeedbackStrategy" file="UIFeedbackStrategy.java">
-    <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
-    <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
-    <classNode dependClassName="jetbrains.mps.messages.Message" />
-    <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.make.UIQueryRelayStrategy" file="UIQueryRelayStrategy.java">
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -109,7 +103,6 @@
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.generator.IModifiableGenerationSettings" />
     <classNode dependClassName="jetbrains.mps.ide.make.MakeTask" />
-    <classNode dependClassName="jetbrains.mps.ide.make.UIFeedbackStrategy" />
     <classNode dependClassName="jetbrains.mps.ide.make.UIQueryRelayStrategy" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
@@ -120,6 +113,7 @@
     <classNode dependClassName="jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer" />
     <classNode dependClassName="jetbrains.mps.internal.make.cfg.TextGenFacetInitializer" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.backports.ProgressMonitorProgressStrategy" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FutureValue" />
     <classNode dependClassName="jetbrains.mps.make.IMakeNotificationListener" />
     <classNode dependClassName="jetbrains.mps.make.MakeNotification" />
