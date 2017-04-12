@@ -5536,7 +5536,7 @@
         </node>
         <node concept="1SiIV0" id="1ZViq9opxBO" role="3bR37C">
           <node concept="3bR9La" id="1ZViq9opxBP" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="7Kfy9QB6LgV" resolve="jetbrains.mps.make.runtime" />
           </node>
         </node>

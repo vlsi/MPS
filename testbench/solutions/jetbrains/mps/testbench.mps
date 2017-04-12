@@ -5,7 +5,6 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
@@ -28,7 +27,6 @@
     <import index="bbnd" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit.runners(jetbrains.mps.baseLanguage.unitTest.libs/)" />
     <import index="j07i" ref="r:d357a980-6a2b-481f-acb3-29792a9d3728(jetbrains.mps.make.dependencies)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
-    <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
@@ -44,12 +42,9 @@
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="k9t0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.internal.collections.runtime(MPS.Core/)" />
-    <import index="o6ex" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.generator(MPS.Workbench/)" />
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
-    <import index="f0ym" ref="r:b828a96a-5bfa-4f8d-b09f-82ef58c36196(jetbrains.mps.internal.make.cfg)" />
     <import index="1gam" ref="r:dc013bd4-6bcf-44c3-9e08-a65e07c88df7(jetbrains.mps.internal.make.cfg)" />
-    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="m52l" ref="r:c3ac4b0a-a487-4481-b87d-bcfbfdd6a85d(jetbrains.mps.lang.editor.imageGen.plugin)" />
   </imports>
@@ -519,7 +514,7 @@
     <node concept="312cEg" id="5INsqDGi_UM" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="isSucessful" />
+      <property role="TrG5h" value="isSuccessful" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="5INsqDGi_Dk" role="1B3o_S" />
       <node concept="10P_77" id="5INsqDGi_UK" role="1tU5fm" />
@@ -670,7 +665,7 @@
                   <property role="3clFbU" value="true" />
                 </node>
                 <node concept="37vLTw" id="5INsqDGl$Vt" role="37vLTJ">
-                  <ref role="3cqZAo" node="5INsqDGi_UM" resolve="isSucessful" />
+                  <ref role="3cqZAo" node="5INsqDGi_UM" resolve="isSuccessful" />
                 </node>
               </node>
             </node>
@@ -883,28 +878,28 @@
                             <node concept="2OqwBi" id="7UozGIEPZTm" role="2Oq$k0">
                               <node concept="2ShNRf" id="5OeL7nccMBY" role="2Oq$k0">
                                 <node concept="1pGfFk" id="5OeL7nccMBZ" role="2ShVmc">
-                                  <ref role="37wK5l" to="f0ym:7UozGIEOUu1" resolve="TextGenFacetInitializer" />
+                                  <ref role="37wK5l" to="1gam:7UozGIEOUu1" resolve="TextGenFacetInitializer" />
                                   <node concept="37vLTw" id="72ouys9KrRx" role="37wK5m">
                                     <ref role="3cqZAo" node="7UozGIEOt5z" resolve="session" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="7UozGIEQ0y9" role="2OqNvi">
-                                <ref role="37wK5l" to="f0ym:7UozGIEPmYI" resolve="failNoTextGen" />
+                                <ref role="37wK5l" to="1gam:7UozGIEPmYI" resolve="failNoTextGen" />
                                 <node concept="3clFbT" id="7UozGIEQ0Hj" role="37wK5m">
                                   <property role="3clFbU" value="false" />
                                 </node>
                               </node>
                             </node>
                             <node concept="liA8E" id="7UozGIEQ1GW" role="2OqNvi">
-                              <ref role="37wK5l" to="f0ym:7UozGIEPrKT" resolve="generateDebugInfo" />
+                              <ref role="37wK5l" to="1gam:7UozGIEPrKT" resolve="generateDebugInfo" />
                               <node concept="3clFbT" id="7UozGIEQ1To" role="37wK5m">
                                 <property role="3clFbU" value="true" />
                               </node>
                             </node>
                           </node>
                           <node concept="liA8E" id="7UozGIEQ2Qj" role="2OqNvi">
-                            <ref role="37wK5l" to="f0ym:7UozGIEP8Yt" resolve="populate" />
+                            <ref role="37wK5l" to="1gam:7UozGIEP8Yt" resolve="populate" />
                             <node concept="37vLTw" id="7UozGIEQ33P" role="37wK5m">
                               <ref role="3cqZAo" node="7V$GMzHGXZm" resolve="ppool" />
                             </node>
@@ -952,21 +947,21 @@
                           <node concept="2OqwBi" id="5OeL7nccFiv" role="2Oq$k0">
                             <node concept="2ShNRf" id="5OeL7nccEf5" role="2Oq$k0">
                               <node concept="1pGfFk" id="5OeL7nccF7G" role="2ShVmc">
-                                <ref role="37wK5l" to="f0ym:7UozGIENpId" resolve="GenerateFacetInitializer" />
+                                <ref role="37wK5l" to="1gam:7UozGIENpId" resolve="GenerateFacetInitializer" />
                                 <node concept="37vLTw" id="5OeL7nccLDa" role="37wK5m">
                                   <ref role="3cqZAo" node="7UozGIEOt5z" resolve="session" />
                                 </node>
                               </node>
                             </node>
                             <node concept="liA8E" id="5OeL7nccFO8" role="2OqNvi">
-                              <ref role="37wK5l" to="f0ym:5OeL7ncc90L" resolve="setGenerationOptions" />
+                              <ref role="37wK5l" to="1gam:5OeL7ncc90L" resolve="setGenerationOptions" />
                               <node concept="37vLTw" id="5OeL7nccFZk" role="37wK5m">
                                 <ref role="3cqZAo" node="NauThptQnK" resolve="optBuilder" />
                               </node>
                             </node>
                           </node>
                           <node concept="liA8E" id="5OeL7nccGwN" role="2OqNvi">
-                            <ref role="37wK5l" to="f0ym:7UozGIENpIK" resolve="populate" />
+                            <ref role="37wK5l" to="1gam:7UozGIENpIK" resolve="populate" />
                             <node concept="37vLTw" id="5OeL7nccMmT" role="37wK5m">
                               <ref role="3cqZAo" node="7V$GMzHGXZm" resolve="ppool" />
                             </node>
@@ -1055,7 +1050,7 @@
               </node>
             </node>
             <node concept="37vLTw" id="5INsqDGiDpQ" role="37vLTJ">
-              <ref role="3cqZAo" node="5INsqDGi_UM" resolve="isSucessful" />
+              <ref role="3cqZAo" node="5INsqDGi_UM" resolve="isSuccessful" />
             </node>
           </node>
         </node>
@@ -1066,13 +1061,13 @@
     </node>
     <node concept="3clFb_" id="5INsqDGjhk2" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="isBuildSucessful" />
+      <property role="TrG5h" value="isBuildSuccessful" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="5INsqDGjhk5" role="3clF47">
         <node concept="3clFbF" id="5INsqDGjhA6" role="3cqZAp">
           <node concept="37vLTw" id="5INsqDGjhA5" role="3clFbG">
-            <ref role="3cqZAo" node="5INsqDGi_UM" resolve="isSucessful" />
+            <ref role="3cqZAo" node="5INsqDGi_UM" resolve="isSuccessful" />
           </node>
         </node>
       </node>
@@ -3538,11 +3533,11 @@
             <property role="3TUv4t" value="true" />
             <property role="TrG5h" value="initGenFacet" />
             <node concept="3uibUv" id="5OeL7ncb378" role="1tU5fm">
-              <ref role="3uigEE" to="f0ym:7UozGIENo9e" resolve="GenerateFacetInitializer" />
+              <ref role="3uigEE" to="1gam:7UozGIENo9e" resolve="GenerateFacetInitializer" />
             </node>
             <node concept="2ShNRf" id="7UozGIENNsH" role="33vP2m">
               <node concept="1pGfFk" id="7UozGIENOoq" role="2ShVmc">
-                <ref role="37wK5l" to="f0ym:7UozGIENpId" resolve="GenerateFacetInitializer" />
+                <ref role="37wK5l" to="1gam:7UozGIENpId" resolve="GenerateFacetInitializer" />
                 <node concept="37vLTw" id="7UozGIENXNk" role="37wK5m">
                   <ref role="3cqZAo" node="7UozGIENSpO" resolve="makeSession" />
                 </node>
@@ -3592,7 +3587,7 @@
                           <ref role="3cqZAo" node="7UozGIENMdp" resolve="initGenFacet" />
                         </node>
                         <node concept="liA8E" id="7UozGIEQd0W" role="2OqNvi">
-                          <ref role="37wK5l" to="f0ym:7UozGIENpIK" resolve="populate" />
+                          <ref role="37wK5l" to="1gam:7UozGIENpIK" resolve="populate" />
                           <node concept="37vLTw" id="7UozGIEQd43" role="37wK5m">
                             <ref role="3cqZAo" node="5oXcJSdWLmU" resolve="pool" />
                           </node>
@@ -4008,7 +4003,7 @@
                 <ref role="3cqZAo" node="7X3$CtwaMPn" resolve="generationHolder" />
               </node>
               <node concept="liA8E" id="5INsqDGjNhj" role="2OqNvi">
-                <ref role="37wK5l" node="5INsqDGjhk2" resolve="isBuildSucessful" />
+                <ref role="37wK5l" node="5INsqDGjhk2" resolve="isBuildSuccessful" />
               </node>
             </node>
           </node>

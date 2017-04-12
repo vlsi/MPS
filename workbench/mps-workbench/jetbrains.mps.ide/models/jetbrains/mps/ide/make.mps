@@ -9,7 +9,6 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
-    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="4rvk" ref="r:7cb72aee-d3e2-47e9-9964-3abda6a73a9a(jetbrains.mps.make.service)" />
     <import index="i5cy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.atomic(JDK/)" />
     <import index="i9so" ref="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)" />
@@ -52,7 +51,6 @@
     <import index="1gam" ref="r:dc013bd4-6bcf-44c3-9e08-a65e07c88df7(jetbrains.mps.internal.make.cfg)" />
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="ao3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.text(MPS.Core/)" />
-    <import index="f0ym" ref="r:b828a96a-5bfa-4f8d-b09f-82ef58c36196(jetbrains.mps.internal.make.cfg)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
   </imports>
   <registry>
@@ -5682,14 +5680,14 @@
             <node concept="2OqwBi" id="72ouys9J4i_" role="3clFbG">
               <node concept="2ShNRf" id="72ouys9J2Ca" role="2Oq$k0">
                 <node concept="1pGfFk" id="72ouys9J3VE" role="2ShVmc">
-                  <ref role="37wK5l" to="f0ym:7UozGIENpId" resolve="GenerateFacetInitializer" />
+                  <ref role="37wK5l" to="1gam:7UozGIENpId" resolve="GenerateFacetInitializer" />
                   <node concept="1rXfSq" id="72ouys9J49I" role="37wK5m">
                     <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="72ouys9J4ET" role="2OqNvi">
-                <ref role="37wK5l" to="f0ym:7UozGIENpIK" resolve="populate" />
+                <ref role="37wK5l" to="1gam:7UozGIENpIK" resolve="populate" />
                 <node concept="37vLTw" id="72ouys9J4Tp" role="37wK5m">
                   <ref role="3cqZAo" node="9D0Ba05v4d" resolve="ppool" />
                 </node>
@@ -5803,14 +5801,14 @@
                 <node concept="2OqwBi" id="72ouys9Ivix" role="2Oq$k0">
                   <node concept="2ShNRf" id="72ouys9I5$P" role="2Oq$k0">
                     <node concept="1pGfFk" id="72ouys9Ivi3" role="2ShVmc">
-                      <ref role="37wK5l" to="f0ym:7UozGIEOUu1" resolve="TextGenFacetInitializer" />
+                      <ref role="37wK5l" to="1gam:7UozGIEOUu1" resolve="TextGenFacetInitializer" />
                       <node concept="1rXfSq" id="72ouys9JXV3" role="37wK5m">
                         <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="72ouys9IvzP" role="2OqNvi">
-                    <ref role="37wK5l" to="f0ym:7UozGIEPmYI" resolve="failNoTextGen" />
+                    <ref role="37wK5l" to="1gam:7UozGIEPmYI" resolve="failNoTextGen" />
                     <node concept="2OqwBi" id="72ouys9Iwsl" role="37wK5m">
                       <node concept="37vLTw" id="72ouys9Iy6T" role="2Oq$k0">
                         <ref role="3cqZAo" node="72ouys9Ixh0" resolve="genSettings" />
@@ -5822,7 +5820,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="72ouys9IvQf" role="2OqNvi">
-                  <ref role="37wK5l" to="f0ym:7UozGIEPrKT" resolve="generateDebugInfo" />
+                  <ref role="37wK5l" to="1gam:7UozGIEPrKT" resolve="generateDebugInfo" />
                   <node concept="2OqwBi" id="72ouys9Iyuo" role="37wK5m">
                     <node concept="37vLTw" id="72ouys9IylZ" role="2Oq$k0">
                       <ref role="3cqZAo" node="72ouys9Ixh0" resolve="genSettings" />
@@ -5834,7 +5832,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="72ouys9Iwcw" role="2OqNvi">
-                <ref role="37wK5l" to="f0ym:7UozGIEP8Yt" resolve="populate" />
+                <ref role="37wK5l" to="1gam:7UozGIEP8Yt" resolve="populate" />
                 <node concept="37vLTw" id="72ouys9Iwre" role="37wK5m">
                   <ref role="3cqZAo" node="9D0Ba05v4d" resolve="ppool" />
                 </node>

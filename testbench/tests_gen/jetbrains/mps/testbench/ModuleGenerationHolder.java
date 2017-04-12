@@ -69,7 +69,7 @@ public class ModuleGenerationHolder {
   private String tmpPath;
   private Map<String, String> path2tmp = MapSequence.fromMap(new HashMap<String, String>());
   private final ModuleGenerationHolder.MyMessageHandler myMessageHandler = new ModuleGenerationHolder.MyMessageHandler();
-  private boolean isSucessful;
+  private boolean isSuccessful;
 
   public ModuleGenerationHolder(SModule module, Project project) {
     this.module = module;
@@ -87,7 +87,7 @@ public class ModuleGenerationHolder {
 
   public void build() throws Exception {
     if (!(needsGeneration())) {
-      isSucessful = true;
+      isSuccessful = true;
       return;
     }
     // sanity check build() doesn't come after diff() (due to broken test method ordering) 
@@ -118,10 +118,10 @@ public class ModuleGenerationHolder {
     };
 
     result = new TestMakeService().make(session, ModuleGenerationHolder.collectResources(project, module), scr, ctl, new EmptyProgressMonitor()).get();
-    isSucessful = result != null && result.isSucessful();
+    isSuccessful = result != null && result.isSucessful();
   }
-  public boolean isBuildSucessful() {
-    return isSucessful;
+  public boolean isBuildSuccessful() {
+    return isSuccessful;
   }
   public List<String> buildErrors() {
     return myMessageHandler.getGenerationErrors();

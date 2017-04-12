@@ -14,7 +14,6 @@ import jetbrains.mps.make.facet.ITarget;
  * Now takes all the values from MakeSession, but may get additional methods to set
  * values explicitly (e.g. cleanMake for those longing for rebuild only).
  * Perhaps, this it should be MakeSession's responsibility to set properties.
- * This class might implement some interface to invoke initializers in a generic way.
  */
 public final class GenerateFacetInitializer implements PropertyPoolInitializer {
   private MakeSession mySession;
