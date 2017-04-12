@@ -100,6 +100,7 @@
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.LinkedHashSet" />
@@ -128,14 +129,11 @@
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
-    <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
-    <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
-    <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.script.IScript" />
     <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
+    <classNode dependClassName="jetbrains.mps.make.script.PropertyPoolInitializer" />
     <classNode dependClassName="jetbrains.mps.make.script.ScriptBuilder" />
     <classNode dependClassName="jetbrains.mps.messages.IMessage" />
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
