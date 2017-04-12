@@ -42,7 +42,7 @@ public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
     for (AnAction a : catGroup.getChildren(null)) {
       ScriptsGlobally_ActionGroup.this.add(a);
     }
-    ScriptsGlobally_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(menuBuilder), PluginId.getId("jetbrains.mps.lang.script.pluginSolution"), menuBuilder);
+    ScriptsGlobally_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(false), PluginId.getId("jetbrains.mps.lang.script.pluginSolution"), false);
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);
     }

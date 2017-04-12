@@ -51,7 +51,7 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
     for (AnAction a : catGroup.getChildren(null)) {
       ScriptsForSelection_ActionGroup.this.add(a);
     }
-    ScriptsForSelection_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(menuBuilder), PluginId.getId("jetbrains.mps.lang.script.pluginSolution"), menuBuilder);
+    ScriptsForSelection_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(true), PluginId.getId("jetbrains.mps.lang.script.pluginSolution"), true);
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);
     }
