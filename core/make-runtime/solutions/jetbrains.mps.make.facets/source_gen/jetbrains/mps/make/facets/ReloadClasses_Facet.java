@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.resources.TResource;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.make.script.IConfig;
 import java.util.Map;
@@ -70,7 +69,8 @@ public class ReloadClasses_Facet extends IFacet.Stub {
               }).distinct().toListSequence();
 
               monitor.currentProgress().beginWork("Reloading classes", 1, monitor.currentProgress().workLeft());
-              ModelAccess.instance().requireWrite(new Runnable() {
+              // FIXME pass progressMonitor down to reloadModules 
+              monitor.getSession().getProject().getModelAccess().runWriteAction(new Runnable() {
                 public void run() {
                   ClassLoaderManager.getInstance().reloadModules(toReload);
                 }

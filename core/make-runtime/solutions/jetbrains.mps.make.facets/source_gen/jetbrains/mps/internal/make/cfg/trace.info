@@ -7,6 +7,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <root nodeRef="r:dc013bd4-6bcf-44c3-9e08-a65e07c88df7(jetbrains.mps.internal.make.cfg)/6705512905415971354">
     <file name="JavaCompileFacetInitializer.java">
       <node id="6705512905416286305" at="12,0,13,0" concept="2" trace="mySkipCompilation" />
@@ -88,96 +89,94 @@
   </root>
   <root nodeRef="r:dc013bd4-6bcf-44c3-9e08-a65e07c88df7(jetbrains.mps.internal.make.cfg)/9122198050634039886">
     <file name="GenerateFacetInitializer.java">
-      <node id="6120846351170967116" at="19,0,20,0" concept="2" trace="mySession" />
-      <node id="9122198050634099848" at="20,0,21,0" concept="2" trace="myCleanMake" />
-      <node id="6705512905417248924" at="21,0,22,0" concept="2" trace="myGenOptions" />
-      <node id="9122198050634099943" at="22,60,23,28" concept="1" />
-      <node id="9122198050634100965" at="23,28,24,44" concept="1" />
-      <node id="9122198050634862575" at="33,64,34,28" concept="1" />
-      <node id="9122198050634864244" at="34,28,35,16" concept="6" />
-      <node id="6705512905417250930" at="37,105,38,34" concept="1" />
-      <node id="6705512905417199673" at="38,34,39,16" concept="6" />
-      <node id="878521226301293350" at="43,47,44,178" concept="5" />
-      <node id="878521226301293380" at="45,23,46,25" concept="1" />
-      <node id="878521226301293388" at="46,25,47,27" concept="1" />
-      <node id="9143630131837001691" at="49,31,50,218" concept="5" />
-      <node id="9143630131837001707" at="51,27,52,32" concept="1" />
-      <node id="6705512905417285731" at="50,218,53,7" concept="3" />
-      <node id="9122198050634046349" at="22,0,26,0" concept="0" trace="GenerateFacetInitializer#(Ljetbrains/mps/make/MakeSession;)V" />
-      <node id="9122198050634860070" at="33,0,37,0" concept="4" trace="cleanMake#(Z)Ljetbrains/mps/internal/make/cfg/GenerateFacetInitializer;" />
-      <node id="6705512905417199665" at="37,0,41,0" concept="4" trace="setGenerationOptions#(Ljetbrains/mps/generator/GenerationOptions/OptionsBuilder;)Ljetbrains/mps/internal/make/cfg/GenerateFacetInitializer;" />
-      <node id="878521226301293368" at="44,178,48,5" concept="3" />
-      <node id="6705512905417252853" at="48,5,54,5" concept="3" />
-      <node id="9122198050634046384" at="42,0,56,0" concept="4" trace="populate#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-      <scope id="6705512905417285734" at="51,27,52,32" />
-      <scope id="9122198050634046352" at="22,60,24,44" />
-      <scope id="9122198050634860075" at="33,64,35,16" />
-      <scope id="6705512905417199668" at="37,105,39,16" />
-      <scope id="878521226301293369" at="45,23,47,27" />
-      <scope id="9122198050634046349" at="22,0,26,0">
+      <node id="9122198050634099848" at="19,0,20,0" concept="2" trace="myCleanMake" />
+      <node id="6705512905417248924" at="20,0,21,0" concept="2" trace="myGenOptions" />
+      <node id="4198334579407155979" at="22,37,23,23" concept="1" />
+      <node id="9122198050634100965" at="31,60,32,44" concept="1" />
+      <node id="9122198050634862575" at="41,64,42,28" concept="1" />
+      <node id="9122198050634864244" at="42,28,43,16" concept="6" />
+      <node id="6705512905417250930" at="45,105,46,34" concept="1" />
+      <node id="6705512905417199673" at="46,34,47,16" concept="6" />
+      <node id="878521226301293350" at="51,47,52,178" concept="5" />
+      <node id="878521226301293388" at="53,46,54,27" concept="1" />
+      <node id="9143630131837001691" at="56,31,57,218" concept="5" />
+      <node id="9143630131837001707" at="58,27,59,32" concept="1" />
+      <node id="4198334579407153702" at="22,0,25,0" concept="0" trace="GenerateFacetInitializer#()V" />
+      <node id="878521226301293368" at="52,178,55,5" concept="3" />
+      <node id="6705512905417285731" at="57,218,60,7" concept="3" />
+      <node id="9122198050634046349" at="30,0,34,0" concept="0" trace="GenerateFacetInitializer#(Ljetbrains/mps/make/MakeSession;)V" />
+      <node id="9122198050634860070" at="41,0,45,0" concept="4" trace="cleanMake#(Z)Ljetbrains/mps/internal/make/cfg/GenerateFacetInitializer;" />
+      <node id="6705512905417199665" at="45,0,49,0" concept="4" trace="setGenerationOptions#(Ljetbrains/mps/generator/GenerationOptions/OptionsBuilder;)Ljetbrains/mps/internal/make/cfg/GenerateFacetInitializer;" />
+      <node id="6705512905417252853" at="55,5,61,5" concept="3" />
+      <node id="9122198050634046384" at="50,0,63,0" concept="4" trace="populate#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+      <scope id="4198334579407153706" at="22,37,23,23" />
+      <scope id="9122198050634046352" at="31,60,32,44" />
+      <scope id="878521226301293369" at="53,46,54,27" />
+      <scope id="6705512905417285734" at="58,27,59,32" />
+      <scope id="9122198050634860075" at="41,64,43,16" />
+      <scope id="6705512905417199668" at="45,105,47,16" />
+      <scope id="4198334579407153702" at="22,0,25,0" />
+      <scope id="9122198050634046349" at="30,0,34,0">
         <var name="makeSession" id="9122198050634088692" />
       </scope>
-      <scope id="9122198050634860070" at="33,0,37,0">
+      <scope id="9122198050634860070" at="41,0,45,0">
         <var name="cleanMake" id="9122198050634862071" />
       </scope>
-      <scope id="6705512905417199665" at="37,0,41,0">
+      <scope id="6705512905417199665" at="45,0,49,0">
         <var name="optionsBuilder" id="6705512905417199675" />
       </scope>
-      <scope id="6705512905417252856" at="49,31,53,7">
+      <scope id="6705512905417252856" at="56,31,60,7">
         <var name="params" id="9143630131837001692" />
       </scope>
-      <scope id="9122198050634046390" at="43,47,54,5">
+      <scope id="9122198050634046390" at="51,47,61,5">
         <var name="vars" id="878521226301293351" />
       </scope>
-      <scope id="9122198050634046384" at="42,0,56,0">
+      <scope id="9122198050634046384" at="50,0,63,0">
         <var name="ppool" id="9122198050634057965" />
       </scope>
-      <unit id="9122198050634039886" at="18,0,57,0" name="jetbrains.mps.internal.make.cfg.GenerateFacetInitializer" />
+      <unit id="9122198050634039886" at="18,0,64,0" name="jetbrains.mps.internal.make.cfg.GenerateFacetInitializer" />
     </file>
   </root>
   <root nodeRef="r:dc013bd4-6bcf-44c3-9e08-a65e07c88df7(jetbrains.mps.internal.make.cfg)/9122198050634442574">
     <file name="TextGenFacetInitializer.java">
-      <node id="8113369036793809139" at="12,0,13,0" concept="2" trace="mySession" />
       <node id="9122198050634501950" at="13,0,14,0" concept="2" trace="myFailNoTextGen" />
       <node id="9122198050634501975" at="14,0,15,0" concept="2" trace="myDebugInfo" />
-      <node id="8113369036793809386" at="15,59,16,28" concept="1" />
-      <node id="9122198050634559637" at="18,62,19,27" concept="1" />
-      <node id="9122198050634559495" at="19,27,20,16" concept="6" />
-      <node id="9122198050634582282" at="22,71,23,28" concept="1" />
-      <node id="9122198050634583217" at="23,28,24,16" concept="6" />
-      <node id="8113369036793824943" at="28,47,29,161" concept="5" />
-      <node id="8113369036793827781" at="30,31,31,33" concept="1" />
-      <node id="7216969004037112956" at="32,5,33,164" concept="5" />
-      <node id="7621205992838583726" at="34,26,35,34" concept="1" />
-      <node id="9122198050634576439" at="35,34,36,30" concept="1" />
-      <node id="9122198050634442625" at="15,0,18,0" concept="0" trace="TextGenFacetInitializer#(Ljetbrains/mps/make/MakeSession;)V" />
-      <node id="8113369036793826475" at="29,161,32,5" concept="3" />
-      <node id="9122198050634559406" at="18,0,22,0" concept="4" trace="failNoTextGen#(Ljava/lang/Boolean;)Ljetbrains/mps/internal/make/cfg/TextGenFacetInitializer;" />
-      <node id="9122198050634579001" at="22,0,26,0" concept="4" trace="generateDebugInfo#(Ljava/lang/Boolean;)Ljetbrains/mps/internal/make/cfg/TextGenFacetInitializer;" />
-      <node id="9122198050635901470" at="33,164,37,5" concept="3" />
-      <node id="9122198050634502045" at="27,0,39,0" concept="4" trace="populate#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-      <scope id="9122198050634442628" at="15,59,16,28" />
-      <scope id="8113369036793826477" at="30,31,31,33" />
-      <scope id="9122198050634559409" at="18,62,20,16" />
-      <scope id="9122198050634579005" at="22,71,24,16" />
-      <scope id="9122198050635901473" at="34,26,36,30" />
-      <scope id="9122198050634442625" at="15,0,18,0">
-        <var name="makeSession" id="8113369036793808683" />
-      </scope>
-      <scope id="9122198050634559406" at="18,0,22,0">
+      <node id="2045755874189825363" at="25,59,26,81" concept="7" />
+      <node id="9122198050634559637" at="28,62,29,27" concept="1" />
+      <node id="9122198050634559495" at="29,27,30,16" concept="6" />
+      <node id="9122198050634582282" at="32,71,33,28" concept="1" />
+      <node id="9122198050634583217" at="33,28,34,16" concept="6" />
+      <node id="7216969004037112956" at="38,47,39,164" concept="5" />
+      <node id="7621205992838583726" at="40,26,41,34" concept="1" />
+      <node id="9122198050634576439" at="41,34,42,30" concept="1" />
+      <node id="2045755874189827130" at="16,0,18,0" concept="0" trace="TextGenFacetInitializer#()V" />
+      <node id="9122198050634559406" at="28,0,32,0" concept="4" trace="failNoTextGen#(Ljava/lang/Boolean;)Ljetbrains/mps/internal/make/cfg/TextGenFacetInitializer;" />
+      <node id="9122198050634579001" at="32,0,36,0" concept="4" trace="generateDebugInfo#(Ljava/lang/Boolean;)Ljetbrains/mps/internal/make/cfg/TextGenFacetInitializer;" />
+      <node id="9122198050635901470" at="39,164,43,5" concept="3" />
+      <node id="9122198050634442625" at="23,0,28,0" concept="0" trace="TextGenFacetInitializer#(Ljetbrains/mps/make/MakeSession;)V" />
+      <node id="9122198050634502045" at="37,0,45,0" concept="4" trace="populate#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+      <scope id="2045755874189827135" at="16,36,16,36" />
+      <scope id="9122198050634442628" at="25,59,26,81" />
+      <scope id="2045755874189827130" at="16,0,18,0" />
+      <scope id="9122198050634559409" at="28,62,30,16" />
+      <scope id="9122198050634579005" at="32,71,34,16" />
+      <scope id="9122198050635901473" at="40,26,42,30" />
+      <scope id="9122198050634559406" at="28,0,32,0">
         <var name="fail" id="9122198050634559557" />
       </scope>
-      <scope id="9122198050634579001" at="22,0,26,0">
+      <scope id="9122198050634579001" at="32,0,36,0">
         <var name="needDebug" id="9122198050634581402" />
       </scope>
-      <scope id="9122198050634502049" at="28,47,37,5">
-        <var name="configParams" id="8113369036793824944" />
+      <scope id="9122198050634442625" at="23,0,28,0">
+        <var name="makeSession" id="8113369036793808683" />
+      </scope>
+      <scope id="9122198050634502049" at="38,47,43,5">
         <var name="tparams" id="7216969004037112957" />
       </scope>
-      <scope id="9122198050634502045" at="27,0,39,0">
+      <scope id="9122198050634502045" at="37,0,45,0">
         <var name="ppool" id="9122198050634502071" />
       </scope>
-      <unit id="9122198050634442574" at="11,0,40,0" name="jetbrains.mps.internal.make.cfg.TextGenFacetInitializer" />
+      <unit id="9122198050634442574" at="12,0,46,0" name="jetbrains.mps.internal.make.cfg.TextGenFacetInitializer" />
     </file>
   </root>
 </debug-info>

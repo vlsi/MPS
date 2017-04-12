@@ -840,10 +840,7 @@
               <node concept="2OqwBi" id="5Pnc_qQloLN" role="2Oq$k0">
                 <node concept="2ShNRf" id="5Pnc_qQloLO" role="2Oq$k0">
                   <node concept="1pGfFk" id="5Pnc_qQloLP" role="2ShVmc">
-                    <ref role="37wK5l" to="1gam:7UozGIEOUu1" resolve="TextGenFacetInitializer" />
-                    <node concept="37vLTw" id="5Pnc_qQloLQ" role="37wK5m">
-                      <ref role="3cqZAo" node="7UozGIEOt5z" resolve="session" />
-                    </node>
+                    <ref role="37wK5l" to="1gam:1LzZ23MgdKU" resolve="TextGenFacetInitializer" />
                   </node>
                 </node>
                 <node concept="liA8E" id="5Pnc_qQloLR" role="2OqNvi">
@@ -905,10 +902,7 @@
             <node concept="2OqwBi" id="5Pnc_qQlsJY" role="33vP2m">
               <node concept="2ShNRf" id="5Pnc_qQlsJZ" role="2Oq$k0">
                 <node concept="1pGfFk" id="5Pnc_qQlsK0" role="2ShVmc">
-                  <ref role="37wK5l" to="1gam:7UozGIENpId" resolve="GenerateFacetInitializer" />
-                  <node concept="37vLTw" id="5Pnc_qQlsK1" role="37wK5m">
-                    <ref role="3cqZAo" node="7UozGIEOt5z" resolve="session" />
-                  </node>
+                  <ref role="37wK5l" to="1gam:3D3uKT_NmCA" resolve="GenerateFacetInitializer" />
                 </node>
               </node>
               <node concept="liA8E" id="5Pnc_qQlsK2" role="2OqNvi">

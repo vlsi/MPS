@@ -24,7 +24,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.make.delta.IDelta;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -83,14 +82,15 @@ public class Binaries_Facet extends IFacet.Stub {
           final Iterable<MResource> input = (Iterable<MResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              progressMonitor.start("Copying resources", 1);
+              progressMonitor.start("Copying resources", 2);
               progressMonitor.step("Collecting");
 
               try {
                 final Map<IFile, byte[]> dataToWrite = MapSequence.fromMap(new HashMap<IFile, byte[]>());
                 final List<IDelta> deltaList = ListSequence.fromList(new ArrayList<IDelta>());
 
-                final SRepository repository = Target_checkParameters.vars(pa.global()).makeSession().getProject().getRepository();
+                // XXX there seems to be no need to depend from Generate task now? 
+                final SRepository repository = monitor.getSession().getProject().getRepository();
 
                 repository.getModelAccess().runReadAction(new Runnable() {
                   public void run() {

@@ -50,7 +50,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
@@ -342,17 +341,10 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       // todo: why should we specify project only for Generate facet? 
       ppool.setPredecessor(predParamPool);
       predParamPool = ppool;
-      new GenerateFacetInitializer(getSession()).populate(ppool);
-
-      // hack: Generate facet not accessible from JavaCompile facet because it's compiled in IDEA 
-      Tuples._2<jetbrains.mps.project.Project, Boolean> varsForJavaCompile = (Tuples._2<jetbrains.mps.project.Project, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.auxCompile"), Object.class);
-      if (varsForJavaCompile != null) {
-        varsForJavaCompile._0(getSession().getProject());
-      }
-      // end of hack 
+      new GenerateFacetInitializer().populate(ppool);
 
       IModifiableGenerationSettings genSettings = GenerationSettingsProvider.getInstance().getGenerationSettings();
-      new TextGenFacetInitializer(getSession()).failNoTextGen(genSettings.isFailOnMissingTextGen()).generateDebugInfo(genSettings.isGenerateDebugInfo()).populate(ppool);
+      new TextGenFacetInitializer().failNoTextGen(genSettings.isFailOnMissingTextGen()).generateDebugInfo(genSettings.isGenerateDebugInfo()).populate(ppool);
 
       new JavaCompileFacetInitializer().setJavaCompileOptions(JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(getSession().getProject())).populate(ppool);
 

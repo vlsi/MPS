@@ -133,6 +133,12 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
     </language>
     <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
       <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
@@ -185,6 +191,7 @@
       <concept id="505095865854384109" name="jetbrains.mps.make.script.structure.JobDeclaration" flags="ng" index="2aLE7I">
         <child id="505095865854384110" name="job" index="2aLE7H" />
       </concept>
+      <concept id="7044091413522263180" name="jetbrains.mps.make.script.structure.GetMakeSessionExpression" flags="ng" index="2_BwXt" />
       <concept id="2360002718792625579" name="jetbrains.mps.make.script.structure.JobDefinition" flags="in" index="ElOhj" />
       <concept id="2360002718792625580" name="jetbrains.mps.make.script.structure.InputResourcesParameter" flags="nn" index="ElOhk" />
       <concept id="2360002718792622184" name="jetbrains.mps.make.script.structure.OutputResources" flags="nn" index="ElOAg">
@@ -291,7 +298,7 @@
                     <property role="Xl_RC" value="Copying resources" />
                   </node>
                   <node concept="3cmrfG" id="Ib_Fk7_VFI" role="37wK5m">
-                    <property role="3cmrfH" value="1" />
+                    <property role="3cmrfH" value="2" />
                   </node>
                 </node>
               </node>
@@ -351,6 +358,11 @@
                   </node>
                 </node>
                 <node concept="3clFbH" id="7OtjhV3LH8a" role="3cqZAp" />
+                <node concept="3SKdUt" id="1LzZ23Mfb2f" role="3cqZAp">
+                  <node concept="3SKdUq" id="1LzZ23Mfb2h" role="3SKWNk">
+                    <property role="3SKdUp" value="XXX there seems to be no need to depend from Generate task now?" />
+                  </node>
+                </node>
                 <node concept="3cpWs8" id="33dz4spRFpP" role="3cqZAp">
                   <node concept="3cpWsn" id="33dz4spRFpQ" role="3cpWs9">
                     <property role="TrG5h" value="repository" />
@@ -360,17 +372,10 @@
                     </node>
                     <node concept="2OqwBi" id="7OtjhV3LXh6" role="33vP2m">
                       <node concept="2OqwBi" id="7OtjhV3LX0u" role="2Oq$k0">
-                        <node concept="2bn25q" id="7OtjhV3LVH2" role="2Oq$k0">
-                          <node concept="2bn25r" id="7OtjhV3LVH0" role="2Oq$k0">
-                            <ref role="2bn25l" to="tpcq:5L5h3brvz7k" resolve="checkParameters" />
-                          </node>
-                          <node concept="2sxana" id="7OtjhV3LVH1" role="2OqNvi">
-                            <ref role="2sxfKC" to="tpcq:5L5h3brvz7T" resolve="makeSession" />
-                          </node>
-                        </node>
                         <node concept="liA8E" id="7OtjhV3LX66" role="2OqNvi">
                           <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                         </node>
+                        <node concept="2_BwXt" id="1LzZ23MeXJg" role="2Oq$k0" />
                       </node>
                       <node concept="liA8E" id="7OtjhV3LXCm" role="2OqNvi">
                         <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />

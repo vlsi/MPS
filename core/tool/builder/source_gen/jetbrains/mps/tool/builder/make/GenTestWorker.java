@@ -27,7 +27,6 @@ import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import java.util.ArrayList;
 import jetbrains.mps.make.script.PropertyPoolInitializer;
-import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.internal.make.cfg.MakeFacetInitializer;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
@@ -178,13 +177,12 @@ public class GenTestWorker extends GeneratorWorker {
       }
     };
     ArrayList<PropertyPoolInitializer> ppi = new ArrayList<PropertyPoolInitializer>();
-    ppi.add(new GenerateFacetInitializer(ms));
     ppi.add(new MakeFacetInitializer().setPathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
       public IFile invoke(String path) {
         return tmpFile(path);
       }
     }));
-    ppi.add(new TextGenFacetInitializer(ms).failNoTextGen(false));
+    ppi.add(new TextGenFacetInitializer().failNoTextGen(false));
     if (isShowDiff()) {
       PropertyPoolInitializer diffFacetInit = new PropertyPoolInitializer() {
         public void populate(IPropertiesPool ppool) {

@@ -40,7 +40,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector" />
-    <classNode dependClassName="jetbrains.mps.lang.core.plugin.TextGen_Facet.Target_configure" />
     <classNode dependClassName="jetbrains.mps.lang.editor.imageGen.plugin.PrintNodeRunnable" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

@@ -244,6 +244,12 @@
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -876,6 +882,16 @@
                     <node concept="_YKpA" id="39YM2jsjU7V" role="1tU5fm">
                       <node concept="17QB3L" id="39YM2jsjU7W" role="_ZDj9" />
                     </node>
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="3KOFRHqQxNh" role="3cqZAp">
+                  <node concept="3SKdUq" id="3KOFRHqQxNj" role="3SKWNk">
+                    <property role="3SKdUp" value="FIXME here, shall not use makeSession.getProject().getModelAccess(), but instead, shall lock" />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="3KOFRHqQxRa" role="3cqZAp">
+                  <node concept="3SKdUq" id="3KOFRHqQxRc" role="3SKWNk">
+                    <property role="3SKdUp" value="repository of a transient model. Expose it either with GenerationStatus or GResource" />
                   </node>
                 </node>
                 <node concept="3clFbF" id="1KUoCipvFzm" role="3cqZAp">

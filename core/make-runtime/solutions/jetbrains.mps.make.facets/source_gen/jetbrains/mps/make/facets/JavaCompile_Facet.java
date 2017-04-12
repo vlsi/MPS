@@ -30,9 +30,9 @@ import jetbrains.mps.make.ErrorsLoggingHandler;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.MPSCompilationResult;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.make.script.IConfig;
@@ -109,20 +109,19 @@ public class JavaCompile_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.MESSAGE(msg));
                 }
               };
-              final Wrappers._T<MPSCompilationResult> cr = new Wrappers._T<MPSCompilationResult>();
-              ModelAccess.instance().runReadAction(new Runnable() {
-                public void run() {
-                  cr.value = new ModuleMaker(msgHandler, MessageKind.INFORMATION).make(toCompile, progressMonitor, vars(pa.global()).options());
+              MPSCompilationResult cr = new ModelAccessHelper(monitor.getSession().getProject().getModelAccess()).runReadAction(new Computable<MPSCompilationResult>() {
+                public MPSCompilationResult compute() {
+                  return new ModuleMaker(msgHandler, MessageKind.INFORMATION).make(toCompile, progressMonitor, vars(pa.global()).options());
                 }
               });
-              vars(pa.global()).compiledAnything(vars(pa.global()).compiledAnything() || cr.value.isCompiledAnything());
-              if (!(cr.value.isOk())) {
-                if (cr.value.getErrorsCount() > 0) {
-                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr.value)));
-                } else if (cr.value.getWarningsCount() > 0) {
-                  monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(cr.value)));
+              vars(pa.global()).compiledAnything(vars(pa.global()).compiledAnything() || cr.isCompiledAnything());
+              if (!(cr.isOk())) {
+                if (cr.getErrorsCount() > 0) {
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr)));
+                } else if (cr.getWarningsCount() > 0) {
+                  monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(cr)));
                 } else {
-                  monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf(cr.value)));
+                  monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf(cr)));
                 }
                 return new IResult.FAILURE(_output_wf1ya0_a0a);
               }
@@ -131,7 +130,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
-                if (cr.value.getChangedModules().contains(tres.module())) {
+                if (cr.getChangedModules().contains(tres.module())) {
                   _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
                 }
               }
@@ -231,6 +230,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
+              // FIXME project property is no longer needed (we take project from make session), remove after 2017.2 
               if (Boolean.TRUE.equals(JavaCompile_Facet.Target_compile.vars(pa.global()).skipCompilation())) {
                 _output_wf1ya0_a0b = Sequence.fromIterable(_output_wf1ya0_a0b).concat(Sequence.fromIterable(input));
                 return new IResult.SUCCESS(_output_wf1ya0_a0b);
@@ -261,7 +261,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
               }
 
-              IdeaJavaCompiler compiler = vars(pa.global()).project().getComponent(IdeaJavaCompiler.class);
+              IdeaJavaCompiler compiler = monitor.getSession().getProject().getComponent(IdeaJavaCompiler.class);
               if (compiler == null || !(compiler.isValid())) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("IntelliJ IDEA is required for compilation")));
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
@@ -348,16 +348,16 @@ public class JavaCompile_Facet extends IFacet.Stub {
       public Parameters() {
         super();
       }
-      public Parameters(Project project, Boolean skipAuxCompile) {
-        super(project, skipAuxCompile);
+      public Parameters(Project unused, Boolean skipAuxCompile) {
+        super(unused, skipAuxCompile);
       }
-      public Project project(Project value) {
+      public Project unused(Project value) {
         return super._0(value);
       }
       public Boolean skipAuxCompile(Boolean value) {
         return super._1(value);
       }
-      public Project project() {
+      public Project unused() {
         return super._0();
       }
       public Boolean skipAuxCompile() {
@@ -382,7 +382,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.auxCompile");
         if (properties.hasProperties(name)) {
           JavaCompile_Facet.Target_auxCompile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.make.facets.JavaCompile.auxCompile.project", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.make.facets.JavaCompile.auxCompile.unused", null);
           MapSequence.fromMap(store).put("jetbrains.mps.make.facets.JavaCompile.auxCompile.skipAuxCompile", String.valueOf(props.skipAuxCompile()));
         }
       }
@@ -405,8 +405,8 @@ public class JavaCompile_Facet extends IFacet.Stub {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.auxCompile");
           JavaCompile_Facet.Target_auxCompile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.facets.JavaCompile.auxCompile.project")) {
-            props.project(null);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.facets.JavaCompile.auxCompile.unused")) {
+            props.unused(null);
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.facets.JavaCompile.auxCompile.skipAuxCompile")) {
             props.skipAuxCompile(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.make.facets.JavaCompile.auxCompile.skipAuxCompile")));

@@ -101,13 +101,13 @@ public class ModuleGenerationHolder {
     final MakeSession session = new MakeSession(project, myMessageHandler, true);
     // trace.info is useless for tests, however we do keep these files in repo, and diffModule test 
     // fails if we don't generate one here 
-    TextGenFacetInitializer tgfi = new TextGenFacetInitializer(session).failNoTextGen(false).generateDebugInfo(true);
+    TextGenFacetInitializer tgfi = new TextGenFacetInitializer().failNoTextGen(false).generateDebugInfo(true);
     MakeFacetInitializer mfi = new MakeFacetInitializer().setPathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
       public IFile invoke(String path) {
         return tmpFile(path);
       }
     });
-    GenerateFacetInitializer gfi = new GenerateFacetInitializer(session).setGenerationOptions(optBuilder);
+    GenerateFacetInitializer gfi = new GenerateFacetInitializer().setGenerationOptions(optBuilder);
     IScriptController ctl = new IScriptController.Stub2(session, tgfi, mfi, gfi);
     result = new TestMakeService().make(session, ModuleGenerationHolder.collectResources(project, module), scr, ctl, new EmptyProgressMonitor()).get();
     isSuccessful = result != null && result.isSucessful();
