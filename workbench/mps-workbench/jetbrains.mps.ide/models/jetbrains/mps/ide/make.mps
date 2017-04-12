@@ -5724,6 +5724,23 @@
         <node concept="3cqZAl" id="9D0Ba05v6_" role="3clF45" />
         <node concept="3Tm6S6" id="9D0Ba05v6A" role="1B3o_S" />
         <node concept="3clFbS" id="9D0Ba05v6B" role="3clF47">
+          <node concept="3cpWs8" id="5Pnc_qQv9BN" role="3cqZAp">
+            <node concept="3cpWsn" id="5Pnc_qQv9BO" role="3cpWs9">
+              <property role="TrG5h" value="makeSession" />
+              <property role="3TUv4t" value="true" />
+              <node concept="3uibUv" id="5Pnc_qQv9BK" role="1tU5fm">
+                <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
+              </node>
+              <node concept="2OqwBi" id="5Pnc_qQv9BP" role="33vP2m">
+                <node concept="Xjq3P" id="5Pnc_qQv9BQ" role="2Oq$k0">
+                  <ref role="1HBi2w" node="9D0Ba05uYl" resolve="WorkbenchMakeService" />
+                </node>
+                <node concept="liA8E" id="5Pnc_qQv9BR" role="2OqNvi">
+                  <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="9D0Ba05v6C" role="3cqZAp">
             <node concept="37vLTI" id="9D0Ba05v6D" role="3clFbG">
               <node concept="2ShNRf" id="9D0Ba05v6E" role="37vLTx">
@@ -5731,7 +5748,10 @@
                   <node concept="1Y3b0j" id="9D0Ba05v6G" role="YeSDq">
                     <property role="2bfB8j" value="true" />
                     <ref role="1Y3XeK" to="i9so:4TqQgK0rdP4" resolve="IConfigMonitor.Stub" />
-                    <ref role="37wK5l" to="i9so:4TqQgK0rdP6" resolve="IConfigMonitor.Stub" />
+                    <ref role="37wK5l" to="i9so:5Pnc_qQuW1m" resolve="IConfigMonitor.Stub" />
+                    <node concept="37vLTw" id="5Pnc_qQv9BS" role="37wK5m">
+                      <ref role="3cqZAo" node="5Pnc_qQv9BO" resolve="makeSession" />
+                    </node>
                     <node concept="3Tm1VV" id="9D0Ba05v6H" role="1B3o_S" />
                     <node concept="3clFb_" id="9D0Ba05v6I" role="jymVt">
                       <property role="1EzhhJ" value="false" />
@@ -5816,8 +5836,8 @@
                                   <ref role="3cqZAo" node="9D0Ba05v6J" resolve="query" />
                                 </node>
                                 <node concept="2OqwBi" id="9D0Ba05v7i" role="37wK5m">
-                                  <node concept="1rXfSq" id="4hiugqyyJ0x" role="2Oq$k0">
-                                    <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
+                                  <node concept="37vLTw" id="5Pnc_qQvdAi" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="5Pnc_qQv9BO" resolve="makeSession" />
                                   </node>
                                   <node concept="liA8E" id="9D0Ba05v7k" role="2OqNvi">
                                     <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
@@ -5911,7 +5931,6 @@
                         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                       </node>
                     </node>
-                    <node concept="2tJIrI" id="5Pnc_qQut8w" role="jymVt" />
                   </node>
                 </node>
               </node>

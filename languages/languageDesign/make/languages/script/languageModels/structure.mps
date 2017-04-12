@@ -527,5 +527,12 @@
     <property role="EcuMT" value="4671800353872995469" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
+  <node concept="1TIwiD" id="671CX74nUMc">
+    <property role="EcuMT" value="7044091413522263180" />
+    <property role="3GE5qa" value="job" />
+    <property role="TrG5h" value="GetMakeSessionExpression" />
+    <property role="34LRSv" value="makeSession" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+  </node>
 </model>
 

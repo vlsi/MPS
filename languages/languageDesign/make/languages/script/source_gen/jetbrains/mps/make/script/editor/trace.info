@@ -12,7 +12,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="19,0,155,0" name="jetbrains.mps.make.script.editor.EditorAspectDescriptorImpl" />
+      <unit at="19,0,157,0" name="jetbrains.mps.make.script.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:997bd332-957d-4e59-bb10-bc8a630d5568(jetbrains.mps.make.script.editor)/1741258697587104896">
@@ -4045,6 +4045,53 @@
       </scope>
       <scope id="2360002718792446687" at="49,0,67,0" />
       <unit id="7077360340906447919" at="21,0,77,0" name="jetbrains.mps.make.script.editor.ResultStatement_EditorBuilder_a" />
+    </file>
+  </root>
+  <root nodeRef="r:997bd332-957d-4e59-bb10-bc8a630d5568(jetbrains.mps.make.script.editor)/7424295030210594779">
+    <file name="GetMakeSessionExpression_Editor.java">
+      <node id="7424295030210594779" at="11,79,12,90" concept="6" />
+      <node id="7424295030210594779" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="7424295030210594779" at="11,79,12,90" />
+      <scope id="7424295030210594779" at="11,0,14,0">
+        <var name="editorContext" id="7424295030210594779" />
+        <var name="node" id="7424295030210594779" />
+      </scope>
+      <unit id="7424295030210594779" at="10,0,15,0" name="jetbrains.mps.make.script.editor.GetMakeSessionExpression_Editor" />
+    </file>
+    <file name="GetMakeSessionExpression_EditorBuilder_a.java">
+      <node id="7424295030210594779" at="19,104,20,19" concept="8" />
+      <node id="7424295030210594779" at="20,19,21,18" concept="1" />
+      <node id="7424295030210594779" at="26,26,27,18" concept="6" />
+      <node id="7424295030210594779" at="30,39,31,37" concept="6" />
+      <node id="7424295030210615963" at="34,48,35,104" concept="5" />
+      <node id="7424295030210615963" at="35,104,36,46" concept="1" />
+      <node id="7424295030210615963" at="36,46,37,28" concept="1" />
+      <node id="7424295030210615963" at="37,28,38,65" concept="1" />
+      <node id="7424295030210615963" at="38,65,39,34" concept="5" />
+      <node id="7424295030210615963" at="39,34,40,53" concept="1" />
+      <node id="7424295030210615963" at="40,53,41,40" concept="1" />
+      <node id="7424295030210615963" at="41,40,42,34" concept="1" />
+      <node id="7424295030210615963" at="42,34,43,22" concept="6" />
+      <node id="7424295030210594779" at="16,0,18,0" concept="2" trace="myNode" />
+      <node id="7424295030210594779" at="30,0,33,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="7424295030210594779" at="19,0,23,0" concept="0" trace="GetMakeSessionExpression_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7424295030210594779" at="24,0,29,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7424295030210615963" at="34,0,45,0" concept="4" trace="createConstant_lvtjnl_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="7424295030210594779" at="26,26,27,18" />
+      <scope id="7424295030210594779" at="30,39,31,37" />
+      <scope id="7424295030210594779" at="19,104,21,18" />
+      <scope id="7424295030210594779" at="30,0,33,0" />
+      <scope id="7424295030210594779" at="19,0,23,0">
+        <var name="context" id="7424295030210594779" />
+        <var name="node" id="7424295030210594779" />
+      </scope>
+      <scope id="7424295030210594779" at="24,0,29,0" />
+      <scope id="7424295030210615963" at="34,48,43,22">
+        <var name="editorCell" id="7424295030210615963" />
+        <var name="style" id="7424295030210615963" />
+      </scope>
+      <scope id="7424295030210615963" at="34,0,45,0" />
+      <unit id="7424295030210594779" at="15,0,46,0" name="jetbrains.mps.make.script.editor.GetMakeSessionExpression_EditorBuilder_a" />
     </file>
   </root>
 </debug-info>

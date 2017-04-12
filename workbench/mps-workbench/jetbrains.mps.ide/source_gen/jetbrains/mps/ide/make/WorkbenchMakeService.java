@@ -367,14 +367,15 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     }
 
     private void init() {
-      this.confMon = new IConfigMonitor.Stub() {
+      final MakeSession makeSession = WorkbenchMakeService.this.getSession();
+      this.confMon = new IConfigMonitor.Stub(makeSession) {
         @Override
         public <T extends IOption> T relayQuery(IQuery<T> query) {
           T opt = null;
           if (delegateConfMon != null) {
             opt = delegateConfMon.relayQuery(query);
           }
-          return (opt != null ? opt : new UIQueryRelayStrategy().relayQuery(query, getSession().getProject()));
+          return (opt != null ? opt : new UIQueryRelayStrategy().relayQuery(query, makeSession.getProject()));
         }
         @Override
         public boolean stopRequested() {
@@ -388,7 +389,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         public IProgress currentProgress() {
           return pmps.currentProgress();
         }
-
       };
       this.jobMon = confMon;
     }

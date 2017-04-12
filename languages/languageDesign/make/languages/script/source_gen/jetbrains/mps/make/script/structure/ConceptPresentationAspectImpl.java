@@ -18,6 +18,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ExpectedInput = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExpectedOption = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FinishWorkStatement = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_GetMakeSessionExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IExpected = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InputResourcesParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_JobDeclaration = new ConceptPresentationBuilder().create();
@@ -58,6 +59,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ExpectedOption;
       case LanguageConceptSwitch.FinishWorkStatement:
         return props_FinishWorkStatement;
+      case LanguageConceptSwitch.GetMakeSessionExpression:
+        return props_GetMakeSessionExpression;
       case LanguageConceptSwitch.IExpected:
         return props_IExpected;
       case LanguageConceptSwitch.InputResourcesParameter:

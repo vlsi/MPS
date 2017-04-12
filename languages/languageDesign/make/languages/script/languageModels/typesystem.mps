@@ -15,6 +15,7 @@
     <import index="yo81" ref="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
+    <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -866,6 +867,32 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="1YbPZF" id="671CX74o0n9">
+    <property role="TrG5h" value="typeof_GetMakeSessionExpression" />
+    <property role="3GE5qa" value="job" />
+    <node concept="3clFbS" id="671CX74o0na" role="18ibNy">
+      <node concept="1Z5TYs" id="671CX74o0_y" role="3cqZAp">
+        <node concept="mw_s8" id="671CX74o0__" role="1ZfhK$">
+          <node concept="1Z2H0r" id="671CX74o0oC" role="mwGJk">
+            <node concept="1YBJjd" id="671CX74o0oS" role="1Z2MuG">
+              <ref role="1YBMHb" node="671CX74o0nc" resolve="expr" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="671CX74o0AD" role="1ZfhKB">
+          <node concept="2c44tf" id="671CX74o0A_" role="mwGJk">
+            <node concept="3uibUv" id="671CX74o0Bm" role="2c44tc">
+              <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="671CX74o0nc" role="1YuTPh">
+      <property role="TrG5h" value="expr" />
+      <ref role="1YaFvo" to="q9ra:671CX74nUMc" resolve="GetMakeSessionExpression" />
     </node>
   </node>
 </model>

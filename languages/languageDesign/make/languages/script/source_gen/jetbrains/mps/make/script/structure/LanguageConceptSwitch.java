@@ -18,22 +18,23 @@ public final class LanguageConceptSwitch {
   public static final int ExpectedInput = 6;
   public static final int ExpectedOption = 7;
   public static final int FinishWorkStatement = 8;
-  public static final int IExpected = 9;
-  public static final int InputResourcesParameter = 10;
-  public static final int JobDeclaration = 11;
-  public static final int JobDefinition = 12;
-  public static final int Option = 13;
-  public static final int OptionExpression = 14;
-  public static final int OptionType = 15;
-  public static final int OutputResources = 16;
-  public static final int PropertiesAccessorParameter = 17;
-  public static final int QueryDefinition = 18;
-  public static final int QueryParameterDeclaration = 19;
-  public static final int RelayQueryExpression = 20;
-  public static final int ReportFeedbackStatement = 21;
-  public static final int ResourceType = 22;
-  public static final int ResultStatement = 23;
-  public static final int Text = 24;
+  public static final int GetMakeSessionExpression = 9;
+  public static final int IExpected = 10;
+  public static final int InputResourcesParameter = 11;
+  public static final int JobDeclaration = 12;
+  public static final int JobDefinition = 13;
+  public static final int Option = 14;
+  public static final int OptionExpression = 15;
+  public static final int OptionType = 16;
+  public static final int OutputResources = 17;
+  public static final int PropertiesAccessorParameter = 18;
+  public static final int QueryDefinition = 19;
+  public static final int QueryParameterDeclaration = 20;
+  public static final int RelayQueryExpression = 21;
+  public static final int ReportFeedbackStatement = 22;
+  public static final int ResourceType = 23;
+  public static final int ResultStatement = 24;
+  public static final int Text = 25;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL);
@@ -46,6 +47,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x70276038dc4d7c6L, ExpectedInput);
     builder.put(0x70276038dc4d7bbL, ExpectedOption);
     builder.put(0x29929a95c9e6987L, FinishWorkStatement);
+    builder.put(0x61c1a3d1c45fac8cL, GetMakeSessionExpression);
     builder.put(0x70276038dc581e7L, IExpected);
     builder.put(0x20c069f80a972dacL, InputResourcesParameter);
     builder.put(0x70276038dc4d7edL, JobDeclaration);

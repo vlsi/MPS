@@ -23,6 +23,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptExpectedInput = createDescriptorForExpectedInput();
   /*package*/ final ConceptDescriptor myConceptExpectedOption = createDescriptorForExpectedOption();
   /*package*/ final ConceptDescriptor myConceptFinishWorkStatement = createDescriptorForFinishWorkStatement();
+  /*package*/ final ConceptDescriptor myConceptGetMakeSessionExpression = createDescriptorForGetMakeSessionExpression();
   /*package*/ final ConceptDescriptor myConceptIExpected = createDescriptorForIExpected();
   /*package*/ final ConceptDescriptor myConceptInputResourcesParameter = createDescriptorForInputResourcesParameter();
   /*package*/ final ConceptDescriptor myConceptJobDeclaration = createDescriptorForJobDeclaration();
@@ -47,7 +48,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAdvanceWorkStatement, myConceptAllWorkLeftExpression, myConceptBeginWorkStatement, myConceptConceptFunctionParameter_progressMonitor, myConceptConfigDefinition, myConceptExpected, myConceptExpectedInput, myConceptExpectedOption, myConceptFinishWorkStatement, myConceptIExpected, myConceptInputResourcesParameter, myConceptJobDeclaration, myConceptJobDefinition, myConceptOption, myConceptOptionExpression, myConceptOptionType, myConceptOutputResources, myConceptPropertiesAccessorParameter, myConceptQueryDefinition, myConceptQueryParameterDeclaration, myConceptRelayQueryExpression, myConceptReportFeedbackStatement, myConceptResourceType, myConceptResultStatement, myConceptText);
+    return Arrays.asList(myConceptAdvanceWorkStatement, myConceptAllWorkLeftExpression, myConceptBeginWorkStatement, myConceptConceptFunctionParameter_progressMonitor, myConceptConfigDefinition, myConceptExpected, myConceptExpectedInput, myConceptExpectedOption, myConceptFinishWorkStatement, myConceptGetMakeSessionExpression, myConceptIExpected, myConceptInputResourcesParameter, myConceptJobDeclaration, myConceptJobDefinition, myConceptOption, myConceptOptionExpression, myConceptOptionType, myConceptOutputResources, myConceptPropertiesAccessorParameter, myConceptQueryDefinition, myConceptQueryParameterDeclaration, myConceptRelayQueryExpression, myConceptReportFeedbackStatement, myConceptResourceType, myConceptResultStatement, myConceptText);
   }
 
   @Override
@@ -72,6 +73,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptExpectedOption;
       case LanguageConceptSwitch.FinishWorkStatement:
         return myConceptFinishWorkStatement;
+      case LanguageConceptSwitch.GetMakeSessionExpression:
+        return myConceptGetMakeSessionExpression;
       case LanguageConceptSwitch.IExpected:
         return myConceptIExpected;
       case LanguageConceptSwitch.InputResourcesParameter:
@@ -198,6 +201,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("workStatement", 0x97a1ce11862c6ddL).target(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6982L).optional(false).origin("682890046602397405").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("finish");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForGetMakeSessionExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.make.script", "GetMakeSessionExpression", 0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x61c1a3d1c45fac8cL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
+    b.origin("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)/7044091413522263180");
+    b.alias("makeSession");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIExpected() {

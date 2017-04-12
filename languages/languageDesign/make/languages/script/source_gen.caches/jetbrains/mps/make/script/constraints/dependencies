@@ -50,6 +50,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.constraints.AdvanceWorkStatement_Constraints" />
     <classNode dependClassName="jetbrains.mps.make.script.constraints.ConfigDefinition_Constraints" />
     <classNode dependClassName="jetbrains.mps.make.script.constraints.FinishWorkStatement_Constraints" />
+    <classNode dependClassName="jetbrains.mps.make.script.constraints.GetMakeSessionExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.make.script.constraints.JobDefinition_Constraints" />
     <classNode dependClassName="jetbrains.mps.make.script.constraints.RelayQueryExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.make.script.constraints.ResourceType_Constraints" />
@@ -84,6 +85,22 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.script.constraints.GetMakeSessionExpression_Constraints" file="GetMakeSessionExpression_Constraints.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintContext_CanBeChild" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintFunction" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.constraints.JobDefinition_Constraints" file="JobDefinition_Constraints.java">

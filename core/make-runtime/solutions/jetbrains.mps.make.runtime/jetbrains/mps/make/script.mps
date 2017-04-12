@@ -259,6 +259,12 @@
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
+      <concept id="8465538089690324397" name="jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag" flags="ng" index="TZ7YB">
+        <property id="8465538089690324399" name="text" index="TZ7Y_" />
+      </concept>
+      <concept id="2217234381367049075" name="jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag" flags="ng" index="VVOAv">
+        <child id="3106559687488741665" name="line" index="2Xj1qM" />
+      </concept>
       <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
         <reference id="2217234381367530213" name="classifier" index="VXe09" />
       </concept>
@@ -583,6 +589,31 @@
       <node concept="3Tm1VV" id="3bEKrlZKk52" role="1B3o_S" />
       <node concept="3clFbS" id="3bEKrlZKk53" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="5Pnc_qQugPX" role="jymVt" />
+    <node concept="3clFb_" id="5Pnc_qQuhd7" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getSession" />
+      <node concept="3clFbS" id="5Pnc_qQuhda" role="3clF47" />
+      <node concept="3Tm1VV" id="5Pnc_qQuhdb" role="1B3o_S" />
+      <node concept="3uibUv" id="5Pnc_qQuh5H" role="3clF45">
+        <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
+      </node>
+      <node concept="P$JXv" id="5Pnc_qQuhX6" role="lGtFl">
+        <node concept="TZ5HA" id="5Pnc_qQuhX7" role="TZ5H$">
+          <node concept="1dT_AC" id="5Pnc_qQuhX8" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ7YB" id="5Pnc_qQuinU" role="3nqlJM">
+          <property role="TZ7Y_" value="2017.2" />
+        </node>
+        <node concept="x79VA" id="5Pnc_qQuhX9" role="3nqlJM">
+          <property role="x79VB" value="active session, never {@code null}" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5Pnc_qQugR4" role="jymVt" />
     <node concept="312cEu" id="4TqQgK0rdOH" role="jymVt">
       <property role="TrG5h" value="Stub" />
       <node concept="3Tm1VV" id="4TqQgK0rdOI" role="1B3o_S" />
@@ -591,9 +622,20 @@
       </node>
       <node concept="312cEg" id="7NBK4ktl$zS" role="jymVt">
         <property role="TrG5h" value="pstub" />
+        <property role="3TUv4t" value="true" />
         <node concept="3Tm6S6" id="7NBK4ktl$zT" role="1B3o_S" />
         <node concept="3uibUv" id="7NBK4ktlCRD" role="1tU5fm">
           <ref role="3uigEE" node="6KRD$9FAjI8" resolve="IProgress" />
+        </node>
+      </node>
+      <node concept="312cEg" id="5Pnc_qQuWQ7" role="jymVt">
+        <property role="34CwA1" value="false" />
+        <property role="eg7rD" value="false" />
+        <property role="TrG5h" value="mySession" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3Tm6S6" id="5Pnc_qQuW$8" role="1B3o_S" />
+        <node concept="3uibUv" id="5Pnc_qQuWL$" role="1tU5fm">
+          <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
         </node>
       </node>
       <node concept="3clFbW" id="4TqQgK0rdOJ" role="jymVt">
@@ -619,6 +661,14 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbF" id="5Pnc_qQuX23" role="3cqZAp">
+            <node concept="37vLTI" id="5Pnc_qQuXaI" role="3clFbG">
+              <node concept="10Nm6u" id="5Pnc_qQuXgg" role="37vLTx" />
+              <node concept="37vLTw" id="5Pnc_qQuX21" role="37vLTJ">
+                <ref role="3cqZAo" node="5Pnc_qQuWQ7" resolve="mySession" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="3clFbW" id="44pXg$rPSXE" role="jymVt">
@@ -639,6 +689,54 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node concept="3clFbF" id="5Pnc_qQuXhu" role="3cqZAp">
+            <node concept="37vLTI" id="5Pnc_qQuXhv" role="3clFbG">
+              <node concept="10Nm6u" id="5Pnc_qQuXhw" role="37vLTx" />
+              <node concept="37vLTw" id="5Pnc_qQuXhx" role="37vLTJ">
+                <ref role="3cqZAo" node="5Pnc_qQuWQ7" resolve="mySession" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbW" id="5Pnc_qQuYoI" role="jymVt">
+        <node concept="3cqZAl" id="5Pnc_qQuYoK" role="3clF45" />
+        <node concept="3Tm1VV" id="5Pnc_qQuYoL" role="1B3o_S" />
+        <node concept="3clFbS" id="5Pnc_qQuYoM" role="3clF47">
+          <node concept="3clFbF" id="5Pnc_qQvv$Z" role="3cqZAp">
+            <node concept="37vLTI" id="5Pnc_qQvv_0" role="3clFbG">
+              <node concept="2OqwBi" id="5Pnc_qQvv_1" role="37vLTJ">
+                <node concept="Xjq3P" id="5Pnc_qQvv_2" role="2Oq$k0" />
+                <node concept="2OwXpG" id="5Pnc_qQvv_3" role="2OqNvi">
+                  <ref role="2Oxat5" node="7NBK4ktl$zS" resolve="pstub" />
+                </node>
+              </node>
+              <node concept="2ShNRf" id="5Pnc_qQvv_4" role="37vLTx">
+                <node concept="1pGfFk" id="5Pnc_qQvv_5" role="2ShVmc">
+                  <ref role="37wK5l" node="7NBK4ktlwwS" resolve="IProgress.Stub" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="5Pnc_qQuYGQ" role="3cqZAp">
+            <node concept="37vLTI" id="5Pnc_qQuYO5" role="3clFbG">
+              <node concept="37vLTw" id="5Pnc_qQuYVv" role="37vLTx">
+                <ref role="3cqZAo" node="5Pnc_qQuYzz" resolve="makeSession" />
+              </node>
+              <node concept="37vLTw" id="5Pnc_qQuYGP" role="37vLTJ">
+                <ref role="3cqZAo" node="5Pnc_qQuWQ7" resolve="mySession" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="5Pnc_qQuYzz" role="3clF46">
+          <property role="TrG5h" value="makeSession" />
+          <node concept="3uibUv" id="5Pnc_qQuYzy" role="1tU5fm">
+            <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
+          </node>
+          <node concept="2AHcQZ" id="5Pnc_qQuYW_" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
           </node>
         </node>
       </node>
@@ -684,6 +782,46 @@
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sHMP" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="5Pnc_qQuhmK" role="jymVt" />
+      <node concept="3clFb_" id="5Pnc_qQuhtN" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="2aFKle" value="false" />
+        <property role="TrG5h" value="getSession" />
+        <node concept="3Tm1VV" id="5Pnc_qQuhtP" role="1B3o_S" />
+        <node concept="3uibUv" id="5Pnc_qQuhtQ" role="3clF45">
+          <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
+        </node>
+        <node concept="3clFbS" id="5Pnc_qQuhtR" role="3clF47">
+          <node concept="3clFbJ" id="5Pnc_qQuZ1c" role="3cqZAp">
+            <node concept="3clFbS" id="5Pnc_qQuZ1e" role="3clFbx">
+              <node concept="YS8fn" id="5Pnc_qQuhD0" role="3cqZAp">
+                <node concept="2ShNRf" id="5Pnc_qQuhDF" role="YScLw">
+                  <node concept="1pGfFk" id="5Pnc_qQuhND" role="2ShVmc">
+                    <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                    <node concept="Xl_RD" id="5Pnc_qQuhQM" role="37wK5m">
+                      <property role="Xl_RC" value="Override the method if you use custom IJobMonitor implementation" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="5Pnc_qQuZdu" role="3clFbw">
+              <node concept="10Nm6u" id="5Pnc_qQuZjo" role="3uHU7w" />
+              <node concept="37vLTw" id="5Pnc_qQuZ2R" role="3uHU7B">
+                <ref role="3cqZAo" node="5Pnc_qQuWQ7" resolve="mySession" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="5Pnc_qQuZrH" role="3cqZAp">
+            <node concept="37vLTw" id="5Pnc_qQuZrF" role="3clFbG">
+              <ref role="3cqZAo" node="5Pnc_qQuWQ7" resolve="mySession" />
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="5Pnc_qQuhtS" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
@@ -2048,6 +2186,27 @@
           </node>
         </node>
       </node>
+      <node concept="3clFbW" id="5Pnc_qQuW1m" role="jymVt">
+        <node concept="3cqZAl" id="5Pnc_qQuW1o" role="3clF45" />
+        <node concept="3Tm1VV" id="5Pnc_qQuW1p" role="1B3o_S" />
+        <node concept="3clFbS" id="5Pnc_qQuW1q" role="3clF47">
+          <node concept="XkiVB" id="5Pnc_qQuZDm" role="3cqZAp">
+            <ref role="37wK5l" node="5Pnc_qQuYoI" resolve="IJobMonitor.Stub" />
+            <node concept="37vLTw" id="5Pnc_qQuZFE" role="37wK5m">
+              <ref role="3cqZAo" node="5Pnc_qQuW4Y" resolve="makeSession" />
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="5Pnc_qQuW4Y" role="3clF46">
+          <property role="TrG5h" value="makeSession" />
+          <node concept="3uibUv" id="5Pnc_qQuW4X" role="1tU5fm">
+            <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
+          </node>
+          <node concept="2AHcQZ" id="5Pnc_qQuZJJ" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          </node>
+        </node>
+      </node>
       <node concept="3clFb_" id="4TqQgK0rdPe" role="jymVt">
         <property role="TrG5h" value="relayQuery" />
         <node concept="37vLTG" id="4TqQgK0rdPf" role="3clF46">
@@ -2530,7 +2689,7 @@
                   <node concept="1Y3b0j" id="3rCIVT6GdWa" role="YeSDq">
                     <property role="2bfB8j" value="true" />
                     <ref role="1Y3XeK" node="4TqQgK0rdP4" resolve="IConfigMonitor.Stub" />
-                    <ref role="37wK5l" node="4TqQgK0rdP6" resolve="IConfigMonitor.Stub" />
+                    <ref role="37wK5l" node="5Pnc_qQuW1m" resolve="IConfigMonitor.Stub" />
                     <node concept="3Tm1VV" id="3rCIVT6GdWb" role="1B3o_S" />
                     <node concept="3clFb_" id="3rCIVT6Gebw" role="jymVt">
                       <property role="TrG5h" value="reportFeedback" />
@@ -2610,6 +2769,9 @@
                           </node>
                         </node>
                       </node>
+                    </node>
+                    <node concept="37vLTw" id="671CX74nClI" role="37wK5m">
+                      <ref role="3cqZAo" node="3rCIVT6G2SM" resolve="myMakeSession" />
                     </node>
                   </node>
                 </node>
@@ -2839,6 +3001,38 @@
           </node>
           <node concept="1dT_AC" id="3rCIVT6GjhS" role="1dT_Ay">
             <property role="1dT_AB" value=" to set up tasks." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="671CX74nJFT" role="TZ5H$">
+          <node concept="1dT_AC" id="671CX74nJFU" role="1dT_Ay">
+            <property role="1dT_AB" value="    To pass MakeSession with Script, I can utilize the fact that MakeSession creates IScript in its " />
+          </node>
+          <node concept="1dT_AA" id="671CX74nOfW" role="1dT_Ay">
+            <node concept="VVOAv" id="671CX74nOg2" role="qph3F">
+              <node concept="TZ5HA" id="671CX74nOg4" role="2Xj1qM">
+                <node concept="1dT_AC" id="671CX74nOg8" role="1dT_Ay">
+                  <property role="1dT_AB" value="toScript(ScriptBuilder)" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="671CX74nOfV" role="1dT_Ay">
+            <property role="1dT_AB" value=" method. Script would further" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="671CX74nOi8" role="TZ5H$">
+          <node concept="1dT_AC" id="671CX74nOi9" role="1dT_Ay">
+            <property role="1dT_AB" value="    to ITarget.createJob(), and pass MakeSession in there (if supported. Could even introduce createJob(MakeSession)). The reason I stick to" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="671CX74nOga" role="TZ5H$">
+          <node concept="1dT_AC" id="671CX74nOgb" role="1dT_Ay">
+            <property role="1dT_AB" value="    IJobMonitor is that (a) once IProgress is history, there'd be nothing in IJobMonitor, (b) IJobMonitor gives clear scope when one could ask for session (with alternative approach," />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="671CX74nOk9" role="TZ5H$">
+          <node concept="1dT_AC" id="671CX74nOka" role="1dT_Ay">
+            <property role="1dT_AB" value="    where IJob is configured, scope and presence of the session would be implicit)." />
           </node>
         </node>
       </node>

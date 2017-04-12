@@ -1274,30 +1274,6 @@
       <node concept="3Tm6S6" id="4P_LPkqMCke" role="1B3o_S" />
       <node concept="10P_77" id="4P_LPkqMCkg" role="1tU5fm" />
     </node>
-    <node concept="312cEg" id="4P_LPkqKVHI" role="jymVt">
-      <property role="TrG5h" value="cmon" />
-      <node concept="2ShNRf" id="4P_LPkqL1ew" role="33vP2m">
-        <node concept="1pGfFk" id="4P_LPkqL2vM" role="2ShVmc">
-          <ref role="37wK5l" to="i9so:4TqQgK0rdP6" resolve="IConfigMonitor.Stub" />
-        </node>
-      </node>
-      <node concept="3Tm6S6" id="4P_LPkqKVHJ" role="1B3o_S" />
-      <node concept="3uibUv" id="4P_LPkqKVHL" role="1tU5fm">
-        <ref role="3uigEE" to="i9so:7eUbKP2Zue8" resolve="IConfigMonitor" />
-      </node>
-    </node>
-    <node concept="312cEg" id="4P_LPkqKVTA" role="jymVt">
-      <property role="TrG5h" value="jmon" />
-      <node concept="2ShNRf" id="4P_LPkqL2xC" role="33vP2m">
-        <node concept="1pGfFk" id="4P_LPkqLTji" role="2ShVmc">
-          <ref role="37wK5l" to="i9so:4TqQgK0rdP6" resolve="IConfigMonitor.Stub" />
-        </node>
-      </node>
-      <node concept="3Tm6S6" id="4P_LPkqKVTB" role="1B3o_S" />
-      <node concept="3uibUv" id="4P_LPkqKVTD" role="1tU5fm">
-        <ref role="3uigEE" to="i9so:5mqBoD3U3Wy" resolve="IJobMonitor" />
-      </node>
-    </node>
     <node concept="312cEg" id="10Uj_treWxJ" role="jymVt">
       <property role="TrG5h" value="outputPathRedirects" />
       <node concept="3uibUv" id="10Uj_trkzLO" role="1tU5fm">
@@ -1410,18 +1386,6 @@
         <property role="TrG5h" value="rebuild" />
         <node concept="10P_77" id="4P_LPkqMCj5" role="1tU5fm" />
       </node>
-      <node concept="37vLTG" id="4P_LPkqKUx$" role="3clF46">
-        <property role="TrG5h" value="cmon" />
-        <node concept="3uibUv" id="4P_LPkqKVxz" role="1tU5fm">
-          <ref role="3uigEE" to="i9so:7eUbKP2Zue8" resolve="IConfigMonitor" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="4P_LPkqKVyy" role="3clF46">
-        <property role="TrG5h" value="jmon" />
-        <node concept="3uibUv" id="4P_LPkqKVF9" role="1tU5fm">
-          <ref role="3uigEE" to="i9so:5mqBoD3U3Wy" resolve="IJobMonitor" />
-        </node>
-      </node>
       <node concept="3cqZAl" id="4P_LPkqKUmZ" role="3clF45" />
       <node concept="3Tm1VV" id="4P_LPkqKUn0" role="1B3o_S" />
       <node concept="3clFbS" id="4P_LPkqKUn1" role="3clF47">
@@ -1435,32 +1399,6 @@
             </node>
             <node concept="37vLTw" id="4P_LPkqKUn7" role="37vLTx">
               <ref role="3cqZAo" node="4P_LPkqKUmX" resolve="pathRedirects" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4P_LPkqKVHM" role="3cqZAp">
-          <node concept="37vLTI" id="4P_LPkqKVHO" role="3clFbG">
-            <node concept="2OqwBi" id="4P_LPkqKVHS" role="37vLTJ">
-              <node concept="Xjq3P" id="4P_LPkqKVHV" role="2Oq$k0" />
-              <node concept="2OwXpG" id="4P_LPkqKVHR" role="2OqNvi">
-                <ref role="2Oxat5" node="4P_LPkqKVHI" resolve="cmon" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="4P_LPkqKVHW" role="37vLTx">
-              <ref role="3cqZAo" node="4P_LPkqKUx$" resolve="cmon" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4P_LPkqKVTE" role="3cqZAp">
-          <node concept="37vLTI" id="4P_LPkqKVTG" role="3clFbG">
-            <node concept="2OqwBi" id="4P_LPkqKVTK" role="37vLTJ">
-              <node concept="Xjq3P" id="4P_LPkqKVTN" role="2Oq$k0" />
-              <node concept="2OwXpG" id="4P_LPkqKVTJ" role="2OqNvi">
-                <ref role="2Oxat5" node="4P_LPkqKVTA" resolve="jmon" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="4P_LPkqKVTO" role="37vLTx">
-              <ref role="3cqZAo" node="4P_LPkqKVyy" resolve="jmon" />
             </node>
           </node>
         </node>
@@ -1646,13 +1584,10 @@
             <node concept="YeOm9" id="71egOude_Lx" role="2ShVmc">
               <node concept="1Y3b0j" id="71egOude_Ly" role="YeSDq">
                 <property role="2bfB8j" value="true" />
-                <ref role="1Y3XeK" to="i9so:4TqQgK0ryjt" resolve="IScriptController.Stub" />
-                <ref role="37wK5l" to="i9so:4TqQgK0ryjv" resolve="IScriptController.Stub" />
-                <node concept="37vLTw" id="4P_LPkqL31f" role="37wK5m">
-                  <ref role="3cqZAo" node="4P_LPkqKVHI" resolve="cmon" />
-                </node>
-                <node concept="37vLTw" id="4P_LPkqL39z" role="37wK5m">
-                  <ref role="3cqZAo" node="4P_LPkqKVTA" resolve="jmon" />
+                <ref role="1Y3XeK" to="i9so:3rCIVT6FYSf" resolve="IScriptController.Stub2" />
+                <ref role="37wK5l" to="i9so:3rCIVT6G0sF" resolve="IScriptController.Stub2" />
+                <node concept="37vLTw" id="6s8pfUfoYXT" role="37wK5m">
+                  <ref role="3cqZAo" node="5OeL7ncbypi" resolve="makeSession" />
                 </node>
                 <node concept="3Tm1VV" id="71egOude_Lz" role="1B3o_S" />
                 <node concept="3clFb_" id="71egOude_L$" role="jymVt">
@@ -1685,21 +1620,6 @@
                     </node>
                   </node>
                   <node concept="3clFbS" id="71egOude_LK" role="3clF47">
-                    <node concept="3clFbF" id="71egOude_LL" role="3cqZAp">
-                      <node concept="3nyPlj" id="71egOude_LM" role="3clFbG">
-                        <ref role="37wK5l" to="i9so:70hZ3jyJvfU" resolve="setup" />
-                        <node concept="37vLTw" id="2BHiRxgm6NZ" role="37wK5m">
-                          <ref role="3cqZAo" node="71egOude_LB" resolve="pp" />
-                        </node>
-                        <node concept="37vLTw" id="2BHiRxgm60w" role="37wK5m">
-                          <ref role="3cqZAo" node="71egOude_LD" resolve="toExecute" />
-                        </node>
-                        <node concept="37vLTw" id="2BHiRxgm_eH" role="37wK5m">
-                          <ref role="3cqZAo" node="71egOude_LG" resolve="input" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbH" id="71egOude_LQ" role="3cqZAp" />
                     <node concept="3SKdUt" id="5OeL7ncbMLd" role="3cqZAp">
                       <node concept="3SKdUq" id="5OeL7ncbMOc" role="3SKWNk">
                         <property role="3SKdUp" value="FIXME rebuild is actually part of MakeSession, not of this RMFC class. For unknown reason, however, idea plugin" />

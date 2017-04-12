@@ -12,6 +12,7 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
@@ -33,10 +34,14 @@ public abstract class AbstractMakeService implements IMakeService {
   }
   /**
    * Reasonable defaults when no IScriptController is supplied by client
+   * I'm not certain there's great value in this distinct subclass of IConfigMonitor.Stub, perhaph, could move everything in there.
+   * Just don't understand why Stub.relayQuery is different, and whether we care to report feedback always.
    */
   public static class DefaultMonitor extends IConfigMonitor.Stub {
-    private MessageFeedbackStrategy myFeedback;
-    public DefaultMonitor(MakeSession makeSession) {
+    private final MessageFeedbackStrategy myFeedback;
+
+    public DefaultMonitor(@NotNull MakeSession makeSession) {
+      super(makeSession);
       myFeedback = new MessageFeedbackStrategy(makeSession.getMessageHandler());
     }
     @Override
