@@ -30,6 +30,7 @@ import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.internal.make.cfg.MakeFacetInitializer;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
@@ -182,7 +183,7 @@ public class GenTestWorker extends GeneratorWorker {
     IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new GenTestWorker.MyJobMonitor(new GenTestWorker.MyProgress(startTestFormat, finishTestFormat))) {
       @Override
       public void setup(IPropertiesPool ppool, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
-        super.setup(ppool, toExecute, input);
+        new GenerateFacetInitializer(ms).populate(ppool);
         new MakeFacetInitializer().setPathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
           public IFile invoke(String path) {
             return tmpFile(path);

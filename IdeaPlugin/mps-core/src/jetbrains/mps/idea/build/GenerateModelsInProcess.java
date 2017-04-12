@@ -20,6 +20,7 @@ import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
 import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.make.MakeSession;
@@ -55,10 +56,11 @@ public class GenerateModelsInProcess {
     IMessageHandler msgHandler = messagesView.newHandler("MPS generator");
 
     final MakeSession makeSession = new MakeSession(ProjectHelper.fromIdeaProject(myProject), msgHandler, true);
+    GenerateFacetInitializer gfi = new GenerateFacetInitializer(makeSession);
     TextGenFacetInitializer tgfi = new TextGenFacetInitializer(makeSession);
     JavaCompileFacetInitializer jcfi = new JavaCompileFacetInitializer().skipCompilation(true);
     BuildMakeService makeService = new BuildMakeService();
-    IScriptController controller = new IScriptController.Stub2(makeSession, tgfi, jcfi, new PropertyPoolInitializer() {
+    IScriptController controller = new IScriptController.Stub2(makeSession, gfi, tgfi, jcfi, new PropertyPoolInitializer() {
       @Override
       public void populate(IPropertiesPool ppool) {
         // now custom configuration
