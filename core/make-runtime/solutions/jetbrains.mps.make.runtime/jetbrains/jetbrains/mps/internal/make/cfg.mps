@@ -30,6 +30,13 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
+      <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
+        <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+      </concept>
+      <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
+        <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -47,6 +54,7 @@
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1221565133444" name="isFinal" index="1EXbeo" />
+        <child id="1095933932569" name="implementedInterface" index="EKbjA" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -303,6 +311,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3rCIVT6Fv0l" role="jymVt" />
     <node concept="3clFb_" id="7UozGIENpIK" role="jymVt">
       <property role="TrG5h" value="populate" />
       <node concept="3cqZAl" id="7UozGIENpIO" role="3clF45" />
@@ -466,6 +475,9 @@
           <ref role="3uigEE" to="i9so:5XvfMqim0Fp" resolve="IPropertiesPool" />
         </node>
       </node>
+      <node concept="2AHcQZ" id="3rCIVT6Fv9_" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
     <node concept="3Tm1VV" id="7UozGIENo9f" role="1B3o_S" />
     <node concept="3UR2Jj" id="7UozGIENGuY" role="lGtFl">
@@ -494,6 +506,9 @@
           <property role="1dT_AB" value="This class might implement some interface to invoke initializers in a generic way." />
         </node>
       </node>
+    </node>
+    <node concept="3uibUv" id="3rCIVT6Fuge" role="EKbjA">
+      <ref role="3uigEE" to="i9so:3rCIVT6F9HK" resolve="PropertyPoolInitializer" />
     </node>
   </node>
   <node concept="312cEu" id="7UozGIEOUte">
@@ -607,6 +622,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3rCIVT6FvT0" role="jymVt" />
     <node concept="3clFb_" id="7UozGIEP8Yt" role="jymVt">
       <property role="TrG5h" value="populate" />
       <node concept="3cqZAl" id="7UozGIEP8Yv" role="3clF45" />
@@ -762,8 +778,14 @@
           <ref role="3uigEE" to="i9so:5XvfMqim0Fp" resolve="IPropertiesPool" />
         </node>
       </node>
+      <node concept="2AHcQZ" id="3rCIVT6Fw0z" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
     <node concept="3Tm1VV" id="7UozGIEOUtf" role="1B3o_S" />
+    <node concept="3uibUv" id="3rCIVT6FvxQ" role="EKbjA">
+      <ref role="3uigEE" to="i9so:3rCIVT6F9HK" resolve="PropertyPoolInitializer" />
+    </node>
   </node>
 </model>
 

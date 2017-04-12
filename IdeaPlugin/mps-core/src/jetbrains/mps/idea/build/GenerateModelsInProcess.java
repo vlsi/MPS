@@ -31,6 +31,7 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.make.service.AbstractMakeService;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
@@ -60,12 +61,8 @@ public class GenerateModelsInProcess {
 
     final MakeSession makeSession = new MakeSession(ProjectHelper.fromIdeaProject(myProject), msgHandler, true);
     BuildMakeService makeService = new BuildMakeService();
-    IScriptController controller = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub() {
-      @Override
-      public void reportFeedback(IFeedback feedback) {
-        mfs.reportFeedback(feedback);
-      }
-    }) {
+    AbstractMakeService.DefaultMonitor monitor = new AbstractMakeService.DefaultMonitor(makeSession);
+    IScriptController controller = new IScriptController.Stub(monitor, monitor) {
       @Override
       public void setup(IPropertiesPool ppool) {
         // this should always be done
