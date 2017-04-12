@@ -376,8 +376,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
           }
           return (opt != null ? opt : new UIQueryRelayStrategy().relayQuery(query, getSession().getProject()));
         }
-      };
-      this.jobMon = new IJobMonitor.Stub() {
         @Override
         public boolean stopRequested() {
           return pmps.isCanceled();
@@ -390,7 +388,9 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         public IProgress currentProgress() {
           return pmps.currentProgress();
         }
+
       };
+      this.jobMon = confMon;
     }
   }
 }
