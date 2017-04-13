@@ -48,13 +48,13 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
-    SNode defaultConceptOfChild = CellUtil.getLinkDeclarationTarget(linkDeclaration);
+    SContainmentLink containmentLink = (SContainmentLink) cellContext.get(AggregationCellContext.LINK);
+    SAbstractConcept defaultConceptOfChild = (SAbstractConcept) cellContext.get(AggregationCellContext.CHILD_CONCEPT);
     SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 
 
     IOperationContext context = editorContext.getOperationContext();
-    SNode childNodeConcept = getConceptOfChild(parentNode, currentChild, MetaAdapterByDeclaration.getConcept(defaultConceptOfChild), context, editorContext);
+    SNode childNodeConcept = getConceptOfChild(parentNode, currentChild, defaultConceptOfChild, context, editorContext);
     if (childNodeConcept == null) {
       return Collections.emptyList();
     }
@@ -64,7 +64,6 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
       return new ArrayList<>();
     }
 
-    SContainmentLink containmentLink = MetaAdapterByDeclaration.getContainmentLink(linkDeclaration);
     SubstituteMenuLookup lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()),
                                                                   concept);
     List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, editorContext, lookup).collect();

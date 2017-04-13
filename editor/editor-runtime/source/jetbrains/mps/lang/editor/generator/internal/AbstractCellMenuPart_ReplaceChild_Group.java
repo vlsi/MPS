@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -46,16 +47,14 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
-    IChildNodeSetter setter = new DefaultChildNodeSetter(linkDeclaration);
-    final SNode defaultConceptOfChild = CellUtil.getLinkDeclarationTarget(linkDeclaration);
-    if (defaultConceptOfChild == null) {
-      return Collections.emptyList();
-    }
+    SContainmentLink containmentLink = (SContainmentLink) cellContext.get(AggregationCellContext.LINK);
+    SAbstractConcept defaultConceptOfChild = (SAbstractConcept) cellContext.get(AggregationCellContext.CHILD_CONCEPT);
+
+    IChildNodeSetter setter = new DefaultChildNodeSetter(containmentLink.getDeclarationNode());
     final SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 
     final IOperationContext context = editorContext.getOperationContext();
-    List parameterObjects = createParameterObjects(parentNode, currentChild, MetaAdapterByDeclaration.getConcept(defaultConceptOfChild), context, editorContext);
+    List parameterObjects = createParameterObjects(parentNode, currentChild, defaultConceptOfChild, context, editorContext);
     if (parameterObjects == null) {
       return Collections.emptyList();
     }
@@ -77,7 +76,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
         public SNode createChildNode(Object parameterObjectWhichActuallyAnOutputConcept, SModel model, String pattern) {
           SNode newChild;
           if (isCustomCreateChildNode()) {
-            newChild = customCreateChildNode(parameterObject, parentNode, currentChild, MetaAdapterByDeclaration.getConcept(defaultConceptOfChild), model, context, editorContext);
+            newChild = customCreateChildNode(parameterObject, parentNode, currentChild, defaultConceptOfChild, model, context, editorContext);
           } else {
             newChild = super.createChildNode(parameterObject, model, pattern);
           }

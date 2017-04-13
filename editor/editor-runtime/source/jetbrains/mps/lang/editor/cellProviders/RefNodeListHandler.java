@@ -81,8 +81,11 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     return myLinkDeclaration;
   }
 
+  /**
+   * @return original link (not specialized)
+   */
   public SContainmentLink getSLink() {
-    return MetaAdapterByDeclaration.getContainmentLink(myLinkDeclaration);
+    return MetaAdapterByDeclaration.getContainmentLink(SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration));
   }
 
   @Deprecated

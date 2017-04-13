@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -45,11 +46,10 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPartEx
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
+    SContainmentLink containmentLink = (SContainmentLink) cellContext.get(AggregationCellContext.LINK);
+    SAbstractConcept defaultConceptOfChild = (SAbstractConcept) cellContext.get(AggregationCellContext.CHILD_CONCEPT);
     SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
-    final SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
-    SContainmentLink containmentLink = MetaAdapterByDeclaration.getContainmentLink(SModelUtil.getGenuineLinkDeclaration(linkDeclaration));
-    List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, MetaAdapterByDeclaration.getConcept(linkDeclarationTarget), editorContext, null).collect();
+    List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, defaultConceptOfChild, editorContext, null).collect();
     return new SubstituteActionsCollector(parentNode, transformationItems, editorContext.getRepository()).collect();
   }
 }

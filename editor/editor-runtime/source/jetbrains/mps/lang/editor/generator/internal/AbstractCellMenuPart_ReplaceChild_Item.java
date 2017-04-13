@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -44,9 +45,9 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
-    IChildNodeSetter setter = new DefaultChildNodeSetter(linkDeclaration);
-    final SNode defaultConceptOfChild = CellUtil.getLinkDeclarationTarget(linkDeclaration);
+    SContainmentLink containmentLink = (SContainmentLink) cellContext.get(AggregationCellContext.LINK);
+    SAbstractConcept defaultConceptOfChild = (SAbstractConcept) cellContext.get(AggregationCellContext.CHILD_CONCEPT);
+    IChildNodeSetter setter = new DefaultChildNodeSetter(containmentLink.getDeclarationNode());
     final SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 
     final IOperationContext context = editorContext.getOperationContext();
@@ -66,7 +67,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
           public SNode createChildNode(Object parameterConcept, SModel model, String pattern) {
             SNode parameterNode = (SNode) parameterConcept;
             if (isCustomCreateChildNode()) {
-              SNode newChild = AbstractCellMenuPart_ReplaceChild_Item.this.customCreateChildNode(parentNode, currentChild, MetaAdapterByDeclaration.getConcept(defaultConceptOfChild),
+              SNode newChild = AbstractCellMenuPart_ReplaceChild_Item.this.customCreateChildNode(parentNode, currentChild, defaultConceptOfChild,
                   parentNode.getModel(), context, editorContext);
               if (newChild != null) {
                 NodeFactoryManager.setupNode(parameterNode, newChild, currentChild, parentNode, model);
