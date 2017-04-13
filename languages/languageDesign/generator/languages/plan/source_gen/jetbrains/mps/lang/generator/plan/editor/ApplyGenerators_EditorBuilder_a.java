@@ -158,7 +158,7 @@ import jetbrains.mps.lang.smodel.behavior.ModuleIdentity__BehaviorDescriptor;
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, super.getSLink()), new SubstituteInfoPartExt[]{new ApplyGenerators_EditorBuilder_a.ApplyGenerators_generator_cellMenu_34tr3z_a0a1a(), new SChildSubstituteInfoPartEx(elementCell)}));
+          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, super.getSLink(), super.getChildSConcept()), new SubstituteInfoPartExt[]{new ApplyGenerators_EditorBuilder_a.ApplyGenerators_generator_cellMenu_34tr3z_a0a1a(), new SChildSubstituteInfoPartEx(elementCell)}));
         }
       }
     }
