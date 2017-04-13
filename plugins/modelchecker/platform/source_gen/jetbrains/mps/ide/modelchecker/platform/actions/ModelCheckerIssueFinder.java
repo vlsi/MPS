@@ -35,7 +35,7 @@ public class ModelCheckerIssueFinder extends BaseFinder {
     return myExtraCheckers;
   }
   @Override
-  public SearchResults find(SearchQuery searchQuery, ProgressMonitor monitor) {
+  public SearchResults<ModelCheckerIssue> find(SearchQuery searchQuery, ProgressMonitor monitor) {
     ModelCheckerIssueFinder.ItemsToCheck itemsToCheck = getItemsToCheck(searchQuery);
 
     int work = ListSequence.fromList(itemsToCheck.modules).count() + ListSequence.fromList(itemsToCheck.models).count() + 1;

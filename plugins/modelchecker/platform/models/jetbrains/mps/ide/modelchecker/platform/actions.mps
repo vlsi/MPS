@@ -1910,6 +1910,9 @@
       </node>
       <node concept="3uibUv" id="3etVqSRKzzt" role="3clF45">
         <ref role="3uigEE" to="9erk:~SearchResults" resolve="SearchResults" />
+        <node concept="3uibUv" id="7nm1uttHg67" role="11_B2D">
+          <ref role="3uigEE" node="3etVqSRKzT$" resolve="ModelCheckerIssue" />
+        </node>
       </node>
       <node concept="3Tm1VV" id="3etVqSRKzzu" role="1B3o_S" />
       <node concept="37vLTG" id="3etVqSRKzzv" role="3clF46">
@@ -10220,8 +10223,8 @@
   </node>
   <node concept="312cEu" id="63oasX2dpcZ">
     <property role="3GE5qa" value="Model Checker.Specific Checks" />
-    <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="RootCheckerSpecificCheckerAdapter" />
+    <property role="1sVAO0" value="false" />
     <node concept="312cEg" id="63oasX2f7DZ" role="jymVt">
       <property role="TrG5h" value="myChecker" />
       <property role="3TUv4t" value="true" />
