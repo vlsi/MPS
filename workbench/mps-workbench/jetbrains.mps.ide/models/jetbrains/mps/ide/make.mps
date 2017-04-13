@@ -5817,7 +5817,7 @@
                                 </node>
                                 <node concept="2OqwBi" id="9D0Ba05v7i" role="37wK5m">
                                   <node concept="1rXfSq" id="4hiugqyyJ0x" role="2Oq$k0">
-                                    <ref role="37wK5l" to="i9so:5Pnc_qQuhtN" resolve="getSession" />
+                                    <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
                                   </node>
                                   <node concept="liA8E" id="9D0Ba05v7k" role="2OqNvi">
                                     <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
