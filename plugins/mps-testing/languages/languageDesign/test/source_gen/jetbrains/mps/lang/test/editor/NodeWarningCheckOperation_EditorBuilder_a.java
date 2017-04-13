@@ -117,7 +117,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0224b421L, 0x75cf259aa047ff8bL, "warningRef")), new SubstituteInfoPartExt[]{new NodeWarningCheckOperation_EditorBuilder_a.warningRefSingleRoleHandler_sh9o09_b0.NodeWarningCheckOperation_generic_cellMenu_sh9o09_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
+        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0224b421L, 0x75cf259aa047ff8bL, "warningRef"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ee2cbee8b386d76L, "jetbrains.mps.lang.test.structure.WarningStatementReference")), new SubstituteInfoPartExt[]{new NodeWarningCheckOperation_EditorBuilder_a.warningRefSingleRoleHandler_sh9o09_b0.NodeWarningCheckOperation_generic_cellMenu_sh9o09_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("warningRef");

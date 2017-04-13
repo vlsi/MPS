@@ -144,7 +144,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3f33baebL, 0x6001c76613d86514L, "matchingText")), new SubstituteInfoPartExt[]{new CellMenuPart_ReferentPrimary_EditorBuilder_a.matchingTextSingleRoleHandler_rsvjao_b1b0.CellMenuPart_ReferentPrimary_matchingText_cellMenu_rsvjao_a0b1b0(), new SChildSubstituteInfoPartEx(editorCell)}));
+        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3f33baebL, 0x6001c76613d86514L, "matchingText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6001c76613c8c373L, "jetbrains.mps.lang.editor.structure.QueryFunction_RefPresentation")), new SubstituteInfoPartExt[]{new CellMenuPart_ReferentPrimary_EditorBuilder_a.matchingTextSingleRoleHandler_rsvjao_b1b0.CellMenuPart_ReferentPrimary_matchingText_cellMenu_rsvjao_a0b1b0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("matchingText");
@@ -248,7 +248,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3f33baebL, 0x5c3ee006520dfad6L, "visibleMatchingText")), new SubstituteInfoPartExt[]{new CellMenuPart_ReferentPrimary_EditorBuilder_a.visibleMatchingTextSingleRoleHandler_rsvjao_b1c0.CellMenuPart_ReferentPrimary_visibleMatchingText_cellMenu_rsvjao_a0b1c0(), new SChildSubstituteInfoPartEx(editorCell)}));
+        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3f33baebL, 0x5c3ee006520dfad6L, "visibleMatchingText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6001c76613c8c373L, "jetbrains.mps.lang.editor.structure.QueryFunction_RefPresentation")), new SubstituteInfoPartExt[]{new CellMenuPart_ReferentPrimary_EditorBuilder_a.visibleMatchingTextSingleRoleHandler_rsvjao_b1c0.CellMenuPart_ReferentPrimary_visibleMatchingText_cellMenu_rsvjao_a0b1c0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("visibleMatchingText");
