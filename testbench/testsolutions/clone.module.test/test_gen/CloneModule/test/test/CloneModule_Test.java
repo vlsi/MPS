@@ -22,6 +22,7 @@ import jetbrains.mps.tool.environment.EnvironmentConfig;
 import java.io.File;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.project.validation.MessageCollectProcessor;
+import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.Reference;
@@ -98,7 +99,7 @@ public class CloneModule_Test extends TestCase {
   }
 
   public static void checkModule(AbstractModule module) {
-    MessageCollectProcessor processor = new MessageCollectProcessor();
+    MessageCollectProcessor<ValidationProblem> processor = new MessageCollectProcessor<ValidationProblem>();
     ValidationUtil.validateModule(module, processor);
     if (!(processor.getErrors().isEmpty())) {
       for (String error : processor.getErrors()) {
@@ -111,7 +112,7 @@ public class CloneModule_Test extends TestCase {
   }
 
   public void executeUnderLock(final Runnable runnable) {
-    final Reference<Throwable> ref = new Reference();
+    final Reference<Throwable> ref = new Reference<Throwable>();
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         project.getModelAccess().executeCommand(new Runnable() {

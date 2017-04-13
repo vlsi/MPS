@@ -158,7 +158,9 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
+        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
+      </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
@@ -233,7 +235,7 @@
       <concept id="8243879142738613213" name="jetbrains.mps.baseLanguage.unitTest.structure.AfterTest" flags="in" index="1KhZuU" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
@@ -749,10 +751,16 @@
             <property role="TrG5h" value="processor" />
             <node concept="3uibUv" id="2_jX3OnIRVK" role="1tU5fm">
               <ref role="3uigEE" to="6if8:~MessageCollectProcessor" resolve="MessageCollectProcessor" />
+              <node concept="3uibUv" id="4QJbmJGUxSE" role="11_B2D">
+                <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+              </node>
             </node>
             <node concept="2ShNRf" id="2_jX3OnIRVL" role="33vP2m">
               <node concept="1pGfFk" id="2_jX3OnIRVM" role="2ShVmc">
                 <ref role="37wK5l" to="6if8:~MessageCollectProcessor.&lt;init&gt;()" resolve="MessageCollectProcessor" />
+                <node concept="3uibUv" id="4QJbmJGUyrE" role="1pMfVU">
+                  <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+                </node>
               </node>
             </node>
           </node>
@@ -860,6 +868,9 @@
             <node concept="2ShNRf" id="1rpDfGKrQ0l" role="33vP2m">
               <node concept="1pGfFk" id="1rpDfGKs6IH" role="2ShVmc">
                 <ref role="37wK5l" to="18ew:~Reference.&lt;init&gt;()" resolve="Reference" />
+                <node concept="3uibUv" id="4QJbmJGUVsW" role="1pMfVU">
+                  <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+                </node>
               </node>
             </node>
           </node>
