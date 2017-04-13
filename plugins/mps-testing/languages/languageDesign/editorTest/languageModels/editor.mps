@@ -2575,6 +2575,83 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="1AA73NYO3r5">
+    <property role="3GE5qa" value="label" />
+    <ref role="1XX52x" to="68nn:1AA73NYNwSA" resolve="LabelConceptWithProperty" />
+    <node concept="3EZMnI" id="1AA73NYO3r7" role="2wV5jI">
+      <node concept="3F0ifn" id="1AA73NYO3re" role="3EZMnx">
+        <property role="3F0ifm" value="property:" />
+      </node>
+      <node concept="3F0A7n" id="1AA73NYO3rk" role="3EZMnx">
+        <property role="1cu_pB" value="1" />
+        <ref role="1NtTu8" to="68nn:1AA73NYO3qV" resolve="myProperty" />
+        <node concept="3vyZuw" id="1AA73NYO3ru" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="VLuvy" id="hG2rrSO" role="3F10Kt">
+          <property role="Vb096" value="LIGHT_BLUE" />
+        </node>
+        <node concept="pkWqt" id="6XT2l8Xx7xs" role="cStSX">
+          <node concept="3clFbS" id="6XT2l8Xx7xt" role="2VODD2">
+            <node concept="3clFbF" id="6XT2l8XxaFJ" role="3cqZAp">
+              <node concept="2OqwBi" id="6XT2l8XxkfR" role="3clFbG">
+                <node concept="17RlXB" id="6XT2l8XxnZd" role="2OqNvi" />
+                <node concept="2OqwBi" id="6XT2l8Xxb0h" role="2Oq$k0">
+                  <node concept="pncrf" id="6XT2l8XxaFI" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="5FowFN7JEny" role="2OqNvi">
+                    <ref role="3TsBF5" to="68nn:1AA73NYO3qV" resolve="myProperty" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="l2Vlx" id="1AA73NYO3ra" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="2ABfQD" id="woUdQL2A71">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstTest_EditorHints" />
+    <node concept="2BsEeg" id="woUdQL2A72" role="2ABdcP">
+      <property role="2gpH_U" value="true" />
+      <property role="TrG5h" value="specificHint" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="woUdQL2Leq">
+    <property role="3GE5qa" value="substitute.childWithNextApplicableEditorAndMenu" />
+    <ref role="1XX52x" to="68nn:woUdQL2Leg" resolve="SubstTestChild_WithNextApplicableEditorAndMenu_2" />
+    <node concept="3F0ifn" id="woUdQL2Les" role="2wV5jI">
+      <property role="3F0ifm" value="child with next applicable editor and menu 2" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="woUdQL2A4B">
+    <property role="3GE5qa" value="substitute.childWithNextApplicableEditorAndMenu" />
+    <ref role="1XX52x" to="68nn:woUdQL2A4u" resolve="SubstTestChild_WithNextApplicableEditorAndMenu_1" />
+    <node concept="3F0A7n" id="woUdQL2A7b" role="2wV5jI">
+      <ref role="1NtTu8" to="68nn:woUdQL2A79" resolve="property" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="woUdQL2A6Z">
+    <property role="3GE5qa" value="substitute.childWithNextApplicableEditorAndMenu" />
+    <ref role="1XX52x" to="68nn:woUdQL2A4u" resolve="SubstTestChild_WithNextApplicableEditorAndMenu_1" />
+    <node concept="3EZMnI" id="woUdQL2A7e" role="2wV5jI">
+      <node concept="l2Vlx" id="woUdQL2A7f" role="2iSdaV" />
+      <node concept="B$lHz" id="woUdQL2A76" role="3EZMnx">
+        <node concept="OXEIz" id="woUdQL2Lev" role="P5bDN">
+          <node concept="UkePV" id="woUdQL2Lex" role="OY2wv">
+            <ref role="Ul1FP" to="68nn:woUdQL2Leg" resolve="SubstTestChild_WithNextApplicableEditorAndMenu_2" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="woUdQL2A7n" role="3EZMnx">
+        <property role="3F0ifm" value="child with next applicable editor and menu 1" />
+      </node>
+    </node>
+    <node concept="2aJ2om" id="woUdQL2A74" role="CpUAK">
+      <ref role="2$4xQ3" node="woUdQL2A72" resolve="specificHint" />
+    </node>
+  </node>
   <node concept="24kQdi" id="VO5i9DB4QX">
     <property role="3GE5qa" value="delete" />
     <ref role="1XX52x" to="68nn:VO5i9DB4Q$" resolve="DeleteWrapperRoot" />
@@ -2629,83 +2706,6 @@
           <property role="1413C4" value="body-brace" />
         </node>
       </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="1AA73NYO3r5">
-    <property role="3GE5qa" value="label" />
-    <ref role="1XX52x" to="68nn:1AA73NYNwSA" resolve="LabelConceptWithProperty" />
-    <node concept="3EZMnI" id="1AA73NYO3r7" role="2wV5jI">
-      <node concept="3F0ifn" id="1AA73NYO3re" role="3EZMnx">
-        <property role="3F0ifm" value="property:" />
-      </node>
-      <node concept="3F0A7n" id="1AA73NYO3rk" role="3EZMnx">
-        <property role="1cu_pB" value="1" />
-        <ref role="1NtTu8" to="68nn:1AA73NYO3qV" resolve="myProperty" />
-        <node concept="3vyZuw" id="1AA73NYO3ru" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="VLuvy" id="hG2rrSO" role="3F10Kt">
-          <property role="Vb096" value="LIGHT_BLUE" />
-        </node>
-        <node concept="pkWqt" id="6XT2l8Xx7xs" role="cStSX">
-          <node concept="3clFbS" id="6XT2l8Xx7xt" role="2VODD2">
-            <node concept="3clFbF" id="6XT2l8XxaFJ" role="3cqZAp">
-              <node concept="2OqwBi" id="6XT2l8XxkfR" role="3clFbG">
-                <node concept="17RlXB" id="6XT2l8XxnZd" role="2OqNvi" />
-                <node concept="2OqwBi" id="6XT2l8Xxb0h" role="2Oq$k0">
-                  <node concept="pncrf" id="6XT2l8XxaFI" role="2Oq$k0" />
-                  <node concept="3TrcHB" id="5FowFN7JEny" role="2OqNvi">
-                    <ref role="3TsBF5" to="68nn:1AA73NYO3qV" resolve="myProperty" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="l2Vlx" id="1AA73NYO3ra" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="woUdQL2A4B">
-    <property role="3GE5qa" value="substitute.childWithNextApplicableEditorAndMenu" />
-    <ref role="1XX52x" to="68nn:woUdQL2A4u" resolve="SubstTestChild_WithNextApplicableEditorAndMenu_1" />
-    <node concept="3F0A7n" id="woUdQL2A7b" role="2wV5jI">
-      <ref role="1NtTu8" to="68nn:woUdQL2A79" resolve="property" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="woUdQL2A6Z">
-    <property role="3GE5qa" value="substitute.childWithNextApplicableEditorAndMenu" />
-    <ref role="1XX52x" to="68nn:woUdQL2A4u" resolve="SubstTestChild_WithNextApplicableEditorAndMenu_1" />
-    <node concept="3EZMnI" id="woUdQL2A7e" role="2wV5jI">
-      <node concept="l2Vlx" id="woUdQL2A7f" role="2iSdaV" />
-      <node concept="B$lHz" id="woUdQL2A76" role="3EZMnx">
-        <node concept="OXEIz" id="woUdQL2Lev" role="P5bDN">
-          <node concept="UkePV" id="woUdQL2Lex" role="OY2wv">
-            <ref role="Ul1FP" to="68nn:woUdQL2Leg" resolve="SubstTestChild_WithNextApplicableEditorAndMenu_2" />
-          </node>
-        </node>
-      </node>
-      <node concept="3F0ifn" id="woUdQL2A7n" role="3EZMnx">
-        <property role="3F0ifm" value="child with next applicable editor and menu 1" />
-      </node>
-    </node>
-    <node concept="2aJ2om" id="woUdQL2A74" role="CpUAK">
-      <ref role="2$4xQ3" node="woUdQL2A72" resolve="specificHint" />
-    </node>
-  </node>
-  <node concept="2ABfQD" id="woUdQL2A71">
-    <property role="3GE5qa" value="substitute" />
-    <property role="TrG5h" value="SubstTest_EditorHints" />
-    <node concept="2BsEeg" id="woUdQL2A72" role="2ABdcP">
-      <property role="2gpH_U" value="true" />
-      <property role="TrG5h" value="specificHint" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="woUdQL2Leq">
-    <property role="3GE5qa" value="substitute.childWithNextApplicableEditorAndMenu" />
-    <ref role="1XX52x" to="68nn:woUdQL2Leg" resolve="SubstTestChild_WithNextApplicableEditorAndMenu_2" />
-    <node concept="3F0ifn" id="woUdQL2Les" role="2wV5jI">
-      <property role="3F0ifm" value="child with next applicable editor and menu 2" />
     </node>
   </node>
 </model>

@@ -22,7 +22,6 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
@@ -39,6 +38,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.typesystem.behavior.MessageStatement__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -117,7 +117,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, 0x75cf259aa047ff15L, "errorRef"))), new SubstituteInfoPartExt[]{new NodeErrorCheckOperation_EditorBuilder_a.errorRefSingleRoleHandler_kzyi6r_b0.NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
+        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, 0x75cf259aa047ff15L, "errorRef")), new SubstituteInfoPartExt[]{new NodeErrorCheckOperation_EditorBuilder_a.errorRefSingleRoleHandler_kzyi6r_b0.NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("errorRef");

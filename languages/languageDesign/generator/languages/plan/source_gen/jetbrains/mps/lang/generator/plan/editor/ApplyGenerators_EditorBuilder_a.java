@@ -30,6 +30,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Group;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -157,7 +158,7 @@ import jetbrains.mps.lang.smodel.behavior.ModuleIdentity__BehaviorDescriptor;
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new ApplyGenerators_EditorBuilder_a.ApplyGenerators_generator_cellMenu_34tr3z_a0a1a(), new SChildSubstituteInfoPartEx(elementCell)}));
+          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, super.getSLink()), new SubstituteInfoPartExt[]{new ApplyGenerators_EditorBuilder_a.ApplyGenerators_generator_cellMenu_34tr3z_a0a1a(), new SChildSubstituteInfoPartEx(elementCell)}));
         }
       }
     }
@@ -165,7 +166,11 @@ import jetbrains.mps.lang.smodel.behavior.ModuleIdentity__BehaviorDescriptor;
   public static class ApplyGenerators_generator_cellMenu_34tr3z_a0a1a extends AbstractCellMenuPart_ReplaceChild_Group {
     public ApplyGenerators_generator_cellMenu_34tr3z_a0a1a() {
     }
-    public List<?> createParameterObjects(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, SNode currentChild, SAbstractConcept defaultConceptOfChild, IOperationContext operationContext, EditorContext editorContext) {
+      return createParameterObjects_impl(node, currentChild, defaultConceptOfChild.getDeclarationNode(), defaultConceptOfChild, operationContext, editorContext);
+    }
+
+    private List<?> createParameterObjects_impl(SNode node, SNode currentChild, SNode defaultConceptOfChild, SAbstractConcept defaultChildConcept, IOperationContext operationContext, EditorContext editorContext) {
       ArrayList<SModuleReference> rv = new ArrayList<SModuleReference>();
       for (LanguageRuntime lr : LanguageRegistry.getInstance(SNodeOperations.getModel(node).getRepository()).getAvailableLanguages()) {
         for (GeneratorRuntime gr : lr.getGenerators()) {
@@ -174,13 +179,14 @@ import jetbrains.mps.lang.smodel.behavior.ModuleIdentity__BehaviorDescriptor;
       }
       return rv;
     }
+
     public boolean isCustomCreateChildNode() {
       return true;
     }
-    public SNode customCreateChildNode(Object parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return this.customCreateChildNode_impl((SModuleReference) parameterObject, node, currentChild, defaultConceptOfChild, model, operationContext, editorContext);
+    public SNode customCreateChildNode(Object parameterObject, SNode node, SNode currentChild, SAbstractConcept defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      return this.customCreateChildNode_impl((SModuleReference) parameterObject, node, currentChild, defaultConceptOfChild.getDeclarationNode(), defaultConceptOfChild, model, operationContext, editorContext);
     }
-    public SNode customCreateChildNode_impl(SModuleReference parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+    public SNode customCreateChildNode_impl(SModuleReference parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SAbstractConcept defaultChildConcept, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode newNode = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adecb80dL, "jetbrains.mps.lang.smodel.structure.GeneratorModulePointer"));
       SLinkOperations.setNewChild(newNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adecb80dL, 0x73246de9adecb874L, "module"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e853388b3L, "jetbrains.mps.lang.smodel.structure.ModulePointer"));
       ModuleIdentity__BehaviorDescriptor.setModuleReference_idnJmxU5cSTj.invoke(SLinkOperations.getTarget(newNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adecb80dL, 0x73246de9adecb874L, "module")), parameterObject);

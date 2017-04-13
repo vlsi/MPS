@@ -33,6 +33,7 @@ import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Group;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
 import jetbrains.mps.nodeEditor.CellSide;
@@ -43,7 +44,6 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReplaceChildMenuCellM
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_CustomChildConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Item;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
@@ -135,7 +135,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new RefNodeList_EditorBuilder_a.RefNodeList_generic_cellMenu_d0l3p8_a0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_generic_cellMenu_d0l3p8_b0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_c0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_d0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_customReplace_cellMenu_d0l3p8_e0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_customReplace_cellMenu_d0l3p8_f0a0(), new RefNodeList_EditorBuilder_a.ApplySideTransforms_left_cellMenu_d0l3p8_g0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_component_cellMenu_d0l3p8_h0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_generic_cellMenu_d0l3p8_i0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_j0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_k0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_l0a0(), new RefNodeList_EditorBuilder_a.ReplaceWith_Constant_cellMenu_d0l3p8_m0a0(), new SChildSubstituteInfoPartEx(elementCell)}));
+          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, super.getSLink()), new SubstituteInfoPartExt[]{new RefNodeList_EditorBuilder_a.RefNodeList_generic_cellMenu_d0l3p8_a0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_generic_cellMenu_d0l3p8_b0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_c0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_d0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_customReplace_cellMenu_d0l3p8_e0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_customReplace_cellMenu_d0l3p8_f0a0(), new RefNodeList_EditorBuilder_a.ApplySideTransforms_left_cellMenu_d0l3p8_g0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_component_cellMenu_d0l3p8_h0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_generic_cellMenu_d0l3p8_i0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_j0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_k0a0(), new RefNodeList_EditorBuilder_a.RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_l0a0(), new RefNodeList_EditorBuilder_a.ReplaceWith_Constant_cellMenu_d0l3p8_m0a0(), new SChildSubstituteInfoPartEx(elementCell)}));
         }
       }
     }
@@ -214,18 +214,23 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
   public static class RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_c0a0 extends AbstractCellMenuPart_ReplaceChild_Group {
     public RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_c0a0() {
     }
-    public List<?> createParameterObjects(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext operationContext, EditorContext editorContext) {
-      boolean var = operationContext != null || node != null || currentChild != null || defaultConceptOfChild != null;
+    public List<?> createParameterObjects(SNode node, SNode currentChild, SAbstractConcept defaultConceptOfChild, IOperationContext operationContext, EditorContext editorContext) {
+      return createParameterObjects_impl(node, currentChild, defaultConceptOfChild.getDeclarationNode(), defaultConceptOfChild, operationContext, editorContext);
+    }
+
+    private List<?> createParameterObjects_impl(SNode node, SNode currentChild, SNode defaultConceptOfChild, SAbstractConcept defaultChildConcept, IOperationContext operationContext, EditorContext editorContext) {
+      boolean var = operationContext != null || node != null || currentChild != null || defaultChildConcept.getDeclarationNode() != null;
       return (var ? null : null);
     }
+
     public boolean isCustomCreateChildNode() {
       return true;
     }
-    public SNode customCreateChildNode(Object parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return this.customCreateChildNode_impl((String) parameterObject, node, currentChild, defaultConceptOfChild, model, operationContext, editorContext);
+    public SNode customCreateChildNode(Object parameterObject, SNode node, SNode currentChild, SAbstractConcept defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      return this.customCreateChildNode_impl((String) parameterObject, node, currentChild, defaultConceptOfChild.getDeclarationNode(), defaultConceptOfChild, model, operationContext, editorContext);
     }
-    public SNode customCreateChildNode_impl(String parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      boolean var = operationContext != null || defaultConceptOfChild != null || model != null || node != null || currentChild != null || parameterObject != null;
+    public SNode customCreateChildNode_impl(String parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SAbstractConcept defaultChildConcept, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      boolean var = operationContext != null || defaultChildConcept.getDeclarationNode() != null || model != null || node != null || currentChild != null || parameterObject != null;
       return (var ? null : null);
     }
     public boolean isReferentPresentation() {
@@ -235,9 +240,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
   public static class RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_d0a0 extends AbstractCellMenuPart_ReplaceChild_Group {
     public RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_d0a0() {
     }
-    public List<?> createParameterObjects(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, SNode currentChild, SAbstractConcept defaultConceptOfChild, IOperationContext operationContext, EditorContext editorContext) {
+      return createParameterObjects_impl(node, currentChild, defaultConceptOfChild.getDeclarationNode(), defaultConceptOfChild, operationContext, editorContext);
+    }
+
+    private List<?> createParameterObjects_impl(SNode node, SNode currentChild, SNode defaultConceptOfChild, SAbstractConcept defaultChildConcept, IOperationContext operationContext, EditorContext editorContext) {
       return null;
     }
+
     public boolean isReferentPresentation() {
       return false;
     }
@@ -334,8 +344,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
   public static class RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_k0a0 extends AbstractCellMenuPart_ReplaceChild_CustomChildConcept {
     public RefNodeList_differentTypeOfChildren_cellMenu_d0l3p8_k0a0() {
     }
-    public SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext operationContext, EditorContext editorContext) {
-      boolean var = currentChild != null || defaultConceptOfChild != null || node != null || operationContext != null;
+    public SNode getConceptOfChild(SNode node, SNode currentChild, SAbstractConcept defaultChildConcept, IOperationContext operationContext, EditorContext editorContext) {
+      return getConceptOfChild_impl(node, currentChild, defaultChildConcept.getDeclarationNode(), defaultChildConcept, operationContext, editorContext);
+    }
+    private SNode getConceptOfChild_impl(SNode node, SNode currentChild, SNode defaultConceptOfChild, SAbstractConcept defaultChildConcept, IOperationContext operationContext, EditorContext editorContext) {
+      boolean var = currentChild != null || defaultChildConcept.getDeclarationNode() != null || node != null || operationContext != null;
       return (var ? null : null);
     }
   }
@@ -351,8 +364,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     public boolean isCustomCreateChildNode() {
       return true;
     }
-    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      boolean var = currentChild != null || defaultConceptOfChild != null || operationContext != null || model != null || node != null;
+    public SNode customCreateChildNode(SNode node, SNode currentChild, SAbstractConcept defaultChildConcept, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      return customCreateChildNode_impl(node, currentChild, defaultChildConcept.getDeclarationNode(), defaultChildConcept, model, operationContext, editorContext);
+    }
+    private SNode customCreateChildNode_impl(SNode node, SNode currentChild, SNode defaultConceptOfChild, SAbstractConcept defaultChildConcept, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      boolean var = currentChild != null || defaultChildConcept.getDeclarationNode() != null || operationContext != null || model != null || node != null;
       return (var ? null : null);
     }
   }

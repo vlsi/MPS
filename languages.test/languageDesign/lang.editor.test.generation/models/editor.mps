@@ -2,12 +2,13 @@
 <model ref="r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="8" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
     <import index="ytt5" ref="r:63b2f701-f24e-4662-9abc-8de126ffafeb(jetbrains.mps.lang.editor.test.generation.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -59,6 +60,7 @@
         <child id="7651593722933768976" name="query" index="nf9zz" />
       </concept>
       <concept id="709996738298806197" name="jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText" flags="in" index="2o9xnK" />
+      <concept id="3488897807488117050" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultChildConcept" flags="nn" index="oBesC" />
       <concept id="1237375020029" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" flags="ln" index="pj6Ft" />
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
@@ -94,7 +96,6 @@
         <property id="5944657839012629576" name="presentation" index="2BUmq6" />
       </concept>
       <concept id="1162497113192" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild" flags="nn" index="2EezPA" />
-      <concept id="1162498275506" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild" flags="nn" index="2EiZAW" />
       <concept id="1239814640496" name="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" flags="nn" index="2EHx9g" />
       <concept id="6150987479542522273" name="jetbrains.mps.lang.editor.structure.QueryHintsSpecification" flags="ig" index="2Hnlc$" />
       <concept id="1216308599511" name="jetbrains.mps.lang.editor.structure.PositionStyleClassItem" flags="ln" index="LD5Jc">
@@ -378,6 +379,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -11189,7 +11191,12 @@
                   <node concept="22lmx$" id="2XU9kLGnlG" role="33vP2m">
                     <node concept="3y3z36" id="2XU9kLGo6P" role="3uHU7w">
                       <node concept="10Nm6u" id="2XU9kLGo78" role="3uHU7w" />
-                      <node concept="2EiZAW" id="2XU9kLGnC1" role="3uHU7B" />
+                      <node concept="2OqwBi" id="2Tdkngc1$rr" role="3uHU7B">
+                        <node concept="oBesC" id="2Tdkngc1$rq" role="2Oq$k0" />
+                        <node concept="liA8E" id="2Tdkngc1$rs" role="2OqNvi">
+                          <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                        </node>
+                      </node>
                     </node>
                     <node concept="22lmx$" id="2XU9kLGm4E" role="3uHU7B">
                       <node concept="22lmx$" id="2XU9kLGm4I" role="3uHU7B">
@@ -11235,7 +11242,12 @@
                           <node concept="22lmx$" id="2XU9kLGpiy" role="3uHU7B">
                             <node concept="3y3z36" id="2XU9kLGpFb" role="3uHU7w">
                               <node concept="10Nm6u" id="2XU9kLGpFl" role="3uHU7w" />
-                              <node concept="2EiZAW" id="2XU9kLGpoy" role="3uHU7B" />
+                              <node concept="2OqwBi" id="2Tdkngc1$r3" role="3uHU7B">
+                                <node concept="oBesC" id="2Tdkngc1$r2" role="2Oq$k0" />
+                                <node concept="liA8E" id="2Tdkngc1$r4" role="2OqNvi">
+                                  <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                                </node>
+                              </node>
                             </node>
                             <node concept="3y3z36" id="2XU9kLGp72" role="3uHU7B">
                               <node concept="1Q79dO" id="2XU9kLGoUQ" role="3uHU7B" />
@@ -11508,7 +11520,12 @@
                           <node concept="10Nm6u" id="2XU9kLGBpN" role="3uHU7w" />
                         </node>
                         <node concept="3y3z36" id="2XU9kLGBpO" role="3uHU7w">
-                          <node concept="2EiZAW" id="2XU9kLGBpP" role="3uHU7B" />
+                          <node concept="2OqwBi" id="2Tdkngc1$rl" role="3uHU7B">
+                            <node concept="oBesC" id="2Tdkngc1$rk" role="2Oq$k0" />
+                            <node concept="liA8E" id="2Tdkngc1$rm" role="2OqNvi">
+                              <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                            </node>
+                          </node>
                           <node concept="10Nm6u" id="2XU9kLGBpQ" role="3uHU7w" />
                         </node>
                       </node>
@@ -11554,7 +11571,12 @@
                             <node concept="10Nm6u" id="2XU9kLGHAT" role="3uHU7w" />
                           </node>
                           <node concept="3y3z36" id="2XU9kLGHAU" role="3uHU7w">
-                            <node concept="2EiZAW" id="2XU9kLGHAV" role="3uHU7B" />
+                            <node concept="2OqwBi" id="2Tdkngc1$ri" role="3uHU7B">
+                              <node concept="oBesC" id="2Tdkngc1$rh" role="2Oq$k0" />
+                              <node concept="liA8E" id="2Tdkngc1$rj" role="2OqNvi">
+                                <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                              </node>
+                            </node>
                             <node concept="10Nm6u" id="2XU9kLGHAW" role="3uHU7w" />
                           </node>
                         </node>
@@ -20589,7 +20611,12 @@
                           <node concept="22lmx$" id="7LC8u44n1fP" role="33vP2m">
                             <node concept="3y3z36" id="7LC8u44n1fQ" role="3uHU7w">
                               <node concept="10Nm6u" id="7LC8u44n1fR" role="3uHU7w" />
-                              <node concept="2EiZAW" id="7LC8u44n1fS" role="3uHU7B" />
+                              <node concept="2OqwBi" id="2Tdkngc1$rx" role="3uHU7B">
+                                <node concept="oBesC" id="2Tdkngc1$rw" role="2Oq$k0" />
+                                <node concept="liA8E" id="2Tdkngc1$ry" role="2OqNvi">
+                                  <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                                </node>
+                              </node>
                             </node>
                             <node concept="22lmx$" id="7LC8u44n1fT" role="3uHU7B">
                               <node concept="22lmx$" id="7LC8u44n1fU" role="3uHU7B">
@@ -20635,7 +20662,12 @@
                                   <node concept="22lmx$" id="7LC8u44n1gj" role="3uHU7B">
                                     <node concept="3y3z36" id="7LC8u44n1gk" role="3uHU7w">
                                       <node concept="10Nm6u" id="7LC8u44n1gl" role="3uHU7w" />
-                                      <node concept="2EiZAW" id="7LC8u44n1gm" role="3uHU7B" />
+                                      <node concept="2OqwBi" id="2Tdkngc1$ru" role="3uHU7B">
+                                        <node concept="oBesC" id="2Tdkngc1$rt" role="2Oq$k0" />
+                                        <node concept="liA8E" id="2Tdkngc1$rv" role="2OqNvi">
+                                          <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                                        </node>
+                                      </node>
                                     </node>
                                     <node concept="3y3z36" id="7LC8u44n1gn" role="3uHU7B">
                                       <node concept="1Q79dO" id="7LC8u44n1go" role="3uHU7B" />
@@ -20908,7 +20940,12 @@
                                   <node concept="10Nm6u" id="7LC8u44n1iI" role="3uHU7w" />
                                 </node>
                                 <node concept="3y3z36" id="7LC8u44n1iJ" role="3uHU7w">
-                                  <node concept="2EiZAW" id="7LC8u44n1iK" role="3uHU7B" />
+                                  <node concept="2OqwBi" id="2Tdkngc1$rc" role="3uHU7B">
+                                    <node concept="oBesC" id="2Tdkngc1$rb" role="2Oq$k0" />
+                                    <node concept="liA8E" id="2Tdkngc1$rd" role="2OqNvi">
+                                      <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                                    </node>
+                                  </node>
                                   <node concept="10Nm6u" id="7LC8u44n1iL" role="3uHU7w" />
                                 </node>
                               </node>
@@ -20954,7 +20991,12 @@
                                     <node concept="10Nm6u" id="7LC8u44n1j9" role="3uHU7w" />
                                   </node>
                                   <node concept="3y3z36" id="7LC8u44n1ja" role="3uHU7w">
-                                    <node concept="2EiZAW" id="7LC8u44n1jb" role="3uHU7B" />
+                                    <node concept="2OqwBi" id="2Tdkngc1$r6" role="3uHU7B">
+                                      <node concept="oBesC" id="2Tdkngc1$r5" role="2Oq$k0" />
+                                      <node concept="liA8E" id="2Tdkngc1$r7" role="2OqNvi">
+                                        <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                                      </node>
+                                    </node>
                                     <node concept="10Nm6u" id="7LC8u44n1jc" role="3uHU7w" />
                                   </node>
                                 </node>
@@ -23920,7 +23962,12 @@
                     <node concept="22lmx$" id="dbAGe2drHm" role="33vP2m">
                       <node concept="3y3z36" id="dbAGe2drHn" role="3uHU7w">
                         <node concept="10Nm6u" id="dbAGe2drHo" role="3uHU7w" />
-                        <node concept="2EiZAW" id="dbAGe2drHp" role="3uHU7B" />
+                        <node concept="2OqwBi" id="2Tdkngc1$rf" role="3uHU7B">
+                          <node concept="oBesC" id="2Tdkngc1$re" role="2Oq$k0" />
+                          <node concept="liA8E" id="2Tdkngc1$rg" role="2OqNvi">
+                            <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                          </node>
+                        </node>
                       </node>
                       <node concept="22lmx$" id="dbAGe2drHq" role="3uHU7B">
                         <node concept="22lmx$" id="dbAGe2drHr" role="3uHU7B">
@@ -23966,7 +24013,12 @@
                             <node concept="22lmx$" id="dbAGe2drHO" role="3uHU7B">
                               <node concept="3y3z36" id="dbAGe2drHP" role="3uHU7w">
                                 <node concept="10Nm6u" id="dbAGe2drHQ" role="3uHU7w" />
-                                <node concept="2EiZAW" id="dbAGe2drHR" role="3uHU7B" />
+                                <node concept="2OqwBi" id="2Tdkngc1$ro" role="3uHU7B">
+                                  <node concept="oBesC" id="2Tdkngc1$rn" role="2Oq$k0" />
+                                  <node concept="liA8E" id="2Tdkngc1$rp" role="2OqNvi">
+                                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                                  </node>
+                                </node>
                               </node>
                               <node concept="3y3z36" id="dbAGe2drHS" role="3uHU7B">
                                 <node concept="1Q79dO" id="dbAGe2drHT" role="3uHU7B" />
@@ -24239,7 +24291,12 @@
                             <node concept="10Nm6u" id="dbAGe2drKf" role="3uHU7w" />
                           </node>
                           <node concept="3y3z36" id="dbAGe2drKg" role="3uHU7w">
-                            <node concept="2EiZAW" id="dbAGe2drKh" role="3uHU7B" />
+                            <node concept="2OqwBi" id="2Tdkngc1$r$" role="3uHU7B">
+                              <node concept="oBesC" id="2Tdkngc1$rz" role="2Oq$k0" />
+                              <node concept="liA8E" id="2Tdkngc1$r_" role="2OqNvi">
+                                <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                              </node>
+                            </node>
                             <node concept="10Nm6u" id="dbAGe2drKi" role="3uHU7w" />
                           </node>
                         </node>
@@ -24285,7 +24342,12 @@
                               <node concept="10Nm6u" id="dbAGe2drKE" role="3uHU7w" />
                             </node>
                             <node concept="3y3z36" id="dbAGe2drKF" role="3uHU7w">
-                              <node concept="2EiZAW" id="dbAGe2drKG" role="3uHU7B" />
+                              <node concept="2OqwBi" id="2Tdkngc1$r9" role="3uHU7B">
+                                <node concept="oBesC" id="2Tdkngc1$r8" role="2Oq$k0" />
+                                <node concept="liA8E" id="2Tdkngc1$ra" role="2OqNvi">
+                                  <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                                </node>
+                              </node>
                               <node concept="10Nm6u" id="dbAGe2drKH" role="3uHU7w" />
                             </node>
                           </node>

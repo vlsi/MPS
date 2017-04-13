@@ -57825,6 +57825,9 @@
   <node concept="3p36aQ" id="1wEcoXjIJ$O">
     <ref role="aqKnT" to="tpee:h9VxSy2" resolve="ThisConstructorInvocation" />
   </node>
+  <node concept="3p36aQ" id="1wEcoXjIJ$P">
+    <ref role="aqKnT" to="tpee:3XnUzqXsajx" resolve="PrimitiveClassExpression" />
+  </node>
   <node concept="3p36aQ" id="1wEcoXjIJ$Q">
     <ref role="aqKnT" to="tpee:h8u8gbX" resolve="CommentedStatementsBlock" />
   </node>
@@ -58682,9 +58685,6 @@
         </node>
       </node>
     </node>
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjIJ$P">
-    <ref role="aqKnT" to="tpee:3XnUzqXsajx" resolve="PrimitiveClassExpression" />
   </node>
 </model>
 

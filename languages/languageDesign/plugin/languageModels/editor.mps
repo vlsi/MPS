@@ -2,12 +2,12 @@
 <model ref="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -6154,10 +6154,10 @@
                   </node>
                   <node concept="2OqwBi" id="qbzkx3Wlza" role="3K4Cdx">
                     <node concept="2OqwBi" id="qbzkx3WkNt" role="2Oq$k0">
-                      <node concept="2ZBlsa" id="qbzkx3Wk_g" role="2Oq$k0" />
                       <node concept="liA8E" id="9OE2USymuZ" role="2OqNvi">
                         <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getName():java.lang.String" resolve="getName" />
                       </node>
+                      <node concept="2ZBlsa" id="qbzkx3Wk_g" role="2Oq$k0" />
                     </node>
                     <node concept="liA8E" id="qbzkx3Wmth" role="2OqNvi">
                       <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
@@ -6176,10 +6176,10 @@
                   <node concept="2pJxcG" id="qbzkx3QggV" role="2pJxcM">
                     <ref role="2pJxcJ" to="tp4k:qbzkx3HQmQ" resolve="keymap" />
                     <node concept="2OqwBi" id="qbzkx3Qhao" role="2pJxcZ">
-                      <node concept="2ZBlsa" id="qbzkx3Qgmp" role="2Oq$k0" />
                       <node concept="liA8E" id="9OE2USymTP" role="2OqNvi">
                         <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getName():java.lang.String" resolve="getName" />
                       </node>
+                      <node concept="2ZBlsa" id="qbzkx3Qgmp" role="2Oq$k0" />
                     </node>
                   </node>
                   <node concept="2pIpSj" id="qbzkx3Qg_0" role="2pJxcM">
@@ -6204,10 +6204,10 @@
             <node concept="3clFbS" id="qbzkx3QiRz" role="2VODD2">
               <node concept="3clFbF" id="qbzkx3Qj01" role="3cqZAp">
                 <node concept="2OqwBi" id="qbzkx3Qjcj" role="3clFbG">
-                  <node concept="2ZBlsa" id="qbzkx3Qj00" role="2Oq$k0" />
                   <node concept="liA8E" id="9OE2USylRS" role="2OqNvi">
                     <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getPresentation():java.lang.String" resolve="getPresentation" />
                   </node>
+                  <node concept="2ZBlsa" id="qbzkx3Qj00" role="2Oq$k0" />
                 </node>
               </node>
             </node>

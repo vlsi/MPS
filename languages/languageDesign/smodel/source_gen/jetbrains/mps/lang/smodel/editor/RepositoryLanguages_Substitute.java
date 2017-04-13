@@ -108,7 +108,7 @@ public class RepositoryLanguages_Substitute extends SubstituteMenuBase {
         @Nullable
         @Override
         public IconResource getIcon(@NotNull String pattern) {
-          return IconContainer.RESOURCE_a0a9e2b_0;
+          return IconContainer.RESOURCE_a0a9e2b;
         }
       }
     }

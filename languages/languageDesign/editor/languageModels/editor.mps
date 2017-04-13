@@ -25277,13 +25277,13 @@
     <property role="3GE5qa" value="QueryFunction" />
     <ref role="aqKnT" to="tpc2:601LQojMcdN" resolve="QueryFunction_RefPresentation" />
   </node>
-  <node concept="3p36aQ" id="5c5foM6v03Z">
-    <property role="3GE5qa" value="CellMenu" />
-    <ref role="aqKnT" to="tpc2:794AQ2t3BuV" resolve="CellMenuPart_ApplySideTransforms" />
-  </node>
   <node concept="3p36aQ" id="5c5foM6uZaj">
     <property role="3GE5qa" value="Stylesheet" />
     <ref role="aqKnT" to="tpc2:hEV7CQ5" resolve="SideTransformAnchorTagStyleClassItem" />
+  </node>
+  <node concept="3p36aQ" id="5c5foM6v03Z">
+    <property role="3GE5qa" value="CellMenu" />
+    <ref role="aqKnT" to="tpc2:794AQ2t3BuV" resolve="CellMenuPart_ApplySideTransforms" />
   </node>
   <node concept="PKFIW" id="7WoWfGXKj7A">
     <property role="3GE5qa" value="Menu.Substitute" />
@@ -25318,6 +25318,9 @@
       <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
     </node>
+  </node>
+  <node concept="3p36aQ" id="31F3x8CXY$Y">
+    <ref role="aqKnT" to="tpc2:31F3x8CXY$U" resolve="CellMenuPart_ReplaceChild_defaultChildConcept" />
   </node>
 </model>
 
