@@ -94,7 +94,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.checkers.AbstractConstraintsChecker" />
+    <classNode dependClassName="jetbrains.mps.checkers.AbstractNodeChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.ConstraintsChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.ErrorReportUtil" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsComponent" />

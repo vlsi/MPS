@@ -20,7 +20,7 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.resolve.ResolverComponent;
 
-public class RefScopeChecker extends AbstractConstraintsChecker {
+public class RefScopeChecker extends AbstractNodeChecker {
   public RefScopeChecker() {
   }
   @Override

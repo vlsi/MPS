@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 
-public class ConstraintsChecker extends AbstractConstraintsChecker {
+public class ConstraintsChecker extends AbstractNodeChecker {
   public ConstraintsChecker() {
   }
 

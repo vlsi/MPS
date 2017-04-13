@@ -960,7 +960,7 @@
       <node id="2276757138027266817" at="112,5,113,90" concept="11" />
       <node id="2276757138027266824" at="113,90,114,114" concept="6" />
       <node id="1915871562660158487" at="114,114,115,37" concept="13" />
-      <node id="2276757138027266829" at="115,37,116,291" concept="6" />
+      <node id="2276757138027266829" at="115,37,116,289" concept="6" />
       <node id="5400869363160111332" at="119,55,120,22" concept="12" />
       <node id="5400869363160114638" at="121,9,122,60" concept="11" />
       <node id="5400869363160116518" at="122,60,123,107" concept="6" />
@@ -1000,7 +1000,7 @@
       <node id="5400869363160099193" at="118,0,126,0" concept="10" trace="process#(Ljetbrains/mps/project/validation/ValidationProblem;)Z" />
       <node id="3740508248791186418" at="85,0,94,0" concept="10" trace="getErrorsSpecificType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/errors/MessageStatus;)Ljava/lang/Iterable;" />
       <node id="6502620292285867812" at="53,43,63,5" concept="9" />
-      <node id="5400869363159943238" at="116,291,126,7" concept="6" />
+      <node id="5400869363159943238" at="116,289,126,7" concept="6" />
       <node id="1278788676566976068" at="53,0,65,0" concept="16" trace="initModelListener#()V" />
       <node id="2276757138026969657" at="104,0,136,0" concept="10" trace="getRootErrors#()Ljava/lang/Iterable;" />
       <scope id="6502620292285867828" at="57,36,58,78" />

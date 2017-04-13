@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.ide.modelchecker.platform.actions.AbstractConstraintsCheckerINodeCheckerAdapter;
+import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
@@ -32,7 +32,7 @@ public class AuditConstraints extends BaseCheckModulesTest {
       public List<String> compute() {
         Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
         // todo: add UsedLanguageChecker 
-        return new CheckingTestsUtil(statistic).applyChecker(new AbstractConstraintsCheckerINodeCheckerAdapter(AbstractConstraintsCheckerINodeCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()), models);
+        return new CheckingTestsUtil(statistic).applyChecker(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()), models);
       }
     });
     ourStats.report("Errors", statistic.getNumErrors());

@@ -2,14 +2,14 @@
 <model ref="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="oh7r" ref="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)" />
@@ -36,7 +36,6 @@
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="6if8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.validation(MPS.Core/)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
-    <import index="k8ev" ref="r:f39afe13-666a-48f2-9d7c-2f9366f78fe5(jetbrains.mps.typesystemEngine.checker)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="ykok" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.constraints(MPS.Core/)" />
@@ -55,6 +54,7 @@
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
     <import index="phxh" ref="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)" />
+    <import index="k8ev" ref="r:f39afe13-666a-48f2-9d7c-2f9366f78fe5(jetbrains.mps.typesystemEngine.checker)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1247,7 +1247,7 @@
                             <ref role="3cqZAo" node="2$EeqAz24yW" resolve="checker" />
                           </node>
                           <node concept="liA8E" id="2$EeqAz24zU" role="2OqNvi">
-                            <ref role="37wK5l" to="phxh:7z7Xs6Zeki" resolve="getErrors" />
+                            <ref role="37wK5l" to="wsw7:7z7Xs6Zeki" resolve="getErrors" />
                             <node concept="37vLTw" id="2$EeqAz24zV" role="37wK5m">
                               <ref role="3cqZAo" node="2$EeqAz24zw" resolve="root" />
                             </node>
@@ -1477,7 +1477,7 @@
         <property role="TrG5h" value="checker" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="2$EeqAz24yX" role="1tU5fm">
-          <ref role="3uigEE" to="phxh:7z7Xs6Zeka" resolve="INodeChecker" />
+          <ref role="3uigEE" to="wsw7:7z7Xs6Zeka" resolve="INodeChecker" />
         </node>
       </node>
       <node concept="37vLTG" id="2$EeqAz24yY" role="3clF46">
@@ -2099,7 +2099,7 @@
                           <ref role="37wK5l" node="2$EeqAz24yU" resolve="applyChecker" />
                           <node concept="2ShNRf" id="7X3$Ctw9fo1" role="37wK5m">
                             <node concept="1pGfFk" id="7X3$Ctw9fo2" role="2ShVmc">
-                              <ref role="37wK5l" to="phxh:4yqv8vrxVuu" resolve="TypesystemChecker" />
+                              <ref role="37wK5l" to="wsw7:4yqv8vrxVuu" resolve="TypesystemChecker" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="7X3$Ctw9fkA" role="37wK5m">
@@ -2339,10 +2339,10 @@
                           <ref role="37wK5l" node="2$EeqAz24yU" resolve="applyChecker" />
                           <node concept="2ShNRf" id="7X3$Ctw9yJr" role="37wK5m">
                             <node concept="1pGfFk" id="7X3$Ctw9yJs" role="2ShVmc">
-                              <ref role="37wK5l" to="phxh:45Q6RD6iAIS" resolve="AbstractConstraintsCheckerINodeCheckerAdapter" />
-                              <node concept="10M0yZ" id="45Q6RD6jLBx" role="37wK5m">
-                                <ref role="3cqZAo" to="phxh:45Q6RD6jHDq" resolve="SKIP_CONSTRAINTS_CONDITION" />
-                                <ref role="1PxDUh" to="phxh:2UMCgvoqxz1" resolve="AbstractConstraintsCheckerINodeCheckerAdapter" />
+                              <ref role="37wK5l" to="wsw7:45Q6RD6iAIS" resolve="AbstractConstraintsCheckerINodeCheckerAdapter" />
+                              <node concept="10M0yZ" id="4QJbmJGVq9u" role="37wK5m">
+                                <ref role="3cqZAo" to="wsw7:45Q6RD6jHDq" resolve="SKIP_CONSTRAINTS_CONDITION" />
+                                <ref role="1PxDUh" to="wsw7:2UMCgvoqxz1" resolve="AbstractConstraintsCheckerINodeCheckerAdapter" />
                               </node>
                               <node concept="2ShNRf" id="1EmyK$n$2II" role="37wK5m">
                                 <node concept="1pGfFk" id="1EmyK$n$hwF" role="2ShVmc">

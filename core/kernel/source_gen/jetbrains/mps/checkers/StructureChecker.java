@@ -8,7 +8,7 @@ import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ValidationProblem;
 
-public class StructureChecker extends AbstractConstraintsChecker {
+public class StructureChecker extends AbstractNodeChecker {
   public void checkNode(final SNode node, final LanguageErrorsCollector errorsCollector, SRepository repository) {
     ValidationUtil.validateSingleNode(node, new Processor<ValidationProblem>() {
       public boolean process(ValidationProblem vp) {

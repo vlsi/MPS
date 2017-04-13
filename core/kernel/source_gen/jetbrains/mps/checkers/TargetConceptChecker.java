@@ -14,7 +14,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 
-public class TargetConceptChecker extends AbstractConstraintsChecker {
+public class TargetConceptChecker extends AbstractNodeChecker {
   public TargetConceptChecker() {
   }
   @Override
