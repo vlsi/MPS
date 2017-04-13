@@ -29,7 +29,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Date: Nov 29, 2006
  */
 public class AggregationCellContext extends BasicCellContext {
-  public static final Object LINK_DECLARATION = new Object();
   public static final Object LINK = new Object();
   public static final Object CHILD_CONCEPT = new Object();
   public static final Object CURRENT_CHILD_NODE = new Object();
@@ -42,13 +41,6 @@ public class AggregationCellContext extends BasicCellContext {
     put(LINK, MetaAdapterByDeclaration.getContainmentLink(origin));
     final SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
     put(CHILD_CONCEPT, MetaAdapterByDeclaration.getConcept(linkDeclarationTarget));
-    put(CURRENT_CHILD_NODE, currentChild);
-  }
-
-  public AggregationCellContext(SNode parentNode, SNode currentChild, SContainmentLink link) {
-    super(parentNode);
-    //todo make runtime work on top of SLink. The current solution allows to generate code, which will be correct in 2017.2
-    put(LINK_DECLARATION, link.getDeclarationNode());
     put(CURRENT_CHILD_NODE, currentChild);
   }
 
