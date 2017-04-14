@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,27 +19,22 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Types of messages reported through {@link IMessageHandler}.
+ * Note, this is not a replacement for logging facilities. {@linkplain IMessage Messages} are intended for end-user
+ * and thus levels other than 'severe issue', 'worth mentioning' and 'if you are curious' do not make sense here.
+ * If you need trace/debug levels, use {@link org.apache.log4j.Logger}.
+ */
 public enum MessageKind {
-  TRACE,
-  DEBUG,
-  INFORMATION,
-  WARNING,
-  ERROR,
-  FATAL;
+  INFORMATION, WARNING, ERROR;
 
   @NotNull
   public static MessageKind fromPriority(Priority level) {
-    if (level.equals(Level.FATAL)) {
-      return MessageKind.FATAL;
-    } else if (level.equals(Level.ERROR)) {
+    if (level.equals(Level.FATAL) || level.equals(Level.ERROR)) {
       return MessageKind.ERROR;
     } else if (level.equals(Level.WARN)) {
       return MessageKind.WARNING;
-    } else if (level.equals(Level.INFO)) {
-      return MessageKind.INFORMATION;
-    } else if (level.equals(Level.DEBUG)) {
-      return MessageKind.DEBUG;
     }
-    return MessageKind.TRACE;
+    return MessageKind.INFORMATION;
   }
 }

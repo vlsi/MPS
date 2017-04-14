@@ -28,13 +28,12 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.make.ErrorsLoggingHandler;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -101,14 +100,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
               if (SetSequence.fromSet(toCompile).isEmpty()) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0a);
               }
-              final IMessageHandler msgHandler = new IMessageHandler() {
-                private final IMessageHandler myErrorsLoggingHandler = new ErrorsLoggingHandler(LogManager.getLogger(new IFacet.Name("jetbrains.mps.make.facets.JavaCompile").getName()));
-
-                public void handle(@NotNull IMessage msg) {
-                  myErrorsLoggingHandler.handle(msg);
-                  monitor.reportFeedback(new IFeedback.MESSAGE(msg));
-                }
-              };
+              final IMessageHandler msgHandler = new ErrorsLoggingHandler(LogManager.getLogger(new IFacet.Name("jetbrains.mps.make.facets.JavaCompile").getName())).compose(monitor.getSession().getMessageHandler());
               MPSCompilationResult cr = new ModelAccessHelper(monitor.getSession().getProject().getModelAccess()).runReadAction(new Computable<MPSCompilationResult>() {
                 public MPSCompilationResult compute() {
                   return new ModuleMaker(msgHandler, MessageKind.INFORMATION).make(toCompile, progressMonitor, vars(pa.global()).options());

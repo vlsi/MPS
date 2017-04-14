@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,4 +28,15 @@ public interface IMessageHandler {
    */
   IMessageHandler NULL_HANDLER = msg -> {
   };
+
+  /**
+   * @param another one more handler to pipe messages to
+   * @return composite message handler that pipes messages to both {@code this} and {@code another}.
+   */
+  default IMessageHandler compose(@NotNull final IMessageHandler another) {
+    return msg -> {
+      IMessageHandler.this.handle(msg);
+      another.handle(msg);
+    };
+  }
 }

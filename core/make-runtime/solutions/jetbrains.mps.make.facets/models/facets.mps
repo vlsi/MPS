@@ -142,7 +142,6 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
-        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
@@ -513,80 +512,32 @@
                 <node concept="3uibUv" id="3k48dctEXQe" role="1tU5fm">
                   <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
                 </node>
-                <node concept="2ShNRf" id="3k48dctEYwU" role="33vP2m">
-                  <node concept="YeOm9" id="3k48dctEYOG" role="2ShVmc">
-                    <node concept="1Y3b0j" id="3k48dctEYOJ" role="YeSDq">
-                      <property role="2bfB8j" value="true" />
-                      <ref role="1Y3XeK" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
-                      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                      <node concept="3Tm1VV" id="3k48dctEYOK" role="1B3o_S" />
-                      <node concept="312cEg" id="3k48dctF0Mt" role="jymVt">
-                        <property role="34CwA1" value="false" />
-                        <property role="eg7rD" value="false" />
-                        <property role="TrG5h" value="myErrorsLoggingHandler" />
-                        <property role="3TUv4t" value="true" />
-                        <node concept="3Tm6S6" id="3k48dctF0uF" role="1B3o_S" />
-                        <node concept="3uibUv" id="3k48dctF0E5" role="1tU5fm">
-                          <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
-                        </node>
-                        <node concept="2ShNRf" id="3k48dctF0X4" role="33vP2m">
-                          <node concept="1pGfFk" id="3k48dctF1iu" role="2ShVmc">
-                            <ref role="37wK5l" to="vqh0:~ErrorsLoggingHandler.&lt;init&gt;(org.apache.log4j.Logger)" resolve="ErrorsLoggingHandler" />
-                            <node concept="2YIFZM" id="3k48dctF1Ll" role="37wK5m">
-                              <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
-                              <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.String):org.apache.log4j.Logger" resolve="getLogger" />
-                              <node concept="2OqwBi" id="3k48dctF3ok" role="37wK5m">
-                                <node concept="2n6ZRZ" id="3k48dctF3dw" role="2Oq$k0">
-                                  <node concept="2e$Q_j" id="3k48dctF3dx" role="2n6ZRX">
-                                    <ref role="1Mm5Yu" node="5L5h3brvDPx" resolve="JavaCompile" />
-                                  </node>
-                                </node>
-                                <node concept="liA8E" id="2SVpevUn6Od" role="2OqNvi">
-                                  <ref role="37wK5l" to="rk9m:hxx6lM0OuF" resolve="getName" />
-                                </node>
-                              </node>
+                <node concept="2OqwBi" id="3D3uKT_PbAT" role="33vP2m">
+                  <node concept="2ShNRf" id="3k48dctF0X4" role="2Oq$k0">
+                    <node concept="1pGfFk" id="3k48dctF1iu" role="2ShVmc">
+                      <ref role="37wK5l" to="vqh0:~ErrorsLoggingHandler.&lt;init&gt;(org.apache.log4j.Logger)" resolve="ErrorsLoggingHandler" />
+                      <node concept="2YIFZM" id="3k48dctF1Ll" role="37wK5m">
+                        <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.String):org.apache.log4j.Logger" resolve="getLogger" />
+                        <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
+                        <node concept="2OqwBi" id="3k48dctF3ok" role="37wK5m">
+                          <node concept="2n6ZRZ" id="3k48dctF3dw" role="2Oq$k0">
+                            <node concept="2e$Q_j" id="3k48dctF3dx" role="2n6ZRX">
+                              <ref role="1Mm5Yu" node="5L5h3brvDPx" resolve="JavaCompile" />
                             </node>
+                          </node>
+                          <node concept="liA8E" id="2SVpevUn6Od" role="2OqNvi">
+                            <ref role="37wK5l" to="rk9m:hxx6lM0OuF" resolve="getName" />
                           </node>
                         </node>
                       </node>
-                      <node concept="2tJIrI" id="3k48dctF2kJ" role="jymVt" />
-                      <node concept="3clFb_" id="3k48dctEYOL" role="jymVt">
-                        <property role="1EzhhJ" value="false" />
-                        <property role="TrG5h" value="handle" />
-                        <property role="DiZV1" value="false" />
-                        <property role="od$2w" value="false" />
-                        <node concept="3Tm1VV" id="3k48dctEYOM" role="1B3o_S" />
-                        <node concept="3cqZAl" id="3k48dctEYOO" role="3clF45" />
-                        <node concept="37vLTG" id="3k48dctEYOP" role="3clF46">
-                          <property role="TrG5h" value="msg" />
-                          <node concept="3uibUv" id="3k48dctEYOQ" role="1tU5fm">
-                            <ref role="3uigEE" to="et5u:~IMessage" resolve="IMessage" />
-                          </node>
-                          <node concept="2AHcQZ" id="3k48dctEYOR" role="2AJF6D">
-                            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-                          </node>
-                        </node>
-                        <node concept="3clFbS" id="3k48dctEYOS" role="3clF47">
-                          <node concept="3clFbF" id="3k48dctF4oH" role="3cqZAp">
-                            <node concept="2OqwBi" id="3k48dctF4_0" role="3clFbG">
-                              <node concept="37vLTw" id="3k48dctF4oG" role="2Oq$k0">
-                                <ref role="3cqZAo" node="3k48dctF0Mt" resolve="myErrorsLoggingHandler" />
-                              </node>
-                              <node concept="liA8E" id="3k48dctF4FP" role="2OqNvi">
-                                <ref role="37wK5l" to="et5u:~IMessageHandler.handle(jetbrains.mps.messages.IMessage):void" resolve="handle" />
-                                <node concept="37vLTw" id="3k48dctF51s" role="37wK5m">
-                                  <ref role="3cqZAo" node="3k48dctEYOP" resolve="msg" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="1daRAt" id="3k48dctF5ko" role="3cqZAp">
-                            <property role="1daRAr" value="MESSAGE" />
-                            <node concept="37vLTw" id="3k48dctF5tu" role="1daK9t">
-                              <ref role="3cqZAo" node="3k48dctEYOP" resolve="msg" />
-                            </node>
-                          </node>
-                        </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3D3uKT_Pc0d" role="2OqNvi">
+                    <ref role="37wK5l" to="et5u:~IMessageHandler.compose(jetbrains.mps.messages.IMessageHandler):jetbrains.mps.messages.IMessageHandler" resolve="compose" />
+                    <node concept="2OqwBi" id="3D3uKT_PcHT" role="37wK5m">
+                      <node concept="2_BwXt" id="3D3uKT_PckY" role="2Oq$k0" />
+                      <node concept="liA8E" id="3D3uKT_Pd5V" role="2OqNvi">
+                        <ref role="37wK5l" to="hfuk:7yGn3z4N4Nw" resolve="getMessageHandler" />
                       </node>
                     </node>
                   </node>

@@ -25,16 +25,15 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.make.ErrorsLoggingHandler;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.make.MPSCompilationResult;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -101,28 +100,21 @@ public class CompileGeneratedJava_Facet extends IFacet.Stub {
               if (SetSequence.fromSet(toCompile).isEmpty()) {
                 return new IResult.SUCCESS(_output_widgfz_a0a);
               }
-              final Wrappers._T<MPSCompilationResult> cr = new Wrappers._T<MPSCompilationResult>();
-              final IMessageHandler msgHandler = new IMessageHandler() {
-                private final IMessageHandler myErrorsLoggingHandler = new ErrorsLoggingHandler(LogManager.getLogger(new IFacet.Name("jetbrains.mps.make.facets.JavaCompile").getClass().toString()));
-
-                public void handle(@NotNull IMessage msg) {
-                  myErrorsLoggingHandler.handle(msg);
-                  monitor.reportFeedback(new IFeedback.MESSAGE(msg));
-                }
-              };
-              ModelAccess.instance().runReadAction(new Runnable() {
-                public void run() {
-                  cr.value = new ModuleMaker(msgHandler, MessageKind.INFORMATION).make(toCompile, progressMonitor, vars(pa.global()).options());
+              final IMessageHandler msgHandler = new ErrorsLoggingHandler(LogManager.getLogger(new IFacet.Name("jetbrains.mps.make.facets.JavaCompile").getName())).compose(monitor.getSession().getMessageHandler());
+              // XXX in fact, shall lock repository of a module from TResource, which is not necessarily the same as project's 
+              MPSCompilationResult cr = new ModelAccessHelper(monitor.getSession().getProject().getModelAccess()).runReadAction(new Computable<MPSCompilationResult>() {
+                public MPSCompilationResult compute() {
+                  return new ModuleMaker(msgHandler, MessageKind.INFORMATION).make(toCompile, progressMonitor, vars(pa.global()).options());
                 }
               });
-              vars(pa.global()).compiledAnything(vars(pa.global()).compiledAnything() || cr.value.isCompiledAnything());
-              if (!(cr.value.isOk())) {
-                if (cr.value.getErrorsCount() > 0) {
-                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr.value)));
-                } else if (cr.value.getWarningsCount() > 0) {
-                  monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(cr.value)));
+              vars(pa.global()).compiledAnything(vars(pa.global()).compiledAnything() || cr.isCompiledAnything());
+              if (!(cr.isOk())) {
+                if (cr.getErrorsCount() > 0) {
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr)));
+                } else if (cr.getWarningsCount() > 0) {
+                  monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(cr)));
                 } else {
-                  monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf(cr.value)));
+                  monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf(cr)));
                 }
                 return new IResult.FAILURE(_output_widgfz_a0a);
               }
@@ -130,7 +122,7 @@ public class CompileGeneratedJava_Facet extends IFacet.Stub {
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_widgfz_a0a);
                 }
-                if (cr.value.getChangedModules().contains(tres.module())) {
+                if (cr.getChangedModules().contains(tres.module())) {
                   _output_widgfz_a0a = Sequence.fromIterable(_output_widgfz_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
                 }
               }
