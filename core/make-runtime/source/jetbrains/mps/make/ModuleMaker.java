@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,11 +26,11 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
+import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -64,7 +64,6 @@ import java.util.TreeSet;
  * fixme check multiple computations of the same modules' dependencies (time wasting)
  */
 public final class ModuleMaker {
-  private final static MessageKind DEFAULT_MSG_LEVEL = MessageKind.INFORMATION;
   public final static Comparator<SModule> MODULE_BY_NAME_COMPARATOR = (module1, module2) -> module1.getModuleName().compareTo(module2.getModuleName());
 
   private final static String BUILDING_MODULES_MSG = "Building %d Modules";
@@ -84,31 +83,34 @@ public final class ModuleMaker {
    * The empty constructor delegates only error messages to the apache's logger and traces nothing
    */
   public ModuleMaker() {
-    ErrorsLoggingHandler defaultHandler = new ErrorsLoggingHandler(LogManager.getLogger(ModuleMaker.class));
-    MessageSender sender = new MessageSender(defaultHandler, this, DEFAULT_MSG_LEVEL);
+    Logger logger = LogManager.getLogger(ModuleMaker.class);
+    MessageSender sender = new MessageSender(IMessageHandler.NULL_HANDLER, logger, this, Level.ERROR);
     myTracer = new CompositeTracer(new NullPerformanceTracer(), sender);
   }
 
   /**
-   * Accepts the logging strategy (via {@link IMessageHandler})
-   * and the logging level {@link MessageKind}.
+   * Constructor for regular use, if uncertain, use this one.
+   *
+   * @param handler sink for end-user messages
    */
-  public ModuleMaker(@NotNull IMessageHandler handler, @NotNull MessageKind level) {
-    MessageSender sender = new MessageSender(handler, this, level);
-    myTracer = new CompositeTracer(new PerformanceTracer(this.toString()), sender);
+  public ModuleMaker(@NotNull IMessageHandler handler) {
+    // End-user messages piped through supplied handler, trace and debug messages go to log according to external configuration
+    Logger logger = LogManager.getLogger(ModuleMaker.class);
+    String mmName = ModuleMaker.class.getName();
+    MessageSender sender = new MessageSender(handler, logger, mmName, Level.ALL);
+    // PerformanceTracer.printReport sends it with info level, but it doesn't seem reasonable to collect performance data unless we debug MM.
+    myTracer = new CompositeTracer(logger.isDebugEnabled() ? new PerformanceTracer(mmName) : new NullPerformanceTracer(), sender);
   }
 
-  /**
-   * Accepts the logging strategy (via {@link IMessageHandler})
-   * and the logging level {@link MessageKind}.
-   * and the performance tracer
-   *
-   * @deprecated IPerformanceTracer is an internal feature I believe.
-   */
+    /**
+     * Accepts the logging strategy (via {@link IMessageHandler})
+     * and the logging level {@link MessageKind}.
+     * @deprecated level is ignored, use {@link #ModuleMaker(IMessageHandler)} instead
+     */
   @Deprecated
-  @ToRemove(version = 3.4)
-  public ModuleMaker(@NotNull IMessageHandler handler, @NotNull MessageKind level, @NotNull IPerformanceTracer tracer) {
-    myTracer = new CompositeTracer(tracer, new MessageSender(handler, this, level));
+  @ToRemove(version = 2017.2)
+  public ModuleMaker(@NotNull IMessageHandler handler, @NotNull MessageKind level) {
+    this(handler);
   }
 
   /**
@@ -193,8 +195,8 @@ public final class ModuleMaker {
         }
         ++cycleNumber;
         CompositeTracer cycleTracer = tracer.subTracer(1);
-        tracer.info(String.format(CYCLE_FORMAT_MSG, cycleNumber, modulesInCycle));
-        cycleTracer.start(getCycleString(cycleNumber, modulesInCycle), 1, Priority.DEBUG);
+        tracer.getSender().info(String.format(CYCLE_FORMAT_MSG, cycleNumber, modulesInCycle));
+        cycleTracer.start(getCycleString(cycleNumber, modulesInCycle), 1);
         ModulesContainer modulesContainer = new ModulesContainer(modulesInCycle, dependencies);
         InternalJavaCompiler internalJavaCompiler = new InternalJavaCompiler(modulesContainer, compilerOptions);
         MPSCompilationResult cycleCompilationResult = internalJavaCompiler.compile(cycleTracer.subTracer(1, SubProgressKind.AS_COMMENT));
@@ -239,7 +241,7 @@ public final class ModuleMaker {
   private Set<SModule> buildDirtyModulesClosure(ModulesContainer modulesContainer, CompositeTracer tracer) {
     tracer.start(BUILDING_DIRTY_CLOSURE, 3);
     Set<SModule> candidates = modulesContainer.getModules();
-    tracer.push(CHECKING_DIRTY_MODULES_MSG, Priority.DEBUG, false);
+    tracer.push(CHECKING_DIRTY_MODULES_MSG, false);
     List<SModule> dirtyModules = new ArrayList<SModule>(candidates.size());
     for (SModule m : candidates) {
       if (modulesContainer.isDirty(m)) {
@@ -255,7 +257,7 @@ public final class ModuleMaker {
 
     Map<SModule, Set<SModule>> backDependencies = new HashMap<>();
 
-    tracer.push(BUILDING_BACK_DEPS_MSG, Priority.DEBUG, true);
+    tracer.push(BUILDING_BACK_DEPS_MSG, true);
     for (SModule m : candidates) {
       for (SModule dep : new GlobalModuleDependenciesManager(m).getModules(Deptype.COMPILE)) {
         Set<SModule> incoming = backDependencies.get(dep);

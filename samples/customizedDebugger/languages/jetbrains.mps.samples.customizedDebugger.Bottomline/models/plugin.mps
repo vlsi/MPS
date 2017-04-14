@@ -57,10 +57,6 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
-        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
-        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
-      </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
@@ -420,8 +416,8 @@
                         <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.String):org.apache.log4j.Logger" resolve="getLogger" />
                         <node concept="2OqwBi" id="3k48dctF3ok" role="37wK5m">
                           <node concept="2n6ZRZ" id="3k48dctF3dw" role="2Oq$k0">
-                            <node concept="2e$Q_j" id="3k48dctF3dx" role="2n6ZRX">
-                              <ref role="1Mm5Yu" to="fy8e:5L5h3brvDPx" resolve="JavaCompile" />
+                            <node concept="2e$Q_j" id="3D3uKT_QlXh" role="2n6ZRX">
+                              <ref role="1Mm5Yu" node="vvfLbL9Exz" resolve="CompileGeneratedJava" />
                             </node>
                           </node>
                           <node concept="liA8E" id="3k48dctF3zn" role="2OqNvi">
@@ -479,13 +475,9 @@
                           <node concept="2OqwBi" id="6XbTA58QqMf" role="3cqZAk">
                             <node concept="2ShNRf" id="6XbTA58QqMg" role="2Oq$k0">
                               <node concept="1pGfFk" id="6XbTA58QqMh" role="2ShVmc">
-                                <ref role="37wK5l" to="vqh0:~ModuleMaker.&lt;init&gt;(jetbrains.mps.messages.IMessageHandler,jetbrains.mps.messages.MessageKind)" resolve="ModuleMaker" />
+                                <ref role="37wK5l" to="vqh0:~ModuleMaker.&lt;init&gt;(jetbrains.mps.messages.IMessageHandler)" resolve="ModuleMaker" />
                                 <node concept="37vLTw" id="6XbTA58Qy8b" role="37wK5m">
                                   <ref role="3cqZAo" node="3k48dctEXQd" resolve="msgHandler" />
-                                </node>
-                                <node concept="Rm8GO" id="3k48dctFa5u" role="37wK5m">
-                                  <ref role="Rm8GQ" to="et5u:~MessageKind.INFORMATION" resolve="INFORMATION" />
-                                  <ref role="1Px2BO" to="et5u:~MessageKind" resolve="MessageKind" />
                                 </node>
                               </node>
                             </node>

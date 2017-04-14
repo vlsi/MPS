@@ -28,6 +28,18 @@ import org.jetbrains.annotations.NotNull;
 public enum MessageKind {
   INFORMATION, WARNING, ERROR;
 
+  /**
+   * @return {@code true} if this enumeration (LHS) value represents a message of at least the same severity than the one supplied (RHS).
+   */
+  public boolean isSameOrGreaterSeverityThan(MessageKind kind) {
+    // ERROR.isSameOrGreaterSeverityThan(ERROR)         : true
+    // ERROR.isSameOrGreaterSeverityThan(WARNING)       : true
+    // WARNING.isSameOrGreaterSeverityThan(ERROR)       : false
+    // INFORMATION.isSameOrGreaterSeverityThan(WARNING) : false
+    // WARNING.isSameOrGreaterSeverityThan(INFORMATION) : true
+    return ordinal() >= kind.ordinal();
+  }
+
   @NotNull
   public static MessageKind fromPriority(Priority level) {
     if (level.equals(Level.FATAL) || level.equals(Level.ERROR)) {
@@ -37,4 +49,5 @@ public enum MessageKind {
     }
     return MessageKind.INFORMATION;
   }
+
 }

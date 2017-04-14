@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.make;
 
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.NameUtil;
@@ -74,10 +72,10 @@ public class CompilationErrorsHandler {
 
       String errMsg = String.format(ERROR_FORMAT_STRING, messageString, problem.getSourceLineNumber());
       if (problem.isWarning()) {
-        mySender.handle(Message.createMessage(MessageKind.WARNING, this.toString(), errMsg, hintObject));
+        mySender.warn(errMsg, hintObject);
       } else if (myErrorTracker.errorsBelowLimit()) {
         myErrorTracker.incErrCnt();
-        mySender.handle(Message.createMessage(MessageKind.ERROR, this.toString(), errMsg, hintObject));
+        mySender.error(errMsg, hintObject);
       }
     }
     return myErrorTracker;

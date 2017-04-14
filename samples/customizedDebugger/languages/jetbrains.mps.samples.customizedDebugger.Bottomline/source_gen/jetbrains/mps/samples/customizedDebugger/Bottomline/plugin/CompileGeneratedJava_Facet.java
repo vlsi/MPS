@@ -32,7 +32,6 @@ import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -100,11 +99,11 @@ public class CompileGeneratedJava_Facet extends IFacet.Stub {
               if (SetSequence.fromSet(toCompile).isEmpty()) {
                 return new IResult.SUCCESS(_output_widgfz_a0a);
               }
-              final IMessageHandler msgHandler = new ErrorsLoggingHandler(LogManager.getLogger(new IFacet.Name("jetbrains.mps.make.facets.JavaCompile").getName())).compose(monitor.getSession().getMessageHandler());
+              final IMessageHandler msgHandler = new ErrorsLoggingHandler(LogManager.getLogger(new IFacet.Name("jetbrains.mps.samples.customizedDebugger.Bottomline.CompileGeneratedJava").getName())).compose(monitor.getSession().getMessageHandler());
               // XXX in fact, shall lock repository of a module from TResource, which is not necessarily the same as project's 
               MPSCompilationResult cr = new ModelAccessHelper(monitor.getSession().getProject().getModelAccess()).runReadAction(new Computable<MPSCompilationResult>() {
                 public MPSCompilationResult compute() {
-                  return new ModuleMaker(msgHandler, MessageKind.INFORMATION).make(toCompile, progressMonitor, vars(pa.global()).options());
+                  return new ModuleMaker(msgHandler).make(toCompile, progressMonitor, vars(pa.global()).options());
                 }
               });
               vars(pa.global()).compiledAnything(vars(pa.global()).compiledAnything() || cr.isCompiledAnything());

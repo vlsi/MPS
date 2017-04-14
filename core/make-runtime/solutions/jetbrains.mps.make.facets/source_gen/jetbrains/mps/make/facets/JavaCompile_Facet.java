@@ -32,7 +32,6 @@ import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -100,10 +99,11 @@ public class JavaCompile_Facet extends IFacet.Stub {
               if (SetSequence.fromSet(toCompile).isEmpty()) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0a);
               }
+              // XXX it's odd to use dedicated ErrorsLoggingHandler provided ModuleMaker reports errors to log itself (in addition to IMessageHandler, see MessageSender). Do I need ELH here? 
               final IMessageHandler msgHandler = new ErrorsLoggingHandler(LogManager.getLogger(new IFacet.Name("jetbrains.mps.make.facets.JavaCompile").getName())).compose(monitor.getSession().getMessageHandler());
               MPSCompilationResult cr = new ModelAccessHelper(monitor.getSession().getProject().getModelAccess()).runReadAction(new Computable<MPSCompilationResult>() {
                 public MPSCompilationResult compute() {
-                  return new ModuleMaker(msgHandler, MessageKind.INFORMATION).make(toCompile, progressMonitor, vars(pa.global()).options());
+                  return new ModuleMaker(msgHandler).make(toCompile, progressMonitor, vars(pa.global()).options());
                 }
               });
               vars(pa.global()).compiledAnything(vars(pa.global()).compiledAnything() || cr.isCompiledAnything());

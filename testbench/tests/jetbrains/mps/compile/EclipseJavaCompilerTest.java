@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,13 @@ import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.util.Reference;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -58,18 +57,29 @@ public class EclipseJavaCompilerTest extends CoreMpsTest {
 
   @Test
   public void testOldVersion() throws Exception {
-    Assert.assertFalse(testRecompileClasses(JavaVersion.VERSION_1_6, IMessageHandler.NULL_HANDLER));
+    Logger mmLogger = Logger.getLogger(ModuleMaker.class);
+    Level oldLevel = mmLogger.getLevel();
+    try {
+      // ModuleMaker uses both IMessageHandler and log4j logger to report its messages.
+      // Those reported through IMessageHandler go to end-user, log4j's are subject to external configuration (usually, bin/log.xml).
+      // In this test we expect to get some compilation errors (hence assertFalse), but don't want the test to fail due to compilation errors
+      // reported through log ('unclean test execution failure' due to console output). Therefore, we temporarily disable log of all error messages.
+      mmLogger.setLevel(Level.FATAL);
+      Assert.assertFalse(testRecompileClasses(JavaVersion.VERSION_1_6));
+    } finally {
+      mmLogger.setLevel(oldLevel);
+    }
   }
 
   @Test
   public void testNewVersion() throws Exception {
-    Assert.assertTrue(testRecompileClasses(JavaVersion.VERSION_1_8, null));
+    Assert.assertTrue(testRecompileClasses(JavaVersion.VERSION_1_8));
   }
 
   /**
    * @return true iff there were no errors during compilation
    */
-  private boolean testRecompileClasses(final JavaVersion version, @Nullable final IMessageHandler msgHandler) {
+  private boolean testRecompileClasses(final JavaVersion version) {
     final Set<SModule> toCompile = new LinkedHashSet<SModule>();
     toCompile.add(ourSolution);
 
@@ -78,12 +88,7 @@ public class EclipseJavaCompilerTest extends CoreMpsTest {
     ourProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         try {
-          ModuleMaker moduleMaker;
-          if (msgHandler == null) {
-            moduleMaker = new ModuleMaker();
-          } else {
-            moduleMaker = new ModuleMaker(msgHandler, MessageKind.INFORMATION);
-          }
+          ModuleMaker moduleMaker = new ModuleMaker();
           moduleMaker.clean(toCompile, new EmptyProgressMonitor());
           MPSCompilationResult result = moduleMaker.make(toCompile, new EmptyProgressMonitor(), new JavaCompilerOptions(version));
           resultRef.set(result.isOk());

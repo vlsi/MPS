@@ -837,62 +837,59 @@
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/4753172061859438915">
     <file name="DefaultMakeTask.java">
-      <node id="8181254056938348781" at="24,0,25,0" concept="4" trace="myProject" />
-      <node id="4753172061859438916" at="25,0,26,0" concept="4" trace="needClean" />
-      <node id="4753172061859438919" at="26,0,27,0" concept="4" trace="modules" />
-      <node id="4753172061859438931" at="28,127,29,32" concept="14" />
-      <node id="4753172061859438935" at="29,32,30,31" concept="3" />
-      <node id="4753172061859438941" at="30,31,31,80" concept="3" />
-      <node id="8181254056938360639" at="31,80,32,52" concept="3" />
-      <node id="1637160376125502138" at="36,57,37,74" concept="8" />
-      <node id="1637160376125502159" at="37,74,38,44" concept="3" />
-      <node id="4305429072761015117" at="39,9,40,86" concept="8" />
-      <node id="5943324037901155722" at="42,27,43,83" concept="8" />
-      <node id="2034046503361606555" at="43,83,44,83" concept="8" />
+      <node id="8181254056938348781" at="26,0,27,0" concept="4" trace="myProject" />
+      <node id="4753172061859438916" at="27,0,28,0" concept="4" trace="needClean" />
+      <node id="4753172061859438919" at="28,0,29,0" concept="4" trace="modules" />
+      <node id="4753172061859438931" at="30,127,31,32" concept="14" />
+      <node id="4753172061859438935" at="31,32,32,31" concept="3" />
+      <node id="4753172061859438941" at="32,31,33,80" concept="3" />
+      <node id="8181254056938360639" at="33,80,34,55" concept="3" />
+      <node id="1637160376125502138" at="38,57,39,74" concept="8" />
+      <node id="1637160376125502159" at="39,74,40,44" concept="3" />
+      <node id="2034046503361606555" at="43,47,44,115" concept="8" />
       <node id="2034046503361606565" at="45,26,46,53" concept="3" />
-      <node id="5366349032751469598" at="47,11,48,154" concept="3" />
-      <node id="5366349032751308839" at="48,154,49,0" concept="11" />
+      <node id="4198334579408260902" at="47,11,48,135" concept="9" />
+      <node id="4198334579408252381" at="48,135,49,0" concept="11" />
       <node id="8181254056938442935" at="51,9,52,0" concept="11" />
-      <node id="2034046503373004767" at="55,29,56,124" concept="3" />
+      <node id="2034046503373004767" at="55,29,56,121" concept="3" />
       <node id="1637160376125502151" at="60,15,61,21" concept="3" />
-      <node id="2034046503361606563" at="44,83,47,11" concept="6" />
+      <node id="2034046503361606563" at="44,115,47,11" concept="6" />
       <node id="2034046503373004765" at="55,0,58,0" concept="7" trace="run#()V" />
-      <node id="2034046503373004761" at="53,56,58,11" concept="3" />
-      <node id="4753172061859438927" at="28,0,34,0" concept="1" trace="DefaultMakeTask#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/util/Set;Z)V" />
+      <node id="2034046503373004761" at="53,53,58,11" concept="3" />
+      <node id="4753172061859438927" at="30,0,36,0" concept="1" trace="DefaultMakeTask#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/util/Set;Z)V" />
       <node id="4753172061859438990" at="52,0,59,7" concept="6" />
-      <node id="2034046503361606553" at="42,0,51,0" concept="7" trace="run#()V" />
-      <node id="8181254056938444116" at="40,86,51,9" concept="3" />
-      <node id="1637160376125502147" at="38,44,62,5" concept="17" />
-      <node id="4753172061859438958" at="35,0,64,0" concept="7" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+      <node id="4198334579408248463" at="43,0,51,0" concept="7" trace="compute#()Ljetbrains/mps/make/MPSCompilationResult;" />
+      <node id="4305429072761015117" at="41,9,51,9" concept="8" />
+      <node id="1637160376125502147" at="40,44,62,5" concept="17" />
+      <node id="4753172061859438958" at="37,0,64,0" concept="7" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
       <scope id="2034046503361606564" at="45,26,46,53" />
-      <scope id="2034046503373004766" at="55,29,56,124" />
+      <scope id="2034046503373004766" at="55,29,56,121" />
       <scope id="1637160376125502150" at="60,15,61,21" />
       <scope id="2034046503373004765" at="55,0,58,0" />
-      <scope id="4753172061859438930" at="28,127,32,52" />
-      <scope id="4753172061859438991" at="53,56,58,11" />
-      <scope id="4753172061859438927" at="28,0,34,0">
+      <scope id="4753172061859438930" at="30,127,34,55" />
+      <scope id="4753172061859438991" at="53,53,58,11" />
+      <scope id="4753172061859438927" at="30,0,36,0">
         <var name="modules" id="4753172061859438952" />
         <var name="needClean" id="4753172061859438955" />
         <var name="project" id="4753172061859438948" />
         <var name="title" id="4753172061859438950" />
       </scope>
-      <scope id="2034046503361606554" at="42,27,49,0">
+      <scope id="4198334579408248464" at="43,47,49,0">
         <var name="maker" id="2034046503361606556" />
-        <var name="mvt" id="5943324037901155723" />
       </scope>
-      <scope id="2034046503361606553" at="42,0,51,0" />
-      <scope id="1637160376125502148" at="39,9,59,7">
+      <scope id="4198334579408248463" at="43,0,51,0" />
+      <scope id="1637160376125502148" at="41,9,59,7">
         <var name="mpsCompilationResult" id="4305429072761015118" />
       </scope>
-      <scope id="4753172061859438964" at="36,57,62,5">
+      <scope id="4753172061859438964" at="38,57,62,5">
         <var name="monitor" id="1637160376125502139" />
       </scope>
-      <scope id="4753172061859438958" at="35,0,64,0">
+      <scope id="4753172061859438958" at="37,0,64,0">
         <var name="indicator" id="4753172061859438961" />
       </scope>
       <unit id="2034046503373004765" at="54,54,58,9" name="jetbrains.mps.ide.make.actions.DefaultMakeTask$2" />
-      <unit id="2034046503361606553" at="41,51,51,7" name="jetbrains.mps.ide.make.actions.DefaultMakeTask$1" />
-      <unit id="4753172061859438915" at="23,0,65,0" name="jetbrains.mps.ide.make.actions.DefaultMakeTask" />
+      <unit id="4198334579408248463" at="42,124,51,7" name="jetbrains.mps.ide.make.actions.DefaultMakeTask$1" />
+      <unit id="4753172061859438915" at="25,0,65,0" name="jetbrains.mps.ide.make.actions.DefaultMakeTask" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/5285710378702826195">

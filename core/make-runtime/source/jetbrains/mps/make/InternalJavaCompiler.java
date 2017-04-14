@@ -23,7 +23,6 @@ import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
-import org.apache.log4j.Priority;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
@@ -140,7 +139,7 @@ class InternalJavaCompiler {
   private void reportModulesWithRemovalsAreNotChanged(Set<SModule> modulesWithRemovals, Set<SModule> changedModules, CompositeTracer tracer) {
     for (SModule module : modulesWithRemovals) {
       if (!changedModules.contains(module)) {
-        tracer.warn(String.format(MODULE_WITH_REMOVALS_WAS_NOT_CHANGED, module), module.getModuleReference());
+        tracer.getSender().warn(String.format(MODULE_WITH_REMOVALS_WAS_NOT_CHANGED, module), module.getModuleReference());
       }
     }
   }
@@ -161,7 +160,7 @@ class InternalJavaCompiler {
       Collection<SModule> changedModules = compilationHandler.process(listener.getResults());
 
       if (changedModules.isEmpty()){
-        tracer.error(NO_CHANGES_AFTER_COMPILATION_ERROR);
+        tracer.getSender().error(NO_CHANGES_AFTER_COMPILATION_ERROR);
       }
       return new MPSCompilationResult(errorsHandler.getErrorsCount(), 0, false, changedModules); // fixme: no warnings in the result
     } finally {
@@ -187,7 +186,7 @@ class InternalJavaCompiler {
     tracer.start(CALCULATING_DEPS_MSG, 1);
     try {
       Set<String> classpath = JavaModuleOperations.collectCompileClasspath(modules, true);
-      tracer.msg("ClassPath: " + classpath, Priority.DEBUG);
+      tracer.getSender().debug("ClassPath: " + classpath);
       return JavaModuleOperations.createClassPathItem(classpath, ModuleMaker.class.getName());
     } finally {
       tracer.done(1);

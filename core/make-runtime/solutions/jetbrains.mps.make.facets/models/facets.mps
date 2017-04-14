@@ -81,10 +81,6 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
-        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
-        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
-      </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
         <child id="1164903496223" name="catchClause" index="TEbGg" />
@@ -506,6 +502,11 @@
                 <node concept="1v1jN8" id="5eo3iW6uLhM" role="2OqNvi" />
               </node>
             </node>
+            <node concept="3SKdUt" id="3D3uKT_Q5W_" role="3cqZAp">
+              <node concept="3SKdUq" id="3D3uKT_Q5WB" role="3SKWNk">
+                <property role="3SKdUp" value="XXX it's odd to use dedicated ErrorsLoggingHandler provided ModuleMaker reports errors to log itself (in addition to IMessageHandler, see MessageSender). Do I need ELH here?" />
+              </node>
+            </node>
             <node concept="3cpWs8" id="3k48dctEXQc" role="3cqZAp">
               <node concept="3cpWsn" id="3k48dctEXQd" role="3cpWs9">
                 <property role="TrG5h" value="msgHandler" />
@@ -575,13 +576,9 @@
                           <node concept="2OqwBi" id="1LzZ23Mdm7n" role="3clFbG">
                             <node concept="2ShNRf" id="1LzZ23Mdm7o" role="2Oq$k0">
                               <node concept="1pGfFk" id="1LzZ23Mdm7p" role="2ShVmc">
-                                <ref role="37wK5l" to="vqh0:~ModuleMaker.&lt;init&gt;(jetbrains.mps.messages.IMessageHandler,jetbrains.mps.messages.MessageKind)" resolve="ModuleMaker" />
+                                <ref role="37wK5l" to="vqh0:~ModuleMaker.&lt;init&gt;(jetbrains.mps.messages.IMessageHandler)" resolve="ModuleMaker" />
                                 <node concept="37vLTw" id="1LzZ23Mdm7q" role="37wK5m">
                                   <ref role="3cqZAo" node="3k48dctEXQd" resolve="msgHandler" />
-                                </node>
-                                <node concept="Rm8GO" id="1LzZ23Mdm7r" role="37wK5m">
-                                  <ref role="Rm8GQ" to="et5u:~MessageKind.INFORMATION" resolve="INFORMATION" />
-                                  <ref role="1Px2BO" to="et5u:~MessageKind" resolve="MessageKind" />
                                 </node>
                               </node>
                             </node>
