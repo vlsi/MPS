@@ -27,7 +27,6 @@ import com.intellij.ui.SpeedSearchBase;
 import com.intellij.ui.TableUtil;
 import com.intellij.ui.ToolbarDecorator;
 import com.intellij.ui.table.JBTable;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.BorderFactory;
@@ -52,6 +51,11 @@ public abstract class MpsElementsTable<T> {
 
   private MpsElementsTableModel<T> myElementsTableModel;
   private JBTable myElementsTable;
+  private boolean myAddRemoveNeeded;
+
+  protected MpsElementsTable(boolean addRemoveNeeded) {
+    myAddRemoveNeeded = addRemoveNeeded;
+  }
 
   public JComponent createComponent() {
     myElementsTableModel = new MpsElementsTableModel<>(getComparator(), getRendererClass(), getColumnTitle());
@@ -102,6 +106,10 @@ public abstract class MpsElementsTable<T> {
         }
       }
     };
+
+    if (!myAddRemoveNeeded) {
+      return myElementsTable;
+    }
 
     ToolbarDecorator decorator = ToolbarDecorator.createDecorator(myElementsTable);
     decorator.setAddAction(new AnActionButtonRunnable() {

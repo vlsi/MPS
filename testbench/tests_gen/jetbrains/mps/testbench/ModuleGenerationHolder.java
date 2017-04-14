@@ -16,14 +16,12 @@ import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.make.service.AbstractMakeService;
-import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.internal.make.cfg.MakeFacetInitializer;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
+import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -69,7 +67,7 @@ public class ModuleGenerationHolder {
   private String tmpPath;
   private Map<String, String> path2tmp = MapSequence.fromMap(new HashMap<String, String>());
   private final ModuleGenerationHolder.MyMessageHandler myMessageHandler = new ModuleGenerationHolder.MyMessageHandler();
-  private boolean isSucessful;
+  private boolean isSuccessful;
 
   public ModuleGenerationHolder(SModule module, Project project) {
     this.module = module;
@@ -87,7 +85,7 @@ public class ModuleGenerationHolder {
 
   public void build() throws Exception {
     if (!(needsGeneration())) {
-      isSucessful = true;
+      isSuccessful = true;
       return;
     }
     // sanity check build() doesn't come after diff() (due to broken test method ordering) 
@@ -101,27 +99,21 @@ public class ModuleGenerationHolder {
     IResult result;
     IScript scr = ModuleGenerationHolder.defaultScriptBuilder().toScript();
     final MakeSession session = new MakeSession(project, myMessageHandler, true);
-    final AbstractMakeService.DefaultMonitor monitor = new AbstractMakeService.DefaultMonitor(session);
-    IScriptController ctl = new IScriptController.Stub(monitor, monitor) {
-      @Override
-      public void setup(IPropertiesPool ppool) {
-        // trace.info is useless for tests, however we do keep these files in repo, and diffModule test 
-        // fails if we don't generate one here 
-        new TextGenFacetInitializer(session).failNoTextGen(false).generateDebugInfo(true).populate(ppool);
-        new MakeFacetInitializer().setPathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
-          public IFile invoke(String path) {
-            return tmpFile(path);
-          }
-        }).populate(ppool);
-        new GenerateFacetInitializer(session).setGenerationOptions(optBuilder).populate(ppool);
+    // trace.info is useless for tests, however we do keep these files in repo, and diffModule test 
+    // fails if we don't generate one here 
+    TextGenFacetInitializer tgfi = new TextGenFacetInitializer(session).failNoTextGen(false).generateDebugInfo(true);
+    MakeFacetInitializer mfi = new MakeFacetInitializer().setPathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
+      public IFile invoke(String path) {
+        return tmpFile(path);
       }
-    };
-
+    });
+    GenerateFacetInitializer gfi = new GenerateFacetInitializer(session).setGenerationOptions(optBuilder);
+    IScriptController ctl = new IScriptController.Stub2(session, tgfi, mfi, gfi);
     result = new TestMakeService().make(session, ModuleGenerationHolder.collectResources(project, module), scr, ctl, new EmptyProgressMonitor()).get();
-    isSucessful = result != null && result.isSucessful();
+    isSuccessful = result != null && result.isSucessful();
   }
-  public boolean isBuildSucessful() {
-    return isSucessful;
+  public boolean isBuildSuccessful() {
+    return isSuccessful;
   }
   public List<String> buildErrors() {
     return myMessageHandler.getGenerationErrors();

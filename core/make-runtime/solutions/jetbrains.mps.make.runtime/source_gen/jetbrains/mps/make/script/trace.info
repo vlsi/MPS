@@ -375,68 +375,105 @@
       <unit id="2551169102353043399" at="6,0,9,0" name="jetbrains.mps.make.script.IOption" />
     </file>
   </root>
+  <root nodeRef="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)/3956618698548878192">
+    <file name="PropertyPoolInitializer.java">
+      <node id="3956618698548885025" at="13,0,14,0" concept="6" trace="populate#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+      <scope id="3956618698548885025" at="13,0,14,0">
+        <var name="ppool" id="3956618698548885082" />
+      </scope>
+      <unit id="3956618698548878192" at="12,0,15,0" name="jetbrains.mps.make.script.PropertyPoolInitializer" />
+    </file>
+  </root>
   <root nodeRef="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)/4648565975300663454">
     <file name="IScriptController.java">
-      <node id="4648565975300663473" at="11,0,12,0" concept="6" trace="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
-      <node id="4648565975300663456" at="12,0,13,0" concept="6" trace="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
-      <node id="8075512910924608489" at="15,0,16,0" concept="6" trace="setup#(Ljetbrains/mps/make/script/IPropertiesPool;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
-      <node id="5646063728432391401" at="19,0,20,0" concept="3" trace="cmon" />
-      <node id="5646063728432391410" at="20,0,21,0" concept="3" trace="jmon" />
-      <node id="5646063728432391404" at="21,56,22,23" concept="2" />
-      <node id="5646063728432391413" at="22,23,23,23" concept="2" />
-      <node id="4691049906353704790" at="25,19,26,44" concept="2" />
-      <node id="4691049906353704796" at="26,44,27,41" concept="2" />
-      <node id="5646063728432391435" at="30,89,31,24" concept="2" />
-      <node id="5646063728432391443" at="34,95,35,24" concept="2" />
-      <node id="8075512910924608518" at="41,109,42,16" concept="2" />
-      <node id="4691049906353696048" at="13,0,15,0" concept="6" trace="setup#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-      <node id="7480932071789559121" at="16,0,18,0" concept="6" trace="useMonitor#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
-      <node id="4691049906353696062" at="37,0,40,0" concept="6" trace="setup#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+      <node id="4648565975300663473" at="14,0,15,0" concept="6" trace="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+      <node id="4648565975300663456" at="15,0,16,0" concept="6" trace="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+      <node id="8075512910924608489" at="16,0,17,0" concept="6" trace="setup#(Ljetbrains/mps/make/script/IPropertiesPool;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
+      <node id="5646063728432391401" at="20,0,21,0" concept="3" trace="cmon" />
+      <node id="5646063728432391410" at="21,0,22,0" concept="3" trace="jmon" />
+      <node id="5646063728432391404" at="22,56,23,23" concept="2" />
+      <node id="5646063728432391413" at="23,23,24,23" concept="2" />
+      <node id="4691049906353704790" at="26,19,27,44" concept="2" />
+      <node id="4691049906353704796" at="27,44,28,41" concept="2" />
+      <node id="5646063728432391435" at="31,89,32,24" concept="2" />
+      <node id="5646063728432391443" at="35,95,36,24" concept="2" />
+      <node id="8630358206816858940" at="41,109,42,16" concept="2" />
+      <node id="3956618698549112370" at="58,0,59,0" concept="3" trace="myMakeSession" />
+      <node id="3956618698549122678" at="59,0,60,0" concept="3" trace="myPoolInitializers" />
+      <node id="3956618698549148852" at="60,0,61,0" concept="3" trace="myMonitor" />
+      <node id="3956618698549120348" at="62,97,63,34" concept="2" />
+      <node id="3956618698549122683" at="63,34,64,44" concept="2" />
+      <node id="3956618698549161395" at="64,44,65,124" concept="9" />
+      <node id="3956618698549162619" at="68,52,69,94" concept="2" />
+      <node id="3956618698549174765" at="73,66,74,39" concept="8" />
+      <node id="3956618698549109041" at="80,95,81,29" concept="2" />
+      <node id="3956618698549108092" at="84,89,85,29" concept="2" />
+      <node id="3956618698549129788" at="89,39,90,15" concept="8" />
+      <node id="3956618698549134701" at="92,62,93,25" concept="2" />
+      <node id="7480932071789559121" at="17,0,19,0" concept="6" trace="useMonitor#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
+      <node id="4691049906353696062" at="38,0,40,0" concept="6" trace="setup#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
       <node id="7480932071789567864" at="44,0,47,0" concept="6" trace="useMonitor#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
-      <node id="5646063728432391391" at="21,0,25,0" concept="1" trace="Stub#(Ljetbrains/mps/make/script/IConfigMonitor;Ljetbrains/mps/make/script/IJobMonitor;)V" />
-      <node id="4691049906353704786" at="25,0,29,0" concept="1" trace="Stub#()V" />
-      <node id="5646063728432391419" at="29,0,33,0" concept="6" trace="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
-      <node id="5646063728432391427" at="33,0,37,0" concept="6" trace="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+      <node id="3956618698549127626" at="88,109,91,7" concept="5" />
+      <node id="3956618698549134700" at="91,7,94,7" concept="4" />
+      <node id="5646063728432391391" at="22,0,26,0" concept="1" trace="Stub#(Ljetbrains/mps/make/script/IConfigMonitor;Ljetbrains/mps/make/script/IJobMonitor;)V" />
+      <node id="4691049906353704786" at="26,0,30,0" concept="1" trace="Stub#()V" />
+      <node id="5646063728432391419" at="30,0,34,0" concept="6" trace="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+      <node id="5646063728432391427" at="34,0,38,0" concept="6" trace="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
       <node id="8075512910924608506" at="40,0,44,0" concept="6" trace="setup#(Ljetbrains/mps/make/script/IPropertiesPool;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
-      <scope id="4691049906353696067" at="38,46,38,46" />
+      <node id="3956618698549158624" at="67,0,71,0" concept="6" trace="reportFeedback#(Ljetbrains/mps/make/script/IFeedback;)V" />
+      <node id="3956618698549170203" at="72,0,76,0" concept="6" trace="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
+      <node id="3956618698549106107" at="79,0,83,0" concept="6" trace="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+      <node id="3956618698549106117" at="83,0,87,0" concept="6" trace="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+      <node id="3956618698549106142" at="96,0,100,0" concept="6" trace="useMonitor#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
+      <node id="3956618698549106127" at="87,0,96,0" concept="6" trace="setup#(Ljetbrains/mps/make/script/IPropertiesPool;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
+      <node id="3956618698549150958" at="65,124,76,8" concept="2" />
+      <node id="3956618698549102379" at="62,0,78,0" concept="1" trace="Stub2#(Ljetbrains/mps/make/MakeSession;null)V" />
+      <scope id="4691049906353696067" at="38,49,38,49" />
       <scope id="7480932071789567869" at="45,53,45,53" />
-      <scope id="4648565975300663473" at="11,0,12,0">
+      <scope id="3956618698549106149" at="98,53,98,53" />
+      <scope id="4648565975300663473" at="14,0,15,0">
         <var name="code" id="4648565975300663477" />
       </scope>
-      <scope id="4648565975300663456" at="12,0,13,0">
+      <scope id="4648565975300663456" at="15,0,16,0">
         <var name="code" id="4648565975300663460" />
       </scope>
-      <scope id="8075512910924608489" at="15,0,16,0">
+      <scope id="8075512910924608489" at="16,0,17,0">
         <var name="input" id="8075512910924608501" />
         <var name="pp" id="8075512910924608494" />
         <var name="toExecute" id="8075512910924608496" />
       </scope>
-      <scope id="5646063728432391426" at="30,89,31,24" />
-      <scope id="5646063728432391434" at="34,95,35,24" />
+      <scope id="5646063728432391426" at="31,89,32,24" />
+      <scope id="5646063728432391434" at="35,95,36,24" />
       <scope id="8075512910924608517" at="41,109,42,16" />
-      <scope id="4691049906353696048" at="13,0,15,0">
-        <var name="ppool" id="4691049906353696054" />
-      </scope>
-      <scope id="7480932071789559121" at="16,0,18,0">
+      <scope id="3956618698549158634" at="68,52,69,94" />
+      <scope id="3956618698549170216" at="73,66,74,39" />
+      <scope id="3956618698549106115" at="80,95,81,29" />
+      <scope id="3956618698549106125" at="84,89,85,29" />
+      <scope id="3956618698549127628" at="89,39,90,15" />
+      <scope id="3956618698549134703" at="92,62,93,25" />
+      <scope id="7480932071789559121" at="17,0,19,0">
         <var name="monitor" id="7480932071789559125" />
       </scope>
-      <scope id="5646063728432391394" at="21,56,23,23" />
-      <scope id="4691049906353704789" at="25,19,27,41" />
-      <scope id="4691049906353696062" at="37,0,40,0">
+      <scope id="5646063728432391394" at="22,56,24,23" />
+      <scope id="4691049906353704789" at="26,19,28,41" />
+      <scope id="4691049906353696062" at="38,0,40,0">
         <var name="ppool" id="4691049906353696063" />
       </scope>
       <scope id="7480932071789567864" at="44,0,47,0">
         <var name="monitor" id="7480932071789567867" />
       </scope>
-      <scope id="5646063728432391391" at="21,0,25,0">
+      <scope id="3956618698549134700" at="91,7,94,7">
+        <var name="ppi" id="3956618698549134704" />
+      </scope>
+      <scope id="5646063728432391391" at="22,0,26,0">
         <var name="cmon" id="5646063728432391396" />
         <var name="jmon" id="5646063728432391398" />
       </scope>
-      <scope id="4691049906353704786" at="25,0,29,0" />
-      <scope id="5646063728432391419" at="29,0,33,0">
+      <scope id="4691049906353704786" at="26,0,30,0" />
+      <scope id="5646063728432391419" at="30,0,34,0">
         <var name="code" id="5646063728432391420" />
       </scope>
-      <scope id="5646063728432391427" at="33,0,37,0">
+      <scope id="5646063728432391427" at="34,0,38,0">
         <var name="code" id="5646063728432391430" />
       </scope>
       <scope id="8075512910924608506" at="40,0,44,0">
@@ -444,42 +481,61 @@
         <var name="pp" id="8075512910924608509" />
         <var name="toExecute" id="8075512910924608511" />
       </scope>
-      <unit id="5646063728432391389" at="18,0,48,0" name="jetbrains.mps.make.script.IScriptController$Stub" />
-      <unit id="4648565975300663454" at="10,0,49,0" name="jetbrains.mps.make.script.IScriptController" />
+      <scope id="3956618698549158624" at="67,0,71,0">
+        <var name="fdbk" id="3956618698549158625" />
+      </scope>
+      <scope id="3956618698549170203" at="72,0,76,0">
+        <var name="query" id="3956618698549170204" />
+      </scope>
+      <scope id="3956618698549106107" at="79,0,83,0">
+        <var name="code" id="3956618698549106111" />
+      </scope>
+      <scope id="3956618698549106117" at="83,0,87,0">
+        <var name="code" id="3956618698549106118" />
+      </scope>
+      <scope id="3956618698549106142" at="96,0,100,0">
+        <var name="monitor" id="3956618698549106146" />
+      </scope>
+      <scope id="3956618698549106140" at="88,109,94,7" />
+      <scope id="3956618698549106127" at="87,0,96,0">
+        <var name="input" id="3956618698549106136" />
+        <var name="pp" id="3956618698549106131" />
+        <var name="toExecute" id="3956618698549106133" />
+      </scope>
+      <scope id="3956618698549102382" at="62,97,76,8" />
+      <scope id="3956618698549102379" at="62,0,78,0">
+        <var name="makeSession" id="3956618698549102902" />
+        <var name="poolInitializers" id="3956618698549103678" />
+      </scope>
+      <unit id="3956618698549157642" at="66,22,76,7" name="jetbrains.mps.make.script.IScriptController$Stub2$1" />
+      <unit id="5646063728432391389" at="19,0,48,0" name="jetbrains.mps.make.script.IScriptController$Stub" />
+      <unit id="3956618698549095951" at="57,0,101,0" name="jetbrains.mps.make.script.IScriptController$Stub2" />
+      <unit id="4648565975300663454" at="13,0,102,0" name="jetbrains.mps.make.script.IScriptController" />
     </file>
   </root>
   <root nodeRef="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)/6168415856807657202">
     <file name="IJob.java">
-      <node id="3390441279428732804" at="11,0,12,0" concept="6" trace="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
-      <node id="4671800353872978273" at="16,96,17,48" concept="14" />
-      <node id="4671800353872978281" at="20,130,21,23" concept="9" />
-      <node id="4671800353872978111" at="21,23,22,37" concept="8" />
-      <node id="3353120829256410616" at="13,0,15,0" concept="1" trace="Stub#()V" />
-      <node id="1989730339991680060" at="15,0,19,0" concept="6" trace="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;)Ljetbrains/mps/make/script/IResult;" />
-      <node id="4671800353872978096" at="19,0,24,0" concept="6" trace="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
-      <scope id="3353120829256410619" at="13,19,13,19" />
-      <scope id="3390441279428732804" at="11,0,12,0">
+      <node id="3390441279428732804" at="13,0,14,0" concept="6" trace="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
+      <node id="8630358206816694559" at="18,130,19,92" concept="8" />
+      <node id="3353120829256410616" at="15,0,17,0" concept="1" trace="Stub#()V" />
+      <node id="4671800353872978096" at="17,0,21,0" concept="6" trace="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
+      <scope id="3353120829256410619" at="15,19,15,19" />
+      <scope id="3390441279428732804" at="13,0,14,0">
         <var name="input" id="3390441279428732816" />
         <var name="mon" id="3390441279428732819" />
         <var name="monitor" id="4671800353872978075" />
         <var name="pa" id="3390441279428732813" />
       </scope>
-      <scope id="1989730339991680072" at="16,96,17,48" />
-      <scope id="3353120829256410616" at="13,0,15,0" />
-      <scope id="4671800353872978106" at="20,130,22,37" />
-      <scope id="1989730339991680060" at="15,0,19,0">
-        <var name="input" id="1989730339991680061" />
-        <var name="mon" id="1989730339991680064" />
-        <var name="pa" id="1989730339991680066" />
-      </scope>
-      <scope id="4671800353872978096" at="19,0,24,0">
+      <scope id="4671800353872978106" at="18,130,19,92" />
+      <scope id="3353120829256410616" at="15,0,17,0" />
+      <scope id="4671800353872978096" at="17,0,21,0">
         <var name="input" id="4671800353872978097" />
         <var name="mon" id="4671800353872978100" />
         <var name="monitor" id="4671800353872978122" />
         <var name="pa" id="4671800353872978102" />
       </scope>
-      <unit id="3353120829256410614" at="12,0,25,0" name="jetbrains.mps.make.script.IJob$Stub" />
-      <unit id="6168415856807657202" at="10,0,26,0" name="jetbrains.mps.make.script.IJob" />
+      <unit id="3353120829256410614" at="14,0,22,0" name="jetbrains.mps.make.script.IJob$Stub" />
+      <unit id="6168415856807657202" at="12,0,23,0" name="jetbrains.mps.make.script.IJob" />
     </file>
   </root>
   <root nodeRef="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)/6168415856807657227">

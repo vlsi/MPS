@@ -975,46 +975,6 @@
         </node>
       </node>
     </node>
-    <node concept="3aamgX" id="hO2ezwe" role="3acgRq">
-      <ref role="30HIoZ" to="tpf3:hO2dfoG" resolve="GenerationContextOp_GetInvocationContext" />
-      <node concept="gft3U" id="hO2ezwf" role="1lVwrX">
-        <node concept="2OqwBi" id="hO2ezwg" role="gfFT$">
-          <node concept="1eOMI4" id="hO2ezwh" role="2Oq$k0">
-            <node concept="10QFUN" id="hO2ezwi" role="1eOMHV">
-              <node concept="10Nm6u" id="hO2ezwj" role="10QFUP" />
-              <node concept="3uibUv" id="hO2ezwk" role="10QFUM">
-                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-              </node>
-            </node>
-            <node concept="29HgVG" id="hO2ezwl" role="lGtFl">
-              <node concept="3NFfHV" id="hO2ezwm" role="3NFExx">
-                <node concept="3clFbS" id="hO2ezwn" role="2VODD2">
-                  <node concept="3clFbF" id="hO2ezwo" role="3cqZAp">
-                    <node concept="2OqwBi" id="hO2ezwp" role="3clFbG">
-                      <node concept="1PxgMI" id="hO2ezwq" role="2Oq$k0">
-                        <node concept="2OqwBi" id="hO2ezwr" role="1m5AlR">
-                          <node concept="30H73N" id="hO2ezws" role="2Oq$k0" />
-                          <node concept="1mfA1w" id="hO2ezwt" role="2OqNvi" />
-                        </node>
-                        <node concept="chp4Y" id="714IaVdH05n" role="3oSUPX">
-                          <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
-                        </node>
-                      </node>
-                      <node concept="3TrEf2" id="hO2ezwu" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="liA8E" id="hO2eIBa" role="2OqNvi">
-            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolve="getInvocationContext" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3aamgX" id="hHr9TeH" role="3acgRq">
       <ref role="30HIoZ" to="tpf3:hHr8y2F" resolve="GenerationContextOp_GetInputModel" />
       <node concept="gft3U" id="hHr9TeI" role="1lVwrX">

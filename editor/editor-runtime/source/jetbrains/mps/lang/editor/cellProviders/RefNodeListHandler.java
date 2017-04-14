@@ -25,10 +25,14 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -39,8 +43,8 @@ import java.util.List;
 
 public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
-  private SNode myChildConcept;
-  private SNode myLinkDeclaration;
+  private SNode myChildConcept; //todo make it use S-entities internally
+  private SNode myLinkDeclaration; //todo make it use S-entities internally
   private boolean myIsReverseOrder = false;
   // TODO: remove after MPS 3.5 was introduced for backward compatibility
   @Deprecated
@@ -71,12 +75,27 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     myIsReverseOrder = isReverseOrder;
   }
 
+  @Deprecated
+  @ToRemove(version = 3.5)
   public SNode getLinkDeclaration() {
     return myLinkDeclaration;
   }
 
+  /**
+   * @return original link (not specialized)
+   */
+  public SContainmentLink getSLink() {
+    return MetaAdapterByDeclaration.getContainmentLink(SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration));
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.5)
   public SNode getChildConcept() {
     return myChildConcept;
+  }
+
+  public SAbstractConcept getChildSConcept() {
+    return MetaAdapterByDeclaration.getConcept(myChildConcept);
   }
 
   @Override

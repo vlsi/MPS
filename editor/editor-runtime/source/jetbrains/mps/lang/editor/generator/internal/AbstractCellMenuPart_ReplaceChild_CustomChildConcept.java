@@ -29,7 +29,9 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -46,8 +48,8 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
-    SNode defaultConceptOfChild = CellUtil.getLinkDeclarationTarget(linkDeclaration);
+    SContainmentLink containmentLink = (SContainmentLink) cellContext.get(AggregationCellContext.LINK);
+    SAbstractConcept defaultConceptOfChild = (SAbstractConcept) cellContext.get(AggregationCellContext.CHILD_CONCEPT);
     SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 
 
@@ -62,13 +64,21 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
       return new ArrayList<>();
     }
 
-    SContainmentLink containmentLink = MetaAdapterByDeclaration.getContainmentLink(linkDeclaration);
     SubstituteMenuLookup lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()),
                                                                   concept);
     List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, editorContext, lookup).collect();
     return new SubstituteActionsCollector(parentNode, transformationItems, editorContext.getRepository()).collect();
   }
 
-  protected abstract SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext context,
-      EditorContext editorContext);
+  @Deprecated
+  @ToRemove(version = 3.5)
+  protected SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext context,
+                                    EditorContext editorContext) {
+    return getConceptOfChild(node, currentChild, MetaAdapterByDeclaration.getConcept(defaultConceptOfChild), context, editorContext);
+  }
+
+  protected SNode getConceptOfChild(SNode node, SNode currentChild, SAbstractConcept defaultChildConcept, IOperationContext context,
+                                    EditorContext editorContext) {
+    return getConceptOfChild(node, currentChild, defaultChildConcept.getDeclarationNode(), context, editorContext);
+  }
 }

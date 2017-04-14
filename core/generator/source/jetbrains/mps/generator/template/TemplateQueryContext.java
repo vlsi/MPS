@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.impl.ExportsSessionContext;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -108,15 +107,6 @@ public class TemplateQueryContext {
   }
 
   /**
-   * @deprecated replaced with more generic alternative, {@link #getOutputNodeByMappingLabel(String, SModel)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public SNode getOutputNodeByMappingLabel(String label) {
-    return getOutputNodeByMappingLabel(label, null);
-  }
-
-  /**
    * Find out conditional root with a given ML, created from specified model
    * @param label generally shall not be null, as it's required in GenerationContextOp_GetOutputByLabel
    * @param inputModel can be null, which indicates current input model. Otherwise, a model root was created from
@@ -175,13 +165,6 @@ public class TemplateQueryContext {
 
   public String createUniqueName(String baseName, SNode contextNode) {
     return myGenerator.getGeneratorSessionContext().createUniqueName(baseName, contextNode, getInputNode());
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public IOperationContext getInvocationContext() {
-    // according to doc: Operation context associated with module - owner of the original input model
-    throw new UnsupportedOperationException("IOperationContext has been deprecated for years and scheduled for removal. Do not use 'genContext.invocation context' aka TemplateQueryContext.getInvocationContext()");
   }
 
   // user objects

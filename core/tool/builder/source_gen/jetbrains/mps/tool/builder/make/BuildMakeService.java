@@ -20,14 +20,9 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.make.dependencies.MakeSequence;
 import jetbrains.mps.make.service.CoreMakeTask;
-import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
-import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.make.script.IJobMonitor;
-import jetbrains.mps.make.script.IPropertiesPool;
-import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.IMessageHandler;
 import org.apache.log4j.Priority;
@@ -76,6 +71,9 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     IScriptController ctl = this.completeController(makeSession, controller);
 
     CoreMakeTask task = new CoreMakeTask(scrName, makeSeq, ctl, makeSession.getMessageHandler());
+    // FIXME redirect of log4j output to IMessageHandler (which is likely a wrap for log4j output in case of command-line build) 
+    // looks suspicious. Shall check 583306c139b8a5d8a5ed6cb05801b646a0f43801 as legitimate fix for  MPS-20125. How come messages reported by generator 
+    // through IMessageHandler didn't reach messages view, but log4j error do. Generator doesn't use log4j for client messages, imo. 
     BuildMakeService.ForwardingLoggingHandler handler = new BuildMakeService.ForwardingLoggingHandler(makeSession.getMessageHandler());
     handler.register();
     try {
@@ -85,43 +83,18 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     }
     return new FutureValue<IResult>(task.getResult());
   }
-  /**
-   * Assume if client supplied IScriptController, he knows what he's doing
-   * and bears full responsibility (except for generator properties initialization, but only for now)
-   * for suppluing correct IConfigMonitor and IJobMonitor instances, if desired (we provide reasonable defaults
-   * for cases when no user-supplied controller present).
-   */
+
   private IScriptController completeController(MakeSession msess, final IScriptController ctl) {
-    final GenerateFacetInitializer gfi = new GenerateFacetInitializer(msess);
-    gfi.cleanMake(true);
-    IConfigMonitor monitor = new AbstractMakeService.DefaultMonitor(msess);
-    return new IScriptController.Stub(monitor, monitor) {
-      @Override
-      public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-        if (ctl != null) {
-          ctl.runJobWithMonitor(code);
-        } else {
-          super.runJobWithMonitor(code);
-        }
-      }
-      @Override
-      public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
-        if (ctl != null) {
-          ctl.runConfigWithMonitor(code);
-        } else {
-          super.runConfigWithMonitor(code);
-        }
-      }
-      @Override
-      public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
-        gfi.populate(pp);
-        if (ctl != null) {
-          ctl.setup(pp, toExecute, input);
-        } else {
-          super.setup(pp, toExecute, input);
-        }
-      }
-    };
+    // Assume if client supplied IScriptController, he knows what he's doing and bears full responsibility 
+    // to supply correct IConfigMonitor and IJobMonitor instances 
+    if (ctl != null) {
+      return ctl;
+    }
+    // Although there's knowledge about default make targets (see #defaultMakeScript(), below), 
+    // I don't want IMakeService to configure any target here explicitly. It's up to caller to configure 
+    // actual targets (yes, they are not necessarily the same as in default script) with desired values, not 
+    // service's to guess defaults. Id rather fail and see which targets were not configured. 
+    return new IScriptController.Stub2(msess);
   }
   public static IScript defaultMakeScript() {
     return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();

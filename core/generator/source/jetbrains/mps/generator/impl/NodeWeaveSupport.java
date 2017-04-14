@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,10 +21,8 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
-import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -62,17 +60,9 @@ public final class NodeWeaveSupport implements NodeWeaveFacility {
 
   @Override
   public void weaveNode(@NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave) throws GenerationFailureException {
-    weaveNode(myWeaveContext.getContextNode(), childRole, outputNodeToWeave);
-  }
-
-  @Override
-  public void weaveNode(@NotNull SNode contextParentNode, @NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave) throws
-      GenerationFailureException {
-    weave(contextParentNode, childRole, outputNodeToWeave, myWeaveContext.getAnchorNode(contextParentNode, outputNodeToWeave));
-  }
-
-  private void weave(@NotNull SNode contextParentNode, @NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave, @Nullable SNode anchor) {
-    assert anchor == null || anchor.getParent() == contextParentNode; // perhaps, this check shall be up the stack?
+    SNode contextParentNode = myWeaveContext.getContextNode();
+    SNode anchor = myWeaveContext.getAnchorNode(contextParentNode, outputNodeToWeave);
+    assert anchor == null || anchor.getParent() == contextParentNode;
     TracingUtil.fillOriginalNode(myTemplateContext.getInput(), outputNodeToWeave, false);
 
     // check child
@@ -105,10 +95,6 @@ public final class NodeWeaveSupport implements NodeWeaveFacility {
   @Override
   public Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, Object... args) throws GenerationException {
     TemplateDeclaration templateDeclarationInstance = myEnv.loadTemplateDeclaration(templateDeclaration, myTemplateNode, myTemplateContext, args);
-    if (templateDeclarationInstance instanceof TemplateDeclarationWeavingAware) {
-      // compatibility
-      return ((TemplateDeclarationWeavingAware) templateDeclarationInstance).weave(myEnv, myTemplateContext, myWeaveContext.getContextNode());
-    }
     if (templateDeclarationInstance != null /*templateDeclarationInstance instanceof TemplateDeclarationWeavingAware2*/) {
       return templateDeclarationInstance.weave(myWeaveContext, this);
     }

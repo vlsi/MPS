@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.text.rt;
 
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -28,15 +26,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
  * @since 3.3
  */
 public interface TextGenAspectDescriptor extends ILanguageAspect {
-  /**
-   * @param concept input kind for textgen
-   * @return descriptor for the concept, or <code>null</code> if this aspect knows nothing about the concept
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  @Nullable
-  TextGenDescriptor getDescriptor(@NotNull SConceptId concept);
-
   @Nullable
   TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept);
 }

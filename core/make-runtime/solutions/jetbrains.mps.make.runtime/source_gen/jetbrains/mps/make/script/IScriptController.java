@@ -6,12 +6,13 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.make.MakeSession;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
 
 public interface IScriptController {
   void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code);
   void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code);
-  @Deprecated
-  void setup(IPropertiesPool ppool);
   void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input);
   @Deprecated
   void useMonitor(ProgressMonitor monitor);
@@ -34,13 +35,65 @@ public interface IScriptController {
     public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
       code.invoke(cmon);
     }
-    @Override
-    public void setup(IPropertiesPool ppool) {
+    protected void setup(IPropertiesPool ppool) {
     }
     @Override
     public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
       setup(pp);
     }
+    @Override
+    public void useMonitor(ProgressMonitor monitor) {
+    }
+  }
+
+  /**
+   * Session-sensitive controller.
+   * The idea was, imo, to keep controller session-independent, but I can't find a way to pass MakeSession to individual
+   * targets without this change. Alternative is to change IScript, but it doesn't suggest a mechanism to pass MakeSession furher
+   * to the task's IJob, while IJobMonitor of the controller does. Now, I need a make session there, and don't want to spend time with IScript refactoring.
+   * XXX Nevertheless consider alternative IScript implementation with a mechanism to pass MakeSession to tasks. Script is truly session-sensitive, after all.
+   *     Even then this class makes sense with generic code to employ {@link jetbrains.mps.make.script.PropertyPoolInitializer } to set up tasks.
+   */
+  class Stub2 implements IScriptController {
+    private final MakeSession myMakeSession;
+    private final PropertyPoolInitializer[] myPoolInitializers;
+    private final IConfigMonitor myMonitor;
+
+    public Stub2(@NotNull MakeSession makeSession, PropertyPoolInitializer... poolInitializers) {
+      myMakeSession = makeSession;
+      myPoolInitializers = poolInitializers;
+      // FIXME identical to AbstractMakeService.DefaultMonitor, but can't re-use here due to dependency direction. Refactor 
+      myMonitor = new IConfigMonitor.Stub() {
+        @Override
+        public void reportFeedback(IFeedback fdbk) {
+          new MessageFeedbackStrategy(myMakeSession.getMessageHandler()).reportFeedback(fdbk);
+        }
+
+        @Override
+        public <T extends IOption> T relayQuery(IQuery<T> query) {
+          return query.defaultOption();
+        }
+      };
+    }
+
+    @Override
+    public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
+      code.invoke(myMonitor);
+    }
+    @Override
+    public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
+      code.invoke(myMonitor);
+    }
+    @Override
+    public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
+      if (myPoolInitializers == null) {
+        return;
+      }
+      for (PropertyPoolInitializer ppi : myPoolInitializers) {
+        ppi.populate(pp);
+      }
+    }
+    @Deprecated
     @Override
     public void useMonitor(ProgressMonitor monitor) {
     }

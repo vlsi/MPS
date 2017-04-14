@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,13 +22,13 @@ import jetbrains.mps.make.ModuleAnalyzer.ModuleAnalyzerResult;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.Priority;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
+import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.eclipse.jdt.internal.compiler.CompilationResult;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -187,7 +187,7 @@ class InternalJavaCompiler {
     tracer.start(CALCULATING_DEPS_MSG, 1);
     try {
       Set<String> classpath = JavaModuleOperations.collectCompileClasspath(modules, true);
-      tracer.info("ClassPath: " + classpath);
+      tracer.msg("ClassPath: " + classpath, Priority.DEBUG);
       return JavaModuleOperations.createClassPathItem(classpath, ModuleMaker.class.getName());
     } finally {
       tracer.done(1);

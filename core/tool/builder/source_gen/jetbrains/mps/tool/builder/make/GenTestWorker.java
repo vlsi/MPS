@@ -25,17 +25,18 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.make.script.IPropertiesPool;
-import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.make.resources.IResource;
+import java.util.ArrayList;
+import jetbrains.mps.make.script.PropertyPoolInitializer;
+import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.internal.make.cfg.MakeFacetInitializer;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.tool.builder.unittest.UnitTestListener;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
+import jetbrains.mps.make.script.IScriptController;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import java.util.concurrent.ExecutionException;
@@ -47,6 +48,7 @@ import jetbrains.mps.project.AbstractModule;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -58,7 +60,6 @@ import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.tool.common.TeamCityMessageFormat;
 import jetbrains.mps.tool.common.ScriptProperties;
-import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.tool.builder.unittest.UnitTestAdapter;
@@ -67,8 +68,6 @@ import jetbrains.mps.tool.builder.unittest.XmlTestReporter;
 import jetbrains.mps.tool.builder.unittest.ConsoleTestReporter;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
-import jetbrains.mps.make.script.IJobMonitor;
-import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.progress.ProgressMonitorBase;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
@@ -178,40 +177,48 @@ public class GenTestWorker extends GeneratorWorker {
         return scriptBuilder.toScript();
       }
     };
-    // FIXME feedback reported through IConfigMonitor.Stub goes to nowhere 
-    IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new GenTestWorker.MyJobMonitor(new GenTestWorker.MyProgress(startTestFormat, finishTestFormat))) {
-      @Override
-      public void setup(IPropertiesPool ppool, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
-        super.setup(ppool, toExecute, input);
-        new MakeFacetInitializer().setPathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
-          public IFile invoke(String path) {
-            return tmpFile(path);
-          }
-        }).populate(ppool);
-        new TextGenFacetInitializer(ms).failNoTextGen(false).populate(ppool);
-
-        Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>> dparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>>) ppool.properties(new ITarget.Name("jetbrains.mps.tool.gentest.Diff.diff"), Object.class);
-        if (dparams != null && isShowDiff()) {
-          dparams._0(new _FunctionTypes._return_P1_E0<String, IFile>() {
-            public String invoke(IFile f) {
-              return pathOfTmpFile(f);
-            }
-          });
-          dparams._1(myWhatToDo.getExcludedFromDiffFiles());
-        }
-
-        if (isInvokeTestsSet()) {
-          Tuples._1<UnitTestListener> testParams = (Tuples._1<UnitTestListener>) ppool.properties(new ITarget.Name("jetbrains.mps.tool.gentest.Test.runTests"), Object.class);
-          testParams._0(new GenTestWorker.MyUnitTestAdapter());
-        }
-        myReporter.finishRun();
-        myReporter.startRun(GenTestWorker.this.myWhatToDo.getProperty("ant.project.name"));
-        new JavaCompileFacetInitializer().setJavaCompileOptions(myJavaCompilerOptions).populate(ppool);
-
+    ArrayList<PropertyPoolInitializer> ppi = new ArrayList<PropertyPoolInitializer>();
+    ppi.add(new GenerateFacetInitializer(ms));
+    ppi.add(new MakeFacetInitializer().setPathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
+      public IFile invoke(String path) {
+        return tmpFile(path);
       }
-    };
+    }));
+    ppi.add(new TextGenFacetInitializer(ms).failNoTextGen(false));
+    if (isShowDiff()) {
+      PropertyPoolInitializer diffFacetInit = new PropertyPoolInitializer() {
+        public void populate(IPropertiesPool ppool) {
+          Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>> dparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>>) ppool.properties(new ITarget.Name("jetbrains.mps.tool.gentest.Diff.diff"), Object.class);
+          if (dparams != null) {
+            dparams._0(new _FunctionTypes._return_P1_E0<String, IFile>() {
+              public String invoke(IFile f) {
+                return pathOfTmpFile(f);
+              }
+            });
+            dparams._1(myWhatToDo.getExcludedFromDiffFiles());
+          }
+        }
+      };
+      ppi.add(diffFacetInit);
+    }
+    if (isInvokeTestsSet()) {
+      PropertyPoolInitializer testFacetInit = new PropertyPoolInitializer() {
+        public void populate(IPropertiesPool ppool) {
+          Tuples._1<UnitTestListener> testParams = (Tuples._1<UnitTestListener>) ppool.properties(new ITarget.Name("jetbrains.mps.tool.gentest.Test.runTests"), Object.class);
+          if (testParams != null) {
+            testParams._0(new GenTestWorker.MyUnitTestAdapter());
+          }
+        }
+      };
+      ppi.add(testFacetInit);
+    }
+    ppi.add(new JavaCompileFacetInitializer().setJavaCompileOptions(myJavaCompilerOptions));
+
+    IScriptController ctl = new IScriptController.Stub2(ms, ppi.toArray(new PropertyPoolInitializer[ppi.size()]));
     try {
       BuildMakeService bms = new BuildMakeService();
+      myReporter.finishRun();
+      myReporter.startRun(myWhatToDo.getProperty("ant.project.name"));
       Future<IResult> result = bms.make(ms, collectResources(project, go.getModules(), go.getModels()), null, ctl, new GenTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat));
       if (!(result.get().isSucessful())) {
         myErrors.add("Make was not successful " + result.get().output());
@@ -253,6 +260,7 @@ public class GenTestWorker extends GeneratorWorker {
   }
 
   private void reportIfStartsWith(String prefix, String work, _FunctionTypes._void_P1_E0<? super String> format) {
+    // This logic looks flawed (how come test name ends with ".Test.Generating"), but as long as GenTestWorker doesn't work, I can't figure out what's right 
     if (work != null && work.startsWith(prefix)) {
       format.invoke(work.substring(prefix.length()) + ".Test." + ((prefix == null ? null : prefix.trim())));
     }
@@ -372,32 +380,7 @@ public class GenTestWorker extends GeneratorWorker {
     GenTestWorker generator = new GenTestWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     generator.workFromMain();
   }
-  private class MyProgress extends IProgress.Stub {
-    private final _FunctionTypes._void_P1_E0<? super String> myStartTestFormat;
-    private final _FunctionTypes._void_P1_E0<? super String> myFinishTestFormat;
-    public MyProgress(_FunctionTypes._void_P1_E0<? super String> startTestFormat, _FunctionTypes._void_P1_E0<? super String> finishTestFormat) {
-      myStartTestFormat = startTestFormat;
-      myFinishTestFormat = finishTestFormat;
-    }
-    @Override
-    public void beginWork(String name, int estimate, int ofTotal) {
-      reportIfStartsWith("Generating ", name, MyProgress.this.myStartTestFormat);
-    }
-    @Override
-    public void finishWork(String name) {
-      reportIfStartsWith("Generating ", name, MyProgress.this.myFinishTestFormat);
-    }
-    @Override
-    public void advanceWork(String name, int done, String comment) {
-      if (comment != null) {
-        _FunctionTypes._void_P1_E0<? super String> format = MyProgress.this.myStartTestFormat;
-        if (done > 1) {
-          format = MyProgress.this.myFinishTestFormat;
-        }
-        reportIfStartsWith("Diffing ", name + " " + comment, format);
-      }
-    }
-  }
+
   private class MyMessageHandler implements IMessageHandler {
     public MyMessageHandler() {
     }
@@ -407,6 +390,21 @@ public class GenTestWorker extends GeneratorWorker {
         case ERROR:
           GenTestWorker.this.error(msg.getText());
           myReporter.errorLine("[ERROR] " + msg.getText());
+          // next code used to be in JobMonitor.reportFeedback, but as long as all feedback is piped to MyMessageHandler,  
+          // the code relocated here, and is activated only when there's active test (although I doubt getCurrentTestName() ever gives 
+          // reasonable value - mechanism to find out current test looks quite odd, see reportIfStartsWith() 
+          String test = myReporter.getCurrentTestName();
+          if (test != null) {
+            Throwable thr = msg.getException();
+            String text = msg.getText();
+            String details = (thr == null ? "(no details)" : String.valueOf(MpsWorker.extractStackTrace(thr)));
+            int eol = text.indexOf("\n");
+            if (eol >= 0) {
+              details = text.substring(eol + 1) + "\n" + details;
+              text = text.substring(0, eol);
+            }
+            myReporter.testFailed(test, text, details);
+          }
           break;
         case WARNING:
           GenTestWorker.this.warning(msg.getText());
@@ -420,6 +418,7 @@ public class GenTestWorker extends GeneratorWorker {
       }
     }
   }
+
   private class MyUnitTestAdapter extends UnitTestAdapter {
     private MyUnitTestAdapter() {
     }
@@ -451,6 +450,7 @@ public class GenTestWorker extends GeneratorWorker {
       }
     }
   }
+
   private class MyReporter {
     private ITestReporter testReporter;
     private String currentTestName;
@@ -556,29 +556,7 @@ public class GenTestWorker extends GeneratorWorker {
       }
     }
   }
-  private class MyJobMonitor extends IJobMonitor.Stub {
-    public MyJobMonitor(IProgress pstub) {
-      super(pstub);
-    }
-    @Override
-    public void reportFeedback(IFeedback fdbk) {
-      if (fdbk.getSeverity() == IFeedback.Severity.ERROR) {
-        String test = myReporter.getCurrentTestName();
-        if (test == null) {
-          test = "unknown";
-        }
-        Throwable thr = fdbk.getException();
-        String msg = fdbk.getMessage();
-        String details = (thr == null ? "(no details)" : String.valueOf(MpsWorker.extractStackTrace(thr)));
-        int eol = msg.indexOf("\n");
-        if (eol >= 0) {
-          details = msg.substring(eol + 1) + "\n" + details;
-          msg = msg.substring(0, eol);
-        }
-        myReporter.testFailed(test, msg, details);
-      }
-    }
-  }
+
   private class MyProgressMonitorBase extends ProgressMonitorBase {
     private String prevTitle;
     private final _FunctionTypes._void_P1_E0<? super String> myStartTestFormat;

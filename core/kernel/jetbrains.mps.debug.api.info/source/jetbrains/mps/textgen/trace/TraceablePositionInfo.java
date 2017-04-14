@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.textgen.trace;
 
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -64,12 +63,5 @@ public class TraceablePositionInfo extends PositionInfo {
       return 0;
     }
     return -1;
-  }
-
-  @Nullable
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public String getConceptFqName() {
-    return myConcept.getQualifiedName();
   }
 }

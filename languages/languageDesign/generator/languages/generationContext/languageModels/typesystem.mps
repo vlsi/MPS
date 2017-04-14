@@ -1139,31 +1139,6 @@
       <ref role="1YaFvo" to="tpf3:hHr8y2F" resolve="GenerationContextOp_GetInputModel" />
     </node>
   </node>
-  <node concept="1YbPZF" id="$lsh0EhByW">
-    <property role="TrG5h" value="typeof_GenerationContextOp_GetInvocationContext" />
-    <node concept="3clFbS" id="$lsh0EhByX" role="18ibNy">
-      <node concept="1Z5TYs" id="$lsh0EhB$7" role="3cqZAp">
-        <node concept="mw_s8" id="$lsh0EhB$8" role="1ZfhKB">
-          <node concept="2c44tf" id="$lsh0EhB$9" role="mwGJk">
-            <node concept="3uibUv" id="$lsh0EhBLZ" role="2c44tc">
-              <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
-            </node>
-          </node>
-        </node>
-        <node concept="mw_s8" id="$lsh0EhB$b" role="1ZfhK$">
-          <node concept="1Z2H0r" id="$lsh0EhB$c" role="mwGJk">
-            <node concept="1YBJjd" id="$lsh0EhB$d" role="1Z2MuG">
-              <ref role="1YBMHb" node="$lsh0EhByZ" resolve="operation" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="$lsh0EhByZ" role="1YuTPh">
-      <property role="TrG5h" value="operation" />
-      <ref role="1YaFvo" to="tpf3:hO2dfoG" resolve="GenerationContextOp_GetInvocationContext" />
-    </node>
-  </node>
   <node concept="1YbPZF" id="$lsh0EhBMC">
     <property role="TrG5h" value="typeof_GenerationContextOp_GetOriginalInputModel" />
     <node concept="3clFbS" id="$lsh0EhBMD" role="18ibNy">

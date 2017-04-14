@@ -16,7 +16,6 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.DefaultTraceInfoProvider" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.TraceInfoProvider" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.UseCarefully" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>

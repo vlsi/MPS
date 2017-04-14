@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 
@@ -98,10 +97,6 @@ public class TestContext extends Context {
       throw new UnsupportedOperationException();
     }
     @Override
-    public IOperationContext getInvocationContext() {
-      throw new UnsupportedOperationException();
-    }
-    @Override
     public String createUniqueName(String string, SNode node) {
       throw new UnsupportedOperationException();
     }
@@ -119,10 +114,6 @@ public class TestContext extends Context {
     }
     @Override
     public SNode getOutputNodeByInputNodeAndMappingLabel(SNode node, String string) {
-      throw new UnsupportedOperationException();
-    }
-    @Override
-    public SNode getOutputNodeByMappingLabel(String string) {
       throw new UnsupportedOperationException();
     }
     @Override

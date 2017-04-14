@@ -27,8 +27,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -44,12 +47,10 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
-    IChildNodeSetter setter = new DefaultChildNodeSetter(linkDeclaration);
-    final SNode defaultConceptOfChild = CellUtil.getLinkDeclarationTarget(linkDeclaration);
-    if (defaultConceptOfChild == null) {
-      return Collections.emptyList();
-    }
+    SContainmentLink containmentLink = (SContainmentLink) cellContext.get(AggregationCellContext.LINK);
+    SAbstractConcept defaultConceptOfChild = (SAbstractConcept) cellContext.get(AggregationCellContext.CHILD_CONCEPT);
+
+    IChildNodeSetter setter = new DefaultChildNodeSetter(containmentLink.getDeclarationNode());
     final SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 
     final IOperationContext context = editorContext.getOperationContext();
@@ -91,9 +92,16 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
     return false;
   }
 
+  @Deprecated
+  @ToRemove(version = 3.5)
   protected SNode customCreateChildNode(Object parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model,
-      IOperationContext context, EditorContext editorContext) {
+                                        IOperationContext context, EditorContext editorContext) {
     return null;
+  }
+
+  protected SNode customCreateChildNode(Object parameterObject, SNode node, SNode currentChild, SAbstractConcept defaultChildConcept, SModel model,
+                                        IOperationContext context, EditorContext editorContext) {
+    return customCreateChildNode(parameterObject, node, currentChild, defaultChildConcept.getDeclarationNode(), model, context, editorContext);
   }
 
   protected String getMatchingText(Object parameterObject) {
@@ -111,12 +119,22 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
     return "";
   }
 
-  protected abstract List createParameterObjects(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext operationContext,
-      EditorContext editorContext);
+  @Deprecated
+  @ToRemove(version = 3.5)
+  protected List createParameterObjects(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext operationContext,
+                                        EditorContext editorContext) {
+    return createParameterObjects(node, currentChild, MetaAdapterByDeclaration.getConcept(defaultConceptOfChild), operationContext, editorContext);
+  }
+
+  protected List createParameterObjects(SNode node, SNode currentChild, SAbstractConcept defaultConceptOfChild, IOperationContext operationContext,
+                                        EditorContext editorContext) {
+    //todo remove body after 3.5, rewrite generator (affects implementation only)
+    return createParameterObjects(node, currentChild, defaultConceptOfChild.getDeclarationNode(), operationContext, editorContext);
+  }
 
   /**
    * @deprecated This method was used only to distinct concept declaration reference and concept that is given as node.
-   *             Now we should use truly concepts in parameter objects, not concept nodes.
+   * Now we should use truly concepts in parameter objects, not concept nodes.
    */
   @Deprecated
   @ToRemove(version = 3.5)

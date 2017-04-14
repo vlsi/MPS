@@ -28,7 +28,6 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.SourceRoot;
-import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -56,8 +55,6 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
-
-import java.util.Objects;
 
 /**
  * Created by danilla on 28/10/15.
@@ -129,10 +126,6 @@ public class MakeDirAModel extends NewModelActionBase {
 
   private EditableSModel createModel(final AnActionEvent e) {
     return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).executeCommand(() -> {
-      SourceRoot sourceRoot = findSourceRootWithAName();
-      if (sourceRoot == null) {
-        throw new IllegalStateException("Source root with the name " + myRootForModel + " could not be found");
-      }
       EditableSModel model = null;
       try {
         SModelName newModelName = new SModelName(myModelPrefix);
@@ -143,7 +136,7 @@ public class MakeDirAModel extends NewModelActionBase {
         VirtualFile targetFile = psiDir.getVirtualFile();
         DataSourceFactoryFromName dataSourceFactory = createDataSourceFactory(targetFile);
         ModelFactory modelFactory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
-        model = (EditableSModel) myModelRoot.createModel(newModelName, sourceRoot, dataSourceFactory, modelFactory);
+        model = (EditableSModel) myModelRoot.createModel(newModelName, mySourceRoot, dataSourceFactory, modelFactory);
       } catch (ModelCannotBeCreatedException ex) {
         LOG.error("", ex);
         return null;
@@ -177,17 +170,6 @@ public class MakeDirAModel extends NewModelActionBase {
         return new FilePerRootDataSource(folder, modelRoot);
       }
     };
-  }
-
-  @Nullable
-  private SourceRoot findSourceRootWithAName() {
-    SourceRoot result = null;
-    for (SourceRoot sourceRoot : myModelRoot.getSourceRoots(SourceRootKinds.SOURCES)) {
-      if (Objects.equals(sourceRoot.getAbsolutePath().getPath(), myRootForModel)) {
-        result = sourceRoot;
-      }
-    }
-    return result;
   }
 
   @Override

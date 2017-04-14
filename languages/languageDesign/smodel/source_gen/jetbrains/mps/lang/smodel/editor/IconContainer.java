@@ -5,10 +5,10 @@ package jetbrains.mps.lang.smodel.editor;
 import jetbrains.mps.smodel.runtime.IconResource;
 
 public class IconContainer {
-  protected static IconResource RESOURCE_a0a9e2b = new IconResource("lang-rt.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a1a9e2b = new IconResource("solution.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a2a9e2b = new IconResource("language.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a3a9e2b = new IconResource("generator.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a4a9e2b = new IconResource("devkit.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a9e2b_0 = new IconResource("language.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a9e2b = new IconResource("language.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a9e2b_0 = new IconResource("lang-rt.png", IconContainer.class);
 }

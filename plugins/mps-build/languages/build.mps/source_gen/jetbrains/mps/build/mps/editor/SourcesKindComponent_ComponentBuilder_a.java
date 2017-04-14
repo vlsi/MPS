@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
@@ -78,7 +78,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
     public BuildMps_Solution_generic_cellMenu_qubgco_a0a() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return Sequence.fromIterable(SEnumOperations.getMembers(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build", 0x48d5d03db92974f7L, "BuildSource_JavaContentFolderKind")).toListSequence();
+      return CollectionSequence.fromCollection(SEnumOperations.getMembers(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build", 0x48d5d03db92974f7L, "BuildSource_JavaContentFolderKind")).toListSequence();
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SEnumerationLiteral) parameterObject, node, model, operationContext, editorContext);
@@ -139,7 +139,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
     public BuildMps_Solution_generic_cellMenu_qubgco_a0c0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return Sequence.fromIterable(SEnumOperations.getMembers(0xcf935df46994e9cL, 0xa132fa109541cba3L, "jetbrains.mps.build.mps", 0x3be316509db4513L, "BuildMps_ModuleSourcesKind")).toListSequence();
+      return CollectionSequence.fromCollection(SEnumOperations.getMembers(0xcf935df46994e9cL, 0xa132fa109541cba3L, "jetbrains.mps.build.mps", 0x3be316509db4513L, "BuildMps_ModuleSourcesKind")).toListSequence();
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SEnumerationLiteral) parameterObject, node, model, operationContext, editorContext);

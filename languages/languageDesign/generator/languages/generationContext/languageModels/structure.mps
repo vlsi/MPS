@@ -404,20 +404,6 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="hO2dfoG">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="generator invocation context (IOperationContext)" />
-    <property role="TrG5h" value="GenerationContextOp_GetInvocationContext" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="invocation context" />
-    <property role="EcuMT" value="1224102704684" />
-    <ref role="1TJDcQ" node="hHiwH3j" resolve="GenerationContextOp_Base" />
-    <node concept="asaX9" id="7cQeykxEBtz" role="lGtFl">
-      <property role="YLPcu" value="MPS 3.3" />
-      <property role="YLQ7P" value="IOperationContext is deprecated and shall cease soon, this accessor will second it." />
-    </node>
-  </node>
   <node concept="1TIwiD" id="hT2$i9n">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />

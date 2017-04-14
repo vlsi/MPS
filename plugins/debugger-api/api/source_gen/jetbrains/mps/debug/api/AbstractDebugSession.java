@@ -9,7 +9,6 @@ import java.util.concurrent.atomic.AtomicReference;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.textgen.trace.TraceInfoProvider;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -99,7 +98,6 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
   public void removeChangeListener(@NotNull SessionChangeListener listener) {
     myListeners.remove(listener);
   }
-  @UseCarefully
   public void trySetState(State oldState, State newState) {
     // use from AbstractUiState only 
     if (myUiState.compareAndSet(oldState, newState)) {

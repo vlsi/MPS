@@ -27,6 +27,10 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -41,9 +45,9 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
-    IChildNodeSetter setter = new DefaultChildNodeSetter(linkDeclaration);
-    final SNode defaultConceptOfChild = CellUtil.getLinkDeclarationTarget(linkDeclaration);
+    SContainmentLink containmentLink = (SContainmentLink) cellContext.get(AggregationCellContext.LINK);
+    SAbstractConcept defaultConceptOfChild = (SAbstractConcept) cellContext.get(AggregationCellContext.CHILD_CONCEPT);
+    IChildNodeSetter setter = new DefaultChildNodeSetter(containmentLink.getDeclarationNode());
     final SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 
     final IOperationContext context = editorContext.getOperationContext();
@@ -79,8 +83,18 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
     return false;
   }
 
-  protected abstract SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model,
-      IOperationContext operationContext, EditorContext editorContext);
+  @Deprecated
+  @ToRemove(version = 3.5)
+  protected SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model,
+      IOperationContext operationContext, EditorContext editorContext){
+    return customCreateChildNode(node, currentChild, MetaAdapterByDeclaration.getConcept(defaultConceptOfChild), model, operationContext, editorContext);
+  }
+
+  protected SNode customCreateChildNode(SNode node, SNode currentChild, SAbstractConcept defaultChildConcept, SModel model,
+                                         IOperationContext operationContext, EditorContext editorContext){
+    //todo remove body after 3.3, review callees, rewrite generator
+    return customCreateChildNode(node, currentChild, defaultChildConcept.getDeclarationNode(), model, operationContext, editorContext);
+  }
 
   protected abstract String getMatchingText();
 

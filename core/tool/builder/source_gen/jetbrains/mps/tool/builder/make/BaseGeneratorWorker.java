@@ -13,10 +13,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.make.service.AbstractMakeService;
-import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
+import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
@@ -104,14 +103,9 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
     Iterable<MResource> resources = Sequence.fromIterable(collectResources(project, go)).toListSequence();
     myEnvironment.flushAllEvents();
     final MakeSession session = new MakeSession(project, myMessageHandler, true);
-    AbstractMakeService.DefaultMonitor defaultMonitor = new AbstractMakeService.DefaultMonitor(session);
-    IScriptController.Stub controller = new IScriptController.Stub(defaultMonitor, defaultMonitor) {
-      @Override
-      public void setup(IPropertiesPool ppool) {
-        new JavaCompileFacetInitializer().skipCompilation(mySkipCompilation).setJavaCompileOptions(myJavaCompilerOptions).populate(ppool);
-        new TextGenFacetInitializer(session).populate(ppool);
-      }
-    };
+    GenerateFacetInitializer gfi = new GenerateFacetInitializer(session);
+    JavaCompileFacetInitializer jcfi = new JavaCompileFacetInitializer().skipCompilation(mySkipCompilation).setJavaCompileOptions(myJavaCompilerOptions);
+    IScriptController controller = new IScriptController.Stub2(session, gfi, jcfi, new TextGenFacetInitializer(session));
     Future<IResult> res = new BuildMakeService().make(session, resources, null, controller, new EmptyProgressMonitor());
 
     try {

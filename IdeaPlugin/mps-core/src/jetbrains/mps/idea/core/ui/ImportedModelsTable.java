@@ -42,6 +42,10 @@ public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
 
   private EditableSModel myModelDescriptor;
 
+  public ImportedModelsTable() {
+    super(true);
+  }
+
   public void setDescriptor(EditableSModel descriptor) {
     myModelDescriptor = descriptor;
   }

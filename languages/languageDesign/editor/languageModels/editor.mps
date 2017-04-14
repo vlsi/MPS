@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
@@ -25277,13 +25277,13 @@
     <property role="3GE5qa" value="QueryFunction" />
     <ref role="aqKnT" to="tpc2:601LQojMcdN" resolve="QueryFunction_RefPresentation" />
   </node>
-  <node concept="3p36aQ" id="5c5foM6v03Z">
-    <property role="3GE5qa" value="CellMenu" />
-    <ref role="aqKnT" to="tpc2:794AQ2t3BuV" resolve="CellMenuPart_ApplySideTransforms" />
-  </node>
   <node concept="3p36aQ" id="5c5foM6uZaj">
     <property role="3GE5qa" value="Stylesheet" />
     <ref role="aqKnT" to="tpc2:hEV7CQ5" resolve="SideTransformAnchorTagStyleClassItem" />
+  </node>
+  <node concept="3p36aQ" id="5c5foM6v03Z">
+    <property role="3GE5qa" value="CellMenu" />
+    <ref role="aqKnT" to="tpc2:794AQ2t3BuV" resolve="CellMenuPart_ApplySideTransforms" />
   </node>
   <node concept="PKFIW" id="7WoWfGXKj7A">
     <property role="3GE5qa" value="Menu.Substitute" />
@@ -25318,6 +25318,9 @@
       <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
     </node>
+  </node>
+  <node concept="3p36aQ" id="31F3x8CXY$Y">
+    <ref role="aqKnT" to="tpc2:31F3x8CXY$U" resolve="CellMenuPart_ReplaceChild_defaultChildConcept" />
   </node>
 </model>
 

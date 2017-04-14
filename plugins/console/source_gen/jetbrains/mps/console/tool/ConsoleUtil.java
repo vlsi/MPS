@@ -12,11 +12,6 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.make.script.IOption;
-import jetbrains.mps.make.script.IQuery;
-import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
@@ -41,20 +36,13 @@ public class ConsoleUtil {
     }
 
     IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
-    IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
-      @Override
-      public <T extends IOption> T relayQuery(IQuery<T> query) {
-        return query.defaultOption();
-      }
-    }, new IJobMonitor.Stub());
-
     final MessagesViewTool mvt = project.getComponent(MessagesViewTool.class);
     final String messagesListName = "Console Make";
     mvt.getAvailableList(messagesListName, true).setWarningsEnabled(false);
     mvt.getAvailableList(messagesListName, true).setInfoEnabled(false);
     MakeSession session = new MakeSession(project, mvt.newHandler(messagesListName), true);
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).resources(false), scr, ctl);
+      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).resources(false), scr);
       try {
         return future.get().isSucessful();
       } catch (InterruptedException e) {

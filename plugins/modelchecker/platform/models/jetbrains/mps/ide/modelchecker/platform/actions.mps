@@ -66,10 +66,10 @@
     <import index="gsia" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.event(JDK/)" />
     <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
     <import index="yctd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.findUsages(MPS.Core/)" />
-    <import index="k4i4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)" />
     <import index="zavc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.messageTargets(MPS.Core/)" />
+    <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="k4i4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/)" />
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
@@ -8111,6 +8111,110 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="4Va90T4Aps0" role="3cqZAp">
+          <node concept="3SKdUq" id="4Va90T4Aps1" role="3SKWNk">
+            <property role="3SKdUp" value="Select all fixable issues" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4Va90T4Aps2" role="3cqZAp">
+          <node concept="3cpWsn" id="4Va90T4Aps3" role="3cpWs9">
+            <property role="TrG5h" value="issuesToFix" />
+            <node concept="_YKpA" id="4Va90T4Aps4" role="1tU5fm">
+              <node concept="3uibUv" id="4Va90T4Aps5" role="_ZDj9">
+                <ref role="3uigEE" node="3etVqSRKzT$" resolve="ModelCheckerIssue" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="4Va90T4Am78" role="33vP2m">
+              <node concept="2ShNRf" id="4Va90T4A2cY" role="2Oq$k0">
+                <node concept="1pGfFk" id="4Va90T4AlTR" role="2ShVmc">
+                  <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess)" resolve="ModelAccessHelper" />
+                  <node concept="2OqwBi" id="4Va90T4AlU9" role="37wK5m">
+                    <node concept="37vLTw" id="4Va90T4AlUa" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2K4NeDxB5Kx" resolve="myProject" />
+                    </node>
+                    <node concept="liA8E" id="4Va90T4AlUb" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="4Va90T4AnlS" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+                <node concept="1bVj0M" id="4Va90T4Ao9F" role="37wK5m">
+                  <node concept="3clFbS" id="4Va90T4Ao9G" role="1bW5cS">
+                    <node concept="3clFbF" id="4Va90T4Apj5" role="3cqZAp">
+                      <node concept="1rXfSq" id="4Va90T4Apj4" role="3clFbG">
+                        <ref role="37wK5l" node="3etVqSRRNwd" resolve="getIssuesToFix" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="3etVqSRRNuH" role="3cqZAp">
+          <node concept="3clFbS" id="3etVqSRRNuI" role="3clFbx">
+            <node concept="3clFbF" id="3etVqSRRNuJ" role="3cqZAp">
+              <node concept="2YIFZM" id="3etVqSRRNuK" role="3clFbG">
+                <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                <ref role="37wK5l" to="jkm4:~Messages.showInfoMessage(java.lang.String,java.lang.String):void" resolve="showInfoMessage" />
+                <node concept="Xl_RD" id="3etVqSRRNuL" role="37wK5m">
+                  <property role="Xl_RC" value="There are no quick fixes for current problems" />
+                </node>
+                <node concept="Xl_RD" id="3etVqSRRNuM" role="37wK5m">
+                  <property role="Xl_RC" value="No Quick Fixes" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="3etVqSRRNuN" role="3cqZAp" />
+          </node>
+          <node concept="2OqwBi" id="3etVqSRRNuO" role="3clFbw">
+            <node concept="37vLTw" id="4Va90T4Ax7u" role="2Oq$k0">
+              <ref role="3cqZAo" node="4Va90T4Aps3" />
+            </node>
+            <node concept="1v1jN8" id="3etVqSRRNuQ" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="3etVqSRRNuR" role="3cqZAp">
+          <node concept="3cpWsn" id="3etVqSRRNuS" role="3cpWs9">
+            <property role="TrG5h" value="dialogAnswer" />
+            <node concept="10Oyi0" id="3etVqSRRNuT" role="1tU5fm" />
+            <node concept="2YIFZM" id="3etVqSRRNuU" role="33vP2m">
+              <ref role="37wK5l" to="jkm4:~Messages.showYesNoDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):int" resolve="showYesNoDialog" />
+              <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+              <node concept="37vLTw" id="2K4NeDxBb$x" role="37wK5m">
+                <ref role="3cqZAo" node="3etVqSRRNr6" />
+              </node>
+              <node concept="3cpWs3" id="3etVqSRRNuZ" role="37wK5m">
+                <node concept="Xl_RD" id="3etVqSRRNv0" role="3uHU7w">
+                  <property role="Xl_RC" value="You may not be able to undo it. Are you sure?" />
+                </node>
+                <node concept="Xl_RD" id="3etVqSRRNv1" role="3uHU7B">
+                  <property role="Xl_RC" value="You are going to remove undeclared properties, children from nodes and resolve references. " />
+                </node>
+              </node>
+              <node concept="Xl_RD" id="3etVqSRRNv2" role="37wK5m">
+                <property role="Xl_RC" value="Warning" />
+              </node>
+              <node concept="10Nm6u" id="3etVqSRRNv3" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="3etVqSRRNv4" role="3cqZAp">
+          <node concept="3clFbS" id="3etVqSRRNv5" role="3clFbx">
+            <node concept="3cpWs6" id="3etVqSRRNv6" role="3cqZAp" />
+          </node>
+          <node concept="3y3z36" id="3etVqSRRNv7" role="3clFbw">
+            <node concept="3cmrfG" id="3etVqSRRNv8" role="3uHU7w">
+              <property role="3cmrfH" value="0" />
+            </node>
+            <node concept="37vLTw" id="3GM_nagTvnm" role="3uHU7B">
+              <ref role="3cqZAo" node="3etVqSRRNuS" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4Va90T4Apq0" role="3cqZAp" />
         <node concept="3clFbF" id="3etVqSRRNuu" role="3cqZAp">
           <node concept="2OqwBi" id="3etVqSRRNuv" role="3clFbG">
             <node concept="2OqwBi" id="2K4NeDxBmie" role="2Oq$k0">
@@ -8125,88 +8229,6 @@
               <ref role="37wK5l" to="lui2:~ModelAccess.executeCommandInEDT(java.lang.Runnable):void" resolve="executeCommandInEDT" />
               <node concept="1bVj0M" id="3etVqSRRNuy" role="37wK5m">
                 <node concept="3clFbS" id="3etVqSRRNuz" role="1bW5cS">
-                  <node concept="3SKdUt" id="3etVqSRRNu$" role="3cqZAp">
-                    <node concept="3SKdUq" id="3etVqSRRNu_" role="3SKWNk">
-                      <property role="3SKdUp" value="Select all fixable issues" />
-                    </node>
-                  </node>
-                  <node concept="3cpWs8" id="3etVqSRRNuA" role="3cqZAp">
-                    <node concept="3cpWsn" id="3etVqSRRNuB" role="3cpWs9">
-                      <property role="TrG5h" value="issuesToFix" />
-                      <node concept="_YKpA" id="3etVqSRRNuC" role="1tU5fm">
-                        <node concept="3uibUv" id="3etVqSRRNuD" role="_ZDj9">
-                          <ref role="3uigEE" node="3etVqSRKzT$" resolve="ModelCheckerIssue" />
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="3etVqSRRNuE" role="33vP2m">
-                        <node concept="liA8E" id="3etVqSRRNuF" role="2OqNvi">
-                          <ref role="37wK5l" node="3etVqSRRNwd" resolve="getIssuesToFix" />
-                        </node>
-                        <node concept="Xjq3P" id="3etVqSRRNuG" role="2Oq$k0" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbJ" id="3etVqSRRNuH" role="3cqZAp">
-                    <node concept="3clFbS" id="3etVqSRRNuI" role="3clFbx">
-                      <node concept="3clFbF" id="3etVqSRRNuJ" role="3cqZAp">
-                        <node concept="2YIFZM" id="3etVqSRRNuK" role="3clFbG">
-                          <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-                          <ref role="37wK5l" to="jkm4:~Messages.showInfoMessage(java.lang.String,java.lang.String):void" resolve="showInfoMessage" />
-                          <node concept="Xl_RD" id="3etVqSRRNuL" role="37wK5m">
-                            <property role="Xl_RC" value="There are no quick fixes for current problems" />
-                          </node>
-                          <node concept="Xl_RD" id="3etVqSRRNuM" role="37wK5m">
-                            <property role="Xl_RC" value="No Quick Fixes" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3cpWs6" id="3etVqSRRNuN" role="3cqZAp" />
-                    </node>
-                    <node concept="2OqwBi" id="3etVqSRRNuO" role="3clFbw">
-                      <node concept="37vLTw" id="3GM_nagTuil" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3etVqSRRNuB" resolve="issuesToFix" />
-                      </node>
-                      <node concept="1v1jN8" id="3etVqSRRNuQ" role="2OqNvi" />
-                    </node>
-                  </node>
-                  <node concept="3cpWs8" id="3etVqSRRNuR" role="3cqZAp">
-                    <node concept="3cpWsn" id="3etVqSRRNuS" role="3cpWs9">
-                      <property role="TrG5h" value="dialogAnswer" />
-                      <node concept="10Oyi0" id="3etVqSRRNuT" role="1tU5fm" />
-                      <node concept="2YIFZM" id="3etVqSRRNuU" role="33vP2m">
-                        <ref role="37wK5l" to="jkm4:~Messages.showYesNoDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):int" resolve="showYesNoDialog" />
-                        <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-                        <node concept="37vLTw" id="2K4NeDxBb$x" role="37wK5m">
-                          <ref role="3cqZAo" node="3etVqSRRNr6" resolve="myIdeaProject" />
-                        </node>
-                        <node concept="3cpWs3" id="3etVqSRRNuZ" role="37wK5m">
-                          <node concept="Xl_RD" id="3etVqSRRNv0" role="3uHU7w">
-                            <property role="Xl_RC" value="You may not be able to undo it. Are you sure?" />
-                          </node>
-                          <node concept="Xl_RD" id="3etVqSRRNv1" role="3uHU7B">
-                            <property role="Xl_RC" value="You are going to remove undeclared properties, children from nodes and resolve references. " />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="3etVqSRRNv2" role="37wK5m">
-                          <property role="Xl_RC" value="Warning" />
-                        </node>
-                        <node concept="10Nm6u" id="3etVqSRRNv3" role="37wK5m" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbJ" id="3etVqSRRNv4" role="3cqZAp">
-                    <node concept="3clFbS" id="3etVqSRRNv5" role="3clFbx">
-                      <node concept="3cpWs6" id="3etVqSRRNv6" role="3cqZAp" />
-                    </node>
-                    <node concept="3y3z36" id="3etVqSRRNv7" role="3clFbw">
-                      <node concept="3cmrfG" id="3etVqSRRNv8" role="3uHU7w">
-                        <property role="3cmrfH" value="0" />
-                      </node>
-                      <node concept="37vLTw" id="3GM_nagTvnm" role="3uHU7B">
-                        <ref role="3cqZAo" node="3etVqSRRNuS" resolve="dialogAnswer" />
-                      </node>
-                    </node>
-                  </node>
                   <node concept="2$JKZl" id="3etVqSRRNva" role="3cqZAp">
                     <node concept="3clFbS" id="3etVqSRRNvb" role="2LFqv$">
                       <node concept="3cpWs8" id="3etVqSRRNvc" role="3cqZAp">
@@ -8224,8 +8246,8 @@
                         </node>
                         <node concept="2ShNRf" id="3etVqSRRNvi" role="2GsD0m">
                           <node concept="Tc6Ow" id="3etVqSRRNvj" role="2ShVmc">
-                            <node concept="37vLTw" id="3GM_nagTBSx" role="I$8f6">
-                              <ref role="3cqZAo" node="3etVqSRRNuB" resolve="issuesToFix" />
+                            <node concept="37vLTw" id="4Va90T4BckF" role="I$8f6">
+                              <ref role="3cqZAo" node="4Va90T4Aps3" resolve="issuesToFix" />
                             </node>
                             <node concept="3uibUv" id="3etVqSRRNvl" role="HW$YZ">
                               <ref role="3uigEE" node="3etVqSRKzT$" resolve="ModelCheckerIssue" />
@@ -8252,8 +8274,8 @@
                               </node>
                               <node concept="3clFbF" id="3etVqSRRNvv" role="3cqZAp">
                                 <node concept="2OqwBi" id="3etVqSRRNvw" role="3clFbG">
-                                  <node concept="37vLTw" id="3GM_nagTxfc" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="3etVqSRRNuB" resolve="issuesToFix" />
+                                  <node concept="37vLTw" id="4Va90T4Bd48" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4Va90T4Aps3" resolve="issuesToFix" />
                                   </node>
                                   <node concept="3dhRuq" id="3etVqSRRNvy" role="2OqNvi">
                                     <node concept="2GrUjf" id="3etVqSRRNvz" role="25WWJ7">

@@ -26,7 +26,7 @@ public class NewFile_Action extends BaseAction {
   public NewFile_Action() {
     super("File", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {

@@ -15,6 +15,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.JOptionPane;
 
 public class SetModuleFolder_Action extends BaseAction {
@@ -23,7 +24,7 @@ public class SetModuleFolder_Action extends BaseAction {
   public SetModuleFolder_Action() {
     super("Set Folder", "", ICON);
     this.setIsAlwaysVisible(true);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
@@ -74,16 +75,22 @@ public class SetModuleFolder_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ProjectPane pane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
+    final ProjectPane pane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
     String oldFolder = ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).getFolderFor(((SModule) MapSequence.fromMap(_params).get("module")));
-    String newFolder = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter new folder", oldFolder);
-    if (newFolder != null) {
-      if (newFolder.equals("")) {
-        newFolder = null;
+    final Wrappers._T<String> newFolder = new Wrappers._T<String>(JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter new folder", oldFolder));
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
+      public void run() {
+        if (newFolder.value != null) {
+          if (newFolder.value.equals("")) {
+            newFolder.value = null;
+          }
+          for (SModule m : pane.getSelectedModules()) {
+            ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(m, newFolder.value);
+          }
+        }
       }
-      for (SModule m : pane.getSelectedModules()) {
-        ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(m, newFolder);
-      }
+    });
+    if (newFolder.value != null) {
       pane.rebuild();
     }
   }

@@ -18,7 +18,7 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
@@ -55493,254 +55493,6 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3ASrrZeFifd">
-    <property role="TrG5h" value="DefaultEditor_ShowReflectiveEditorForAbstractChild" />
-    <property role="3GE5qa" value="defaultEditor" />
-    <property role="3YCmrE" value="show reflective editor action should force showing reflective editor even if the concept is abstract" />
-    <node concept="3clFbS" id="3ASrrZeFife" role="LjaKd">
-      <node concept="2HxZob" id="3ASrrZeFiff" role="3cqZAp">
-        <node concept="1iFQzN" id="3ASrrZeFifg" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
-        </node>
-      </node>
-    </node>
-    <node concept="3ChvRt" id="3ASrrZeFifh" role="LiRBU">
-      <node concept="3ChvRu" id="3owEWSkkffd" role="3ChbNt">
-        <node concept="3ChvRv" id="3owEWSkkffe" role="3ChvRr" />
-        <node concept="J$7tf" id="3owEWSkkfff" role="J$7P3" />
-        <node concept="3R5hHD" id="3owEWSkkffr" role="3R5kS3">
-          <node concept="LIFWc" id="3owEWSkkq3g" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="0" />
-            <property role="p6zMs" value="0" />
-            <property role="LIFWd" value="Error" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3ChvRt" id="3ASrrZeFifl" role="LiZbd">
-      <node concept="3ChvRu" id="3owEWSkkfdG" role="3ChbNt">
-        <node concept="3ChvRv" id="3owEWSkkfdH" role="3ChvRr" />
-        <node concept="J$7tf" id="3owEWSkkfdI" role="J$7P3" />
-        <node concept="3R5hHD" id="3owEWSkkmB2" role="3R5kS3">
-          <node concept="LIFWc" id="3owEWSkkmBk" role="lGtFl">
-            <property role="LIFWa" value="0" />
-            <property role="LIFWd" value="collection_0" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="3owEWSkkq3q">
-    <property role="TrG5h" value="DefaultEditor_ShowReflectiveEditorForInterfaceChild" />
-    <property role="3GE5qa" value="defaultEditor" />
-    <property role="3YCmrE" value="show reflective editor action should force showing reflective editor even if the concept is interface concept" />
-    <node concept="3clFbS" id="3owEWSkkq3r" role="LjaKd">
-      <node concept="2HxZob" id="3owEWSkkq3s" role="3cqZAp">
-        <node concept="1iFQzN" id="3owEWSkkq3t" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
-        </node>
-      </node>
-    </node>
-    <node concept="3ChvRt" id="3owEWSkkq3u" role="LiRBU">
-      <node concept="3ChvRu" id="3owEWSkkq3v" role="3ChbNt">
-        <node concept="3ChvRv" id="3owEWSkkq3w" role="3ChvRr" />
-        <node concept="J$7tf" id="3owEWSkkq3x" role="J$7P3">
-          <node concept="LIFWc" id="3owEWSkktvi" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="0" />
-            <property role="p6zMs" value="0" />
-            <property role="LIFWd" value="Error" />
-          </node>
-        </node>
-        <node concept="3R5hHD" id="3owEWSkkq3y" role="3R5kS3" />
-      </node>
-    </node>
-    <node concept="3ChvRt" id="3owEWSkkq3$" role="LiZbd">
-      <node concept="3ChvRu" id="3owEWSkkq3_" role="3ChbNt">
-        <node concept="3ChvRv" id="3owEWSkkq3A" role="3ChvRr" />
-        <node concept="J$7tf" id="3owEWSkkq3B" role="J$7P3">
-          <node concept="LIFWc" id="3owEWSkktv$" role="lGtFl">
-            <property role="LIFWa" value="0" />
-            <property role="LIFWd" value="collection_0" />
-          </node>
-        </node>
-        <node concept="3R5hHD" id="3owEWSkkq3C" role="3R5kS3" />
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="1A9qTDfpZBw">
-    <property role="TrG5h" value="DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Child" />
-    <property role="3GE5qa" value="defaultEditor" />
-    <property role="3YCmrE" value="Checking that the reflective editor is correctly rendered in case of the concept is invalid" />
-    <node concept="3clFbS" id="1A9qTDfpZBx" role="LjaKd">
-      <node concept="2HxZob" id="1A9qTDfpZBy" role="3cqZAp">
-        <node concept="1iFQzN" id="1A9qTDfpZBz" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
-        </node>
-      </node>
-    </node>
-    <node concept="ysw62" id="1A9qTDfpZB$" role="LiRBU">
-      <node concept="ysnKK" id="1A9qTDfpZB_" role="ysw63">
-        <property role="ysw6s" value="deletedParentName" />
-        <ref role="ysw6q" node="1A9qTDfpZB_" />
-        <node concept="ysw61" id="1A9qTDfpZBA" role="ysw6u" />
-        <node concept="1mVH4l" id="2V5Y3KmbJ3A" role="SUVWm" />
-        <node concept="LIFWc" id="3bMABAF4I39" role="lGtFl">
-          <property role="LIFWa" value="0" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="constant_7" />
-        </node>
-      </node>
-    </node>
-    <node concept="ysw62" id="1A9qTDfpZBB" role="LiZbd">
-      <node concept="ysnKK" id="1A9qTDfpZBC" role="ysw63">
-        <property role="ysw6s" value="deletedParentName" />
-        <ref role="ysw6q" node="1A9qTDfpZBC" />
-        <node concept="ysw61" id="1A9qTDfpZBD" role="ysw6u">
-          <node concept="LIFWc" id="3bMABAF4I3_" role="lGtFl">
-            <property role="LIFWa" value="0" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="0" />
-            <property role="p6zMs" value="0" />
-            <property role="LIFWd" value="constant_0" />
-          </node>
-        </node>
-        <node concept="1mVH4l" id="2V5Y3KmbJ3K" role="SUVWm" />
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="1A9qTDfq4Xl">
-    <property role="TrG5h" value="DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Property" />
-    <property role="3GE5qa" value="defaultEditor" />
-    <property role="3YCmrE" value="Checking that the reflective editor is correctly rendered in case of the concept is invalid" />
-    <node concept="3clFbS" id="1A9qTDfq4Xm" role="LjaKd">
-      <node concept="2HxZob" id="1A9qTDfq4Xn" role="3cqZAp">
-        <node concept="1iFQzN" id="1A9qTDfq4Xo" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBNW" resolve="MoveRight" />
-        </node>
-      </node>
-    </node>
-    <node concept="ysw62" id="1A9qTDfq4Xp" role="LiRBU">
-      <node concept="ysnKK" id="1A9qTDfq4Xq" role="ysw63">
-        <property role="ysw6s" value="deletedParentName" />
-        <ref role="ysw6q" node="1A9qTDfq4Xq" />
-        <node concept="ysw61" id="1A9qTDfq4Xr" role="ysw6u" />
-        <node concept="1mVH4l" id="2V5Y3KmbJ4u" role="SUVWm" />
-        <node concept="LIFWc" id="3bMABAF4I47" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="1" />
-          <property role="p6zMs" value="1" />
-          <property role="LIFWd" value="constant_5" />
-        </node>
-      </node>
-    </node>
-    <node concept="ysw62" id="1A9qTDfq4Xs" role="LiZbd">
-      <node concept="ysnKK" id="1A9qTDfq4Xt" role="ysw63">
-        <property role="ysw6s" value="deletedParentName" />
-        <ref role="ysw6q" node="1A9qTDfq4Xt" />
-        <node concept="ysw61" id="1A9qTDfq4Xu" role="ysw6u" />
-        <node concept="1mVH4l" id="2V5Y3KmbJ4C" role="SUVWm" />
-        <node concept="LIFWc" id="1NaNvmfc1FA" role="lGtFl">
-          <property role="LIFWa" value="0" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="property_name" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="1A9qTDfq4XR">
-    <property role="TrG5h" value="DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Abstract" />
-    <property role="3GE5qa" value="defaultEditor" />
-    <property role="3YCmrE" value="Checking that the reflective editor is correctly rendered. Abstract concept should be rendered when the concept is invalid" />
-    <node concept="3clFbS" id="1A9qTDfq4XS" role="LjaKd">
-      <node concept="2HxZob" id="1A9qTDfq4XT" role="3cqZAp">
-        <node concept="1iFQzN" id="1A9qTDfq4XU" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
-        </node>
-      </node>
-    </node>
-    <node concept="ysw62" id="1A9qTDfq4XV" role="LiRBU">
-      <node concept="ysnKK" id="1A9qTDfq4XW" role="ysw63">
-        <property role="ysw6s" value="deletedParentName" />
-        <ref role="ysw6q" node="1A9qTDfq4XW" />
-        <node concept="ysw61" id="2V5Y3KmbtIj" role="ysw6u" />
-        <node concept="1mVH4l" id="2V5Y3KmbJ2d" role="SUVWm" />
-        <node concept="LIFWc" id="3bMABAF5zUz" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="1" />
-          <property role="p6zMs" value="1" />
-          <property role="LIFWd" value="constant_10" />
-        </node>
-      </node>
-    </node>
-    <node concept="ysw62" id="1A9qTDfq4XY" role="LiZbd">
-      <node concept="ysnKK" id="1A9qTDfq4XZ" role="ysw63">
-        <property role="ysw6s" value="deletedParentName" />
-        <ref role="ysw6q" node="1A9qTDfq4XZ" />
-        <node concept="ysw61" id="1A9qTDfq4Y0" role="ysw6u" />
-        <node concept="1mVH4l" id="2V5Y3KmbJ3k" role="SUVWm">
-          <node concept="LIFWc" id="3bMABAF5zUP" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="22" />
-            <property role="p6zMs" value="22" />
-            <property role="LIFWd" value="constant_0" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="2V5Y3KmbJ4M">
-    <property role="TrG5h" value="DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Reference" />
-    <property role="3GE5qa" value="defaultEditor" />
-    <property role="3YCmrE" value="Checking that the reflcetive editor is correctly rendered in case of the concept is invalid" />
-    <node concept="3clFbS" id="2V5Y3KmbJ4N" role="LjaKd">
-      <node concept="2HxZob" id="2V5Y3KmbJ4O" role="3cqZAp">
-        <node concept="1iFQzN" id="2V5Y3KmbJ4P" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBNW" resolve="MoveRight" />
-        </node>
-      </node>
-    </node>
-    <node concept="ysw62" id="2V5Y3KmbJ4Q" role="LiRBU">
-      <node concept="ysnKK" id="2V5Y3KmbJ4R" role="ysw63">
-        <property role="ysw6s" value="deletedParentName" />
-        <ref role="ysw6q" node="2V5Y3KmbJ4R" />
-        <node concept="ysw61" id="2V5Y3KmbJ4S" role="ysw6u" />
-        <node concept="1mVH4l" id="2V5Y3KmbJ4T" role="SUVWm" />
-        <node concept="LIFWc" id="3bMABAF4I5d" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="1" />
-          <property role="p6zMs" value="1" />
-          <property role="LIFWd" value="constant_2" />
-        </node>
-      </node>
-    </node>
-    <node concept="ysw62" id="2V5Y3KmbJ4U" role="LiZbd">
-      <node concept="ysnKK" id="2V5Y3KmbJ4V" role="ysw63">
-        <property role="ysw6s" value="deletedParentName" />
-        <ref role="ysw6q" node="2V5Y3KmbJ4V" />
-        <node concept="ysw61" id="2V5Y3KmbJ4W" role="ysw6u" />
-        <node concept="1mVH4l" id="2V5Y3KmbJ4X" role="SUVWm" />
-        <node concept="LIFWc" id="3bMABAF4I5v" role="lGtFl">
-          <property role="LIFWa" value="0" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="reference_deletedParentReference" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="LiM7Y" id="7DH9HgSBqgw">
     <property role="TrG5h" value="DeleteUsualStatementBeforeUsual" />
     <property role="3GE5qa" value="selection.deleteCommented.statement" />
@@ -56629,6 +56381,84 @@
       <node concept="3Tm1VV" id="7DH9HgSBlmE" role="1B3o_S" />
     </node>
   </node>
+  <node concept="LiM7Y" id="3owEWSkkq3q">
+    <property role="TrG5h" value="DefaultEditor_ShowReflectiveEditorForInterfaceChild" />
+    <property role="3GE5qa" value="defaultEditor" />
+    <property role="3YCmrE" value="show reflective editor action should force showing reflective editor even if the concept is interface concept" />
+    <node concept="3clFbS" id="3owEWSkkq3r" role="LjaKd">
+      <node concept="2HxZob" id="3owEWSkkq3s" role="3cqZAp">
+        <node concept="1iFQzN" id="3owEWSkkq3t" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
+        </node>
+      </node>
+    </node>
+    <node concept="3ChvRt" id="3owEWSkkq3u" role="LiRBU">
+      <node concept="3ChvRu" id="3owEWSkkq3v" role="3ChbNt">
+        <node concept="3ChvRv" id="3owEWSkkq3w" role="3ChvRr" />
+        <node concept="J$7tf" id="3owEWSkkq3x" role="J$7P3">
+          <node concept="LIFWc" id="3owEWSkktvi" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="Error" />
+          </node>
+        </node>
+        <node concept="3R5hHD" id="3owEWSkkq3y" role="3R5kS3" />
+      </node>
+    </node>
+    <node concept="3ChvRt" id="3owEWSkkq3$" role="LiZbd">
+      <node concept="3ChvRu" id="3owEWSkkq3_" role="3ChbNt">
+        <node concept="3ChvRv" id="3owEWSkkq3A" role="3ChvRr" />
+        <node concept="J$7tf" id="3owEWSkkq3B" role="J$7P3">
+          <node concept="LIFWc" id="3owEWSkktv$" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="LIFWd" value="collection_0" />
+          </node>
+        </node>
+        <node concept="3R5hHD" id="3owEWSkkq3C" role="3R5kS3" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3ASrrZeFifd">
+    <property role="TrG5h" value="DefaultEditor_ShowReflectiveEditorForAbstractChild" />
+    <property role="3GE5qa" value="defaultEditor" />
+    <property role="3YCmrE" value="show reflective editor action should force showing reflective editor even if the concept is abstract" />
+    <node concept="3clFbS" id="3ASrrZeFife" role="LjaKd">
+      <node concept="2HxZob" id="3ASrrZeFiff" role="3cqZAp">
+        <node concept="1iFQzN" id="3ASrrZeFifg" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
+        </node>
+      </node>
+    </node>
+    <node concept="3ChvRt" id="3ASrrZeFifh" role="LiRBU">
+      <node concept="3ChvRu" id="3owEWSkkffd" role="3ChbNt">
+        <node concept="3ChvRv" id="3owEWSkkffe" role="3ChvRr" />
+        <node concept="J$7tf" id="3owEWSkkfff" role="J$7P3" />
+        <node concept="3R5hHD" id="3owEWSkkffr" role="3R5kS3">
+          <node concept="LIFWc" id="3owEWSkkq3g" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="Error" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3ChvRt" id="3ASrrZeFifl" role="LiZbd">
+      <node concept="3ChvRu" id="3owEWSkkfdG" role="3ChbNt">
+        <node concept="3ChvRv" id="3owEWSkkfdH" role="3ChvRr" />
+        <node concept="J$7tf" id="3owEWSkkfdI" role="J$7P3" />
+        <node concept="3R5hHD" id="3owEWSkkmB2" role="3R5kS3">
+          <node concept="LIFWc" id="3owEWSkkmBk" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="LIFWd" value="collection_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
   <node concept="LiM7Y" id="7DH9HgSBpPb">
     <property role="TrG5h" value="BackspaceUsualStatementAfterUsual" />
     <property role="3GE5qa" value="selection.deleteCommented.statement" />
@@ -57115,6 +56945,48 @@
       <node concept="3Tm1VV" id="VO5i9D_DIB" role="1B3o_S" />
     </node>
   </node>
+  <node concept="LiM7Y" id="2V5Y3KmbJ4M">
+    <property role="TrG5h" value="DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Reference" />
+    <property role="3GE5qa" value="defaultEditor" />
+    <property role="3YCmrE" value="Checking that the reflcetive editor is correctly rendered in case of the concept is invalid" />
+    <node concept="3clFbS" id="2V5Y3KmbJ4N" role="LjaKd">
+      <node concept="2HxZob" id="2V5Y3KmbJ4O" role="3cqZAp">
+        <node concept="1iFQzN" id="2V5Y3KmbJ4P" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBNW" resolve="MoveRight" />
+        </node>
+      </node>
+    </node>
+    <node concept="ysw62" id="2V5Y3KmbJ4Q" role="LiRBU">
+      <node concept="ysnKK" id="2V5Y3KmbJ4R" role="ysw63">
+        <property role="ysw6s" value="deletedParentName" />
+        <ref role="ysw6q" node="2V5Y3KmbJ4R" />
+        <node concept="ysw61" id="2V5Y3KmbJ4S" role="ysw6u" />
+        <node concept="1mVH4l" id="2V5Y3KmbJ4T" role="SUVWm" />
+        <node concept="LIFWc" id="3bMABAF4I5d" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="1" />
+          <property role="p6zMs" value="1" />
+          <property role="LIFWd" value="constant_2" />
+        </node>
+      </node>
+    </node>
+    <node concept="ysw62" id="2V5Y3KmbJ4U" role="LiZbd">
+      <node concept="ysnKK" id="2V5Y3KmbJ4V" role="ysw63">
+        <property role="ysw6s" value="deletedParentName" />
+        <ref role="ysw6q" node="2V5Y3KmbJ4V" />
+        <node concept="ysw61" id="2V5Y3KmbJ4W" role="ysw6u" />
+        <node concept="1mVH4l" id="2V5Y3KmbJ4X" role="SUVWm" />
+        <node concept="LIFWc" id="3bMABAF4I5v" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="reference_deletedParentReference" />
+        </node>
+      </node>
+    </node>
+  </node>
   <node concept="LiM7Y" id="ATHDXzvTQx">
     <property role="TrG5h" value="DeleteUsualStatementBeforeCommented" />
     <property role="3GE5qa" value="selection.deleteCommented.statement" />
@@ -57267,6 +57139,91 @@
       <node concept="3Tm1VV" id="ATHDXzvTR2" role="1B3o_S" />
     </node>
   </node>
+  <node concept="LiM7Y" id="1A9qTDfq4XR">
+    <property role="TrG5h" value="DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Abstract" />
+    <property role="3GE5qa" value="defaultEditor" />
+    <property role="3YCmrE" value="Checking that the reflective editor is correctly rendered. Abstract concept should be rendered when the concept is invalid" />
+    <node concept="3clFbS" id="1A9qTDfq4XS" role="LjaKd">
+      <node concept="2HxZob" id="1A9qTDfq4XT" role="3cqZAp">
+        <node concept="1iFQzN" id="1A9qTDfq4XU" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
+        </node>
+      </node>
+    </node>
+    <node concept="ysw62" id="1A9qTDfq4XV" role="LiRBU">
+      <node concept="ysnKK" id="1A9qTDfq4XW" role="ysw63">
+        <property role="ysw6s" value="deletedParentName" />
+        <ref role="ysw6q" node="1A9qTDfq4XW" />
+        <node concept="ysw61" id="2V5Y3KmbtIj" role="ysw6u" />
+        <node concept="1mVH4l" id="2V5Y3KmbJ2d" role="SUVWm" />
+        <node concept="LIFWc" id="3bMABAF5zUz" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="1" />
+          <property role="p6zMs" value="1" />
+          <property role="LIFWd" value="constant_10" />
+        </node>
+      </node>
+    </node>
+    <node concept="ysw62" id="1A9qTDfq4XY" role="LiZbd">
+      <node concept="ysnKK" id="1A9qTDfq4XZ" role="ysw63">
+        <property role="ysw6s" value="deletedParentName" />
+        <ref role="ysw6q" node="1A9qTDfq4XZ" />
+        <node concept="ysw61" id="1A9qTDfq4Y0" role="ysw6u" />
+        <node concept="1mVH4l" id="2V5Y3KmbJ3k" role="SUVWm">
+          <node concept="LIFWc" id="3bMABAF5zUP" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="22" />
+            <property role="p6zMs" value="22" />
+            <property role="LIFWd" value="constant_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1A9qTDfq4Xl">
+    <property role="TrG5h" value="DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Property" />
+    <property role="3GE5qa" value="defaultEditor" />
+    <property role="3YCmrE" value="Checking that the reflective editor is correctly rendered in case of the concept is invalid" />
+    <node concept="3clFbS" id="1A9qTDfq4Xm" role="LjaKd">
+      <node concept="2HxZob" id="1A9qTDfq4Xn" role="3cqZAp">
+        <node concept="1iFQzN" id="1A9qTDfq4Xo" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBNW" resolve="MoveRight" />
+        </node>
+      </node>
+    </node>
+    <node concept="ysw62" id="1A9qTDfq4Xp" role="LiRBU">
+      <node concept="ysnKK" id="1A9qTDfq4Xq" role="ysw63">
+        <property role="ysw6s" value="deletedParentName" />
+        <ref role="ysw6q" node="1A9qTDfq4Xq" />
+        <node concept="ysw61" id="1A9qTDfq4Xr" role="ysw6u" />
+        <node concept="1mVH4l" id="2V5Y3KmbJ4u" role="SUVWm" />
+        <node concept="LIFWc" id="3bMABAF4I47" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="1" />
+          <property role="p6zMs" value="1" />
+          <property role="LIFWd" value="constant_5" />
+        </node>
+      </node>
+    </node>
+    <node concept="ysw62" id="1A9qTDfq4Xs" role="LiZbd">
+      <node concept="ysnKK" id="1A9qTDfq4Xt" role="ysw63">
+        <property role="ysw6s" value="deletedParentName" />
+        <ref role="ysw6q" node="1A9qTDfq4Xt" />
+        <node concept="ysw61" id="1A9qTDfq4Xu" role="ysw6u" />
+        <node concept="1mVH4l" id="2V5Y3KmbJ4C" role="SUVWm" />
+        <node concept="LIFWc" id="1NaNvmfc1FA" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="property_name" />
+        </node>
+      </node>
+    </node>
+  </node>
   <node concept="LiM7Y" id="7DH9HgSBvSu">
     <property role="TrG5h" value="BackspaceOnlyCommentedCondition" />
     <property role="3GE5qa" value="selection.deleteCommented.condition" />
@@ -57327,6 +57284,60 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="7DH9HgSBvSR" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2DeKCKjQf7u">
+    <property role="TrG5h" value="CompleteNullTypePrimitiveClassExpression" />
+    <property role="3GE5qa" value="primitiveClass" />
+    <node concept="9aQIb" id="2DeKCKjQf7v" role="LiRBU">
+      <node concept="3clFbS" id="2DeKCKjQf7w" role="9aQI4">
+        <node concept="LIFWc" id="2DeKCKjRdfK" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_u338ov_a0a" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="2DeKCKjQf7x" role="LiZbd">
+      <node concept="3clFbS" id="2DeKCKjQf7y" role="9aQI4">
+        <node concept="LIFWc" id="2DeKCKjSDSl" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_u338ov_a0a" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="2DeKCKjQf7A" role="LjaKd">
+      <node concept="2HxZob" id="2DeKCKjQqPY" role="3cqZAp">
+        <node concept="1iFQzN" id="2DeKCKjQqQd" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="2TK7Tu" id="2DeKCKjQf7B" role="3cqZAp">
+        <property role="2TTd_B" value="nullType.class" />
+      </node>
+      <node concept="3vwNmj" id="2DeKCKjQqZ9" role="3cqZAp">
+        <node concept="3clFbC" id="2DeKCKjQuBB" role="3vwVQn">
+          <node concept="3cmrfG" id="2DeKCKjQv4b" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="2DeKCKjQtDk" role="3uHU7B">
+            <node concept="2OqwBi" id="2DeKCKjQs1s" role="2Oq$k0">
+              <node concept="369mXd" id="2DeKCKjQqZA" role="2Oq$k0" />
+              <node concept="liA8E" id="2DeKCKjQtyY" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="2DeKCKjQtNY" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node concept="LiM7Y" id="2Kr5WktLRN9">
@@ -57517,6 +57528,35 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="7DH9HgSBkVQ" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2DeKCKjPcwd">
+    <property role="TrG5h" value="TypePrimitiveClassExpression" />
+    <property role="3GE5qa" value="primitiveClass" />
+    <node concept="9aQIb" id="2DeKCKjPcxB" role="LiRBU">
+      <node concept="3clFbS" id="2DeKCKjPc_Z" role="9aQI4">
+        <node concept="LIFWc" id="2DeKCKjRdga" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_u338ov_a0a" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="2DeKCKjPcEq" role="LiZbd">
+      <node concept="3clFbS" id="2DeKCKjPcEr" role="9aQI4">
+        <node concept="3clFbF" id="2DeKCKjPyaS" role="3cqZAp">
+          <node concept="229OVn" id="7cC8ee7wmMT" role="3clFbG">
+            <node concept="10P55v" id="7cC8ee7wmMU" role="229OVk" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="2DeKCKjPcIP" role="LjaKd">
+      <node concept="2TK7Tu" id="2DeKCKjPcIO" role="3cqZAp">
+        <property role="2TTd_B" value="double.class" />
+      </node>
     </node>
   </node>
   <node concept="LiM7Y" id="2Kr5WktLQls">
@@ -58494,6 +58534,49 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="7DH9HgSB72t" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1A9qTDfpZBw">
+    <property role="TrG5h" value="DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Child" />
+    <property role="3GE5qa" value="defaultEditor" />
+    <property role="3YCmrE" value="Checking that the reflective editor is correctly rendered in case of the concept is invalid" />
+    <node concept="3clFbS" id="1A9qTDfpZBx" role="LjaKd">
+      <node concept="2HxZob" id="1A9qTDfpZBy" role="3cqZAp">
+        <node concept="1iFQzN" id="1A9qTDfpZBz" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
+        </node>
+      </node>
+    </node>
+    <node concept="ysw62" id="1A9qTDfpZB$" role="LiRBU">
+      <node concept="ysnKK" id="1A9qTDfpZB_" role="ysw63">
+        <property role="ysw6s" value="deletedParentName" />
+        <ref role="ysw6q" node="1A9qTDfpZB_" />
+        <node concept="ysw61" id="1A9qTDfpZBA" role="ysw6u" />
+        <node concept="1mVH4l" id="2V5Y3KmbJ3A" role="SUVWm" />
+        <node concept="LIFWc" id="3bMABAF4I39" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="constant_7" />
+        </node>
+      </node>
+    </node>
+    <node concept="ysw62" id="1A9qTDfpZBB" role="LiZbd">
+      <node concept="ysnKK" id="1A9qTDfpZBC" role="ysw63">
+        <property role="ysw6s" value="deletedParentName" />
+        <ref role="ysw6q" node="1A9qTDfpZBC" />
+        <node concept="ysw61" id="1A9qTDfpZBD" role="ysw6u">
+          <node concept="LIFWc" id="3bMABAF4I3_" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="constant_0" />
+          </node>
+        </node>
+        <node concept="1mVH4l" id="2V5Y3KmbJ3K" role="SUVWm" />
+      </node>
     </node>
   </node>
   <node concept="LiM7Y" id="7DH9HgSBm2N">
@@ -60518,89 +60601,6 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="7DH9HgSBjfU" role="1B3o_S" />
-    </node>
-  </node>
-  <node concept="LiM7Y" id="2DeKCKjPcwd">
-    <property role="TrG5h" value="TypePrimitiveClassExpression" />
-    <property role="3GE5qa" value="primitiveClass" />
-    <node concept="9aQIb" id="2DeKCKjPcxB" role="LiRBU">
-      <node concept="3clFbS" id="2DeKCKjPc_Z" role="9aQI4">
-        <node concept="LIFWc" id="2DeKCKjRdga" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="Constant_u338ov_a0a" />
-        </node>
-      </node>
-    </node>
-    <node concept="9aQIb" id="2DeKCKjPcEq" role="LiZbd">
-      <node concept="3clFbS" id="2DeKCKjPcEr" role="9aQI4">
-        <node concept="3clFbF" id="2DeKCKjPyaS" role="3cqZAp">
-          <node concept="229OVn" id="7cC8ee7wmMT" role="3clFbG">
-            <node concept="10P55v" id="7cC8ee7wmMU" role="229OVk" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="2DeKCKjPcIP" role="LjaKd">
-      <node concept="2TK7Tu" id="2DeKCKjPcIO" role="3cqZAp">
-        <property role="2TTd_B" value="double.class" />
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="2DeKCKjQf7u">
-    <property role="TrG5h" value="CompleteNullTypePrimitiveClassExpression" />
-    <property role="3GE5qa" value="primitiveClass" />
-    <node concept="9aQIb" id="2DeKCKjQf7v" role="LiRBU">
-      <node concept="3clFbS" id="2DeKCKjQf7w" role="9aQI4">
-        <node concept="LIFWc" id="2DeKCKjRdfK" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="Constant_u338ov_a0a" />
-        </node>
-      </node>
-    </node>
-    <node concept="9aQIb" id="2DeKCKjQf7x" role="LiZbd">
-      <node concept="3clFbS" id="2DeKCKjQf7y" role="9aQI4">
-        <node concept="LIFWc" id="2DeKCKjSDSl" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="Constant_u338ov_a0a" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="2DeKCKjQf7A" role="LjaKd">
-      <node concept="2HxZob" id="2DeKCKjQqPY" role="3cqZAp">
-        <node concept="1iFQzN" id="2DeKCKjQqQd" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-      <node concept="2TK7Tu" id="2DeKCKjQf7B" role="3cqZAp">
-        <property role="2TTd_B" value="nullType.class" />
-      </node>
-      <node concept="3vwNmj" id="2DeKCKjQqZ9" role="3cqZAp">
-        <node concept="3clFbC" id="2DeKCKjQuBB" role="3vwVQn">
-          <node concept="3cmrfG" id="2DeKCKjQv4b" role="3uHU7w">
-            <property role="3cmrfH" value="0" />
-          </node>
-          <node concept="2OqwBi" id="2DeKCKjQtDk" role="3uHU7B">
-            <node concept="2OqwBi" id="2DeKCKjQs1s" role="2Oq$k0">
-              <node concept="369mXd" id="2DeKCKjQqZA" role="2Oq$k0" />
-              <node concept="liA8E" id="2DeKCKjQtyY" role="2OqNvi">
-                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-              </node>
-            </node>
-            <node concept="liA8E" id="2DeKCKjQtNY" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
 </model>

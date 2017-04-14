@@ -7,7 +7,6 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.ide.findusages.FindersManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -44,7 +43,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
 
   @Nullable
   public SNodeReference getDeclarationNode() {
-    return FindersManager.getInstance().getDeclarationNode(this);
+    return null;
   }
 
   protected SNodeReference buildNodePointer(SModelReference modelRef, String nodeId) {

@@ -64,7 +64,7 @@ public class ProjectTest {
   public void buildModule() throws Exception {
     generationHolder.build();
 
-    if (!(generationHolder.isBuildSucessful())) {
+    if (!(generationHolder.isBuildSuccessful())) {
       List<String> errors = generationHolder.buildErrors();
       Assert.assertTrue("Build errors:\n" + IterableUtils.join(errors, "\n"), errors.isEmpty());
       List<String> warns = generationHolder.buildWarns();

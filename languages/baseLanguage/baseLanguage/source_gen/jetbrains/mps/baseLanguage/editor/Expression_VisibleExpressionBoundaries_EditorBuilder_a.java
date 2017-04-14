@@ -17,6 +17,10 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentStyleClass;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -74,6 +78,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
   private EditorCell createNextEditor_nejlv4_b0() {
     {
       EditorCell editorCell = getCellFactory().createEditorCell(myNode, false, Expression_VisibleExpressionBoundaries_Editor.class);
+      editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new Expression_VisibleExpressionBoundaries_EditorBuilder_a.ReplaceWith_Expression_cellMenu_nejlv4_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
       return editorCell;
     }
   }

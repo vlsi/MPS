@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,10 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
-import jetbrains.mps.make.java.ModelDependencies;
-import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.util.Status;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Igor Alshannikov
@@ -73,37 +66,8 @@ public class GenerationStatus extends Status {
     return myInputModel;
   }
 
-  /**
-   * debug info is not part of generation/transformation process, rather that of textgen, thus has nothing to do with GenerationStatus
-   * @return always <code>null</code>
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public DebugInfo getDebugInfo() {
-    return null;
-  }
-
-  /**
-   * BL dependencies are not part of generation/transformation process, rather that of textgen, thus has nothing to do with GenerationStatus
-   * @return always <code>null</code>
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public ModelDependencies getBLDependencies() {
-    return null;
-  }
-
   public GenerationDependencies getDependencies() {
     return myDependencies;
-  }
-
-  /**
-   * @deprecated use {@link GenerationDependencies#getUnchangedDependencies() getDependencies().getUnchangedDependencies()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public List<GenerationRootDependencies> getUnchangedDependencies() {
-    return myDependencies != null ? myDependencies.getUnchangedDependencies() : Collections.<GenerationRootDependencies>emptyList();
   }
 
   public SModel getOriginalInputModel() {
