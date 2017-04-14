@@ -357,7 +357,7 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -2834,15 +2834,19 @@
                 <property role="Xl_RC" value="selected models" />
               </node>
               <node concept="3cpWs3" id="16Z9VSyiVMj" role="3K4E3e">
-                <node concept="2OqwBi" id="16Z9VSyiYIc" role="3uHU7w">
-                  <node concept="2OqwBi" id="16Z9VSyiWum" role="2Oq$k0">
-                    <node concept="37vLTw" id="16Z9VSyiW0V" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4O9Oe_fsJ$8" resolve="models" />
+                <node concept="2YIFZM" id="2tXd5U3U6eh" role="3uHU7w">
+                  <ref role="37wK5l" to="18ew:~NameUtil.compactNamespace(java.lang.String):java.lang.String" resolve="compactNamespace" />
+                  <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                  <node concept="2OqwBi" id="16Z9VSyiYIc" role="37wK5m">
+                    <node concept="2OqwBi" id="16Z9VSyiWum" role="2Oq$k0">
+                      <node concept="37vLTw" id="16Z9VSyiW0V" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4O9Oe_fsJ$8" resolve="models" />
+                      </node>
+                      <node concept="1uHKPH" id="16Z9VSyiXV1" role="2OqNvi" />
                     </node>
-                    <node concept="1uHKPH" id="16Z9VSyiXV1" role="2OqNvi" />
-                  </node>
-                  <node concept="liA8E" id="16Z9VSyiYYF" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+                    <node concept="liA8E" id="16Z9VSyiYYF" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+                    </node>
                   </node>
                 </node>
                 <node concept="Xl_RD" id="16Z9VSyiUGt" role="3uHU7B">

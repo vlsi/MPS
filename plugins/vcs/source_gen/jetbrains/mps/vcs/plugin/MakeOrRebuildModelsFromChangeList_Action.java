@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -51,7 +52,7 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     if (IMakeService.INSTANCE.get().isSessionActive() || ListSequence.fromList(models).isEmpty()) {
       return false;
     }
-    String what = (ListSequence.fromList(models).count() == 1 ? "model " + ListSequence.fromList(models).first().getModelName() : "selected models");
+    String what = (ListSequence.fromList(models).count() == 1 ? "model " + NameUtil.compactNamespace(ListSequence.fromList(models).first().getModelName()) : "selected models");
     String fmt = (MakeOrRebuildModelsFromChangeList_Action.this.rebuild ? "Rebuild %s" : "Make %s");
     event.getPresentation().setText(String.format(fmt, what));
     return true;
