@@ -17,7 +17,6 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -26,6 +25,7 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.Project;
@@ -104,10 +104,8 @@ public class TextGen_Facet extends IFacet.Stub {
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
-              if (vars(pa.global()).makeSession() == null) {
-                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Need access to make session")));
-                return new IResult.FAILURE(_output_21gswx_a0a);
-              }
+              // FIXME drop MakeSession property after 2017.2 
+              // no-op now 
             default:
               return new IResult.SUCCESS(_output_21gswx_a0a);
           }
@@ -165,13 +163,13 @@ public class TextGen_Facet extends IFacet.Stub {
       public Parameters() {
         super();
       }
-      public Parameters(MakeSession makeSession) {
-        super(makeSession);
+      public Parameters(MakeSession unused) {
+        super(unused);
       }
-      public MakeSession makeSession(MakeSession value) {
+      public MakeSession unused(MakeSession value) {
         return super._0(value);
       }
-      public MakeSession makeSession() {
+      public MakeSession unused() {
         return super._0();
       }
     }
@@ -202,8 +200,8 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + resource.model().getName())));
                 }
               }
-              final IMessageHandler messageHandler = TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getMessageHandler();
-              final Project mpsProject = TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getProject();
+              final IMessageHandler messageHandler = monitor.getSession().getMessageHandler();
+              final Project mpsProject = monitor.getSession().getProject();
               final TextGeneratorEngine tgEngine = new TextGeneratorEngine(messageHandler);
 
               // Perhaps, shall check res.status.isError(), however not sure if there 
@@ -440,7 +438,7 @@ public class TextGen_Facet extends IFacet.Stub {
           final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              final TextGeneratorEngine tgEngine = new TextGeneratorEngine(TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getMessageHandler());
+              final TextGeneratorEngine tgEngine = new TextGeneratorEngine(monitor.getSession().getMessageHandler());
               try {
                 int modelsCount = Sequence.fromIterable(input).count();
                 final ArrayBlockingQueue<TextGenResult> resultQueue = new ArrayBlockingQueue<TextGenResult>(modelsCount);
@@ -454,7 +452,7 @@ public class TextGen_Facet extends IFacet.Stub {
                     // It looks like 'best effort' (generate all possible) is reasonable alternative. 
                     continue;
                   }
-                  TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getProject().getModelAccess().runReadAction(new Runnable() {
+                  monitor.getSession().getProject().getModelAccess().runReadAction(new Runnable() {
                     public void run() {
                       tgEngine.schedule(model, resultQueue);
                     }
@@ -556,7 +554,7 @@ public class TextGen_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.configure");
         if (properties.hasProperties(name)) {
           TextGen_Facet.Target_configure.Parameters props = properties.properties(name, TextGen_Facet.Target_configure.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.configure.makeSession", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.configure.unused", null);
         }
       }
       {
@@ -573,8 +571,8 @@ public class TextGen_Facet extends IFacet.Stub {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.configure");
           TextGen_Facet.Target_configure.Parameters props = properties.properties(name, TextGen_Facet.Target_configure.Parameters.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.configure.makeSession")) {
-            props.makeSession(null);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.configure.unused")) {
+            props.unused(null);
           }
         }
         {

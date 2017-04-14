@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,14 +66,13 @@ public class GenerationPlan implements ModelGenerationPlan {
   public GenerationPlan(@NotNull SModel inputModel, @Nullable Collection<SLanguage> additionalLanguages) {
     try {
       EngagedGeneratorCollector c = new EngagedGeneratorCollector(inputModel, additionalLanguages);
+      myGenerators = c.getGenerators();
       if (LOG.isDebugEnabled()) {
         LOG.debug(">>>");
         c.dump(LOG::debug);
         LOG.debug("<<<");
       }
-
       GenerationPartitioner partitioner = new GenerationPartitioner(c.getGenerators());
-      myGenerators = c.getGenerators();
       myPlan = partitioner.createMappingSets();
       if (myPlan.isEmpty()) {
         myPlan.add(Collections.<TemplateMappingConfiguration>emptyList());

@@ -80,6 +80,7 @@
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
+      <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -508,14 +509,22 @@
       <property role="TrG5h" value="DefaultMonitor" />
       <node concept="312cEg" id="7UozGIEQURc" role="jymVt">
         <property role="TrG5h" value="myFeedback" />
+        <property role="3TUv4t" value="true" />
         <node concept="3Tm6S6" id="7UozGIEQURd" role="1B3o_S" />
         <node concept="3uibUv" id="7UozGIEQWVD" role="1tU5fm">
           <ref role="3uigEE" to="jqcx:5oXcJSdWLoz" resolve="MessageFeedbackStrategy" />
         </node>
       </node>
+      <node concept="2tJIrI" id="5Pnc_qQuLpf" role="jymVt" />
       <node concept="3clFbW" id="7UozGIEQUec" role="jymVt">
         <node concept="3cqZAl" id="7UozGIEQUed" role="3clF45" />
         <node concept="3clFbS" id="7UozGIEQUef" role="3clF47">
+          <node concept="XkiVB" id="5Pnc_qQv0uc" role="3cqZAp">
+            <ref role="37wK5l" to="i9so:5Pnc_qQuW1m" resolve="IConfigMonitor.Stub" />
+            <node concept="37vLTw" id="5Pnc_qQv0KO" role="37wK5m">
+              <ref role="3cqZAo" node="7UozGIEQUrL" resolve="makeSession" />
+            </node>
+          </node>
           <node concept="3clFbF" id="7UozGIEQXa$" role="3cqZAp">
             <node concept="37vLTI" id="7UozGIEQXb_" role="3clFbG">
               <node concept="2ShNRf" id="7UozGIEQXfa" role="37vLTx">
@@ -542,6 +551,9 @@
           <property role="TrG5h" value="makeSession" />
           <node concept="3uibUv" id="7UozGIEQUrK" role="1tU5fm">
             <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
+          </node>
+          <node concept="2AHcQZ" id="5Pnc_qQuO3x" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
           </node>
         </node>
       </node>
@@ -621,6 +633,16 @@
         <node concept="TZ5HA" id="7UozGIER2_H" role="TZ5H$">
           <node concept="1dT_AC" id="7UozGIER2_I" role="1dT_Ay">
             <property role="1dT_AB" value="Reasonable defaults when no IScriptController is supplied by client" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5Pnc_qQv2$D" role="TZ5H$">
+          <node concept="1dT_AC" id="5Pnc_qQv2$E" role="1dT_Ay">
+            <property role="1dT_AB" value="I'm not certain there's great value in this distinct subclass of IConfigMonitor.Stub, perhaph, could move everything in there." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5Pnc_qQv2$J" role="TZ5H$">
+          <node concept="1dT_AC" id="5Pnc_qQv2$K" role="1dT_Ay">
+            <property role="1dT_AB" value="Just don't understand why Stub.relayQuery is different, and whether we care to report feedback always." />
           </node>
         </node>
       </node>

@@ -432,5 +432,31 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="671CX74nUNS">
+    <property role="3GE5qa" value="job" />
+    <ref role="1M2myG" to="q9ra:671CX74nUMc" resolve="GetMakeSessionExpression" />
+    <node concept="9S07l" id="671CX74nUNT" role="9Vyp8">
+      <node concept="3clFbS" id="671CX74nUNU" role="2VODD2">
+        <node concept="3clFbF" id="671CX74nVt$" role="3cqZAp">
+          <node concept="2OqwBi" id="671CX74nZ2D" role="3clFbG">
+            <node concept="2OqwBi" id="671CX74nVIb" role="2Oq$k0">
+              <node concept="nLn13" id="671CX74nVtx" role="2Oq$k0" />
+              <node concept="2Xjw5R" id="671CX74nWFV" role="2OqNvi">
+                <node concept="3gmYPX" id="671CX74nXuJ" role="1xVPHs">
+                  <node concept="3gn64h" id="671CX74nY8i" role="3gmYPZ">
+                    <ref role="3gnhBz" to="q9ra:230qvwa_MQF" resolve="JobDefinition" />
+                  </node>
+                  <node concept="3gn64h" id="671CX74nYwK" role="3gmYPZ">
+                    <ref role="3gnhBz" to="q9ra:1HN6OkgRbV$" resolve="ConfigDefinition" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3x8VRR" id="671CX74nZ$s" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

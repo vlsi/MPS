@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
 import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.facet.IFacet;
@@ -94,7 +93,7 @@ public class MPSMakeMediator {
     BuildMakeService buildMakeService = new BuildMakeService();
     MakeSession makeSession = createCleanMakeSession();
 
-    final MakeFacetWrapper makeFacetWrapper = new MakeFacetWrapper(myContext, makeSession, myMessageHandler, pathsController);
+    final MakeFacetWrapper makeFacetWrapper = new MakeFacetWrapper(myContext, makeSession, pathsController);
     ReducedMakeFacetConfiguration makeFacetConfiguration = makeFacetWrapper.constructMakeFacetConfiguration();
     IScriptController scriptCtl = makeFacetWrapper.configureFacets();
 
@@ -173,14 +172,12 @@ public class MPSMakeMediator {
     private final CompileContext myContext;
     private final MakeSession myMakeSession;
     private final GenerationPathsController myPathsController;
-    private final MessageFeedbackStrategy myMessageFeedbackStrategy;
     private ReducedMakeFacetConfiguration myMakeFacetConfiguration;
 
-    public MakeFacetWrapper(CompileContext context, MakeSession makeSession, IMessageHandler messageHandler, GenerationPathsController pathsController) {
+    public MakeFacetWrapper(CompileContext context, MakeSession makeSession, GenerationPathsController pathsController) {
       myContext = context;
       myMakeSession = makeSession;
       myPathsController = pathsController;
-      myMessageFeedbackStrategy = new MessageFeedbackStrategy(messageHandler);
     }
 
     public IScriptController configureFacets() {
@@ -189,12 +186,7 @@ public class MPSMakeMediator {
 
     public ReducedMakeFacetConfiguration constructMakeFacetConfiguration() {
       final boolean isMake = JavaBuilderUtil.isCompileJavaIncrementally(myContext);
-      myMakeFacetConfiguration = new ReducedMakeFacetConfiguration(myPathsController.getRedirects(), !isMake, new Stub(), new IJobMonitor.Stub() {
-        @Override
-        public void reportFeedback(IFeedback feedback) {
-          myMessageFeedbackStrategy.reportFeedback(feedback);
-        }
-      });
+      myMakeFacetConfiguration = new ReducedMakeFacetConfiguration(myPathsController.getRedirects(), !isMake);
       return myMakeFacetConfiguration;
     }
   }

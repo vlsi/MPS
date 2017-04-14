@@ -287,6 +287,7 @@
       <concept id="505095865854384109" name="jetbrains.mps.make.script.structure.JobDeclaration" flags="ng" index="2aLE7I">
         <child id="505095865854384110" name="job" index="2aLE7H" />
       </concept>
+      <concept id="7044091413522263180" name="jetbrains.mps.make.script.structure.GetMakeSessionExpression" flags="ng" index="2_BwXt" />
       <concept id="2360002718792625579" name="jetbrains.mps.make.script.structure.JobDefinition" flags="in" index="ElOhj" />
       <concept id="2360002718792625580" name="jetbrains.mps.make.script.structure.InputResourcesParameter" flags="nn" index="ElOhk" />
       <concept id="2360002718792622184" name="jetbrains.mps.make.script.structure.OutputResources" flags="nn" index="ElOAg">
@@ -411,14 +412,7 @@
                     </node>
                     <node concept="2OqwBi" id="33dz4spRFpR" role="33vP2m">
                       <node concept="2OqwBi" id="33dz4spRFpS" role="2Oq$k0">
-                        <node concept="2bn25q" id="33dz4spRFpT" role="2Oq$k0">
-                          <node concept="2bn25r" id="33dz4spRFpU" role="2Oq$k0">
-                            <ref role="2bn25l" to="tpcq:72ouys9JzGh" resolve="configure" />
-                          </node>
-                          <node concept="2sxana" id="33dz4spRFpV" role="2OqNvi">
-                            <ref role="2sxfKC" to="tpcq:72ouys9JDlL" resolve="makeSession" />
-                          </node>
-                        </node>
+                        <node concept="2_BwXt" id="1LzZ23MfXWx" role="2Oq$k0" />
                         <node concept="liA8E" id="33dz4spRFpW" role="2OqNvi">
                           <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                         </node>

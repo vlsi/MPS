@@ -1968,6 +1968,59 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="671CX74o1g6" role="3acgRq">
+      <ref role="30HIoZ" to="q9ra:671CX74nUMc" resolve="GetMakeSessionExpression" />
+      <node concept="1Koe21" id="671CX74o5Tt" role="1lVwrX">
+        <property role="3GE5qa" value="job" />
+        <node concept="1bVj0M" id="671CX74o5Tu" role="1Koe22">
+          <node concept="37vLTG" id="671CX74o5Tv" role="1bW2Oz">
+            <property role="TrG5h" value="mon" />
+            <node concept="3uibUv" id="671CX74o5Tw" role="1tU5fm">
+              <ref role="3uigEE" to="i9so:5mqBoD3U3Wy" resolve="IJobMonitor" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="671CX74o5Tx" role="1bW5cS">
+            <node concept="3clFbF" id="671CX74o5Ty" role="3cqZAp">
+              <node concept="2OqwBi" id="671CX74o5Tz" role="3clFbG">
+                <node concept="37vLTw" id="671CX74o5T_" role="2Oq$k0">
+                  <ref role="3cqZAo" node="671CX74o5Tv" resolve="mon" />
+                  <node concept="1ZhdrF" id="671CX74o5TA" role="lGtFl">
+                    <property role="2qtEX8" value="variableDeclaration" />
+                    <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
+                    <node concept="3$xsQk" id="671CX74o5TB" role="3$ytzL">
+                      <node concept="3clFbS" id="671CX74o5TC" role="2VODD2">
+                        <node concept="3clFbF" id="671CX74o5TD" role="3cqZAp">
+                          <node concept="2OqwBi" id="671CX74o5TE" role="3clFbG">
+                            <node concept="1iwH7S" id="671CX74o5TF" role="2Oq$k0" />
+                            <node concept="1iwH70" id="671CX74o5TG" role="2OqNvi">
+                              <ref role="1iwH77" node="2U8Fq3GPMjA" resolve="JobDefinition_jobMonitor" />
+                              <node concept="2OqwBi" id="671CX74o5TH" role="1iwH7V">
+                                <node concept="30H73N" id="671CX74o5TI" role="2Oq$k0" />
+                                <node concept="2Xjw5R" id="671CX74o5TJ" role="2OqNvi">
+                                  <node concept="1xMEDy" id="671CX74o5TK" role="1xVPHs">
+                                    <node concept="chp4Y" id="671CX74o5TL" role="ri$Ld">
+                                      <ref role="cht4Q" to="q9ra:230qvwa_MQF" resolve="JobDefinition" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="671CX74o5TN" role="2OqNvi">
+                  <ref role="37wK5l" to="i9so:5Pnc_qQuhd7" resolve="getSession" />
+                </node>
+                <node concept="raruj" id="671CX74o5TO" role="lGtFl" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="Qs71p" id="6PjbmCNofGz">
     <property role="TrG5h" value="Expected_" />

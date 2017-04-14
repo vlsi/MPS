@@ -72,6 +72,8 @@ public class Test_Facet extends IFacet.Stub {
             case 0:
               for (final GResource gr : Sequence.fromIterable(input)) {
                 final Wrappers._T<List<String>> tests = new Wrappers._T<List<String>>();
+                // FIXME here, shall not use makeSession.getProject().getModelAccess(), but instead, shall lock 
+                // repository of a transient model. Expose it either with GenerationStatus or GResource 
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
                     SModel outModel = gr.status().getOutputModel();

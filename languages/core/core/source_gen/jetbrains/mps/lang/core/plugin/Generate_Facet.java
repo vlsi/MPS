@@ -17,7 +17,6 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -98,13 +97,11 @@ public class Generate_Facet extends IFacet.Stub {
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
-              if (vars(pa.global()).makeSession() == null) {
-                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Facet requires access to make session")));
-                return new IResult.FAILURE(_output_fi61u2_a0a);
-              }
+              // FIXME drop unused parameters once MPS 2017.2 is out 
+
               if (vars(pa.global()).cleanMake() == null) {
-                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no cleanMake")));
-                return new IResult.FAILURE(_output_fi61u2_a0a);
+                // FIXME is there true need to control clean of a generate task independent from MakeSession? 
+                vars(pa.global()).cleanMake(monitor.getSession().isCleanMake());
               }
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0a);
@@ -166,16 +163,16 @@ public class Generate_Facet extends IFacet.Stub {
       public Variables() {
         super();
       }
-      public Variables(MakeSession makeSession, Boolean cleanMake) {
-        super(makeSession, cleanMake);
+      public Variables(MakeSession unused1, Boolean cleanMake) {
+        super(unused1, cleanMake);
       }
-      public MakeSession makeSession(MakeSession value) {
+      public MakeSession unused1(MakeSession value) {
         return super._0(value);
       }
       public Boolean cleanMake(Boolean value) {
         return super._1(value);
       }
-      public MakeSession makeSession() {
+      public MakeSession unused1() {
         return super._0();
       }
       public Boolean cleanMake() {
@@ -213,7 +210,7 @@ public class Generate_Facet extends IFacet.Stub {
               vars(pa.global()).parametersProvider(new DefaultGenerationParametersProvider());
               vars(pa.global()).generationOptions().parameters(vars(pa.global()).parametersProvider());
 
-              Project mpsProject = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getProject();
+              Project mpsProject = monitor.getSession().getProject();
               TransientModelsProvider tmc = mpsProject.getComponent(TransientModelsProvider.class);
               boolean ownTransientsProvider = tmc == null;
               vars(pa.global()).transientModelsProvider((ownTransientsProvider ? new TransientModelsProvider(mpsProject.getRepository(), null) : tmc));
@@ -353,7 +350,7 @@ public class Generate_Facet extends IFacet.Stub {
                 return new IResult.SUCCESS(_output_fi61u2_a0c);
               }
               monitor.currentProgress().beginWork("Pre-loading models", work, monitor.currentProgress().workLeft());
-              final Project project = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getProject();
+              final Project project = monitor.getSession().getProject();
               Sequence.fromIterable(input).visitAll(new IVisitor<MResource>() {
                 public void visit(final MResource mod) {
                   monitor.currentProgress().advanceWork("Pre-loading models", 100);
@@ -435,7 +432,7 @@ public class Generate_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               final Wrappers._T<Map<SModule, Iterable<SModel>>> retainedModels = new Wrappers._T<Map<SModule, Iterable<SModel>>>();
-              final Project mpsProject = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getProject();
+              final Project mpsProject = monitor.getSession().getProject();
               mpsProject.getModelAccess().runReadAction(new Runnable() {
                 public void run() {
                   retainedModels.value = RetainedUtil.collectModelsToRetain(input);
@@ -456,7 +453,7 @@ public class Generate_Facet extends IFacet.Stub {
               }
 
               final GenerationTaskRecorder<GeneratorTask> taskHandler = new GenerationTaskRecorder<GeneratorTask>(null);
-              final IMessageHandler mh = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getMessageHandler();
+              final IMessageHandler mh = monitor.getSession().getMessageHandler();
 
               progressMonitor.start("Generating", 110);
               try {
@@ -596,7 +593,7 @@ public class Generate_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
         if (properties.hasProperties(name)) {
           Generate_Facet.Target_checkParameters.Variables props = properties.properties(name, Generate_Facet.Target_checkParameters.Variables.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.makeSession", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.unused1", null);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake", String.valueOf(props.cleanMake()));
         }
       }
@@ -617,8 +614,8 @@ public class Generate_Facet extends IFacet.Stub {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
           Generate_Facet.Target_checkParameters.Variables props = properties.properties(name, Generate_Facet.Target_checkParameters.Variables.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.makeSession")) {
-            props.makeSession(null);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.unused1")) {
+            props.unused1(null);
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")) {
             props.cleanMake(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")));

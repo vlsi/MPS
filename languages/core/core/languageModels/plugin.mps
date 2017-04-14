@@ -412,6 +412,7 @@
         <child id="1977954644795396329" name="config" index="bFwIG" />
       </concept>
       <concept id="1977954644795375332" name="jetbrains.mps.make.script.structure.ConfigDefinition" flags="in" index="bFUmx" />
+      <concept id="7044091413522263180" name="jetbrains.mps.make.script.structure.GetMakeSessionExpression" flags="ng" index="2_BwXt" />
       <concept id="2360002718792446594" name="jetbrains.mps.make.script.structure.ResourceType" flags="in" index="El1HU">
         <child id="3308693286243004242" name="classifierType" index="1gOjxh" />
       </concept>
@@ -571,26 +572,14 @@
       <node concept="2aLE7I" id="72ouys9JzGi" role="ElM8M">
         <node concept="ElOhj" id="72ouys9JzGj" role="2aLE7H">
           <node concept="3clFbS" id="72ouys9JzGk" role="2VODD2">
-            <node concept="3clFbJ" id="72ouys9JFyL" role="3cqZAp">
-              <node concept="3clFbS" id="72ouys9JFyM" role="3clFbx">
-                <node concept="1daRAt" id="72ouys9JFEN" role="3cqZAp">
-                  <property role="1daRAr" value="ERROR" />
-                  <node concept="Xl_RD" id="72ouys9JGPD" role="1daK9t">
-                    <property role="Xl_RC" value="Need access to make session" />
-                  </node>
-                </node>
-                <node concept="3D7k6m" id="72ouys9JGQj" role="3cqZAp">
-                  <property role="3D7k6l" value="FAILURE" />
-                </node>
+            <node concept="3SKdUt" id="1LzZ23Mgaq3" role="3cqZAp">
+              <node concept="3SKdUq" id="1LzZ23Mgaq4" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME drop MakeSession property after 2017.2" />
               </node>
-              <node concept="3clFbC" id="72ouys9JFDW" role="3clFbw">
-                <node concept="10Nm6u" id="72ouys9JFEq" role="3uHU7w" />
-                <node concept="1aIXbY" id="72ouys9JFyY" role="3uHU7B">
-                  <node concept="1aIXbZ" id="72ouys9JFyX" role="2Oq$k0" />
-                  <node concept="2sxana" id="72ouys9JFz1" role="2OqNvi">
-                    <ref role="2sxfKC" node="72ouys9JDlL" resolve="makeSession" />
-                  </node>
-                </node>
+            </node>
+            <node concept="3SKdUt" id="1LzZ23Mgaqr" role="3cqZAp">
+              <node concept="3SKdUq" id="1LzZ23Mgaqt" role="3SKWNk">
+                <property role="3SKdUp" value="no-op now" />
               </node>
             </node>
           </node>
@@ -601,7 +590,7 @@
         <node concept="3Tm1VV" id="72ouys9JDlK" role="1B3o_S" />
         <node concept="2lGYhJ" id="72ouys9JDlL" role="2pHZQ9">
           <property role="3dDGau" value="false" />
-          <property role="TrG5h" value="makeSession" />
+          <property role="TrG5h" value="unused" />
           <node concept="3uibUv" id="72ouys9JDlT" role="2lK19J">
             <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
           </node>
@@ -715,14 +704,7 @@
                   <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
                 </node>
                 <node concept="2OqwBi" id="7A08csWbR37" role="33vP2m">
-                  <node concept="2bn25q" id="7A08csWbR38" role="2Oq$k0">
-                    <node concept="2bn25r" id="7A08csWbR39" role="2Oq$k0">
-                      <ref role="2bn25l" node="72ouys9JzGh" resolve="configure" />
-                    </node>
-                    <node concept="2sxana" id="7A08csWbR3a" role="2OqNvi">
-                      <ref role="2sxfKC" node="72ouys9JDlL" resolve="makeSession" />
-                    </node>
-                  </node>
+                  <node concept="2_BwXt" id="1LzZ23Mg7zW" role="2Oq$k0" />
                   <node concept="liA8E" id="7A08csWbR3b" role="2OqNvi">
                     <ref role="37wK5l" to="hfuk:7yGn3z4N4Nw" resolve="getMessageHandler" />
                   </node>
@@ -737,14 +719,7 @@
                   <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
                 </node>
                 <node concept="2OqwBi" id="7A08csWclch" role="33vP2m">
-                  <node concept="2bn25q" id="7A08csWclci" role="2Oq$k0">
-                    <node concept="2bn25r" id="7A08csWclcj" role="2Oq$k0">
-                      <ref role="2bn25l" node="72ouys9JzGh" resolve="configure" />
-                    </node>
-                    <node concept="2sxana" id="7A08csWclck" role="2OqNvi">
-                      <ref role="2sxfKC" node="72ouys9JDlL" resolve="makeSession" />
-                    </node>
-                  </node>
+                  <node concept="2_BwXt" id="1LzZ23Mg6RB" role="2Oq$k0" />
                   <node concept="liA8E" id="7A08csWclcl" role="2OqNvi">
                     <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                   </node>
@@ -2449,14 +2424,7 @@
                   <node concept="1pGfFk" id="BfgvErhIVy" role="2ShVmc">
                     <ref role="37wK5l" to="ao3:~TextGeneratorEngine.&lt;init&gt;(jetbrains.mps.messages.IMessageHandler)" resolve="TextGeneratorEngine" />
                     <node concept="2OqwBi" id="13CsAhVSOGu" role="37wK5m">
-                      <node concept="2bn25q" id="13CsAhVSOrk" role="2Oq$k0">
-                        <node concept="2bn25r" id="13CsAhVSOri" role="2Oq$k0">
-                          <ref role="2bn25l" node="72ouys9JzGh" resolve="configure" />
-                        </node>
-                        <node concept="2sxana" id="13CsAhVSOrj" role="2OqNvi">
-                          <ref role="2sxfKC" node="72ouys9JDlL" resolve="makeSession" />
-                        </node>
-                      </node>
+                      <node concept="2_BwXt" id="1LzZ23Mg8hZ" role="2Oq$k0" />
                       <node concept="liA8E" id="13CsAhVSOUH" role="2OqNvi">
                         <ref role="37wK5l" to="hfuk:7yGn3z4N4Nw" resolve="getMessageHandler" />
                       </node>
@@ -2613,14 +2581,7 @@
                         </node>
                         <node concept="2OqwBi" id="13CsAhVSQHF" role="2Oq$k0">
                           <node concept="2OqwBi" id="13CsAhVSPAL" role="2Oq$k0">
-                            <node concept="2bn25q" id="13CsAhVSPm8" role="2Oq$k0">
-                              <node concept="2bn25r" id="13CsAhVSPm9" role="2Oq$k0">
-                                <ref role="2bn25l" node="72ouys9JzGh" resolve="configure" />
-                              </node>
-                              <node concept="2sxana" id="13CsAhVSPma" role="2OqNvi">
-                                <ref role="2sxfKC" node="72ouys9JDlL" resolve="makeSession" />
-                              </node>
-                            </node>
+                            <node concept="2_BwXt" id="1LzZ23MgacP" role="2Oq$k0" />
                             <node concept="liA8E" id="13CsAhVSPMc" role="2OqNvi">
                               <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                             </node>
@@ -3026,38 +2987,34 @@
       <node concept="2aLE7I" id="5L5h3brvz7l" role="ElM8M">
         <node concept="ElOhj" id="5L5h3brvz7m" role="2aLE7H">
           <node concept="3clFbS" id="5L5h3brvz7n" role="2VODD2">
-            <node concept="3clFbJ" id="5jLBleAj80C" role="3cqZAp">
-              <node concept="3clFbS" id="5jLBleAj80E" role="3clFbx">
-                <node concept="1daRAt" id="5jLBleAj8ax" role="3cqZAp">
-                  <property role="1daRAr" value="ERROR" />
-                  <node concept="Xl_RD" id="5jLBleAj8a_" role="1daK9t">
-                    <property role="Xl_RC" value="Facet requires access to make session" />
-                  </node>
-                </node>
-                <node concept="3D7k6m" id="65xvqqItfeF" role="3cqZAp">
-                  <property role="3D7k6l" value="FAILURE" />
-                </node>
-              </node>
-              <node concept="3clFbC" id="5jLBleAj89E" role="3clFbw">
-                <node concept="10Nm6u" id="5jLBleAj8a8" role="3uHU7w" />
-                <node concept="1aIXbY" id="5jLBleAj81o" role="3uHU7B">
-                  <node concept="1aIXbZ" id="5jLBleAj81n" role="2Oq$k0" />
-                  <node concept="2sxana" id="5jLBleAj81r" role="2OqNvi">
-                    <ref role="2sxfKC" node="5L5h3brvz7T" resolve="makeSession" />
-                  </node>
-                </node>
+            <node concept="3SKdUt" id="3D3uKT_MUna" role="3cqZAp">
+              <node concept="3SKdUq" id="3D3uKT_MUnc" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME drop unused parameters once MPS 2017.2 is out" />
               </node>
             </node>
+            <node concept="3clFbH" id="3D3uKT_MVWs" role="3cqZAp" />
             <node concept="3clFbJ" id="5L5h3brvz7G" role="3cqZAp">
               <node concept="3clFbS" id="5L5h3brvz7H" role="3clFbx">
-                <node concept="1daRAt" id="5L5h3brvz7I" role="3cqZAp">
-                  <property role="1daRAr" value="ERROR" />
-                  <node concept="Xl_RD" id="5L5h3brvz7J" role="1daK9t">
-                    <property role="Xl_RC" value="no cleanMake" />
+                <node concept="3SKdUt" id="3D3uKT_MVVw" role="3cqZAp">
+                  <node concept="3SKdUq" id="3D3uKT_MVVy" role="3SKWNk">
+                    <property role="3SKdUp" value="FIXME is there true need to control clean of a generate task independent from MakeSession?" />
                   </node>
                 </node>
-                <node concept="3D7k6m" id="5L5h3brvz7K" role="3cqZAp">
-                  <property role="3D7k6l" value="FAILURE" />
+                <node concept="3clFbF" id="3D3uKT_MUZd" role="3cqZAp">
+                  <node concept="37vLTI" id="3D3uKT_MV_E" role="3clFbG">
+                    <node concept="2OqwBi" id="3D3uKT_MVJ$" role="37vLTx">
+                      <node concept="2_BwXt" id="3D3uKT_MVDI" role="2Oq$k0" />
+                      <node concept="liA8E" id="3D3uKT_MVTM" role="2OqNvi">
+                        <ref role="37wK5l" to="hfuk:7yGn3z4N631" resolve="isCleanMake" />
+                      </node>
+                    </node>
+                    <node concept="1aIXbY" id="3D3uKT_MUZ9" role="37vLTJ">
+                      <node concept="1aIXbZ" id="3D3uKT_MUZ8" role="2Oq$k0" />
+                      <node concept="2sxana" id="3D3uKT_MUZc" role="2OqNvi">
+                        <ref role="2sxfKC" node="5L5h3brvz7V" resolve="cleanMake" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
               <node concept="3clFbC" id="5L5h3brvz7L" role="3clFbw">
@@ -3077,7 +3034,7 @@
         <property role="TrG5h" value="Variables" />
         <node concept="2lGYhJ" id="5L5h3brvz7T" role="2pHZQ9">
           <property role="3dDGau" value="false" />
-          <property role="TrG5h" value="makeSession" />
+          <property role="TrG5h" value="unused1" />
           <node concept="3uibUv" id="5jLBleAiEoP" role="2lK19J">
             <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
           </node>
@@ -3367,14 +3324,7 @@
                   <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
                 </node>
                 <node concept="2OqwBi" id="5jLBleAj6wq" role="33vP2m">
-                  <node concept="2bn25q" id="5jLBleAj6wr" role="2Oq$k0">
-                    <node concept="2bn25r" id="5jLBleAj6ws" role="2Oq$k0">
-                      <ref role="2bn25l" node="5L5h3brvz7k" resolve="checkParameters" />
-                    </node>
-                    <node concept="2sxana" id="5jLBleAj6wt" role="2OqNvi">
-                      <ref role="2sxfKC" node="5L5h3brvz7T" resolve="makeSession" />
-                    </node>
-                  </node>
+                  <node concept="2_BwXt" id="3D3uKT_MRjd" role="2Oq$k0" />
                   <node concept="liA8E" id="5jLBleAj6wu" role="2OqNvi">
                     <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                   </node>
@@ -3664,14 +3614,7 @@
                   <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
                 </node>
                 <node concept="2OqwBi" id="5jLBleAj6fF" role="33vP2m">
-                  <node concept="2bn25q" id="5jLBleAj5py" role="2Oq$k0">
-                    <node concept="2bn25r" id="5jLBleAj5pz" role="2Oq$k0">
-                      <ref role="2bn25l" node="5L5h3brvz7k" resolve="checkParameters" />
-                    </node>
-                    <node concept="2sxana" id="5jLBleAj62A" role="2OqNvi">
-                      <ref role="2sxfKC" node="5L5h3brvz7T" resolve="makeSession" />
-                    </node>
-                  </node>
+                  <node concept="2_BwXt" id="3D3uKT_MRrI" role="2Oq$k0" />
                   <node concept="liA8E" id="5jLBleAj6qR" role="2OqNvi">
                     <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                   </node>
@@ -3799,14 +3742,7 @@
                   <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
                 </node>
                 <node concept="2OqwBi" id="5jLBleAj7z$" role="33vP2m">
-                  <node concept="2bn25q" id="5jLBleAj03n" role="2Oq$k0">
-                    <node concept="2bn25r" id="5jLBleAj03o" role="2Oq$k0">
-                      <ref role="2bn25l" node="5L5h3brvz7k" resolve="checkParameters" />
-                    </node>
-                    <node concept="2sxana" id="5jLBleAj7fo" role="2OqNvi">
-                      <ref role="2sxfKC" node="5L5h3brvz7T" resolve="makeSession" />
-                    </node>
-                  </node>
+                  <node concept="2_BwXt" id="3D3uKT_MRWW" role="2Oq$k0" />
                   <node concept="liA8E" id="5jLBleAj7Na" role="2OqNvi">
                     <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                   </node>
@@ -3989,14 +3925,7 @@
                   <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
                 </node>
                 <node concept="2OqwBi" id="65xvqqIsXeI" role="33vP2m">
-                  <node concept="2bn25q" id="65xvqqIsWXx" role="2Oq$k0">
-                    <node concept="2bn25r" id="65xvqqIsWXv" role="2Oq$k0">
-                      <ref role="2bn25l" node="5L5h3brvz7k" resolve="checkParameters" />
-                    </node>
-                    <node concept="2sxana" id="65xvqqIsWXw" role="2OqNvi">
-                      <ref role="2sxfKC" node="5L5h3brvz7T" resolve="makeSession" />
-                    </node>
-                  </node>
+                  <node concept="2_BwXt" id="3D3uKT_MSv0" role="2Oq$k0" />
                   <node concept="liA8E" id="65xvqqIsXkJ" role="2OqNvi">
                     <ref role="37wK5l" to="hfuk:7yGn3z4N4Nw" resolve="getMessageHandler" />
                   </node>

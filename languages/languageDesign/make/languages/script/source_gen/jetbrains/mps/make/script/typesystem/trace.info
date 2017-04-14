@@ -13,7 +13,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="11,0,63,0" name="jetbrains.mps.make.script.typesystem.TypesystemDescriptor" />
+      <unit at="11,0,67,0" name="jetbrains.mps.make.script.typesystem.TypesystemDescriptor" />
     </file>
   </root>
   <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/187226666892735701">
@@ -777,6 +777,54 @@
         <var name="argument" id="6445309097630674038" />
       </scope>
       <unit id="6445309097630674038" at="17,0,55,0" name="jetbrains.mps.make.script.typesystem.supertypesOf_IResource_SubtypingRule" />
+    </file>
+  </root>
+  <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/7044091413522286025">
+    <file name="typeof_GetMakeSessionExpression_InferenceRule.java">
+      <node id="7044091413522286946" at="21,5,22,46" concept="6" />
+      <node id="7044091413522286946" at="22,46,23,202" concept="6" />
+      <node id="7044091413522286946" at="23,202,24,279" concept="2" />
+      <node id="7044091413522286025" at="27,50,28,168" concept="7" />
+      <node id="7044091413522286025" at="30,68,31,102" concept="7" />
+      <node id="7044091413522286025" at="33,30,34,17" concept="7" />
+      <node id="7044091413522287013" at="36,61,37,63" concept="6" />
+      <node id="7044091413522287013" at="37,63,38,30" concept="6" />
+      <node id="7044091413522287013" at="38,30,39,252" concept="2" />
+      <node id="7044091413522287013" at="39,252,40,448" concept="2" />
+      <node id="7044091413522287013" at="40,448,41,24" concept="7" />
+      <node id="7044091413522286025" at="18,0,20,0" concept="1" trace="typeof_GetMakeSessionExpression_InferenceRule#()V" />
+      <node id="7044091413522286025" at="27,0,30,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="7044091413522286025" at="30,0,33,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="7044091413522286025" at="33,0,36,0" concept="5" trace="overrides#()Z" />
+      <node id="7044091413522286946" at="20,117,25,5" concept="0" />
+      <node id="7044091413522286025" at="20,0,27,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="7044091413522287013" at="36,0,43,0" concept="9" trace="_quotation_createNode_fevs53_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="7044091413522286025" at="18,58,18,58" />
+      <scope id="7044091413522286025" at="27,50,28,168" />
+      <scope id="7044091413522286025" at="30,68,31,102" />
+      <scope id="7044091413522286025" at="33,30,34,17" />
+      <scope id="7044091413522286025" at="18,0,20,0" />
+      <scope id="7044091413522286946" at="21,5,24,279">
+        <var name="_info_12389875345" id="7044091413522286946" />
+        <var name="_nodeToCheck_1029348928467" id="7044091413522286946" />
+      </scope>
+      <scope id="7044091413522286025" at="27,0,30,0" />
+      <scope id="7044091413522286025" at="30,0,33,0">
+        <var name="argument" id="7044091413522286025" />
+      </scope>
+      <scope id="7044091413522286025" at="33,0,36,0" />
+      <scope id="7044091413522286026" at="20,117,25,5" />
+      <scope id="7044091413522287013" at="36,61,41,24">
+        <var name="facade" id="7044091413522287013" />
+        <var name="quotedNode_1" id="7044091413522287013" />
+      </scope>
+      <scope id="7044091413522286025" at="20,0,27,0">
+        <var name="expr" id="7044091413522286025" />
+        <var name="status" id="7044091413522286025" />
+        <var name="typeCheckingContext" id="7044091413522286025" />
+      </scope>
+      <scope id="7044091413522287013" at="36,0,43,0" />
+      <unit id="7044091413522286025" at="17,0,44,0" name="jetbrains.mps.make.script.typesystem.typeof_GetMakeSessionExpression_InferenceRule" />
     </file>
   </root>
   <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/8170824575195246249">

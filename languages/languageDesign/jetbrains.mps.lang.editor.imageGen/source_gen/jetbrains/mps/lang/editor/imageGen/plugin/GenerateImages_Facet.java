@@ -19,7 +19,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.resources.GResource;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.lang.core.plugin.TextGen_Facet.Target_configure;
 import java.util.Map;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -87,7 +86,7 @@ public class GenerateImages_Facet extends IFacet.Stub {
               progressMonitor.start("Printing Images", 4);
 
               try {
-                final SRepository repository = Target_configure.vars(pa.global()).makeSession().getProject().getRepository();
+                final SRepository repository = monitor.getSession().getProject().getRepository();
 
                 final Map<IFile, List<PrintNodeRunnable>> folder2PrintRunnables = MapSequence.fromMap(new HashMap<IFile, List<PrintNodeRunnable>>());
 
