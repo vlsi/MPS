@@ -27,31 +27,28 @@ public class ModelChecker {
     mySpecificCheckers = specificCheckers;
   }
   public void checkModel(SModel model, ProgressMonitor monitor) {
-    List<SpecificChecker> specificCheckers = mySpecificCheckers;
-
-    monitor.start("Checking " + model.getModelName(), ListSequence.fromList(specificCheckers).count());
+    monitor.start("Checking " + model.getName(), ListSequence.fromList(mySpecificCheckers).count());
     try {
       SModule module = model.getModule();
 
       if (module == null) {
         if (LOG.isEnabledFor(Level.WARN)) {
-          LOG.warn("Module is null for " + model.getModelName() + " model");
+          LOG.warn("Module is null for " + model.getName() + " model");
         }
+        return;
       }
 
-      if (module != null) {
-        for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers)) {
-          try {
-            List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1, SubProgressKind.AS_COMMENT));
-            myResults.getSearchResults().addAll(specificCheckerResults);
-          } catch (Throwable t) {
-            if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error("Error while " + model.getModelName() + " model checking", t);
-            }
+      for (SpecificChecker specificChecker : ListSequence.fromList(mySpecificCheckers)) {
+        try {
+          List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1, SubProgressKind.AS_COMMENT));
+          myResults.getSearchResults().addAll(specificCheckerResults);
+        } catch (Throwable t) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
+            LOG.error("Error while " + model.getName() + " model checking", t);
           }
-          if (monitor.isCanceled()) {
-            break;
-          }
+        }
+        if (monitor.isCanceled()) {
+          break;
         }
       }
     } finally {
