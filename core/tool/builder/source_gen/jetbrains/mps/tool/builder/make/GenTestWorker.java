@@ -29,7 +29,6 @@ import java.util.ArrayList;
 import jetbrains.mps.make.script.PropertyPoolInitializer;
 import jetbrains.mps.internal.make.cfg.MakeFacetInitializer;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.facet.ITarget;
@@ -182,7 +181,6 @@ public class GenTestWorker extends GeneratorWorker {
         return tmpFile(path);
       }
     }));
-    ppi.add(new TextGenFacetInitializer().failNoTextGen(false));
     if (isShowDiff()) {
       PropertyPoolInitializer diffFacetInit = new PropertyPoolInitializer() {
         public void populate(IPropertiesPool ppool) {

@@ -344,7 +344,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       new GenerateFacetInitializer().populate(ppool);
 
       IModifiableGenerationSettings genSettings = GenerationSettingsProvider.getInstance().getGenerationSettings();
-      new TextGenFacetInitializer().failNoTextGen(genSettings.isFailOnMissingTextGen()).generateDebugInfo(genSettings.isGenerateDebugInfo()).populate(ppool);
+      new TextGenFacetInitializer().generateDebugInfo(genSettings.isGenerateDebugInfo()).populate(ppool);
 
       new JavaCompileFacetInitializer().setJavaCompileOptions(JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(getSession().getProject())).populate(ppool);
 

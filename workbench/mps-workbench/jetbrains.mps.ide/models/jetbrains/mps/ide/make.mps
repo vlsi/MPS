@@ -5465,22 +5465,9 @@
           <node concept="3clFbF" id="72ouys9I5$T" role="3cqZAp">
             <node concept="2OqwBi" id="72ouys9IvR9" role="3clFbG">
               <node concept="2OqwBi" id="72ouys9Iv$x" role="2Oq$k0">
-                <node concept="2OqwBi" id="72ouys9Ivix" role="2Oq$k0">
-                  <node concept="2ShNRf" id="72ouys9I5$P" role="2Oq$k0">
-                    <node concept="1pGfFk" id="72ouys9Ivi3" role="2ShVmc">
-                      <ref role="37wK5l" to="1gam:1LzZ23MgdKU" resolve="TextGenFacetInitializer" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="72ouys9IvzP" role="2OqNvi">
-                    <ref role="37wK5l" to="1gam:7UozGIEPmYI" resolve="failNoTextGen" />
-                    <node concept="2OqwBi" id="72ouys9Iwsl" role="37wK5m">
-                      <node concept="37vLTw" id="72ouys9Iy6T" role="2Oq$k0">
-                        <ref role="3cqZAo" node="72ouys9Ixh0" resolve="genSettings" />
-                      </node>
-                      <node concept="liA8E" id="72ouys9Iwsn" role="2OqNvi">
-                        <ref role="37wK5l" to="ap4t:~IGenerationSettings.isFailOnMissingTextGen():boolean" resolve="isFailOnMissingTextGen" />
-                      </node>
-                    </node>
+                <node concept="2ShNRf" id="72ouys9I5$P" role="2Oq$k0">
+                  <node concept="1pGfFk" id="72ouys9Ivi3" role="2ShVmc">
+                    <ref role="37wK5l" to="1gam:1LzZ23MgdKU" resolve="TextGenFacetInitializer" />
                   </node>
                 </node>
                 <node concept="liA8E" id="72ouys9IvQf" role="2OqNvi">

@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.facet.ITarget;
 
 public final class TextGenFacetInitializer implements PropertyPoolInitializer {
-  private Boolean myFailNoTextGen;
   private Boolean myDebugInfo;
 
   public TextGenFacetInitializer() {
@@ -25,8 +24,13 @@ public final class TextGenFacetInitializer implements PropertyPoolInitializer {
   public TextGenFacetInitializer(MakeSession makeSession) {
     // FIXME Don't need makeSession argument any longer. Left for compatibility. 
   }
+  /**
+   * 
+   * @deprecated unused value
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public TextGenFacetInitializer failNoTextGen(Boolean fail) {
-    myFailNoTextGen = fail;
     return this;
   }
   public TextGenFacetInitializer generateDebugInfo(Boolean needDebug) {
@@ -38,7 +42,6 @@ public final class TextGenFacetInitializer implements PropertyPoolInitializer {
   public void populate(IPropertiesPool ppool) {
     Tuples._2<Boolean, Boolean> tparams = (Tuples._2<Boolean, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
     if (tparams != null) {
-      tparams._0(myFailNoTextGen);
       tparams._1(myDebugInfo);
     }
   }

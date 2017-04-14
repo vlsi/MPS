@@ -409,16 +409,16 @@ public class TextGen_Facet extends IFacet.Stub {
       public Parameters() {
         super();
       }
-      public Parameters(Boolean failIfNoTextgen, Boolean generateDebugInfo) {
-        super(failIfNoTextgen, generateDebugInfo);
+      public Parameters(Boolean unused, Boolean generateDebugInfo) {
+        super(unused, generateDebugInfo);
       }
-      public Boolean failIfNoTextgen(Boolean value) {
+      public Boolean unused(Boolean value) {
         return super._0(value);
       }
       public Boolean generateDebugInfo(Boolean value) {
         return super._1(value);
       }
-      public Boolean failIfNoTextgen() {
+      public Boolean unused() {
         return super._0();
       }
       public Boolean generateDebugInfo() {
@@ -561,7 +561,7 @@ public class TextGen_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
         if (properties.hasProperties(name)) {
           TextGen_Facet.Target_textGen.Parameters props = properties.properties(name, TextGen_Facet.Target_textGen.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen", String.valueOf(props.failIfNoTextgen()));
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.unused", String.valueOf(props.unused()));
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo", String.valueOf(props.generateDebugInfo()));
         }
       }
@@ -578,8 +578,8 @@ public class TextGen_Facet extends IFacet.Stub {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
           TextGen_Facet.Target_textGen.Parameters props = properties.properties(name, TextGen_Facet.Target_textGen.Parameters.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen")) {
-            props.failIfNoTextgen(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen")));
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.unused")) {
+            props.unused(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.TextGen.textGen.unused")));
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo")) {
             props.generateDebugInfo(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo")));

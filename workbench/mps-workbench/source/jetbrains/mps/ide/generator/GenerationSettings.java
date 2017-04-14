@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,7 +77,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.setKeepModelsWithWarnings(state.myKeepModelsWithWarnings);
     myState.setIncremental(state.myIncremental);
     myState.setIncrementalUseCache(state.myIncrementalUseCache);
-    myState.setFailOnMissingTextGen(state.myFailOnMissingTextGen);
     myState.setGenerateDebugInfo(state.myGenerateDebugInfo);
     myState.setShowBadChildWarning(state.myShowBadChildWarning);
     myState.setDebugIncrementalDependencies(state.myDebugIncrementalDependencies);
@@ -113,7 +112,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     public boolean myKeepModelsWithWarnings;
     public boolean myIncremental;
     public boolean myIncrementalUseCache;
-    public boolean myFailOnMissingTextGen;
     public boolean myGenerateDebugInfo;
     public boolean myShowBadChildWarning;
     public boolean myDebugIncrementalDependencies;
@@ -143,7 +141,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
       myKeepModelsWithWarnings = s.isKeepModelsWithWarnings();
       myIncremental = s.isIncremental();
       myIncrementalUseCache = s.isIncrementalUseCache();
-      myFailOnMissingTextGen = s.isFailOnMissingTextGen();
       myGenerateDebugInfo = s.isGenerateDebugInfo();
       myShowBadChildWarning = s.isShowBadChildWarning();
       myDebugIncrementalDependencies = s.isDebugIncrementalDependencies();

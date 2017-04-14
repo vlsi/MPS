@@ -1734,10 +1734,10 @@
       <node id="6648795410103966566" at="402,31,403,17" concept="11" />
       <node id="6648795410103966566" at="405,87,406,83" concept="11" />
       <node id="6648795410103966896" at="409,27,410,16" concept="16" />
-      <node id="6648795410103966896" at="412,77,413,50" concept="16" />
-      <node id="6648795410103966896" at="415,53,416,31" concept="11" />
+      <node id="6648795410103966896" at="412,68,413,41" concept="16" />
+      <node id="6648795410103966896" at="415,44,416,31" concept="11" />
       <node id="6648795410103966896" at="418,55,419,31" concept="11" />
-      <node id="6648795410103966896" at="421,40,422,26" concept="11" />
+      <node id="6648795410103966896" at="421,31,422,26" concept="11" />
       <node id="6648795410103966896" at="424,42,425,26" concept="11" />
       <node id="6648795410103966906" at="430,0,431,0" concept="14" trace="name" />
       <node id="6648795410103966909" at="436,173,437,56" concept="10" />
@@ -1797,14 +1797,14 @@
       <node id="6648795410103966565" at="556,137,557,99" concept="5" />
       <node id="6648795410103966565" at="560,7,561,88" concept="10" />
       <node id="6648795410103966565" at="562,45,563,133" concept="10" />
-      <node id="6648795410103966565" at="563,133,564,141" concept="5" />
-      <node id="6648795410103966565" at="564,141,565,145" concept="5" />
+      <node id="6648795410103966565" at="563,133,564,123" concept="5" />
+      <node id="6648795410103966565" at="564,123,565,145" concept="5" />
       <node id="6648795410103966565" at="571,9,572,92" concept="10" />
       <node id="6648795410103966565" at="572,92,573,137" concept="10" />
       <node id="6648795410103966565" at="574,107,575,31" concept="5" />
       <node id="6648795410103966565" at="578,9,579,90" concept="10" />
       <node id="6648795410103966565" at="579,90,580,133" concept="10" />
-      <node id="6648795410103966565" at="581,114,582,142" concept="5" />
+      <node id="6648795410103966565" at="581,105,582,124" concept="5" />
       <node id="6648795410103966565" at="584,116,585,146" concept="5" />
       <node id="8113369036793723665" at="97,0,99,0" concept="3" trace="Target_configure#()V" />
       <node id="6648795410103966566" at="179,0,181,0" concept="3" trace="Target_textGen#()V" />
@@ -1860,9 +1860,9 @@
       <node id="6648795410103966566" at="405,0,408,0" concept="15" trace="vars#(Ljetbrains/mps/make/script/IPropertiesPool;)Ljetbrains/mps/lang/core/plugin/TextGen_Facet/Target_textGen/Parameters;" />
       <node id="6648795410103966896" at="409,0,412,0" concept="3" trace="Parameters#()V" />
       <node id="6648795410103966896" at="412,0,415,0" concept="3" trace="Parameters#(Ljava/lang/Boolean;Ljava/lang/Boolean;)V" />
-      <node id="6648795410103966896" at="415,0,418,0" concept="9" trace="failIfNoTextgen#(Ljava/lang/Boolean;)Ljava/lang/Boolean;" />
+      <node id="6648795410103966896" at="415,0,418,0" concept="9" trace="unused#(Ljava/lang/Boolean;)Ljava/lang/Boolean;" />
       <node id="6648795410103966896" at="418,0,421,0" concept="9" trace="generateDebugInfo#(Ljava/lang/Boolean;)Ljava/lang/Boolean;" />
-      <node id="6648795410103966896" at="421,0,424,0" concept="9" trace="failIfNoTextgen#()Ljava/lang/Boolean;" />
+      <node id="6648795410103966896" at="421,0,424,0" concept="9" trace="unused#()Ljava/lang/Boolean;" />
       <node id="6648795410103966896" at="424,0,427,0" concept="9" trace="generateDebugInfo#()Ljava/lang/Boolean;" />
       <node id="706856211123273666" at="456,0,459,0" concept="9" trace="run#()V" />
       <node id="706856211123340031" at="483,45,486,23" concept="8" />
@@ -1996,10 +1996,10 @@
       <scope id="6648795410103966566" at="402,31,403,17" />
       <scope id="6648795410103966566" at="405,87,406,83" />
       <scope id="6648795410103966896" at="409,27,410,16" />
-      <scope id="6648795410103966896" at="412,77,413,50" />
-      <scope id="6648795410103966896" at="415,53,416,31" />
+      <scope id="6648795410103966896" at="412,68,413,41" />
+      <scope id="6648795410103966896" at="415,44,416,31" />
       <scope id="6648795410103966896" at="418,55,419,31" />
-      <scope id="6648795410103966896" at="421,40,422,26" />
+      <scope id="6648795410103966896" at="421,31,422,26" />
       <scope id="6648795410103966896" at="424,42,425,26" />
       <scope id="706856211123273667" at="456,39,457,60" />
       <scope id="706856211123340048" at="484,176,485,87" />
@@ -2018,7 +2018,7 @@
       <scope id="6648795410103966906" at="538,49,539,18" />
       <scope id="6648795410103966906" at="545,31,546,17" />
       <scope id="6648795410103966565" at="574,107,575,31" />
-      <scope id="6648795410103966565" at="581,114,582,142" />
+      <scope id="6648795410103966565" at="581,105,582,124" />
       <scope id="6648795410103966565" at="584,116,585,146" />
       <scope id="8113369036793723665" at="97,0,99,0" />
       <scope id="8113369036793723667" at="106,19,108,27" />
@@ -2127,8 +2127,8 @@
       </scope>
       <scope id="6648795410103966896" at="409,0,412,0" />
       <scope id="6648795410103966896" at="412,0,415,0">
-        <var name="failIfNoTextgen" id="6648795410103966896" />
         <var name="generateDebugInfo" id="6648795410103966896" />
+        <var name="unused" id="6648795410103966896" />
       </scope>
       <scope id="6648795410103966896" at="415,0,418,0">
         <var name="value" id="6648795410103966896" />

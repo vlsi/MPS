@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 package jetbrains.mps.generator;
+
+import jetbrains.mps.util.annotation.ToRemove;
 
 /**
  * Settings #isCheckModelsBeforeGeneration and #isGenerateDebugInfo are not generator-specific, but
@@ -51,6 +53,8 @@ public interface IModifiableGenerationSettings extends IGenerationSettings {
 
   void setDebugIncrementalDependencies(boolean value);
 
+  @Deprecated
+  @ToRemove(version = 2017.2)
   void setFailOnMissingTextGen(boolean fail);
 
   void setGenerateDebugInfo(boolean generateDebugInfo);

@@ -120,7 +120,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer" />
     <classNode dependClassName="jetbrains.mps.internal.make.cfg.MakeFacetInitializer" />
-    <classNode dependClassName="jetbrains.mps.internal.make.cfg.TextGenFacetInitializer" />
     <classNode dependClassName="jetbrains.mps.make.MakeSession" />
     <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
@@ -220,7 +219,6 @@
     <classNode dependClassName="jetbrains.mps.internal.make.cfg.GenerateFacetInitializer" />
     <classNode dependClassName="jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer" />
     <classNode dependClassName="jetbrains.mps.internal.make.cfg.MakeFacetInitializer" />
-    <classNode dependClassName="jetbrains.mps.internal.make.cfg.TextGenFacetInitializer" />
     <classNode dependClassName="jetbrains.mps.make.MakeSession" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />

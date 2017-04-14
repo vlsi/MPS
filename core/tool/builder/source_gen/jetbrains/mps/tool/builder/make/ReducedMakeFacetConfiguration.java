@@ -20,7 +20,6 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
-import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
 import jetbrains.mps.internal.make.cfg.MakeFacetInitializer;
@@ -69,8 +68,6 @@ public class ReducedMakeFacetConfiguration {
         // FIXME rebuild is actually part of MakeSession, not of this RMFC class. For unknown reason, however, idea plugin 
         // uses distinct values for session's and generation's clean flag 
         new GenerateFacetInitializer().cleanMake(rebuild).setGenerationOptions(optBuilder).populate(pp);
-
-        new TextGenFacetInitializer().populate(pp);
 
         Tuples._1<Boolean> skipCopyTraceinfo = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.traceable.CopyTraceInfo.copyTraceInfo"), Object.class);
         if (skipCopyTraceinfo != null) {

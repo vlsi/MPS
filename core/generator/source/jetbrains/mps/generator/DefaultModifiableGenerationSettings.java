@@ -31,7 +31,6 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   private boolean myIncremental = false;
   private boolean myIncrementalUseCache = false;
   private boolean myDebugIncrementalDependencies = false;
-  private boolean myFailOnMissingTextGen = false;
   private boolean myGenerateDebugInfo = true;
   private boolean myShowBadChildWarning = true;
   private boolean myActiveInplaceTransform = true;
@@ -170,12 +169,12 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public boolean isFailOnMissingTextGen() {
-    return myFailOnMissingTextGen;
+    return false;
   }
 
   @Override
   public void setFailOnMissingTextGen(boolean fail) {
-    myFailOnMissingTextGen = fail;
+    // no-op
   }
 
   @Override

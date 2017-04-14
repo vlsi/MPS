@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,7 +75,6 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
   private JCheckBox myLimitNumberOfModels = new JCheckBox("Maximum number of transient models to keep:");
   private JFormattedTextField myNumberOfModelsToKeep = new JFormattedTextField(new RangeDecimalFormatter(0, 1000));
 
-  private JCheckBox myFailOnMissingTextgen = new JCheckBox("Fail if textgen not found");
   private JCheckBox myGenerateDebugInfo = new JCheckBox("Generate debug information");
 
   private JLabel myStatusLabel;
@@ -288,10 +287,9 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
   private JPanel createTextGenPanel() {
     JPanel textgenPanel = new JPanel();
     textgenPanel.setLayout(new BoxLayout(textgenPanel, BoxLayout.Y_AXIS));
-    textgenPanel.add(myFailOnMissingTextgen);
     textgenPanel.add(myGenerateDebugInfo);
     textgenPanel.setBorder(IdeBorderFactory.createTitledBorder("TextGen options"));
-    myButtonState.track(myFailOnMissingTextgen, myGenerateDebugInfo);
+    myButtonState.track(myGenerateDebugInfo);
     return textgenPanel;
   }
 
@@ -319,7 +317,6 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     }
     myGenerationSettings.enableInplaceTransformations(myInplaceTransform.isSelected());
     myGenerationSettings.setCreateStaticReferences(myAvoidDynamicRefs.isSelected());
-    myGenerationSettings.setFailOnMissingTextGen(myFailOnMissingTextgen.isSelected());
     myGenerationSettings.setGenerateDebugInfo(myGenerateDebugInfo.isSelected());
 
     myButtonState.reset(); // memorize the new state
@@ -382,7 +379,6 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     myNumberOfModelsToKeep.setValue(myGenerationSettings.getNumberOfModelsToKeep() == -1 ? 16 : myGenerationSettings.getNumberOfModelsToKeep());
     myLimitNumberOfModels.setSelected(myGenerationSettings.getNumberOfModelsToKeep() != -1);
 
-    myFailOnMissingTextgen.setSelected(myGenerationSettings.isFailOnMissingTextGen());
     myGenerateDebugInfo.setSelected(myGenerationSettings.isGenerateDebugInfo());
 
     final JRadioButton[] allbuttons = {myTraceNone, myTraceSteps, myTraceLanguages, myTraceTypes};
