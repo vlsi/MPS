@@ -84,16 +84,16 @@ public class ModelCheckerIssueFinder extends BaseFinder {
     }
   }
   private static class ItemsToCheck {
-    public List<SModel> models;
-    public List<SModule> modules;
+    public List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
+    public List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
   }
   private ModelCheckerIssueFinder.ItemsToCheck getItemsToCheck(SearchQuery searchQuery) {
     IHolder objectHolder = searchQuery.getObjectHolder();
     final SearchScope scope = searchQuery.getScope();
     ModelCheckerIssueFinder.ItemsToCheck itemsToCheck = new ModelCheckerIssueFinder.ItemsToCheck();
-    // FIXME IT'S PLAIN WRONG TO PASS SET OF MODELS/MODULES TO CHECK THROUGH IHolder.
-    //       SearchScope tells where to look for, SearchQuery.getObjectHolder tells what to look for
-    //       That's why I didn't change scope.resolve here to use query.getSearchObjectResolver()!
+    // FIXME IT'S PLAIN WRONG TO PASS SET OF MODELS/MODULES TO CHECK THROUGH IHolder. 
+    //       SearchScope tells where to look for, SearchQuery.getObjectHolder tells what to look for 
+    //       That's why I didn't change scope.resolve here to use query.getSearchObjectResolver()! 
     if (objectHolder instanceof ModelsHolder) {
       ModelsHolder modelsHolder = (ModelsHolder) objectHolder;
       for (SModelReference ref : modelsHolder.getObject()) {

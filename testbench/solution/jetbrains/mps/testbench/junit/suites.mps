@@ -53,7 +53,6 @@
     <import index="vqh0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.make(MPS.Core/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
-    <import index="phxh" ref="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)" />
     <import index="k8ev" ref="r:f39afe13-666a-48f2-9d7c-2f9366f78fe5(jetbrains.mps.typesystemEngine.checker)" />
   </imports>
   <registry>
@@ -1477,7 +1476,7 @@
         <property role="TrG5h" value="checker" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="2$EeqAz24yX" role="1tU5fm">
-          <ref role="3uigEE" to="wsw7:7z7Xs6Zeka" resolve="INodeChecker" />
+          <ref role="3uigEE" to="wsw7:7z7Xs6Zeka" resolve="IRootChecker" />
         </node>
       </node>
       <node concept="37vLTG" id="2$EeqAz24yY" role="3clF46">
@@ -2339,10 +2338,10 @@
                           <ref role="37wK5l" node="2$EeqAz24yU" resolve="applyChecker" />
                           <node concept="2ShNRf" id="7X3$Ctw9yJr" role="37wK5m">
                             <node concept="1pGfFk" id="7X3$Ctw9yJs" role="2ShVmc">
-                              <ref role="37wK5l" to="wsw7:45Q6RD6iAIS" resolve="AbstractConstraintsCheckerINodeCheckerAdapter" />
+                              <ref role="37wK5l" to="wsw7:45Q6RD6iAIS" resolve="AbstractConstraintsCheckerRootCheckerAdapter" />
                               <node concept="10M0yZ" id="4QJbmJGVq9u" role="37wK5m">
                                 <ref role="3cqZAo" to="wsw7:45Q6RD6jHDq" resolve="SKIP_CONSTRAINTS_CONDITION" />
-                                <ref role="1PxDUh" to="wsw7:2UMCgvoqxz1" resolve="AbstractConstraintsCheckerINodeCheckerAdapter" />
+                                <ref role="1PxDUh" to="wsw7:2UMCgvoqxz1" resolve="AbstractConstraintsCheckerRootCheckerAdapter" />
                               </node>
                               <node concept="2ShNRf" id="1EmyK$n$2II" role="37wK5m">
                                 <node concept="1pGfFk" id="1EmyK$n$hwF" role="2ShVmc">

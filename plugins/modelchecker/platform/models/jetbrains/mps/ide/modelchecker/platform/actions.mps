@@ -1942,6 +1942,13 @@
             <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
           </node>
         </node>
+        <node concept="2ShNRf" id="2Mj26p32tHE" role="33vP2m">
+          <node concept="Tc6Ow" id="2Mj26p32pa6" role="2ShVmc">
+            <node concept="3uibUv" id="2Mj26p32pa7" role="HW$YZ">
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="312cEg" id="4QJbmJH1DeO" role="jymVt">
         <property role="TrG5h" value="modules" />
@@ -1949,6 +1956,13 @@
         <node concept="_YKpA" id="4QJbmJH1DeQ" role="1tU5fm">
           <node concept="3uibUv" id="4QJbmJH1FjM" role="_ZDj9">
             <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+          </node>
+        </node>
+        <node concept="2ShNRf" id="2Mj26p32vDj" role="33vP2m">
+          <node concept="Tc6Ow" id="2Mj26p32vwr" role="2ShVmc">
+            <node concept="3uibUv" id="2Mj26p32vws" role="HW$YZ">
+              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+            </node>
           </node>
         </node>
       </node>
@@ -8171,7 +8185,7 @@
           </node>
           <node concept="2OqwBi" id="3etVqSRRNuO" role="3clFbw">
             <node concept="37vLTw" id="4Va90T4Ax7u" role="2Oq$k0">
-              <ref role="3cqZAo" node="4Va90T4Aps3" />
+              <ref role="3cqZAo" node="4Va90T4Aps3" resolve="issuesToFix" />
             </node>
             <node concept="1v1jN8" id="3etVqSRRNuQ" role="2OqNvi" />
           </node>
@@ -8184,7 +8198,7 @@
               <ref role="37wK5l" to="jkm4:~Messages.showYesNoDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):int" resolve="showYesNoDialog" />
               <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
               <node concept="37vLTw" id="2K4NeDxBb$x" role="37wK5m">
-                <ref role="3cqZAo" node="3etVqSRRNr6" />
+                <ref role="3cqZAo" node="3etVqSRRNr6" resolve="myIdeaProject" />
               </node>
               <node concept="3cpWs3" id="3etVqSRRNuZ" role="37wK5m">
                 <node concept="Xl_RD" id="3etVqSRRNv0" role="3uHU7w">
@@ -8210,7 +8224,7 @@
               <property role="3cmrfH" value="0" />
             </node>
             <node concept="37vLTw" id="3GM_nagTvnm" role="3uHU7B">
-              <ref role="3cqZAo" node="3etVqSRRNuS" />
+              <ref role="3cqZAo" node="3etVqSRRNuS" resolve="dialogAnswer" />
             </node>
           </node>
         </node>
