@@ -7,7 +7,6 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
@@ -51,7 +50,6 @@
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="1gam" ref="r:dc013bd4-6bcf-44c3-9e08-a65e07c88df7(jetbrains.mps.internal.make.cfg)" />
     <import index="j07i" ref="r:d357a980-6a2b-481f-acb3-29792a9d3728(jetbrains.mps.make.dependencies)" />
-    <import index="wwqx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.logging(MPS.Core/)" />
     <import index="d6hn" ref="r:f9ad0653-f934-4037-8035-de5d2e74cf22(jetbrains.mps.core.tool.environment.classloading)" />
   </imports>
   <registry>
@@ -861,77 +859,15 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="5Pnc_qQoFop" role="3cqZAp">
-          <node concept="3SKdUq" id="5Pnc_qQoFor" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME redirect of log4j output to IMessageHandler (which is likely a wrap for log4j output in case of command-line build)" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="5Pnc_qQoGx7" role="3cqZAp">
-          <node concept="3SKdUq" id="5Pnc_qQoGx9" role="3SKWNk">
-            <property role="3SKdUp" value="looks suspicious. Shall check 583306c139b8a5d8a5ed6cb05801b646a0f43801 as legitimate fix for  MPS-20125. How come messages reported by generator" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="5Pnc_qQoHDT" role="3cqZAp">
-          <node concept="3SKdUq" id="5Pnc_qQoHDV" role="3SKWNk">
-            <property role="3SKdUp" value="through IMessageHandler didn't reach messages view, but log4j error do. Generator doesn't use log4j for client messages, imo." />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="3fReyX4t2WH" role="3cqZAp">
-          <node concept="3cpWsn" id="3fReyX4t2WI" role="3cpWs9">
-            <property role="TrG5h" value="handler" />
-            <node concept="3uibUv" id="3fReyX4t2WB" role="1tU5fm">
-              <ref role="3uigEE" node="3fReyX4rdR4" resolve="BuildMakeService.ForwardingLoggingHandler" />
+        <node concept="3clFbF" id="KL8Aqll4fr" role="3cqZAp">
+          <node concept="2OqwBi" id="KL8Aqll4fs" role="3clFbG">
+            <node concept="37vLTw" id="3GM_nagTyvD" role="2Oq$k0">
+              <ref role="3cqZAo" node="KL8Aqll4ff" resolve="task" />
             </node>
-            <node concept="2ShNRf" id="3fReyX4t2WJ" role="33vP2m">
-              <node concept="1pGfFk" id="3fReyX4t2WK" role="2ShVmc">
-                <ref role="37wK5l" node="3fReyX4rw5T" resolve="BuildMakeService.ForwardingLoggingHandler" />
-                <node concept="2OqwBi" id="3fReyX4t2WL" role="37wK5m">
-                  <node concept="37vLTw" id="3fReyX4t2WM" role="2Oq$k0">
-                    <ref role="3cqZAo" node="KL8Aqll4be" resolve="makeSession" />
-                  </node>
-                  <node concept="liA8E" id="3fReyX4t2WN" role="2OqNvi">
-                    <ref role="37wK5l" to="hfuk:7yGn3z4N4Nw" resolve="getMessageHandler" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4Ju2VOBwJwE" role="3cqZAp">
-          <node concept="2OqwBi" id="4Ju2VOBwKl5" role="3clFbG">
-            <node concept="37vLTw" id="4Ju2VOBwJwD" role="2Oq$k0">
-              <ref role="3cqZAo" node="3fReyX4t2WI" resolve="handler" />
-            </node>
-            <node concept="liA8E" id="4Ju2VOBwLfb" role="2OqNvi">
-              <ref role="37wK5l" to="wwqx:~MPSAppenderBase.register():void" resolve="register" />
-            </node>
-          </node>
-        </node>
-        <node concept="2GUZhq" id="3fReyX4r3GI" role="3cqZAp">
-          <node concept="3clFbS" id="3fReyX4r3GK" role="2GV8ay">
-            <node concept="3clFbF" id="KL8Aqll4fr" role="3cqZAp">
-              <node concept="2OqwBi" id="KL8Aqll4fs" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagTyvD" role="2Oq$k0">
-                  <ref role="3cqZAo" node="KL8Aqll4ff" resolve="task" />
-                </node>
-                <node concept="liA8E" id="KL8Aqll4fu" role="2OqNvi">
-                  <ref role="37wK5l" to="4rvk:6eQ0BhLYtnI" resolve="run" />
-                  <node concept="37vLTw" id="2BHiRxgm8Dl" role="37wK5m">
-                    <ref role="3cqZAo" node="KL8Aqll4bp" resolve="monitor" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="3fReyX4r3GL" role="2GVbov">
-            <node concept="3clFbF" id="3fReyX4t5ay" role="3cqZAp">
-              <node concept="2OqwBi" id="3fReyX4t5hJ" role="3clFbG">
-                <node concept="37vLTw" id="3fReyX4t5ax" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3fReyX4t2WI" resolve="handler" />
-                </node>
-                <node concept="liA8E" id="3fReyX4tmbR" role="2OqNvi">
-                  <ref role="37wK5l" to="wwqx:~MPSAppenderBase.unregister():void" resolve="unregister" />
-                </node>
+            <node concept="liA8E" id="KL8Aqll4fu" role="2OqNvi">
+              <ref role="37wK5l" to="4rvk:6eQ0BhLYtnI" resolve="run" />
+              <node concept="37vLTw" id="2BHiRxgm8Dl" role="37wK5m">
+                <ref role="3cqZAo" node="KL8Aqll4bp" resolve="monitor" />
               </node>
             </node>
           </node>
@@ -1104,166 +1040,6 @@
       </node>
       <node concept="3uibUv" id="KL8Aqll4dZ" role="3clF45">
         <ref role="3uigEE" to="i9so:5mqBoD3U3Wb" resolve="IScript" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3fReyX4t0fk" role="jymVt" />
-    <node concept="312cEu" id="3fReyX4rdR4" role="jymVt">
-      <property role="2bfB8j" value="false" />
-      <property role="TrG5h" value="ForwardingLoggingHandler" />
-      <node concept="2tJIrI" id="3fReyX4rtNd" role="jymVt" />
-      <node concept="3clFbW" id="3fReyX4rw5T" role="jymVt">
-        <node concept="3cqZAl" id="3fReyX4rw5V" role="3clF45" />
-        <node concept="3Tm1VV" id="3fReyX4rw5W" role="1B3o_S" />
-        <node concept="3clFbS" id="3fReyX4rw5X" role="3clF47">
-          <node concept="3clFbF" id="3fReyX4sDJG" role="3cqZAp">
-            <node concept="37vLTI" id="3fReyX4sDJI" role="3clFbG">
-              <node concept="2OqwBi" id="3fReyX4sDJM" role="37vLTJ">
-                <node concept="Xjq3P" id="3fReyX4sDJP" role="2Oq$k0" />
-                <node concept="2OwXpG" id="3fReyX4sDJL" role="2OqNvi">
-                  <ref role="2Oxat5" node="3fReyX4sDJC" resolve="myMessageHandler" />
-                </node>
-              </node>
-              <node concept="37vLTw" id="3fReyX4sDJQ" role="37vLTx">
-                <ref role="3cqZAo" node="3fReyX4rwqp" resolve="messageHandler" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="37vLTG" id="3fReyX4rwqp" role="3clF46">
-          <property role="TrG5h" value="messageHandler" />
-          <node concept="3uibUv" id="3fReyX4rwqo" role="1tU5fm">
-            <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
-          </node>
-        </node>
-      </node>
-      <node concept="3clFb_" id="6Hsvt1DXYJ3" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="append" />
-        <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
-        <node concept="3Tmbuc" id="6Hsvt1DXYJ4" role="1B3o_S" />
-        <node concept="3cqZAl" id="6Hsvt1DXYJ6" role="3clF45" />
-        <node concept="37vLTG" id="6Hsvt1DXYJ7" role="3clF46">
-          <property role="TrG5h" value="priority" />
-          <node concept="3uibUv" id="6Hsvt1DXYJ8" role="1tU5fm">
-            <ref role="3uigEE" to="q7tw:~Priority" resolve="Priority" />
-          </node>
-          <node concept="2AHcQZ" id="6Hsvt1DXYJ9" role="2AJF6D">
-            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-          </node>
-        </node>
-        <node concept="37vLTG" id="6Hsvt1DXYJa" role="3clF46">
-          <property role="TrG5h" value="categoryName" />
-          <node concept="17QB3L" id="6Hsvt1DYZQV" role="1tU5fm" />
-          <node concept="2AHcQZ" id="6Hsvt1DXYJc" role="2AJF6D">
-            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-          </node>
-        </node>
-        <node concept="37vLTG" id="6Hsvt1DXYJd" role="3clF46">
-          <property role="TrG5h" value="messageText" />
-          <node concept="17QB3L" id="6Hsvt1DZ03L" role="1tU5fm" />
-          <node concept="2AHcQZ" id="6Hsvt1DXYJf" role="2AJF6D">
-            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-          </node>
-        </node>
-        <node concept="37vLTG" id="6Hsvt1DXYJg" role="3clF46">
-          <property role="TrG5h" value="throwable" />
-          <node concept="3uibUv" id="6Hsvt1DXYJh" role="1tU5fm">
-            <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
-          </node>
-          <node concept="2AHcQZ" id="6Hsvt1DXYJi" role="2AJF6D">
-            <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
-          </node>
-        </node>
-        <node concept="37vLTG" id="6Hsvt1DXYJj" role="3clF46">
-          <property role="TrG5h" value="object" />
-          <node concept="3uibUv" id="6Hsvt1DXYJk" role="1tU5fm">
-            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-          </node>
-          <node concept="2AHcQZ" id="6Hsvt1DXYJl" role="2AJF6D">
-            <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
-          </node>
-        </node>
-        <node concept="3clFbS" id="6Hsvt1DXYJm" role="3clF47">
-          <node concept="3cpWs8" id="6Hsvt1DY5$J" role="3cqZAp">
-            <node concept="3cpWsn" id="6Hsvt1DY5$K" role="3cpWs9">
-              <property role="TrG5h" value="message" />
-              <property role="3TUv4t" value="false" />
-              <node concept="3uibUv" id="6Hsvt1DY5$L" role="1tU5fm">
-                <ref role="3uigEE" to="et5u:~Message" resolve="Message" />
-              </node>
-              <node concept="2ShNRf" id="6Hsvt1DY5$M" role="33vP2m">
-                <node concept="1pGfFk" id="6Hsvt1DY5$N" role="2ShVmc">
-                  <ref role="37wK5l" to="et5u:~Message.&lt;init&gt;(jetbrains.mps.messages.MessageKind,java.lang.String)" resolve="Message" />
-                  <node concept="2YIFZM" id="6Hsvt1DYI2g" role="37wK5m">
-                    <ref role="37wK5l" to="et5u:~MessageKind.fromPriority(org.apache.log4j.Priority):jetbrains.mps.messages.MessageKind" resolve="fromPriority" />
-                    <ref role="1Pybhc" to="et5u:~MessageKind" resolve="MessageKind" />
-                    <node concept="37vLTw" id="6Hsvt1DYMu3" role="37wK5m">
-                      <ref role="3cqZAo" node="6Hsvt1DXYJ7" resolve="priority" />
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="6Hsvt1DZ9ji" role="37wK5m">
-                    <ref role="3cqZAo" node="6Hsvt1DXYJd" resolve="messageText" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="H0JT4CpCu3" role="3cqZAp">
-            <node concept="2OqwBi" id="H0JT4CpC_p" role="3clFbG">
-              <node concept="37vLTw" id="H0JT4CpCu1" role="2Oq$k0">
-                <ref role="3cqZAo" node="6Hsvt1DY5$K" resolve="message" />
-              </node>
-              <node concept="liA8E" id="H0JT4CpCHW" role="2OqNvi">
-                <ref role="37wK5l" to="et5u:~Message.setException(java.lang.Throwable):jetbrains.mps.messages.Message" resolve="setException" />
-                <node concept="37vLTw" id="H0JT4CpCRj" role="37wK5m">
-                  <ref role="3cqZAo" node="6Hsvt1DXYJg" resolve="throwable" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="6Hsvt1DY5$V" role="3cqZAp">
-            <node concept="2OqwBi" id="6Hsvt1DY5$W" role="3clFbG">
-              <node concept="37vLTw" id="3GM_nagTuHf" role="2Oq$k0">
-                <ref role="3cqZAo" node="6Hsvt1DY5$K" resolve="message" />
-              </node>
-              <node concept="liA8E" id="6Hsvt1DY5$Y" role="2OqNvi">
-                <ref role="37wK5l" to="et5u:~Message.setHintObject(java.lang.Object):jetbrains.mps.messages.Message" resolve="setHintObject" />
-                <node concept="37vLTw" id="6Hsvt1DZi15" role="37wK5m">
-                  <ref role="3cqZAo" node="6Hsvt1DXYJj" resolve="object" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="6Hsvt1DY5_2" role="3cqZAp">
-            <node concept="2OqwBi" id="6Hsvt1DY5_3" role="3clFbG">
-              <node concept="37vLTw" id="3fReyX4sNrg" role="2Oq$k0">
-                <ref role="3cqZAo" node="3fReyX4sDJC" resolve="myMessageHandler" />
-              </node>
-              <node concept="liA8E" id="6Hsvt1DY5_5" role="2OqNvi">
-                <ref role="37wK5l" to="et5u:~IMessageHandler.handle(jetbrains.mps.messages.IMessage):void" resolve="handle" />
-                <node concept="37vLTw" id="3GM_nagT_6y" role="37wK5m">
-                  <ref role="3cqZAo" node="6Hsvt1DY5$K" resolve="message" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2AHcQZ" id="6Hsvt1E2eHP" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-        </node>
-      </node>
-      <node concept="2tJIrI" id="3fReyX4rtRm" role="jymVt" />
-      <node concept="3Tm1VV" id="3fReyX4rdR5" role="1B3o_S" />
-      <node concept="3uibUv" id="3fReyX4rmtu" role="1zkMxy">
-        <ref role="3uigEE" to="wwqx:~MPSAppenderBase" resolve="MPSAppenderBase" />
-      </node>
-      <node concept="312cEg" id="3fReyX4sDJC" role="jymVt">
-        <property role="TrG5h" value="myMessageHandler" />
-        <node concept="3Tm6S6" id="3fReyX4sDJD" role="1B3o_S" />
-        <node concept="3uibUv" id="3fReyX4sDJF" role="1tU5fm">
-          <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
-        </node>
       </node>
     </node>
   </node>

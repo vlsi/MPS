@@ -23,10 +23,6 @@ import jetbrains.mps.make.service.CoreMakeTask;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.logging.MPSAppenderBase;
-import jetbrains.mps.messages.IMessageHandler;
-import org.apache.log4j.Priority;
-import org.jetbrains.annotations.Nullable;
 
 public class BuildMakeService extends AbstractMakeService implements IMakeService {
   public BuildMakeService() {
@@ -71,16 +67,7 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     IScriptController ctl = this.completeController(makeSession, controller);
 
     CoreMakeTask task = new CoreMakeTask(scrName, makeSeq, ctl, makeSession.getMessageHandler());
-    // FIXME redirect of log4j output to IMessageHandler (which is likely a wrap for log4j output in case of command-line build) 
-    // looks suspicious. Shall check 583306c139b8a5d8a5ed6cb05801b646a0f43801 as legitimate fix for  MPS-20125. How come messages reported by generator 
-    // through IMessageHandler didn't reach messages view, but log4j error do. Generator doesn't use log4j for client messages, imo. 
-    BuildMakeService.ForwardingLoggingHandler handler = new BuildMakeService.ForwardingLoggingHandler(makeSession.getMessageHandler());
-    handler.register();
-    try {
-      task.run(monitor);
-    } finally {
-      handler.unregister();
-    }
+    task.run(monitor);
     return new FutureValue<IResult>(task.getResult());
   }
 
@@ -98,21 +85,5 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
   }
   public static IScript defaultMakeScript() {
     return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
-  }
-
-  public static class ForwardingLoggingHandler extends MPSAppenderBase {
-
-    public ForwardingLoggingHandler(IMessageHandler messageHandler) {
-      this.myMessageHandler = messageHandler;
-    }
-    @Override
-    protected void append(@NotNull Priority priority, @NotNull String categoryName, @NotNull String messageText, @Nullable Throwable throwable, @Nullable Object object) {
-      Message message = new Message(MessageKind.fromPriority(priority), messageText);
-      message.setException(throwable);
-      message.setHintObject(object);
-      myMessageHandler.handle(message);
-    }
-
-    private IMessageHandler myMessageHandler;
   }
 }
