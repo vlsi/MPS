@@ -234,7 +234,7 @@ public final class CommonPaths {
 
   private static void addIdeaJars(CompositeClassPathItem result) {
     addRepackedIdeaJars(result);
-    addIfExists(result, "lib/netty-all-4.1.6.Final.Patched.jar");
+    addIfExists(result, "lib/netty-all-4.1.9.Final.jar");
     addIfExists(result, "lib/sanselan-0.98-snapshot.jar");
     addIfExists(result, "lib/util.jar");
     addIfExists(result, "lib/extensions.jar");
