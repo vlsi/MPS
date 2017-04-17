@@ -22,6 +22,7 @@ import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -39,19 +40,11 @@ public class HUtil {
   // todo: in which there are no typechecking context(
   public static SNode copyIfNecessary(SNode node) {
     if (node != null && (node.getParent() != null || node.getModel() != null)) {
-      // this copies all the atributes, because can be used in migration scripts
+      // this copies all the attributes, because can be used in migration scripts
       return CopyUtil.copy(node, new THashMap<SNode, SNode>(1), true);
     } else {
       return node;
     }
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  //can't remove in 3.3 as coerce statement is still generated into it
-  public static IMatchingPattern createMatchingPatternByConceptFQName(final String conceptFQName) {
-    //this usage of by-name is reviewed
-    return new ConceptMatchingPattern(MetaAdapterFactoryByName.getConcept(conceptFQName));
   }
 
   public static IMatchingPattern createMatchingPatternByConcept(SConcept concept) {
@@ -60,14 +53,12 @@ public class HUtil {
 
   public static boolean isRuntimeTypeVariable(SNode node) {
     if (node == null) return false;
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable".equals(conceptFqName);
+    return SNodeUtil.concept_RuntimeTypeVariable.equals(node.getConcept());
   }
 
   public static boolean isRuntimeHoleType(SNode node) {
     if (node == null) return false;
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType".equals(conceptFqName);
+    return SNodeUtil.concept_RuntimeHoleType.equals(node.getConcept());
   }
 
   public static void addAdditionalRuleIdsFromInfo(IErrorReporter errorReporter, EquationInfo equationInfo) {

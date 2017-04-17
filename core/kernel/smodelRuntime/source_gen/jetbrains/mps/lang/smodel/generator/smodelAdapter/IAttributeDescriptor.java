@@ -8,8 +8,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 
@@ -51,10 +49,6 @@ public interface IAttributeDescriptor {
     }
     @Override
     public void update(@NotNull SNode attribute) {
-      // todo: remove this hack after removing string constructor 
-      if (myLink.getOwner().getQualifiedName().equals(MetaIdFactory.INVALID_CONCEPT_NAME) && attribute.getParent() != null) {
-        myLink = MetaAdapterFactoryByName.getReferenceLink(attribute.getParent().getConcept().getQualifiedName(), myLink.getName());
-      }
       AttributeOperations.setLink(attribute, myLink);
     }
   }
@@ -85,10 +79,6 @@ public interface IAttributeDescriptor {
     }
     @Override
     public void update(@NotNull SNode attribute) {
-      // todo: remove this hack after removing string constructor 
-      if (myProperty.getOwner().getQualifiedName().equals(MetaIdFactory.INVALID_CONCEPT_NAME) && attribute.getParent() != null) {
-        myProperty = MetaAdapterFactoryByName.getProperty(attribute.getParent().getConcept().getQualifiedName(), myProperty.getName());
-      }
       AttributeOperations.setProperty(attribute, myProperty);
     }
   }

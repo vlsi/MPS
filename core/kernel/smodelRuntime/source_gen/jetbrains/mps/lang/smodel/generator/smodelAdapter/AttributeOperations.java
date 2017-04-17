@@ -10,8 +10,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.log4j.Level;
-import jetbrains.mps.smodel.behaviour.BHReflection;
-import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -25,6 +23,8 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
 public class AttributeOperations {
   private static final Logger LOG = LogManager.getLogger(AttributeOperations.class);
@@ -47,7 +47,7 @@ public class AttributeOperations {
         LOG.error(Sequence.fromIterable(list).count() + " nodes match single value attribute. The first found node returned as the value.");
       }
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("  node=" + node.getReference() + "; attribute=" + ((String) BHReflection.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(Sequence.fromIterable(list).first())), SMethodTrimmedId.create("getRole", null, "1653mnvAgoG"))) + " (" + Sequence.fromIterable(list).first().getNodeId() + ")");
+        LOG.error("  node=" + node.getReference() + "; concept=" + SNodeOperations.getConcept(Sequence.fromIterable(list).first()).getQualifiedName() + " (" + Sequence.fromIterable(list).first().getNodeId() + ")");
       }
     }
     return Sequence.fromIterable(list).first();
@@ -85,10 +85,10 @@ public class AttributeOperations {
     } else {
       if (Sequence.fromIterable(oldlist).count() > 1) {
         if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error(Sequence.fromIterable(oldlist).count() + " nodes match signle value attribute during attribute replacing. Only the first found node replaced.");
+          LOG.error(Sequence.fromIterable(oldlist).count() + " nodes match single value attribute during attribute replacing. Only the first found node replaced.");
         }
         if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("  node=" + node.getReference() + "; attribute=" + ((String) BHReflection.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(Sequence.fromIterable(oldlist).first())), SMethodTrimmedId.create("getRole", null, "1653mnvAgoG"))) + " (" + Sequence.fromIterable(oldlist).first().getNodeId() + ")");
+          LOG.error("  node=" + node.getReference() + "; attribute=" + SNodeOperations.getConcept(Sequence.fromIterable(oldlist).first()).getQualifiedName() + " (" + Sequence.fromIterable(oldlist).first().getNodeId() + ")");
         }
       }
       SNodeOperations.replaceWithAnother(Sequence.fromIterable(oldlist).first(), value);
@@ -243,7 +243,7 @@ public class AttributeOperations {
     }
     @Override
     protected void insertAfter(SNode node, SNode anchorNode) {
-      AttributeOperations.insertAttribute(myReferenceContainer, anchorNode, myAttributeDescriptor, (SNode) node);
+      AttributeOperations.insertAttribute(myReferenceContainer, (SNode) anchorNode, myAttributeDescriptor, (SNode) node);
     }
     @Override
     protected void doAddReference(SNode node) {

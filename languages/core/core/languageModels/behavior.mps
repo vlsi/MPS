@@ -31,7 +31,6 @@
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -1615,94 +1614,6 @@
     </node>
     <node concept="13hLZK" id="2WmWrdnSpX5" role="13h7CW">
       <node concept="3clFbS" id="2WmWrdnSpX6" role="2VODD2" />
-    </node>
-  </node>
-  <node concept="13h7C7" id="1653mnvAgoJ">
-    <ref role="13h7C2" to="tpck:4uZwTti3_$T" resolve="Attribute" />
-    <node concept="13hLZK" id="1653mnvAgoK" role="13h7CW">
-      <node concept="3clFbS" id="1653mnvAgoL" role="2VODD2" />
-    </node>
-    <node concept="13i0hz" id="1653mnvAgoG" role="13h7CS">
-      <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
-      <property role="TrG5h" value="getRole" />
-      <property role="13i0it" value="true" />
-      <node concept="3Tm1VV" id="1653mnvAgoH" role="1B3o_S" />
-      <node concept="17QB3L" id="1653mnvAgoD" role="3clF45" />
-      <node concept="3clFbS" id="1653mnvAgoI" role="3clF47">
-        <node concept="3SKdUt" id="6_gUeuqPDMB" role="3cqZAp">
-          <node concept="3SKdUq" id="6_gUeuqPDNF" role="3SKWNk">
-            <property role="3SKdUp" value="use this method" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="6_gUeuqPq_y" role="3cqZAp">
-          <node concept="2YIFZM" id="6_gUeuqPqA6" role="3clFbG">
-            <ref role="37wK5l" to="tpcn:6_gUeuqINwd" resolve="getAttributeRole" />
-            <ref role="1Pybhc" to="tpcn:6_gUeuqI_Vn" resolve="AttributeDesignTimeOperations" />
-            <node concept="13iPFW" id="6_gUeuqPqK2" role="37wK5m" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="6_gUeuqPDJu" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
-    <node concept="13i0hz" id="1653mnvAgpO" role="13h7CS">
-      <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
-      <property role="TrG5h" value="multiple" />
-      <property role="13i0it" value="true" />
-      <node concept="3Tm1VV" id="1653mnvAgpP" role="1B3o_S" />
-      <node concept="10P_77" id="1653mnvAgpL" role="3clF45" />
-      <node concept="3clFbS" id="1653mnvAgpQ" role="3clF47">
-        <node concept="3SKdUt" id="6_gUeuqPEbj" role="3cqZAp">
-          <node concept="3SKdUq" id="6_gUeuqPEch" role="3SKWNk">
-            <property role="3SKdUp" value="use this method" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="6_gUeuqPr6Z" role="3cqZAp">
-          <node concept="2YIFZM" id="6_gUeuqPr7z" role="3clFbG">
-            <ref role="37wK5l" to="tpcn:6_gUeuqIK5K" resolve="isMultipleAttribute" />
-            <ref role="1Pybhc" to="tpcn:6_gUeuqI_Vn" resolve="AttributeDesignTimeOperations" />
-            <node concept="13iPFW" id="6_gUeuqPr7V" role="37wK5m" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="6_gUeuqPE88" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
-    <node concept="13i0hz" id="2D1PBM_bxHl" role="13h7CS">
-      <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
-      <property role="TrG5h" value="getAttributed" />
-      <property role="13i0it" value="true" />
-      <node concept="3Tm1VV" id="2D1PBM_bxHm" role="1B3o_S" />
-      <node concept="_YKpA" id="2D1PBM_bxHj" role="3clF45">
-        <node concept="3Tqbb2" id="2D1PBM_bxHk" role="_ZDj9">
-          <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="2D1PBM_bxHn" role="3clF47">
-        <node concept="3SKdUt" id="6_gUeuqPEpO" role="3cqZAp">
-          <node concept="3SKdUq" id="6_gUeuqPEse" role="3SKWNk">
-            <property role="3SKdUp" value="use this method" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="6_gUeuqPrt2" role="3cqZAp">
-          <node concept="2OqwBi" id="6_gUeuqPs69" role="3clFbG">
-            <node concept="2YIFZM" id="6_gUeuqPruc" role="2Oq$k0">
-              <ref role="37wK5l" to="tpcn:6_gUeuqIOUd" resolve="getApplicableConcepts" />
-              <ref role="1Pybhc" to="tpcn:6_gUeuqI_Vn" resolve="AttributeDesignTimeOperations" />
-              <node concept="13iPFW" id="6_gUeuqPrvc" role="37wK5m" />
-            </node>
-            <node concept="ANE8D" id="6_gUeuqPtXV" role="2OqNvi" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="6_gUeuqPEEY" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
     </node>
   </node>
   <node concept="13h7C7" id="1653mnvAOGA">
