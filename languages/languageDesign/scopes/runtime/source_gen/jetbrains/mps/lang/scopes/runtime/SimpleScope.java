@@ -14,11 +14,19 @@ import org.jetbrains.annotations.NotNull;
 public abstract class SimpleScope extends Scope {
   private final List<SNode> nodes;
   public SimpleScope(Iterable<SNode> nodes) {
-    // why i need hash set? 
     this.nodes = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode node : nodes) {
-      if ((node != null)) {
-        this.nodes.add(node);
+
+    // Checking nodes var for null first because null value can be easily passed here as a result of the combination of 
+    // smodel language calls & bahaviour method calls on top of it like: 
+    //     sNodeType.concept.getPropertyDeclarations()  
+    // in this case, if conept (reference inside sNodeType) is null (not specified yet) then the result of 
+    // .getPropertyDeclarations() method call will be null despite null-safety inside any of smodel/collection 
+    // languages returning empty collections in similar cases. 
+    if (nodes != null) {
+      for (SNode node : nodes) {
+        if ((node != null)) {
+          this.nodes.add(node);
+        }
       }
     }
   }
