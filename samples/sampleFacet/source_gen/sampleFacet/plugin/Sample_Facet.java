@@ -88,6 +88,7 @@ public class Sample_Facet extends IFacet.Stub {
               }
               Target_configure.vars(pa.global()).parametersProvider().addParameter("count", 100500);
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_kf1bs5_a0a);
           }
         }
@@ -195,6 +196,7 @@ public class Sample_Facet extends IFacet.Stub {
                 _output_kf1bs5_a0b = Sequence.fromIterable(_output_kf1bs5_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_kf1bs5_a0b);
           }
         }

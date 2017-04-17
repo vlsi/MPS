@@ -126,6 +126,7 @@ public class CompileGeneratedJava_Facet extends IFacet.Stub {
                 }
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_widgfz_a0a);
           }
         }
@@ -219,6 +220,7 @@ public class CompileGeneratedJava_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_widgfz_a0b = null;
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
+          progressMonitor.start("", 0 + 1000);
           switch (0) {
             case 0:
               if (Boolean.TRUE.equals(CompileGeneratedJava_Facet.Target_compile.vars(pa.global()).skipCompilation())) {
@@ -257,9 +259,10 @@ public class CompileGeneratedJava_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_widgfz_a0b);
               }
 
-              monitor.currentProgress().beginWork("Compiling in IntelliJ IDEA", 1, monitor.currentProgress().workLeft());
+              ProgressMonitor subProgress_o0a0b = progressMonitor.subTask(1000);
+              subProgress_o0a0b.start("Compiling in IntelliJ IDEA", 1);
 
-              monitor.currentProgress().advanceWork("Compiling in IntelliJ IDEA", 1);
+              subProgress_o0a0b.advance(1);
               CompilationResult cr = compiler.compileModules(Sequence.fromIterable(toCompile).select(new ISelector<TResource, SModule>() {
                 public SModule select(TResource it) {
                   return it.module();
@@ -276,8 +279,9 @@ public class CompileGeneratedJava_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_widgfz_a0b);
               }
 
-              monitor.currentProgress().finishWork("Compiling in IntelliJ IDEA");
+              subProgress_o0a0b.done();
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_widgfz_a0b);
           }
         }

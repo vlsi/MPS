@@ -114,6 +114,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                 progressMonitor.done();
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_ehksfb_a0a);
           }
         }

@@ -124,6 +124,7 @@ public class JavaDebugEvaluate_Facet extends IFacet.Stub {
               }
               _output_it4uid_a0a = Sequence.fromIterable(_output_it4uid_a0a).concat(Sequence.fromIterable(input));
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_it4uid_a0a);
           }
         }

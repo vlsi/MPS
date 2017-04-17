@@ -104,6 +104,7 @@ public class Generate_Facet extends IFacet.Stub {
                 vars(pa.global()).cleanMake(monitor.getSession().isCleanMake());
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_fi61u2_a0a);
           }
         }
@@ -228,6 +229,7 @@ public class Generate_Facet extends IFacet.Stub {
               }
               return new IResult.SUCCESS(_output_fi61u2_a0b);
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_fi61u2_a0b);
           }
         }
@@ -343,17 +345,19 @@ public class Generate_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0c = null;
           final Iterable<MResource> input = (Iterable<MResource>) (Iterable) rawInput;
+          progressMonitor.start("", 0 + 1000);
           switch (0) {
             case 0:
               int work = Sequence.fromIterable(input).count() * 100;
               if (work == 0) {
                 return new IResult.SUCCESS(_output_fi61u2_a0c);
               }
-              monitor.currentProgress().beginWork("Pre-loading models", work, monitor.currentProgress().workLeft());
+              final ProgressMonitor subProgress_c0a0c = progressMonitor.subTask(1000);
+              subProgress_c0a0c.start("Pre-loading models", work);
               final Project project = monitor.getSession().getProject();
               Sequence.fromIterable(input).visitAll(new IVisitor<MResource>() {
                 public void visit(final MResource mod) {
-                  monitor.currentProgress().advanceWork("Pre-loading models", 100);
+                  subProgress_c0a0c.advance(100);
                   project.getModelAccess().runReadAction(new Runnable() {
                     public void run() {
                       Sequence.fromIterable(mod.models()).visitAll(new IVisitor<SModel>() {
@@ -365,9 +369,10 @@ public class Generate_Facet extends IFacet.Stub {
                   });
                 }
               });
-              monitor.currentProgress().finishWork("Pre-loading models");
+              subProgress_c0a0c.done();
               _output_fi61u2_a0c = Sequence.fromIterable(_output_fi61u2_a0c).concat(Sequence.fromIterable(input));
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_fi61u2_a0c);
           }
         }
@@ -534,6 +539,7 @@ public class Generate_Facet extends IFacet.Stub {
                 })));
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_fi61u2_a0d);
           }
         }

@@ -161,6 +161,7 @@ public class Binaries_Facet extends IFacet.Stub {
                 progressMonitor.done();
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_8acy7z_a0a);
           }
         }

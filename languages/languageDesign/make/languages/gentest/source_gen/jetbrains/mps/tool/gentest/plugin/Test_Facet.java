@@ -85,6 +85,7 @@ public class Test_Facet extends IFacet.Stub {
                 }
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_rwbd_a0a);
           }
         }
@@ -146,16 +147,19 @@ public class Test_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_rwbd_a0b = null;
           final Iterable<ITestResource> input = (Iterable<ITestResource>) (Iterable) rawInput;
+          progressMonitor.start("", 0 + 1000);
           switch (0) {
             case 0:
               if (vars(pa.global()).testListener() == null) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("No test listener provided, stopping")));
                 return new IResult.FAILURE(_output_rwbd_a0b);
               }
-              monitor.currentProgress().beginWork("Testing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
+              ProgressMonitor subProgress_b0a0b = progressMonitor.subTask(1000);
+              subProgress_b0a0b.start("Testing", Sequence.fromIterable(input).count() * 100);
               for (ITestResource resource : Sequence.fromIterable(input)) {
                 String fqn = resource.getModule().getModuleName();
-                monitor.currentProgress().advanceWork("Testing", 1, fqn);
+                subProgress_b0a0b.advance(1);
+                subProgress_b0a0b.step(fqn);
                 ProcessBuilder pb = new ProcessBuilder(resource.buildCommandLine());
                 try {
                   Process process = pb.start();
@@ -167,10 +171,12 @@ public class Test_Facet extends IFacet.Stub {
                 } catch (IOException ioe) {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(ioe.getMessage())));
                 }
-                monitor.currentProgress().advanceWork("Testing", 99, fqn);
+                subProgress_b0a0b.advance(99);
+                subProgress_b0a0b.step(fqn);
               }
-              monitor.currentProgress().finishWork("Testing");
+              subProgress_b0a0b.done();
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_rwbd_a0b);
           }
         }

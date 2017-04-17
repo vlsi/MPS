@@ -79,6 +79,7 @@ public class CollectHashes_Facet extends IFacet.Stub {
                 }
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_revm5v_a0a);
           }
         }

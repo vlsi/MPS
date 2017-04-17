@@ -126,6 +126,7 @@ public class Make_Facet extends IFacet.Stub {
                 progressMonitor.done();
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_pm9z_a0a);
           }
         }
@@ -213,6 +214,7 @@ public class Make_Facet extends IFacet.Stub {
                 activity.run();
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_pm9z_a0b);
           }
         }
@@ -274,6 +276,7 @@ public class Make_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_pm9z_a0c);
           }
         }

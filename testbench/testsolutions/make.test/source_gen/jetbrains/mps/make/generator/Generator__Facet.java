@@ -64,6 +64,7 @@ public class Generator__Facet extends IFacet.Stub {
             case 0:
               vars(pa.global()).value("uninitialized");
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_j0fmyu_a0a);
           }
         }
@@ -141,19 +142,22 @@ public class Generator__Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_j0fmyu_a0b = null;
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
+          progressMonitor.start("", 0 + 1000);
           switch (0) {
             case 0:
               Assert.assertEquals("uninitialized", Generator__Facet.Target_Configure.vars(pa.global()).value());
-              monitor.currentProgress().beginWork("GENERATE", 100, monitor.currentProgress().workLeft());
+              ProgressMonitor subProgress_b0a0b = progressMonitor.subTask(1000);
+              subProgress_b0a0b.start("GENERATE", 100);
               Generator__Facet.Target_Configure.vars(pa.global()).value("VALUE");
               for (IResource resource : input) {
                 _output_j0fmyu_a0b = Sequence.fromIterable(_output_j0fmyu_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
               }
-              monitor.currentProgress().advanceWork("GENERATE", 50);
-              monitor.currentProgress().finishWork("GENERATE");
+              subProgress_b0a0b.advance(50);
+              subProgress_b0a0b.done();
               _output_j0fmyu_a0b = Sequence.fromIterable(_output_j0fmyu_a0b).concat(Sequence.fromIterable(input));
               return new IResult.SUCCESS(_output_j0fmyu_a0b);
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_j0fmyu_a0b);
           }
         }

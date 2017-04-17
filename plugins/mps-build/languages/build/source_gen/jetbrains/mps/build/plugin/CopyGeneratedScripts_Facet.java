@@ -67,14 +67,17 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_ixa0pj_a0a = null;
           final Iterable<TextGenOutcomeResource> input = (Iterable<TextGenOutcomeResource>) (Iterable) rawInput;
+          progressMonitor.start("", 0 + 1000);
           switch (0) {
             case 0:
               final FileProcessor fp = new FileProcessor();
               List<FilesDelta> deltas = ListSequence.fromList(new ArrayList<FilesDelta>());
-              monitor.currentProgress().beginWork("Build language ANT files", Sequence.fromIterable(input).count() + 2, monitor.currentProgress().workLeft());
+              ProgressMonitor subProgress_c0a0a = progressMonitor.subTask(1000);
+              subProgress_c0a0a.start("Build language ANT files", Sequence.fromIterable(input).count() + 2);
 
               for (TextGenOutcomeResource res : Sequence.fromIterable(input)) {
-                monitor.currentProgress().advanceWork("Build language ANT files", 1, res.getModel().getModelName());
+                subProgress_c0a0a.advance(1);
+                subProgress_c0a0a.step(res.getModel().getModelName());
 
                 TextGenResult textGenResult = res.getTextGenResult();
                 for (TextUnit tu : textGenResult.getUnits()) {
@@ -113,7 +116,8 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                 _output_ixa0pj_a0a = Sequence.fromIterable(_output_ixa0pj_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(Sequence.<IDelta>singleton(folded)))));
               }
 
-              monitor.currentProgress().advanceWork("Build language ANT files", 1, "writing...");
+              subProgress_c0a0a.advance(1);
+              subProgress_c0a0a.step("writing...");
 
               FileSystem.getInstance().runWriteTransaction(new Runnable() {
                 @Override
@@ -122,8 +126,9 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                 }
               });
 
-              monitor.currentProgress().finishWork("Build language ANT files");
+              subProgress_c0a0a.done();
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_ixa0pj_a0a);
           }
         }

@@ -107,6 +107,7 @@ public class TextGen_Facet extends IFacet.Stub {
               // FIXME drop MakeSession property after 2017.2 
               // no-op now 
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_21gswx_a0a);
           }
         }
@@ -184,6 +185,7 @@ public class TextGen_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_21gswx_a0b = null;
           final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
+          progressMonitor.start("", 0 + 1000);
           switch (0) {
             case 0:
               if (Sequence.fromIterable(input).any(new IWhereFilter<GResource>() {
@@ -216,7 +218,8 @@ public class TextGen_Facet extends IFacet.Stub {
               final boolean _generateDebugInfo = vars(pa.global()).generateDebugInfo() == null || vars(pa.global()).generateDebugInfo();
 
               int modelsCount = Sequence.fromIterable(resourcesWithOutput).count();
-              monitor.currentProgress().beginWork("Writing", modelsCount + 3, monitor.currentProgress().workLeft());
+              ProgressMonitor subProgress_p0a0b = progressMonitor.subTask(1000);
+              subProgress_p0a0b.start("Writing", modelsCount + 3);
 
               try {
                 final ArrayBlockingQueue<TextGenResult> resultQueue = new ArrayBlockingQueue<TextGenResult>(modelsCount);
@@ -231,7 +234,7 @@ public class TextGen_Facet extends IFacet.Stub {
                   }
                 });
 
-                monitor.currentProgress().advanceWork("Writing", 3);
+                subProgress_p0a0b.advance(3);
 
                 final Map<GResource, List<IDelta>> deltas2 = new HashMap<GResource, List<IDelta>>();
                 final List<FileProcessor> fileProcessors2 = ListSequence.fromList(new ArrayList<FileProcessor>());
@@ -249,7 +252,8 @@ public class TextGen_Facet extends IFacet.Stub {
                     }
                   }
 
-                  monitor.currentProgress().advanceWork("Writing", 1, tgr.getModel().getReference().getModelName());
+                  subProgress_p0a0b.advance(1);
+                  subProgress_p0a0b.step(tgr.getModel().getReference().getModelName());
                   final GResource inputResource = textGenInput2Resource.get(tgr.getModel());
 
                   _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TextGenOutcomeResource(inputResource.model(), inputResource.module(), tgr))));
@@ -346,9 +350,10 @@ public class TextGen_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_21gswx_a0b);
               } finally {
                 tgEngine.shutdown();
-                monitor.currentProgress().finishWork("Writing");
+                subProgress_p0a0b.done();
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_21gswx_a0b);
           }
         }
@@ -495,6 +500,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 tgEngine.shutdown();
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_21gswx_a0c);
           }
         }

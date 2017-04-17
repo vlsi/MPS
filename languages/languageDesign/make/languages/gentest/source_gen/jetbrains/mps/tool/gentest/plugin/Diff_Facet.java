@@ -70,13 +70,16 @@ public class Diff_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_mtqq_a0a = null;
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
+          progressMonitor.start("", 0 + 1000);
           switch (0) {
             case 0:
               if (vars(pa.global()).fileToPath() != null) {
-                monitor.currentProgress().beginWork("Diffing", 100 * Sequence.fromIterable(input).count(), monitor.currentProgress().workLeft());
+                ProgressMonitor subProgress_a0a0a0a = progressMonitor.subTask(1000);
+                subProgress_a0a0a0a.start("Diffing", 100 * Sequence.fromIterable(input).count());
                 for (TResource tgres : Sequence.fromIterable(input)) {
                   String fqn = tgres.modelDescriptor().getName().getLongName();
-                  monitor.currentProgress().advanceWork("Diffing", 1, fqn);
+                  subProgress_a0a0a0a.advance(1);
+                  subProgress_a0a0a0a.step(fqn);
                   DeltaReconciler dr = new DeltaReconciler(tgres.delta());
                   final Set<String> retainedPaths = SetSequence.fromSet(new HashSet<String>());
                   dr.visitAll(new FilesDelta.Visitor() {
@@ -96,11 +99,13 @@ public class Diff_Facet extends IFacet.Stub {
                   if (errors.length() > 0) {
                     monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Differences\n" + errors.toString())));
                   }
-                  monitor.currentProgress().advanceWork("Diffing", 99, fqn);
+                  subProgress_a0a0a0a.advance(99);
+                  subProgress_a0a0a0a.step(fqn);
                 }
-                monitor.currentProgress().finishWork("Diffing");
+                subProgress_a0a0a0a.done();
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_mtqq_a0a);
           }
         }

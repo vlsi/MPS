@@ -128,6 +128,7 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
                 progressMonitor.done();
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_zgz0lb_a0a);
           }
         }

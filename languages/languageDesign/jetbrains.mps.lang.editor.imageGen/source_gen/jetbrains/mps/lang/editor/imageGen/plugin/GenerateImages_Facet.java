@@ -202,6 +202,7 @@ public class GenerateImages_Facet extends IFacet.Stub {
                 progressMonitor.done();
               }
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_7crsqe_a0a);
           }
         }

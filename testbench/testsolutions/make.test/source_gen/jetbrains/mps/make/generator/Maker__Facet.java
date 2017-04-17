@@ -57,6 +57,7 @@ public class Maker__Facet extends IFacet.Stub {
           switch (0) {
             case 0:
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_izvplp_a0a);
           }
         }

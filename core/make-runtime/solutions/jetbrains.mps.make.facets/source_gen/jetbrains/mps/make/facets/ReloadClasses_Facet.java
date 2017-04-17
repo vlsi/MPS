@@ -60,6 +60,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_i849au_a0a = null;
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
+          progressMonitor.start("", 0 + 1000);
           switch (0) {
             case 0:
               final Collection<? extends SModule> toReload = Sequence.fromIterable(input).select(new ISelector<TResource, SModule>() {
@@ -68,16 +69,18 @@ public class ReloadClasses_Facet extends IFacet.Stub {
                 }
               }).distinct().toListSequence();
 
-              monitor.currentProgress().beginWork("Reloading classes", 1, monitor.currentProgress().workLeft());
+              ProgressMonitor subProgress_c0a0a = progressMonitor.subTask(1000);
+              subProgress_c0a0a.start("Reloading classes", 1);
               // FIXME pass progressMonitor down to reloadModules 
               monitor.getSession().getProject().getModelAccess().runWriteAction(new Runnable() {
                 public void run() {
                   ClassLoaderManager.getInstance().reloadModules(toReload);
                 }
               });
-              monitor.currentProgress().advanceWork("Reloading classes", 1);
-              monitor.currentProgress().finishWork("Reloading classes");
+              subProgress_c0a0a.advance(1);
+              subProgress_c0a0a.done();
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_i849au_a0a);
           }
         }

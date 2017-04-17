@@ -55,16 +55,20 @@ public class Worker__Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_qdke9s_a0a = null;
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
+          progressMonitor.start("", 0 + 1000 + 1000 / 2);
           switch (0) {
             case 0:
-              monitor.currentProgress().beginWork("WORK", 100, monitor.currentProgress().workLeft());
-              monitor.currentProgress().advanceWork("WORK", 50);
-              monitor.currentProgress().beginWork("WORKWORK", 10, monitor.currentProgress().workLeft() / 2);
-              monitor.currentProgress().advanceWork("WORKWORK", 5);
-              monitor.currentProgress().advanceWork("WORKWORK", 5);
-              monitor.currentProgress().finishWork("WORKWORK");
-              monitor.currentProgress().finishWork("WORK");
+              ProgressMonitor subProgress_a0a0a = progressMonitor.subTask(1000);
+              subProgress_a0a0a.start("WORK", 100);
+              subProgress_a0a0a.advance(50);
+              ProgressMonitor subProgress_c0a0a = progressMonitor.subTask(1000 / 2);
+              subProgress_c0a0a.start("WORKWORK", 10);
+              subProgress_c0a0a.advance(5);
+              subProgress_c0a0a.advance(5);
+              subProgress_c0a0a.done();
+              subProgress_a0a0a.done();
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_qdke9s_a0a);
           }
         }

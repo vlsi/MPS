@@ -59,6 +59,7 @@ public class TextGen__Facet extends IFacet.Stub {
           switch (0) {
             case 0:
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_rqwvem_a0a);
           }
         }

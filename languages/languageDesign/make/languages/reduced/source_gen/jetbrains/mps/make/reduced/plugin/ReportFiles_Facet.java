@@ -95,6 +95,7 @@ public class ReportFiles_Facet extends IFacet.Stub {
               });
               _output_bk4wqp_a0a = Sequence.fromIterable(_output_bk4wqp_a0a).concat(Sequence.fromIterable(input));
             default:
+              progressMonitor.done();
               return new IResult.SUCCESS(_output_bk4wqp_a0a);
           }
         }
