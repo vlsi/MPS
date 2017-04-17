@@ -1140,6 +1140,79 @@
     </node>
     <node concept="2tJIrI" id="4wG2MBHiBy0" role="jymVt" />
     <node concept="2tJIrI" id="4soTJTMNmN0" role="jymVt" />
+    <node concept="Wx3nA" id="48K6v0B_84r" role="jymVt">
+      <property role="TrG5h" value="concept_Classifier" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="48K6v0B_84s" role="1B3o_S" />
+      <node concept="35c_gC" id="48K6v0B_84t" role="33vP2m">
+        <ref role="35c_gD" to="tpee:g7pOWCK" resolve="Classifier" />
+      </node>
+      <node concept="3uibUv" id="48K6v0B_84u" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+      </node>
+      <node concept="z59LJ" id="296OPknEzQ$" role="lGtFl">
+        <node concept="TZ5HA" id="296OPknEzQ_" role="TZ5H$">
+          <node concept="1dT_AC" id="296OPknEzQA" role="1dT_Ay">
+            <property role="1dT_AB" value="java concepts to be used in idea plugin" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="Wx3nA" id="296OPknDVV9" role="jymVt">
+      <property role="TrG5h" value="concept_IMemberContainer" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="296OPknDVVa" role="1B3o_S" />
+      <node concept="3uibUv" id="296OPknDVVb" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SInterfaceConcept" resolve="SInterfaceConcept" />
+      </node>
+      <node concept="35c_gC" id="296OPknDVVc" role="33vP2m">
+        <ref role="35c_gD" to="tpee:hoSGL_l" resolve="IMemberContainer" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="296OPknExEa" role="jymVt">
+      <property role="TrG5h" value="concept_BaseMethodDeclaration" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="296OPknExEb" role="1B3o_S" />
+      <node concept="3uibUv" id="296OPknExEc" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+      </node>
+      <node concept="35c_gC" id="296OPknExEd" role="33vP2m">
+        <ref role="35c_gD" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="296OPknDu5W" role="jymVt">
+      <property role="TrG5h" value="concept_InstanceMethodDeclaration" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="296OPknDu5X" role="1B3o_S" />
+      <node concept="3uibUv" id="296OPknEwqq" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+      </node>
+      <node concept="35c_gC" id="296OPknDFJ8" role="33vP2m">
+        <ref role="35c_gD" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="296OPknEwBM" role="jymVt">
+      <property role="TrG5h" value="concept_StaticMethodDeclaration" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="296OPknEwBN" role="1B3o_S" />
+      <node concept="3uibUv" id="296OPknEwBO" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+      </node>
+      <node concept="35c_gC" id="296OPknEwBP" role="33vP2m">
+        <ref role="35c_gD" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="296OPknEwSn" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="concept_ConstructorDeclaration" />
+      <node concept="3Tm1VV" id="296OPknEwSo" role="1B3o_S" />
+      <node concept="3uibUv" id="296OPknEwSp" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+      </node>
+      <node concept="35c_gC" id="296OPknEwSq" role="33vP2m">
+        <ref role="35c_gD" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
+      </node>
+    </node>
     <node concept="Wx3nA" id="4soTJTMNmnL" role="jymVt">
       <property role="TrG5h" value="link_ConstructorDeclaration_returnType" />
       <property role="3TUv4t" value="true" />
@@ -1154,20 +1227,9 @@
       <node concept="z59LJ" id="4soTJTMNne2" role="lGtFl">
         <node concept="TZ5HA" id="4soTJTMNne3" role="TZ5H$">
           <node concept="1dT_AC" id="4soTJTMNne4" role="1dT_Ay">
-            <property role="1dT_AB" value="todo:remove this hack" />
+            <property role="1dT_AB" value="todo: returnType is needed for hack in ValidationUtil, remove this hack" />
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="Wx3nA" id="48K6v0B_84r" role="jymVt">
-      <property role="TrG5h" value="concept_Classifier" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="48K6v0B_84s" role="1B3o_S" />
-      <node concept="35c_gC" id="48K6v0B_84t" role="33vP2m">
-        <ref role="35c_gD" to="tpee:g7pOWCK" resolve="Classifier" />
-      </node>
-      <node concept="3uibUv" id="48K6v0B_84u" role="1tU5fm">
-        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
       </node>
     </node>
     <node concept="2tJIrI" id="4soTJTMNmbg" role="jymVt" />

@@ -35,7 +35,7 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -76,7 +76,7 @@ public class MPSJavaDirectInheritorsSearcher extends QueryExecutorBase<PsiClass,
         public void run() {
           for (SModel model : facetSolution.getModels()) {
             for (SNode root : model.getRootNodes()) {
-              for (SNode claz : SNodeOperations.getNodeAncestors(root, MetaAdapterFactoryByName.getConcept("jetbrains.mps.baseLanguage.structure.Classifier"), true)) {
+              for (SNode claz : SNodeOperations.getNodeAncestors(root, SNodeUtil.concept_Classifier, true)) {
                 PsiElement psiElem = MPSPsiProvider.getInstance(project).getPsi(claz);
                 // not our real project MPS node, probably stub
                 if (!(psiElem instanceof MPSPsiNode)) continue; // should skip all model
