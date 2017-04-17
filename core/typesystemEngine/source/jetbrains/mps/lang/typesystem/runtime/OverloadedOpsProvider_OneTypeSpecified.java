@@ -18,14 +18,11 @@ package jetbrains.mps.lang.typesystem.runtime;
 import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.typesystem.inference.SubtypingManager;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.typesystem.inference.SubtypingManager;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloadedOpsTypesProvider {
   protected SNode myOperandType;
