@@ -224,6 +224,9 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_6998860900671617198(final IfMacroContext _context) {
     return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x6120f2e858e5a64cL, "javaLevelTarget")));
   }
+  public static boolean ifMacro_Condition_6687784383157676229(final IfMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x6e014d63c07ebd25L, "sources")), MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6e014d63c07ebd1bL, 0x6e014d63c07ebd1cL, "elements"))).isNotEmpty();
+  }
   public static boolean ifMacro_Condition_1659807394254493284(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x1708d207f21b161dL, "resources")) != null) && ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x1708d207f21b161dL, "resources")), MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6e014d63c07ebd1bL, 0x6e014d63c07ebd1cL, "elements"))).isNotEmpty();
   }
@@ -350,7 +353,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_6823203400274315763(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Sequence.fromArray(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x147ef24d5e272d05L, "compilerOptions")).split("\\s+"))).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        return _quotation_createNode_x583g4_a0a0a0a0ed(it);
+        return _quotation_createNode_x583g4_a0a0a0a0fd(it);
       }
     });
   }
@@ -413,28 +416,28 @@ public class QueriesGenerated {
     }
   }
   public static GeneratedMatchingPattern patternRule_Condition_6647099934207260021(final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new Pattern_1ei209tuoku46(_quotation_createNode_x583g4_a0a0a0rd());
+    GeneratedMatchingPattern pattern = new Pattern_1ei209tuoku46(_quotation_createNode_x583g4_a0a0a0sd());
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
     return pattern;
   }
   public static GeneratedMatchingPattern patternRule_Condition_8654221991637509675(final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new Pattern_1tr0xntv2qalo(_quotation_createNode_x583g4_a0a0a0sd());
+    GeneratedMatchingPattern pattern = new Pattern_1tr0xntv2qalo(_quotation_createNode_x583g4_a0a0a0td());
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
     return pattern;
   }
   public static GeneratedMatchingPattern patternRule_Condition_7926701909975860432(final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new Pattern_1o81hbea58wr5(_quotation_createNode_x583g4_a0a0a0td());
+    GeneratedMatchingPattern pattern = new Pattern_1o81hbea58wr5(_quotation_createNode_x583g4_a0a0a0ud());
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
     return pattern;
   }
   public static GeneratedMatchingPattern patternRule_Condition_7926701909975928828(final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new Pattern_1o81hbea5adj1(_quotation_createNode_x583g4_a0a0a0ud());
+    GeneratedMatchingPattern pattern = new Pattern_1o81hbea5adj1(_quotation_createNode_x583g4_a0a0a0vd());
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
@@ -473,7 +476,7 @@ public class QueriesGenerated {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static SNode _quotation_createNode_x583g4_a0a0a0a0ed(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a0a0a0fd(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -488,7 +491,7 @@ public class QueriesGenerated {
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b5L, "attributes"), quotedNode_3);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_x583g4_a0a0a0rd() {
+  private static SNode _quotation_createNode_x583g4_a0a0a0sd() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -508,7 +511,7 @@ public class QueriesGenerated {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x16838b3fce9a4922L, "content"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_x583g4_a0a0a0sd() {
+  private static SNode _quotation_createNode_x583g4_a0a0a0td() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -528,7 +531,7 @@ public class QueriesGenerated {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x16838b3fce9a4922L, "content"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_x583g4_a0a0a0td() {
+  private static SNode _quotation_createNode_x583g4_a0a0a0ud() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -548,7 +551,7 @@ public class QueriesGenerated {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x16838b3fce9a4922L, "content"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_x583g4_a0a0a0ud() {
+  private static SNode _quotation_createNode_x583g4_a0a0a0vd() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
