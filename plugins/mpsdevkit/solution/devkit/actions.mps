@@ -844,7 +844,7 @@
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="MPS Languages DevKit" />
     <property role="9BnSO" value="143.1" />
-    <property role="9BnSK" value="3.4.4" />
+    <property role="9BnSK" value="3.4.5" />
   </node>
   <node concept="tC5Ba" id="56$IWKxe1aW">
     <property role="TrG5h" value="ProjectNewActionsEx" />
