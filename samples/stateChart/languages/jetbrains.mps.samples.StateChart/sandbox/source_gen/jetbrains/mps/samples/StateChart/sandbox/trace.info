@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
   <root nodeRef="r:9e213040-ebb9-4760-9472-e2782f8f9b3b(jetbrains.mps.samples.StateChart.sandbox)/1480846759627688991">
-    <file name="Sample.xml">
-      <unit id="1480846759627688991" at="1,0,20,8" name="jetbrains.mps.samples.StateChart.sandbox.Sample" />
+    <file name="Printer.xml">
+      <unit id="1480846759627688991" at="1,0,23,8" name="jetbrains.mps.samples.StateChart.sandbox.Printer" />
+    </file>
+  </root>
+  <root nodeRef="r:9e213040-ebb9-4760-9472-e2782f8f9b3b(jetbrains.mps.samples.StateChart.sandbox)/6813679070098906557">
+    <file name="Test.xml">
+      <unit id="6813679070098906557" at="1,0,17,8" name="jetbrains.mps.samples.StateChart.sandbox.Test" />
     </file>
   </root>
 </debug-info>

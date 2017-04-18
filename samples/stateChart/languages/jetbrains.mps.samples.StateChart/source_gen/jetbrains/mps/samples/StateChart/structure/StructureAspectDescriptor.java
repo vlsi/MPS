@@ -12,7 +12,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptChartOperation = createDescriptorForChartOperation();
+  /*package*/ final ConceptDescriptor myConceptEmptyOperation = createDescriptorForEmptyOperation();
   /*package*/ final ConceptDescriptor myConceptEvent = createDescriptorForEvent();
+  /*package*/ final ConceptDescriptor myConceptLog = createDescriptorForLog();
+  /*package*/ final ConceptDescriptor myConceptOperationsList = createDescriptorForOperationsList();
+  /*package*/ final ConceptDescriptor myConceptRaise = createDescriptorForRaise();
   /*package*/ final ConceptDescriptor myConceptState = createDescriptorForState();
   /*package*/ final ConceptDescriptor myConceptStateChart = createDescriptorForStateChart();
   /*package*/ final ConceptDescriptor myConceptTransition = createDescriptorForTransition();
@@ -24,15 +29,25 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptEvent, myConceptState, myConceptStateChart, myConceptTransition);
+    return Arrays.asList(myConceptChartOperation, myConceptEmptyOperation, myConceptEvent, myConceptLog, myConceptOperationsList, myConceptRaise, myConceptState, myConceptStateChart, myConceptTransition);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myConceptIndex.index(id)) {
+      case LanguageConceptSwitch.ChartOperation:
+        return myConceptChartOperation;
+      case LanguageConceptSwitch.EmptyOperation:
+        return myConceptEmptyOperation;
       case LanguageConceptSwitch.Event:
         return myConceptEvent;
+      case LanguageConceptSwitch.Log:
+        return myConceptLog;
+      case LanguageConceptSwitch.OperationsList:
+        return myConceptOperationsList;
+      case LanguageConceptSwitch.Raise:
+        return myConceptRaise;
       case LanguageConceptSwitch.State:
         return myConceptState;
       case LanguageConceptSwitch.StateChart:
@@ -48,12 +63,51 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myConceptIndex.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForChartOperation() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.StateChart", "ChartOperation", 0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26a37L);
+    b.class_(false, true, false);
+    b.origin("r:89aa1fb5-b463-4059-be0d-fc7ef188f902(jetbrains.mps.samples.StateChart.structure)/6813679070097861175");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForEmptyOperation() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.StateChart", "EmptyOperation", 0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26aecL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.samples.StateChart.structure.ChartOperation", 0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26a37L);
+    b.origin("r:89aa1fb5-b463-4059-be0d-fc7ef188f902(jetbrains.mps.samples.StateChart.structure)/6813679070097861356");
+    b.alias("<empty>");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForEvent() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.StateChart", "Event", 0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a3L);
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:89aa1fb5-b463-4059-be0d-fc7ef188f902(jetbrains.mps.samples.StateChart.structure)/1480846759627646115");
     b.alias("event");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForLog() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.StateChart", "Log", 0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26a92L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.samples.StateChart.structure.ChartOperation", 0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26a37L);
+    b.origin("r:89aa1fb5-b463-4059-be0d-fc7ef188f902(jetbrains.mps.samples.StateChart.structure)/6813679070097861266");
+    b.prop("value", 0x5e8f0d038ab26a93L, "6813679070097861267");
+    b.alias("log");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForOperationsList() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.StateChart", "OperationsList", 0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26ac1L);
+    b.class_(false, false, false);
+    b.origin("r:89aa1fb5-b463-4059-be0d-fc7ef188f902(jetbrains.mps.samples.StateChart.structure)/6813679070097861313");
+    b.aggregate("operations", 0x5e8f0d038ab26ac2L).target(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26a37L).optional(true).ordered(true).multiple(true).origin("6813679070097861314").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForRaise() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.StateChart", "Raise", 0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26a70L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.samples.StateChart.structure.ChartOperation", 0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26a37L);
+    b.origin("r:89aa1fb5-b463-4059-be0d-fc7ef188f902(jetbrains.mps.samples.StateChart.structure)/6813679070097861232");
+    b.associate("event", 0x5e8f0d038ab26a71L).target(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a3L).optional(false).origin("6813679070097861233").done();
+    b.alias("raise");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForState() {
@@ -65,6 +119,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("isInitial", 0x148d064832658c3eL, "1480846759627689022");
     b.prop("isFinal", 0x148d064832668aabL, "1480846759627754155");
     b.aggregate("transitions", 0x148d06483264e4afL).target(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a9L).optional(true).ordered(true).multiple(true).origin("1480846759627646127").done();
+    b.aggregate("onEntry", 0x5e8f0d038ab691b5L).target(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26ac1L).optional(false).ordered(true).multiple(false).origin("6813679070098133429").done();
+    b.aggregate("onExit", 0x5e8f0d038ab691caL).target(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26ac1L).optional(false).ordered(true).multiple(false).origin("6813679070098133450").done();
     b.alias("state");
     return b.create();
   }
@@ -72,6 +128,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.StateChart", "StateChart", 0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e46aL);
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
     b.origin("r:89aa1fb5-b463-4059-be0d-fc7ef188f902(jetbrains.mps.samples.StateChart.structure)/1480846759627646058");
     b.aggregate("triggers", 0x148d06483264e4b1L).target(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a3L).optional(true).ordered(true).multiple(true).origin("1480846759627646129").done();
     b.aggregate("states", 0x148d06483264e4b3L).target(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a6L).optional(true).ordered(true).multiple(true).origin("1480846759627646131").done();
@@ -84,6 +141,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:89aa1fb5-b463-4059-be0d-fc7ef188f902(jetbrains.mps.samples.StateChart.structure)/1480846759627646121");
     b.associate("trigger", 0x148d06483264e4aaL).target(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a3L).optional(false).origin("1480846759627646122").done();
     b.associate("target", 0x148d06483264e4acL).target(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a6L).optional(false).origin("1480846759627646124").done();
+    b.aggregate("onTransit", 0x5e8f0d038ab3c886L).target(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26ac1L).optional(false).ordered(true).multiple(false).origin("6813679070097950854").done();
     b.alias("transition");
     return b.create();
   }

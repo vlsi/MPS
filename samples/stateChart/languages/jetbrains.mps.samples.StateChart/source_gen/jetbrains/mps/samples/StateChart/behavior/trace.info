@@ -1,8 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="11,0,22,0" name="jetbrains.mps.samples.StateChart.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,32,0" name="jetbrains.mps.samples.StateChart.behavior.BehaviorAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:50514b7d-08e4-4455-89be-27b76ce2693e(jetbrains.mps.samples.StateChart.behavior)/6813679070098910800">
+    <file name="StateChart__BehaviorDescriptor.java">
+      <node id="6813679070098910800" at="33,0,34,0" concept="7" trace="CONCEPT" />
+      <node id="6813679070098910800" at="34,0,35,0" concept="7" trace="REGISTRY" />
+      <node id="6813679070098910800" at="36,0,37,0" concept="7" trace="getScope_id52_Geb4QDV$" />
+      <node id="6813679070098910800" at="38,0,39,0" concept="7" trace="BH_METHODS" />
+      <node id="6813679070098924489" at="46,44,47,336" concept="6" />
+      <node id="6813679070098917053" at="49,8,50,385" concept="6" />
+      <node id="6813679070098937866" at="51,12,52,259" concept="6" />
+      <node id="6813679070098910800" at="56,48,57,20" concept="9" />
+      <node id="6813679070098910800" at="61,114,62,21" concept="2" />
+      <node id="6813679070098910800" at="66,114,67,49" concept="5" />
+      <node id="6813679070098910800" at="68,26,69,56" concept="11" />
+      <node id="6813679070098910800" at="72,13,73,115" concept="6" />
+      <node id="6813679070098910800" at="74,14,75,58" concept="11" />
+      <node id="6813679070098910800" at="80,128,81,49" concept="5" />
+      <node id="6813679070098910800" at="82,26,83,56" concept="11" />
+      <node id="6813679070098910800" at="86,14,87,58" concept="11" />
+      <node id="6813679070098910800" at="93,48,94,22" concept="6" />
+      <node id="6813679070098910800" at="99,40,100,19" concept="6" />
+      <node id="6813679070098910800" at="40,0,42,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6813679070098935899" at="51,10,53,5" concept="0" />
+      <node id="6813679070098920405" at="46,0,49,0" concept="4" trace="getName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="6813679070098910800" at="56,0,59,0" concept="1" trace="StateChart__BehaviorDescriptor#()V" />
+      <node id="6813679070098910800" at="67,49,70,5" concept="3" />
+      <node id="6813679070098910800" at="81,49,84,5" concept="3" />
+      <node id="6813679070098910800" at="60,0,64,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="6813679070098910800" at="84,5,88,5" concept="10" />
+      <node id="6813679070098920399" at="44,396,49,8" concept="5" />
+      <node id="6813679070098910800" at="91,0,96,0" concept="4" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="6813679070098910800" at="97,0,102,0" concept="4" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="6813679070098910800" at="70,5,76,5" concept="10" />
+      <node id="6813679070098911840" at="43,116,53,5" concept="3" />
+      <node id="6813679070098910800" at="79,0,90,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="6813679070098910800" at="43,0,55,0" concept="8" trace="getScope_id52_Geb4QDV$#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <node id="6813679070098910800" at="65,0,78,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="6813679070098910800" at="40,63,40,63" />
+      <scope id="6813679070098920410" at="46,44,47,336" />
+      <scope id="6813679070098935900" at="51,12,52,259" />
+      <scope id="6813679070098910800" at="56,48,57,20" />
+      <scope id="6813679070098910800" at="61,114,62,21" />
+      <scope id="6813679070098910800" at="68,26,69,56" />
+      <scope id="6813679070098910800" at="72,13,73,115" />
+      <scope id="6813679070098910800" at="74,14,75,58" />
+      <scope id="6813679070098910800" at="82,26,83,56" />
+      <scope id="6813679070098910800" at="86,14,87,58" />
+      <scope id="6813679070098910800" at="93,48,94,22" />
+      <scope id="6813679070098910800" at="99,40,100,19" />
+      <scope id="6813679070098910800" at="40,0,42,0">
+        <var name="__thisNode__" id="6813679070098910800" />
+      </scope>
+      <scope id="6813679070098920405" at="46,0,49,0">
+        <var name="child" id="6813679070098920408" />
+      </scope>
+      <scope id="6813679070098910800" at="56,0,59,0" />
+      <scope id="6813679070098910800" at="60,0,64,0">
+        <var name="constructor" id="6813679070098910800" />
+        <var name="node" id="6813679070098910800" />
+        <var name="parameters" id="6813679070098910800" />
+      </scope>
+      <scope id="6813679070098910800" at="91,0,96,0" />
+      <scope id="6813679070098910800" at="97,0,102,0" />
+      <scope id="6813679070098911842" at="44,396,50,385">
+        <var name="myStates" id="6813679070098920400" />
+      </scope>
+      <scope id="6813679070098910800" at="80,128,88,5">
+        <var name="methodIndex" id="6813679070098910800" />
+      </scope>
+      <scope id="6813679070098910824" at="43,116,53,5" />
+      <scope id="6813679070098910800" at="66,114,76,5">
+        <var name="methodIndex" id="6813679070098910800" />
+      </scope>
+      <scope id="6813679070098910800" at="79,0,90,0">
+        <var name="concept" id="6813679070098910800" />
+        <var name="method" id="6813679070098910800" />
+        <var name="parameters" id="6813679070098910800" />
+      </scope>
+      <scope id="6813679070098910800" at="43,0,55,0">
+        <var name="__thisNode__" id="6813679070098910800" />
+        <var name="child" id="6813679070098910827" />
+        <var name="kind" id="6813679070098910825" />
+      </scope>
+      <scope id="6813679070098910800" at="65,0,78,0">
+        <var name="method" id="6813679070098910800" />
+        <var name="node" id="6813679070098910800" />
+        <var name="parameters" id="6813679070098910800" />
+      </scope>
+      <unit id="6813679070098920403" at="45,31,49,7" name="jetbrains.mps.samples.StateChart.behavior.StateChart__BehaviorDescriptor$1" />
+      <unit id="6813679070098910800" at="32,0,103,0" name="jetbrains.mps.samples.StateChart.behavior.StateChart__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

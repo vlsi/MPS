@@ -9,7 +9,12 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private final ConceptPresentation props_ChartOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_EmptyOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Event = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Log = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_OperationsList = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Raise = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_State = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StateChart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Transition = new ConceptPresentationBuilder().create();
@@ -19,8 +24,18 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.ChartOperation:
+        return props_ChartOperation;
+      case LanguageConceptSwitch.EmptyOperation:
+        return props_EmptyOperation;
       case LanguageConceptSwitch.Event:
         return props_Event;
+      case LanguageConceptSwitch.Log:
+        return props_Log;
+      case LanguageConceptSwitch.OperationsList:
+        return props_OperationsList;
+      case LanguageConceptSwitch.Raise:
+        return props_Raise;
       case LanguageConceptSwitch.State:
         return props_State;
       case LanguageConceptSwitch.StateChart:

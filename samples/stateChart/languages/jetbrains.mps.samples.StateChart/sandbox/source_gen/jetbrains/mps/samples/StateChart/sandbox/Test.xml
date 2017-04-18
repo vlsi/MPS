@@ -1,0 +1,17 @@
+<scxml version="1.0" datamodel="ecmascript" initial="s1">
+  
+  <state id="s1">
+    <transition event="e1" target="s2">
+      <log expr="Going to state s2"></log>
+    </transition>
+  </state>
+  <state id="s2">
+    <onEntry>
+      <log expr="Arrived to s2"></log>
+    </onEntry>
+    <onExit>
+      <log expr="Exiting s2"></log>
+      <raise event="e3"></raise>
+    </onExit>
+  </state>
+</scxml>

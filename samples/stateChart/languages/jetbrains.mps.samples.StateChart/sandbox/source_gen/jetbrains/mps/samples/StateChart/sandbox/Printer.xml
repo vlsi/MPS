@@ -1,7 +1,10 @@
 <scxml version="1.0" datamodel="ecmascript" initial="Off">
   
   <final id="Off">
-    <transition event="Turn On" target="On"></transition>
+    <transition event="Turn On" target="On">
+      <log expr="foo"></log>
+      <raise event="Turn Off"></raise>
+    </transition>
   </final>
   <state id="On" initial="Ready">
     <transition event="Turn Off" target="Off"></transition>
