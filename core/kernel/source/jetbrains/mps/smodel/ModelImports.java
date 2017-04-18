@@ -75,6 +75,10 @@ public final class ModelImports {
     myModel.deleteLanguageId(language);
   }
 
+  public Collection<SLanguage> getLanguagesEngagedOnGeneration() {
+    return myModel.getLanguagesEngagedOnGeneration();
+  }
+
   /**
    * Use another model as source for necessary imports.
    * Copies immediate imports of other models.

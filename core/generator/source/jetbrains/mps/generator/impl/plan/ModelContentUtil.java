@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.smodel.ModelDependencyScanner;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -33,7 +34,7 @@ public class ModelContentUtil {
 
   public static Collection<SLanguage> getUsedLanguages(@NotNull SModel model) {
     Set<SLanguage> namespaces = new HashSet<SLanguage>();
-    namespaces.addAll(((jetbrains.mps.smodel.SModelInternal) model).getLanguagesEngagedOnGeneration());
+    namespaces.addAll(new ModelImports(model).getLanguagesEngagedOnGeneration());
     if (SModelStereotype.isGeneratorModel(model)) {
       ModelScanner templateModelScanner = new ModelScanner();
       templateModelScanner.scanInLegacyMode(model);
