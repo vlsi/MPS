@@ -20,8 +20,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("diagram", "Diagram View", true, "jetbrains.mps.samples.componentDependencies.editor.views.diagram"), new ConceptEditorHintImpl("table", "Table View", true, "jetbrains.mps.samples.componentDependencies.editor.views.table"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    SAbstractConcept cncpt = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0b.index(cncpt)) {
+    SAbstractConcept cncpt_a0b = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0b.index(cncpt_a0b)) {
       case 0:
         return Arrays.asList(new ConceptEditor[]{new Component_Editor(), new Component_diagram_Editor(), new Component_table_Editor()});
       case 1:

@@ -16,8 +16,8 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    SAbstractConcept cncpt = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0a.index(cncpt)) {
+    SAbstractConcept cncpt_a0a = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt_a0a)) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AssertEquals_Editor());
       case 1:
@@ -51,8 +51,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    SAbstractConcept cncpt = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0c.index(cncpt)) {
+    SAbstractConcept cncpt_a0c = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt_a0c)) {
       case 0:
         if (true) {
           if ("jetbrains.mps.baseLanguage.unitTest.editor.MessageComponent".equals(editorComponentId)) {

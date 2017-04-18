@@ -20,8 +20,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
-    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-    switch (index_xbvbvu_a0c.index(cncpt)) {
+    SAbstractConcept cncpt_a0c = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0c.index(cncpt_a0c)) {
       case 0:
         if (true) {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a2, menuId.getFqName())) {

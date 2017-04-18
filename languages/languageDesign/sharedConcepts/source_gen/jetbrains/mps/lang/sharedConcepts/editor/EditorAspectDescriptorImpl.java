@@ -18,8 +18,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_xbvbvu_a0c.index(cncpt)) {
+    SAbstractConcept cncpt_a0c = concept;
+    switch (index_xbvbvu_a0c.index(cncpt_a0c)) {
       case 0:
         return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_editorContext_SubstituteMenu());
       case 1:

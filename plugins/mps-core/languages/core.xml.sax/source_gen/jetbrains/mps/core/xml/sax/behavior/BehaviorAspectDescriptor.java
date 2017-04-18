@@ -33,8 +33,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_846f5o_a0s.index(cncpt)) {
+    SAbstractConcept cncpt_a0s = concept;
+    switch (index_846f5o_a0s.index(cncpt_a0s)) {
       case 0:
         return myXMLSAXAttributeHandler__BehaviorDescriptor;
       case 1:

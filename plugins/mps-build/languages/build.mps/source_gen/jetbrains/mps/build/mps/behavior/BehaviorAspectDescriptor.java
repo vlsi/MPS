@@ -35,8 +35,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_846f5o_a0u.index(cncpt)) {
+    SAbstractConcept cncpt_a0u = concept;
+    switch (index_846f5o_a0u.index(cncpt_a0u)) {
       case 0:
         return myBuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor;
       case 1:

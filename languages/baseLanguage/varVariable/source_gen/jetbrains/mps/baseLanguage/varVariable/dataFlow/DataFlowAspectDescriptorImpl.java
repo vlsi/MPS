@@ -17,8 +17,8 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
-    SAbstractConcept cncpt = ((SAbstractConcept) concept);
-    switch (index_vhxjlb_a0b.index(cncpt)) {
+    SAbstractConcept cncpt_a0b = ((SAbstractConcept) concept);
+    switch (index_vhxjlb_a0b.index(cncpt_a0b)) {
       case 0:
         return Collections.<IDataFlowBuilder>singletonList(new VarVariableDeclaration_DataFlow());
       default:

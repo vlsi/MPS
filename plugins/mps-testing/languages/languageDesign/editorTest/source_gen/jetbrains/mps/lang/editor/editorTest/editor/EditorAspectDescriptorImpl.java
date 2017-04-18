@@ -22,8 +22,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("specificHint", "", true, "jetbrains.mps.lang.editor.editorTest.editor.SubstTest_EditorHints.specificHint"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    SAbstractConcept cncpt = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0b.index(cncpt)) {
+    SAbstractConcept cncpt_a0b = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0b.index(cncpt_a0b)) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AttractsFocusBlock_Editor());
       case 1:
@@ -146,8 +146,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_xbvbvu_a0f.index(cncpt)) {
+    SAbstractConcept cncpt_a0f = concept;
+    switch (index_xbvbvu_a0f.index(cncpt_a0f)) {
       case 0:
         return Collections.<TransformationMenu>singletonList(new IBaseTestBlock_TransformationMenu());
       case 1:
@@ -159,8 +159,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_xbvbvu_a0g.index(cncpt)) {
+    SAbstractConcept cncpt_a0g = concept;
+    switch (index_xbvbvu_a0g.index(cncpt_a0g)) {
       case 0:
         return Collections.<SubstituteMenu>singletonList(new SubstTestAbstractChild_SubstituteMenu());
       case 1:

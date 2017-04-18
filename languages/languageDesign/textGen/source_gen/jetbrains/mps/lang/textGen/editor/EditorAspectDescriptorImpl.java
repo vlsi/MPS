@@ -18,8 +18,8 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    SAbstractConcept cncpt = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0a.index(cncpt)) {
+    SAbstractConcept cncpt_a0a = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt_a0a)) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AppendOperation_Editor());
       case 1:
@@ -77,8 +77,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_xbvbvu_a0d.index(cncpt)) {
+    SAbstractConcept cncpt_a0d = concept;
+    switch (index_xbvbvu_a0d.index(cncpt_a0d)) {
       case 0:
         return Arrays.asList(new TransformationMenu[]{new CollectionAppendPartWithSeparator(), new addSeparator_Contribution()});
       default:
@@ -88,8 +88,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_xbvbvu_a0e.index(cncpt)) {
+    SAbstractConcept cncpt_a0e = concept;
+    switch (index_xbvbvu_a0e.index(cncpt_a0e)) {
       case 0:
         return Collections.<SubstituteMenu>singletonList(new AbstractTextGenParameter_SubstituteMenu());
       case 1:

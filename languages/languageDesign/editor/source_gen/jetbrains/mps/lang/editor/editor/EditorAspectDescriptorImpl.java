@@ -20,8 +20,8 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    SAbstractConcept cncpt = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0a.index(cncpt)) {
+    SAbstractConcept cncpt_a0a = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt_a0a)) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AbstractCellSelector_Editor());
       case 1:
@@ -365,8 +365,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    SAbstractConcept cncpt = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0c.index(cncpt)) {
+    SAbstractConcept cncpt_a0c = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt_a0c)) {
       case 0:
         if (true) {
           if ("jetbrains.mps.lang.editor.editor.CellModelCollection_FoldedCellComponent".equals(editorComponentId)) {
@@ -467,8 +467,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_xbvbvu_a0e.index(cncpt)) {
+    SAbstractConcept cncpt_a0e = concept;
+    switch (index_xbvbvu_a0e.index(cncpt_a0e)) {
       case 0:
         return Collections.<TransformationMenu>singletonList(new AbstractCellSelector_TransformationMenu());
       case 1:
@@ -482,8 +482,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-    switch (index_xbvbvu_a0f.index(cncpt)) {
+    SAbstractConcept cncpt_a0f = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0f.index(cncpt_a0f)) {
       case 0:
         if (true) {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a5, menuId.getFqName())) {
@@ -519,8 +519,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_xbvbvu_a0g.index(cncpt)) {
+    SAbstractConcept cncpt_a0g = concept;
+    switch (index_xbvbvu_a0g.index(cncpt_a0g)) {
       case 0:
         return Collections.<SubstituteMenu>singletonList(new AbstractCellSelector_SubstituteMenu());
       case 1:

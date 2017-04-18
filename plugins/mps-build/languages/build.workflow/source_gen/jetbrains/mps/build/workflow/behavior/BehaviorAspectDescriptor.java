@@ -32,8 +32,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_846f5o_a0r.index(cncpt)) {
+    SAbstractConcept cncpt_a0r = concept;
+    switch (index_846f5o_a0r.index(cncpt_a0r)) {
       case 0:
         return myBwfAntTaskBundleDeclaration__BehaviorDescriptor;
       case 1:

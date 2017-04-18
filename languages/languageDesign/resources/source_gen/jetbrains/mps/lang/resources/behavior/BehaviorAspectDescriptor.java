@@ -31,8 +31,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_846f5o_a0q.index(cncpt)) {
+    SAbstractConcept cncpt_a0q = concept;
+    switch (index_846f5o_a0q.index(cncpt_a0q)) {
       case 0:
         return myCircle__BehaviorDescriptor;
       case 1:

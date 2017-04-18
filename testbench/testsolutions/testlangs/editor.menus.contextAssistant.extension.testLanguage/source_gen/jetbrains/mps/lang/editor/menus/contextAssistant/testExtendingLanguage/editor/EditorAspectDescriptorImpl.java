@@ -20,8 +20,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_xbvbvu_a0c.index(cncpt)) {
+    SAbstractConcept cncpt_a0c = concept;
+    switch (index_xbvbvu_a0c.index(cncpt_a0c)) {
       case 0:
         return Arrays.asList(new TransformationMenu[]{new Child_MoreDefaultActions(), new DefaultMenuContribution(), new Extras(), new Parameterized()});
       default:
@@ -31,8 +31,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-    switch (index_xbvbvu_a0d.index(cncpt)) {
+    SAbstractConcept cncpt_a0d = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0d.index(cncpt_a0d)) {
       case 0:
         if (true) {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a3, menuId.getFqName())) {

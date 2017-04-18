@@ -24,8 +24,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("VisibleExpressionBoundaries", "Visible Expression Boundaries", true, "jetbrains.mps.baseLanguage.editor.BLHints.VisibleExpressionBoundaries"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    SAbstractConcept cncpt = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0b.index(cncpt)) {
+    SAbstractConcept cncpt_a0b = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0b.index(cncpt_a0b)) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AbstractClassifierReference_Editor());
       case 1:
@@ -349,8 +349,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    SAbstractConcept cncpt = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0d.index(cncpt)) {
+    SAbstractConcept cncpt_a0d = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0d.index(cncpt_a0d)) {
       case 0:
         if (true) {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a3, editorComponentId)) {
@@ -470,8 +470,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_xbvbvu_a0g.index(cncpt)) {
+    SAbstractConcept cncpt_a0g = concept;
+    switch (index_xbvbvu_a0g.index(cncpt_a0g)) {
       case 0:
         return Collections.<TransformationMenu>singletonList(new AbstractClassifierReference_TransformationMenu());
       case 1:
@@ -553,8 +553,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-    switch (index_xbvbvu_a0h.index(cncpt)) {
+    SAbstractConcept cncpt_a0h = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0h.index(cncpt_a0h)) {
       case 0:
         if (true) {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a7, menuId.getFqName())) {
@@ -982,8 +982,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_xbvbvu_a0i.index(cncpt)) {
+    SAbstractConcept cncpt_a0i = concept;
+    switch (index_xbvbvu_a0i.index(cncpt_a0i)) {
       case 0:
         return Collections.<SubstituteMenu>singletonList(new AbstractCreator_SubstituteMenu());
       case 1:
@@ -1119,8 +1119,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
-    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-    switch (index_xbvbvu_a0j.index(cncpt)) {
+    SAbstractConcept cncpt_a0j = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0j.index(cncpt_a0j)) {
       case 0:
         if (true) {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a9, menuId.getFqName())) {

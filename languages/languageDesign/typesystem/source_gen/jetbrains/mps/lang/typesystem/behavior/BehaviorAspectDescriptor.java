@@ -75,8 +75,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    SAbstractConcept cncpt = concept;
-    switch (index_846f5o_a0ic.index(cncpt)) {
+    SAbstractConcept cncpt_a0ic = concept;
+    switch (index_846f5o_a0ic.index(cncpt_a0ic)) {
       case 0:
         return myAbstractInequationStatement__BehaviorDescriptor;
       case 1:

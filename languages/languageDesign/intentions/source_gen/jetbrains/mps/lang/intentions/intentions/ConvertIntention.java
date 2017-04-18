@@ -87,14 +87,14 @@ public class ConvertIntention extends IntentionsFactory {
     return nodeRef;
   }
   public void resolveChildFilterRefernce(SNode root, SNode node) {
-    SAbstractConcept cncpt = SNodeOperations.getConcept(node);
-    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c750L, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode"))) {
+    SAbstractConcept cncpt_a0cb = SNodeOperations.getConcept(node);
+    if (SConceptOperations.isSubConceptOf(cncpt_a0cb, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c750L, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode"))) {
       SNodeOperations.replaceWithAnother(node, createParameterReference(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter")), 1));
     }
-    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x11601f73f7aL, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext"))) {
+    if (SConceptOperations.isSubConceptOf(cncpt_a0cb, MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x11601f73f7aL, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext"))) {
       SNodeOperations.replaceWithAnother(node, createParameterReference(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter")), 2));
     }
-    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b83c562eL, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node"))) {
+    if (SConceptOperations.isSubConceptOf(cncpt_a0cb, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b83c562eL, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node"))) {
       SNodeOperations.replaceWithAnother(node, createParameterReference(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter")), 0));
     }
 

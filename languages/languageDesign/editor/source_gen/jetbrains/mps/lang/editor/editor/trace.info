@@ -49151,9 +49151,9 @@
       <node id="7426426660807303123" at="247,139,248,22" concept="8" />
       <node id="424900768569074879" at="252,31,253,586" concept="7" />
       <node id="424900768569124983" at="253,586,254,27" concept="7" />
-      <node id="424900768569106186" at="255,40,256,81" concept="7" />
-      <node id="424900768569128181" at="257,231,258,277" concept="2" />
-      <node id="424900768569153054" at="260,213,261,360" concept="2" />
+      <node id="424900768569106186" at="255,40,256,95" concept="7" />
+      <node id="424900768569128181" at="257,245,258,277" concept="2" />
+      <node id="424900768569153054" at="260,227,261,360" concept="2" />
       <node id="424900768569208675" at="263,9,264,45" concept="8" />
       <node id="7426426660807303124" at="268,44,269,46" concept="8" />
       <node id="7426426660807303124" at="271,15,272,79" concept="2" />
@@ -49173,7 +49173,7 @@
       <node id="8612453216082699935" at="163,0,166,0" concept="6" trace="getNoTargetText#()Ljava/lang/String;" />
       <node id="8612453216082699935" at="193,0,196,0" concept="6" trace="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8612453216082699935" at="220,9,223,9" concept="5" />
-      <node id="424900768569106186" at="256,81,259,11" concept="5" />
+      <node id="424900768569106186" at="256,95,259,11" concept="5" />
       <node id="424900768569106186" at="259,11,262,11" concept="5" />
       <node id="7426426660807303124" at="268,0,271,0" concept="6" trace="isValidText#(Ljava/lang/String;)Z" />
       <node id="8612453216082699935" at="47,0,51,0" concept="1" trace="SubstituteMenuPart_Action_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -49218,8 +49218,8 @@
       <scope id="8612453216082699935" at="193,66,194,233" />
       <scope id="8612453216082699935" at="210,17,211,42" />
       <scope id="8612453216082699935" at="221,122,222,238" />
-      <scope id="424900768569106186" at="257,231,258,277" />
-      <scope id="424900768569106186" at="260,213,261,360" />
+      <scope id="424900768569106186" at="257,245,258,277" />
+      <scope id="424900768569106186" at="260,227,261,360" />
       <scope id="7426426660807303124" at="268,44,269,46" />
       <scope id="8612453216082699935" at="47,105,49,18" />
       <scope id="8612453216082700793" at="77,50,79,22">
@@ -49297,7 +49297,7 @@
         <var name="style" id="8478191136883534280" />
       </scope>
       <scope id="424900768569106186" at="255,40,262,11">
-        <var name="cncpt" id="424900768569106186" />
+        <var name="cncpt_a0c0a0a1a0a0t" id="424900768569106186" />
       </scope>
       <scope id="8612453216082699935" at="215,96,223,9" />
       <scope id="8612453216082699935" at="236,51,244,22">

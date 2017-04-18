@@ -26,7 +26,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    SAbstractConcept cncpt = concept;
+    SAbstractConcept cncpt_d0f = concept;
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);
   }

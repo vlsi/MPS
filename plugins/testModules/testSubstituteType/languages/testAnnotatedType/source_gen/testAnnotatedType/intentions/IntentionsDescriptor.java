@@ -29,8 +29,8 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    SAbstractConcept cncpt = concept;
-    switch (index_hphjzv_d0f.index(cncpt)) {
+    SAbstractConcept cncpt_d0f = concept;
+    switch (index_hphjzv_d0f.index(cncpt_d0f)) {
       case 0:
         if (true) {
           // Concept: PrimType 
