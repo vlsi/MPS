@@ -3,7 +3,7 @@
   <id>jetbrains.mps.editor.contextActions</id>
   <name>MPS Context Actions Tool</name>
   <description>The Context Actions sidebar shows context-dependent actions when editing MPS models</description>
-  <version>2017.1</version>
+  <version>2017.1.1</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
   <idea-version since-build="171.1" until-build="172.1"/>
 

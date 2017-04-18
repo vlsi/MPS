@@ -1782,8 +1782,8 @@
         </node>
       </node>
       <node concept="3_J27D" id="iTJcDIxtN7" role="m$_w8">
-        <node concept="3Mxwew" id="iTJcDIxtNG" role="3MwsjC">
-          <property role="3MwjfP" value="2017.1" />
+        <node concept="3Mxwey" id="5E_HzS4qA7n" role="3MwsjC">
+          <ref role="3Mxwex" to="ffeo:5HVSRHdVf2d" resolve="version" />
         </node>
       </node>
       <node concept="398BVA" id="iTJcDIxtNM" role="I30fb">

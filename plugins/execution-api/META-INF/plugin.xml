@@ -3,7 +3,7 @@
   <id>jetbrains.mps.execution.api</id>
   <name>Execution Api and Utility Languages</name>
   <description>Execution api and utility languages for MPS</description>
-  <version>2017.1</version>
+  <version>2017.1.1</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="171.1" until-build="172.1"/>
 
