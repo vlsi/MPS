@@ -23,5 +23,6 @@
     <orderEntry type="module" module-name="closures-runtime" />
     <orderEntry type="module" module-name="actions-runtime" />
     <orderEntry type="module" module-name="intentions-runtime" />
+    <orderEntry type="module" module-name="mps-icons" />
   </component>
 </module>
