@@ -806,6 +806,9 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/shapes/languages/jetbrains.mps.samples.Shapes/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/shapes/languages/jetbrains.mps.samples.Shapes/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/shapes/languages/jetbrains.mps.samples.Shapes/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/stateChart/languages/jetbrains.mps.samples.StateChart/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/stateChart/languages/jetbrains.mps.samples.StateChart/sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/stateChart/languages/jetbrains.mps.samples.StateChart/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/languages/theSimplestLanguage/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/languages/theSimplestLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/source_gen" isTestSource="false" />
@@ -957,6 +960,9 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/shapes/languages/jetbrains.mps.samples.Shapes/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/shapes/languages/jetbrains.mps.samples.Shapes/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/shapes/languages/jetbrains.mps.samples.Shapes/sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/stateChart/languages/jetbrains.mps.samples.StateChart/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/stateChart/languages/jetbrains.mps.samples.StateChart/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/stateChart/languages/jetbrains.mps.samples.StateChart/sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/languages/theSimplestLanguage/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/languages/theSimplestLanguage/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/classes_gen" />

@@ -588,6 +588,10 @@
       <directory url="file://$PROJECT_DIR$/samples/shapes/languages/jetbrains.mps.samples.Shapes/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/shapes/languages/jetbrains.mps.samples.Shapes/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/shapes/languages/jetbrains.mps.samples.Shapes/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/stateChart/languages/jetbrains.mps.samples.StateChart/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/stateChart/languages/jetbrains.mps.samples.StateChart/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/stateChart/languages/jetbrains.mps.samples.StateChart/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/stateChart/languages/jetbrains.mps.samples.StateChart/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/theSimplestLanguage/languages/theSimplestLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/theSimplestLanguage/languages/theSimplestLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/source_gen" includeSubdirectories="true" />
