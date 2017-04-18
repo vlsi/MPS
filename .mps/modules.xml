@@ -397,6 +397,8 @@
       <modulePath path="$PROJECT_DIR$/samples/sampleXML/solutions/sandbox/sampleXML.sandbox.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/shapes/languages/jetbrains.mps.samples.Shapes/jetbrains.mps.samples.Shapes.mpl" folder="samples.shapes" />
       <modulePath path="$PROJECT_DIR$/samples/shapes/languages/jetbrains.mps.samples.Shapes/sandbox/jetbrains.mps.samples.Shapes.sandbox.msd" folder="samples.shapes" />
+      <modulePath path="$PROJECT_DIR$/samples/stateChart/languages/jetbrains.mps.samples.StateChart/jetbrains.mps.samples.StateChart.mpl" folder="samples.stateChart" />
+      <modulePath path="$PROJECT_DIR$/samples/stateChart/languages/jetbrains.mps.samples.StateChart/sandbox/jetbrains.mps.samples.StateChart.sandbox.msd" folder="samples.stateChart" />
       <modulePath path="$PROJECT_DIR$/samples/theSimplestLanguage/languages/theSimplestLanguage/jetbrains.mps.samples.theSimplestLanguage.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/jetbrains.mps.samples.theSimplestLanguage.sandbox.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/xmlLiterals/languages/xmlLiterals/jetbrains.mps.samples.xmlLiterals.mpl" folder="samples" />
