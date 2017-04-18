@@ -45,7 +45,7 @@
   </root>
   <root nodeRef="r:bcfe2964-5744-4773-9086-0090dbda0712(jetbrains.mps.build.sandbox.build1)/4993211115183416028">
     <file name="buildPlugin.xml">
-      <unit id="4993211115183416028" at="1,0,83,10" name="jetbrains.mps.build.sandbox.build1.buildPlugin" />
+      <unit id="4993211115183416028" at="1,0,76,10" name="jetbrains.mps.build.sandbox.build1.buildPlugin" />
     </file>
   </root>
   <root nodeRef="r:bcfe2964-5744-4773-9086-0090dbda0712(jetbrains.mps.build.sandbox.build1)/5610619299013213201">

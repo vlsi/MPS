@@ -5,7 +5,6 @@
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
     <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
     <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
   </languages>
   <imports />
   <registry>
@@ -1961,6 +1960,13 @@
         <ref role="nCB5Y" node="6g0vjebAkhc" resolve="mps-textgen" />
       </node>
     </node>
+    <node concept="398b33" id="TfcoydlQ6W" role="3989C9">
+      <property role="TrG5h" value="idea-platform" />
+      <node concept="2sjeV3" id="TfcoydlS8a" role="nCB5Z">
+        <property role="2a2d0E" value="true" />
+        <ref role="2sjeV2" node="16Vg0jOcomR" resolve="idea-libraries" />
+      </node>
+    </node>
     <node concept="398b33" id="16Vg0jOco3P" role="3989C9">
       <property role="TrG5h" value="mps-platform" />
       <node concept="nCB5N" id="75RBgxKmBu7" role="nCB5Z">
@@ -2025,9 +2031,9 @@
       <node concept="nCB5N" id="5g8Dzn7jpQc" role="nCB5Z">
         <ref role="nCB5Y" node="1WZWsoqJkkn" resolve="mps-core" />
       </node>
-      <node concept="2sjeV3" id="5bUGwboXw99" role="nCB5Z">
-        <property role="2a2d0E" value="true" />
-        <ref role="2sjeV2" node="16Vg0jOcomR" resolve="idea-libraries" />
+      <node concept="nCB5N" id="TfcoydlTah" role="nCB5Z">
+        <property role="1Sh$E4" value="true" />
+        <ref role="nCB5Y" node="TfcoydlQ6W" resolve="idea-platform" />
       </node>
       <node concept="2sjeV3" id="4PRDOPWNZKO" role="nCB5Z">
         <ref role="2sjeV2" node="1s0vtrx9SbK" resolve="asm-all" />
@@ -2696,6 +2702,9 @@
           </node>
           <node concept="Saw0i" id="2fQZjorSjPO" role="39821P">
             <ref role="Saw0g" node="4LDuh$UetHY" resolve="mps-debugger" />
+          </node>
+          <node concept="Saw0i" id="Tfcoydmz2G" role="39821P">
+            <ref role="Saw0g" node="TfcoydlQ6W" resolve="idea-platform" />
           </node>
           <node concept="398223" id="7wpYgMyUMhF" role="39821P">
             <node concept="3_J27D" id="7wpYgMyUMhG" role="Nbhlr">
@@ -3766,6 +3775,9 @@
         <property role="TrG5h" value="MPS.IDEA" />
         <property role="3LESm3" value="498d89d2-c2e9-11e2-ad49-6cf049e62fe5" />
         <property role="2GAjPV" value="true" />
+        <node concept="1E1SXE" id="TfcoydlVJg" role="3bR37C">
+          <ref role="1E1SXG" node="TfcoydlQ6W" resolve="idea-platform" />
+        </node>
         <node concept="398BVA" id="1ia2VB5g_5t" role="3LF7KH">
           <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
           <node concept="2Ry0Ak" id="1ia2VB5g_5v" role="iGT6I">

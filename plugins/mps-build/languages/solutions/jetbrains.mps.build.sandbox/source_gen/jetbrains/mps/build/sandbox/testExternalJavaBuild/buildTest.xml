@@ -40,12 +40,5 @@
   
   <target name="java.compile.main" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/main" />
-    <javac destdir="${build.tmp}/java/out/main" fork="true" encoding="utf8" includeantruntime="false" debug="true">
-      <compilerarg value="-Xlint:none" />
-      <src />
-      <classpath>
-        <fileset file="${artifacts.buildTest2}/sub.jar" />
-      </classpath>
-    </javac>
   </target>
 </project>

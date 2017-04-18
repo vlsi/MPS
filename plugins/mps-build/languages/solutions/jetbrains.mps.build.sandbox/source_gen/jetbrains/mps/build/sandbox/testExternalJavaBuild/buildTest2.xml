@@ -37,10 +37,5 @@
   
   <target name="java.compile.sub">
     <mkdir dir="${build.tmp}/java/out/sub" />
-    <javac destdir="${build.tmp}/java/out/sub" fork="true" encoding="utf8" includeantruntime="false" debug="true">
-      <compilerarg value="-Xlint:none" />
-      <src />
-      <classpath />
-    </javac>
   </target>
 </project>

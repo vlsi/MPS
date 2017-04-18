@@ -63,13 +63,6 @@
   
   <target name="java.compile.test1" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/test1" />
-    <javac destdir="${build.tmp}/java/out/test1" fork="true" encoding="utf8" includeantruntime="false" debug="true">
-      <compilerarg value="-Xlint:none" />
-      <src />
-      <classpath>
-        <fileset file="${build.tmp}/deps/buildCore/inrelease.zip/mps-core${buildCore.ver}.jar" />
-      </classpath>
-    </javac>
   </target>
   
   <target name="layout.custom1">
