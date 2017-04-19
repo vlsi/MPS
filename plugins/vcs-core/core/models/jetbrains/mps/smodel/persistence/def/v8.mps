@@ -31,9 +31,9 @@
     <import index="i44q" ref="r:3e2c3b97-24cc-4bee-9343-0bf0b2be88e3(jetbrains.mps.smodel.persistence.def)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="kart" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.xml.sax(JDK/)" />
-    <import index="ex0d" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.persistence(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="iho" ref="r:57faf072-5a23-4c30-9cf6-da73f0e0a8ad(jetbrains.mps.vcspersistence)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -336,7 +336,7 @@
       <concept id="4720003541470384741" name="jetbrains.mps.core.xml.sax.structure.XMLSAXChildRuleCondition" flags="in" index="3qrk1j" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
@@ -2858,8 +2858,8 @@
                         <node concept="liA8E" id="5q2c4liZEKj" role="2OqNvi">
                           <ref role="37wK5l" to="w1kc:~SModel.addRootNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="addRootNode" />
                           <node concept="2YIFZM" id="4OWCAYL3StC" role="37wK5m">
-                            <ref role="37wK5l" to="ex0d:~SNodeFactory.newRegular(java.lang.String):jetbrains.mps.smodel.SNode" resolve="newRegular" />
-                            <ref role="1Pybhc" to="ex0d:~SNodeFactory" resolve="SNodeFactory" />
+                            <ref role="1Pybhc" to="iho:296OPknLbYf" resolve="SNodeFactory" />
+                            <ref role="37wK5l" to="iho:296OPknLbY_" resolve="newRegular" />
                             <node concept="37vLTw" id="4OWCAYL3Sut" role="37wK5m">
                               <ref role="3cqZAo" node="5q2c4lj3gzL" resolve="stubConcept" />
                             </node>
@@ -3528,8 +3528,8 @@
                           <ref role="3uigEE" to="w1kc:~SNode" resolve="SNode" />
                         </node>
                         <node concept="2YIFZM" id="4OWCAYL3TvW" role="33vP2m">
-                          <ref role="37wK5l" to="ex0d:~SNodeFactory.newRegular(java.lang.String):jetbrains.mps.smodel.SNode" resolve="newRegular" />
-                          <ref role="1Pybhc" to="ex0d:~SNodeFactory" resolve="SNodeFactory" />
+                          <ref role="1Pybhc" to="iho:296OPknLbYf" resolve="SNodeFactory" />
+                          <ref role="37wK5l" to="iho:296OPknLbY_" resolve="newRegular" />
                           <node concept="37vLTw" id="4OWCAYL3Txf" role="37wK5m">
                             <ref role="3cqZAo" node="5q2c4lj3ONd" resolve="stubConcept" />
                           </node>
@@ -3849,15 +3849,15 @@
                   <ref role="3cqZAo" node="4jPMhuNXagz" resolve="interfaceNode" />
                 </node>
                 <node concept="2YIFZM" id="4OWCAYL3TKR" role="3K4E3e">
-                  <ref role="1Pybhc" to="ex0d:~SNodeFactory" resolve="SNodeFactory" />
-                  <ref role="37wK5l" to="ex0d:~SNodeFactory.newInterface(java.lang.String):jetbrains.mps.smodel.SNode" resolve="newInterface" />
+                  <ref role="1Pybhc" to="iho:296OPknLbYf" resolve="SNodeFactory" />
+                  <ref role="37wK5l" to="iho:296OPknLbYr" resolve="newInterface" />
                   <node concept="37vLTw" id="4OWCAYL3TS9" role="37wK5m">
                     <ref role="3cqZAo" node="1x8_mT5yC86" resolve="conceptName" />
                   </node>
                 </node>
                 <node concept="2YIFZM" id="4OWCAYL3Udw" role="3K4GZi">
-                  <ref role="37wK5l" to="ex0d:~SNodeFactory.newRegular(java.lang.String):jetbrains.mps.smodel.SNode" resolve="newRegular" />
-                  <ref role="1Pybhc" to="ex0d:~SNodeFactory" resolve="SNodeFactory" />
+                  <ref role="1Pybhc" to="iho:296OPknLbYf" resolve="SNodeFactory" />
+                  <ref role="37wK5l" to="iho:296OPknLbY_" resolve="newRegular" />
                   <node concept="37vLTw" id="4OWCAYL3UkO" role="37wK5m">
                     <ref role="3cqZAo" node="1x8_mT5yC86" resolve="conceptName" />
                   </node>

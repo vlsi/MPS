@@ -67,11 +67,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadResult" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.SNodeFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.IReferencePersister" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.SAXVisibleModelElements" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.VersionUtil" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.SNodeFactory" />
     <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />

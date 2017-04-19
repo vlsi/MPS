@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.persistence.SNodeFactory;
+import jetbrains.mps.vcspersistence.SNodeFactory;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.util.SNodeOperations;

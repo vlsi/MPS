@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.persistence.SNodeFactory;
+import jetbrains.mps.vcspersistence.SNodeFactory;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.apache.log4j.Level;

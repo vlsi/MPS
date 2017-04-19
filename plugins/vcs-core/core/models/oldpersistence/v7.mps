@@ -19,7 +19,6 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
-    <import index="ex0d" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.persistence(MPS.Core/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="5fzo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.persistence.def(MPS.Core/)" />
     <import index="7a2w" ref="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.util.xml)" />
@@ -261,7 +260,7 @@
       <concept id="3465552206661911172" name="jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler_value" flags="nn" index="3kJTZq" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
@@ -1348,15 +1347,15 @@
                   <ref role="3cqZAo" node="4jPMhuNXagz" resolve="needLazy" />
                 </node>
                 <node concept="2YIFZM" id="rXLmmK_Sem" role="3K4E3e">
-                  <ref role="37wK5l" to="ex0d:~SNodeFactory.newLazy(java.lang.String):jetbrains.mps.smodel.SNode" resolve="newLazy" />
-                  <ref role="1Pybhc" to="ex0d:~SNodeFactory" resolve="SNodeFactory" />
+                  <ref role="1Pybhc" to="iho:296OPknLbYf" resolve="SNodeFactory" />
+                  <ref role="37wK5l" to="iho:296OPknLbYh" resolve="newLazy" />
                   <node concept="37vLTw" id="rXLmmK_Sen" role="37wK5m">
                     <ref role="3cqZAo" node="1x8_mT5xTKT" resolve="readType" />
                   </node>
                 </node>
                 <node concept="2YIFZM" id="rXLmmK_Seo" role="3K4GZi">
-                  <ref role="37wK5l" to="ex0d:~SNodeFactory.newRegular(java.lang.String):jetbrains.mps.smodel.SNode" resolve="newRegular" />
-                  <ref role="1Pybhc" to="ex0d:~SNodeFactory" resolve="SNodeFactory" />
+                  <ref role="1Pybhc" to="iho:296OPknLbYf" resolve="SNodeFactory" />
+                  <ref role="37wK5l" to="iho:296OPknLbY_" resolve="newRegular" />
                   <node concept="37vLTw" id="rXLmmK_Sep" role="37wK5m">
                     <ref role="3cqZAo" node="1x8_mT5xTKT" resolve="readType" />
                   </node>
