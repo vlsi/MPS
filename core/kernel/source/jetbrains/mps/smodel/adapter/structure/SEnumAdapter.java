@@ -154,5 +154,10 @@ public class SEnumAdapter implements SEnumeration {
     public int hashCode() {
       return myPresentation.hashCode();
     }
+
+    @Override
+    public String toString() {
+      return getPresentation();
+    }
   }
 }
