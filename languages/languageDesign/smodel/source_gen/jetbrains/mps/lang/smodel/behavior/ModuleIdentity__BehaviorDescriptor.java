@@ -17,15 +17,15 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class ModuleIdentity__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e85338e1eL, "jetbrains.mps.lang.smodel.structure.ModuleIdentity");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SModuleReference> getModuleReference_idnJmxU5cSSU = new SMethodBuilder<SModuleReference>(new SJavaCompoundTypeImpl(SModuleReference.class)).name("getModuleReference").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("nJmxU5cSSU").registry(REGISTRY).build();
+  public static final SMethod<SModuleReference> getModuleReference_idnJmxU5cSSU = new SMethodBuilder<SModuleReference>(new SJavaCompoundTypeImpl(SModuleReference.class)).name("getModuleReference").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("nJmxU5cSSU").registry(REGISTRY).build();
   public static final SMethod<Void> setModuleReference_idnJmxU5cSTj = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setModuleReference").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("nJmxU5cSTj").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SModuleReference.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getModuleReference_idnJmxU5cSSU, setModuleReference_idnJmxU5cSTj);
@@ -33,6 +33,10 @@ public final class ModuleIdentity__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  @Nullable
+  /*package*/ static SModuleReference getModuleReference_idnJmxU5cSSU(@NotNull SNode __thisNode__) {
+    return null;
+  }
 
   /*package*/ ModuleIdentity__BehaviorDescriptor() {
     super(REGISTRY);
@@ -50,6 +54,8 @@ public final class ModuleIdentity__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 0:
+        return (T) ((SModuleReference) getModuleReference_idnJmxU5cSSU(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

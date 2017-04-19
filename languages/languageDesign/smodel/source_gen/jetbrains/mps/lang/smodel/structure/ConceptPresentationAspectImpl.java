@@ -64,6 +64,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IfInstanceOfVariable = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LanguageId = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd7L, "namespace"), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd8L, "languageId"), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd9L, "version")).create();
   private final ConceptPresentation props_LanguageIdentity = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_LanguageIdentityBySourceModule = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LanguageRefExpression = new ConceptPresentationBuilder().shortDesc("Reference to a run-time language").create();
   private final ConceptPresentation props_LanguageReferenceExpression = new ConceptPresentationBuilder().deprecated(true).shortDesc("Access Language module instance").create();
   private final ConceptPresentation props_LinkAttributeQualifier = new ConceptPresentationBuilder().create();
@@ -298,6 +299,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_LanguageId;
       case LanguageConceptSwitch.LanguageIdentity:
         return props_LanguageIdentity;
+      case LanguageConceptSwitch.LanguageIdentityBySourceModule:
+        return props_LanguageIdentityBySourceModule;
       case LanguageConceptSwitch.LanguageRefExpression:
         return props_LanguageRefExpression;
       case LanguageConceptSwitch.LanguageReferenceExpression:
