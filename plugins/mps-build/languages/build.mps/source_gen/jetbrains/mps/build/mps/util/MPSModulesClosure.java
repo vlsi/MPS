@@ -25,7 +25,10 @@ import java.util.List;
 public class MPSModulesClosure {
   private LinkedHashSet<SNode> myModules = new LinkedHashSet<SNode>();
   private Set<SNode> myDevkits = new LinkedHashSet<SNode>();
-  private LinkedHashSet<SNode> myLanguagesWithRuntime = new LinkedHashSet<SNode>();
+  /**
+   * Language modules that have runtime : BuildMps_ModuleRuntime hodling anything but a solution.
+   */
+  private LinkedHashSet<SNode> myLanguagesWithOddRuntime = new LinkedHashSet<SNode>();
 
   private final Iterable<SNode> myInitialModules;
   private final boolean myTrackDevkits;
@@ -177,20 +180,29 @@ public class MPSModulesClosure {
     collectDependencies(dependencies, reexportOnly);
   }
 
+  /**
+   * For each module, collect execution-time dependencies, based on runtime solution of languages which were used to
+   * generate given module. Dependencies are transitive (i.e. include RTs for runtime solutions). 
+   * 
+   * Dependencies necessary to load RT solutions are also included. For an input module, DOES NOT include dependencies other than RT solutions.
+   * 
+   * @param sequence input modules
+   */
   private void collectAllUsedLanguageRuntimesAndTheirDeps(Iterable<SNode> sequence) {
     if (Sequence.fromIterable(sequence).isEmpty()) {
       return;
     }
     Set<SNode> langs = SetSequence.fromSet(new HashSet<SNode>());
-    Set<SNode> solutions = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> langsWithOddRT = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> rtSolutions = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode module : Sequence.fromIterable(sequence)) {
-      fillUsedLanguageRuntimes(module, langs, solutions);
+      fillUsedLanguageRuntimes(module, langs, langsWithOddRT, rtSolutions);
     }
-    SetSequence.fromSet(solutions).removeSequence(SetSequence.fromSet(myModules));
-    myModules.addAll(solutions);
-    myLanguagesWithRuntime.addAll(langs);
-    collectDependencies(((Iterable<SNode>) solutions), false);
-    collectAllUsedLanguageRuntimesAndTheirDeps(((Iterable<SNode>) solutions));
+    SetSequence.fromSet(rtSolutions).removeSequence(SetSequence.fromSet(myModules));
+    myModules.addAll(rtSolutions);
+    myLanguagesWithOddRuntime.addAll(langsWithOddRT);
+    collectDependencies(((Iterable<SNode>) rtSolutions), false);
+    collectAllUsedLanguageRuntimesAndTheirDeps(((Iterable<SNode>) rtSolutions));
   }
 
   private void collectGeneratorsDependendencies(Iterable<SNode> languages) {
@@ -233,16 +245,17 @@ public class MPSModulesClosure {
   public MPSModulesClosure closure() {
     // get all direct dependencies abd runtimes, plus re-exported dependencies thereof. 
     Set<SNode> langs = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> langsWithOddRT = SetSequence.fromSet(new HashSet<SNode>());
     Set<SNode> solutions = SetSequence.fromSet(new HashSet<SNode>());
 
     for (SNode module : Sequence.fromIterable(myInitialModules)) {
       List<SNode> firstLevelDeps = Sequence.fromIterable(getDependencies(module, false)).toListSequence();
       collectDependencies(firstLevelDeps, true);
-      fillUsedLanguageRuntimes(module, langs, solutions);
+      fillUsedLanguageRuntimes(module, langs, langsWithOddRT, solutions);
       myModules.addAll(firstLevelDeps);
     }
     myModules.addAll(solutions);
-    myLanguagesWithRuntime.addAll(langs);
+    myLanguagesWithOddRuntime.addAll(langsWithOddRT);
     collectDependencies(((Iterable<SNode>) solutions), true);
     myModules.removeAll(Sequence.fromIterable(myInitialModules).toListSequence());
     return this;
@@ -289,13 +302,23 @@ public class MPSModulesClosure {
    */
   public MPSModulesClosure generationDependenciesClosure() {
     // direct and indirect dependencies of used languages and their runtimes; source languages of generators involved 
+    Set<SNode> usedLanguages = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> langsWithOddRT = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> solutions = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode m : Sequence.fromIterable(myInitialModules)) {
-      Iterable<SNode> usedLanguages = getUsedLanguages(m);
-      collectDependencies(usedLanguages, false);
-      collectAllUsedLanguageRuntimesAndTheirDeps(usedLanguages);
-      myModules.addAll(Sequence.fromIterable(usedLanguages).toListSequence());
-      collectGeneratorsDependendencies(usedLanguages);
+      fillUsedLanguageRuntimes(m, usedLanguages, langsWithOddRT, solutions);
     }
+    // need module of a used language AND anything this module would require to load 
+    collectDependencies((Iterable<SNode>) usedLanguages, false);
+    // code, generated with a used language, might require runtime of the language, and anything this RT solution 
+    // re-exports. However, without all dependencies (including non-reexported), solution won't load, hence include all. 
+    collectDependencies((Iterable<SNode>) solutions, false);
+    // RT solutions might be generated with other set of languages with own set of RT dependencies, collect these, too. 
+    collectAllUsedLanguageRuntimesAndTheirDeps((Iterable<SNode>) solutions);
+    // for employed languages, look at their generators and include their dependencies, too 
+    collectGeneratorsDependendencies(usedLanguages);
+    myModules.addAll(usedLanguages);
+    myLanguagesWithOddRuntime.addAll(langsWithOddRT);
     return this;
   }
 
@@ -313,22 +336,28 @@ public class MPSModulesClosure {
 
     SNode initial = Sequence.fromIterable(myInitialModules).first();
     Set<SNode> langs = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> langsWithOddRT = SetSequence.fromSet(new HashSet<SNode>());
     Set<SNode> runtimes = SetSequence.fromSet(new HashSet<SNode>());
-    fillUsedLanguageRuntimes(initial, langs, runtimes);
+    fillUsedLanguageRuntimes(initial, langs, langsWithOddRT, runtimes);
     myModules.addAll(runtimes);
-    myLanguagesWithRuntime.addAll(langs);
+    myLanguagesWithOddRuntime.addAll(langsWithOddRT);
     return this;
   }
 
   /**
-   * Analyzes the used languages and their runtime solutions for the given module
+   * Collects and analyzes used languages and their runtime solutions for the given module.
+   * Generally, shall be static and without side-effects, however, at the moment uses {@link jetbrains.mps.build.mps.util.MPSModulesClosure#getUsedLanguages(SNode) } which updates myDevkits field
+   * FIXME refactor, introduce fillUsedLanguages(module, set[languages])and make them static
    * 
    * @param module given
-   * @param languagesWithRuntime will be filled with the used languages which has runtime solution
-   * @param runtimeSolutions will be filled with runtime solutions of those languagesWithRuntime
+   * @param usedLanguages filled with used languages of the module
+   * @param languagesWithRuntime will be filled with the used languages that has runtime which IS NOT a regular runtime solution
+   * @param runtimeSolutions filled with runtime solutions found for used languages
    */
-  private void fillUsedLanguageRuntimes(SNode module, Set<SNode> languagesWithRuntime, Set<SNode> runtimeSolutions) {
-    for (SNode language : getUsedLanguages(module)) {
+  private void fillUsedLanguageRuntimes(SNode module, Set<SNode> usedLanguages, Set<SNode> languagesWithRuntime, Set<SNode> runtimeSolutions) {
+    List<SNode> ul = Sequence.fromIterable(getUsedLanguages(module)).toListSequence();
+    SetSequence.fromSet(usedLanguages).addSequence(ListSequence.fromList(ul));
+    for (SNode language : ul) {
       boolean hasRuntime = false;
       for (SNode rdep : SLinkOperations.getChildren(language, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x2c4467914643be24L, "runtime"))) {
         if (!(SNodeOperations.isInstanceOf(rdep, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914644b6e3L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime")))) {
@@ -382,7 +411,7 @@ public class MPSModulesClosure {
   }
 
   public Iterable<SNode> getAllModules() {
-    return Sequence.fromIterable(((Iterable<SNode>) myModules)).concat(Sequence.fromIterable((Iterable<SNode>) myLanguagesWithRuntime)).concat(Sequence.fromIterable((Iterable<SNode>) myDevkits));
+    return Sequence.fromIterable(((Iterable<SNode>) myModules)).concat(Sequence.fromIterable((Iterable<SNode>) myLanguagesWithOddRuntime)).concat(Sequence.fromIterable((Iterable<SNode>) myDevkits));
   }
 
   public SNode getInitial() {

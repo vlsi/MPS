@@ -332,6 +332,7 @@
       <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
         <property id="5858074156537516431" name="text" index="x79VB" />
       </concept>
+      <concept id="6832197706140896242" name="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" flags="ng" index="z59LJ" />
       <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
       <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
         <reference id="6832197706140518108" name="param" index="zr_51" />
@@ -3315,7 +3316,7 @@
       </node>
     </node>
     <node concept="312cEg" id="6xJrZo0GW9O" role="jymVt">
-      <property role="TrG5h" value="myLanguagesWithRuntime" />
+      <property role="TrG5h" value="myLanguagesWithOddRuntime" />
       <node concept="3Tm6S6" id="6xJrZo0GW9P" role="1B3o_S" />
       <node concept="3uibUv" id="6xJrZo0GW9Q" role="1tU5fm">
         <ref role="3uigEE" to="33ny:~LinkedHashSet" resolve="LinkedHashSet" />
@@ -3328,6 +3329,13 @@
           <ref role="37wK5l" to="33ny:~LinkedHashSet.&lt;init&gt;()" resolve="LinkedHashSet" />
           <node concept="3Tqbb2" id="6xJrZo0GWa6" role="1pMfVU">
             <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+          </node>
+        </node>
+      </node>
+      <node concept="z59LJ" id="73Idof7yO$G" role="lGtFl">
+        <node concept="TZ5HA" id="73Idof7yO$H" role="TZ5H$">
+          <node concept="1dT_AC" id="73Idof7yO$I" role="1dT_Ay">
+            <property role="1dT_AB" value="Language modules that have runtime : BuildMps_ModuleRuntime hodling anything but a solution." />
           </node>
         </node>
       </node>
@@ -4603,9 +4611,26 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="73Idof7ywMz" role="3cqZAp">
+          <node concept="3cpWsn" id="73Idof7ywM$" role="3cpWs9">
+            <property role="TrG5h" value="langsWithOddRT" />
+            <node concept="2hMVRd" id="73Idof7ywM_" role="1tU5fm">
+              <node concept="3Tqbb2" id="73Idof7ywMA" role="2hN53Y">
+                <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="73Idof7ywMB" role="33vP2m">
+              <node concept="2i4dXS" id="73Idof7ywMC" role="2ShVmc">
+                <node concept="3Tqbb2" id="73Idof7ywMD" role="HW$YZ">
+                  <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="4fCiNXEkjcY" role="3cqZAp">
           <node concept="3cpWsn" id="4fCiNXEkjcZ" role="3cpWs9">
-            <property role="TrG5h" value="solutions" />
+            <property role="TrG5h" value="rtSolutions" />
             <node concept="2hMVRd" id="4fCiNXEkjd0" role="1tU5fm">
               <node concept="3Tqbb2" id="4fCiNXEkjd1" role="2hN53Y">
                 <ref role="ehGHo" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
@@ -4630,15 +4655,18 @@
           <node concept="3clFbS" id="4fCiNXEp2kr" role="2LFqv$">
             <node concept="3clFbF" id="4fCiNXEkkMF" role="3cqZAp">
               <node concept="1rXfSq" id="4fCiNXEkkME" role="3clFbG">
-                <ref role="37wK5l" node="4fCiNXEhDRV" resolve="fillUsedLanguageRuntimes" />
+                <ref role="37wK5l" node="73Idof7B$fF" resolve="fillUsedLanguageRuntimes" />
                 <node concept="2GrUjf" id="4fCiNXEpgLI" role="37wK5m">
                   <ref role="2Gs0qQ" node="4fCiNXEp2kn" resolve="module" />
                 </node>
                 <node concept="37vLTw" id="4fCiNXEklFM" role="37wK5m">
                   <ref role="3cqZAo" node="4fCiNXEkjcS" resolve="langs" />
                 </node>
+                <node concept="37vLTw" id="73Idof7yzZa" role="37wK5m">
+                  <ref role="3cqZAo" node="73Idof7ywM$" resolve="langsWithOddRT" />
+                </node>
                 <node concept="37vLTw" id="4fCiNXEklKc" role="37wK5m">
-                  <ref role="3cqZAo" node="4fCiNXEkjcZ" resolve="solutions" />
+                  <ref role="3cqZAo" node="4fCiNXEkjcZ" resolve="rtSolutions" />
                 </node>
               </node>
             </node>
@@ -4647,7 +4675,7 @@
         <node concept="3clFbF" id="6qG_vx$m5i8" role="3cqZAp">
           <node concept="2OqwBi" id="6qG_vx$m6KD" role="3clFbG">
             <node concept="37vLTw" id="6qG_vx$m5i7" role="2Oq$k0">
-              <ref role="3cqZAo" node="4fCiNXEkjcZ" resolve="solutions" />
+              <ref role="3cqZAo" node="4fCiNXEkjcZ" resolve="rtSolutions" />
             </node>
             <node concept="1kEaZ2" id="6qG_vx$m9hf" role="2OqNvi">
               <node concept="37vLTw" id="6qG_vx$maXQ" role="25WWJ7">
@@ -4664,7 +4692,7 @@
             <node concept="liA8E" id="4fCiNXEkpXJ" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~AbstractCollection.addAll(java.util.Collection):boolean" resolve="addAll" />
               <node concept="37vLTw" id="4fCiNXEkqwH" role="37wK5m">
-                <ref role="3cqZAo" node="4fCiNXEkjcZ" resolve="solutions" />
+                <ref role="3cqZAo" node="4fCiNXEkjcZ" resolve="rtSolutions" />
               </node>
             </node>
           </node>
@@ -4672,12 +4700,12 @@
         <node concept="3clFbF" id="4fCiNXEksjj" role="3cqZAp">
           <node concept="2OqwBi" id="4fCiNXEktRG" role="3clFbG">
             <node concept="37vLTw" id="4fCiNXEksji" role="2Oq$k0">
-              <ref role="3cqZAo" node="6xJrZo0GW9O" resolve="myLanguagesWithRuntime" />
+              <ref role="3cqZAo" node="6xJrZo0GW9O" resolve="myLanguagesWithOddRuntime" />
             </node>
             <node concept="liA8E" id="4fCiNXEkwtk" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~AbstractCollection.addAll(java.util.Collection):boolean" resolve="addAll" />
-              <node concept="37vLTw" id="4fCiNXEkwWA" role="37wK5m">
-                <ref role="3cqZAo" node="4fCiNXEkjcS" resolve="langs" />
+              <node concept="37vLTw" id="73Idof7y$Yv" role="37wK5m">
+                <ref role="3cqZAo" node="73Idof7ywM$" resolve="langsWithOddRT" />
               </node>
             </node>
           </node>
@@ -4693,7 +4721,7 @@
                   </node>
                 </node>
                 <node concept="37vLTw" id="4fCiNXEotB8" role="10QFUP">
-                  <ref role="3cqZAo" node="4fCiNXEkjcZ" resolve="solutions" />
+                  <ref role="3cqZAo" node="4fCiNXEkjcZ" resolve="rtSolutions" />
                 </node>
               </node>
             </node>
@@ -4708,7 +4736,7 @@
             <node concept="1eOMI4" id="4fCiNXEpkhx" role="37wK5m">
               <node concept="10QFUN" id="4fCiNXEpkhu" role="1eOMHV">
                 <node concept="37vLTw" id="4fCiNXEoEUj" role="10QFUP">
-                  <ref role="3cqZAo" node="4fCiNXEkjcZ" resolve="solutions" />
+                  <ref role="3cqZAo" node="4fCiNXEkjcZ" resolve="rtSolutions" />
                 </node>
                 <node concept="A3Dl8" id="4fCiNXEplI0" role="10QFUM">
                   <node concept="3Tqbb2" id="4fCiNXEplI1" role="A3Ik2">
@@ -4725,6 +4753,34 @@
         <node concept="A3Dl8" id="4fCiNXEoJy4" role="1tU5fm">
           <node concept="3Tqbb2" id="4fCiNXEoJy5" role="A3Ik2">
             <ref role="ehGHo" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="73Idof7_73L" role="lGtFl">
+        <node concept="TZ5HA" id="73Idof7_73M" role="TZ5H$">
+          <node concept="1dT_AC" id="73Idof7_73N" role="1dT_Ay">
+            <property role="1dT_AB" value="For each module, collect execution-time dependencies, based on runtime solution of languages which were used to" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="73Idof7_rms" role="TZ5H$">
+          <node concept="1dT_AC" id="73Idof7_rmt" role="1dT_Ay">
+            <property role="1dT_AB" value="generate given module. Dependencies are transitive (i.e. include RTs for runtime solutions). " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="73Idof7_ry6" role="TZ5H$">
+          <node concept="1dT_AC" id="73Idof7_ry7" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="73Idof7_rr4" role="TZ5H$">
+          <node concept="1dT_AC" id="73Idof7_rr5" role="1dT_Ay">
+            <property role="1dT_AB" value="Dependencies necessary to load RT solutions are also included. For an input module, DOES NOT include dependencies other than RT solutions." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="73Idof7_73O" role="3nqlJM">
+          <property role="TUZQ4" value="input modules" />
+          <node concept="zr_55" id="73Idof7_73Q" role="zr_5Q">
+            <ref role="zr_51" node="4fCiNXEoJy3" resolve="sequence" />
           </node>
         </node>
       </node>
@@ -5052,6 +5108,23 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="73Idof7yrFi" role="3cqZAp">
+          <node concept="3cpWsn" id="73Idof7yrFj" role="3cpWs9">
+            <property role="TrG5h" value="langsWithOddRT" />
+            <node concept="2hMVRd" id="73Idof7yrFk" role="1tU5fm">
+              <node concept="3Tqbb2" id="73Idof7yrFl" role="2hN53Y">
+                <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="73Idof7yrFm" role="33vP2m">
+              <node concept="2i4dXS" id="73Idof7yrFn" role="2ShVmc">
+                <node concept="3Tqbb2" id="73Idof7yrFo" role="HW$YZ">
+                  <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="4fCiNXEl813" role="3cqZAp">
           <node concept="3cpWsn" id="4fCiNXEl814" role="3cpWs9">
             <property role="TrG5h" value="solutions" />
@@ -5113,12 +5186,15 @@
             </node>
             <node concept="3clFbF" id="4fCiNXEl81a" role="3cqZAp">
               <node concept="1rXfSq" id="4fCiNXEl81b" role="3clFbG">
-                <ref role="37wK5l" node="4fCiNXEhDRV" resolve="fillUsedLanguageRuntimes" />
+                <ref role="37wK5l" node="73Idof7B$fF" resolve="fillUsedLanguageRuntimes" />
                 <node concept="2GrUjf" id="4fCiNXEl92m" role="37wK5m">
                   <ref role="2Gs0qQ" node="2pk5iwY3nYF" resolve="module" />
                 </node>
                 <node concept="37vLTw" id="4fCiNXEl81d" role="37wK5m">
                   <ref role="3cqZAo" node="4fCiNXEl80X" resolve="langs" />
+                </node>
+                <node concept="37vLTw" id="73Idof7yu37" role="37wK5m">
+                  <ref role="3cqZAo" node="73Idof7yrFj" resolve="langsWithOddRT" />
                 </node>
                 <node concept="37vLTw" id="4fCiNXEl81e" role="37wK5m">
                   <ref role="3cqZAo" node="4fCiNXEl814" resolve="solutions" />
@@ -5156,12 +5232,12 @@
         <node concept="3clFbF" id="4fCiNXElex8" role="3cqZAp">
           <node concept="2OqwBi" id="4fCiNXElgmX" role="3clFbG">
             <node concept="37vLTw" id="4fCiNXElex7" role="2Oq$k0">
-              <ref role="3cqZAo" node="6xJrZo0GW9O" resolve="myLanguagesWithRuntime" />
+              <ref role="3cqZAo" node="6xJrZo0GW9O" resolve="myLanguagesWithOddRuntime" />
             </node>
             <node concept="liA8E" id="4fCiNXEli3_" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~AbstractCollection.addAll(java.util.Collection):boolean" resolve="addAll" />
-              <node concept="37vLTw" id="4fCiNXElizL" role="37wK5m">
-                <ref role="3cqZAo" node="4fCiNXEl80X" resolve="langs" />
+              <node concept="37vLTw" id="73Idof7yvob" role="37wK5m">
+                <ref role="3cqZAo" node="73Idof7yrFj" resolve="langsWithOddRT" />
               </node>
             </node>
           </node>
@@ -5454,6 +5530,57 @@
             <property role="3SKdUp" value="direct and indirect dependencies of used languages and their runtimes; source languages of generators involved" />
           </node>
         </node>
+        <node concept="3cpWs8" id="73Idof7yAHX" role="3cqZAp">
+          <node concept="3cpWsn" id="73Idof7yAHY" role="3cpWs9">
+            <property role="TrG5h" value="usedLanguages" />
+            <node concept="2hMVRd" id="73Idof7yAHZ" role="1tU5fm">
+              <node concept="3Tqbb2" id="73Idof7yAI0" role="2hN53Y">
+                <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="73Idof7yAI1" role="33vP2m">
+              <node concept="2i4dXS" id="73Idof7yAI2" role="2ShVmc">
+                <node concept="3Tqbb2" id="73Idof7yAI3" role="HW$YZ">
+                  <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="73Idof7yAI4" role="3cqZAp">
+          <node concept="3cpWsn" id="73Idof7yAI5" role="3cpWs9">
+            <property role="TrG5h" value="langsWithOddRT" />
+            <node concept="2hMVRd" id="73Idof7yAI6" role="1tU5fm">
+              <node concept="3Tqbb2" id="73Idof7yAI7" role="2hN53Y">
+                <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="73Idof7yAI8" role="33vP2m">
+              <node concept="2i4dXS" id="73Idof7yAI9" role="2ShVmc">
+                <node concept="3Tqbb2" id="73Idof7yAIa" role="HW$YZ">
+                  <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="73Idof7yAIb" role="3cqZAp">
+          <node concept="3cpWsn" id="73Idof7yAIc" role="3cpWs9">
+            <property role="TrG5h" value="solutions" />
+            <node concept="2hMVRd" id="73Idof7yAId" role="1tU5fm">
+              <node concept="3Tqbb2" id="73Idof7yAIe" role="2hN53Y">
+                <ref role="ehGHo" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="73Idof7yAIf" role="33vP2m">
+              <node concept="2i4dXS" id="73Idof7yAIg" role="2ShVmc">
+                <node concept="3Tqbb2" id="73Idof7yAIh" role="HW$YZ">
+                  <ref role="ehGHo" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="2Gpval" id="2pk5iwY3nZv" role="3cqZAp">
           <node concept="2GrKxI" id="2pk5iwY3nZw" role="2Gsz3X">
             <property role="TrG5h" value="m" />
@@ -5462,63 +5589,131 @@
             <ref role="3cqZAo" node="2pk5iwY3nT7" resolve="myInitialModules" />
           </node>
           <node concept="3clFbS" id="2pk5iwY3nZy" role="2LFqv$">
-            <node concept="3cpWs8" id="4fCiNXEpypJ" role="3cqZAp">
-              <node concept="3cpWsn" id="4fCiNXEpypK" role="3cpWs9">
-                <property role="TrG5h" value="usedLanguages" />
-                <node concept="A3Dl8" id="4fCiNXEpypD" role="1tU5fm">
-                  <node concept="3Tqbb2" id="4fCiNXEpypG" role="A3Ik2">
-                    <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
-                  </node>
+            <node concept="3clFbF" id="73Idof7yAIm" role="3cqZAp">
+              <node concept="1rXfSq" id="73Idof7yAIn" role="3clFbG">
+                <ref role="37wK5l" node="73Idof7B$fF" resolve="fillUsedLanguageRuntimes" />
+                <node concept="2GrUjf" id="73Idof7yDuE" role="37wK5m">
+                  <ref role="2Gs0qQ" node="2pk5iwY3nZw" resolve="m" />
                 </node>
-                <node concept="1rXfSq" id="4fCiNXEpypL" role="33vP2m">
-                  <ref role="37wK5l" node="6xJrZo0GT$g" resolve="getUsedLanguages" />
-                  <node concept="2GrUjf" id="4fCiNXEpypM" role="37wK5m">
-                    <ref role="2Gs0qQ" node="2pk5iwY3nZw" resolve="m" />
-                  </node>
+                <node concept="37vLTw" id="73Idof7yAIp" role="37wK5m">
+                  <ref role="3cqZAo" node="73Idof7yAHY" resolve="usedLanguages" />
                 </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="4fCiNXEpyMk" role="3cqZAp">
-              <node concept="1rXfSq" id="4fCiNXEpyMl" role="3clFbG">
-                <ref role="37wK5l" node="4fCiNXEeiCm" resolve="collectDependencies" />
-                <node concept="37vLTw" id="4fCiNXEpyMm" role="37wK5m">
-                  <ref role="3cqZAo" node="4fCiNXEpypK" resolve="usedLanguages" />
+                <node concept="37vLTw" id="73Idof7yAIq" role="37wK5m">
+                  <ref role="3cqZAo" node="73Idof7yAI5" resolve="langsWithOddRT" />
                 </node>
-                <node concept="3clFbT" id="4fCiNXEpyMn" role="37wK5m">
-                  <property role="3clFbU" value="false" />
+                <node concept="37vLTw" id="73Idof7yAIr" role="37wK5m">
+                  <ref role="3cqZAo" node="73Idof7yAIc" resolve="solutions" />
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="4fCiNXEpyMo" role="3cqZAp">
-              <node concept="1rXfSq" id="4fCiNXEpyMp" role="3clFbG">
-                <ref role="37wK5l" node="4fCiNXEbDzJ" resolve="collectAllUsedLanguageRuntimesAndTheirDeps" />
-                <node concept="37vLTw" id="4fCiNXEpyMq" role="37wK5m">
-                  <ref role="3cqZAo" node="4fCiNXEpypK" resolve="usedLanguages" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="73Idof7zD3V" role="3cqZAp">
+          <node concept="3SKdUq" id="73Idof7zD3X" role="3SKWNk">
+            <property role="3SKdUp" value="need module of a used language AND anything this module would require to load" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4fCiNXEpyMk" role="3cqZAp">
+          <node concept="1rXfSq" id="4fCiNXEpyMl" role="3clFbG">
+            <ref role="37wK5l" node="4fCiNXEeiCm" resolve="collectDependencies" />
+            <node concept="10QFUN" id="73Idof7zBg_" role="37wK5m">
+              <node concept="37vLTw" id="73Idof7zc88" role="10QFUP">
+                <ref role="3cqZAo" node="73Idof7yAHY" resolve="usedLanguages" />
+              </node>
+              <node concept="A3Dl8" id="73Idof7zBtO" role="10QFUM">
+                <node concept="3Tqbb2" id="73Idof7zBtP" role="A3Ik2">
+                  <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="4fCiNXE_Q28" role="3cqZAp">
-              <node concept="2OqwBi" id="4fCiNXE_QxB" role="3clFbG">
-                <node concept="37vLTw" id="4fCiNXE_Q27" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6xJrZo0GW9x" resolve="myModules" />
-                </node>
-                <node concept="liA8E" id="4fCiNXE_ShV" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~AbstractCollection.addAll(java.util.Collection):boolean" resolve="addAll" />
-                  <node concept="2OqwBi" id="4fCiNXE_UBz" role="37wK5m">
-                    <node concept="37vLTw" id="4fCiNXE_SMP" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4fCiNXEpypK" resolve="usedLanguages" />
-                    </node>
-                    <node concept="ANE8D" id="4fCiNXE_Vqd" role="2OqNvi" />
-                  </node>
+            <node concept="3clFbT" id="4fCiNXEpyMn" role="37wK5m">
+              <property role="3clFbU" value="false" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="73Idof7$b5I" role="3cqZAp">
+          <node concept="3SKdUq" id="73Idof7$b5K" role="3SKWNk">
+            <property role="3SKdUp" value="code, generated with a used language, might require runtime of the language, and anything this RT solution" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="73Idof7$cXO" role="3cqZAp">
+          <node concept="3SKdUq" id="73Idof7$cXQ" role="3SKWNk">
+            <property role="3SKdUp" value="re-exports. However, without all dependencies (including non-reexported), solution won't load, hence include all." />
+          </node>
+        </node>
+        <node concept="3clFbF" id="73Idof7zcI4" role="3cqZAp">
+          <node concept="1rXfSq" id="73Idof7zcI5" role="3clFbG">
+            <ref role="37wK5l" node="4fCiNXEeiCm" resolve="collectDependencies" />
+            <node concept="10QFUN" id="73Idof7zAAi" role="37wK5m">
+              <node concept="A3Dl8" id="73Idof7zANv" role="10QFUM">
+                <node concept="3Tqbb2" id="73Idof7zB0K" role="A3Ik2">
+                  <ref role="ehGHo" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
                 </node>
               </node>
+              <node concept="37vLTw" id="73Idof7zdQH" role="10QFUP">
+                <ref role="3cqZAo" node="73Idof7yAIc" resolve="solutions" />
+              </node>
             </node>
-            <node concept="3clFbF" id="4fCiNXE_W3R" role="3cqZAp">
-              <node concept="1rXfSq" id="4fCiNXE_W3Q" role="3clFbG">
-                <ref role="37wK5l" node="4fCiNXEqqZz" resolve="collectGeneratorsDependendencies" />
-                <node concept="37vLTw" id="4fCiNXE_WKe" role="37wK5m">
-                  <ref role="3cqZAo" node="4fCiNXEpypK" resolve="usedLanguages" />
+            <node concept="3clFbT" id="73Idof7zcI7" role="37wK5m">
+              <property role="3clFbU" value="false" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="73Idof7_sPp" role="3cqZAp">
+          <node concept="3SKdUq" id="73Idof7_sPr" role="3SKWNk">
+            <property role="3SKdUp" value="RT solutions might be generated with other set of languages with own set of RT dependencies, collect these, too." />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4fCiNXEpyMo" role="3cqZAp">
+          <node concept="1rXfSq" id="4fCiNXEpyMp" role="3clFbG">
+            <ref role="37wK5l" node="4fCiNXEbDzJ" resolve="collectAllUsedLanguageRuntimesAndTheirDeps" />
+            <node concept="10QFUN" id="73Idof7_rC8" role="37wK5m">
+              <node concept="A3Dl8" id="73Idof7_rC9" role="10QFUM">
+                <node concept="3Tqbb2" id="73Idof7_rCa" role="A3Ik2">
+                  <ref role="ehGHo" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
                 </node>
+              </node>
+              <node concept="37vLTw" id="73Idof7_rCb" role="10QFUP">
+                <ref role="3cqZAo" node="73Idof7yAIc" resolve="solutions" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="73Idof7$jpq" role="3cqZAp">
+          <node concept="3SKdUq" id="73Idof7$jps" role="3SKWNk">
+            <property role="3SKdUp" value="for employed languages, look at their generators and include their dependencies, too" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4fCiNXE_W3R" role="3cqZAp">
+          <node concept="1rXfSq" id="4fCiNXE_W3Q" role="3clFbG">
+            <ref role="37wK5l" node="4fCiNXEqqZz" resolve="collectGeneratorsDependendencies" />
+            <node concept="37vLTw" id="73Idof7$e0q" role="37wK5m">
+              <ref role="3cqZAo" node="73Idof7yAHY" resolve="usedLanguages" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4fCiNXE_Q28" role="3cqZAp">
+          <node concept="2OqwBi" id="4fCiNXE_QxB" role="3clFbG">
+            <node concept="37vLTw" id="4fCiNXE_Q27" role="2Oq$k0">
+              <ref role="3cqZAo" node="6xJrZo0GW9x" resolve="myModules" />
+            </node>
+            <node concept="liA8E" id="4fCiNXE_ShV" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~AbstractCollection.addAll(java.util.Collection):boolean" resolve="addAll" />
+              <node concept="37vLTw" id="73Idof7yDGK" role="37wK5m">
+                <ref role="3cqZAo" node="73Idof7yAHY" resolve="usedLanguages" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="73Idof7yEDH" role="3cqZAp">
+          <node concept="2OqwBi" id="73Idof7yGBi" role="3clFbG">
+            <node concept="37vLTw" id="73Idof7yEDF" role="2Oq$k0">
+              <ref role="3cqZAo" node="6xJrZo0GW9O" resolve="myLanguagesWithOddRuntime" />
+            </node>
+            <node concept="liA8E" id="73Idof7yJTs" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~AbstractCollection.addAll(java.util.Collection):boolean" resolve="addAll" />
+              <node concept="37vLTw" id="73Idof7yKK_" role="37wK5m">
+                <ref role="3cqZAo" node="73Idof7yAI5" resolve="langsWithOddRT" />
               </node>
             </node>
           </node>
@@ -5637,6 +5832,23 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="73Idof7yoBS" role="3cqZAp">
+          <node concept="3cpWsn" id="73Idof7yoBT" role="3cpWs9">
+            <property role="TrG5h" value="langsWithOddRT" />
+            <node concept="2hMVRd" id="73Idof7yoBU" role="1tU5fm">
+              <node concept="3Tqbb2" id="73Idof7yoBV" role="2hN53Y">
+                <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="73Idof7yoBW" role="33vP2m">
+              <node concept="2i4dXS" id="73Idof7yoBX" role="2ShVmc">
+                <node concept="3Tqbb2" id="73Idof7yoBY" role="HW$YZ">
+                  <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="4fCiNXEk0TP" role="3cqZAp">
           <node concept="3cpWsn" id="4fCiNXEk0TS" role="3cpWs9">
             <property role="TrG5h" value="runtimes" />
@@ -5656,12 +5868,15 @@
         </node>
         <node concept="3clFbF" id="4fCiNXEjSfF" role="3cqZAp">
           <node concept="1rXfSq" id="4fCiNXEjSfE" role="3clFbG">
-            <ref role="37wK5l" node="4fCiNXEhDRV" resolve="fillUsedLanguageRuntimes" />
+            <ref role="37wK5l" node="73Idof7B$fF" resolve="fillUsedLanguageRuntimes" />
             <node concept="37vLTw" id="4fCiNXEjTlp" role="37wK5m">
               <ref role="3cqZAo" node="2pk5iwY3nZS" resolve="initial" />
             </node>
             <node concept="37vLTw" id="4fCiNXEk2Bm" role="37wK5m">
               <ref role="3cqZAo" node="4fCiNXEjUDJ" resolve="langs" />
+            </node>
+            <node concept="37vLTw" id="73Idof7yrAJ" role="37wK5m">
+              <ref role="3cqZAo" node="73Idof7yoBT" resolve="langsWithOddRT" />
             </node>
             <node concept="37vLTw" id="4fCiNXEk2EB" role="37wK5m">
               <ref role="3cqZAo" node="4fCiNXEk0TS" resolve="runtimes" />
@@ -5684,12 +5899,12 @@
         <node concept="3clFbF" id="4fCiNXEk9XS" role="3cqZAp">
           <node concept="2OqwBi" id="4fCiNXEkbPi" role="3clFbG">
             <node concept="37vLTw" id="4fCiNXEk9XR" role="2Oq$k0">
-              <ref role="3cqZAo" node="6xJrZo0GW9O" resolve="myLanguagesWithRuntime" />
+              <ref role="3cqZAo" node="6xJrZo0GW9O" resolve="myLanguagesWithOddRuntime" />
             </node>
             <node concept="liA8E" id="4fCiNXEkexN" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~AbstractCollection.addAll(java.util.Collection):boolean" resolve="addAll" />
-              <node concept="37vLTw" id="4fCiNXEkf3d" role="37wK5m">
-                <ref role="3cqZAo" node="4fCiNXEjUDJ" resolve="langs" />
+              <node concept="37vLTw" id="73Idof7yqdh" role="37wK5m">
+                <ref role="3cqZAo" node="73Idof7yoBT" resolve="langsWithOddRT" />
               </node>
             </node>
           </node>
@@ -5722,33 +5937,40 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6BLo1Mgj9bX" role="jymVt" />
-    <node concept="3clFb_" id="4fCiNXEhDRV" role="jymVt">
+    <node concept="3clFb_" id="73Idof7B$fF" role="jymVt">
       <property role="TrG5h" value="fillUsedLanguageRuntimes" />
-      <node concept="37vLTG" id="4fCiNXEhXXh" role="3clF46">
-        <property role="TrG5h" value="module" />
-        <node concept="3Tqbb2" id="4fCiNXEi6hu" role="1tU5fm">
-          <ref role="ehGHo" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="4fCiNXEi7eC" role="3clF46">
-        <property role="TrG5h" value="languagesWithRuntime" />
-        <node concept="2hMVRd" id="4fCiNXEihSG" role="1tU5fm">
-          <node concept="3Tqbb2" id="4fCiNXEihVU" role="2hN53Y">
-            <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="4fCiNXEihZm" role="3clF46">
-        <property role="TrG5h" value="runtimeSolutions" />
-        <node concept="2hMVRd" id="4fCiNXEirxN" role="1tU5fm">
-          <node concept="3Tqbb2" id="4fCiNXEiryt" role="2hN53Y">
-            <ref role="ehGHo" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
-          </node>
-        </node>
-      </node>
-      <node concept="3cqZAl" id="4fCiNXEhDRY" role="3clF45" />
-      <node concept="3Tm6S6" id="4fCiNXEhO9_" role="1B3o_S" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
       <node concept="3clFbS" id="4fCiNXEhDS0" role="3clF47">
+        <node concept="3cpWs8" id="73Idof7xbsD" role="3cqZAp">
+          <node concept="3cpWsn" id="73Idof7xbsE" role="3cpWs9">
+            <property role="TrG5h" value="ul" />
+            <node concept="2I9FWS" id="73Idof7xdYs" role="1tU5fm">
+              <ref role="2I9WkF" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+            </node>
+            <node concept="2OqwBi" id="73Idof7xdjU" role="33vP2m">
+              <node concept="1rXfSq" id="73Idof7xbsF" role="2Oq$k0">
+                <ref role="37wK5l" node="6xJrZo0GT$g" resolve="getUsedLanguages" />
+                <node concept="37vLTw" id="73Idof7xbsG" role="37wK5m">
+                  <ref role="3cqZAo" node="4fCiNXEhXXh" resolve="module" />
+                </node>
+              </node>
+              <node concept="ANE8D" id="73Idof7xdFz" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="73Idof7xG$H" role="3cqZAp">
+          <node concept="2OqwBi" id="73Idof7xJ6B" role="3clFbG">
+            <node concept="37vLTw" id="73Idof7xG$F" role="2Oq$k0">
+              <ref role="3cqZAo" node="73Idof7wvMh" resolve="usedLanguages" />
+            </node>
+            <node concept="X8dFx" id="73Idof7xVu5" role="2OqNvi">
+              <node concept="37vLTw" id="73Idof7yb0w" role="25WWJ7">
+                <ref role="3cqZAo" node="73Idof7xbsE" resolve="ul" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="1DcWWT" id="4fCiNXEjBJm" role="3cqZAp">
           <node concept="3clFbS" id="4fCiNXEjBJn" role="2LFqv$">
             <node concept="3cpWs8" id="4fCiNXEjBJo" role="3cqZAp">
@@ -5874,18 +6096,70 @@
               <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
             </node>
           </node>
-          <node concept="1rXfSq" id="4fCiNXEjBKc" role="1DdaDG">
-            <ref role="37wK5l" node="6xJrZo0GT$g" resolve="getUsedLanguages" />
-            <node concept="37vLTw" id="4fCiNXEjBKd" role="37wK5m">
-              <ref role="3cqZAo" node="4fCiNXEhXXh" resolve="module" />
-            </node>
+          <node concept="37vLTw" id="73Idof7xbsH" role="1DdaDG">
+            <ref role="3cqZAo" node="73Idof7xbsE" resolve="ul" />
           </node>
         </node>
       </node>
+      <node concept="37vLTG" id="4fCiNXEhXXh" role="3clF46">
+        <property role="TrG5h" value="module" />
+        <node concept="3Tqbb2" id="4fCiNXEi6hu" role="1tU5fm">
+          <ref role="ehGHo" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="73Idof7wvMh" role="3clF46">
+        <property role="TrG5h" value="usedLanguages" />
+        <node concept="2hMVRd" id="73Idof7wKeA" role="1tU5fm">
+          <node concept="3Tqbb2" id="73Idof7wM91" role="2hN53Y">
+            <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4fCiNXEi7eC" role="3clF46">
+        <property role="TrG5h" value="languagesWithRuntime" />
+        <node concept="2hMVRd" id="4fCiNXEihSG" role="1tU5fm">
+          <node concept="3Tqbb2" id="4fCiNXEihVU" role="2hN53Y">
+            <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4fCiNXEihZm" role="3clF46">
+        <property role="TrG5h" value="runtimeSolutions" />
+        <node concept="2hMVRd" id="4fCiNXEirxN" role="1tU5fm">
+          <node concept="3Tqbb2" id="4fCiNXEiryt" role="2hN53Y">
+            <ref role="ehGHo" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="4fCiNXEhDRY" role="3clF45" />
       <node concept="P$JXv" id="ECLZhkpzMZ" role="lGtFl">
         <node concept="TZ5HA" id="ECLZhkpzN0" role="TZ5H$">
           <node concept="1dT_AC" id="ECLZhkpzN1" role="1dT_Ay">
-            <property role="1dT_AB" value="Analyzes the used languages and their runtime solutions for the given module" />
+            <property role="1dT_AB" value="Collects and analyzes used languages and their runtime solutions for the given module." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="73Idof7BS96" role="TZ5H$">
+          <node concept="1dT_AC" id="73Idof7BS97" role="1dT_Ay">
+            <property role="1dT_AB" value="Generally, shall be static and without side-effects, however, at the moment uses " />
+          </node>
+          <node concept="1dT_AA" id="73Idof7BS_D" role="1dT_Ay">
+            <node concept="92FcH" id="73Idof7BS_J" role="qph3F">
+              <node concept="TZ5HA" id="73Idof7BS_L" role="2XjZqd" />
+              <node concept="VXe0Z" id="73Idof7BXEa" role="92FcQ">
+                <ref role="VXe0S" node="6xJrZo0GT$g" resolve="getUsedLanguages" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="73Idof7BS_C" role="1dT_Ay">
+            <property role="1dT_AB" value=" which updates myDevkits field" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="73Idof7C1Wp" role="TZ5H$">
+          <node concept="1dT_AC" id="73Idof7C1Wq" role="1dT_Ay">
+            <property role="1dT_AB" value="FIXME refactor, introduce fillUsedLanguages(module, set[languages])" />
+          </node>
+          <node concept="1dT_AC" id="73Idof7C1WA" role="1dT_Ay">
+            <property role="1dT_AB" value="and make them static" />
           </node>
         </node>
         <node concept="TUZQ0" id="ECLZhkpzN2" role="3nqlJM">
@@ -5894,19 +6168,26 @@
             <ref role="zr_51" node="4fCiNXEhXXh" resolve="module" />
           </node>
         </node>
+        <node concept="TUZQ0" id="73Idof7ybcl" role="3nqlJM">
+          <property role="TUZQ4" value="filled with used languages of the module" />
+          <node concept="zr_55" id="73Idof7ybeK" role="zr_5Q">
+            <ref role="zr_51" node="73Idof7wvMh" resolve="usedLanguages" />
+          </node>
+        </node>
         <node concept="TUZQ0" id="ECLZhkpzN5" role="3nqlJM">
-          <property role="TUZQ4" value="will be filled with the used languages which has runtime solution" />
+          <property role="TUZQ4" value="will be filled with the used languages that has runtime which IS NOT a regular runtime solution" />
           <node concept="zr_55" id="ECLZhkpzN7" role="zr_5Q">
             <ref role="zr_51" node="4fCiNXEi7eC" resolve="languagesWithRuntime" />
           </node>
         </node>
         <node concept="TUZQ0" id="ECLZhkpzN8" role="3nqlJM">
-          <property role="TUZQ4" value="will be filled with runtime solutions of those languagesWithRuntime" />
+          <property role="TUZQ4" value="filled with runtime solutions found for used languages" />
           <node concept="zr_55" id="ECLZhkpzNa" role="zr_5Q">
             <ref role="zr_51" node="4fCiNXEihZm" resolve="runtimeSolutions" />
           </node>
         </node>
       </node>
+      <node concept="3Tm6S6" id="4fCiNXEhO9_" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="6BLo1Mgoidj" role="jymVt" />
     <node concept="3clFb_" id="6xJrZo0HFQO" role="jymVt">
@@ -6198,7 +6479,7 @@
               <node concept="3QWeyG" id="2pk5iwY3STv" role="2OqNvi">
                 <node concept="10QFUN" id="2pk5iwY3U1c" role="576Qk">
                   <node concept="37vLTw" id="2BHiRxeunf_" role="10QFUP">
-                    <ref role="3cqZAo" node="6xJrZo0GW9O" resolve="myLanguagesWithRuntime" />
+                    <ref role="3cqZAo" node="6xJrZo0GW9O" resolve="myLanguagesWithOddRuntime" />
                   </node>
                   <node concept="A3Dl8" id="2pk5iwY3U1j" role="10QFUM">
                     <node concept="3Tqbb2" id="2pk5iwY3U1k" role="A3Ik2">
