@@ -8,6 +8,9 @@
   </languages>
   <imports>
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
+    <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -34,18 +37,56 @@
       <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
         <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
       </concept>
+      <concept id="5773579205429866751" name="jetbrains.mps.lang.test.structure.EditorComponentExpression" flags="nn" index="369mXd" />
       <concept id="4239542196496927193" name="jetbrains.mps.lang.test.structure.MPSActionReference" flags="ng" index="1iFQzN">
         <reference id="4239542196496929559" name="action" index="1iFR8X" />
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
+        <child id="1154032183016" name="body" index="2LFqv$" />
+      </concept>
+      <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
+        <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <child id="1068431790190" name="initializer" index="33vP2m" />
+      </concept>
+      <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
+        <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
+      </concept>
+      <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
+        <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
+        <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
+      </concept>
+      <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+      </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
+      </concept>
+    </language>
+    <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
+      <concept id="1171981022339" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" flags="nn" index="3vwNmj">
+        <child id="1171981057159" name="condition" index="3vwVQn" />
+      </concept>
+      <concept id="1171983834376" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" flags="nn" index="3vFxKo">
+        <child id="1171983854940" name="condition" index="3vFALc" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -54,6 +95,18 @@
     </language>
     <language id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest">
       <concept id="866632705892246361" name="jetbrains.mps.lang.editor.editorTest.structure.CollapsedConditionally" flags="ng" index="2PtSq3" />
+      <concept id="5489671301386464594" name="jetbrains.mps.lang.editor.editorTest.structure.SwingComponentContainer" flags="ng" index="30Tdu$">
+        <child id="5489671301386517278" name="expandedComponent" index="30SS7C" />
+        <child id="5489671301386517276" name="collapsedComponent" index="30SS7E" />
+        <child id="3824034168925414630" name="collapsedInnerContainer" index="3iOdoQ" />
+        <child id="3824034168925414634" name="expandedInnerContainer" index="3iOdoU" />
+      </concept>
+      <concept id="5489671301385861734" name="jetbrains.mps.lang.editor.editorTest.structure.SwingComponent" flags="ng" index="30Vo2g" />
+      <concept id="3824034168927872487" name="jetbrains.mps.lang.editor.editorTest.structure.SwingComponentinFoldedCell" flags="ng" index="3iXPsR">
+        <property id="3824034168927872488" name="collapsed" index="3iXPsS" />
+        <child id="3824034168928173503" name="foldedCell" index="3iYGXJ" />
+      </concept>
+      <concept id="3824034168928173505" name="jetbrains.mps.lang.editor.editorTest.structure.FoldedCell" flags="ng" index="3iYGWh" />
       <concept id="6240706158489921624" name="jetbrains.mps.lang.editor.editorTest.structure.CollapsedByDefault" flags="ng" index="3EYh_R" />
       <concept id="6240706158490120944" name="jetbrains.mps.lang.editor.editorTest.structure.FoldingContainer" flags="ng" index="3EZwfv">
         <property id="866632705892284183" name="collapsed" index="2PtLbd" />
@@ -63,6 +116,16 @@
       <concept id="7429553584211899775" name="jetbrains.mps.lang.editor.editorTest.structure.CollapsibleConcept" flags="ng" index="1PHirw">
         <property id="7429553584211899890" name="collapsedByDefault" index="1PHipH" />
         <child id="7429553584211899776" name="children" index="1PHiov" />
+      </concept>
+    </language>
+    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
+        <child id="1153944400369" name="variable" index="2Gsz3X" />
+        <child id="1153944424730" name="inputSequence" index="2GsD0m" />
+      </concept>
+      <concept id="1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" flags="nr" index="2GrKxI" />
+      <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
+        <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
     </language>
   </registry>
@@ -914,6 +977,1167 @@
   </node>
   <node concept="2XOHcx" id="6fAlldOEbsG">
     <property role="2XOHcw" value="${mps_home}" />
+  </node>
+  <node concept="LiM7Y" id="4KJeJqcLICp">
+    <property role="TrG5h" value="CollapseSwingComponent" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="4KJeJqcMps7" role="LjaKd">
+      <node concept="2HxZob" id="4KJeJqcMps5" role="3cqZAp">
+        <node concept="1iFQzN" id="4KJeJqcMpsj" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4p0Cg4vAvL0" resolve="Collapse" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="4KJeJqcMw8I" role="3cqZAp">
+        <node concept="3cpWsn" id="4KJeJqcMw8J" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="4KJeJqcMw8E" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="4KJeJqcMw8H" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="4KJeJqcMw8K" role="33vP2m">
+            <node concept="2OqwBi" id="4KJeJqcMw8L" role="2Oq$k0">
+              <node concept="369mXd" id="4KJeJqcMw8M" role="2Oq$k0" />
+              <node concept="liA8E" id="4KJeJqcMw8N" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4KJeJqcMw8O" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="4KJeJqcMxOU" role="3cqZAp">
+        <node concept="2OqwBi" id="4KJeJqcMyd7" role="3vFALc">
+          <node concept="37vLTw" id="4KJeJqcMxQh" role="2Oq$k0">
+            <ref role="3cqZAo" node="4KJeJqcMw8J" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="4KJeJqcMyMx" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="4KJeJqcMzJc" role="3cqZAp">
+        <node concept="2GrKxI" id="4KJeJqcMzJe" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="4KJeJqcMzLs" role="2GsD0m">
+          <ref role="3cqZAo" node="4KJeJqcMw8J" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="4KJeJqcMzJi" role="2LFqv$">
+          <node concept="3vFxKo" id="4KJeJqcMAZl" role="3cqZAp">
+            <node concept="2OqwBi" id="4KJeJqcM$NJ" role="3vFALc">
+              <node concept="2OqwBi" id="4KJeJqcM$6g" role="2Oq$k0">
+                <node concept="2GrUjf" id="4KJeJqcM$02" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="4KJeJqcMzJe" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="4KJeJqcM$mo" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4KJeJqcMAI$" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="30Tdu$" id="4KJeJqcNnmm" role="LiRBU">
+      <node concept="30Vo2g" id="4KJeJqcNnmw" role="30SS7C">
+        <node concept="LIFWc" id="3khGH3BPtGU" role="lGtFl">
+          <property role="LIFWa" value="3" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="3" />
+          <property role="p6zMs" value="3" />
+          <property role="LIFWd" value="Constant_4mrfuu_a0" />
+        </node>
+      </node>
+    </node>
+    <node concept="30Tdu$" id="4KJeJqcNF4O" role="LiZbd">
+      <node concept="30Vo2g" id="4KJeJqcNF4Y" role="30SS7C" />
+      <node concept="LIFWc" id="3khGH3BQz$z" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_ycnsl1_a7c0_0" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4KJeJqcMPiW">
+    <property role="TrG5h" value="ExpandSwingComponent" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="4KJeJqcMPj0" role="LjaKd">
+      <node concept="2HxZob" id="4KJeJqcMQ12" role="3cqZAp">
+        <node concept="1iFQzN" id="4KJeJqcMQ13" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4p0Cg4vAvM4" resolve="Expand" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="4KJeJqcMPj3" role="3cqZAp">
+        <node concept="3cpWsn" id="4KJeJqcMPj4" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="4KJeJqcMPj5" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="4KJeJqcMPj6" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="4KJeJqcMPj7" role="33vP2m">
+            <node concept="2OqwBi" id="4KJeJqcMPj8" role="2Oq$k0">
+              <node concept="369mXd" id="4KJeJqcMPj9" role="2Oq$k0" />
+              <node concept="liA8E" id="4KJeJqcMPja" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4KJeJqcMPjb" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="4KJeJqcMPjc" role="3cqZAp">
+        <node concept="2OqwBi" id="4KJeJqcMPjd" role="3vFALc">
+          <node concept="37vLTw" id="4KJeJqcMPje" role="2Oq$k0">
+            <ref role="3cqZAo" node="4KJeJqcMPj4" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="4KJeJqcMPjf" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="4KJeJqcMPjg" role="3cqZAp">
+        <node concept="2GrKxI" id="4KJeJqcMPjh" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="4KJeJqcMPji" role="2GsD0m">
+          <ref role="3cqZAo" node="4KJeJqcMPj4" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="4KJeJqcMPjj" role="2LFqv$">
+          <node concept="3vwNmj" id="4KJeJqcMSxv" role="3cqZAp">
+            <node concept="2OqwBi" id="4KJeJqcMSyn" role="3vwVQn">
+              <node concept="2OqwBi" id="4KJeJqcMSyo" role="2Oq$k0">
+                <node concept="2GrUjf" id="4KJeJqcMSyp" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="4KJeJqcMPjh" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="4KJeJqcMSyq" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4KJeJqcMSyr" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="30Tdu$" id="4KJeJqcNIcz" role="LiRBU">
+      <node concept="30Vo2g" id="4KJeJqcNIcH" role="30SS7E" />
+      <node concept="LIFWc" id="3khGH3BPzBU" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_ycnsl1_a2c0_0" />
+      </node>
+    </node>
+    <node concept="30Tdu$" id="4KJeJqcO1DT" role="LiZbd">
+      <node concept="30Vo2g" id="4KJeJqcO40S" role="30SS7E" />
+      <node concept="LIFWc" id="3khGH3BPzKw" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_ycnsl1_a2c0" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4KJeJqcO8$j">
+    <property role="TrG5h" value="InitiallyCollapsedInnerSwingComponent" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="4KJeJqcO8$o" role="LjaKd">
+      <node concept="3cpWs8" id="4KJeJqcO8$r" role="3cqZAp">
+        <node concept="3cpWsn" id="4KJeJqcO8$s" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="4KJeJqcO8$t" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="4KJeJqcO8$u" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="4KJeJqcO8$v" role="33vP2m">
+            <node concept="2OqwBi" id="4KJeJqcO8$w" role="2Oq$k0">
+              <node concept="369mXd" id="4KJeJqcO8$x" role="2Oq$k0" />
+              <node concept="liA8E" id="4KJeJqcO8$y" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4KJeJqcO8$z" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="4KJeJqcO8$$" role="3cqZAp">
+        <node concept="2OqwBi" id="4KJeJqcO8$_" role="3vFALc">
+          <node concept="37vLTw" id="4KJeJqcO8$A" role="2Oq$k0">
+            <ref role="3cqZAo" node="4KJeJqcO8$s" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="4KJeJqcO8$B" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="4KJeJqcO8$C" role="3cqZAp">
+        <node concept="2GrKxI" id="4KJeJqcO8$D" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="4KJeJqcO8$E" role="2GsD0m">
+          <ref role="3cqZAo" node="4KJeJqcO8$s" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="4KJeJqcO8$F" role="2LFqv$">
+          <node concept="3vFxKo" id="4KJeJqcO8$G" role="3cqZAp">
+            <node concept="2OqwBi" id="4KJeJqcO8$H" role="3vFALc">
+              <node concept="2OqwBi" id="4KJeJqcO8$I" role="2Oq$k0">
+                <node concept="2GrUjf" id="4KJeJqcO8$J" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="4KJeJqcO8$D" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="4KJeJqcO8$K" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4KJeJqcO8$L" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="30Tdu$" id="4KJeJqcO8$l" role="LiRBU">
+      <node concept="30Tdu$" id="3khGH3BKS5m" role="3iOdoQ">
+        <node concept="30Vo2g" id="3khGH3BKSJ6" role="30SS7E" />
+      </node>
+      <node concept="LIFWc" id="3khGH3BRoq6" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_ycnsl1_a21c0_0" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4KJeJqcORpq">
+    <property role="TrG5h" value="InitiallyExpandedInnerSwingComponent" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="4KJeJqcORpv" role="LjaKd">
+      <node concept="3cpWs8" id="4KJeJqcORpw" role="3cqZAp">
+        <node concept="3cpWsn" id="4KJeJqcORpx" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="4KJeJqcORpy" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="4KJeJqcORpz" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="4KJeJqcORp$" role="33vP2m">
+            <node concept="2OqwBi" id="4KJeJqcORp_" role="2Oq$k0">
+              <node concept="369mXd" id="4KJeJqcORpA" role="2Oq$k0" />
+              <node concept="liA8E" id="4KJeJqcORpB" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4KJeJqcORpC" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="4KJeJqcORpD" role="3cqZAp">
+        <node concept="2OqwBi" id="4KJeJqcORpE" role="3vFALc">
+          <node concept="37vLTw" id="4KJeJqcORpF" role="2Oq$k0">
+            <ref role="3cqZAo" node="4KJeJqcORpx" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="4KJeJqcORpG" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="4KJeJqcORpH" role="3cqZAp">
+        <node concept="2GrKxI" id="4KJeJqcORpI" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="4KJeJqcORpJ" role="2GsD0m">
+          <ref role="3cqZAo" node="4KJeJqcORpx" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="4KJeJqcORpK" role="2LFqv$">
+          <node concept="3vwNmj" id="4KJeJqcOS96" role="3cqZAp">
+            <node concept="2OqwBi" id="4KJeJqcORpM" role="3vwVQn">
+              <node concept="2OqwBi" id="4KJeJqcORpN" role="2Oq$k0">
+                <node concept="2GrUjf" id="4KJeJqcORpO" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="4KJeJqcORpI" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="4KJeJqcORpP" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4KJeJqcORpQ" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="30Tdu$" id="4KJeJqcORps" role="LiRBU">
+      <node concept="30Tdu$" id="3khGH3BKSu0" role="3iOdoU">
+        <node concept="30Vo2g" id="3khGH3BKSua" role="30SS7C">
+          <node concept="LIFWc" id="3khGH3BKSAC" role="lGtFl">
+            <property role="LIFWa" value="3" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="3" />
+            <property role="p6zMs" value="3" />
+            <property role="LIFWd" value="Constant_4mrfuu_a0" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3khGH3BKRqM">
+    <property role="TrG5h" value="InitiallyCollapsedSwingComponent" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="3khGH3BKRqN" role="LjaKd">
+      <node concept="3cpWs8" id="3khGH3BKRqO" role="3cqZAp">
+        <node concept="3cpWsn" id="3khGH3BKRqP" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="3khGH3BKRqQ" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="3khGH3BKRqR" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3khGH3BKRqS" role="33vP2m">
+            <node concept="2OqwBi" id="3khGH3BKRqT" role="2Oq$k0">
+              <node concept="369mXd" id="3khGH3BKRqU" role="2Oq$k0" />
+              <node concept="liA8E" id="3khGH3BKRqV" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3khGH3BKRqW" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="3khGH3BKRqX" role="3cqZAp">
+        <node concept="2OqwBi" id="3khGH3BKRqY" role="3vFALc">
+          <node concept="37vLTw" id="3khGH3BKRqZ" role="2Oq$k0">
+            <ref role="3cqZAo" node="3khGH3BKRqP" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="3khGH3BKRr0" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="3khGH3BKRr1" role="3cqZAp">
+        <node concept="2GrKxI" id="3khGH3BKRr2" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="3khGH3BKRr3" role="2GsD0m">
+          <ref role="3cqZAo" node="3khGH3BKRqP" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="3khGH3BKRr4" role="2LFqv$">
+          <node concept="3vFxKo" id="3khGH3BKRr5" role="3cqZAp">
+            <node concept="2OqwBi" id="3khGH3BKRr6" role="3vFALc">
+              <node concept="2OqwBi" id="3khGH3BKRr7" role="2Oq$k0">
+                <node concept="2GrUjf" id="3khGH3BKRr8" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="3khGH3BKRr2" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="3khGH3BKRr9" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3khGH3BKRra" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="30Tdu$" id="3khGH3BKRrb" role="LiRBU">
+      <node concept="30Vo2g" id="3khGH3BKRrc" role="30SS7E" />
+      <node concept="LIFWc" id="3khGH3BPLW_" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_ycnsl1_a2c0_0" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3khGH3BKRre">
+    <property role="TrG5h" value="InitiallyExpandedSwingComponent" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="3khGH3BKRrf" role="LjaKd">
+      <node concept="3cpWs8" id="3khGH3BKRrg" role="3cqZAp">
+        <node concept="3cpWsn" id="3khGH3BKRrh" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="3khGH3BKRri" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="3khGH3BKRrj" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3khGH3BKRrk" role="33vP2m">
+            <node concept="2OqwBi" id="3khGH3BKRrl" role="2Oq$k0">
+              <node concept="369mXd" id="3khGH3BKRrm" role="2Oq$k0" />
+              <node concept="liA8E" id="3khGH3BKRrn" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3khGH3BKRro" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="3khGH3BKRrp" role="3cqZAp">
+        <node concept="2OqwBi" id="3khGH3BKRrq" role="3vFALc">
+          <node concept="37vLTw" id="3khGH3BKRrr" role="2Oq$k0">
+            <ref role="3cqZAo" node="3khGH3BKRrh" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="3khGH3BKRrs" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="3khGH3BKRrt" role="3cqZAp">
+        <node concept="2GrKxI" id="3khGH3BKRru" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="3khGH3BKRrv" role="2GsD0m">
+          <ref role="3cqZAo" node="3khGH3BKRrh" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="3khGH3BKRrw" role="2LFqv$">
+          <node concept="3vwNmj" id="3khGH3BKRrx" role="3cqZAp">
+            <node concept="2OqwBi" id="3khGH3BKRry" role="3vwVQn">
+              <node concept="2OqwBi" id="3khGH3BKRrz" role="2Oq$k0">
+                <node concept="2GrUjf" id="3khGH3BKRr$" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="3khGH3BKRru" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="3khGH3BKRr_" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3khGH3BKRrA" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="30Tdu$" id="3khGH3BKRrB" role="LiRBU">
+      <node concept="30Vo2g" id="3khGH3BKRrC" role="30SS7C">
+        <node concept="LIFWc" id="3khGH3BKRrD" role="lGtFl">
+          <property role="LIFWa" value="2" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="2" />
+          <property role="p6zMs" value="2" />
+          <property role="LIFWd" value="Constant_4mrfuu_a0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3khGH3BLjZZ">
+    <property role="TrG5h" value="CollapseInnerSwingComponent" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="3khGH3BLk00" role="LjaKd">
+      <node concept="2HxZob" id="3khGH3BLk01" role="3cqZAp">
+        <node concept="1iFQzN" id="3khGH3BLk02" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4p0Cg4vAvL0" resolve="Collapse" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="3khGH3BLkZH" role="3cqZAp">
+        <node concept="1iFQzN" id="3khGH3BLkZI" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4p0Cg4vAvL0" resolve="Collapse" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="3khGH3BLk03" role="3cqZAp">
+        <node concept="3cpWsn" id="3khGH3BLk04" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="3khGH3BLk05" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="3khGH3BLk06" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3khGH3BLk07" role="33vP2m">
+            <node concept="2OqwBi" id="3khGH3BLk08" role="2Oq$k0">
+              <node concept="369mXd" id="3khGH3BLk09" role="2Oq$k0" />
+              <node concept="liA8E" id="3khGH3BLk0a" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3khGH3BLk0b" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="3khGH3BLk0c" role="3cqZAp">
+        <node concept="2OqwBi" id="3khGH3BLk0d" role="3vFALc">
+          <node concept="37vLTw" id="3khGH3BLk0e" role="2Oq$k0">
+            <ref role="3cqZAo" node="3khGH3BLk04" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="3khGH3BLk0f" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="3khGH3BLk0g" role="3cqZAp">
+        <node concept="2GrKxI" id="3khGH3BLk0h" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="3khGH3BLk0i" role="2GsD0m">
+          <ref role="3cqZAo" node="3khGH3BLk04" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="3khGH3BLk0j" role="2LFqv$">
+          <node concept="3vFxKo" id="3khGH3BLk0k" role="3cqZAp">
+            <node concept="2OqwBi" id="3khGH3BLk0l" role="3vFALc">
+              <node concept="2OqwBi" id="3khGH3BLk0m" role="2Oq$k0">
+                <node concept="2GrUjf" id="3khGH3BLk0n" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="3khGH3BLk0h" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="3khGH3BLk0o" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3khGH3BLk0p" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="30Tdu$" id="3khGH3BLk0q" role="LiRBU">
+      <node concept="30Tdu$" id="3khGH3BLknK" role="3iOdoU">
+        <node concept="30Vo2g" id="3khGH3BLknU" role="30SS7C">
+          <node concept="LIFWc" id="3khGH3BSA2e" role="lGtFl">
+            <property role="LIFWa" value="3" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="3" />
+            <property role="p6zMs" value="3" />
+            <property role="LIFWd" value="Constant_4mrfuu_a0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="30Tdu$" id="3khGH3BLkBK" role="LiZbd">
+      <node concept="30Tdu$" id="3khGH3BLkBL" role="3iOdoU">
+        <node concept="30Vo2g" id="3khGH3BLkBM" role="30SS7C" />
+      </node>
+      <node concept="LIFWc" id="3khGH3BSH6s" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_ycnsl1_a71c0_0" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3khGH3BLrmF">
+    <property role="TrG5h" value="ExpandInnerSwingComponent" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="3khGH3BLrmG" role="LjaKd">
+      <node concept="2HxZob" id="3khGH3BLrmH" role="3cqZAp">
+        <node concept="1iFQzN" id="3khGH3BLrmI" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4p0Cg4vAvM4" resolve="Expand" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="3khGH3BLLsg" role="3cqZAp">
+        <node concept="1iFQzN" id="3khGH3BLL$5" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="3khGH3BLLNh" role="3cqZAp">
+        <node concept="1iFQzN" id="3khGH3BLLNi" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="3khGH3BQ01j" role="3cqZAp">
+        <node concept="1iFQzN" id="3khGH3BQ01k" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="3khGH3BLLV7" role="3cqZAp">
+        <node concept="1iFQzN" id="3khGH3BLLV8" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4p0Cg4vAvM4" resolve="Expand" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="3khGH3BLrmJ" role="3cqZAp">
+        <node concept="3cpWsn" id="3khGH3BLrmK" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="3khGH3BLrmL" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="3khGH3BLrmM" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3khGH3BLrmN" role="33vP2m">
+            <node concept="2OqwBi" id="3khGH3BLrmO" role="2Oq$k0">
+              <node concept="369mXd" id="3khGH3BLrmP" role="2Oq$k0" />
+              <node concept="liA8E" id="3khGH3BLrmQ" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3khGH3BLrmR" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="3khGH3BLrmS" role="3cqZAp">
+        <node concept="2OqwBi" id="3khGH3BLrmT" role="3vFALc">
+          <node concept="37vLTw" id="3khGH3BLrmU" role="2Oq$k0">
+            <ref role="3cqZAo" node="3khGH3BLrmK" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="3khGH3BLrmV" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="3khGH3BLrmW" role="3cqZAp">
+        <node concept="2GrKxI" id="3khGH3BLrmX" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="3khGH3BLrmY" role="2GsD0m">
+          <ref role="3cqZAo" node="3khGH3BLrmK" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="3khGH3BLrmZ" role="2LFqv$">
+          <node concept="3vwNmj" id="3khGH3BLrn0" role="3cqZAp">
+            <node concept="2OqwBi" id="3khGH3BLrn1" role="3vwVQn">
+              <node concept="2OqwBi" id="3khGH3BLrn2" role="2Oq$k0">
+                <node concept="2GrUjf" id="3khGH3BLrn3" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="3khGH3BLrmX" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="3khGH3BLrn4" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3khGH3BLrn5" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="30Tdu$" id="3khGH3BLrn6" role="LiRBU">
+      <node concept="30Tdu$" id="3khGH3BLsE0" role="3iOdoQ">
+        <node concept="30Vo2g" id="3khGH3BLsEa" role="30SS7E" />
+      </node>
+      <node concept="LIFWc" id="3khGH3BRAMw" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_ycnsl1_a21c0_0" />
+      </node>
+    </node>
+    <node concept="30Tdu$" id="3khGH3BLsUg" role="LiZbd">
+      <node concept="30Tdu$" id="3khGH3BLsUi" role="3iOdoQ">
+        <node concept="30Vo2g" id="3khGH3BLsUj" role="30SS7E" />
+        <node concept="LIFWc" id="3khGH3BQEST" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_ycnsl1_a2c0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3khGH3BSPTg">
+    <property role="TrG5h" value="InitiallyIndirectlyCollapsedInnerSwingComponent" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="3khGH3BSPTh" role="LjaKd">
+      <node concept="3cpWs8" id="3khGH3BSPTi" role="3cqZAp">
+        <node concept="3cpWsn" id="3khGH3BSPTj" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="3khGH3BSPTk" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="3khGH3BSPTl" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3khGH3BSPTm" role="33vP2m">
+            <node concept="2OqwBi" id="3khGH3BSPTn" role="2Oq$k0">
+              <node concept="369mXd" id="3khGH3BSPTo" role="2Oq$k0" />
+              <node concept="liA8E" id="3khGH3BSPTp" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3khGH3BSPTq" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="3khGH3BSPTr" role="3cqZAp">
+        <node concept="2OqwBi" id="3khGH3BSPTs" role="3vFALc">
+          <node concept="37vLTw" id="3khGH3BSPTt" role="2Oq$k0">
+            <ref role="3cqZAo" node="3khGH3BSPTj" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="3khGH3BSPTu" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="3khGH3BSPTv" role="3cqZAp">
+        <node concept="2GrKxI" id="3khGH3BSPTw" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="3khGH3BSPTx" role="2GsD0m">
+          <ref role="3cqZAo" node="3khGH3BSPTj" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="3khGH3BSPTy" role="2LFqv$">
+          <node concept="3vFxKo" id="3khGH3BSPTz" role="3cqZAp">
+            <node concept="2OqwBi" id="3khGH3BSPT$" role="3vFALc">
+              <node concept="2OqwBi" id="3khGH3BSPT_" role="2Oq$k0">
+                <node concept="2GrUjf" id="3khGH3BSPTA" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="3khGH3BSPTw" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="3khGH3BSPTB" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3khGH3BSPTC" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="30Tdu$" id="3khGH3BSPTD" role="LiRBU">
+      <node concept="30Tdu$" id="3khGH3BSPTE" role="3iOdoQ">
+        <node concept="30Vo2g" id="3khGH3BSQh5" role="30SS7C" />
+      </node>
+      <node concept="LIFWc" id="3khGH3BSQpF" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_ycnsl1_a21c0_0" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3khGH3BSYlu">
+    <property role="TrG5h" value="ExpandInnerSwingComponentInSubtree" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="3khGH3BSYlv" role="LjaKd">
+      <node concept="2HxZob" id="3khGH3BSYlw" role="3cqZAp">
+        <node concept="1iFQzN" id="3khGH3BSYlx" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4p0Cg4vAvM4" resolve="Expand" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="3khGH3BSYlE" role="3cqZAp">
+        <node concept="3cpWsn" id="3khGH3BSYlF" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="3khGH3BSYlG" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="3khGH3BSYlH" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3khGH3BSYlI" role="33vP2m">
+            <node concept="2OqwBi" id="3khGH3BSYlJ" role="2Oq$k0">
+              <node concept="369mXd" id="3khGH3BSYlK" role="2Oq$k0" />
+              <node concept="liA8E" id="3khGH3BSYlL" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3khGH3BSYlM" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="3khGH3BSYlN" role="3cqZAp">
+        <node concept="2OqwBi" id="3khGH3BSYlO" role="3vFALc">
+          <node concept="37vLTw" id="3khGH3BSYlP" role="2Oq$k0">
+            <ref role="3cqZAo" node="3khGH3BSYlF" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="3khGH3BSYlQ" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="3khGH3BSYlR" role="3cqZAp">
+        <node concept="2GrKxI" id="3khGH3BSYlS" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="3khGH3BSYlT" role="2GsD0m">
+          <ref role="3cqZAo" node="3khGH3BSYlF" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="3khGH3BSYlU" role="2LFqv$">
+          <node concept="3vwNmj" id="3khGH3BSYlV" role="3cqZAp">
+            <node concept="2OqwBi" id="3khGH3BSYlW" role="3vwVQn">
+              <node concept="2OqwBi" id="3khGH3BSYlX" role="2Oq$k0">
+                <node concept="2GrUjf" id="3khGH3BSYlY" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="3khGH3BSYlS" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="3khGH3BSYlZ" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3khGH3BSYm0" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="30Tdu$" id="3khGH3BSYm1" role="LiRBU">
+      <node concept="30Tdu$" id="3khGH3BSYm2" role="3iOdoQ">
+        <node concept="30Vo2g" id="3khGH3BSZKz" role="30SS7C" />
+      </node>
+      <node concept="LIFWc" id="3khGH3BSZT9" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_ycnsl1_a21c0_0" />
+      </node>
+    </node>
+    <node concept="30Tdu$" id="3khGH3BSZTj" role="LiZbd">
+      <node concept="30Tdu$" id="3khGH3BSZTk" role="3iOdoQ">
+        <node concept="30Vo2g" id="3khGH3BSZTl" role="30SS7C" />
+      </node>
+      <node concept="LIFWc" id="3khGH3BT0gW" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_ycnsl1_a21c0" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3khGH3BT83V">
+    <property role="TrG5h" value="InitiallyVisibleSwingComponentInFoldedCell" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="3khGH3BT83W" role="LjaKd">
+      <node concept="3cpWs8" id="3khGH3BT83X" role="3cqZAp">
+        <node concept="3cpWsn" id="3khGH3BT83Y" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="3khGH3BT83Z" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="3khGH3BT840" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3khGH3BT841" role="33vP2m">
+            <node concept="2OqwBi" id="3khGH3BT842" role="2Oq$k0">
+              <node concept="369mXd" id="3khGH3BT843" role="2Oq$k0" />
+              <node concept="liA8E" id="3khGH3BT844" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3khGH3BT845" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="3khGH3BT846" role="3cqZAp">
+        <node concept="2OqwBi" id="3khGH3BT847" role="3vFALc">
+          <node concept="37vLTw" id="3khGH3BT848" role="2Oq$k0">
+            <ref role="3cqZAo" node="3khGH3BT83Y" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="3khGH3BT849" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="3khGH3BT84a" role="3cqZAp">
+        <node concept="2GrKxI" id="3khGH3BT84b" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="3khGH3BT84c" role="2GsD0m">
+          <ref role="3cqZAo" node="3khGH3BT83Y" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="3khGH3BT84d" role="2LFqv$">
+          <node concept="3vwNmj" id="3khGH3BVqmN" role="3cqZAp">
+            <node concept="2OqwBi" id="3khGH3BT84f" role="3vwVQn">
+              <node concept="2OqwBi" id="3khGH3BT84g" role="2Oq$k0">
+                <node concept="2GrUjf" id="3khGH3BT84h" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="3khGH3BT84b" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="3khGH3BT84i" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3khGH3BT84j" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3iXPsR" id="3khGH3BTWez" role="LiRBU">
+      <property role="3iXPsS" value="true" />
+      <node concept="3iYGWh" id="3khGH3BV4mg" role="3iYGXJ" />
+      <node concept="LIFWc" id="3khGH3BW22N" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="1" />
+        <property role="p6zMs" value="1" />
+        <property role="LIFWd" value="Constant_frk6hv_a4a" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3khGH3BVqUe">
+    <property role="TrG5h" value="InitiallyInvisibleSwingComponentInFoldedCell" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="3khGH3BVqUf" role="LjaKd">
+      <node concept="3cpWs8" id="3khGH3BVqUg" role="3cqZAp">
+        <node concept="3cpWsn" id="3khGH3BVqUh" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="3khGH3BVqUi" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="3khGH3BVqUj" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3khGH3BVqUk" role="33vP2m">
+            <node concept="2OqwBi" id="3khGH3BVqUl" role="2Oq$k0">
+              <node concept="369mXd" id="3khGH3BVqUm" role="2Oq$k0" />
+              <node concept="liA8E" id="3khGH3BVqUn" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3khGH3BVqUo" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="3khGH3BVqUp" role="3cqZAp">
+        <node concept="2OqwBi" id="3khGH3BVqUq" role="3vFALc">
+          <node concept="37vLTw" id="3khGH3BVqUr" role="2Oq$k0">
+            <ref role="3cqZAo" node="3khGH3BVqUh" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="3khGH3BVqUs" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="3khGH3BVqUt" role="3cqZAp">
+        <node concept="2GrKxI" id="3khGH3BVqUu" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="3khGH3BVqUv" role="2GsD0m">
+          <ref role="3cqZAo" node="3khGH3BVqUh" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="3khGH3BVqUw" role="2LFqv$">
+          <node concept="3vFxKo" id="3khGH3BVrs9" role="3cqZAp">
+            <node concept="2OqwBi" id="3khGH3BVqUy" role="3vFALc">
+              <node concept="2OqwBi" id="3khGH3BVqUz" role="2Oq$k0">
+                <node concept="2GrUjf" id="3khGH3BVqU$" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="3khGH3BVqUu" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="3khGH3BVqU_" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3khGH3BVqUA" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3iXPsR" id="3khGH3BVqUB" role="LiRBU">
+      <node concept="3iYGWh" id="3khGH3BVqUC" role="3iYGXJ" />
+      <node concept="LIFWc" id="3khGH3BVS7s" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_frk6hv_a1e0" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3khGH3BWf_l">
+    <property role="TrG5h" value="HideSwingComponentInFoldedCell" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="3khGH3BWf_m" role="LjaKd">
+      <node concept="2HxZob" id="3khGH3BWutl" role="3cqZAp">
+        <node concept="1iFQzN" id="3khGH3BWu_a" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="3khGH3BWlHQ" role="3cqZAp">
+        <node concept="1iFQzN" id="3khGH3BWlPE" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4p0Cg4vAvM4" resolve="Expand" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="3khGH3BWf_n" role="3cqZAp">
+        <node concept="3cpWsn" id="3khGH3BWf_o" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="3khGH3BWf_p" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="3khGH3BWf_q" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3khGH3BWf_r" role="33vP2m">
+            <node concept="2OqwBi" id="3khGH3BWf_s" role="2Oq$k0">
+              <node concept="369mXd" id="3khGH3BWf_t" role="2Oq$k0" />
+              <node concept="liA8E" id="3khGH3BWf_u" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3khGH3BWf_v" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="3khGH3BWf_w" role="3cqZAp">
+        <node concept="2OqwBi" id="3khGH3BWf_x" role="3vFALc">
+          <node concept="37vLTw" id="3khGH3BWf_y" role="2Oq$k0">
+            <ref role="3cqZAo" node="3khGH3BWf_o" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="3khGH3BWf_z" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="3khGH3BWf_$" role="3cqZAp">
+        <node concept="2GrKxI" id="3khGH3BWf__" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="3khGH3BWf_A" role="2GsD0m">
+          <ref role="3cqZAo" node="3khGH3BWf_o" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="3khGH3BWf_B" role="2LFqv$">
+          <node concept="3vFxKo" id="3khGH3BWf_C" role="3cqZAp">
+            <node concept="2OqwBi" id="3khGH3BWf_D" role="3vFALc">
+              <node concept="2OqwBi" id="3khGH3BWf_E" role="2Oq$k0">
+                <node concept="2GrUjf" id="3khGH3BWf_F" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="3khGH3BWf__" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="3khGH3BWf_G" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3khGH3BWf_H" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3iXPsR" id="3khGH3BWf_I" role="LiRBU">
+      <property role="3iXPsS" value="true" />
+      <node concept="3iYGWh" id="3khGH3BWf_J" role="3iYGXJ" />
+      <node concept="LIFWc" id="3khGH3BWujk" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="1" />
+        <property role="p6zMs" value="1" />
+        <property role="LIFWd" value="Constant_frk6hv_a4a" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3khGH3BWAyP">
+    <property role="TrG5h" value="ShowSwingComponentInFoldedCell" />
+    <property role="3GE5qa" value="swingComponents" />
+    <node concept="3clFbS" id="3khGH3BWAyQ" role="LjaKd">
+      <node concept="2HxZob" id="3khGH3BWAyT" role="3cqZAp">
+        <node concept="1iFQzN" id="3khGH3BWAyU" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4p0Cg4vAvL0" resolve="Collapse" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="3khGH3BWAyV" role="3cqZAp">
+        <node concept="3cpWsn" id="3khGH3BWAyW" role="3cpWs9">
+          <property role="TrG5h" value="componentCells" />
+          <node concept="3uibUv" id="3khGH3BWAyX" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3uibUv" id="3khGH3BWAyY" role="11_B2D">
+              <ref role="3uigEE" to="exr9:~EditorCell_WithComponent" resolve="EditorCell_WithComponent" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3khGH3BWAyZ" role="33vP2m">
+            <node concept="2OqwBi" id="3khGH3BWAz0" role="2Oq$k0">
+              <node concept="369mXd" id="3khGH3BWAz1" role="2Oq$k0" />
+              <node concept="liA8E" id="3khGH3BWAz2" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getCellTracker():jetbrains.mps.nodeEditor.CellTracker" resolve="getCellTracker" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3khGH3BWAz3" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~CellTracker.getComponentCells():java.util.Set" resolve="getComponentCells" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vFxKo" id="3khGH3BWAz4" role="3cqZAp">
+        <node concept="2OqwBi" id="3khGH3BWAz5" role="3vFALc">
+          <node concept="37vLTw" id="3khGH3BWAz6" role="2Oq$k0">
+            <ref role="3cqZAo" node="3khGH3BWAyW" resolve="componentCells" />
+          </node>
+          <node concept="liA8E" id="3khGH3BWAz7" role="2OqNvi">
+            <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="3khGH3BWAz8" role="3cqZAp">
+        <node concept="2GrKxI" id="3khGH3BWAz9" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="37vLTw" id="3khGH3BWAza" role="2GsD0m">
+          <ref role="3cqZAo" node="3khGH3BWAyW" resolve="componentCells" />
+        </node>
+        <node concept="3clFbS" id="3khGH3BWAzb" role="2LFqv$">
+          <node concept="3vwNmj" id="3khGH3BWBla" role="3cqZAp">
+            <node concept="2OqwBi" id="3khGH3BWAzd" role="3vwVQn">
+              <node concept="2OqwBi" id="3khGH3BWAze" role="2Oq$k0">
+                <node concept="2GrUjf" id="3khGH3BWAzf" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="3khGH3BWAz9" resolve="cell" />
+                </node>
+                <node concept="liA8E" id="3khGH3BWAzg" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorCell_WithComponent.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3khGH3BWAzh" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3iXPsR" id="3khGH3BWAzi" role="LiRBU">
+      <node concept="3iYGWh" id="3khGH3BWAzj" role="3iYGXJ" />
+      <node concept="LIFWc" id="3khGH3BWB31" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_frk6hv_a1e0" />
+      </node>
+    </node>
   </node>
 </model>
 

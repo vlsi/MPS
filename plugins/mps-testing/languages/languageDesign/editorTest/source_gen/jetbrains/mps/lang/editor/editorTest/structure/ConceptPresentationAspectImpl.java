@@ -31,6 +31,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_DelTestSpecialChild1 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DeleteWrapperChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DeleteWrapperRoot = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_FoldedCell = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FoldingContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IBaseTestBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IDelTestChild = new ConceptPresentationBuilder().create();
@@ -72,6 +73,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SubstTestChild_WithNextApplicableEditorAndMenu_2 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstTestEnumPropertyChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstTestRoot = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SwingComponent = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SwingComponentContainer = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SwingComponentinFoldedCell = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestBlockList = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_VariableDeclarationBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_VariableDeclarationReference = new ConceptPresentationBuilder().create();
@@ -126,6 +130,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_DeleteWrapperChild;
       case LanguageConceptSwitch.DeleteWrapperRoot:
         return props_DeleteWrapperRoot;
+      case LanguageConceptSwitch.FoldedCell:
+        return props_FoldedCell;
       case LanguageConceptSwitch.FoldingContainer:
         return props_FoldingContainer;
       case LanguageConceptSwitch.IBaseTestBlock:
@@ -208,6 +214,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_SubstTestEnumPropertyChild;
       case LanguageConceptSwitch.SubstTestRoot:
         return props_SubstTestRoot;
+      case LanguageConceptSwitch.SwingComponent:
+        return props_SwingComponent;
+      case LanguageConceptSwitch.SwingComponentContainer:
+        return props_SwingComponentContainer;
+      case LanguageConceptSwitch.SwingComponentinFoldedCell:
+        return props_SwingComponentinFoldedCell;
       case LanguageConceptSwitch.TestBlockList:
         return props_TestBlockList;
       case LanguageConceptSwitch.VariableDeclarationBlock:
