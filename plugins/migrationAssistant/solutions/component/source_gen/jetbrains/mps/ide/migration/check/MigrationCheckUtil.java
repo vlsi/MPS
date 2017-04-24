@@ -178,11 +178,11 @@ __switch__:
     return result;
   }
 
-  public static boolean haveProblems(Iterable<SModule> modules, boolean includeBrokenReferences, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
-    return CollectionSequence.fromCollection(getProblems(modules, includeBrokenReferences, progressCallback, 1)).isNotEmpty();
+  public static Boolean haveProblems(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
+    return CollectionSequence.fromCollection(getProblems(modules, progressCallback, 1)).isNotEmpty();
   }
 
-  public static Collection<Problem> getProblems(Iterable<SModule> modules, final boolean includeBrokenReferences, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, final int maxErrors) {
+  public static Collection<Problem> getProblems(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, final int maxErrors) {
     final List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
 
     Collection<DependencyProblem> badModuleProblems = findBadModules(modules, maxErrors);
@@ -240,7 +240,7 @@ __switch__:
             }
             SetSequence.fromSet(missingFeatures).addElement(err.getFeature());
             ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(err.getFeature(), err.getNode(), err.getMessage()));
-          } else if (includeBrokenReferences && vp instanceof BrokenReferenceError) {
+          } else if (vp instanceof BrokenReferenceError) {
             BrokenReferenceError err = (BrokenReferenceError) vp;
             ListSequence.fromList(result).addElement(new BrokenReferenceProblem(err.getReference(), err.getMessage()));
           } else {

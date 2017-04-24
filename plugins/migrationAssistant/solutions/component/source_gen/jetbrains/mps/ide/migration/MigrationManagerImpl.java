@@ -35,6 +35,7 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.ArrayList;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
+import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -213,7 +214,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     return (isCleanup ? cleanupSize : ListSequence.fromList(migrations).count() - cleanupSize);
   }
 
-  public MigrationManager.MigrationStep nextProjectStep(Map<ProjectMigrationWithOptions.Option, Object> options, boolean cleanup) {
+  public MigrationManager.MigrationStep nextProjectStep(MigrationOptions options, boolean cleanup) {
     ProjectMigration current = next(lastProjectMigration, cleanup);
 
     while (current != null && !(current.shouldBeExecuted(myMpsMproject))) {
@@ -226,7 +227,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
 
     lastProjectMigration = current;
     if (current instanceof ProjectMigrationWithOptions) {
-      //((ProjectMigrationWithOptions) current).setOptionValues(options);
+      ((ProjectMigrationWithOptions) current).setOptionValues(options);
     }
 
     final ProjectMigration cc = current;

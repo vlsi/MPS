@@ -7,8 +7,9 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
-import jetbrains.mps.ide.migration.wizard.MigrationProblemsContainer;
+import jetbrains.mps.ide.migration.wizard.MigrationSession;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
@@ -19,6 +20,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -80,8 +82,9 @@ import org.jetbrains.annotations.Nullable;
  */
 @State(name = "MigrationTrigger", storages = @Storage(value = StoragePathMacros.WORKSPACE_FILE)
 )
-public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor, MigrationProblemsContainer {
+public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor, MigrationSession {
   private final ClassLoaderManager myClassLoaderManager;
+  private MigrationOptions myOptions = new MigrationOptions();
 
   private MPSProject myMpsProject;
   private final MigrationManager myMigrationManager;
@@ -143,7 +146,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
             public void run() {
               myState.migrationRequired = false;
 
-              final MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager, MigrationTrigger.this);
+              final MigrationWizard wizard = new MigrationWizard(myProject, MigrationTrigger.this);
               // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
               boolean finished = wizard.showAndGet();
               restoreTipsState();
@@ -158,7 +161,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   }
                 });
               } else {
-                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0i0a0a0a0b0a0a0a0b0a3a62(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
+                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0i0a0a0a0b0a0a0a0b0a3a72(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
                 if (lastStep == null) {
                   return;
                 }
@@ -554,7 +557,19 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     public boolean migrationRequired = false;
     public Boolean tips;
   }
-  private static <T> T as_feb5zp_a0a0a0i0a0a0a0b0a0a0a0b0a3a62(Object o, Class<T> type) {
+  @Override
+  public jetbrains.mps.project.Project getProject() {
+    return myMpsProject;
+  }
+  @Override
+  public MigrationManager getMigrationManager() {
+    return myMigrationManager;
+  }
+  @Override
+  public MigrationOptions getOptions() {
+    return myOptions;
+  }
+  private static <T> T as_feb5zp_a0a0a0i0a0a0a0b0a0a0a0b0a3a72(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

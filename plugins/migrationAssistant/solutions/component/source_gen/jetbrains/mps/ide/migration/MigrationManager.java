@@ -5,8 +5,7 @@ package jetbrains.mps.ide.migration;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.global.ProjectMigration;
 import java.util.List;
-import java.util.Map;
-import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
+import jetbrains.mps.migration.global.MigrationOptions;
 import org.jetbrains.annotations.Nullable;
 
 public interface MigrationManager {
@@ -29,7 +28,7 @@ public interface MigrationManager {
 
   int projectStepsCount(boolean isCleanup);
 
-  MigrationManager.MigrationStep nextProjectStep(Map<ProjectMigrationWithOptions.Option, Object> options, boolean cleanup);
+  MigrationManager.MigrationStep nextProjectStep(MigrationOptions options, boolean cleanup);
 
   int moduleStepsCount();
 

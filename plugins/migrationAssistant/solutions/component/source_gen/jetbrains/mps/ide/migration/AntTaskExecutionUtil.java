@@ -5,9 +5,7 @@ package jetbrains.mps.ide.migration;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
+import jetbrains.mps.migration.global.MigrationOptions;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -27,7 +25,7 @@ public class AntTaskExecutionUtil {
       public void run() {
         while (true) {
           // we don't know which options are "better" so we "select" no one 
-          MigrationManager.MigrationStep step = m.nextProjectStep(MapSequence.fromMap(new HashMap<ProjectMigrationWithOptions.Option, Object>()), true);
+          MigrationManager.MigrationStep step = m.nextProjectStep(new MigrationOptions(), true);
           if (step == null) {
             break;
           }
@@ -42,7 +40,7 @@ public class AntTaskExecutionUtil {
         }
 
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
-        ok.value = !(MigrationCheckUtil.haveProblems(modules, true, new _FunctionTypes._void_P1_E0<Double>() {
+        ok.value = !(MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
           }
         }));
@@ -52,7 +50,7 @@ public class AntTaskExecutionUtil {
         }
 
         while (true) {
-          MigrationManager.MigrationStep step = m.nextProjectStep(MapSequence.fromMap(new HashMap<ProjectMigrationWithOptions.Option, Object>()), false);
+          MigrationManager.MigrationStep step = m.nextProjectStep(new MigrationOptions(), false);
           if (step == null) {
             break;
           }
@@ -82,7 +80,7 @@ public class AntTaskExecutionUtil {
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
-        ok.value = MigrationCheckUtil.haveProblems(modules, true, new _FunctionTypes._void_P1_E0<Double>() {
+        ok.value = MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
           }
         });
