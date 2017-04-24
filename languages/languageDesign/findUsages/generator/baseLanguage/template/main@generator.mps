@@ -186,7 +186,6 @@
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
-      <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
@@ -716,36 +715,6 @@
     </node>
     <node concept="3uibUv" id="7JBhbjisYqe" role="1zkMxy">
       <ref role="3uigEE" to="b2d5:7aWSXuXO6ad" resolve="GeneratedFinder" />
-    </node>
-    <node concept="Wx3nA" id="htY2teB" role="jymVt">
-      <property role="TrG5h" value="LOG" />
-      <node concept="2YIFZM" id="Hn0$MvbYVu" role="33vP2m">
-        <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.String):org.apache.log4j.Logger" resolve="getLogger" />
-        <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
-        <node concept="Xl_RD" id="Hn0$MvbYVv" role="37wK5m">
-          <property role="Xl_RC" value="" />
-          <node concept="17Uvod" id="Hn0$MvbYVw" role="lGtFl">
-            <property role="2qtEX9" value="value" />
-            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-            <node concept="3zFVjK" id="Hn0$MvbYVx" role="3zH0cK">
-              <node concept="3clFbS" id="Hn0$MvbYVy" role="2VODD2">
-                <node concept="3clFbF" id="Hn0$MvbYVz" role="3cqZAp">
-                  <node concept="2OqwBi" id="Hn0$MvbYV$" role="3clFbG">
-                    <node concept="30H73N" id="Hn0$MvbYV_" role="2Oq$k0" />
-                    <node concept="2qgKlT" id="Hn0$MvbYVA" role="2OqNvi">
-                      <ref role="37wK5l" to="tp3f:hEwIc4S" resolve="getGeneratedClassLongName" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm6S6" id="htY2teC" role="1B3o_S" />
-      <node concept="3uibUv" id="Hn0$MvbYVr" role="1tU5fm">
-        <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
-      </node>
     </node>
     <node concept="3clFbW" id="6VBrDosllh3" role="jymVt">
       <node concept="3cqZAl" id="6VBrDosllh4" role="3clF45" />

@@ -27,8 +27,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class ConceptInstances_Finder extends GeneratedFinder {
-  private static final Logger LOG_1127887887 = LogManager.getLogger(ConceptInstances_Finder.class);
-  private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
+  private static final Logger LOG = LogManager.getLogger(ConceptInstances_Finder.class);
   public ConceptInstances_Finder() {
   }
   @Override
@@ -62,8 +61,8 @@ public class ConceptInstances_Finder extends GeneratedFinder {
             sb.append("Language runtime class is " + runtime.getClass().getName());
           }
         }
-        if (LOG_1127887887.isEnabledFor(Level.ERROR)) {
-          LOG_1127887887.error(sb.toString());
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error(sb.toString());
         }
         return;
       }

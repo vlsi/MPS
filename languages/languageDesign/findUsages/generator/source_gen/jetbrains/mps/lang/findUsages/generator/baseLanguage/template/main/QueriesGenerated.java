@@ -50,9 +50,6 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1197207280707(final PropertyMacroContext _context) {
     return (String) FinderDeclaration__BehaviorDescriptor.getGeneratedClassName_idhEwIc4_.invoke(_context.getNode());
   }
-  public static Object propertyMacro_GetPropertyValue_817124385502523105(final PropertyMacroContext _context) {
-    return (String) FinderDeclaration__BehaviorDescriptor.getGeneratedClassLongName_idhEwIc4S.invoke(_context.getNode());
-  }
   public static Object propertyMacro_GetPropertyValue_1202839664536(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, 0x116c9c44c38L, "description"));
   }
