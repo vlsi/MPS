@@ -226,7 +226,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
 
     lastProjectMigration = current;
     if (current instanceof ProjectMigrationWithOptions) {
-      ((ProjectMigrationWithOptions) current).setOptionValues(options);
+      //((ProjectMigrationWithOptions) current).setOptionValues(options);
     }
 
     final ProjectMigration cc = current;

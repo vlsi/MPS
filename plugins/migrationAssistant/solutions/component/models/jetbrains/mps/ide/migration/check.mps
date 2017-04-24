@@ -240,7 +240,6 @@
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
-      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -271,7 +270,7 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
@@ -975,10 +974,6 @@
           </node>
         </node>
       </node>
-      <node concept="37vLTG" id="44NRCusZvLJ" role="3clF46">
-        <property role="TrG5h" value="includeBrokenReferences" />
-        <node concept="10P_77" id="44NRCusZvLK" role="1tU5fm" />
-      </node>
       <node concept="37vLTG" id="6JtYk_H7EGw" role="3clF46">
         <property role="TrG5h" value="progressCallback" />
         <node concept="1ajhzC" id="6JtYk_H7F0W" role="1tU5fm">
@@ -997,9 +992,6 @@
               <node concept="37vLTw" id="3n7MNzOLfaI" role="37wK5m">
                 <ref role="3cqZAo" node="3n7MNzOJXgD" resolve="modules" />
               </node>
-              <node concept="37vLTw" id="44NRCusZ$r5" role="37wK5m">
-                <ref role="3cqZAo" node="44NRCusZvLJ" resolve="includeBrokenReferences" />
-              </node>
               <node concept="37vLTw" id="6JtYk_H7FfS" role="37wK5m">
                 <ref role="3cqZAo" node="6JtYk_H7EGw" resolve="progressCallback" />
               </node>
@@ -1012,7 +1004,9 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="3n7MNzOJUrA" role="1B3o_S" />
-      <node concept="10P_77" id="3n7MNzOJVMk" role="3clF45" />
+      <node concept="3uibUv" id="PobQbOaWZC" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+      </node>
     </node>
     <node concept="2tJIrI" id="3n7MNzOJT6Z" role="jymVt" />
     <node concept="2YIFZL" id="3n7MNzO_xEA" role="jymVt">
@@ -1027,10 +1021,6 @@
             <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
           </node>
         </node>
-      </node>
-      <node concept="37vLTG" id="44NRCusZpE2" role="3clF46">
-        <property role="TrG5h" value="includeBrokenReferences" />
-        <node concept="10P_77" id="44NRCusZrok" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="6JtYk_H7N0R" role="3clF46">
         <property role="TrG5h" value="progressCallback" />
@@ -1752,17 +1742,12 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="1Wc70l" id="44NRCusZtw1" role="3eO9$A">
-                          <node concept="37vLTw" id="44NRCusZuEm" role="3uHU7B">
-                            <ref role="3cqZAo" node="44NRCusZpE2" resolve="includeBrokenReferences" />
+                        <node concept="2ZW3vV" id="44NRCusYJ$O" role="3eO9$A">
+                          <node concept="3uibUv" id="44NRCusYMQF" role="2ZW6by">
+                            <ref role="3uigEE" to="6if8:~BrokenReferenceError" resolve="BrokenReferenceError" />
                           </node>
-                          <node concept="2ZW3vV" id="44NRCusYJ$O" role="3uHU7w">
-                            <node concept="3uibUv" id="44NRCusYMQF" role="2ZW6by">
-                              <ref role="3uigEE" to="6if8:~BrokenReferenceError" resolve="BrokenReferenceError" />
-                            </node>
-                            <node concept="37vLTw" id="44NRCusYJ$Q" role="2ZW6bz">
-                              <ref role="3cqZAo" node="2RwlJ15ZUXp" resolve="vp" />
-                            </node>
+                          <node concept="37vLTw" id="44NRCusYJ$Q" role="2ZW6bz">
+                            <ref role="3cqZAo" node="2RwlJ15ZUXp" resolve="vp" />
                           </node>
                         </node>
                       </node>

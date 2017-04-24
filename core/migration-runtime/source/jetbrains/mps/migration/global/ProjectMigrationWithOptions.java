@@ -69,5 +69,5 @@ public interface ProjectMigrationWithOptions extends ProjectMigration {
 
   Collection<Option> getOptions();
 
-  void setOptionValues(Map<Option, Object> values);
+  void setOptionValues(MigrationOptions values);
 }
