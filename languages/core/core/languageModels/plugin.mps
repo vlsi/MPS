@@ -3818,7 +3818,7 @@
                                     </node>
                                     <node concept="2ShNRf" id="sT86IN_a0G" role="33vP2m">
                                       <node concept="1pGfFk" id="sT86IN_avs" role="2ShVmc">
-                                        <ref role="37wK5l" to="ap4t:~GenPlanExtractor.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,jetbrains.mps.generator.GenerationOptions$OptionsBuilder)" resolve="GenPlanExtractor" />
+                                        <ref role="37wK5l" to="ap4t:~GenPlanExtractor.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,jetbrains.mps.generator.GenerationOptions$OptionsBuilder,jetbrains.mps.messages.IMessageHandler)" resolve="GenPlanExtractor" />
                                         <node concept="2OqwBi" id="sT86IN_ew9" role="37wK5m">
                                           <node concept="37vLTw" id="sT86IN_en3" role="2Oq$k0">
                                             <ref role="3cqZAo" node="5jLBleAj03m" resolve="mpsProject" />
@@ -3833,6 +3833,12 @@
                                           </node>
                                           <node concept="2sxana" id="sT86IN_d7Q" role="2OqNvi">
                                             <ref role="2sxfKC" node="5L5h3brvzaY" resolve="generationOptions" />
+                                          </node>
+                                        </node>
+                                        <node concept="2OqwBi" id="1BaWVumPy4T" role="37wK5m">
+                                          <node concept="2_BwXt" id="1BaWVumPxW3" role="2Oq$k0" />
+                                          <node concept="liA8E" id="1BaWVumPyeN" role="2OqNvi">
+                                            <ref role="37wK5l" to="hfuk:7yGn3z4N4Nw" resolve="getMessageHandler" />
                                           </node>
                                         </node>
                                       </node>

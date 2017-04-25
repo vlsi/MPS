@@ -33,6 +33,7 @@
     <import index="tft2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.plan(MPS.Core/)" />
     <import index="57ty" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.messages(MPS.Platform/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
+    <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" implicit="true" />
   </imports>
@@ -1945,6 +1946,32 @@
           </node>
         </node>
         <node concept="3clFbH" id="2DNBjvGmth" role="3cqZAp" />
+        <node concept="3cpWs8" id="4dzOCaryA3M" role="3cqZAp">
+          <node concept="3cpWsn" id="4dzOCaryA3N" role="3cpWs9">
+            <property role="3TUv4t" value="false" />
+            <property role="TrG5h" value="messagesView" />
+            <node concept="3uibUv" id="4dzOCaryA3O" role="1tU5fm">
+              <ref role="3uigEE" to="57ty:~MessagesViewTool" resolve="MessagesViewTool" />
+            </node>
+            <node concept="2OqwBi" id="4dzOCaryA3P" role="33vP2m">
+              <node concept="2OqwBi" id="7vhSOKo2fse" role="2Oq$k0">
+                <node concept="37vLTw" id="7vhSOKo2fop" role="2Oq$k0">
+                  <ref role="3cqZAo" node="67MRmR$wIVQ" resolve="context" />
+                </node>
+                <node concept="liA8E" id="7vhSOKo2fy8" role="2OqNvi">
+                  <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4dzOCaryA3R" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="4dzOCaryA3S" role="37wK5m">
+                  <ref role="3VsUkX" to="57ty:~MessagesViewTool" resolve="MessagesViewTool" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1BaWVumQ$Kt" role="3cqZAp" />
         <node concept="3SKdUt" id="2DNBjvGm2O" role="3cqZAp">
           <node concept="3SKdUq" id="2DNBjvGmbQ" role="3SKWNk">
             <property role="3SKdUp" value="by default, show generation plan as Make/Generate would see it." />
@@ -1964,9 +1991,17 @@
             </node>
             <node concept="2ShNRf" id="6qPDHM9$rrl" role="33vP2m">
               <node concept="1pGfFk" id="6qPDHM9$_QV" role="2ShVmc">
-                <ref role="37wK5l" to="ap4t:~GenPlanExtractor.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="GenPlanExtractor" />
+                <ref role="37wK5l" to="ap4t:~GenPlanExtractor.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,jetbrains.mps.messages.IMessageHandler)" resolve="GenPlanExtractor" />
                 <node concept="37vLTw" id="6qPDHM9$B9y" role="37wK5m">
                   <ref role="3cqZAo" node="6qPDHM9$AGs" resolve="repo" />
+                </node>
+                <node concept="2OqwBi" id="1BaWVumQ_NM" role="37wK5m">
+                  <node concept="37vLTw" id="1BaWVumQ_sV" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4dzOCaryA3N" resolve="messagesView" />
+                  </node>
+                  <node concept="liA8E" id="1BaWVumQAbA" role="2OqNvi">
+                    <ref role="37wK5l" to="57ty:~MessagesViewTool.newHandler():jetbrains.mps.messages.IMessageHandler" resolve="newHandler" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -2007,31 +2042,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="2DNBjvGh6e" role="3cqZAp" />
-        <node concept="3cpWs8" id="4dzOCaryA3M" role="3cqZAp">
-          <node concept="3cpWsn" id="4dzOCaryA3N" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="messagesView" />
-            <node concept="3uibUv" id="4dzOCaryA3O" role="1tU5fm">
-              <ref role="3uigEE" to="57ty:~MessagesViewTool" resolve="MessagesViewTool" />
-            </node>
-            <node concept="2OqwBi" id="4dzOCaryA3P" role="33vP2m">
-              <node concept="2OqwBi" id="7vhSOKo2fse" role="2Oq$k0">
-                <node concept="37vLTw" id="7vhSOKo2fop" role="2Oq$k0">
-                  <ref role="3cqZAo" node="67MRmR$wIVQ" resolve="context" />
-                </node>
-                <node concept="liA8E" id="7vhSOKo2fy8" role="2OqNvi">
-                  <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
-                </node>
-              </node>
-              <node concept="liA8E" id="4dzOCaryA3R" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                <node concept="3VsKOn" id="4dzOCaryA3S" role="37wK5m">
-                  <ref role="3VsUkX" to="57ty:~MessagesViewTool" resolve="MessagesViewTool" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="7vhSOKo2qMn" role="3cqZAp">
           <node concept="3cpWsn" id="7vhSOKo2qMo" role="3cpWs9">
             <property role="TrG5h" value="helper" />

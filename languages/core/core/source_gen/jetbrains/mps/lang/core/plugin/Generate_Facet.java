@@ -447,7 +447,7 @@ public class Generate_Facet extends IFacet.Stub {
               if (Generate_Facet.Target_configure.vars(pa.global()).customPlan() == null) {
                 mpsProject.getModelAccess().runReadAction(new Runnable() {
                   public void run() {
-                    GenPlanExtractor planExtractor = new GenPlanExtractor(mpsProject.getRepository(), Generate_Facet.Target_configure.vars(pa.global()).generationOptions());
+                    GenPlanExtractor planExtractor = new GenPlanExtractor(mpsProject.getRepository(), Generate_Facet.Target_configure.vars(pa.global()).generationOptions(), monitor.getSession().getMessageHandler());
                     for (MResource res : Sequence.fromIterable(input)) {
                       for (SModel m : Sequence.fromIterable(res.models())) {
                         planExtractor.configurePlanFor(m);

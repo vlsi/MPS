@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,19 +76,19 @@ public class GenerationPartitioner {
     myConflicts = new PriorityConflicts(generators);
     mySolver = new PartitioningSolver(myConflicts);
 
-    myModulesMap = new HashMap<SModuleReference, TemplateModule>(myGenerators.size());
-    myModelMap = new HashMap<SModelReference, TemplateModel>();
+    myModulesMap = new HashMap<>(myGenerators.size());
+    myModelMap = new HashMap<>();
     for (TemplateModule module : myGenerators) {
       myModulesMap.put(module.getModuleReference(), module);
       for (TemplateModel model : module.getModels()) {
         myModelMap.put(model.getSModelReference(), model);
       }
     }
-    myExplicitDependencies = new HashSet<Pair<TemplateModule, TemplateModule>>();
+    myExplicitDependencies = new HashSet<>();
   }
 
   public List<List<TemplateMappingConfiguration>> createMappingSets() {
-    ArrayList<TemplateMappingConfiguration> allMappingConfigurations = new ArrayList<TemplateMappingConfiguration>();
+    ArrayList<TemplateMappingConfiguration> allMappingConfigurations = new ArrayList<>();
     for (TemplateModule generator : myGenerators) {
       for (TemplateModel model : generator.getModels()) {
         allMappingConfigurations.addAll(model.getConfigurations());
@@ -123,7 +123,7 @@ public class GenerationPartitioner {
   }
 
   static List<List<TemplateMappingConfiguration>> phaseAsPlainList(List<GenerationPhase> phases) {
-    List<List<TemplateMappingConfiguration>> rv = new ArrayList<List<TemplateMappingConfiguration>>();
+    List<List<TemplateMappingConfiguration>> rv = new ArrayList<>();
     for (GenerationPhase gp : phases) {
       rv.add(gp.getAllElements());
     }
@@ -131,10 +131,10 @@ public class GenerationPartitioner {
   }
 
   static List<List<TemplateMappingConfiguration>> phaseGroupedByGenerator(List<GenerationPhase> phases) {
-    List<List<TemplateMappingConfiguration>> rv = new ArrayList<List<TemplateMappingConfiguration>>();
+    List<List<TemplateMappingConfiguration>> rv = new ArrayList<>();
     for (GenerationPhase gp : phases) {
       for (Group g : gp.groupByGenerator()) {
-        rv.add(new ArrayList<TemplateMappingConfiguration>(g.getElements()));
+        rv.add(new ArrayList<>(g.getElements()));
       }
     }
     return rv;
@@ -149,7 +149,7 @@ public class GenerationPartitioner {
       }
     }
     // auxiliary rules to ensure generator runs no later than any generator of its target language
-    MultiMap<SLanguage, TemplateModule> lang2gen = new MultiMap<SLanguage, TemplateModule>();
+    MultiMap<SLanguage, TemplateModule> lang2gen = new MultiMap<>();
     for (TemplateModule generator : myGenerators) {
       LanguageRuntime sLanguage = generator.getSourceLanguage();
       SLanguage lang = MetaAdapterFactory.getLanguage(sLanguage.getId(),sLanguage.getNamespace());
@@ -160,7 +160,7 @@ public class GenerationPartitioner {
       if (lhsHelper.getAllMappings().isEmpty()) {
         continue;
       }
-      HashSet<TemplateModule> targetGenerators = new HashSet<TemplateModule>();
+      HashSet<TemplateModule> targetGenerators = new HashSet<>();
       for (SLanguage targetLang : generator.getTargetLanguages()) {
         targetGenerators.addAll(lang2gen.get(targetLang));
       }
@@ -174,7 +174,7 @@ public class GenerationPartitioner {
       }
       // for each target generator,  add a rule {all MC in the current generator} <= {all MC of target generator}, with respect to top-pri MC
       for (TemplateModule tg : targetGenerators) {
-        if (myExplicitDependencies.contains(new Pair<TemplateModule, TemplateModule>(generator, tg))) {
+        if (myExplicitDependencies.contains(new Pair<>(generator, tg))) {
           continue;
         }
         RuleHelper rhsHelper = new RuleHelper(tg, new MappingConfig_RefAllLocal());
@@ -247,12 +247,12 @@ public class GenerationPartitioner {
     }
     for (TemplateModule l : lhsHelper.getInvolvedGenerators()) {
       for (TemplateModule r : rhsHelper.getInvolvedGenerators()) {
-        myExplicitDependencies.add(new Pair<TemplateModule, TemplateModule>(l, r));
+        myExplicitDependencies.add(new Pair<>(l, r));
       }
     }
     switch (rule.getType()) {
       case STRICTLY_TOGETHER:
-        Set<TemplateMappingConfiguration> coherentMappings = new HashSet<TemplateMappingConfiguration>(rhs);
+        Set<TemplateMappingConfiguration> coherentMappings = new HashSet<>(rhs);
         coherentMappings.addAll(lhs);
         mySolver.registerCoherent(coherentMappings, rule);
         return;
@@ -284,7 +284,7 @@ public class GenerationPartitioner {
     }
 
     public Collection<TemplateMappingConfiguration> getTopPriMappings() {
-      ArrayList<TemplateMappingConfiguration> rv = new ArrayList<TemplateMappingConfiguration>();
+      ArrayList<TemplateMappingConfiguration> rv = new ArrayList<>();
       for (TemplateMappingConfiguration mc : getAllMappings()) {
         if (mc.isTopPriority()) {
           rv.add(mc);
@@ -294,7 +294,7 @@ public class GenerationPartitioner {
     }
 
     public Collection<TemplateMappingConfiguration> getRegularMappings() {
-      ArrayList<TemplateMappingConfiguration> rv = new ArrayList<TemplateMappingConfiguration>();
+      ArrayList<TemplateMappingConfiguration> rv = new ArrayList<>();
       for (TemplateMappingConfiguration mc : getAllMappings()) {
         if (!mc.isTopPriority()) {
           rv.add(mc);
@@ -304,7 +304,7 @@ public class GenerationPartitioner {
     }
 
     public Collection<TemplateModule> getInvolvedGenerators() {
-      HashSet<TemplateModule> rv = new HashSet<TemplateModule>();
+      HashSet<TemplateModule> rv = new HashSet<>();
       for (TemplateMappingConfiguration mc : getAllMappings()) {
         rv.add(mc.getModel().getModule());
       }
@@ -319,11 +319,11 @@ public class GenerationPartitioner {
 
     private Collection<TemplateMappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, TemplateModule refGenerator) {
       if (mappingRef instanceof MappingConfig_RefAllGlobal) {
-        return new ArrayList<TemplateMappingConfiguration>(mySolver.getKnownMapConfigs());
+        return new ArrayList<>(mySolver.getKnownMapConfigs());
       }
 
       if (mappingRef instanceof MappingConfig_RefAllLocal) {
-        List<TemplateMappingConfiguration> mappingConf = new ArrayList<TemplateMappingConfiguration>();
+        List<TemplateMappingConfiguration> mappingConf = new ArrayList<>();
         for (TemplateModel templateModel : refGenerator.getModels()) {
           for (TemplateMappingConfiguration n : templateModel.getConfigurations()) {
             mappingConf.add(n);
@@ -333,7 +333,7 @@ public class GenerationPartitioner {
       }
 
       if (mappingRef instanceof MappingConfig_RefSet) {
-        List<TemplateMappingConfiguration> result = new ArrayList<TemplateMappingConfiguration>();
+        List<TemplateMappingConfiguration> result = new ArrayList<>();
         MappingConfig_RefSet refSet = ((MappingConfig_RefSet) mappingRef);
         for (MappingConfig_AbstractRef simpleRef : refSet.getMappingConfigs()) {
           result.addAll(getMappingsFromRef(simpleRef, refGenerator));

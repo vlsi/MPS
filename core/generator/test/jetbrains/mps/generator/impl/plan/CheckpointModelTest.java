@@ -316,23 +316,44 @@ public class CheckpointModelTest extends PlatformMpsTest {
       }
     });
     Assert.assertNotNull(plan);
-    Assert.assertEquals(5, plan.getSteps().size());
+    Assert.assertEquals(10, plan.getSteps().size());
     myErrors.checkThat(plan.getSteps().get(0), CoreMatchers.instanceOf(Checkpoint.class));
     myErrors.checkThat(plan.getSteps().get(1), CoreMatchers.instanceOf(Transform.class));
-    myErrors.checkThat(plan.getSteps().get(2), CoreMatchers.instanceOf(Checkpoint.class));
+    myErrors.checkThat(plan.getSteps().get(2), CoreMatchers.instanceOf(Transform.class));
     myErrors.checkThat(plan.getSteps().get(3), CoreMatchers.instanceOf(Transform.class));
     myErrors.checkThat(plan.getSteps().get(4), CoreMatchers.instanceOf(Transform.class));
+    myErrors.checkThat(plan.getSteps().get(5), CoreMatchers.instanceOf(Checkpoint.class));
+    myErrors.checkThat(plan.getSteps().get(6), CoreMatchers.instanceOf(Transform.class));
+    myErrors.checkThat(plan.getSteps().get(7), CoreMatchers.instanceOf(Transform.class));
+    myErrors.checkThat(plan.getSteps().get(8), CoreMatchers.instanceOf(Transform.class));
+    myErrors.checkThat(plan.getSteps().get(9), CoreMatchers.instanceOf(Transform.class));
     //
     Checkpoint p1 = (Checkpoint) plan.getSteps().get(0);
-    Checkpoint p2 = (Checkpoint) plan.getSteps().get(2);
+    Checkpoint p2 = (Checkpoint) plan.getSteps().get(5);
     myErrors.checkThat(p1.isPersisted(), CoreMatchers.equalTo(true));
     myErrors.checkThat(p2.isPersisted(), CoreMatchers.equalTo(false));
-    Transform t1 = (Transform) plan.getSteps().get(1); // closures + extensions
-    Transform t2 = (Transform) plan.getSteps().get(3); // blInternal + extensions
-    Transform t3 = (Transform) plan.getSteps().get(4); // bl + extensions
-    myErrors.checkThat(t1.getTransformations().size(), CoreMatchers.equalTo(7)); // 2 from closures + 5 from collections
-    myErrors.checkThat(t2.getTransformations().size(), CoreMatchers.equalTo(1)); // 1 MC in blInternal.
-    myErrors.checkThat(t3.getTransformations().size(), CoreMatchers.equalTo(8)); // 3 from BL + 5 from collections
+    // closures + extensions
+    Transform clos1 = (Transform) plan.getSteps().get(1);
+    Transform clos2 = (Transform) plan.getSteps().get(2);
+    Transform clos3 = (Transform) plan.getSteps().get(3);
+    Transform clos4 = (Transform) plan.getSteps().get(4);
+    // blInternal + extensions
+    Transform blInt = (Transform) plan.getSteps().get(6);
+    // bl + extensions
+    Transform bl1 = (Transform) plan.getSteps().get(7);
+    Transform bl2 = (Transform) plan.getSteps().get(8);
+    Transform bl3 = (Transform) plan.getSteps().get(9);
+    // 2 from closures + 5 from collections
+    myErrors.checkThat(clos1.getTransformations().size(), CoreMatchers.equalTo(1));
+    myErrors.checkThat(clos2.getTransformations().size(), CoreMatchers.equalTo(4));
+    myErrors.checkThat(clos3.getTransformations().size(), CoreMatchers.equalTo(1));
+    myErrors.checkThat(clos4.getTransformations().size(), CoreMatchers.equalTo(1));
+    // 1 MC in blInternal.
+    myErrors.checkThat(blInt.getTransformations().size(), CoreMatchers.equalTo(1));
+    // 3 from BL + 5 from collections
+    myErrors.checkThat(bl1.getTransformations().size(), CoreMatchers.equalTo(1));
+    myErrors.checkThat(bl2.getTransformations().size(), CoreMatchers.equalTo(4));
+    myErrors.checkThat(bl3.getTransformations().size(), CoreMatchers.equalTo(3));
   }
 
   // utility to obtain generators of j.m.g.test.crossmodel.property language

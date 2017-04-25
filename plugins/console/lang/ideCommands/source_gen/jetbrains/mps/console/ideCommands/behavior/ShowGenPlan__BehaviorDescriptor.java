@@ -21,9 +21,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.generator.GenPlanExtractor;
 import jetbrains.mps.generator.ModelGenerationPlan;
-import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.console.ideCommands.util.PartitioningHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
@@ -53,13 +53,14 @@ public final class ShowGenPlan__BehaviorDescriptor extends BaseBHDescriptor {
       return;
     }
 
+    MessagesViewTool messagesView = context.getProject().getComponent(MessagesViewTool.class);
+
     // by default, show generation plan as Make/Generate would see it. 
     // If forced, however, may ignore context and show default (model content based) plan. 
 
-    GenPlanExtractor gpExtractor = new GenPlanExtractor(repo);
+    GenPlanExtractor gpExtractor = new GenPlanExtractor(repo, messagesView.newHandler());
     final ModelGenerationPlan externalPlan = (gpExtractor.hasPlan(model) ? gpExtractor.getPlan(model) : null);
 
-    MessagesViewTool messagesView = context.getProject().getComponent(MessagesViewTool.class);
     PartitioningHelper helper = new PartitioningHelper(messagesView, console);
     ModelGenerationPlan gp;
     if (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x2c510b378f8ce5ddL, "ignoreExternalPlan"))) {
