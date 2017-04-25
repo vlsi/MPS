@@ -52,8 +52,21 @@ public abstract class LongBaseStep<Task extends StepTask> extends BaseStep {
       protected boolean isFinished() {
         return myTask.isComplete();
       }
+      @Override
+      public void setText(String text) {
+        super.setText(text);
+        progress(text, true);
+      }
+      @Override
+      public void setText2(String text) {
+        super.setText2(text);
+        progress(text, false);
+      }
     };
     myProgress.setIndeterminate(false);
+  }
+
+  protected void progress(String text, boolean main) {
   }
 
   @Override
@@ -65,11 +78,7 @@ public abstract class LongBaseStep<Task extends StepTask> extends BaseStep {
   protected abstract void report(String s);
 
   @Override
-  public void autostart(_FunctionTypes._void_P0_E0 later) {
-    runWhenStepIsInitialized(myProgress, myTask, later);
-  }
-
-  private void runWhenStepIsInitialized(final InlineProgressIndicator progress, final Task task, final _FunctionTypes._void_P0_E0 later) {
+  public void autostart(final _FunctionTypes._void_P0_E0 later) {
     // this is needed to fully show the step before starting working 
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
@@ -77,10 +86,10 @@ public abstract class LongBaseStep<Task extends StepTask> extends BaseStep {
           public void run() {
             ProgressManager.getInstance().runProcess(new Runnable() {
               public void run() {
-                task.run(progress);
+                myTask.run(myProgress);
                 later.invoke();
               }
-            }, progress);
+            }, myProgress);
           }
         });
       }

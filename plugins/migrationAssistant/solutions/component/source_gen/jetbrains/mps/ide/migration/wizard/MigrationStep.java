@@ -37,7 +37,10 @@ public class MigrationStep extends LongBaseStep<MigrationTask> {
     mainPanel.add(myProgress.getComponent(), BorderLayout.SOUTH);
   }
 
-
+  @Override
+  protected void progress(String text, boolean main) {
+    report(text);
+  }
 
   protected void report(final String step) {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
