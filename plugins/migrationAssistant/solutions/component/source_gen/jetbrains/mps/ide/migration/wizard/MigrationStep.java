@@ -43,7 +43,8 @@ public class MigrationStep extends LongBaseStep<MigrationTask> {
   }
 
   protected void report(final String step) {
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+    // todo why invokeAndWait doesn't work? 
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         DefaultListModel model = (DefaultListModel) myList.getModel();
         model.addElement(step);

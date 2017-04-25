@@ -98,7 +98,7 @@ public abstract class StepTask extends Task.Modal {
           myCurrentChange = null;
         }
       }
-    });
+    }, ModalityState.any());
 
     return noException.value;
   }

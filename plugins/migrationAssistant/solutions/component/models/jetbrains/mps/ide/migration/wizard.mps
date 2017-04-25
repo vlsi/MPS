@@ -1327,6 +1327,11 @@
         <node concept="17QB3L" id="513ZrA4x4$3" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="513ZrA4x4zw" role="3clF47">
+        <node concept="3SKdUt" id="6jvWROReWpk" role="3cqZAp">
+          <node concept="3SKdUq" id="6jvWROReWpm" role="3SKWNk">
+            <property role="3SKdUp" value="todo why invokeAndWait doesn't work?" />
+          </node>
+        </node>
         <node concept="3clFbF" id="1V18N7tiKDE" role="3cqZAp">
           <node concept="2OqwBi" id="1V18N7tiL3n" role="3clFbG">
             <node concept="2YIFZM" id="1V18N7tiKP0" role="2Oq$k0">
@@ -1334,7 +1339,7 @@
               <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
             </node>
             <node concept="liA8E" id="1V18N7tiLje" role="2OqNvi">
-              <ref role="37wK5l" to="bd8o:~Application.invokeAndWait(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeAndWait" />
+              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
               <node concept="1bVj0M" id="513ZrA4x4zH" role="37wK5m">
                 <node concept="3clFbS" id="513ZrA4x4zI" role="1bW5cS">
                   <node concept="3cpWs8" id="513ZrA4x4zz" role="3cqZAp">
