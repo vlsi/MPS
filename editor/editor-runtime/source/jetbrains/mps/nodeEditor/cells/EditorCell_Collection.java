@@ -584,13 +584,14 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       return;
     }
 
-    if (isCollapsed()) {
+    boolean collapsed = isCollapsed();
+    if (collapsed) {
       addUnfoldingListener();
-      removeFoldingListenerForChildren();
     } else {
       removeUnfoldingListener();
-      addUnfoldingListenerForChildren();
     }
+    updateSubtreeOnCollapsedStateChange(getEditorCells().iterator(), !collapsed);
+    updateSubtreeOnCollapsedStateChange(getFoldedCellCollection().iterator(), collapsed);
   }
 
   private void updateSelectionOnCollapseChange() {
@@ -618,33 +619,24 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return CellTraversalUtil.getFoldedParent(this) != null;
   }
 
-  private void addUnfoldingListenerForChildren() {
-    for (TreeIterator<EditorCell> iterator = new CellTreeIterable(this, this, true).skipStart().iterator(); iterator.hasNext(); ) {
-      EditorCell child = iterator.next();
-      if (child instanceof EditorCell_WithComponent) {
-        ((EditorCell_WithComponent) child).getComponent().setVisible(true);
-      }
-      if (child instanceof EditorCell_Collection) {
-        EditorCell_Collection childCollection = (EditorCell_Collection) child;
-        if (childCollection.isCollapsed()) {
-          childCollection.addUnfoldingListener();
-          iterator.skipChildren();
+  private void updateSubtreeOnCollapsedStateChange(Iterator<EditorCell> subtreeRootsIterator, boolean visible) {
+    while (subtreeRootsIterator.hasNext()) {
+      EditorCell nextSubtreeRootCell = subtreeRootsIterator.next();
+      for (TreeIterator<EditorCell> iterator = new CellTreeIterable(nextSubtreeRootCell, nextSubtreeRootCell, true).iterator(); iterator.hasNext(); ) {
+        EditorCell child = iterator.next();
+        if (child instanceof EditorCell_WithComponent) {
+          ((EditorCell_WithComponent) child).getComponent().setVisible(visible);
         }
-      }
-    }
-  }
-
-  private void removeFoldingListenerForChildren() {
-    for (TreeIterator<EditorCell> iterator = new CellTreeIterable(this, this, true).skipStart().iterator(); iterator.hasNext(); ) {
-      EditorCell child = iterator.next();
-      if (child instanceof EditorCell_WithComponent) {
-        ((EditorCell_WithComponent) child).getComponent().setVisible(false);
-      }
-      if (child instanceof EditorCell_Collection) {
-        EditorCell_Collection childCollection = (EditorCell_Collection) child;
-        if (childCollection.isCollapsed()) {
-          childCollection.removeUnfoldingListener();
-          iterator.skipChildren();
+        if (child instanceof EditorCell_Collection) {
+          EditorCell_Collection childCollection = (EditorCell_Collection) child;
+          if (childCollection.isCollapsed()) {
+            if (visible) {
+              childCollection.addUnfoldingListener();
+            } else {
+              childCollection.removeUnfoldingListener();
+            }
+            iterator.skipChildren();
+          }
         }
       }
     }
@@ -978,12 +970,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
     if (isFoldable()) {
       getEditor().getCellTracker().addFoldableCell(this);
-    }
-    if (isCollapsed()) {
       if (isDefaultCollapsedValueChanged()) {
-        getEditor().setCollapseState(this, myCollapsed);
+        getEditor().setCollapseState(this, isCollapsed());
       }
-      if (!isUnderFolded()) {
+
+      if (!isUnderFolded() && isCollapsed()) {
         addUnfoldingListener();
       }
     }
@@ -991,23 +982,24 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public void onRemove() {
-    if (isFoldable()) {
-      getEditor().getCellTracker().removeFoldableCell(this);
-    }
     removeUnfoldingListener();
     if (isDefaultCollapsedValueChanged()) {
       getEditor().resetCollapseState(this);
+    }
+
+    if (isFoldable()) {
+      getEditor().getCellTracker().removeFoldableCell(this);
     }
 
     if (myLastCellSelectionListener != null) {
       setBracesEnabled(false);
       getEditor().getSelectionManager().removeSelectionListener(myLastCellSelectionListener);
     }
-    for (EditorCell child : getEditorCells()) {
-      ((EditorCell_Basic) child).onRemove();
-    }
     if (hasFoldedCell()) {
       ((EditorCell_Basic) getFoldedCell()).onRemove();
+    }
+    for (EditorCell child : getEditorCells()) {
+      ((EditorCell_Basic) child).onRemove();
     }
     super.onRemove();
   }

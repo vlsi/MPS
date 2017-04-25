@@ -927,5 +927,65 @@
     <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
+  <node concept="1TIwiD" id="4KJeJqcKFDA">
+    <property role="EcuMT" value="5489671301385861734" />
+    <property role="3GE5qa" value="folding" />
+    <property role="TrG5h" value="SwingComponent" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="4KJeJqcMYPi">
+    <property role="EcuMT" value="5489671301386464594" />
+    <property role="3GE5qa" value="folding" />
+    <property role="TrG5h" value="SwingComponentContainer" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="4KJeJqcNbGs" role="1TKVEi">
+      <property role="IQ2ns" value="5489671301386517276" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="collapsedComponent" />
+      <ref role="20lvS9" node="4KJeJqcKFDA" resolve="SwingComponent" />
+    </node>
+    <node concept="1TJgyj" id="4KJeJqcNbGu" role="1TKVEi">
+      <property role="IQ2ns" value="5489671301386517278" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="expandedComponent" />
+      <ref role="20lvS9" node="4KJeJqcKFDA" resolve="SwingComponent" />
+    </node>
+    <node concept="1TJgyj" id="3khGH3BKmjA" role="1TKVEi">
+      <property role="IQ2ns" value="3824034168925414630" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="collapsedInnerContainer" />
+      <ref role="20lvS9" node="4KJeJqcMYPi" resolve="SwingComponentContainer" />
+    </node>
+    <node concept="1TJgyj" id="3khGH3BKmjE" role="1TKVEi">
+      <property role="IQ2ns" value="3824034168925414634" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="expandedInnerContainer" />
+      <ref role="20lvS9" node="4KJeJqcMYPi" resolve="SwingComponentContainer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3khGH3BTInB">
+    <property role="EcuMT" value="3824034168927872487" />
+    <property role="3GE5qa" value="folding" />
+    <property role="TrG5h" value="SwingComponentinFoldedCell" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3khGH3BURQZ" role="1TKVEi">
+      <property role="IQ2ns" value="3824034168928173503" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="foldedCell" />
+      <ref role="20lvS9" node="3khGH3BURR1" resolve="FoldedCell" />
+    </node>
+    <node concept="1TJgyi" id="3khGH3BTInC" role="1TKVEl">
+      <property role="IQ2nx" value="3824034168927872488" />
+      <property role="TrG5h" value="collapsed" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3khGH3BURR1">
+    <property role="EcuMT" value="3824034168928173505" />
+    <property role="3GE5qa" value="folding" />
+    <property role="TrG5h" value="FoldedCell" />
+    <property role="R5$K7" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
 </model>
 

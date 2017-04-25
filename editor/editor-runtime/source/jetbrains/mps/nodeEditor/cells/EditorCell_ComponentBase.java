@@ -17,6 +17,8 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
@@ -53,6 +55,31 @@ public abstract class EditorCell_ComponentBase extends EditorCell_Basic implemen
   public void onAdd() {
     super.onAdd();
     getEditor().getCellTracker().addComponentCell(this);
+    getComponent().setVisible(calculateComponentVisibility());
+  }
+
+  private boolean calculateComponentVisibility() {
+    // traversing all foldable cells up to the root and checking if this component cell is included
+    // into visible cells sub-tree
+    EditorCell child = this;
+    EditorCell_Collection parent = getParent();
+    while (parent != null) {
+      if (parent.isFoldable()) {
+        boolean visible = false;
+        for (EditorCell editorCell : parent) {
+          if (editorCell == child) {
+            visible = true;
+            break;
+          }
+        }
+        if (!visible) {
+          return false;
+        }
+      }
+      child = parent;
+      parent = parent.getParent();
+    }
+    return true;
   }
 
   @Override

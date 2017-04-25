@@ -46,12 +46,10 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   private SNode myChildConcept; //todo make it use S-entities internally
   private SNode myLinkDeclaration; //todo make it use S-entities internally
   private boolean myIsReverseOrder = false;
-  // TODO: remove after MPS 3.5 was introduced for backward compatibility
-  @Deprecated
-  private SNode myNode;
 
   public RefNodeListHandler(final SNode ownerNode, final String childRole, EditorContext editorContext) {
-    super(childRole, editorContext);
+    // TODO: remove ownerNode parameter after MPS 3.5
+    super(ownerNode, childRole, editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {
@@ -67,7 +65,6 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
         myElementRole = SModelUtil.getLinkDeclarationRole(genuineLink);
       }
     });
-    myNode = ownerNode;
   }
 
   public RefNodeListHandler(SNode ownerNode, String childRole, EditorContext editorContext, boolean isReverseOrder) {
@@ -178,6 +175,6 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   @NotNull
   @Override
   public SNode getNode() {
-    return myNode;
+    return myOwnerNode;
   }
 }
