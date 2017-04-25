@@ -22,6 +22,8 @@ import com.intellij.openapi.application.ModalityState;
 
 public abstract class StepTask extends Task.Modal {
   private static final Logger LOG = LogManager.getLogger(StepTask.class);
+  public static final String APPLY = "Applying migration ";
+
   protected MigrationSession mySession;
   protected volatile boolean myIsComplete = false;
   private LocalHistoryAction myCurrentChange = null;
@@ -76,7 +78,7 @@ public abstract class StepTask extends Task.Modal {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         if (myCurrentChange == null) {
-          myCurrentChange = LocalHistory.getInstance().startAction("Applying migration " + step.getCommonDescription());
+          myCurrentChange = LocalHistory.getInstance().startAction(APPLY + step.getCommonDescription());
         }
         mySession.getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
@@ -84,7 +86,7 @@ public abstract class StepTask extends Task.Modal {
           }
         });
 
-        if (next == null || next.invoke() == null || neq_cchsnc_a0a3a0a0a0a3a71(next.invoke().getMergeId(), step.getMergeId())) {
+        if (next == null || next.invoke() == null || neq_cchsnc_a0a3a0a0a0a3a91(next.invoke().getMergeId(), step.getMergeId())) {
           final Project project = mySession.getProject();
           project.getRepository().getModelAccess().runWriteAction(new Runnable() {
             public void run() {
@@ -100,7 +102,7 @@ public abstract class StepTask extends Task.Modal {
 
     return noException.value;
   }
-  private static boolean neq_cchsnc_a0a3a0a0a0a3a71(Object a, Object b) {
+  private static boolean neq_cchsnc_a0a3a0a0a0a3a91(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

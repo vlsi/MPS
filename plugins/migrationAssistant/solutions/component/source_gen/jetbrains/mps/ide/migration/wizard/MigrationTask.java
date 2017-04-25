@@ -15,6 +15,9 @@ import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.ide.migration.MigrationComponent;
 
 public class MigrationTask extends StepTask {
+  public static final String STARTED = "Migration started";
+  public static final String FINISHED = "Migration finished";
+
   public MigrationTask(MigrationSession session) {
     super(session, "Migration progress");
   }
@@ -24,7 +27,7 @@ public class MigrationTask extends StepTask {
     mySession.setErrorDescriptor(null);
 
     progress.start("Migrating...", 100);
-    LongBaseStep.addGlobalLabel(mySession.getProject(), "Migration started");
+    LongBaseStep.addGlobalLabel(mySession.getProject(), STARTED);
 
     if (!((runProjectMigrations(progress.subTask(10))))) {
       result(progress, new MigrationExceptionError(), "Exception while running migration");
@@ -35,7 +38,7 @@ public class MigrationTask extends StepTask {
       return;
     }
 
-    LongBaseStep.addGlobalLabel(mySession.getProject(), "Migration finished");
+    LongBaseStep.addGlobalLabel(mySession.getProject(), FINISHED);
 
     if (!((checkProject(progress.subTask(15))))) {
       result(progress, new PostCheckError(mySession.getProject(), true), "Problems are detected after executing migrations.");
