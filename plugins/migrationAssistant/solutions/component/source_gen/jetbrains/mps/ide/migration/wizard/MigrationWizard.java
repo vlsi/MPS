@@ -4,31 +4,14 @@ package jetbrains.mps.ide.migration.wizard;
 
 import com.intellij.ide.wizard.AbstractWizardEx;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
-import javax.swing.JComponent;
-import javax.swing.JTextPane;
-import jetbrains.mps.ide.ui.util.UIUtil;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import com.intellij.ui.components.JBScrollPane;
-import com.intellij.ui.components.JBLabel;
-import java.awt.Dimension;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigration;
-import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.migration.ScriptApplied;
+import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -40,73 +23,9 @@ public class MigrationWizard extends AbstractWizardEx {
     setSize(700, 400);
   }
 
-  private static class InfoOption extends ProjectMigrationWithOptions.Option<Void> {
-    private String myText;
-    private String myCaption;
-    public InfoOption(String id, String caption, String text) {
-      super(id);
-      myText = text;
-      myCaption = caption;
-    }
-    @Override
-    public JComponent createComponent() {
-      JTextPane infoTextPane = new JTextPane();
-      UIUtil.setTextPaneHtmlText(infoTextPane, myText);
-      JPanel panel = new JPanel(new BorderLayout());
-      JBScrollPane scrollPane = new JBScrollPane(infoTextPane);
-      panel.add(scrollPane, BorderLayout.CENTER);
-      panel.add(new JBLabel(myCaption), BorderLayout.NORTH);
-      panel.setPreferredSize(new Dimension((int) panel.getPreferredSize().getWidth(), 100));
-      return panel;
-    }
-    @Override
-    public Void getValue(JComponent component) {
-      return null;
-    }
-  }
-
   private static List<BaseStep> createSteps(final MigrationSession session) {
-    List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
-    final jetbrains.mps.project.Project mpsPoject = session.getProject();
-
-    final List<String> modulesToMigrate = ListSequence.fromList(new ArrayList<String>());
-    final List<String> languageMigrations = ListSequence.fromList(new ArrayList<String>());
-
-    final MigrationManager manager = session.getMigrationManager();
-    mpsPoject.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        ListSequence.fromList(modulesToMigrate).addSequence(Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(mpsPoject)).where(new IWhereFilter<SModule>() {
-          public boolean accept(SModule module) {
-            return Sequence.fromIterable(MigrationsUtil.getAllSteps(module)).isNotEmpty();
-          }
-        }).select(new ISelector<SModule, String>() {
-          public String select(SModule module) {
-            return NameUtil.compactNamespace(module.getModuleName());
-          }
-        }));
-        ListSequence.fromList(languageMigrations).addSequence(ListSequence.fromList(manager.getModuleMigrationsToApply(MigrationModuleUtil.getMigrateableModulesFromProject(mpsPoject))).select(new ISelector<ScriptApplied.ScriptAppliedReference, String>() {
-          public String select(ScriptApplied.ScriptAppliedReference it) {
-            return it.getKindDescription(it.resolve(manager.getMigrationComponent(), false));
-          }
-        }).distinct());
-      }
-    });
-    StringBuilder modulesSB = new StringBuilder();
-    for (String m : modulesToMigrate) {
-      modulesSB.append(m).append("<br />");
-    }
-    StringBuilder scriptsSB = new StringBuilder();
-    for (String lm : languageMigrations) {
-      scriptsSB.append(lm).append("<br />");
-    }
-    session.getOptions().addOption(new MigrationWizard.InfoOption("viewModulesToMigrate", "Modules to be migrated:", modulesSB.toString()));
-    session.getOptions().addOption(new MigrationWizard.InfoOption("viewScriptToRun", "Language migrations to be executed:", scriptsSB.toString()));
-
-    ListSequence.fromList(pMig).ofType(ProjectMigrationWithOptions.class).where(new IWhereFilter<ProjectMigrationWithOptions>() {
-      public boolean accept(ProjectMigrationWithOptions it) {
-        return it.shouldBeExecuted(mpsPoject);
-      }
-    }).translate(new ITranslator2<ProjectMigrationWithOptions, ProjectMigrationWithOptions.Option>() {
+    Iterable<ProjectMigration> projectMig = session.getMigrationManager().getProjectMigrationsToApply();
+    Sequence.fromIterable(projectMig).ofType(ProjectMigrationWithOptions.class).translate(new ITranslator2<ProjectMigrationWithOptions, ProjectMigrationWithOptions.Option>() {
       public Iterable<ProjectMigrationWithOptions.Option> translate(ProjectMigrationWithOptions it) {
         return it.getOptions();
       }

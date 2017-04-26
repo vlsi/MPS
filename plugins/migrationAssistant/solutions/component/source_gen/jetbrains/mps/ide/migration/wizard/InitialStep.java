@@ -7,24 +7,31 @@ import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import javax.swing.JComponent;
 import java.util.HashMap;
 import java.awt.Dimension;
-import javax.swing.JPanel;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.util.ui.JBInsets;
-import java.awt.BorderLayout;
-import javax.swing.JTextPane;
-import jetbrains.mps.ide.ui.util.UIUtil;
-import com.intellij.uiDesigner.core.GridConstraints;
 import javax.swing.BoxLayout;
+import javax.swing.JPanel;
+import com.intellij.ui.components.JBLabel;
+import javax.swing.Box;
 import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.Project;
+import javax.swing.tree.DefaultMutableTreeNode;
+import jetbrains.mps.ide.migration.MigrationManager;
+import java.util.List;
+import jetbrains.mps.ide.migration.ScriptApplied;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.migration.global.ProjectMigration;
+import jetbrains.mps.migration.global.CleanupProjectMigration;
+import javax.swing.JTree;
+import com.intellij.ui.components.JBScrollPane;
+import java.awt.BorderLayout;
 import com.intellij.ide.wizard.AbstractWizardStepEx;
 import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class InitialStep extends BaseStep {
   public static final String ID = "initial";
-
-  private static final String TEXT = "Welcome to Migration Assistant!<br><br>" + "MPS has detected that your project requires migration before it can be used with this version of the product.<br><br>" + "This wizard will guide you through the migration process. It's going to take a while.<br><br>" + "Select Next to proceed with migration or Cancel if you wish to postpone it.";
 
   private MigrationSession mySession;
   private Map<ProjectMigrationWithOptions.Option, JComponent> myComponents = new HashMap<ProjectMigrationWithOptions.Option, JComponent>();
@@ -39,27 +46,90 @@ public class InitialStep extends BaseStep {
     // Set preferred size to avoid trim of Help button (if no icon presented) 
     mainPanel.setPreferredSize(new Dimension(400, 200));
 
-    JPanel pagePanel = new JPanel(new GridLayoutManager(2, 1, new JBInsets(5, 5, 5, 0), -1, -1));
-    mainPanel.add(pagePanel, BorderLayout.CENTER);
+    mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+    JPanel labelPanel = new JPanel();
+    labelPanel.setLayout(new BoxLayout(labelPanel, BoxLayout.X_AXIS));
+    JBLabel msg = new JBLabel("<html>To work properly in current setup, this project should be migrated.<br><br>" + "Migrations to be applied:<br></html>");
+    labelPanel.add(msg);
+    labelPanel.add(Box.createHorizontalGlue());
+    mainPanel.add(labelPanel);
 
-    JPanel infoHolder = new JPanel(new BorderLayout());
-    JTextPane info = new JTextPane();
-    UIUtil.setTextPaneHtmlText(info, TEXT);
-    info.setPreferredSize(new Dimension(300, 220));
-    infoHolder.add(info, BorderLayout.CENTER);
-    pagePanel.add(infoHolder, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
+    JPanel infoPanel = new JPanel();
+    infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.X_AXIS));
+    infoPanel.add(Box.createRigidArea(new Dimension()));
+    infoPanel.add(createMigrationsInfo());
+    infoPanel.add(Box.createRigidArea(new Dimension()));
+    mainPanel.add(infoPanel);
 
-    JPanel settingsPanel = new JPanel();
-    settingsPanel.setLayout(new BoxLayout(settingsPanel, BoxLayout.Y_AXIS));
-    settingsPanel.setBorder(IdeBorderFactory.createTitledBorder("Options", true));
-    pagePanel.add(settingsPanel, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
-
-    for (ProjectMigrationWithOptions.Option option : ListSequence.fromList(mySession.getOptions().optionsList())) {
-      JComponent c = option.createComponent();
-      myComponents.put(option, c);
-      settingsPanel.add(c);
+    if (!(myComponents.isEmpty())) {
+      JPanel settingsPanel = new JPanel();
+      settingsPanel.setLayout(new BoxLayout(settingsPanel, BoxLayout.Y_AXIS));
+      settingsPanel.setBorder(IdeBorderFactory.createTitledBorder("Options", true));
+      for (ProjectMigrationWithOptions.Option option : ListSequence.fromList(mySession.getOptions().optionsList())) {
+        JComponent c = option.createComponent();
+        myComponents.put(option, c);
+        settingsPanel.add(c);
+      }
+      mainPanel.add(settingsPanel);
     }
-    settingsPanel.setVisible(!(myComponents.isEmpty()));
+  }
+
+  private JComponent createMigrationsInfo() {
+    final Project project = mySession.getProject();
+    // root 
+    final DefaultMutableTreeNode root = new DefaultMutableTreeNode("empty");
+
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        final MigrationManager manager = mySession.getMigrationManager();
+        List<ScriptApplied.ScriptAppliedReference> moduleMigrations = manager.getModuleMigrationsToApply(MigrationModuleUtil.getMigrateableModulesFromProject(project));
+
+        // categories 
+        final DefaultMutableTreeNode croot = new DefaultMutableTreeNode("Cleanups");
+        final DefaultMutableTreeNode proot = new DefaultMutableTreeNode("Project Migrations");
+        final DefaultMutableTreeNode lroot = new DefaultMutableTreeNode("Module Migrations (" + ListSequence.fromList(moduleMigrations).count() + " modules)");
+
+        Sequence.fromIterable(manager.getProjectMigrationsToApply()).visitAll(new IVisitor<ProjectMigration>() {
+          public void visit(ProjectMigration it) {
+            DefaultMutableTreeNode node = new DefaultMutableTreeNode(it.getDescription());
+            if (it instanceof CleanupProjectMigration) {
+              croot.add(node);
+            } else {
+              proot.add(node);
+            }
+          }
+        });
+        if (croot.children().hasMoreElements()) {
+          root.add(croot);
+        }
+        if (proot.children().hasMoreElements()) {
+          root.add(proot);
+        }
+
+        ListSequence.fromList(moduleMigrations).visitAll(new IVisitor<ScriptApplied.ScriptAppliedReference>() {
+          public void visit(ScriptApplied.ScriptAppliedReference it) {
+            // todo group by language, group by migration type 
+            // todo make an icon 
+            String caption = it.getKindDescription(it.resolve(manager.getMigrationComponent(), false));
+            lroot.add(new DefaultMutableTreeNode(caption));
+          }
+        });
+        if (ListSequence.fromList(moduleMigrations).isNotEmpty()) {
+          root.add(lroot);
+        }
+      }
+    });
+    JTree tree = new JTree(root);
+    tree.setRootVisible(false);
+    for (int i = 0; i < tree.getRowCount(); i++) {
+      tree.expandRow(i);
+    }
+    JBScrollPane scrollPane = new JBScrollPane(tree);
+
+    JPanel panel = new JPanel(new BorderLayout());
+    panel.add(scrollPane, BorderLayout.CENTER);
+    panel.setPreferredSize(new Dimension((int) panel.getPreferredSize().getWidth(), 100));
+    return panel;
   }
 
   @Override
@@ -70,6 +140,15 @@ public class InitialStep extends BaseStep {
   @Override
   public Object getPreviousStepId() {
     return null;
+  }
+
+  @Override
+  public String cancelButtonLabel() {
+    return "Cancel";
+  }
+  @Override
+  public String nextButtonLabel() {
+    return "Migrate";
   }
 
   @Override

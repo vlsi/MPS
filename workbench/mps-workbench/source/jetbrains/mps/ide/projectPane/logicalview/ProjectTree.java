@@ -135,10 +135,10 @@ public class ProjectTree extends MPSTree implements TreeNodeParamProvider {
     return myShowStructureCondition == null || myShowStructureCondition.compute();
   }
 
-  private static class ModulesNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
+  public static class ModulesNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
     private StandaloneMPSProject myProject;
 
-    protected ModulesNamespaceTreeBuilder(Project project) {
+    public ModulesNamespaceTreeBuilder(Project project) {
       myProject = (StandaloneMPSProject) project;
     }
 

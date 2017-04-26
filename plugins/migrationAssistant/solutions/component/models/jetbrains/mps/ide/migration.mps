@@ -5145,7 +5145,19 @@
         <property role="3cmrfH" value="3" />
       </node>
     </node>
-    <node concept="2tJIrI" id="6CdT9mpAKig" role="jymVt" />
+    <node concept="312cEg" id="5vn5x3cSspx" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="s" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3uibUv" id="5vn5x3cSshl" role="1tU5fm">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="Xl_RD" id="5vn5x3cSsAf" role="33vP2m">
+        <property role="Xl_RC" value="MPS is about to start the migration process. We  ModulesTo be migrated:---, Migrations to apply: ----" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5vn5x3cSs5l" role="jymVt" />
     <node concept="2YIFZL" id="6CdT9mpAKgR" role="jymVt">
       <property role="TrG5h" value="showMigrationConfirmation" />
       <node concept="10P_77" id="2BGZPGekBTW" role="3clF45" />

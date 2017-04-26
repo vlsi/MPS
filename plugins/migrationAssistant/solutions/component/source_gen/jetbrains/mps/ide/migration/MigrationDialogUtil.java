@@ -18,6 +18,7 @@ import com.intellij.openapi.project.Project;
 
 public class MigrationDialogUtil {
   private static final int MIGRATIONS_TO_SHOW_COUNT = 3;
+  /*package*/ String s = "MPS is about to start the migration process. We  ModulesTo be migrated:---, Migrations to apply: ----";
 
   public static boolean showMigrationConfirmation(final MPSProject project, final Iterable<SModule> modules, final MigrationManager m, boolean includeResave) {
     final StringBuilder text = new StringBuilder();
