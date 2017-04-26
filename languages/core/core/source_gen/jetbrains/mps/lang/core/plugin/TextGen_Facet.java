@@ -218,7 +218,7 @@ public class TextGen_Facet extends IFacet.Stub {
               final boolean _generateDebugInfo = vars(pa.global()).generateDebugInfo() == null || vars(pa.global()).generateDebugInfo();
 
               int modelsCount = Sequence.fromIterable(resourcesWithOutput).count();
-              ProgressMonitor subProgress_p0a0b = progressMonitor.subTask(1000);
+              final ProgressMonitor subProgress_p0a0b = progressMonitor.subTask(1000);
               subProgress_p0a0b.start("Writing", modelsCount + 3);
 
               try {

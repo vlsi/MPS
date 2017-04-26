@@ -154,7 +154,7 @@ public class Test_Facet extends IFacet.Stub {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("No test listener provided, stopping")));
                 return new IResult.FAILURE(_output_rwbd_a0b);
               }
-              ProgressMonitor subProgress_b0a0b = progressMonitor.subTask(1000);
+              final ProgressMonitor subProgress_b0a0b = progressMonitor.subTask(1000);
               subProgress_b0a0b.start("Testing", Sequence.fromIterable(input).count() * 100);
               for (ITestResource resource : Sequence.fromIterable(input)) {
                 String fqn = resource.getModule().getModuleName();

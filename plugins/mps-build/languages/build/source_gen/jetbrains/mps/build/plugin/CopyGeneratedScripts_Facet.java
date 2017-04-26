@@ -72,7 +72,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
             case 0:
               final FileProcessor fp = new FileProcessor();
               List<FilesDelta> deltas = ListSequence.fromList(new ArrayList<FilesDelta>());
-              ProgressMonitor subProgress_c0a0a = progressMonitor.subTask(1000);
+              final ProgressMonitor subProgress_c0a0a = progressMonitor.subTask(1000);
               subProgress_c0a0a.start("Build language ANT files", Sequence.fromIterable(input).count() + 2);
 
               for (TextGenOutcomeResource res : Sequence.fromIterable(input)) {

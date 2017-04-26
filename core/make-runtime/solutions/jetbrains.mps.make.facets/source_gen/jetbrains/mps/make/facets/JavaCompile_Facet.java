@@ -261,7 +261,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
               }
 
-              ProgressMonitor subProgress_p0a0b = progressMonitor.subTask(1000);
+              final ProgressMonitor subProgress_p0a0b = progressMonitor.subTask(1000);
               subProgress_p0a0b.start("Compiling in IntelliJ IDEA", 1);
 
               subProgress_p0a0b.advance(1);
