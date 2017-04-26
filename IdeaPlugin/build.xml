@@ -31,7 +31,7 @@
   <property name="base_dir" value="${basedir}/.."/>
   <property name="build.home" value="${base_dir}/IdeaPlugin/build"/>
   <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
-  <!--<property name="junit.debug.arg" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5041"/>-->
+  <!--<property name="junit.debug.arg" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5051"/>-->
   <property name="junit.debug.arg" value="-D"/> <!--Value for JUnit test JVM launcher. Use -D as empty jvmarg value is treated as classname to run-->
   <property name="mps.plugin.dependencies.target" value="install"
             description="Allows to modify getDependencies.xml target to download only 3rd party libraries without IDEA platform on Team City build"/>
