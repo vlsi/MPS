@@ -6,7 +6,7 @@
     <option name="HOST" value="localhost" />
     <option name="PORT" value="5050" />
     <RunnerSettings RunnerId="Debug">
-      <option name="DEBUG_PORT" value="5040" />
+      <option name="DEBUG_PORT" value="5050" />
       <option name="TRANSPORT" value="0" />
       <option name="LOCAL" value="false" />
     </RunnerSettings>

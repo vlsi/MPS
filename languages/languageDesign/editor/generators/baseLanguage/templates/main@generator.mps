@@ -119,6 +119,7 @@
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
+      <concept id="1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" flags="ln" index="VPxyj" />
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1240253180846" name="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem" flags="ln" index="34QqEe" />
       <concept id="8313721352726366579" name="jetbrains.mps.lang.editor.structure.CellModel_Empty" flags="ng" index="35HoNQ" />
@@ -158,6 +159,13 @@
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
+      <concept id="1225898583838" name="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" flags="ng" index="1HfYo3">
+        <child id="1225898971709" name="getter" index="1Hhtcw" />
+      </concept>
+      <concept id="1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" flags="sg" stub="3708815482283559694" index="1HlG4h">
+        <child id="1225900141900" name="modelAccessor" index="1HlULh" />
+      </concept>
+      <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
       <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1198257632966" name="jetbrains.mps.lang.editor.structure.CellModel_BlockStart" flags="ng" index="3XI7vg" />
       <concept id="1198257747917" name="jetbrains.mps.lang.editor.structure.CellModel_BlockEnd" flags="ng" index="3XIzrr" />
@@ -815,6 +823,7 @@
       <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
+      <concept id="1235566831861" name="jetbrains.mps.baseLanguage.collections.structure.AllOperation" flags="nn" index="2HxqBE" />
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435808" name="initValue" index="HW$Y0" />
         <child id="1237721435807" name="elementType" index="HW$YZ" />
@@ -15039,6 +15048,62 @@
       </node>
       <node concept="j$656" id="35SBEYReu4n" role="1fOSGc">
         <ref role="v9R2y" node="35SBEYReu2L" resolve="weave_Collection_HorizontalLayout" />
+      </node>
+    </node>
+    <node concept="30QchW" id="3e7sY3zCDbV" role="30SoJX">
+      <ref role="30HIoZ" to="tpc2:hPHlG0c" resolve="CellModel_ReadOnlyModelAccessor" />
+      <node concept="3gB$ML" id="3e7sY3zCDbX" role="3gCiVm">
+        <node concept="3clFbS" id="3e7sY3zCDbY" role="2VODD2">
+          <node concept="3clFbF" id="3e7sY3zDgJF" role="3cqZAp">
+            <node concept="2OqwBi" id="3e7sY3zDhfq" role="3clFbG">
+              <node concept="1iwH7S" id="3e7sY3zDgJE" role="2Oq$k0" />
+              <node concept="2f_y7m" id="3e7sY3zDhoc" role="2OqNvi">
+                <node concept="30H73N" id="3e7sY3zDhrQ" role="2f_y78" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="30G5F_" id="3e7sY3zCIVR" role="30HLyM">
+        <node concept="3clFbS" id="3e7sY3zCIVS" role="2VODD2">
+          <node concept="3clFbF" id="3e7sY3zD3Z4" role="3cqZAp">
+            <node concept="2OqwBi" id="3e7sY3zD6jo" role="3clFbG">
+              <node concept="2OqwBi" id="3e7sY3zD3Z6" role="2Oq$k0">
+                <node concept="30H73N" id="3e7sY3zD3Z7" role="2Oq$k0" />
+                <node concept="3Tsc0h" id="3e7sY3zD3Z8" role="2OqNvi">
+                  <ref role="3TtcxE" to="tpc2:hJF10O6" resolve="styleItem" />
+                </node>
+              </node>
+              <node concept="2HxqBE" id="3e7sY3zDdWh" role="2OqNvi">
+                <node concept="1bVj0M" id="3e7sY3zDdWj" role="23t8la">
+                  <node concept="3clFbS" id="3e7sY3zDdWk" role="1bW5cS">
+                    <node concept="3clFbF" id="3e7sY3zDemk" role="3cqZAp">
+                      <node concept="3fqX7Q" id="3e7sY3zDg3h" role="3clFbG">
+                        <node concept="2OqwBi" id="3e7sY3zDg3j" role="3fr31v">
+                          <node concept="37vLTw" id="3e7sY3zDg3k" role="2Oq$k0">
+                            <ref role="3cqZAo" node="3e7sY3zDdWl" resolve="it" />
+                          </node>
+                          <node concept="1mIQ4w" id="3e7sY3zDg3l" role="2OqNvi">
+                            <node concept="chp4Y" id="3e7sY3zDg3m" role="cj9EA">
+                              <ref role="cht4Q" to="tpc2:hgVPxA7" resolve="EditableStyleClassItem" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="3e7sY3zDdWl" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="3e7sY3zDdWm" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="j$656" id="3e7sY3zDjs3" role="1fOSGc">
+        <ref role="v9R2y" node="3e7sY3zDjpZ" resolve="weave_ReadOnlyModelAccessor" />
       </node>
     </node>
     <node concept="3aamgX" id="hrXKLrW" role="3acgRq">
@@ -41586,6 +41651,28 @@
     </node>
     <node concept="3uibUv" id="1zbMpom$u$v" role="1zkMxy">
       <ref role="3uigEE" to="qtqj:~WrapperSubstituteMenuPart" resolve="WrapperSubstituteMenuPart" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="3e7sY3zDjpZ">
+    <property role="TrG5h" value="weave_ReadOnlyModelAccessor" />
+    <property role="3GE5qa" value="CellModel" />
+    <ref role="3gUMe" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+    <node concept="1HlG4h" id="3e7sY3zDk8l" role="13RCb5">
+      <node concept="1HfYo3" id="3e7sY3zDk8o" role="1HlULh">
+        <node concept="3TQlhw" id="3e7sY3zDk8p" role="1Hhtcw">
+          <node concept="3clFbS" id="3e7sY3zDk8q" role="2VODD2">
+            <node concept="3clFbF" id="3e7sY3zDkgX" role="3cqZAp">
+              <node concept="Xl_RD" id="3e7sY3zDkgW" role="3clFbG">
+                <property role="Xl_RC" value="" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="VPxyj" id="3e7sY3zDkp_" role="3F10Kt">
+        <property role="VOm3f" value="false" />
+        <node concept="raruj" id="3e7sY3zDkpF" role="lGtFl" />
+      </node>
     </node>
   </node>
 </model>
