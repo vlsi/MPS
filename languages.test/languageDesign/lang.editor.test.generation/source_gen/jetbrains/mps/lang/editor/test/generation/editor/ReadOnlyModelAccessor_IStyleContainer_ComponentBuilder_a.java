@@ -349,6 +349,7 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.NORMAL);
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

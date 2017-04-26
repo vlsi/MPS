@@ -707,45 +707,48 @@
       <node id="1280144168199507055" at="86,79,87,82" concept="1" />
       <node id="1280144168199507055" at="87,82,88,265" concept="1" />
       <node id="1280144168199507055" at="88,265,89,60" concept="1" />
-      <node id="1280144168199507055" at="89,60,90,22" concept="6" />
-      <node id="1280144168199513244" at="95,53,96,161" concept="6" />
+      <node id="1280144168199507055" at="89,60,90,34" concept="5" />
+      <node id="1280144168199507055" at="90,34,91,47" concept="1" />
+      <node id="1280144168199507055" at="91,47,92,40" concept="1" />
+      <node id="1280144168199507055" at="92,40,93,22" concept="6" />
+      <node id="1280144168199513244" at="98,53,99,161" concept="6" />
       <node id="1280144168199507055" at="31,0,33,0" concept="2" trace="myNode" />
       <node id="1280144168199512054" at="69,0,71,0" concept="0" trace="ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0a0#()V" />
       <node id="1280144168199507055" at="80,0,82,0" concept="4" trace="setText#(Ljava/lang/String;)V" />
-      <node id="1280144168199513244" at="93,0,95,0" concept="0" trace="ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0b0#()V" />
+      <node id="1280144168199513244" at="96,0,98,0" concept="0" trace="ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0b0#()V" />
       <node id="1280144168199507055" at="45,0,48,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1280144168199512054" at="71,0,74,0" concept="4" trace="getReplacementConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1280144168199507055" at="77,0,80,0" concept="4" trace="getText#()Ljava/lang/String;" />
       <node id="1280144168199507055" at="82,0,85,0" concept="4" trace="isValidText#(Ljava/lang/String;)Z" />
-      <node id="1280144168199513244" at="95,0,98,0" concept="4" trace="getReplacementConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1280144168199513244" at="98,0,101,0" concept="4" trace="getReplacementConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1280144168199507055" at="34,0,38,0" concept="0" trace="SolutionRef_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1280144168199507055" at="39,0,44,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1280144168199507055" at="49,0,58,0" concept="4" trace="createCollection_ns5ajd_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1280144168199507055" at="58,0,68,0" concept="4" trace="createConstant_ns5ajd_a0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1280144168199507055" at="75,62,85,15" concept="5" />
-      <node id="1280144168199507055" at="75,0,92,0" concept="4" trace="createReadOnlyModelAccessor_ns5ajd_b0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="1280144168199507055" at="75,0,95,0" concept="4" trace="createReadOnlyModelAccessor_ns5ajd_b0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="1280144168199512054" at="69,59,69,59" />
       <scope id="1280144168199507055" at="80,37,80,37" />
-      <scope id="1280144168199513244" at="93,59,93,59" />
+      <scope id="1280144168199513244" at="96,59,96,59" />
       <scope id="1280144168199507055" at="41,26,42,18" />
       <scope id="1280144168199507055" at="45,39,46,39" />
       <scope id="1280144168199512054" at="71,53,72,161" />
       <scope id="1280144168199507063" at="77,31,78,107" />
       <scope id="1280144168199507055" at="82,44,83,46" />
-      <scope id="1280144168199513244" at="95,53,96,161" />
+      <scope id="1280144168199513244" at="98,53,99,161" />
       <scope id="1280144168199507055" at="34,91,36,18" />
       <scope id="1280144168199512054" at="69,0,71,0" />
       <scope id="1280144168199507055" at="80,0,82,0">
         <var name="s" id="1280144168199507055" />
       </scope>
-      <scope id="1280144168199513244" at="93,0,95,0" />
+      <scope id="1280144168199513244" at="96,0,98,0" />
       <scope id="1280144168199507055" at="45,0,48,0" />
       <scope id="1280144168199512054" at="71,0,74,0" />
       <scope id="1280144168199507055" at="77,0,80,0" />
       <scope id="1280144168199507055" at="82,0,85,0">
         <var name="s" id="1280144168199507055" />
       </scope>
-      <scope id="1280144168199513244" at="95,0,98,0" />
+      <scope id="1280144168199513244" at="98,0,101,0" />
       <scope id="1280144168199507055" at="34,0,38,0">
         <var name="context" id="1280144168199507055" />
         <var name="node" id="1280144168199507055" />
@@ -760,14 +763,15 @@
       </scope>
       <scope id="1280144168199507055" at="49,0,58,0" />
       <scope id="1280144168199507055" at="58,0,68,0" />
-      <scope id="1280144168199507055" at="75,62,90,22">
+      <scope id="1280144168199507055" at="75,62,93,22">
         <var name="editorCell" id="1280144168199507055" />
+        <var name="style" id="1280144168199507055" />
       </scope>
-      <scope id="1280144168199507055" at="75,0,92,0" />
+      <scope id="1280144168199507055" at="75,0,95,0" />
       <unit id="1280144168199512054" at="68,0,75,0" name="jetbrains.mps.testbench.suite.editor.SolutionRef_EditorBuilder_a$ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0a0" />
-      <unit id="1280144168199513244" at="92,0,99,0" name="jetbrains.mps.testbench.suite.editor.SolutionRef_EditorBuilder_a$ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0b0" />
+      <unit id="1280144168199513244" at="95,0,102,0" name="jetbrains.mps.testbench.suite.editor.SolutionRef_EditorBuilder_a$ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0b0" />
       <unit id="1280144168199507055" at="76,88,85,5" name="jetbrains.mps.testbench.suite.editor.SolutionRef_EditorBuilder_a$1" />
-      <unit id="1280144168199507055" at="30,0,100,0" name="jetbrains.mps.testbench.suite.editor.SolutionRef_EditorBuilder_a" />
+      <unit id="1280144168199507055" at="30,0,103,0" name="jetbrains.mps.testbench.suite.editor.SolutionRef_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:aed1d11b-73e5-474f-a263-22833310a33f(jetbrains.mps.testbench.suite.editor)/1741258697587113832">

@@ -314,6 +314,7 @@ import jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation__Behavi
     editorCell.setCellId("ReadOnlyModelAccessor_ldr481_w0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -337,6 +338,9 @@ import jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation__Behavi
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_ldr481_y0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.EDITABLE, false);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 }

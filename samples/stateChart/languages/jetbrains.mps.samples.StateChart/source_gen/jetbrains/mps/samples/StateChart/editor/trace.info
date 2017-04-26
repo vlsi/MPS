@@ -692,10 +692,11 @@
       <node id="1480846759627784561" at="433,82,434,60" concept="1" />
       <node id="1480846759627784561" at="434,60,435,34" concept="5" />
       <node id="1480846759627784561" at="435,34,436,60" concept="1" />
-      <node id="1480846759627784561" at="436,60,437,40" concept="1" />
-      <node id="1480846759627784561" at="437,40,438,22" concept="6" />
-      <node id="6813679070099271090" at="440,50,441,141" concept="5" />
-      <node id="6813679070099271090" at="441,141,442,22" concept="6" />
+      <node id="1480846759627784561" at="436,60,437,47" concept="1" />
+      <node id="1480846759627784561" at="437,47,438,40" concept="1" />
+      <node id="1480846759627784561" at="438,40,439,22" concept="6" />
+      <node id="6813679070099271090" at="441,50,442,141" concept="5" />
+      <node id="6813679070099271090" at="442,141,443,22" concept="6" />
       <node id="1480846759627784098" at="41,0,43,0" concept="2" trace="myNode" />
       <node id="1480846759627784098" at="179,0,181,0" concept="2" trace="myNode" />
       <node id="1480846759627784098" at="253,0,255,0" concept="2" trace="myNode" />
@@ -723,7 +724,7 @@
       <node id="1480846759627784098" at="256,0,260,0" concept="0" trace="onEntrySingleRoleHandler_sjqidp_b7a#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="1480846759627784098" at="336,0,340,0" concept="4" trace="createRefNode_sjqidp_b8a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1480846759627784098" at="344,0,348,0" concept="0" trace="onExitSingleRoleHandler_sjqidp_b8a#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="6813679070099271090" at="440,0,444,0" concept="4" trace="createComponent_sjqidp_m0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6813679070099271090" at="441,0,445,0" concept="4" trace="createComponent_sjqidp_m0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1480846759627784098" at="49,0,54,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1480846759627784113" at="106,57,111,22" concept="3" />
       <node id="1480846759627784124" at="133,57,138,22" concept="3" />
@@ -760,7 +761,7 @@
       <node id="1480846759627784113" at="95,0,113,0" concept="4" trace="createProperty_sjqidp_b0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1480846759627784124" at="122,0,140,0" concept="4" trace="createProperty_sjqidp_d0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1480846759627784176" at="149,0,167,0" concept="4" trace="createProperty_sjqidp_f0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="1480846759627784561" at="421,0,440,0" concept="4" trace="createReadOnlyModelAccessor_sjqidp_l0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="1480846759627784561" at="421,0,441,0" concept="4" trace="createReadOnlyModelAccessor_sjqidp_l0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1480846759627784098" at="59,0,83,0" concept="4" trace="createCollection_sjqidp_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="1480846759627784561" at="426,37,426,37" />
       <scope id="1480846759627784098" at="51,26,52,18" />
@@ -808,7 +809,7 @@
       <scope id="1480846759627784561" at="426,0,428,0">
         <var name="s" id="1480846759627784561" />
       </scope>
-      <scope id="6813679070099271090" at="440,50,442,22">
+      <scope id="6813679070099271090" at="441,50,443,22">
         <var name="editorCell" id="6813679070099271090" />
       </scope>
       <scope id="1480846759627784098" at="55,0,58,0" />
@@ -850,7 +851,7 @@
         <var name="context" id="1480846759627784098" />
         <var name="ownerNode" id="1480846759627784098" />
       </scope>
-      <scope id="6813679070099271090" at="440,0,444,0" />
+      <scope id="6813679070099271090" at="441,0,445,0" />
       <scope id="1480846759627784098" at="49,0,54,0" />
       <scope id="1480846759627784098" at="187,0,192,0" />
       <scope id="1480846759627784098" at="196,0,201,0">
@@ -980,14 +981,14 @@
         <var name="provider" id="1480846759627784176" />
         <var name="style" id="1480846759627784176" />
       </scope>
-      <scope id="1480846759627784561" at="421,62,438,22">
-        <var name="editorCell" id="1480846759627784561" />
-        <var name="style" id="1480846759627784561" />
-      </scope>
       <scope id="1480846759627784113" at="95,0,113,0" />
       <scope id="1480846759627784124" at="122,0,140,0" />
       <scope id="1480846759627784176" at="149,0,167,0" />
-      <scope id="1480846759627784561" at="421,0,440,0" />
+      <scope id="1480846759627784561" at="421,62,439,22">
+        <var name="editorCell" id="1480846759627784561" />
+        <var name="style" id="1480846759627784561" />
+      </scope>
+      <scope id="1480846759627784561" at="421,0,441,0" />
       <scope id="1480846759627784098" at="59,50,81,22">
         <var name="editorCell" id="1480846759627784098" />
       </scope>
@@ -996,7 +997,7 @@
       <unit id="1480846759627784098" at="178,0,227,0" name="jetbrains.mps.samples.StateChart.editor.State_EditorBuilder_a$transitionsListHandler_sjqidp_g0" />
       <unit id="1480846759627784098" at="252,0,306,0" name="jetbrains.mps.samples.StateChart.editor.State_EditorBuilder_a$onEntrySingleRoleHandler_sjqidp_b7a" />
       <unit id="1480846759627784098" at="340,0,394,0" name="jetbrains.mps.samples.StateChart.editor.State_EditorBuilder_a$onExitSingleRoleHandler_sjqidp_b8a" />
-      <unit id="1480846759627784098" at="40,0,445,0" name="jetbrains.mps.samples.StateChart.editor.State_EditorBuilder_a" />
+      <unit id="1480846759627784098" at="40,0,446,0" name="jetbrains.mps.samples.StateChart.editor.State_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:f2fc442e-c0f0-467d-ac9f-8f38c8182f6f(jetbrains.mps.samples.StateChart.editor)/1480846759627803705">

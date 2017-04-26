@@ -16,6 +16,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentStyleClass;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 /*package*/ class PortProvider_currentPort_ComponentBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -52,6 +53,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentSty
     editorCell.setCellId("ReadOnlyModelAccessor_udq69y_a");
     Style style = new StyleImpl();
     new CommentStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

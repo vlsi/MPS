@@ -104,6 +104,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     editorCell.setCellId("ReadOnlyModelAccessor_crgygw_b0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

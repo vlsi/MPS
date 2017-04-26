@@ -472,9 +472,9 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     editorCell.setCellId("ReadOnlyModelAccessor_vc3gub_b0d0");
     Style style = new StyleImpl();
     new xmlTagNameStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.MATCHING_LABEL, "xmltag");
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

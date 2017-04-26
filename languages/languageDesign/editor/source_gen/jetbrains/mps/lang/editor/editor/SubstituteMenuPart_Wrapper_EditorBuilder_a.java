@@ -330,6 +330,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.FoldedCell
     editorCell.setCellId("ReadOnlyModelAccessor_mz0ndi_b0a");
     Style style = new StyleImpl();
     new FoldedCellStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

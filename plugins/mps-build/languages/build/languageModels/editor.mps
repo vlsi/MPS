@@ -828,9 +828,6 @@
             <node concept="ljvvj" id="1AfwOXhJ_w1" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
-            <node concept="VPxyj" id="1AfwOXhJ_w2" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
             <node concept="VechU" id="1AfwOXhJ_w3" role="3F10Kt">
               <property role="Vb096" value="gray" />
             </node>
@@ -1327,9 +1324,6 @@
           </node>
           <node concept="ljvvj" id="1AfwOXhJyQI" role="3F10Kt">
             <property role="VOm3f" value="true" />
-          </node>
-          <node concept="VPxyj" id="1AfwOXhJyQJ" role="3F10Kt">
-            <property role="VOm3f" value="false" />
           </node>
           <node concept="VechU" id="1AfwOXhJyQK" role="3F10Kt">
             <property role="Vb096" value="gray" />

@@ -23,6 +23,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 /*package*/ class GeneratorDebug_InputNode_InspectorBuilder_a extends AbstractEditorBuilder {
@@ -144,6 +147,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_6u0t67_a0a1a");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.EDITABLE, false);
+      editorCell.getStyle().putAll(style);
       return editorCell;
     }
     private EditorCell createConstant_6u0t67_a0a1a() {

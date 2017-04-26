@@ -69,6 +69,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.setCellId("ReadOnlyModelAccessor_xynqqp_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

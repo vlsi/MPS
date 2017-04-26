@@ -181,8 +181,8 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     Style style = new StyleImpl();
     style.set(StyleAttributes.BASE_LINE_CELL, true);
     style.set(StyleAttributes.FONT_SIZE, 25);
-    style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

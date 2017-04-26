@@ -3468,8 +3468,9 @@
       <node id="5422656561932452968" at="121,84,122,64" concept="2" />
       <node id="5422656561932452968" at="122,64,123,36" concept="7" />
       <node id="5422656561932452968" at="123,36,124,54" concept="2" />
-      <node id="5422656561932452968" at="124,54,125,42" concept="2" />
-      <node id="5422656561932452968" at="125,42,126,24" concept="8" />
+      <node id="5422656561932452968" at="124,54,125,48" concept="2" />
+      <node id="5422656561932452968" at="125,48,126,42" concept="2" />
+      <node id="5422656561932452968" at="126,42,127,24" concept="8" />
       <node id="5422656561932452469" at="30,0,32,0" concept="3" trace="myNode" />
       <node id="5422656561932452960" at="89,0,91,0" concept="3" trace="myNode" />
       <node id="5422656561932452968" at="114,0,116,0" concept="6" trace="setText#(Ljava/lang/String;)V" />
@@ -3489,7 +3490,7 @@
       <node id="5422656561932452968" at="109,66,119,17" concept="7" />
       <node id="5422656561932452469" at="59,0,71,0" concept="6" trace="createRefCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5422656561932452469" at="56,48,71,6" concept="7" />
-      <node id="5422656561932452968" at="109,0,128,0" concept="6" trace="createReadOnlyModelAccessor_hdcr7q_a0a0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="5422656561932452968" at="109,0,129,0" concept="6" trace="createReadOnlyModelAccessor_hdcr7q_a0a0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5422656561932452469" at="56,0,88,0" concept="6" trace="createRefCell_hdcr7q_a0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="5422656561932452968" at="114,39,114,39" />
       <scope id="5422656561932452469" at="40,26,41,18" />
@@ -3538,11 +3539,11 @@
         <var name="effectiveNode" id="5422656561932452469" />
         <var name="node" id="5422656561932452469" />
       </scope>
-      <scope id="5422656561932452968" at="109,66,126,24">
+      <scope id="5422656561932452968" at="109,66,127,24">
         <var name="editorCell" id="5422656561932452968" />
         <var name="style" id="5422656561932452968" />
       </scope>
-      <scope id="5422656561932452968" at="109,0,128,0" />
+      <scope id="5422656561932452968" at="109,0,129,0" />
       <scope id="5422656561932452469" at="56,48,86,22">
         <var name="attributeConcept" id="5422656561932452469" />
         <var name="editorCell" id="5422656561932452469" />
@@ -3552,8 +3553,8 @@
       <unit id="5422656561932452469" at="61,74,65,9" name="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_EditorBuilder_a$1$1" />
       <unit id="5422656561932452968" at="110,90,119,7" name="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_EditorBuilder_a$Inline_Builder_hdcr7q_a0a$1" />
       <unit id="5422656561932452469" at="57,40,71,5" name="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_EditorBuilder_a$1" />
-      <unit id="5422656561932452960" at="88,0,129,0" name="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_EditorBuilder_a$Inline_Builder_hdcr7q_a0a" />
-      <unit id="5422656561932452469" at="29,0,130,0" name="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_EditorBuilder_a" />
+      <unit id="5422656561932452960" at="88,0,130,0" name="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_EditorBuilder_a$Inline_Builder_hdcr7q_a0a" />
+      <unit id="5422656561932452469" at="29,0,131,0" name="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/5717188120683436211">

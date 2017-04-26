@@ -34,7 +34,6 @@
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
-      <concept id="1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" flags="ln" index="VPxyj" />
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
       </concept>
@@ -140,9 +139,6 @@
         <node concept="1HlG4h" id="6rDosczKcuz" role="3EZMnx">
           <node concept="ljvvj" id="6rDosczKiu9" role="3F10Kt">
             <property role="VOm3f" value="true" />
-          </node>
-          <node concept="VPxyj" id="6rDosczKi9m" role="3F10Kt">
-            <property role="VOm3f" value="false" />
           </node>
           <node concept="VechU" id="6rDosczKjdJ" role="3F10Kt">
             <property role="Vb096" value="gray" />

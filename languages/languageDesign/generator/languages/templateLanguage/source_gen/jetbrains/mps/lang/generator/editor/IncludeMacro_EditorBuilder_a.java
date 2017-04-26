@@ -107,10 +107,10 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.referenceStyleClass
     editorCell.setCellId("ReadOnlyModelAccessor_8okfes_b0");
     Style style = new StyleImpl();
     new referenceStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "includeTemplate");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

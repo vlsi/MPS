@@ -87,6 +87,9 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new SolutionRef_EditorBuilder_a.ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
     editorCell.setCellId("ReadOnlyModelAccessor_ns5ajd_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.EDITABLE, false);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
   public static class ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

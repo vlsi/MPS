@@ -175,6 +175,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     editorCell.setCellId("ReadOnlyModelAccessor_b5vsyg_a1a");
     Style style = new StyleImpl();
     new FoldedCellStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

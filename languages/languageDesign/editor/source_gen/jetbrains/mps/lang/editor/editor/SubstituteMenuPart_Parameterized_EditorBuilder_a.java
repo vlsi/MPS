@@ -244,6 +244,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
     editorCell.setCellId("ReadOnlyModelAccessor_vxtpdv_a1a");
     Style style = new StyleImpl();
     new FoldedCellStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

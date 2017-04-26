@@ -88,6 +88,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setCellId("ReadOnlyModelAccessor_yq81ip_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -256,6 +257,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new IntervalLiteral_EditorBuilder_a.IntervalLiteral_generic_cellMenu_yq81ip_a0e0(), new IntervalLiteral_EditorBuilder_a.IntervalLiteral_generic_cellMenu_yq81ip_b0e0(), new SChildSubstituteInfoPartEx(editorCell)}));
     editorCell.setCellId("ReadOnlyModelAccessor_yq81ip_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.EDITABLE, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
   public static class IntervalLiteral_generic_cellMenu_yq81ip_a0e0 extends AbstractCellMenuPart_Generic_Item {

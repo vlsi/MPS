@@ -78,6 +78,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     editorCell.setCellId("ReadOnlyModelAccessor_xqbs61_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -104,6 +105,9 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_xqbs61_d0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.EDITABLE, false);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 }

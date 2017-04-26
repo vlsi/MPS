@@ -79,6 +79,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
     Style style = new StyleImpl();
     new LeftBracketStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -174,6 +175,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
     Style style = new StyleImpl();
     new RightBracketStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

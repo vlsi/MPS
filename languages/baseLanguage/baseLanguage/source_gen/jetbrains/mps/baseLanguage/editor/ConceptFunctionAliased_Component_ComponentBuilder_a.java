@@ -85,8 +85,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     editorCell.setCellId("ReadOnlyModelAccessor_ohhbpy_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

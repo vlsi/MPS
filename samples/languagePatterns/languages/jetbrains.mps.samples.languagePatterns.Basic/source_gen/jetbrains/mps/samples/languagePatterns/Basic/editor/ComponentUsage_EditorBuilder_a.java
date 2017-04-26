@@ -22,6 +22,9 @@ import jetbrains.mps.samples.languagePatterns.Basic.behavior.Component__Behavior
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 /*package*/ class ComponentUsage_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -140,6 +143,9 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_iuxdpw_a0c0");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.EDITABLE, true);
+      editorCell.getStyle().putAll(style);
       return editorCell;
     }
   }

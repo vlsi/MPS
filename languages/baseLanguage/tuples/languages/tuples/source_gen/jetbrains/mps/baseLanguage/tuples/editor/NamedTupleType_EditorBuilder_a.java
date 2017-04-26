@@ -125,6 +125,7 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0a");
     Style style = new StyleImpl();
     new LeftBracketStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -228,6 +229,7 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_c0a");
     Style style = new StyleImpl();
     new RightBracketStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setTransformationMenuLookup(new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType")));
     return editorCell;
@@ -256,6 +258,9 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new NamedTupleType_EditorBuilder_a.ReplaceWith_NamedTupleType_cellMenu_2ojjgh_a0a1a(), new SChildSubstituteInfoPartEx(editorCell)}));
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a1a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.EDITABLE, false);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
   public static class ReplaceWith_NamedTupleType_cellMenu_2ojjgh_a0a1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

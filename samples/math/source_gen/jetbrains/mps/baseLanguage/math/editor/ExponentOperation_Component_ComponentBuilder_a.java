@@ -144,6 +144,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     editorCell.setCellId("ReadOnlyModelAccessor_spngij_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     deleteUpperIndex.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;

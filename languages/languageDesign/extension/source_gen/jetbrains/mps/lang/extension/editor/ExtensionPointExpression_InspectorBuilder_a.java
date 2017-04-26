@@ -21,6 +21,9 @@ import jetbrains.mps.lang.extension.behavior.IRootWithUniqueName__BehaviorDescri
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 /*package*/ class ExtensionPointExpression_InspectorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -123,6 +126,9 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_hr8njl_a0b0");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.EDITABLE, false);
+      editorCell.getStyle().putAll(style);
       return editorCell;
     }
   }

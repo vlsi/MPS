@@ -253,6 +253,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     editorCell.setCellId("ReadOnlyModelAccessor_x4c5fc_a1a");
     Style style = new StyleImpl();
     new FoldedCellStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

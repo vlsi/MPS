@@ -573,6 +573,9 @@
       </node>
     </node>
     <node concept="lHwQ9" id="90itwmCbgP" role="lHYvc">
+      <node concept="eHHct" id="shm0pfCUOL" role="eHHcv">
+        <ref role="eHHcs" to="tpee:fT7qRmf" resolve="MulExpression" />
+      </node>
       <node concept="3uibUv" id="90itwmCbgW" role="1RiMAP">
         <ref role="3uigEE" node="3EC23lOMpRC" resolve="Complex" />
       </node>
@@ -671,9 +674,6 @@
             <ref role="3cqZAo" node="90itwmCbgZ" resolve="res" />
           </node>
         </node>
-      </node>
-      <node concept="eHHct" id="shm0pfCUOL" role="eHHcv">
-        <ref role="eHHcs" to="tpee:fT7qRmf" resolve="MulExpression" />
       </node>
     </node>
     <node concept="lHwQ9" id="5DObUx33sX5" role="lHYvc">

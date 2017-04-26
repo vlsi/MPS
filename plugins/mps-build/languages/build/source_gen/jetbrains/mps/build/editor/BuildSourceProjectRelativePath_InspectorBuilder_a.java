@@ -19,6 +19,7 @@ import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 /*package*/ class BuildSourceProjectRelativePath_InspectorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -72,6 +73,9 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_698n2d_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.EDITABLE, false);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 }

@@ -15,6 +15,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.editor.test.generation.editor.TestTargetStyleSheet_StyleSheet.testParentStyleStyleClass;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 /*package*/ class ReadOnlyModelAccessor_ICellStyle_ComponentBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -51,6 +52,7 @@ import jetbrains.mps.lang.editor.test.generation.editor.TestTargetStyleSheet_Sty
     editorCell.setCellId("ReadOnlyModelAccessor_isas8b_a");
     Style style = new StyleImpl();
     new testParentStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

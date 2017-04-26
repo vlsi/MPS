@@ -559,6 +559,9 @@
       <node concept="Vb9p2" id="4W7TaJQkr65" role="3F10Kt">
         <property role="Vbekb" value="BOLD" />
       </node>
+      <node concept="VPxyj" id="4ybvZlFTCGV" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
       <node concept="2SqB2G" id="1USvB3ZvF7B" role="2SqHTX">
         <property role="TrG5h" value="ALIAS_EDITOR_COMPONENT" />
       </node>

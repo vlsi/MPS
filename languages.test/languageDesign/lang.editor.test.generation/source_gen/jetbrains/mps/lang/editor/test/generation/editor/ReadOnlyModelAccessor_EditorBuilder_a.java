@@ -12,6 +12,9 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 /*package*/ class ReadOnlyModelAccessor_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -49,6 +52,9 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     editorCell.setCellId("ReadOnlyModelAccessor_rjl5nj_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.EDITABLE, false);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 }

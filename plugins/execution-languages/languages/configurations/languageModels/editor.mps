@@ -354,7 +354,6 @@
         <node concept="VPM3Z" id="2v69eKc7bbF" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="VPxyj" id="2v69eKc7bbG" role="3F10Kt" />
         <node concept="VechU" id="2v69eKc7bbH" role="3F10Kt">
           <property role="Vb096" value="DARK_BLUE" />
         </node>

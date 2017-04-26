@@ -26,6 +26,7 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import org.jetbrains.mps.samples.Money.behavior.CurrentStockPrice__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 /*package*/ class CurrentStockPrice_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -149,6 +150,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     editorCell.setCellId("ReadOnlyModelAccessor_w8qb9s_e0");
     Style style = new StyleImpl();
     new CommentStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

@@ -122,6 +122,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       editorCell.setCellId("ReadOnlyModelAccessor_hdcr7q_a0a0");
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, true);
+      style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }

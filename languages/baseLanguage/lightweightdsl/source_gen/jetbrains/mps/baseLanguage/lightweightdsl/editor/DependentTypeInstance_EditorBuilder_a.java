@@ -55,6 +55,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     editorCell.setCellContext(getCellFactory().getCellContext());
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

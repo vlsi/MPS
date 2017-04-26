@@ -104,6 +104,7 @@ import jetbrains.mps.smodel.SReference;
     editorCell.setCellId("ReadOnlyModelAccessor_xpsq7t_a0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -149,6 +150,7 @@ import jetbrains.mps.smodel.SReference;
     editorCell.setCellId("ReadOnlyModelAccessor_xpsq7t_c0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

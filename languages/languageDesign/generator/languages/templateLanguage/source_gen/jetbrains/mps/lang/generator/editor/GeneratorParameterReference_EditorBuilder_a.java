@@ -169,6 +169,9 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_p6qpij_b1a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.EDITABLE, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
   private EditorCell createCollection_p6qpij_c0() {

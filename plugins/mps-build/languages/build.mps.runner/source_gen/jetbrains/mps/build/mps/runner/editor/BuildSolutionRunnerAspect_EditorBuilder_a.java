@@ -152,8 +152,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setCellId("ReadOnlyModelAccessor_xi87ym_b1a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

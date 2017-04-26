@@ -86,6 +86,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_generic_cellMenu_55ttgk_a0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_generic_cellMenu_55ttgk_b0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_customReplace_cellMenu_55ttgk_c0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_customReplace_cellMenu_55ttgk_d0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ApplySideTransforms_left_cellMenu_55ttgk_e0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_component_cellMenu_55ttgk_f0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReadOnlyModelAccessor_generic_cellMenu_55ttgk_g0a0(), new ReadOnlyModelAccessor_EditorCellModel_ComponentBuilder_a.ReplaceWith_Error_cellMenu_55ttgk_h0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     editorCell.setCellId("theId");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.EDITABLE, false);
+    editorCell.getStyle().putAll(style);
     if (nodeCondition_55ttgk_a0a_0()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }

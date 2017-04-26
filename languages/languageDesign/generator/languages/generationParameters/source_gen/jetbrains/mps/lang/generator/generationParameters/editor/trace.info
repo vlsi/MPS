@@ -624,7 +624,10 @@
       <node id="4700935326594654865" at="71,15,72,79" concept="1" />
       <node id="4700935326594654865" at="72,79,73,82" concept="1" />
       <node id="4700935326594654865" at="73,82,74,60" concept="1" />
-      <node id="4700935326594654865" at="74,60,75,22" concept="6" />
+      <node id="4700935326594654865" at="74,60,75,34" concept="5" />
+      <node id="4700935326594654865" at="75,34,76,47" concept="1" />
+      <node id="4700935326594654865" at="76,47,77,40" concept="1" />
+      <node id="4700935326594654865" at="77,40,78,22" concept="6" />
       <node id="8484425748929510077" at="25,0,27,0" concept="2" trace="myNode" />
       <node id="4700935326594654865" at="66,0,68,0" concept="4" trace="setText#(Ljava/lang/String;)V" />
       <node id="8484425748929510077" at="39,0,42,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -635,7 +638,7 @@
       <node id="8484425748929510077" at="43,0,52,0" concept="4" trace="createCollection_95jom2_a_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4700935326594654861" at="52,0,61,0" concept="4" trace="createConstant_95jom2_a0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4700935326594654865" at="61,62,71,15" concept="5" />
-      <node id="4700935326594654865" at="61,0,77,0" concept="4" trace="createReadOnlyModelAccessor_95jom2_b0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4700935326594654865" at="61,0,80,0" concept="4" trace="createReadOnlyModelAccessor_95jom2_b0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="4700935326594654865" at="66,37,66,37" />
       <scope id="8484425748929510077" at="35,26,36,18" />
       <scope id="8484425748929510077" at="39,39,40,41" />
@@ -664,12 +667,13 @@
       </scope>
       <scope id="8484425748929510077" at="43,0,52,0" />
       <scope id="4700935326594654861" at="52,0,61,0" />
-      <scope id="4700935326594654865" at="61,62,75,22">
+      <scope id="4700935326594654865" at="61,62,78,22">
         <var name="editorCell" id="4700935326594654865" />
+        <var name="style" id="4700935326594654865" />
       </scope>
-      <scope id="4700935326594654865" at="61,0,77,0" />
+      <scope id="4700935326594654865" at="61,0,80,0" />
       <unit id="4700935326594654865" at="62,88,71,5" name="jetbrains.mps.lang.generator.generationParameters.editor.DefaultGeneratorParameter_InspectorBuilder_a$1" />
-      <unit id="8484425748929510077" at="24,0,78,0" name="jetbrains.mps.lang.generator.generationParameters.editor.DefaultGeneratorParameter_InspectorBuilder_a" />
+      <unit id="8484425748929510077" at="24,0,81,0" name="jetbrains.mps.lang.generator.generationParameters.editor.DefaultGeneratorParameter_InspectorBuilder_a" />
     </file>
   </root>
 </debug-info>

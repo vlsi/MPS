@@ -13567,7 +13567,6 @@
         <node concept="VPM3Z" id="hQ6p3Q0" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="VPxyj" id="hQ6p4ZM" role="3F10Kt" />
         <node concept="VechU" id="hQ6p9Zf" role="3F10Kt">
           <property role="Vb096" value="DARK_BLUE" />
         </node>
@@ -14689,7 +14688,6 @@
         <node concept="VPM3Z" id="hQ6o7d_" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="VPxyj" id="hQ6obfs" role="3F10Kt" />
         <node concept="VechU" id="hQ6oogL" role="3F10Kt">
           <property role="Vb096" value="DARK_BLUE" />
         </node>
@@ -24755,9 +24753,6 @@
         <node concept="VechU" id="VufYxgcLYk" role="3F10Kt">
           <property role="Vb096" value="red" />
         </node>
-        <node concept="VPxyj" id="VufYxhpeE9" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
       </node>
       <node concept="2SsqMj" id="6ixVQjdASKw" role="3EZMnx" />
       <node concept="l2Vlx" id="6ixVQjdAQsM" role="2iSdaV" />
@@ -24928,9 +24923,6 @@
         </node>
         <node concept="VechU" id="VufYxh0Lwr" role="3F10Kt">
           <property role="Vb096" value="red" />
-        </node>
-        <node concept="VPxyj" id="VufYxhpe0P" role="3F10Kt">
-          <property role="VOm3f" value="false" />
         </node>
       </node>
       <node concept="l2Vlx" id="21iL58aWNuF" role="2iSdaV" />

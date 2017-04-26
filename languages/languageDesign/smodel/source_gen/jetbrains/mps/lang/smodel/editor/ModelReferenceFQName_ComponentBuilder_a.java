@@ -84,6 +84,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
     editorCell.setCellId("FQName");
     Style style = new StyleImpl();
     style.set(StyleAttributes.AUTO_DELETABLE, true);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     ModelReferenceDelete.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;

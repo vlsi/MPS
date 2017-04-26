@@ -2955,9 +2955,6 @@
       <node concept="VechU" id="7eBNsYUkMZy" role="3F10Kt">
         <property role="Vb096" value="blue" />
       </node>
-      <node concept="VPxyj" id="7eBNsYW359U" role="3F10Kt">
-        <property role="VOm3f" value="false" />
-      </node>
     </node>
   </node>
   <node concept="24kQdi" id="7eBNsYUNfjM">

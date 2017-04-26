@@ -1762,6 +1762,9 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_i8r80j_a01a0a");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.EDITABLE, false);
+      editorCell.getStyle().putAll(style);
       return editorCell;
     }
     private EditorCell createReadOnlyModelAccessor_i8r80j_b01a0a() {
@@ -1779,6 +1782,9 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new RefNodeList_ListWithRole_ComponentBuilder_a.childrenListHandler_i8r80j_a0.RefNodeList_generic_cellMenu_i8r80j_a0b01a0a(), new RefNodeList_ListWithRole_ComponentBuilder_a.childrenListHandler_i8r80j_a0.RefNodeList_generic_cellMenu_i8r80j_b0b01a0a(), new RefNodeList_ListWithRole_ComponentBuilder_a.childrenListHandler_i8r80j_a0.RefNodeList_customReplace_cellMenu_i8r80j_c0b01a0a(), new RefNodeList_ListWithRole_ComponentBuilder_a.childrenListHandler_i8r80j_a0.RefNodeList_customReplace_cellMenu_i8r80j_d0b01a0a(), new RefNodeList_ListWithRole_ComponentBuilder_a.childrenListHandler_i8r80j_a0.ApplySideTransforms_left_cellMenu_i8r80j_e0b01a0a(), new RefNodeList_ListWithRole_ComponentBuilder_a.childrenListHandler_i8r80j_a0.RefNodeList_component_cellMenu_i8r80j_f0b01a0a(), new RefNodeList_ListWithRole_ComponentBuilder_a.childrenListHandler_i8r80j_a0.RefNodeList_generic_cellMenu_i8r80j_g0b01a0a(), new RefNodeList_ListWithRole_ComponentBuilder_a.childrenListHandler_i8r80j_a0.ReplaceWith_Error_cellMenu_i8r80j_h0b01a0a(), new SChildSubstituteInfoPartEx(editorCell)}));
       editorCell.setCellId("theId");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.EDITABLE, false);
+      editorCell.getStyle().putAll(style);
       if (nodeCondition_i8r80j_a1k0a0_0()) {
         editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
       }
@@ -1933,6 +1939,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       editorCell.setCellId("ReadOnlyModelAccessor_i8r80j_c01a0a");
       Style style = new StyleImpl();
       new testParentStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+      style.set(StyleAttributes.EDITABLE, false);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }

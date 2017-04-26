@@ -81,13 +81,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.UNDERLINED, true);
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_7k9x8q_a3a0());
+    style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_7k9x8q_a2a0());
     style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "target");
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private SNode _StyleParameter_QueryFunction_7k9x8q_a3a0() {
+  private SNode _StyleParameter_QueryFunction_7k9x8q_a2a0() {
     return SLinkOperations.getTarget(getNode(), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"));
   }
   private EditorCell createReadOnlyModelAccessor_7k9x8q_a0_0() {
@@ -106,6 +106,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.setCellId("ReadOnlyModelAccessor_7k9x8q_a0_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

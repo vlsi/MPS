@@ -1000,9 +1000,6 @@
                 </node>
               </node>
             </node>
-            <node concept="VPxyj" id="5M4a$b5jbWs" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
             <node concept="VPM3Z" id="5M4a$b5jbWu" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>

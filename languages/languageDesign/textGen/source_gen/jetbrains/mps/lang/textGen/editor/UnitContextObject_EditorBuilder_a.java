@@ -84,6 +84,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setCellId("ReadOnlyModelAccessor_sr4j1t_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.READ_ONLY, true);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

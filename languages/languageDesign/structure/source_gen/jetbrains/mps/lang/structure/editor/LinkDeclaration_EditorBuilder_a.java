@@ -318,8 +318,8 @@ import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClas
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_6h6dhy_d2a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

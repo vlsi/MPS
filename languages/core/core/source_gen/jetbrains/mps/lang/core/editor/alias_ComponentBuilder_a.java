@@ -54,6 +54,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     editorCell.setCellId("ALIAS_EDITOR_COMPONENT");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
