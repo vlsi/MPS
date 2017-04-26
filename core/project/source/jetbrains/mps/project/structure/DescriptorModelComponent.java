@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,12 +49,13 @@ public class DescriptorModelComponent implements CoreComponent {
 
   @Override
   public void init() {
-    myRepository.addRepositoryListener(myListener);
+    myRepository.getModelAccess().runWriteAction(() -> myRepository.addRepositoryListener(myListener));
   }
 
   @Override
   public void dispose() {
-    myRepository.removeRepositoryListener(myListener);
+    // it's vital to have exclusive access to a repository as we contribute/revoke models
+    myRepository.getModelAccess().runWriteAction(() -> myRepository.removeRepositoryListener(myListener));
     myListener.disposeProviders();
   }
 

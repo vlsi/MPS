@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,15 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.components.ComponentPluginBase;
+import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * evgeny, 11/9/12
  */
-public final class MPSPersistence extends ComponentPluginBase {
+public final class MPSPersistence extends ComponentPlugin {
   @NotNull private final PersistenceFacade myPersistenceFacade;
 
   public MPSPersistence(@NotNull PersistenceFacade persistenceFacade) {

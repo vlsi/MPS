@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.findusages;
 
-import jetbrains.mps.components.ComponentPluginBase;
+import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -23,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * evgeny, 10/14/11
  */
-public final class MPSFindUsages extends ComponentPluginBase {
+public final class MPSFindUsages extends ComponentPlugin {
   private final LanguageRegistry myLanguageRegistry;
 
   public MPSFindUsages(@NotNull LanguageRegistry languageRegistry) {

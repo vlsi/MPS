@@ -18,9 +18,10 @@ package jetbrains.mps.core.platform;
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.components.ComponentPluginBase;
+import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.languageScope.LanguageScopeFactory;
 import jetbrains.mps.library.LibraryInitializer;
@@ -52,13 +53,12 @@ import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * Core MPS functionality layer. Non-instantiable now, the only way to create MPS is via {@code jetbrains.mps.core.platform.PlatformFactory}.
  */
-public final class MPSCore extends ComponentPluginBase {
+public final class MPSCore extends ComponentPlugin {
   private volatile boolean myInitialized = false;
   private ClassLoaderManager myClassLoaderManager;
   private LibraryInitializer myLibraryInitializer;
@@ -99,7 +99,7 @@ public final class MPSCore extends ComponentPluginBase {
     init(new PathMacros());
     myLibraryInitializer = init(new LibraryInitializer(myModuleRepository));
     init(new GlobalScope(myModuleRepository));
-    init(new ImmatureReferences(myModuleRepository));
+    init(new ImmatureReferences(myModuleRepository, myPersistenceFacade));
 
     init(new QueryMethodGenerated(myClassLoaderManager));
     myLanguageRegistry = init(new LanguageRegistry(myModuleRepository, myClassLoaderManager));

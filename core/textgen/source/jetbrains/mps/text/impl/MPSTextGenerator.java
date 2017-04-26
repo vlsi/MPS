@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.text.impl;
 
-import jetbrains.mps.components.ComponentPluginBase;
+import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Artem Tikhomirov
  * @since 3.4
  */
-public class MPSTextGenerator extends ComponentPluginBase {
+public class MPSTextGenerator extends ComponentPlugin {
   private final LanguageRegistry myLanguageRegistry;
 
   public MPSTextGenerator(@NotNull LanguageRegistry languageRegistry) {

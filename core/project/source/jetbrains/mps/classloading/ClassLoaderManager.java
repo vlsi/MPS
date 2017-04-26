@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,20 +170,22 @@ public class ClassLoaderManager implements CoreComponent {
 
   @Override
   public void init() {
-    myRepository.getModelAccess().checkWriteAccess();
-
-    if (INSTANCE != null) throw new IllegalStateException("ClassLoaderManager is already initialized");
+    if (INSTANCE != null) {
+      throw new IllegalStateException("ClassLoaderManager is already initialized");
+    }
     INSTANCE = this;
-    myRepositoryListener.init(this);
-    myClassLoadersHolder.init();
+    myRepository.getModelAccess().runWriteAction(() -> {
+      myRepositoryListener.init(this);
+      myClassLoadersHolder.init();
+    });
   }
 
   @Override
   public void dispose() {
-    myRepository.getModelAccess().checkWriteAccess();
-
-    myClassLoadersHolder.dispose();
-    myRepositoryListener.dispose();
+    myRepository.getModelAccess().runWriteAction(() -> {
+      myClassLoadersHolder.dispose();
+      myRepositoryListener.dispose();
+    });
     INSTANCE = null;
   }
 

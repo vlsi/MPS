@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.references;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SReferenceBase;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -54,18 +55,18 @@ public class ImmatureReferences implements CoreComponent {
   private final SRepositoryContentAdapter myReposListener = new MyRepositoryAdapter();
 
   private final ConcurrentMap<SModelReference, ConcurrentMap<SReferenceBase, Object>> myReferences =
-      new ConcurrentHashMap<SModelReference, ConcurrentMap<SReferenceBase, Object>>();
+      new ConcurrentHashMap<>();
 
-  private ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, Object>> myReferencesSetPool = new ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, Object>>();
+  private ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, Object>> myReferencesSetPool = new ConcurrentLinkedQueue<>();
 
   private boolean myDisabled = true;
 
-  public ImmatureReferences(SRepository repository) {
+  public ImmatureReferences(SRepository repository, PersistenceFacade persistenceFacade) {
     myRepository = repository;
     for (int i = 0; i < POOL_SIZE; i++) {
-      myReferencesSetPool.add(new ConcurrentHashMap<SReferenceBase, Object>());
+      myReferencesSetPool.add(new ConcurrentHashMap<>());
     }
-    myVirtualRef = PersistenceFacade.getInstance().createModelReference(new ModuleReference("$ImmatureRefsModuleRef$", ModuleId.regular()), SModelId.generate(), "$ImmatureRefsModelRef$");
+    myVirtualRef = persistenceFacade.createModelReference(new ModuleReference("$ImmatureRefsModuleRef$", ModuleId.regular()), SModelId.generate(), "$ImmatureRefsModelRef$");
   }
 
   public void enable() {
@@ -84,12 +85,12 @@ public class ImmatureReferences implements CoreComponent {
     }
 
     INSTANCE = this;
-    myReposListener.subscribeTo(myRepository);
+    new RepoListenerRegistrar(myRepository, myReposListener).attach();
   }
 
   @Override
   public void dispose() {
-    myReposListener.unsubscribeFrom(myRepository);
+    new RepoListenerRegistrar(myRepository, myReposListener).detach();
     INSTANCE = null;
   }
 
@@ -127,12 +128,12 @@ public class ImmatureReferences implements CoreComponent {
     try {
       pooledSet = myReferencesSetPool.remove();
     } catch (NoSuchElementException e) {
-      pooledSet = new ConcurrentHashMap<SReferenceBase, Object>();
+      pooledSet = new ConcurrentHashMap<>();
     }
     ConcurrentMap<SReferenceBase, Object> usedSet = myReferences.putIfAbsent(modelRef, pooledSet);
     if (usedSet == null) {
       usedSet = pooledSet;
-      pooledSet = new ConcurrentHashMap<SReferenceBase, Object>();
+      pooledSet = new ConcurrentHashMap<>();
     }
     myReferencesSetPool.add(pooledSet);
     return usedSet;

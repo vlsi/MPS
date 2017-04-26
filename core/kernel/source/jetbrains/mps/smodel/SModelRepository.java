@@ -83,12 +83,12 @@ public class SModelRepository implements CoreComponent {
     }
 
     INSTANCE = this;
-    myRepository.addRepositoryListener(myRepositoriesListener);
+    new RepoListenerRegistrar(myRepository, myRepositoriesListener).attach();
   }
 
   @Override
   public void dispose() {
-    myRepository.removeRepositoryListener(myRepositoriesListener);
+    new RepoListenerRegistrar(myRepository, myRepositoriesListener).detach();
     INSTANCE = null;
   }
 

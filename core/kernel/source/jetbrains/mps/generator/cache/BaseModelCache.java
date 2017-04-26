@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.generator.cache;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
@@ -68,14 +69,14 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
 
   @Override
   public void init() {
-    myRepository.addRepositoryListener(myRepoListener);
+    new RepoListenerRegistrar(myRepository, myRepoListener).attach();
     myCleanupManager.addCleanupListener(this);
   }
 
   @Override
   public void dispose() {
     myCleanupManager.removeCleanupListener(this);
-    myRepository.removeRepositoryListener(myRepoListener);
+    new RepoListenerRegistrar(myRepository, myRepoListener).detach();
   }
 
   @Nullable

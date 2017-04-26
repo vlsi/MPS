@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.components.ComponentPluginBase;
+import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -29,7 +29,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 /**
  * evgeny, 10/14/11
  */
-public final class MPSGenerator extends ComponentPluginBase {
+public final class MPSGenerator extends ComponentPlugin {
   private final FacetsFacade myFacetsFacade;
   private FacetFactory myGeneratorFacetFactory = new FacetFactory() {
     @Override

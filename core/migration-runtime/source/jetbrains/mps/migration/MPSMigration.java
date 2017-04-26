@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.migration;
 
-import jetbrains.mps.components.ComponentPluginBase;
+import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.migration.global.MigrationPropertiesManager;
 
 /**
@@ -23,7 +23,7 @@ import jetbrains.mps.migration.global.MigrationPropertiesManager;
  * @author Artem Tikhomirov
  * @since 3.3
  */
-public class MPSMigration extends ComponentPluginBase {
+public class MPSMigration extends ComponentPlugin {
   @Override
   public void init() {
     super.init();

@@ -69,11 +69,14 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
 
   @Override
   public void dispose() {
-    for (SLibrary lib : myLibraries) {
-      lib.dispose();
-    }
-    myLibraries.clear();
-    myContributors.clear();
+    // we are going to remove modules from the repository, need exclusive access
+    myModelAccess.runWriteAction(() -> {
+      for (SLibrary lib : myLibraries) {
+        lib.dispose();
+      }
+      myLibraries.clear();
+      myContributors.clear();
+    });
     INSTANCE = null;
   }
 
