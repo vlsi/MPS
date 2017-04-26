@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,8 +52,7 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
   private final Map<String, TextGenDescriptor> textGenDescriptors = new ConcurrentHashMap<String, TextGenDescriptor>();
   private final LanguageRegistry myLanguageRegistry;
 
-  // FIXME shall be package-local once we have distinct MPSTextGen ComponentPlugin
-  public TextGenRegistry(@NotNull LanguageRegistry languageRegistry) {
+  /*package*/ TextGenRegistry(@NotNull LanguageRegistry languageRegistry) {
     myLanguageRegistry = languageRegistry;
   }
 
