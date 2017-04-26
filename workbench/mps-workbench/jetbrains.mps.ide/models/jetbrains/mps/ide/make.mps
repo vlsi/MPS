@@ -4,8 +4,6 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
@@ -26,7 +24,6 @@
     <import index="jqcx" ref="r:8e0d2787-667a-41b8-9f98-9bb45c087fba(jetbrains.mps.internal.make.runtime.script)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="rk9m" ref="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" />
-    <import index="2eq1" ref="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)" />
     <import index="ab4o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs.newvfs.impl(MPS.IDEA/)" />
     <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
@@ -44,7 +41,6 @@
     <import index="9w4s" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util(MPS.IDEA/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="fglx" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileTypes(MPS.IDEA/)" />
-    <import index="fy8e" ref="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="j07i" ref="r:d357a980-6a2b-481f-acb3-29792a9d3728(jetbrains.mps.make.dependencies)" />
@@ -3272,39 +3268,10 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6ZzUxXZQOVM" role="jymVt" />
-    <node concept="312cEg" id="9D0Ba05vmK" role="jymVt">
-      <property role="TrG5h" value="reloadManager" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3uibUv" id="491od_ZafeI" role="1tU5fm">
-        <ref role="3uigEE" to="2eq1:491od_XFyVl" resolve="ReloadManagerComponent" />
-      </node>
-      <node concept="3Tm6S6" id="9D0Ba05vmL" role="1B3o_S" />
-    </node>
-    <node concept="2tJIrI" id="6ZzUxXZPL3n" role="jymVt" />
     <node concept="3clFbW" id="9D0Ba05v9E" role="jymVt">
       <node concept="3cqZAl" id="9D0Ba05v9F" role="3clF45" />
       <node concept="3Tm1VV" id="9D0Ba05v9G" role="1B3o_S" />
-      <node concept="3clFbS" id="9D0Ba05v9H" role="3clF47">
-        <node concept="3clFbF" id="9D0Ba05v9O" role="3cqZAp">
-          <node concept="37vLTI" id="9D0Ba05v9P" role="3clFbG">
-            <node concept="2OqwBi" id="9D0Ba05v9Q" role="37vLTJ">
-              <node concept="Xjq3P" id="9D0Ba05v9R" role="2Oq$k0" />
-              <node concept="2OwXpG" id="9D0Ba05v9S" role="2OqNvi">
-                <ref role="2Oxat5" node="9D0Ba05vmK" resolve="reloadManager" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="2BHiRxglWvO" role="37vLTx">
-              <ref role="3cqZAo" node="9D0Ba05v9W" resolve="reloadManager" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="9D0Ba05v9W" role="3clF46">
-        <property role="TrG5h" value="reloadManager" />
-        <node concept="3uibUv" id="491od_Z8chT" role="1tU5fm">
-          <ref role="3uigEE" to="2eq1:491od_XFyVl" resolve="ReloadManagerComponent" />
-        </node>
-      </node>
+      <node concept="3clFbS" id="9D0Ba05v9H" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="6ZzUxXZPQ1p" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vam" role="jymVt">
@@ -3330,17 +3297,6 @@
             <node concept="Xjq3P" id="9D0Ba05vaw" role="37wK5m" />
           </node>
         </node>
-        <node concept="3clFbF" id="9D0Ba05vaA" role="3cqZAp">
-          <node concept="2OqwBi" id="9D0Ba05vaB" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuyIJ" role="2Oq$k0">
-              <ref role="3cqZAo" node="9D0Ba05vmK" resolve="reloadManager" />
-            </node>
-            <node concept="liA8E" id="9D0Ba05vaD" role="2OqNvi">
-              <ref role="37wK5l" to="2eq1:491od_XIFbC" resolve="setMakeService" />
-              <node concept="Xjq3P" id="9D0Ba05vaE" role="37wK5m" />
-            </node>
-          </node>
-        </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_SlqS" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
@@ -3355,17 +3311,6 @@
       <node concept="3Tm1VV" id="9D0Ba05vaL" role="1B3o_S" />
       <node concept="3cqZAl" id="9D0Ba05vaM" role="3clF45" />
       <node concept="3clFbS" id="9D0Ba05vaN" role="3clF47">
-        <node concept="3clFbF" id="9D0Ba05vaT" role="3cqZAp">
-          <node concept="2OqwBi" id="9D0Ba05vaU" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuVu3" role="2Oq$k0">
-              <ref role="3cqZAo" node="9D0Ba05vmK" resolve="reloadManager" />
-            </node>
-            <node concept="liA8E" id="9D0Ba05vaW" role="2OqNvi">
-              <ref role="37wK5l" to="2eq1:491od_XIFbC" resolve="setMakeService" />
-              <node concept="10Nm6u" id="9D0Ba05vaX" role="37wK5m" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="9D0Ba05vb3" role="3cqZAp">
           <node concept="2YIFZM" id="9D0Ba05vb4" role="3clFbG">
             <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />

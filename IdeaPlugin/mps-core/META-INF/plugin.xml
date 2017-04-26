@@ -46,6 +46,7 @@
       <implementation-class>jetbrains.mps.ide.persistence.PersistenceComponent</implementation-class>
     </component>
     <component>
+      <interface-class>jetbrains.mps.make.IMakeService</interface-class>
       <implementation-class>jetbrains.mps.idea.core.make.NoMakeService</implementation-class>
     </component>
     <component>
