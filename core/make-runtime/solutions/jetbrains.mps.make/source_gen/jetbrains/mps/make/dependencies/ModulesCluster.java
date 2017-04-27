@@ -250,17 +250,13 @@ __switch__:
       public SModuleReference select(SLanguage it) {
         return it.getSourceModuleReference();
       }
-    }).where(new NotNullWhereFilter()));
+    }).where(new NotNullWhereFilter<SModuleReference>()));
     // ...as well its generators 
     for (LanguageRuntime lr : SetSequence.fromSet(allUsedLanguages).select(new ISelector<SLanguage, LanguageRuntime>() {
       public LanguageRuntime select(SLanguage it) {
         return myLanguageRegistry.getLanguage(it);
       }
-    })) {
-      if (lr == null) {
-        // could not use withoutNull as it generates non-typed interface, and its result is ISequence<Object> 
-        continue;
-      }
+    }).where(new NotNullWhereFilter<LanguageRuntime>())) {
       for (GeneratorRuntime gr : lr.getGenerators()) {
         SetSequence.fromSet(reqs).addElement(gr.getModuleReference());
       }
