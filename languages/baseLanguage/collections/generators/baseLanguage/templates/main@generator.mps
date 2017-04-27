@@ -708,6 +708,38 @@
           <node concept="2ShNRf" id="1JuK1Kc$DC" role="37wK5m">
             <node concept="1pGfFk" id="1JuK1KcCjs" role="2ShVmc">
               <ref role="37wK5l" to="urs3:1JuK1K9lRL" resolve="NotNullWhereFilter" />
+              <node concept="33vP2l" id="7vIfY0LyS$o" role="1pMfVU">
+                <node concept="29HgVG" id="7vIfY0LySHU" role="lGtFl">
+                  <node concept="3NFfHV" id="7vIfY0LySMO" role="3NFExx">
+                    <node concept="3clFbS" id="7vIfY0LySMP" role="2VODD2">
+                      <node concept="3clFbF" id="1BjAL$S3qqd" role="3cqZAp">
+                        <node concept="2YIFZM" id="1BjAL$S3rdp" role="3clFbG">
+                          <ref role="37wK5l" to="tp2g:hwak6Ex" resolve="copyTypeRecursively" />
+                          <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
+                          <node concept="2YIFZM" id="7vIfY0LKQde" role="37wK5m">
+                            <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
+                            <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
+                            <node concept="2OqwBi" id="7vIfY0LCFlI" role="37wK5m">
+                              <node concept="1PxgMI" id="7vIfY0LCEKB" role="2Oq$k0">
+                                <node concept="chp4Y" id="7vIfY0LCF0j" role="3oSUPX">
+                                  <ref role="cht4Q" to="tp2q:gKA3Dh4" resolve="SequenceType" />
+                                </node>
+                                <node concept="2OqwBi" id="7vIfY0L$ZNe" role="1m5AlR">
+                                  <node concept="30H73N" id="7vIfY0LySW4" role="2Oq$k0" />
+                                  <node concept="3JvlWi" id="7vIfY0LCCqE" role="2OqNvi" />
+                                </node>
+                              </node>
+                              <node concept="3TrEf2" id="7vIfY0LCFMN" role="2OqNvi">
+                                <ref role="3Tt5mk" to="tp2q:gKA3Ige" resolve="elementType" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

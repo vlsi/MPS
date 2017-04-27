@@ -1388,7 +1388,7 @@
     <file name="SelectNotNullOperation_Test.java">
       <node id="3797954653256380821" at="15,53,16,85" concept="9" />
       <node id="3797954653256381181" at="16,85,17,0" concept="12" />
-      <node id="3797954653256381258" at="17,0,18,93" concept="4" />
+      <node id="3797954653256381258" at="17,0,18,102" concept="4" />
       <node id="3797954653256444515" at="26,0,27,0" concept="5" trace="__CP__" />
       <node id="3797954653256444515" at="32,28,33,54" concept="0" />
       <node id="3797954653256444515" at="33,54,34,35" concept="10" />
@@ -1407,10 +1407,13 @@
       <node id="3797954653256848240" at="58,0,59,64" concept="4" />
       <node id="3797954653256977512" at="59,64,60,66" concept="4" />
       <node id="3797954653257046794" at="60,66,61,0" concept="12" />
-      <node id="3797954653257045000" at="61,0,62,96" concept="9" />
-      <node id="3797954653257042609" at="62,96,63,71" concept="4" />
+      <node id="3797954653257045000" at="61,0,62,105" concept="9" />
+      <node id="3797954653257042609" at="62,105,63,71" concept="4" />
       <node id="3797954653256979007" at="63,71,64,74" concept="4" />
       <node id="3797954653257042540" at="64,74,65,0" concept="12" />
+      <node id="5707364337279399621" at="66,92,67,35" concept="4" />
+      <node id="5707364337279372769" at="68,5,69,0" concept="12" />
+      <node id="5707364337279392369" at="65,0,68,5" concept="6" />
       <node id="3797954653256380525" at="15,0,20,0" concept="8" trace="test_EmptySequence#()V" />
       <node id="3797954653256444515" at="29,20,48,19" concept="14" />
       <node id="3797954653256444515" at="27,46,49,31" concept="3" />
@@ -1420,15 +1423,19 @@
       <node id="3797954653256444515" at="22,43,54,10" concept="10" />
       <node id="3797954653256444515" at="22,0,56,0" concept="8" trace="iterable#()Ljava/lang/Iterable;" />
       <node id="3797954653256444086" at="20,55,56,7" concept="9" />
-      <node id="3797954653256443955" at="20,0,67,0" concept="8" trace="test_IntegerSequence#()V" />
+      <node id="3797954653256443955" at="20,0,71,0" concept="8" trace="test_IntegerSequence#()V" />
       <scope id="3797954653256444515" at="46,28,47,37" />
+      <scope id="5707364337279392371" at="66,92,67,35" />
       <scope id="3797954653256444515" at="32,28,34,35" />
       <scope id="3797954653256444516" at="43,27,45,28" />
-      <scope id="3797954653256380528" at="15,53,18,93">
+      <scope id="3797954653256380528" at="15,53,18,102">
         <var name="intS" id="3797954653256380824" />
       </scope>
       <scope id="3797954653256445206" at="35,27,38,34" />
       <scope id="3797954653256976536" at="39,27,42,34" />
+      <scope id="5707364337279392369" at="65,0,68,5">
+        <var name="i" id="5707364337279392097" />
+      </scope>
       <scope id="3797954653256380525" at="15,0,20,0" />
       <scope id="3797954653256444515" at="29,20,48,19" />
       <scope id="3797954653256444515" at="27,46,50,29" />
@@ -1437,15 +1444,15 @@
       <scope id="3797954653256444515" at="24,0,54,0" />
       <scope id="3797954653256444515" at="22,43,54,10" />
       <scope id="3797954653256444515" at="22,0,56,0" />
-      <scope id="3797954653256443958" at="20,55,65,0">
+      <scope id="3797954653256443958" at="20,55,69,0">
         <var name="intS" id="3797954653256444087" />
         <var name="intSNotNull" id="3797954653257045003" />
       </scope>
-      <scope id="3797954653256443955" at="20,0,67,0" />
+      <scope id="3797954653256443955" at="20,0,71,0" />
       <unit id="3797954653256444515" at="25,23,52,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SelectNotNullOperation_Test$1$1$1" />
       <unit id="3797954653256444515" at="23,19,54,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SelectNotNullOperation_Test$1$1" />
       <unit id="3797954653256444515" at="21,54,56,5" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SelectNotNullOperation_Test$1" />
-      <unit id="3797954653256380020" at="14,0,68,0" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SelectNotNullOperation_Test" />
+      <unit id="3797954653256380020" at="14,0,72,0" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SelectNotNullOperation_Test" />
     </file>
   </root>
 </debug-info>
