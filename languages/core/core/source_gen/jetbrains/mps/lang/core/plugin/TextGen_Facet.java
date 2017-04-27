@@ -24,6 +24,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.smodel.resources.GResource;
+import java.util.stream.IntStream;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.smodel.SModelOperations;
@@ -185,7 +186,7 @@ public class TextGen_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_21gswx_a0b = null;
           final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
-          progressMonitor.start("", 0 + 1000);
+          progressMonitor.start("", IntStream.of(1000).sum());
           switch (0) {
             case 0:
               if (Sequence.fromIterable(input).any(new IWhereFilter<GResource>() {

@@ -18,6 +18,7 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.resources.TResource;
+import java.util.stream.IntStream;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -60,7 +61,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_i849au_a0a = null;
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
-          progressMonitor.start("", 0 + 1000);
+          progressMonitor.start("", IntStream.of(1000).sum());
           switch (0) {
             case 0:
               final Collection<? extends SModule> toReload = Sequence.fromIterable(input).select(new ISelector<TResource, SModule>() {

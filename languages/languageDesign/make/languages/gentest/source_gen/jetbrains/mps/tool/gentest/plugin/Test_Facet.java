@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.facet.ITargetEx;
+import java.util.stream.IntStream;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.tool.builder.unittest.UnitTestOutputReader;
 import java.io.IOException;
@@ -147,7 +148,7 @@ public class Test_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_rwbd_a0b = null;
           final Iterable<ITestResource> input = (Iterable<ITestResource>) (Iterable) rawInput;
-          progressMonitor.start("", 0 + 1000);
+          progressMonitor.start("", IntStream.of(1000).sum());
           switch (0) {
             case 0:
               if (vars(pa.global()).testListener() == null) {

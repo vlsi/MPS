@@ -17,6 +17,7 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import java.util.stream.IntStream;
 import jetbrains.mps.make.script.IConfig;
 import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -55,7 +56,7 @@ public class Worker__Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_qdke9s_a0a = null;
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
-          progressMonitor.start("", 0 + 1000 + 1000 / 2);
+          progressMonitor.start("", IntStream.of(1000, 1000 / 2).sum());
           switch (0) {
             case 0:
               final ProgressMonitor subProgress_a0a0a = progressMonitor.subTask(1000);

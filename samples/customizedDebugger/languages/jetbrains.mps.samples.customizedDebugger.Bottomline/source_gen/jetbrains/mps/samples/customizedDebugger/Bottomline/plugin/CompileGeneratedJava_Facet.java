@@ -38,6 +38,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.compiler.JavaCompilerOptions;
+import java.util.stream.IntStream;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler;
 import jetbrains.mps.make.CompilationResult;
@@ -220,7 +221,7 @@ public class CompileGeneratedJava_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_widgfz_a0b = null;
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
-          progressMonitor.start("", 0 + 1000);
+          progressMonitor.start("", IntStream.of(1000).sum());
           switch (0) {
             case 0:
               if (Boolean.TRUE.equals(CompileGeneratedJava_Facet.Target_compile.vars(pa.global()).skipCompilation())) {

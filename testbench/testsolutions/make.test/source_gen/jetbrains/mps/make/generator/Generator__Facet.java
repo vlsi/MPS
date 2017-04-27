@@ -21,6 +21,7 @@ import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.util.stream.IntStream;
 import junit.framework.Assert;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -142,7 +143,7 @@ public class Generator__Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_j0fmyu_a0b = null;
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
-          progressMonitor.start("", 0 + 1000);
+          progressMonitor.start("", IntStream.of(1000).sum());
           switch (0) {
             case 0:
               Assert.assertEquals("uninitialized", Generator__Facet.Target_Configure.vars(pa.global()).value());

@@ -18,6 +18,7 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.resources.TResource;
+import java.util.stream.IntStream;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -70,7 +71,7 @@ public class Diff_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_mtqq_a0a = null;
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
-          progressMonitor.start("", 0 + 1000);
+          progressMonitor.start("", IntStream.of(1000).sum());
           switch (0) {
             case 0:
               if (vars(pa.global()).fileToPath() != null) {

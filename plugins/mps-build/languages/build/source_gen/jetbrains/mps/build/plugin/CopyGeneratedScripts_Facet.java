@@ -18,6 +18,7 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.lang.core.plugin.TextGenOutcomeResource;
+import java.util.stream.IntStream;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.text.TextGenResult;
@@ -67,7 +68,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_ixa0pj_a0a = null;
           final Iterable<TextGenOutcomeResource> input = (Iterable<TextGenOutcomeResource>) (Iterable) rawInput;
-          progressMonitor.start("", 0 + 1000);
+          progressMonitor.start("", IntStream.of(1000).sum());
           switch (0) {
             case 0:
               final FileProcessor fp = new FileProcessor();

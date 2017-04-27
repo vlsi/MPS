@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.resources.CleanupActivityResource;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.smodel.resources.MResource;
+import java.util.stream.IntStream;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -345,7 +346,7 @@ public class Generate_Facet extends IFacet.Stub {
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0c = null;
           final Iterable<MResource> input = (Iterable<MResource>) (Iterable) rawInput;
-          progressMonitor.start("", 0 + 1000);
+          progressMonitor.start("", IntStream.of(1000).sum());
           switch (0) {
             case 0:
               int work = Sequence.fromIterable(input).count() * 100;
