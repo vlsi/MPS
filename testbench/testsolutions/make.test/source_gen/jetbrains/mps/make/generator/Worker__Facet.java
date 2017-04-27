@@ -58,10 +58,10 @@ public class Worker__Facet extends IFacet.Stub {
           progressMonitor.start("", 0 + 1000 + 1000 / 2);
           switch (0) {
             case 0:
-              ProgressMonitor subProgress_a0a0a = progressMonitor.subTask(1000);
+              final ProgressMonitor subProgress_a0a0a = progressMonitor.subTask(1000);
               subProgress_a0a0a.start("WORK", 100);
               subProgress_a0a0a.advance(50);
-              ProgressMonitor subProgress_c0a0a = progressMonitor.subTask(1000 / 2);
+              final ProgressMonitor subProgress_c0a0a = progressMonitor.subTask(1000 / 2);
               subProgress_c0a0a.start("WORKWORK", 10);
               subProgress_c0a0a.advance(5);
               subProgress_c0a0a.advance(5);

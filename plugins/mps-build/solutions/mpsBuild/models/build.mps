@@ -2,9 +2,11 @@
 <model ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
-    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
+    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="3" />
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
   </languages>
   <imports />
   <registry>
@@ -14476,6 +14478,11 @@
             <ref role="3bR37D" node="568PkTlOK6f" resolve="jetbrains.mps.core.properties" />
           </node>
         </node>
+        <node concept="1SiIV0" id="1$VFM_tv06T" role="3bR37C">
+          <node concept="3bR9La" id="1$VFM_tv06S" role="1SiIV1">
+            <ref role="3bR37D" node="7YI57w6K0nr" resolve="jetbrains.mps.lang.plugin#1203080439937" />
+          </node>
+        </node>
       </node>
       <node concept="1E0d5M" id="2a9bszgrv8t" role="1E1XAP">
         <ref role="1E0d5P" node="2eDSGe9d1q1" resolve="MPS.Workbench" />
@@ -14578,12 +14585,6 @@
         <node concept="3bR9La" id="6IZ_b08qDCB" role="1SiIV1">
           <property role="3bR36h" value="false" />
           <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
-        </node>
-      </node>
-      <node concept="1SiIV0" id="4EGyYGcBc0W" role="3bR37C">
-        <node concept="3bR9La" id="4EGyYGcBc0X" role="1SiIV1">
-          <property role="3bR36h" value="false" />
-          <ref role="3bR37D" node="568PkTlOK6f" resolve="jetbrains.mps.core.properties" />
         </node>
       </node>
     </node>

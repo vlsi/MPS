@@ -146,7 +146,7 @@ public class Generator__Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               Assert.assertEquals("uninitialized", Generator__Facet.Target_Configure.vars(pa.global()).value());
-              ProgressMonitor subProgress_b0a0b = progressMonitor.subTask(1000);
+              final ProgressMonitor subProgress_b0a0b = progressMonitor.subTask(1000);
               subProgress_b0a0b.start("GENERATE", 100);
               Generator__Facet.Target_Configure.vars(pa.global()).value("VALUE");
               for (IResource resource : input) {

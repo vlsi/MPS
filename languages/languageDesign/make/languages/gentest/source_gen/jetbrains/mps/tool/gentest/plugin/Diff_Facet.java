@@ -74,7 +74,7 @@ public class Diff_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               if (vars(pa.global()).fileToPath() != null) {
-                ProgressMonitor subProgress_a0a0a0a = progressMonitor.subTask(1000);
+                final ProgressMonitor subProgress_a0a0a0a = progressMonitor.subTask(1000);
                 subProgress_a0a0a0a.start("Diffing", 100 * Sequence.fromIterable(input).count());
                 for (TResource tgres : Sequence.fromIterable(input)) {
                   String fqn = tgres.modelDescriptor().getName().getLongName();

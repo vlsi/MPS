@@ -17,7 +17,6 @@ import jetbrains.mps.make.IMakeNotificationListener;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.resources.IResource;
@@ -67,22 +66,17 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   private volatile AtomicReference<Future<IResult>> currentProcess = new AtomicReference<Future<IResult>>();
   private List<IMakeNotificationListener> listeners = Collections.synchronizedList(ListSequence.fromList(new ArrayList<IMakeNotificationListener>()));
 
-  private final ReloadManagerComponent reloadManager;
-
-  public WorkbenchMakeService(ReloadManagerComponent reloadManager) {
-    this.reloadManager = reloadManager;
+  public WorkbenchMakeService() {
   }
 
   @Override
   public void initComponent() {
     INSTANCE = this;
     IMakeService.INSTANCE.set(this);
-    reloadManager.setMakeService(this);
   }
 
   @Override
   public void disposeComponent() {
-    reloadManager.setMakeService(null);
     IMakeService.INSTANCE.set(null);
     INSTANCE = null;
   }

@@ -15,7 +15,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.make.IMakeService;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModelAccess;
@@ -43,44 +42,26 @@ public class ReloadManagerComponent extends ReloadManager implements Application
   private final Object myUpdateId = new Object();
   private final AtomicInteger mySuspendCount = new AtomicInteger(0);
 
-  private IMakeService myMakeService;
+  private final IMakeService myMakeService;
 
-  public ReloadManagerComponent(ProjectManager projectManager) {
+  public ReloadManagerComponent(ProjectManager projectManager, IMakeService makeService) {
     myProjectManager = projectManager;
     myTaskQueue.setRestartTimerOnAdd(true);
+    myMakeService = makeService;
   }
 
   public void initComponent() {
+    myMakeService.addListener(myMakeListener);
   }
 
   public void disposeComponent() {
-    if (myMakeService != null) {
-      myMakeService.removeListener(myMakeListener);
-      myMakeService = null;
-    }
+    myMakeService.removeListener(myMakeListener);
   }
 
   @NonNls
   @NotNull
   public String getComponentName() {
     return "Reload Manager";
-  }
-
-  /**
-   * 
-   * @deprecated the dependency between components must be the other way around
-   */
-  @ToRemove(version = 3.4)
-  @Deprecated
-  public void setMakeService(IMakeService ms) {
-    if (ms != null) {
-      ms.addListener(myMakeListener);
-    } else {
-      if (myMakeService != null) {
-        myMakeService.removeListener(myMakeListener);
-      }
-    }
-    myMakeService = ms;
   }
 
   public void suspendReloads() {
