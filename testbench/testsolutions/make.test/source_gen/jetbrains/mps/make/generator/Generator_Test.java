@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.jmock.integration.junit4.JMock;
 import jetbrains.mps.make.unittest.MockTestCase;
 import jetbrains.mps.make.facet.IFacetManifest;
+import jetbrains.mps.make.facet.FacetRegistry;
 import org.junit.Test;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.script.IScriptController;
@@ -31,11 +32,11 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.junit.Before;
 import java.lang.reflect.Constructor;
 import org.junit.After;
-import jetbrains.mps.make.facet.FacetRegistry;
 
 @RunWith(JMock.class)
 public class Generator_Test extends MockTestCase {
   private IFacetManifest manifest;
+  private FacetRegistry myFacetRegistry;
   @Test
   public void test_queryStop() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
@@ -113,23 +114,23 @@ public class Generator_Test extends MockTestCase {
     Constructor<?> ctor = mf.getConstructor();
     Object inst = ctor.newInstance();
     this.manifest = (IFacetManifest) inst;
+    myFacetRegistry = new FacetRegistry(null);
+    myFacetRegistry.init();
     registerFacets(manifest);
   }
   @After
   public void tearDown() throws Exception {
     unregisterFacets(manifest);
+    myFacetRegistry.dispose();
   }
   private void registerFacets(IFacetManifest fm) {
     for (IFacet fct : fm.facets()) {
-      FacetRegistry.getInstance().register(fct);
+      myFacetRegistry.register(fct);
     }
   }
   private void unregisterFacets(IFacetManifest fm) {
     for (IFacet fct : fm.facets()) {
-      FacetRegistry.getInstance().unregister(fct);
+      myFacetRegistry.unregister(fct);
     }
-  }
-  private String internalWorkName(String name) {
-    return "__" + name + "__";
   }
 }

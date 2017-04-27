@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
@@ -31,12 +30,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
  */
 public final class MPSGenerator extends ComponentPlugin {
   private final FacetsFacade myFacetsFacade;
-  private FacetFactory myGeneratorFacetFactory = new FacetFactory() {
-    @Override
-    public SModuleFacet create() {
-      return new CustomGenerationModuleFacet();
-    }
-  };
+  private FacetFactory myGeneratorFacetFactory = CustomGenerationModuleFacet::new;
 
   public MPSGenerator() {
     // XXX in fact, shall receive FF as an argument

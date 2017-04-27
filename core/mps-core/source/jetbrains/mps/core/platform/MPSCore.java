@@ -25,7 +25,6 @@ import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.languageScope.LanguageScopeFactory;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.make.facets.BootstrapMakeFacets;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
@@ -117,7 +116,6 @@ public final class MPSCore extends ComponentPlugin {
     init(new ResolverComponent());
     init(new ValidationSettings());
 
-    init(new BootstrapMakeFacets());
     init(new PropertySupportCache(myClassLoaderManager));
   }
 

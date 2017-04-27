@@ -101,7 +101,10 @@
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
-      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
+      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
+        <property id="8606350594693632173" name="isTransient" index="eg7rD" />
+        <property id="1240249534625" name="isVolatile" index="34CwA1" />
+      </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <child id="1068390468201" name="constructor" index="312cEh" />
@@ -3217,17 +3220,26 @@
           <node concept="3clFbS" id="Xi7lqdKi9l" role="2LFqv$">
             <node concept="3clFbF" id="Xi7lqdKi9s" role="3cqZAp">
               <node concept="2OqwBi" id="Xi7lqdKi9v" role="3clFbG">
-                <node concept="2YIFZM" id="Xi7lqdKi9u" role="2Oq$k0">
-                  <ref role="37wK5l" to="ud0o:5mqBoD3U4qe" resolve="getInstance" />
-                  <ref role="1Pybhc" to="ud0o:5mqBoD3U4oX" resolve="FacetRegistry" />
-                </node>
                 <node concept="liA8E" id="Xi7lqdKi9z" role="2OqNvi">
                   <ref role="37wK5l" to="ud0o:5mqBoD3U4px" resolve="unregister" />
                   <node concept="2GrUjf" id="Xi7lqdKi9_" role="37wK5m">
                     <ref role="2Gs0qQ" node="Xi7lqdKi9j" resolve="fn" />
                   </node>
                 </node>
+                <node concept="37vLTw" id="DgErZvRu0y" role="2Oq$k0">
+                  <ref role="3cqZAo" node="DgErZvRq$n" resolve="myFacetRegistry" />
+                </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="DgErZvRu9$" role="3cqZAp">
+          <node concept="2OqwBi" id="DgErZvRui0" role="3clFbG">
+            <node concept="37vLTw" id="DgErZvRu9y" role="2Oq$k0">
+              <ref role="3cqZAo" node="DgErZvRq$n" resolve="myFacetRegistry" />
+            </node>
+            <node concept="liA8E" id="DgErZvRuus" role="2OqNvi">
+              <ref role="37wK5l" to="ud0o:1PwNLcbNQiT" resolve="dispose" />
             </node>
           </node>
         </node>
@@ -3843,11 +3855,38 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="DgErZvRrYA" role="3cqZAp">
+          <node concept="37vLTI" id="DgErZvRsDj" role="3clFbG">
+            <node concept="37vLTw" id="DgErZvRrY$" role="37vLTJ">
+              <ref role="3cqZAo" node="DgErZvRq$n" resolve="myFacetRegistry" />
+            </node>
+            <node concept="2ShNRf" id="DgErZvRnNo" role="37vLTx">
+              <node concept="1pGfFk" id="DgErZvRnNp" role="2ShVmc">
+                <ref role="37wK5l" to="ud0o:1PwNLcbNHCz" resolve="FacetRegistry" />
+                <node concept="10Nm6u" id="DgErZvRnNq" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="DgErZvRp3W" role="3cqZAp">
+          <node concept="3SKdUq" id="DgErZvRp3Y" role="3SKWNk">
+            <property role="3SKdUp" value="foe now, need to make instance available through FR.getInstance()" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="DgErZvRmij" role="3cqZAp">
+          <node concept="2OqwBi" id="DgErZvRngN" role="3clFbG">
+            <node concept="37vLTw" id="DgErZvRtPX" role="2Oq$k0">
+              <ref role="3cqZAo" node="DgErZvRq$n" resolve="myFacetRegistry" />
+            </node>
+            <node concept="liA8E" id="DgErZvRnK9" role="2OqNvi">
+              <ref role="37wK5l" to="ud0o:1PwNLcbNQiN" resolve="init" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="7Lza_WeTGl6" role="3cqZAp">
           <node concept="2OqwBi" id="7Lza_WeTGl7" role="3clFbG">
-            <node concept="2YIFZM" id="7Lza_WeTGl8" role="2Oq$k0">
-              <ref role="37wK5l" to="ud0o:5mqBoD3U4qe" resolve="getInstance" />
-              <ref role="1Pybhc" to="ud0o:5mqBoD3U4oX" resolve="FacetRegistry" />
+            <node concept="37vLTw" id="DgErZvRtSz" role="2Oq$k0">
+              <ref role="3cqZAo" node="DgErZvRq$n" resolve="myFacetRegistry" />
             </node>
             <node concept="liA8E" id="7Lza_WeTGl9" role="2OqNvi">
               <ref role="37wK5l" to="ud0o:5mqBoD3U4p7" resolve="register" />
@@ -3859,29 +3898,27 @@
         </node>
         <node concept="3clFbF" id="7Lza_WeTGlb" role="3cqZAp">
           <node concept="2OqwBi" id="7Lza_WeTGlc" role="3clFbG">
-            <node concept="2YIFZM" id="7Lza_WeTGld" role="2Oq$k0">
-              <ref role="37wK5l" to="ud0o:5mqBoD3U4qe" resolve="getInstance" />
-              <ref role="1Pybhc" to="ud0o:5mqBoD3U4oX" resolve="FacetRegistry" />
-            </node>
             <node concept="liA8E" id="7Lza_WeTGle" role="2OqNvi">
               <ref role="37wK5l" to="ud0o:5mqBoD3U4p7" resolve="register" />
               <node concept="37vLTw" id="3GM_nagTy4c" role="37wK5m">
                 <ref role="3cqZAo" node="7Lza_WeTGke" resolve="fgen" />
               </node>
             </node>
+            <node concept="37vLTw" id="DgErZvRtVo" role="2Oq$k0">
+              <ref role="3cqZAo" node="DgErZvRq$n" resolve="myFacetRegistry" />
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="7Lza_WeTGlg" role="3cqZAp">
           <node concept="2OqwBi" id="7Lza_WeTGlh" role="3clFbG">
-            <node concept="2YIFZM" id="7Lza_WeTGli" role="2Oq$k0">
-              <ref role="1Pybhc" to="ud0o:5mqBoD3U4oX" resolve="FacetRegistry" />
-              <ref role="37wK5l" to="ud0o:5mqBoD3U4qe" resolve="getInstance" />
-            </node>
             <node concept="liA8E" id="7Lza_WeTGlj" role="2OqNvi">
               <ref role="37wK5l" to="ud0o:5mqBoD3U4p7" resolve="register" />
               <node concept="37vLTw" id="3GM_nagTzcL" role="37wK5m">
                 <ref role="3cqZAo" node="7Lza_WeTGkk" resolve="ftextgen" />
               </node>
+            </node>
+            <node concept="37vLTw" id="DgErZvRtXT" role="2Oq$k0">
+              <ref role="3cqZAo" node="DgErZvRq$n" resolve="myFacetRegistry" />
             </node>
           </node>
         </node>
@@ -4011,6 +4048,16 @@
     </node>
     <node concept="3uibUv" id="24lCXWIKYAQ" role="1zkMxy">
       <ref role="3uigEE" node="1MpPVq5jPbU" resolve="MockTestCase" />
+    </node>
+    <node concept="312cEg" id="DgErZvRq$n" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myFacetRegistry" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="DgErZvRpLQ" role="1B3o_S" />
+      <node concept="3uibUv" id="DgErZvRqzX" role="1tU5fm">
+        <ref role="3uigEE" to="ud0o:5mqBoD3U4oX" resolve="FacetRegistry" />
+      </node>
     </node>
   </node>
   <node concept="3s_ewN" id="1FvZhs40CRp">
@@ -15142,15 +15189,12 @@
               <node concept="3uibUv" id="7Lza_WeTGpc" role="1tU5fm">
                 <ref role="3uigEE" to="ud0o:5mqBoD3U4oX" resolve="FacetRegistry" />
               </node>
-              <node concept="2YIFZM" id="7Lza_WeTGpd" role="33vP2m">
-                <ref role="37wK5l" to="ud0o:5mqBoD3U4qe" resolve="getInstance" />
-                <ref role="1Pybhc" to="ud0o:5mqBoD3U4oX" resolve="FacetRegistry" />
+              <node concept="2ShNRf" id="DgErZvQTeP" role="33vP2m">
+                <node concept="1pGfFk" id="DgErZvQVfn" role="2ShVmc">
+                  <ref role="37wK5l" to="ud0o:1PwNLcbNHCz" resolve="FacetRegistry" />
+                  <node concept="10Nm6u" id="DgErZvQVjI" role="37wK5m" />
+                </node>
               </node>
-            </node>
-          </node>
-          <node concept="2Hmddi" id="7Lza_WeTGpe" role="3cqZAp">
-            <node concept="37vLTw" id="3GM_nagTsHi" role="2Hmdds">
-              <ref role="3cqZAo" node="7Lza_WeTGpb" resolve="reg" />
             </node>
           </node>
           <node concept="3clFbF" id="7Lza_WeTGpg" role="3cqZAp">

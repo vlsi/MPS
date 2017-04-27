@@ -22,6 +22,7 @@ import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.ide.findusages.MPSFindUsages;
 import jetbrains.mps.lang.dataFlow.MPSDataFlow;
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.make.facets.MPSMake;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -40,6 +41,7 @@ class PlatformBase implements Platform {
   private MPSFindUsages myFindUsages;
   private MPSTextGenerator myTextGen;
   private MPSDataFlow myDataFlow;
+  private MPSMake myMake;
 
   PlatformBase(PlatformOptionsBuilder options) {
     if (options.loadsCore()) {
@@ -51,11 +53,13 @@ class PlatformBase implements Platform {
       myPersistence.init();
     }
     if (options.loadsOthers()) {
+      myMake = new MPSMake(myCore.getLanguageRegistry());
       myTypesystem = new MPSTypesystem(myCore.getLanguageRegistry(), myCore.getClassLoaderManager());
       myGenerator = new MPSGenerator();
       myFindUsages = new MPSFindUsages(myCore.getLanguageRegistry());
       myTextGen = new MPSTextGenerator(myCore.getLanguageRegistry());
       myDataFlow = new MPSDataFlow(myCore.getClassLoaderManager());
+      myMake.init();
       myTypesystem.init();
       myGenerator.init();
       myFindUsages.init();
@@ -89,6 +93,7 @@ class PlatformBase implements Platform {
 
   @Override
   public void dispose() {
+    dispose(myMake);
     dispose(myDataFlow);
     dispose(myTextGen);
     dispose(myFindUsages);

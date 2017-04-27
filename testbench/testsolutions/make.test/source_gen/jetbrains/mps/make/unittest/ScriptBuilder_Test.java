@@ -5,6 +5,7 @@ package jetbrains.mps.make.unittest;
 import org.junit.runner.RunWith;
 import org.jmock.integration.junit4.JMock;
 import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.facet.FacetRegistry;
 import org.junit.Test;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -16,13 +17,13 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.junit.After;
-import jetbrains.mps.make.facet.FacetRegistry;
 import org.junit.Before;
 import org.jmock.Expectations;
 
 @RunWith(JMock.class)
 public class ScriptBuilder_Test extends MockTestCase {
   private IFacet[] facets;
+  private FacetRegistry myFacetRegistry;
   @Test
   public void test_make() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
@@ -100,8 +101,9 @@ public class ScriptBuilder_Test extends MockTestCase {
   @After
   public void tearDown() throws Exception {
     for (IFacet fn : Sequence.fromIterable(Sequence.fromArray(facets))) {
-      FacetRegistry.getInstance().unregister(fn);
+      myFacetRegistry.unregister(fn);
     }
+    myFacetRegistry.dispose();
     context.assertIsSatisfied();
   }
   @Before
@@ -139,9 +141,12 @@ public class ScriptBuilder_Test extends MockTestCase {
         will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("gen")})));
       }
     });
-    FacetRegistry.getInstance().register(fmake);
-    FacetRegistry.getInstance().register(fgen);
-    FacetRegistry.getInstance().register(ftextgen);
+    myFacetRegistry = new FacetRegistry(null);
+    // foe now, need to make instance available through FR.getInstance() 
+    myFacetRegistry.init();
+    myFacetRegistry.register(fmake);
+    myFacetRegistry.register(fgen);
+    myFacetRegistry.register(ftextgen);
     Mockups.allowing(context, fmake);
     Mockups.allowing(context, fgen);
     Mockups.allowing(context, ftextgen);

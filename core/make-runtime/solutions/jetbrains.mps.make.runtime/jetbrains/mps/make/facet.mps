@@ -17,6 +17,7 @@
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="8uml" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.make.facet(MPS.Core/)" />
+    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -38,6 +39,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -52,6 +54,7 @@
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
+      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -678,11 +681,6 @@
       <node concept="3uibUv" id="5mqBoD3U4q$" role="1tU5fm">
         <ref role="3uigEE" node="5mqBoD3U4oX" resolve="FacetRegistry" />
       </node>
-      <node concept="2ShNRf" id="5mqBoD3U4q_" role="33vP2m">
-        <node concept="1pGfFk" id="5mqBoD3U4qA" role="2ShVmc">
-          <ref role="37wK5l" node="5mqBoD3U4qC" resolve="FacetRegistry" />
-        </node>
-      </node>
     </node>
     <node concept="312cEg" id="5mqBoD3U4oY" role="jymVt">
       <property role="TrG5h" value="facetMap" />
@@ -731,11 +729,97 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbW" id="5mqBoD3U4qC" role="jymVt">
-      <node concept="3cqZAl" id="5mqBoD3U4qD" role="3clF45" />
-      <node concept="3clFbS" id="5mqBoD3U4qE" role="3clF47" />
-      <node concept="3Tm6S6" id="5mqBoD3U4qF" role="1B3o_S" />
+    <node concept="312cEg" id="1PwNLcbNINf" role="jymVt">
+      <property role="TrG5h" value="myLanguageRegistry" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="1PwNLcbNINg" role="1B3o_S" />
+      <node concept="3uibUv" id="1PwNLcbNINi" role="1tU5fm">
+        <ref role="3uigEE" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
+      </node>
     </node>
+    <node concept="2tJIrI" id="1PwNLcbNJYp" role="jymVt" />
+    <node concept="3clFbW" id="1PwNLcbNHCz" role="jymVt">
+      <node concept="3cqZAl" id="1PwNLcbNHC_" role="3clF45" />
+      <node concept="3clFbS" id="1PwNLcbNHCB" role="3clF47">
+        <node concept="3SKdUt" id="DgErZvQLHA" role="3cqZAp">
+          <node concept="3SKdUq" id="DgErZvQLHC" role="3SKWNk">
+            <property role="3SKdUp" value="1. languageRegistry could be null to facilitate unit tests." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="1PwNLcbO3pO" role="3cqZAp">
+          <node concept="3SKdUq" id="1PwNLcbO3pQ" role="3SKWNk">
+            <property role="3SKdUp" value="2. technically, package-local visibility would suffice, however, MPS could not guess it's the same package for two models with same qualified name." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="DgErZvSPy$" role="3cqZAp">
+          <node concept="3SKdUq" id="DgErZvSPyA" role="3SKWNk">
+            <property role="3SKdUp" value="3. FIXME In fact, there's not too much reason to pass LanguageRegistry here, we use it to go from namespace in IFacet.Name to SLanguage. IFacet.Name could give SLanguage right away." />
+          </node>
+        </node>
+        <node concept="3clFbF" id="1PwNLcbNINj" role="3cqZAp">
+          <node concept="37vLTI" id="1PwNLcbNINl" role="3clFbG">
+            <node concept="37vLTw" id="1PwNLcbNINo" role="37vLTJ">
+              <ref role="3cqZAo" node="1PwNLcbNINf" resolve="myLanguageRegistry" />
+            </node>
+            <node concept="37vLTw" id="1PwNLcbNINp" role="37vLTx">
+              <ref role="3cqZAo" node="1PwNLcbNIMG" resolve="languageRegistry" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1PwNLcbNIMG" role="3clF46">
+        <property role="TrG5h" value="languageRegistry" />
+        <node concept="3uibUv" id="1PwNLcbNIMF" role="1tU5fm">
+          <ref role="3uigEE" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1PwNLcbO3ll" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="1PwNLcbNPk$" role="jymVt" />
+    <node concept="3clFb_" id="1PwNLcbNQiN" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="init" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="1PwNLcbNQiO" role="1B3o_S" />
+      <node concept="3cqZAl" id="1PwNLcbNQiQ" role="3clF45" />
+      <node concept="3clFbS" id="1PwNLcbNQiR" role="3clF47">
+        <node concept="3clFbF" id="1PwNLcbNZ5R" role="3cqZAp">
+          <node concept="37vLTI" id="1PwNLcbNZjh" role="3clFbG">
+            <node concept="Xjq3P" id="1PwNLcbNZjP" role="37vLTx" />
+            <node concept="37vLTw" id="1PwNLcbNZ5Q" role="37vLTJ">
+              <ref role="3cqZAo" node="5mqBoD3U4qy" resolve="INSTANCE" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1PwNLcbNQiS" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1PwNLcbNY4F" role="jymVt" />
+    <node concept="3clFb_" id="1PwNLcbNQiT" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="dispose" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="1PwNLcbNQiU" role="1B3o_S" />
+      <node concept="3cqZAl" id="1PwNLcbNQiW" role="3clF45" />
+      <node concept="3clFbS" id="1PwNLcbNQiX" role="3clF47">
+        <node concept="3clFbF" id="1PwNLcbNZoJ" role="3cqZAp">
+          <node concept="37vLTI" id="1PwNLcbNZym" role="3clFbG">
+            <node concept="10Nm6u" id="1PwNLcbNZyU" role="37vLTx" />
+            <node concept="37vLTw" id="1PwNLcbNZoI" role="37vLTJ">
+              <ref role="3cqZAo" node="5mqBoD3U4qy" resolve="INSTANCE" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1PwNLcbNQiY" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1PwNLcbNFuu" role="jymVt" />
     <node concept="3clFb_" id="5mqBoD3U4p7" role="jymVt">
       <property role="TrG5h" value="register" />
       <node concept="3cqZAl" id="5mqBoD3U4p8" role="3clF45" />
@@ -970,9 +1054,8 @@
             <node concept="3uibUv" id="7F$lR9jRN9c" role="1tU5fm">
               <ref role="3uigEE" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
             </node>
-            <node concept="2YIFZM" id="7F$lR9jRN9d" role="33vP2m">
-              <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance():jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
-              <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
+            <node concept="37vLTw" id="1PwNLcbNMuR" role="33vP2m">
+              <ref role="3cqZAo" node="1PwNLcbNINf" resolve="myLanguageRegistry" />
             </node>
           </node>
         </node>
@@ -1266,6 +1349,9 @@
       <node concept="3uibUv" id="5mqBoD3U4qx" role="3clF45">
         <ref role="3uigEE" node="5mqBoD3U4oX" resolve="FacetRegistry" />
       </node>
+    </node>
+    <node concept="3uibUv" id="1PwNLcbNOlZ" role="EKbjA">
+      <ref role="3uigEE" to="wyuk:~CoreComponent" resolve="CoreComponent" />
     </node>
   </node>
   <node concept="3HP615" id="1TGyBqvr2zy">

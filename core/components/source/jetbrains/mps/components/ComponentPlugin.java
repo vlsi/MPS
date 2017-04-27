@@ -22,10 +22,9 @@ import java.util.LinkedList;
  * evgeny, 10/14/11
  */
 public class ComponentPlugin {
-  private Deque<CoreComponent> myComponents;
+  private final Deque<CoreComponent> myComponents = new LinkedList<>();
 
   public void init() {
-    myComponents = new LinkedList<>();
   }
 
   /**
@@ -42,9 +41,6 @@ public class ComponentPlugin {
   }
 
   public void dispose() {
-    if (myComponents == null) {
-      return;
-    }
     while (!myComponents.isEmpty()) {
       dispose(myComponents.pop());
     }

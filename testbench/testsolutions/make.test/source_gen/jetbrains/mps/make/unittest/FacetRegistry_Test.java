@@ -13,8 +13,7 @@ public class FacetRegistry_Test extends MockTestCase {
   public void test_registerUnregister() throws Exception {
     final IFacet fct = Mockups.facet(context, "foobar");
     Assert.assertNotNull(fct);
-    FacetRegistry reg = FacetRegistry.getInstance();
-    Assert.assertNotNull(reg);
+    FacetRegistry reg = new FacetRegistry(null);
     reg.register(fct);
     Assert.assertSame(fct, MapSequence.fromMap(reg.allFacets()).get(new IFacet.Name("foobar")));
     Assert.assertSame(fct, reg.lookup(new IFacet.Name("foobar")));
