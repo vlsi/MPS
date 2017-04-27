@@ -15,7 +15,7 @@ public class SelectNotNullOperation_Test extends TestCase {
   public void test_EmptySequence() throws Exception {
     Iterable<Integer> intS = Sequence.fromIterable(Collections.<Integer>emptyList());
 
-    Assert.assertTrue(Sequence.fromIterable(intS).where(new NotNullWhereFilter()).isEmpty());
+    Assert.assertTrue(Sequence.fromIterable(intS).where(new NotNullWhereFilter<Integer>()).isEmpty());
   }
   public void test_IntegerSequence() throws Exception {
     Iterable<Integer> intS = Sequence.fromClosure(new ISequenceClosure<Integer>() {
@@ -59,9 +59,13 @@ __switch__:
     Assert.assertTrue(Sequence.fromIterable(intS).contains(20));
     Assert.assertTrue(Sequence.fromIterable(intS).contains(null));
 
-    Iterable<Integer> intSNotNull = Sequence.fromIterable(intS).where(new NotNullWhereFilter());
+    Iterable<Integer> intSNotNull = Sequence.fromIterable(intS).where(new NotNullWhereFilter<Integer>());
     Assert.assertTrue(Sequence.fromIterable(intSNotNull).contains(20));
     Assert.assertFalse(Sequence.fromIterable(intSNotNull).contains(null));
+
+    for (Integer i : Sequence.fromIterable(intS).where(new NotNullWhereFilter<Integer>())) {
+      Assert.assertTrue(i != null);
+    }
 
   }
 }
