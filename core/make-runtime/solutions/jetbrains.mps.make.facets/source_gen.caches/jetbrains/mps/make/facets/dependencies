@@ -83,8 +83,11 @@
   </dependency>
   <dependency className="jetbrains.mps.make.facets.MPSMake" file="MPSMake.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.cleanup.CleanupManager" />
     <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
     <classNode dependClassName="jetbrains.mps.make.facets.BootstrapMakeFacets" />
+    <classNode dependClassName="jetbrains.mps.make.java.BLDependenciesCache" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode extendsClassName="jetbrains.mps.components.ComponentPlugin" />
   </dependency>

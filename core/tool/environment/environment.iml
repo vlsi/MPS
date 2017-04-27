@@ -15,7 +15,6 @@
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="platform" exported="" />
-    <orderEntry type="module" module-name="mps-core" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="closures-runtime" />

@@ -11,7 +11,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="module" module-name="mps-core" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="module-library">

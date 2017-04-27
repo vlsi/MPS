@@ -5,6 +5,9 @@ package jetbrains.mps.make.facets;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.make.facet.FacetRegistry;
+import jetbrains.mps.make.java.BLDependenciesCache;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.cleanup.CleanupManager;
 
 public class MPSMake extends ComponentPlugin {
   private final LanguageRegistry myLanguageRegistry;
@@ -17,5 +20,8 @@ public class MPSMake extends ComponentPlugin {
   public void init() {
     FacetRegistry facetRegistry = init(new FacetRegistry(myLanguageRegistry));
     init(new BootstrapMakeFacets(facetRegistry));
+    // FIXME I know it's wrong to access global repository and cleanup manager instance like that 
+    //       but I hope to drop CleanupManager soon, and to come up with a replacement for global repo cache. 
+    init(new BLDependenciesCache(MPSModuleRepository.getInstance(), CleanupManager.getInstance()));
   }
 }

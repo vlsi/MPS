@@ -25,7 +25,6 @@ import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.languageScope.LanguageScopeFactory;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.PathMacros;
@@ -94,7 +93,7 @@ public final class MPSCore extends ComponentPlugin {
     init(new SModelFileTracker.Plug(repositoryRegistry));
     init(new ModuleRepositoryFacade(myModuleRepository));
     init(new ModuleFileTracker(myModuleRepository));
-    CleanupManager cleanupManager = init(new CleanupManager(myClassLoaderManager));
+    init(new CleanupManager(myClassLoaderManager));
     init(new PathMacros());
     myLibraryInitializer = init(new LibraryInitializer(myModuleRepository));
     init(new GlobalScope(myModuleRepository));
@@ -111,7 +110,6 @@ public final class MPSCore extends ComponentPlugin {
                                       new LanguageDescriptorModelProvider(myClassLoaderManager),
                                       new GeneratorDescriptorModelProvider()));
     init(new ProjectStructureModule(myModuleRepository, myPersistenceFacade));
-    init(new BLDependenciesCache(myModuleRepository, cleanupManager));
 
     init(new ResolverComponent());
     init(new ValidationSettings());

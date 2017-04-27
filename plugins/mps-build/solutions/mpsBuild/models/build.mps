@@ -1169,30 +1169,6 @@
         </node>
       </node>
     </node>
-    <node concept="398b33" id="1WZWsoqJkkn" role="3989C9">
-      <property role="TrG5h" value="mps-core" />
-      <node concept="398b2D" id="1E0pRfCJ4SS" role="398b2p">
-        <node concept="398BVA" id="1E0pRfCJ5Od" role="398b2C">
-          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-          <node concept="2Ry0Ak" id="1E0pRfCJ5Of" role="iGT6I">
-            <property role="2Ry0Am" value="core" />
-            <node concept="2Ry0Ak" id="1E0pRfCJ6Ir" role="2Ry0An">
-              <property role="2Ry0Am" value="mps-core" />
-            </node>
-          </node>
-        </node>
-        <node concept="nFU4i" id="1E0pRfCJ6It" role="nFU4p">
-          <property role="nFU4j" value="source" />
-          <property role="3LZaj6" value="source" />
-        </node>
-      </node>
-      <node concept="nCB5N" id="1WZWsoqJmZ0" role="nCB5Z">
-        <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-kernel" />
-      </node>
-      <node concept="nCB5N" id="1WZWsoqJqKn" role="nCB5Z">
-        <ref role="nCB5Y" node="6C2IEmQCfZN" resolve="mps-make-rt" />
-      </node>
-    </node>
     <node concept="398b33" id="6C2IEmQCfZN" role="3989C9">
       <property role="TrG5h" value="mps-make-rt" />
       <node concept="398b2D" id="6C2IEmQCl1X" role="398b2p">
@@ -1827,9 +1803,6 @@
       <node concept="nCB5N" id="1nB28s4qWD" role="nCB5Z">
         <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-kernel" />
       </node>
-      <node concept="nCB5N" id="1nB28s4YPj" role="nCB5Z">
-        <ref role="nCB5Y" node="1WZWsoqJkkn" resolve="mps-core" />
-      </node>
       <node concept="nCB5N" id="5mffBJ2Z2Nv" role="nCB5Z">
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="5StVQ8qcPeV" resolve="platform" />
@@ -1854,9 +1827,6 @@
       </node>
       <node concept="nCB5N" id="1nB28s7q7d" role="nCB5Z">
         <ref role="nCB5Y" node="6C2IEmQCfZN" resolve="mps-make-rt" />
-      </node>
-      <node concept="nCB5N" id="1nB28s7YXe" role="nCB5Z">
-        <ref role="nCB5Y" node="1WZWsoqJkkn" resolve="mps-core" />
       </node>
       <node concept="nCB5N" id="1nB28s8yoa" role="nCB5Z">
         <ref role="nCB5Y" node="75RBgxKm6HY" resolve="mps-generator" />
@@ -1941,12 +1911,7 @@
           </node>
         </node>
       </node>
-      <node concept="nCB5N" id="5StVQ8qcSwe" role="nCB5Z">
-        <property role="1Sh$E4" value="true" />
-        <ref role="nCB5Y" node="1WZWsoqJkkn" resolve="mps-core" />
-      </node>
       <node concept="nCB5N" id="5StVQ8qcTYx" role="nCB5Z">
-        <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="3dkXFAFkSFA" resolve="mps-persistence" />
       </node>
       <node concept="nCB5N" id="5StVQ8qcVsR" role="nCB5Z">
@@ -1960,6 +1925,9 @@
       </node>
       <node concept="nCB5N" id="1BQUFFY60xQ" role="nCB5Z">
         <ref role="nCB5Y" node="6g0vjebAkhc" resolve="mps-textgen" />
+      </node>
+      <node concept="nCB5N" id="3qKyeEgxPgf" role="nCB5Z">
+        <ref role="nCB5Y" node="6C2IEmQCfZN" resolve="mps-make-rt" />
       </node>
     </node>
     <node concept="398b33" id="TfcoydlQ6W" role="3989C9">
@@ -2029,9 +1997,6 @@
       <node concept="nCB5N" id="5g8Dzn7jora" role="nCB5Z">
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="6C2IEmQCfZN" resolve="mps-make-rt" />
-      </node>
-      <node concept="nCB5N" id="5g8Dzn7jpQc" role="nCB5Z">
-        <ref role="nCB5Y" node="1WZWsoqJkkn" resolve="mps-core" />
       </node>
       <node concept="nCB5N" id="TfcoydlTah" role="nCB5Z">
         <property role="1Sh$E4" value="true" />
@@ -2526,9 +2491,6 @@
           </node>
           <node concept="Saw0i" id="1WZWsoqIKE5" role="39821P">
             <ref role="Saw0g" node="1WZWsoqIz7X" resolve="mps-migration" />
-          </node>
-          <node concept="Saw0i" id="1WZWsoqJu4H" role="39821P">
-            <ref role="Saw0g" node="1WZWsoqJkkn" resolve="mps-core" />
           </node>
           <node concept="398223" id="7wpYgMyUGWH" role="39821P">
             <node concept="3_J27D" id="7wpYgMyUGWI" role="Nbhlr">

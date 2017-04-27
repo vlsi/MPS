@@ -233,9 +233,6 @@
       <concept id="6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" flags="ng" index="2pMdtt">
         <property id="6666499814681541920" name="text" index="2pMdty" />
       </concept>
-      <concept id="6666499814681299064" name="jetbrains.mps.core.xml.structure.XmlComment" flags="nn" index="2pNm8U">
-        <child id="1622293396949036151" name="lines" index="3o66t8" />
-      </concept>
       <concept id="6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" flags="ng" index="2pNNFK">
         <property id="6666499814681415862" name="tagName" index="2pNNFO" />
         <property id="6999033275467544021" name="shortEmptyNotation" index="qg3DV" />
@@ -245,9 +242,6 @@
       <concept id="6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" flags="ng" index="2pNUuL">
         <property id="6666499814681447926" name="attrName" index="2pNUuO" />
         <child id="6666499814681541918" name="value" index="2pMdts" />
-      </concept>
-      <concept id="1622293396949036126" name="jetbrains.mps.core.xml.structure.XmlCommentLine" flags="nn" index="3o66tx">
-        <property id="1622293396949036127" name="text" index="3o66tw" />
       </concept>
       <concept id="1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" flags="nn" index="3o6iSG">
         <property id="1622293396948953704" name="value" index="3o6i5n" />
@@ -11563,16 +11557,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2pNNFK" id="4LrmwrDbDnp" role="3o6s8t">
-                  <property role="qg3DV" value="true" />
-                  <property role="2pNNFO" value="fileset" />
-                  <node concept="2pNUuL" id="4LrmwrDbDnq" role="2pNNFR">
-                    <property role="2pNUuO" value="dir" />
-                    <node concept="2pMdtt" id="4LrmwrDbDnr" role="2pMdts">
-                      <property role="2pMdty" value="${build.tmp}/java/out/mps-core" />
-                    </node>
-                  </node>
-                </node>
                 <node concept="2pNNFK" id="6iFFqpAwPG5" role="3o6s8t">
                   <property role="qg3DV" value="true" />
                   <property role="2pNNFO" value="fileset" />
@@ -11650,21 +11634,6 @@
                     <property role="2pNUuO" value="dir" />
                     <node concept="2pMdtt" id="5g8Dzn7llSK" role="2pMdts">
                       <property role="2pMdty" value="${build.tmp}/java/out/mps-make-rt" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="2pNm8U" id="17DjL8wcLlu" role="3o6s8t">
-                  <node concept="3o66tx" id="17DjL8wcLm7" role="3o66t8">
-                    <property role="3o66tw" value="MPSCore instantiates MigrationPropertiesManager" />
-                  </node>
-                </node>
-                <node concept="2pNNFK" id="17DjL8wcI6e" role="3o6s8t">
-                  <property role="qg3DV" value="true" />
-                  <property role="2pNNFO" value="fileset" />
-                  <node concept="2pNUuL" id="17DjL8wcI6f" role="2pNNFR">
-                    <property role="2pNUuO" value="dir" />
-                    <node concept="2pMdtt" id="17DjL8wcI6g" role="2pMdts">
-                      <property role="2pMdty" value="${build.tmp}/java/out/mps-migration" />
                     </node>
                   </node>
                 </node>

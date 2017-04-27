@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/classes" />
     <output-test url="file://$MODULE_DIR$/testclasses" />
     <exclude-output />
@@ -20,7 +20,6 @@
     <orderEntry type="module" module-name="closures-runtime" />
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="module" module-name="kernel-resources" />
-    <orderEntry type="module" module-name="mps-core" exported="" />
     <orderEntry type="module" module-name="java-stub" />
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
@@ -36,9 +35,9 @@
     <orderEntry type="module" module-name="tuples-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="migrations-runtime" />
-    <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="refactoring" />
     <orderEntry type="module" module-name="resources_en" />
     <orderEntry type="module" module-name="actions-runtime" />
+    <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
   </component>
 </module>

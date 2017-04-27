@@ -32,6 +32,8 @@
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
+    <import index="9fyk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.make.java(MPS.Core/)" />
+    <import index="48b2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.cleanup(MPS.Core/)" />
     <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" implicit="true" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" implicit="true" />
   </imports>
@@ -2188,6 +2190,34 @@
                 <ref role="37wK5l" node="1PwNLcbMO5S" resolve="BootstrapMakeFacets" />
                 <node concept="37vLTw" id="1PwNLcbO0QD" role="37wK5m">
                   <ref role="3cqZAo" node="1PwNLcbO0Q$" resolve="facetRegistry" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3qKyeEgy0Br" role="3cqZAp">
+          <node concept="3SKdUq" id="3qKyeEgy0Bt" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME I know it's wrong to access global repository and cleanup manager instance like that" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3qKyeEgy0MG" role="3cqZAp">
+          <node concept="3SKdUq" id="3qKyeEgy0MI" role="3SKWNk">
+            <property role="3SKdUp" value="      but I hope to drop CleanupManager soon, and to come up with a replacement for global repo cache." />
+          </node>
+        </node>
+        <node concept="3clFbF" id="3qKyeEgxRG3" role="3cqZAp">
+          <node concept="1rXfSq" id="3qKyeEgxRG1" role="3clFbG">
+            <ref role="37wK5l" to="wyuk:~ComponentPlugin.init(jetbrains.mps.components.CoreComponent):jetbrains.mps.components.CoreComponent" resolve="init" />
+            <node concept="2ShNRf" id="3qKyeEgxRJ9" role="37wK5m">
+              <node concept="1pGfFk" id="3qKyeEgy00f" role="2ShVmc">
+                <ref role="37wK5l" to="9fyk:~BLDependenciesCache.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,jetbrains.mps.cleanup.CleanupManager)" resolve="BLDependenciesCache" />
+                <node concept="2YIFZM" id="3qKyeEgy09X" role="37wK5m">
+                  <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                  <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                </node>
+                <node concept="2YIFZM" id="3qKyeEgy0u7" role="37wK5m">
+                  <ref role="37wK5l" to="48b2:~CleanupManager.getInstance():jetbrains.mps.cleanup.CleanupManager" resolve="getInstance" />
+                  <ref role="1Pybhc" to="48b2:~CleanupManager" resolve="CleanupManager" />
                 </node>
               </node>
             </node>
