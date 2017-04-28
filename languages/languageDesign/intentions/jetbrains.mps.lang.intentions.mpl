@@ -9,7 +9,7 @@
     <model modelUID="r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)" />
   </accessoryModels>
   <generators>
-    <generator alias="" namespace="jetbrains.mps.lang.intentions#1192798684353" uuid="79a2d464-32b0-48d2-96f9-b40717277a07">
+    <generator alias="" namespace="jetbrains.mps.lang.intentions#1192798684353" uuid="79a2d464-32b0-48d2-96f9-b40717277a07" reflective-queries="false">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/baseLanguage/template" />
