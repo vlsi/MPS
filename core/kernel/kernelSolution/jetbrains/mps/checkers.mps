@@ -1875,8 +1875,8 @@
     <node concept="3clFb_" id="45Q6RD6pndG" role="jymVt">
       <property role="TrG5h" value="addError" />
       <property role="1EzhhJ" value="false" />
-      <node concept="3cqZAl" id="45Q6RD6pndS" role="3clF45" />
       <node concept="3Tm1VV" id="45Q6RD6pndT" role="1B3o_S" />
+      <node concept="3cqZAl" id="45Q6RD6pndS" role="3clF45" />
       <node concept="3clFbS" id="45Q6RD6pndU" role="3clF47">
         <node concept="3clFbF" id="45Q6RD6pneg" role="3cqZAp">
           <node concept="2OqwBi" id="45Q6RD6pneh" role="3clFbG">
@@ -2075,19 +2075,24 @@
         <node concept="3cpWs8" id="1EmyK$nuXop" role="3cqZAp">
           <node concept="3cpWsn" id="1EmyK$nuXoq" role="3cpWs9">
             <property role="TrG5h" value="nodes" />
-            <node concept="2hMVRd" id="1EmyK$nv7dw" role="1tU5fm">
-              <node concept="3Tqbb2" id="1EmyK$nv8ho" role="2hN53Y" />
-            </node>
-            <node concept="2OqwBi" id="1EmyK$nuXor" role="33vP2m">
-              <node concept="37vLTw" id="1EmyK$nuXos" role="2Oq$k0">
-                <ref role="3cqZAo" node="1EmyK$nrkmB" resolve="myDependenciesToNodesAndViceVersa" />
-              </node>
-              <node concept="liA8E" id="1EmyK$nuXot" role="2OqNvi">
-                <ref role="37wK5l" to="yg2w:~ManyToManyMap.getByFirst(java.lang.Object):java.util.Set" resolve="getByFirst" />
-                <node concept="37vLTw" id="1EmyK$nuXou" role="37wK5m">
-                  <ref role="3cqZAo" node="1QnJaNXtnNv" resolve="dependency" />
+            <node concept="2ShNRf" id="15byySRlSUj" role="33vP2m">
+              <node concept="2i4dXS" id="15byySRlSib" role="2ShVmc">
+                <node concept="3Tqbb2" id="15byySRlSic" role="HW$YZ" />
+                <node concept="2OqwBi" id="1EmyK$nuXor" role="I$8f6">
+                  <node concept="37vLTw" id="1EmyK$nuXos" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1EmyK$nrkmB" resolve="myDependenciesToNodesAndViceVersa" />
+                  </node>
+                  <node concept="liA8E" id="1EmyK$nuXot" role="2OqNvi">
+                    <ref role="37wK5l" to="yg2w:~ManyToManyMap.getByFirst(java.lang.Object):java.util.Set" resolve="getByFirst" />
+                    <node concept="37vLTw" id="1EmyK$nuXou" role="37wK5m">
+                      <ref role="3cqZAo" node="1QnJaNXtnNv" resolve="dependency" />
+                    </node>
+                  </node>
                 </node>
               </node>
+            </node>
+            <node concept="2hMVRd" id="1EmyK$nv7dw" role="1tU5fm">
+              <node concept="3Tqbb2" id="1EmyK$nv8ho" role="2hN53Y" />
             </node>
           </node>
         </node>
@@ -4381,14 +4386,14 @@
     <node concept="312cEu" id="1$3BPv3W06D" role="jymVt">
       <property role="TrG5h" value="ResolveReferenceQuickFix" />
       <property role="2bfB8j" value="true" />
-      <node concept="3Tmbuc" id="5s7RUu7Maz7" role="1B3o_S" />
-      <node concept="3uibUv" id="1$3BPv3W06J" role="EKbjA">
-        <ref role="3uigEE" to="2gg1:~QuickFixProvider" resolve="QuickFixProvider" />
-      </node>
       <node concept="312cEg" id="1$3BPv3W078" role="jymVt">
         <property role="TrG5h" value="myIsError" />
         <node concept="3Tm6S6" id="1$3BPv3W079" role="1B3o_S" />
         <node concept="10P_77" id="1$3BPv3W07b" role="1tU5fm" />
+      </node>
+      <node concept="3Tmbuc" id="5s7RUu7Maz7" role="1B3o_S" />
+      <node concept="3uibUv" id="1$3BPv3W06J" role="EKbjA">
+        <ref role="3uigEE" to="2gg1:~QuickFixProvider" resolve="QuickFixProvider" />
       </node>
       <node concept="312cEg" id="1$3BPv3W08w" role="jymVt">
         <property role="TrG5h" value="myReference" />
@@ -6107,8 +6112,8 @@
     <node concept="3clFb_" id="45Q6RD6pR2a" role="jymVt">
       <property role="TrG5h" value="addError" />
       <property role="1EzhhJ" value="true" />
-      <node concept="3cqZAl" id="45Q6RD6pR2b" role="3clF45" />
       <node concept="3Tm1VV" id="45Q6RD6pR2c" role="1B3o_S" />
+      <node concept="3cqZAl" id="45Q6RD6pR2b" role="3clF45" />
       <node concept="3clFbS" id="45Q6RD6pR2d" role="3clF47" />
       <node concept="37vLTG" id="45Q6RD6pR2m" role="3clF46">
         <property role="TrG5h" value="errorReporter" />
@@ -6663,6 +6668,9 @@
                   <property role="2bfB8j" value="true" />
                   <ref role="1Y3XeK" to="yyf4:~Processor" resolve="Processor" />
                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                  <node concept="3uibUv" id="45Q6RD6njvW" role="2Ghqu4">
+                    <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+                  </node>
                   <node concept="3Tm1VV" id="45Q6RD6njvL" role="1B3o_S" />
                   <node concept="3clFb_" id="45Q6RD6njvM" role="jymVt">
                     <property role="1EzhhJ" value="false" />
@@ -6696,9 +6704,6 @@
                         </node>
                       </node>
                     </node>
-                  </node>
-                  <node concept="3uibUv" id="45Q6RD6njvW" role="2Ghqu4">
-                    <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
                   </node>
                 </node>
               </node>

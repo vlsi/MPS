@@ -102,7 +102,7 @@ public class LanguageErrorsComponent extends LanguageErrorsCollector {
   private Set<SNode> removeDependencyFromMapping(@NotNull SNode dependency) {
     // removing dependency node from any mappings together with all checked nodes 
     // depending on this dependency node 
-    Set<SNode> nodes = myDependenciesToNodesAndViceVersa.getByFirst(dependency);
+    Set<SNode> nodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), myDependenciesToNodesAndViceVersa.getByFirst(dependency));
     for (SNode node : SetSequence.fromSet(nodes)) {
       myDependenciesToNodesAndViceVersa.clearSecond(node);
     }
