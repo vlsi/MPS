@@ -427,7 +427,6 @@
       <directory url="file://$PROJECT_DIR$/samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.pluginSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.runtime/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.runtime/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Bottomline/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Bottomline/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Bottomline/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Bottomline/source_gen" includeSubdirectories="true" />

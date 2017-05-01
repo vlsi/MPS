@@ -687,7 +687,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Bottomline/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Bottomline/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Bottomline/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Highlevel/generator/source_gen" isTestSource="false" />
@@ -842,7 +841,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.pluginSolution/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.runtime/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Bottomline/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Bottomline/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Bottomline/sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Highlevel/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Highlevel/generator/classes_gen" />
