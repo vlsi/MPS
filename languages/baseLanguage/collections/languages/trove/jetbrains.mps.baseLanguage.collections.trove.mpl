@@ -10,7 +10,7 @@
     <model modelUID="r:9e8bdb89-2777-4a48-887c-0edd1d0b1863(jetbrains.mps.baseLanguage.collections.trove.containers)" />
   </accessoryModels>
   <generators>
-    <generator alias="baseLanguage" namespace="jetbrains.mps.baseLanguage.collections.trove#5499565529811308574" uuid="025cace2-ef04-4d42-8742-4ee5ffad542f" reflective-queries="false">
+    <generator alias="baseLanguage" namespace="jetbrains.mps.baseLanguage.collections.trove#5499565529811308574" uuid="025cace2-ef04-4d42-8742-4ee5ffad542f">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />

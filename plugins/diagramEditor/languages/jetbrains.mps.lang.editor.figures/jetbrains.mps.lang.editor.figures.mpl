@@ -11,7 +11,7 @@
   </facets>
   <accessoryModels />
   <generators>
-    <generator namespace="jetbrains.mps.lang.editor.figures#785823818609016954" uuid="79bc6a9b-8e2d-4176-931d-45144f3a872a" reflective-queries="false">
+    <generator namespace="jetbrains.mps.lang.editor.figures#785823818609016954" uuid="79bc6a9b-8e2d-4176-931d-45144f3a872a">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />

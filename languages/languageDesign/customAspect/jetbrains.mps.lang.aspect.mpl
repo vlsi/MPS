@@ -18,7 +18,7 @@
     <model modelUID="r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspect.methods)" />
   </accessoryModels>
   <generators>
-    <generator alias="" namespace="jetbrains.mps.lang.aspect#3274906159125927726" uuid="e45a8b22-94f2-427f-b849-77f254c4eef5" reflective-queries="false">
+    <generator alias="" namespace="jetbrains.mps.lang.aspect#3274906159125927726" uuid="e45a8b22-94f2-427f-b849-77f254c4eef5">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
