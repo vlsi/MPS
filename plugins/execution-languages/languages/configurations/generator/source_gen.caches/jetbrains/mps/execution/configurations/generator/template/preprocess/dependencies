@@ -2,9 +2,16 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.execution.configurations.generator.template.preprocess.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ExecuteCommandPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.QueryKey" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.ScriptCodeBlock" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -17,10 +24,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.QueryProviderBase" />
   </dependency>
 </dependenciesRoot>
 
