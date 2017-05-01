@@ -835,7 +835,8 @@ public class QueriesGenerated extends QueryProviderBase {
     return PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(_context.getNode()).getName();
   }
   public static Object propertyMacro_GetPropertyValue_1547633452932955847(final PropertyMacroContext _context) {
-    return SNodeOperations.getParent(_context.getNode()).getProperty(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(_context.getNode()));
+    // in case porperty value contains backslash or anything else not suited for Java 
+    return NameUtil.escapeString(SNodeOperations.getParent(_context.getNode()).getProperty(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(_context.getNode())));
   }
   public static Object propertyMacro_GetPropertyValue_3188250212959938205(final PropertyMacroContext _context) {
     return ((Integer) _context.getVariable("cv:c"));

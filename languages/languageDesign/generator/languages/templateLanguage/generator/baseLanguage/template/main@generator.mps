@@ -38023,20 +38023,29 @@
                         <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
                         <node concept="3zFVjK" id="1lUj6NW_7V7" role="3zH0cK">
                           <node concept="3clFbS" id="1lUj6NW_7V8" role="2VODD2">
-                            <node concept="3clFbF" id="1lUj6NW_8EX" role="3cqZAp">
-                              <node concept="2OqwBi" id="1lUj6NW_fdw" role="3clFbG">
-                                <node concept="2JrnkZ" id="1lUj6NW_etD" role="2Oq$k0">
-                                  <node concept="2OqwBi" id="1lUj6NW_8PS" role="2JrQYb">
-                                    <node concept="30H73N" id="1lUj6NW_8EW" role="2Oq$k0" />
-                                    <node concept="1mfA1w" id="1lUj6NW_awR" role="2OqNvi" />
+                            <node concept="3SKdUt" id="76og1JlPLyY" role="3cqZAp">
+                              <node concept="3SKdUq" id="76og1JlPLz0" role="3SKWNk">
+                                <property role="3SKdUp" value="in case porperty value contains backslash or anything else not suited for Java" />
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="76og1JlPJOn" role="3cqZAp">
+                              <node concept="2YIFZM" id="76og1JlPK4N" role="3clFbG">
+                                <ref role="37wK5l" to="18ew:~NameUtil.escapeString(java.lang.String):java.lang.String" resolve="escapeString" />
+                                <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                                <node concept="2OqwBi" id="1lUj6NW_fdw" role="37wK5m">
+                                  <node concept="2JrnkZ" id="1lUj6NW_etD" role="2Oq$k0">
+                                    <node concept="2OqwBi" id="1lUj6NW_8PS" role="2JrQYb">
+                                      <node concept="30H73N" id="1lUj6NW_8EW" role="2Oq$k0" />
+                                      <node concept="1mfA1w" id="1lUj6NW_awR" role="2OqNvi" />
+                                    </node>
                                   </node>
-                                </node>
-                                <node concept="liA8E" id="1lUj6NW_fLa" role="2OqNvi">
-                                  <ref role="37wK5l" to="mhbf:~SNode.getProperty(org.jetbrains.mps.openapi.language.SProperty):java.lang.String" resolve="getProperty" />
-                                  <node concept="2OqwBi" id="5q7UjaiU7L2" role="37wK5m">
-                                    <node concept="30H73N" id="5q7UjaiU7Es" role="2Oq$k0" />
-                                    <node concept="2qgKlT" id="5q7UjaiU7Xb" role="2OqNvi">
-                                      <ref role="37wK5l" to="tpcu:1avfQ4BBzOo" resolve="getProperty" />
+                                  <node concept="liA8E" id="1lUj6NW_fLa" role="2OqNvi">
+                                    <ref role="37wK5l" to="mhbf:~SNode.getProperty(org.jetbrains.mps.openapi.language.SProperty):java.lang.String" resolve="getProperty" />
+                                    <node concept="2OqwBi" id="5q7UjaiU7L2" role="37wK5m">
+                                      <node concept="30H73N" id="5q7UjaiU7Es" role="2Oq$k0" />
+                                      <node concept="2qgKlT" id="5q7UjaiU7Xb" role="2OqNvi">
+                                        <ref role="37wK5l" to="tpcu:1avfQ4BBzOo" resolve="getProperty" />
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
