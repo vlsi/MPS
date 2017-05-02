@@ -76,10 +76,6 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
-        <child id="1224071154657" name="classifierType" index="0kSFW" />
-        <child id="1224071154656" name="expression" index="0kSFX" />
-      </concept>
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
@@ -1857,33 +1853,12 @@
                                     </node>
                                     <node concept="9aQIb" id="7lByCvU_D4y" role="9aQIa">
                                       <node concept="3clFbS" id="7lByCvU_D4z" role="9aQI4">
-                                        <node concept="3cpWs8" id="5EyPfg3xGaC" role="3cqZAp">
-                                          <node concept="3cpWsn" id="5EyPfg3xGaD" role="3cpWs9">
-                                            <property role="TrG5h" value="lastStep" />
-                                            <node concept="3uibUv" id="5EyPfg3xGaE" role="1tU5fm">
-                                              <ref role="3uigEE" to="o8ag:12JIgXNwLaS" resolve="MigrationErrorWizardStep" />
-                                            </node>
-                                            <node concept="0kSF2" id="5EyPfg3xGaF" role="33vP2m">
-                                              <node concept="3uibUv" id="5EyPfg3xGaG" role="0kSFW">
-                                                <ref role="3uigEE" to="o8ag:12JIgXNwLaS" resolve="MigrationErrorWizardStep" />
-                                              </node>
-                                              <node concept="2OqwBi" id="5EyPfg3xGaH" role="0kSFX">
-                                                <node concept="37vLTw" id="5EyPfg3xGaI" role="2Oq$k0">
-                                                  <ref role="3cqZAo" node="5EyPfg3xGa4" resolve="wizard" />
-                                                </node>
-                                                <node concept="liA8E" id="5EyPfg3xGaJ" role="2OqNvi">
-                                                  <ref role="37wK5l" to="uxeh:~AbstractWizard.getCurrentStepObject():com.intellij.ide.wizard.Step" resolve="getCurrentStepObject" />
-                                                </node>
-                                              </node>
-                                            </node>
-                                          </node>
-                                        </node>
                                         <node concept="3clFbJ" id="5EyPfg3xGaK" role="3cqZAp">
-                                          <node concept="3clFbC" id="5EyPfg3xGaL" role="3clFbw">
-                                            <node concept="37vLTw" id="5EyPfg3xGaM" role="3uHU7B">
-                                              <ref role="3cqZAo" node="5EyPfg3xGaD" resolve="lastStep" />
+                                          <node concept="3clFbC" id="6dkZ8D0MUym" role="3clFbw">
+                                            <node concept="10Nm6u" id="6dkZ8D0MUNk" role="3uHU7w" />
+                                            <node concept="37vLTw" id="6dkZ8D0MTtY" role="3uHU7B">
+                                              <ref role="3cqZAo" node="2htE_P_Moh7" resolve="myErrors" />
                                             </node>
-                                            <node concept="10Nm6u" id="5EyPfg3xGaN" role="3uHU7w" />
                                           </node>
                                           <node concept="3clFbS" id="5EyPfg3xGaO" role="3clFbx">
                                             <node concept="3cpWs6" id="5EyPfg3xGaP" role="3cqZAp" />
