@@ -214,7 +214,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     return (isCleanup ? cleanupSize : ListSequence.fromList(migrations).count() - cleanupSize);
   }
 
-  public MigrationManager.MigrationStep nextProjectStep(MigrationOptions options, boolean cleanup) {
+  public ProjectMigration nextProjectStep(MigrationOptions options, boolean cleanup) {
     ProjectMigration current = next(lastProjectMigration, cleanup);
 
     while (current != null && !(current.shouldBeExecuted(myMpsMproject))) {
@@ -230,38 +230,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
       ((ProjectMigrationWithOptions) current).setOptionValues(options);
     }
 
-    final ProjectMigration cc = current;
-    return new MigrationManager.MigrationStep() {
-      public String getDescription() {
-        return cc.getDescription();
-      }
-      @Override
-      public String getCommonDescription() {
-        return cc.getDescription();
-      }
-      @Override
-      public String getMergeId() {
-        return null;
-      }
-      public boolean execute() {
-        try {
-          cc.execute(myMpsMproject);
-        } catch (Throwable e) {
-          if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("Could not execute script", e);
-          }
-          return false;
-        }
-        return true;
-      }
-
-      public void forceExecutionNextTime() {
-        if (!((cc instanceof CleanupProjectMigration))) {
-          throw new UnsupportedOperationException("only supported for cleanup project migrations");
-        }
-        ((CleanupProjectMigration) cc).forceExecutionNextTime(myMpsMproject);
-      }
-    };
+    return current;
   }
 
   private ProjectMigration next(ProjectMigration current, final boolean cleanup) {
@@ -304,8 +273,8 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     return result.value;
   }
 
-  public MigrationManager.MigrationStep nextModuleStep(@Nullable final String preferredId) {
-    final Wrappers._T<MigrationManager.MigrationStep> result = new Wrappers._T<MigrationManager.MigrationStep>(null);
+  public ScriptApplied nextModuleStep(@Nullable final String preferredId) {
+    final Wrappers._T<ScriptApplied> result = new Wrappers._T<ScriptApplied>(null);
     myMpsMproject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<ScriptApplied> toApply = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject))).translate(new ITranslator2<SModule, ScriptApplied.ScriptAppliedReference>() {
@@ -339,26 +308,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
           return;
         }
 
-        ScriptApplied applied = Sequence.fromIterable(preferred).first();
-        result.value = new MigrationManager.MigrationStep() {
-          public String getDescription() {
-            return applied.getDescription() + ": " + applied.getModule().getModuleName();
-          }
-          @Override
-          public String getCommonDescription() {
-            return applied.getDescription();
-          }
-          @Override
-          public String getMergeId() {
-            return applied.getId();
-          }
-          public boolean execute() {
-            return applied.execute(myMigrationComponent);
-          }
-          public void forceExecutionNextTime() {
-            throw new UnsupportedOperationException("not supported for module migrations");
-          }
-        };
+        result.value = Sequence.fromIterable(preferred).first();
       }
     });
     return result.value;

@@ -29,6 +29,7 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.migration.global.RunnableMigration;
 
 public class TestMigrationHelper {
   private Project myProject;
@@ -134,7 +135,7 @@ public class TestMigrationHelper {
       }
 
       private List<ProjectMigration> passedP = ListSequence.fromList(new ArrayList<ProjectMigration>());
-      public MigrationManager.MigrationStep nextProjectStep(MigrationOptions options, final boolean cleanup) {
+      public ProjectMigration nextProjectStep(MigrationOptions options, final boolean cleanup) {
         final ProjectMigration next = Sequence.fromIterable(getProjectMigrationsToApply()).where(new IWhereFilter<ProjectMigration>() {
           public boolean accept(ProjectMigration it) {
             return cleanup == (it instanceof CleanupProjectMigration);
@@ -148,34 +149,13 @@ public class TestMigrationHelper {
           return null;
         }
         ListSequence.fromList(passedP).addElement(next);
-        return new MigrationManager.MigrationStep() {
-          public String getDescription() {
-            return next.getDescription();
-          }
-          public String getCommonDescription() {
-            return next.getDescription();
-          }
-          public String getMergeId() {
-            return null;
-          }
-          public boolean execute() {
-            try {
-              next.execute(myMpsProject);
-              return true;
-            } catch (Throwable t) {
-              // todo way to check this 
-              return false;
-            }
-          }
-          public void forceExecutionNextTime() {
-          }
-        };
+        return next;
       }
       public int moduleStepsCount() {
         return Sequence.fromIterable(getModuleMigrationsApplied()).count();
       }
       private List<ScriptApplied> passedM = ListSequence.fromList(new ArrayList<ScriptApplied>());
-      public MigrationManager.MigrationStep nextModuleStep(@Nullable String preferredId) {
+      public ScriptApplied nextModuleStep(@Nullable String preferredId) {
         Iterable<MigrationScriptApplied> applied = getModuleMigrationsApplied();
         final MigrationScriptApplied sa = Sequence.fromIterable(applied).findFirst(new IWhereFilter<MigrationScriptApplied>() {
           public boolean accept(final MigrationScriptApplied sa) {
@@ -186,29 +166,7 @@ public class TestMigrationHelper {
             });
           }
         });
-        if (sa == null) {
-          return null;
-        }
-        // todo remove MigrationStep interface, MigrationReference, MigrationApplied, MigrationAppliedReference 
-        return new MigrationManager.MigrationStep() {
-          public String getDescription() {
-            return sa.getDescription() + ": " + sa.getModule().getModuleName();
-          }
-          @Override
-          public String getCommonDescription() {
-            return sa.getDescription();
-          }
-          @Override
-          public String getMergeId() {
-            return sa.getId();
-          }
-          public boolean execute() {
-            return sa.execute(getMigrationComponent());
-          }
-          public void forceExecutionNextTime() {
-            throw new UnsupportedOperationException("not supported for module migrations");
-          }
-        };
+        return sa;
       }
       private Iterable<MigrationScriptApplied> getModuleMigrationsApplied() {
         final List<SModule> modules = ListSequence.fromList(((List<SModule>) myMpsProject.getProjectModules())).take(5).toListSequence();
@@ -253,6 +211,10 @@ public class TestMigrationHelper {
       private String myId;
       public MyProjectMigration(String id) {
         myId = id;
+      }
+      @Override
+      public boolean canBeMerged(RunnableMigration migration) {
+        return false;
       }
       public String getDescription() {
         return myId;

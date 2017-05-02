@@ -20,10 +20,12 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.Color;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.ide.migration.MigrationManager;
+import jetbrains.mps.migration.global.RunnableMigration;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.migration.global.ProjectMigration;
+import jetbrains.mps.migration.global.CleanupProjectMigration;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
@@ -163,22 +165,26 @@ public class MigrationTask {
     };
   }
 
-  private boolean executeSingleStep(final MigrationManager.MigrationStep step, final _FunctionTypes._return_P0_E0<? extends MigrationManager.MigrationStep> next) {
+  private <T extends RunnableMigration> boolean executeSingleStep(final T step, final _FunctionTypes._void_P1_E0<? super T> executor, final _FunctionTypes._return_P0_E0<? extends RunnableMigration> next) {
     assert step != null;
     final Wrappers._boolean noException = new Wrappers._boolean(true);
 
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         if (myCurrentChange == null) {
-          myCurrentChange = LocalHistory.getInstance().startAction(APPLY + step.getCommonDescription());
+          myCurrentChange = LocalHistory.getInstance().startAction(APPLY + step.getDescription());
         }
         mySession.getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
-            noException.value = ((MigrationManager.MigrationStep) step).execute();
+            try {
+              executor.invoke(step);
+            } catch (Throwable t) {
+              noException.value = false;
+            }
           }
         });
 
-        if (next == null || next.invoke() == null || neq_ajmasp_a0a3a0a0a0a3a82(next.invoke().getMergeId(), step.getMergeId())) {
+        if (next == null || next.invoke() == null || !(next.invoke().canBeMerged(step))) {
           final Project project = mySession.getProject();
           project.getRepository().getModelAccess().runWriteAction(new Runnable() {
             public void run() {
@@ -203,15 +209,21 @@ public class MigrationTask {
       addGlobalLabel(mySession.getProject(), "Cleanup started");
 
       while (true) {
-        MigrationManager.MigrationStep step = mySession.getMigrationManager().nextProjectStep(mySession.getOptions(), true);
-        if (step == null) {
+        ProjectMigration pm = mySession.getMigrationManager().nextProjectStep(mySession.getOptions(), true);
+        if (pm == null) {
           break;
         }
 
-        m.step(((MigrationManager.MigrationStep) step).getDescription());
-        if (!(executeSingleStep(step, null))) {
+        m.step(pm.getDescription());
+        if (!(executeSingleStep(pm, new _FunctionTypes._void_P1_E0<ProjectMigration>() {
+          public void invoke(ProjectMigration p) {
+            p.execute(mySession.getProject());
+          }
+        }, null))) {
           success = false;
-          step.forceExecutionNextTime();
+          if (pm instanceof CleanupProjectMigration) {
+            ((CleanupProjectMigration) pm).forceExecutionNextTime(mySession.getProject());
+          }
           break;
         }
 
@@ -287,13 +299,17 @@ public class MigrationTask {
     m.start("Running project migrations...", projectStepsCount);
     boolean success = true;
     while (true) {
-      MigrationManager.MigrationStep step = mySession.getMigrationManager().nextProjectStep(mySession.getOptions(), false);
-      if (step == null) {
+      ProjectMigration pm = mySession.getMigrationManager().nextProjectStep(mySession.getOptions(), false);
+      if (pm == null) {
         break;
       }
 
-      m.step(((MigrationManager.MigrationStep) step).getDescription());
-      if (!(executeSingleStep(step, null))) {
+      m.step(pm.getDescription());
+      if (!(executeSingleStep(pm, new _FunctionTypes._void_P1_E0<ProjectMigration>() {
+        public void invoke(ProjectMigration p) {
+          p.execute(mySession.getProject());
+        }
+      }, null))) {
         success = false;
         break;
       }
@@ -311,15 +327,19 @@ public class MigrationTask {
 
     final Wrappers._T<String> preferredId = new Wrappers._T<String>(null);
     while (true) {
-      MigrationManager.MigrationStep step = mySession.getMigrationManager().nextModuleStep(preferredId.value);
-      if (step == null) {
+      ScriptApplied sa = mySession.getMigrationManager().nextModuleStep(preferredId.value);
+      if (sa == null) {
         break;
       }
 
-      preferredId.value = step.getMergeId();
-      m.step(((MigrationManager.MigrationStep) step).getDescription());
-      if (!(executeSingleStep(step, new _FunctionTypes._return_P0_E0<MigrationManager.MigrationStep>() {
-        public MigrationManager.MigrationStep invoke() {
+      preferredId.value = sa.getId();
+      m.step(sa.getDescription());
+      if (!(executeSingleStep(sa, new _FunctionTypes._void_P1_E0<ScriptApplied>() {
+        public void invoke(ScriptApplied s) {
+          s.execute(mySession.getMigrationManager().getMigrationComponent());
+        }
+      }, new _FunctionTypes._return_P0_E0<ScriptApplied>() {
+        public ScriptApplied invoke() {
           return mySession.getMigrationManager().nextModuleStep(preferredId.value);
         }
       }))) {
@@ -367,8 +387,5 @@ public class MigrationTask {
       }
     });
     return haveNotMigrated.value;
-  }
-  private static boolean neq_ajmasp_a0a3a0a0a0a3a82(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

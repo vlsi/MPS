@@ -28,17 +28,9 @@ public interface MigrationManager {
 
   int projectStepsCount(boolean isCleanup);
 
-  MigrationManager.MigrationStep nextProjectStep(MigrationOptions options, boolean cleanup);
+  ProjectMigration nextProjectStep(MigrationOptions options, boolean cleanup);
 
   int moduleStepsCount();
 
-  MigrationManager.MigrationStep nextModuleStep(@Nullable String preferredId);
-
-  interface MigrationStep {
-    String getDescription();
-    String getCommonDescription();
-    String getMergeId();
-    boolean execute();
-    void forceExecutionNextTime();
-  }
+  ScriptApplied nextModuleStep(@Nullable String preferredId);
 }

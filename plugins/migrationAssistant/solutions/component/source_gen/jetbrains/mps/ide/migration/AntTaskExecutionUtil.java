@@ -5,6 +5,7 @@ package jetbrains.mps.ide.migration;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.MigrationOptions;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,12 +26,14 @@ public class AntTaskExecutionUtil {
       public void run() {
         while (true) {
           // we don't know which options are "better" so we "select" no one 
-          MigrationManager.MigrationStep step = m.nextProjectStep(new MigrationOptions(), true);
+          ProjectMigration step = m.nextProjectStep(new MigrationOptions(), true);
           if (step == null) {
             break;
           }
-          if (!(step.execute())) {
-            throw new RuntimeException("Problem on executing cleanup migrations");
+          try {
+            step.execute(project);
+          } catch (Throwable t) {
+            throw new RuntimeException("Problem on executing language migrations");
           }
         }
 
@@ -50,21 +53,25 @@ public class AntTaskExecutionUtil {
         }
 
         while (true) {
-          MigrationManager.MigrationStep step = m.nextProjectStep(new MigrationOptions(), false);
-          if (step == null) {
+          ProjectMigration pm = m.nextProjectStep(new MigrationOptions(), false);
+          if (pm == null) {
             break;
           }
-          if (!(step.execute())) {
-            throw new RuntimeException("Problem on executing project migrations");
+          try {
+            pm.execute(project);
+          } catch (Throwable t) {
+            throw new RuntimeException("Problem on executing language migrations");
           }
         }
 
         while (true) {
-          MigrationManager.MigrationStep step = m.nextModuleStep(null);
-          if (step == null) {
+          ScriptApplied mig = m.nextModuleStep(null);
+          if (mig == null) {
             break;
           }
-          if (!(step.execute())) {
+          try {
+            mig.execute(m.getMigrationComponent());
+          } catch (Throwable t) {
             throw new RuntimeException("Problem on executing language migrations");
           }
         }

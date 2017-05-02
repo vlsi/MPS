@@ -13,6 +13,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.migration.global.RunnableMigration;
 
 public final class MigrationScriptApplied implements ScriptApplied {
 
@@ -86,10 +87,20 @@ public final class MigrationScriptApplied implements ScriptApplied {
     return result;
   }
 
-  public boolean execute(MigrationComponent migrationComponent) {
-    return migrationComponent.executeMigrationScript(this);
+  public void execute(MigrationComponent migrationComponent) {
+    if (!(migrationComponent.executeMigrationScript(this))) {
+      throw new RuntimeException("Exception during migration");
+    }
   }
 
+  @Override
+  public boolean canBeMerged(RunnableMigration migration) {
+    MigrationScriptApplied other = as_wo989e_a0a0a51(migration, MigrationScriptApplied.class);
+    if (other == null) {
+      return false;
+    }
+    return eq_wo989e_a0c0p(getId(), other.getId());
+  }
   public String getDescription() {
     return new MigrationScriptApplied.MigrationScriptAppliedReference(myScript.getDescriptor(), myModule).getKindDescription(this);
   }
@@ -97,5 +108,11 @@ public final class MigrationScriptApplied implements ScriptApplied {
   public String getId() {
     MigrationScriptReference d = myScript.getDescriptor();
     return "migration:" + d.getLanguage().toString() + ":" + d.getFromVersion();
+  }
+  private static <T> T as_wo989e_a0a0a51(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
+  private static boolean eq_wo989e_a0c0p(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

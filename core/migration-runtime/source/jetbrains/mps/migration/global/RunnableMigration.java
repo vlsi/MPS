@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,8 @@
  */
 package jetbrains.mps.migration.global;
 
-import jetbrains.mps.project.Project;
-
-public interface ProjectMigration extends RunnableMigration<Project> {
-  void applyToCreatedProject(Project p);
-
-  boolean shouldBeExecuted(Project p);
-
-  boolean isRerunnable();
+public interface RunnableMigration<T> {
+  String getDescription();
+  void execute(T param);
+  boolean canBeMerged(RunnableMigration another);
 }
