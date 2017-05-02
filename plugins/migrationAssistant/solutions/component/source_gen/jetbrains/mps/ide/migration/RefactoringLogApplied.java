@@ -13,7 +13,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.migration.global.RunnableMigration;
 
 public final class RefactoringLogApplied implements ScriptApplied {
 
@@ -77,10 +76,6 @@ public final class RefactoringLogApplied implements ScriptApplied {
   }
   public String getDescription() {
     return new RefactoringLogApplied.RefactoringLogAppliedReference(myRefactoringLog.getDescriptor(), myModule).getKindDescription(this);
-  }
-  @Override
-  public boolean canBeMerged(RunnableMigration migration) {
-    return false;
   }
   @Override
   public String getId() {

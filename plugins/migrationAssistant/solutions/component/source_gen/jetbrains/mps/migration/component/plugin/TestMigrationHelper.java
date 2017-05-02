@@ -29,7 +29,6 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.migration.global.RunnableMigration;
 
 public class TestMigrationHelper {
   private Project myProject;
@@ -211,10 +210,6 @@ public class TestMigrationHelper {
       private String myId;
       public MyProjectMigration(String id) {
         myId = id;
-      }
-      @Override
-      public boolean canBeMerged(RunnableMigration migration) {
-        return false;
       }
       public String getDescription() {
         return myId;

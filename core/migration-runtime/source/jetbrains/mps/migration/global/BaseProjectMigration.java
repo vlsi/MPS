@@ -59,9 +59,4 @@ public abstract class BaseProjectMigration implements ProjectMigration {
   public void applyToCreatedProject(Project p) {
     setExecuted(p);
   }
-
-  @Override
-  public boolean canBeMerged(RunnableMigration another) {
-    return false;
-  }
 }

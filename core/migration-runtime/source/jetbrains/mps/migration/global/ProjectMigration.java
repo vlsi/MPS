@@ -17,10 +17,14 @@ package jetbrains.mps.migration.global;
 
 import jetbrains.mps.project.Project;
 
-public interface ProjectMigration extends RunnableMigration<Project> {
+public interface ProjectMigration {
+  String getDescription();
+
   void applyToCreatedProject(Project p);
 
   boolean shouldBeExecuted(Project p);
 
   boolean isRerunnable();
+
+  void execute(Project p);
 }

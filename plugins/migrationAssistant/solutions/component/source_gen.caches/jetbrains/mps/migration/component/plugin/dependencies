@@ -352,7 +352,6 @@
     <classNode dependClassName="jetbrains.mps.migration.global.CleanupProjectMigration" />
     <classNode dependClassName="jetbrains.mps.migration.global.MigrationOptions" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
-    <classNode dependClassName="jetbrains.mps.migration.global.RunnableMigration" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

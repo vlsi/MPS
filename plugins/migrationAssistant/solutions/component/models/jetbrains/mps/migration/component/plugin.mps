@@ -1057,7 +1057,7 @@
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="68FOACLucbo" role="2OqNvi">
-                                  <ref role="37wK5l" to="bdll:~RunnableMigration.getDescription():java.lang.String" resolve="getDescription" />
+                                  <ref role="37wK5l" to="bdll:~ProjectMigration.getDescription():java.lang.String" resolve="getDescription" />
                                 </node>
                               </node>
                             </node>
@@ -1094,7 +1094,7 @@
                                             </node>
                                           </node>
                                           <node concept="liA8E" id="5$zfhXzr$FX" role="2OqNvi">
-                                            <ref role="37wK5l" to="bdll:~RunnableMigration.execute(java.lang.Object):void" resolve="execute" />
+                                            <ref role="37wK5l" to="bdll:~ProjectMigration.execute(jetbrains.mps.project.Project):void" resolve="execute" />
                                             <node concept="2OqwBi" id="5$zfhXzr$GE" role="37wK5m">
                                               <node concept="2WthIp" id="5$zfhXzr$GH" role="2Oq$k0" />
                                               <node concept="1DTwFV" id="5$zfhXzr$GJ" role="2OqNvi">
@@ -1169,7 +1169,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="5$zfhXzrxUN" role="2OqNvi">
-                  <ref role="37wK5l" to="bdll:~RunnableMigration.getDescription():java.lang.String" resolve="getDescription" />
+                  <ref role="37wK5l" to="bdll:~ProjectMigration.getDescription():java.lang.String" resolve="getDescription" />
                 </node>
               </node>
             </node>
@@ -5044,28 +5044,6 @@
             <node concept="3uibUv" id="65hwFmZj0x1" role="1tU5fm">
               <ref role="3uigEE" to="wyt6:~String" resolve="String" />
             </node>
-          </node>
-        </node>
-        <node concept="3clFb_" id="3DyGwJ_8nKI" role="jymVt">
-          <property role="1EzhhJ" value="false" />
-          <property role="TrG5h" value="canBeMerged" />
-          <property role="DiZV1" value="false" />
-          <property role="od$2w" value="false" />
-          <node concept="3Tm1VV" id="3DyGwJ_8nKJ" role="1B3o_S" />
-          <node concept="10P_77" id="3DyGwJ_8nKL" role="3clF45" />
-          <node concept="37vLTG" id="3DyGwJ_8nKM" role="3clF46">
-            <property role="TrG5h" value="migration" />
-            <node concept="3uibUv" id="3DyGwJ_8nKN" role="1tU5fm">
-              <ref role="3uigEE" to="bdll:~RunnableMigration" resolve="RunnableMigration" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="3DyGwJ_8nKQ" role="3clF47">
-            <node concept="3clFbF" id="3DyGwJ_8nKT" role="3cqZAp">
-              <node concept="3clFbT" id="3DyGwJ_8nKS" role="3clFbG" />
-            </node>
-          </node>
-          <node concept="2AHcQZ" id="3DyGwJ_8nKR" role="2AJF6D">
-            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
           </node>
         </node>
         <node concept="3Tm6S6" id="65hwFmZiSK3" role="1B3o_S" />
