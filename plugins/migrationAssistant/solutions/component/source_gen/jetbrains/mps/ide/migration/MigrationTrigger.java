@@ -22,7 +22,6 @@ import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
@@ -161,8 +160,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   }
                 });
               } else {
-                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0i0a0a0a0b0a0a0a0b0a3a72(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
-                if (lastStep == null) {
+                if (myErrors == null) {
                   return;
                 }
 
@@ -568,8 +566,5 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   @Override
   public MigrationOptions getOptions() {
     return myOptions;
-  }
-  private static <T> T as_feb5zp_a0a0a0i0a0a0a0b0a0a0a0b0a3a72(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
   }
 }

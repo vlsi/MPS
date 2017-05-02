@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
-import com.intellij.ui.components.JBLabel;
 import javax.swing.Box;
 import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -47,12 +46,7 @@ public class InitialStep extends BaseStep {
     mainPanel.setPreferredSize(new Dimension(400, 200));
 
     mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-    JPanel labelPanel = new JPanel();
-    labelPanel.setLayout(new BoxLayout(labelPanel, BoxLayout.X_AXIS));
-    JBLabel msg = new JBLabel("<html>To work properly in current setup, this project should be migrated.<br><br>" + "Migrations to be applied:<br></html>");
-    labelPanel.add(msg);
-    labelPanel.add(Box.createHorizontalGlue());
-    mainPanel.add(labelPanel);
+    mainPanel.add(createInfoPanel("<html>To work properly in current setup, this project should be migrated.<br><br>" + "Migrations to be applied:<br></html>"));
 
     JPanel infoPanel = new JPanel();
     infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.X_AXIS));
@@ -134,7 +128,7 @@ public class InitialStep extends BaseStep {
 
   @Override
   public Object getNextStepId() {
-    return PrepareStep.ID;
+    return MigrationStep.ID;
   }
 
   @Override

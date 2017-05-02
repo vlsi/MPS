@@ -12,9 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class MigrationWizard extends AbstractWizardEx {
 
@@ -35,16 +32,18 @@ public class MigrationWizard extends AbstractWizardEx {
       }
     });
 
-    return ListSequence.fromListAndArray(new ArrayList<BaseStep>(), new InitialStep(session), new PrepareStep(session), new MigrationStep(session), new MigrationErrorWizardStep(session));
+    return ListSequence.fromListAndArray(new ArrayList<BaseStep>(), new InitialStep(session), new MigrationStep(session));
   }
 
   @Override
   public boolean isAutoAdjustable() {
     return true;
   }
+
   @Override
-  protected void updateStep() {
-    super.updateStep();
+  protected void updateButtons() {
+    super.updateButtons();
+    // our steps can provide different next/prev button texts 
     getCancelButton().setEnabled(((BaseStep) getCurrentStepObject()).canBeCancelled());
     String nextLabel = ((BaseStep) getCurrentStepObject()).nextButtonLabel();
     if (nextLabel != null) {
@@ -55,25 +54,6 @@ public class MigrationWizard extends AbstractWizardEx {
       getCancelButton().setText(cancelLabel);
       getRootPane().setDefaultButton(getCancelButton());
     }
-  }
-  @Override
-  protected void doNextAction() {
-    super.doNextAction();
-
-    final ModalityState current = ModalityState.current();
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        ((BaseStep) getCurrentStepObject()).autostart(new _FunctionTypes._void_P0_E0() {
-          public void invoke() {
-            ApplicationManager.getApplication().invokeLater(new Runnable() {
-              public void run() {
-                updateStep();
-              }
-            }, current);
-          }
-        });
-      }
-    }, current);
   }
 
   @Override

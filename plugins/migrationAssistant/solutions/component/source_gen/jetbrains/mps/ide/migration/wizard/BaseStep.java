@@ -6,10 +6,11 @@ import com.intellij.ide.wizard.AbstractWizardStepEx;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ide.wizard.CommitStepException;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import javax.swing.BoxLayout;
+import com.intellij.ui.components.JBLabel;
+import javax.swing.Box;
 
 public abstract class BaseStep extends AbstractWizardStepEx {
   private JComponent myComponent;
@@ -26,7 +27,7 @@ public abstract class BaseStep extends AbstractWizardStepEx {
   @Override
   public JComponent getComponent() {
     if (myComponent == null) {
-      this.myComponent = new JPanel(new BorderLayout());
+      myComponent = new JPanel();
       myComponent.setBorder(IdeBorderFactory.createEmptyBorder(0, 10, 0, 10));
       doCreateComponent(myComponent);
     }
@@ -53,8 +54,14 @@ public abstract class BaseStep extends AbstractWizardStepEx {
   public String cancelButtonLabel() {
     return null;
   }
-  public void autostart(_FunctionTypes._void_P0_E0 later) {
-    later.invoke();
-  }
   protected abstract void doCreateComponent(JComponent mainPanel);
+
+  protected JComponent createInfoPanel(String text) {
+    JPanel labelPanel = new JPanel();
+    labelPanel.setLayout(new BoxLayout(labelPanel, BoxLayout.X_AXIS));
+    JBLabel msg = new JBLabel(text);
+    labelPanel.add(msg);
+    labelPanel.add(Box.createHorizontalGlue());
+    return labelPanel;
+  }
 }

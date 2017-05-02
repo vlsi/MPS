@@ -22,8 +22,8 @@ import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import jetbrains.mps.ide.migration.wizard.MigrationSession;
 import jetbrains.mps.ide.migration.wizard.MigrationTask;
-import jetbrains.mps.ide.migration.wizard.StepTask;
 import jetbrains.mps.migration.global.MigrationOptions;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.junit.suites.TestMakeUtil;
 import jetbrains.mps.tool.environment.Environment;
@@ -92,14 +92,14 @@ public class MigrationsTest {
       }
     };
 
-    new MigrationTask(session).run(new EmptyProgressIndicator());
+    new MigrationTask(session,new ProgressMonitorAdapter(new EmptyProgressIndicator())).run();
     List<ChangeSet> changes = LocalHistoryImpl.getInstanceImpl().getFacade().getChangeListInTests().getChangesInTests();
     int num = changes.size();
     Assert.assertTrue("Changes: " + num, num >= 6); //additional migrations may appear from lang design languages
     Assert.assertEquals(MigrationTask.FINISHED, changes.get(0).getLabel());
     Assert.assertEquals(MigrationTask.STARTED, changes.get(num - 1).getLabel());
     for (int i = 1; i < num - 1; i++) {
-      Assert.assertTrue(changes.get(i).getName().startsWith(StepTask.APPLY));
+      Assert.assertTrue(changes.get(i).getName().startsWith(MigrationTask.APPLY));
     }
     project.dispose();
   }

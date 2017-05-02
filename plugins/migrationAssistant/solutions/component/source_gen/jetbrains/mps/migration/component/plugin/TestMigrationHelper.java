@@ -19,12 +19,12 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.migration.MigrationComponent;
 import jetbrains.mps.ide.migration.MigrationScriptApplied;
 import jetbrains.mps.ide.migration.ScriptApplied;
-import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -103,7 +103,24 @@ public class TestMigrationHelper {
         return myProjectMig;
       }
       public List<ScriptApplied.ScriptAppliedReference> getModuleMigrationsToApply(Iterable<SModule> modules) {
-        return ListSequence.fromList(new ArrayList<ScriptApplied.ScriptAppliedReference>());
+        List<ScriptApplied.ScriptAppliedReference> res = ListSequence.fromList(new ArrayList<ScriptApplied.ScriptAppliedReference>());
+        ListSequence.fromList(res).addSequence(Sequence.fromIterable(getModuleMigrationsApplied()).select(new ISelector<MigrationScriptApplied, MigrationScriptApplied.MigrationScriptAppliedReference>() {
+          public MigrationScriptApplied.MigrationScriptAppliedReference select(MigrationScriptApplied it) {
+            MigrationScriptApplied applied = it;
+            return new MigrationScriptApplied.MigrationScriptAppliedReference(applied.getScript().getDescriptor(), applied.getModule()) {
+              @Override
+              public String getKindDescription(ScriptApplied resolved) {
+                return applied.getScript().getCaption();
+              }
+
+              @Override
+              public MigrationScriptApplied resolve(MigrationComponent migrationComponent, boolean silently) {
+                return null;
+              }
+            };
+          }
+        }));
+        return res;
       }
       public List<ScriptApplied.ScriptAppliedReference> getMissingMigrations() {
         return Collections.emptyList();
