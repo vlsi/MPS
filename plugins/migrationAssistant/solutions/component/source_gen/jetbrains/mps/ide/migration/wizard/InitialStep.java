@@ -46,7 +46,7 @@ public class InitialStep extends BaseStep {
     mainPanel.setPreferredSize(new Dimension(400, 200));
 
     mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-    mainPanel.add(createInfoPanel("<html>To work properly in current setup, this project should be migrated.<br><br>" + "Migrations to be applied:<br></html>"));
+    mainPanel.add(createInfoPanel("<html>This project should be migrated.<br><br>" + "Migrations to be applied:<br></html>"));
 
     JPanel infoPanel = new JPanel();
     infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.X_AXIS));

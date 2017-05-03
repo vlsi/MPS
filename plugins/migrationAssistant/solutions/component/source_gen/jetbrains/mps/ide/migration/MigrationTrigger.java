@@ -319,7 +319,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
             boolean resave;
             boolean migrate;
             if (migrationRequired.value) {
-              migrate = MigrationDialogUtil.showMigrationConfirmation(myMpsProject, allModules, myMigrationManager, importVersionsUpdateRequired.value);
+              migrate = MigrationDialogUtil.showMigrationConfirmation(myMpsProject, allModules, myMigrationManager);
               resave = importVersionsUpdateRequired.value && migrate;
             } else {
               migrate = false;

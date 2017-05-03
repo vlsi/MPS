@@ -1402,7 +1402,7 @@
                 <ref role="37wK5l" node="6dkZ8D0Fuoz" resolve="createInfoPanel" />
                 <node concept="3cpWs3" id="6dkZ8D0FuKa" role="37wK5m">
                   <node concept="Xl_RD" id="6dkZ8D0FuKb" role="3uHU7B">
-                    <property role="Xl_RC" value="&lt;html&gt;To work properly in current setup, this project should be migrated.&lt;br&gt;&lt;br&gt;" />
+                    <property role="Xl_RC" value="&lt;html&gt;This project should be migrated.&lt;br&gt;&lt;br&gt;" />
                   </node>
                   <node concept="Xl_RD" id="6dkZ8D0FuKc" role="3uHU7w">
                     <property role="Xl_RC" value="Migrations to be applied:&lt;br&gt;&lt;/html&gt;" />

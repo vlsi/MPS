@@ -4,100 +4,13 @@ package jetbrains.mps.ide.migration;
 
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.migration.global.ProjectMigration;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
-import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.Project;
 
 public class MigrationDialogUtil {
-  private static final int MIGRATIONS_TO_SHOW_COUNT = 3;
-  /*package*/ String s = "MPS is about to start the migration process. We  ModulesTo be migrated:---, Migrations to apply: ----";
-
-  public static boolean showMigrationConfirmation(final MPSProject project, final Iterable<SModule> modules, final MigrationManager m, boolean includeResave) {
-    final StringBuilder text = new StringBuilder();
-    text.append("This project needs to be migrated.\n");
-
-    if (includeResave) {
-      text.append("  Module descriptors need to be updated. The update will change many files.\n");
-    }
-
-    project.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        Iterable<String> projectMigrations = Sequence.fromIterable(m.getProjectMigrationsToApply()).select(new ISelector<ProjectMigration, String>() {
-          public String select(ProjectMigration it) {
-            return it.getDescription();
-          }
-        });
-        if (Sequence.fromIterable(projectMigrations).isNotEmpty()) {
-          text.append("  Project migrations to be executed:\n");
-          Sequence.fromIterable(projectMigrations).take(MIGRATIONS_TO_SHOW_COUNT).visitAll(new IVisitor<String>() {
-            public void visit(String it) {
-              text.append("    ").append(it).append("\n");
-            }
-          });
-          if (Sequence.fromIterable(projectMigrations).count() > MIGRATIONS_TO_SHOW_COUNT) {
-            text.append("    ...and ").append(Sequence.fromIterable(projectMigrations).count() - MIGRATIONS_TO_SHOW_COUNT).append(" more\n");
-          }
-        }
-      }
-    });
-
-    project.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        Iterable<String> languageMigrations = ListSequence.fromList(m.getModuleMigrationsToApply(modules)).select(new ISelector<ScriptApplied.ScriptAppliedReference, String>() {
-          public String select(ScriptApplied.ScriptAppliedReference it) {
-            return it.getKindDescription(it.resolve(m.getMigrationComponent(), false));
-          }
-        }).distinct();
-        if (Sequence.fromIterable(languageMigrations).isNotEmpty()) {
-          text.append("  Language migrations to be executed:\n");
-          Sequence.fromIterable(languageMigrations).take(MIGRATIONS_TO_SHOW_COUNT).visitAll(new IVisitor<String>() {
-            public void visit(String it) {
-              text.append("    ").append(it).append("\n");
-            }
-          });
-          if (Sequence.fromIterable(languageMigrations).count() > MIGRATIONS_TO_SHOW_COUNT) {
-            text.append("    ...and ").append(Sequence.fromIterable(languageMigrations).count() - MIGRATIONS_TO_SHOW_COUNT).append(" more\n");
-          }
-        }
-      }
-    });
-
-    project.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        Iterable<String> modules = Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(project)).where(new IWhereFilter<SModule>() {
-          public boolean accept(SModule module) {
-            return Sequence.fromIterable(MigrationsUtil.getAllSteps(module)).isNotEmpty();
-          }
-        }).select(new ISelector<SModule, String>() {
-          public String select(SModule module) {
-            return NameUtil.compactNamespace(module.getModuleName());
-          }
-        });
-        if (Sequence.fromIterable(modules).isNotEmpty()) {
-          text.append("  Modules to be migrated:\n");
-          Sequence.fromIterable(modules).take(MIGRATIONS_TO_SHOW_COUNT).visitAll(new IVisitor<String>() {
-            public void visit(String it) {
-              text.append("    ").append(it).append("\n");
-            }
-          });
-          if (Sequence.fromIterable(modules).count() > MIGRATIONS_TO_SHOW_COUNT) {
-            text.append("    ...and ").append(Sequence.fromIterable(modules).count() - MIGRATIONS_TO_SHOW_COUNT).append(" more\n");
-          }
-        }
-      }
-    });
-
-    text.append("\nIn case the migration is postponed, this notification will not appear until the project is reopened.\n");
-    text.append("Migration Assistant can be invoked at any time by clicking Tools->Run Migration Assistant.\n");
-    text.append("Would you like to reload project and start the migration immediately?");
+  public static boolean showMigrationConfirmation(MPSProject project, Iterable<SModule> modules, MigrationManager m) {
+    StringBuilder text = new StringBuilder();
+    text.append("The project needs to be migrated.\n\n" + "This project uses older versions of languages and/or outdated project format.\n" + "To work correctly in the current environment, some migrations should be applied to the project.\n" + "If the migration is postponed, it is still possible to work with the project.\n" + "However, not migrated code may work slower or worse in some aspect, and typically will not work in next release.\n" + "It is strongly recommended to run the migrations as soon as possible and only use not-migrated project to fix any problems in it before migrating.\n\n" + "Would you like to reload project and start the migration immediately?");
 
     int result = Messages.showYesNoDialog(project.getProject(), text.toString(), "Migration Required", "Migrate", "Postpone", null);
     return result == Messages.YES;
@@ -106,7 +19,7 @@ public class MigrationDialogUtil {
   public static boolean showResaveConfirmation(MPSProject project) {
     StringBuilder text = new StringBuilder();
     text.append("Module descriptors need to be updated. The update will change many files.\n");
-    text.append("\nIf you postpone the update, this notification will not appear until the project is reopened.\n");
+    text.append("If the update is postponed, migration status may be calculated with errors in future.\n\n");
 
     text.append("Would you like to update module descriptors immediately?");
 
@@ -115,6 +28,6 @@ public class MigrationDialogUtil {
   }
 
   public static void showNoMigrationMessage(Project p) {
-    Messages.showMessageDialog(p, "None of the modules in project require migration.\n" + "Migration assistant will not be started.", "Migration Not Required", null);
+    Messages.showMessageDialog(p, "Project doesn't need to be migrated.\n" + "Migration assistant will not be started.", "Migration Not Required", null);
   }
 }
