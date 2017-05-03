@@ -3,8 +3,6 @@ package jetbrains.mps.migration;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.migration.MigrationComponent;
-import jetbrains.mps.ide.migration.ScriptApplied.ScriptAppliedReference;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.testbench.junit.suites.BaseProjectsTest;
@@ -46,7 +44,6 @@ public class NoPendingMigrationsTest extends BaseProjectsTest {
     List<String> moduleMigrations = new ArrayList<>();
     Exception exception = ThreadUtils.runInUIThreadAndWait(() -> {
       MigrationManager migrationManager = getContextProject().getComponent(MigrationManager.class);
-      MigrationComponent migrationComponent = getContextProject().getComponent(MigrationComponent.class);
       migrationRequired[0] = migrationManager.isMigrationRequired();
       if (migrationRequired[0]) {
         projectMigrations.addAll(IterableUtil.asCollection(migrationManager.getProjectMigrationsToApply())
@@ -56,7 +53,7 @@ public class NoPendingMigrationsTest extends BaseProjectsTest {
         getContextProject().getModelAccess().runReadAction(() -> {
           modules.addAll(IterableUtil.asCollection(MigrationsUtil.getMigrateableModulesFromProject(getContextProject())));
           moduleMigrations.addAll(migrationManager.getModuleMigrationsToApply(modules)
-              .stream().map(it -> it.getKindDescription(it.resolve(migrationComponent, false)))
+              .stream().map(it -> it.getScriptReference().resolve(false).getCaption())
               .collect(Collectors.toList()));
         });
       }
