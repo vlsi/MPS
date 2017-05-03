@@ -192,29 +192,7 @@ class DefaultModelAccess extends ModelAccess {
 
   @Override
   @Deprecated
-  public <T> T runWriteActionInCommand(Computable<T> c) {
-    return runWriteAction(c);
-  }
-
-  public <T> T runWriteActionInCommand(Computable<T> c, Project project) {
-    return runWriteAction(c);
-  }
-
-  public <T> T runWriteActionInCommand(Computable<T> c, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
-    return runWriteAction(c);
-  }
-
-  @Override
-  @Deprecated
   public void runWriteActionInCommand(Runnable r) {
-    runWriteAction(r);
-  }
-
-  public void runWriteActionInCommand(Runnable r, Project project) {
-    runWriteAction(r);
-  }
-
-  public void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
     runWriteAction(r);
   }
 

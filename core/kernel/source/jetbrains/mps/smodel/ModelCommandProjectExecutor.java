@@ -45,9 +45,5 @@ interface ModelCommandProjectExecutor extends ModelCommandExecutor {
 
   @ToRemove(version = 3.2)
   @Deprecated
-  <T> T runWriteActionInCommand(Computable<T> c, Project project);
-
-  @ToRemove(version = 3.2)
-  @Deprecated
   void runUndoTransparentCommand(Runnable r, Project project);
 }

@@ -308,34 +308,15 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
   @Override
   @Deprecated
-  public <T> T runWriteActionInCommand(Computable<T> c) {
-    return runWriteActionInCommand(c, CurrentProjectAccessUtil.getMPSProjectFromUI());
-  }
-
-  public <T> T runWriteActionInCommand(Computable<T> c, Project project) {
-    if (project == null) {
-      project = CurrentProjectAccessUtil.getMPSProjectFromUI();
-    }
-    return runWriteActionInCommand(c, null, null, false, project);
-  }
-
-  public <T> T runWriteActionInCommand(Computable<T> c, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
-    final ComputeRunnable<T> r = new ComputeRunnable<>(c);
-    runWriteActionInCommand(r, name, groupId, requestUndoConfirmation, project);
-    return r.getResult();
-  }
-
-  @Override
-  @Deprecated
   public void runWriteActionInCommand(Runnable r) {
     runWriteActionInCommand(r, CurrentProjectAccessUtil.getMPSProjectFromUI());
   }
 
-  public void runWriteActionInCommand(Runnable r, Project project) {
+  private void runWriteActionInCommand(Runnable r, Project project) {
     executeCommand(r, project);
   }
 
-  public void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
+  private void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
     CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project),
                                                   new CommandRunnable(r, project), name, groupId,
                                                   requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION

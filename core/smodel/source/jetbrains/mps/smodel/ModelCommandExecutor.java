@@ -59,15 +59,10 @@ public interface ModelCommandExecutor {
   void runWriteInEDT(Runnable r);
 
   /**
-   * use runWriteActionInCommand(final Computable<T> c, Project project)
-   */
-  @Deprecated
-  <T> T runWriteActionInCommand(Computable<T> c);
-
-  /**
    * use runWriteActionInCommand(Runnable r, Project project)
    */
   @Deprecated
+  // 18 uses in MPS, 0 in mbeddr
   void runWriteActionInCommand(Runnable r);
 
   /**
