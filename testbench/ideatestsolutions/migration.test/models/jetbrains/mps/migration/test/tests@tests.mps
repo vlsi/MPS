@@ -580,7 +580,7 @@
       </node>
       <node concept="3clFb_" id="5yUWKvFP1uB" role="jymVt">
         <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getDescriptor" />
+        <property role="TrG5h" value="getReference" />
         <node concept="3uibUv" id="5yUWKvFP1uC" role="3clF45">
           <ref role="3uigEE" to="6f4m:2RG318eWpZ8" resolve="MigrationScriptReference" />
         </node>
@@ -781,7 +781,7 @@
                                   <ref role="3cqZAo" node="$5yWDriIQw" resolve="scriptA0" />
                                 </node>
                                 <node concept="liA8E" id="$5yWDriM0j" role="2OqNvi">
-                                  <ref role="37wK5l" to="6f4m:4F5w8gPX8b4" resolve="getDescriptor" />
+                                  <ref role="37wK5l" to="6f4m:4F5w8gPX8b4" resolve="getReference" />
                                 </node>
                               </node>
                             </node>
@@ -836,7 +836,7 @@
                                   <ref role="3cqZAo" node="$5yWDriM00" resolve="scriptB0" />
                                 </node>
                                 <node concept="liA8E" id="$5yWDriNUV" role="2OqNvi">
-                                  <ref role="37wK5l" to="6f4m:4F5w8gPX8b4" resolve="getDescriptor" />
+                                  <ref role="37wK5l" to="6f4m:4F5w8gPX8b4" resolve="getReference" />
                                 </node>
                               </node>
                             </node>

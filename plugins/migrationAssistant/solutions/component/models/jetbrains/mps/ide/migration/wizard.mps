@@ -8,6 +8,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
   </languages>
   <imports>
     <import index="uxeh" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.wizard(MPS.IDEA/)" />
@@ -287,6 +288,9 @@
       <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
       <concept id="8974276187400348183" name="jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement" flags="nn" index="1QHqEM" />
       <concept id="8974276187400348177" name="jetbrains.mps.lang.access.structure.ExecuteCommandStatement" flags="nn" index="1QHqEO" />
+    </language>
+    <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
+      <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1235746970280" name="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" flags="nn" index="2Sg_IR">
@@ -1740,8 +1744,8 @@
                 <node concept="3cpWsn" id="7L$Uh3Nfkm7" role="3cpWs9">
                   <property role="TrG5h" value="moduleMigrations" />
                   <node concept="_YKpA" id="7L$Uh3NfklL" role="1tU5fm">
-                    <node concept="3uibUv" id="7L$Uh3NfklO" role="_ZDj9">
-                      <ref role="3uigEE" to="bim2:36$CdjYfPok" resolve="ScriptApplied.ScriptAppliedReference" />
+                    <node concept="3uibUv" id="6fMyXCHpWVq" role="_ZDj9">
+                      <ref role="3uigEE" to="bim2:36$CdjYfOUh" resolve="ScriptApplied" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="7L$Uh3Nfkm8" role="33vP2m">
@@ -1828,7 +1832,7 @@
                                             <ref role="3cqZAo" node="6fMyXCHnuix" resolve="it" />
                                           </node>
                                           <node concept="liA8E" id="6fMyXCHnvJ0" role="2OqNvi">
-                                            <ref role="37wK5l" to="bim2:6Z8qT6OUVNN" resolve="getModule" />
+                                            <ref role="37wK5l" to="bim2:5tBZROX10Z6" resolve="getModule" />
                                           </node>
                                         </node>
                                       </node>
@@ -2022,31 +2026,30 @@
                           <node concept="3cpWsn" id="5vn5x3d2gox" role="3cpWs9">
                             <property role="TrG5h" value="caption" />
                             <node concept="17QB3L" id="5vn5x3d2gou" role="1tU5fm" />
-                            <node concept="2OqwBi" id="5vn5x3d2goy" role="33vP2m">
-                              <node concept="liA8E" id="5vn5x3d2goz" role="2OqNvi">
-                                <ref role="37wK5l" to="bim2:79xDgbhfuO_" resolve="getKindDescription" />
-                                <node concept="2OqwBi" id="5vn5x3d2go$" role="37wK5m">
-                                  <node concept="37vLTw" id="5vn5x3d2go_" role="2Oq$k0">
+                            <node concept="2EnYce" id="6fMyXCHq5_m" role="33vP2m">
+                              <node concept="2OqwBi" id="6fMyXCHq06R" role="2Oq$k0">
+                                <node concept="2OqwBi" id="6fMyXCHpZ4y" role="2Oq$k0">
+                                  <node concept="37vLTw" id="6fMyXCHpYD1" role="2Oq$k0">
                                     <ref role="3cqZAo" node="5vn5x3d27qs" resolve="it" />
                                   </node>
-                                  <node concept="liA8E" id="5vn5x3d2goA" role="2OqNvi">
-                                    <ref role="37wK5l" to="bim2:36$CdjYfPt4" resolve="resolve" />
-                                    <node concept="2OqwBi" id="5vn5x3d2goB" role="37wK5m">
-                                      <node concept="37vLTw" id="5vn5x3d2goC" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="4hH4xQoOegc" resolve="manager" />
-                                      </node>
-                                      <node concept="liA8E" id="5vn5x3d2goD" role="2OqNvi">
-                                        <ref role="37wK5l" to="bim2:6Z8qT6OTV9H" resolve="getMigrationComponent" />
-                                      </node>
+                                  <node concept="liA8E" id="6fMyXCHpZyo" role="2OqNvi">
+                                    <ref role="37wK5l" to="bim2:6fMyXCHpy$X" resolve="getScriptReference" />
+                                  </node>
+                                </node>
+                                <node concept="liA8E" id="6fMyXCHq25H" role="2OqNvi">
+                                  <ref role="37wK5l" to="6f4m:6fMyXCHptub" resolve="resolve" />
+                                  <node concept="2OqwBi" id="5vn5x3d2goB" role="37wK5m">
+                                    <node concept="37vLTw" id="5vn5x3d2goC" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="4hH4xQoOegc" resolve="manager" />
                                     </node>
-                                    <node concept="3clFbT" id="5vn5x3d2goE" role="37wK5m">
-                                      <property role="3clFbU" value="false" />
+                                    <node concept="liA8E" id="5vn5x3d2goD" role="2OqNvi">
+                                      <ref role="37wK5l" to="bim2:6Z8qT6OTV9H" resolve="getMigrationComponent" />
                                     </node>
                                   </node>
                                 </node>
                               </node>
-                              <node concept="37vLTw" id="5vn5x3d2goF" role="2Oq$k0">
-                                <ref role="3cqZAo" node="5vn5x3d27qs" resolve="it" />
+                              <node concept="liA8E" id="6fMyXCHq4ZE" role="2OqNvi">
+                                <ref role="37wK5l" to="6f4m:6fMyXCHoyrN" resolve="getCaption" />
                               </node>
                             </node>
                           </node>
