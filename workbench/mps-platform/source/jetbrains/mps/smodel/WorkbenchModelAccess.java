@@ -427,26 +427,12 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       throw new IllegalStateException("undo transparent action cannot be invoked in a command");
     }
 
-    int cmd = myCommandLevel;
-    try {
-      myCommandLevel = 0;
-      CommandProcessor.getInstance().runUndoTransparentAction(new CommandRunnable(r, project));
-    } finally {
-      myCommandLevel = cmd;
-    }
+    CommandProcessor.getInstance().runUndoTransparentAction(new CommandRunnable(r, project));
   }
 
   @Override
   public boolean isInsideCommand() {
     return canWrite() && myCommandLevel > 0;
-  }
-
-  @Override
-  public void checkReadAccess() {
-    // TODO remove this method
-    if (!canRead() /* && !myIndexingThreads.contains(Thread.currentThread())*/) {
-      throw new IllegalModelAccessError("You can read model only inside read actions");
-    }
   }
 
   @Override
@@ -584,7 +570,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
     @Override
     public void run() {
-      ModelAccess.instance().runWriteAction(() -> {
+      WorkbenchModelAccess.this.runWriteAction(() -> {
         incCommandLevel(myRunnable);
         try {
           myRunnable.run();
