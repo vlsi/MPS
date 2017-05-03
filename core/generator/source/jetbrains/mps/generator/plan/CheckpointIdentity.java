@@ -75,4 +75,9 @@ public final class CheckpointIdentity {
     }
     return false;
   }
+
+  @Override
+  public String toString() {
+    return String.format("CP[%s.%s]", myPlan.getName(), myName);
+  }
 }

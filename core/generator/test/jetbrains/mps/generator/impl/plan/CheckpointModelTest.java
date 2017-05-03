@@ -135,7 +135,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
       }
     }
     myErrors.checkThat("Checkpoint model", cpModel, CoreMatchers.notNullValue());
-    ModelCheckpoints modelCheckpoints = cme.getState(m, planIdentity);
+    ModelCheckpoints modelCheckpoints = cme.getState(m);
     myErrors.checkThat("CrossModelEnvironment: state present", modelCheckpoints, CoreMatchers.notNullValue());
     CheckpointState cpState = modelCheckpoints.find(cp1);
     myErrors.checkThat("CheckpointState present", cpState, CoreMatchers.notNullValue());
@@ -178,7 +178,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
     });
     myErrors.checkThat("Generation succeeds", genStatus.isOk(), CoreMatchers.equalTo(true));
     CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider, new ModelStreamProviderImpl());
-    ModelCheckpoints modelCheckpoints = cme.getState(m, planIdentity);
+    ModelCheckpoints modelCheckpoints = cme.getState(m);
     boolean crossModelCheckpointsPresent = modelCheckpoints != null;
     myErrors.checkThat("CrossModelEnvironment: state present", crossModelCheckpointsPresent, CoreMatchers.equalTo(true));
     if (!crossModelCheckpointsPresent) {

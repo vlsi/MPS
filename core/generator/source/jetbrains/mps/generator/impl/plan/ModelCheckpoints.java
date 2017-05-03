@@ -17,7 +17,6 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.plan.CheckpointIdentity;
-import jetbrains.mps.generator.plan.PlanIdentity;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
@@ -32,39 +31,31 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 /**
- * All checkpoint models known for (associated with) the given original model for a given generation plan.
- * FIXME likely, we shall keep track of the plan here. Given checkpoints are matched by name, we need a plan to identify the right one.
+ * All checkpoint models known for (associated with) the given original model.
  * @author Artem Tikhomirov
  * @since 3.3
  */
 public class ModelCheckpoints {
   // modifiable list (set, iterate+remove operations)
   private final List<CheckpointState> myStates;
-  private final PlanIdentity myPlan;
 
   /**
    * @param state not null
    */
   /*package*/ ModelCheckpoints(CheckpointState state) {
-    myPlan = state.getCheckpoint().getPlan();
     myStates = new ArrayList<>(2);
     myStates.add(state);
   }
 
   /**
-   * @param plan not null
    * @param states not null
    */
-  /*package*/ ModelCheckpoints(PlanIdentity plan, Collection<CheckpointState> states) {
-    myPlan = plan;
-    assert StreamSupport.stream(states.spliterator(), false).allMatch(s -> s.getCheckpoint().getPlan().equals(plan));
+  /*package*/ ModelCheckpoints(Collection<CheckpointState> states) {
+    // XXX shall I assert all states are for the same original model?
+    // FIXME shall I assert no duplicated states (model for same cp)?
     myStates = new ArrayList<>(states); // copy
   }
 
-
-  /*package*/ PlanIdentity getPlan() {
-    return myPlan;
-  }
 
   /**
    * Retrieve state that corresponds to transition between specified checkpoints.
@@ -106,6 +97,8 @@ public class ModelCheckpoints {
       myStates.set(i, state);
       return cps;
     }
+    // there's no matching state, record a new one
+    myStates.add(state);
     return null;
   }
 

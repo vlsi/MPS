@@ -578,9 +578,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       // XXX can I do anything in this case?
       return null;
     }
-    // myPlanStep.getPlanIdentity() points to the plan in action; while we need that of target model
+    // Note, myPlanStep.getPlanIdentity() points to the plan in action; while we need that of target model
     // which could be generated against different plan (although with a shared CP).
-    ModelCheckpoints modelHistory = env.getState(model, targetPoint.getIdentity().getPlan());
+    ModelCheckpoints modelHistory = env.getState(model);
     if (modelHistory == null) {
       return null;
     }

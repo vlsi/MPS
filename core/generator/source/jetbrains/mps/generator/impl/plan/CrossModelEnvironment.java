@@ -28,7 +28,6 @@ import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.generator.plan.PlanIdentity;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -43,11 +42,11 @@ import java.util.HashSet;
 
 /**
  * Captures what outer world would like to tell generator about available cross-model reference targets.
- *
+ * <p>
  * FIXME likely, we shall not keep checkpoint models for actions other than true generate
  * (e.g. text preview). Still shall resolve cross model references, but #createCheckpoint shall become no-op.
  * OTOH, what if I preview 2 nodes ith cross-references from 2 different models? Kept, but separately?
- *
+ * <p>
  * XXX perhaps, can instantiate CME with PlanIdentity at hand (does plan change during generation run? It's per-model, after all).
  *
  * @author Artem Tikhomirov
@@ -77,18 +76,19 @@ public class CrossModelEnvironment {
 
   /**
    * FIXME Given CP could be defined in a plan/CPSet other then the one being executed, is there any sense to
-   *       pass planIdentity, not CPIdentity here. Perhaps, could hide ModelCheckpoints concept altogether as
-   *       implementation detail?
+   * pass planIdentity, not CPIdentity here. Perhaps, could hide ModelCheckpoints concept altogether as
+   * implementation detail?
+   *
    * @return recorded checkpoints for the model, if any
    */
   @Nullable
-  public ModelCheckpoints getState(@NotNull SModel model, @NotNull PlanIdentity planIdentity) {
-    ModelCheckpoints mcp = getTransientCheckpoints(model.getReference(), planIdentity);
+  public ModelCheckpoints getState(@NotNull SModel model) {
+    ModelCheckpoints mcp = getTransientCheckpoints(model.getReference());
     if (mcp != null) {
       return mcp;
     }
-    // FIXME once accessed, perhaps ModelCheckpoints instance shall be kept in myTransientCheckpoints?
-    return getPersistedCheckpoints(model).getCheckpointsFor(planIdentity, (m, cp) -> {
+    // FIXME once accessed, perhaps ModelCheckpoints instance shall be kept in myTransientCheckpoints or myExposedPersisted?
+    return getPersistedCheckpoints(model).getCheckpointsFor((m, cp) -> {
       // XXX for now, expose whole ModelCheckpoints at once, although just specific CheckpointState
       //     (accessed later though MC.find) would suffice
       SModel exposed = createBlankCheckpointModel(model.getReference(), cp);
@@ -99,10 +99,10 @@ public class CrossModelEnvironment {
   }
 
   @Nullable
-  private ModelCheckpoints getTransientCheckpoints(SModelReference originModel, PlanIdentity planIdentity) {
+  private ModelCheckpoints getTransientCheckpoints(SModelReference originModel) {
     ModelCheckpoints mcp = myTransientCheckpoints.get(originModel);
     if (mcp == null) {
-      mcp = loadFromTransientModule(originModel.getName(), planIdentity);
+      mcp = loadFromTransientModule(originModel.getName());
       if (mcp != null) {
         myTransientCheckpoints.put(originModel, mcp);
       }
@@ -114,44 +114,38 @@ public class CrossModelEnvironment {
    * look up checkpoint models in transient module
    * CP models may be there if they were generated as part of the same make session or exposed there due to 'copy' of persisted model
    * when a reference to persisted CP was resolved.
-   *
+   * <p>
    * both parameters are !null
    */
-  private ModelCheckpoints loadFromTransientModule(SModelName originalModelName, PlanIdentity planIdentity) {
+  private ModelCheckpoints loadFromTransientModule(SModelName originalModelName) {
     // XXX getCheckpointModelsFor iterates models of the module, hence needs a model read
     //     OTOH, just a wrap with model read doesn't make sense here (models could get disposed right after the call),
     //     so likely we shall populate myCheckpoints in constructor/dedicated method. Still, what about checkpoint model disposed *after*
     //     I've collected all the relevant state for this class?
     //     Not sure whether read shall be local to this class or external on constructor/initialization method
     //     It seems to be an implementation detail that we traverse model and use its nodes to persist mapping label information (that's what we need RA for).
-    return new ModelAccessHelper(myTransientModelProvider.getRepository()).runReadAction(new Computable<ModelCheckpoints>() {
-      @Override
-      public ModelCheckpoints compute() {
-        String nameNoStereotype = originalModelName.getLongName();
-        ArrayList<CheckpointState> cpModels = new ArrayList<>(4);
-        for (SModel m : myModule.getModels()) {
-          if (!nameNoStereotype.equals(m.getName().getLongName()) || false == m instanceof ModelWithAttributes) {
-            continue;
-          }
-          String gpAttrValue = ((ModelWithAttributes) m).getAttribute(GENERATION_PLAN);
-          String cpAttrValue = ((ModelWithAttributes) m).getAttribute(CHECKPOINT);
-          if (gpAttrValue == null || cpAttrValue == null) {
-            continue;
-          }
-          PlanIdentity modelPlan = new PlanIdentity(gpAttrValue);
-          if (!modelPlan.equals(planIdentity)) {
-            continue;
-          }
-          CheckpointIdentity modelCheckpoint = new CheckpointIdentity(modelPlan, cpAttrValue /* here, persistent identity*/);
-          // FIXME read and fill memento with MappingLabels
-          //       now, just restore it from debug root we've got there. Later (once true persistence is done), shall consider
-          //       option to keep mappings inside a model (not to bother with persistence) or to follow MappingsMemento approach with
-          //       custom serialization code (and to solve the issue of associated model streams serialized/managed (i.e. deleted) along with a cp model)
-          MappingsMemento memento = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(m));
-          cpModels.add(new CheckpointState(memento, m, modelCheckpoint));
+    return new ModelAccessHelper(myTransientModelProvider.getRepository()).runReadAction(() -> {
+      String nameNoStereotype = originalModelName.getLongName();
+      ArrayList<CheckpointState> cpModels = new ArrayList<>(4);
+      for (SModel m : myModule.getModels()) {
+        if (!nameNoStereotype.equals(m.getName().getLongName()) || false == m instanceof ModelWithAttributes) {
+          continue;
         }
-        return cpModels.isEmpty() ? null : new ModelCheckpoints(planIdentity, cpModels);
+        String gpAttrValue = ((ModelWithAttributes) m).getAttribute(GENERATION_PLAN);
+        String cpAttrValue = ((ModelWithAttributes) m).getAttribute(CHECKPOINT);
+        if (gpAttrValue == null || cpAttrValue == null) {
+          continue;
+        }
+        PlanIdentity modelPlan = new PlanIdentity(gpAttrValue);
+        CheckpointIdentity modelCheckpoint = new CheckpointIdentity(modelPlan, cpAttrValue /* here, persistent identity*/);
+        // FIXME read and fill memento with MappingLabels
+        //       now, just restore it from debug root we've got there. Later (once true persistence is done), shall consider
+        //       option to keep mappings inside a model (not to bother with persistence) or to follow MappingsMemento approach with
+        //       custom serialization code (and to solve the issue of associated model streams serialized/managed (i.e. deleted) along with a cp model)
+        MappingsMemento memento = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(m));
+        cpModels.add(new CheckpointState(memento, m, modelCheckpoint));
       }
+      return cpModels.isEmpty() ? null : new ModelCheckpoints(cpModels);
     });
   }
 
@@ -171,10 +165,11 @@ public class CrossModelEnvironment {
 
   /**
    * FIXME Not sure if it's right to pass CPI here, not CP. On one hand, we use CPI to identify any its use in any plan.
-   *       OTOH, here we construct name for a model being transformed (not *referenced*), and as such we care about specific CP in a specific plan,
-   *       not just its identity.
+   * OTOH, here we construct name for a model being transformed (not *referenced*), and as such we care about specific CP in a specific plan,
+   * not just its identity.
    */
-  /*package*/ static SModelName createCheckpointModelName(SModelReference originalModel, CheckpointIdentity step) {
+  /*package*/
+  static SModelName createCheckpointModelName(SModelReference originalModel, CheckpointIdentity step) {
     String longName = originalModel.getName().getLongName();
     String stereotype = step.getPersistenceValue();
     return new SModelName(longName, stereotype);
@@ -183,7 +178,9 @@ public class CrossModelEnvironment {
   // originalModel is just to construct name/reference of the checkpoint model
   public SModel createBlankCheckpointModel(SModelReference originalModel, CheckpointIdentity step) {
     final SModelName transientModelName = createCheckpointModelName(originalModel, step);
-    final SModelReference mr = PersistenceFacade.getInstance().createModelReference(myModule.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName.getValue());
+    final SModelReference mr = PersistenceFacade.getInstance()
+                                                .createModelReference(myModule.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(),
+                                                                      transientModelName.getValue());
     SModel checkpointModel = myModule.createTransientModel(mr);
     assert checkpointModel instanceof ModelWithAttributes;
     ((ModelWithAttributes) checkpointModel).setAttribute(GENERATION_PLAN, step.getPlan().getName());
@@ -193,7 +190,7 @@ public class CrossModelEnvironment {
 
   public void publishCheckpoint(@NotNull SModelReference originalModel, @NotNull CheckpointState cpState) {
     myModule.addModelToKeep(cpState.getCheckpointModel().getReference(), true);
-    ModelCheckpoints checkpoints = getTransientCheckpoints(originalModel, cpState.getCheckpoint().getPlan());
+    ModelCheckpoints checkpoints = getTransientCheckpoints(originalModel);
     if (checkpoints == null) {
       // XXX what if there's one in persistent? Shall we copy it into transient and update with the code below?
       myTransientCheckpoints.put(originalModel, new ModelCheckpoints(cpState));
@@ -202,7 +199,7 @@ public class CrossModelEnvironment {
       if (replaced == null) {
         return;
       }
-      HashSet<SModelReference> forgottenCheckpoints = new HashSet<SModelReference>();
+      HashSet<SModelReference> forgottenCheckpoints = new HashSet<>();
       ArrayDeque<CheckpointState> discarded = new ArrayDeque<>();
       discarded.add(replaced);
       do {
