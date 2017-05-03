@@ -18,7 +18,6 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.resources.TResource;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
@@ -66,7 +65,7 @@ public class ReportFiles_Facet extends IFacet.Stub {
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              ModelAccess.instance().requireWrite(new Runnable() {
+              monitor.getSession().getProject().getModelAccess().runWriteAction(new Runnable() {
                 public void run() {
                   for (TResource itr : Sequence.fromIterable(input)) {
                     final SModel md = itr.modelDescriptor();

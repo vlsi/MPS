@@ -123,52 +123,11 @@ public interface ModelCommandExecutor {
   <T> T tryRead(Computable<T> c);
 
   /**
-   * Does everything to ensure the locking and the operation success, including asking for the user confirmation.
-   * Throws a RuntimeException if nothing helped.
-   *
-   * @deprecated see {@link #requireWrite(Runnable)} for explanation
-   *
-   * @param r
-   * @return
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  void requireRead(Runnable r);
-
-  /**
-   * Does everything to ensure the locking and the operation success, including asking for the user confirmation.
-   * Throws a RuntimeException if nothing helped.
-   * Returns the result of the computation.
-   *
-   * @deprecated see {@link #requireWrite(Runnable)} for explanation
-   *
-   * @param c
-   * @return
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  <T> T requireRead(Computable<T> c);
-
-  /**
    * @deprecated with no contract, what could justify its use?
    */
   @Deprecated
   @ToRemove(version = 3.3)
   void flushEventQueue();
-
-  /**
-   * Does everything to ensure the locking and the operation success, including asking for the user confirmation.
-   * Throws a RuntimeException if nothing helped.
-   *
-   * @deprecated deadlock prevention (if needed) shall be part of {@link #runWriteAction(Runnable)}, user confirmation
-   * shall be part of specific implementation (i.e. WorkbenchModelAccess, initialized from IDE, might ask one, while DefaultModelAccess,
-   * from Ant build, shall not), and clients running read/write actions shall not care about these implementation details (they can't reasonably react anyway)
-   *
-   * @param r
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  void requireWrite(Runnable r);
 
   @Nullable
   <K, V> ConcurrentMap<K, V> getRepositoryStateCache(String repositoryKey);

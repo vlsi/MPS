@@ -22,7 +22,7 @@ import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vfs.IFileUtils;
 import java.awt.Dimension;
@@ -69,8 +69,9 @@ public class EditorUtil {
           return;
         }
 
+        ModelAccess modelAccess = context.getRepository().getModelAccess();
         if (copy) {
-          ModelAccess.instance().requireWrite(new Runnable() {
+          modelAccess.runWriteAction(new Runnable() {
             public void run() {
               SModel model = sourceNode.getModel();
               String outputRoot = ((AbstractModule) model.getModule()).getModuleSourceDir().getPath() + File.separator + "icons";
@@ -87,7 +88,7 @@ public class EditorUtil {
         }
 
         final String pathToShow = shrinkPath.invoke(result.value.getPath());
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        modelAccess.executeCommand(new Runnable() {
           @Override
           public void run() {
             SNodeAccessUtil.setProperty(sourceNode, property, pathToShow);

@@ -158,38 +158,6 @@ class DefaultModelAccess extends ModelAccess {
     }
   }
 
-  @Override
-  public void requireRead(Runnable r) {
-    int i;
-    int MAX_TRIES = 4;
-    for (i = 0; i < MAX_TRIES && !tryRead(r); ++i) {
-      try {
-        Thread.sleep((1 << i) * 100);
-      } catch (InterruptedException ignore) {
-      }
-    }
-    if (i >= MAX_TRIES) {
-      throw new RuntimeException("Failed to acquire read lock");
-    }
-  }
-
-  @Override
-  public <T> T requireRead(Computable<T> c) {
-    T result = null;
-    int i;
-    int MAX_TRIES = 4;
-    for (i = 0; i < MAX_TRIES && (result = tryRead(c)) == null; ++i) {
-      try {
-        Thread.sleep((1 << i) * 100);
-      } catch (InterruptedException ignore) {
-      }
-    }
-    if (i >= MAX_TRIES) {
-      throw new RuntimeException("Failed to acquire read lock");
-    }
-    return result;
-  }
-
   public boolean tryWrite(Runnable r) {
     if (getWriteLock().tryLock()) {
       try {
@@ -214,21 +182,6 @@ class DefaultModelAccess extends ModelAccess {
       }
     } else {
       return null;
-    }
-  }
-
-  @Override
-  public void requireWrite(Runnable r) {
-    int i;
-    int MAX_TRIES = 4;
-    for (i = 0; i < MAX_TRIES && !tryWrite(r); ++i) {
-      try {
-        Thread.sleep((1 << i) * 100);
-      } catch (InterruptedException ignore) {
-      }
-    }
-    if (i >= MAX_TRIES) {
-      throw new RuntimeException("Failed to acquire write lock");
     }
   }
 

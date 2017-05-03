@@ -18,6 +18,9 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="fy8e" ref="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" />
     <import index="tpcq" ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" />
+    <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" implicit="true" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -174,6 +177,7 @@
       <concept id="505095865854384109" name="jetbrains.mps.make.script.structure.JobDeclaration" flags="ng" index="2aLE7I">
         <child id="505095865854384110" name="job" index="2aLE7H" />
       </concept>
+      <concept id="7044091413522263180" name="jetbrains.mps.make.script.structure.GetMakeSessionExpression" flags="ng" index="2_BwXt" />
       <concept id="2360002718792625579" name="jetbrains.mps.make.script.structure.JobDefinition" flags="in" index="ElOhj" />
       <concept id="2360002718792625580" name="jetbrains.mps.make.script.structure.InputResourcesParameter" flags="nn" index="ElOhk" />
       <concept id="2360002718792622184" name="jetbrains.mps.make.script.structure.OutputResources" flags="nn" index="ElOAg">
@@ -229,12 +233,19 @@
           <node concept="3clFbS" id="7Ch2QCiG3La" role="2VODD2">
             <node concept="3clFbF" id="7Ch2QCiG3Li" role="3cqZAp">
               <node concept="2OqwBi" id="7Ch2QCiG3Lm" role="3clFbG">
-                <node concept="2YIFZM" id="7Ch2QCiG3Ll" role="2Oq$k0">
-                  <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                  <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+                <node concept="2OqwBi" id="6csMYGQIjk8" role="2Oq$k0">
+                  <node concept="2OqwBi" id="6csMYGQIifc" role="2Oq$k0">
+                    <node concept="2_BwXt" id="6csMYGQIhN7" role="2Oq$k0" />
+                    <node concept="liA8E" id="6csMYGQIiJF" role="2OqNvi">
+                      <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="6csMYGQIk4g" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                  </node>
                 </node>
                 <node concept="liA8E" id="7Ch2QCiG3ZU" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.requireWrite(java.lang.Runnable):void" resolve="requireWrite" />
+                  <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
                   <node concept="1bVj0M" id="7Ch2QCiG3ZV" role="37wK5m">
                     <node concept="3clFbS" id="7Ch2QCiG3ZW" role="1bW5cS">
                       <node concept="2Gpval" id="4g8ToP4MVkD" role="3cqZAp">

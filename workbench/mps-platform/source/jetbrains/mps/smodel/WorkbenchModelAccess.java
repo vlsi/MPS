@@ -17,15 +17,9 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.util.ProgressWindow;
-import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
@@ -51,10 +45,8 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
  * We always first acquire IDEA's lock and only then acquire MPS's lock
  */
 public final class WorkbenchModelAccess extends ModelAccess implements Disposable, ApplicationComponent {
-  private static final int REQUIRE_MAX_TRIES = 8;
   private static final int WAIT_FOR_WRITE_LOCK_MILLIS = 200;
   private static final String IDEA_WRITE_LOCK_FAIL = "Failed to acquire the IDEA write lock after having waited for %.3f s";
-  private static final String WRITE_LOCK_FAIL = "Failed to acquire write lock after having waited for %.3f s";
 
   private final EDTExecutor myEDTExecutor = new EDTExecutor();
   private final WriteActionTracker myWriteActionTracker;
@@ -201,34 +193,6 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     return null;
   }
 
-  @Override
-  public void requireRead(Runnable r) {
-    int i;
-    long start;
-    long waited;
-    do {
-      start = System.currentTimeMillis();
-      for (i = 0; i < REQUIRE_MAX_TRIES && !tryRead(r); ++i) {
-        try {
-          Thread.sleep((1 << i) * 100);
-        } catch (InterruptedException ignore) {
-        }
-      }
-      waited = System.currentTimeMillis() - start;
-    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
-
-    if (i >= REQUIRE_MAX_TRIES) {
-      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for " + waited + "ms");
-    }
-  }
-
-  @Override
-  public <T> T requireRead(Computable<T> c) {
-    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
-    requireRead(r);
-    return r.getResult();
-  }
-
   private boolean tryWrite(final Runnable r) {
     Computable<Boolean> c = () -> {
       r.run();
@@ -292,44 +256,6 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       return valueOf(System.nanoTime())
                  .subtract(valueOf(myStartNanos))
                  .divide(valueOf(1e9), BigDecimal.ROUND_DOWN);
-    }
-  }
-
-  @Override
-  public void requireWrite(Runnable r) {
-    TaskTimer taskTimer = new TaskTimer();
-    taskTimer.start();
-    boolean done = false;
-    while (!done) {
-      for (int attempt = 0; attempt < REQUIRE_MAX_TRIES; ++attempt) {
-        boolean success = tryWrite(r);
-        done |= success; // done if succeeded
-        done |= sleep(attempt); // done if interrupted while sleeping
-      }
-      if (!done) {
-        askUserForProceeding(taskTimer);
-      }
-    }
-  }
-
-  /**
-   * @return true iff interrupted
-   */
-  private boolean sleep(int attempt) {
-    try {
-      Thread.sleep((1 << attempt) * 100);
-    } catch (InterruptedException ie) {
-      Thread.currentThread().interrupt();
-      LOG.error("Interrupted while trying to access the MPS write lock", ie);
-      return true;
-    }
-    return false;
-  }
-
-  private void askUserForProceeding(TaskTimer timer) {
-    boolean cancelAction = confirmActionCancellation();
-    if (!cancelAction) {
-      throw new TimeOutRuntimeException(String.format(WRITE_LOCK_FAIL, timer.secondsElapsed()));
     }
   }
 
@@ -438,25 +364,6 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   @Override
   public boolean hasScheduledWrites() {
     return myWriteActionTracker.hasScheduledWrites() || super.hasScheduledWrites();
-  }
-
-  private boolean confirmActionCancellation() {
-    if (((ApplicationEx) ApplicationManager.getApplication()).holdsReadLock()) {
-      return true;
-    }
-
-    final int[] chosen = new int[1];
-    final ProgressIndicator pi = ProgressManager.getInstance().getProgressIndicator();
-    //noinspection ThrowableResultOfMethodCallIgnored
-    ThreadUtils.runInUIThreadAndWait(() -> {
-      if (pi instanceof ProgressWindow && !((ProgressWindow) pi).isBackgrounded()) {
-        ((ProgressWindow) pi).background();
-      }
-
-      chosen[0] = Messages.showYesNoDialog("The current action is taking too long, do you want to abort it?", "Unresponsive Process", null);
-    });
-
-    return chosen[0] == Messages.YES;
   }
 
   //--------command events listening
