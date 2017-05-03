@@ -5,14 +5,6 @@
       <sourceRoot location="languageModels" />
       <sourceRoot location="languageAccessories" />
     </modelRoot>
-    <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="languageModels" />
-      <sourceRoot location="languageAccessories" />
-    </modelRoot>
-    <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="languageModels" />
-      <sourceRoot location="languageAccessories" />
-    </modelRoot>
   </models>
   <accessoryModels>
     <model modelUID="r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspect.methods)" />
