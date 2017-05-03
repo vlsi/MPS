@@ -158,33 +158,6 @@ class DefaultModelAccess extends ModelAccess {
     }
   }
 
-  public boolean tryWrite(Runnable r) {
-    if (getWriteLock().tryLock()) {
-      try {
-        clearRepositoryStateCaches();
-        myWriteActionDispatcher.run(r);
-      } finally {
-        getWriteLock().unlock();
-      }
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  public <T> T tryWrite(final Computable<T> c) {
-    if (getWriteLock().tryLock()) {
-      try {
-        clearRepositoryStateCaches();
-        return myWriteActionDispatcher.compute(c);
-      } finally {
-        getWriteLock().unlock();
-      }
-    } else {
-      return null;
-    }
-  }
-
   @Override
   public void executeCommand(Runnable r, Project project) {
     runWriteAction(r);
