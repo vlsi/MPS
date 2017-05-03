@@ -1329,14 +1329,14 @@
           <node concept="3cpWsn" id="79xDgbhe3Gh" role="3cpWs9">
             <property role="TrG5h" value="result" />
             <node concept="_YKpA" id="79xDgbhe3Gi" role="1tU5fm">
-              <node concept="3uibUv" id="79xDgbhe3Gj" role="_ZDj9">
-                <ref role="3uigEE" to="bim2:36$CdjYfPok" resolve="ScriptApplied.ScriptAppliedReference" />
+              <node concept="3uibUv" id="6fMyXCHy37c" role="_ZDj9">
+                <ref role="3uigEE" to="bim2:6fMyXCHDaRA" resolve="ScriptApplied" />
               </node>
             </node>
             <node concept="2ShNRf" id="79xDgbhe3Gk" role="33vP2m">
               <node concept="Tc6Ow" id="79xDgbhe3Gl" role="2ShVmc">
-                <node concept="3uibUv" id="79xDgbhe3Gm" role="HW$YZ">
-                  <ref role="3uigEE" to="bim2:36$CdjYfPok" resolve="ScriptApplied.ScriptAppliedReference" />
+                <node concept="3uibUv" id="6fMyXCHy3Di" role="HW$YZ">
+                  <ref role="3uigEE" to="bim2:6fMyXCHDaRA" resolve="ScriptApplied" />
                 </node>
               </node>
             </node>
@@ -1434,7 +1434,10 @@
                     <node concept="TSZUe" id="79xDgbhe3GU" role="2OqNvi">
                       <node concept="2ShNRf" id="79xDgbhe3GV" role="25WWJ7">
                         <node concept="1pGfFk" id="79xDgbhe3GW" role="2ShVmc">
-                          <ref role="37wK5l" to="bim2:79xDgbhaH8e" resolve="MigrationScriptApplied.MigrationScriptAppliedReference" />
+                          <ref role="37wK5l" to="bim2:6fMyXCHDbdU" resolve="ScriptApplied" />
+                          <node concept="37vLTw" id="79xDgbhe5l$" role="37wK5m">
+                            <ref role="3cqZAo" node="79xDgbhe4ML" resolve="module" />
+                          </node>
                           <node concept="2ShNRf" id="79xDgbhe3GX" role="37wK5m">
                             <node concept="1pGfFk" id="79xDgbhe3GY" role="2ShVmc">
                               <ref role="37wK5l" to="6f4m:1HyHl70Zxpa" resolve="MigrationScriptReference" />
@@ -1445,9 +1448,6 @@
                                 <ref role="3cqZAo" node="79xDgbhe5LX" resolve="i" />
                               </node>
                             </node>
-                          </node>
-                          <node concept="37vLTw" id="79xDgbhe5l$" role="37wK5m">
-                            <ref role="3cqZAo" node="79xDgbhe4ML" resolve="module" />
                           </node>
                         </node>
                       </node>
@@ -1583,10 +1583,13 @@
                     <node concept="TSZUe" id="79xDgbhe3HX" role="2OqNvi">
                       <node concept="2ShNRf" id="79xDgbhe3HY" role="25WWJ7">
                         <node concept="1pGfFk" id="79xDgbhe3HZ" role="2ShVmc">
-                          <ref role="37wK5l" to="bim2:79xDgbhb4AZ" resolve="RefactoringLogApplied.RefactoringLogAppliedReference" />
+                          <ref role="37wK5l" to="bim2:6fMyXCHDbdU" resolve="ScriptApplied" />
+                          <node concept="37vLTw" id="79xDgbhe3I7" role="37wK5m">
+                            <ref role="3cqZAo" node="79xDgbhe4ML" resolve="module" />
+                          </node>
                           <node concept="2ShNRf" id="79xDgbhe3I0" role="37wK5m">
                             <node concept="1pGfFk" id="79xDgbhe3I1" role="2ShVmc">
-                              <ref role="37wK5l" to="6f4m:4uVwhQyPurm" resolve="RefactoringLogReference" />
+                              <ref role="37wK5l" to="6f4m:4uVwhQyPurm" resolve="RefactoringScriptReference" />
                               <node concept="2GrUjf" id="79xDgbhe3I3" role="37wK5m">
                                 <ref role="2Gs0qQ" node="79xDgbhe3Hl" resolve="dep" />
                               </node>
@@ -1594,9 +1597,6 @@
                                 <ref role="3cqZAo" node="79xDgbhea89" resolve="i" />
                               </node>
                             </node>
-                          </node>
-                          <node concept="37vLTw" id="79xDgbhe3I7" role="37wK5m">
-                            <ref role="3cqZAo" node="79xDgbhe4ML" resolve="module" />
                           </node>
                         </node>
                       </node>
@@ -1646,8 +1646,8 @@
         </node>
       </node>
       <node concept="A3Dl8" id="79xDgbhebDu" role="3clF45">
-        <node concept="3uibUv" id="79xDgbhebDv" role="A3Ik2">
-          <ref role="3uigEE" to="bim2:36$CdjYfPok" resolve="ScriptApplied.ScriptAppliedReference" />
+        <node concept="3uibUv" id="6fMyXCHximw" role="A3Ik2">
+          <ref role="3uigEE" to="bim2:6fMyXCHDaRA" resolve="ScriptApplied" />
         </node>
       </node>
       <node concept="3Tm1VV" id="79xDgbhe3y4" role="1B3o_S" />

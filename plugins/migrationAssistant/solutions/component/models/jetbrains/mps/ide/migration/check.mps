@@ -630,7 +630,7 @@
                                               <ref role="3cqZAo" node="5$2ALroQvWq" resolve="mc" />
                                             </node>
                                             <node concept="liA8E" id="3nC7LeAE1sZ" role="2OqNvi">
-                                              <ref role="37wK5l" to="bim2:5TtkZMYUq8y" resolve="fetchMigrationScript" />
+                                              <ref role="37wK5l" to="bim2:6fMyXCH_I67" resolve="findScript" />
                                               <node concept="2ShNRf" id="3nC7LeAE1t0" role="37wK5m">
                                                 <node concept="1pGfFk" id="3nC7LeAE1t1" role="2ShVmc">
                                                   <ref role="37wK5l" to="6f4m:1HyHl70Zxpa" resolve="MigrationScriptReference" />
@@ -3052,7 +3052,7 @@
         <property role="3TUv4t" value="false" />
         <node concept="3Tm6S6" id="6Z8qT6OW_4I" role="1B3o_S" />
         <node concept="3uibUv" id="6Z8qT6OWA9L" role="1tU5fm">
-          <ref role="3uigEE" to="6f4m:4uVwhQyPurf" resolve="RefactoringLogReference" />
+          <ref role="3uigEE" to="6f4m:4uVwhQyPurf" resolve="RefactoringScriptReference" />
         </node>
       </node>
       <node concept="312cEg" id="6Z8qT6OW_4K" role="jymVt">
@@ -3065,7 +3065,7 @@
         <node concept="37vLTG" id="6Z8qT6OW_4P" role="3clF46">
           <property role="TrG5h" value="migration" />
           <node concept="3uibUv" id="6Z8qT6OWAfj" role="1tU5fm">
-            <ref role="3uigEE" to="6f4m:4uVwhQyPurf" resolve="RefactoringLogReference" />
+            <ref role="3uigEE" to="6f4m:4uVwhQyPurf" resolve="RefactoringScriptReference" />
           </node>
         </node>
         <node concept="37vLTG" id="6Z8qT6OW_4R" role="3clF46">
