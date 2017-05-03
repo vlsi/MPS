@@ -1814,8 +1814,33 @@
                             <property role="Xl_RC" value="Module Migrations (" />
                           </node>
                           <node concept="2OqwBi" id="7L$Uh3Nfdl9" role="3uHU7w">
-                            <node concept="37vLTw" id="7L$Uh3NfoVH" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7L$Uh3Nfkm7" resolve="moduleMigrations" />
+                            <node concept="2OqwBi" id="6fMyXCHnwky" role="2Oq$k0">
+                              <node concept="2OqwBi" id="6fMyXCHntHI" role="2Oq$k0">
+                                <node concept="37vLTw" id="7L$Uh3NfoVH" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="7L$Uh3Nfkm7" resolve="moduleMigrations" />
+                                </node>
+                                <node concept="3$u5V9" id="6fMyXCHnuit" role="2OqNvi">
+                                  <node concept="1bVj0M" id="6fMyXCHnuiv" role="23t8la">
+                                    <node concept="3clFbS" id="6fMyXCHnuiw" role="1bW5cS">
+                                      <node concept="3clFbF" id="6fMyXCHnuTG" role="3cqZAp">
+                                        <node concept="2OqwBi" id="6fMyXCHnvju" role="3clFbG">
+                                          <node concept="37vLTw" id="6fMyXCHnuTF" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="6fMyXCHnuix" resolve="it" />
+                                          </node>
+                                          <node concept="liA8E" id="6fMyXCHnvJ0" role="2OqNvi">
+                                            <ref role="37wK5l" to="bim2:6Z8qT6OUVNN" resolve="getModule" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="Rh6nW" id="6fMyXCHnuix" role="1bW2Oz">
+                                      <property role="TrG5h" value="it" />
+                                      <node concept="2jxLKc" id="6fMyXCHnuiy" role="1tU5fm" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="1VAtEI" id="6fMyXCHnx6z" role="2OqNvi" />
                             </node>
                             <node concept="34oBXx" id="7L$Uh3NfdYZ" role="2OqNvi" />
                           </node>

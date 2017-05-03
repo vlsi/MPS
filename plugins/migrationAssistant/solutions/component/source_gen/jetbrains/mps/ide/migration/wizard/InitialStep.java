@@ -18,6 +18,8 @@ import jetbrains.mps.ide.migration.MigrationManager;
 import java.util.List;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.migration.global.ProjectMigration;
@@ -81,7 +83,11 @@ public class InitialStep extends BaseStep {
         // categories 
         final DefaultMutableTreeNode croot = new DefaultMutableTreeNode("Cleanups");
         final DefaultMutableTreeNode proot = new DefaultMutableTreeNode("Project Migrations");
-        final DefaultMutableTreeNode lroot = new DefaultMutableTreeNode("Module Migrations (" + ListSequence.fromList(moduleMigrations).count() + " modules)");
+        final DefaultMutableTreeNode lroot = new DefaultMutableTreeNode("Module Migrations (" + ListSequence.fromList(moduleMigrations).select(new ISelector<ScriptApplied.ScriptAppliedReference, SModule>() {
+          public SModule select(ScriptApplied.ScriptAppliedReference it) {
+            return it.getModule();
+          }
+        }).distinct().count() + " modules)");
 
         Sequence.fromIterable(manager.getProjectMigrationsToApply()).visitAll(new IVisitor<ProjectMigration>() {
           public void visit(ProjectMigration it) {
