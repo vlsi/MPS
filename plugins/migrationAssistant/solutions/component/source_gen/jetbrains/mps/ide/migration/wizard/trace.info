@@ -38,47 +38,47 @@
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)/2620437876316153983">
     <file name="PostCheckError.java">
-      <node id="8224028748485565891" at="15,0,16,0" concept="4" trace="myProject" />
-      <node id="8224028748487031857" at="16,0,17,0" concept="4" trace="myHaveBadCode" />
-      <node id="3201314612678605869" at="17,0,18,0" concept="4" trace="myMigrationsToCheck" />
-      <node id="8224028748485565895" at="19,100,20,18" concept="3" />
-      <node id="8224028748487031861" at="20,18,21,32" concept="3" />
-      <node id="3201314612678605874" at="21,32,22,44" concept="3" />
-      <node id="6413859341759181087" at="24,30,25,97" concept="9" />
-      <node id="6413859341759187646" at="26,24,27,88" concept="3" />
-      <node id="6413859341759221428" at="28,12,29,196" concept="3" />
-      <node id="6413859341759575144" at="29,196,30,126" concept="3" />
-      <node id="6413859341759243591" at="31,5,32,15" concept="10" />
-      <node id="2620568266963564733" at="34,77,35,91" concept="9" />
-      <node id="6413859341758479708" at="35,91,36,352" concept="10" />
-      <node id="8369211240152421934" at="39,30,40,17" concept="10" />
-      <node id="6413859341759219222" at="28,10,31,5" concept="0" />
-      <node id="2620437876316148129" at="34,0,38,0" concept="8" trace="getProblems#(Lcom/intellij/openapi/progress/ProgressIndicator;)Ljava/lang/Iterable;" />
-      <node id="4930617085365252337" at="38,0,42,0" concept="8" trace="canIgnore#()Z" />
-      <node id="2620437876316153987" at="19,0,24,0" concept="2" trace="PostCheckError#(Ljetbrains/mps/project/Project;Ljava/lang/Iterable;Z)V" />
-      <node id="6413859341759183817" at="25,97,31,5" concept="7" />
-      <node id="2620437876316148123" at="24,0,34,0" concept="8" trace="getMessage#()Ljava/lang/String;" />
-      <scope id="6413859341759183819" at="26,24,27,88" />
-      <scope id="4930617085365252343" at="39,30,40,17" />
-      <scope id="6413859341759219223" at="28,12,30,126" />
-      <scope id="2620437876316148134" at="34,77,36,352">
+      <node id="8224028748485565891" at="14,0,15,0" concept="4" trace="myProject" />
+      <node id="8224028748487031857" at="15,0,16,0" concept="4" trace="myHaveBadCode" />
+      <node id="3201314612678605869" at="16,0,17,0" concept="4" trace="myMigrationsToCheck" />
+      <node id="8224028748485565895" at="18,100,19,18" concept="3" />
+      <node id="8224028748487031861" at="19,18,20,32" concept="3" />
+      <node id="3201314612678605874" at="20,32,21,44" concept="3" />
+      <node id="6413859341759181087" at="23,30,24,97" concept="9" />
+      <node id="6413859341759187646" at="25,24,26,88" concept="3" />
+      <node id="6413859341759221428" at="27,12,28,196" concept="3" />
+      <node id="6413859341759575144" at="28,196,29,126" concept="3" />
+      <node id="6413859341759243591" at="30,5,31,15" concept="10" />
+      <node id="2620568266963564733" at="33,77,34,91" concept="9" />
+      <node id="6413859341758479708" at="34,91,35,155" concept="10" />
+      <node id="8369211240152421934" at="38,30,39,17" concept="10" />
+      <node id="6413859341759219222" at="27,10,30,5" concept="0" />
+      <node id="2620437876316148129" at="33,0,37,0" concept="8" trace="getProblems#(Lcom/intellij/openapi/progress/ProgressIndicator;)Ljava/lang/Iterable;" />
+      <node id="4930617085365252337" at="37,0,41,0" concept="8" trace="canIgnore#()Z" />
+      <node id="2620437876316153987" at="18,0,23,0" concept="2" trace="PostCheckError#(Ljetbrains/mps/project/Project;Ljava/lang/Iterable;Z)V" />
+      <node id="6413859341759183817" at="24,97,30,5" concept="7" />
+      <node id="2620437876316148123" at="23,0,33,0" concept="8" trace="getMessage#()Ljava/lang/String;" />
+      <scope id="6413859341759183819" at="25,24,26,88" />
+      <scope id="4930617085365252343" at="38,30,39,17" />
+      <scope id="6413859341759219223" at="27,12,29,126" />
+      <scope id="2620437876316148134" at="33,77,35,155">
         <var name="modules" id="2620568266963564734" />
       </scope>
-      <scope id="2620437876316153988" at="19,100,22,44" />
-      <scope id="2620437876316148129" at="34,0,38,0">
+      <scope id="2620437876316153988" at="18,100,21,44" />
+      <scope id="2620437876316148129" at="33,0,37,0">
         <var name="progressIndicator" id="4355467922915295540" />
       </scope>
-      <scope id="4930617085365252337" at="38,0,42,0" />
-      <scope id="2620437876316153987" at="19,0,24,0">
+      <scope id="4930617085365252337" at="37,0,41,0" />
+      <scope id="2620437876316153987" at="18,0,23,0">
         <var name="haveBadCode" id="8224028748486821993" />
         <var name="migrationsToCheck" id="3201314612678591277" />
         <var name="p" id="8224028748485565056" />
       </scope>
-      <scope id="2620437876316148127" at="24,30,32,15">
+      <scope id="2620437876316148127" at="23,30,31,15">
         <var name="res" id="6413859341759181088" />
       </scope>
-      <scope id="2620437876316148123" at="24,0,34,0" />
-      <unit id="2620437876316153983" at="14,0,43,0" name="jetbrains.mps.ide.migration.wizard.PostCheckError" />
+      <scope id="2620437876316148123" at="23,0,33,0" />
+      <unit id="2620437876316153983" at="13,0,42,0" name="jetbrains.mps.ide.migration.wizard.PostCheckError" />
     </file>
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)/2620437876316469478">

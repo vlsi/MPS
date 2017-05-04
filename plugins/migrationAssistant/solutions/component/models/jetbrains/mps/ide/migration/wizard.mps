@@ -358,7 +358,6 @@
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
-      <concept id="1176903168877" name="jetbrains.mps.baseLanguage.collections.structure.UnionOperation" flags="nn" index="4Tj9Z" />
       <concept id="1176906603202" name="jetbrains.mps.baseLanguage.collections.structure.BinaryOperation" flags="nn" index="56pJg">
         <child id="1176906787974" name="rightExpression" index="576Qk" />
       </concept>
@@ -5526,57 +5525,30 @@
           </node>
         </node>
         <node concept="3cpWs6" id="5$2ALroPrPs" role="3cqZAp">
-          <node concept="2OqwBi" id="5$2ALroRT$4" role="3cqZAk">
-            <node concept="2YIFZM" id="5$2ALroPUZC" role="2Oq$k0">
-              <ref role="37wK5l" to="t99v:5$2ALroOKzs" resolve="getNotMigrated" />
+          <node concept="2YIFZM" id="5$2ALroPUZC" role="3cqZAk">
+            <ref role="37wK5l" to="t99v:5$2ALroOKzs" resolve="getNotMigrated" />
+            <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
+            <node concept="37vLTw" id="5$2ALroPUZD" role="37wK5m">
+              <ref role="3cqZAo" node="2hu8fhm1zyY" resolve="modules" />
+            </node>
+            <node concept="37vLTw" id="2LHmEReYsSt" role="37wK5m">
+              <ref role="3cqZAo" node="2LHmEReYrKH" resolve="myMigrationsToCheck" />
+            </node>
+            <node concept="2YIFZM" id="4eqmL$d2y8X" role="37wK5m">
               <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
-              <node concept="37vLTw" id="5$2ALroPUZD" role="37wK5m">
-                <ref role="3cqZAo" node="2hu8fhm1zyY" resolve="modules" />
+              <ref role="37wK5l" to="t99v:3LLIJZBXV90" resolve="progressIndicatorToCallback" />
+              <node concept="37vLTw" id="4eqmL$d2y8Y" role="37wK5m">
+                <ref role="3cqZAo" node="3LLIJZBYo4O" resolve="progressIndicator" />
               </node>
-              <node concept="37vLTw" id="2LHmEReYsSt" role="37wK5m">
-                <ref role="3cqZAo" node="2LHmEReYrKH" resolve="myMigrationsToCheck" />
+              <node concept="3cmrfG" id="4eqmL$d2CRI" role="37wK5m">
+                <property role="3cmrfH" value="0" />
               </node>
-              <node concept="2YIFZM" id="4eqmL$d2y8X" role="37wK5m">
-                <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
-                <ref role="37wK5l" to="t99v:3LLIJZBXV90" resolve="progressIndicatorToCallback" />
-                <node concept="37vLTw" id="4eqmL$d2y8Y" role="37wK5m">
-                  <ref role="3cqZAo" node="3LLIJZBYo4O" resolve="progressIndicator" />
-                </node>
-                <node concept="3cmrfG" id="4eqmL$d2CRI" role="37wK5m">
-                  <property role="3cmrfH" value="0" />
-                </node>
-                <node concept="3b6qkQ" id="4eqmL$d2DFn" role="37wK5m">
-                  <property role="$nhwW" value="0.5" />
-                </node>
-              </node>
-              <node concept="3cmrfG" id="5$2ALroPUZF" role="37wK5m">
-                <property role="3cmrfH" value="100" />
+              <node concept="3b6qkQ" id="4eqmL$d2DFn" role="37wK5m">
+                <property role="$nhwW" value="1.0" />
               </node>
             </node>
-            <node concept="4Tj9Z" id="5$2ALroRUh1" role="2OqNvi">
-              <node concept="2YIFZM" id="2htE_P_LEJ2" role="576Qk">
-                <ref role="37wK5l" to="t99v:3n7MNzO_xEA" resolve="getProblems" />
-                <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
-                <node concept="37vLTw" id="2hu8fhm1zz1" role="37wK5m">
-                  <ref role="3cqZAo" node="2hu8fhm1zyY" resolve="modules" />
-                </node>
-                <node concept="2YIFZM" id="3LLIJZBYr$K" role="37wK5m">
-                  <ref role="37wK5l" to="t99v:3LLIJZBXV90" resolve="progressIndicatorToCallback" />
-                  <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
-                  <node concept="37vLTw" id="3LLIJZBYskv" role="37wK5m">
-                    <ref role="3cqZAo" node="3LLIJZBYo4O" resolve="progressIndicator" />
-                  </node>
-                  <node concept="3b6qkQ" id="4eqmL$d2HZO" role="37wK5m">
-                    <property role="$nhwW" value="0.5" />
-                  </node>
-                  <node concept="3cmrfG" id="4eqmL$d2Jjv" role="37wK5m">
-                    <property role="3cmrfH" value="1" />
-                  </node>
-                </node>
-                <node concept="3cmrfG" id="2htE_P_LEJ6" role="37wK5m">
-                  <property role="3cmrfH" value="100" />
-                </node>
-              </node>
+            <node concept="3cmrfG" id="5$2ALroPUZF" role="37wK5m">
+              <property role="3cmrfH" value="100" />
             </node>
           </node>
         </node>

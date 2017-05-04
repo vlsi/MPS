@@ -8,7 +8,6 @@ import jetbrains.mps.lang.migration.runtime.base.Problem;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 
 public class PostCheckError extends MigrationErrorDescriptor {
@@ -33,7 +32,7 @@ public class PostCheckError extends MigrationErrorDescriptor {
   }
   public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
     Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(myProject);
-    return CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(modules, myMigrationsToCheck, MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0, 0.5), 100)).union(CollectionSequence.fromCollection(MigrationCheckUtil.getProblems(modules, MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0.5, 1), 100)));
+    return MigrationCheckUtil.getNotMigrated(modules, myMigrationsToCheck, MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0, 1.0), 100);
   }
   @Override
   public boolean canIgnore() {
