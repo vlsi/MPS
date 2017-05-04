@@ -2479,6 +2479,7 @@
           <module ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" />
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
@@ -2653,19 +2654,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-customAspect-languageAccessories">
       <fileset dir="${mps_home}/languages/languageDesign/customAspect/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-customAspect-languageAccessories1">
-      <fileset dir="${mps_home}/languages/languageDesign/customAspect/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-customAspect-languageAccessories2">
-      <fileset dir="${mps_home}/languages/languageDesign/customAspect/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-customAspect-languageModels">
-      <fileset dir="${mps_home}/languages/languageDesign/customAspect/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-customAspect-languageModels1">
-      <fileset dir="${mps_home}/languages/languageDesign/customAspect/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-customAspect-languageModels2">
       <fileset dir="${mps_home}/languages/languageDesign/customAspect/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.aspect-src.jar" duplicate="preserve">
@@ -2684,11 +2673,7 @@
       <zipfileset file="${mps_home}/languages/languageDesign/customAspect/jetbrains.mps.lang.aspect.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-customAspect-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-customAspect-languageAccessories" prefix="module/languageAccessories" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-customAspect-languageAccessories1" prefix="module/languageAccessories" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-customAspect-languageAccessories2" prefix="module/languageAccessories" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-customAspect-languageModels" prefix="module/languageModels" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-customAspect-languageModels1" prefix="module/languageModels" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-customAspect-languageModels2" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.util.order.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.util.order.jar/META-INF" />

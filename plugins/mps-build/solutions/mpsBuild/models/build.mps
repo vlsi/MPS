@@ -5408,12 +5408,6 @@
             <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
           </node>
         </node>
-        <node concept="1SiIV0" id="5ZhKIhfQeNV" role="3bR37C">
-          <node concept="3bR9La" id="5ZhKIhfQeNW" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Kfy9QB6L8Y" resolve="jetbrains.mps.lang.project" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="3IvUXkfNZZt" role="3bR37C">
           <node concept="3bR9La" id="3IvUXkfNZZu" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -5436,6 +5430,18 @@
           <node concept="3bR9La" id="6A4ej7gpp$j" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="tRSO93SZkh" role="3bR37C">
+          <node concept="3bR9La" id="tRSO93SZki" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1qokWp1VHJa" resolve="jetbrains.mps.refactoring.participant" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="tRSO93SZkj" role="3bR37C">
+          <node concept="3bR9La" id="tRSO93SZkk" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6Lfd" resolve="jetbrains.mps.findUsages.runtime" />
           </node>
         </node>
       </node>
