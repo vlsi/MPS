@@ -25,7 +25,7 @@ public class MigrationsUtil {
     return MigrationModuleUtil.isModuleMigrateable(m);
   }
 
-  public static Iterable<ScriptApplied> getAllSteps(SModule module) {
+  public static Iterable<ScriptApplied> getAllSteps(SModule module, boolean firstOnly) {
     List<ScriptApplied> result = ListSequence.fromList(new ArrayList<ScriptApplied>());
     for (SLanguage lang : SetSequence.fromSet(getUsedLanguages(module))) {
       int currentLangVersion = lang.getLanguageVersion();
@@ -36,6 +36,9 @@ public class MigrationsUtil {
 
       for (int i = ver; i < currentLangVersion; i++) {
         ListSequence.fromList(result).addElement(new ScriptApplied(module, new MigrationScriptReference(lang, i)));
+        if (firstOnly) {
+          break;
+        }
       }
     }
     for (SModule dep : SetSequence.fromSet(getModuleDependencies(module))) {
@@ -47,6 +50,9 @@ public class MigrationsUtil {
 
       for (int i = ver; i < currentDepVersion; i++) {
         ListSequence.fromList(result).addElement(new ScriptApplied(module, new RefactoringScriptReference(dep, i)));
+        if (firstOnly) {
+          break;
+        }
       }
     }
     return result;

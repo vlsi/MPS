@@ -239,7 +239,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
   public List<ScriptApplied> getModuleMigrationsToApply(Iterable<SModule> modules) {
     return Sequence.fromIterable(modules).translate(new ITranslator2<SModule, ScriptApplied>() {
       public Iterable<ScriptApplied> translate(SModule module) {
-        return MigrationsUtil.getAllSteps(module);
+        return MigrationsUtil.getAllSteps(module, false);
       }
     }).toListSequence();
   }
@@ -327,30 +327,76 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     final Wrappers._T<ScriptApplied> result = new Wrappers._T<ScriptApplied>(null);
     myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Iterable<ScriptApplied> toApply = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject))).translate(new ITranslator2<SModule, ScriptApplied>() {
-          public Iterable<ScriptApplied> translate(SModule module) {
-            return MigrationsUtil.getAllSteps(module);
+        // .toList is important here, makes it not to perform calculation many times 
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject));
+        if (preferredId == null) {
+          result.value = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, ScriptApplied>() {
+            public Iterable<ScriptApplied> translate(SModule module) {
+              return MigrationsUtil.getAllSteps(module, true);
+            }
+          }).findFirst(new IWhereFilter<ScriptApplied>() {
+            public boolean accept(ScriptApplied it) {
+              return canBeExecutedImmediately(it);
+            }
+          });
+          return;
+        }
+
+        if (preferredId instanceof MigrationScriptReference) {
+          final MigrationScriptReference mid = as_yvrsrz_a0a0a4a0a0a0a1a34(preferredId, MigrationScriptReference.class);
+          SModule byId = Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
+            public boolean accept(SModule it) {
+              return SetSequence.fromSet(MigrationsUtil.getUsedLanguages(it)).contains(mid.getLanguage());
+            }
+          }).where(new IWhereFilter<SModule>() {
+            public boolean accept(SModule it) {
+              int ver = Math.max(0, ((AbstractModule) it).getUsedLanguageVersion(mid.getLanguage()));
+              return ver == mid.getFromVersion();
+            }
+          }).findFirst(new IWhereFilter<SModule>() {
+            public boolean accept(SModule it) {
+              return canBeExecutedImmediately(new ScriptApplied(it, mid));
+            }
+          });
+          if (byId != null) {
+            result.value = new ScriptApplied(byId, mid);
+            return;
           }
-        }).where(new IWhereFilter<ScriptApplied>() {
+        } else if (preferredId instanceof RefactoringScriptReference) {
+          final RefactoringScriptReference rid = as_yvrsrz_a0a0a0e0a0a0a0b0rb(preferredId, RefactoringScriptReference.class);
+          SModule byId = Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
+            public boolean accept(SModule it) {
+              return SetSequence.fromSet(MigrationsUtil.getModuleDependencies(it)).contains(rid.getModule());
+            }
+          }).where(new IWhereFilter<SModule>() {
+            public boolean accept(SModule it) {
+              int ver = Math.max(0, ((AbstractModule) it).getDependencyVersion(rid.getModule()));
+              return ver == rid.getFromVersion();
+            }
+          }).findFirst(new IWhereFilter<SModule>() {
+            public boolean accept(SModule it) {
+              return canBeExecutedImmediately(new ScriptApplied(it, rid));
+            }
+          });
+          if (byId != null) {
+            result.value = new ScriptApplied(byId, rid);
+            return;
+          }
+        } else {
+          // todo get rid of explicit class mention 
+          throw new IllegalArgumentException();
+        }
+
+        // no applicable found by id 
+        result.value = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, ScriptApplied>() {
+          public Iterable<ScriptApplied> translate(SModule module) {
+            return MigrationsUtil.getAllSteps(module, true);
+          }
+        }).findFirst(new IWhereFilter<ScriptApplied>() {
           public boolean accept(ScriptApplied it) {
             return canBeExecutedImmediately(it);
           }
         });
-
-        // try find preferred, otherwise any 
-        Iterable<ScriptApplied> preferred = (preferredId == null ? toApply : Sequence.fromIterable(toApply).where(new IWhereFilter<ScriptApplied>() {
-          public boolean accept(ScriptApplied it) {
-            return preferredId == null || preferredId.equals(it.getScriptReference());
-          }
-        }));
-        if (Sequence.fromIterable(preferred).isEmpty()) {
-          preferred = toApply;
-        }
-        if (Sequence.fromIterable(preferred).isEmpty()) {
-          return;
-        }
-
-        result.value = Sequence.fromIterable(preferred).first();
       }
     });
     return result.value;
@@ -517,5 +563,11 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     }
     int dv = Math.max(0, ((AbstractModule) m).getDependencyVersion(ref.getModule(), false));
     return dv <= ref.getFromVersion();
+  }
+  private static <T> T as_yvrsrz_a0a0a4a0a0a0a1a34(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
+  private static <T> T as_yvrsrz_a0a0a0e0a0a0a0b0rb(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }
