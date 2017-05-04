@@ -5,6 +5,7 @@ package jetbrains.mps.ide.migration.check;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.ide.migration.ScriptApplied;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Collection;
@@ -13,6 +14,8 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -22,8 +25,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -65,82 +66,89 @@ public class MigrationCheckUtil {
     };
   }
 
-  public static boolean haveNotMigrated(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
-    return CollectionSequence.fromCollection(getNotMigrated(modules, progressCallback, 1)).isNotEmpty();
+  public static boolean haveNotMigrated(Iterable<SModule> modules, Iterable<ScriptApplied> migrationsToCheck, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
+    return CollectionSequence.fromCollection(getNotMigrated(modules, migrationsToCheck, progressCallback, 1)).isNotEmpty();
   }
 
-  public static Collection<Problem> getNotMigrated(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, int maxErrors) {
-    List<Tuples._2<MigrationScript, SModule>> scriptsApplied = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, Tuples._2<MigrationScript, SModule>>() {
-      public Iterable<Tuples._2<MigrationScript, SModule>> translate(final SModule module) {
-        Set<SLanguage> allLanguages = new SLanguageHierarchy(LanguageRegistry.getInstance(module.getRepository()), module.getUsedLanguages()).getExtended();
-        Iterable<MigrationScript> scripts = SetSequence.fromSet(allLanguages).translate(new ITranslator2<SLanguage, MigrationScript>() {
-          public Iterable<MigrationScript> translate(final SLanguage it) {
-            return new Iterable<MigrationScript>() {
-              public Iterator<MigrationScript> iterator() {
-                return new YieldingIterator<MigrationScript>() {
-                  private int __CP__ = 0;
-                  protected boolean moveToNext() {
-__loop__:
-                    do {
-__switch__:
-                      switch (this.__CP__) {
-                        case -1:
-                          assert false : "Internal error";
-                          return false;
-                        case 2:
-                          this._2_ver = 0;
-                        case 3:
-                          if (!(_2_ver < it.getLanguageVersion())) {
-                            this.__CP__ = 1;
-                            break;
-                          }
-                          this.__CP__ = 4;
-                          break;
-                        case 5:
-                          _2_ver++;
-                          this.__CP__ = 3;
-                          break;
-                        case 8:
-                          if (_7_script != null) {
-                            this.__CP__ = 9;
-                            break;
-                          }
-                          this.__CP__ = 5;
-                          break;
-                        case 10:
-                          this.__CP__ = 5;
-                          this.yield(_7_script);
-                          return true;
-                        case 0:
-                          this.__CP__ = 2;
-                          break;
-                        case 4:
-                          this._7_script = new MigrationScriptReference(it, _2_ver).resolve(true);
-                          this.__CP__ = 8;
-                          break;
-                        case 9:
-                          this.__CP__ = 10;
-                          break;
-                        default:
-                          break __loop__;
-                      }
-                    } while (true);
-                    return false;
-                  }
-                  private int _2_ver;
-                  private MigrationScript _7_script;
-                };
-              }
-            };
-          }
-        });
-        return Sequence.fromIterable(scripts).select(new ISelector<MigrationScript, Tuples._2<MigrationScript, SModule>>() {
-          public Tuples._2<MigrationScript, SModule> select(MigrationScript script) {
-            return MultiTuple.<MigrationScript,SModule>from(script, module);
-          }
-        });
+  public static Collection<Problem> getNotMigrated(Iterable<SModule> modules, Iterable<ScriptApplied> migrationsToCheck, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, int maxErrors) {
+    List<Tuples._2<MigrationScript, SModule>> scriptsApplied = Sequence.fromIterable(migrationsToCheck).select(new ISelector<ScriptApplied, Tuples._2<MigrationScript, SModule>>() {
+      public Tuples._2<MigrationScript, SModule> select(ScriptApplied it) {
+        return MultiTuple.<MigrationScript,SModule>from(((MigrationScript) it.getScriptReference().resolve(true)), it.getModule());
       }
     }).toListSequence();
+    if (scriptsApplied == null) {
+      scriptsApplied = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, Tuples._2<MigrationScript, SModule>>() {
+        public Iterable<Tuples._2<MigrationScript, SModule>> translate(final SModule module) {
+          Set<SLanguage> allLanguages = new SLanguageHierarchy(LanguageRegistry.getInstance(module.getRepository()), module.getUsedLanguages()).getExtended();
+          Iterable<MigrationScript> scripts = SetSequence.fromSet(allLanguages).translate(new ITranslator2<SLanguage, MigrationScript>() {
+            public Iterable<MigrationScript> translate(final SLanguage it) {
+              return new Iterable<MigrationScript>() {
+                public Iterator<MigrationScript> iterator() {
+                  return new YieldingIterator<MigrationScript>() {
+                    private int __CP__ = 0;
+                    protected boolean moveToNext() {
+__loop__:
+                      do {
+__switch__:
+                        switch (this.__CP__) {
+                          case -1:
+                            assert false : "Internal error";
+                            return false;
+                          case 2:
+                            this._2_ver = 0;
+                          case 3:
+                            if (!(_2_ver < it.getLanguageVersion())) {
+                              this.__CP__ = 1;
+                              break;
+                            }
+                            this.__CP__ = 4;
+                            break;
+                          case 5:
+                            _2_ver++;
+                            this.__CP__ = 3;
+                            break;
+                          case 8:
+                            if (_7_script != null) {
+                              this.__CP__ = 9;
+                              break;
+                            }
+                            this.__CP__ = 5;
+                            break;
+                          case 10:
+                            this.__CP__ = 5;
+                            this.yield(_7_script);
+                            return true;
+                          case 0:
+                            this.__CP__ = 2;
+                            break;
+                          case 4:
+                            this._7_script = new MigrationScriptReference(it, _2_ver).resolve(true);
+                            this.__CP__ = 8;
+                            break;
+                          case 9:
+                            this.__CP__ = 10;
+                            break;
+                          default:
+                            break __loop__;
+                        }
+                      } while (true);
+                      return false;
+                    }
+                    private int _2_ver;
+                    private MigrationScript _7_script;
+                  };
+                }
+              };
+            }
+          });
+          return Sequence.fromIterable(scripts).select(new ISelector<MigrationScript, Tuples._2<MigrationScript, SModule>>() {
+            public Tuples._2<MigrationScript, SModule> select(MigrationScript script) {
+              return MultiTuple.<MigrationScript,SModule>from(script, module);
+            }
+          });
+        }
+      }).toListSequence();
+    }
     final int allSteps = ListSequence.fromList(scriptsApplied).count();
     int stepsPassed = 0;
 

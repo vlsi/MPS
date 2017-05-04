@@ -5,12 +5,13 @@ package jetbrains.mps.ide.migration.wizard;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.history.LocalHistoryAction;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.persistence.PersistenceRegistry;
-import org.apache.log4j.Level;
 import java.util.List;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import org.apache.log4j.Level;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -47,6 +48,7 @@ public class MigrationTask {
   private MigrationSession mySession;
   private volatile boolean myIsComplete = false;
   private LocalHistoryAction myCurrentChange = null;
+  private List<ScriptApplied> myWereRun = ListSequence.fromList(new ArrayList<ScriptApplied>());
 
   private ProgressMonitorAdapter myMonitor;
   private int myLastStep = 0;
@@ -118,13 +120,13 @@ public class MigrationTask {
     addGlobalLabel(mySession.getProject(), FINISHED);
 
     if (!((checkProject(myMonitor.subTask(10))))) {
-      result(myMonitor, new PostCheckError(mySession.getProject(), true), "Problems are detected after executing migrations.");
+      result(myMonitor, new PostCheckError(mySession.getProject(), myWereRun, true), "Problems are detected after executing migrations.");
       return true;
     }
 
     // todo move from here to migration annotations 
     if (!((findNotMigrated(myMonitor.subTask(5))))) {
-      result(myMonitor, new PostCheckError(mySession.getProject(), false), "Problems are detected after executing migrations.");
+      result(myMonitor, new PostCheckError(mySession.getProject(), myWereRun, false), "Problems are detected after executing migrations.");
       return true;
     }
 
@@ -336,6 +338,7 @@ public class MigrationTask {
       preferredId.value = sa.getScriptReference();
       String caption = sa.getScriptReference().resolve(false).getCaption();
       m.step(caption);
+      ListSequence.fromList(myWereRun).addElement(sa);
       if (!(executeSingleStep(caption, new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           mySession.getMigrationManager().executeScript(sa);
@@ -346,7 +349,7 @@ public class MigrationTask {
           if (next == null) {
             return false;
           }
-          return eq_ajmasp_a0c0a0a2a0g0f0ob(sa.getScriptReference(), next.getScriptReference());
+          return eq_ajmasp_a0c0a0a2a0h0f0pb(sa.getScriptReference(), next.getScriptReference());
         }
       }))) {
         success = false;
@@ -385,7 +388,7 @@ public class MigrationTask {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
         m.start("Finding not migrated code...", Sequence.fromIterable(modules).count());
-        haveNotMigrated.value = MigrationCheckUtil.haveNotMigrated(modules, frac2inc(Sequence.fromIterable(modules).count(), new _FunctionTypes._void_P1_E0<Integer>() {
+        haveNotMigrated.value = MigrationCheckUtil.haveNotMigrated(modules, myWereRun, frac2inc(Sequence.fromIterable(modules).count(), new _FunctionTypes._void_P1_E0<Integer>() {
           public void invoke(Integer processed) {
             m.advance(processed);
           }
@@ -394,7 +397,7 @@ public class MigrationTask {
     });
     return haveNotMigrated.value;
   }
-  private static boolean eq_ajmasp_a0c0a0a2a0g0f0ob(Object a, Object b) {
+  private static boolean eq_ajmasp_a0c0a0a2a0h0f0pb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

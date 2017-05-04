@@ -74,6 +74,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.classloading.ModuleClassLoaderSupport" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.BrokenReferenceProblem" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.ConceptFeatureMissingProblem" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.ConceptMissingProblem" />

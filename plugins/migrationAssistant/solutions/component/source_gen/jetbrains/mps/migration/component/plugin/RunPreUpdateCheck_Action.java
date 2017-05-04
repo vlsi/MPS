@@ -75,7 +75,8 @@ public class RunPreUpdateCheck_Action extends BaseAction {
         progressIndicator.setIndeterminate(false);
         repos.getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            ListSequence.fromList(problems).addSequence(CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(modules[0], new _FunctionTypes._void_P1_E0<Double>() {
+
+            ListSequence.fromList(problems).addSequence(CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(modules[0], null, new _FunctionTypes._void_P1_E0<Double>() {
               public void invoke(Double d) {
                 progressIndicator.setFraction(d);
               }
