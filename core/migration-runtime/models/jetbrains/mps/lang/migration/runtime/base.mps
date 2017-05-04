@@ -42,7 +42,6 @@
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
-    <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
@@ -2484,20 +2483,6 @@
         <ref role="3uigEE" node="2RG318eVG1Z" resolve="MigrationScript" />
       </node>
       <node concept="3clFbS" id="6fMyXCHzvjn" role="3clF47">
-        <node concept="3cpWs8" id="5TtkZMYUq8K" role="3cqZAp">
-          <node concept="3cpWsn" id="5TtkZMYUq8L" role="3cpWs9">
-            <property role="TrG5h" value="depLanguage" />
-            <node concept="2OqwBi" id="1HyHl7120me" role="33vP2m">
-              <node concept="Xjq3P" id="6fMyXCHNNeW" role="2Oq$k0" />
-              <node concept="liA8E" id="1HyHl71230b" role="2OqNvi">
-                <ref role="37wK5l" node="2RG318eWpZ$" resolve="getLanguage" />
-              </node>
-            </node>
-            <node concept="3uibUv" id="5TtkZMZb6uQ" role="1tU5fm">
-              <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="5TtkZMYUq8Q" role="3cqZAp">
           <node concept="3cpWsn" id="5TtkZMYUq8R" role="3cpWs9">
             <property role="TrG5h" value="current" />
@@ -2511,26 +2496,33 @@
           </node>
         </node>
         <node concept="3clFbH" id="6fMyXCHNX1E" role="3cqZAp" />
-        <node concept="3clFbH" id="6fMyXCHNY2o" role="3cqZAp" />
-        <node concept="3cpWs8" id="5TtkZMYUq8W" role="3cqZAp">
-          <node concept="3cpWsn" id="5TtkZMYUq8X" role="3cpWs9">
+        <node concept="3cpWs8" id="57ZanakvLTX" role="3cqZAp">
+          <node concept="3cpWsn" id="57ZanakvLTY" role="3cpWs9">
             <property role="TrG5h" value="md" />
-            <node concept="3uibUv" id="5TtkZMYUq8Y" role="1tU5fm">
+            <node concept="3uibUv" id="57ZanakvLTZ" role="1tU5fm">
               <ref role="3uigEE" node="2RG318eVG1Q" resolve="MigrationAspectDescriptor" />
             </node>
-            <node concept="1rXfSq" id="5TtkZMYUq8Z" role="33vP2m">
-              <ref role="37wK5l" node="3v32as6QTI5" resolve="getMigrationDescriptor" />
-              <node concept="10QFUN" id="5JfAyZ3Kw5j" role="37wK5m">
-                <node concept="3uibUv" id="5JfAyZ3KyN1" role="10QFUM">
-                  <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+            <node concept="2OqwBi" id="57ZanakvLU0" role="33vP2m">
+              <node concept="2OqwBi" id="57ZanakvLU1" role="2Oq$k0">
+                <node concept="2YIFZM" id="57ZanakvLU2" role="2Oq$k0">
+                  <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
+                  <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
+                  <node concept="2YIFZM" id="57ZanakvLU3" role="37wK5m">
+                    <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                    <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                  </node>
                 </node>
-                <node concept="2OqwBi" id="5TtkZMZbN_6" role="10QFUP">
-                  <node concept="37vLTw" id="5TtkZMYUq90" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5TtkZMYUq8L" resolve="depLanguage" />
+                <node concept="liA8E" id="57ZanakvLU4" role="2OqNvi">
+                  <ref role="37wK5l" to="vndm:~LanguageRegistry.getLanguage(org.jetbrains.mps.openapi.language.SLanguage):jetbrains.mps.smodel.language.LanguageRuntime" resolve="getLanguage" />
+                  <node concept="37vLTw" id="57ZanakvLU5" role="37wK5m">
+                    <ref role="3cqZAo" node="2RG318eWpZ9" resolve="language" />
                   </node>
-                  <node concept="liA8E" id="5TtkZMZbPNp" role="2OqNvi">
-                    <ref role="37wK5l" to="c17a:~SLanguage.getSourceModule():org.jetbrains.mps.openapi.module.SModule" resolve="getSourceModule" />
-                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="57ZanakvLU6" role="2OqNvi">
+                <ref role="37wK5l" to="vndm:~LanguageRuntime.getAspect(java.lang.Class):jetbrains.mps.smodel.runtime.ILanguageAspect" resolve="getAspect" />
+                <node concept="3VsKOn" id="57ZanakvLU7" role="37wK5m">
+                  <ref role="3VsUkX" node="2RG318eVG1Q" resolve="MigrationAspectDescriptor" />
                 </node>
               </node>
             </node>
@@ -2548,8 +2540,8 @@
                   <node concept="Xl_RD" id="5TtkZMYUq97" role="3uHU7B">
                     <property role="Xl_RC" value="Could not load migration descriptor for language " />
                   </node>
-                  <node concept="37vLTw" id="5TtkZMYUq98" role="3uHU7w">
-                    <ref role="3cqZAo" node="5TtkZMYUq8L" resolve="depLanguage" />
+                  <node concept="37vLTw" id="57ZanakvAZ0" role="3uHU7w">
+                    <ref role="3cqZAo" node="2RG318eWpZ9" resolve="language" />
                   </node>
                 </node>
               </node>
@@ -2563,7 +2555,7 @@
             </node>
             <node concept="3clFbC" id="5TtkZMYUq99" role="3uHU7B">
               <node concept="37vLTw" id="5TtkZMYUq9b" role="3uHU7B">
-                <ref role="3cqZAo" node="5TtkZMYUq8X" resolve="md" />
+                <ref role="3cqZAo" node="57ZanakvLTY" resolve="md" />
               </node>
               <node concept="10Nm6u" id="5TtkZMYUq9a" role="3uHU7w" />
             </node>
@@ -2577,7 +2569,7 @@
             </node>
             <node concept="2EnYce" id="5TtkZMYUq9f" role="33vP2m">
               <node concept="37vLTw" id="5TtkZMYUq9g" role="2Oq$k0">
-                <ref role="3cqZAo" node="5TtkZMYUq8X" resolve="md" />
+                <ref role="3cqZAo" node="57ZanakvLTY" resolve="md" />
               </node>
               <node concept="liA8E" id="5TtkZMYUq9h" role="2OqNvi">
                 <ref role="37wK5l" node="2RG318eVG1R" resolve="getScript" />
@@ -2602,8 +2594,8 @@
                       <node concept="Xl_RD" id="5TtkZMYUq9r" role="3uHU7B">
                         <property role="Xl_RC" value="Could not load migration script for language " />
                       </node>
-                      <node concept="37vLTw" id="5TtkZMYUq9s" role="3uHU7w">
-                        <ref role="3cqZAo" node="5TtkZMYUq8L" resolve="depLanguage" />
+                      <node concept="37vLTw" id="57ZanakvAZ1" role="3uHU7w">
+                        <ref role="3cqZAo" node="2RG318eWpZ9" resolve="language" />
                       </node>
                     </node>
                     <node concept="Xl_RD" id="5TtkZMYUq9t" role="3uHU7w">
@@ -2642,53 +2634,6 @@
       </node>
       <node concept="2AHcQZ" id="6fMyXCHzvjo" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="6fMyXCHO7Kx" role="jymVt" />
-    <node concept="3clFb_" id="3v32as6QTI5" role="jymVt">
-      <property role="TrG5h" value="getMigrationDescriptor" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tm6S6" id="36$CdjYadHx" role="1B3o_S" />
-      <node concept="3uibUv" id="3v32as6QEZD" role="3clF45">
-        <ref role="3uigEE" node="2RG318eVG1Q" resolve="MigrationAspectDescriptor" />
-      </node>
-      <node concept="37vLTG" id="3v32as6QEZE" role="3clF46">
-        <property role="TrG5h" value="module" />
-        <node concept="3uibUv" id="5JfAyZ3Kjxx" role="1tU5fm">
-          <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="3v32as6QEYY" role="3clF47">
-        <node concept="3cpWs6" id="1VEkjZgrkjV" role="3cqZAp">
-          <node concept="2OqwBi" id="1VEkjZgrkjW" role="3cqZAk">
-            <node concept="2OqwBi" id="1VEkjZgrkjX" role="2Oq$k0">
-              <node concept="2YIFZM" id="1VEkjZgrkjY" role="2Oq$k0">
-                <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
-                <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
-                <node concept="2OqwBi" id="1VEkjZgrkjZ" role="37wK5m">
-                  <node concept="37vLTw" id="1VEkjZgrkk0" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3v32as6QEZE" resolve="module" />
-                  </node>
-                  <node concept="liA8E" id="1VEkjZgrkk1" role="2OqNvi">
-                    <ref role="37wK5l" to="31cb:~SModuleBase.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                  </node>
-                </node>
-              </node>
-              <node concept="liA8E" id="1VEkjZgrkk2" role="2OqNvi">
-                <ref role="37wK5l" to="vndm:~LanguageRegistry.getLanguage(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.language.LanguageRuntime" resolve="getLanguage" />
-                <node concept="37vLTw" id="1VEkjZgrkk3" role="37wK5m">
-                  <ref role="3cqZAo" node="3v32as6QEZE" resolve="module" />
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="1VEkjZgrkk4" role="2OqNvi">
-              <ref role="37wK5l" to="vndm:~LanguageRuntime.getAspect(java.lang.Class):jetbrains.mps.smodel.runtime.ILanguageAspect" resolve="getAspect" />
-              <node concept="3VsKOn" id="1VEkjZgrkk5" role="37wK5m">
-                <ref role="3VsUkX" node="2RG318eVG1Q" resolve="MigrationAspectDescriptor" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>

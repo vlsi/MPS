@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.Language;
-import org.apache.log4j.Level;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import org.apache.log4j.Level;
 
 public class MigrationScriptReference implements BaseScriptReference<MigrationScript> {
   private static final Logger LOG = LogManager.getLogger(MigrationScriptReference.class);
@@ -59,30 +59,24 @@ public class MigrationScriptReference implements BaseScriptReference<MigrationSc
 
   @Override
   public MigrationScript resolve(boolean silent) {
-    SLanguage depLanguage = this.getLanguage();
     int current = this.getFromVersion();
 
-
-    MigrationAspectDescriptor md = getMigrationDescriptor((Language) depLanguage.getSourceModule());
+    MigrationAspectDescriptor md = LanguageRegistry.getInstance(MPSModuleRepository.getInstance()).getLanguage(language).getAspect(MigrationAspectDescriptor.class);
     if (md == null && !(silent)) {
       if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("Could not load migration descriptor for language " + depLanguage + ".");
+        LOG.warn("Could not load migration descriptor for language " + language + ".");
       }
     }
-    MigrationScript script = check_dhbyxl_a0g0k(md, current);
+    MigrationScript script = check_dhbyxl_a0e0k(md, current);
     if (script == null && !(silent)) {
       if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("Could not load migration script for language " + depLanguage + ", version " + current + ".");
+        LOG.warn("Could not load migration script for language " + language + ", version " + current + ".");
       }
       return null;
     }
     return script;
   }
-
-  private MigrationAspectDescriptor getMigrationDescriptor(Language module) {
-    return LanguageRegistry.getInstance(module.getRepository()).getLanguage(module).getAspect(MigrationAspectDescriptor.class);
-  }
-  private static MigrationScript check_dhbyxl_a0g0k(MigrationAspectDescriptor checkedDotOperand, Integer current) {
+  private static MigrationScript check_dhbyxl_a0e0k(MigrationAspectDescriptor checkedDotOperand, Integer current) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(current);
     }
