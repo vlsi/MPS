@@ -48,6 +48,7 @@ public class MigrationStep extends BaseStep {
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
+        myProgress.setFraction(0.0);
         try {
           Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -82,7 +83,7 @@ public class MigrationStep extends BaseStep {
           Project project = ProjectHelper.toIdeaProject(mySession.getProject());
           String msg = mySession.getErrorDescriptor().getMessage();
           msg = msg.replaceAll("<br>", "\n");
-          res.value = Messages.showYesNoDialog(project, msg, "Errors detected", "Ignore and Migrate", "Stop Migration", null) == Messages.YES;
+          res.value = Messages.showYesNoDialog(project, msg, "Errors detected", "Ignore and Continue", "Stop Migration", null) == Messages.YES;
         }
       });
     } catch (InvocationTargetException e) {

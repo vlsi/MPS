@@ -637,6 +637,19 @@
               <node concept="1bVj0M" id="65hwFmZdKXE" role="37wK5m">
                 <property role="3yWfEV" value="true" />
                 <node concept="3clFbS" id="65hwFmZdKXF" role="1bW5cS">
+                  <node concept="3clFbF" id="2EQVK3eFe2b" role="3cqZAp">
+                    <node concept="2OqwBi" id="2EQVK3eFf8P" role="3clFbG">
+                      <node concept="37vLTw" id="2EQVK3eFe29" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7rK8qWGDnm$" resolve="myProgress" />
+                      </node>
+                      <node concept="liA8E" id="2EQVK3eFgNV" role="2OqNvi">
+                        <ref role="37wK5l" to="ot7:~AbstractProgressIndicatorExBase.setFraction(double):void" resolve="setFraction" />
+                        <node concept="3b6qkQ" id="2EQVK3eFhkJ" role="37wK5m">
+                          <property role="$nhwW" value="0.0" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="SfApY" id="1zaRC58xUbc" role="3cqZAp">
                     <node concept="3clFbS" id="1zaRC58xUbe" role="SfCbr">
                       <node concept="3clFbF" id="1zaRC58xwBK" role="3cqZAp">
@@ -907,7 +920,7 @@
                               <property role="Xl_RC" value="Errors detected" />
                             </node>
                             <node concept="Xl_RD" id="kFlbeYNNa5" role="37wK5m">
-                              <property role="Xl_RC" value="Ignore and Migrate" />
+                              <property role="Xl_RC" value="Ignore and Continue" />
                             </node>
                             <node concept="Xl_RD" id="kFlbeYNNa6" role="37wK5m">
                               <property role="Xl_RC" value="Stop Migration" />
@@ -7973,8 +7986,37 @@
                 </node>
                 <node concept="liA8E" id="78xBDbKdHGX" role="2OqNvi">
                   <ref role="37wK5l" to="yyf4:~ProgressMonitor.step(java.lang.String):void" resolve="step" />
-                  <node concept="37vLTw" id="6fMyXCHC7$E" role="37wK5m">
-                    <ref role="3cqZAo" node="6fMyXCHC7$A" resolve="caption" />
+                  <node concept="3cpWs3" id="2EQVK3eFrzi" role="37wK5m">
+                    <node concept="Xl_RD" id="2EQVK3eFrC1" role="3uHU7w">
+                      <property role="Xl_RC" value="]" />
+                    </node>
+                    <node concept="3cpWs3" id="2EQVK3eFpgo" role="3uHU7B">
+                      <node concept="3cpWs3" id="2EQVK3eFoTj" role="3uHU7B">
+                        <node concept="37vLTw" id="6fMyXCHC7$E" role="3uHU7B">
+                          <ref role="3cqZAo" node="6fMyXCHC7$A" resolve="caption" />
+                        </node>
+                        <node concept="Xl_RD" id="2EQVK3eFnoE" role="3uHU7w">
+                          <property role="Xl_RC" value=" [" />
+                        </node>
+                      </node>
+                      <node concept="2YIFZM" id="2EQVK3eFqnW" role="3uHU7w">
+                        <ref role="37wK5l" to="18ew:~NameUtil.compactNamespace(java.lang.String):java.lang.String" resolve="compactNamespace" />
+                        <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                        <node concept="2OqwBi" id="2EQVK3eFqDI" role="37wK5m">
+                          <node concept="2OqwBi" id="2EQVK3eFpD5" role="2Oq$k0">
+                            <node concept="37vLTw" id="2EQVK3eFprD" role="2Oq$k0">
+                              <ref role="3cqZAo" node="78xBDbK8Qvm" resolve="sa" />
+                            </node>
+                            <node concept="liA8E" id="2EQVK3eFpTv" role="2OqNvi">
+                              <ref role="37wK5l" to="bim2:6fMyXCHDaVU" resolve="getModule" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="2EQVK3eFr6o" role="2OqNvi">
+                            <ref role="37wK5l" to="lui2:~SModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

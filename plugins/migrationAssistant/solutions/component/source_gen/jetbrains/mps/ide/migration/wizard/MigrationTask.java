@@ -38,6 +38,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
+import jetbrains.mps.util.NameUtil;
 
 public class MigrationTask {
   private static final Logger LOG = LogManager.getLogger(MigrationTask.class);
@@ -341,7 +342,7 @@ public class MigrationTask {
 
       preferredId.value = sa.getScriptReference();
       String caption = sa.getScriptReference().resolve(false).getCaption();
-      m.step(caption);
+      m.step(caption + " [" + NameUtil.compactNamespace(sa.getModule().getModuleName()) + "]");
       ListSequence.fromList(myWereRun).addElement(sa);
       if (!(executeSingleStep(caption, new _FunctionTypes._void_P0_E0() {
         public void invoke() {
