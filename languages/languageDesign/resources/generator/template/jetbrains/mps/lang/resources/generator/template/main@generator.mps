@@ -1152,12 +1152,12 @@
                                       <ref role="3Tt5mk" to="1oap:49FXMLkTOT$" resolve="concept" />
                                     </node>
                                   </node>
-                                  <node concept="chp4Y" id="7KUdrkEw7U_" role="3oSUPX">
-                                    <ref role="cht4Q" to="tp25:h3TUQj6" resolve="ConceptRefExpression" />
+                                  <node concept="chp4Y" id="6t2iki4yyMu" role="3oSUPX">
+                                    <ref role="cht4Q" to="tp25:h8chp0G" resolve="RefConcept_Reference" />
                                   </node>
                                 </node>
-                                <node concept="3TrEf2" id="49FXMLkUICB" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="tp25:h3TV0KE" resolve="conceptDeclaration" />
+                                <node concept="3TrEf2" id="6t2iki4yz3M" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="tp25:h8cht0$" resolve="conceptDeclaration" />
                                 </node>
                               </node>
                             </node>

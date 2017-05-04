@@ -385,6 +385,22 @@
     <property role="TrG5h" value="typeof_ConceptIconResourceExpression" />
     <property role="3GE5qa" value="icons.instantiation" />
     <node concept="3clFbS" id="49FXMLkTX5b" role="18ibNy">
+      <node concept="1Z5TYs" id="5e4Ig8X_8Wt" role="3cqZAp">
+        <node concept="mw_s8" id="5e4Ig8X_8WU" role="1ZfhKB">
+          <node concept="2c44tf" id="5e4Ig8X_8WQ" role="mwGJk">
+            <node concept="3uibUv" id="5e4Ig8X_8XB" role="2c44tc">
+              <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5e4Ig8X_8Ww" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5e4Ig8X_8EW" role="mwGJk">
+            <node concept="1YBJjd" id="5e4Ig8X_8GR" role="1Z2MuG">
+              <ref role="1YBMHb" node="49FXMLkTX5l" resolve="n" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="2NvLDW" id="49FXMLkTX5c" role="3cqZAp">
         <property role="3wDh2S" value="true" />
         <node concept="mw_s8" id="49FXMLkTX5d" role="1ZfhKB">
