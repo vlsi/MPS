@@ -37,6 +37,6 @@ public class PostCheckError extends MigrationErrorDescriptor {
   }
   @Override
   public boolean canIgnore() {
-    throw new UnsupportedOperationException("not supposed to be called");
+    return false;
   }
 }
