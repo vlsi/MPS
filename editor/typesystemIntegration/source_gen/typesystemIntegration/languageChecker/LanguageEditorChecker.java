@@ -47,7 +47,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.TransientSModel;
@@ -161,7 +160,7 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
     }
   }
 
-  private Set<EditorMessage> createMessages(EditorContext editorContext, boolean inspector, LanguageErrorsComponent errorsComponent, SNode editedNode) {
+  private Set<EditorMessage> createMessages(final EditorContext editorContext, boolean inspector, LanguageErrorsComponent errorsComponent, SNode editedNode) {
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     boolean runQuickFixes = shouldRunQuickFixs(editorContext.getModel(), inspector);
     final List<Tuples._2<QuickFix_Runtime, SNode>> quickFixesToExecute = ListSequence.fromList(new ArrayList<Tuples._2<QuickFix_Runtime, SNode>>());
@@ -198,7 +197,7 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
     if (ListSequence.fromList(quickFixesToExecute).isNotEmpty()) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+          editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new Runnable() {
             public void run() {
               for (Tuples._2<QuickFix_Runtime, SNode> fix : quickFixesToExecute) {
                 if (SNodeOperations.getModel(fix._1()) != null) {

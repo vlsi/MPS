@@ -36,8 +36,16 @@
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
+      <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
+        <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
+      </concept>
+      <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
+      <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
+        <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <child id="1068580123133" name="returnType" index="3clF45" />
+        <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
       </concept>
       <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_" />
@@ -93,6 +101,9 @@
         <property id="7898029224680692134" name="description" index="2n97ot" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
         <child id="1167169362365" name="conditionFunction" index="30HLyM" />
+      </concept>
+      <concept id="1227303129915" name="jetbrains.mps.lang.generator.structure.AbstractMacro" flags="lg" index="30XT8A">
+        <property id="3265704088513289864" name="comment" index="34cw8o" />
       </concept>
       <concept id="1092059087312" name="jetbrains.mps.lang.generator.structure.TemplateDeclaration" flags="ig" index="13MO4I">
         <reference id="1168285871518" name="applicableConcept" index="3gUMe" />
@@ -808,22 +819,41 @@
         <node concept="3cqZAl" id="4C1usRVDw3F" role="3clF45" />
         <node concept="3Tm1VV" id="4C1usRVDw3G" role="1B3o_S" />
         <node concept="3clFbS" id="4C1usRVDw3H" role="3clF47">
-          <node concept="3clFbF" id="4C1usRVDw3I" role="3cqZAp">
-            <node concept="2OqwBi" id="4C1usRVDw3J" role="3clFbG">
-              <node concept="2YIFZM" id="4C1usRVDw3K" role="2Oq$k0">
-                <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+          <node concept="3clFbF" id="2Ubk3jQL8$r" role="3cqZAp">
+            <node concept="2OqwBi" id="2Ubk3jQL9ek" role="3clFbG">
+              <node concept="2OqwBi" id="2Ubk3jQL8LJ" role="2Oq$k0">
+                <node concept="37vLTw" id="2Ubk3jQL8$p" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2Ubk3jQL8kG" resolve="repo" />
+                  <node concept="29HgVG" id="2Ubk3jQL9UW" role="lGtFl">
+                    <property role="34cw8o" value="I know repo is optional field, but we are moving towards mandatory context repository anyway." />
+                    <node concept="3NFfHV" id="2Ubk3jQL9UX" role="3NFExx">
+                      <node concept="3clFbS" id="2Ubk3jQL9UY" role="2VODD2">
+                        <node concept="3clFbF" id="2Ubk3jQL9V4" role="3cqZAp">
+                          <node concept="2OqwBi" id="2Ubk3jQL9UZ" role="3clFbG">
+                            <node concept="3TrEf2" id="2Ubk3jQL9V2" role="2OqNvi">
+                              <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" resolve="repo" />
+                            </node>
+                            <node concept="30H73N" id="2Ubk3jQL9V3" role="2Oq$k0" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="2Ubk3jQL98t" role="2OqNvi">
+                  <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                </node>
               </node>
-              <node concept="liA8E" id="4C1usRVDw3L" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runUndoTransparentCommand(java.lang.Runnable):void" resolve="runUndoTransparentCommand" />
-                <node concept="10Nm6u" id="4C1usRVDw3M" role="37wK5m">
-                  <node concept="29HgVG" id="4C1usRVDw3N" role="lGtFl">
-                    <node concept="3NFfHV" id="4C1usRVDw3O" role="3NFExx">
-                      <node concept="3clFbS" id="4C1usRVDw3P" role="2VODD2">
-                        <node concept="3clFbF" id="4C1usRVDw3Q" role="3cqZAp">
-                          <node concept="2OqwBi" id="4C1usRVDw3R" role="3clFbG">
-                            <node concept="30H73N" id="4C1usRVDw3S" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="4C1usRVDw3T" role="2OqNvi">
+              <node concept="liA8E" id="2Ubk3jQL9rS" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~ModelAccess.executeUndoTransparentCommand(java.lang.Runnable):void" resolve="executeUndoTransparentCommand" />
+                <node concept="10Nm6u" id="2Ubk3jQL9Ah" role="37wK5m">
+                  <node concept="29HgVG" id="2Ubk3jQL9Ai" role="lGtFl">
+                    <node concept="3NFfHV" id="2Ubk3jQL9Aj" role="3NFExx">
+                      <node concept="3clFbS" id="2Ubk3jQL9Ak" role="2VODD2">
+                        <node concept="3clFbF" id="2Ubk3jQL9Al" role="3cqZAp">
+                          <node concept="2OqwBi" id="2Ubk3jQL9Am" role="3clFbG">
+                            <node concept="30H73N" id="2Ubk3jQL9An" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="2Ubk3jQL9Ao" role="2OqNvi">
                               <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" resolve="commandClosureLiteral" />
                             </node>
                           </node>
@@ -834,7 +864,13 @@
                 </node>
               </node>
             </node>
-            <node concept="raruj" id="4C1usRVDw3U" role="lGtFl" />
+            <node concept="raruj" id="2Ubk3jQL9Ld" role="lGtFl" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="2Ubk3jQL8kG" role="3clF46">
+          <property role="TrG5h" value="repo" />
+          <node concept="3uibUv" id="2Ubk3jQL8kF" role="1tU5fm">
+            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
           </node>
         </node>
       </node>

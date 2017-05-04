@@ -35,10 +35,8 @@
     <import index="g51k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
-    <import index="6if8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.validation(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
-    <import index="zavc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.messageTargets(MPS.Core/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
   </imports>
@@ -416,13 +414,13 @@
       <node concept="3Tm6S6" id="2v0ve8x$p7u" role="1B3o_S" />
       <node concept="2hMVRd" id="2v0ve8x$p7v" role="1tU5fm">
         <node concept="3uibUv" id="2v0ve8x$p7w" role="2hN53Y">
-          <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractConstraintsChecker" />
+          <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeChecker" />
         </node>
       </node>
       <node concept="2ShNRf" id="2v0ve8x$p7x" role="33vP2m">
         <node concept="2i4dXS" id="2v0ve8x$p7y" role="2ShVmc">
           <node concept="3uibUv" id="2v0ve8x$p7z" role="HW$YZ">
-            <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractConstraintsChecker" />
+            <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeChecker" />
           </node>
         </node>
       </node>
@@ -1699,12 +1697,21 @@
                     <node concept="3clFbS" id="2v0ve8x$pjx" role="1bW5cS">
                       <node concept="3clFbF" id="2v0ve8x$pjy" role="3cqZAp">
                         <node concept="2OqwBi" id="2v0ve8x$pjz" role="3clFbG">
-                          <node concept="2YIFZM" id="2v0ve8x$pj$" role="2Oq$k0">
-                            <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                            <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                          <node concept="2OqwBi" id="2Ubk3jQLR2j" role="2Oq$k0">
+                            <node concept="2OqwBi" id="2Ubk3jQLQGI" role="2Oq$k0">
+                              <node concept="37vLTw" id="2Ubk3jQLQya" role="2Oq$k0">
+                                <ref role="3cqZAo" node="2v0ve8x$pgQ" resolve="editorContext" />
+                              </node>
+                              <node concept="liA8E" id="2Ubk3jQLQRw" role="2OqNvi">
+                                <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="2Ubk3jQLRis" role="2OqNvi">
+                              <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                            </node>
                           </node>
                           <node concept="liA8E" id="2v0ve8x$pj_" role="2OqNvi">
-                            <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runUndoTransparentCommand(java.lang.Runnable):void" resolve="runUndoTransparentCommand" />
+                            <ref role="37wK5l" to="lui2:~ModelAccess.executeUndoTransparentCommand(java.lang.Runnable):void" resolve="executeUndoTransparentCommand" />
                             <node concept="1bVj0M" id="2v0ve8x$pjA" role="37wK5m">
                               <node concept="3clFbS" id="2v0ve8x$pjB" role="1bW5cS">
                                 <node concept="1DcWWT" id="2v0ve8x$pjC" role="3cqZAp">

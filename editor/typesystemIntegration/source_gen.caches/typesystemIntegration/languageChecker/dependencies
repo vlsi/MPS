@@ -117,7 +117,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.checking.UpdateResult" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.typesystem.checking.HighlightUtil" />
     <classNode dependClassName="jetbrains.mps.typesystem.checking.TypesEditorChecker" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.ITypechecking" />

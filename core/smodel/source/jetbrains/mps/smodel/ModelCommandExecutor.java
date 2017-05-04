@@ -77,6 +77,13 @@ public interface ModelCommandExecutor {
   @ToRemove(version = 3.4)
   boolean isInEDT();
 
+  /**
+   * @deprecated Use {@link org.jetbrains.mps.openapi.module.ModelAccess#executeUndoTransparentCommand(Runnable)}.
+   * This method left for compatibility with 2017.1-generated code. Template for ExecuteTransparentCommandStatement has been updated to use
+   * openapi.ModelAccess alternative only in 2017.2
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   void runUndoTransparentCommand(Runnable r); // openapi.ModelAccess#executeUndoTransparentCommand
 
   boolean isInsideCommand(); // openapi.ModelAccess#isCommandAction

@@ -24,7 +24,6 @@ import jetbrains.mps.errors.NullErrorReporter;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.ui.MessageType;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
@@ -112,7 +111,7 @@ public class ShowNodeType_Action extends BaseAction {
     try {
       final Wrappers._T<String> dialogTitle = new Wrappers._T<String>();
 
-      ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeUndoTransparentCommand(new Runnable() {
         public void run() {
           tmpModel.value = TemporaryModels.getInstance().create(true, TempModuleOptions.forDefaultModule());
           tmpModel.value.addRootNode(type.value);
@@ -124,7 +123,7 @@ public class ShowNodeType_Action extends BaseAction {
       new MyBaseNodeDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), dialogTitle.value, type.value, error.value).show();
 
     } finally {
-      ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeUndoTransparentCommand(new Runnable() {
         public void run() {
           // XXX what's the need to remove type node from the model we dispose anyway? 
           tmpModel.value.removeRootNode(type.value);
