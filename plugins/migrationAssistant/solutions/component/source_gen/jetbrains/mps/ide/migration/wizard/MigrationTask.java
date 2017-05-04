@@ -74,7 +74,8 @@ public class MigrationTask {
   }
 
   protected boolean doRun() {
-    if (myLastStep++ == 0) {
+    if (myLastStep == 0) {
+      myLastStep++;
       List<ScriptApplied> missingMigrations = findMissingMigrations(myMonitor.subTask(5));
       if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
         result(myMonitor, new MigrationsMissingError(missingMigrations), "Some migrations are missing.");
@@ -82,14 +83,16 @@ public class MigrationTask {
       }
     }
 
-    if (myLastStep++ == 1) {
+    if (myLastStep == 1) {
+      myLastStep++;
       if (!((runCleanupMigrations(myMonitor.subTask(10))))) {
         result(myMonitor, new MigrationExceptionError(), "Error while running cleanup migration.");
         return false;
       }
     }
 
-    if (myLastStep++ == 2) {
+    if (myLastStep == 2) {
+      myLastStep++;
       Map<SModule, SModule> errsToShow = checkMigratedLibs(myMonitor.subTask(5));
       if (MapSequence.fromMap(errsToShow).isNotEmpty()) {
         result(myMonitor, new NotMigratedLibsError(errsToShow), "Some dependent modules are not migrated.");
@@ -97,7 +100,8 @@ public class MigrationTask {
       }
     }
 
-    if (myLastStep++ == 3) {
+    if (myLastStep == 3) {
+      myLastStep++;
       // null - no error, true - must stop, false - can ignore 
       Boolean mustStop = checkModels(myMonitor.subTask(30));
       if (mustStop != null) {
