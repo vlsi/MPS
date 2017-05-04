@@ -4,7 +4,6 @@ package jetbrains.mps.refactoring.participant;
 
 
 public interface RefactoringSession {
-
   void putObject(String id, Object object);
   Object getObject(String id);
 

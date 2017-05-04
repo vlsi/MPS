@@ -8,6 +8,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.List;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.ide.findusages.model.SearchTask;
+import jetbrains.mps.refactoring.participant.RefactoringUI;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

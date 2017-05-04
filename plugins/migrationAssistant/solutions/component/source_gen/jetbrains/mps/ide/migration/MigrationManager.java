@@ -7,9 +7,9 @@ import jetbrains.mps.migration.global.ProjectMigration;
 import java.util.List;
 import jetbrains.mps.migration.global.MigrationOptions;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 
 public interface MigrationManager {
-
   boolean isMigrationRequired();
 
   boolean isMigrationRequired(Iterable<SModule> modules);
@@ -18,13 +18,13 @@ public interface MigrationManager {
 
   void doUpdateImportVersions(SModule module);
 
-  MigrationComponent getMigrationComponent();
+  void executeScript(ScriptApplied s);
 
   Iterable<ProjectMigration> getProjectMigrationsToApply();
 
-  List<ScriptApplied.ScriptAppliedReference> getModuleMigrationsToApply(Iterable<SModule> modules);
+  List<ScriptApplied> getModuleMigrationsToApply(Iterable<SModule> modules);
 
-  List<ScriptApplied.ScriptAppliedReference> getMissingMigrations();
+  List<ScriptApplied> getMissingMigrations();
 
   int projectStepsCount(boolean isCleanup);
 
@@ -32,5 +32,5 @@ public interface MigrationManager {
 
   int moduleStepsCount();
 
-  ScriptApplied nextModuleStep(@Nullable String preferredId);
+  ScriptApplied nextModuleStep(@Nullable BaseScriptReference preferredId);
 }

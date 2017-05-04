@@ -37,7 +37,7 @@ public class AntTaskExecutionUtil {
           }
         }
 
-        List<ScriptApplied.ScriptAppliedReference> missingMigrations = m.getMissingMigrations();
+        List<ScriptApplied> missingMigrations = m.getMissingMigrations();
         if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
           throw new RuntimeException("Some migrations are missing");
         }
@@ -70,7 +70,7 @@ public class AntTaskExecutionUtil {
             break;
           }
           try {
-            mig.execute(m.getMigrationComponent());
+            m.executeScript(mig);
           } catch (Throwable t) {
             throw new RuntimeException("Problem on executing language migrations");
           }

@@ -16,15 +16,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.migration.MigrationComponent;
-import jetbrains.mps.ide.migration.MigrationScriptApplied;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
+import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -68,7 +67,7 @@ public class TestMigrationHelper {
 
     private class MyMigrationManager implements MigrationManager {
       private List<ProjectMigration> myProjectMig = ListSequence.fromListAndArray(new ArrayList<ProjectMigration>(), new TestMigrationHelper.MyMigrationSession.MyCleanupProjectMigration("project migration 1: cleanup"), new TestMigrationHelper.MyMigrationSession.MyCleanupProjectMigration("project migration 2: cleanup"), new TestMigrationHelper.MyMigrationSession.MyProjectMigration("project migration 3: normal"), new TestMigrationHelper.MyMigrationSession.MyProjectMigration("project migration 4: normal"));
-      private List<MigrationScript> myModuleMig = ListSequence.fromListAndArray(new ArrayList<MigrationScript>(), new TestMigrationHelper.MyMigrationSession.MyMigrationManager.MyModuleMigration("module migration 1", 1), new TestMigrationHelper.MyMigrationSession.MyMigrationManager.MyModuleMigration("module migration 2", 2));
+      private List<MigrationScript> myModuleMig = ListSequence.fromListAndArray(new ArrayList<MigrationScript>(), new TestMigrationHelper.MyMigrationSession.MyModuleMigration("module migration 1", 1), new TestMigrationHelper.MyMigrationSession.MyModuleMigration("module migration 2", 2));
       public MyMigrationManager() {
       }
       public boolean isMigrationRequired() {
@@ -82,47 +81,18 @@ public class TestMigrationHelper {
       }
       public void doUpdateImportVersions(SModule module) {
       }
-      public MigrationComponent getMigrationComponent() {
-        // todo make interface for migration component 
-        return new MigrationComponent(myProject, myMpsProject) {
-          @Override
-          public boolean executeMigrationScript(MigrationScriptApplied sa) {
-            // todo why don't we have executeProjectMigration method? 
-            try {
-              // todo why I see this code the second time? 
-              sa.getScript().execute(sa.getModule());
-              ListSequence.fromList(passedM).addElement(sa);
-              return true;
-            } catch (Throwable t) {
-              return false;
-            }
-          }
-        };
+      @Override
+      public void executeScript(ScriptApplied s) {
+        s.getScriptReference().resolve(true).execute(s.getModule());
+        ListSequence.fromList(passedM).addElement(s);
       }
       public Iterable<ProjectMigration> getProjectMigrationsToApply() {
         return myProjectMig;
       }
-      public List<ScriptApplied.ScriptAppliedReference> getModuleMigrationsToApply(Iterable<SModule> modules) {
-        List<ScriptApplied.ScriptAppliedReference> res = ListSequence.fromList(new ArrayList<ScriptApplied.ScriptAppliedReference>());
-        ListSequence.fromList(res).addSequence(Sequence.fromIterable(getModuleMigrationsApplied()).select(new ISelector<MigrationScriptApplied, MigrationScriptApplied.MigrationScriptAppliedReference>() {
-          public MigrationScriptApplied.MigrationScriptAppliedReference select(MigrationScriptApplied it) {
-            MigrationScriptApplied applied = it;
-            return new MigrationScriptApplied.MigrationScriptAppliedReference(applied.getScript().getDescriptor(), applied.getModule()) {
-              @Override
-              public String getKindDescription(ScriptApplied resolved) {
-                return applied.getScript().getCaption();
-              }
-
-              @Override
-              public MigrationScriptApplied resolve(MigrationComponent migrationComponent, boolean silently) {
-                return null;
-              }
-            };
-          }
-        }));
-        return res;
+      public List<ScriptApplied> getModuleMigrationsToApply(Iterable<SModule> modules) {
+        return (List<ScriptApplied>) ((List) Sequence.fromIterable(getModuleMigrationsApplied()).toListSequence());
       }
-      public List<ScriptApplied.ScriptAppliedReference> getMissingMigrations() {
+      public List<ScriptApplied> getMissingMigrations() {
         return Collections.emptyList();
       }
       public int projectStepsCount(final boolean isCleanup) {
@@ -154,55 +124,62 @@ public class TestMigrationHelper {
         return Sequence.fromIterable(getModuleMigrationsApplied()).count();
       }
       private List<ScriptApplied> passedM = ListSequence.fromList(new ArrayList<ScriptApplied>());
-      public ScriptApplied nextModuleStep(@Nullable String preferredId) {
-        Iterable<MigrationScriptApplied> applied = getModuleMigrationsApplied();
-        final MigrationScriptApplied sa = Sequence.fromIterable(applied).findFirst(new IWhereFilter<MigrationScriptApplied>() {
-          public boolean accept(final MigrationScriptApplied sa) {
+      public ScriptApplied nextModuleStep(@Nullable BaseScriptReference ref) {
+        Iterable<ScriptApplied> applied = getModuleMigrationsApplied();
+        final ScriptApplied sa = Sequence.fromIterable(applied).findFirst(new IWhereFilter<ScriptApplied>() {
+          public boolean accept(final ScriptApplied sa) {
             return ListSequence.fromList(passedM).all(new IWhereFilter<ScriptApplied>() {
               public boolean accept(ScriptApplied it) {
-                return neq_q74r2d_a0a0a0a0a0a0a0a0a0a0b0r9h(it.getId(), sa.getId()) || it.getModule() != sa.getModule();
+                return neq_q74r2d_a0a0a0a0a0a0a0a0a0a0b0r9h(it.getScriptReference(), sa.getScriptReference()) || it.getModule() != sa.getModule();
               }
             });
           }
         });
         return sa;
       }
-      private Iterable<MigrationScriptApplied> getModuleMigrationsApplied() {
+      private Iterable<ScriptApplied> getModuleMigrationsApplied() {
         final List<SModule> modules = ListSequence.fromList(((List<SModule>) myMpsProject.getProjectModules())).take(5).toListSequence();
-        return ListSequence.fromList(this.myModuleMig).translate(new ITranslator2<MigrationScript, MigrationScriptApplied>() {
-          public Iterable<MigrationScriptApplied> translate(final MigrationScript script) {
-            return ListSequence.fromList(modules).select(new ISelector<SModule, MigrationScriptApplied>() {
-              public MigrationScriptApplied select(SModule module) {
-                return new MigrationScriptApplied(script, module);
+        return ListSequence.fromList(this.myModuleMig).translate(new ITranslator2<MigrationScript, ScriptApplied>() {
+          public Iterable<ScriptApplied> translate(final MigrationScript script) {
+            return ListSequence.fromList(modules).select(new ISelector<SModule, ScriptApplied>() {
+              public ScriptApplied select(SModule module) {
+                return new ScriptApplied(module, script.getReference());
               }
             });
           }
         });
       }
-      private class MyModuleMigration extends MigrationScriptBase {
-        private String myCaption;
-        private int myFakeId;
-        public MyModuleMigration(String caption, int fakeId) {
-          myCaption = caption;
-          myFakeId = fakeId;
-        }
-        @Override
-        public String getCaption() {
-          return myCaption;
-        }
-        public MigrationScriptReference getDescriptor() {
-          // todo this is suspicious 
-          // todo name is used as id here 
-          return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0, myFakeId, "fake lang " + myFakeId), 0);
-        }
-        @Nullable
-        public SNode execute(SModule module) {
-          try {
-            Thread.sleep(2000);
-          } catch (InterruptedException e) {
+    }
+
+    private class MyModuleMigration extends MigrationScriptBase {
+      private String myCaption;
+      private int myFakeId;
+      public MyModuleMigration(String caption, int fakeId) {
+        myCaption = caption;
+        myFakeId = fakeId;
+      }
+      @Override
+      public String getCaption() {
+        return myCaption;
+      }
+      public MigrationScriptReference getReference() {
+        // todo this is suspicious 
+        // todo name is used as id here 
+        final TestMigrationHelper.MyMigrationSession.MyModuleMigration _this = this;
+        return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0, myFakeId, "fake lang " + myFakeId), 0) {
+          @Override
+          public MigrationScript resolve(boolean silent) {
+            return _this;
           }
-          return null;
+        };
+      }
+      @Nullable
+      public SNode execute(SModule module) {
+        try {
+          Thread.sleep(1000);
+        } catch (InterruptedException e) {
         }
+        return null;
       }
     }
 
@@ -224,7 +201,7 @@ public class TestMigrationHelper {
       }
       public void execute(jetbrains.mps.project.Project p0) {
         try {
-          Thread.sleep(2000);
+          Thread.sleep(1000);
         } catch (InterruptedException e) {
         }
       }

@@ -13,7 +13,7 @@ import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.plugin.RenameReferencesParticipant;
-import jetbrains.mps.ide.platform.actions.core.RefactoringUI;
+import jetbrains.mps.refactoring.participant.RefactoringUI;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;

@@ -5,7 +5,6 @@ package jetbrains.mps.ide.migration.check;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.migration.MigrationComponent;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Collection;
@@ -66,11 +65,11 @@ public class MigrationCheckUtil {
     };
   }
 
-  public static boolean haveNotMigrated(Iterable<SModule> modules, MigrationComponent mc, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
-    return CollectionSequence.fromCollection(getNotMigrated(modules, mc, progressCallback, 1)).isNotEmpty();
+  public static boolean haveNotMigrated(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
+    return CollectionSequence.fromCollection(getNotMigrated(modules, progressCallback, 1)).isNotEmpty();
   }
 
-  public static Collection<Problem> getNotMigrated(Iterable<SModule> modules, final MigrationComponent mc, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, int maxErrors) {
+  public static Collection<Problem> getNotMigrated(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, int maxErrors) {
     List<Tuples._2<MigrationScript, SModule>> scriptsApplied = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, Tuples._2<MigrationScript, SModule>>() {
       public Iterable<Tuples._2<MigrationScript, SModule>> translate(final SModule module) {
         Set<SLanguage> allLanguages = new SLanguageHierarchy(LanguageRegistry.getInstance(module.getRepository()), module.getUsedLanguages()).getExtended();
@@ -116,7 +115,7 @@ __switch__:
                           this.__CP__ = 2;
                           break;
                         case 4:
-                          this._7_script = mc.fetchMigrationScript(new MigrationScriptReference(it, _2_ver), true);
+                          this._7_script = new MigrationScriptReference(it, _2_ver).resolve(true);
                           this.__CP__ = 8;
                           break;
                         case 9:

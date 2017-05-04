@@ -11,7 +11,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.migration.MigrationComponent;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -67,8 +66,6 @@ public class ExecuteRerunnableMigrations_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final MigrationComponent mc = event.getData(CommonDataKeys.PROJECT).getComponent(MigrationComponent.class);
-
     final List<SModule>[] modules = new List[1];
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -129,7 +126,7 @@ __switch__:
                                     this.__CP__ = 2;
                                     break;
                                   case 4:
-                                    this._7_script = mc.fetchMigrationScript(new MigrationScriptReference(it, _2_ver), true);
+                                    this._7_script = new MigrationScriptReference(it, _2_ver).resolve(true);
                                     this.__CP__ = 8;
                                     break;
                                   case 9:

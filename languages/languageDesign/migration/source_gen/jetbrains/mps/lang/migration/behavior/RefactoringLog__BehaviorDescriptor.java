@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
@@ -27,15 +27,15 @@ public final class RefactoringLog__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.structure.RefactoringLog");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<RefactoringLogReference> getDescriptor_id4uVwhQyPQ_Z = new SMethodBuilder<RefactoringLogReference>(new SJavaCompoundTypeImpl(RefactoringLogReference.class)).name("getDescriptor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyPQ_Z").registry(REGISTRY).build();
+  public static final SMethod<RefactoringScriptReference> getDescriptor_id4uVwhQyPQ_Z = new SMethodBuilder<RefactoringScriptReference>(new SJavaCompoundTypeImpl(RefactoringScriptReference.class)).name("getDescriptor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyPQ_Z").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDescriptor_id4uVwhQyPQ_Z);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static RefactoringLogReference getDescriptor_id4uVwhQyPQ_Z(@NotNull SNode __thisNode__) {
-    return new RefactoringLogReference(SNodeOperations.getModel(__thisNode__).getModule(), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d91L, "fromVersion")));
+  /*package*/ static RefactoringScriptReference getDescriptor_id4uVwhQyPQ_Z(@NotNull SNode __thisNode__) {
+    return new RefactoringScriptReference(SNodeOperations.getModel(__thisNode__).getModule(), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d91L, "fromVersion")));
   }
 
   /*package*/ RefactoringLog__BehaviorDescriptor() {
@@ -55,7 +55,7 @@ public final class RefactoringLog__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((RefactoringLogReference) getDescriptor_id4uVwhQyPQ_Z(node));
+        return (T) ((RefactoringScriptReference) getDescriptor_id4uVwhQyPQ_Z(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

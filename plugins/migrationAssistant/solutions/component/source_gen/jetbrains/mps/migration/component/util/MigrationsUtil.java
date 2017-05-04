@@ -12,10 +12,8 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.ide.migration.MigrationScriptApplied;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
-import jetbrains.mps.ide.migration.RefactoringLogApplied;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
 import java.util.Set;
 
 public class MigrationsUtil {
@@ -27,8 +25,8 @@ public class MigrationsUtil {
     return MigrationModuleUtil.isModuleMigrateable(m);
   }
 
-  public static Iterable<ScriptApplied.ScriptAppliedReference> getAllSteps(SModule module) {
-    List<ScriptApplied.ScriptAppliedReference> result = ListSequence.fromList(new ArrayList<ScriptApplied.ScriptAppliedReference>());
+  public static Iterable<ScriptApplied> getAllSteps(SModule module) {
+    List<ScriptApplied> result = ListSequence.fromList(new ArrayList<ScriptApplied>());
     for (SLanguage lang : SetSequence.fromSet(getUsedLanguages(module))) {
       int currentLangVersion = lang.getLanguageVersion();
       int ver = ((AbstractModule) module).getUsedLanguageVersion(lang, false);
@@ -37,7 +35,7 @@ public class MigrationsUtil {
       currentLangVersion = Math.max(currentLangVersion, 0);
 
       for (int i = ver; i < currentLangVersion; i++) {
-        ListSequence.fromList(result).addElement(new MigrationScriptApplied.MigrationScriptAppliedReference(new MigrationScriptReference(lang, i), module));
+        ListSequence.fromList(result).addElement(new ScriptApplied(module, new MigrationScriptReference(lang, i)));
       }
     }
     for (SModule dep : SetSequence.fromSet(getModuleDependencies(module))) {
@@ -48,7 +46,7 @@ public class MigrationsUtil {
       currentDepVersion = Math.max(currentDepVersion, 0);
 
       for (int i = ver; i < currentDepVersion; i++) {
-        ListSequence.fromList(result).addElement(new RefactoringLogApplied.RefactoringLogAppliedReference(new RefactoringLogReference(dep, i), module));
+        ListSequence.fromList(result).addElement(new ScriptApplied(module, new RefactoringScriptReference(dep, i)));
       }
     }
     return result;

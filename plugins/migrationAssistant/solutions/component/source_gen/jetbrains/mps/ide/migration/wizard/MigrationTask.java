@@ -36,8 +36,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
-import jetbrains.mps.ide.migration.MigrationScriptApplied;
-import jetbrains.mps.ide.migration.MigrationComponent;
+import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 
 public class MigrationTask {
   private static final Logger LOG = LogManager.getLogger(MigrationTask.class);
@@ -74,7 +73,7 @@ public class MigrationTask {
 
   protected boolean doRun() {
     if (myLastStep++ == 0) {
-      List<ScriptApplied.ScriptAppliedReference> missingMigrations = findMissingMigrations(myMonitor.subTask(5));
+      List<ScriptApplied> missingMigrations = findMissingMigrations(myMonitor.subTask(5));
       if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
         result(myMonitor, new MigrationsMissingError(missingMigrations), "Some migrations are missing.");
         return false;
@@ -178,6 +177,9 @@ public class MigrationTask {
             try {
               execute.invoke();
             } catch (Throwable t) {
+              if (LOG.isEnabledFor(Level.ERROR)) {
+                LOG.error("Exception during migration", t);
+              }
               noException.value = false;
             }
           }
@@ -235,7 +237,7 @@ public class MigrationTask {
     return success;
   }
 
-  private List<ScriptApplied.ScriptAppliedReference> findMissingMigrations(ProgressMonitor m) {
+  private List<ScriptApplied> findMissingMigrations(ProgressMonitor m) {
     m.start("Checking migrations consistency...", 1);
     try {
       return mySession.getMigrationManager().getMissingMigrations();
@@ -253,9 +255,9 @@ public class MigrationTask {
         final List<SModule> projectModules = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).toListSequence();
         Set<SModule> depModules = SetSequence.fromSetWithValues(new HashSet<SModule>(), new GlobalModuleDependenciesManager(projectModules).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));
         SetSequence.fromSet(depModules).removeSequence(Sequence.fromIterable(((Iterable<SModule>) mpsProject.getModulesWithGenerators())));
-        List<ScriptApplied.ScriptAppliedReference> depMigrationsToRun = mySession.getMigrationManager().getModuleMigrationsToApply(depModules);
-        Iterable<SModule> notMigratedModules = ListSequence.fromList(depMigrationsToRun).select(new ISelector<ScriptApplied.ScriptAppliedReference, SModule>() {
-          public SModule select(ScriptApplied.ScriptAppliedReference it) {
+        List<ScriptApplied> depMigrationsToRun = mySession.getMigrationManager().getModuleMigrationsToApply(depModules);
+        Iterable<SModule> notMigratedModules = ListSequence.fromList(depMigrationsToRun).select(new ISelector<ScriptApplied, SModule>() {
+          public SModule select(ScriptApplied it) {
             return it.getModule();
           }
         }).distinct();
@@ -324,27 +326,27 @@ public class MigrationTask {
     m.start("Running language migrations...", languageStepsCount);
     boolean success = true;
 
-    final Wrappers._T<String> preferredId = new Wrappers._T<String>(null);
+    final Wrappers._T<BaseScriptReference> preferredId = new Wrappers._T<BaseScriptReference>(null);
     while (true) {
       final ScriptApplied sa = mySession.getMigrationManager().nextModuleStep(preferredId.value);
       if (sa == null) {
         break;
       }
 
-      preferredId.value = sa.getId();
-      m.step(sa.getDescription());
-      if (!(executeSingleStep(sa.getDescription(), new _FunctionTypes._void_P0_E0() {
+      preferredId.value = sa.getScriptReference();
+      String caption = sa.getScriptReference().resolve(false).getCaption();
+      m.step(caption);
+      if (!(executeSingleStep(caption, new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-          sa.execute(mySession.getMigrationManager().getMigrationComponent());
+          mySession.getMigrationManager().executeScript(sa);
         }
       }, new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
           ScriptApplied next = mySession.getMigrationManager().nextModuleStep(preferredId.value);
-          MigrationScriptApplied other = as_ajmasp_a0a1a0a0c0a5a5a04(next, MigrationScriptApplied.class);
-          if (other == null) {
+          if (next == null) {
             return false;
           }
-          return eq_ajmasp_a0d0a0a2a0f0f0ob(sa.getId(), other.getId());
+          return eq_ajmasp_a0c0a0a2a0g0f0ob(sa.getScriptReference(), next.getScriptReference());
         }
       }))) {
         success = false;
@@ -383,7 +385,7 @@ public class MigrationTask {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
         m.start("Finding not migrated code...", Sequence.fromIterable(modules).count());
-        haveNotMigrated.value = MigrationCheckUtil.haveNotMigrated(modules, project.getComponent(MigrationComponent.class), frac2inc(Sequence.fromIterable(modules).count(), new _FunctionTypes._void_P1_E0<Integer>() {
+        haveNotMigrated.value = MigrationCheckUtil.haveNotMigrated(modules, frac2inc(Sequence.fromIterable(modules).count(), new _FunctionTypes._void_P1_E0<Integer>() {
           public void invoke(Integer processed) {
             m.advance(processed);
           }
@@ -392,10 +394,7 @@ public class MigrationTask {
     });
     return haveNotMigrated.value;
   }
-  private static <T> T as_ajmasp_a0a1a0a0c0a5a5a04(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static boolean eq_ajmasp_a0d0a0a2a0f0f0ob(Object a, Object b) {
+  private static boolean eq_ajmasp_a0c0a0a2a0g0f0ob(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

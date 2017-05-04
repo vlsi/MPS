@@ -9,36 +9,36 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.ide.migration.MigrationScriptApplied;
+import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.check.MissingMigrationProblem;
 import java.util.Collections;
-import jetbrains.mps.ide.migration.RefactoringLogApplied;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
 import jetbrains.mps.project.AbstractModule;
 
 public class MigrationsMissingError extends MigrationErrorDescriptor {
-  private List<ScriptApplied.ScriptAppliedReference> errors;
-  public MigrationsMissingError(List<ScriptApplied.ScriptAppliedReference> errors) {
+  private List<ScriptApplied> errors;
+  public MigrationsMissingError(List<ScriptApplied> errors) {
     this.errors = errors;
   }
   public String getMessage() {
     return "Migration was not started.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "It's possible to invoke Migration Assistant at any time by selecting Tools->Run Migration Assistant from the main menu.";
   }
   public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
-    final List<SModule> modules = ListSequence.fromList(errors).select(new ISelector<ScriptApplied.ScriptAppliedReference, SModule>() {
-      public SModule select(ScriptApplied.ScriptAppliedReference it) {
+    final List<SModule> modules = ListSequence.fromList(errors).select(new ISelector<ScriptApplied, SModule>() {
+      public SModule select(ScriptApplied it) {
         return it.getModule();
       }
     }).toListSequence();
-    return ListSequence.fromList(errors).ofType(MigrationScriptApplied.MigrationScriptAppliedReference.class).select(new ISelector<MigrationScriptApplied.MigrationScriptAppliedReference, MigrationScriptReference>() {
-      public MigrationScriptReference select(MigrationScriptApplied.MigrationScriptAppliedReference it) {
-        return it.getMigrationSciptReference();
+    List<BaseScriptReference> sRefs = ListSequence.fromList(errors).select(new ISelector<ScriptApplied, BaseScriptReference>() {
+      public BaseScriptReference select(ScriptApplied it) {
+        return it.getScriptReference();
       }
-    }).distinct().select(new ISelector<MigrationScriptReference, Problem>() {
+    }).distinct().toListSequence();
+    return ListSequence.fromList(sRefs).ofType(MigrationScriptReference.class).select(new ISelector<MigrationScriptReference, Problem>() {
       public Problem select(final MigrationScriptReference it) {
         List<SModule> languageUsages = ListSequence.fromList(modules).where(new IWhereFilter<SModule>() {
           public boolean accept(SModule module) {
@@ -51,12 +51,8 @@ public class MigrationsMissingError extends MigrationErrorDescriptor {
           }
         }).toListSequence()));
       }
-    }).concat(ListSequence.fromList(errors).ofType(RefactoringLogApplied.RefactoringLogAppliedReference.class).select(new ISelector<RefactoringLogApplied.RefactoringLogAppliedReference, RefactoringLogReference>() {
-      public RefactoringLogReference select(RefactoringLogApplied.RefactoringLogAppliedReference it) {
-        return it.getRefactoringLogReference();
-      }
-    }).distinct().select(new ISelector<RefactoringLogReference, Problem>() {
-      public Problem select(final RefactoringLogReference it) {
+    }).concat(ListSequence.fromList(sRefs).ofType(RefactoringScriptReference.class).select(new ISelector<RefactoringScriptReference, Problem>() {
+      public Problem select(final RefactoringScriptReference it) {
         List<SModule> languageUsages = ListSequence.fromList(modules).where(new IWhereFilter<SModule>() {
           public boolean accept(SModule module) {
             return SetSequence.fromSet(MigrationsUtil.getModuleDependencies(module)).contains(it.getModule());

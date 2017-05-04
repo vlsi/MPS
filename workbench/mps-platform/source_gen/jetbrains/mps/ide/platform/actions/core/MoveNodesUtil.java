@@ -17,6 +17,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.refactoring.participant.RefactoringUI;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;

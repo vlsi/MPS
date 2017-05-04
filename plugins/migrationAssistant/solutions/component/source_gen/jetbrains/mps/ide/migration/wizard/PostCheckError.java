@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
-import jetbrains.mps.ide.migration.MigrationComponent;
 
 public class PostCheckError extends MigrationErrorDescriptor {
   private Project myProject;
@@ -31,7 +30,7 @@ public class PostCheckError extends MigrationErrorDescriptor {
   }
   public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
     Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(myProject);
-    return CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(modules, myProject.getComponent(MigrationComponent.class), MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0, 0.5), 100)).union(CollectionSequence.fromCollection(MigrationCheckUtil.getProblems(modules, MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0.5, 1), 100)));
+    return CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(modules, MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0, 0.5), 100)).union(CollectionSequence.fromCollection(MigrationCheckUtil.getProblems(modules, MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0.5, 1), 100)));
   }
   @Override
   public boolean canIgnore() {

@@ -15,7 +15,6 @@ import java.util.List;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.ide.migration.MigrationComponent;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -63,7 +62,6 @@ public class RunPreUpdateCheck_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final List<Problem> problems = ListSequence.fromList(new ArrayList<Problem>());
-    final MigrationComponent mc = event.getData(CommonDataKeys.PROJECT).getComponent(MigrationComponent.class);
     final List<SModule>[] modules = new List[1];
     final SRepository repos = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
     repos.getModelAccess().runReadAction(new Runnable() {
@@ -77,7 +75,7 @@ public class RunPreUpdateCheck_Action extends BaseAction {
         progressIndicator.setIndeterminate(false);
         repos.getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            ListSequence.fromList(problems).addSequence(CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(modules[0], mc, new _FunctionTypes._void_P1_E0<Double>() {
+            ListSequence.fromList(problems).addSequence(CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(modules[0], new _FunctionTypes._void_P1_E0<Double>() {
               public void invoke(Double d) {
                 progressIndicator.setFraction(d);
               }

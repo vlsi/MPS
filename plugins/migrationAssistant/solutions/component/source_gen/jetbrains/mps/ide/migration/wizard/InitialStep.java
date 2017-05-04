@@ -15,21 +15,30 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.Project;
 import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.ide.migration.MigrationManager;
-import java.util.List;
-import jetbrains.mps.ide.migration.ScriptApplied;
-import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
+import java.util.List;
+import jetbrains.mps.ide.migration.ScriptApplied;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
+import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
 import javax.swing.JTree;
 import com.intellij.ui.components.JBScrollPane;
 import java.awt.BorderLayout;
 import com.intellij.ide.wizard.AbstractWizardStepEx;
 import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringScript;
 
 public class InitialStep extends BaseStep {
   public static final String ID = "initial";
@@ -77,18 +86,11 @@ public class InitialStep extends BaseStep {
 
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        final MigrationManager manager = mySession.getMigrationManager();
-        List<ScriptApplied.ScriptAppliedReference> moduleMigrations = manager.getModuleMigrationsToApply(MigrationModuleUtil.getMigrateableModulesFromProject(project));
+        MigrationManager manager = mySession.getMigrationManager();
 
-        // categories 
+        // project migrations 
         final DefaultMutableTreeNode croot = new DefaultMutableTreeNode("Cleanups");
         final DefaultMutableTreeNode proot = new DefaultMutableTreeNode("Project Migrations");
-        final DefaultMutableTreeNode lroot = new DefaultMutableTreeNode("Module Migrations (" + ListSequence.fromList(moduleMigrations).select(new ISelector<ScriptApplied.ScriptAppliedReference, SModule>() {
-          public SModule select(ScriptApplied.ScriptAppliedReference it) {
-            return it.getModule();
-          }
-        }).distinct().count() + " modules)");
-
         Sequence.fromIterable(manager.getProjectMigrationsToApply()).visitAll(new IVisitor<ProjectMigration>() {
           public void visit(ProjectMigration it) {
             DefaultMutableTreeNode node = new DefaultMutableTreeNode(it.getDescription());
@@ -106,19 +108,90 @@ public class InitialStep extends BaseStep {
           root.add(proot);
         }
 
-        ListSequence.fromList(moduleMigrations).visitAll(new IVisitor<ScriptApplied.ScriptAppliedReference>() {
-          public void visit(ScriptApplied.ScriptAppliedReference it) {
-            // todo group by language, group by migration type 
-            // todo make an icon 
-            String caption = it.getKindDescription(it.resolve(manager.getMigrationComponent(), false));
-            lroot.add(new DefaultMutableTreeNode(caption));
+        List<ScriptApplied> migrationsApplied = manager.getModuleMigrationsToApply(MigrationModuleUtil.getMigrateableModulesFromProject(project));
+        Iterable<BaseScriptReference> scripts = ListSequence.fromList(migrationsApplied).select(new ISelector<ScriptApplied, BaseScriptReference>() {
+          public BaseScriptReference select(ScriptApplied it) {
+            return it.getScriptReference();
+          }
+        }).distinct();
+
+        // language migrations 
+        final Map<SLanguage, DefaultMutableTreeNode> l2n = MapSequence.fromMap(new HashMap<SLanguage, DefaultMutableTreeNode>());
+        Sequence.fromIterable(scripts).ofType(MigrationScriptReference.class).select(new ISelector<MigrationScriptReference, SLanguage>() {
+          public SLanguage select(MigrationScriptReference it) {
+            return it.getLanguage();
+          }
+        }).distinct().visitAll(new IVisitor<SLanguage>() {
+          public void visit(SLanguage it) {
+            MapSequence.fromMap(l2n).put(it, new DefaultMutableTreeNode(NameUtil.compactNamespace(it.getQualifiedName())));
           }
         });
-        if (ListSequence.fromList(moduleMigrations).isNotEmpty()) {
+        Sequence.fromIterable(scripts).ofType(MigrationScriptReference.class).visitAll(new IVisitor<MigrationScriptReference>() {
+          public void visit(MigrationScriptReference it) {
+            // todo make an icon 
+            String caption = check_nznoqw_a0b0a0a51a0a0e0j(it.resolve(false));
+            MapSequence.fromMap(l2n).get(it.getLanguage()).add(new DefaultMutableTreeNode(caption));
+          }
+        });
+        int migratedModulesNum = ListSequence.fromList(migrationsApplied).where(new IWhereFilter<ScriptApplied>() {
+          public boolean accept(ScriptApplied it) {
+            return it.getScriptReference() instanceof MigrationScriptReference;
+          }
+        }).select(new ISelector<ScriptApplied, SModule>() {
+          public SModule select(ScriptApplied it) {
+            return it.getModule();
+          }
+        }).distinct().count();
+        final DefaultMutableTreeNode lroot = new DefaultMutableTreeNode("Language Migrations (" + migratedModulesNum + " modules)");
+        Sequence.fromIterable(MapSequence.fromMap(l2n).values()).visitAll(new IVisitor<DefaultMutableTreeNode>() {
+          public void visit(DefaultMutableTreeNode it) {
+            lroot.add(it);
+          }
+        });
+        if (lroot.children().hasMoreElements()) {
           root.add(lroot);
+        }
+
+        // module migrations 
+        final Map<SModule, DefaultMutableTreeNode> m2n = MapSequence.fromMap(new HashMap<SModule, DefaultMutableTreeNode>());
+        Sequence.fromIterable(scripts).ofType(RefactoringScriptReference.class).select(new ISelector<RefactoringScriptReference, SModule>() {
+          public SModule select(RefactoringScriptReference it) {
+            return it.getModule();
+          }
+        }).distinct().visitAll(new IVisitor<SModule>() {
+          public void visit(SModule it) {
+            MapSequence.fromMap(m2n).put(it, new DefaultMutableTreeNode(NameUtil.compactNamespace(it.getModuleName())));
+          }
+        });
+        Sequence.fromIterable(scripts).ofType(RefactoringScriptReference.class).visitAll(new IVisitor<RefactoringScriptReference>() {
+          public void visit(RefactoringScriptReference it) {
+            // todo make an icon 
+            String caption = check_nznoqw_a0b0a0a42a0a0e0j(it.resolve(false));
+            DefaultMutableTreeNode node = new DefaultMutableTreeNode(caption);
+            MapSequence.fromMap(m2n).get(it.getModule()).add(node);
+          }
+        });
+        int migratedModulesNum2 = ListSequence.fromList(migrationsApplied).where(new IWhereFilter<ScriptApplied>() {
+          public boolean accept(ScriptApplied it) {
+            return it.getScriptReference() instanceof RefactoringScriptReference;
+          }
+        }).select(new ISelector<ScriptApplied, SModule>() {
+          public SModule select(ScriptApplied it) {
+            return it.getModule();
+          }
+        }).distinct().count();
+        final DefaultMutableTreeNode mroot = new DefaultMutableTreeNode("Module Migrations (" + migratedModulesNum2 + " modules)");
+        Sequence.fromIterable(MapSequence.fromMap(m2n).values()).visitAll(new IVisitor<DefaultMutableTreeNode>() {
+          public void visit(DefaultMutableTreeNode it) {
+            mroot.add(it);
+          }
+        });
+        if (mroot.children().hasMoreElements()) {
+          root.add(mroot);
         }
       }
     });
+
     JTree tree = new JTree(root);
     tree.setRootVisible(false);
     for (int i = 0; i < tree.getRowCount(); i++) {
@@ -160,5 +233,17 @@ public class InitialStep extends BaseStep {
       Object val = option.getValue(c);
       mySession.getOptions().setOptionValue(option, val);
     }
+  }
+  private static String check_nznoqw_a0b0a0a51a0a0e0j(MigrationScript checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getCaption();
+    }
+    return null;
+  }
+  private static String check_nznoqw_a0b0a0a42a0a0e0j(RefactoringScript checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getCaption();
+    }
+    return null;
   }
 }

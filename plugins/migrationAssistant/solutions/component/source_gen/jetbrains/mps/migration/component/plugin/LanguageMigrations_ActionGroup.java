@@ -13,7 +13,6 @@ import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.migration.MigrationComponent;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -47,10 +46,6 @@ public class LanguageMigrations_ActionGroup extends GeneratedActionGroup {
     if (mpsProject == null) {
       return;
     }
-    MigrationComponent migrationComponent = project.getComponent(MigrationComponent.class);
-    if (migrationComponent == null) {
-      return;
-    }
 
     List<SLanguage> languages = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).translate(new ITranslator2<SModule, SLanguage>() {
       public Iterable<SLanguage> translate(SModule module) {
@@ -67,7 +62,7 @@ public class LanguageMigrations_ActionGroup extends GeneratedActionGroup {
       DefaultActionGroup langRootsGroup = new DefaultActionGroup(NameUtil.compactNamespace(name), true);
 
       for (int ver = 0; ver < language.getLanguageVersion(); ver++) {
-        MigrationScript script = migrationComponent.fetchMigrationScript(new MigrationScriptReference(language, ver), true);
+        MigrationScript script = new MigrationScriptReference(language, ver).resolve(true);
         if (script == null) {
           continue;
         }

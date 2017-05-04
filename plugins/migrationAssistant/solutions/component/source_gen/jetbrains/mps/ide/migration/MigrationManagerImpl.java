@@ -7,9 +7,19 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.migration.global.ProjectMigration;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
+import jetbrains.mps.lang.migration.runtime.base.DataCollector;
+import java.util.Map;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.migration.component.util.MigrationDataUtil;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -17,11 +27,9 @@ import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import java.util.HashMap;
 import java.util.Set;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -38,30 +46,72 @@ import jetbrains.mps.migration.global.CleanupProjectMigration;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
+import jetbrains.mps.refactoring.participant.RefactoringSession;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
+import jetbrains.mps.refactoring.participant.RefactoringSessionImpl;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringScript;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.refactoring.participant.RefactoringUI;
+import jetbrains.mps.refactoring.participant.RefactoringParticipant;
+import jetbrains.mps.ide.platform.actions.core.RefactoringProcessor;
+import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 
 public class MigrationManagerImpl extends AbstractProjectComponent implements MigrationManager {
   private static final Logger LOG = LogManager.getLogger(MigrationManagerImpl.class);
-  private Project myMpsMproject;
+  private Project myMpsProject;
   private ProjectMigration lastProjectMigration = null;
-  private MigrationComponent myMigrationComponent;
 
-  public MigrationManagerImpl(com.intellij.openapi.project.Project project, Project mpsProject, MigrationComponent migrationComponent) {
+  private SModule myDataModule;
+  private TempModuleOptions myDataModuleOptions;
+
+  private DataCollector myDataCollector = new DataCollector() {
+    public Map<SModule, SNode> collectData(SModule module, final MigrationScriptReference scriptReference) {
+      final Map<SModule, SNode> requiredData = MapSequence.fromMap(new HashMap<SModule, SNode>());
+      SetSequence.fromSet(MigrationsUtil.getModuleDependencies(module)).visitAll(new IVisitor<SModule>() {
+        public void visit(SModule it) {
+          SNode dataString = MigrationDataUtil.readData(it, scriptReference);
+          if (dataString != null) {
+            MapSequence.fromMap(requiredData).put(it, dataString);
+          }
+        }
+      });
+      return requiredData;
+    }
+  };
+
+  public MigrationManagerImpl(com.intellij.openapi.project.Project project, Project mpsProject) {
     super(project);
-    myMpsMproject = mpsProject;
-    myMigrationComponent = migrationComponent;
+    myMpsProject = mpsProject;
   }
 
-  public MigrationComponent getMigrationComponent() {
-    return myMigrationComponent;
+  @Override
+  public void initComponent() {
+    myMpsProject.getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        myDataModuleOptions = TempModuleOptions.forDefaultModule();
+        myDataModule = myDataModuleOptions.createModule();
+      }
+    });
+  }
+
+  @Override
+  public void disposeComponent() {
+    myMpsProject.getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        myDataModuleOptions.disposeModule();
+      }
+    });
   }
 
   public boolean isMigrationRequired() {
     final Wrappers._boolean result = new Wrappers._boolean(false);
-    myMpsMproject.getRepository().getModelAccess().runReadAction(new Runnable() {
+    myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(myMpsMproject);
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(myMpsProject);
         result.value = isMigrationRequired(modules);
       }
     });
@@ -76,13 +126,13 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     List<ProjectMigration> allProjectMigrations = ProjectMigrationsRegistry.getInstance().getMigrations();
     return ListSequence.fromList(allProjectMigrations).where(new IWhereFilter<ProjectMigration>() {
       public boolean accept(ProjectMigration it) {
-        return it.shouldBeExecuted(myMpsMproject);
+        return it.shouldBeExecuted(myMpsProject);
       }
     }).toListSequence();
   }
 
   public boolean importVersionsUpdateRequired(Iterable<SModule> modules) {
-    myMpsMproject.getModelAccess().checkReadAccess();
+    myMpsProject.getModelAccess().checkReadAccess();
 
     for (SModule module : Sequence.fromIterable(modules)) {
       AbstractModule abstractModule = (AbstractModule) module;
@@ -138,7 +188,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     module.getRepository().getModelAccess().checkReadAccess();
     Map<SLanguage, Integer> newLangVersions = new HashMap<SLanguage, Integer>();
     Set<SLanguage> usedLanguages = module.getUsedLanguages();
-    SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(LanguageRegistry.getInstance(myMpsMproject.getRepository()), usedLanguages);
+    SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(LanguageRegistry.getInstance(myMpsProject.getRepository()), usedLanguages);
     Set<SLanguage> extendingLangsClosure = languageHierarchy.getExtended();
     for (SLanguage lang : extendingLangsClosure) {
       if (oldLangVersions.containsKey(lang)) {
@@ -186,21 +236,21 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     }
   }
 
-  public List<ScriptApplied.ScriptAppliedReference> getModuleMigrationsToApply(Iterable<SModule> modules) {
-    return Sequence.fromIterable(modules).translate(new ITranslator2<SModule, ScriptApplied.ScriptAppliedReference>() {
-      public Iterable<ScriptApplied.ScriptAppliedReference> translate(SModule module) {
+  public List<ScriptApplied> getModuleMigrationsToApply(Iterable<SModule> modules) {
+    return Sequence.fromIterable(modules).translate(new ITranslator2<SModule, ScriptApplied>() {
+      public Iterable<ScriptApplied> translate(SModule module) {
         return MigrationsUtil.getAllSteps(module);
       }
     }).toListSequence();
   }
 
-  public List<ScriptApplied.ScriptAppliedReference> getMissingMigrations() {
-    final Wrappers._T<List<ScriptApplied.ScriptAppliedReference>> result = new Wrappers._T<List<ScriptApplied.ScriptAppliedReference>>(ListSequence.fromList(new ArrayList<ScriptApplied.ScriptAppliedReference>()));
-    myMpsMproject.getRepository().getModelAccess().runReadAction(new Runnable() {
+  public List<ScriptApplied> getMissingMigrations() {
+    final Wrappers._T<List<ScriptApplied>> result = new Wrappers._T<List<ScriptApplied>>(ListSequence.fromList(new ArrayList<ScriptApplied>()));
+    myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        result.value = ListSequence.fromList(getModuleMigrationsToApply(MigrationsUtil.getMigrateableModulesFromProject(myMpsMproject))).where(new IWhereFilter<ScriptApplied.ScriptAppliedReference>() {
-          public boolean accept(ScriptApplied.ScriptAppliedReference it) {
-            return it.resolve(myMigrationComponent, false) == null;
+        result.value = ListSequence.fromList(getModuleMigrationsToApply(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject))).where(new IWhereFilter<ScriptApplied>() {
+          public boolean accept(ScriptApplied it) {
+            return it.getScriptReference().resolve(false) == null;
           }
         }).toListSequence();
       }
@@ -217,7 +267,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
   public ProjectMigration nextProjectStep(MigrationOptions options, boolean cleanup) {
     ProjectMigration current = next(lastProjectMigration, cleanup);
 
-    while (current != null && !(current.shouldBeExecuted(myMpsMproject))) {
+    while (current != null && !(current.shouldBeExecuted(myMpsProject))) {
       current = next(current, cleanup);
     }
 
@@ -265,40 +315,32 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
 
   public int moduleStepsCount() {
     final Wrappers._int result = new Wrappers._int();
-    myMpsMproject.getRepository().getModelAccess().runReadAction(new Runnable() {
+    myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        result.value = ListSequence.fromList(getModuleMigrationsToApply(MigrationsUtil.getMigrateableModulesFromProject(myMpsMproject))).count();
+        result.value = ListSequence.fromList(getModuleMigrationsToApply(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject))).count();
       }
     });
     return result.value;
   }
 
-  public ScriptApplied nextModuleStep(@Nullable final String preferredId) {
+  public ScriptApplied nextModuleStep(@Nullable final BaseScriptReference preferredId) {
     final Wrappers._T<ScriptApplied> result = new Wrappers._T<ScriptApplied>(null);
-    myMpsMproject.getRepository().getModelAccess().runReadAction(new Runnable() {
+    myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Iterable<ScriptApplied> toApply = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject))).translate(new ITranslator2<SModule, ScriptApplied.ScriptAppliedReference>() {
-          public Iterable<ScriptApplied.ScriptAppliedReference> translate(SModule module) {
+        Iterable<ScriptApplied> toApply = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject))).translate(new ITranslator2<SModule, ScriptApplied>() {
+          public Iterable<ScriptApplied> translate(SModule module) {
             return MigrationsUtil.getAllSteps(module);
-          }
-        }).select(new ISelector<ScriptApplied.ScriptAppliedReference, ScriptApplied>() {
-          public ScriptApplied select(ScriptApplied.ScriptAppliedReference it) {
-            return it.resolve(myMigrationComponent, false);
           }
         }).where(new IWhereFilter<ScriptApplied>() {
           public boolean accept(ScriptApplied it) {
-            return it != null && Sequence.fromIterable(it.getDependencies()).where(new IWhereFilter<ScriptApplied.ScriptAppliedReference>() {
-              public boolean accept(ScriptApplied.ScriptAppliedReference it) {
-                return !(it.isAlreadyDone());
-              }
-            }).isEmpty();
+            return canBeExecutedImmediately(it);
           }
         });
 
         // try find preferred, otherwise any 
         Iterable<ScriptApplied> preferred = (preferredId == null ? toApply : Sequence.fromIterable(toApply).where(new IWhereFilter<ScriptApplied>() {
           public boolean accept(ScriptApplied it) {
-            return preferredId == null || preferredId.equals(it.getId());
+            return preferredId == null || preferredId.equals(it.getScriptReference());
           }
         }));
         if (Sequence.fromIterable(preferred).isEmpty()) {
@@ -314,4 +356,166 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     return result.value;
   }
 
+  public void executeScript(ScriptApplied s) {
+    // todo why don't we have executeProjectMigration method? 
+    // todo remove explicit class mention (map<ref->script>?) 
+    if (s.getScriptReference() instanceof MigrationScriptReference) {
+      executeMigrationScript(s);
+    } else if (s.getScriptReference() instanceof RefactoringScriptReference) {
+      executeRefactoringScript(s);
+    } else {
+      throw new IllegalArgumentException();
+    }
+  }
+
+  private static class RefactoringSessionTaskQueue {
+    private static final String myId = "refactoringSession.migrationAssistant.taskQueue";
+    private List<Runnable> myTasks = ListSequence.fromList(new ArrayList<Runnable>());
+    public static MigrationManagerImpl.RefactoringSessionTaskQueue getInstance(RefactoringSession session) {
+      MigrationManagerImpl.RefactoringSessionTaskQueue result = ((MigrationManagerImpl.RefactoringSessionTaskQueue) session.getObject(myId));
+      if (result == null) {
+        result = new MigrationManagerImpl.RefactoringSessionTaskQueue();
+        session.putObject(myId, result);
+      }
+      return result;
+    }
+    public void putTask(Runnable task) {
+      ListSequence.fromList(myTasks).addElement(task);
+    }
+    public void runAll() {
+      for (Runnable task : ListSequence.fromList(myTasks)) {
+        task.run();
+      }
+    }
+  }
+
+  private void executeMigrationScript(ScriptApplied<MigrationScriptReference> sa) {
+    MigrationScript script = sa.getScriptReference().resolve(true);
+    AbstractModule module = ((AbstractModule) sa.getModule());
+    SLanguage fromLanguage = script.getReference().getLanguage();
+    Integer usedVersion = module.getModuleDescriptor().getLanguageVersions().get(fromLanguage);
+    usedVersion = Math.max(usedVersion, 0);
+    assert usedVersion == script.getReference().getFromVersion();
+
+    script.setDataCollector(myDataCollector);
+    SNode data = script.execute(module);
+    if (data != null) {
+      MigrationDataUtil.addData(module, myDataModule, script.getReference(), data);
+    }
+
+    int toVersion = script.getReference().getFromVersion() + 1;
+    module.getModuleDescriptor().getLanguageVersions().put(fromLanguage, toVersion);
+    module.setChanged();
+
+    for (SModel model : ListSequence.fromList(module.getModels())) {
+      if (model.isReadOnly()) {
+        continue;
+      }
+      if (!((model instanceof SModelInternal))) {
+        continue;
+      }
+      if (!(((SModelInternal) model).importedLanguageIds().contains(fromLanguage))) {
+        continue;
+      }
+
+      ((SModelInternal) model).setLanguageImportVersion(fromLanguage, toVersion);
+    }
+  }
+
+  private void executeRefactoringScript(ScriptApplied<RefactoringScriptReference> sa) {
+    RefactoringScriptReference rLog = sa.getScriptReference();
+    final AbstractModule module = ((AbstractModule) sa.getModule());
+    SModule fromModule = rLog.getModule();
+    int importedVersion = MigrationModuleUtil.getDependencyVersion(module, fromModule);
+    importedVersion = Math.max(importedVersion, 0);
+    assert importedVersion == rLog.getFromVersion();
+
+    final RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
+    RefactoringScript ref = rLog.resolve(true);
+    ref.setSession(refactoringSession);
+    ref.setTaskExecutor(new _FunctionTypes._void_P1_E0<Runnable>() {
+      public void invoke(Runnable task) {
+        MigrationManagerImpl.RefactoringSessionTaskQueue.getInstance(refactoringSession).putTask(task);
+      }
+    });
+    ref.setRefactoringProcessor(new _FunctionTypes._void_P4_E0<RefactoringUI, RefactoringParticipant.PersistentRefactoringParticipant, Iterable<SNode>, Map<SNode, SNode>>() {
+      public void invoke(RefactoringUI ui, RefactoringParticipant.PersistentRefactoringParticipant p, Iterable<SNode> initialState, Map<SNode, SNode> initialToFinal) {
+        doRun(module, p, ui, initialState, initialToFinal, refactoringSession);
+      }
+    });
+    ref.execute(module);
+    MigrationManagerImpl.RefactoringSessionTaskQueue.getInstance(refactoringSession).runAll();
+    refactoringSession.performAllRegistered();
+
+    int toVersion = rLog.getFromVersion() + 1;
+    MigrationModuleUtil.setDepVersion(module, fromModule.getModuleReference(), toVersion);
+
+    // todo: versions in models 
+  }
+
+  private <IP, FP> void doRun(AbstractModule module, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, IP, FP> participant, RefactoringUI ui, Iterable<SNode> initialState, final Map<SNode, SNode> initialToFinal, RefactoringSessionImpl refactoringSession) {
+    RefactoringProcessor.<IP,FP,SNode,SNode>performRefactoring(new RefactoringParticipant.DeserializingParticipantStateFactory<IP, FP>(), ui, refactoringSession, module.getRepository(), new ModulesScope(module), null, ((Iterable<? extends RefactoringParticipant<?, ?, IP, FP>>) Sequence.<RefactoringParticipant<?, ?, IP, FP>>singleton(participant)), Sequence.fromIterable(initialState).toListSequence(), new _FunctionTypes._return_P1_E0<Map<SNode, SNode>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, SNode, SNode>>>() {
+      public Map<SNode, SNode> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, SNode, SNode>> changes) {
+        return initialToFinal;
+      }
+    }, null);
+  }
+
+  private boolean canBeExecutedImmediately(ScriptApplied script) {
+    // todo remove explicit class mention 
+
+    AbstractModule moduleToMigrate = (AbstractModule) script.getModule();
+    if (script.getScriptReference() instanceof MigrationScriptReference) {
+      MigrationScriptReference sr = (MigrationScriptReference) script.getScriptReference();
+      int v = moduleToMigrate.getUsedLanguageVersion(sr.getLanguage(), false);
+      if (v != sr.getFromVersion()) {
+        return false;
+      }
+
+      for (MigrationScriptReference s : Sequence.fromIterable(sr.resolve(true).executeAfter())) {
+        if (needsToBeApplied(s, moduleToMigrate)) {
+          return false;
+        }
+      }
+
+      for (MigrationScriptReference s : Sequence.fromIterable(sr.resolve(true).requiresData())) {
+        for (SModule dep : SetSequence.fromSet(MigrationsUtil.getModuleDependencies(moduleToMigrate))) {
+          if (needsToBeApplied(s, dep)) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+    if (script.getScriptReference() instanceof RefactoringScriptReference) {
+      RefactoringScriptReference sr = (RefactoringScriptReference) script.getScriptReference();
+      int v = moduleToMigrate.getDependencyVersion(sr.getModule(), false);
+      if (v != sr.getFromVersion()) {
+        return false;
+      }
+
+      for (RefactoringScriptReference s : Sequence.fromIterable(sr.resolve(true).getExecuteAfter())) {
+        if (needsToBeApplied(s, moduleToMigrate)) {
+          return false;
+        }
+      }
+      return true;
+    }
+    throw new IllegalArgumentException();
+  }
+
+  private boolean needsToBeApplied(MigrationScriptReference ref, SModule m) {
+    if (!(SetSequence.fromSet(MigrationsUtil.getUsedLanguages(m)).contains(ref.getLanguage()))) {
+      return false;
+    }
+    int dv = ((AbstractModule) m).getUsedLanguageVersion(ref.getLanguage(), false);
+    return dv <= ref.getFromVersion();
+  }
+  private boolean needsToBeApplied(RefactoringScriptReference ref, SModule m) {
+    if (!(SetSequence.fromSet(MigrationsUtil.getModuleDependencies(m)).contains(ref.getModule()))) {
+      return false;
+    }
+    int dv = ((AbstractModule) m).getDependencyVersion(ref.getModule(), false);
+    return dv <= ref.getFromVersion();
+  }
 }

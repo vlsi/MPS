@@ -6,7 +6,7 @@ import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
 import jetbrains.mps.project.AbstractModule;
 
 public abstract class MissingMigrationProblem extends Problem<SModule> {
@@ -35,10 +35,10 @@ public abstract class MissingMigrationProblem extends Problem<SModule> {
   }
 
   public static class MissingRefactoringLogProblem extends MissingMigrationProblem {
-    private RefactoringLogReference myScriptReference;
+    private RefactoringScriptReference myScriptReference;
     private int myUsedVersion;
 
-    public MissingRefactoringLogProblem(RefactoringLogReference migration, int usedVersion) {
+    public MissingRefactoringLogProblem(RefactoringScriptReference migration, int usedVersion) {
       super(migration.getModule());
       myScriptReference = migration;
     }

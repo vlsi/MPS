@@ -32,7 +32,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringUI" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringUI" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.ExtensionDescriptor" file="ExtensionDescriptor.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -106,7 +106,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.DefaultRefactoringUI" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringProcessor" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringUI" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.NodeLocation" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -123,6 +122,7 @@
     <classNode dependClassName="jetbrains.mps.refactoring.participant.NodeCopyTracker" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringUI" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
@@ -169,7 +169,6 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchTask" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.DefaultRefactoringUI" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringUI" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -180,6 +179,7 @@
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSessionImpl" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringUI" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
@@ -190,17 +190,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.platform.actions.core.RefactoringUI" file="RefactoringUI.java">
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchTask" />
-    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
-    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.Rename_Action" file="Rename_Action.java">
     <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
