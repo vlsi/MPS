@@ -9015,23 +9015,30 @@
               <node concept="3cpWsn" id="6fMyXCHGhHJ" role="3cpWs9">
                 <property role="TrG5h" value="v" />
                 <node concept="10Oyi0" id="6fMyXCHGhHK" role="1tU5fm" />
-                <node concept="2OqwBi" id="6fMyXCHGhHL" role="33vP2m">
-                  <node concept="liA8E" id="6fMyXCHGhHM" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~AbstractModule.getUsedLanguageVersion(org.jetbrains.mps.openapi.language.SLanguage,boolean):int" resolve="getUsedLanguageVersion" />
-                    <node concept="2OqwBi" id="6fMyXCHGhHN" role="37wK5m">
-                      <node concept="37vLTw" id="6fMyXCHGhHO" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6fMyXCHGhHv" resolve="sr" />
-                      </node>
-                      <node concept="liA8E" id="6fMyXCHGhHP" role="2OqNvi">
-                        <ref role="37wK5l" to="6f4m:2RG318eWpZ$" resolve="getLanguage" />
-                      </node>
-                    </node>
-                    <node concept="3clFbT" id="6fMyXCHGhHQ" role="37wK5m">
-                      <property role="3clFbU" value="false" />
-                    </node>
+                <node concept="2YIFZM" id="5rGw4pz6vYr" role="33vP2m">
+                  <ref role="1Pybhc" to="wyt6:~Math" resolve="Math" />
+                  <ref role="37wK5l" to="wyt6:~Math.max(int,int):int" resolve="max" />
+                  <node concept="3cmrfG" id="5rGw4pz6wIK" role="37wK5m">
+                    <property role="3cmrfH" value="0" />
                   </node>
-                  <node concept="37vLTw" id="6fMyXCHGhHR" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6fMyXCHGhHB" resolve="moduleToMigrate" />
+                  <node concept="2OqwBi" id="6fMyXCHGhHL" role="37wK5m">
+                    <node concept="liA8E" id="6fMyXCHGhHM" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~AbstractModule.getUsedLanguageVersion(org.jetbrains.mps.openapi.language.SLanguage,boolean):int" resolve="getUsedLanguageVersion" />
+                      <node concept="2OqwBi" id="6fMyXCHGhHN" role="37wK5m">
+                        <node concept="37vLTw" id="6fMyXCHGhHO" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6fMyXCHGhHv" resolve="sr" />
+                        </node>
+                        <node concept="liA8E" id="6fMyXCHGhHP" role="2OqNvi">
+                          <ref role="37wK5l" to="6f4m:2RG318eWpZ$" resolve="getLanguage" />
+                        </node>
+                      </node>
+                      <node concept="3clFbT" id="6fMyXCHGhHQ" role="37wK5m">
+                        <property role="3clFbU" value="false" />
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="6fMyXCHGhHR" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6fMyXCHGhHB" resolve="moduleToMigrate" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -9203,23 +9210,30 @@
               <node concept="3cpWsn" id="6fMyXCHF76w" role="3cpWs9">
                 <property role="TrG5h" value="v" />
                 <node concept="10Oyi0" id="6fMyXCHF76l" role="1tU5fm" />
-                <node concept="2OqwBi" id="6fMyXCHF76x" role="33vP2m">
-                  <node concept="liA8E" id="6fMyXCHF76y" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~AbstractModule.getDependencyVersion(org.jetbrains.mps.openapi.module.SModule,boolean):int" resolve="getDependencyVersion" />
-                    <node concept="2OqwBi" id="6fMyXCHF76z" role="37wK5m">
-                      <node concept="37vLTw" id="6fMyXCHF76$" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6fMyXCHEUW1" resolve="sr" />
-                      </node>
-                      <node concept="liA8E" id="6fMyXCHF76_" role="2OqNvi">
-                        <ref role="37wK5l" to="6f4m:4uVwhQyPurF" resolve="getModule" />
-                      </node>
-                    </node>
-                    <node concept="3clFbT" id="6fMyXCHF76A" role="37wK5m">
-                      <property role="3clFbU" value="false" />
-                    </node>
+                <node concept="2YIFZM" id="5rGw4pz6xxs" role="33vP2m">
+                  <ref role="1Pybhc" to="wyt6:~Math" resolve="Math" />
+                  <ref role="37wK5l" to="wyt6:~Math.max(int,int):int" resolve="max" />
+                  <node concept="3cmrfG" id="5rGw4pz6xXT" role="37wK5m">
+                    <property role="3cmrfH" value="0" />
                   </node>
-                  <node concept="37vLTw" id="6fMyXCHF76B" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6fMyXCHGhHB" resolve="moduleToMigrate" />
+                  <node concept="2OqwBi" id="6fMyXCHF76x" role="37wK5m">
+                    <node concept="liA8E" id="6fMyXCHF76y" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~AbstractModule.getDependencyVersion(org.jetbrains.mps.openapi.module.SModule,boolean):int" resolve="getDependencyVersion" />
+                      <node concept="2OqwBi" id="6fMyXCHF76z" role="37wK5m">
+                        <node concept="37vLTw" id="6fMyXCHF76$" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6fMyXCHEUW1" resolve="sr" />
+                        </node>
+                        <node concept="liA8E" id="6fMyXCHF76_" role="2OqNvi">
+                          <ref role="37wK5l" to="6f4m:4uVwhQyPurF" resolve="getModule" />
+                        </node>
+                      </node>
+                      <node concept="3clFbT" id="6fMyXCHF76A" role="37wK5m">
+                        <property role="3clFbU" value="false" />
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="6fMyXCHF76B" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6fMyXCHGhHB" resolve="moduleToMigrate" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -9367,28 +9381,35 @@
           <node concept="3cpWsn" id="6fMyXCHIprt" role="3cpWs9">
             <property role="TrG5h" value="dv" />
             <node concept="10Oyi0" id="6fMyXCHIpru" role="1tU5fm" />
-            <node concept="2OqwBi" id="6fMyXCHIprv" role="33vP2m">
-              <node concept="liA8E" id="6fMyXCHIprw" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~AbstractModule.getUsedLanguageVersion(org.jetbrains.mps.openapi.language.SLanguage,boolean):int" resolve="getUsedLanguageVersion" />
-                <node concept="2OqwBi" id="6fMyXCHIprx" role="37wK5m">
-                  <node concept="37vLTw" id="6fMyXCHIrUr" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6fMyXCHIkwC" resolve="ref" />
-                  </node>
-                  <node concept="liA8E" id="6fMyXCHIprz" role="2OqNvi">
-                    <ref role="37wK5l" to="6f4m:2RG318eWpZ$" resolve="getLanguage" />
-                  </node>
-                </node>
-                <node concept="3clFbT" id="6fMyXCHIpr$" role="37wK5m">
-                  <property role="3clFbU" value="false" />
-                </node>
+            <node concept="2YIFZM" id="5rGw4pz6BNl" role="33vP2m">
+              <ref role="1Pybhc" to="wyt6:~Math" resolve="Math" />
+              <ref role="37wK5l" to="wyt6:~Math.max(int,int):int" resolve="max" />
+              <node concept="3cmrfG" id="5rGw4pz6EU7" role="37wK5m">
+                <property role="3cmrfH" value="0" />
               </node>
-              <node concept="1eOMI4" id="6fMyXCHIrfB" role="2Oq$k0">
-                <node concept="10QFUN" id="6fMyXCHIrfA" role="1eOMHV">
-                  <node concept="37vLTw" id="6fMyXCHIrf_" role="10QFUP">
-                    <ref role="3cqZAo" node="6fMyXCHImMt" resolve="m" />
+              <node concept="2OqwBi" id="6fMyXCHIprv" role="37wK5m">
+                <node concept="liA8E" id="6fMyXCHIprw" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~AbstractModule.getUsedLanguageVersion(org.jetbrains.mps.openapi.language.SLanguage,boolean):int" resolve="getUsedLanguageVersion" />
+                  <node concept="2OqwBi" id="6fMyXCHIprx" role="37wK5m">
+                    <node concept="37vLTw" id="6fMyXCHIrUr" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6fMyXCHIkwC" resolve="ref" />
+                    </node>
+                    <node concept="liA8E" id="6fMyXCHIprz" role="2OqNvi">
+                      <ref role="37wK5l" to="6f4m:2RG318eWpZ$" resolve="getLanguage" />
+                    </node>
                   </node>
-                  <node concept="3uibUv" id="6fMyXCHIrvy" role="10QFUM">
-                    <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                  <node concept="3clFbT" id="6fMyXCHIpr$" role="37wK5m">
+                    <property role="3clFbU" value="false" />
+                  </node>
+                </node>
+                <node concept="1eOMI4" id="6fMyXCHIrfB" role="2Oq$k0">
+                  <node concept="10QFUN" id="6fMyXCHIrfA" role="1eOMHV">
+                    <node concept="37vLTw" id="6fMyXCHIrf_" role="10QFUP">
+                      <ref role="3cqZAo" node="6fMyXCHImMt" resolve="m" />
+                    </node>
+                    <node concept="3uibUv" id="6fMyXCHIrvy" role="10QFUM">
+                      <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -9467,28 +9488,35 @@
           <node concept="3cpWsn" id="6fMyXCHIHD8" role="3cpWs9">
             <property role="TrG5h" value="dv" />
             <node concept="10Oyi0" id="6fMyXCHIHD9" role="1tU5fm" />
-            <node concept="2OqwBi" id="6fMyXCHIHDa" role="33vP2m">
-              <node concept="liA8E" id="6fMyXCHIHDb" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~AbstractModule.getDependencyVersion(org.jetbrains.mps.openapi.module.SModule,boolean):int" resolve="getDependencyVersion" />
-                <node concept="2OqwBi" id="6fMyXCHIHDc" role="37wK5m">
-                  <node concept="37vLTw" id="6fMyXCHIHDd" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6fMyXCHIHDs" resolve="ref" />
-                  </node>
-                  <node concept="liA8E" id="6fMyXCHIHDe" role="2OqNvi">
-                    <ref role="37wK5l" to="6f4m:4uVwhQyPurF" resolve="getModule" />
-                  </node>
-                </node>
-                <node concept="3clFbT" id="6fMyXCHIHDf" role="37wK5m">
-                  <property role="3clFbU" value="false" />
-                </node>
+            <node concept="2YIFZM" id="5rGw4pz6XRB" role="33vP2m">
+              <ref role="1Pybhc" to="wyt6:~Math" resolve="Math" />
+              <ref role="37wK5l" to="wyt6:~Math.max(int,int):int" resolve="max" />
+              <node concept="3cmrfG" id="5rGw4pz70YF" role="37wK5m">
+                <property role="3cmrfH" value="0" />
               </node>
-              <node concept="1eOMI4" id="6fMyXCHIHDg" role="2Oq$k0">
-                <node concept="10QFUN" id="6fMyXCHIHDh" role="1eOMHV">
-                  <node concept="37vLTw" id="6fMyXCHIHDi" role="10QFUP">
-                    <ref role="3cqZAo" node="6fMyXCHIHDu" resolve="m" />
+              <node concept="2OqwBi" id="6fMyXCHIHDa" role="37wK5m">
+                <node concept="liA8E" id="6fMyXCHIHDb" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~AbstractModule.getDependencyVersion(org.jetbrains.mps.openapi.module.SModule,boolean):int" resolve="getDependencyVersion" />
+                  <node concept="2OqwBi" id="6fMyXCHIHDc" role="37wK5m">
+                    <node concept="37vLTw" id="6fMyXCHIHDd" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6fMyXCHIHDs" resolve="ref" />
+                    </node>
+                    <node concept="liA8E" id="6fMyXCHIHDe" role="2OqNvi">
+                      <ref role="37wK5l" to="6f4m:4uVwhQyPurF" resolve="getModule" />
+                    </node>
                   </node>
-                  <node concept="3uibUv" id="6fMyXCHIHDj" role="10QFUM">
-                    <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                  <node concept="3clFbT" id="6fMyXCHIHDf" role="37wK5m">
+                    <property role="3clFbU" value="false" />
+                  </node>
+                </node>
+                <node concept="1eOMI4" id="6fMyXCHIHDg" role="2Oq$k0">
+                  <node concept="10QFUN" id="6fMyXCHIHDh" role="1eOMHV">
+                    <node concept="37vLTw" id="6fMyXCHIHDi" role="10QFUP">
+                      <ref role="3cqZAo" node="6fMyXCHIHDu" resolve="m" />
+                    </node>
+                    <node concept="3uibUv" id="6fMyXCHIHDj" role="10QFUM">
+                      <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                    </node>
                   </node>
                 </node>
               </node>

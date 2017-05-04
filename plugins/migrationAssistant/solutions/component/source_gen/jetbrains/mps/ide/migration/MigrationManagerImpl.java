@@ -467,7 +467,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     AbstractModule moduleToMigrate = (AbstractModule) script.getModule();
     if (script.getScriptReference() instanceof MigrationScriptReference) {
       MigrationScriptReference sr = (MigrationScriptReference) script.getScriptReference();
-      int v = moduleToMigrate.getUsedLanguageVersion(sr.getLanguage(), false);
+      int v = Math.max(0, moduleToMigrate.getUsedLanguageVersion(sr.getLanguage(), false));
       if (v != sr.getFromVersion()) {
         return false;
       }
@@ -489,7 +489,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     }
     if (script.getScriptReference() instanceof RefactoringScriptReference) {
       RefactoringScriptReference sr = (RefactoringScriptReference) script.getScriptReference();
-      int v = moduleToMigrate.getDependencyVersion(sr.getModule(), false);
+      int v = Math.max(0, moduleToMigrate.getDependencyVersion(sr.getModule(), false));
       if (v != sr.getFromVersion()) {
         return false;
       }
@@ -508,14 +508,14 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     if (!(SetSequence.fromSet(MigrationsUtil.getUsedLanguages(m)).contains(ref.getLanguage()))) {
       return false;
     }
-    int dv = ((AbstractModule) m).getUsedLanguageVersion(ref.getLanguage(), false);
+    int dv = Math.max(0, ((AbstractModule) m).getUsedLanguageVersion(ref.getLanguage(), false));
     return dv <= ref.getFromVersion();
   }
   private boolean needsToBeApplied(RefactoringScriptReference ref, SModule m) {
     if (!(SetSequence.fromSet(MigrationsUtil.getModuleDependencies(m)).contains(ref.getModule()))) {
       return false;
     }
-    int dv = ((AbstractModule) m).getDependencyVersion(ref.getModule(), false);
+    int dv = Math.max(0, ((AbstractModule) m).getDependencyVersion(ref.getModule(), false));
     return dv <= ref.getFromVersion();
   }
 }
