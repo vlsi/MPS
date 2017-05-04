@@ -2522,6 +2522,41 @@
                   </node>
                   <node concept="3clFbJ" id="6KmbN9hT19G" role="3cqZAp">
                     <node concept="3clFbS" id="6KmbN9hT19H" role="3clFbx">
+                      <node concept="3SKdUt" id="2Ubk3jQKtAV" role="3cqZAp">
+                        <node concept="3SKdUq" id="2Ubk3jQKtAX" role="3SKWNk">
+                          <property role="3SKdUp" value="FIXME it used to be executeCommand (that replaced runWriteActionInCommand) here." />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="2Ubk3jQKB2K" role="3cqZAp">
+                        <node concept="3SKdUq" id="2Ubk3jQKB2M" role="3SKWNk">
+                          <property role="3SKdUp" value="      as long as our modules are always loaded into global repository, model.getRepository().getModelAccess() gives" />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="2Ubk3jQKCO5" role="3cqZAp">
+                        <node concept="3SKdUq" id="2Ubk3jQKCO7" role="3SKWNk">
+                          <property role="3SKdUp" value="      GlobalModelAccess of MPSModuleRepository, which doesn't support commands. " />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="2Ubk3jQKG34" role="3cqZAp">
+                        <node concept="3SKdUq" id="2Ubk3jQKG36" role="3SKWNk">
+                          <property role="3SKdUp" value="      Earlier code went fine with runWriteActionInCommand() which looked up active project from UI." />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="2Ubk3jQKI7T" role="3cqZAp">
+                        <node concept="3SKdUq" id="2Ubk3jQKI7V" role="3SKWNk">
+                          <property role="3SKdUp" value="      MSPL, however, listens to all repositories, and it's odd to execute a command in a project for a model that may belong to a completely different one." />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="2Ubk3jQKK2D" role="3cqZAp">
+                        <node concept="3SKdUq" id="2Ubk3jQKK2F" role="3SKWNk">
+                          <property role="3SKdUp" value="      Therefore, it's better to stick to model's native repository. What we lack with runWriteAction instead of executeCommand is undo capability, perhaps." />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="2Ubk3jQKQkj" role="3cqZAp">
+                        <node concept="3SKdUq" id="2Ubk3jQKQkl" role="3SKWNk">
+                          <property role="3SKdUp" value="      Is it something so vital anyone would complain of?" />
+                        </node>
+                      </node>
                       <node concept="3clFbF" id="1KUoCiqb66_" role="3cqZAp">
                         <node concept="2OqwBi" id="1KUoCiqb66A" role="3clFbG">
                           <node concept="2OqwBi" id="4tEWdMGHxEx" role="2Oq$k0">
@@ -2538,7 +2573,7 @@
                             </node>
                           </node>
                           <node concept="liA8E" id="1KUoCiqb66C" role="2OqNvi">
-                            <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
+                            <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
                             <node concept="1bVj0M" id="1KUoCiqb66D" role="37wK5m">
                               <node concept="3clFbS" id="1KUoCiqb66E" role="1bW5cS">
                                 <node concept="3clFbF" id="1KUoCiqb66G" role="3cqZAp">
