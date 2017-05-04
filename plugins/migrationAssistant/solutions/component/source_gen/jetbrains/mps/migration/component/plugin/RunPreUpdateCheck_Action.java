@@ -22,6 +22,18 @@ import jetbrains.mps.migration.component.util.MigrationsUtil;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.ide.migration.ScriptApplied;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.Set;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -62,11 +74,11 @@ public class RunPreUpdateCheck_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final List<Problem> problems = ListSequence.fromList(new ArrayList<Problem>());
-    final List<SModule>[] modules = new List[1];
+    final List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
     final SRepository repos = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
     repos.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        modules[0] = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(event.getData(MPSCommonDataKeys.MPS_PROJECT))).toListSequence();
+        ListSequence.fromList(modules).addSequence(Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(event.getData(MPSCommonDataKeys.MPS_PROJECT))));
       }
     });
 
@@ -75,8 +87,78 @@ public class RunPreUpdateCheck_Action extends BaseAction {
         progressIndicator.setIndeterminate(false);
         repos.getModelAccess().runReadAction(new Runnable() {
           public void run() {
-
-            ListSequence.fromList(problems).addSequence(CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(modules[0], null, new _FunctionTypes._void_P1_E0<Double>() {
+            Iterable<ScriptApplied> checks = ListSequence.fromList(modules).translate(new ITranslator2<SModule, ScriptApplied>() {
+              public Iterable<ScriptApplied> translate(final SModule module) {
+                Set<SLanguage> allLanguages = new SLanguageHierarchy(LanguageRegistry.getInstance(module.getRepository()), module.getUsedLanguages()).getExtended();
+                Iterable<MigrationScript> scripts = SetSequence.fromSet(allLanguages).translate(new ITranslator2<SLanguage, MigrationScript>() {
+                  public Iterable<MigrationScript> translate(final SLanguage it) {
+                    return new Iterable<MigrationScript>() {
+                      public Iterator<MigrationScript> iterator() {
+                        return new YieldingIterator<MigrationScript>() {
+                          private int __CP__ = 0;
+                          protected boolean moveToNext() {
+__loop__:
+                            do {
+__switch__:
+                              switch (this.__CP__) {
+                                case -1:
+                                  assert false : "Internal error";
+                                  return false;
+                                case 2:
+                                  this._2_ver = 0;
+                                case 3:
+                                  if (!(_2_ver < it.getLanguageVersion())) {
+                                    this.__CP__ = 1;
+                                    break;
+                                  }
+                                  this.__CP__ = 4;
+                                  break;
+                                case 5:
+                                  _2_ver++;
+                                  this.__CP__ = 3;
+                                  break;
+                                case 8:
+                                  if (_7_script != null) {
+                                    this.__CP__ = 9;
+                                    break;
+                                  }
+                                  this.__CP__ = 5;
+                                  break;
+                                case 10:
+                                  this.__CP__ = 5;
+                                  this.yield(_7_script);
+                                  return true;
+                                case 0:
+                                  this.__CP__ = 2;
+                                  break;
+                                case 4:
+                                  this._7_script = new MigrationScriptReference(it, _2_ver).resolve(true);
+                                  this.__CP__ = 8;
+                                  break;
+                                case 9:
+                                  this.__CP__ = 10;
+                                  break;
+                                default:
+                                  break __loop__;
+                              }
+                            } while (true);
+                            return false;
+                          }
+                          private int _2_ver;
+                          private MigrationScript _7_script;
+                        };
+                      }
+                    };
+                  }
+                });
+                return Sequence.fromIterable(scripts).select(new ISelector<MigrationScript, ScriptApplied>() {
+                  public ScriptApplied select(MigrationScript script) {
+                    return new ScriptApplied(module, script.getReference());
+                  }
+                });
+              }
+            });
+            ListSequence.fromList(problems).addSequence(CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(checks, new _FunctionTypes._void_P1_E0<Double>() {
               public void invoke(Double d) {
                 progressIndicator.setFraction(d);
               }

@@ -5507,30 +5507,10 @@
         </node>
       </node>
       <node concept="3clFbS" id="2htE_P_Np6A" role="3clF47">
-        <node concept="3cpWs8" id="2hu8fhm1zyX" role="3cqZAp">
-          <node concept="3cpWsn" id="2hu8fhm1zyY" role="3cpWs9">
-            <property role="TrG5h" value="modules" />
-            <node concept="A3Dl8" id="2hu8fhm1zyT" role="1tU5fm">
-              <node concept="3uibUv" id="2hu8fhm1zyW" role="A3Ik2">
-                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-              </node>
-            </node>
-            <node concept="2YIFZM" id="2hu8fhm1zyZ" role="33vP2m">
-              <ref role="37wK5l" to="auc7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
-              <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
-              <node concept="37vLTw" id="78xBDbK5iGY" role="37wK5m">
-                <ref role="3cqZAo" node="78xBDbK5hR3" resolve="myProject" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs6" id="5$2ALroPrPs" role="3cqZAp">
           <node concept="2YIFZM" id="5$2ALroPUZC" role="3cqZAk">
             <ref role="37wK5l" to="t99v:5$2ALroOKzs" resolve="getNotMigrated" />
             <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
-            <node concept="37vLTw" id="5$2ALroPUZD" role="37wK5m">
-              <ref role="3cqZAo" node="2hu8fhm1zyY" resolve="modules" />
-            </node>
             <node concept="37vLTw" id="2LHmEReYsSt" role="37wK5m">
               <ref role="3cqZAo" node="2LHmEReYrKH" resolve="myMigrationsToCheck" />
             </node>
@@ -8364,9 +8344,6 @@
                   <node concept="2YIFZM" id="7D61RZ3fnJg" role="37vLTx">
                     <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
                     <ref role="37wK5l" to="t99v:5$2ALroODBH" resolve="haveNotMigrated" />
-                    <node concept="37vLTw" id="7D61RZ3fnJh" role="37wK5m">
-                      <ref role="3cqZAo" node="7D61RZ3fnII" resolve="modules" />
-                    </node>
                     <node concept="37vLTw" id="2LHmEReYnPq" role="37wK5m">
                       <ref role="3cqZAo" node="2LHmEReY9df" resolve="myWereRun" />
                     </node>

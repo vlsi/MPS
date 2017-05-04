@@ -376,7 +376,7 @@ public class MigrationTask {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
         m.start("Finding not migrated code...", Sequence.fromIterable(modules).count());
-        haveNotMigrated.value = MigrationCheckUtil.haveNotMigrated(modules, myWereRun, frac2inc(Sequence.fromIterable(modules).count(), new _FunctionTypes._void_P1_E0<Integer>() {
+        haveNotMigrated.value = MigrationCheckUtil.haveNotMigrated(myWereRun, frac2inc(Sequence.fromIterable(modules).count(), new _FunctionTypes._void_P1_E0<Integer>() {
           public void invoke(Integer processed) {
             m.advance(processed);
           }
