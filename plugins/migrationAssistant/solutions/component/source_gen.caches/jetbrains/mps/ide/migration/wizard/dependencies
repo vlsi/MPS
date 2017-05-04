@@ -137,6 +137,7 @@
     <classNode dependClassName="com.intellij.openapi.wm.impl.status.InlineProgressIndicator" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -151,6 +152,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />

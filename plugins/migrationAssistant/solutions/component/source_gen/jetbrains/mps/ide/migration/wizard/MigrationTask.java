@@ -21,9 +21,10 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.Color;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
+import javax.swing.JComponent;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
+import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
@@ -170,6 +171,10 @@ public class MigrationTask {
   private boolean executeSingleStep(final String desc, final _FunctionTypes._void_P0_E0 execute, final _FunctionTypes._return_P0_E0<? extends Boolean> merge) {
     final Wrappers._boolean noException = new Wrappers._boolean(true);
 
+    // todo pass ModalityState to constructor/via session? 
+    // in tests, we have EmptyProgressIndicator and use NON_MODAL 
+    JComponent modalityComponent = check_ajmasp_a0e0cb(as_ajmasp_a0a0e0db(myMonitor.getIndicator(), InlineProgressIndicator.class));
+    ModalityState modalityState = (modalityComponent == null ? ModalityState.NON_MODAL : ModalityState.stateForComponent(modalityComponent));
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         if (myCurrentChange == null) {
@@ -200,7 +205,7 @@ public class MigrationTask {
           myCurrentChange = null;
         }
       }
-    }, ModalityState.stateForComponent(((InlineProgressIndicator) myMonitor.getIndicator()).getComponent()));
+    }, modalityState);
 
     return noException.value;
   }
@@ -379,6 +384,15 @@ public class MigrationTask {
       }
     });
     return haveNotMigrated.value;
+  }
+  private static JComponent check_ajmasp_a0e0cb(InlineProgressIndicator checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getComponent();
+    }
+    return null;
+  }
+  private static <T> T as_ajmasp_a0a0e0db(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
   private static boolean eq_ajmasp_a0c0a0a2a0h0f0pb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

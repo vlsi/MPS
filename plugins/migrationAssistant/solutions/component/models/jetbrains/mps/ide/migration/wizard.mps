@@ -6636,6 +6636,69 @@
           </node>
         </node>
         <node concept="3clFbH" id="78xBDbKcohx" role="3cqZAp" />
+        <node concept="3SKdUt" id="2rKcbG_HHgg" role="3cqZAp">
+          <node concept="3SKdUq" id="2rKcbG_HHgi" role="3SKWNk">
+            <property role="3SKdUp" value="todo pass ModalityState to constructor/via session?" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2rKcbG_IlKo" role="3cqZAp">
+          <node concept="3SKdUq" id="2rKcbG_IlKq" role="3SKWNk">
+            <property role="3SKdUp" value="in tests, we have EmptyProgressIndicator and use NON_MODAL" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2rKcbG_HXGb" role="3cqZAp">
+          <node concept="3cpWsn" id="2rKcbG_HXGc" role="3cpWs9">
+            <property role="TrG5h" value="modalityComponent" />
+            <node concept="3uibUv" id="2rKcbG_HXG5" role="1tU5fm">
+              <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
+            </node>
+            <node concept="2EnYce" id="2rKcbG_HXGd" role="33vP2m">
+              <node concept="0kSF2" id="2rKcbG_HXGe" role="2Oq$k0">
+                <node concept="3uibUv" id="2rKcbG_HXGf" role="0kSFW">
+                  <ref role="3uigEE" to="nd9s:~InlineProgressIndicator" resolve="InlineProgressIndicator" />
+                </node>
+                <node concept="2OqwBi" id="2rKcbG_HXGg" role="0kSFX">
+                  <node concept="37vLTw" id="2rKcbG_HXGh" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6dkZ8D0H4WB" resolve="myMonitor" />
+                  </node>
+                  <node concept="liA8E" id="2rKcbG_HXGi" role="2OqNvi">
+                    <ref role="37wK5l" to="mk8z:~ProgressMonitorAdapter.getIndicator():com.intellij.openapi.progress.ProgressIndicator" resolve="getIndicator" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="2rKcbG_HXGj" role="2OqNvi">
+                <ref role="37wK5l" to="nd9s:~InlineProgressIndicator.getComponent():javax.swing.JComponent" resolve="getComponent" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2rKcbG_GEWG" role="3cqZAp">
+          <node concept="3cpWsn" id="2rKcbG_GEWH" role="3cpWs9">
+            <property role="TrG5h" value="modalityState" />
+            <node concept="3uibUv" id="2rKcbG_GEW_" role="1tU5fm">
+              <ref role="3uigEE" to="bd8o:~ModalityState" resolve="ModalityState" />
+            </node>
+            <node concept="3K4zz7" id="2rKcbG_I8_t" role="33vP2m">
+              <node concept="10M0yZ" id="2rKcbG_I97_" role="3K4E3e">
+                <ref role="3cqZAo" to="bd8o:~ModalityState.NON_MODAL" resolve="NON_MODAL" />
+                <ref role="1PxDUh" to="bd8o:~ModalityState" resolve="ModalityState" />
+              </node>
+              <node concept="3clFbC" id="2rKcbG_I7RL" role="3K4Cdx">
+                <node concept="10Nm6u" id="2rKcbG_I8he" role="3uHU7w" />
+                <node concept="37vLTw" id="2rKcbG_I7mu" role="3uHU7B">
+                  <ref role="3cqZAo" node="2rKcbG_HXGc" resolve="modalityComponent" />
+                </node>
+              </node>
+              <node concept="2YIFZM" id="2rKcbG_GEWI" role="3K4GZi">
+                <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+                <ref role="37wK5l" to="bd8o:~ModalityState.stateForComponent(java.awt.Component):com.intellij.openapi.application.ModalityState" resolve="stateForComponent" />
+                <node concept="37vLTw" id="2rKcbG_I9BP" role="37wK5m">
+                  <ref role="3cqZAo" node="2rKcbG_HXGc" resolve="modalityComponent" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="1V18N7tiS9X" role="3cqZAp">
           <node concept="2OqwBi" id="1V18N7tiWam" role="3clFbG">
             <node concept="2YIFZM" id="1V18N7tiVRm" role="2Oq$k0">
@@ -6827,29 +6890,8 @@
                   </node>
                 </node>
               </node>
-              <node concept="2YIFZM" id="7g_qkvFwigJ" role="37wK5m">
-                <ref role="37wK5l" to="bd8o:~ModalityState.stateForComponent(java.awt.Component):com.intellij.openapi.application.ModalityState" resolve="stateForComponent" />
-                <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
-                <node concept="2OqwBi" id="7g_qkvFwjqS" role="37wK5m">
-                  <node concept="1eOMI4" id="7g_qkvFwk2l" role="2Oq$k0">
-                    <node concept="10QFUN" id="7g_qkvFwk2k" role="1eOMHV">
-                      <node concept="2OqwBi" id="7g_qkvFwk2h" role="10QFUP">
-                        <node concept="37vLTw" id="7g_qkvFwk2i" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6dkZ8D0H4WB" resolve="myMonitor" />
-                        </node>
-                        <node concept="liA8E" id="7g_qkvFwk2j" role="2OqNvi">
-                          <ref role="37wK5l" to="mk8z:~ProgressMonitorAdapter.getIndicator():com.intellij.openapi.progress.ProgressIndicator" resolve="getIndicator" />
-                        </node>
-                      </node>
-                      <node concept="3uibUv" id="7g_qkvFwkke" role="10QFUM">
-                        <ref role="3uigEE" to="nd9s:~InlineProgressIndicator" resolve="InlineProgressIndicator" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="7g_qkvFwl5b" role="2OqNvi">
-                    <ref role="37wK5l" to="nd9s:~InlineProgressIndicator.getComponent():javax.swing.JComponent" resolve="getComponent" />
-                  </node>
-                </node>
+              <node concept="37vLTw" id="2rKcbG_GEWR" role="37wK5m">
+                <ref role="3cqZAo" node="2rKcbG_GEWH" resolve="modalityState" />
               </node>
             </node>
           </node>
