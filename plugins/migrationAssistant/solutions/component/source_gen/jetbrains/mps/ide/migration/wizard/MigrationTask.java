@@ -104,9 +104,9 @@ public class MigrationTask {
     if (myLastStep == 3) {
       myLastStep++;
       // null - no error, true - must stop, false - can ignore 
-      Boolean mustStop = checkModels(myMonitor.subTask(30));
-      if (mustStop != null) {
-        result(myMonitor, new PreCheckError(mySession.getProject(), mustStop), "Errors were found in models");
+      boolean errors = checkModels(myMonitor.subTask(30));
+      if (errors) {
+        result(myMonitor, new PreCheckError(mySession.getProject(), errors), "Errors were found in models");
         return false;
       }
     }
@@ -283,15 +283,15 @@ public class MigrationTask {
     return errsToShow;
   }
 
-  private Boolean checkModels(final ProgressMonitor m) {
-    final Wrappers._T<Boolean> mustStop = new Wrappers._T<Boolean>(null);
+  private boolean checkModels(final ProgressMonitor m) {
+    final Wrappers._boolean hasErrors = new Wrappers._boolean();
     final Project mpsProject = mySession.getProject();
     mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         List<SModule> modules = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).toListSequence();
         int count = ListSequence.fromList(modules).count();
         m.start("Checking models...", count);
-        mustStop.value = MigrationCheckUtil.haveProblems(modules, frac2inc(count, new _FunctionTypes._void_P1_E0<Integer>() {
+        hasErrors.value = MigrationCheckUtil.haveProblems(modules, frac2inc(count, new _FunctionTypes._void_P1_E0<Integer>() {
           public void invoke(Integer processed) {
             m.advance(processed);
           }
@@ -299,7 +299,7 @@ public class MigrationTask {
         m.done();
       }
     });
-    return mustStop.value;
+    return hasErrors.value;
   }
 
   private boolean runProjectMigrations(ProgressMonitor m) {

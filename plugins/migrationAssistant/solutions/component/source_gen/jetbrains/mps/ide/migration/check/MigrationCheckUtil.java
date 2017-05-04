@@ -185,7 +185,7 @@ __switch__:
     return result;
   }
 
-  public static Boolean haveProblems(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
+  public static boolean haveProblems(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
     return CollectionSequence.fromCollection(getProblems(modules, progressCallback, 1)).isNotEmpty();
   }
 

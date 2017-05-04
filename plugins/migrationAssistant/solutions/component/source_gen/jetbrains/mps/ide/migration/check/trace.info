@@ -219,7 +219,7 @@
       <node id="2482611074347905119" at="168,0,171,0" concept="9" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2482611074347887683" at="172,5,175,5" concept="8" />
       <node id="2482611074347963166" at="179,115,182,7" concept="8" />
-      <node id="3875289449860414622" at="188,0,191,0" concept="15" trace="haveProblems#(Ljava/lang/Iterable;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)Ljava/lang/Boolean;" />
+      <node id="3875289449860414622" at="188,0,191,0" concept="15" trace="haveProblems#(Ljava/lang/Iterable;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)Z" />
       <node id="1315974995649578686" at="197,0,200,5" concept="8" />
       <node id="7772642625670074620" at="201,0,204,5" concept="8" />
       <node id="1287322040319329334" at="211,0,214,0" concept="9" trace="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
