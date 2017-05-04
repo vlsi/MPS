@@ -15,6 +15,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.Project;
 import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.ide.migration.MigrationManager;
+import javax.swing.Icon;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.migration.global.ProjectMigration;
@@ -28,10 +32,14 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
 import javax.swing.JTree;
+import javax.swing.tree.DefaultTreeCellRenderer;
+import java.awt.Component;
+import jetbrains.mps.ide.icons.IdeIcons;
 import com.intellij.ui.components.JBScrollPane;
 import java.awt.BorderLayout;
 import com.intellij.ide.wizard.AbstractWizardStepEx;
@@ -87,13 +95,14 @@ public class InitialStep extends BaseStep {
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         MigrationManager manager = mySession.getMigrationManager();
+        final Icon migrationIcon = ApplicationManager.getApplication().getComponent(GlobalIconManager.class).getIconFor(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
 
         // project migrations 
         final DefaultMutableTreeNode croot = new DefaultMutableTreeNode("Cleanups");
         final DefaultMutableTreeNode proot = new DefaultMutableTreeNode("Project Migrations");
         Sequence.fromIterable(manager.getProjectMigrationsToApply()).visitAll(new IVisitor<ProjectMigration>() {
           public void visit(ProjectMigration it) {
-            DefaultMutableTreeNode node = new DefaultMutableTreeNode(it.getDescription());
+            DefaultMutableTreeNode node = new InitialStep.MyTreeNode(it.getDescription(), migrationIcon);
             if (it instanceof CleanupProjectMigration) {
               croot.add(node);
             } else {
@@ -123,14 +132,13 @@ public class InitialStep extends BaseStep {
           }
         }).distinct().visitAll(new IVisitor<SLanguage>() {
           public void visit(SLanguage it) {
-            MapSequence.fromMap(l2n).put(it, new DefaultMutableTreeNode(NameUtil.compactNamespace(it.getQualifiedName())));
+            MapSequence.fromMap(l2n).put(it, new InitialStep.MyTreeNode(NameUtil.compactNamespace(it.getQualifiedName()), MPSIcons.Nodes.Language));
           }
         });
         Sequence.fromIterable(scripts).ofType(MigrationScriptReference.class).visitAll(new IVisitor<MigrationScriptReference>() {
           public void visit(MigrationScriptReference it) {
-            // todo make an icon 
-            String caption = check_nznoqw_a0b0a0a51a0a0e0j(it.resolve(false));
-            MapSequence.fromMap(l2n).get(it.getLanguage()).add(new DefaultMutableTreeNode(caption));
+            String caption = check_nznoqw_a0a0a0a61a0e0j(it.resolve(false));
+            MapSequence.fromMap(l2n).get(it.getLanguage()).add(new InitialStep.MyTreeNode(caption, migrationIcon));
           }
         });
         int migratedModulesNum = ListSequence.fromList(migrationsApplied).where(new IWhereFilter<ScriptApplied>() {
@@ -165,8 +173,7 @@ public class InitialStep extends BaseStep {
         });
         Sequence.fromIterable(scripts).ofType(RefactoringScriptReference.class).visitAll(new IVisitor<RefactoringScriptReference>() {
           public void visit(RefactoringScriptReference it) {
-            // todo make an icon 
-            String caption = check_nznoqw_a0b0a0a42a0a0e0j(it.resolve(false));
+            String caption = check_nznoqw_a0a0a0a52a0e0j(it.resolve(false));
             DefaultMutableTreeNode node = new DefaultMutableTreeNode(caption);
             MapSequence.fromMap(m2n).get(it.getModule()).add(node);
           }
@@ -194,6 +201,18 @@ public class InitialStep extends BaseStep {
 
     JTree tree = new JTree(root);
     tree.setRootVisible(false);
+    tree.setCellRenderer(new DefaultTreeCellRenderer() {
+      @Override
+      public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
+        super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
+        if (value instanceof InitialStep.MyTreeNode) {
+          setIcon(as_nznoqw_a0a0a0b0a0a0a0i0j(value, InitialStep.MyTreeNode.class).getIcon());
+        } else {
+          setIcon((expanded ? IdeIcons.OPENED_FOLDER : IdeIcons.CLOSED_FOLDER));
+        }
+        return this;
+      }
+    });
     for (int i = 0; i < tree.getRowCount(); i++) {
       tree.expandRow(i);
     }
@@ -234,16 +253,31 @@ public class InitialStep extends BaseStep {
       mySession.getOptions().setOptionValue(option, val);
     }
   }
-  private static String check_nznoqw_a0b0a0a51a0a0e0j(MigrationScript checkedDotOperand) {
+
+  private static class MyTreeNode extends DefaultMutableTreeNode {
+    private Icon myIcon;
+    public MyTreeNode(String caption, Icon icon) {
+      super(caption);
+      myIcon = icon;
+    }
+
+    public Icon getIcon() {
+      return myIcon;
+    }
+  }
+  private static String check_nznoqw_a0a0a0a61a0e0j(MigrationScript checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getCaption();
     }
     return null;
   }
-  private static String check_nznoqw_a0b0a0a42a0a0e0j(RefactoringScript checkedDotOperand) {
+  private static String check_nznoqw_a0a0a0a52a0e0j(RefactoringScript checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getCaption();
     }
     return null;
+  }
+  private static <T> T as_nznoqw_a0a0a0b0a0a0a0i0j(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }
