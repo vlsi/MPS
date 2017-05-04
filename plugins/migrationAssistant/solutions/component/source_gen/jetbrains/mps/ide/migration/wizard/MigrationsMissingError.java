@@ -25,7 +25,7 @@ public class MigrationsMissingError extends MigrationErrorDescriptor {
     this.errors = errors;
   }
   public String getMessage() {
-    return "Migration was not started.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "It's possible to invoke Migration Assistant at any time by selecting Tools->Run Migration Assistant from the main menu.";
+    return "Some migration scripts are missing.<br><br>" + "Missing scripts will be shown in ModelChecker after the migration wizard is closed.<br><br>" + "Migration can't continue.";
   }
   public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
     final List<SModule> modules = ListSequence.fromList(errors).select(new ISelector<ScriptApplied, SModule>() {

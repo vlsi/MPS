@@ -58,9 +58,9 @@
     <import index="paf" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.projectPane.logicalview(MPS.Workbench/)" />
     <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="o8ag" ref="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)" />
     <import index="sn11" ref="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)" />
     <import index="xnls" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.icons(MPS.Platform/)" />
+    <import index="o8ag" ref="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)" />
     <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" implicit="true" />
   </imports>
   <registry>
@@ -203,6 +203,7 @@
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
+        <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
@@ -224,6 +225,10 @@
       <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" flags="ng" index="3eNFk2">
+        <child id="1206060619838" name="condition" index="3eO9$A" />
+        <child id="1206060644605" name="statementList" index="3eOfB_" />
+      </concept>
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
@@ -467,6 +472,21 @@
         <ref role="3uigEE" node="PobQbOdOMD" resolve="MigrationTask" />
       </node>
     </node>
+    <node concept="2tJIrI" id="2QIvLbam1Ak" role="jymVt" />
+    <node concept="312cEg" id="2QIvLbalWyl" role="jymVt">
+      <property role="TrG5h" value="myErrorPanel" />
+      <node concept="3Tm6S6" id="2QIvLbalWyj" role="1B3o_S" />
+      <node concept="3uibUv" id="2QIvLbalWyk" role="1tU5fm">
+        <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
+      </node>
+    </node>
+    <node concept="312cEg" id="3nmMoI1Xt_5" role="jymVt">
+      <property role="TrG5h" value="myErrorLabel" />
+      <node concept="3uibUv" id="2MgbhA$C5Wf" role="1tU5fm">
+        <ref role="3uigEE" to="dxuu:~JLabel" resolve="JLabel" />
+      </node>
+      <node concept="3Tm6S6" id="3nmMoI1Xt_3" role="1B3o_S" />
+    </node>
     <node concept="2tJIrI" id="6dkZ8D0CKy3" role="jymVt" />
     <node concept="3clFbW" id="5SsFeroaawc" role="jymVt">
       <property role="DiZV1" value="false" />
@@ -553,7 +573,7 @@
             <node concept="liA8E" id="6dkZ8D0Fh15" role="2OqNvi">
               <ref role="37wK5l" to="z60i:~Container.setLayout(java.awt.LayoutManager):void" resolve="setLayout" />
               <node concept="2ShNRf" id="6dkZ8D0Fhf4" role="37wK5m">
-                <node concept="1pGfFk" id="1zaRC58zaHQ" role="2ShVmc">
+                <node concept="1pGfFk" id="1TrwGKNTAwA" role="2ShVmc">
                   <ref role="37wK5l" to="z60i:~BorderLayout.&lt;init&gt;()" resolve="BorderLayout" />
                 </node>
               </node>
@@ -575,9 +595,30 @@
                   <ref role="37wK5l" to="nd9s:~InlineProgressIndicator.getComponent():javax.swing.JComponent" resolve="getComponent" />
                 </node>
               </node>
-              <node concept="10M0yZ" id="1zaRC58zbps" role="37wK5m">
+              <node concept="10M0yZ" id="1TrwGKNTBca" role="37wK5m">
                 <ref role="3cqZAo" to="z60i:~BorderLayout.NORTH" resolve="NORTH" />
                 <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="SZAFJlrztb" role="3cqZAp" />
+        <node concept="3clFbF" id="2QIvLbalWyv" role="3cqZAp">
+          <node concept="37vLTI" id="2QIvLbalWyw" role="3clFbG">
+            <node concept="2OqwBi" id="2QIvLbalWyx" role="37vLTJ">
+              <node concept="Xjq3P" id="2QIvLbalWyy" role="2Oq$k0" />
+              <node concept="2OwXpG" id="2QIvLbalWyz" role="2OqNvi">
+                <ref role="2Oxat5" node="2QIvLbalWyl" resolve="myErrorPanel" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="2QIvLbalWy$" role="37vLTx">
+              <node concept="1pGfFk" id="2QIvLbalWy_" role="2ShVmc">
+                <ref role="37wK5l" to="dxuu:~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolve="JPanel" />
+                <node concept="2ShNRf" id="2QIvLbalWyA" role="37wK5m">
+                  <node concept="1pGfFk" id="2QIvLbalWyB" role="2ShVmc">
+                    <ref role="37wK5l" to="z60i:~BorderLayout.&lt;init&gt;()" resolve="BorderLayout" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -589,12 +630,45 @@
             </node>
             <node concept="liA8E" id="1zaRC58x7O7" role="2OqNvi">
               <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="2ShNRf" id="1zaRC58yyuN" role="37wK5m">
-                <node concept="1pGfFk" id="1zaRC58yHsP" role="2ShVmc">
+              <node concept="37vLTw" id="SZAFJlryEm" role="37wK5m">
+                <ref role="3cqZAo" node="2QIvLbalWyl" resolve="myErrorPanel" />
+              </node>
+              <node concept="10M0yZ" id="1zaRC58zces" role="37wK5m">
+                <ref role="3cqZAo" to="z60i:~BorderLayout.CENTER" resolve="CENTER" />
+                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="SZAFJlrzXs" role="3cqZAp" />
+        <node concept="3clFbF" id="3nmMoI1Xt_d" role="3cqZAp">
+          <node concept="37vLTI" id="3nmMoI1Xt_e" role="3clFbG">
+            <node concept="2OqwBi" id="3nmMoI1Xt_f" role="37vLTJ">
+              <node concept="Xjq3P" id="3nmMoI1Xt_g" role="2Oq$k0" />
+              <node concept="2OwXpG" id="3nmMoI1Xt_h" role="2OqNvi">
+                <ref role="2Oxat5" node="3nmMoI1Xt_5" resolve="myErrorLabel" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="3nmMoI1Xt_i" role="37vLTx">
+              <node concept="1pGfFk" id="3nmMoI1Xt_j" role="2ShVmc">
+                <ref role="37wK5l" to="dxuu:~JLabel.&lt;init&gt;()" resolve="JLabel" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3nmMoI1Xomd" role="3cqZAp">
+          <node concept="2OqwBi" id="3nmMoI1XpaL" role="3clFbG">
+            <node concept="37vLTw" id="SZAFJlryEl" role="2Oq$k0">
+              <ref role="3cqZAo" node="2QIvLbalWyl" resolve="myErrorPanel" />
+            </node>
+            <node concept="liA8E" id="3nmMoI1Xq7Z" role="2OqNvi">
+              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
+              <node concept="2ShNRf" id="3nmMoI1XqnB" role="37wK5m">
+                <node concept="1pGfFk" id="3nmMoI1Xsgk" role="2ShVmc">
                   <ref role="37wK5l" to="dxuu:~JPanel.&lt;init&gt;()" resolve="JPanel" />
                 </node>
               </node>
-              <node concept="10M0yZ" id="1zaRC58zces" role="37wK5m">
+              <node concept="10M0yZ" id="3nmMoI1XtbD" role="37wK5m">
                 <ref role="3cqZAo" to="z60i:~BorderLayout.CENTER" resolve="CENTER" />
                 <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
               </node>
@@ -625,7 +699,6 @@
             <ref role="37wK5l" to="uxeh:~AbstractWizardStepEx._init():void" resolve="_init" />
           </node>
         </node>
-        <node concept="3clFbH" id="6dkZ8D0LLpk" role="3cqZAp" />
         <node concept="3clFbF" id="65hwFmZdKXA" role="3cqZAp">
           <node concept="2OqwBi" id="65hwFmZdKXB" role="3clFbG">
             <node concept="2YIFZM" id="65hwFmZdKXC" role="2Oq$k0">
@@ -637,19 +710,6 @@
               <node concept="1bVj0M" id="65hwFmZdKXE" role="37wK5m">
                 <property role="3yWfEV" value="true" />
                 <node concept="3clFbS" id="65hwFmZdKXF" role="1bW5cS">
-                  <node concept="3clFbF" id="2EQVK3eFe2b" role="3cqZAp">
-                    <node concept="2OqwBi" id="2EQVK3eFf8P" role="3clFbG">
-                      <node concept="37vLTw" id="2EQVK3eFe29" role="2Oq$k0">
-                        <ref role="3cqZAo" node="7rK8qWGDnm$" resolve="myProgress" />
-                      </node>
-                      <node concept="liA8E" id="2EQVK3eFgNV" role="2OqNvi">
-                        <ref role="37wK5l" to="ot7:~AbstractProgressIndicatorExBase.setFraction(double):void" resolve="setFraction" />
-                        <node concept="3b6qkQ" id="2EQVK3eFhkJ" role="37wK5m">
-                          <property role="$nhwW" value="0.0" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="SfApY" id="1zaRC58xUbc" role="3cqZAp">
                     <node concept="3clFbS" id="1zaRC58xUbe" role="SfCbr">
                       <node concept="3clFbF" id="1zaRC58xwBK" role="3cqZAp">
@@ -703,55 +763,201 @@
                                 </node>
                                 <node concept="3clFbJ" id="kFlbeYO3ki" role="3cqZAp">
                                   <node concept="3clFbS" id="kFlbeYO3kk" role="3clFbx">
-                                    <node concept="3clFbJ" id="kFlbeYO6WC" role="3cqZAp">
-                                      <node concept="3clFbS" id="kFlbeYO6WE" role="3clFbx">
-                                        <node concept="3clFbF" id="kFlbeYL64t" role="3cqZAp">
-                                          <node concept="2OqwBi" id="kFlbeYL6$5" role="3clFbG">
-                                            <node concept="37vLTw" id="kFlbeYL64r" role="2Oq$k0">
-                                              <ref role="3cqZAo" node="PobQbOgkyz" resolve="myTask" />
+                                    <node concept="3clFbJ" id="3nmMoI1WNo0" role="3cqZAp">
+                                      <node concept="3clFbS" id="3nmMoI1WNo2" role="3clFbx">
+                                        <node concept="3clFbF" id="SZAFJlsv4Q" role="3cqZAp">
+                                          <node concept="2OqwBi" id="SZAFJlsw_B" role="3clFbG">
+                                            <node concept="2YIFZM" id="SZAFJlsvKF" role="2Oq$k0">
+                                              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                                              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
                                             </node>
-                                            <node concept="liA8E" id="kFlbeYL6Xa" role="2OqNvi">
-                                              <ref role="37wK5l" node="kFlbeYL0Kh" resolve="forceComplete" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                        <node concept="3clFbF" id="1zaRC58z5V5" role="3cqZAp">
-                                          <node concept="2OqwBi" id="1zaRC58z6A_" role="3clFbG">
-                                            <node concept="37vLTw" id="1zaRC58z5V3" role="2Oq$k0">
-                                              <ref role="3cqZAo" node="7rK8qWGDnm$" resolve="myProgress" />
-                                            </node>
-                                            <node concept="liA8E" id="1zaRC58z7iW" role="2OqNvi">
-                                              <ref role="37wK5l" to="ot7:~AbstractProgressIndicatorExBase.setFraction(double):void" resolve="setFraction" />
-                                              <node concept="3b6qkQ" id="1zaRC58z8ky" role="37wK5m">
-                                                <property role="$nhwW" value="1.0" />
+                                            <node concept="liA8E" id="SZAFJlsxDs" role="2OqNvi">
+                                              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
+                                              <node concept="1bVj0M" id="SZAFJlsyBd" role="37wK5m">
+                                                <node concept="3clFbS" id="SZAFJlsyBe" role="1bW5cS">
+                                                  <node concept="3clFbF" id="2QIvLbam8BF" role="3cqZAp">
+                                                    <node concept="2OqwBi" id="2QIvLbam9LL" role="3clFbG">
+                                                      <node concept="37vLTw" id="2QIvLbam8BD" role="2Oq$k0">
+                                                        <ref role="3cqZAo" node="2QIvLbalWyl" resolve="myErrorPanel" />
+                                                      </node>
+                                                      <node concept="liA8E" id="2QIvLbamb$R" role="2OqNvi">
+                                                        <ref role="37wK5l" to="dxuu:~JComponent.setBorder(javax.swing.border.Border):void" resolve="setBorder" />
+                                                        <node concept="2YIFZM" id="1a06Yzj2xZ2" role="37wK5m">
+                                                          <ref role="37wK5l" to="dxuu:~BorderFactory.createCompoundBorder(javax.swing.border.Border,javax.swing.border.Border):javax.swing.border.CompoundBorder" resolve="createCompoundBorder" />
+                                                          <ref role="1Pybhc" to="dxuu:~BorderFactory" resolve="BorderFactory" />
+                                                          <node concept="2YIFZM" id="1a06Yzj2$3p" role="37wK5m">
+                                                            <ref role="1Pybhc" to="dxuu:~BorderFactory" resolve="BorderFactory" />
+                                                            <ref role="37wK5l" to="dxuu:~BorderFactory.createEmptyBorder(int,int,int,int):javax.swing.border.Border" resolve="createEmptyBorder" />
+                                                            <node concept="3cmrfG" id="1a06Yzj2_cS" role="37wK5m">
+                                                              <property role="3cmrfH" value="20" />
+                                                            </node>
+                                                            <node concept="3cmrfG" id="4g5G3DGKH7J" role="37wK5m">
+                                                              <property role="3cmrfH" value="0" />
+                                                            </node>
+                                                            <node concept="3cmrfG" id="1a06Yzj2B$B" role="37wK5m">
+                                                              <property role="3cmrfH" value="10" />
+                                                            </node>
+                                                            <node concept="3cmrfG" id="4g5G3DGKFRU" role="37wK5m">
+                                                              <property role="3cmrfH" value="0" />
+                                                            </node>
+                                                          </node>
+                                                          <node concept="2YIFZM" id="4g5G3DGKLN6" role="37wK5m">
+                                                            <ref role="37wK5l" to="lzb2:~IdeBorderFactory.createTitledBorder(java.lang.String,boolean):com.intellij.ui.border.IdeaTitledBorder" resolve="createTitledBorder" />
+                                                            <ref role="1Pybhc" to="lzb2:~IdeBorderFactory" resolve="IdeBorderFactory" />
+                                                            <node concept="Xl_RD" id="3nmMoI1ZNxO" role="37wK5m">
+                                                              <property role="Xl_RC" value="Error" />
+                                                            </node>
+                                                            <node concept="3clFbT" id="4g5G3DGKOQ3" role="37wK5m">
+                                                              <property role="3clFbU" value="true" />
+                                                            </node>
+                                                          </node>
+                                                        </node>
+                                                      </node>
+                                                    </node>
+                                                  </node>
+                                                  <node concept="3clFbF" id="6WrjTjFmJSV" role="3cqZAp">
+                                                    <node concept="2OqwBi" id="3nmMoI1X$ny" role="3clFbG">
+                                                      <node concept="37vLTw" id="3nmMoI1XzdD" role="2Oq$k0">
+                                                        <ref role="3cqZAo" node="3nmMoI1Xt_5" resolve="myErrorLabel" />
+                                                      </node>
+                                                      <node concept="liA8E" id="3nmMoI1XAss" role="2OqNvi">
+                                                        <ref role="37wK5l" to="dxuu:~JLabel.setText(java.lang.String):void" resolve="setText" />
+                                                        <node concept="3cpWs3" id="2MgbhA$B1hB" role="37wK5m">
+                                                          <node concept="Xl_RD" id="2MgbhA$B1r0" role="3uHU7w">
+                                                            <property role="Xl_RC" value="&lt;/html&gt;" />
+                                                          </node>
+                                                          <node concept="3cpWs3" id="2MgbhA$AZ_Q" role="3uHU7B">
+                                                            <node concept="Xl_RD" id="2MgbhA$AU6I" role="3uHU7B">
+                                                              <property role="Xl_RC" value="&lt;html&gt;" />
+                                                            </node>
+                                                            <node concept="2OqwBi" id="3nmMoI1XM3O" role="3uHU7w">
+                                                              <node concept="2OqwBi" id="3nmMoI1XKXA" role="2Oq$k0">
+                                                                <node concept="37vLTw" id="3nmMoI1XKda" role="2Oq$k0">
+                                                                  <ref role="3cqZAo" node="2htE_P_MyAB" resolve="mySession" />
+                                                                </node>
+                                                                <node concept="liA8E" id="3nmMoI1XLyW" role="2OqNvi">
+                                                                  <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getErrorDescriptor" />
+                                                                </node>
+                                                              </node>
+                                                              <node concept="liA8E" id="3nmMoI1XMJo" role="2OqNvi">
+                                                                <ref role="37wK5l" node="2htE_P_MrC7" resolve="getMessage" />
+                                                              </node>
+                                                            </node>
+                                                          </node>
+                                                        </node>
+                                                      </node>
+                                                    </node>
+                                                  </node>
+                                                  <node concept="3clFbF" id="3nmMoI1XeL$" role="3cqZAp">
+                                                    <node concept="2OqwBi" id="3nmMoI1Xf_P" role="3clFbG">
+                                                      <node concept="37vLTw" id="SZAFJlryEn" role="2Oq$k0">
+                                                        <ref role="3cqZAo" node="2QIvLbalWyl" resolve="myErrorPanel" />
+                                                      </node>
+                                                      <node concept="liA8E" id="3nmMoI1Xh9N" role="2OqNvi">
+                                                        <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
+                                                        <node concept="2OqwBi" id="3nmMoI1Xt_k" role="37wK5m">
+                                                          <node concept="Xjq3P" id="3nmMoI1Xt_l" role="2Oq$k0" />
+                                                          <node concept="2OwXpG" id="3nmMoI1Xt_m" role="2OqNvi">
+                                                            <ref role="2Oxat5" node="3nmMoI1Xt_5" resolve="myErrorLabel" />
+                                                          </node>
+                                                        </node>
+                                                        <node concept="10M0yZ" id="3nmMoI1Xnmd" role="37wK5m">
+                                                          <ref role="3cqZAo" to="z60i:~BorderLayout.NORTH" resolve="NORTH" />
+                                                          <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
+                                                        </node>
+                                                      </node>
+                                                    </node>
+                                                  </node>
+                                                  <node concept="3clFbF" id="3nmMoI1WO91" role="3cqZAp">
+                                                    <node concept="2OqwBi" id="3nmMoI1WO92" role="3clFbG">
+                                                      <node concept="37vLTw" id="3nmMoI1WO93" role="2Oq$k0">
+                                                        <ref role="3cqZAo" node="PobQbOgkyz" resolve="myTask" />
+                                                      </node>
+                                                      <node concept="liA8E" id="3nmMoI1WO94" role="2OqNvi">
+                                                        <ref role="37wK5l" node="kFlbeYL0Kh" resolve="forceComplete" />
+                                                      </node>
+                                                    </node>
+                                                  </node>
+                                                  <node concept="3clFbF" id="3nmMoI1WO95" role="3cqZAp">
+                                                    <node concept="2OqwBi" id="3nmMoI1WO96" role="3clFbG">
+                                                      <node concept="37vLTw" id="3nmMoI1WO97" role="2Oq$k0">
+                                                        <ref role="3cqZAo" node="7rK8qWGDnm$" resolve="myProgress" />
+                                                      </node>
+                                                      <node concept="liA8E" id="3nmMoI1WO98" role="2OqNvi">
+                                                        <ref role="37wK5l" to="ot7:~AbstractProgressIndicatorExBase.setFraction(double):void" resolve="setFraction" />
+                                                        <node concept="3b6qkQ" id="3nmMoI1WO99" role="37wK5m">
+                                                          <property role="$nhwW" value="1.0" />
+                                                        </node>
+                                                      </node>
+                                                    </node>
+                                                  </node>
+                                                  <node concept="3clFbF" id="3nmMoI1WO9a" role="3cqZAp">
+                                                    <node concept="1rXfSq" id="3nmMoI1WO9b" role="3clFbG">
+                                                      <ref role="37wK5l" to="uxeh:~AbstractWizardStepEx.fireStateChanged():void" resolve="fireStateChanged" />
+                                                    </node>
+                                                  </node>
+                                                </node>
+                                              </node>
+                                              <node concept="2YIFZM" id="SZAFJlugSz" role="37wK5m">
+                                                <ref role="37wK5l" to="bd8o:~ModalityState.stateForComponent(java.awt.Component):com.intellij.openapi.application.ModalityState" resolve="stateForComponent" />
+                                                <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+                                                <node concept="37vLTw" id="SZAFJluhTM" role="37wK5m">
+                                                  <ref role="3cqZAo" node="2QIvLbalWyl" resolve="myErrorPanel" />
+                                                </node>
                                               </node>
                                             </node>
                                           </node>
                                         </node>
-                                        <node concept="3clFbF" id="kFlbeYL7rb" role="3cqZAp">
-                                          <node concept="1rXfSq" id="kFlbeYL7rc" role="3clFbG">
-                                            <ref role="37wK5l" to="uxeh:~AbstractWizardStepEx.fireStateChanged():void" resolve="fireStateChanged" />
-                                          </node>
-                                        </node>
-                                        <node concept="3zACq4" id="kFlbeYKM2g" role="3cqZAp" />
+                                        <node concept="3zACq4" id="3nmMoI1WO9c" role="3cqZAp" />
                                       </node>
-                                      <node concept="22lmx$" id="kFlbeYOc3A" role="3clFbw">
-                                        <node concept="3fqX7Q" id="kFlbeYOb0l" role="3uHU7B">
-                                          <node concept="2OqwBi" id="kFlbeYOb0n" role="3fr31v">
-                                            <node concept="2OqwBi" id="kFlbeYOb0o" role="2Oq$k0">
-                                              <node concept="37vLTw" id="kFlbeYOb0p" role="2Oq$k0">
-                                                <ref role="3cqZAo" node="2htE_P_MyAB" resolve="mySession" />
-                                              </node>
-                                              <node concept="liA8E" id="kFlbeYOb0q" role="2OqNvi">
-                                                <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getErrorDescriptor" />
-                                              </node>
+                                      <node concept="3fqX7Q" id="kFlbeYOb0l" role="3clFbw">
+                                        <node concept="2OqwBi" id="kFlbeYOb0n" role="3fr31v">
+                                          <node concept="2OqwBi" id="kFlbeYOb0o" role="2Oq$k0">
+                                            <node concept="37vLTw" id="kFlbeYOb0p" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="2htE_P_MyAB" resolve="mySession" />
                                             </node>
-                                            <node concept="liA8E" id="kFlbeYOb0r" role="2OqNvi">
-                                              <ref role="37wK5l" node="44NRCusZM2r" resolve="canIgnore" />
+                                            <node concept="liA8E" id="kFlbeYOb0q" role="2OqNvi">
+                                              <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getErrorDescriptor" />
                                             </node>
                                           </node>
+                                          <node concept="liA8E" id="kFlbeYOb0r" role="2OqNvi">
+                                            <ref role="37wK5l" node="44NRCusZM2r" resolve="canIgnore" />
+                                          </node>
                                         </node>
-                                        <node concept="3fqX7Q" id="kFlbeYNUxm" role="3uHU7w">
+                                      </node>
+                                      <node concept="3eNFk2" id="3nmMoI1WPbr" role="3eNLev">
+                                        <node concept="3clFbS" id="3nmMoI1WPbt" role="3eOfB_">
+                                          <node concept="3clFbF" id="kFlbeYL64t" role="3cqZAp">
+                                            <node concept="2OqwBi" id="kFlbeYL6$5" role="3clFbG">
+                                              <node concept="37vLTw" id="kFlbeYL64r" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="PobQbOgkyz" resolve="myTask" />
+                                              </node>
+                                              <node concept="liA8E" id="kFlbeYL6Xa" role="2OqNvi">
+                                                <ref role="37wK5l" node="kFlbeYL0Kh" resolve="forceComplete" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node concept="3clFbF" id="1zaRC58z5V5" role="3cqZAp">
+                                            <node concept="2OqwBi" id="1zaRC58z6A_" role="3clFbG">
+                                              <node concept="37vLTw" id="1zaRC58z5V3" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="7rK8qWGDnm$" resolve="myProgress" />
+                                              </node>
+                                              <node concept="liA8E" id="1zaRC58z7iW" role="2OqNvi">
+                                                <ref role="37wK5l" to="ot7:~AbstractProgressIndicatorExBase.setFraction(double):void" resolve="setFraction" />
+                                                <node concept="3b6qkQ" id="1zaRC58z8ky" role="37wK5m">
+                                                  <property role="$nhwW" value="1.0" />
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node concept="3clFbF" id="kFlbeYL7rb" role="3cqZAp">
+                                            <node concept="1rXfSq" id="kFlbeYL7rc" role="3clFbG">
+                                              <ref role="37wK5l" to="uxeh:~AbstractWizardStepEx.fireStateChanged():void" resolve="fireStateChanged" />
+                                            </node>
+                                          </node>
+                                          <node concept="3zACq4" id="kFlbeYKM2g" role="3cqZAp" />
+                                        </node>
+                                        <node concept="3fqX7Q" id="kFlbeYNUxm" role="3eO9$A">
                                           <node concept="1rXfSq" id="kFlbeYNUxo" role="3fr31v">
                                             <ref role="37wK5l" node="6dkZ8D0M1ac" resolve="showError" />
                                           </node>
@@ -913,8 +1119,13 @@
                             <node concept="37vLTw" id="kFlbeYNN9Y" role="37wK5m">
                               <ref role="3cqZAo" node="kFlbeYNDPe" resolve="project" />
                             </node>
-                            <node concept="37vLTw" id="1zaRC58wg2E" role="37wK5m">
-                              <ref role="3cqZAo" node="1zaRC58wg2$" resolve="msg" />
+                            <node concept="3cpWs3" id="3nmMoI1WHrq" role="37wK5m">
+                              <node concept="37vLTw" id="1zaRC58wg2E" role="3uHU7B">
+                                <ref role="3cqZAo" node="1zaRC58wg2$" resolve="msg" />
+                              </node>
+                              <node concept="Xl_RD" id="3nmMoI1WmRa" role="3uHU7w">
+                                <property role="Xl_RC" value="Continue migration?" />
+                              </node>
                             </node>
                             <node concept="Xl_RD" id="kFlbeYNNa4" role="37wK5m">
                               <property role="Xl_RC" value="Errors detected" />
@@ -1157,6 +1368,14 @@
               <ref role="37wK5l" to="ot7:~AbstractProgressIndicatorExBase.setIndeterminate(boolean):void" resolve="setIndeterminate" />
               <node concept="3clFbT" id="1zaRC58wHKz" role="37wK5m">
                 <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="3nmMoI1Y0js" role="3cqZAp">
+            <node concept="1rXfSq" id="3nmMoI1Y0jq" role="3clFbG">
+              <ref role="37wK5l" to="ot7:~AbstractProgressIndicatorExBase.setFraction(double):void" resolve="setFraction" />
+              <node concept="3b6qkQ" id="3nmMoI1Y0UK" role="37wK5m">
+                <property role="$nhwW" value="0.0" />
               </node>
             </node>
           </node>
@@ -3911,20 +4130,15 @@
         <node concept="3clFbF" id="ANqTy7mxfo" role="3cqZAp">
           <node concept="3cpWs3" id="ANqTy7mxfp" role="3clFbG">
             <node concept="3cpWs3" id="ANqTy7mxfq" role="3uHU7B">
-              <node concept="3cpWs3" id="ANqTy7mxfr" role="3uHU7B">
-                <node concept="Xl_RD" id="ANqTy7mxfs" role="3uHU7B">
-                  <property role="Xl_RC" value="Migration was not started.&lt;br&gt;" />
-                </node>
-                <node concept="Xl_RD" id="ANqTy7mxft" role="3uHU7w">
-                  <property role="Xl_RC" value="The project depends on some external modules that were not fully migrated.&lt;br&gt;&lt;br&gt;" />
-                </node>
+              <node concept="Xl_RD" id="ANqTy7mxft" role="3uHU7B">
+                <property role="Xl_RC" value="The project depends on external modules that were not fully migrated.&lt;br&gt;&lt;br&gt;" />
               </node>
               <node concept="Xl_RD" id="ANqTy7mxfu" role="3uHU7w">
-                <property role="Xl_RC" value="Problems will be shown in Model Checker tool after the project is loaded.&lt;br&gt;" />
+                <property role="Xl_RC" value="If the error is ignored, further migrations may be applied incorrectly.&lt;br&gt;" />
               </node>
             </node>
-            <node concept="Xl_RD" id="ANqTy7mxfv" role="3uHU7w">
-              <property role="Xl_RC" value="It's possible to invoke Migration Assistant at any time by selecting Tools-&gt;Run Migration Assistant from the main menu." />
+            <node concept="Xl_RD" id="3nmMoI1WmR8" role="3uHU7w">
+              <property role="Xl_RC" value="It is recommended to migrate dependent modules first.\n\n" />
             </node>
           </node>
         </node>
@@ -4062,20 +4276,15 @@
         <node concept="3clFbF" id="6Sxc5MixVtZ" role="3cqZAp">
           <node concept="3cpWs3" id="7u9mkj2dzmi" role="3clFbG">
             <node concept="3cpWs3" id="7u9mkj2dz6R" role="3uHU7B">
-              <node concept="3cpWs3" id="7u9mkj2dxpm" role="3uHU7B">
-                <node concept="Xl_RD" id="7u9mkj2dxps" role="3uHU7B">
-                  <property role="Xl_RC" value="Migration was not started.&lt;br&gt;" />
-                </node>
-                <node concept="Xl_RD" id="7u9mkj2dySe" role="3uHU7w">
-                  <property role="Xl_RC" value="Some migration scripts are missing or finished with errors.&lt;br&gt;&lt;br&gt;" />
-                </node>
+              <node concept="Xl_RD" id="7u9mkj2dySe" role="3uHU7B">
+                <property role="Xl_RC" value="Some migration scripts are missing.&lt;br&gt;&lt;br&gt;" />
               </node>
               <node concept="Xl_RD" id="7u9mkj2dzmo" role="3uHU7w">
-                <property role="Xl_RC" value="Problems will be shown in Model Checker tool after the project is loaded.&lt;br&gt;" />
+                <property role="Xl_RC" value="Missing scripts will be shown in ModelChecker after the migration wizard is closed.&lt;br&gt;&lt;br&gt;" />
               </node>
             </node>
             <node concept="Xl_RD" id="7u9mkj2dzmq" role="3uHU7w">
-              <property role="Xl_RC" value="It's possible to invoke Migration Assistant at any time by selecting Tools-&gt;Run Migration Assistant from the main menu." />
+              <property role="Xl_RC" value="Migration can't continue." />
             </node>
           </node>
         </node>
@@ -4531,71 +4740,13 @@
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3clFbS" id="4hH4xQo_MdL" role="3clF47">
-        <node concept="3clFbJ" id="4hH4xQo_MdM" role="3cqZAp">
-          <node concept="3clFbS" id="4hH4xQo_MdN" role="3clFbx">
-            <node concept="3cpWs6" id="4hH4xQo_MdO" role="3cqZAp">
-              <node concept="3cpWs3" id="4hH4xQo_MdP" role="3cqZAk">
-                <node concept="3cpWs3" id="4hH4xQo_MdQ" role="3uHU7B">
-                  <node concept="3cpWs3" id="4hH4xQo_MdR" role="3uHU7B">
-                    <node concept="3cpWs3" id="4hH4xQo_MdS" role="3uHU7B">
-                      <node concept="Xl_RD" id="4hH4xQo_MdT" role="3uHU7B">
-                        <property role="Xl_RC" value="Migration Assistant found some problems that prevent this project from being migrated.&lt;br&gt;&lt;br&gt;" />
-                      </node>
-                      <node concept="Xl_RD" id="4hH4xQo_MdU" role="3uHU7w">
-                        <property role="Xl_RC" value="Try running migrations after correcting your project and/or adding necessary libraries.&lt;br&gt;" />
-                      </node>
-                    </node>
-                    <node concept="Xl_RD" id="4hH4xQo_MdV" role="3uHU7w">
-                      <property role="Xl_RC" value="Migration Assistant will be started again on next project opening or it can be started " />
-                    </node>
-                  </node>
-                  <node concept="Xl_RD" id="4hH4xQo_MdW" role="3uHU7w">
-                    <property role="Xl_RC" value="manually by choosing Tools-&gt;Run Migration Assistant from the main menu.&lt;br&gt;&lt;br&gt;" />
-                  </node>
-                </node>
-                <node concept="Xl_RD" id="4hH4xQo_MdX" role="3uHU7w">
-                  <property role="Xl_RC" value="Problems will be shown in Model Checker tool when the project is loaded." />
-                </node>
-              </node>
+        <node concept="3cpWs6" id="3nmMoI1WJFC" role="3cqZAp">
+          <node concept="3cpWs3" id="3nmMoI1WF5e" role="3cqZAk">
+            <node concept="Xl_RD" id="3nmMoI1WF5f" role="3uHU7B">
+              <property role="Xl_RC" value="Migration Assistant found some problems in the project.&lt;br&gt;&lt;br&gt;" />
             </node>
-          </node>
-          <node concept="3fqX7Q" id="4hH4xQo_MdY" role="3clFbw">
-            <node concept="37vLTw" id="4hH4xQoF0N1" role="3fr31v">
-              <ref role="3cqZAo" node="4hH4xQoF06S" resolve="myCanIgnore" />
-            </node>
-          </node>
-          <node concept="9aQIb" id="4hH4xQo_Me0" role="9aQIa">
-            <node concept="3clFbS" id="4hH4xQo_Me1" role="9aQI4">
-              <node concept="3cpWs6" id="4hH4xQo_Me2" role="3cqZAp">
-                <node concept="3cpWs3" id="4hH4xQo_Me3" role="3cqZAk">
-                  <node concept="3cpWs3" id="4hH4xQo_Me4" role="3uHU7B">
-                    <node concept="3cpWs3" id="4hH4xQo_Me5" role="3uHU7B">
-                      <node concept="3cpWs3" id="4hH4xQo_Me6" role="3uHU7B">
-                        <node concept="Xl_RD" id="4hH4xQo_Me7" role="3uHU7w">
-                          <property role="Xl_RC" value="You can ignore all broken references and continue migration, but it can cause some migrations to run improperly.&lt;br&gt;" />
-                        </node>
-                        <node concept="3cpWs3" id="4hH4xQo_Me8" role="3uHU7B">
-                          <node concept="Xl_RD" id="4hH4xQo_Me9" role="3uHU7B">
-                            <property role="Xl_RC" value="Migration Assistant found some broken references that prevent this project from being migrated.&lt;br&gt;&lt;br&gt;" />
-                          </node>
-                          <node concept="Xl_RD" id="4hH4xQo_Mea" role="3uHU7w">
-                            <property role="Xl_RC" value="Try running migrations after correcting your project and/or adding necessary libraries.&lt;br&gt;" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="Xl_RD" id="4hH4xQo_Meb" role="3uHU7w">
-                        <property role="Xl_RC" value="Migration Assistant will be started again on next project opening or it can be started " />
-                      </node>
-                    </node>
-                    <node concept="Xl_RD" id="4hH4xQo_Mec" role="3uHU7w">
-                      <property role="Xl_RC" value="manually by choosing Tools-&gt;Run Migration Assistant from the main menu.&lt;br&gt;&lt;br&gt;" />
-                    </node>
-                  </node>
-                  <node concept="Xl_RD" id="4hH4xQo_Med" role="3uHU7w">
-                    <property role="Xl_RC" value="Problems will be shown in Model Checker tool when the project is loaded." />
-                  </node>
-                </node>
-              </node>
+            <node concept="Xl_RD" id="3nmMoI1WF5g" role="3uHU7w">
+              <property role="Xl_RC" value="It is recommended to fix problems before starting the migration.&lt;br&gt;" />
             </node>
           </node>
         </node>
@@ -5587,17 +5738,17 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4hH4xQoGSn5" role="3cqZAp">
-          <node concept="2OqwBi" id="4hH4xQoGTGT" role="3clFbG">
+        <node concept="3clFbF" id="3nmMoI1XWmL" role="3cqZAp">
+          <node concept="2OqwBi" id="3nmMoI1XWmM" role="3clFbG">
             <node concept="37vLTw" id="6dkZ8D0HxzQ" role="2Oq$k0">
               <ref role="3cqZAo" node="6dkZ8D0H4WB" resolve="myMonitor" />
             </node>
-            <node concept="liA8E" id="4hH4xQoGUcG" role="2OqNvi">
+            <node concept="liA8E" id="3nmMoI1XWmN" role="2OqNvi">
               <ref role="37wK5l" to="mk90:~ProgressMonitorBase.start(java.lang.String,int):void" resolve="start" />
-              <node concept="Xl_RD" id="4hH4xQoGUr7" role="37wK5m">
+              <node concept="Xl_RD" id="3nmMoI1XWmO" role="37wK5m">
                 <property role="Xl_RC" value="Migrating..." />
               </node>
-              <node concept="3cmrfG" id="4hH4xQoGUBi" role="37wK5m">
+              <node concept="3cmrfG" id="3nmMoI1XWmP" role="37wK5m">
                 <property role="3cmrfH" value="100" />
               </node>
             </node>

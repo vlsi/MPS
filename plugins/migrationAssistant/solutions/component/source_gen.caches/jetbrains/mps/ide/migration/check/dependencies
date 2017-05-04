@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.migration.check.BinaryModelProblem" file="BinaryModelProblem.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.migration.check.BrokenReferenceProblem" file="BrokenReferenceProblem.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

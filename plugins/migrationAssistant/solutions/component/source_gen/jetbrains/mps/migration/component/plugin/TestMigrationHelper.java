@@ -18,7 +18,9 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Collections;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
@@ -93,7 +95,13 @@ public class TestMigrationHelper {
         return (List<ScriptApplied>) ((List) Sequence.fromIterable(getModuleMigrationsApplied()).toListSequence());
       }
       public List<ScriptApplied> getMissingMigrations() {
-        return Collections.emptyList();
+        final Wrappers._T<SModule> module = new Wrappers._T<SModule>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            module.value = MPSModuleRepository.getInstance().getModules().iterator().next();
+          }
+        });
+        return ListSequence.fromListAndArray(new ArrayList<ScriptApplied>(), new ScriptApplied(module.value, ListSequence.fromList(myModuleMig).first().getReference()));
       }
       public int projectStepsCount(final boolean isCleanup) {
         return Sequence.fromIterable(getProjectMigrationsToApply()).where(new IWhereFilter<ProjectMigration>() {

@@ -600,28 +600,6 @@
       <unit id="4698343510313244766" at="9,0,24,0" name="jetbrains.mps.ide.migration.check.BrokenReferenceProblem" />
     </file>
   </root>
-  <root nodeRef="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)/5071438569185736035">
-    <file name="BinaryModelProblem.java">
-      <node id="5071438569185736036" at="9,0,10,0" concept="6" trace="myMessage" />
-      <node id="5071438569185736044" at="11,61,12,18" concept="16" />
-      <node id="5071438569185736046" at="12,18,13,24" concept="5" />
-      <node id="5071438569185736059" at="16,30,17,21" concept="11" />
-      <node id="5071438569185736066" at="20,31,21,27" concept="11" />
-      <node id="5071438569185736055" at="16,0,19,0" concept="9" trace="getMessage#()Ljava/lang/String;" />
-      <node id="5071438569185736062" at="20,0,23,0" concept="9" trace="getCategory#()Ljava/lang/String;" />
-      <node id="5071438569185736040" at="11,0,15,0" concept="3" trace="BinaryModelProblem#(Lorg/jetbrains/mps/openapi/module/SModule;Ljava/lang/String;)V" />
-      <scope id="5071438569185736058" at="16,30,17,21" />
-      <scope id="5071438569185736065" at="20,31,21,27" />
-      <scope id="5071438569185736043" at="11,61,13,24" />
-      <scope id="5071438569185736055" at="16,0,19,0" />
-      <scope id="5071438569185736062" at="20,0,23,0" />
-      <scope id="5071438569185736040" at="11,0,15,0">
-        <var name="message" id="5071438569185736052" />
-        <var name="module" id="5071438569185736050" />
-      </scope>
-      <unit id="5071438569185736035" at="8,0,24,0" name="jetbrains.mps.ide.migration.check.BinaryModelProblem" />
-    </file>
-  </root>
   <root nodeRef="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)/6423044698582254379">
     <file name="MigrationOutputUtil.java">
       <node id="6423044698582254379" at="30,0,31,0" concept="14" trace="LOG" />

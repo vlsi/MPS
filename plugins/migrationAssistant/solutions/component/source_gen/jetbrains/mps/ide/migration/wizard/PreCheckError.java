@@ -17,11 +17,7 @@ public class PreCheckError extends MigrationErrorDescriptor {
     myProject = p;
   }
   public String getMessage() {
-    if (!(myCanIgnore)) {
-      return "Migration Assistant found some problems that prevent this project from being migrated.<br><br>" + "Try running migrations after correcting your project and/or adding necessary libraries.<br>" + "Migration Assistant will be started again on next project opening or it can be started " + "manually by choosing Tools->Run Migration Assistant from the main menu.<br><br>" + "Problems will be shown in Model Checker tool when the project is loaded.";
-    } else {
-      return "Migration Assistant found some broken references that prevent this project from being migrated.<br><br>" + "Try running migrations after correcting your project and/or adding necessary libraries.<br>" + "You can ignore all broken references and continue migration, but it can cause some migrations to run improperly.<br>" + "Migration Assistant will be started again on next project opening or it can be started " + "manually by choosing Tools->Run Migration Assistant from the main menu.<br><br>" + "Problems will be shown in Model Checker tool when the project is loaded.";
-    }
+    return "Migration Assistant found some problems in the project.<br><br>" + "It is recommended to fix problems before starting the migration.<br>";
   }
   public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
     Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(myProject);

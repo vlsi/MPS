@@ -17,7 +17,7 @@ public class NotMigratedLibsError extends MigrationErrorDescriptor {
     this.errors = errors;
   }
   public String getMessage() {
-    return "Migration was not started.<br>" + "The project depends on some external modules that were not fully migrated.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "It's possible to invoke Migration Assistant at any time by selecting Tools->Run Migration Assistant from the main menu.";
+    return "The project depends on external modules that were not fully migrated.<br><br>" + "If the error is ignored, further migrations may be applied incorrectly.<br>" + "It is recommended to migrate dependent modules first.\n\n";
   }
   public boolean canIgnore() {
     return true;
