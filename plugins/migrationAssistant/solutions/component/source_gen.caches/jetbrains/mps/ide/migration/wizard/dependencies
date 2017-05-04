@@ -134,6 +134,7 @@
     <classNode dependClassName="com.intellij.history.LocalHistoryAction" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
+    <classNode dependClassName="com.intellij.openapi.wm.impl.status.InlineProgressIndicator" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Double" />

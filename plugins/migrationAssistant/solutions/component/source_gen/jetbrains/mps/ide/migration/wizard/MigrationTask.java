@@ -23,6 +23,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
@@ -204,7 +205,7 @@ public class MigrationTask {
           myCurrentChange = null;
         }
       }
-    }, ModalityState.any());
+    }, ModalityState.stateForComponent(((InlineProgressIndicator) myMonitor.getIndicator()).getComponent()));
 
     return noException.value;
   }

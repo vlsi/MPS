@@ -6889,9 +6889,29 @@
                   </node>
                 </node>
               </node>
-              <node concept="2YIFZM" id="1GIEUvuO_jh" role="37wK5m">
-                <ref role="37wK5l" to="bd8o:~ModalityState.any():com.intellij.openapi.application.ModalityState" resolve="any" />
+              <node concept="2YIFZM" id="7g_qkvFwigJ" role="37wK5m">
+                <ref role="37wK5l" to="bd8o:~ModalityState.stateForComponent(java.awt.Component):com.intellij.openapi.application.ModalityState" resolve="stateForComponent" />
                 <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+                <node concept="2OqwBi" id="7g_qkvFwjqS" role="37wK5m">
+                  <node concept="1eOMI4" id="7g_qkvFwk2l" role="2Oq$k0">
+                    <node concept="10QFUN" id="7g_qkvFwk2k" role="1eOMHV">
+                      <node concept="2OqwBi" id="7g_qkvFwk2h" role="10QFUP">
+                        <node concept="37vLTw" id="7g_qkvFwk2i" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6dkZ8D0H4WB" resolve="myMonitor" />
+                        </node>
+                        <node concept="liA8E" id="7g_qkvFwk2j" role="2OqNvi">
+                          <ref role="37wK5l" to="mk8z:~ProgressMonitorAdapter.getIndicator():com.intellij.openapi.progress.ProgressIndicator" resolve="getIndicator" />
+                        </node>
+                      </node>
+                      <node concept="3uibUv" id="7g_qkvFwkke" role="10QFUM">
+                        <ref role="3uigEE" to="nd9s:~InlineProgressIndicator" resolve="InlineProgressIndicator" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="7g_qkvFwl5b" role="2OqNvi">
+                    <ref role="37wK5l" to="nd9s:~InlineProgressIndicator.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
