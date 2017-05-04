@@ -119,19 +119,14 @@ public class MigrationTask {
       result(myMonitor, new MigrationExceptionError(), "Exception while running migration");
       return true;
     }
-    if (!((runLanguageMigrations(myMonitor.subTask(30))))) {
+    if (!((runLanguageMigrations(myMonitor.subTask(40))))) {
       result(myMonitor, new MigrationExceptionError(), "Exception while running migration");
       return true;
     }
     addGlobalLabel(mySession.getProject(), FINISHED);
 
-    if (!((checkProject(myMonitor.subTask(10))))) {
-      result(myMonitor, new PostCheckError(mySession.getProject(), myWereRun, true), "Problems are detected after executing migrations.");
-      return true;
-    }
-
     // todo move from here to migration annotations 
-    if (!((findNotMigrated(myMonitor.subTask(5))))) {
+    if (findNotMigrated(myMonitor.subTask(5))) {
       result(myMonitor, new PostCheckError(mySession.getProject(), myWereRun, false), "Problems are detected after executing migrations.");
       return true;
     }
@@ -367,24 +362,6 @@ public class MigrationTask {
 
     m.done();
     return success;
-  }
-
-  private boolean checkProject(final ProgressMonitor m) {
-    final Wrappers._boolean haveBadCode = new Wrappers._boolean();
-    final Project mpsProject = mySession.getProject();
-    mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
-        m.start("Checking models...", Sequence.fromIterable(modules).count());
-
-        haveBadCode.value = MigrationCheckUtil.haveProblems(modules, frac2inc(Sequence.fromIterable(modules).count(), new _FunctionTypes._void_P1_E0<Integer>() {
-          public void invoke(Integer processed) {
-            m.advance(processed);
-          }
-        }));
-      }
-    });
-    return haveBadCode.value;
   }
 
   private boolean findNotMigrated(final ProgressMonitor m) {
