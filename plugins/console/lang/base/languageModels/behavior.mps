@@ -6,7 +6,6 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="8" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -21,7 +20,6 @@
     <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
     <import index="3qmy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.classloading(MPS.Core/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
@@ -255,7 +253,7 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -272,6 +270,7 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
       <concept id="1181952871644" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts" flags="nn" index="LSoRf">
         <child id="1182506816063" name="smodel" index="1iTxcG" />
       </concept>
@@ -515,15 +514,11 @@
                                           <node concept="Xl_RD" id="3ZgZ1njTfOt" role="3uHU7w">
                                             <property role="Xl_RC" value=".Main" />
                                           </node>
-                                          <node concept="2OqwBi" id="3ZgZ1njTfOu" role="3uHU7B">
-                                            <node concept="liA8E" id="3ZgZ1njTfOv" role="2OqNvi">
-                                              <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+                                          <node concept="2OqwBi" id="4tEWdMGBqr2" role="3uHU7B">
+                                            <node concept="37vLTw" id="4tEWdMGBpJd" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="1BJjlnrBHXK" resolve="model" />
                                             </node>
-                                            <node concept="2JrnkZ" id="3ZgZ1njTfOw" role="2Oq$k0">
-                                              <node concept="37vLTw" id="3ZgZ1njTgw_" role="2JrQYb">
-                                                <ref role="3cqZAo" node="1BJjlnrBHXK" resolve="model" />
-                                              </node>
-                                            </node>
+                                            <node concept="LkI2h" id="4tEWdMGBqW_" role="2OqNvi" />
                                           </node>
                                         </node>
                                         <node concept="17QB3L" id="3ZgZ1njTfOA" role="1tU5fm" />
@@ -711,6 +706,16 @@
                                                       </node>
                                                     </node>
                                                   </node>
+                                                </node>
+                                              </node>
+                                              <node concept="2OqwBi" id="4tEWdMGBhqE" role="ukAjM">
+                                                <node concept="2JrnkZ" id="4tEWdMGBfO6" role="2Oq$k0">
+                                                  <node concept="37vLTw" id="4tEWdMGBdIH" role="2JrQYb">
+                                                    <ref role="3cqZAo" node="1BJjlnrBHXK" resolve="model" />
+                                                  </node>
+                                                </node>
+                                                <node concept="liA8E" id="4tEWdMGBi3X" role="2OqNvi">
+                                                  <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                                                 </node>
                                               </node>
                                             </node>

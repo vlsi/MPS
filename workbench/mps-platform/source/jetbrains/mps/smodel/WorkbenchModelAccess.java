@@ -306,16 +306,6 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     runWriteActionInCommand(r, name, groupId, confirmUndo, project);
   }
 
-  @Override
-  @Deprecated
-  public void runWriteActionInCommand(Runnable r) {
-    runWriteActionInCommand(r, CurrentProjectAccessUtil.getMPSProjectFromUI());
-  }
-
-  private void runWriteActionInCommand(Runnable r, Project project) {
-    executeCommand(r, project);
-  }
-
   private void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
     CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project),
                                                   new CommandRunnable(r, project), name, groupId,

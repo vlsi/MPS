@@ -374,7 +374,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteToggleAction" />
@@ -403,6 +402,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteToggleAction" />
   </dependency>
   <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyMainActionGroup" file="MyMainActionGroup.java">

@@ -15,6 +15,7 @@ import jetbrains.jetpad.projectional.view.ViewEventHandler;
 import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -57,11 +58,12 @@ public class MyConnectorCreationAction implements PaletteToggleAction {
             return;
           }
           myDiagramCell.hideConnectionDragFeedback();
+          final SRepository repo = myDiagramCell.getContext().getRepository();
           final DiagramCell.ConnectionInfo connectionInfo = myDiagramCell.getConnectionInfo();
           final Wrappers._boolean result = new Wrappers._boolean(false);
-          ModelAccess.instance().runReadAction(new Runnable() {
+          repo.getModelAccess().runReadAction(new Runnable() {
             public void run() {
-              if (connectionInfo.isValid() && SNodeOperations.isInstanceOf(connectionInfo.getFromNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && connectionInfo.getFromId() instanceof SNode && SNodeOperations.isInstanceOf(connectionInfo.getToNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && connectionInfo.getToId() instanceof SNode && eq_lbjacb_a0a0a0a0a0a4a0a0b0a0a0a0a5(SNodeOperations.getContainingLink(((SNode) connectionInfo.getToId())), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x20a804e2ec410486L, "inMetaPorts"))) {
+              if (connectionInfo.isValid() && SNodeOperations.isInstanceOf(connectionInfo.getFromNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && connectionInfo.getFromId() instanceof SNode && SNodeOperations.isInstanceOf(connectionInfo.getToNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && connectionInfo.getToId() instanceof SNode && eq_lbjacb_a0a0a0a0a0a5a0a0b0a0a0a0a5(SNodeOperations.getContainingLink(((SNode) connectionInfo.getToId())), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x20a804e2ec410486L, "inMetaPorts"))) {
                 result.value = true;
               }
             }
@@ -69,7 +71,7 @@ public class MyConnectorCreationAction implements PaletteToggleAction {
           if (!(result.value)) {
             return;
           }
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          repo.getModelAccess().executeCommand(new Runnable() {
             public void run() {
               SNode connectorInstance = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec441516L, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance"));
               SLinkOperations.setTarget(connectorInstance, MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec441516L, 0x49664459198225c0L, "source"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x4966445919822461L, "jetbrains.mps.testHybridEditor.structure.ConnectorEndInstance")));
@@ -105,7 +107,7 @@ public class MyConnectorCreationAction implements PaletteToggleAction {
     }
     return false;
   }
-  private static boolean eq_lbjacb_a0a0a0a0a0a4a0a0b0a0a0a0a5(Object a, Object b) {
+  private static boolean eq_lbjacb_a0a0a0a0a0a5a0a0b0a0a0a0a5(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

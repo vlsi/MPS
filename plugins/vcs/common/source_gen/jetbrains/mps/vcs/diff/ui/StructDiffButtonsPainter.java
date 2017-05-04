@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditor;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
@@ -68,7 +67,7 @@ public class StructDiffButtonsPainter extends ButtonsPainter {
     }
     @Override
     public void performAction() {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      getEditorComponent().getEditorContext().getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           ModelChange.rollbackChanges(getChangeGroup().getChanges());
         }
@@ -81,7 +80,7 @@ public class StructDiffButtonsPainter extends ButtonsPainter {
     }
     @Override
     public void performAction() {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      getEditorComponent().getEditorContext().getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           List<ModelChange> changes = getChangeGroup().getChanges();
           final SModel model = ListSequence.fromList(changes).first().getChangeSet().getOldModel();

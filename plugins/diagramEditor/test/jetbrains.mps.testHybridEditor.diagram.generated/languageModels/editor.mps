@@ -23,7 +23,8 @@
     <import index="ia57" ref="r:fc9c4864-4036-4c2e-9220-1fcd2b04815c(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi)" />
     <import index="jqfx" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.projectional.view(jetbrains.jetpad/)" />
     <import index="sn11" ref="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)" />
-    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="lgza" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.model.property(jetbrains.jetpad/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -221,6 +222,7 @@
     <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
       <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
       <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
+        <child id="1423104411234567454" name="repo" index="ukAjM" />
         <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
       </concept>
       <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
@@ -1313,6 +1315,19 @@
               </node>
             </node>
           </node>
+          <node concept="2OqwBi" id="4tEWdMGAEOs" role="ukAjM">
+            <node concept="2OqwBi" id="4tEWdMGAEOt" role="2Oq$k0">
+              <node concept="37vLTw" id="4tEWdMGAEOu" role="2Oq$k0">
+                <ref role="3cqZAo" node="BmcO$nNjor" resolve="myDiagramCell" />
+              </node>
+              <node concept="liA8E" id="4tEWdMGAEOv" role="2OqNvi">
+                <ref role="37wK5l" to="g51k:~EditorCell_Basic.getContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getContext" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4tEWdMGAEOw" role="2OqNvi">
+              <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="37vLTG" id="BmcO$nNoI9" role="3clF46">
@@ -1542,6 +1557,19 @@
                                     </node>
                                   </node>
                                 </node>
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="4tEWdMGACuF" role="ukAjM">
+                              <node concept="2OqwBi" id="4tEWdMGA_Hf" role="2Oq$k0">
+                                <node concept="37vLTw" id="4tEWdMGA$8p" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="BmcO$nNjor" resolve="myDiagramCell" />
+                                </node>
+                                <node concept="liA8E" id="4tEWdMGABAl" role="2OqNvi">
+                                  <ref role="37wK5l" to="g51k:~EditorCell_Basic.getContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getContext" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="4tEWdMGAE19" role="2OqNvi">
+                                <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                               </node>
                             </node>
                           </node>
@@ -2204,6 +2232,28 @@
                                     </node>
                                   </node>
                                 </node>
+                                <node concept="3cpWs8" id="4tEWdMGA2yR" role="3cqZAp">
+                                  <node concept="3cpWsn" id="4tEWdMGA2yS" role="3cpWs9">
+                                    <property role="TrG5h" value="repo" />
+                                    <property role="3TUv4t" value="true" />
+                                    <node concept="3uibUv" id="4tEWdMGA2yQ" role="1tU5fm">
+                                      <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+                                    </node>
+                                    <node concept="2OqwBi" id="4tEWdMGA2yT" role="33vP2m">
+                                      <node concept="2OqwBi" id="4tEWdMGA2yU" role="2Oq$k0">
+                                        <node concept="37vLTw" id="4tEWdMGA2yV" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="75MLXfcuTeN" resolve="myDiagramCell" />
+                                        </node>
+                                        <node concept="liA8E" id="4tEWdMGA2yW" role="2OqNvi">
+                                          <ref role="37wK5l" to="g51k:~EditorCell_Basic.getContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getContext" />
+                                        </node>
+                                      </node>
+                                      <node concept="liA8E" id="4tEWdMGA2yX" role="2OqNvi">
+                                        <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
                                 <node concept="3cpWs8" id="6P_LPfF3SSk" role="3cqZAp">
                                   <node concept="3cpWsn" id="6P_LPfF3SSl" role="3cpWs9">
                                     <property role="TrG5h" value="connectionInfo" />
@@ -2339,6 +2389,9 @@
                                         </node>
                                       </node>
                                     </node>
+                                  </node>
+                                  <node concept="37vLTw" id="4tEWdMGA581" role="ukAjM">
+                                    <ref role="3cqZAo" node="4tEWdMGA2yS" resolve="repo" />
                                   </node>
                                 </node>
                                 <node concept="3clFbJ" id="75MLXfc$2nw" role="3cqZAp">
@@ -2561,6 +2614,9 @@
                                         </node>
                                       </node>
                                     </node>
+                                  </node>
+                                  <node concept="37vLTw" id="4tEWdMGA5zp" role="ukAjM">
+                                    <ref role="3cqZAo" node="4tEWdMGA2yS" resolve="repo" />
                                   </node>
                                 </node>
                                 <node concept="3clFbF" id="3NXJmdrx6zB" role="3cqZAp">

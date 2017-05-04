@@ -250,7 +250,7 @@
       </scope>
       <unit id="4757360427194674042" at="145,64,149,17" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$3$1" />
       <unit id="4213817562888239050" at="165,56,170,5" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$4" />
-      <unit id="2034046503373010383" at="155,59,161,9" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$3$2" />
+      <unit id="2034046503373010383" at="155,50,161,9" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$3$2" />
       <unit id="4093906047203395741" at="76,42,85,5" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$1" />
       <unit id="4093906047203395595" at="200,0,210,0" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$MyTaskQueue" />
       <unit id="4213817562888239088" at="99,46,121,5" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$2" />

@@ -15,7 +15,6 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import java.util.Arrays;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditor;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class DiffButtonsPainter extends ButtonsPainter {
   private IHighlighter myDiffPane;
@@ -58,7 +57,7 @@ public class DiffButtonsPainter extends ButtonsPainter {
     }
     @Override
     public void performAction() {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      getEditorComponent().getEditorContext().getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           ModelChange.rollbackChanges(getChangeGroup().getChanges());
           myDiffPane.rehighlight();

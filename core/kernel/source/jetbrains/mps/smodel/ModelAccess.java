@@ -118,7 +118,8 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
 
   @Override
   public void executeCommand(Runnable r) {
-    throw new UnsupportedOperationException();
+    // ExecuteCommandStatement with repo == null generates into executeCommand(Runnable)
+    executeCommand(r, null);
   }
 
   @Override

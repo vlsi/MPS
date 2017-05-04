@@ -56,6 +56,7 @@ public abstract class SModuleBase implements SModule {
   public final SRepository getRepository() {
     SRepository repository = myRepository;
     if (repository != null) {
+      // XXX it's odd model.getRepository doesn't require model read, while model.getModule().getRepository() does.
       repository.getModelAccess().checkReadAccess();
     }
     return repository;

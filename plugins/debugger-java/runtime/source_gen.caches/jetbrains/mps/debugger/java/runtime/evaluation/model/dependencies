@@ -62,7 +62,6 @@
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelDependencyUpdate" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelImports" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />

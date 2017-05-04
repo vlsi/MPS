@@ -17,9 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.concurrent.ConcurrentMap;
 
@@ -28,42 +26,35 @@ import java.util.concurrent.ConcurrentMap;
  */
 public interface ModelCommandExecutor {
 
-  boolean canRead();
+  boolean canRead(); // == openapi.ModelAccess
 
-  void checkReadAccess();
+  void checkReadAccess(); // == openapi.ModelAccess
 
-  boolean canWrite();
+  boolean canWrite(); // == openapi.ModelAccess
 
-  void checkWriteAccess();
+  void checkWriteAccess(); // == openapi.ModelAccess
 
   // read
 
-  void runReadAction(Runnable r);
+  void runReadAction(Runnable r); // == openapi.ModelAccess
 
-  <T> T runReadAction(Computable<T> c);
+  <T> T runReadAction(Computable<T> c); // extends openapi.ModelAccess with Computable support
 
   /**
    * Run read asynchronously, in EDT thread
    */
-  void runReadInEDT(Runnable r);
+  void runReadInEDT(Runnable r); // == openapi.ModelAccess
 
   // write
 
-  void runWriteAction(Runnable r);
+  void runWriteAction(Runnable r); // == openapi.ModelAccess
 
-  <T> T runWriteAction(Computable<T> c);
+  <T> T runWriteAction(Computable<T> c); // extends openapi.ModelAccess with Computable support
 
   /**
    * Run write asynchronously, in EDT thread
    */
-  void runWriteInEDT(Runnable r);
-
-  /**
-   * use runWriteActionInCommand(Runnable r, Project project)
-   */
-  @Deprecated
-  // 18 uses in MPS, 0 in mbeddr
-  void runWriteActionInCommand(Runnable r);
+  void runWriteInEDT(Runnable r); // == openapi.ModelAccess
 
   /**
    * Enables canRead() without actually acquiring the read lock (screw you, ReadWriteLock!).
@@ -86,15 +77,9 @@ public interface ModelCommandExecutor {
   @ToRemove(version = 3.4)
   boolean isInEDT();
 
-  public interface RunnableWithProgress {
+  void runUndoTransparentCommand(Runnable r); // openapi.ModelAccess#executeUndoTransparentCommand
 
-    void run(@NotNull ProgressMonitor monitor);
-
-  }
-
-  void runUndoTransparentCommand(Runnable r);
-
-  boolean isInsideCommand();
+  boolean isInsideCommand(); // openapi.ModelAccess#isCommandAction
 
   /**
    * Returns true iff the locking and the operation were successful.
@@ -106,7 +91,7 @@ public interface ModelCommandExecutor {
    * @param r
    * @return
    */
-  boolean tryRead(Runnable r);
+  boolean tryRead(Runnable r); // extends openapi.ModelAccess with optional read lock
 
   /**
    * Returns the result of the computation, null if locking was unsuccessful.
@@ -115,7 +100,7 @@ public interface ModelCommandExecutor {
    * @param <T>
    * @return
    */
-  <T> T tryRead(Computable<T> c);
+  <T> T tryRead(Computable<T> c); // extends openapi.ModelAccess with optional read lock and Computable
 
   /**
    * @deprecated with no contract, what could justify its use?
@@ -124,6 +109,10 @@ public interface ModelCommandExecutor {
   @ToRemove(version = 3.3)
   void flushEventQueue();
 
+  /**
+   * @deprecated see {@code jetbrains.mps.smodel.ModelAccess#getRepositoryStateCache(String)}
+   */
+  @Deprecated
   @Nullable
   <K, V> ConcurrentMap<K, V> getRepositoryStateCache(String repositoryKey);
 }

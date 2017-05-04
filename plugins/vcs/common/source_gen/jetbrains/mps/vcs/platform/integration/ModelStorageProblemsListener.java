@@ -36,7 +36,6 @@ import java.io.File;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import com.intellij.openapi.application.ModalityState;
@@ -184,6 +183,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
           backupFile.delete();
           return;
         }
+        assert model.getRepository() != null;
 
         final boolean contentConflict = file.exists();
         boolean needSave = ReloadManager.getInstance().computeNoReload(new Computable<Boolean>() {
@@ -196,7 +196,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
           }
         });
         if (needSave) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          model.getRepository().getModelAccess().executeCommand(new Runnable() {
             public void run() {
               model.updateTimestamp();
               model.save();

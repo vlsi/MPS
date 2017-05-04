@@ -4120,30 +4120,20 @@
       <node concept="3cqZAl" id="hASWOEoLLi" role="3clF45" />
       <node concept="3Tm6S6" id="hASWOEoLLj" role="1B3o_S" />
       <node concept="3clFbS" id="hASWOEoLLk" role="3clF47">
-        <node concept="3clFbF" id="1KUoCiqb7CF" role="3cqZAp">
-          <node concept="2OqwBi" id="1KUoCiqb7CG" role="3clFbG">
-            <node concept="2YIFZM" id="1KUoCiqb7CH" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-            </node>
-            <node concept="liA8E" id="1KUoCiqb7CJ" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteActionInCommand(java.lang.Runnable):void" resolve="runWriteActionInCommand" />
-              <node concept="1bVj0M" id="1KUoCiqb7CK" role="37wK5m">
-                <node concept="3clFbS" id="1KUoCiqb7CL" role="1bW5cS">
-                  <node concept="3clFbF" id="1KUoCiqb7CM" role="3cqZAp">
-                    <node concept="1rXfSq" id="4hiugqyz8nm" role="3clFbG">
-                      <ref role="37wK5l" node="hASWOEoLLs" resolve="fillVariables" />
-                      <node concept="1PxgMI" id="1KUoCiqb7CO" role="37wK5m">
-                        <node concept="1rXfSq" id="1KUoCiqb7CP" role="1m5AlR">
-                          <ref role="37wK5l" to="i1lu:IYmOvnJt$W" resolve="getNode" />
-                        </node>
-                        <node concept="chp4Y" id="714IaVdH1wd" role="3oSUPX">
-                          <ref role="cht4Q" to="8sls:5f51wLF6d$_" resolve="EvaluatorConcept" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
+        <node concept="3SKdUt" id="4tEWdMGCp8O" role="3cqZAp">
+          <node concept="3SKdUq" id="4tEWdMGCp8Q" role="3SKWNk">
+            <property role="3SKdUp" value="2 uses. setUpNode() is invoked within command; updateState runs new command itself" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="1KUoCiqb7CM" role="3cqZAp">
+          <node concept="1rXfSq" id="4hiugqyz8nm" role="3clFbG">
+            <ref role="37wK5l" node="hASWOEoLLs" resolve="fillVariables" />
+            <node concept="1PxgMI" id="1KUoCiqb7CO" role="37wK5m">
+              <node concept="1rXfSq" id="1KUoCiqb7CP" role="1m5AlR">
+                <ref role="37wK5l" to="i1lu:IYmOvnJt$W" resolve="getNode" />
+              </node>
+              <node concept="chp4Y" id="714IaVdH1wd" role="3oSUPX">
+                <ref role="cht4Q" to="8sls:5f51wLF6d$_" resolve="EvaluatorConcept" />
               </node>
             </node>
           </node>
@@ -4596,14 +4586,33 @@
         </node>
         <node concept="3clFbJ" id="hASWOEoLOt" role="3cqZAp">
           <node concept="3clFbS" id="hASWOEoLOu" role="3clFbx">
+            <node concept="3SKdUt" id="4tEWdMGCsDP" role="3cqZAp">
+              <node concept="3SKdUq" id="4tEWdMGCsDR" role="3SKWNk">
+                <property role="3SKdUp" value="createVars used to execute command (runWriteActionInCommand), hence I assume (a) we've got proper thread here" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4tEWdMGCsKZ" role="3cqZAp">
+              <node concept="3SKdUq" id="4tEWdMGCsL1" role="3SKWNk">
+                <property role="3SKdUp" value="(b) there's need to run inside a command. Although it looks undoTransparent (the one that doesn't record any changes)" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4tEWdMGCsSd" role="3cqZAp">
+              <node concept="3SKdUq" id="4tEWdMGCsSf" role="3SKWNk">
+                <property role="3SKdUp" value="is suited much better here." />
+              </node>
+            </node>
             <node concept="3clFbF" id="1KUoCiqb5Bt" role="3cqZAp">
               <node concept="2OqwBi" id="1KUoCiqb5Bu" role="3clFbG">
-                <node concept="2YIFZM" id="1KUoCiqb5Bv" role="2Oq$k0">
-                  <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                  <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+                <node concept="2OqwBi" id="4tEWdMGCr9U" role="2Oq$k0">
+                  <node concept="37vLTw" id="4tEWdMGCs2z" role="2Oq$k0">
+                    <ref role="3cqZAo" to="i1lu:IYmOvnMT_e" resolve="myDebuggerRepository" />
+                  </node>
+                  <node concept="liA8E" id="4tEWdMGCssS" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                  </node>
                 </node>
                 <node concept="liA8E" id="1KUoCiqb5Bw" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+                  <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
                   <node concept="1bVj0M" id="1KUoCiqb5Bx" role="37wK5m">
                     <node concept="3clFbS" id="1KUoCiqb5By" role="1bW5cS">
                       <node concept="3clFbF" id="1KUoCiqb5Bz" role="3cqZAp">

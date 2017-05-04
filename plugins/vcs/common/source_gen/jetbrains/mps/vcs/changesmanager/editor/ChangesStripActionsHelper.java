@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
@@ -77,7 +76,7 @@ public class ChangesStripActionsHelper {
     if (changes == null) {
       return;
     }
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         final SModel model = ListSequence.fromList(changes).first().getChangeSet().getNewModel();
         final NodeCopier nc = new NodeCopier(model);

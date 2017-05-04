@@ -26,9 +26,9 @@ import jetbrains.mps.console.tool.BaseConsoleTab;
 import jetbrains.mps.console.tool.ConsoleUtil;
 import javax.swing.SwingUtilities;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
-import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Level;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -59,7 +59,7 @@ public final class GeneratedCommand__BehaviorDescriptor extends BaseBHDescriptor
           public void run() {
             try {
               SModule module = model.getModule();
-              String name = model.getModelName() + ".Main";
+              String name = SModelOperations.getModelName(model) + ".Main";
               Class<?> aClass = ClassLoaderManager.getInstance().getClass(module, name);
               if (aClass == null) {
                 throw new ClassNotFoundException("No class " + name + " for module " + module);
@@ -68,7 +68,7 @@ public final class GeneratedCommand__BehaviorDescriptor extends BaseBHDescriptor
               for (final Method method : methods) {
                 if (method.getName().equals("execute")) {
                   beforeCallback.run();
-                  ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                  model.getRepository().getModelAccess().executeCommand(new Runnable() {
                     public void run() {
                       try {
                         method.invoke(null, new Object[]{context, console});

@@ -24,135 +24,135 @@
   </root>
   <root nodeRef="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)/3425763466219069294">
     <file name="StructDiffButtonsPainter.java">
-      <node id="3425763466219069306" at="26,106,27,49" concept="14" />
-      <node id="3425763466219069331" at="32,44,33,45" concept="9" />
-      <node id="3425763466219071112" at="37,44,38,48" concept="9" />
-      <node id="3425763466219275162" at="40,7,41,95" concept="8" />
-      <node id="3425763466219277550" at="43,25,44,151" concept="3" />
-      <node id="3425763466219167302" at="46,22,47,146" concept="3" />
-      <node id="3425763466219069345" at="50,22,51,147" concept="3" />
-      <node id="3425763466219268305" at="53,25,54,145" concept="3" />
-      <node id="3425763466219290378" at="56,5,57,18" concept="9" />
-      <node id="3425763466219069399" at="59,127,60,79" concept="8" />
-      <node id="3425763466219069406" at="60,79,61,104" concept="8" />
-      <node id="3425763466219069414" at="61,104,62,78" concept="3" />
-      <node id="3425763466219069421" at="62,78,63,19" concept="9" />
-      <node id="3425763466219069441" at="66,91,67,43" concept="14" />
-      <node id="3425763466219069463" at="72,27,73,69" concept="3" />
-      <node id="3425763466219088043" at="79,90,80,43" concept="14" />
-      <node id="3425763466219104053" at="85,27,86,68" concept="8" />
-      <node id="317498100166503621" at="86,68,87,99" concept="8" />
-      <node id="317498100166503631" at="87,99,88,54" concept="8" />
-      <node id="3425763466219116876" at="90,51,91,27" concept="3" />
-      <node id="3425763466219096602" at="95,47,96,34" concept="3" />
-      <node id="3425763466219150337" at="98,13,99,30" concept="3" />
-      <node id="3425763466219069298" at="26,0,29,0" concept="2" trace="StructDiffButtonsPainter#(Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;)V" />
-      <node id="3425763466219069329" at="32,0,35,0" concept="7" trace="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-      <node id="3425763466219071110" at="37,0,40,0" concept="7" trace="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-      <node id="3425763466219069359" at="42,28,45,7" concept="6" />
-      <node id="3425763466219083131" at="45,7,48,7" concept="6" />
-      <node id="3425763466219069343" at="49,12,52,7" concept="6" />
-      <node id="3425763466219083453" at="52,7,55,7" concept="6" />
-      <node id="3425763466219069431" at="66,0,69,0" concept="2" trace="MyButtonRevert#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;IILjava/lang/String;Ljavax/swing/Icon;)V" />
-      <node id="3425763466219069461" at="72,0,75,0" concept="7" trace="run#()V" />
-      <node id="3425763466219088033" at="79,0,82,0" concept="2" trace="MyButtonApply#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;IILjava/lang/String;Ljavax/swing/Icon;)V" />
-      <node id="3425763466219116874" at="90,0,93,0" concept="7" trace="visit#(Ljetbrains/mps/vcs/diff/changes/NodeGroupChange;)V" />
-      <node id="3425763466219094091" at="95,0,98,0" concept="7" trace="visit#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
-      <node id="3425763466219069322" at="30,101,35,7" concept="8" />
-      <node id="3425763466219071103" at="35,7,40,7" concept="8" />
-      <node id="3425763466219069457" at="70,33,75,9" concept="3" />
-      <node id="3425763466219116870" at="88,54,93,13" concept="3" />
-      <node id="3425763466219091490" at="93,13,98,13" concept="3" />
-      <node id="3425763466219069394" at="59,0,65,0" concept="13" trace="addTo#(Ljetbrains/mps/vcs/diff/ui/common/DiffEditor;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;Z)Ljetbrains/mps/vcs/diff/ui/StructDiffButtonsPainter;" />
-      <node id="3425763466219069341" at="49,10,56,5" concept="1" />
-      <node id="3425763466219069453" at="69,0,77,0" concept="7" trace="performAction#()V" />
-      <node id="3425763466219069340" at="41,95,56,5" concept="6" />
-      <node id="3425763466219088063" at="85,0,101,0" concept="7" trace="run#()V" />
-      <node id="3425763466219088059" at="83,33,101,9" concept="3" />
-      <node id="3425763466219088055" at="82,0,103,0" concept="7" trace="performAction#()V" />
-      <node id="3425763466219069316" at="29,0,59,0" concept="7" trace="createButtonsForChangeGroup#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;I)Ljava/lang/Iterable;" />
-      <scope id="3425763466219069305" at="26,106,27,49" />
-      <scope id="3425763466219069330" at="32,44,33,45" />
-      <scope id="3425763466219071111" at="37,44,38,48" />
-      <scope id="3425763466219069362" at="43,25,44,151" />
-      <scope id="3425763466219083133" at="46,22,47,146" />
-      <scope id="3425763466219069344" at="50,22,51,147" />
-      <scope id="3425763466219083455" at="53,25,54,145" />
-      <scope id="3425763466219069440" at="66,91,67,43" />
-      <scope id="3425763466219069462" at="72,27,73,69" />
-      <scope id="3425763466219088042" at="79,90,80,43" />
-      <scope id="3425763466219116875" at="90,51,91,27" />
-      <scope id="3425763466219094092" at="95,47,96,34" />
-      <scope id="3425763466219069298" at="26,0,29,0">
+      <node id="3425763466219069306" at="25,106,26,49" concept="14" />
+      <node id="3425763466219069331" at="31,44,32,45" concept="9" />
+      <node id="3425763466219071112" at="36,44,37,48" concept="9" />
+      <node id="3425763466219275162" at="39,7,40,95" concept="8" />
+      <node id="3425763466219277550" at="42,25,43,151" concept="3" />
+      <node id="3425763466219167302" at="45,22,46,146" concept="3" />
+      <node id="3425763466219069345" at="49,22,50,147" concept="3" />
+      <node id="3425763466219268305" at="52,25,53,145" concept="3" />
+      <node id="3425763466219290378" at="55,5,56,18" concept="9" />
+      <node id="3425763466219069399" at="58,127,59,79" concept="8" />
+      <node id="3425763466219069406" at="59,79,60,104" concept="8" />
+      <node id="3425763466219069414" at="60,104,61,78" concept="3" />
+      <node id="3425763466219069421" at="61,78,62,19" concept="9" />
+      <node id="3425763466219069441" at="65,91,66,43" concept="14" />
+      <node id="3425763466219069463" at="71,27,72,69" concept="3" />
+      <node id="3425763466219088043" at="78,90,79,43" concept="14" />
+      <node id="3425763466219104053" at="84,27,85,68" concept="8" />
+      <node id="317498100166503621" at="85,68,86,99" concept="8" />
+      <node id="317498100166503631" at="86,99,87,54" concept="8" />
+      <node id="3425763466219116876" at="89,51,90,27" concept="3" />
+      <node id="3425763466219096602" at="94,47,95,34" concept="3" />
+      <node id="3425763466219150337" at="97,13,98,30" concept="3" />
+      <node id="3425763466219069298" at="25,0,28,0" concept="2" trace="StructDiffButtonsPainter#(Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;)V" />
+      <node id="3425763466219069329" at="31,0,34,0" concept="7" trace="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+      <node id="3425763466219071110" at="36,0,39,0" concept="7" trace="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+      <node id="3425763466219069359" at="41,28,44,7" concept="6" />
+      <node id="3425763466219083131" at="44,7,47,7" concept="6" />
+      <node id="3425763466219069343" at="48,12,51,7" concept="6" />
+      <node id="3425763466219083453" at="51,7,54,7" concept="6" />
+      <node id="3425763466219069431" at="65,0,68,0" concept="2" trace="MyButtonRevert#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;IILjava/lang/String;Ljavax/swing/Icon;)V" />
+      <node id="3425763466219069461" at="71,0,74,0" concept="7" trace="run#()V" />
+      <node id="3425763466219088033" at="78,0,81,0" concept="2" trace="MyButtonApply#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;IILjava/lang/String;Ljavax/swing/Icon;)V" />
+      <node id="3425763466219116874" at="89,0,92,0" concept="7" trace="visit#(Ljetbrains/mps/vcs/diff/changes/NodeGroupChange;)V" />
+      <node id="3425763466219094091" at="94,0,97,0" concept="7" trace="visit#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+      <node id="3425763466219069322" at="29,101,34,7" concept="8" />
+      <node id="3425763466219071103" at="34,7,39,7" concept="8" />
+      <node id="3425763466219069457" at="69,33,74,9" concept="3" />
+      <node id="3425763466219116870" at="87,54,92,13" concept="3" />
+      <node id="3425763466219091490" at="92,13,97,13" concept="3" />
+      <node id="3425763466219069394" at="58,0,64,0" concept="13" trace="addTo#(Ljetbrains/mps/vcs/diff/ui/common/DiffEditor;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;Z)Ljetbrains/mps/vcs/diff/ui/StructDiffButtonsPainter;" />
+      <node id="3425763466219069341" at="48,10,55,5" concept="1" />
+      <node id="3425763466219069453" at="68,0,76,0" concept="7" trace="performAction#()V" />
+      <node id="3425763466219069340" at="40,95,55,5" concept="6" />
+      <node id="3425763466219088063" at="84,0,100,0" concept="7" trace="run#()V" />
+      <node id="3425763466219088059" at="82,33,100,9" concept="3" />
+      <node id="3425763466219088055" at="81,0,102,0" concept="7" trace="performAction#()V" />
+      <node id="3425763466219069316" at="28,0,58,0" concept="7" trace="createButtonsForChangeGroup#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;I)Ljava/lang/Iterable;" />
+      <scope id="3425763466219069305" at="25,106,26,49" />
+      <scope id="3425763466219069330" at="31,44,32,45" />
+      <scope id="3425763466219071111" at="36,44,37,48" />
+      <scope id="3425763466219069362" at="42,25,43,151" />
+      <scope id="3425763466219083133" at="45,22,46,146" />
+      <scope id="3425763466219069344" at="49,22,50,147" />
+      <scope id="3425763466219083455" at="52,25,53,145" />
+      <scope id="3425763466219069440" at="65,91,66,43" />
+      <scope id="3425763466219069462" at="71,27,72,69" />
+      <scope id="3425763466219088042" at="78,90,79,43" />
+      <scope id="3425763466219116875" at="89,51,90,27" />
+      <scope id="3425763466219094092" at="94,47,95,34" />
+      <scope id="3425763466219069298" at="25,0,28,0">
         <var name="changeGroupLayout" id="3425763466219069314" />
         <var name="editorComponent" id="3425763466219069301" />
       </scope>
-      <scope id="3425763466219069329" at="32,0,35,0">
+      <scope id="3425763466219069329" at="31,0,34,0">
         <var name="c" id="3425763466219069329" />
       </scope>
-      <scope id="3425763466219071110" at="37,0,40,0">
+      <scope id="3425763466219071110" at="36,0,39,0">
         <var name="c" id="3425763466219071110" />
       </scope>
-      <scope id="3425763466219069431" at="66,0,69,0">
+      <scope id="3425763466219069431" at="65,0,68,0">
         <var name="changeGroup" id="3425763466219069432" />
         <var name="icon" id="3425763466219069449" />
         <var name="name" id="3425763466219069438" />
         <var name="x" id="3425763466219069434" />
         <var name="y" id="3425763466219069436" />
       </scope>
-      <scope id="3425763466219069461" at="72,0,75,0" />
-      <scope id="3425763466219088033" at="79,0,82,0">
+      <scope id="3425763466219069461" at="71,0,74,0" />
+      <scope id="3425763466219088033" at="78,0,81,0">
         <var name="changeGroup" id="3425763466219088034" />
         <var name="icon" id="3425763466219088051" />
         <var name="name" id="3425763466219088040" />
         <var name="x" id="3425763466219088036" />
         <var name="y" id="3425763466219088038" />
       </scope>
-      <scope id="3425763466219116874" at="90,0,93,0">
+      <scope id="3425763466219116874" at="89,0,92,0">
         <var name="ch" id="3425763466219116874" />
       </scope>
-      <scope id="3425763466219094091" at="95,0,98,0">
+      <scope id="3425763466219094091" at="94,0,97,0">
         <var name="ch" id="3425763466219094091" />
       </scope>
-      <scope id="3425763466219069398" at="59,127,63,19">
+      <scope id="3425763466219069398" at="58,127,62,19">
         <var name="editorComponent" id="3425763466219069400" />
         <var name="painter" id="3425763466219069407" />
       </scope>
-      <scope id="3425763466219069456" at="70,33,75,9" />
-      <scope id="3425763466219069358" at="42,28,48,7" />
-      <scope id="3425763466219069342" at="49,12,55,7" />
-      <scope id="3425763466219069394" at="59,0,65,0">
+      <scope id="3425763466219069456" at="69,33,74,9" />
+      <scope id="3425763466219069358" at="41,28,47,7" />
+      <scope id="3425763466219069342" at="48,12,54,7" />
+      <scope id="3425763466219069394" at="58,0,64,0">
         <var name="changeGroupLayout" id="3425763466219069426" />
         <var name="diffEditor" id="3425763466219069424" />
         <var name="inspector" id="3425763466219069428" />
       </scope>
-      <scope id="3425763466219069453" at="69,0,77,0" />
-      <scope id="3425763466219088064" at="85,27,99,30">
+      <scope id="3425763466219069453" at="68,0,76,0" />
+      <scope id="3425763466219088064" at="84,27,98,30">
         <var name="changes" id="3425763466219104056" />
         <var name="model" id="317498100166503622" />
         <var name="nc" id="317498100166503632" />
       </scope>
-      <scope id="3425763466219088063" at="85,0,101,0" />
-      <scope id="3425763466219088058" at="83,33,101,9" />
-      <scope id="3425763466219088055" at="82,0,103,0" />
-      <scope id="3425763466219069317" at="30,101,57,18">
+      <scope id="3425763466219088063" at="84,0,100,0" />
+      <scope id="3425763466219088058" at="82,33,100,9" />
+      <scope id="3425763466219088055" at="81,0,102,0" />
+      <scope id="3425763466219069317" at="29,101,56,18">
         <var name="allDelete" id="3425763466219071104" />
         <var name="allInsert" id="3425763466219069323" />
         <var name="result" id="3425763466219275165" />
       </scope>
-      <scope id="3425763466219069316" at="29,0,59,0">
+      <scope id="3425763466219069316" at="28,0,58,0">
         <var name="changeGroup" id="3425763466219069387" />
         <var name="y" id="3425763466219069389" />
       </scope>
-      <unit id="3425763466219069329" at="31,80,35,5" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$1" />
-      <unit id="3425763466219071110" at="36,80,40,5" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$2" />
-      <unit id="3425763466219069461" at="71,57,75,7" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonRevert$1" />
-      <unit id="3425763466219116874" at="89,84,93,11" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonApply$1$1" />
-      <unit id="3425763466219094091" at="94,54,98,11" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonApply$1$2" />
-      <unit id="3425763466219069430" at="65,0,78,0" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonRevert" />
-      <unit id="3425763466219088063" at="84,57,101,7" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonApply$1" />
-      <unit id="3425763466219088032" at="78,0,104,0" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonApply" />
-      <unit id="3425763466219069294" at="25,0,106,0" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter" />
+      <unit id="3425763466219069329" at="30,80,34,5" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$1" />
+      <unit id="3425763466219071110" at="35,80,39,5" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$2" />
+      <unit id="3425763466219069461" at="70,98,74,7" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonRevert$1" />
+      <unit id="3425763466219116874" at="88,84,92,11" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonApply$1$1" />
+      <unit id="3425763466219094091" at="93,54,97,11" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonApply$1$2" />
+      <unit id="3425763466219069430" at="64,0,77,0" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonRevert" />
+      <unit id="3425763466219088063" at="83,98,100,7" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonApply$1" />
+      <unit id="3425763466219088032" at="77,0,103,0" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonApply" />
+      <unit id="3425763466219069294" at="24,0,105,0" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter" />
     </file>
   </root>
   <root nodeRef="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)/4664177994952686123">
@@ -1251,87 +1251,87 @@
   </root>
   <root nodeRef="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)/8733553229778920021">
     <file name="DiffButtonsPainter.java">
-      <node id="8817948936280658191" at="21,0,22,0" concept="4" trace="myDiffPane" />
-      <node id="8817948936280708476" at="22,128,23,49" concept="14" />
-      <node id="3082448011095400151" at="23,49,24,31" concept="3" />
-      <node id="8733553229778920124" at="27,101,28,36" concept="8" />
-      <node id="8733553229778920138" at="30,44,31,45" concept="9" />
-      <node id="8733553229778920151" at="35,25,36,125" concept="3" />
-      <node id="8733553229778920167" at="39,22,40,102" concept="3" />
-      <node id="8733553229778920181" at="43,25,44,35" concept="9" />
-      <node id="8733553229778920189" at="45,12,46,18" concept="9" />
-      <node id="8817948936280639158" at="49,147,50,79" concept="8" />
-      <node id="8817948936280639165" at="50,79,51,105" concept="8" />
-      <node id="8817948936280639173" at="51,105,52,78" concept="3" />
-      <node id="8817948936280639180" at="52,78,53,19" concept="9" />
-      <node id="8733553229778920099" at="56,85,57,43" concept="14" />
-      <node id="2160183673829627077" at="62,27,63,69" concept="3" />
-      <node id="3082448011095397686" at="63,69,64,35" concept="3" />
-      <node id="8733553229778920187" at="45,10,47,5" concept="1" />
-      <node id="8733553229778920136" at="30,0,33,0" concept="7" trace="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-      <node id="8733553229778920149" at="34,28,37,7" concept="6" />
-      <node id="8733553229778920165" at="38,12,41,7" concept="6" />
-      <node id="8733553229778920095" at="56,0,59,0" concept="2" trace="MyButton#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;IILjava/lang/String;Ljavax/swing/Icon;)V" />
-      <node id="8817948936280708468" at="22,0,26,0" concept="2" trace="DiffButtonsPainter#(Ljetbrains/mps/vcs/diff/ui/IHighlighter;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;)V" />
-      <node id="8733553229778920163" at="38,10,42,5" concept="1" />
-      <node id="2034046503373005833" at="62,0,66,0" concept="7" trace="run#()V" />
-      <node id="8733553229778920128" at="28,36,33,7" concept="8" />
-      <node id="8733553229778920179" at="42,5,47,5" concept="6" />
-      <node id="8817948936280639153" at="49,0,55,0" concept="13" trace="addTo#(Ljetbrains/mps/vcs/diff/ui/IHighlighter;Ljetbrains/mps/vcs/diff/ui/common/DiffEditor;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;Z)Ljetbrains/mps/vcs/diff/ui/DiffButtonsPainter;" />
-      <node id="2034046503373005829" at="60,33,66,9" concept="3" />
-      <node id="8733553229778920146" at="33,7,42,5" concept="6" />
-      <node id="8733553229778920084" at="59,0,68,0" concept="7" trace="performAction#()V" />
-      <node id="8733553229778920115" at="26,0,49,0" concept="7" trace="createButtonsForChangeGroup#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;I)Ljava/lang/Iterable;" />
-      <scope id="8733553229778920137" at="30,44,31,45" />
-      <scope id="8733553229778920150" at="35,25,36,125" />
-      <scope id="8733553229778920166" at="39,22,40,102" />
-      <scope id="8733553229778920180" at="43,25,44,35" />
-      <scope id="8733553229778920188" at="45,12,46,18" />
-      <scope id="8733553229778920098" at="56,85,57,43" />
-      <scope id="8817948936280708475" at="22,128,24,31" />
-      <scope id="2034046503373005834" at="62,27,64,35" />
-      <scope id="8733553229778920136" at="30,0,33,0">
+      <node id="8817948936280658191" at="20,0,21,0" concept="4" trace="myDiffPane" />
+      <node id="8817948936280708476" at="21,128,22,49" concept="14" />
+      <node id="3082448011095400151" at="22,49,23,31" concept="3" />
+      <node id="8733553229778920124" at="26,101,27,36" concept="8" />
+      <node id="8733553229778920138" at="29,44,30,45" concept="9" />
+      <node id="8733553229778920151" at="34,25,35,125" concept="3" />
+      <node id="8733553229778920167" at="38,22,39,102" concept="3" />
+      <node id="8733553229778920181" at="42,25,43,35" concept="9" />
+      <node id="8733553229778920189" at="44,12,45,18" concept="9" />
+      <node id="8817948936280639158" at="48,147,49,79" concept="8" />
+      <node id="8817948936280639165" at="49,79,50,105" concept="8" />
+      <node id="8817948936280639173" at="50,105,51,78" concept="3" />
+      <node id="8817948936280639180" at="51,78,52,19" concept="9" />
+      <node id="8733553229778920099" at="55,85,56,43" concept="14" />
+      <node id="2160183673829627077" at="61,27,62,69" concept="3" />
+      <node id="3082448011095397686" at="62,69,63,35" concept="3" />
+      <node id="8733553229778920187" at="44,10,46,5" concept="1" />
+      <node id="8733553229778920136" at="29,0,32,0" concept="7" trace="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+      <node id="8733553229778920149" at="33,28,36,7" concept="6" />
+      <node id="8733553229778920165" at="37,12,40,7" concept="6" />
+      <node id="8733553229778920095" at="55,0,58,0" concept="2" trace="MyButton#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;IILjava/lang/String;Ljavax/swing/Icon;)V" />
+      <node id="8817948936280708468" at="21,0,25,0" concept="2" trace="DiffButtonsPainter#(Ljetbrains/mps/vcs/diff/ui/IHighlighter;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;)V" />
+      <node id="8733553229778920163" at="37,10,41,5" concept="1" />
+      <node id="2034046503373005833" at="61,0,65,0" concept="7" trace="run#()V" />
+      <node id="8733553229778920128" at="27,36,32,7" concept="8" />
+      <node id="8733553229778920179" at="41,5,46,5" concept="6" />
+      <node id="8817948936280639153" at="48,0,54,0" concept="13" trace="addTo#(Ljetbrains/mps/vcs/diff/ui/IHighlighter;Ljetbrains/mps/vcs/diff/ui/common/DiffEditor;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;Z)Ljetbrains/mps/vcs/diff/ui/DiffButtonsPainter;" />
+      <node id="5146190354804351010" at="59,33,65,9" concept="3" />
+      <node id="8733553229778920146" at="32,7,41,5" concept="6" />
+      <node id="8733553229778920084" at="58,0,67,0" concept="7" trace="performAction#()V" />
+      <node id="8733553229778920115" at="25,0,48,0" concept="7" trace="createButtonsForChangeGroup#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;I)Ljava/lang/Iterable;" />
+      <scope id="8733553229778920137" at="29,44,30,45" />
+      <scope id="8733553229778920150" at="34,25,35,125" />
+      <scope id="8733553229778920166" at="38,22,39,102" />
+      <scope id="8733553229778920180" at="42,25,43,35" />
+      <scope id="8733553229778920188" at="44,12,45,18" />
+      <scope id="8733553229778920098" at="55,85,56,43" />
+      <scope id="8817948936280708475" at="21,128,23,31" />
+      <scope id="2034046503373005834" at="61,27,63,35" />
+      <scope id="8733553229778920136" at="29,0,32,0">
         <var name="c" id="8733553229778920136" />
       </scope>
-      <scope id="8733553229778920148" at="34,28,37,7" />
-      <scope id="8733553229778920164" at="38,12,41,7" />
-      <scope id="8733553229778920095" at="56,0,59,0">
+      <scope id="8733553229778920148" at="33,28,36,7" />
+      <scope id="8733553229778920164" at="37,12,40,7" />
+      <scope id="8733553229778920095" at="55,0,58,0">
         <var name="changeGroup" id="8733553229778920105" />
         <var name="icon" id="8733553229778920113" />
         <var name="name" id="8733553229778920111" />
         <var name="x" id="8733553229778920107" />
         <var name="y" id="8733553229778920109" />
       </scope>
-      <scope id="8817948936280708468" at="22,0,26,0">
+      <scope id="8817948936280708468" at="21,0,25,0">
         <var name="changeGroupLayout" id="8817948936280708484" />
         <var name="editorComponent" id="8817948936280708471" />
         <var name="rehighlighter" id="8817948936280708469" />
       </scope>
-      <scope id="8817948936280639157" at="49,147,53,19">
+      <scope id="8817948936280639157" at="48,147,52,19">
         <var name="editorComponent" id="8817948936280639159" />
         <var name="painter" id="8817948936280639166" />
       </scope>
-      <scope id="2034046503373005833" at="62,0,66,0" />
-      <scope id="8817948936280639153" at="49,0,55,0">
+      <scope id="2034046503373005833" at="61,0,65,0" />
+      <scope id="8817948936280639153" at="48,0,54,0">
         <var name="changeGroupLayout" id="8817948936280639185" />
         <var name="diffEditor" id="8817948936280639183" />
         <var name="inspector" id="8817948936280639187" />
         <var name="rehighliter" id="8817948936280639154" />
       </scope>
-      <scope id="8733553229778920087" at="60,33,66,9" />
-      <scope id="8733553229778920084" at="59,0,68,0" />
-      <scope id="8733553229778920123" at="27,101,47,5">
+      <scope id="8733553229778920087" at="59,33,65,9" />
+      <scope id="8733553229778920084" at="58,0,67,0" />
+      <scope id="8733553229778920123" at="26,101,46,5">
         <var name="allInsert" id="8733553229778920129" />
         <var name="button" id="8733553229778920125" />
       </scope>
-      <scope id="8733553229778920115" at="26,0,49,0">
+      <scope id="8733553229778920115" at="25,0,48,0">
         <var name="changeGroup" id="8733553229778920119" />
         <var name="y" id="8733553229778920121" />
       </scope>
-      <unit id="8733553229778920136" at="29,80,33,5" name="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter$1" />
-      <unit id="2034046503373005833" at="61,57,66,7" name="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter$MyButton$1" />
-      <unit id="8733553229778920081" at="55,0,69,0" name="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter$MyButton" />
-      <unit id="8733553229778920021" at="20,0,70,0" name="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter" />
+      <unit id="8733553229778920136" at="28,80,32,5" name="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter$1" />
+      <unit id="2034046503373005833" at="60,98,65,7" name="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter$MyButton$1" />
+      <unit id="8733553229778920081" at="54,0,68,0" name="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter$MyButton" />
+      <unit id="8733553229778920021" at="19,0,69,0" name="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter" />
     </file>
   </root>
   <root nodeRef="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)/8817948936268058313">

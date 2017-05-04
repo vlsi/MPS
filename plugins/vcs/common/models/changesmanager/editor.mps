@@ -45,7 +45,6 @@
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
     <import index="4b2m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.messages(MPS.IDEA/)" />
     <import index="bmv6" ref="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)" />
-    <import index="wvnl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.extensions(MPS.Editor/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -5930,12 +5929,21 @@
         </node>
         <node concept="3clFbF" id="27S0kf0bUbm" role="3cqZAp">
           <node concept="2OqwBi" id="27S0kf0bUhf" role="3clFbG">
-            <node concept="2YIFZM" id="27S0kf0bUel" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+            <node concept="2OqwBi" id="4tEWdMGCVd8" role="2Oq$k0">
+              <node concept="2OqwBi" id="4tEWdMGCUH8" role="2Oq$k0">
+                <node concept="37vLTw" id="4tEWdMGCUwP" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4oRgVqwezf2" resolve="editorContext" />
+                </node>
+                <node concept="liA8E" id="4tEWdMGCV0z" role="2OqNvi">
+                  <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4tEWdMGCVxL" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
             </node>
             <node concept="liA8E" id="27S0kf0bV40" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteActionInCommand(java.lang.Runnable):void" resolve="runWriteActionInCommand" />
+              <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
               <node concept="1bVj0M" id="27S0kf0bXpN" role="37wK5m">
                 <node concept="3clFbS" id="27S0kf0bXpP" role="1bW5cS">
                   <node concept="3cpWs8" id="2isuDONH$dy" role="3cqZAp">

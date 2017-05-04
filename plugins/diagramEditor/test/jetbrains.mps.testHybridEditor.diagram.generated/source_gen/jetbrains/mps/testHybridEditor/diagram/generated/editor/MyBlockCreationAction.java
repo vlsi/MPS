@@ -7,7 +7,6 @@ import jetbrains.jetpad.projectional.view.ViewTrait;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.ide.icons.IconManager;
@@ -29,7 +28,7 @@ public class MyBlockCreationAction implements PaletteToggleAction {
   public MyBlockCreationAction(DiagramCell diagramCell, final SNode block) {
     myDiagramCell = diagramCell;
     myMetaBlock = block;
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myDiagramCell.getContext().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         myText = SPropertyOperations.getString(block, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
         myIcon = IconManager.getIconFor(myMetaBlock);
@@ -46,7 +45,7 @@ public class MyBlockCreationAction implements PaletteToggleAction {
           if (!(view.focused().get())) {
             view.container().focusedView().set(view);
           }
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          myDiagramCell.getContext().getRepository().getModelAccess().executeCommand(new Runnable() {
             public void run() {
               SNode newBlockInstance = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance"));
               SLinkOperations.setTarget(newBlockInstance, MetaAdapterFactory.getReferenceLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec4404a9L, "metaBlock"), myMetaBlock);

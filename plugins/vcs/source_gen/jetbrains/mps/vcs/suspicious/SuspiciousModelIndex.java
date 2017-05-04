@@ -152,7 +152,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
           }
         }
         // XXX no idea what to do with conflicts not from a project 
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        ModelAccess.instance().executeCommand(new Runnable() {
           public void run() {
             for (Conflictable conflictable : toReload) {
               conflictable.reloadFromDisk();

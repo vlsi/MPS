@@ -164,12 +164,6 @@ class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  @Deprecated
-  public void runWriteActionInCommand(Runnable r) {
-    runWriteAction(r);
-  }
-
-  @Override
   public void runUndoTransparentCommand(Runnable r, Project project) {
     r.run();
   }

@@ -16,10 +16,8 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.Project;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Extracted part of ModelCommandExecutor for purposes of code migration from kernel into neatly structured modules
@@ -27,7 +25,8 @@ import org.jetbrains.annotations.Nullable;
  * instead to run project-aware commands. There are handy {@link jetbrains.mps.project.Project#getModelAccess()} 
  * and <code>jetbrains.mps.ide.project.ProjectHelper</code>if you got MPS or IDEA project.
  *
-у * TODO introduce Project in the mps openapi and transfer the required methods to the {@code ModelAccess} API.
+ * TODO introduce Project in the mps openapi and transfer the required methods to the {@code ModelAccess} API.
+ * XXX  [artem] I doubt it's a good idea to expose Project in ModelAccess API, let's discuss it first.
  *
  * @author Artem Tikhomirov
  */
@@ -37,6 +36,7 @@ interface ModelCommandProjectExecutor extends ModelCommandExecutor {
 
   @ToRemove(version = 3.2)
   @Deprecated
+    // used in templates, ExecuteCommandInEDTStatement with repo == null
   void runCommandInEDT(@NotNull Runnable r, @NotNull Project p);
 
   @ToRemove(version = 3.2)

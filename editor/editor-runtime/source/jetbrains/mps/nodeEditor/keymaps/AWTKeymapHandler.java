@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,16 +17,15 @@ package jetbrains.mps.nodeEditor.keymaps;
 
 import gnu.trove.TIntObjectHashMap;
 import gnu.trove.TObjectProcedure;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
@@ -215,12 +214,7 @@ public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
       ActionListener actionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            @Override
-            public void run() {
-              executeAction(action, contextCell, editorContext);
-            }
-          });
+          executeAction(action, contextCell, editorContext);
         }
       };
       menuItem.addActionListener(actionListener);

@@ -39,7 +39,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeSession" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
@@ -99,6 +98,7 @@
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
     <classNode dependClassName="javax.swing.event.TreeSelectionListener" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -106,7 +106,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
@@ -134,6 +134,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeNonConflictingRoots" file="MergeNonConflictingRoots.java">

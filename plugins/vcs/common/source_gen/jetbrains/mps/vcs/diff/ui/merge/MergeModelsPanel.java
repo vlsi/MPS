@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.vcs.diff.merge.MergeSessionState;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -27,7 +28,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.diff.merge.TextMergeRequest;
 import java.awt.BorderLayout;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.diff.ui.MetadataUtil;
@@ -40,6 +41,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.smodel.CopyUtil;
@@ -65,7 +67,8 @@ public class MergeModelsPanel extends JPanel {
   public static final Icon APPLY_NON_CONFLICTS = AllIcons.Diff.ApplyNotConflicts;
   public static final Icon RESET = AllIcons.Actions.Rollback;
 
-  private Project myProject;
+  private final Project myProject;
+  private final SRepository myProjectRepository;
   private MergeSession myMergeSession;
   private MergeSession myMetadataMergeSession;
   private MergeSessionState myInitialState;
@@ -97,13 +100,19 @@ public class MergeModelsPanel extends JPanel {
     myProject = project;
     myContentTitles = request.getContentTitles().toArray(myContentTitles);
     assert myContentTitles.length == 3;
-    ModelAccess.instance().runReadAction(new Runnable() {
+    // FIXME code below requires thorough refactoring. Models that come here are IMO loaded from disk and are not 
+    // attached to any repository, hence there's no reason to grab lock to deal with them. OTOH, there's code that 
+    // registers and exposes model artifacts with a temp module, which is part of global repository now and hence 
+    // requires model lock. 
+    myProjectRepository = ProjectHelper.getProjectRepository(project);
+    assert myProjectRepository != null;
+    myProjectRepository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         myMergeSession = MergeSession.createMergeSession(baseModel, mineModel, repoModel);
         myInitialState = myMergeSession.getCurrentState();
       }
     });
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myProjectRepository.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         DiffModelUtil.renameModelAndRegister(myMergeSession.getBaseModel(), "base");
         DiffModelUtil.renameModelAndRegister(myMergeSession.getMyModel(), "mine");
@@ -112,7 +121,7 @@ public class MergeModelsPanel extends JPanel {
       }
     });
     if (ListSequence.fromList(myMergeSession.getMetadataChanges()).isNotEmpty()) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      myProjectRepository.getModelAccess().runWriteAction(new Runnable() {
         public void run() {
           SModel baseMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getBaseModel(), "metadata_base", false);
           SModel mineMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getMyModel(), "metadata_mine", false);
@@ -185,7 +194,7 @@ public class MergeModelsPanel extends JPanel {
       return false;
     }
     if (result == MergeConfirmation.RESOLVE_AUTOMATICALLY) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      myProjectRepository.getModelAccess().executeCommand(new Runnable() {
         public void run() {
           mergeNonConflictingRoots();
         }
@@ -204,10 +213,10 @@ public class MergeModelsPanel extends JPanel {
   }
 
   private SModel getResultModelWithFixedId() {
-    SModel resultModel = ModelAccess.instance().runReadAction(new Computable<MergeTemporaryModel>() {
+    SModel resultModel = new ModelAccessHelper(myProjectRepository).runReadAction(new Computable<MergeTemporaryModel>() {
       public MergeTemporaryModel compute() {
         // copy to avoid problems with de-registration 
-        jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(as_ktyr7l_a0a0a1a0a0a0a0a0pb(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal());
+        jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(as_ktyr7l_a0a0a1a0a0a0a0a0qb(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal());
         return new MergeTemporaryModel(resModel, false);
       }
     });
@@ -219,7 +228,7 @@ public class MergeModelsPanel extends JPanel {
     return resultModel;
   }
   private void unregisterModels() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myProjectRepository.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         if (myMetadataMergeSession != null) {
           DiffModelUtil.unregisterModel(myMetadataMergeSession.getResultModel());
@@ -266,7 +275,7 @@ public class MergeModelsPanel extends JPanel {
 
     myRootId = rootId;
     final MergeSession session = (rootId == null ? myMetadataMergeSession : myMergeSession);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProjectRepository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         SNodeId nodeId = (rootId == null ? Sequence.fromIterable(myMetadataMergeSession.getAffectedRoots()).first() : rootId);
         if (myMergeRootsPane == null) {
@@ -332,14 +341,15 @@ public class MergeModelsPanel extends JPanel {
       applyUnresolvedChanges(myMetadataMergeSession, myMetadataMergeSession.getAllChanges(), mine);
       applyMetadataChanges();
     }
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    // XXX tree.rebuildNow as model command, really? 
+    myProjectRepository.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         myMergeTree.rebuildNow();
       }
     });
   }
   private void applyMetadataChanges() {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    myProjectRepository.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         if (myMetadataMergeSession != null) {
           MetadataUtil.applyMetadataChanges(myMergeSession.getResultModel(), myMetadataMergeSession.getResultModel());
@@ -387,7 +397,7 @@ public class MergeModelsPanel extends JPanel {
         ListSequence.fromList(changesToExclude).addElement(change);
       }
     }
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    myProjectRepository.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         session.applyChanges(changesToApply);
         session.excludeChanges(changesToExclude);
@@ -533,7 +543,7 @@ public class MergeModelsPanel extends JPanel {
       changeCurrentRoot(rootId);
     }
   }
-  private static <T> T as_ktyr7l_a0a0a1a0a0a0a0a0pb(Object o, Class<T> type) {
+  private static <T> T as_ktyr7l_a0a0a1a0a0a0a0a0qb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -116,11 +115,8 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     return evaluatorConcept;
   }
   private void createVars() {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        fillVariables(SNodeOperations.cast(getNode(), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept")));
-      }
-    });
+    // 2 uses. setUpNode() is invoked within command; updateState runs new command itself 
+    fillVariables(SNodeOperations.cast(getNode(), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept")));
   }
   private void fillVariables(SNode evaluatorConcept) {
     try {
@@ -181,7 +177,10 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   public void updateState() {
     super.updateState();
     if (myDebugSession.getEvaluationProvider().canEvaluate()) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      // createVars used to execute command (runWriteActionInCommand), hence I assume (a) we've got proper thread here 
+      // (b) there's need to run inside a command. Although it looks undoTransparent (the one that doesn't record any changes) 
+      // is suited much better here. 
+      myDebuggerRepository.getModelAccess().executeCommand(new Runnable() {
         public void run() {
           createVars();
         }

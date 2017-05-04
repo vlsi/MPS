@@ -2198,7 +2198,7 @@
                       <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
                     </node>
                     <node concept="liA8E" id="1KUoCiqb7ne" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteActionInCommand(java.lang.Runnable):void" resolve="runWriteActionInCommand" />
+                      <ref role="37wK5l" to="w1kc:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
                       <node concept="1bVj0M" id="1KUoCiqb7nf" role="37wK5m">
                         <node concept="3clFbS" id="1KUoCiqb7ng" role="1bW5cS">
                           <node concept="1DcWWT" id="1KUoCiqb7nh" role="3cqZAp">
