@@ -106,7 +106,7 @@ public class MigrationTask {
     if (myLastStep == 3) {
       myLastStep++;
       // null - no error, true - must stop, false - can ignore 
-      boolean errors = checkModels(myMonitor.subTask(30));
+      boolean errors = checkModels(myMonitor.subTask(20));
       if (errors) {
         result(myMonitor, new PreCheckError(mySession.getProject(), errors), "Errors were found in models");
         return false;
@@ -127,7 +127,7 @@ public class MigrationTask {
     addGlobalLabel(mySession.getProject(), FINISHED);
 
     // todo move from here to migration annotations 
-    if (findNotMigrated(myMonitor.subTask(5))) {
+    if (findNotMigrated(myMonitor.subTask(15))) {
       result(myMonitor, new PostCheckError(mySession.getProject(), myWereRun, false), "Problems are detected after executing migrations.");
       return true;
     }

@@ -6049,7 +6049,7 @@
                     <node concept="liA8E" id="PobQbO9xGZ" role="2OqNvi">
                       <ref role="37wK5l" to="mk90:~ProgressMonitorBase.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
                       <node concept="3cmrfG" id="PobQbO9y3R" role="37wK5m">
-                        <property role="3cmrfH" value="30" />
+                        <property role="3cmrfH" value="20" />
                       </node>
                     </node>
                   </node>
@@ -6281,7 +6281,7 @@
               <node concept="liA8E" id="78xBDbK97cH" role="2OqNvi">
                 <ref role="37wK5l" to="mk90:~ProgressMonitorBase.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
                 <node concept="3cmrfG" id="78xBDbK97cI" role="37wK5m">
-                  <property role="3cmrfH" value="5" />
+                  <property role="3cmrfH" value="15" />
                 </node>
               </node>
             </node>
