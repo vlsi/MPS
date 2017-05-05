@@ -45,7 +45,6 @@
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="1fjm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow.framework(MPS.Core/)" />
     <import index="cx9y" ref="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" />
     <import index="dau9" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow.framework.instructions(MPS.Core/)" />
@@ -54952,27 +54951,11 @@
           <node concept="3uibUv" id="1TyKSmlKXK_" role="1tU5fm">
             <ref role="3uigEE" to="gp7a:~GlobalModuleDependenciesManager" resolve="GlobalModuleDependenciesManager" />
           </node>
-          <node concept="2YIFZM" id="1TyKSmlKXKE" role="33vP2m">
-            <ref role="37wK5l" to="fnmy:_HxOdnhk$K" resolve="getFromCache" />
-            <ref role="1Pybhc" to="fnmy:47AFxFGR3kx" resolve="RepositoryStateCacheUtils" />
-            <node concept="Xl_RD" id="1TyKSmlKXKF" role="37wK5m">
-              <property role="Xl_RC" value="CheckExtendedClassIsImported" />
-            </node>
-            <node concept="37vLTw" id="1TyKSmlKXKG" role="37wK5m">
-              <ref role="3cqZAo" node="7juMyjb$kLV" resolve="module" />
-            </node>
-            <node concept="1bVj0M" id="1TyKSmlKXKH" role="37wK5m">
-              <node concept="3clFbS" id="1TyKSmlKXKI" role="1bW5cS">
-                <node concept="3clFbF" id="1TyKSmlKXKJ" role="3cqZAp">
-                  <node concept="2ShNRf" id="1TyKSmlKXKK" role="3clFbG">
-                    <node concept="1pGfFk" id="1TyKSmlKXKL" role="2ShVmc">
-                      <ref role="37wK5l" to="gp7a:~GlobalModuleDependenciesManager.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule)" resolve="GlobalModuleDependenciesManager" />
-                      <node concept="37vLTw" id="1TyKSmlKXKM" role="37wK5m">
-                        <ref role="3cqZAo" node="7juMyjb$kLV" resolve="module" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
+          <node concept="2ShNRf" id="1TyKSmlKXKK" role="33vP2m">
+            <node concept="1pGfFk" id="1TyKSmlKXKL" role="2ShVmc">
+              <ref role="37wK5l" to="gp7a:~GlobalModuleDependenciesManager.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule)" resolve="GlobalModuleDependenciesManager" />
+              <node concept="37vLTw" id="1TyKSmlKXKM" role="37wK5m">
+                <ref role="3cqZAo" node="7juMyjb$kLV" resolve="module" />
               </node>
             </node>
           </node>
