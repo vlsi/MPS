@@ -21,11 +21,11 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.Color;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import javax.swing.JComponent;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.ApplicationManager;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
 import java.util.HashMap;
@@ -168,7 +168,7 @@ public class MigrationTask {
     };
   }
 
-  private boolean executeSingleStep(final String desc, final _FunctionTypes._void_P0_E0 execute, final _FunctionTypes._return_P0_E0<? extends Boolean> merge) {
+  private boolean executeSingleStep(final ProgressMonitor m, final String localHistCaption, final _FunctionTypes._void_P0_E0 execute, final _FunctionTypes._return_P0_E0<? extends Boolean> merge) {
     final Wrappers._boolean noException = new Wrappers._boolean(true);
 
     // todo pass ModalityState to constructor/via session? 
@@ -178,7 +178,7 @@ public class MigrationTask {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         if (myCurrentChange == null) {
-          myCurrentChange = LocalHistory.getInstance().startAction(APPLY + desc);
+          myCurrentChange = LocalHistory.getInstance().startAction(APPLY + localHistCaption);
         }
         mySession.getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
@@ -195,6 +195,7 @@ public class MigrationTask {
 
         if (merge == null || !(merge.invoke())) {
           final Project project = mySession.getProject();
+          m.step("Saving project...");
           project.getRepository().getModelAccess().runWriteAction(new Runnable() {
             public void run() {
               project.getRepository().saveAll();
@@ -224,7 +225,7 @@ public class MigrationTask {
         }
 
         m.step(pm.getDescription());
-        if (!(executeSingleStep(pm.getDescription(), new _FunctionTypes._void_P0_E0() {
+        if (!(executeSingleStep(m, pm.getDescription(), new _FunctionTypes._void_P0_E0() {
           public void invoke() {
             pm.execute(mySession.getProject());
           }
@@ -314,7 +315,7 @@ public class MigrationTask {
       }
 
       m.step(pm.getDescription());
-      if (!(executeSingleStep(pm.getDescription(), new _FunctionTypes._void_P0_E0() {
+      if (!(executeSingleStep(m, pm.getDescription(), new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           pm.execute(mySession.getProject());
         }
@@ -345,7 +346,7 @@ public class MigrationTask {
       String caption = sa.getScriptReference().resolve(false).getCaption();
       m.step(caption + " [" + NameUtil.compactNamespace(sa.getModule().getModuleName()) + "]");
       ListSequence.fromList(myWereRun).addElement(sa);
-      if (!(executeSingleStep(caption, new _FunctionTypes._void_P0_E0() {
+      if (!(executeSingleStep(m, caption, new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           mySession.getMigrationManager().executeScript(sa);
         }
@@ -355,7 +356,7 @@ public class MigrationTask {
           if (next == null) {
             return false;
           }
-          return eq_ajmasp_a0c0a0a2a0h0f0pb(sa.getScriptReference(), next.getScriptReference());
+          return eq_ajmasp_a0c0a0a3a0h0f0pb(sa.getScriptReference(), next.getScriptReference());
         }
       }))) {
         success = false;
@@ -394,7 +395,7 @@ public class MigrationTask {
   private static <T> T as_ajmasp_a0a0e0db(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static boolean eq_ajmasp_a0c0a0a2a0h0f0pb(Object a, Object b) {
+  private static boolean eq_ajmasp_a0c0a0a3a0h0f0pb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -6681,7 +6681,7 @@
                                   <ref role="3cqZAo" node="65hwFmZgzso" resolve="APPLY" />
                                 </node>
                                 <node concept="37vLTw" id="12g5A1PruXu" role="3uHU7w">
-                                  <ref role="3cqZAo" node="12g5A1PrmW3" resolve="desc" />
+                                  <ref role="3cqZAo" node="12g5A1PrmW3" resolve="localHistCaption" />
                                 </node>
                               </node>
                             </node>
@@ -6775,6 +6775,19 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="3clFbF" id="2nQGvk0v01p" role="3cqZAp">
+                        <node concept="2OqwBi" id="2nQGvk0v0aH" role="3clFbG">
+                          <node concept="37vLTw" id="2nQGvk0v01n" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2nQGvk0uS5K" resolve="m" />
+                          </node>
+                          <node concept="liA8E" id="2nQGvk0v0ts" role="2OqNvi">
+                            <ref role="37wK5l" to="yyf4:~ProgressMonitor.step(java.lang.String):void" resolve="step" />
+                            <node concept="Xl_RD" id="2nQGvk0v0E2" role="37wK5m">
+                              <property role="Xl_RC" value="Saving project..." />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node concept="1QHqEM" id="23976bwCZk_" role="3cqZAp">
                         <node concept="1QHqEC" id="23976bwCZkA" role="1QHqEI">
                           <node concept="3clFbS" id="23976bwCZkB" role="1bW5cS">
@@ -6857,8 +6870,14 @@
       </node>
       <node concept="3Tm6S6" id="6dkZ8D0LwnR" role="1B3o_S" />
       <node concept="10P_77" id="25gV4LszgSu" role="3clF45" />
+      <node concept="37vLTG" id="2nQGvk0uS5K" role="3clF46">
+        <property role="TrG5h" value="m" />
+        <node concept="3uibUv" id="2nQGvk0uU$n" role="1tU5fm">
+          <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
+        </node>
+      </node>
       <node concept="37vLTG" id="12g5A1PrmW3" role="3clF46">
-        <property role="TrG5h" value="desc" />
+        <property role="TrG5h" value="localHistCaption" />
         <node concept="3uibUv" id="12g5A1Prr5N" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
@@ -7000,18 +7019,18 @@
                   </node>
                 </node>
                 <node concept="3clFbH" id="4hH4xQoI2JN" role="3cqZAp" />
-                <node concept="3clFbF" id="78xBDbKdJfS" role="3cqZAp">
-                  <node concept="2OqwBi" id="78xBDbKdJfT" role="3clFbG">
-                    <node concept="37vLTw" id="78xBDbKdJfU" role="2Oq$k0">
+                <node concept="3clFbF" id="2nQGvk0uQmg" role="3cqZAp">
+                  <node concept="2OqwBi" id="2nQGvk0uQ$t" role="3clFbG">
+                    <node concept="37vLTw" id="2nQGvk0uQme" role="2Oq$k0">
                       <ref role="3cqZAo" node="4hH4xQoI2Ko" resolve="m" />
                     </node>
-                    <node concept="liA8E" id="78xBDbKdJfV" role="2OqNvi">
+                    <node concept="liA8E" id="2nQGvk0uQKa" role="2OqNvi">
                       <ref role="37wK5l" to="yyf4:~ProgressMonitor.step(java.lang.String):void" resolve="step" />
-                      <node concept="2OqwBi" id="78xBDbKdJfW" role="37wK5m">
-                        <node concept="37vLTw" id="3DyGwJ_4My5" role="2Oq$k0">
+                      <node concept="2OqwBi" id="2nQGvk0uQL0" role="37wK5m">
+                        <node concept="37vLTw" id="2nQGvk0uQL1" role="2Oq$k0">
                           <ref role="3cqZAo" node="4hH4xQoI2JA" resolve="pm" />
                         </node>
-                        <node concept="liA8E" id="78xBDbKdJg1" role="2OqNvi">
+                        <node concept="liA8E" id="2nQGvk0uQL2" role="2OqNvi">
                           <ref role="37wK5l" to="bdll:~ProjectMigration.getDescription():java.lang.String" resolve="getDescription" />
                         </node>
                       </node>
@@ -7072,6 +7091,9 @@
                   <node concept="3fqX7Q" id="4hH4xQoI2JW" role="3clFbw">
                     <node concept="1rXfSq" id="4hH4xQoI2JX" role="3fr31v">
                       <ref role="37wK5l" node="25gV4LszgYY" resolve="executeSingleStep" />
+                      <node concept="37vLTw" id="2nQGvk0uOAH" role="37wK5m">
+                        <ref role="3cqZAo" node="4hH4xQoI2Ko" resolve="m" />
+                      </node>
                       <node concept="2OqwBi" id="12g5A1PrFXj" role="37wK5m">
                         <node concept="37vLTw" id="4hH4xQoI2JY" role="2Oq$k0">
                           <ref role="3cqZAo" node="4hH4xQoI2JA" resolve="pm" />
@@ -7816,18 +7838,18 @@
               </node>
             </node>
             <node concept="3clFbH" id="78xBDbK8GKp" role="3cqZAp" />
-            <node concept="3clFbF" id="78xBDbKdFZb" role="3cqZAp">
-              <node concept="2OqwBi" id="78xBDbKdG45" role="3clFbG">
-                <node concept="37vLTw" id="78xBDbKdFZ9" role="2Oq$k0">
+            <node concept="3clFbF" id="2nQGvk0uR6L" role="3cqZAp">
+              <node concept="2OqwBi" id="2nQGvk0uRka" role="3clFbG">
+                <node concept="37vLTw" id="2nQGvk0uR6J" role="2Oq$k0">
                   <ref role="3cqZAo" node="78xBDbK8GKI" resolve="m" />
                 </node>
-                <node concept="liA8E" id="78xBDbKdG7I" role="2OqNvi">
+                <node concept="liA8E" id="2nQGvk0uRvC" role="2OqNvi">
                   <ref role="37wK5l" to="yyf4:~ProgressMonitor.step(java.lang.String):void" resolve="step" />
-                  <node concept="2OqwBi" id="78xBDbKdHs9" role="37wK5m">
-                    <node concept="37vLTw" id="3DyGwJ_6fLA" role="2Oq$k0">
+                  <node concept="2OqwBi" id="2nQGvk0uRPg" role="37wK5m">
+                    <node concept="37vLTw" id="2nQGvk0uRG4" role="2Oq$k0">
                       <ref role="3cqZAo" node="78xBDbK8GKa" resolve="pm" />
                     </node>
-                    <node concept="liA8E" id="78xBDbKdHse" role="2OqNvi">
+                    <node concept="liA8E" id="2nQGvk0uS1E" role="2OqNvi">
                       <ref role="37wK5l" to="bdll:~ProjectMigration.getDescription():java.lang.String" resolve="getDescription" />
                     </node>
                   </node>
@@ -7851,6 +7873,9 @@
               <node concept="3fqX7Q" id="78xBDbK8GKx" role="3clFbw">
                 <node concept="1rXfSq" id="78xBDbK8GKy" role="3fr31v">
                   <ref role="37wK5l" node="25gV4LszgYY" resolve="executeSingleStep" />
+                  <node concept="37vLTw" id="2nQGvk0uO26" role="37wK5m">
+                    <ref role="3cqZAo" node="78xBDbK8GKI" resolve="m" />
+                  </node>
                   <node concept="2OqwBi" id="12g5A1PrGQu" role="37wK5m">
                     <node concept="37vLTw" id="78xBDbK8GKz" role="2Oq$k0">
                       <ref role="3cqZAo" node="78xBDbK8GKa" resolve="pm" />
@@ -8137,6 +8162,9 @@
               <node concept="3fqX7Q" id="78xBDbKbly4" role="3clFbw">
                 <node concept="1rXfSq" id="78xBDbK8QvP" role="3fr31v">
                   <ref role="37wK5l" node="25gV4LszgYY" resolve="executeSingleStep" />
+                  <node concept="37vLTw" id="2nQGvk0uPaq" role="37wK5m">
+                    <ref role="3cqZAo" node="78xBDbK8Qwd" resolve="m" />
+                  </node>
                   <node concept="37vLTw" id="6fMyXCHC7$F" role="37wK5m">
                     <ref role="3cqZAo" node="6fMyXCHC7$A" resolve="caption" />
                   </node>
