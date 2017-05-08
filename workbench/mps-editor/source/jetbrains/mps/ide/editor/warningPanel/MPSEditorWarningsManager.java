@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,12 +34,13 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.util.containers.MultiMap;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
@@ -56,6 +57,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MPSEditorWarningsManager implements ProjectComponent {
   public static final Logger LOG = LogManager.getLogger(MPSEditorWarningsManager.class);
@@ -67,6 +69,9 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   private final MPSClassesListener myClassesListener = new EditorWarningsListenerAdapter();
   private final MyFileStatusListener myFileStatusListener = new MyFileStatusListener();
   private MessageBusConnection myProjectBus;
+  // I don't truly need atomic boolean here, regular boolean would suffice in most cases, as requests generally come
+  // from same thread sequentially (e.g. modelLoaded). Nevertheless, it doesn't hurt to account for more complicated scenario.
+  private final AtomicBoolean myScheduledUpdateAllWarnings = new AtomicBoolean(false);
 
   private final SRepositoryContentAdapter myRepoListener = new SRepositoryContentAdapter() {
     @Override
@@ -143,18 +148,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void updateWarnings(@NotNull final MPSFileNodeEditor editor) {
-    DumbService.getInstance(myProject.getProject()).smartInvokeLater(new Runnable() {
-      @Override
-      public void run() {
-        final Runnable task = new Runnable() {
-          @Override
-          public void run() {
-            doUpdateWarnings(editor);
-          }
-        };
-        myProject.getModelAccess().runReadAction(task);
-      }
-    });
+    DumbService.getInstance(myProject.getProject()).smartInvokeLater(new ModelReadRunnable(myProject.getModelAccess(), () -> doUpdateWarnings(editor)));
   }
 
   private void doUpdateWarnings(final MPSFileNodeEditor editor) {
@@ -204,9 +198,15 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   // re-dispatch updateAllWarnings from an EDT thread
   /*package*/ void updateAllWarningsLater() {
+    if (myScheduledUpdateAllWarnings.get()) {
+      // there's already scheduled update in the EDT queue
+      return;
+    }
+    myScheduledUpdateAllWarnings.set(true);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
+        myScheduledUpdateAllWarnings.set(false);
         if (myProject.isDisposed()) {
           return;
         }
