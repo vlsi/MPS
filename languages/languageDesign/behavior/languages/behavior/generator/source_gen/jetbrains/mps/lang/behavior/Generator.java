@@ -61,7 +61,6 @@ public class Generator extends TemplateModuleBase {
 
   @Override
   protected void fillReferencedGenerators(TemplateModuleBase.ReferencedGenerators referencedGenerators) {
-    referencedGenerators.employed("e45a8b22-94f2-427f-b849-77f254c4eef5(jetbrains.mps.lang.aspect#3274906159125927726)");
-    referencedGenerators.employed("3ac18869-0828-4401-abad-822a47bf83f1(jetbrains.mps.lang.descriptor#9020561928507175817)");
+    referencedGenerators.extended("3ac18869-0828-4401-abad-822a47bf83f1(jetbrains.mps.lang.descriptor#9020561928507175817)");
   }
 }

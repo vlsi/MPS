@@ -58,11 +58,8 @@ public class Language extends LanguageRuntime {
     extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7"), "jetbrains.mps.lang.structure"));
     extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("443f4c36-fcf5-4eb6-9500-8d06ed259e3e"), "jetbrains.mps.baseLanguage.classifiers"));
     extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("7866978e-a0f0-4cc7-81bc-4d213d9375e1"), "jetbrains.mps.lang.smodel"));
-    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("aee9cad2-acd4-4608-aef2-0004f6a1cdbd"), "jetbrains.mps.lang.actions"));
     extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), "jetbrains.mps.lang.core"));
-    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("13744753-c81f-424a-9c1b-cf8943bf4e86"), "jetbrains.mps.lang.sharedConcepts"));
     extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("f3061a53-9226-4cc5-a443-f952ceaf5816"), "jetbrains.mps.baseLanguage"));
-    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("83888646-71ce-4f1c-9c53-c54016f6ad4f"), "jetbrains.mps.baseLanguage.collections"));
   }
 
   @Override
@@ -71,65 +68,41 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    if (aspectClass.getName().equals("jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor")) {
-      if (aspectClass == ActionAspectDescriptor.class) {
-        return (T) new ActionAspectDescriptorImpl();
-      }
+    if (aspectClass == ActionAspectDescriptor.class) {
+      return aspectClass.cast(new ActionAspectDescriptorImpl());
     }
-    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
-      if (aspectClass == BehaviorAspectDescriptor.class) {
-        return (T) new jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor();
-      }
+    if (aspectClass == BehaviorAspectDescriptor.class) {
+      return aspectClass.cast(new jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor());
     }
-    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor")) {
-      if (aspectClass == ConstraintsAspectDescriptor.class) {
-        return (T) new jetbrains.mps.lang.editor.constraints.ConstraintsAspectDescriptor();
-      }
+    if (aspectClass == ConstraintsAspectDescriptor.class) {
+      return aspectClass.cast(new jetbrains.mps.lang.editor.constraints.ConstraintsAspectDescriptor());
     }
-    if (aspectClass.getName().equals("jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor")) {
-      if (aspectClass == DataFlowAspectDescriptor.class) {
-        return (T) new DataFlowAspectDescriptorImpl();
-      }
+    if (aspectClass == DataFlowAspectDescriptor.class) {
+      return aspectClass.cast(new DataFlowAspectDescriptorImpl());
     }
-    if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {
-      if (aspectClass == EditorAspectDescriptor.class) {
-        return (T) new EditorAspectDescriptorImpl();
-      }
+    if (aspectClass == EditorAspectDescriptor.class) {
+      return aspectClass.cast(new EditorAspectDescriptorImpl());
     }
-    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor")) {
-      if (aspectClass == FindUsageAspectDescriptor.class) {
-        return (T) new FindUsagesDescriptor();
-      }
+    if (aspectClass == FindUsageAspectDescriptor.class) {
+      return aspectClass.cast(new FindUsagesDescriptor());
     }
-    if (aspectClass.getName().equals("jetbrains.mps.intentions.IntentionAspectDescriptor")) {
-      if (aspectClass == IntentionAspectDescriptor.class) {
-        return (T) new IntentionsDescriptor();
-      }
+    if (aspectClass == IntentionAspectDescriptor.class) {
+      return aspectClass.cast(new IntentionsDescriptor());
     }
-    if (aspectClass.getName().equals("jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor")) {
-      if (aspectClass == MigrationAspectDescriptor.class) {
-        return (T) new MigrationDescriptor();
-      }
+    if (aspectClass == MigrationAspectDescriptor.class) {
+      return aspectClass.cast(new MigrationDescriptor());
     }
-    if (aspectClass.getName().equals("jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor")) {
-      if (aspectClass == ScriptAspectDescriptor.class) {
-        return (T) new ScriptsDescriptor();
-      }
+    if (aspectClass == ScriptAspectDescriptor.class) {
+      return aspectClass.cast(new ScriptsDescriptor());
     }
-    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
-      if (aspectClass == StructureAspectDescriptor.class) {
-        return (T) new jetbrains.mps.lang.editor.structure.StructureAspectDescriptor();
-      }
+    if (aspectClass == StructureAspectDescriptor.class) {
+      return aspectClass.cast(new jetbrains.mps.lang.editor.structure.StructureAspectDescriptor());
     }
-    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConceptPresentationAspect")) {
-      if (aspectClass == ConceptPresentationAspect.class) {
-        return (T) new ConceptPresentationAspectImpl();
-      }
+    if (aspectClass == ConceptPresentationAspect.class) {
+      return aspectClass.cast(new ConceptPresentationAspectImpl());
     }
-    if (aspectClass.getName().equals("jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor")) {
-      if (aspectClass == IHelginsDescriptor.class) {
-        return (T) new TypesystemDescriptor();
-      }
+    if (aspectClass == IHelginsDescriptor.class) {
+      return aspectClass.cast(new TypesystemDescriptor());
     }
     return null;
   }

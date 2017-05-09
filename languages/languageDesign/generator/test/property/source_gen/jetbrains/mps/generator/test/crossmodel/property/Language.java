@@ -45,20 +45,14 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
-      if (aspectClass == BehaviorAspectDescriptor.class) {
-        return (T) new jetbrains.mps.generator.test.crossmodel.property.behavior.BehaviorAspectDescriptor();
-      }
+    if (aspectClass == BehaviorAspectDescriptor.class) {
+      return aspectClass.cast(new jetbrains.mps.generator.test.crossmodel.property.behavior.BehaviorAspectDescriptor());
     }
-    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
-      if (aspectClass == StructureAspectDescriptor.class) {
-        return (T) new jetbrains.mps.generator.test.crossmodel.property.structure.StructureAspectDescriptor();
-      }
+    if (aspectClass == StructureAspectDescriptor.class) {
+      return aspectClass.cast(new jetbrains.mps.generator.test.crossmodel.property.structure.StructureAspectDescriptor());
     }
-    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConceptPresentationAspect")) {
-      if (aspectClass == ConceptPresentationAspect.class) {
-        return (T) new ConceptPresentationAspectImpl();
-      }
+    if (aspectClass == ConceptPresentationAspect.class) {
+      return aspectClass.cast(new ConceptPresentationAspectImpl());
     }
     return null;
   }
