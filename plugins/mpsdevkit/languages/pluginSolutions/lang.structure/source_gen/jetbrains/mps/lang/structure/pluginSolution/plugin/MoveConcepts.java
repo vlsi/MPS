@@ -80,7 +80,7 @@ public class MoveConcepts implements MoveNodesAction {
         Iterable<SModule> modules = project.getProjectModules();
         return structureModels.value = Sequence.fromIterable(modules).ofType(Language.class).select(new ISelector<Language, SModelReference>() {
           public SModelReference select(Language it) {
-            return check_u6ijv2_a0a0a0a0a1a0a0h0f(it.getStructureModelDescriptor());
+            return check_u6ijv2_a0a0a0a0a1a0h0f(it.getStructureModelDescriptor());
           }
         }).where(new IWhereFilter<SModelReference>() {
           public boolean accept(SModelReference it) {
@@ -104,7 +104,7 @@ public class MoveConcepts implements MoveNodesAction {
     MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel.value), project)).withValues(nodesToMove));
   }
 
-  private static SModelReference check_u6ijv2_a0a0a0a0a1a0a0h0f(SModel checkedDotOperand) {
+  private static SModelReference check_u6ijv2_a0a0a0a0a1a0h0f(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

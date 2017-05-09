@@ -4009,7 +4009,7 @@
       <node id="95073643532950040" at="75,37,76,61" concept="2" />
       <node id="95073643532950040" at="77,5,78,22" concept="7" />
       <node id="3364696741418272242" at="80,46,81,185" concept="7" />
-      <node id="6628579460229359380" at="83,46,84,448" concept="7" />
+      <node id="6628579460229359380" at="83,46,84,451" concept="7" />
       <node id="178770917832494476" at="86,49,87,101" concept="6" />
       <node id="178770917832494476" at="87,101,88,47" concept="2" />
       <node id="178770917832494476" at="88,47,89,34" concept="2" />
@@ -4192,8 +4192,8 @@
       <node id="95073643532950040" at="290,0,293,0" concept="5" trace="getNoTargetText#()Ljava/lang/String;" />
       <node id="95073643532950040" at="343,0,346,0" concept="5" trace="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="95073643532950040" at="371,9,374,9" concept="4" />
-      <node id="6628579460229371301" at="399,76,402,5" concept="4" />
-      <node id="6628579460229362500" at="405,76,408,5" concept="4" />
+      <node id="6628579460229371301" at="399,78,402,5" concept="4" />
+      <node id="6628579460229362500" at="405,77,408,5" concept="4" />
       <node id="95073643532950040" at="48,0,52,0" concept="1" trace="AnalyzerRunnerCreator_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="95073643532950040" at="111,63,115,5" concept="4" />
       <node id="95073643532950040" at="168,0,172,0" concept="5" trace="createRefNode_u2jyfv_d0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -4215,8 +4215,8 @@
       <node id="178770917832494476" at="86,0,92,0" concept="5" trace="createConstant_u2jyfv_a0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="252054926403436844" at="162,0,168,0" concept="5" trace="createConstant_u2jyfv_c0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3364696741418271746" at="233,0,239,0" concept="5" trace="createConstant_u2jyfv_a4a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6628579460229371301" at="399,0,405,0" concept="8" trace="check_2oqrv7_a0a0k#(Ljava/util/List;)Z" />
-      <node id="6628579460229362500" at="405,0,411,0" concept="8" trace="check_2oqrv7_a0a0a01#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="6628579460229371301" at="399,0,405,0" concept="8" trace="check_u2jyfv_a0a0a5a#(Ljava/util/List;)Z" />
+      <node id="6628579460229362500" at="405,0,411,0" concept="8" trace="check_u2jyfv_a0a0a0f0#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="95073643532950040" at="187,0,194,0" concept="5" trace="createChildCell#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="95073643532950040" at="258,0,265,0" concept="5" trace="createChildCell#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="95073643532950040" at="321,0,328,0" concept="5" trace="createRefNodeList_u2jyfv_c5a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -4246,7 +4246,7 @@
       <scope id="95073643532950040" at="72,37,73,61" />
       <scope id="95073643532950040" at="75,37,76,61" />
       <scope id="3364696741418271777" at="80,46,81,185" />
-      <scope id="6628579460229413944" at="83,46,84,448" />
+      <scope id="6628579460229413944" at="83,46,84,451" />
       <scope id="95073643532950040" at="98,39,99,143" />
       <scope id="95073643532950048" at="135,41,136,42" />
       <scope id="95073643532950048" at="141,28,142,20" />
@@ -4328,8 +4328,8 @@
         <var name="context" id="95073643532950040" />
         <var name="ownerNode" id="95073643532950040" />
       </scope>
-      <scope id="6628579460229371301" at="399,76,403,17" />
-      <scope id="6628579460229362500" at="405,76,409,16" />
+      <scope id="6628579460229371301" at="399,78,403,17" />
+      <scope id="6628579460229362500" at="405,77,409,16" />
       <scope id="95073643532950040" at="53,0,58,0" />
       <scope id="95073643532950048" at="129,0,134,0">
         <var name="context" id="95073643532950048" />

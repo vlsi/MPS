@@ -191,7 +191,6 @@
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
-      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.aspect.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
@@ -223,7 +222,6 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
-      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.util.order.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
       <library file="${artifacts.mps}/lib/mps-behavior-api.jar" />
       <library file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />

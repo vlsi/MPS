@@ -81,7 +81,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x2eb1cddc01267d7aL, "mode")) != null);
   }
   private boolean nodeCondition_u2jyfv_a5a() {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x376a4d52f8d10dc6L, "parameters"))).isNotEmpty() || check_2oqrv7_a0a0k(check_2oqrv7_a0a0a01(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x151c4f99e489a17L, "analyzer"))));
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x376a4d52f8d10dc6L, "parameters"))).isNotEmpty() || check_u2jyfv_a0a0a5a(check_u2jyfv_a0a0a0f0(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x151c4f99e489a17L, "analyzer"))));
   }
   private EditorCell createConstant_u2jyfv_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "analyzer");
@@ -396,13 +396,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean check_2oqrv7_a0a0k(List<SNode> checkedDotOperand) {
+  private static boolean check_u2jyfv_a0a0a5a(List<SNode> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return ListSequence.fromList(checkedDotOperand).isNotEmpty();
     }
     return false;
   }
-  private static List<SNode> check_2oqrv7_a0a0a01(SNode checkedDotOperand) {
+  private static List<SNode> check_u2jyfv_a0a0a0f0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getChildren(checkedDotOperand, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, 0x376a4d52f8c2e303L, "constructorParameters"));
     }

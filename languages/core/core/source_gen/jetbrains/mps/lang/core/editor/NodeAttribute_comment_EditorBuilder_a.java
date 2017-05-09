@@ -49,12 +49,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
   }
   private Iterable<String> getEditorHints_fqq7dl_a0() {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
-    if (check_2lowb9_a1a9(myNode.getContainmentLink())) {
+    if (check_fqq7dl_a1a0a(myNode.getContainmentLink())) {
       ListSequence.fromList(result).addElement("jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment");
     }
     return result;
   }
-  private static boolean check_2lowb9_a1a9(SContainmentLink checkedDotOperand) {
+  private static boolean check_fqq7dl_a1a0a(SContainmentLink checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
     }
