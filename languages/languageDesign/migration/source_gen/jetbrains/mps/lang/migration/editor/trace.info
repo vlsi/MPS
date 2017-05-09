@@ -12,7 +12,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="17,0,105,0" name="jetbrains.mps.lang.migration.editor.EditorAspectDescriptorImpl" />
+      <unit at="16,0,92,0" name="jetbrains.mps.lang.migration.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:b37fdbd0-16ea-49c3-a711-9a930a47b589(jetbrains.mps.lang.migration.editor)/1741258697586930407">
@@ -3906,74 +3906,6 @@
       <unit id="7527743013695058365" at="53,40,67,5" name="jetbrains.mps.lang.migration.editor.NodePatternVariableReference_EditorBuilder_a$1" />
       <unit id="7527743013695058369" at="88,0,128,0" name="jetbrains.mps.lang.migration.editor.NodePatternVariableReference_EditorBuilder_a$Inline_Builder_1x8nz9_a0a" />
       <unit id="7527743013695058365" at="25,0,129,0" name="jetbrains.mps.lang.migration.editor.NodePatternVariableReference_EditorBuilder_a" />
-    </file>
-  </root>
-  <root nodeRef="r:b37fdbd0-16ea-49c3-a711-9a930a47b589(jetbrains.mps.lang.migration.editor)/8113079483879306406">
-    <file name="NonExactInstances.java">
-      <node id="8113079483879306406" at="30,30,31,16" concept="8" />
-      <node id="8113079483879306406" at="33,0,34,0" concept="3" trace="myLocations" />
-      <node id="8113079483879306406" at="35,67,36,63" concept="7" />
-      <node id="8113079483879306406" at="41,124,42,156" concept="6" />
-      <node id="8113079483879306406" at="43,135,44,279" concept="2" />
-      <node id="8113079483879306406" at="45,5,46,18" concept="7" />
-      <node id="8113079483879322739" at="51,84,52,70" concept="7" />
-      <node id="8113079483879322739" at="56,0,57,0" concept="3" trace="_context" />
-      <node id="8113079483879322739" at="58,55,59,27" concept="2" />
-      <node id="8113079483879323300" at="64,50,65,43" concept="7" />
-      <node id="8113079483879511263" at="70,204,71,401" concept="2" />
-      <node id="8113079483879501961" at="72,9,73,562" concept="2" />
-      <node id="8113079483879536208" at="77,58,78,580" concept="7" />
-      <node id="8113079483879322739" at="83,50,84,173" concept="7" />
-      <node id="8113079483879306406" at="30,0,33,0" concept="1" trace="NonExactInstances#()V" />
-      <node id="8113079483879306406" at="42,156,45,5" concept="4" />
-      <node id="8113079483879322739" at="58,0,61,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
-      <node id="8113079483879508014" at="69,52,72,9" concept="4" />
-      <node id="8113079483879306406" at="34,0,38,0" concept="5" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
-      <node id="8113079483879322739" at="50,0,54,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
-      <node id="8113079483879322739" at="76,0,80,0" concept="5" trace="canExecute#(Ljava/lang/String;)Z" />
-      <node id="8113079483879322739" at="62,0,67,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="8113079483879322739" at="81,0,86,0" concept="5" trace="getOutputConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="8113079483879322739" at="68,0,75,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
-      <node id="8113079483879306406" at="39,0,48,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
-      <scope id="8113079483879306406" at="30,30,31,16" />
-      <scope id="8113079483879306406" at="35,67,36,63" />
-      <scope id="8113079483879306406" at="43,135,44,279" />
-      <scope id="8113079483879322739" at="51,84,52,70" />
-      <scope id="8113079483879322739" at="58,55,59,27" />
-      <scope id="8113079483879322750" at="64,50,65,43" />
-      <scope id="8113079483879508016" at="70,204,71,401" />
-      <scope id="8113079483879535400" at="77,58,78,580" />
-      <scope id="8113079483879322739" at="83,50,84,173" />
-      <scope id="8113079483879306406" at="30,0,33,0" />
-      <scope id="8113079483879322739" at="58,0,61,0">
-        <var name="context" id="8113079483879322739" />
-      </scope>
-      <scope id="8113079483879306406" at="34,0,38,0">
-        <var name="location" id="8113079483879306406" />
-      </scope>
-      <scope id="8113079483879322739" at="50,0,54,0">
-        <var name="context" id="8113079483879322739" />
-      </scope>
-      <scope id="8113079483879322752" at="69,52,73,562" />
-      <scope id="8113079483879322739" at="76,0,80,0">
-        <var name="pattern" id="8113079483879322739" />
-      </scope>
-      <scope id="8113079483879306406" at="41,124,46,18">
-        <var name="result" id="8113079483879306406" />
-      </scope>
-      <scope id="8113079483879322739" at="62,0,67,0">
-        <var name="pattern" id="8113079483879322739" />
-      </scope>
-      <scope id="8113079483879322739" at="81,0,86,0" />
-      <scope id="8113079483879322739" at="68,0,75,0">
-        <var name="pattern" id="8113079483879322739" />
-      </scope>
-      <scope id="8113079483879306406" at="39,0,48,0">
-        <var name="_context" id="8113079483879306406" />
-      </scope>
-      <unit id="8113079483879322739" at="55,0,87,0" name="jetbrains.mps.lang.migration.editor.NonExactInstances$TMP_Action_bvz3fq_a0$Item" />
-      <unit id="8113079483879322739" at="49,0,88,0" name="jetbrains.mps.lang.migration.editor.NonExactInstances$TMP_Action_bvz3fq_a0" />
-      <unit id="8113079483879306406" at="29,0,89,0" name="jetbrains.mps.lang.migration.editor.NonExactInstances" />
     </file>
   </root>
   <root nodeRef="r:b37fdbd0-16ea-49c3-a711-9a930a47b589(jetbrains.mps.lang.migration.editor)/8415841354030308260">
