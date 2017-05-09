@@ -26,7 +26,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Map;
@@ -47,7 +46,6 @@ import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
-import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 
 @Generated
 public class QueriesGenerated extends QueryProviderBase {
@@ -295,6 +293,10 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceMacro_GetReferent_2312049224521283734(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638d23L, 0x4b6b6d7b2a638e5dL, "classifier"));
   }
+  public static Object referenceMacro_GetReferent_4147950839246952264(final ReferenceMacroContext _context) {
+    // TODO genContext.get output ScriptsDescriptorCons for model model; 
+    return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".ScriptsDescriptor";
+  }
   public static boolean ifMacro_Condition_2598676492883187120(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225f4f883L, 0x11225f69a66L, "affectedInstancePredicate")) != null);
   }
@@ -405,12 +407,6 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static SNode sourceNodeQuery_2312049224521342153(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x5c5c941438573499L, 0x4b6b6d7b2a62097fL, "oldClassifier"));
-  }
-  public static Object templateArgumentQuery_4565427742315565556(final TemplateArgumentContext _context) {
-    return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".ScriptsDescriptor";
-  }
-  public static Object templateArgumentQuery_5700381506346626450(final TemplateArgumentContext _context) {
-    return SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.script.runtime(MPS.Core/)", "~ScriptAspectDescriptor");
   }
   public static Iterable<SNode> sourceNodesQuery_2598676492883202965(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x11225f9fb49L, "part"));
@@ -940,6 +936,7 @@ public class QueriesGenerated extends QueryProviderBase {
     rtqMethods.put("5434557751113998941", new QueriesGenerated.RTQ(10, "Object"));
     rtqMethods.put("6720970695605836566", new QueriesGenerated.RTQ(11, "Object"));
     rtqMethods.put("2312049224521283733", new QueriesGenerated.RTQ(12, "Object"));
+    rtqMethods.put("4147950839246952263", new QueriesGenerated.RTQ(13, "ScriptsDescriptor"));
   }
   @NotNull
   @Override
@@ -985,37 +982,8 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.referenceMacro_GetReferent_6720970695605836567(ctx);
         case 12:
           return QueriesGenerated.referenceMacro_GetReferent_2312049224521283734(ctx);
-        default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
-      }
-    }
-  }
-  private final Map<String, CallArgumentQuery> caqMethods = new HashMap<String, CallArgumentQuery>();
-  {
-    caqMethods.put("4565427742315565556", new QueriesGenerated.CAQ(0));
-    caqMethods.put("5700381506346626450", new QueriesGenerated.CAQ(1));
-  }
-  @NotNull
-  @Override
-  public CallArgumentQuery getTemplateCallArgumentQuery(@NotNull QueryKey queryKey) {
-    final String id = queryKey.getTemplateNode().getNodeId().toString();
-    if (!(caqMethods.containsKey(id))) {
-      return super.getTemplateCallArgumentQuery(queryKey);
-    }
-    return caqMethods.get(id);
-  }
-  private static class CAQ implements CallArgumentQuery {
-    private final int methodKey;
-    /*package*/ CAQ(int methodKey) {
-      this.methodKey = methodKey;
-    }
-    @Nullable
-    public Object evaluate(@NotNull TemplateArgumentContext ctx) throws GenerationFailureException {
-      switch (methodKey) {
-        case 0:
-          return QueriesGenerated.templateArgumentQuery_4565427742315565556(ctx);
-        case 1:
-          return QueriesGenerated.templateArgumentQuery_5700381506346626450(ctx);
+        case 13:
+          return QueriesGenerated.referenceMacro_GetReferent_4147950839246952264(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

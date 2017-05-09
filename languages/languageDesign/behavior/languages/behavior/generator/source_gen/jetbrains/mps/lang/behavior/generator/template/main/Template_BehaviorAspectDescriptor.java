@@ -138,6 +138,7 @@ public class Template_BehaviorAspectDescriptor extends TemplateDeclarationBase i
       {
         final SNode tnode12 = environment.createOutputNode(myConcepts[7]);
         try {
+          environment.nodeCopied(context2, tnode12, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/9221686591909436657");
           TemplateContext context6 = context2.subContext();
           {
             final SNode tnode13 = environment.createOutputNode(myConcepts[8]);
